@@ -1,0 +1,95 @@
+{
+  "id": "derui-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "无锡得瑞动力科技有限公司",
+    "brands": [
+      "得瑞"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Zhejiang",
+    "city": "Lanxi"
+  },
+  "founded": 2018,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ và tổ máy (thông minh, thông dụng, siêu cách âm), tháp đèn",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2018 ở Vô Tích, nay chuyển về Lan Khê (Chiết Giang)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "发动机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa có dải công suất, website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2.asp?id=2621",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "无锡得瑞动力科技有限公司 （以下简称\"得瑞动力\"） 成立于2018年，原址位于 太湖之滨的无锡，目前已搬迁至浙江省兰溪市，是 一家专业从事发动机、发电机组 （包括智能发电机组，通用发电机组，极超静音发电机组，投光车等）"
+      ],
+      "file": "sources/derui-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

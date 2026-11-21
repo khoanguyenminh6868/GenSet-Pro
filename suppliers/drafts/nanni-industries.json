@@ -1,0 +1,16 @@
+{
+  "id": "nanni-industries", "country": "FR", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Nanni Industries", "zh": null, "brands": ["Nanni"],
+  "web": "https://www.nannienergy.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Nanni designs and develops complete marine solutions including engines from 10 to 2200 hp, marine generators from 5 to 800 kW, manoeuvring systems and interfaces. Nanni distributes its products through its sales and service network in 90 countries worldwide."]
+  },
+  "str": [["Máy phát hàng hải 5–800 kW và động cơ thủy 10–2200 hp; mạng lưới bán hàng/dịch vụ ở 90 nước", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "marine generators", "fuel": "diesel", "p": [5, 800, "kW", "unspecified", 1], "src": [1] },
+    { "k": "engine", "s": "engines", "fuel": "diesel", "p": [10, 2200, "hp", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi năm thành lập, địa chỉ; hàng chào QMF6M (gói IB2300371415) là máy phát thủy 1 pha"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

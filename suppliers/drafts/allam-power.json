@@ -1,0 +1,13 @@
+{
+  "id": "allam-power", "country": "GB", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Allam Power Ltd", "zh": null, "brands": ["Tempest"],
+  "web": "https://allam.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© 2026 Allam Power Ltd", "Diesel generators ranging from 5-3000 kva available to suit the following applications", "All Tempest generating sets are designed and manufactured at our factory in England"]
+  },
+  "str": [["Tổ máy diesel Tempest 5–3000 kVA, thiết kế và sản xuất tại nhà máy ở Anh", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Tempest generating sets", "fuel": "diesel", "p": [5, 3000, "kVA", "unspecified", 1], "src": [1] } ],
+  "miss": ["Trang sản phẩm không ghi năm thành lập, hãng động cơ, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

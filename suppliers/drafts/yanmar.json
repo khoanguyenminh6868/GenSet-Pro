@@ -1,0 +1,16 @@
+{
+  "id": "yanmar", "country": "JP", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "YANMAR HOLDINGS CO., LTD.", "zh": null, "brands": ["Yanmar"],
+  "web": "https://www.yanmar.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["yanmar-shandong"],
+  "src": {
+    "1": ["A", "Copyright © YANMAR HOLDINGS CO., LTD. All rights reserved.", "With ratings from 650 kVA to 1,250 kVA, each unit is driven by an AY engine"],
+    "2": ["A", "Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR"]
+  },
+  "str": [["Tổ máy diesel lớn dòng AY 650–1250 kVA, dùng động cơ AY của Yanmar", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "AY Power Generation Series", "fuel": "diesel", "eng": ["AY"], "p": [650, 1250, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa lưu trang các dòng tổ máy khác (6HAL, EY, tổ máy nhỏ YDG); trang 2 chỉ có tiêu đề danh mục"],
+  "by": "discover-bot (Claude)"
+}

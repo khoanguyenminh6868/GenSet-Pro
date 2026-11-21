@@ -1,0 +1,16 @@
+{
+  "id": "cldj-fujian", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "福安市昌隆电机有限公司", "brands": ["昌隆"],
+  "web": "http://www.fjcldj.com/", "prov": "Fujian", "city": "Fuan", "founded": 2002, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "欢迎访问福安市昌隆电机有限公司！", "专业制造柴油发电机/发电机，坐落在福安市城阳镇铁湖工业区金业路6号，公司创办于2002年，工厂占地8000多平方米，建筑面积5000多平方米，专业生产柴油发电机组"]
+  },
+  "str": [["Nhà máy tổ máy diesel và đầu phát tại Phúc An, thành lập 2002, rộng hơn 8000 m²", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] },
+    { "k": "alternator", "s": "发电机", "src": [1] }
+  ],
+  "miss": ["Trang chủ / giới thiệu không ghi dải công suất, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

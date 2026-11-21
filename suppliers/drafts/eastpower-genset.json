@@ -1,0 +1,18 @@
+{
+  "id": "eastpower-genset", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Yangzhou East Power Equipment Co., Ltd", "zh": null, "brands": ["East Power"],
+  "web": "https://www.eastpowergenset.com/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "YANGZHOU EAST POWER EQUIPMENT CO., LTD", "We specialized in the manufacture of diesel generator sets, gas generator sets, gas turbine generator sets and all kinds of internal combustion power unit."]
+  },
+  "str": [
+    ["Làm tổ máy diesel, tổ máy khí, tổ máy tua bin khí", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "src": [1] },
+    { "k": "genset", "s": "Gas generator sets", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot"
+}

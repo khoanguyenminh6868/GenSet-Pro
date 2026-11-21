@@ -1,0 +1,5 @@
+{"id":"ims-aggregatebau","country":"DE","role":"genset_oem","status":"verified","conf":"medium","en":"IMS Aggregatebau GmbH & Co. KG","zh":null,"brands":["IMS"],"web":"https://ims-aggregatebau.de/","prov":null,"city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","IMS Aggregatebau GmbH & Co. KG","von 10 bis 670 kVA","Unsere mobilen Stromerzeuger ermöglichen eine schnelle und unkomplizierte Notstromversorgung vor Ort.","20 Fuß | 150 – 600 kVA"]},
+"str":[["Tổ máy 10–670 kVA, có tổ máy di động và container 10/20 feet",1]],"cert":[],
+"lines":[{"k":"genset","s":"Stromerzeuger","fuel":"diesel","p":[10,670,"kVA","unspecified",1],"types":["container"],"src":[1]}],
+"miss":["Trang danh sách không ghi năm thành lập, hãng động cơ, chứng chỉ"],"by":"discover-bot (Claude)"}

@@ -1,0 +1,4 @@
+{ "id": "mase-generators", "country": "IT", "role": "genset_oem", "status": "partial", "conf": "medium", "en": "Mase Generators S.p.A.", "zh": null, "brands": ["Mase"], "web": "https://www.masegenerators.com/", "prov": "Forlì-Cesena", "city": "Cesena", "founded": 1970, "fsrc": [1], "related": [],
+  "src": { "1": ["A", "Dalla sua fondazione nel 1970 la Mase Generators S.p.A. è sempre stata all’avanguardia", "Dal 1970 GENERATORI, MOTOSALDATRICI e TORRI FARO"] },
+  "str": [["Máy phát điện (cả máy phát hàng hải), máy hàn, tháp đèn; thành lập 1970 (Ý)", 1]], "cert": [], "lines": [ { "k": "genset", "s": "GENERATORI", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

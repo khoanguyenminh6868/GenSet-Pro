@@ -1,0 +1,603 @@
+{
+  "id": "gdf-guangzhou",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "广州柴油机厂股份有限公司",
+    "brands": [
+      "广柴",
+      "GDF"
+    ]
+  },
+  "website": "https://www.gdfdiesel.com/",
+  "hq": {
+    "province": "Guangdong",
+    "city": "Guangzhou"
+  },
+  "founded": 1911,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel tốc độ trung bình 550–2000 kW (6 và 9 xi lanh)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Tiền thân 协同和机器厂 thành lập 1911",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "中速柴油机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 550,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ chỉ ghi hai dải 550-960kW và 1000-2000kW cạnh nhãn 6缸/9缸, chưa rõ dải nào của dòng nào"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gdfdiesel.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2015 广州柴油机厂股份有限公司ALL Rights Reserved.",
+        "广州柴油机厂股份有限公司（简称“广柴股份”）是中国民族工业的杰出代表，原名为协同和机器厂，创立于1911年",
+        "550-960kW",
+        "1000-2000kW"
+      ],
+      "file": "sources/gdf-guangzhou/1.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=225",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 陆用发电机组 generator set | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=287",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 船用发电机组 Marine generator set | | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=394",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| generator set | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=288&cid=67",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 船用发电机组Marine generator set | |"
+      ],
+      "file": "sources/gdf-guangzhou/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=289&cid=68",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 船用发电机组Marine generator set | | |"
+      ],
+      "file": "sources/gdf-guangzhou/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=290&cid=70",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 船用发电机组Marine generator set | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=294&cid=69",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 船用发电机组Marine generator set | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=90&cid=31",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 陆用发电机组 generator set | | |"
+      ],
+      "file": "sources/gdf-guangzhou/108.md"
+    },
+    {
+      "n": 110,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=292&cid=72",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 陆用发电机组 generator set | | | | | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/110.md"
+    },
+    {
+      "n": 111,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_14.aspx?itemid=293&cid=73",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 陆用发电机组 generator set | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/111.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=390&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Marine generator set | | |"
+      ],
+      "file": "sources/gdf-guangzhou/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=391&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Marine generator set | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/115.md"
+    },
+    {
+      "n": 116,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=392&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Marine generator set | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/116.md"
+    },
+    {
+      "n": 118,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=395&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| generator set | |"
+      ],
+      "file": "sources/gdf-guangzhou/118.md"
+    },
+    {
+      "n": 119,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=396&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| generator set | | | | | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=397&cid=",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| generator set | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/120.md"
+    },
+    {
+      "n": 121,
+      "url": "https://www.gdfdiesel.com/cpzxMI/info_61.aspx?itemid=388",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Marine generator set | | | | | | |"
+      ],
+      "file": "sources/gdf-guangzhou/121.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 陆用发电机组 generator set | | | | |",
+        "| 项目 Items | 单位 Unit | | | | |",
+        "| 系列Series | | 320系列",
+        "| 机组型号Gen-Set Model | | GC1000LAH | GC1250LAH | GC1600LAH | GC1800LAH | GC2000LAH"
+      ],
+      "rows": [
+        "| 发动机型号Engine Model | | 6 320ZD | 6 320ZD-2 | 8 320ZD-4 | 8320ZD-6 | 8 320ZD-8",
+        "| 机组功率Power | kW | 1000 | 1250 | 1600 | 1800 | 2000",
+        "| 频率Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 50 | 5 0/60",
+        "| 转速Speed | r/min | 4 28/450 | 5 00/514 | 5 00/514 | 500 | 5 00/514",
+        "| 外形尺寸 Outline dimension (长×宽×高)(L×B×H) | mm | 7 670×2290×2900 | 8 060×2290×2900 | 9 750×2300×3380 | 9780×2300×3380 | 9 775×2570×3825",
+        "| 重量 Weight | kg | 34000 | 35000 | 45000 | 48000 | 62200",
+        "| | | | | | |",
+        "| 1 、各型号机组的供货范围，按相应技术文件执行。 | | | | | |"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 船用发电机组 Marine generator set | | | | | | |",
+        "| 项目 Items | 单位 Unit | | | | | | |",
+        "| 系列Series | | 230 | | | | | |",
+        "| 机组型号 Gen-Set Model | | CCFJ550J-W | CCFJ660J-W | CCFJ750J-W | CCFJ704J-W | CCFJ880J-W | CCFJ944J-W | CCFJ960J-W"
+      ],
+      "rows": [
+        "| 发动机型号 Engine Model | | 6 230ZD | 6 230ZD | 6 230ZD | 6 230ZD | 8 230ZD | 8 230ZD | 8230ZD",
+        "| 机组功率 Power | kW | 550 | 660 | 750 | 704 | 880 | 944 | 960",
+        "| 频率 Frequency | Hz | 5 0/60 | 5 0/60 | 50 | 60 | 5 0/60 | 60 | 50",
+        "| 转速 Speed | r/min | 7 50/720 | 7 50/720 | 750 | 720 | 7 50/720 | 720 | 750",
+        "| 外形尺寸 Outline dimension (长×宽×高)(L×B×H) | mm | 5743×1534 × 2522 | 5673×1634× 2522 | 5673×1634× 2522 | 5673×1634× 2522 | 6629×1634× 2573 | 6629×1634× 2573 | 6629×1634× 2573",
+        "| 重量 Weight | kg | 18000 | 18500 | 18500 | 18500 | 23000 | 23500 | 23500",
+        "| 证书 | | C CS | C CS | C CS | C CS | C CS | C CS | C CS",
+        "| 燃料类型 Fuel type | | LDO/MDO 、 18 0 -380cSt/50 ℃ HFO | LDO/MDO 、 18 0 -380cSt/50 ℃ HFO | LDO/MDO 、 180 -380cSt/50 ℃ HFO | LDO/MDO 、 180 -380cSt/50 ℃ HFO | LDO/MDO 、 180 -380cSt/50 ℃ HFO | LDO/MDO 、 180 -380cSt/50 ℃ HFO | LDO/MDO 、 180 -380cSt/50 ℃ HFO",
+        "| | | | | | | | |"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| generator set | | | | |",
+        "| Items | Unit | | | | |",
+        "| Series | | 320 series",
+        "| Gen-Set Model | | GC1000LAH | GC1250LAH | GC1600LAH | GC1800LAH | GC2000LAH"
+      ],
+      "rows": [
+        "| Engine Model | | 6 320ZD | 6 320ZD-2 | 8 320ZD-4 | 8320ZD-6 | 8 320ZD-8",
+        "| Power | kW | 1000 | 1250 | 1600 | 1800 | 2000",
+        "| Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 50 | 5 0/60",
+        "| Speed | r/min | 4 28/450 | 5 00/514 | 5 00/514 | 500 | 5 00/514",
+        "| Outline dimension (L×B×H) | mm | 7 670×2290×2900 | 8 060×2290×2900 | 9 750×2300×3380 | 9780×2300×3380 | 9 775×2570×3825",
+        "| Weight | kg | 34000 | 35000 | 45000 | 48000 | 62200",
+        "| | | | | | |",
+        "| | | | | | |"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 船用发电机组Marine generator set | |",
+        "| 项目 Items | 单位 Unit | |",
+        "| 系列Series | | CS21",
+        "| 机组型号Gen-Set Model | | C CFJ1200J-W | CCFJ1470J-W",
+        "| 发动机型号Engine Model | | 6CS21/32CR | 8 CS21/32"
+      ],
+      "rows": [
+        "| 机组功率Power | kW | 1200 | 1470",
+        "| 频率Frequency | Hz | 50 | 60",
+        "| 转速Speed | r/min | 1000 | 900",
+        "| 外形尺寸 Outline dimension（长×宽×高）(L×B×H) | mm | 5690×1910×2830 | 7401×2303×2675",
+        "| 重量 Weight | kg | ≈ 26000 | ≈ 30000",
+        "| 证书 | | C CS/ZY | C C S",
+        "| 燃料类型Fuel type | | 轻油 | 180cSt/50℃ HFO",
+        "| | | |",
+        "| 1 、各型号机组的供货范围，按相应技术文件执行。 | | |"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 船用发电机组Marine generator set | | |",
+        "| 项目 Items | 单位 Unit | | |",
+        "| 系列Series | |",
+        "| 机组型号Gen-Set Model | | CCFJ1250J-W | CCFJ1600J-W | CCFJ2000J-W"
+      ],
+      "rows": [
+        "| 发动机型号Engine Model | | 6320ZCd-4 | 8320ZCd-4 | 8 320ZCd-8",
+        "| 机组功率Power | kW | 1250 | 1600 | 2000",
+        "| 频率Frequency | Hz | 50 | 50 | 5 0/60",
+        "| 转速Speed | r/min | 500 | 500 | 5 00/514",
+        "| 外形尺寸 Outline dimension（长×宽×高）(L×B×H) | mm | 8 060×2290×2900 | 9 750×2300×3380 | 9 809×2000×3380",
+        "| 重量 Weight | kg | 35000 | 45000 | 49800",
+        "| | | | |",
+        "| 1 、各型号机组的供货范围，按相应技术文件执行。 | | | |"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 船用发电机组Marine generator set | | | |",
+        "| 项目 Items | 单位 Unit | | | |",
+        "| 系列Series | | G32",
+        "| 机组型号Gen-Set Model | | CCFJ2750J-W | CCFJ3380J-W | CCFJ3700J-W | CCFJ4180J-W"
+      ],
+      "rows": [
+        "| 发动机型号Engine Model | | 6 G32A | 8G32 | 8G32A | 9G32",
+        "| 机组功率Power | kW | 2750 | 3380 | 3700 | 4180",
+        "| 频率Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60",
+        "| 转速Speed | r/min | 600 | 600 | 600 | 600",
+        "| 外形尺寸 Outline dimension (长×宽×高)(L×B×H) | mm | 9 195×2720×3490 | 1 0618 ×2 850 × 3455 | 1 0618 ×2 850 × 3455 | 1 1400 × 2850 × 3745",
+        "| 重量 Weight | kg | 55800 | 75000 | 75000 | 87000",
+        "| 证书 | | C CS | C CS | C CS | C CS",
+        "| 燃料类型Fuel type | | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO",
+        "| | | | | |"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 船用发电机组Marine generator set | | | | | |",
+        "| 项目 Items | 单位 Unit | | | | | |"
+      ],
+      "rows": [
+        "| 系列Series | | 6G26系列 | 8G26系列 | 9G26系列",
+        "| 发动机型号Engine Model | | 6 G26 | 8 G26 | 9G26",
+        "| 机组功率Power | kW | 1825 | 1900 | 2430 | 2530 | 2735 | 2850",
+        "| 频率Frequency | Hz | 60 | 50 | 60 | 50 | 60 | 50",
+        "| 转速Speed | r/min | 720 | 750 | 720 | 750 | 720 | 750",
+        "| 外形尺寸 Outline dimension (长×宽×高)(L×B×H) | mm | 8152×2152×3120 | 9042×2152×3120 | 9487×2152×3120",
+        "| 重量 Weight | kg | 53000 | 61000 | 74300"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 陆用发电机组 generator set | | |",
+        "| 项目 Items | 单位 Unit | | |",
+        "| 系列Series | | 230 | |"
+      ],
+      "rows": [
+        "| 机组型号Gen-Set Model | | GC550LA | GC700LA | GC1000LA8",
+        "| 发动机型号Engine Model | | 6 230ZD | 6 230ZD | 8 230ZD",
+        "| 机组功率Power | kW | 550 | 700 | 1000",
+        "| 频率Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60",
+        "| 转速Speed | r/min | 7 50/720 | 7 50/720 | 7 50/720",
+        "| 外形尺寸 Outline dimension（长×宽×高）(L×B×H) | mm | 5743×1534×2522 | 5743×1534×2522 | 6629×1634×2630",
+        "| 重量 Weight | kg | 18000 | 18500 | 23500",
+        "| 燃料类型Fuel type | | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO",
+        "| | | | |",
+        "| 1 、各型号机组的供货范围，按相应技术文件执行。 | | | |"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 陆用发电机组 generator set | | | | | | | | | |",
+        "| 项目 Items | 单 位 Unit | | | | | | | | | |"
+      ],
+      "rows": [
+        "| 系列Series | | 6G26系列 | 8G26系列 | 9G26系列",
+        "| 发动机型号 Engine Model | | 6 G26 | 6 G26-2 | 8G26 | 8G26-2 | 9G26",
+        "| 机组功率Power | kW | 1825 | 1900 | 1635 | 1700 | 2430 | 2530 | 2160 | 2250 | 2735 | 2850",
+        "| 频率 Frequency | Hz | 60 | 50 | 60 | 50 | 60 | 50 | 60 | 50 | 60 | 50",
+        "| 转速Speed | r/min | 720 | 750 | 720 | 750 | 720 | 750 | 720 | 750 | 720 | 750",
+        "| 外形尺寸 Outline dimension (长×宽×高) (L×B×H) | mm | 8152×2152×3120 | 9042×2152×3120 | 9487×2152×3120",
+        "| 重量 Weight | kg | 53000 | 61000 | 74300",
+        "| 燃料类型 Fuel type | | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "广州柴油机厂股份有限公司",
+      "header": [
+        "| 陆用发电机组 generator set | | | | |",
+        "| 项目 Items | 单位 Unit | | | | |",
+        "| 系列Series | | G32"
+      ],
+      "rows": [
+        "| 机组型号Gen-Set Model | | GC2500LA | GC2750LA | GC3380LA | GC3700LA | GC4180LA",
+        "| 发动机型号Engine Model | | 6 G32 | 6 G32A | 8G32 | 8G32A | 9G32",
+        "| 机组功率Power | kW | 2500 | 2750 | 3380 | 3700 | 4180",
+        "| 频率Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60",
+        "| 转速Speed | r/min | 600 | 600 | 600 | 600 | 600",
+        "| 外形尺寸 Outline dimension (长×宽×高) (L×B×H) | mm | 9 195×2720×3490 | 9 195×2720×3490 | 1 0618 ×2 850 × 3455 | 1 0618 ×2 850 × 3455 | 1 1400 × 2850 × 3745",
+        "| 重量 Weight | kg | 55800 | 55800 | 75000 | 75000 | 87000",
+        "| 燃料类型Fuel type | | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO",
+        "| | | | | | |"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| Marine generator set | | |",
+        "| Items | Unit | | |",
+        "| Series | |",
+        "| Gen-Set Model | | CCFJ1250J-W | CCFJ1600J-W | CCFJ2000J-W"
+      ],
+      "rows": [
+        "| Engine Model | | 6320ZCd-4 | 8320ZCd-4 | 8 320ZCd-8",
+        "| Power | kW | 1250 | 1600 | 2000",
+        "| Frequency | Hz | 50 | 50 | 5 0/60",
+        "| Speed | r/min | 500 | 500 | 5 00/514",
+        "| Outline dimension (L×B×H) | mm | 8 060×2290×2900 | 9 750×2300×3380 | 9 809×2000×3380",
+        "| Weight | kg | 35000 | 45000 | 49800",
+        "| | | | |",
+        "| | | | |"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| Marine generator set | | | | | |",
+        "| Items | Unit | | | | | |",
+        "| Series | | 6G26series | 8G26series | 9G26series",
+        "| Gen-Set Model | | CCFJ1825J-W | CCFJ 1900 J-W | CCFJ 2430 J-W | CCFJ 2530 J-W | CCFJ 2735 J-W | CCFJ 2850 J-W"
+      ],
+      "rows": [
+        "| Engine Model | | 6 G26 | 8 G26 | 9G26",
+        "| Power | kW | 1825 | 1900 | 2430 | 2530 | 2735 | 2850",
+        "| Frequency | Hz | 60 | 50 | 60 | 50 | 60 | 50",
+        "| Speed | r/min | 720 | 750 | 720 | 750 | 720 | 750",
+        "| Outline dimension (L×B×H) | mm | 8152×2152×3120 | 9042×2152×3120 | 9487×2152×3120",
+        "| Weight | kg | 53000 | 61000 | 74300"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| Marine generator set | | | |",
+        "| Items | Unit | | | |",
+        "| Series | | G32",
+        "| Gen-Set Model | | CCFJ2750J-W | CCFJ3380J-W | CCFJ37000J-W | CCFJ4180J-W"
+      ],
+      "rows": [
+        "| Engine Model | | 6 G32A | 8G32 | 8G32A | 9G32",
+        "| Power | kW | 2750 | 3380 | 3700 | 4180",
+        "| Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60",
+        "| Speed | r/min | 600 | 600 | 600 | 600",
+        "| Outline dimension (L×B×H) | mm | 9 195×2720×3490 | 1 0618 ×2 850 × 3455 | 1 0618 ×2 850 × 3455 | 1 1400 × 2850 × 3745",
+        "| Weight | kg | 55800 | 75000 | 75000 | 87000",
+        "| Certificate | | C CS | C CS | C CS | C CS",
+        "| Fuel type | | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO",
+        "| | | | | |",
+        "| | | | | |"
+      ]
+    },
+    {
+      "n": 118,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| generator set | |",
+        "| Items | Unit | |",
+        "| Series | | CS21",
+        "| Gen-Set Model | | C CFJ1200J-W | CCFJ1470J-W",
+        "| Engine Model | | 6CS21/32CR | 8 CS21/32"
+      ],
+      "rows": [
+        "| Power | kW | 1200 | 1470",
+        "| Frequency | Hz | 50 | 60",
+        "| Speed | r/min | 1000 | 900",
+        "| Outline dimension (L×B×H) | mm | 5690×1910×2830 | 7401×2303×2675",
+        "| Weight | kg | ≈ 26000 | ≈ 30000",
+        "| Certificate | | C CS/ZY | C C S",
+        "| Fuel type | | 轻油 | 180cSt/50℃ HFO",
+        "| | | |",
+        "| | | |"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| generator set | | | | | | | | | |",
+        "| Items | Unit | | | | | | | | | |",
+        "| Series | | 6G26series | 8G26series | 9G26series",
+        "| Gen-Set Model | | G C 1825 LAH | G C1900LAH | G C1635LAH | G C1700LAH | G C2430LAH | G C2530LAH | G C2160LAH | G C2250LAH | G C2735LAH | G C2850LAH"
+      ],
+      "rows": [
+        "| Engine Model | | 6 G26 | 6 G26-2 | 8G26 | 8G26-2 | 9G26",
+        "| Power | kW | 1825 | 1900 | 1635 | 1700 | 2430 | 2530 | 2160 | 2250 | 2735 | 2850",
+        "| Frequency | Hz | 60 | 50 | 60 | 50 | 60 | 50 | 60 | 50 | 60 | 50",
+        "| Speed | r/min | 720 | 750 | 720 | 750 | 720 | 750 | 720 | 750 | 720 | 750",
+        "| Outline dimension (L×B×H) | mm | 8152×2152×3120 | 9042×2152×3120 | 9487×2152×3120",
+        "| Weight | kg | 53000 | 61000 | 74300"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| generator set | | | | |",
+        "| Items | Unit | | | | |",
+        "| Series | | G32"
+      ],
+      "rows": [
+        "| Gen-Set Model | | GC2500LA | GC2750LA | GC3380LA | GC3700LA | GC4180LA",
+        "| Engine Model | | 6 G32 | 6 G32A | 8G32 | 8G32A | 9G32",
+        "| Power | kW | 2500 | 2750 | 3380 | 3700 | 4180",
+        "| Frequency | Hz | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60 | 5 0/60",
+        "| Speed | r/min | 600 | 600 | 600 | 600 | 600",
+        "| Outline dimension (L×B×H) | mm | 9 195×2720×3490 | 9 195×2720×3490 | 1 0618 ×2 850 × 3455 | 1 0618 ×2 850 × 3455 | 1 1400 × 2850 × 3745",
+        "| Weight | kg | 55800 | 55800 | 75000 | 75000 | 87000",
+        "| Fuel type | | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO | 380cSt/50℃ HFO",
+        "| | | | | | |",
+        "| | | | | | |"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "Guangzhou diesel engine factory Limited by Share Ltd",
+      "header": [
+        "| Marine generator set | | | | | | |",
+        "| Items | Unit | | | | | | |",
+        "| Series | | 230 | | | | | |",
+        "| Gen-Set Model | | CCFJ550J-W | CCFJ660J-W | CCFJ750J-W | CCFJ704J-W | CCFJ880J-W | CCFJ944J-W | CCFJ960J-W"
+      ],
+      "rows": [
+        "| Engine Model | | 6 230ZD | 6 230ZD | 6 230ZD | 6 230ZD | 8 230ZD | 8 230ZD | 8230ZD",
+        "| Power | kW | 550 | 660 | 750 | 704 | 880 | 944 | 960",
+        "| Frequency | Hz | 5 0/60 | 5 0/60 | 50 | 60 | 5 0/60 | 60 | 50",
+        "| Speed | r/min | 7 50/720 | 7 50/720 | 750 | 720 | 7 50/720 | 720 | 750",
+        "| Outline dimension (L×B×H) | mm | 5743×1534×2522 | 5673×1634×2522 | 5673×1634×2522 | 5673×1634×2522 | 6629×1634×2573 | 6629×1634×2573 | 6629×1634×2573",
+        "| Weight | kg | 18000 | 18500 | 18500 | 18500 | 23000 | 23500 | 23500",
+        "| Certificate | | C CS | C CS | C CS | C CS | C CS | C CS | C CS",
+        "| Fuel type | | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO | LDO/MDO 、 180-380cSt/50 ℃ HFO",
+        "| | | | | | | | |",
+        "| | | | | | | | |"
+      ]
+    }
+  ]
+}

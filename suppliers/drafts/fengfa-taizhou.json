@@ -1,0 +1,6 @@
+{"id":"fengfa-taizhou","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":"Taizhou Fengfa Power Equipment Co., Ltd.","zh":null,"brands":["Fengfa"],"web":"https://www.ffdlpower.com/","prov":null,"city":"Taizhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © Taizhou Fengfa Power Equipment Co., Ltd. All Rights Reserved","Taizhou Fengfa Power Equipment Co., Ltd. mainly produces and sells diesel generator sets, marinepower emergent diesel gen-sets and gas gen-sets.","Fengfa Power produces marine generator sets with a power range of 37.5KVA-1250KVA 30kW-1000kW 50Hz/1500RPM","Fengfa has also obtained AAA qualification and ISO9001-2008 certification."]},
+"str":[["Làm tổ máy diesel, tổ máy khẩn cấp tàu thủy và tổ máy khí",1],["Tổ máy tàu thủy 37,5–1250 kVA (30–1000 kW), 50 Hz / 1500 rpm",1]],
+"cert":[["ISO9001",1]],
+"lines":[{"k":"genset","s":"Marine generator sets","fuel":"diesel","p":[37.5,1250,"kVA","unspecified",1],"freq":["50Hz"],"src":[1]},{"k":"genset","s":"Diesel generator sets","fuel":"diesel","src":[1]},{"k":"genset","s":"Gas gen-sets","fuel":"gas","src":[1]}],
+"miss":["Không thấy tỉnh (có hai thành phố Thái Châu ở Giang Tô và Chiết Giang), năm thành lập, tên tiếng Trung"],"by":"discover-bot"}

@@ -1,0 +1,57 @@
+{
+  "id": "mahindra-powerol",
+  "country": "IN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Mahindra Powerol",
+  "zh": null,
+  "brands": [
+    "Mahindra Powerol"
+  ],
+  "web": "https://www.mahindrapowerol.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Mahindra Powerol has a strong network of over 200 dealers and service",
+      "The company's range of 5kva to 625kva generators includes"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy 5–625 kVA",
+      1
+    ],
+    [
+      "Mạng lưới hơn 200 đại lý và dịch vụ",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Mahindra Powerol gensets",
+      "fuel": "diesel",
+      "p": [
+        5,
+        625,
+        "kVA",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

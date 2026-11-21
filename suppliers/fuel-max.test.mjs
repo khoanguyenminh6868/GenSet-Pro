@@ -1,0 +1,113 @@
+// node --test suppliers/*.test.mjs — the fuel consumption the HSMT allows (Khoa, 2026-11-12): a row whose own figure
+// (same load, in L/h) is over it is left out of candidates() like one under a minimum; a row with no such figure stays.
+import test from "node:test";
+import assert from "node:assert/strict";
+import { candidates, hintsOf } from "./config-bot.mjs";
+
+const C = globalThis.GenbidCatalog;
+const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel consumption 100% load (L/h) | Fuel consumption 75% load (L/h) | Fuel consumption (g/kWh) |";
+const sup = (id, rows, header = H) => ({ id, country: "CN", confidence: "high", specTables: [{ n: 101, title: "Gensets 50Hz", header: [header], rows }] });
+const free = (text) => ({ ...hintsOf(`Chương V. Yêu cầu kỹ thuật\n${text}`), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] });
+const run = (list, hints) => candidates(C.build(list), { value: 400, unit: "kVA" }, hints, { suppliers: list });
+const ids = (r) => r.top.map((x) => x.u.supplierId).sort();
+const rows = [
+  sup("low", ["| l-1 | 420 | 336 | WP13D405E200 | XY1 | 80 | 61 | 200 |"]),
+  sup("high", ["| h-1 | 420 | 336 | WP13D385E200 | XY1 | 99 | 74 | 215 |"]),
+  sup("none", ["| n-1 | 420 | 336 | YC6K520-D30 | XY1 | | | |"]),
+  sup("gkwh", ["| g-1 | 420 | 336 | YC6MJ500L-D21 | XY1 | 230 g/kWh | | |"]),
+];
+
+test("fuel at 100% load over the HSMT's limit: the row is left out, with the reason; no figure or another unit: kept", () => {
+  const h = free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz");
+  assert.equal(h.maxFuel, 90);
+  const r = run(rows, h);
+  assert.deepEqual(ids(r), ["gkwh", "low", "none"]);
+  assert.deepEqual(r.dropped.map((x) => [x.u.supplierId, x.ruled]), [["high", ["fuel"]]]);
+  assert.ok(r.all.every((x) => !x.fuelOver));
+});
+
+test("fuel at 75% load is compared with the 75% figure only", () => {
+  const r = run(rows, free("Tiêu hao nhiên liệu ở 75% tải ≤ 70 L/h\n50 Hz"));
+  assert.deepEqual(r.dropped.map((x) => [x.u.supplierId, x.ruled]), [["high", ["fuel75"]]]);
+  // 100% limit 90: the row with 99 L/h at 100% goes, the one with 74 at 75% is not judged on it.
+  assert.deepEqual(run(rows, free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz")).dropped.map((x) => x.u.supplierId), ["high"]);
+});
+
+test("a figure equal to the limit stays; the engine the HSMT names stays with 300 points off", () => {
+  assert.equal(run(rows, free("Tiêu hao nhiên liệu ở 100% tải ≤ 99 L/h\n50 Hz")).dropped.length, 0);
+  const r = run(rows, free("Động cơ WP13D385E200\nTiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz"));
+  assert.equal(r.dropped.length, 0);
+  const x = r.top.find((y) => y.u.supplierId === "high");
+  assert.equal(x.named, true); assert.deepEqual(x.ruled, ["fuel"]); assert.equal(x.fuelOver, true); assert.match(x.why.join(" "), /tiêu hao 99 L\/h > 90 L\/h/);
+});
+
+test("no limit in the HSMT: nothing is left out", () => {
+  const r = run(rows, free("50 Hz"));
+  assert.equal(r.dropped.length, 0); assert.deepEqual(ids(r), ["gkwh", "high", "low", "none"]);
+});
+
+test("not judged: a bound (\"< 100\") and a figure no genset of this size burns (a kW / kVA pair under the heading)", () => {
+  const list = [
+    sup("bound", ["| b-1 | 420 | 336 | WP13D405E200 | XY1 | < 100 | | |"]),
+    sup("pair", ["| p-1 | 420 | 336 | WP13D385E200 | XY1 | 336/420 | | |"]),
+    sup("over", ["| o-1 | 420 | 336 | YC6K520-D30 | XY1 | 99 | | |"]),
+  ];
+  const r = run(list, free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz"));
+  assert.deepEqual(ids(r), ["bound", "pair"]);
+  assert.deepEqual(r.dropped.map((x) => x.u.supplierId), ["over"]);
+});
+
+test("a heading that names no load is filed under 100% by the catalog but is not left out: the old 300 points off stay", () => {
+  const H2 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel Consumption (L/h) |";
+  const list = [sup("nl", ["| n-1 | 420 | 336 | WP13D405E200 | XY1 | 99 |"], H2), sup("fl", ["| f-1 | 420 | 336 | YC6K520-D30 | XY1 | 99 |"], H.replace("100% load", "Full-Load"))];
+  const r = run(list, free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz"));
+  assert.deepEqual(ids(r), ["nl"]);
+  const x = r.top[0];
+  assert.equal(x.fuelOver, true); assert.equal(x.fuelNoLoad, true); assert.deepEqual(x.ruled, []);
+  assert.deepEqual(r.dropped.map((d) => d.u.supplierId), ["fl"]);
+});
+
+// IB2600603983 (2026-11-17), bảng pdftotext: nhãn của ô xuống dòng DƯỚI số ("mức 100% tải" nằm sau "≤ 156 lít/giờ").
+// Trước đây "100%" đóng dòng trên bị gán cho số của dòng dưới: 113 L/h (70% tải) thành mức 100% tải.
+test("nhãn mức tải xuống dòng dưới con số: mỗi số nhận mức tải của dòng ngay dưới nó", () => {
+  const h = free([
+    "12    Tiêu hao nhiên liệu",
+    " +    Tiêu hao nhiên liệu ở                       ≤ 156 lít/giờ",
+    "      mức 100% tải",
+    " +    Tiêu hao nhiên liệu ở                       ≤ 113 lít/giờ",
+    "      mức 70% tải",
+    " +    Tiêu hao nhiên liệu ở                        ≤ 77 lít/giờ",
+    "      mức 50% tải",
+    "13    Khả năng đáp ứng tải             Đóng tải từ mức 0% tải",
+  ].join("\n"));
+  assert.deepEqual([h.maxFuel, h.maxFuel75, h.maxFuel50], [156, null, 77]);
+});
+// IB2600570050 / IB2600588204 (hints-audit.mjs, 2026-11-17): mức tải đứng ngay SAU con số trên cùng dòng.
+test("mức tải ngay sau con số (\"≤ 3,7 lít/giờ tại (75 %) tải\"): mỗi số nhận mức tải của chính dòng nó", () => {
+  const h = free("Định mức tiêu hao nhiên liệu\n≤ 3,7 lít/giờ tại (75 %) tải định mức\n≤ 5,0 lít/giờ tại (100 %) tải định mức\nĐạt");
+  assert.deepEqual([h.maxFuel, h.maxFuel75, h.maxFuel50], [5, 3.7, null]);
+});
+test("nhãn mức tải đứng TRƯỚC con số (dòng trên hoặc cùng dòng) vẫn đọc như cũ", () => {
+  const a = free("Tiêu hao nhiên liệu ở 100% tải:\n≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải:\n≤ 80 lít/giờ");
+  assert.deepEqual([a.maxFuel, a.maxFuel75], [105, 80]);
+  const b = free("Tiêu hao nhiên liệu ở 100% tải ≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải ≤ 80 lít/giờ\nmức 50% tải");
+  assert.deepEqual([b.maxFuel, b.maxFuel75, b.maxFuel50], [105, 80, null]);
+});
+
+// hints-audit.mjs 2026-11-17 (soat-nguong-2): mức tải đứng SAU con số, có chữ dẫn hoặc gãy dòng. Dòng thật của HSMT.
+test("mức 75% tải sau con số với chữ dẫn: số của mức 75%, không phải mức 100% (IB2300204857, IB2300230061, IB2400389666, IB2500261097)", () => {
+  for (const [line, v] of [
+    ["1.8\nMức tiêu thụ nhiên liệu\n≤ 34 Lít/ giờ với mức 75% tải (chế độ vận hành liên tục)", 34],
+    ["3.9 Tiêu thụ nhiên liệu ≤ 23 lít/giờ ở chế độ hoạt động 75% tải liên tục", 23],
+    ["8      Tiêu hao nhiên liệu                ≤53 L/h (khi mức tải là 75%)", 53],
+    ["- Tiêu thụ nhiên liệu: ≤ 85 L/h (khi mức tải là 75%).", 85],
+  ]) { const h = free(line); assert.deepEqual([h.maxFuel, h.maxFuel75], [null, v], line); }
+});
+test("≤23 L/h (khi mức tải là / 75%) gãy dòng (IB2500073242)", () => {
+  const h = free(" 7    Nhiên liệu                 Dầu Diesel\n                                 ≤23 L/h (khi mức tải là\n 8    Tiêu hao nhiên liệu\n                                 75%)\n                            Dài ≤3100mm");
+  assert.deepEqual([h.maxFuel, h.maxFuel75], [null, 23]);
+});
+test("nhãn 'hoạt động 75% tải' xuống dòng dưới con số (IB2600438484): 150.1 là mức 75%, 198.2 là mức 100%", () => {
+  const h = free("13    Hệ thống đốt                    Loại phun nhiên liệu trực tiếp\n14    Tiêu hao nhiên liệu ở mức ≤ 150.1 lít/giờ\n      hoạt động 75% tải\n15    Tiêu hao nhiên liệu ở mức ≤ 198.2 lít/giờ\n      hoạt động 100% tải");
+  assert.deepEqual([h.maxFuel, h.maxFuel75], [198.2, 150.1]);
+});

@@ -1,0 +1,56 @@
+{
+  "id": "genesal-energy",
+  "country": "ES",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Genesal Energy",
+  "zh": null,
+  "brands": [
+    "Genesal"
+  ],
+  "web": "https://www.genesalenergy.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Genesal Energy acabamos de suministrar un total de 96 grupos electrógenos para telecom"
+    ],
+    "2": [
+      "A",
+      "5-5.250 kVA | 50/60 Hz | 1.500/1.800 rpm | Monofásicos/Trifásicos"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy diesel 5–5250 kVA, 50/60 Hz, một pha và ba pha",
+      2
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Grupos electrógenos diésel",
+      "fuel": "diesel",
+      "p": [
+        5,
+        5250,
+        "kVA",
+        "unspecified",
+        2
+      ],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

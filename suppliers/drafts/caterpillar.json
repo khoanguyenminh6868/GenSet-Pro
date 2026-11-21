@@ -1,0 +1,20 @@
+{
+  "id": "caterpillar", "country": "US", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Caterpillar", "zh": null, "brands": ["Cat"],
+  "web": "https://www.cat.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© 2026 Caterpillar. All Rights Reserved.", "Our product range spans 6.8 to 5,720 ekW (6.8 to 7,150 kVA) in both 50 Hz and 60 Hz configurations"],
+    "2": ["A", "With models ranging from 100 to 4,500 ekW (100 to 4,500 kVA), these systems operate on pipeline natural gas as well as a wide range of alternative gaseous fuels"]
+  },
+  "str": [
+    ["Tổ máy diesel 6,8–7150 kVA, cả 50 Hz và 60 Hz", 1],
+    ["Tổ máy khí 100–4500 kVA, chạy khí tự nhiên và nhiên liệu khí thay thế", 2]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Cat diesel generator sets", "fuel": "diesel", "p": [6.8, 7150, "kVA", "unspecified", 1], "freq": ["50Hz", "60Hz"], "src": [1] },
+    { "k": "genset", "s": "Cat gas generator sets", "fuel": "gas", "p": [100, 4500, "kVA", "unspecified", 2], "src": [2] }
+  ],
+  "miss": ["Chưa lưu trang giới thiệu công ty (năm thành lập, nhà máy)"],
+  "by": "discover-bot (Claude)"
+}

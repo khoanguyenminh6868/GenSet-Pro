@@ -1,0 +1,20 @@
+{
+  "id": "generac", "country": "US", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Generac Power Systems, Inc.", "zh": null, "brands": ["Generac"],
+  "web": "https://www.generac.com/", "prov": null, "city": null, "founded": 1959, "fsrc": [2], "related": [],
+  "src": {
+    "1": ["A", "© 2026 Generac Power Systems, Inc. All rights reserved."],
+    "2": ["A", "Founded in 1959, Generac was the first to engineer affordable home standby generators, along with the first engine developed specifically for the rigors of generator use"],
+    "3": ["A", "Stationary Generator | 10kW | Diesel | 2.2L", "2000kW - 3500kW"]
+  },
+  "str": [
+    ["Theo hãng: là hãng đầu tiên làm động cơ chuyên cho máy phát", 2],
+    ["Dòng tổ máy diesel tĩnh tại từ 10 kW, bộ lọc trang tới nhóm 2000–3500 kW", 3]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Stationary Generators (Diesel)", "fuel": "diesel", "p": [10, 3500, "kW", "unspecified", 3], "src": [3] }
+  ],
+  "miss": ["Mức trên 3500 kW lấy theo bộ lọc '2000kW - 3500kW' của trang danh sách, chưa lưu trang model lớn nhất", "Chưa có chứng chỉ, tần số; sản phẩm chủ yếu cho thị trường 60 Hz"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,894 @@
+[
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [],
+  "rows": [
+   "| QES9 | QES14 | QES20 | QES 30 | QES 40 | QES60 | QES 80 | QES 100",
+   "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50",
+   "| Rated voltage (1) | V | 230 | 400Y / 230 | 230 | 400Y / 230 | 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230",
+   "| Prime power (PRP) | kVA / kW | 6.6/6.6 | 8.8/7 | 11/11 | 13.8/11 | 17.6/17.6 | 20/16 | 30/24 | 28/23 | 42/34 | 60/48 | 90/72 | 100/80",
+   "| Rated standby power (ESP) | kVA / kW | 6/6 | 10/8 | 10/10 | 15/12 | 16/16 | 21.3/17 | 31/25 | 45/36 | 63/50 | 96/77 | 112/90",
+   "| Power factor cos φ | 1 | 0.8 | 1 | 0.8 | 1 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+   "| Rated current (PRP) | A | 26.1 | 12.6 | 43.5 | 19.9 | 69.6 | 28.9 | 43.0 | 61.0 | 86.0 | 129.0 | 144.3",
+   "| Performance class acc. ISO-8528/5 | G1 | G1 | G1 | G1 | G2 | G1 | G1 | G2 | G2 | G2",
+   "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [],
+  "rows": [
+   "| Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50",
+   "| Rated voltage (1) | V | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230 | 400Y / 230",
+   "| Prime power (PRP) | kVA / kW | 125/100 | 180/144 | 250/200 | 325/260 | 380/304 | 450/360 | 515/412 | 637/510",
+   "| Rated standby power (ESP) | kVA / kW | 135/108 | 194/155 | 272/218 | 350/280 | 414/331 | 502/402 | 531/425 | 700/560",
+   "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+   "| Rated current (PRP) | A | 180.4 | 259.0 | 360.0 | 469.0 | 548.5 | 649.5 | 743.0 | 951.0",
+   "| Performance class acc. ISO-8528/5 | G2 | G2 | G2 | G3 | G2 | G3 | G3 | G2",
+   "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [],
+  "rows": [
+   "| Rated frequency | Hz | 60 | 60 | 60 | 60 | 60 | 60 | 60 | 60",
+   "| Rated voltage (1) | V | 240 | 220Y / 127 | 240 | 220Y / 127 | 240 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127",
+   "| Prime power (PRP) | kVA / kW | 10/8 | 13/13 | 17.5/14 | 22.5/18 | 25/20 | 34/27 | 48,4/39 | 72/58 | 103/82 | 112/89",
+   "| Rated standby power (ESP) | kVA / kW | 11.3/9 | 14.3/14.3 | | 25/19.8 | | 36/29 | 53/42 | 78/63 | 112/89 | 128/102",
+   "| 15/12 | 26.3/21",
+   "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+   "| Rated current (PRP) | A | 33.3 | 26.2 | 54.2 | 45.9 | 32.5 | 65.6 | 88.2 | 127.0 | 86.0 | 270.0 | 310.0",
+   "| Performance class acc. ISO-8528/5 | G1 | G1 | G1 | G2 | G1 | G2 | G2 | G2",
+   "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [],
+  "rows": [
+   "| Rated frequency | Hz | 60 | 60 | 60 | 60 | 60 | 60 | 60 | 60",
+   "| Rated voltage (1) | V | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127 | 220Y / 127",
+   "| Prime power (PRP) | kVA / kW | 139/112 | 186/149 | 262/210 | 311/249 | 373/298 | 447/358 | 509/407 | 691/553",
+   "| Rated standby power (ESP) | kVA / kW | 152/122 | 204/163 | 286/229 | 337/270 | 412/330 | 487/390 | 563/450 | 758/607",
+   "| Power factor cos φ | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8",
+   "| Rated current (PRP) | A | 368.0 | 489.0 | 688.0 | 448.0 | 448.0 | 538.0 | 612.0 | 1813.0",
+   "| Performance class acc. ISO-8528/5 | G2 | G2 | G2 | G3 | G3 | G3 | G3 | G2",
+   "| Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [
+   "| ACA270C | ACA270F | ACA270J | ACA315G | ACA355C | ACA355DS | ACA355E | ACA355E"
+  ],
+  "rows": [
+   "| Rated Output | kVA | 162/150 | 231 | 315 | 532/481 | 644/594 | 708/655 | 845/775 | 845/775",
+   "| Degree of protection / Insulation class | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H | IP23/H"
+  ]
+ },
+ {
+  "n": 1001,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/2_generators/spain/qes-row/2958%202480%2000_QES%20Brochure_LRC%20market_EN_26-02_LR.pdf",
+  "title": "Datasheet: Brochure QES LRC market English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/power-diesel-generators/mobile-row/qes",
+  "header": [],
+  "rows": [
+   "| * QES generators can operate at higher | temperature",
+   "canopy (Polyester powder coating finishing)",
+   "| Model | QES 9-20 | QES 9-10 | QES 14-25 | QES 30-50 | QES 60-695",
+   "| Genset phase number | 1PH | 3PH | 3PH | 3PH | 3PH",
+   "| Single phase L+N+G 16A(3P) | 2 | 1 | 1 | 1 | 1",
+   "| type of application, mobile and stationary, prime and | It’s your generator, have it your way!",
+   "| • Alternator heater for safe and secure starting | Mechanical options",
+   "| remote and local start applications | • Synthetic oil",
+   "| • Expansions modules for inputs and outputs | • Water separator fuel pre-filter",
+   "| Hot Parts Protection | Option",
+   "| Alternator Auxiliary winding (AWES) | Option",
+   "| Radiator Coolant Level Switch | Option (*)",
+   "Fuel consumption",
+   "| (Standard / 24-48H / 1000l fuel tank) | 22 / 52 / 103 | 14 / 32 / 65 | 10,8 / 25 / 50 | / 28 / 54 | 8 / 21 / 39",
+   "Engine",
+   "| Model | Kubota",
+   "| Aspiration | Natural",
+   "| Speed control | Mechanical",
+   "| governor | governor",
+   "| Coolant | water-cooled",
+   "| Exhaust gas emission compliance | China 3 | China 3 | China 3 | Stage 2 | | Stage 2 |",
+   "Alternator",
+   "| Model | Altas Copco",
+   "Engine",
+   "| Model | Cummins",
+   "| Aspiration | Turbo charger Turbo charger Turbocharger Turbocharger",
+   "| Speed control | Electronic",
+   "| Exhaust gas emission compliance | Fuel optimized Fuel optimized Fueloptimized Fueloptimized",
+   "Fuel consumption",
+   "| (Standard / 24-48H / 1000l fuel tank) | 20 /46.3 /92.6 | | 11.4 /26 /52 | 9 /20.5 /41",
+   "Engine",
+   "| Exhaust gas emission | compliance",
+   "Dimensions and weight",
+   "| Skid dimensions (L x W x H) | mm | 2135x720x245 2135x720x245 2135x720x245 2000X910X130 | 2000X910X130 | 2180 X 1005 | 2960 x 1100 | 2960 x 1070",
+   "Dimensions and weight",
+   "| Optimize your power | solutions",
+   "| is not always the most efficient solution. Does the | Just one example:",
+   "| fleet need higher power? A Modular Power Plant (or | The deployment of a 1MVA generator as",
+   "| We have developed a unique Power Management System | application as a guide, could mean up to",
+   "| (PMS). The PMS manages the number of generators | 1677 liters of fuel consumed each day.",
+   "| running in parallel with load demand, starting and | That compares with approximately 1558",
+   "| In this way, the load on each generator remains at a level | were doing the same job. In this case, an",
+   "| that optimizes fuel consumption. | estimated annual saving of more than",
+   "| It also eliminates the need for generators to run with low | to mention 85 tons of CO2 saved over the",
+   "| load levels, which can cause engine damage and shorten | course of a year.",
+   "| HYBRID GENERATORS | LIGHT TOWERS"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Potencia nominal | kVA/kW | 2 | 15 / 12 | 35 / 35 | 45 / 36 | 45 / 36",
+   "| energía | kWh | 2,16 | 58 | 38,4 | 58 | 77",
+   "| Tensión nominal (50 Hz) (1) | VCA | 230 | 230 | 400 / 230 | 400 / 230 | 400 / 230",
+   "| Tensión nomina de la batería | VCC | 48 | 48 | 48 | 48 | 48",
+   "| Intensidad nominal, descarga | A | 9 | 52 | 50 | 52 | 52",
+   "| Temperatura de funcionamiento (2) | ºC | –10 a 45 | –10 a 50 | –10 a 50 | –10 a 50 | –10 a 50",
+   "| Nivel de ruidos | dB(A) | <80 | <80 | <80 | <80 | <80"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Cantidad | unidades | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| Corriente de paso máxima | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Tiempo de recarga (en % de DoD) | h | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120",
+   "| Aceptación de factor de potencia | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consumo máximo de equipos auxiliares | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Energía total a través de la salida de hasta (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Potencia nominal | kVA/kW | 120 / 120 | 150 / 150",
+   "| energía | kWh | 122,9 | 153",
+   "| Tensión nominal (50 Hz) (1) | VCA | 400 / 230 | 400 / 230",
+   "| Tensión nomina de la batería | VCC | 614 | 384",
+   "| Intensidad nominal, descarga | A | 174 | 217",
+   "| Temperatura de funcionamiento (2) | ºC | -20 a 50 | -20 a 50",
+   "| Nivel de ruidos | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Cantidad | unidades | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Corriente de paso máxima | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Tiempo de recarga (en % de DoD) | h | 1,5 | 1,5",
+   "| kVA | 100 - 300 | 150 - 300",
+   "| Aceptación de factor de potencia | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Spanish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Spanish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consumo máximo de equipos auxiliares | kW | 1,08 | 1,08",
+   "| Energía total a través de la salida de hasta (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantità | unità | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| Corrente massima passante | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Tempo di ricarica (a DoD%) | h | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Raccomandazione ibrida | kVA | 3,5 | 30 | 45–120 | 45–120 | 45–120"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consumo di corrente massimo | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Energia totale in uscita fino a (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Potenza nominale | kVA/kW | 120 / 120 | 150 – 150",
+   "| kWh | 122,9 | 153",
+   "| Tensione nominale (50 Hz) (1) | VCA | 400 / 230 | 400 / 230",
+   "| Tensione del sistema di batterie | VDC | 614 | 384",
+   "| Corrente nominale | A | 174 | 217",
+   "| Temperatura di esercizio (2) | °C | –da -20 a 50 | –da -20 a 50",
+   "| Livello di potenza acustica | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantità | unità | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Corrente massima passante | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Autonomia in scarica 100% / potenza nominale 75% | h | 0,9 / 1,5 | 0,9 / 1,5",
+   "| Autonomia in scarica 50% / potenza nominale 25% | h | 2,0 / 4,0 | 2,0 / 4,0",
+   "| Tempo di ricarica (a DoD%) | h | 1,5 | 1,5",
+   "| Raccomandazione ibrida (dimensione del generatore) | kVA | 100 - 300 | 150 - 300",
+   "| Accettazione del fattore di potenza | -1 / 1 | -1 / 1"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Italian-v7.pdf.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Italian",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consumo di corrente massimo | kW | 1,08 | 1,08",
+   "| Energia totale in uscita fino a (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Antal | enheter | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| Max strömbegränsning | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Urladdningstid 100 % / 75 % märkeffekt | h | 0,9 / 1,3 | 4 / 5,3 | 0,8 / 1,1 | 1,3 / 1,8 | 1,8 / 2,4",
+   "| Urladdningstid 50 % / 25 % märkeffekt | h | 2 / 4 | 8 / 16 | 1,6 / 2,5 | 2,7 / 5,3 | 3,5 / 7,1",
+   "| Laddningstid (vid DoD%) | h | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Hybridrekommendation (generatorstorlek) | kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120",
+   "| Acceptans för effektfaktor | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1",
+   "| Max reservförbrukning | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Totalt energiutbyte upp till (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Märkeffekt | kVA/kW | 120 / 120 | 150 / 150",
+   "| Märkkapacitet för energilagring | kWh | 122,9 | 153",
+   "| Märkspänning (50 Hz) (1) | VAC | 400 /230 | 400 /230",
+   "| Märkspänning för batteri | VDC | 614 | 384",
+   "| Märkvärde för urladdningsström | A | 174 | 217",
+   "| Drifttemperatur (2) | ºC | -20 till 50 | -20 till 50",
+   "| Ljudeffektnivå | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Antal | enheter | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Max strömbegränsning | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Urladdningstid 100 % / 75 % märkeffekt | h | 0,9 / 1,5 | 0,9 / 1,5",
+   "| Urladdningstid 50 % / 25 % märkeffekt | h | 2,0 / 4,0 | 2,0 / 4,0",
+   "| Laddningstid (vid DoD%) | h | 1,5 | 1,5",
+   "| Hybridrekommendation (generatorstorlek) | kVA | 100 – 300 | 150 – 300",
+   "| Acceptans för effektfaktor | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Swedish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Swedish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Max reservförbrukning | kW | 1,08 | 1,08",
+   "| Totalt energiutbyte upp till (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantité | unités | 1 | 1 | 3 | 3 | 3",
+   "| Puissance apparente maximale | kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Temps de recharge (@DoD%) | h | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Recommandation hybride | kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consommation auxiliaire maximale | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Énergie totale grâce à une puissance | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Puissance nominale | kVA/kW | 120/120 | 150 / 150",
+   "| Capacité de stockage d’énergie nominale | kWh | 122,9 | 153",
+   "| Tension nominale (50Hz) (1) | VCA | 400 / 230 | 400 / 230",
+   "| Tension nominale de la batterie | VCC | 614 | 384",
+   "| Courant nominal de décharge | A | 174 | 217",
+   "| Température de service 2 | ºC | -20 à 50 | -20 à 50",
+   "| Niveau de puissance acoustique | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantité | unités | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Courant de passage maximal | A | 11 | 11"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Autonomie de décharge 100 % / puissance nominale 75 % | h | 0,9/1,5 | 0,9/1,5",
+   "| Autonomie de décharge 50 % / puissance nominale 25 % | h | 2,0/4,0 | 2,0/4,0",
+   "| Temps de recharge (@DoD%) | h | 1,5 | 1,5",
+   "| Recommandation hybride (taille du groupe électrogène) | kVA | 100 – 300 | 150 – 300",
+   "| Acceptation du facteur de puissance | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-French-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems French",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Consommation auxiliaire maximale | kW | 1,08 | 1,08",
+   "| Énergie totale grâce à une puissance allant jusqu’à (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Nennstromleistung | kVA/kW | 2 | 15 / 12 | 35 / 35 | 45 / 36 | 45 / 36",
+   "| Nennenergiespeicherkapazität | kWh | 2,16 | 58 | 38,4 | 58 | 77",
+   "| Nennspannung (50 Hz) (1) | VAC | 230 | 230 | 400 / 230 | 400 / 230 | 400 / 230",
+   "| Batterienennspannung | VDC | 48 | 48 | 48 | 48 | 48",
+   "| Nennstromentladung | A | 9 | 52 | 50 | 52 | 52",
+   "| Betriebstemperatur (2) | °C | -10 to 45 | -10 bis 50 | -10 bis 50 | -10 bis 50 | -10 bis 50",
+   "| Schallleistungspegel | dB(A) | <80 | <80 | <80 | <80 | <80"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Anzahl | Einheiten | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| Max. Durchleitstrom | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Aufladezeit (bei DoD%) | Std. | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Hybrid-Empfehlung (Stromerzeugergröße) | kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120",
+   "| Leistungsfaktorakzeptanz | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1",
+   "| Maximaler Nebenverbrauch | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Nennstromleistung | kVA/kW | 120 / 120 | 150 / 150",
+   "| Nennenergiespeicherkapazität | kWh | 122,9 | 153",
+   "| Nennspannung (50 Hz) (1) | VAC | 400 / 230 | 400 / 230",
+   "| Batterienennspannung | VDC | 614 | 384",
+   "| Nennstromentladung | A | 174 | 217",
+   "| Betriebstemperatur (2) | °C | -20 bis 50 | -20 bis 50",
+   "| Schallleistungspegel | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Anzahl | Einheiten | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Max. Durchleitstrom | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Entladungsautonomie 100 % / 75 % Nennleistung | Std. | 0,9 / 1,5 | 0,9 / 1,5",
+   "| Entladungsautonomie 50 % / 25 % Nennleistung | Std. | 2,0 / 4,0 | 2,0 / 4,0",
+   "| Aufladezeit (bei DoD%) | Std. | 1,5 | 1,5",
+   "| Hybrid-Empfehlung (Stromerzeugergröße) | kVA | 100 – 300 | 150 – 300",
+   "| Leistungsfaktorakzeptanz | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-German-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems German",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Maximaler Nebenverbrauch | kW | 1,08 | 1,08",
+   "| Gesamtenergie durch Leistung bis (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Aantal | units | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| Maximale doorvoerstroom | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Oplaadtijd (@DoD%) | u | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Hybride aanbeveling (generatorvermogen) | kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120",
+   "| Powerfactor | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1",
+   "| Max. sluimerverbruik | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Totale energielevering tot (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Nominaal vermogen | kVA/kW | 120 / 120 | 150 / 150",
+   "| Nominale energieopslagcapaciteit | kWh | 122,9 | 153",
+   "| Nominale spanning (50 Hz) (1) | VAC | 400 / 230 | 400 / 230",
+   "| Nominale batterijspanning | VDC | 614 | 384",
+   "| Nominale stroomontlading | A | 174 | 217",
+   "| Gebruikstemperatuur (2) | ºC | -20 tot 50 | -20 tot 50",
+   "| Geluidsniveau | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Aantal | units | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Maximale doorvoerstroom | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Ontladingsautonomie 100% / 75% nominaal vermogen | u | 0,9 / 1,5 | 0,9 / 1,5",
+   "| Ontladingsautonomie 50% / 25% nominaal vermogen | u | 2,0 / 4,0 | 2,0 / 4,0",
+   "| Oplaadtijd (@DoD%) | u | 1,5 | 1,5",
+   "| Hybride aanbeveling (generatorvermogen) | kVA | 100 - 300 | 150 - 300",
+   "| Powerfactor | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1007,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure%20Energy%20Storage%20Systems%20Netherlands%20v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Netherlands",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Max. sluimerverbruik | kW | 1,08 | 1,08",
+   "| Totale energielevering tot (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Ilość | jedn. | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5",
+   "| A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Czas ładowania (@DoD%) | h | 3 | 7 | 1,6 | 2,3 | 3,1",
+   "| Zalecenie dotyczące zasilania hybrydowego | kVA | 3,5 | 30 | 45-120 | 45-120 | 45-120"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Maksymalne zużycie pomocnicze | kW | 0,03 | 5,3 | 5,4 | 5,4 | 5,5",
+   "| Całkowita energia na wyjściu do (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Moc znamionowa | kVA/kW | 120 / 120 | 150 / 150",
+   "| kWh | 122,9 | 153",
+   "| Napięcie znamionowe (50 Hz) (1) | VAC | 400 / 230 | 400 / 230",
+   "| Napięcie znamionowe akumulatora | VDC | 614 | 384",
+   "| Prąd znamionowy rozładowania | A | 174 | 217",
+   "| Temperatura robocza (2) | ºC | -20 do 50 | -20 do 50",
+   "| Poziom ciśnienia akustycznego | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Ilość | jedn. | 4 | 5",
+   "| kVA | 156 | 195",
+   "| A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Czas ładowania (@DoD%) | h | 1,5 | 1,5",
+   "| Zalecenie dotyczące zasilania hybrydowego | kVA | 100 - 300 | 150 - 300"
+  ]
+ },
+ {
+  "n": 1008,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-Polish-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems Polish",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Maksymalne zużycie pomocnicze | kW | 1,08 | 1,08",
+   "| Całkowita energia na wyjściu do (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantity | units | 1 | 1 | 3 | 3 | 3",
+   "| kVA | 3 | 22.5 | 67.5 | 67.5 | 67.5",
+   "| Maximum passthrough current | A | 18 | 100 | 100 | 100 | 100"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Discharge autonomy 100% / 75% rated power | h | 0.9 / 1.3 | 4 / 5.3 | 0.8 / 1.1 | 1.3 / 1.8 | 1.8 / 2.4",
+   "| Discharge autonomy 50% / 25% rated power | h | 2 / 4 | 8 / 16 | 1.6 / 2.5 | 2.7 / 5.3 | 3.5 / 7.1",
+   "| Recharging time (@DoD%) | h | 3 | 7 | 1.6 | 2.3 | 3.1",
+   "| Hybrid recommendation (generator size) | kVA | 3.5 | 30 | 45-120 | 45-120 | 45-120",
+   "| Power factor acceptance | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1 | -1 … 1",
+   "| Maximum auxiliary consumption | kW | 0.03 | 5.3 | 5.4 | 5.4 | 5.5",
+   "| Total energy through output up to (4) | MWh | 4 | 200 | 200 | 200 | 250"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Rated power | kVA/kW | 120 / 120 | 150 / 150",
+   "| Rated energy storage capacity | kWh | 122.9 | 153",
+   "| Rated voltage (50Hz) (1) | VAC | 400 / 230 | 400 / 230",
+   "| Battery rated voltage | VDC | 614 | 384",
+   "| Rated current discharge | A | 174 | 217",
+   "| Operating temperature (2) | ºC | -20 to 50 | -20 to 50",
+   "| Sound power level | dB(A) | < 56 | < 56"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Quantity | units | 4 | 5",
+   "| kVA | 156 | 195",
+   "| Maximum passthrough current | A | 400 | 400"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Discharge autonomy 100% / 75% rated power | h | 0.9 / 1.5 | 0.9 / 1.5",
+   "| Discharge autonomy 50% / 25% rated power | h | 2.0 / 4.0 | 2.0 / 4.0",
+   "| Recharging time (@DoD%) | h | 1.5 | 1.5",
+   "| Hybrid recommendation (generator size) | kVA | 100 - 300 | 150 - 300",
+   "| Power factor acceptance | -1 … 1 | -1 … 1"
+  ]
+ },
+ {
+  "n": 1009,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/ess-portable-canopy/Brochure-Energy-Storage-Systems-English-v7.pdf",
+  "title": "Datasheet: Brochure Portable and Canopy range Energy Storage Systems English",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/small",
+  "header": [],
+  "rows": [
+   "| Maximum auxiliary consumption | kW | 1.08 | 1.08",
+   "| Total energy through output up to (4) | MWh | 536 | 720"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/energy-storage-systems/zbc-zsc-fcp-/ZBC%20Container%20Energy%20Storage%20System%20Brochure_LR_EN.pdf",
+  "title": "Datasheet: ZBC ZSC FCP Container energy storage system Brochure EN",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/medium",
+  "header": [],
+  "rows": [
+   "| Rated power input/output (PF=0.99) | kW | 160 | 240 | 360 | 480",
+   "| Charging Current | A | 200 | 300 | 500A (liquid cooled) / 200A (Air cooled)",
+   "| Sound power level at 1m | dB(A) | <70 | <70 | <65 | <65"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/energy-storage-systems/zbc-zsc-fcp-/ZBC%20Container%20Energy%20Storage%20System%20Brochure_LR_EN.pdf",
+  "title": "Datasheet: ZBC ZSC FCP Container energy storage system Brochure EN",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/medium",
+  "header": [],
+  "rows": [
+   "| Nominal power | kVA/kW | 250 | 300 | 500",
+   "| Nominal energy storage capacity | kWh | 575 | 308 | 246",
+   "| Nominal voltage (50Hz) (1) | VAC | 400 | 400 | 400",
+   "| Battery system voltage | VDC | 672-864 | 672-864 | 672-864",
+   "| Nominal current discharge | A | 360 | 433 | 721",
+   "| Operating temperature (2) | ºC | -20 to 50 | -20 to 50 | -10 to 50",
+   "| Sound power level | dB(A) | <60 | <60 | <60"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/energy-storage-systems/zbc-zsc-fcp-/ZBC%20Container%20Energy%20Storage%20System%20Brochure_LR_EN.pdf",
+  "title": "Datasheet: ZBC ZSC FCP Container energy storage system Brochure EN",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/medium",
+  "header": [],
+  "rows": [
+   "| Quantity (modules) | units | 4 | 5 | 8",
+   "| Total nominal power | kW / kVA | 250/ 250 | 300 / 300 | 500 / 500",
+   "| kVA | 275 | 330 | 550",
+   "| Input DC voltage range | Vdc | 600-900 | 600-900 | 600-900",
+   "| Maximum passthrough current | A | No limitation (5) | No limitation (5) | No limitation (5)"
+  ]
+ },
+ {
+  "n": 1010,
+  "url": "https://www.atlascopco.com/content/dam/atlas-copco/construction-technique/portable-energy/documents/energy-storage-systems/zbc-zsc-fcp-/ZBC%20Container%20Energy%20Storage%20System%20Brochure_LR_EN.pdf",
+  "title": "Datasheet: ZBC ZSC FCP Container energy storage system Brochure EN",
+  "from": "https://www.atlascopco.com/en-ph/construction-equipment/products/energy-storage-systems/medium",
+  "header": [],
+  "rows": [
+   "| Discharge autonomy 100% / 75% rated power | h | 2 / 2.6 | 1 / 1.3 | 0.5 / 0.7",
+   "| Discharge autonomy 50% / 25% rated power | h | 4 / 8 | 2 / 4 | 0.9 / 1.8",
+   "| Recharging time (@DoD%) | h | 2 | 0.9 | 0.4",
+   "| Hybrid recommendation (generator size) | kVA | 200-1.000 | 200-1.000 | 200-1.000",
+   "| Power factor acceptance | -1 … 1 | -1 … 1 | -1 … 1",
+   "| Derating temperature | ºC | from 40ºC | from 40ºC | from 40ºC",
+   "| Total energy through output up to (4) | MWh | 2.400 | 1.300 | 1.040",
+   "| Continous power mode | kW | 250 | 240 | 300"
+  ]
+ }
+]

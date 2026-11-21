@@ -1,0 +1,13 @@
+{
+  "id": "fudiankang-hunan", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "湖南省富电康机电设备工程有限公司", "brands": ["富电康"],
+  "web": "https://www.fudiankang.cn/", "prov": "Hunan", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2025 湖南省富电康机电设备工程有限公司 All rights reserved.", "强大的营销及服务网络遍布全国，发电机组功率范围从8 KW -2420KW能满足市场上不同功率", "公司取得了IS09001:2015质量管理体系认证证书，ISO 14001:2015环境管理体系认证证书，并获得了国家信息产业部电信设备进网许可证，国家内燃机组检验合格"]
+  },
+  "str": [["Tổ máy diesel 8–2420 kW, văn phòng ở các thành phố lớn toàn quốc", 1], ["Có giấy phép thiết bị viễn thông và chứng nhận kiểm định tổ máy quốc gia", 1]],
+  "cert": [["ISO9001", 1], ["ISO14001", 1]],
+  "lines": [ { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "p": [8, 2420, "kW", "unspecified", 1], "src": [1] } ],
+  "miss": ["Chưa có năm thành lập (trang ghi 'hơn 20 năm'); trang còn nhắc 深圳市富电康柴油发电机有限公司 (quan hệ chưa rõ)"],
+  "by": "discover-bot (Claude)"
+}

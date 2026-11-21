@@ -1,0 +1,13 @@
+{
+  "id": "huali-shandong", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "山东华力机电有限公司", "brands": ["华力"],
+  "web": "http://www.hualijidian.com/", "prov": "Shandong", "city": "Jining", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "山东华力机电有限公司 版权所有 地 址：山东省济宁市汶上", "20MW国家标准试验中心", "800KW-3000KW", "山东华力机电亮相2026印尼雅加达电力展｜400kW静音柴油发电机组"]
+  },
+  "str": [["Có trung tâm thử nghiệm 20 MW; danh mục tổ máy chia nhóm tới 800–3000 kW", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Nhóm nhỏ nhất ghi '20KW以下' nên chưa ghi dải công suất; chưa có năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,6 @@
+{"id":"itc-power","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":"Changzhou ITC Power Equipment Manufacturing Co.,Ltd.","zh":null,"brands":["ITCPower","ITC POWER"],"web":"https://www.itcpowergenerator.com/","prov":"Jiangsu","city":"Changzhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © Changzhou ITC Power Equipment Manufacturing Co.,Ltd. All Rights Reserved.","Building 10, No. 3, Xiaming Road, Wuyi, Hengshanqiao Town, Changzhou City, Jiangsu Province, CHINA.","9-1500 KW Diesel Generator","4.5-15 KW Diesel Generator","Our company covers an area of more than 20000 square meters and produces more than 100000 machines every year."]},
+"str":[["Nhà máy hơn 20.000 m² ở Thường Châu; làm động cơ diesel, tổ máy diesel, bơm, tháp đèn",1],["Theo hãng: hơn 100.000 máy mỗi năm",1]],
+"cert":[],
+"lines":[{"k":"genset","s":"Diesel Generator (9-1500 KW; 4.5-15 KW air-cooled)","fuel":"diesel","p":[4.5,1500,"kW","unspecified",1],"src":[1]}],
+"miss":["Không thấy năm thành lập (video YouTube ghi 'Since 2008' nhưng không dùng làm nguồn), chứng chỉ, hãng động cơ cụ thể"],"by":"discover-bot"}

@@ -1,0 +1,30 @@
+{
+  "id": "perkins",
+  "country": "GB",
+  "role": "engine_maker",
+  "status": "partial",
+  "conf": "high",
+  "en": "Perkins Engines Company Limited",
+  "zh": null,
+  "brands": ["Perkins"],
+  "web": "https://www.perkins.com/",
+  "prov": null,
+  "city": "Peterborough",
+  "founded": 1932,
+  "fsrc": [1],
+  "related": [],
+  "src": {
+    "1": ["A", "The company was founded in a small office in Peterborough, UK, in 1932", "Caterpillar’s acquisition of Perkins in December 1997"],
+    "2": ["A", "Perkins is a world-leading supplier of off-highway diesel engines in the 4-2000 kW (5-2800 hp) market", "Since 1997 Perkins has been owned by Caterpillar."]
+  },
+  "str": [
+    ["Thành lập 1932 tại Peterborough (Anh), thuộc Caterpillar từ 1997", 1],
+    ["Nhà cung cấp động cơ diesel off-highway dải 4–2000 kW", 2]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "Perkins diesel and gas engines 4-2000 kW", "fuel": "diesel", "src": [2] }
+  ],
+  "miss": ["Trang lịch sử và tuyển dụng không ghi địa chỉ chi tiết, chứng nhận"],
+  "by": "Claude Code (Tìm Thông Số đợt 1 G7)"
+}

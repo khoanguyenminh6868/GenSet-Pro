@@ -1,0 +1,16 @@
+{
+  "id": "boss-fujian", "country": "CN", "role": "alternator_maker", "status": "partial", "conf": "medium",
+  "en": "Fujian BOSS Electrical Machinery Co.,Ltd.", "zh": null, "brands": ["BOSS POWERS"],
+  "web": null, "prov": "Fujian", "city": "Fuzhou", "founded": null, "fsrc": [], "related": ["tesla-fujian"],
+  "src": {
+    "1": ["B", "Fujian BOSS Electrical Machinery Co.,Ltd.", "Boss Electrical Machinery Co.,Ltd focuses on Generator and generating set manufacturing, marketing and services.The company is located in Fuzhou City,Fujian Province,China.", "Products include Stamford Brushless Alternator, ST/STC Brush Generator ,diesel generator sets and so on.", "6.5KW to 2000KW AC Synchronous Stamford type brushless alternator", "38kVA to 2000kVA Yuchai Water Cooling Silent Diesel Generator Power Genset"]
+  },
+  "str": [["Đầu phát không chổi than kiểu Stamford 6,5–2000 kW, đầu phát chổi than ST/STC và tổ máy diesel", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "AC Synchronous Stamford type brushless alternator", "p": [6.5, 2000, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Yuchai Water Cooling Silent Diesel Generator", "fuel": "diesel", "eng": ["Yuchai"], "p": [38, 2000, "kVA", "unspecified", 1], "types": ["silent"], "src": [1] }
+  ],
+  "miss": ["Nguồn là gian hàng trên CCCME (Phòng Thương mại Máy móc Trung Quốc, hạng B), chưa có website riêng; công ty con Fujian Tesla Power có website tesla-power.net"],
+  "by": "discover-bot (Claude)"
+}

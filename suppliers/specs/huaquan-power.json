@@ -1,0 +1,118 @@
+[
+ {
+  "n": 101,
+  "url": "https://huaquanpower.net/mhr/--/yc-series-diesel-generator-set-2/15kw-yc-diesel-generator-set/",
+  "title": "YC 15kW Diesel Generator Set - HuaQuan Power",
+  "header": [],
+  "rows": [
+   "| Prime Power | 15 kW / 18 kVA",
+   "| Standby Power | 16 kW / 20 kVA",
+   "| Rated Voltage | 400/230V (Customizable)",
+   "| Frequency | 50/60 Hz",
+   "| Power Factor | 0.8 (Lagging)",
+   "| Engine Speed | 1500 RPM (50Hz) / 1800 RPM (60Hz)",
+   "| Engine Model | Yuchai YC4D60-D21",
+   "| Alternator | Stamford UC224C",
+   "| Fuel Tank Capacity | 200L (8-12h Runtime)",
+   "| Starting System | 24V DC Electric",
+   "| Noise Level | 75 dBA @ 7m",
+   "| Dimensions | 2100×800×1400 mm",
+   "| Controller | DeepSea 6020 / SmartGen HGM6120"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://huaquanpower.net/zh/--/yc-series-diesel-generator-set-2/30kw-yc-diesel-generator-set/",
+  "title": "YC 30kW 柴油发电机组 - 华全动力",
+  "header": [],
+  "rows": [
+   "| 常用功率 | 30 kW / 37 kVA",
+   "| 备用功率 | 33 kW / 41 kVA",
+   "| 频率 | 50/60 Hz",
+   "| 发动机转速 | 1500 RPM (50Hz) / 1800 RPM (60Hz)",
+   "| 发动机型号 | Yuchai YC4D60-D21",
+   "| 发电机 | Stamford UC224C",
+   "| 噪音水平 | 75 dBA @ 7m"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://huaquanpower.net/zh/grupo-gerador-diesel/yc-series-diesel-generator-set-2/40kw-yc-diesel-generator-set/",
+  "title": "YC 40kW 柴油发电机组 - 华全动力",
+  "header": [],
+  "rows": [
+   "| 常用功率 | 40 kW / 50 kVA",
+   "| 备用功率 | 44 kW / 55 kVA",
+   "| 频率 | 50/60 Hz",
+   "| 发动机转速 | 1500 RPM (50Hz) / 1800 RPM (60Hz)",
+   "| 发动机型号 | Yuchai YC4D60-D21",
+   "| 发电机 | Stamford UC224C",
+   "| 噪音水平 | 75 dBA @ 7m"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://huaquanpower.net/diesel-kragopwekker-stel/wc--reeks--diesel--generator--stel/60kw-wc-diesel-generator-set/",
+  "title": "WC 60kW Diesel Generator Set - HuaQuan Power",
+  "header": [],
+  "rows": [
+   "| Prime Power | 60 kW / 75 kVA",
+   "| Standby Power | 66 kW / 82 kVA",
+   "| Rated Voltage | 400/230V (Customizable)",
+   "| Frequency | 50/60 Hz",
+   "| Power Factor | 0.8 (Lagging)",
+   "| Engine Speed | 1500 RPM (50Hz) / 1800 RPM (60Hz)",
+   "| Engine Model | Weichai WP4D66E200",
+   "| Alternator | Stamford UC224F",
+   "| Fuel Tank Capacity | 200L (8-12h Runtime)",
+   "| Starting System | 24V DC Electric",
+   "| Noise Level | 75 dBA @ 7m",
+   "| Dimensions | 2600×1000×1650 mm",
+   "| Controller | DeepSea 6020 / SmartGen HGM6120"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://huaquanpower.net/75kw-kms-diesel-generator-set/",
+  "title": "75KW KMS Series Diesel Generator Set %",
+  "header": [],
+  "rows": [
+   "| Model | KMS-75GF / KMS-75S (Silent)",
+   "| Prime Power | 68 KW / 85 kVA",
+   "| Standby Power | 75 KW / 94 kVA",
+   "| Engine Type | 4-Stroke, Direct Injection, Turbocharged (where applicable)",
+   "| Alternator Type | Brushless, Single Bearing, IP23",
+   "| Voltage Regulation | ±1% (AVR controlled)",
+   "| Frequency | 50/60Hz",
+   "| Rated Voltage | 230/400V",
+   "| Power Factor | 0.8 (Lagging)",
+   "| Fuel Tank Capacity | 132–396 L (base-frame integrated, 8–24 hour runtime)",
+   "| Fuel Consumption @75% Load | 16.5 L/h",
+   "| Starting System | 24V DC Electric Start",
+   "| Dimensions (LxWxH) | 2425 x 1125 x 1650 mm (approximate)",
+   "| Noise Level @7m (Silent) | 65 dBA"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://huaquanpower.net/800kw-sc-diesel-generator-set/",
+  "title": "800KW SC Series Diesel Generator Set %",
+  "header": [],
+  "rows": [
+   "| Model | SC-800GF / SC-800S (Silent)",
+   "| Prime Power | 720 KW / 900 kVA",
+   "| Standby Power | 800 KW / 1000 kVA",
+   "| Engine Type | 4-Stroke, Direct Injection, Turbocharged (where applicable)",
+   "| Alternator Type | Brushless, Single Bearing, IP23",
+   "| Voltage Regulation | ±1% (AVR controlled)",
+   "| Frequency | 50/60Hz",
+   "| Rated Voltage | 400/230V",
+   "| Power Factor | 0.8 (Lagging)",
+   "| Fuel Tank Capacity | 1408–4224 L (base-frame integrated, 8–24 hour runtime)",
+   "| Fuel Consumption @75% Load | 176.0 L/h",
+   "| Starting System | 24V DC Electric Start",
+   "| Dimensions (LxWxH) | 4800 x 2300 x 3000 mm (approximate)",
+   "| Noise Level @7m (Silent) | 78 dBA"
+  ]
+ }
+]

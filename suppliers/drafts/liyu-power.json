@@ -1,0 +1,14 @@
+{
+  "id": "liyu-power", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "湖南省力宇燃气动力有限公司", "brands": ["力宇", "Liyu Power"],
+  "web": "https://www.liyupower.cn/", "prov": "Hunan", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "力宇LY170及LY260系列燃气发电机组（900-4000kW） 为高需求地区提供高效、可靠的电力", "2500kW-4000kW", "900kW-1200kW"],
+    "2": ["A", "力宇集团旗下湖南省力宇燃气动力有限公司（以下简称“力宇动力”）"]
+  },
+  "str": [["Tổ máy khí LY170, LY260 công suất 900–4000 kW", 1], ["Thuộc tập đoàn 力宇集团", 2]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "LY170及LY260系列燃气发电机组", "fuel": "gas", "p": [900, 4000, "kW", "unspecified", 1], "src": [1] } ],
+  "miss": ["Chưa có năm thành lập, địa chỉ nhà máy, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,82 @@
+{
+  "id": "volvo-penta-wuxi",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Volvo Penta engine plant in Wuxi (Volvo Penta / Wuxi Diesel Engine Works)",
+    "zh": null,
+    "brands": [
+      "Volvo Penta"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2000,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "fawde"
+  ],
+  "strengths": [
+    {
+      "text": "Nhà máy liên doanh Volvo Penta – Wuxi Diesel Engine Works ở Vô Tích, lắp động cơ diesel từ bộ CKD (chủ yếu từ nhà máy Skövde, Thụy Điển), chủ yếu cho tổ máy phát",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Công suất khoảng 10.000 động cơ/năm (thông cáo 01/2005)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Industrial diesel engines (mainly for generator sets)",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn duy nhất là thông cáo Volvo Group 01/2005; không thấy tên pháp nhân, website riêng, tình trạng hiện tại và dải công suất",
+    "Wuxi Diesel Engine Works hiện là lõi của FAWDE (bản ghi fawde)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.volvogroup.com/en/news-and-media/news/2005/jan/news-20882.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "The plant, located in Wuxi, about 100 kilometers west of Shanghai, is jointly owned by Volvo Penta and its Chinese partner, Wuxi Diesel Engine Works.",
+        "Inaugurated in the beginning of 2000, the plant assembles diesel engines delivered as CKD kits, primarily from Volvo’s engine plant in Skövde, Sweden.",
+        "Production involves diesel engines used in industrial applications, mainly generator sets, as well as in various types of workboats and passenger vessels.",
+        "now has a capacity of 10,000 engines annually"
+      ],
+      "file": "sources/volvo-penta-wuxi/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

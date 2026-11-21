@@ -1,0 +1,88 @@
+{
+  "id": "xinchai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "浙江新柴股份有限公司",
+    "brands": [
+      "新柴"
+    ]
+  },
+  "website": "https://www.xinchaipower.com/",
+  "hq": {
+    "province": "Zhejiang",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel 7 nền tảng (N, D, K, E, B, H, F), hơn 100 model; động cơ cho tổ máy 10–140 kVA",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "发电机组动力",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 140,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Năm thành lập chưa có; dải 10–140 kVA lấy từ trang GPOWER (hạng B), website riêng chưa ghi dải"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2.asp?id=2758",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "浙江新柴股份有限公司",
+        "产品涵盖N、D、K、E、B、H、F七大平台，100多个机型、1300多个变型产品形成了完整的市场配套结构，构筑起了工程机械、农业机械、发电机组等市场的良好发展格局。发电机组动力功率覆盖范围10KVA-140KVA。"
+      ],
+      "file": "sources/xinchai/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.xinchaipower.com/aboutus.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "新柴简介 - 浙江新柴股份有限公司",
+        "office@xinchaipower.cn"
+      ],
+      "file": "sources/xinchai/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-02",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
+}

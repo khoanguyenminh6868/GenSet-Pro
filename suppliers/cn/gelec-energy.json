@@ -1,0 +1,88 @@
+{
+  "id": "gelec-energy",
+  "country": "FR",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "GELEC Energy",
+    "zh": null,
+    "brands": [
+      "GELEC"
+    ]
+  },
+  "website": "https://www.gelecenergy.fr/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy công nghiệp 9–2000 kVA (vỏ cách âm, khung hở, container) và máy xách tay 4,5–11 kVA",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Công ty con của tập đoàn 2AST, mạng lưới chi nhánh toàn nước Pháp",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gamme industrielle standard",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi năm thành lập, địa chỉ nhà máy, hãng động cơ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gelecenergy.fr/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "GELEC Energy , filiale du groupe 2AST",
+        "Gamme industrielle standard de 9 à 2000 kVA",
+        "De 10 à 2000 kVA , nos groupes électrogènes industriels sont disponibles en version capotée, en open ou en conteneur",
+        "Groupes électrogènes portatifs de 4,5 à 11 kVA"
+      ],
+      "file": "sources/gelec-energy/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "mtu-rolls-royce", "country": "DE", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Rolls-Royce Power Systems (mtu)", "zh": null, "brands": ["mtu"],
+  "web": "https://www.mtu-solutions.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["mtu-yuchai"],
+  "src": {
+    "1": ["A", "mtu is a product and solution brand of Rolls-Royce, providing world-class power solutions and complete life-cycle support.", "About Rolls-Royce Power Systems", "50 Hz: 1,600 – 4,000 kVA", "50 Hz: 770 – 1,270 kVA", "50 Hz: 590 - 1,000 kVA", "50 Hz: 30 – 94 kVA", "60 Hz: 27 – 400 kWe", "Our product portfolio covers diesel generator sets up to 3,250 kWe (60 Hz)", "85% load factor for standby applications and 75% for prime power"]
+  },
+  "str": [
+    ["Tổ máy diesel 50 Hz 30–4000 kVA (Series 0080–0225, 1600, 2000, 4000)", 1],
+    ["Hệ số tải 85% cho dự phòng và 75% cho prime theo trang hãng", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "mtu Series 4000", "fuel": "diesel", "eng": ["mtu"], "p": [1600, 4000, "kVA", "unspecified", 1], "freq": ["50Hz", "60Hz"], "src": [1] },
+    { "k": "genset", "s": "mtu Series 2000", "fuel": "diesel", "eng": ["mtu"], "p": [770, 1270, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "mtu Series 1600", "fuel": "diesel", "eng": ["mtu"], "p": [590, 1000, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "mtu Series 0080 – mtu Series 0225", "fuel": "diesel", "p": [30, 94, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa lưu trang giới thiệu công ty (địa chỉ, năm thành lập); liên doanh tại Trung Quốc là bản ghi mtu-yuchai"],
+  "by": "discover-bot (Claude)"
+}

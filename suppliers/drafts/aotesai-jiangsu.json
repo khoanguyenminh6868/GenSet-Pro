@@ -1,0 +1,13 @@
+{
+  "id": "aotesai-jiangsu", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "江苏奥特赛动力科技有限公司", "brands": ["奥特赛"],
+  "web": "http://www.fdjjg.net/", "prov": "Jiangsu", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright ©2025 江苏奥特赛动力科技有限公司 版权所有", "发电机组_移动式发电机组_国产发电机组_进口发电机组_静音式发电机组-江苏奥特赛动力科技有限公司", "20kw发电机组", "300kw发电机组"]
+  },
+  "str": [["Tổ máy di động, cách âm; danh mục trang chủ 20–300 kW", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "发电机组", "fuel": "diesel", "p": [20, 300, "kW", "unspecified", 1], "types": ["silent"], "src": [1] } ],
+  "miss": ["Dải công suất theo danh mục trang chủ; chưa có năm thành lập, thành phố, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

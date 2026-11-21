@@ -1,0 +1,16 @@
+{
+  "id": "liangdi-fujian", "country": "CN", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": null, "zh": "福建亮迪电源科技有限公司", "brands": ["闽冠"],
+  "web": "http://www.mdmotor.com/", "prov": "Fujian", "city": "Fuan", "founded": 1991, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "福建亮迪电源科技有限公司 创办于1991年，位于福建省福安市。主营5KW—2000KW陆用、船用发电机、发电机组等机电产品", "专业生产研究，设计制造各类发电机，柴油发电机组", "TFWL系列三相无刷交流 TFWS系列三相无刷交流", "地址：福建省福安市铁湖工业区"]
+  },
+  "str": [["Đầu phát và tổ máy trên bộ / tàu thủy 5–2000 kW, thành lập 1991 tại Phúc An", 1], ["Đầu phát không chổi than ba pha TFWL, TFWS", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "TFWL / TFWS系列三相无刷交流同步发电机", "p": [5, 2000, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Dải 5KW—2000KW là của cả đầu phát và tổ máy (trang ghi chung); website cũ (Copyright 2009-2013), chưa thấy chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

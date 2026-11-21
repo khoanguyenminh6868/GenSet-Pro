@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenBid supplier record (suppliers/<country>/<id>.json)",
+  "type": "object",
+  "required": ["id", "country", "role", "status", "names", "productLines", "sources", "confidence", "checkedAt"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "role": { "enum": ["genset_oem", "engine_maker", "alternator_maker", "controller_maker", "distributor"] },
+    "status": { "enum": ["verified", "partial", "incomplete"] },
+    "names": { "type": "object", "properties": { "en": { "type": ["string", "null"] }, "zh": { "type": ["string", "null"] }, "brands": { "type": "array", "items": { "type": "string" } } } },
+    "website": { "type": ["string", "null"] },
+    "otherWebsites": { "type": "array", "items": { "type": "string" }, "description": "Website khác của cùng công ty (kaihua-genset: hichaipower.com); crawl-specs / crawl-datasheets / controllers cào cả các site này" },
+    "hq": { "type": "object", "properties": { "province": { "type": ["string", "null"] }, "city": { "type": ["string", "null"] } } },
+    "founded": { "type": ["integer", "null"] },
+    "foundedSrc": { "$ref": "#/$defs/src" },
+    "relatedIds": { "type": "array", "items": { "type": "string" } },
+    "strengths": { "type": "array", "items": { "type": "object", "required": ["text", "src"], "properties": { "text": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "productLines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "series", "src"],
+        "properties": {
+          "kind": { "enum": ["genset", "engine", "alternator", "controller"] },
+          "series": { "type": "string" },
+          "fuel": { "enum": ["diesel", "gas", "dual", "hfo", "gasoline", "other", null] },
+          "engineMakes": { "type": "array", "items": { "type": "string" } },
+          "engineModels": { "type": "array", "items": { "type": "string" } },
+          "alternatorMakes": { "type": "array", "items": { "type": "string" } },
+          "power": {
+            "type": ["object", "null"],
+            "required": ["min", "max", "unit", "rating", "src"],
+            "properties": { "min": { "type": "number" }, "max": { "type": "number" }, "unit": { "enum": ["kVA", "kW", "hp", "PS"] }, "rating": { "enum": ["prime", "standby", "continuous", "unspecified"] }, "src": { "$ref": "#/$defs/src" } }
+          },
+          "frequency": { "type": "array", "items": { "type": "string" } },
+          "voltage": { "type": "array", "items": { "type": "string" } },
+          "types": { "type": "array", "items": { "type": "string" } },
+          "emission": { "type": "array", "items": { "type": "string" } },
+          "standards": { "type": "array", "items": { "type": "string" } },
+          "src": { "$ref": "#/$defs/src" }
+        }
+      }
+    },
+    "certifications": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "vietnam": { "type": "object", "properties": { "distributors": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "website": { "type": ["string", "null"] }, "src": { "$ref": "#/$defs/src" } } } }, "note": { "type": ["string", "null"] } } },
+    "contacts": { "type": "array", "items": { "type": "object", "required": ["type", "value", "src"], "properties": { "type": { "enum": ["email", "phone", "whatsapp", "wechat"] }, "value": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "controllers": { "type": "array", "items": { "type": "object", "required": ["brand", "text", "line", "src"], "properties": { "brand": { "type": "string" }, "model": { "type": ["string", "null"] }, "text": { "type": "string" }, "line": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "brandLicensed": { "type": "boolean", "description": "Thương hiệu cấp phép (NCC chỉ mang tên hãng, không sản xuất); named-genset.mjs brandLicensedSeller đọc" },
+    "specTables": {
+      "type": "array",
+      "description": "Bảng thông số lưu nguyên văn từ nguồn n (crawl-specs / catalog PDF / OCR); web/catalog.js đọc lúc chạy",
+      "items": {
+        "type": "object",
+        "required": ["n", "title", "header", "rows"],
+        "additionalProperties": false,
+        "properties": { "n": { "type": "integer" }, "title": { "type": "string" }, "header": { "type": "array", "items": { "type": "string" } }, "rows": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "manufacturing": {
+      "type": "array",
+      "description": "Nơi sản xuất (đầu phát / bộ điều khiển / hãng): nước, thành phố, dòng sản phẩm nếu nguồn nói. Có src + quote (nguyên văn, kiểm trong trang đã lưu) hoặc khoa (quyết định của Khoa khi nguồn không nói thẳng)",
+      "items": {
+        "type": "object",
+        "required": ["country", "scope"],
+        "additionalProperties": false,
+        "properties": {
+          "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "city": { "type": ["string", "null"] },
+          "scope": { "enum": ["manufacture", "design"], "description": "manufacture = nguồn nói sản xuất / lắp ráp ở đó; design = nguồn chỉ nói thiết kế / phát triển" },
+          "products": { "type": ["string", "null"], "description": "Dòng sản phẩm nếu nguồn nói; null = nguồn không nói" },
+          "src": { "$ref": "#/$defs/src" },
+          "quote": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "khoa": { "type": "string", "pattern": "^Khoa chốt \\d{2}/\\d{2}/\\d{4}", "description": "Mặc định Khoa chốt mà nguồn không nói thẳng; nếu có src + quote thì chúng là phần nguồn nói" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "manufacturingNote": { "type": "string", "description": "Chưa xác nhận được nơi sản xuất và vì sao (ghi tình trạng tra cứu, không phải dữ kiện về hãng)" },
+    "exportMarkets": { "type": "array", "items": { "type": "string" } },
+    "missing": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["n", "url", "accessedAt", "tier", "quote", "file"],
+        "properties": {
+          "n": { "type": "integer" },
+          "url": { "type": "string" },
+          "accessedAt": { "type": "string" },
+          "tier": { "enum": ["A", "B", "C"] },
+          "quote": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+          "file": { "type": "string" },
+          "official": { "type": "boolean", "description": "Code tính (web-memo.mjs isOfficial): trang thuộc tên miền của hãng bản ghi; agent không ghi" }
+        }
+      }
+    },
+    "confidence": { "enum": ["high", "medium", "low"] },
+    "checkedAt": { "type": "string" },
+    "checkedBy": { "type": "string" }
+  },
+  "$defs": { "src": { "type": "array", "items": { "type": "integer" }, "minItems": 1 } }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "genpower-turkey",
+  "country": "TR",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Genpower Jeneratör",
+  "zh": null,
+  "brands": [
+    "Genpower"
+  ],
+  "web": "https://www.genpower.com.tr/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "10 kVa’dan 3300 kVa’ya kadar olan endüstriyel tip dizel jeneratör ve 1 kVa’dan 12 kVa’ya kadar olan portatif jeneratör",
+      "Copyright Genpower Jeneratör ’e aittir"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy diesel công nghiệp 10–3300 kVA và máy phát di động 1–12 kVA",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Genpower endüstriyel dizel jeneratör",
+      "fuel": "diesel",
+      "p": [
+        10,
+        3300,
+        "kVA",
+        "unspecified",
+        1
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

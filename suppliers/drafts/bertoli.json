@@ -1,0 +1,5 @@
+{"id":"bertoli","country":"IT","role":"genset_oem","status":"verified","conf":"medium","en":"Bertoli Srl","zh":null,"brands":["Bertoli"],"web":"https://www.bertolisrl.it/","prov":null,"city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","©2026 Bertoli Srl","Con una gamma di potenza che va da 2 a 2500 kVA e ad alimentazione tramite gasolio e da 5 a 650 KVA ad alimentazione tramite gas metano o gas prope"]},
+"str":[["Tổ máy diesel 2–2500 kVA và tổ máy khí (metan/propan) 5–650 kVA",1]],"cert":[],
+"lines":[{"k":"genset","s":"Gruppi elettrogeni a gasolio","fuel":"diesel","p":[2,2500,"kVA","unspecified",1],"src":[1]},{"k":"genset","s":"Gruppi elettrogeni a gas","fuel":"gas","p":[5,650,"kVA","unspecified",1],"src":[1]}],
+"miss":["Chưa có năm thành lập, địa chỉ, chứng chỉ"],"by":"discover-bot (Claude)"}

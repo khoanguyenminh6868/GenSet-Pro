@@ -1,0 +1,5 @@
+{"id":"yaohu-chongqing","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"CHONGQING YAOHU POWER MACHINE CO.,LTD.","zh":null,"brands":["Yaohu"],"web":null,"prov":"Chongqing","city":"Chongqing","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","Chongqing Yaohu Power Machine Co., Ltd. is a leading professional manufacturer of gasoline engines, diesel engines, gasoline generators, diesel generators, water pumps, welding generators","Address:No.23 Jinshan Avenue, Tongliang Industrial Park, Chongqing,China"]},
+"str":[["Động cơ xăng / diesel, máy phát xăng / diesel, máy phát-hàn, bơm",1]],"cert":[],
+"lines":[{"k":"genset","s":"Gasoline / diesel generators","src":[1]},{"k":"engine","s":"Gasoline / diesel engines","src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"],"by":"discover-bot (Claude)"}

@@ -1,0 +1,5 @@
+{"id":"lanzhou-electric","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"兰州电机股份有限公司","brands":["兰电"],"web":"https://www.lec.cn/","prov":"Gansu","city":"Lanzhou","founded":2010,"fsrc":[1],"related":[],
+"src":{"1":["A","2010年12月经股份制改造注册成立了兰州电机股份有限公司。","1983年TFHX系列船用同步发电机、TFW系列小型三相同步无刷发电机、TX系列三相异步电动机分别","为广州花园酒店试制的630千瓦自动化应急备用电源发电机组投入运行"],"2":["A","COPYRIGHT ©2015 兰州电机股份有限公司"]},
+"str":[["Đầu phát đồng bộ (TFW không chổi than, TFHX tàu thủy), tổ máy dự phòng, máy phát gió",1],["Pháp nhân cổ phần thành lập 12/2010 (kế thừa nhà máy điện cơ Lan Châu)",1]],"cert":[],
+"lines":[{"k":"alternator","s":"TFW / TFHX系列同步发电机","src":[1]}],
+"miss":["Trang lịch sử không ghi dải công suất sản phẩm hiện tại"],"by":"discover-bot (Claude)"}

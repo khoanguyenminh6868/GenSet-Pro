@@ -1,0 +1,663 @@
+{
+  "id": "penlucky",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong Penlucky Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Penlucky"
+    ]
+  },
+  "website": "https://penlucky.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2007,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Tổ máy diesel 9–3450 kVA; làm cả tháp đèn di động và trạm phát chạy liên tục",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Có giải pháp nguồn liên tục / dự phòng 10–3000 kVA cho mỏ dầu",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: là một trong các nhà sản xuất hàng đầu Trung Quốc",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generating sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 9,
+        "max": 3450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ có câu 'SWT offers a wide range of precision power equipment from 8.3kVA to 3781kVA' nhắc thương hiệu SWT (có bản ghi superwatt-swt); chưa có nguồn về quan hệ giữa hai công ty nên không dùng",
+    "Trang chứng chỉ không ghi tên chứng chỉ dạng chữ",
+    "Không thấy tên tiếng Trung, hãng động cơ/đầu phát cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://penlucky.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2023, Shandong Penlucky Power Equipment Co., Ltd. All rights reserved.",
+        "1-1-917, Danguili Golden Street, Dongfeng Street, Kuiwen District, Weifang City, Shandong Province, China",
+        "We provide comprehensive solution for prime/standby power generation from 10-3000kva on oil field."
+      ],
+      "file": "sources/penlucky/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://penlucky.com/about/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Established in 2007, Penlucky today is one of the Chinese leading manufacturers of the highest quality diesel generating sets and complete power generation systems. We have a wide power range from 9kVA to 3450kVA with world famous engine and alternator brand.",
+        "Penlucky Power is located in Weifang High-Tech Zone, Shandong, China, founded in 2007, specializing in the design, manufacture, and sales of mobile lighting towers, standby generator sets, and continuous operation power stations."
+      ],
+      "file": "sources/penlucky/2.md"
+    },
+    {
+      "n": 101,
+      "url": "https://penlucky.com/generator/diesel-industrial-generators/yuchai-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "file": "sources/penlucky/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://penlucky.com/generator/diesel-industrial-generators/cummins-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "file": "sources/penlucky/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://penlucky.com/generator/diesel-industrial-generators/weichai-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "file": "sources/penlucky/103.md"
+    },
+    {
+      "n": 107,
+      "url": "https://penlucky.com/generator/gas-generator/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "file": "sources/penlucky/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://penlucky.com/generator/marine-generator/plwm-series-models-power-by-weichai/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| | Penlucky Model | Primary Powe /KW | Continuous power/ KW | Engine Model | Alternator Leroy-Somer | Mode of speed regulation | Dimension mm | Data PDF"
+      ],
+      "file": "sources/penlucky/108.md"
+    },
+    {
+      "n": 116,
+      "url": "https://penlucky.com/product-item/cummins-4bt3-9-gm/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "file": "sources/penlucky/116.md"
+    },
+    {
+      "n": 119,
+      "url": "https://penlucky.com/product-item/cummins-6bt5-9-gm/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "file": "sources/penlucky/119.md"
+    },
+    {
+      "n": 120,
+      "url": "https://penlucky.com/product-item/cummins-6cta8-3-gm/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "file": "sources/penlucky/120.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Yuchai Generator | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| PLY45 | 45 | 40 | YC4D60-D21 | TAL A42 E | 1800*750*1200 | 2400*1000*1500 | view",
+        "| PLY75 | 75 | 68 | YC4D90Z-D21 | TAL A42 H | 1870*800*1200 | 2400*1000*1500 | view",
+        "| PLY85 | 85 | 77 | YC4A100Z-D20 | TAL A44 C | 2250*800*1300 | 3000*1200*1700 | view",
+        "| PLY115 | 115 | 105 | YC4A140L-D20 | TAL A44 D | 2300*800*1300 | 3000*1200*1700 | view",
+        "| PLY150 | 150 | 136 | YC4A180L-D20 | TAL A44 F | 2300*800*1300 | 3000*1200*1700 | view",
+        "| PLY150 | 150 | 136 | YC6B180L-D20 | TAL A44 F | 2250*950*1420 | 3000*1200*1700 | view",
+        "| PLY165 | 165 | 150 | YC6B205L-D20 | TAL A44 J | 2500*850*1300 | 3300*1400*1700 | view",
+        "| PLY200 | 200 | 187.5 | YC6A245L-D21 | TAL A44 L | 2550*950*15550 | 3300*1400*1700 | view",
+        "| PLY275 | 275 | 250 | YC6MK350L-D20 | TAL A46 D | 2930*1120*1600 | 3300*1400*1700 | view",
+        "| PLY350 | 350 | 312.5 | YC6MK420L-D20 | TAL A46 F | 3000*1150*1700 | 3300*1400*1700 | view",
+        "| PLY375 | 375 | 350 | YC6MJ480L-D20 | TAL A46 H | 3050*1100*1700 | 3300*1400*1700 | view",
+        "| PLY415 | 415 | 375 | YC6MJ500L-D21 | TAL A46 H | 3100*1200*1800 | 4700*2100*2450 | view",
+        "| PLY440 | 440 | 400 | YC6T550L-D21 | TAL A473 A | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLY500 | 500 | 437 | YC6T600L-D22 | TAL A473 B | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLY550 | 550 | 500 | YC6T660L-D22 | TAL A473 C | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLY25 | 22.5 | 20 | 4D24G6 | TAL A40 F | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLY30 | 27.5 | 25 | 4D24G7 | TAL A40 G | 2980*1170*1780 | 4090*1460*2150 | view",
+        "| PLY35 | 32.5 | 30 | 4D24TG2 | TAL A42 C | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLY45 | 41.25 | 37.5 | 4D24TG0 | TAL A42 E | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLY65 | 62.5 | 56 | YC4D80-D34 | TAL A42 F | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLY70 | 68.75 | 62.5 | YC4D90-D34 | TAL A42 H | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLY80 | 80 | 75 | YC4D105-D34 | TAL A44 C | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLY100 | 100 | 87.5 | YC4D120-D31 | TAL A44 D | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLY115 | 115 | 100 | YC4D140-D31 | TAL A44 D | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLY125 | 125 | 112.5 | YC4D155-D31 | TAL A44 D | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLY115 | 112.5 | 100 | YC4A140-D30 | TAL A44 D | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLY125 | 125 | 112.5 | YC4A155D30 | TAL A44 D | 2300*800*1300 | 3000*1200*1700 | view",
+        "| PLY125 | 125 | 112.5 | YC4A165-D30 | TAL A44 D | 2300*800*1300 | 3000*1200*1700 | view",
+        "| PLY150 | 150 | 137.5 | YC4A190-D30 | TAL A44 H | 2250*950*1420 | 3000*1200*1700 | view",
+        "| PLY175 | 175 | 150 | YC6A205-D30 | TAL A44 J | 2500*850*1300 | 3300*1400*1700 | view",
+        "| PLY190 | 187.5 | 175 | YC6A245-D30 | TAL A44 K | 2550*950*15550 | 3300*1400*1700 | view",
+        "| PLY200 | 200 | 187.5 | YC6A245-D30 | TAL A44 L | 2550*950*15550 | 3300*1400*1700 | view",
+        "| PLY225 | 225 | 200 | YC6A275-D30 | TAL A44 M | 2550*950*15550 | 3300*1400*1700 | view",
+        "| PLY275 | 275 | 250 | YC6MK350-D30 | TAL A46 D | 2930*1120*1600 | 3300*1400*1700 | view",
+        "| PLY350 | 350 | 312.5 | YC6MK420D30 | TAL A46 F | 3050*1100*1700 | 3300*1400*1700 | view",
+        "| PLY375 | 375 | 350 | YC6MK450-D30 | TAL A46 G | 3050*1100*1700 | 3300*1400*1700 | view",
+        "| PLY415 | 412.5 | 375 | YC6MJ500-D30 | TAL A46 H | 3100*1200*1800 | 4700*2100*2450 | view",
+        "| PLY415 | 412.5 | 375 | YC6K500-D31 | TAL A46 H | 3286*1367*1711 | 4300*1594*2250 | view",
+        "| PLY415 | 412.5 | 375 | YC6K500-D30 | TAL A46 H | 3286*1367*1711 | 4300*1594*2250 | view",
+        "| PLY440 | 437.5 | 400 | YC6K520-D30 | TAL A473 A | 3286*1367*1711 | 4300*1594*2250 | view",
+        "| PLY500 | 500 | 437.5 | YC6K600-D30 | TAL A473 B | 3286*1367*1711 | 4300*1594*2250 | view",
+        "| PLY550 | 550 | 500 | YC6K660-D30 | TAL A473 C | 3286*1367*1711 | 4300*1594*2250 | view",
+        "| PLY625 | 625 | 562.5 | YC6TD780-D31 | TAL A473 D | 3750*1839*2019 | 5530*1860*2550 | view",
+        "| PLY690 | 687.5 | 625 | YC6TD840-D31 | TAL A473 E | 3750*1839*2019 | 5530*1860*2550 | view",
+        "| PLY750 | 750 | 687.5 | YC6TD840-D31 | TAL A473 F | 3750*1839*2019 | 5530*1860*2550 | view",
+        "| PLY815 | 812.5 | 750 | YC6TD1000-D30 | TAL A49 A | 3750*1839*2019 | 5530*1860*2550 | view",
+        "| PLY825 | 825 | 750 | YC6C1020-D31 | TAL A49 B | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY890 | 887.5 | 812.5 | YC61070-D31 | TAL A49 C | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY1000 | 1000 | 912.5 | YC61220-D31 | TAL A49 D | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY1125 | 1125 | 1000 | YC6C1320-D31 | TAL A49 E | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY1250 | 1250 | 1125 | YC6C1320-D31 | TAL A49 E | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY1375 | 1375 | 1250 | YC6C1660-D30 | LSA 50.2 M6 | 4937*2260*2279 | ISO 20’ft HQ | view",
+        "| PLY1100 | 1100 | 1000 | YC12VTD1350 | TAL A49 E | 6600*2680*2980 | | view",
+        "| PLY1250 | 1250 | 1125 | YC12VTD1500 | TAL A49 E | 6600*2680*2980 | | view",
+        "| PLY1375 | 1375 | 1250 | YC12VTD1680 | LSA 50.2 M6 | 6600*2680*2980 | | view",
+        "| PLY1500 | 1500 | 1375 | YC12VTS1830 | LSA 50.2 M7 | 6600*2680*2980 | | view",
+        "| PLY1690 | 1687.5 | 1500 | YC12VTD2000 | LSA 50.2 M8 | 6600*2680*2980 | | view",
+        "| PLY1375 | 1375 | 1250 | YC12VC1680 | LSA 50.2 M6 | 6600*2680*2980 | | view",
+        "| PLY 1690 | 1678.5 | 1500 | YC12VC2070 | LSA 50.2 M8 | 6600*2680*2980 | | view",
+        "| PLY1875 | 1875 | 1687.5 | YC12V2270 | LSA 50.2 VL 10 | 6600*2680*2980 | | view",
+        "| PLY200 | 2000 | 1875 | YC12VC2510 | LSA 52.3 S5 | 6600*2680*2980 | | view",
+        "| PLY2250 | 2250 | 2045 | YC12VC2700 | LSA 52.3 S6 | 6600*2680*2980 | | view",
+        "| PLY2500 | 2500 | 2250 | YC16VC3000 | LSA 52.3 S7 | 7290*3000*3760 | | view",
+        "| PLY2750 | 2750 | 2500 | YC16VC3300 | LSA 52.3 L12 | 7290*3000*3760 | | view",
+        "| PLY3000 | 3000 | 2750 | YC16VC3600 | LSA 52.3 UL16 | 7290*3000*3760 | | view"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Cummins Generator | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| PLC28 | 28 | 25 | 4B3.9-G1 | S0L2-M1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC30 | 30 | 27.5 | 4B3.9-G1 | S0L2-P1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC44 | 44 | 40 | 4BT3.9-G1 | S1L2-K1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC65 | 65 | 60 | 4BTA3.9-G2 | S1L2-Y1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC70Q | 70 | 62.5 | QSB3.9-G2 | S1L2-Y1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC80 | 80 | 72.5 | 4BTA3.9-G11 | UCI224G1 | 1760*760*1380 | 2440*1060*1680 | view",
+        "| PLC90 | 90 | 80 | 4BTA3.9-G11 | UCI224G1 | 1760*760*1380 | 2600*1060*1830 | view",
+        "| PLC90Q | 90 | 80 | QSB3.9-G3 | UCI224G1 | 1760*760*1380 | 2810*1140*1830 | view",
+        "| PLC103 | 103 | 94 | 6BT5.9-G1 | UCI274C1 | 2300*830*1700 | 2810*1140*1830 | view",
+        "| PLC110 | 110 | 100 | 6BT5.9-G1 | UCI274G1 | 2300*830*1700 | 2810*1140*1830 | view",
+        "| PLC110Q | 110 | 100 | QSB5.9-G2 | UCI274G1 | 2300*830*1700 | 2810*1140*1830 | view",
+        "| PLC125 | 125 | 115 | 6BTA5.9-G2 | UCI274D1 | 2300*830*1700 | 3230*1170*1800 | view",
+        "| PLC140Q | 140 | 125 | QSB5.9-G3 | UCI274E1 | 2300*830*1700 | 3230*1170*1800 | view",
+        "| PLC142 | 142 | 130 | 6BTAA5.9-G2 | UCI274E1 | 2350*830*1700 | 3230*1170*1800 | view",
+        "| PLC170 | 170 | 156 | 6BTAA5.9-G12 | UCI274E1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PLC175 | 175 | 160 | 6CTA8.3-G1 | UCI274F1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PL-C200 | 200 | 180 | 6CTA8.3-G1 | UCI274F1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PLC200 | 200 | 180 | 6CTA8.3-G2 | UCI274G1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PLC200Q | 200 | 180 | QSB6.7-G4 | UCI274G1 | 2500*960*1850 | 3590*1150*2050 | view",
+        "| PLC220 | 220 | 200 | 6CTAA8.3-G2 | UCI274H1 | 2500*960*1850 | 3230*1170*1800 | view",
+        "| PLC275D | 275 | 250 | 6CTAA8.9-G2 | UCDI274K1 | 2500*960*1850 | 3590*1150*2050 | view",
+        "| PLC275Q | 275 | 250 | 6LTA8.9-G2 | UCDI274K1 | 2500*1200*1850 | 3590*1310*2050 | view",
+        "| PLC300G | NA | 375 | K19N | S4LID-F41 | | |",
+        "| PLC350DD | 330 | 300 | 6LTAA9.5-G1 | S4L1-D41 | 2500*1160*1850 | 3890*1460*2150 | view",
+        "| PLC350G | NA | 437.5 | K19N | S5LID-C4 | | |",
+        "| PLC400G | NA | 500 | K19N | S5LID-C4 | | |",
+        "| PLC500DQ | 500 | 450 | QSZ13-G10 | HCI544F-S | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC500G | NA | 625 | K38N | HCI544FS | | |",
+        "| PLC550DQ | 550 | 500 | QSZ13-G10 | HCI544C1 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC275N | 275 | 250 | NT855-GA | UCDI274K1 | 3020*1100*1850 | 3890*1460*2150 | view",
+        "| PLC350 | 340 | 310 | MTAA11-G3 | S4L1D-D41 | 3020*1100*1850 | 3890*1460*2150 | view",
+        "| PLC360 | 350 | 320 | NTA855-GAB | S4L1D-E41 | 3020*1100*1850 | 4230*1460*2150 | view",
+        "| PLC375 | 375 | 344 | NTA855-G2A | S4L1D-E41 | 3020*1100*1850 | 4230*1460*2150 | view",
+        "| PLC400 | 388 | 350 | NTA855-G4 | S4L1D-E41 | 3020*1100*1850 | 4230*1460*2150 | view",
+        "| PLC412 | 412 | 375 | NTAA855-G7 | S4L1D-F41 | 3090*1100*1850 | 4230*1460*2150 | view",
+        "| PLC440Q | 438 | 400 | QSNT-G3 | S4L1D-F41 | 3090*1300*1850 | 4630*1660*2250 | view",
+        "| PLC450 | 450 | NA | NTAA855-G7A | S4L1D-F41 | 3090*1100*1850 | 4230*1460*2150 | view",
+        "| PLC500Q | 500 | 450 | QSNT-G4X | S4L1D-G41 | 3090*1300*1850 | 4630*1660*2150 | view",
+        "| PLC500 | 500 | 450 | KTA19-G3 | S4L1D-G41 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC550 | 550 | 500 | KTA19-G3A | S5L1D-C4 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC550 | 550 | 500 | KTA19-G4 | S5L1D-C4 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC600G | | 750 | K38N | S5L1D-H4 | | | view",
+        "| PLC650 | 650 | NA | KTA19-G8 | HCI544E1 | 3650*1500*2050 | 4630*1660*2250 | view",
+        "| PLC660 | 650 | 575 | KTAA19-G6 | HCI544FS1 | 3650*1638*2050 | 5030*1860*2550 | view",
+        "| PLC688K | 688 | 6250 | KTA19-G8A | HCI5444FS1 | 3650*1638*2050 | 5030*1860*2550 | view",
+        "| PLC688 | 688 | NA | KTAA19-G6A | HCI544FS1 | 3650*1638*2050 | 5030*1860*2550 | view",
+        "| PLC700Q | 3575 | 3250 | QSK19-G4 | HCI544FS1 | 3650*1638*2050 | 5030*1860*2550 | view",
+        "| PLC700G | | 875 | K38N | S6L1D-E4 | 3650*1638*2050 | 5030*1860*2550 | view",
+        "| PLC800G | | 1000 | K38N | S6LID-E4 | | | view",
+        "| PLC825 | 825 | 750 | KTA38-G2 | S5L1D-H4 | 4550*2100*2320 | ISO 20’ft GP | view",
+        "| PLC880 | 880 | 800 | KTA38-G2B | S6L1D-F4 | 4550*2110*2320 | ISO 20’ft GP | view",
+        "| PLC900G | | 1125 | K50N | S6L1D-G4 | | | view",
+        "| PLC1000 | 1000 | 910 | KTA38-G2A | S6L1D-D4 | 4550*2110*2320 | ISO 20’ft GP | view",
+        "| PLC1000G | | 1250 | K50N | S6L1D-D4 | | | view",
+        "| PLC1100 | 1100 | 1000 | KTA38-G5 | S6L1D-E4 | 4750*2100*2320 | ISO 20’ft GP | view",
+        "| PLC1250 | 1250 | NA | KTA38-G9 | S6L1D-F4 | 4750*2100*2320 | ISO 20’ft GP | view",
+        "| PLC1375Q | 1375 | 1250 | QSK38-G5 | S6L1D-G4 | 5000*2200*2500 | ISO 20’ft GP | view",
+        "| PLC1375 | 1375 | 1250 | KTA50-G3 | S6L1D-G4 | 5000*2200*2500 | ISO 20’ft GP | view",
+        "| PLC1375E | 1375 | 1250 | KTA50-G3 | S6L1D-G41 | 5000*2200*2500 | ISO 20’ft GP | view",
+        "| PLC1500 | 1540 | 1400 | KTA50-G8 | S6L1D-H4 | 5820*2200*2800 | NA | view",
+        "| PLC1500E | 1650 | 1400 | KTA50-G8 | PI734C1 | 5820*2200*2800 | NA | view",
+        "| PLC1600 | 1650 | 1500 | KTA50-GS8 | PI734C1 | 5820*2200*2800 | ISO 20’ft GP | view",
+        "| PLC1800 | 1800 | NA | KTA50-G15 | PI734D1 | 5820*2200*2800 | ISO 20’ft GP | view",
+        "| PLC1875 | 1875 | NA | KTA50-G15 | PI734ES1 | 5820*2200*2800 | ISO 20’ft GP | view",
+        "| PLC700V | 700 | 635 | VAT28-G5 | HCI544FS1 | 3650*1750*2050 | ISO 20’ft GP | view",
+        "| PLC825V | 825 | 750 | VAT28-G6 | S5L1D-H4 | 3850*1750*2050 | ISO 20’ft GP | view",
+        "| PLC1000Q | 1000 | 910 | QST30-G3 | S6L1D-D4 | 4550*2100*2320 | ISO 20’ft GP | view",
+        "| PLC1100Q | 1100 | 1000 | QST30-G4 | S6L1D-E4 | 4750*2100*2320 | ISO 20’ft GP | view",
+        "| PLC2060Q | 2062 | 1875 | QST60-G3 | PI734E1 | 5820*2200*2800 | ISO 40’ft GP | view",
+        "| PLC2250Q | 2250 | 2050 | QST60-G4 | PI734F1 | 5820*2200*2800 | ISO 40’ft GP | view",
+        "| PLC2500Q | 2500 | 2250 | QST60-G8 | PI734E1 OR S7L1D-J4 | 5820*2200*2800 | ISO 40’ft GP | view"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Cummins Generator | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| PLC28-60 | 33 | 30 | 4B3.9-G2 | S0L2-P1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC40-60 | 50 | 45 | 4B3.9-G2 | S0L2-N1 | 1760*760*1380 | 2290*1060*1680 | view",
+        "| PLC65-60 | 68 | 62.5 | 4BTA3.9-G2 | UCI224D1 | 1760*760*1380 | 2440*1060*1680 | view",
+        "| PLC70-60 | 70 | 65 | 4BTA3.9-G2 | S1L2-Y1 | 1760*760*1380 | 2440*1060*1680 | view",
+        "| PLC75-60 | 77 | 70 | 4BTA3.9-G11 | UCI224E1 | 1760*760*1380 | 2440*1060*1680 | view",
+        "| PLC80-60 | 95 | 85 | 4BTA3.9-G11 | UCI224F1 | 1760*760*1380 | 2440*1060*1680 | view",
+        "| PLC90-60 | 100 | 90 | 4BTA3.9-G11 | UCI224G1 | 1760*760*1380 | 2600*1060*1830 | view",
+        "| PLC105-60 | 120 | 110 | 6BT5.9-G2 | UCI224C1 | 2300*830*1700 | 2810*1140*1830 | view",
+        "| PLC110-60 | 132 | 120 | 6BT5.9-G2 | UCI274D1 | 2300*830*1700 | 2810*1140*1830 | view",
+        "| PLC125-60 | 145 | 130 | 6BTA5.9-G2 | UCI274D1 | 2300*830*1700 | 3230*1170*1800 | view",
+        "| PLC142-60 | 156 | 145 | 6BTAA5.9-G2 | UCI274E1 | 2300*830*1700 | 3230*1170*1800 | view",
+        "| PLC170-60 | 180 | 168 | 6BTAA5.9-G12 | UCI274E1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PLC200-60 | 212 | 200 | 6CTA8.3-G2 | UCI274G1 | 2390*860*1850 | 3230*1170*1800 | view",
+        "| PLC220-60 | 250 | 230 | 6BTAA8.9-G2 | UCI274H1 | 2450*960*1850 | 3590*1150*2050 | view",
+        "| PLC275D-60 | 275 | 250 | 6LTAA8.9-G2 | UCDI274J1 | 2500*960*1850 | 3590*1150*2050 | view",
+        "| PLC300-60 | 306 | 280 | 6LTAA8.9-G3 | UCDI274F1 | 2500*960*1850 | 3590*1150*2050 | view",
+        "| PLC350D-60 | 330 | 300 | 6LTAA9.5-G1 | UCDI274K1 | 2500*960*1850 | 3590*1150*2050 | view",
+        "| PLC500DQ-60 | 500 | 460 | QSZ13-33 | S4L1D-F41 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC312-60 | 344 | 310 | NTA855-G1 | S4L1D-C41 | 3020*1100*1850 | 4230*1460*2150 | view",
+        "| PL-C360-60 | 375 | 344 | NTA855-G1B | S4L1D-D41 | 3020*1100*1850 | 3230*1170*1800 | view",
+        "| PLC400-60 | 435 | 400 | NTA855-G1B | S4L1D-E41 | 3020*1100*1850 | 4230*1660*2150 | view",
+        "| PLC440-60 | 500 | 438 | KTA19-G2 | S4L1D-F41 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC500-60 | 550 | 500 | KTA19-G2 | S4LID-F41 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC550-60 | 625 | 562 | KTA19-G3A | HCI544D1 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC550-60 | 625 | 562 | KTA19-G4 | HCI544D1 | 3400*1258*2050 | 4630*1660*2250 | view",
+        "| PLC688-60 | 750 | NA | KTAA19-G6A | S5LID-E4 | 3650*1683*2050 | 4630*1660*2250 | view",
+        "| PLC700Q-60 | 750 | 688 | QSK19-G5 | S5LID-E4 | 3650*1683*2050 | 4630*1660*2250 | view",
+        "| PLC700-60 | 850 | 775 | KT38-G | HCI544F1 | 4550*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC825-60 | 1000 | 910 | KTA38-G2 | S6L1D-C4 | 4550*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC1000-60 | 1100 | 1000 | KTA38-G2A | S6L1D-D4 | 4550*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC1100-60 | 1250 | 1125 | KTA38-G9 | S6L1D-E4 | 4750*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC1250-60 | 1375 | NA | KTA38-G9 | S6L1D-F4 | 5000*2200*2500 | ISO 20′ ft GP | view",
+        "| PLC1375-60 | 1562 | 1420 | KTA50-G3 | S6L1D-G4 | 5000*2200*2500 | ISO 20′ ft GP | view",
+        "| PLC1600-60 | 1760 | 1600 | KTA50-G9 | PI734B1 | 5820*2200*2800 | ISO 20′ ft GP | view",
+        "| PLC1600-60 | 1875 | 1600 | KTA50-G9 | S7L1D-C4 | 5820*2200*2800 | ISO 20′ ft GP | view",
+        "| PLC700V-60 | 750 | 682 | VTA28-G5 | HCI544E1 | 4000*1750*250 | ISO 20′ ft GP | view",
+        "| PLC900Q-60 | 1000 | 910 | QSK23-G3 | S6L1D-C4 | 4550*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC1000Q-60 | 1125 | 1029 | QST30-G3 | S6L1D-D4 | 4550-2100-2320 | ISO 20′ ft GP | view",
+        "| PLC1100Q-60 | 1250 | 1138 | QST30-G4 | S6L1D-E4 | 4750*2100*2320 | ISO 20′ ft GP | view",
+        "| PLC1800Q-60 | 2000 | 1818 | QSK50-G6 | PI734D1 | | ISO 40′ ft GP | view",
+        "| PLC2500Q-60 | 2500 | 2280 | QSK60-G6 | PI734D1 | | ISO 40′ ft GP | view"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Weichai Generator | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| PLW16.5/B1 | 16.5 | 15 | WP2.3D25E200 | TAL-A40-D | 1458*723*1058 | 2290*1060*1680 | view",
+        "| PLW22/B1 | 22 | 20 | WP2.3D25E200 | TAL-A40-F | 1513*723*1058 | 2290*1060*1680 | view",
+        "| PLW27.5/B1 | 27.5 | 25 | WP2.3D33E200 | TAL-A40-G | 1513*723*1058 | 2290*1060*1680 | view",
+        "| PLW33/B1 | 33 | 30 | WP2.3D33E200 | TAL-A42-C | 1572*757*1058 | 2290*1060*1680 | view",
+        "| PLW41/B1 | 41 | 37.3 | WP2.3D40E200 | TAL-A42-E | 1572*757*1058 | 2290*1060*1680 | view",
+        "| PLW68.5/B1 | 68.5 | 62.3 | WP4. 1D66E200 | TAL-A42-H | 1930*860*1218 | 2440*1060*1680 | view",
+        "| PLW88/B1 | 88 | 80 | WP4. 1D80E200 | TAL-A44-C | 1930*860*1218 | 2440*1060*1680 | view",
+        "| PLW110/B1 | 110 | 100 | WP4. 1D100E200 | TAL-A44-D | 1930*860*1218 | 2810*1140*1830 | view",
+        "| PLW125/B1 | 125 | / | WP4. 1D113E200 | TAL-A44-D | 1930*860*1218 | 2475*860*1451 | view",
+        "| PLW137.5/B9 | 137.5 | 125 | WP6D132E200 | TAL-A44-E | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW165/B9 | 165 | 150 | WP6D152E200 | TAL-A44-J | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW187.5/B9 | 187.5 | / | WP6D167E200 | TAL-A44-K | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW206/B8 | 206 | 187.3 | WP10D200E200 | TAL-A44-L | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLW250/B8 | 250 | / | WP10D238E200 | TAL-A44-M | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLW275/B8 | 275 | 250 | WP10D264E200 | TAL-A46-D | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLW320/B8 | 320 | / | WP10D280E200 | TAL-A46-E | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLW344/B8 | 344 | 312.7 | WP10D320E200 | TAL-A46-F | 2980*1170*1780 | 4090*1460*2150 | view",
+        "| PLW344/B8 | 344 | 312.7 | WP12D353E200 | TAL-A46-G | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW412.5/B8 | 412.5 | 375 | WP12D353E200 | TAL-A46-H | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW440/B8 | 440 | 400 | WP13D385E200 | TAL A473 A | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW450/B8 | 450 | / | WP13D405E200 | TAL-A473-A | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW500/B83 | 500 | 454.5 | WP13D440E310 | TAL-A473-B | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLW550/B83 | 550 | 500 | WP13D490E310 | TAL-A473-C | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLW687.5/B7 | 687.5 | 625 | 6M33D633E200 | TAL-A473-E | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW750/B7 | 750 | 681.8 | 6M33D670E200 | TAL-A473-F | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW825/B73 | 825 | 750 | 6M33D725E310 | TAL-A49-B | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW900/B7 | 900 | 818.2 | 8M33D800E200 | TAL-A49-C | 4030*1871*2131 | ISO-20’ft HQ | view",
+        "| PLW1000/B7 | 1000 | 909 | 8M33D890E200 | TAL-A49-D | 4030*1871*2131 | ISO-20’ft HQ | view",
+        "| PLW1100/B73 | 1100 | 1000 | 8M33D975E310 | TAL-A49-E | 4030*1871*2131 | ISO-20’ft HQ | view",
+        "| PLW880/B7 | 880 | 800 | 12M26D792E200 | TAL-A49-C | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW900/B7 | 900 | 818.2 | 12M26D792E200 | TAL-A49-C | 4030*1871*2131 | ISO-20’ft HQ | view",
+        "| PLW1000/B7 | 1000 | 909 | 12M26D902E200 | TAL-A49-D | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW1100/B7 | 1100 | 1000 | 12M26D968E200 | TAL-A49-E | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW1250/B7 | 1250 | 1136.4 | 12M33D1108E200 | TAL-A49-E | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW1375/B7 | 1375 | 1250 | 12M33D1210E200 | LSA-50.2-M6 | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW1650/B73 | 1650 | 1500 | 12M33D1500E310 | LSA-50.2-L8 | 4800*2200*2450 | ISO-20’ft HQ | view",
+        "| PLW1875B73 | 1875 | / | 16M33G0D3/5 | LSA 50.2 VL 10 | 6500*2750*3058 | ISO-40’ft HQ | view",
+        "| PLW1925B73 | 1925 | 1750 | 16M33G2D3/5 | LSA-52.3-S5 | 6500*2750*3058 | ISO-40’ft HQ | view",
+        "| PLW2000B73 | 2000 | / | 16M33G4F3/5 | LSA-52.3-S5 | 6500*2750*3058 | ISO-40’ft HQ | view",
+        "| PLW2062B73 | 2062 | 1874.5 | 16M33G6D3/5 | LSA-52.3-S5 | 6500*2750*3058 | ISO-40’ft HQ | view",
+        "| PLW2250B73 | 2250 | / | 16M33G8D3/5 | LSA-52.3-S6 | 6500*2750*3058 | ISO-40’ft HQ | view",
+        "| PLW2500B73 | 2500 | 2272 | 20M33G4D3/5 | LSA-52.3-S7 | 7010*2680*2980 | ISO-40’ft HQ | view",
+        "| PLW2500B73 | 2500 | 2272 | 12M55G4D3/5 | LSA-52.3-S7 | 6600*2680*2980 | ISO-40’ft HQ | view",
+        "| PLW2750B73 | 2750 | 2500 | 12M55G6D3/5 | LSA-52.3-L12 | 6600*2680*2980 | ISO-40’ft HQ | view",
+        "| PLW3025B73 | 3025 | 2750 | 12M55G6D3/5 | LSA-52.3-UL16 | 6600*2680*2980 | ISO-40’ft HQ | view",
+        "| PLW3300B73 | 3300 | 3000 | 16M55G2D3/5 | LSA | 7090*3000*3580 | ISO-40’ft HQ | view",
+        "| PLW3575B73 | 3575 | 3250 | 16M55G4D3/5 | LSA | 7090*3000*3580 | ISO-40’ft HQ | view",
+        "| PLW4125B73 | 4125 | 3750 | 16M55G6D3/5 | LSA | 7290*3000*3760 | ISO-40’ft HQ | view"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Weichai Generator | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| PLW16.5/B1 | 16.5 | 15 | WP2.3D25E201 | TAL A40 C | 1458*723*1058 | 2290*1060*1680 | view",
+        "| PLW22/B1 | 22 | 20 | WP2.3D25E201 | TAL A40 E | 1513*723*1058 | 2290*1060*1680 | view",
+        "| PLW27.5/B1 | 27.5 | 25 | WP2.3D33E201 | TAL A40 G | 1513*723*1058 | 2290*1060*1680 | view",
+        "| PLW33/B1 | 33 | 30 | WP2.3D33E201 | TAL A42 C | 1572*757*1058 | 2290*1060*1680 | view",
+        "| PLW41/B1 | 41 | 37.3 | WP2.3D40E201 | TAL A42 E | 1572*757*1058 | 2290*1060*1680 | view",
+        "| PLW68.5/B1 | 68.5 | 62.3 | WP4. 1D66E201 | TAL A42 H | 1930*860*1218 | 2440*1060*1680 | view",
+        "| PLW88/B1 | 88 | 80 | WP4. 1D80E201 | TAL A44 C | 1930*860*1218 | 2440*1060*1680 | view",
+        "| PLW110/B1 | 110 | 100 | WP4. 1D100E201 | TAL A44 D | 1930*860*1218 | 2810*1140*1830 | view",
+        "| PLW125/B1 | 125 | / | WP4. 1D113E201 | TAL A44 D | 1930*860*1218 | 2475*860*1451 | view",
+        "| PLW137.5/B9 | 137.5 | 125 | WP6D132E201 | TAL A44 E | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW165/B9 | 165 | 150 | WP6D152E201 | TAL A44 H | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW187.5/B9 | 187.5 | / | WP6D167E201 | TAL A44 J | 2475*860*1451 | 3230*1170*1800 | view",
+        "| PLW206/B8 | 206 | 187.3 | WP10D200E201 | TAL A44 K | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLW250/B8 | 250 | / | WP10D238E201 | TAL A44 M | 2980*1170*1780 | 3590*1310*2050 | view",
+        "| PLW275/B8 | 275 | 250 | WP10D264E201 | TAL A44 M | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLW320/B8 | 320 | / | WP10D280E201 | TAL A46 D | 2980*1170*1780 | 3890*1460*2150 | view",
+        "| PLW344/B8 | 344 | 312.7 | WP10D320E201 | TAL A46 E | 2980*1170*1780 | 4090*1460*2150 | view",
+        "| PLW344/B8 | 344 | 312.7 | WP12D353E201 | TAL A46 E | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW412.5/B8 | 412.5 | 375 | WP12D353E201 | TAL A46 G | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW440/B8 | 440 | 400 | WP13D385E201 | TAL A46 H | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW450/B8 | 450 | / | WP13D405E201 | TAL A46 H | 3200*1345*1885 | 4230*1460*2150 | view",
+        "| PLW500/B83 | 500 | 454.5 | WP13D440E311 | TAL A473 A | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLW550/B83 | 550 | 500 | WP13D490E311 | TAL A473 A | 3200*1345*1885 | 4630*1660*2250 | view",
+        "| PLW687.5/B7 | 687.5 | 625 | 6M33D633E201 | TAL A473 C | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW750/B7 | 750 | 681.8 | 6M33D670E201 | TAL A473 E | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW825/B73 | 825 | 750 | 6M33D725E311 | TAL A473 F | 3850*1680*2100 | 5530*1860*2550 | view",
+        "| PLW900/B7 | 900 | 818.2 | 8M33D800E201 | TAL A49 B | 4030*1871*2131 | ISO 20’ft HQ | view",
+        "| PLW1000/B7 | 1000 | 909 | 8M33D890E201 | TAL A49 B | 4030*1871*2131 | ISO 20’ft HQ | view",
+        "| PLW1100/B73 | 1100 | 1000 | 8M33D975E311 | TAL A49 C | 4030*1871*2131 | ISO 20’ft HQ | view",
+        "| PLW880/B7 | 880 | 800 | 12M26D792E201 | TAL A4973 F | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW900/B7 | 900 | 818.2 | 12M26D792E201 | TAL A473 F | 4030*1871*2131 | ISO 20’ft HQ | view",
+        "| PLW1000/B7 | 1000 | 909 | 12M26D902E201 | TAL A49 B | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW1100/B7 | 1100 | 1000 | 12M26D968E201 | TAL A49 D | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW1250/B7 | 1250 | 1136.4 | 12M33D1108E201 | TAL A49 E | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW1375/B7 | 1375 | 1250 | 12M33D1210E201 | TAL A49 E | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW1650/B73 | 1650 | 1500 | 12M33D1500E311 | TAL | 4800*2200*2450 | ISO 20’ft HQ | view",
+        "| PLW1875B73 | 1875 | / | 16M33G1500/6 | TAL | 6500*2750*3058 | | view",
+        "| PLW1925B73 | 1925 | 1750 | 16M33G1650/6 | TAL | 6500*2750*3058 | | view",
+        "| PLW2000B73 | 2000 | / | 16M33G4F3/5 | TAL | 6500*2750*3058 | | view",
+        "| PLW2062B73 | 2062 | 1874.5 | 16M33G1650/6 | TAL | 6500*2750*3058 | | view",
+        "| PLW2250B73 | 2250 | / | 16M33G1750/6 | TAL | 6500*2750*3058 | | view",
+        "| PLW2500B73 | 2500 | 2272 | 20M33G2000/6 | PI734E1 | 7010*2680*2980 | | view",
+        "| PLW2500B73 | 2500 | 2272 | 12M55G2000/6 | PI734F1 | 6600*2680*2980 | | view",
+        "| PLW2750B73 | 2750 | 2500 | 20M33G2200/6 | PI734G1 | 6600*2680*2980 | | view",
+        "| PLW3025B73 | 3025 | 2750 | 12M55G2500/6 | LSA53.2M9 | 6600*2680*2980 | | view",
+        "| PLW3300B73 | 3300 | 3000 | 16M55G2640/6 | LSA53.2M9 | 7090*3000*3580 | | view",
+        "| PLW3575B73 | 3575 | 3250 | 16M55G2800/6 | LSA 53.2M9 | 7090*3000*3580 | | view",
+        "| PLW4125B73 | 4125 | 3750 | 16M55G3300/6 | LSA 54 UL 110 | 7290*3000*3760 | | view"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Gaseous Industrial Generators | Penlucky",
+      "header": [
+        "| | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF"
+      ],
+      "rows": [
+        "| GGP33*9NG3 | 33 | 30 | WP4D44E200NG | | 1458*723*1058 | | view",
+        "| GGP41*9NG3 | 41 | 37.5 | WP4D44E200NG | | 1513*723*1058 | | view",
+        "| GGP68.5*9NG3 | 68.5 | 62.5 | WP4D66E300NG | | 1513*723*1058 | | view",
+        "| GGP82.5*9NG3 | 82.5 | 75 | WP4D77E300NG | | 1572*757*1058 | | view",
+        "| GGP11O*9NG3 | 110 | 100 | WP6D100E3OONG | | 1572*757*1058 | | view",
+        "| GGP123.5*9NG3 | 123.5 | 112.5 | WP6D132E300NG | | 1930*860*1218 | | view",
+        "| GGP137.5*9NG3 | / | 125 | WP6D132E3OONG | | 1930*860*1218 | | view",
+        "| GGP165*8NG3 | 165 | 150 | WP10D158E3OONG | | 1930*860*1218 | | view",
+        "| GGP206*8NG3 | / | 187.5 | WP10D200E300NG | | 1930*860*1218 | | view",
+        "| GGP247.5*8NG3 | 247.5 | 225 | WP12D238E300NG | | 2475*860*1451 | | view",
+        "| GGP275*8NG3 | / | 250 | WP12D264E300NG | | 2475*860*1451 | | view",
+        "| GGP316*8NG3 | 316 | 287.5 | WP13D286E300NG | | 2475*860*1451 | | view",
+        "| GGP344*8NG3 | / | 312.5 | WP13D317E300NG | | 2980*1170*1780 | | view",
+        "| GGP550*7NG3 | 550 | 500 | 6M33D495E310NG | | 2980*1170*1780 | | view",
+        "| GGP687.5*7NG3 | 687.5 | 625 | 12M26D605E300NG | | 2980*1170*1780 | | view",
+        "| GGP990*7NG3 | 990 | 900 | 12M33D880E310NG | | 2980*1170*1780 | | view",
+        "| GGP11OO*7NG3 | 1100 | 1000 | 12M33D968E310NG | | 2980*1170*1780 | | view",
+        "| GGP550*6NG3 | / | 500 | CW6200ZT | | 3200*1345*1885 | | view",
+        "| GGP687.5*6NG3 | / | 625 | CW8200ZT | | 3200*1345*1885 | | view",
+        "| GGP11OO*6NG3 | / | 1000 | CW12V200ZT | | 3200*1345*1885 | | view",
+        "| GGP1375*6NG3 | / | 1250 | WHM12V200D1104G101 | | 3200*1345*1885 | | view"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "PLWM series models power by WEICHAI | Penlucky",
+      "header": [
+        "| | Penlucky Model | Primary Powe /KW | Continuous power/ KW | Engine Model | Alternator Leroy-Somer | Mode of speed regulation | Dimension mm | Data PDF",
+        "| PLWM16B1 | 16 | 16 | WP2.3CD25E200 | TAL A40 D | Electronics | 1266*760*1145 | view",
+        "| PLWM20B1 | 20 | 20 | WP2.3CD33E200 | TAL A40 F | Electronics | 1266*760*1145 | view",
+        "| PLWM24B1 | 24 | 24 | WP2.3CD33E200 | TAL A40 G | Electronics | 1266*760*1145 | view",
+        "| PLWM30B1 | 30 | 30 | WP2.3CD40E200 | TAL A42 C | Electronics | 1266*760*1145 | view",
+        "| PLWM40B1 | 40 | 40 | WP4.1CD66E200 | TAL A42 E | Mechanical/ electronic | 1543*936*1122 | view",
+        "| PLWM50B1 | 50 | 50 | WP4. 1CD66E200 | TAL A42 H | Mechanical/ electronic | 1543*936*1122 | view",
+        "| PL-WM64B1 | 64 | 64 | WP4. 1CD83E200 | TAL A44 C | Mechanical/ electronic | 1633*936*1122 | view",
+        "| PLWM30D | 30 | 30 | WP4CD44E200 | TAL A44 D | Mechanical/ electronic | 1700*827*1212 | view",
+        "| PLWM40D | 40 | 40 | WP4CD66E200 | TAL A44 D | Mechanical/ electronic | 1700*827*1212 | view",
+        "| PLWM50D | 50 | 50 | WP4CD66E200 | TAL A44 E | Mechanical/ electronic | 1700*827*1212 | view",
+        "| PLWM64D | 64 | 64 | WP4CD100E200 | TAL A44 J | Mechanical/ electronic | 1700*827*1212 | view",
+        "| PLWM75D | 75 | 75 | WP4CD100E200 | TAL A44 K | Mechanical/ electronic | 1700*827*1212 | view",
+        "| PLWM90D | 90 | 90 | WP6CD132E200 | TAL A44 L | Mechanical/ electronic | 2150*778*1385 | view",
+        "| PLWM100 | 100 | 100 | WP6CD132E200 | TAL A44 M | Mechanical/ electronic | 2150*778*1385 | view",
+        "| PLWM120D | 120 | 120 | WP6CD152E200 | TAL A46 D | Mechanical/ electronic | 2150*778*1385 | view",
+        "| PLWM150S | 150 | 150 | WP10CD200E200 | TAL A46 E | Mechanical/ electronic | 2375*1000*1572 | view",
+        "| PLWM180S | 180 | 180 | WP10CD238E200 | TAL A46 F | Mechanical/ electronic | 2542*1000*1572 | view",
+        "| PLWM200S | 200 | 200 | WP10CD264E200 | TAL A46 G | Mechanical/ electronic | 2542*1000*1572 | view",
+        "| PLWM250S | 250 | 250 | WP12CD317E200 | TAL A46 H | Mechanical/ electronic | 2669*1000*1572 | view",
+        "| PLWM250S1 | 250 | 250 | WP12CD290E201 | TAL A473 A | Mechanical/ electronic | 2517*1123*1628 | view",
+        "| PLWM300 | 300 | 300 | WP13CD385E200 | TAL A473 A | Electronically-controlled common rail | 2664*1000*1532 | view",
+        "| PLWM350 | 350 | 350 | 6M33CD447E200 | TAL A473 B | Electronics | 3010*1040*1600 | view",
+        "| PLWM400 | 400 | 400 | 6M33CD484E200 | TAL A473 C | Electronics | 3010*1040*1600 | view",
+        "| PLWM450 | 450 | 450 | 6M33CD550E200 | TAL A473 E | Electronics | 3140*1040*1600 | view",
+        "| PLWM500 | 500 | 500 | 12M33CD748E200 | TAL A473 F | Electronics | 3140*1040*1600 | view",
+        "| PLWM600 | 600 | 600 | 12M33CD748E200 | TAL A49 B | Electronics | 3596*1521*1927 | view",
+        "| PLWM700 | 700 | 700 | 12M33CD902E200 | TAL A49 C | Electronics | 3820*1521*1927 | view",
+        "| PLWM800 | 800 | 800 | 12M33CD968E200 | TAL A49 D | Electronics | 3895*1521*1927 | view",
+        "| PLWM900 | 900 | 900 | 12M33CD1100E200 | TAL A49 E | Electronics | 3914*1521*1927 | view",
+        "| PLWM250X | 250 | 250 | X6170ZCD280-1 | TAL A49 C | Mechanical /electronic | 3288*1255*1977 | view",
+        "| PLWM300X | 300 | 300 | X6170ZCD330-1 | TAL A49 C | Mechanical /electronic | 3241*1255*1977 | view",
+        "| PLWM350X | 350 | 350 | X6170ZCD390-4 | TAL A49 D | Mechanical /electronic | 3400*1236*2001 | view",
+        "| PLWM400X | 400 | 400 | X6170ZCD440-4 | TAL A49 E | Mechanical /electronic | 3466*1236*2001 | view",
+        "| PLWM450X | 450 | 450 | X6170ZCD500-5 | TAL A49 E | Mechanical /electronic | 3728*1406*2004 | view"
+      ],
+      "rows": [
+        "| PLWM500X | 500 | 400 | X6170ZCD556-5 | LSA 50.2 M6 | Mechanical /electronic | 3728*1406*2004 | view",
+        "| PLWM500X2 | 500 | 450 | X6170ZCD601-5 | LSA 50.2 L8 | Mechanical /electronic | 3728*1406*2004 | view",
+        "| PLWM400X2 | 400 | 400 | 8170ZCD441-1 | LSA 50.2 VL 10 | electronic | 4424*1493*2277 | view",
+        "| PLWM500X2 | 500 | 500 | 8170ZCD600-5 | LSA 52.3 S5 | Electronics | 4418*1406*2004 | view",
+        "| PLWM400X3 | 400 | 400 | 8170ZCD441-1* | LSA 52.3 S5 | Electronical-controlled common rail | 4424*1493*2277 | view",
+        "| PLWM450X3 | 450 | 450 | 8170ZCD49-1* | LSA 52.3 S5 | Electronical-controlled common rail | 4418*1406*2004 | view",
+        "| PLWM500X3 | 500 | 500 | 8170ZCD600-5* | LSA 52.3 S6 | Electronical-controlled common rail | 4418*1406*2004 | view",
+        "| PLWM450WH | 450 | 450 | 6WH17CD539-1 | LSA 52.3 S7 | Electronical-controlled common rail | 4435*1550*1715 | view",
+        "| PLWM500WH | 500 | 500 | 6WH17CD638-2 | LSA 52.3 S7 | Electronical-controlled common rail | 4435*1550*1715 | view",
+        "| PLWM550WH | 550 | 500 | 6WH17CD660-5 | LSA 52.3 L12 | Electronical-controlled common rail | 4435*1550*1715 | view",
+        "| PLWM600WH | 600 | 500 | 6WH17CD809-5 | LSA 52.3 UL16 | Electronical-controlled common rail | 4435*1550*1715 | view",
+        "| PLWM800WH | 800 | 800 | 12WH17CD990-1 | LSA | Electronical-controlled common rail | 5315*1600*1782 | view",
+        "| PLWH1000WH | 10000 | 900 | 12WH17CD1210-1 | LSA | Electronical-controlled common rail | 5315*1600*1782 | view",
+        "| PLWH1000WH2 | 1000 | 1000 | 12WH17CD1265-1 | LSA | Electronical-controlled common rail | 5315*1600*1782 | view"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "4BT3.9-GM Marine Generator Engine（47-65KW) | SHANDONG PENLUCKY POWER EQUIPMENT CO., LTD.",
+      "header": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "rows": [
+        "| 4BT3.9-GM47 | 47@1500 | 52@1500 | 4 | 3.9 | charged, inter-cooled",
+        "| 4BT3.9-GM55 | 55@1500 | 61@1500 | 4 | 3.9 | charged, inter-cooled",
+        "| 4BT3.9-GM65 | 65@1800 | 72@1800 | 4 | 3.9 | charged, inter-cooled"
+      ]
+    },
+    {
+      "n": 119,
+      "title": "Cummins 6BT5.9-GM Series Marine Generator Engine(80-115KW) | SHANDONG PENLUCKY POWER EQUIPMENT CO., LTD.",
+      "header": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "rows": [
+        "| 6BT5.9-GM80 | 80@1500 | 88@1500 | 6 | 5.9 | charged",
+        "| 6BT5.9-GM83 | 83@1500 | 92@1500 | 6 | 5.9 | charged",
+        "| 6BT5.9-GM100 | 100@1800 | 110@1800 | 6 | 5.9 | charged",
+        "| 6BTA5.9-GM100 | 100@1500 | 110@1500 | 6 | 5.9 | charged, inter-cooled",
+        "| 6BTA5.9-GM120 | 120@1800 | 132@1800 | 6 | 5.9 | charged, inter-cooled",
+        "| 6BTAA5.9-GM115 | 115@1500 | 27@1500 | 6 | 5.9 | charged, inter-cooled",
+        "| 6BT5.9-M120 | 90@2200 | 100@2270 | 6 | 5.9 | Ordinary charged",
+        "| 6BTA5.9-M150 | 110@2200 | 120@2270 | 6 | 5.9 | charged, inter-cooled"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "Cummins 6CTA8.3-GM Series Genuine Marine Auxiliary Engine(115-175KW) | SHANDONG PENLUCKY POWER EQUIPMENT CO., LTD.",
+      "header": [
+        "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration"
+      ],
+      "rows": [
+        "| 6CT8.3-GM115 | 115@1500 | 126@1500 | 6 | 8.3 | Ordinary charged",
+        "| 6CT8.3-GM129 | 129@1800 | 142@1800 | 6 | 8.3 | Ordinary charged",
+        "| 6CTA8.3-GM155 | 155@1500 | 170@1500 | 6 | 8.3 | charged, inter-cooled",
+        "| 6CTA8.3-GM175 | 175@1800 | 193@1800 | 6 | 8.3 | charged, inter-cooled"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own abundant skills for",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea",
+      "line": "BAUDOUIN and MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own abundant",
+      "src": [
+        2
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": null,
+      "text": "WoodWard",
+      "line": "PERKINS, BAUDOUIN and MITSUBISHI engines and world famous STAMFORD, Leroy Somer and Mecc Alte alternator. We also use WoodWard, Deep Sea and ComAp control module which are professional engine controllers as our core control module. Also we own",
+      "src": [
+        2
+      ]
+    }
+  ]
+}

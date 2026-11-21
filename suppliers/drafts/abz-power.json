@@ -1,0 +1,5 @@
+{"id":"abz-power","country":"DE","role":"genset_oem","status":"partial","conf":"medium","en":"ABZ Aggregate-Bau GmbH & Co. KG","zh":null,"brands":["ABZ"],"web":"https://www.abz-power.com/","prov":null,"city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","ABZ Aggregate-Bau GmbH & Co. KG","Seit 40 Jahren vertrauen uns Kunden aus mehr als 70 L&auml;ndern"]},
+"str":[["Tổ máy phát điện xuất khẩu tới hơn 70 nước, hoạt động 40 năm",1]],"cert":[],
+"lines":[{"k":"genset","s":"Stromerzeugungsanlagen","src":[1]}],
+"miss":["Trang chủ không ghi dải công suất, năm thành lập cụ thể"],"by":"discover-bot (Claude)"}

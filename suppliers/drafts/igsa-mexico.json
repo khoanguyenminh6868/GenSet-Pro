@@ -1,0 +1,46 @@
+{
+  "id": "igsa-mexico",
+  "country": "MX",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "IGSA",
+  "zh": null,
+  "brands": [
+    "IGSA"
+  ],
+  "web": "https://www.igsa.com.mx/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Copyright © 2025 IGSA, S.A.P.I. de C.V. Todos los derechos reservados.",
+      "IGSA - Plantas eléctricas, cogeneración y telecomunicaciones"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy phát (plantas eléctricas), đồng phát, nguồn cho viễn thông",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Plantas eléctricas IGSA",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

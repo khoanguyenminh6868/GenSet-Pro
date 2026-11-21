@@ -1,0 +1,18 @@
+{
+  "id": "fg-wilson", "country": "GB", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Caterpillar (NI) Ltd", "zh": null, "brands": ["FG Wilson"],
+  "web": "https://www.fgwilson.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["caterpillar"],
+  "src": {
+    "1": ["A", "Caterpillar (NI) Ltd 2024 All Rights Reserved.", "Designed with industrial users in mind, our 6.8 – 2,500 kVA diesel generator product range", "Small Range <220 kVA", "Medium Range 225 – 938 kVA", "Large Range >800 kVA", "now with over 60 years in the power generation business"]
+  },
+  "str": [
+    ["Tổ máy diesel 6,8–2500 kVA (nhóm nhỏ <220, vừa 225–938, lớn >800 kVA)", 1],
+    ["Theo hãng: hơn 60 năm trong ngành phát điện", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator product range", "fuel": "diesel", "p": [6.8, 2500, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi năm thành lập, nhà máy, hãng động cơ / đầu phát từng dòng"],
+  "by": "discover-bot (Claude)"
+}

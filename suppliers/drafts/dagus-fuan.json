@@ -1,0 +1,6 @@
+{"id":"dagus-fuan","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"Fu'an Dagus Power Machinery Co., Ltd.","zh":null,"brands":["Dagus"],"web":"https://www.daguspower.com/","prov":"Fujian","city":"Fu'an","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright © Fu'an Dagus Power Machinery Co., Ltd.","Address: Xibing Town, Fu’an City, Ningde City, Fujian Province","It mainly produces diesel, gasoline generator sets, generators, motors, water pumps and other series of electromechanical products.","200KVA disel generator(power by CUMMINS engine)","100KVA low noise diesel generator(power by LOVOL engine)","62.6KVA generator(power by WEICHAI engine)","80KVA diesel generator(power by YUNNEI engine)","20KVA diesel generator(power by YANGDONG engiine)"]},
+"str":[["Làm tổ máy diesel và xăng, đầu phát, động cơ điện, bơm nước",1],["Có tổ máy dùng động cơ Cummins, Lovol, Weichai, Yunnei, Yangdong",1]],
+"cert":[],
+"lines":[{"k":"genset","s":"Diesel generator sets","fuel":"diesel","eng":["CUMMINS","LOVOL","WEICHAI","YUNNEI","YANGDONG"],"src":[1]},{"k":"alternator","s":"Brushless alternator","src":[1]}],
+"miss":["Trang chủ chỉ liệt kê từng sản phẩm (20–200 kVA), không ghi dải công suất chung","Không thấy năm thành lập, chứng chỉ"],"by":"discover-bot"}

@@ -1,0 +1,73 @@
+{
+ "problems": 0,
+ "requirements": 39,
+ "unverifiedRequirements": 0,
+ "brandSync": null,
+ "named": {
+  "make": "Fortugen",
+  "models": [
+   "FG-C525LS"
+  ],
+  "found": false,
+  "equivalent": true,
+  "warn": false
+ },
+ "clarifyByCode": [],
+ "missingCodes": [
+  "standards",
+  "fuel_system",
+  "alt_type",
+  "oil_capacity",
+  "coolant_capacity",
+  "ctl_measure"
+ ],
+ "message": null,
+ "configs": [
+  {
+   "rank": 1,
+   "engine": "Cummins QSZ13-G3",
+   "alternator": "Stamford HCI544C",
+   "controller": "Deep Sea DSE6120",
+   "named": "equivalent",
+   "suppliers": [
+    "uleengen:103",
+    "kaihua-genset:103",
+    "superwatt-power:104"
+   ],
+   "checks": {
+    "genset": "3/0/5/7",
+    "engine": "8/0/2/2",
+    "alternator": "1/0/5/1",
+    "controller": "5/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 2,
+   "engine": "QSZ13-G3",
+   "alternator": "BW-354D",
+   "controller": "Deep Sea DSE6120",
+   "named": "equivalent",
+   "suppliers": [
+    "bobig-power:111",
+    "kaihua-genset:103",
+    "superwatt-power:104"
+   ],
+   "checks": {
+    "genset": "5/0/3/7",
+    "engine": "6/0/4/2",
+    "alternator": "1/0/5/1",
+    "controller": "3/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  }
+ ]
+}

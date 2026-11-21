@@ -1,0 +1,5 @@
+{"id":"sxd-shaanxi","country":"CN","role":"engine_maker","status":"partial","conf":"medium","en":null,"zh":"陕西柴油机重工有限公司","brands":["中船陕柴","SXD"],"web":"http://www.sxd408.com/","prov":"Shaanxi","city":null,"founded":1953,"fsrc":[1],"related":[],
+"src":{"1":["A","本网内容版权均属陕西柴油机重工有限公司所有","陕西柴油机重工有限公司（简称：中船陕柴）隶属于中国动力/中船动力集团，前身是国营陕西柴油机厂，始建于1953年，是我国“一五”期间投资兴建的156项重点工程之一，是国内主要的中、高速大功率柴油机制造企业和柴油","先后获得CCS、ABS、BV、LR、NK、RINA、DNV·GL、KR八大船级社的认可证书","公司生产区占地面积约78万平方米，建筑面积约28万平方米。"]},
+"str":[["Động cơ diesel tốc độ trung bình / cao công suất lớn và tổ máy diesel; thuộc China Power / CSSC Power",1],["Tiền thân thành lập 1953; khu sản xuất ~780.000 m²; chứng nhận 8 đăng kiểm tàu",1]],"cert":[["CCS",1],["ABS",1],["BV",1],["LR",1],["NK",1],["RINA",1],["KR",1]],
+"lines":[{"k":"engine","s":"中、高速大功率柴油机","fuel":"diesel","src":[1]},{"k":"genset","s":"柴油发电机组","fuel":"diesel","src":[1]}],
+"miss":["Trang giới thiệu không ghi dải công suất kW; lưu bằng Chromium"],"by":"discover-bot (Claude)"}

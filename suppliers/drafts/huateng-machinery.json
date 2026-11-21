@@ -1,0 +1,50 @@
+{
+ "id": "huateng-machinery",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Hua Teng Machinery",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": null,
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Hua Teng Machinery",
+   "Local Branch / Dealer",
+   "苏州甪直镇和兴西路16-18号",
+   "16 He Xing Xi Lu"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://. (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}

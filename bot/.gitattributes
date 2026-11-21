@@ -1,0 +1,2 @@
+# Script bash chạy trên Linux (sandbox Vercel): luôn LF, kể cả khi checkout trên Windows.
+*.sh text eol=lf

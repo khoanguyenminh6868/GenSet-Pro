@@ -1,0 +1,14 @@
+{
+  "id": "lister-petter", "country": "GB", "role": "engine_maker", "status": "verified", "conf": "medium",
+  "en": "Lister Petter Engine Company LTD", "zh": null, "brands": ["Lister Petter", "Earth Max"],
+  "web": "https://listerpetter.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Lister Petter Engine Company LTD launches a new range of diesel engines", "Engineered for fixed-speed 1500/1800 rpm applications where downtime is not an option, Earth Max Series delivers uncompromising performance from 1020 kW to 2220 kW", "supporting generator installations up to 2750 kVA."],
+    "2": ["A", "In 1986, their legacies merged to form Lister Petter", "By the 1990s, Lister Petter engines were the heartbeat of FG Wilson’s industry-leading diesel generators"]
+  },
+  "str": [["Động cơ diesel phát điện Earth Max 1020–2220 kW (1500/1800 vòng/phút), cho tổ máy tới 2750 kVA", 1], ["Lister và Petter hợp nhất năm 1986; từng là động cơ của tổ máy FG Wilson thập niên 1990", 2]],
+  "cert": [],
+  "lines": [ { "k": "engine", "s": "Earth Max Series", "fuel": "diesel", "p": [1020, 2220, "kW", "unspecified", 1], "src": [1] } ],
+  "miss": ["Chưa lưu trang các dòng động cơ nhỏ; năm 1986 là năm hợp nhất, không ghi vào năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

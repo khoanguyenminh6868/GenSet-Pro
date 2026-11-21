@@ -1,0 +1,91 @@
+{
+  "id": "weike-wuxi",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "无锡威克电机技术有限公司",
+    "brands": [
+      "威克",
+      "WHI",
+      "WHM"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than WHI/WHM 6,5–2000 kW, cách điện cấp H, 50/60 Hz, 380–660 V",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2003 tại Vô Tích",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "WHI/WHM系列发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [
+        "50Hz",
+        "60Hz"
+      ],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang giới thiệu nhà triển lãm trên website GPOWER (hạng B); chưa tìm thấy website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.china-gpower.com/news2.asp?id=2636",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "无锡威克电机技术有限公司",
+        "成立于2003年， 坐落于风景秀丽的太湖之滨——无锡，是 一家专业 生产无刷同步交流发电机的厂家",
+        "威克专业生产WHI/WHM系列发电机为 ： H级 ， 50/60Hz ， 电压380-660V ， 功率：6.5-2000KW 。"
+      ],
+      "file": "sources/weike-wuxi/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

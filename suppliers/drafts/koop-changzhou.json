@@ -1,0 +1,16 @@
+{
+  "id": "koop-changzhou", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "Changzhou Koop Power Machinery Co., Ltd.", "zh": null, "brands": ["KOOP"],
+  "web": "https://www.koopchina.com/", "prov": "Jiangsu", "city": "Changzhou", "founded": 2007, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Changzhou Koop Power Machinery Co., Ltd.", "Koop was established in 2007 as an international company focusing on the research and development, intelligent manufacturing, sales and service of small power engines and power machinery products.", "Many products have obtained US EPA, EU CE certification, and Euro 5 emission certification", "Single cylinder air-cooled KD170F/FE", "Water-cooled diesel engine KP13NM", "Open frame generator set KDF8500X/XE(-3)"]
+  },
+  "str": [["Động cơ diesel/xăng cỡ nhỏ (KD170F…KD1100F, KD2V80, KP13NM) và tổ máy KDF", 1]],
+  "cert": [["CE", 1]],
+  "lines": [
+    { "k": "engine", "s": "Diesel engine", "fuel": "diesel", "src": [1] },
+    { "k": "genset", "s": "Open frame generator set KDF", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất tổ máy KDF", "Không thấy tên tiếng Trung trên trang đã lưu"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

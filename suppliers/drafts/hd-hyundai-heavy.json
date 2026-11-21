@@ -1,0 +1,49 @@
+{
+  "id": "hd-hyundai-heavy",
+  "country": "KR",
+  "role": "engine_maker",
+  "status": "partial",
+  "conf": "medium",
+  "en": "HD Hyundai Heavy Industries (Engine & Machinery)",
+  "zh": null,
+  "brands": [
+    "HiMSEN"
+  ],
+  "web": "https://www.hd-hhi.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [
+    "zhenjiang-cssc-hyundai"
+  ],
+  "src": {
+    "1": [
+      "A",
+      "Copyright© 2025 HD Hyundai Heavy Industries. All Rights Reserved.",
+      "Machinery Business Unit of HD Hyundai Heavy Industries is the world’s top supplier of marine and stationary engines",
+      "as well as the HiMSEN engine—our proprietary four-stroke medium-speed engine"
+    ]
+  },
+  "str": [
+    [
+      "Theo hãng: nhà cung cấp động cơ tàu thuỷ và động cơ tĩnh tại lớn nhất thế giới; động cơ trung tốc 4 kỳ HiMSEN",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "engine",
+      "s": "HiMSEN four-stroke medium-speed engines",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có dải công suất HiMSEN trên trang đã lưu"
+  ],
+  "by": "discover-bot (Claude)"
+}

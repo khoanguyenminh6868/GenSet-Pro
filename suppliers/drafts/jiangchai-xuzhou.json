@@ -1,0 +1,10 @@
+{"id":"jiangchai-xuzhou","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":null,"zh":"江柴控股集团有限公司","brands":["江柴"],"web":"https://www.jc-zc.net/","prov":"Jiangsu","city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","版权所有：江柴控股集团有限公司","康明斯发电机组20-2400KW","帕金斯发电机组7-2000KW","上柴发电机组45-1720KW","玉柴发电机组16-1800KW","奔驰发电机组520-2600KW","沃尔沃发电机组68-570KW"]},
+"str":[["Tổ máy diesel theo hãng động cơ: Cummins 20–2400 kW, Perkins 7–2000 kW, SDEC 45–1720 kW, Yuchai 16–1800 kW, MTU 520–2600 kW, Volvo 68–570 kW",1]],"cert":[],
+"lines":[
+{"k":"genset","s":"康明斯发电机组","fuel":"diesel","eng":["康明斯"],"p":[20,2400,"kW","unspecified",1],"src":[1]},
+{"k":"genset","s":"帕金斯发电机组","fuel":"diesel","eng":["帕金斯"],"p":[7,2000,"kW","unspecified",1],"src":[1]},
+{"k":"genset","s":"上柴发电机组","fuel":"diesel","eng":["上柴"],"p":[45,1720,"kW","unspecified",1],"src":[1]},
+{"k":"genset","s":"玉柴发电机组","fuel":"diesel","eng":["玉柴"],"p":[16,1800,"kW","unspecified",1],"src":[1]},
+{"k":"genset","s":"奔驰发电机组","fuel":"diesel","eng":["奔驰"],"p":[520,2600,"kW","unspecified",1],"src":[1]}],
+"miss":["Trang chủ không ghi địa chỉ, năm thành lập, chứng chỉ (nguồn bên thứ ba ghi trụ sở Từ Châu — không dùng)"],"by":"discover-bot (Claude)"}

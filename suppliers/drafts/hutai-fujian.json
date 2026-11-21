@@ -1,0 +1,16 @@
+{
+  "id": "hutai-fujian", "country": "CN", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": null, "zh": "互泰发电机（福建）有限公司", "brands": ["互泰", "HUTAI"],
+  "web": "http://hutaifdj.com/", "prov": "Fujian", "city": "Fuan", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "互泰发电机（福建）有限公司 —— 发电机及发电机组制造", "地址：福建省福安市世纪大道137号", "164系列 6.5KW-12.8KW互泰无刷发电机", "404系列 600KW-1000KW互泰无刷发电机", "354系列 360KW-550KW互泰无刷发电机"]
+  },
+  "str": [["Đầu phát không chổi than HUTAI 6,5–1000 kW (khung 164 đến 404), kèm tổ máy", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "互泰无刷发电机 (164–404系列)", "p": [6.5, 1000, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "发电机组", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Chưa có năm thành lập, chứng chỉ; trang chủ cũng ghi tên 广东隆宏机电设备有限公司 (longhong-foshan), quan hệ chưa rõ"],
+  "by": "discover-bot (Claude)"
+}

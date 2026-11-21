@@ -1,0 +1,2819 @@
+[
+ {
+  "id": "aoke-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 137,
+    "title": "奥克发电130kw发电机组生产厂家 - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组",
+    "header": [
+     "| 机组型号 | 主用功率(KW) | 备用功率(KW) | 发动机品牌 | 柴油机型号 | 缸数 | 排量(L) | 机油容量(L) | 燃油消(g/kw/h) | 外形尺寸 (L×W×H mm×mm×mm) | 机组重量(KG) | 技术咨询 | 详细参数"
+    ],
+    "rows": [
+     "| AOKE-V133 | 121KW | 133KW | 沃尔沃 | TAD531GE | 6 | 7.15 | 20 | 204 | 2400*950*1550 | 1760 | | 详细参数"
+    ]
+   },
+   {
+    "n": 141,
+    "title": "奥克发电90kw发电机组生产厂家 - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组",
+    "header": [
+     "| 机组型号 | 主用功率(KW) | 备用功率(KW) | 发动机品牌 | 柴油机型号 | 缸数 | 排量(L) | 机油容量(L) | 燃油消(g/kw/h) | 外形尺寸 (L×W×H mm×mm×mm) | 机组重量(KG) | 技术咨询 | 详细参数"
+    ],
+    "rows": [
+     "| AOKE-V87 | 80KW | 87KW | 沃尔沃 | TAD531GE | 4 | 4.46 | 13 | 211 | 2080*940*1550 | 1350 | | 详细参数"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "app-power-anpu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 5001,
+    "title": "Catalog app-power-anpu-catalog — trang 14 phải",
+    "header": [
+     "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+    ],
+    "rows": [
+     "| APP-80GF | 80 | 100 | 88 | 110 | TAD531GE |",
+     "| APP-250GF | 250 | 313 | 275 | 344 | TAD1341GE |",
+     "| APP-260GF | 260 | 325 | 286 | 358 | TAD1351GE |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "baifa-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "",
+    "header": [
+     "| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY",
+     "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+    ],
+    "rows": [
+     "| BF-V360-T3 | 358 | 325 | VOLVO | TAD1351GE | EMS2 / ECU | S4L1D-E41 | STAGE IIIA/ TIER 3 | SWEDEN"
+    ]
+   },
+   {
+    "n": 102,
+    "title": "",
+    "header": [
+     "| | POWERED BY VOLVO | 1800RPM TIER 3",
+     "| BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE STAMFORD | GOV. | ALTERNATOR STAMFORD",
+     "| MODEL | kVA | kVA | | | |"
+    ],
+    "rows": [
+     "| BF-V360T3-60 | 375 | 341 | TAD1351GE | EMS2 / ECU | S4L1D-E41"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bdadl-shanghai",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 112,
+    "title": "550KW-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-M570 | 520/570 | 奔驰MTU | 12V2000G25 | 12 | 21 | 50 | ≤195 | 3500*1350*1850 | 4350"
+    ]
+   },
+   {
+    "n": 118,
+    "title": "250KW-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 119,
+    "title": "200KW-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400"
+    ]
+   },
+   {
+    "n": 124,
+    "title": "80KW-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-V80 | 80/100 | 沃尔沃遍达 | TAD531GE | 4 | 4.76 | 13 | ≤206 | 2200*760*1400 | 1150"
+    ]
+   },
+   {
+    "n": 134,
+    "title": "沃尔沃系列-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (主用/备用) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-V80 | 80/88 | 沃尔沃奔达 | TAD531GE | 4 | 4.76 | 13 | ≤206 | 2200*760*1380 | 1150"
+    ]
+   },
+   {
+    "n": 134,
+    "title": "沃尔沃系列-上海博杜安动力科技有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (主用/备用) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| BDA-V260 | 260/290 | 沃尔沃奔达 | TAD1351GE | 6 | 12.78 | 34 | ≤210 | 2450*1100*1700 | 2450"
+    ]
+   },
+   {
+    "n": 135,
+    "title": "奔驰系列-上海博杜安动力科技有限公司",
+    "header": [
+     "| 型号 | 输出功率 (主用/备用) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 耗油率 (g/kw.h) | 尺寸 L*W*H(mm) | 重量 (kg)"
+    ],
+    "rows": [
+     "| BDA-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400",
+     "| BDA-M570 | 520/570 | 奔驰MTU | 12V2000G25 | 12 | 21 | 50 | ≤195 | 3500*1350*1850 | 4350"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "camda-generator",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6020"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 156,
+    "title": "High Performance MTU Powered Diesel Generator Set for Reliable Energy - Camda New Energy Equipment Co., Ltd",
+    "header": [
+     "| Genset model | MTU model | Engine frequency | Genset prime/standby power（KW） | Leroy Somer alternator"
+    ],
+    "rows": [
+     "| KDGM560S | 12V2000G25 | S2000/50HZ | 512/560 | LSA49.3S4/528KW"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cgm-italia",
+  "country": "IT",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "Industrial CGM Generators | Silent, Robust, and Reliable",
+    "header": [
+     "| | Model | PDF | PRP | STYB | Engine | M/E | Emissions | No. of cylinders | Net mechanical power | ¾ load consumption | Tank | Open base frame | Soundproof canopy | dB(A) at 7 mt | Manual panel | Automatic panel",
+     "| | | KVA | KW | KVA | KW | | | | | Hp/Kw | lt/hr | lt | Modello | Kg | LxLWxH [mm] | Modello | Kg | LxLWxH [mm] | dB(A) | Modello | Modello"
+    ],
+    "rows": [
+     "| e330VO | | 330 | 264 | 363 | 290.4 | TAD 1351GE | E | 3A | 6 | 374/279 | 52.4 | 400 | B400 | 3260 | 2950x1550x2100 | C450 | 4260 | 4270x1735x2350 | 69 | QM500 | QA500"
+    ]
+   },
+   {
+    "n": 1001,
+    "title": "Datasheet: DOWNLOAD PDF",
+    "header": [
+     "| M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge",
+     "| OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt",
+     "| quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique",
+     "| potenza in continuoprime powerpuissance continue | potenza in emergenzastand-by powerpuissance en secours",
+     "| M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge",
+     "| OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt",
+     "| quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique",
+     "| modellomodelmodèle | motoreenginemoteur",
+     "| modellomodelmodèle | motoreenginemoteur",
+     "| [kVA] | [kW]",
+     "| [kVA] | [kW]",
+     "| lt/hr | lt",
+     "| Model | kg",
+     "| LxLWxH [mm] | Model",
+     "| kg | LxLWxH [mm]",
+     "| dB(A) | Model",
+     "| Model | [kVA]",
+     "| [kW] | [kVA]",
+     "| [kW] | lt/hr",
+     "| lt | Model",
+     "| kg | LxLWxH [mm]",
+     "| Model | kg",
+     "| LxLWxH [mm] | dB(A)",
+     "| Model | Model"
+    ],
+    "rows": [
+     "| e330VO | 330 | 264 | 363 | 290,4 | TAD 1351GE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "comappower",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": "InteliGen"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 106,
+    "title": "MTU GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM725MTU | 725kVA | 580kW | 660kVA | 528kW | 12V2000G25 | 12 | COM725MTU"
+    ]
+   },
+   {
+    "n": 106,
+    "title": "MTU GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM725MTU | 725kVA | 580kW | 660kVA | 528kW | 12V2000G25 | 12 | COM725MTU"
+    ]
+   },
+   {
+    "n": 108,
+    "title": "VOLVO GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM110V | 110kVA | 88kW | 100kVA | 80kW | TAD531GE | 4 | COM110V"
+    ]
+   },
+   {
+    "n": 108,
+    "title": "VOLVO GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM356V | 356kVA | 285kW | 324kVA | 259kW | TAD1351GE | 6 | COM356V"
+    ]
+   },
+   {
+    "n": 108,
+    "title": "VOLVO GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM114V | 114kVA | 91kW | 104kVA | 83kW | TAD531GE | 4 | COM114V"
+    ]
+   },
+   {
+    "n": 108,
+    "title": "VOLVO GENERATOR SET - Comappower",
+    "header": [
+     "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| COM375V | 375kVA | 300kW | 338kVA | 270kW | TAD1351GE | 6 | COM375V",
+     "| COM110V | 110kVA | 88kW | 100kVA | 80kW | TAD531GE | 4 | COM110V"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "comler-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 102,
+    "title": "沃尔沃发电机组_",
+    "header": [
+     "| 机组型号 | 机组品牌 | 油机型号 | 油机常用功率(KW) | 调速方式 | 油机品牌 | 排放 | 额定电压（V） | 额定电流（A) | 功率因数 | 频率(HZ) | 转速(r/min) | 外形尺寸 (mm) | 重量 (KG)"
+    ],
+    "rows": [
+     "| COMLER260KW | 康姆勒 | TAD1351GE | 279 | 电控单体泵 | 沃尔沃 | 国三 | 400/230 | 469.1 | 0.8 | 50 | 1500 | 3100*1100*1900 | 3100"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "deman-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   },
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Xingnuo",
+    "model": null
+   },
+   {
+    "brand": "Shuangling",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2261,
+    "title": "DM356V TAD1351GE — Volvo 50Hz (Tier 3) Models (200kW-600kW.pdf)",
+    "header": [
+     "Genset Model  Standby Power  Prime Power           Engine Model  No. of     Details"
+    ],
+    "rows": [
+     "DM356V        356kVA  285kW  324kVA     259kW      TAD1351GE     6          Contact  us"
+    ]
+   },
+   {
+    "n": 2281,
+    "title": "DM375V TAD1351GE — Volvo 60Hz   (Tier 3) Models (200kW-600kW.pdf)",
+    "header": [
+     "Genset Model  Alternator  Standby Power        Prime Power         Engine        No. of  Details"
+    ],
+    "rows": [
+     "DM375V        SLG314D     375kVA    300kW   338kVA          270kW  TAD1351GE         6   Contact      us"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dingbo",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM6110"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 108,
+    "title": "Diesel Genset Generator Price | Starlight Generator",
+    "header": [
+     "| Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)"
+    ],
+    "rows": [
+     "| XG-80GF | 80/100 | 88/110 | TAD531GE | LSA44.3 S5 | 2200x720x1380 | 1200",
+     "| XG-250GF | 250/312.5 | 275/343.75 | TAD1341GE | LSA46.3 L10 | 3000x1100x1750 | 2300",
+     "| XG-250GF | 250/312.5 | 275/343.75 | TAD1351GE | LSA46.3 L10 | 3000x1100x1750 | 2300"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "frs-shenyang",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 104,
+    "title": "沃尔沃系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网",
+    "header": [
+     "| 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级",
+     "| 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）",
+     "| 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0",
+     "| 励磁方式 | 无刷自励磁 | 轴承数 | 单轴承",
+     "| 机组技术参数 | 发动机技术参数",
+     "| 机组型号 | 主要功率 （kW） | 备用功率 （kW） | 机组尺寸 （长x宽x高） | 重量 （kg） | 发动机型号 | 缸数/排列 | 缸径 mm | 行程 mm | 排量 （L） | 燃油消耗率 g/（kw·h） | 机油容量 （L） | 冷却液容量 （L）",
+     "| | | | 开架式 | 静音式 | 开架式 | 静音式 | | | | | | | |"
+    ],
+    "rows": [
+     "| FRS-259V | 259 | 285 | 2800*1275*1780 | 4250*1470*2179 | 3000 | 4135 | TAD1351GE | 6/L | 131 | 158 | 12.78 | 202 | 36 | 44"
+    ]
+   },
+   {
+    "n": 105,
+    "title": "MTU奔驰系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网",
+    "header": [
+     "| 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级",
+     "| 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）",
+     "| 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0",
+     "| 励磁方式 | 无刷自励磁 | 轴承数 | 单轴承",
+     "| 机组技术参数 | 发动机技术参数",
+     "| 机组型号 | 主要功率 （kW） | 备用功率 （kW） | 机组尺寸 （长x宽x高） | 重量 （kg） | 发动机型号 | 缸数/排列 | 缸径 mm | 行程 mm | 排量 （L） | 燃油消耗率 g/（kw·h） | 机油容量 （L） | 冷却液容量 （L）",
+     "| | | | 开架式 | 静音式 | 开架式 | 静音式 | | | | | | | |"
+    ],
+    "rows": [
+     "| FRS-515M | 515 | 560 | 4070*1657*2081 | 6058*2438*2591 | 5400 | 11100 | 12V2000G25 | 12/V | 130 | 150 | 23.88 | 203 | 77 | 164"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "fukangsi-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 2005,
+    "title": "三、沃尔沃柴油发电机组技术参数 1、排放标准：国II",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| FKS-V80 | 80/100 | 沃尔沃遍达 | TAD531GE | 4 | 4.76 | 13 | ≤206 | 2200*760*1380 | 1150",
+     "| FKS-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 2005,
+    "title": "三、沃尔沃柴油发电机组技术参数 2、排放标准：国III",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| FKS-V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 12.78 | 34 | ≤210 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 2007,
+    "title": "三、奔驰柴油发电机组技术参数",
+    "header": [
+     "| 型号 | 输出功率 (KW) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 耗油率 (g/kw.h) | 尺寸 L*W*H(mm) | 重量 (kg)"
+    ],
+    "rows": [
+     "| FKS-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400",
+     "| FKS-M570 | 520/570 | 奔驰MTU | 12V2000G25 | 12 | 21 | 50 | ≤195 | 3500*1350*1850 | 4350"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "generatordieselchina",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "low",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE4520"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE4620"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 126,
+    "title": "MTU Diesel Generator | 2000 & 4000 Series | 520-2,400kW",
+    "header": [
+     "| | Model | Standby kW / kVA | Prime kW / kVA | Engine Model | Fuel L/h @75% / @100% | View"
+    ],
+    "rows": [
+     "| R-M650D5/S | 572 / 715 | 520 / 650 | 12V2000G25 | 94.2 / 125.7 | Details →"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "gordon-power",
+  "country": "CN",
+  "role": "alternator_maker",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": "InteliLite NT AMF20"
+   },
+   {
+    "brand": "Datakom",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120 MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320 MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610 MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8620"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8660 MKII"
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 103,
+    "title": "Sound Insulated Air Cooled Diesel Generator For Homes from China manufacturer - GORDON",
+    "header": [],
+    "rows": [
+     "| Model | KDF6700Q(-3)",
+     "| Frequency [Hz] | 50, 60",
+     "| Voltage [V] | 220, 230, 240, 110/220, 115/230, 120/240, 220/380, 230/400, 240/415",
+     "| Rated Power [KVA] | 4.5 (5.6), 5.0 (6.3)",
+     "| Power Factor Φ | 1.0 (0.8)",
+     "| Fuel Tank Capacity [L] | 14.5",
+     "| Engine Model | KD186FAE",
+     "| Bore * Stroke [mm] | 86 * 72",
+     "| Displacement | 0.418L",
+     "| Speed [rpm] | 3000~3600",
+     "| Power [Kw] | 5.8, 6.6",
+     "| Fuel Grade | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+     "| Dimensions [mm] | 910 * 530 * 740"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "gti-power",
+  "country": "GB",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7120"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7220"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE3110"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2003,
+    "title": "GTI Volvo / Mecc Alte 50Hz",
+    "header": [
+     "| Prime Power | Engine | Alternator | Control Panel | Canopy"
+    ],
+    "rows": [
+     "| 300 kva | TAD1341GE | ECO38-1LC | DSE7320 |"
+    ]
+   },
+   {
+    "n": 2004,
+    "title": "GTI Volvo / Leroy 50Hz",
+    "header": [
+     "| Prime Power | Engine | Alternator | DSE panel | Canopy"
+    ],
+    "rows": [
+     "| 300 kva | TAD1341GE | TAL046F | DSE7320 |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "haifeng-taizhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 2002,
+    "title": "沃尔沃柴油发电机组 主要参数（海锋官网）",
+    "header": [
+     "| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重量 (kg)",
+     "| KVA | KW"
+    ],
+    "rows": [
+     "| HF-75GF | 93.75 | 75 | TAD531GE | 4L | 108/130 | 218 | 2080×750×1450 | 1150",
+     "| HF-80GF | 100 | 80 | TAD531GE | 4L | 108/130 | 218 | 2080×750×1450 | 1150",
+     "| HF-250GF | 312.5 | 250 | TAD1341GE | 6L | 131/158 | 191 | 2950×1120×1595 | 2700"
+    ]
+   },
+   {
+    "n": 2004,
+    "title": "奔驰MTU柴油发电机组 主要参数（海锋官网）",
+    "header": [
+     "| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kwh) | 外形尺寸 (L×W×H)(mm) | 重量 (kg)",
+     "| KVA | KW"
+    ],
+    "rows": [
+     "| HF-520GF | 650 | 520 | 12V2000G25 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hengtong-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "SmartGen",
+    "model": "HGM6110U"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2013,
+    "title": "GF250V 柴油发电机组 - 基本参数",
+    "header": [
+     "柴油发电机组 - 基本参数"
+    ],
+    "rows": [
+     "型号：TAD1341GE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "huadong-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 104,
+    "title": "VOLVO系列 - 陆用电站-产品中心 - 扬州市华东动力机械有限公司",
+    "header": [
+     "| 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） |",
+     "| 额定功率 | 备用功率 | 型号 | 最大功率 （KW）"
+    ],
+    "rows": [
+     "| HDV100 | 100/80 | 110/88 | 144 | 21 | TAD531GE | 96 | 2450×930×1720 | 1225 | 下载参数"
+    ]
+   },
+   {
+    "n": 105,
+    "title": "MTU系列 - 陆用电站-产品中心 - 扬州市华东动力机械有限公司",
+    "header": [
+     "| 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） |",
+     "| 额定功率 | 备用功率 | 型号 | 最大功率 （KW）"
+    ],
+    "rows": [
+     "| HDM650 | 650/520 | 715/572 | 941 | 125 | 12V2000G25 | 635 | 3850×1450×2110 | 5350 | 下载参数"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "huatai-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 103,
+    "title": "沃尔沃系列柴油发电机组-扬州华泰电气有限公司",
+    "header": [
+     "| 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE OIL(L) | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)"
+    ],
+    "rows": [
+     "| 80GF | 80 | TAD531GE | 4L | 108/130 | 4.76 | 13 | 1150 | 2200*760*1380",
+     "| 260GF | 260 | TAD1341GE | 6L | 120/138 | 9.36 | 34 | 2450 | 2900*1100*1600"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "huipu-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 106,
+    "title": "VOLVO Generator | Huipu Power",
+    "header": [
+     "| Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem capacity | DimensionL*W*H(mm*mm*mm) | Weight(kg)",
+     "| Master | Standby"
+    ],
+    "rows": [
+     "| HP-V88 | 80 | 88 | TAD531GE | 4 | 108*130 | 4.76 | 26.1 | 124 | 16 | 2536*763*1447 | 1120",
+     "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jet-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6020"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM6120N"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 122,
+    "title": "Powered by VOLVO Diesel Generator Set | Jet Power Generator",
+    "header": [
+     "| Model | 400V / 50Hz / 1500rpm | VOLVO PENTA Diesel Engine |",
+     "| Emission level | Alternator",
+     "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Fuel Cons. | Mecc Alte",
+     "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | L | Mecc Alte"
+    ],
+    "rows": [
+     "| V-358T3 | 358 | 286 | 325 | 260 | TAD1351GE | L6 | EMS | 12.78 | 131*158 | 65 | Stage IIIA / Tier 3 | ECO38 2L4C"
+    ]
+   },
+   {
+    "n": 132,
+    "title": "Water Cooled VOLVO PENTA Diesel Generator Set | Jet Power",
+    "header": [
+     "| Model | 400V / 50Hz / 1500RPM | VOLVO PENTA DIESEL ENGINE | Alternator",
+     "| Standby Power | Prime Power | Engine | No. of Cylinders | Bore / Stroke | Displacement (L) | Governing Type | Compression Ratio | Stamford",
+     "| kVA | kW | kVA | kW | （MM) | (L)"
+    ],
+    "rows": [
+     "| V-344 | 344 | 275 | 313 | 250 | TAD1351GE | 6 / In Line | 131×158 mm | 12.78 | Electronic | 18.1:1 | HCI444ES"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jiangchai-xuzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 104,
+    "title": "奔驰_发电机组厂家_江柴控股集团有限公司",
+    "header": [
+     "| 机组型号 | 主用功率（KW） | 备用功率（KW） | 发动机品牌 | 发动机型号 | 电流（A） | 油耗（L/H） | 机组尺寸（M） | 重量（kg） | 详情参数"
+    ],
+    "rows": [
+     "| J20M570M | 520 | 570 | 奔驰 | 12V2000G25 | 936 | 114 | 3.93*1.58*2.1 | 5155 | 详细"
+    ]
+   },
+   {
+    "n": 106,
+    "title": "沃尔沃_发电机组厂家_江柴控股集团有限公司",
+    "header": [
+     "| 机组型号 | 主用功率（KW） | 备用功率（KW） | 发动机品牌 | 发动机型号 | 电流（A） | 油耗（L/H） | 机组尺寸（M） | 重量（kg） | 详情参数"
+    ],
+    "rows": [
+     "| J20V275M | 250 | 275 | 沃尔沃 | TAD1351GE | 450 | 55 | 3*1.106*1.6 | 3000 | 详细"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jianghao-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 103,
+    "title": "Volvo-Penta series Diesel Generator-Jiangsu Jianghao Generator Co.,Ltd.",
+    "header": [
+     "| Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail",
+     "| KW | KVA"
+    ],
+    "rows": [
+     "| JHV-88GF | 88 | 110 | 158.4 | TAD531GE | 4 | 108*130 | 4.76 | 214 | 2100*960*1450 | 1150 | Click",
+     "| JHV-280GF | 280 | 350 | 504 | TAD1341GE | 6 | 131*158 | 12.78 | 198 | 3100*1150*1600 | 2550 | Click"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jinjia-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7310"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 103,
+    "title": "Volvo Penta Generator 80kW-550kW | Jinjia Power",
+    "header": [],
+    "rows": [
+     "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 2100×700×1450",
+     "| JJV-90GF | 90 | 99 | 112.5 | TAD551GE | 4 | 4.76 | 214 | 1150 | 2100×960×1450",
+     "| JJV-112GF | 112 | 123 | 140 | TAD750GE | 6 | 7.15 | 214 | 1200 | 2500×1020×1500",
+     "| JJV-128GF | 128 | 141 | 160 | TAD752GE | 6 | 7.15 | 213 | 1700 | 2520×1060×1530",
+     "| JJV-160GF | 160 | 176 | 200 | TAD753GE | 6 | 7.15 | 216 | 1800 | 2550×1060×1530",
+     "| JJV-180GF | 180 | 198 | 225 | TAD754GE | 6 | 7.15 | 204 | 1900 | 2600×1100×1530",
+     "| JJV-200GF | 200 | 220 | 250 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530",
+     "| JJV-220GF | 220 | 242 | 275 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530",
+     "| JJV-280GF | 280 | 308 | 350 | TAD1351GE | 6 | 12.78 | 198 | 2850 | 3100×1150×1600",
+     "| JJV-300GF | 300 | 330 | 375 | TAD1352GE | 6 | 12.78 | 198 | 2900 | 3100×1150×1600",
+     "| JJV-320GF | 320 | 352 | 400 | TAD1354GE | 6 | 12.78 | 198 | 2950 | 3100×1150×1600",
+     "| JJV-350GF | 350 | 385 | 437.5 | TAD1355GE | 6 | 12.78 | 199 | 3050 | 3100×1150×1600",
+     "| JJV-400GF | 400 | 440 | 500 | TAD1650GE | 6 | 16.12 | 199 | 3300 | 3200×1150×1880",
+     "| JJV-440GF | 440 | 484 | 550 | TAD1651GE | 6 | 16.12 | 199 | 3400 | 3200×1150×1880",
+     "| JJV-500GF | 500 | 550 | 625 | TWD1652GE | 6 | 16.12 | 199 | 3600 | 3350×1350×1950",
+     "| JJV-550GF | 550 | 605 | 687.5 | TWD1653GE | 6 | 16.12 | 199 | 3700 | 3400×1350×2000"
+    ]
+   },
+   {
+    "n": 107,
+    "title": "MTU Generator 220kW-2500kW | Jinjia Power",
+    "header": [],
+    "rows": [
+     "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 | 2800*1150*1650",
+     "| JJM-250GF | 250 | 275 | 312.5 | 6R1600G20F | 6 | 10.52 | 199 | 2900 | 2800*1150*1650",
+     "| JJM-300GF | 300 | 330 | 375 | 8V1600G10F | 8 | 14 | 191 | 3230 | 2840*1660*1975",
+     "| JJM-320GF | 320 | 352 | 400 | 8V1600G20F | 8 | 14.03 | 190 | 3250 | 2840*1660*1975",
+     "| JJM-360GF | 360 | 396 | 450 | 10V1600G10F | 10 | 17.5 | 191 | 3800 | 3230*1660*2040",
+     "| JJM-400GF | 400 | 440 | 500 | 10V1600G20F | 10 | 17.53 | 190 | 4000 | 3320*1350*1850",
+     "| JJM-480GF | 480 | 528 | 600 | 12V1600G10F | 12 | 21 | 195 | 3900 | 3300*1400*1970",
+     "| JJM-500GF | 500 | 550 | 625 | 12V1600G20F | 12 | 21.04 | 195 | 4410 | 3400*1350*1850",
+     "| JJM-550GF | 550 | 605 | 687.5 | 12V2000G25 | 12 | 23.88 | 197 | 6500 | 4000*1650*2280",
+     "| JJM-630GF | 630 | 693 | 787.5 | 12V2000G65 | 12 | 23.89 | 202 | 7000 | 4200*1650*2280",
+     "| JJM-800GF | 800 | 880 | 1000 | 16V2000G25 | 16 | 31.84 | 198 | 7800 | 4500*2000*2300",
+     "| JJM-880GF | 880 | 968 | 1100 | 16V2000G65 | 16 | 31.86 | 198 | 7830 | 4500*2000*2300",
+     "| JJM-1000GF | 1000 | 1100 | 1250 | 18V2000G65 | 18 | 35.82 | 202 | 9000 | 4700*2000*2380",
+     "| JJM-1100GF | 1100 | 1210 | 1375 | 12V4000G21R | 12 | 48.75 | 199 | 11500 | 6100*2100*2400",
+     "| JJM-1200GF | 1200 | 1320 | 1500 | 12V4000G23R | 12 | 57.2 | 195 | 12000 | 6150*2150*2400",
+     "| JJM-1400GF | 1400 | 1540 | 1750 | 12V4000G23 | 12 | 57.2 | 189 | 13000 | 6150*2150*2400",
+     "| JJM-1500GF | 1500 | 1650 | 1875 | 12V4000G63 | 12 | 57.2 | 193 | 14000 | 6150*2150*2400",
+     "| JJM-1760GF | 1760 | 1936 | 2200 | 16V4000G23 | 16 | 76.27 | 192 | 17000 | 6500*2600*2500",
+     "| JJM-1900GF | 1900 | 2090 | 2375 | 16V4000G63 | 16 | 76.3 | 191 | 17500 | 6550*2600*2500",
+     "| JJM-2200GF | 2200 | 2420 | 2750 | 20V4000G23 | 20 | 95.33 | 195 | 24000 | 8300*2950*2550",
+     "| JJM-2400GF | 2400 | 2640 | 3000 | 20V4000G63 | 20 | 95.4 | 193 | 24500 | 8300*2950*2550",
+     "| JJM-2500GF | 2500 | 2750 | 3125 | 20V4000G63L | 20 | 95.33 | 192 | 25000 | 8300*2950*2550"
+    ]
+   },
+   {
+    "n": 112,
+    "title": "沃尔沃柴油发电机组 | 低排放静音备用电源 | 锦佳动力",
+    "header": [],
+    "rows": [
+     "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 2100×700×1450",
+     "| JJV-90GF | 90 | 99 | 112.5 | TAD551GE | 4 | 4.76 | 214 | 1150 | 2100×960×1450",
+     "| JJV-112GF | 112 | 123 | 140 | TAD750GE | 6 | 7.15 | 214 | 1200 | 2500×1020×1500",
+     "| JJV-128GF | 128 | 141 | 160 | TAD752GE | 6 | 7.15 | 213 | 1700 | 2520×1060×1530",
+     "| JJV-160GF | 160 | 176 | 200 | TAD753GE | 6 | 7.15 | 216 | 1800 | 2550×1060×1530",
+     "| JJV-180GF | 180 | 198 | 225 | TAD754GE | 6 | 7.15 | 204 | 1900 | 2600×1100×1530",
+     "| JJV-200GF | 200 | 220 | 250 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530",
+     "| JJV-220GF | 220 | 242 | 275 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530",
+     "| JJV-280GF | 280 | 308 | 350 | TAD1351GE | 6 | 12.78 | 198 | 2850 | 3100×1150×1600",
+     "| JJV-300GF | 300 | 330 | 375 | TAD1352GE | 6 | 12.78 | 198 | 2900 | 3100×1150×1600",
+     "| JJV-320GF | 320 | 352 | 400 | TAD1354GE | 6 | 12.78 | 198 | 2950 | 3100×1150×1600",
+     "| JJV-350GF | 350 | 385 | 437.5 | TAD1355GE | 6 | 12.78 | 199 | 3050 | 3100×1150×1600",
+     "| JJV-400GF | 400 | 440 | 500 | TAD1650GE | 6 | 16.12 | 199 | 3300 | 3200×1150×1880",
+     "| JJV-440GF | 440 | 484 | 550 | TAD1651GE | 6 | 16.12 | 199 | 3400 | 3200×1150×1880",
+     "| JJV-500GF | 500 | 550 | 625 | TWD1652GE | 6 | 16.12 | 199 | 3600 | 3350×1350×1950",
+     "| JJV-550GF | 550 | 605 | 687.5 | TWD1653GE | 6 | 16.12 | 199 | 3700 | 3400×1350×2000"
+    ]
+   },
+   {
+    "n": 116,
+    "title": "MTU柴油发电机组参数_200-4000kW关键应用首选 | 锦佳动力",
+    "header": [],
+    "rows": [
+     "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 | 2800*1150*1650",
+     "| JJM-250GF | 250 | 275 | 312.5 | 6R1600G20F | 6 | 10.52 | 199 | 2900 | 2800*1150*1650",
+     "| JJM-300GF | 300 | 330 | 375 | 8V1600G10F | 8 | 14 | 191 | 3230 | 2840*1660*1975",
+     "| JJM-320GF | 320 | 352 | 400 | 8V1600G20F | 8 | 14.03 | 190 | 3250 | 2840*1660*1975",
+     "| JJM-360GF | 360 | 396 | 450 | 10V1600G10F | 10 | 17.5 | 191 | 3800 | 3230*1660*2040",
+     "| JJM-400GF | 400 | 440 | 500 | 10V1600G20F | 10 | 17.53 | 190 | 4000 | 3320*1350*1850",
+     "| JJM-480GF | 480 | 528 | 600 | 12V1600G10F | 12 | 21 | 195 | 3900 | 3300*1400*1970",
+     "| JJM-500GF | 500 | 550 | 625 | 12V1600G20F | 12 | 21.04 | 195 | 4410 | 3400*1350*1850",
+     "| JJM-550GF | 550 | 605 | 687.5 | 12V2000G25 | 12 | 23.88 | 197 | 6500 | 4000*1650*2280",
+     "| JJM-630GF | 630 | 693 | 787.5 | 12V2000G65 | 12 | 23.89 | 202 | 7000 | 4200*1650*2280",
+     "| JJM-800GF | 800 | 880 | 1000 | 16V2000G25 | 16 | 31.84 | 198 | 7800 | 4500*2000*2300",
+     "| JJM-880GF | 880 | 968 | 1100 | 16V2000G65 | 16 | 31.86 | 198 | 7830 | 4500*2000*2300",
+     "| JJM-1000GF | 1000 | 1100 | 1250 | 18V2000G65 | 18 | 35.82 | 202 | 9000 | 4700*2000*2380",
+     "| JJM-1100GF | 1100 | 1210 | 1375 | 12V4000G21R | 12 | 48.75 | 199 | 11500 | 6100*2100*2400",
+     "| JJM-1200GF | 1200 | 1320 | 1500 | 12V4000G23R | 12 | 57.2 | 195 | 12000 | 6150*2150*2400",
+     "| JJM-1400GF | 1400 | 1540 | 1750 | 12V4000G23 | 12 | 57.2 | 189 | 13000 | 6150*2150*2400",
+     "| JJM-1500GF | 1500 | 1650 | 1875 | 12V4000G63 | 12 | 57.2 | 193 | 14000 | 6150*2150*2400",
+     "| JJM-1760GF | 1760 | 1936 | 2200 | 16V4000G23 | 16 | 76.27 | 192 | 17000 | 6500*2600*2500",
+     "| JJM-1900GF | 1900 | 2090 | 2375 | 16V4000G63 | 16 | 76.3 | 191 | 17500 | 6550*2600*2500",
+     "| JJM-2200GF | 2200 | 2420 | 2750 | 20V4000G23 | 20 | 95.33 | 195 | 24000 | 8300*2950*2550",
+     "| JJM-2400GF | 2400 | 2640 | 3000 | 20V4000G63 | 20 | 95.4 | 193 | 24500 | 8300*2950*2550",
+     "| JJM-2500GF | 2500 | 2750 | 3125 | 20V4000G63L | 20 | 95.33 | 192 | 25000 | 8300*2950*2550"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kaihua-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": "InteliGen"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6020"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120 MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM6120UC"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM7120UC"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM9510"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 103,
+    "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+    "header": [
+     "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+     "| KVA | KW | KVA | KW | mm | KG"
+    ],
+    "rows": [
+     "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
+     "| KH-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700"
+    ]
+   },
+   {
+    "n": 104,
+    "title": "10-200KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+    "header": [
+     "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+     "| KVA | KW | KVA | KW | mm | KG"
+    ],
+    "rows": [
+     "| KH-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150",
+     "| KH-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150"
+    ]
+   },
+   {
+    "n": 109,
+    "title": "MTU Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+    "header": [
+     "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+     "| kVA | kW | kVA | kW | mm | KG"
+    ],
+    "rows": [
+     "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
+     "| KH-520GF2 | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000"
+    ]
+   },
+   {
+    "n": 120,
+    "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+    "header": [
+     "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+     "| KVA | KW | KVA | KW | KG"
+    ],
+    "rows": [
+     "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
+     "| KH-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700"
+    ]
+   },
+   {
+    "n": 121,
+    "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+    "header": [
+     "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+     "| KVA | KW | KVA | KW | KG"
+    ],
+    "rows": [
+     "| KH-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150",
+     "| KH-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150"
+    ]
+   },
+   {
+    "n": 124,
+    "title": "OEM Hichaipower Volvo Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+    "header": [
+     "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG) | Detail Data",
+     "| KVA | KW | KVA | KW"
+    ],
+    "rows": [
+     "| HC-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150 | Download",
+     "| HC-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150 | Download",
+     "| HC-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700 | Download",
+     "| HC-350GF2 | 375 | 340 | TAD1341GE | S4L1D-D41 | 3100*1120*1788 | 4230*1460*2150 | Download"
+    ]
+   },
+   {
+    "n": 125,
+    "title": "OEM Hichai MTU Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+    "header": [
+     "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight | Detail Data",
+     "| kVA | kW | kVA | kW | mm | KG"
+    ],
+    "rows": [
+     "| HC-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000 | Download"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kangwo-guangdong",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 105,
+    "title": "MTU柴油发电机组",
+    "header": [
+     "| 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 机油容量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数",
+     "| KW | KVA",
+     "| | MTU2000系例"
+    ],
+    "rows": [
+     "| GKW-500GF | 550 | 687.5 | 990 | 12V2000G25 | 12 | 130*150 | 23.88 | 77 | 197 | 4000*1650*2280 | 6500 | 获取"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "koop-changzhou",
+  "country": "CN",
+  "role": "engine_maker",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 108,
+    "title": "Changzhou Koop Power Machinery Co., Ltd.",
+    "header": [],
+    "rows": [
+     "| model | KDF6700WE",
+     "| Frequency (Hz) | 50",
+     "| Voltage (V) | 230",
+     "| Output power (kVA) | 2.0",
+     "| Current adjustment range (A) | 50~180",
+     "| Power factor (medium) | 1.0",
+     "| Fuel tank capacity (L) | 12.5",
+     "| Power model | KD186FAE",
+     "| Cylinder diameter*stroke (mm) | 86*72",
+     "| Displacement (L) | 0.418",
+     "| Speed ​​(rpm) | 3000",
+     "| Engine power (kW) | 5.8",
+     "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+     "| Engine oil brand | SAE10W30 (CD grade and above)",
+     "| Dimensions (mm) | 710*515*630",
+     "| Frequency [Hz] | 50 60",
+     "| Voltage [V] | 220,230,240,110/220,115/230,120/240",
+     "| Output power[Kva] | 2.0 2.2",
+     "| Current adjustment range[A] | 50 ~ 180",
+     "| Power factor Φ | 1",
+     "| Fuel tank capacity [L] | 12.5",
+     "| Cylinder diameter*stroke[mm] | 86* 72",
+     "| Displacement [L] | 0.418",
+     "| Power [Kw] | 5.8 6.6",
+     "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+     "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+     "| Dimensions [mm] | 750*515*640"
+    ]
+   },
+   {
+    "n": 110,
+    "title": "Changzhou Koop Power Machinery Co., Ltd.",
+    "header": [],
+    "rows": [
+     "| model | KDF6700Q(-3/3D)",
+     "| Frequency (Hz) | 50",
+     "| Voltage (V) | 230 400",
+     "| Rated power (kVA) | 4.5 5.6",
+     "| Power limit (kVA) | 5.0 6.3",
+     "| Power factor (φ) | 1.0 0.8",
+     "| Fuel tank capacity (L) | 14.5",
+     "| Power model | KD186FAE",
+     "| Cylinder diameter*stroke (mm) | 86*72",
+     "| Displacement (L) | 0.418",
+     "| Speed ​​(rpm) | 3000",
+     "| Engine power (kW) | 5.8",
+     "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+     "| Engine oil brand | SAE10W30 (CD grade and above)",
+     "| Dimensions (mm) | 910*530*740",
+     "| model | KDF6700Q(-3)",
+     "| Frequency [Hz] | 50 60",
+     "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+     "| Rated power [KVA] | 4.5 (5.6) 5.0(6.3)",
+     "| Power limit [KVA] | 5.0(6.3) 5.5(6.9)",
+     "| Power factor Φ | 1.0(0.8)",
+     "| Fuel tank capacity [L] | 14.5",
+     "| Cylinder diameter*stroke[mm] | 86*72",
+     "| Displacement | 0.418L",
+     "| Speed ​​[rpm] | 3000 3600",
+     "| Power [Kw] | 5.8 6.6",
+     "| Fuel brand | Diesel: 0# (summer), -10# (winter) Use 0# diesel in summer and -10# or -20# diesel in winter.",
+     "| Engine oil brand | SAE10W30 (CD grade or above) Use CD or CD grade 15W-40 engine oil (or SAE equivalent grade engine oil)",
+     "| Dimensions [mm] | 910*530*740"
+    ]
+   },
+   {
+    "n": 118,
+    "title": "Changzhou Koop Power Machinery Co., Ltd.",
+    "header": [],
+    "rows": [
+     "| model | KDF6700QQ(-3)",
+     "| Frequency (Hz) | 50",
+     "| Voltage (V) | 230 400",
+     "| Rated power (kVA) | 4.2 5.3",
+     "| Power limit (kVA) | 4.5 5.6",
+     "| Power factor (φ) | 1.0 0.8",
+     "| Fuel tank capacity (L) | 14.5",
+     "| Noise level at 7 meters (dB) | 65",
+     "| Power model | KD186FAE",
+     "| Cylinder diameter*stroke (mm) | 86*72",
+     "| Displacement (L) | 0.418",
+     "| Speed ​​(rpm) | 3000",
+     "| Engine power (kW) | 5.8",
+     "| Fuel brand | Diesel: 0# (summer), -10# (winter)",
+     "| Engine oil brand | SAE10W30 (CD grade and above)",
+     "| Dimensions (mm) | 995*645*890",
+     "| Frequency [Hz] | 50 60",
+     "| Voltage [V] | 220,230,240,110/220,115/230,120/240,220/380,230/400,240/415",
+     "| Rated power[KVA] | 4.2( 5.3 ) 4.5 ( 5.6 )",
+     "| Power limit [Kva] | 4.5 (5.6) 5.0 ( 6.3 )",
+     "| Power factor Φ | 1(0.8)",
+     "| Fuel tank capacity [L] | 14.5",
+     "| Noise at 7 meters | 63",
+     "| Cylinder diameter*stroke[mm] | 86*72",
+     "| Displacement | 0.418L",
+     "| Speed ​​[rpm] | 3000 3600",
+     "| Power [Kw] | 5.8 6.6",
+     "| Fuel brand | Diesel: 0#(summer), -10#(winter)",
+     "| Dimensions [mm] | 995*645*750"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "kusing-guangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 2012,
+    "title": "VK32500 技术参数 (Volvo Penta)",
+    "header": [
+     "| VK32500"
+    ],
+    "rows": [
+     "| 发电机型号 | TAD1341GE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lees-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 104,
+    "title": "- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!",
+    "header": [
+     "| Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications"
+    ],
+    "rows": [
+     "| LSV375S3-6E | 380 | 345 | 304 | 276 | TAD1351GE | PDF"
+    ]
+   },
+   {
+    "n": 1156,
+    "title": "Datasheet: PDF",
+    "header": [],
+    "rows": [
+     "| MODEL | LSV350S3-E",
+     "Standard Features",
+     "| Standby | kW | 280",
+     "| Prime | kVA | 318",
+     "| Power | kW | 254 | ØThe 50Hz generator set offers a AUS 2012 listing and CE 2015",
+     "| Voltage | V | 230/400 | ØThe generator set complies with ISO 8528-5, Class G3",
+     "| Rated speed | rpm | 1500",
+     "| LEES generator sets meet the standards of ISO9001, CE， | ØElectronic engine controls and a generator microprocessor",
+     "Standard reference Conditions:",
+     "AS 2789, and DIN 6271. Prime power ratings:Prime power ratings apply to installations where utility power is unavailable or unreliable. At varying load, the number of",
+     "| Volvo engine Model: | TAD1351GE",
+     "| Engine Brand | VOLVO",
+     "| Engine Model | TAD1351GE",
+     "| Cylinder No.& Configuration | 6 cylinder Diesel L",
+     "| Bore x Stroke | mm | 131*158",
+     "| Displacement | L | 12.78",
+     "| Compression Ratio | 18.1:1",
+     "| Rated Power | kW | 271",
+     "| Rated Speed | 1500",
+     "| Lubrication System | Splash Lubrication",
+     "| Lube Oil | CH15W-40",
+     "| Fuel Consumption 25% load | L/H | 21",
+     "| Fuel Consumption 50% load | L/H | 37",
+     "| Fuel Consumption 75% load | L/H | 53",
+     "| Fuel Consumption 100% load | L/H | 68",
+     "Alternator",
+     "| Exciter type | Brushless, Permanent-Magnet,",
+     "| Pilot Exciter | Ø | Sustained short-circuit current of up to 300% of the",
+     "| Voltage regulator | Solid-State, Volts/Hz | rated current for up to 10 seconds.",
+     "| Insulation | NEMA MG1, Class H",
+     "| Voltage regulation, no-load to | with±0.25% no-load to full-load regulation.",
+     "Standard and Optional Features",
+     "| Engine | Overview Dimension & Weight"
+    ]
+   },
+   {
+    "n": 1166,
+    "title": "Datasheet: PDF",
+    "header": [],
+    "rows": [
+     "| MODEL | LSV380S3-6",
+     "Standard Features",
+     "| Standby | system and accessories.",
+     "| Power | Prime",
+     "| Frequency | Hz | 60 | ØThe generator set complies with ISO 8528-5, Class G3",
+     "| Voltage | V | 208/120; 220/127; 416/240;",
+     "| Rated speed | rpm | 1800 | ØThe 60Hz generator set engine is certified by the Environmental",
+     "| LEES generator sets meet the standards of ISO9001, CE， | systems in today’s generator market.",
+     "Standard reference Conditions:",
+     "AS 2789, and DIN 6271. Prime power ratings:Prime power ratings apply to installations where utility power is unavailable or unreliable. At varying load, the number of",
+     "| Volvo engine Model: | TAD1341GE",
+     "| Engine Brand | VOLVO",
+     "| Engine Model | TAD1341GE",
+     "| Cylinder No.& Configuration | 6 cylinder Diesel L",
+     "| Bore x Stroke | mm | 131x158",
+     "| Displacement | L | 12.78",
+     "| Compression Ratio | 18.1:1",
+     "| Rated Power | kW | 287",
+     "| Rated Speed | 1800",
+     "| Lubrication System | Splash Lubrication",
+     "| Lube Oil | CH15W-40",
+     "| Fuel Consumption 25% load | L/H | 21",
+     "| Fuel Consumption 50% load | L/H | 38",
+     "| Fuel Consumption 75% load | L/H | 55",
+     "| Fuel Consumption 100% load | L/H | 73",
+     "Alternator",
+     "| Exciter type | Brushless, Permanent-Magnet,",
+     "| Pilot Exciter | Ø | Sustained short-circuit current of up to 300% of the",
+     "| Voltage regulator | Solid-State, Volts/Hz | rated current for up to 10 seconds.",
+     "| Insulation | NEMA MG1, Class H",
+     "| Voltage regulation, no-load to | with±0.25% no-load to full-load regulation.",
+     "Standard and Optional Features",
+     "| Engine | Overview Dimension & Weight"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "legapower",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 102,
+    "title": "MTU Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+    "header": [
+     "| Genset Specification 400/230V 50HZ | Engine Soecification | Datasheet",
+     "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+     "| ESP | PRP"
+    ],
+    "rows": [
+     "| LG300M | 300 | 275 | 51 | 6R1600G70F | 6L | ECM | 10.50 |",
+     "| LG688M | 688 | 625 | 119 | 12V2000G25 | 12V | ECM | 23.88 |",
+     "| LG725M | 725 | 659 | 140 | 12V2000G25 | 12V | ECM | 23.88 |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "liangzi-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 116,
+    "title": "机组功率 > 250KW发电机组_柴油发电机_柴油发电机组_扬州发电机-扬州量子电力设备有限公司",
+    "header": [
+     "| 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量(L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重量 (KG) | 详细"
+    ],
+    "rows": [
+     "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数",
+     "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2450 | 详细参数"
+    ]
+   },
+   {
+    "n": 122,
+    "title": "机组功率 > 80KW发电机组_柴油发电机_柴油发电机组_扬州发电机-扬州量子电力设备有限公司",
+    "header": [
+     "| 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量(L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重量 (KG) | 详细"
+    ],
+    "rows": [
+     "| LZ-V80 | 80/100 | 沃尔沃遍达 | TAD531GE | 4 | 4.76 | 13 | ≤205 | 2200*760*1380 | 1150 | 详细参数"
+    ]
+   },
+   {
+    "n": 143,
+    "title": "250KW发电机组_柴油发电机_柴油发电机组_扬州发电机-扬州量子电力设备有限公司",
+    "header": [
+     "| 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量(L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重量 (KG) | 详细"
+    ],
+    "rows": [
+     "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数",
+     "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2450 | 详细参数"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "long-gen",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "China STABLE PERFORMANCE VOLVO DIESEL GENERATOR 202KW-520KW factory and suppliers | LONGEN",
+    "header": [
+     "| Model | Power | ENGINE | ALTERNATOR",
+     "| | Prime (KW/kVA) | Standby(KW/kVA) | Model | Stamford | Leroy Somer | download"
+    ],
+    "rows": [
+     "| LGVS-356 | 259 | 324 | 285 | 356 | TAD1351GE | HCI 444ES | LSA46.3 L10 | download"
+    ]
+   },
+   {
+    "n": 101,
+    "title": "China STABLE PERFORMANCE VOLVO DIESEL GENERATOR 202KW-520KW factory and suppliers | LONGEN",
+    "header": [
+     "| Model | Prime Power | Standby Power | Engine | Alternator",
+     "| | KW | kVA | KW | kVA | Volvo | Stamford | Leroy Somer(LSA) | download"
+    ],
+    "rows": [
+     "| LGVS-375 | 273 | 341 | 300 | 375 | TAD1351GE | S4L1D-D4 | LSA46.3 L10 | download"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mamo-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 106,
+    "title": "China MTU Series Diesel Generator factory and manufacturers | Mamo Power",
+    "header": [
+     "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+    ],
+    "rows": [
+     "| TM725 | 528 | 660 | 581 | 725 | 12V2000G25 | 580 | O | O |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "meao-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "沃尔沃发电机组_江苏美奥动力科技有限公司",
+    "header": [
+     "| 型号 | 备用功率 | 主用功率 | 发动机型号 | 发电机型号 | 尺寸 | 重量",
+     "| kVA | kWe | kVA | kWe | mm | KG"
+    ],
+    "rows": [
+     "| MP-80GF | 110 | 88 | 100 | 80 | TAD531GE | UCI274C | 2080x720x1450 | 1150",
+     "| MP-240GF | 330 | 264 | 300 | 240 | TAD1341GE | HCI444D | 2950x1120x1595 | 2700"
+    ]
+   },
+   {
+    "n": 102,
+    "title": "奔驰发电机组_江苏美奥动力科技有限公司",
+    "header": [
+     "| 型号 | 备用功率 | 主用功率 | 发动机型号 | 发电机型号 | 尺寸 | 重量",
+     "| kVA | kWe | kVA | kWe | mm | KG"
+    ],
+    "rows": [
+     "| MP-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | HCI544F | 4200×1650×2200 | 7000"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mingbang-mbkl",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 125,
+    "title": "China VOLVO Silent Genset Manufacturers, Suppliers, Factory - VOLVO Silent Genset Quotation - Mingbang",
+    "header": [
+     "| No. | GENSET Model | Prime Power | Standby Power | Engine Model | Cylinder | Displacement | Bore*Stroke | Fuel Consumption | Dimension",
+     "| KVA | KW | KVA | KW | VOLVO | (nos) | (L) | (mm) | (lir/hr) | mm"
+    ],
+    "rows": [
+     "| 2 | MB-V80 | 100 | 80 | 110 | 88 | TAD531GE | 4 | 1.5 | 84*90 | 20.7 | 3000×1200×1740",
+     "| 8 | MB-V252 | 315 | 252 | 347 | 277 | TAD1341GE | 4 | 3.3 | 105*127 | 61.7 | 4000×1800×2300"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nenjo-generator",
+  "country": "CN",
+  "role": "alternator_maker",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "DEIF",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 142,
+    "title": "60-650KVA Volvo Trailer Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+    "header": [
+     "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine Output KW | 排放标准 Emission"
+    ],
+    "rows": [
+     "| HJ259V | 沃尔沃 VOLVO | TAD1351GE | 259.0 | 306.0 | T3",
+     "| HJ258V | 沃尔沃 VOLVO | TAD1351GE | 258.0 | 323.0 | T3"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pengpai-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 111,
+    "title": "550KW-功率段分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-M570 | 520/570 | 奔驰MTU | 12V2000G25 | 12 | 21 | 50 | ≤195 | 3500*1350*1850 | 4350"
+    ]
+   },
+   {
+    "n": 117,
+    "title": "250KW-功率段分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 118,
+    "title": "200KW-功率段分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400"
+    ]
+   },
+   {
+    "n": 123,
+    "title": "80KW-功率段分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-V80 | 80/100 | 沃尔沃遍达 | TAD531GE | 4 | 4.76 | 13 | ≤206 | 2200*760*1400 | 1150"
+    ]
+   },
+   {
+    "n": 126,
+    "title": "沃尔沃系列发电机组-品牌分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-V80 | 80/100 | 沃尔沃遍达 | TAD531GE | 4 | 4.76 | 13 | ≤206 | 2200*760*1380 | 1150",
+     "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 126,
+    "title": "沃尔沃系列发电机组-品牌分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+    ],
+    "rows": [
+     "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 12.78 | 34 | ≤210 | 2900*1100*1600 | 2450"
+    ]
+   },
+   {
+    "n": 127,
+    "title": "MTU系列发电机组-品牌分类-柴油发电机组厂家|移动静音发电机组|船用发电机组-扬州澎湃动力设备有限公司",
+    "header": [
+     "| 型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 耗油率 (g/kw.h) | 尺寸 L*W*H(mm) | 重量 (kg)"
+    ],
+    "rows": [
+     "| PPDL-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400",
+     "| PPDL-M570 | 520/570 | 奔驰MTU | 12V2000G25 | 12 | 21 | 50 | ≤195 | 3500*1350*1850 | 4350"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pingchang-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "产品中心-扬州平常机械有限公司111",
+    "header": [
+     "| | 机组型号 | 主用功率 | 柴油机型号 | 发电机型号 | 基础尺寸 | 机组重量 | 操作"
+    ],
+    "rows": [
+     "| PC-V88 | 80(KW) | TAD531GE | KH90-1-4 | 2100*750*1320(MM) | 1150(KG) | 机组详细",
+     "| PC-V290 | 260(KW) | TAD1351GE | KH280-1-4 | 2450*1000*1700(MM) | 2500(KG) | 机组详细",
+     "| PC-B550 | 500(KW) | 12V2000G25 | KH550-1-4 | 4000*1650*2280(MM) | 6500(KG) | 机组详细"
+    ]
+   },
+   {
+    "n": 103,
+    "title": "使用沃尔沃柴油机作为动力系统-扬州平常机械有限公司111",
+    "header": [
+     "| | 机组型号 | 主用功率 | 柴油机型号 | 发电机型号 | 基础尺寸 | 机组重量 | 操作"
+    ],
+    "rows": [
+     "| PC-V88 | 80(KW) | TAD531GE | KH90-1-4 | 2100*750*1320(MM) | 1150(KG) | 机组详细",
+     "| PC-V290 | 260(KW) | TAD1351GE | KH280-1-4 | 2450*1000*1700(MM) | 2500(KG) | 机组详细"
+    ]
+   },
+   {
+    "n": 104,
+    "title": "使用奔驰柴油机作为动力系统-扬州平常机械有限公司111",
+    "header": [
+     "| | 机组型号 | 主用功率 | 柴油机型号 | 发电机型号 | 基础尺寸 | 机组重量 | 操作"
+    ],
+    "rows": [
+     "| PC-B550 | 500(KW) | 12V2000G25 | KH550-1-4 | 4000*1650*2280(MM) | 6500(KG) | 机组详细"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "power-hf",
+  "country": "CN",
+  "role": "engine_maker",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 117,
+    "title": "华丰—VOLVO系列 - 燃油发电机组 - 华丰动力股份有限公司--官网",
+    "header": [
+     "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+    ],
+    "rows": [
+     "| 2 | PHF-80VX | 80 | 88 | 144 | TAD531GE | ● | ● | ●",
+     "| 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pramac",
+  "country": "IT",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE4520MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8620MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610MKII"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8003"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8920MKII"
+   },
+   {
+    "brand": "ComAp",
+    "model": "AC03"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2008,
+    "title": "GSW110V (pramac.com product page, 60 Hz)",
+    "header": [
+     "GSW110V"
+    ],
+    "rows": [
+     "TAD531GE"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rcg-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   },
+   {
+    "brand": "DEIF",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 111,
+    "title": "R-M Series (MTU)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+    "header": [
+     "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+    ],
+    "rows": [
+     "| R-M650D5-S | 650 kVA / 520 kW | 715 kVA / 572 kW | 12V2000G25 | TAL-A473-F | PDF",
+     "| R-M650D5-S | 650 kVA / 520 kW | 715 kVA / 572 kW | 12V2000G25 | S5L1D-F4 | PDF"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rise-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6110"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 111,
+    "title": "Volvo Diesel Generator | Diesel Engine Powered Generator | RISE Power",
+    "header": [
+     "| Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Open Version | Soundproofed Version",
+     "| kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg) | L*W*H(mm) | Weight (kg)"
+    ],
+    "rows": [
+     "| RVM259 | 324 | 259 | 356 | 285 | TAD1351GE | 6L | 12.78 | < 60.6 | 2950*1120*1595 | 2350 | 3950*1400*2115 | 3150"
+    ]
+   },
+   {
+    "n": 111,
+    "title": "Volvo Diesel Generator | Diesel Engine Powered Generator | RISE Power",
+    "header": [
+     "| Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Open Version | Soundproofed Version",
+     "| kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg) | L*W*H(mm) | Weight (kg)"
+    ],
+    "rows": [
+     "| RVM273 | 341 | 273 | 375 | 300 | TAD1351GE | 6L | 12.78 | < 60.5 | 2950*1120*1595 | 2350 | 3950*1400*2115 | 3430"
+    ]
+   },
+   {
+    "n": 118,
+    "title": "MTU Diesel Generator | MTU Engine | RISE Power",
+    "header": [
+     "| Model | Power (kVA/kW) | Engine Model | Dimension | Weight(kg)",
+     "| Prime | Standby | Open Type | Open Type"
+    ],
+    "rows": [
+     "| RMM515 | 643/515 | 708/567 | 12V2000G25 | 3680*1700*2160 | 5434"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "senci-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 108,
+    "title": "沃尔沃柴油发电机组-沃尔沃发电机组 - 江苏神驰发电机",
+    "header": [
+     "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+     "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+    ],
+    "rows": [
+     "| | 80/88 | TAD531GE | 88/98 | 108x130 | 4 | 13 | 218 | 国Ⅱ | 2200X720X1380 | 1200",
+     "| | 250/275 | TAD1351GE | 285/306 | 131/158 | 6 | 30 | 200 | 国Ⅲ | 3000X1100X1750 | 2300"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "senci",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "SmartGen",
+    "model": "HGM420"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6120"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM6120"
+   },
+   {
+    "brand": "DEIF",
+    "model": "AGC150"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM9530"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2004,
+    "title": "沃尔沃系列 VOLVO SERIES",
+    "header": [
+     "| 沃尔沃系列 VOLVO SERIES",
+     "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type",
+     "| 外形尺寸Overall Size (LXWXH)(mm) | 机组重量 Welght (kg)"
+    ],
+    "rows": [
+     "| | 80/88 | TAD531GE | 88/98 | 108x130 | 4 | 13 | 218 | 国Ⅱ | 2200X720X1380 | 1200",
+     "| | 250/275 | TAD1351GE | 285/306 | 131/158 | 6 | 30 | 200 | 国Ⅲ | 3000X1100X1750 | 2300"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "shunfeng-changzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE3110"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 101,
+    "title": "顺风牌沃尔沃柴油发电机组-柴油发电机组-港机发电机组-常州顺风发电设备有限公司【官网】",
+    "header": [
+     "| 机组型号 | 柴油机型号 | 主用功率 KW/KVA | 备用功率 KW/KVA | 额定电压(V) | 稳态电压调整率 | 稳态频率 调整率 | 开架机组尺寸(mm×mm) 重量 (kg) | 静音机组尺寸 (mm×mm) 重量(kg)"
+    ],
+    "rows": [
+     "| SV80 | TAD531GE | 80/100 | 88/110 | 400/230 | ≤±1% | ≤5% | 2030×720×1390 | 1030 | 2760×1140×1830 | 1900"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "simpson-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 113,
+    "title": "300kW-1100kW",
+    "header": [
+     "| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据",
+     "| SP0600D-L | 600/750 | 菱重 | S6R2-PTA-C | 3805×1557×2146 | SP0600D-L.pdf"
+    ],
+    "rows": [
+     "| SP0560D-U | 560/700 | 12V2000G25 | 4200×1580×2470 | SP0560D-U.pdf"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sr-genset",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "ComAp",
+    "model": "IG200"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2007,
+    "title": "Volvo series – bảng 2",
+    "header": [
+     "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+     "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+    ],
+    "rows": [
+     "| 380 | 304 | 345 | 276 | TAD1341GE | Elec | S4L1D-D4 | TAL-A46-E | SA314-288 | 3250*1350*1800 | 4260*1450*2100"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "taihai-taizhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 104,
+    "title": "500KW-800KW发电机组-产品展示_泰州泰海机电设备有限公司",
+    "header": [],
+    "rows": [
+     "| TH-500GF | 625 | 500 | KTAA19-G6A | 6L | 159/159 | 18.9 | 203.8 | 3550×1550×2100 | 4400 |",
+     "| TH-600GF | 725 | 600 | KTA38-G2 | 12V | 159/159 | 37.8 | 206 | 4260×1650×2350 | 6350 |",
+     "| TH-640GF | 800 | 640 | KTA38-G2B | 12V | 159/159 | 37.8 | 206 | 4260×1650×2350 | 6350 |",
+     "| TH-720GF | 900 | 720 | KTA38-G2A | 12V | 159/159 | 37.8 | 210 | 4350×1650×2350 | 6650 |",
+     "| TH-800GF | 1000 | 800 | KTA38-G5 | 12V | 159/159 | 37.8 | 201 | 4500×1850×2350 | 6900 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-500GF | 625 | 500 | 2806A-E18TAG2 | 6L | 145/183 | 18.13 | 97 | 3960×1535×2100 | 4453 |",
+     "| TH-600GF | 750 | 600 | 4006-23TAG2A | 6L | 160/190 | 22.921 | 130 | 4450×1650×2290 | 5413 |",
+     "| TH-640GF | 800 | 640 | 4006-23TAG3A | 6L | 160/190 | 22.921 | 130 | 4450×1710×2290 | 5422 |",
+     "| TH-700GF | 875 | 700 | 4008TAG1A | 8V | 160/190 | 30.561 | 163 | 4700×2045×2475 | 7600 |",
+     "| TH-800GF | 1000 | 800 | 4008TAG2A | 8V | 160/190 | 30.561 | 163 | 4700×2045×2475 | 7639 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-528GF | 660 | 528 | 12V1600G20F | 12 | 122/150 | 21.0 | 191 | 3330×1590×1970 | 4100 |",
+     "| TH-520GF | 650 | 520 | 12V2000G25 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000 |",
+     "| TH-640GF | 800 | 640 | 12V2000G65 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000 |",
+     "| TH-728GF | 910 | 728 | 16V2000G25 | 16 | 130/150 | 31.84 | 178.6 | 4500×2000×2300 | 7850 |",
+     "| TH-800GF | 1000 | 800 | 16V2000G65 | 16 | 130/150 | 31.84 | 200.9 | 4500×2000×2300 | 7850 |",
+     "| TH-500GF | 625 | 500 | DP180LB | 10V | 128/142 | 18.273 | 121.8 | 3600×1420×1700 | 3980",
+     "| TH-560GF | 700 | 560 | DP222LB | 12V | 128/142 | 21.927 | 130.0 | 3600×1420×1700 | 4100",
+     "| TH-600GF | 750 | 600 | DP222LC | 12V | 128/142 | 21.927 | 134.0 | 3700×1500×1800 | 4160",
+     "| TH-640GF | 800 | 640 | DP222LC | 12V | 128/142 | 21.927 | 148.5 | 3700×1500×1800 | 4200",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-500GF | 625 | 500 | SC27G830D2 | 12V | 135/155 | 26.6 | 210 | 3500×1610×2110 | 3700 |",
+     "| TH-600GF | 750 | 600 | SC33W990D2 | 6L | 180/215 | 32.8 | 215 | 4400×1690×2150 | 7000 |",
+     "| TH-500GF | 625 | 500 | YC6TD840L-D20 | 6L | 152/180 | 19.57 | 192 | 3550×1260×1820 | 3500",
+     "| TH-600GF | 750 | 600 | YC6C1020L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000",
+     "| TH-640GF | 800 | 640 | YC6C1070L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000",
+     "| TH-720GF | 900 | 720 | YC6C1220L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000",
+     "| TH-800GF | 1000 | 800 | YC6C1320L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000",
+     "| TH-500GF | 625 | 500 | WD269TAD56 | 12 | 138/150 | 26.9 | 198 | 3650×1700×2200 | 4200",
+     "| TH-550GF | 687.5 | 550 | WD287TAD61L | 12 | 138/160 | 28.7 | 198 | 3700×1700×2200 | 4400",
+     "| TH-600GF | 750 | 600 | WD305TAD68 | 12 | 140/165 | 30.5 | 196 | 3700×1700×2200 | 4400",
+     "| TH-720GF | 900 | 720 | WD327TAD78 | 12 | 145/165 | 32.7 | 196 | 3700×1700×2200 | 4400",
+     "| TH-800GF | 1000 | 800 | WD327TAD88 | 12 | 145/165 | 32.7 | 196 | 3700×1700×2200 | 4400"
+    ]
+   },
+   {
+    "n": 106,
+    "title": "100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司",
+    "header": [],
+    "rows": [
+     "| TH-200GF | 250 | 200 | NT855-GA | 6L | 140/152 | 14 | 206 | 2980×1000×1700 | 2320 |",
+     "| | | | MTA11-G2A | 6L | 125/147 | 10.8 | 200 | 2980×1000×1700 | 2320 |",
+     "| TH-250GF | 312.5 | 250 | NTA855-G1B | 6L | 140/152 | 14 | 207 | 2980×1000×1700 | 2450 |",
+     "| | | | MTAA11-G3 | 6L | 125/147 | 10.8 | 188 | 3150×1050×1700 | 2450 |",
+     "| TH-275GF | 343.7 | 275 | NTA855-G2A | 6L | 140/152 | 14 | 206 | 3100×1000×1700 | 2600 |",
+     "| TH-300GF | 375 | 300 | NTAA855-G7 | 6L | 140/152 | 14 | 204 | 3400×1280×1800 | 3050 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-120GF | 150 | 120 | TAD731GE | 6L | 108/130 | 7.15 | 215 | 2400×870×1450 | 1560 |",
+     "| TH-150GF | 188 | 150 | TAD732GE | 6L | 108/130 | 7.15 | 213 | 2600×1050×1500 | 1600 |",
+     "| TH-180GF | 225 | 180 | TAD733GE | 6L | 108/130 | 7.15 | 216 | 2600×1050×1770 | 1800 |",
+     "| TH-200GF | 250 | 200 | TAD734GE | 6L | 108/130 | 7.15 | 204 | 2600×1120×1670 | 2700 |",
+     "| TH-250GF | 312.5 | 250 | TAD1341GE | 6L | 131/158 | 12.78 | 191 | 2950×1120×1595 | 2700 |",
+     "| TH-280GF | 350 | 280 | TAD1342GE | 6L | 131/158 | 12.78 | 191 | 2950×1120×1595 | 2700 |",
+     "| TH-300GF | 375 | 300 | TAD1343GE | 6L | 131/158 | 12.78 | 192 | 3130×1115×1800 | 3000 |",
+     "| TH-100GF | 125 | 100 | 1106A-70TAG1 | 6L | 105/135 | 7.01 | 24.1 | 2565×730×1575 | 1376 |",
+     "| | | | 1006TAG | 6L | 100/127 | 5.99 | 24.1 | 2565×730×1575 | 1376 |",
+     "| TH-120GF | 150 | 120 | 1006TAG2 | 6L | 100/127 | 5.99 | 31 | 2565×730×1575 | 1416 |",
+     "| | | | 1106A-70TAG2 | 6L | 105/135 | 7.01 | 31 | 2565×730×1575 | 1416 |",
+     "| TH-140GF | 175 | 140 | 1106A-70TAG3 | 6L | 105/135 | 7.01 | 31 | 2645×730×1630 | 1644 |",
+     "| | | | 1106C-E66TAG4 | 6L | 105/127 | 6.6 | 31 | 2645×730×1630 | 1644 |",
+     "| TH-150GF | 187.5 | 150 | 1106A-70TAG4 | 6L | 105/135 | 7.01 | 31 | 2645×730×1630 | 1644 |",
+     "| TH-160GF | 200 | 160 | 1306C-E87TAG3 | 6L | 116.6/135.9 | 8.7 | 36.8 | 3035×900×1525 | 1695 |",
+     "| TH-180GF | 225 | 180 | 1306C-E87TAG4 | 6L | 116.6/135.9 | 8.7 | 39.7 | 3035×900×1525 | 1695 |",
+     "| TH-200GF | 250 | 200 | 1306C-E87TAG6 | 6L | 116.6/135.9 | 8.7 | 42.6 | 3035×900×1525 | 2035 |",
+     "| TH-280GF | 350 | 280 | 2206A-E13TAG2 | 6L | 130/157 | 12.5 | 54 | 3500×1105×1960 | 3385 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-224GF | 280 | 224 | 6R1600G10F | 6 | 122/150 | 10.5 | 201 | 3000×1335×1880 | 2795 |",
+     "| TH-250GF | 312.5 | 250 | 6R1600G20F | 6 | 122/150 | 10.5 | 199 | 3000×1335×1880 | 2795 |",
+     "| TH-300GF | 375 | 300 | 8V1600G10F | 8 | 122/150 | 14.0 | 191 | 3000×1590×1940 | 3570 |",
+     "| TH-120GF | 150 | 120 | P086TI-1 | 6L | 111/139 | 8.071 | 35.4 | 2650×950×1400 | 1800",
+     "| TH-150GF | 187.5 | 150 | P086TI | 6L | 111/139 | 8.071 | 43.1 | 2650×950×1400 | 1800",
+     "| TH-200GF | 250 | 200 | P126TI | 6L | 123/155 | 11.051 | 58.1 | 2960×1030×1500 | 2315",
+     "| TH-250GF | 312.5 | 250 | P126TI-II | 6L | 123/155 | 11.051 | 63.1 | 2960×1030×1500 | 2315",
+     "| TH-280GF | 350 | 280 | P158LE-1 | 8V | 128/142 | 14.618 | 78.7 | 3120×1390×1690 | 2715",
+     "| TH-300GF | 375 | 300 | P158LE-1 | 8V | 128/142 | 14.618 | 78.7 | 3120×1390×1690 | 2885",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-120GF | 150 | 120 | SC8D220D2 | 6L | 114/135 | 8.28 | 200 | 2700×1000×1500 | 2200 |",
+     "| TH-150GF | 187.5 | 150 | SC7H250D2 | 6L | 105/124 | 6.5 | 193 | 2700×1000×1500 | 2250 |",
+     "| TH-160GF | 200 | 160 | SC8D280D2 | 6L | 114/135 | 8.28 | 200 | 2700×1000×1500 | 2250 |",
+     "| TH-180GF | 225 | 180 | SC13G310D2 | 6L | 135/150 | 12.88 | 200 | 2700×1000×1500 | 2250 |",
+     "| TH-200GF | 250 | 200 | SC9D340D2 | 6L | 114/144 | 8.82 | 195 | 3000×1080×1700 | 2350 |",
+     "| TH-250GF | 312.5 | 250 | SC13G420D2 | 6L | 135/150 | 12.88 | 200 | 3150×1240×1750 | 2500 |",
+     "| TH-270GF | 337.5 | 270 | SC12E460D2 | 6L | 128/153 | 11.8 | 192 | 3160×1400×1750 | 2500 |",
+     "| TH-300GF | 375 | 300 | SC15G500D2 | 6L | 135/165 | 14.16 | 200 | 3300×1340×1900 | 3390 |",
+     "| TH-120GF | 150 | 120 | YC6A200L-D20 | 6L | 108/132 | 7.252 | 192 | 2600×1000×1700 | 1700",
+     "| TH-150GF | 187.5 | 150 | YC6A230L-D20 | 6L | 108/132 | 7.252 | 192 | 2700×1000×1700 | 1770",
+     "| TH-160GF | 200 | 160 | YC6G245L-D20 | 6L | 112/132 | 7.8 | 195 | 2700×1000×1700 | 1770",
+     "| TH-180GF | 225 | 180 | YC6M350L-D20 | 6L | 120/145 | 9.839 | 197 | 3010×1040×1820 | 2450",
+     "| TH-200GF | 250 | 200 | YC6M350L-D20 | 6L | 120/145 | 9.839 | 197 | 3010×1040×1820 | 2450",
+     "| TH-250GF | 312.5 | 250 | YC6MK420L-D20 | 6L | 123/145 | 10.338 | 195 | 3010×1040×1820 | 2450",
+     "| TH-300GF | 375 | 300 | YC6MJ480L-D20 | 6L | 131/145 | 11.726 | 195 | 3010×1040×1820 | 2450",
+     "| TH-120GF | 150 | 120 | WD150D15 | 6 | 140/160 | 14.8 | 198 | 2650×900×1400 | 2200",
+     "| TH-150GF | 187.5 | 150 | WD129TD16 | 6 | 135/150 | 12.9 | 198 | 2650×900×1400 | 2200",
+     "| TH-160GF | 200 | 160 | WD129TD17 | 6 | 135/150 | 12.9 | 198 | 2650×900×1400 | 2200",
+     "| TH-180GF | 225 | 180 | WD135TD19 | 6 | 135/150 | 13.5 | 198 | 2650×900×1400 | 2200",
+     "| TH-200GF | 250 | 200 | WD129TAD23 | 6 | 135/150 | 12.9 | 198 | 3000×1250×1900 | 2600",
+     "| TH-250GF | 312.5 | 250 | WD135TAD28 | 6 | 138/150 | 13.5 | 198 | 3000×1250×1900 | 3000",
+     "| TH-280GF | 350 | 280 | WD145TAD30 | 6 | 138/160 | 14.5 | 198 | 3000×1250×1900 | 3200",
+     "| TH-300GF | 375 | 300 | WD145TAD33L | 6 | 138/160 | 14.5 | 198 | 3000×1250×1900 | 3200"
+    ]
+   },
+   {
+    "n": 107,
+    "title": "10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司",
+    "header": [],
+    "rows": [
+     "| TH-15GF | 18.75 | 15 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |",
+     "| TH-20GF | 25 | 20 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |",
+     "| TH-24GF | 30 | 24 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |",
+     "| TH-32GF | 40 | 32 | 4BT3.9-G2 | 4L | 102/120 | 3.9 | 210 | 1660×750×1200 | 810 |",
+     "| TH-48GF | 60 | 48 | 4BTA3.9-G2 | 4L | 102/120 | 3.9 | 210 | 1860×750×1200 | 850 |",
+     "| TH-64GF | 80 | 64 | 6BT5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1040 |",
+     "| TH-75GF | 93.75 | 75 | 6BT5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1056 |",
+     "| TH-92GF | 115 | 92 | 6BTA5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1096 |",
+     "| TH-104GF | 130 | 104 | 6BTAA5.9-G2 | 6L | 102/120 | 5.9 | 209 | 2300×850×1300 | 1400 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-68GF | 85 | 68 | TAD530GE | 4L | 108/130 | 4.76 | 213 | 2080×720×1450 | 1090 |",
+     "| TH-75GF | 93.75 | 75 | TAD531GE | 4L | 108/130 | 4.76 | 218 | 2080×750×1450 | 1150 |",
+     "| TH-80GF | 100 | 80 | TAD531GE | 4L | 108/130 | 4.76 | 218 | 2080×750×1450 | 1150 |",
+     "| TH-90GF | 112.5 | 90 | TAD532GE | 4L | 108/130 | 4.76 | 214 | 2280×900×1450 | 1250 |",
+     "| TH-100GF | 125 | 100 | TAD532GE | 4L | 108/130 | 4.76 | 214 | 2280×900×1450 | 1250 |",
+     "| | KVA | KW | | | | | | | |",
+     "| TH-8GF | 10 | 8 | 403D-11G | 3L | 77/81 | 1.131 | 2.0 | 1100×450×940 | 290 |",
+     "| TH-10GF | 12.5 | 10 | 403D-15G | 3L | 84/90 | 1.496 | 3.2 | 1200×500×1000 | 380 |",
+     "| TH-16GF | 20 | 16 | 404D-22G | 4L | 84/100 | 2.216 | 4.0 | 1350×530×1000 | 456 |",
+     "| TH-20GF | 25 | 20 | 404D-22TG | 4L | 84/100 | 2.216 | 5.0 | 1350×530×1000 | 480 |",
+     "| TH-24GF | 30 | 24 | 1103A-33G | 3L | 105/127 | 3.3 | 5.4 | 1740×730×1565 | 762 |",
+     "| TH-36GF | 45 | 36 | 1103A-33TG1 | 3L | 105/127 | 3.3 | 8.2 | 2030×730×1565 | 870 |",
+     "| TH-50GF | 62.5 | 50 | 1104A-44TG1 | 4L | 105/127 | 4.4 | 11.2 | 2135×730×1595 | 978 |",
+     "| TH-64GF | 80 | 64 | 1104A-44TG2 | 4L | 105/127 | 4.4 | 14.0 | 2135×730×1595 | 1018 |",
+     "| TH-75GF | 93.7 | 75 | 1006TG1A | 6L | 100/127 | 5.99 | 16.5 | 2235×730×1595 | 1050 |",
+     "| TH-80GF | 100 | 80 | 1006TG2A | 6L | 100/127 | 5.99 | 16.5 | 2235×730×1595 | 1050 |",
+     "| | | | 1104C-44TAG2 | 4L | 105/127 | 4.4 | 17.1 | 2235×730×1595 | 1090 |",
+     "| TH-100GF | 125 | 100 | 1106A-70TAG1 | 6L | 105/135 | 7.01 | 24.1 | 2565×730×1575 | 1376 |",
+     "| | | | 1006TAG | 6L | 100/127 | 5.99 | 24.1 | 2565×730×1575 | 1376 |"
+    ]
+   },
+   {
+    "n": 111,
+    "title": "沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司",
+    "header": [
+     "| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重量 | 技术文档",
+     "| | KVA | KW | | | | | | | |"
+    ],
+    "rows": [
+     "| TH-75GF | 93.75 | 75 | TAD531GE | 4L | 108/130 | 4.76 | 218 | 2080×750×1450 | 1150 |",
+     "| TH-80GF | 100 | 80 | TAD531GE | 4L | 108/130 | 4.76 | 218 | 2080×750×1450 | 1150 |",
+     "| TH-250GF | 312.5 | 250 | TAD1341GE | 6L | 131/158 | 12.78 | 191 | 2950×1120×1595 | 2700 |"
+    ]
+   },
+   {
+    "n": 113,
+    "title": "奔驰柴油发电机组-产品展示_泰州泰海机电设备有限公司",
+    "header": [
+     "| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程(mm) | 排气量 (L) | 燃油消耗量(g/kwh) | 外形尺寸(L×W×H) (mm) | 重量(kg) | 技术文档",
+     "| | KVA | KW | | | | | | | |"
+    ],
+    "rows": [
+     "| THM-520GF | 650 | 520 | 12V2000G25 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000 |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tecnogen",
+  "country": "IT",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 2003,
+    "title": "Tecnogen Enermax (Volvo): model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 Hz | engine | panel",
+    "header": [
+     "| MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (ï) 7 m | | | | |",
+     "| | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | | Tank l | L | W | H | Kg"
+    ],
+    "rows": [
+     "| VO353TSX** | 341 | 315 | 375 | 340 | TAD1351GE | E | 6 | 12780 | 249 | 294 | 49 | 56 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5000"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tellhow-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 107,
+    "title": "515kW-2600kW THCM Series Silent Diesel Generator Sets | 515–2600kW MTU Power Solutions",
+    "header": [
+     "| Model | Engine model | Prime power | Standby power | Overall size | Weight （Kg） | Noise (no load) | Tank capacity",
+     "| （kW） | （kW） | Length (L)×Width (W)×Height (H) | 1m | 7m | （L）"
+    ],
+    "rows": [
+     "| THCM515 | 12V2000G25 | 515 | 560 | 6058X2438X2591 | 10500 | 82 | 74 | 1000L"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vantek-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 105,
+    "title": "玉柴发电机组-陆用发电机组-江苏万泰动力设备有限公司",
+    "header": [
+     "| 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机型号 | 机组尺寸 (MM) | 重量 (KG)"
+    ],
+    "rows": [
+     "| TPD105V6 | 105 | 84 | 115 | 92 | TAD531GE | 2080×940×1550 | 1350",
+     "| TPD340V6 | 340 | 273 | 375 | 300 | TAD1341GE | 2950×1120×1788 | 2500"
+    ]
+   },
+   {
+    "n": 106,
+    "title": "沃尔沃发电机组-陆用发电机组-江苏万泰动力设备有限公司",
+    "header": [
+     "| 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机型号 | 机组尺寸 (MM) | 重量 (KG)"
+    ],
+    "rows": [
+     "| TPD100V5 | 100 | 80 | 110 | 88 | TAD531GE | 2080×940×1550 | 1350",
+     "| TPD318V5 | 318 | 255 | 348 | 278 | TAD1341GE | 2950×1120×1788 | 2500"
+    ]
+   },
+   {
+    "n": 106,
+    "title": "沃尔沃发电机组-陆用发电机组-江苏万泰动力设备有限公司",
+    "header": [
+     "| 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机型号 | 机组尺寸 (MM) | 重量 (KG)"
+    ],
+    "rows": [
+     "| TPD323V5 | 323 | 259 | 355 | 285 | TAD1351GE | 3400×1160×1850 | 3450"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "victory-generator",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": "AMF20"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE6020"
+   },
+   {
+    "brand": "SmartGen",
+    "model": "HGM6120"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 107,
+    "title": "275KVA~4000KVA MTU Diesel Generator Set",
+    "header": [
+     "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | Cylinder | Open Generator Set | Silent Generator Set",
+     "| KW | KVA | KW | KVA | Dimensions/ L*W*H (mm) | Weight (kg) | Dimensions/ L*W*H (mm) | Weight (kg)"
+    ],
+    "rows": [
+     "| V240M | 50 | 220 | 275 | 240 | 300 | 6R1600G70F | 52 | 6L | 3000*1450*1815 | 2760 | 4350*1500*2260 | 4870",
+     "| V550M | 50 | 500 | 625 | 550 | 687.5 | 12V2000G25 | 120 | 12V | 4050*1585*2150 | 4600 | 20 GP container | 10250",
+     "| V580M | 50 | 527.2 | 659 | 580 | 725 | 12V2000G25 | 126 | 12V | 4050*1585*2150 | 5350 | 20 GP container | 10250"
+    ]
+   },
+   {
+    "n": 111,
+    "title": "250KVA~770KVA Volvo Penta Diesel Generator Set Wholesaler",
+    "header": [
+     "| Genset Model | Prime Power | Standby Power | Engine model | Emission Standards | Bore*Stroke | CYL | Displacement | Lube | Fuel consumption | Dimension | Weight",
+     "| KW | KVA | KW | KVA | (mm) | (L) | (L) | g/kw.h | (mm) | (Kg)"
+    ],
+    "rows": [
+     "| V285PT | 260 | 325 | 285 | 356 | TAD1351GE | CN III, EU III | 131*158 | 6 | 12.78 | 35 | 198 | 3100*1150*1600 | 2850",
+     "| V300PT | 273 | 341 | 300 | 375 | TAD1351GE | US TIER3 | 131*158 | 6 | 12.78 | 35 | 198 | 3100*1150*1600 | 2850"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "volvo-penta",
+  "country": "SE",
+  "role": "engine_maker",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 1005,
+    "title": "Datasheet: TAD1351GE — Volvo Penta product bulletin",
+    "header": [],
+    "rows": [
+     "| Net engine prime power kWm, 50 Hz / 1500 rpm | 279 kWm / 1500 rpm",
+     "| Net engine standby power kWm, 50 Hz / 1500 rpm | 306 kWm / 1500 rpm",
+     "| Net engine prime power kWm, 60 Hz / 1800 rpm | 294 kWm / 1800 rpm",
+     "| Net engine standby power kWm, 60 Hz / 1800 rpm | 323 kWm / 1800 rpm",
+     "| Bore × Stroke, mm | 131 × 158",
+     "| Displacement, l | 12.78",
+     "| Compression ratio | 18.1:1",
+     "| Dry weight, engine only, kg | 1295",
+     "| Dry weight with Gen Pac, kg | 1715"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "walter-yangzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 104,
+    "title": "200-500KVA-200-500KVA-Generation System, Diesel Generator Set-Walter",
+    "header": [
+     "| GensetModel | Power（kVA） | Engine Brand | Engine Model | Dimension(MM)L*W*H",
+     "| Standby | Prime"
+    ],
+    "rows": [
+     "| WET-V345 | 345 | 313 | Volvo | TAD1341GE | 2600*1000*1600"
+    ]
+   },
+   {
+    "n": 105,
+    "title": "10-200KVA-10-200KVA-Generation System, Diesel Generator Set-Walter",
+    "header": [
+     "| GensetModel | Power（kVA） | EngineBrand | Engine Model | Dimension(MM)L*W*H",
+     "| Standby | Prime"
+    ],
+    "rows": [
+     "| WET-V138 | 138 | 125 | Volvo | TAD531GE | 2200*900*1500"
+    ]
+   },
+   {
+    "n": 111,
+    "title": "Volvo Series-Volvo Series-Generation System, Diesel Generator Set-Walter",
+    "header": [
+     "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H",
+     "| KVA | KW | KVA | KW"
+    ],
+    "rows": [
+     "| WET-88 | 110 | 88 | 100 | 80 | TAD531GE | 2200*900*1500"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "weiman-fujian",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 108,
+    "title": "WT-MTU – WEIMAN",
+    "header": [
+     "| Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Download",
+     "| Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder *Bore*Stroke (Qty*mm*mm) | Displacement (L) | Compression Ratio | Asp.",
+     "| Prime | Standby | Prime | Standby | g/kw.h | L/h"
+    ],
+    "rows": [
+     "| WT-MT715 | 520 | 650 | 572 | 715 | 12V2000G25 | 580 | 635 | 203 | 138.52 | 12×130×150 | 23.88 | 16:1 | TC | More data"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "westinpower",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8004"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE8610"
+   },
+   {
+    "brand": "DEIF",
+    "model": null
+   },
+   {
+    "brand": "Woodward",
+    "model": "easYgen-1800"
+   }
+  ],
+  "specTables": [
+   {
+    "n": 117,
+    "title": "Diesel Generator Set with MTU Engine | Genset Supplier | Westinpower",
+    "header": [
+     "| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | |",
+     "| | kVA | kW | kVA | kW | | | | L*W*H (mm) | L*W*H (mm)"
+    ],
+    "rows": [
+     "| TX710 | 715 | 572 | 650 | 520 | 12V2000G25 | 23.88 | 156 | 4000*1585*2265 | 5306*1706*3015"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "wintpower",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": "AMF25"
+   },
+   {
+    "brand": "Datakom",
+    "model": "DKG-309"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE4620"
+   },
+   {
+    "brand": "Deep Sea",
+    "model": "DSE7320"
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 111,
+    "title": "China Mtu Diesel Power Generator Set Dg Genset 863kVA 1000kVA 1100kVA 1250kVA 1375kVA Manufacture and Factory | WINTPOWER",
+    "header": [
+     "| Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displacement | Battery Vol. | Max power | Governor | Open Type Dimension",
+     "| Standby Power | Prime Power | Cons 100% ( L/H )",
+     "| KVA/KW | KVA/KW | L | V | KW | | L×W×H ( MM ) | Weight KG"
+    ],
+    "rows": [
+     "| WT-MT300 | 300/240 | 275/220 | 66 | 6R1600G70F | 6L | 10.5 | 24 | 274 | ECM | 3159*1195*1897 | 2760",
+     "| WT-MT688 | 688/550 | 625/500 | 140 | 12V2000G25 | 12V | 23.88 | 24 | 580 | ECM | 4125*1470*2130 | 5350",
+     "| WT-MT725 | 725/580 | 659/527 | 140 | 12V2000G25 | 12V | 23.88 | 24 | 580 | ECM | 4125*1470*2130 | 5350"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "world-power-fuzhou",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 103,
+    "title": "Power Engine - FUZHOU WORLD POWER GENERATION CO.,LTD",
+    "header": [
+     "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+    ],
+    "rows": [
+     "| WDPG-V100 | 80 | 100 | 88 | 110 | TAD531GE | 4 | E |",
+     "| WDPG-V313 | 250 | 313 | 275 | 344 | TAD1341GE | 6 | E |"
+    ]
+   },
+   {
+    "n": 103,
+    "title": "Power Engine - FUZHOU WORLD POWER GENERATION CO.,LTD",
+    "header": [
+     "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+    ],
+    "rows": [
+     "| WDPG-MTU660 | 528 | 660 | 580 | 725 | 12V2000G25 | 12 | E |"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "xingguang-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 102,
+    "title": "沃尔沃柴油发电机组系列 - 江苏星光动力集团",
+    "header": [
+     "| 沃尔沃 机组型号 | 机组输出 功率 (KW/KVA) | 柴油机 型号 | 柴油机功率（ KW ） 主 / 备用 | 缸数 | 机油 容量 （ L ） | 燃油 消耗 g/kw.h | 排放 | 开架机组 外形尺寸 L × W × H(mm) | 机组 重量 (kg)"
+    ],
+    "rows": [
+     "| XG-88GF | 80/88 | TAD531GE | 88/96 | 4 | 13 | 218 | 国 II | 2200×720×1380 | 1200",
+     "| XG-275GF | 250/275 | TAD1341GE | 277/298 | 6 | 30 | 191 | 国 II | 3000×1100×1750 | 2300",
+     "| XG-275GF-1 | 250/275 | TAD1351GE | 285/306 | 6 | 30 | 200 | 国 III | 3000×1100×1750 | 2300"
+    ]
+   },
+   {
+    "n": 112,
+    "title": "MTU奔驰柴油发电机组系列 - 江苏星光动力集团",
+    "header": [
+     "| 奔驰 机组型号 | 机组输出 功率 (KW/KVA) | 柴油机 型号 | 柴油机功率（ KW ） 主 / 备用 | 缸数 | 机油 容量 （ L ） | 燃油 消耗 g/kw.h | 排放 | 开架机组 外形尺寸 L×W×H(mm) | 机组 重量 (kg)"
+    ],
+    "rows": [
+     "| XG-550GF-1 | 500/625 | 550/688 | 12V2000G25 | 12 | 77 | 197 | 国 II | 3900×1650×2280 | 6500"
+    ]
+   },
+   {
+    "n": 121,
+    "title": "300-1000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+    "header": [
+     "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+     "| Standby | Prime"
+    ],
+    "rows": [
+     "| XG350S3-E | 350 | 318 | Volvo | TAD1351GE | PDF",
+     "| XG715S3 | 715 | 650 | MTU | 12V2000G25 | PDF",
+     "| XG315S3-6E | 315 | 283 | Volvo | TAD1351GE | PDF",
+     "| XG380S3-6 | 380 | 345 | Volvo | TAD1341GE | PDF"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "yanan-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 103,
+    "title": "MTU GENERATOR SET - Buy MTU, GENERATOR SET Product on Fujian Yanan Technology Co., Ltd",
+    "header": [
+     "| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| YN725MTU | 725kVA | 580kW | 660kVA | 528kW | 12V2000G25 | 12 | YN725MTU",
+     "| YN725MTU | 725kVA | 580kW | 660kVA | 528kW | 12V2000G25 | 12 | YN725MTU"
+    ]
+   },
+   {
+    "n": 107,
+    "title": "VOLVO GENERATOR SET - Buy VOLVO, GENERATOR SET Product on Fujian Yanan Technology Co., Ltd",
+    "header": [
+     "| Genset Model | Standby power | Prime power | Engine Model | NO.of Cylinder | Detail Data"
+    ],
+    "rows": [
+     "| YN356V | 356kVA | 285kW | 324kVA | 259kW | TAD1351GE | 6 | YN356V",
+     "| YN375V | SLG314D | 375kVA | 300kW | 338kVA | 270kW | TAD1351GE | 6 | YN375V"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "yingtai-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 107,
+    "title": "沃尔沃发电机组, 沃尔沃发电机组 供应 - 英泰集团有限公司",
+    "header": [
+     "| 发动机 型号 Engine Type | 功率 (主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径* 行程Bore/ Strokse (MM) | 排气量 Exhaust Cspacity (L) | 压缩比 Compression Ratio | 机 油容量 Lubri cating Capacity (L) | 燃油耗 Fuel Consu mptio (G/ KW.H) | 燃油耗 Fuel Consu mptio (L/H) | 调速方式 Type Of Gov ernor | 冷却液容量 Liquid coolind capa city | 排放等级 Emis sion leveis"
+    ],
+    "rows": [
+     "| TAD531GE | 88 | 102 | 4 | 108*130 | 4.76 | 18.:1 | 13 | 218 | 22.9 | 机械 | 20 | 国二",
+     "| TAD1341GE | 271 | 315 | 6 | 131*158 | 12.78 | 18.1:1 | 36 | 202 | 65.5 | 电喷 | 44 | 国二",
+     "| TAD1351GE | 271 | 315 | 6 | 131*158 | 12.78 | 18.1:1 | 36 | 206 | 61.8 | 电喷 | 44 | 国三"
+    ]
+   },
+   {
+    "n": 110,
+    "title": "MTU发电机组-英泰集团有限公司",
+    "header": [
+     "| 机组型号 Genset Model | 功率（主用） Power(KW) | 功率（备用） Power(KW) | 电流（主用） Power(A) | 电流（备用）Power(A) | 净重 Net Weight(kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发动机型号 Engine Type",
+     "| KW | KVA | KW | KVA"
+    ],
+    "rows": [
+     "| 500GF | 500 | 625 | 567 | 709 | 900 | 1021 | 7000 | 3.9*1.42*2.2 | MTU 2000系列 | 12V2000G25"
+    ]
+   },
+   {
+    "n": 2008,
+    "title": "Yingtai / MTU",
+    "header": [
+     "| 机组型号 Genset Model | 功率（主用） Power(KW) | 功率（备用） Power(KW) | 电流（主用） Power(A) | 电流（备用）Power(A) | 净重 Net Weight(kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发动机型号 Engine Type"
+    ],
+    "rows": [
+     "| 500GF | 500 | 625 | 567 | 709 | 900 | 1021 | 7000 | 3.9*1.42*2.2 | MTU 2000系列 | 12V2000G25"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "yunding-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "controllers": [
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   },
+   {
+    "brand": "Mebay",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   },
+   {
+    "brand": "Mebay",
+    "model": null
+   },
+   {
+    "brand": "Deep Sea",
+    "model": null
+   },
+   {
+    "brand": "ComAp",
+    "model": null
+   },
+   {
+    "brand": "SmartGen",
+    "model": null
+   },
+   {
+    "brand": "Mebay",
+    "model": null
+   }
+  ],
+  "specTables": [
+   {
+    "n": 2003,
+    "title": "奔驰MTU柴油发电机组 MTU(奔驰)2000系列",
+    "header": [
+     "| 机组型号 Model | 功率P ower | 电流A Current | 发动机型号 Engin e model | 缸数 Cylinder | 缸径*行程 Bore*Stroke | 排气量L Displacement | 机油容量L Lube oil | 油耗g/kw.h Consumption | 尺寸mm Size | 重量Kg Weight",
+     "| KW | KVA",
+     "| MTU(奔驰)2000系列"
+    ],
+    "rows": [
+     "| YDM-550GF | 550 | 687.5 | 990 | 12V2000G25 | 12 | 130*150 | 23.88L | 77L | 197 | 4000*1650*2280 | 6500"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "zhengchi-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "confidence": "medium",
+  "specTables": [
+   {
+    "n": 101,
+    "title": "沃尔沃发电机 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| | 机组型号 | 输出功率(KW) | 电流 | 柴油机型号 | 缸数 | 缸径×行程 | 排气量 | 燃油消耗率 | 机组尺寸mm | 机组重量 | 电压(V) | 频率 | 输出 | 详细参数",
+     "| 主用 | 备用"
+    ],
+    "rows": [
+     "| ZCDL-V275 | 250 | 275 | 450A | TAD1351GE | 6 | 131*158 | 12.78L | 200g/kw.h | 300*1106*1600 | 3000kg | 220/380 | 50Hz | 三相四线 | 详细参数"
+    ]
+   },
+   {
+    "n": 131,
+    "title": "280kw柴油发电机组 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 260KW | 280KW | 沃尔沃 | ZCDL-V280 | TAD1341GE | 50Hz | 230/400 | 6.3/10.5 | 200g/kw.h | 三相四线 | 6 | 14.6 | 3300×1380×1850 | 3000 | 更多"
+    ]
+   },
+   {
+    "n": 132,
+    "title": "250kw柴油发电机组 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 250KW | 275KW | 沃尔沃 | ZCDL-V275 | TAD1351GE | 50Hz | 230/400 | 6.3/10.5 | 204g/kw.h | 三相四线 | 6 | 14.6 | 3400×1130×2020 | 3250 | 更多"
+    ]
+   },
+   {
+    "n": 140,
+    "title": "正驰动力130kw发电机组生产厂家 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 121KW | 133KW | 沃尔沃 | ZCDL-V133 | TAD531GE | 50Hz | 230/400 | 6.3/10.5 | 204g/kw.h | 三相四线 | 6 | 7.15 | 2400×950×1550 | 1760 | 更多"
+    ]
+   },
+   {
+    "n": 144,
+    "title": "90kw柴油发电机组 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 80KW | 87KW | 沃尔沃 | ZCDL-V87 | TAD531GE | 50Hz | 230/400 | 6.3/10.5 | 211g/kw.h | 三相四线 | 4 | 4.46 | 2080×940×1550 | 1350 | 更多"
+    ]
+   },
+   {
+    "n": 145,
+    "title": "正驰动力85kw发电机组生产厂家 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 80KW | 87KW | 沃尔沃 | ZCDL-V87 | TAD531GE | 50Hz | 230/400 | 6.3/10.5 | 211g/kw.h | 三相四线 | 4 | 4.76 | 2080×940×1550 | 1350 | 更多",
+     "| 80KW | 88KW | 沃尔沃 | ZCDL-V88 | TAD531GE | 50Hz | 230/400 | 6.3/10.5 | 155g/kw.h | 三相四线 | 6 | 8.2 | 2000×750×1100 | 1900 | 更多"
+    ]
+   },
+   {
+    "n": 146,
+    "title": "80kw柴油发电机组 - 【官网】|柴油发电机组厂家，康明斯发电机，柴油发电机，玉柴柴油发电机组，正驰动力",
+    "header": [
+     "| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"
+    ],
+    "rows": [
+     "| 80KW | 87KW | 沃尔沃 | ZCDL-V87 | TAD531GE | 50Hz | 230/400 | 6.3/10.5 | 211g/kw.h | 三相四线 | 4 | 4.46 | 2080×940×1550 | 1350 | 更多"
+    ]
+   }
+  ]
+ }
+]

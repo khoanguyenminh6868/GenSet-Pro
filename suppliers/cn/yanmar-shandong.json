@@ -1,0 +1,83 @@
+{
+  "id": "yanmar-shandong",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Yanmar Engine (Shandong) Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Yanmar"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Shandong",
+    "city": "Qingdao"
+  },
+  "founded": 2003,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Công ty con của Yanmar tại Thanh Đảo, sản xuất và bán động cơ diesel công nghiệp; sản xuất động cơ diesel đứng làm mát bằng nước từ 11/2013",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Khoảng 250 nhân viên (10/2013)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Vertical water cooled diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn duy nhất là thông cáo Yanmar năm 2013; không thấy website riêng và thông tin hiện tại của công ty",
+    "Thông cáo không ghi động cơ dùng cho máy phát điện và không ghi dải công suất (chỉ ghi model 70HP dự kiến)",
+    "Không thấy tên tiếng Trung trên các trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.yanmar.com/global/news/2013/10/28/1164.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Name : Yanmar Engine (Shandong) Co., Ltd.",
+        "Established : February 2003",
+        "Location : No. 278 Shaohai Road, Hetao, Hongdao Economic Zone, Tsingtao, Shandong Province, China, 266113",
+        "Business scope : production and sales of industrial diesel engines, and assembly and sales of small-sized construction machinery",
+        "Yanmar will start production of vertical water cooled diesel engines in Tsingtao, China, as of November 2013.",
+        "Employees : approx. 250 (as of October 2013)"
+      ],
+      "file": "sources/yanmar-shandong/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

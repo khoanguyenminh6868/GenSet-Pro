@@ -1,0 +1,16 @@
+{
+  "id": "powerlink-shanghai", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "PowerLink", "zh": null, "brands": ["PowerLink"],
+  "web": "https://www.powerlinkworld.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "delivering modular and reliable power solutions ranging from 3.6 kWe to 2300 kWe"],
+    "2": ["A", "Delivering a flexible power range from 6 kVA to 4000 kVA, our generators are designed for ultimate versatility.", "Backed by advanced manufacturing facilities in the UK and China", "The HV range of diesel generators, powered by Mitsubishi, Perkins, and Cummins engines, provides 1250 kVA to3250 kVA", "The EP range of diesel generators, powered by Perkins engines, provides 6kVA to 2250kVA"]
+  },
+  "str": [["Tổ máy diesel 6–4000 kVA; dòng cao áp HV 1250–3250 kVA; có nhà máy ở Anh và Trung Quốc", 2], ["Có cả tổ máy khí, hệ lai pin, máy nén khí, đèn chiếu sáng di động", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "PowerLink diesel generators (VR, QSV, EC, EP, RK, HV)", "fuel": "diesel", "eng": ["Perkins", "Cummins", "Mitsubishi"], "p": [6, 4000, "kVA", "unspecified", 2], "src": [2] }
+  ],
+  "miss": ["Website không ghi tên pháp nhân, địa chỉ, năm thành lập; quốc gia ghi CN vì website nêu nhà máy ở Anh và Trung Quốc (hồ sơ GPOWER ghi 威迩徕德电力设备(上海)有限公司, chưa lưu được trang)"],
+  "by": "discover-bot (Claude)"
+}

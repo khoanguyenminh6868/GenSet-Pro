@@ -1,0 +1,938 @@
+{
+  "id": "kaichen-jiangsu",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Jiangsu Kaichen Electric Power Equipment Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Kaichen"
+    ]
+  },
+  "website": "https://www.kaichenpower.com/",
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Yangzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nhà máy 24.000 m² ở Giang Đô, Dương Châu; hơn 6.000 tổ máy/năm, hơn 200 nhân sự",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có dòng tổ máy KC-C (Cummins) và KC-P (Perkins)",
+      "src": [
+        2
+      ]
+    },
+    {
+      "text": "Theo hãng: hơn 20 năm kinh nghiệm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Open Diesel Generator KC-C (CUMMINS)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "CUMMINS"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins KC-P series Open Type Diesel Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kaichen silent genset, Ricardo engine (báo giá 2026-11-10)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Ricardo"
+      ],
+      "engineModels": [
+        "ZH4100D",
+        "ZH4105ZLD",
+        "R4105ZD",
+        "R6105ZD",
+        "R6105AZLD",
+        "R6105IZLD",
+        "R6108IZLD",
+        "P10",
+        "618ZLD",
+        "P12"
+      ],
+      "alternatorMakes": [
+        "Kaichen"
+      ],
+      "power": {
+        "min": 30,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          5002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "220/380V"
+      ],
+      "types": [
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        5002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Kaichen silent genset, Yuchai engine (báo giá 2026-11-10)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4V35-D20",
+        "YC4V45Z-D20",
+        "YC4V55Z-D20",
+        "YC4D90Z-D25",
+        "YC4A100Z-D25",
+        "YC4A140L-D25",
+        "YC4A180L-D20",
+        "YC6B205L-D20",
+        "YC6A245L-D21",
+        "YC6MK350L-D20",
+        "YC6MK420L-D20",
+        "YC6MJ500L-D21"
+      ],
+      "alternatorMakes": [
+        "Kaichen"
+      ],
+      "power": {
+        "min": 16,
+        "max": 300,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          5002
+        ]
+      },
+      "frequency": [
+        "50Hz"
+      ],
+      "voltage": [
+        "220/380V"
+      ],
+      "types": [
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        5002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Công ty có nhiều website (kaichenpower.com, jskcgenerator.com, cnkcpower.com, kcgenset.com...); hai tên ghi trên trang: 'Jiangsu Kaichen Electric Power Equipment Co., Ltd.' và 'Jiangsu Kaichen Power Equipment Co., Ltd.'",
+    "Các trang đã lưu không ghi dải công suất chung và chứng chỉ cụ thể"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kaichenpower.com/company-profile",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © Jiangsu Kaichen Electric Power Equipment Co., Ltd. All Rights Reserved.",
+        "Dinghuo Industrial Park, Jiangdu District, Yangzhou, Jiangsu Province",
+        "Jiangsu Kaichen Electric Power Equipment Co., Ltd. is a professional manufacturer specializing in diesel generator sets and integrated power solutions. With over 20 years of industry experience",
+        "We operate a modern 24,000㎡ production facility with an annual output of over 6,000 generator sets. Supported by a team of more than 200 professionals"
+      ],
+      "file": "sources/kaichen-jiangsu/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.jskcgenerator.com/",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2026 Jiangsu Kaichen Electric Power Equipment Co., Ltd.",
+        "Add: Nanhuan East Road, Majiazhuang, Dinghuo Town, Jiangdu District, Yangzhou City, Jiangsu Province",
+        "Open Diesel Generator KC-C（CUMMINS）",
+        "Perkins KCP Open Type Diesel Generator"
+      ],
+      "file": "sources/kaichen-jiangsu/2.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/kaichen-jiangsu-catalog.pdf",
+      "accessedAt": "2026-11-11",
+      "tier": "A",
+      "quote": [
+        "| KCC-25GF | 22 | 27 | 24 | 30 | 4B3.9-G2 |"
+      ],
+      "file": "sources/kaichen-jiangsu/5001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.kaichenpower.com/cummins-diesel-generator/300kw-industrial-diesel-generators.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Engine: Chongqing Cummins NTA855-G2A"
+      ],
+      "file": "sources/kaichen-jiangsu/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.kaichenpower.com/silent-diesel-generator-set/20kw-silent-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Power | 20 kW"
+      ],
+      "file": "sources/kaichen-jiangsu/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.kaichenpower.com/household-diesel-generator/100kw-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Power | 100 kW"
+      ],
+      "file": "sources/kaichen-jiangsu/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.kaichenpower.com/household-diesel-generator/75kw-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Prime Power | 75 kW"
+      ],
+      "file": "sources/kaichen-jiangsu/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.kaichenpower.com/household-diesel-generator/200kw-diesel-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Power Output | 200 kW / 250 kVA"
+      ],
+      "file": "sources/kaichen-jiangsu/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.kaichenpower.com/perkins-diesel-generator/370kw-perkins-generator-set.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Type | Dimension Open type L*W*H(mm) | Weight"
+      ],
+      "file": "sources/kaichen-jiangsu/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.kaichenpower.com/perkins-diesel-generator/200kw-gen-power-diesel-generator.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | KCP-300GF"
+      ],
+      "file": "sources/kaichen-jiangsu/107.md"
+    },
+    {
+      "n": 108,
+      "url": "https://www.kaichenpower.com/cummins-diesel-generator/320kw-diesel-generator-sets.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Engine: Cummins NTAA855-G7"
+      ],
+      "file": "sources/kaichen-jiangsu/108.md"
+    },
+    {
+      "n": 5002,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/kaichen-jiangsu-quotation-2026-11-10.xlsx",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 30 | 33 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 300 | 330 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 16KW/20KVA | YUCHAI | YC4V35-D20 | Kaichen | KCI-16 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 860 | 16 | 18 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 300KW/375KVA | YUCHAI | YC6MJ500L-D21 | Kaichen | KCI-300 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3800 | 300 | 330 | 100AH | Capable of continuous use for over 10 hours |",
+        "Brushless alternator, single bearing, IP23, H insulation class",
+        "Voltage:220/380 Speed: 50HZ , 1500rpm Phase:three phases"
+      ],
+      "file": "sources/kaichen-jiangsu/5002.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "300kW Industrial Diesel Generator | Reliable Power Solution for Industrial Use",
+      "header": [],
+      "rows": [
+        "Engine: Chongqing Cummins NTA855-G2A",
+        "Alternator: KCC-350GF",
+        "Controller: Smartgen HGM6110",
+        "| Genset Model | KCC-350GF",
+        "| Standby Power | 375 kVA / 300 kW",
+        "| Prime Power | 350 kVA / 280 kW",
+        "| Engine Model | NTA855-G2A",
+        "| Displacement | 14 L",
+        "| Fuel Consumption | 207 g/kW·h"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "20kW Silent Diesel Generator | Low Noise Backup Power",
+      "header": [],
+      "rows": [
+        "| Prime Power | 20 kW",
+        "| Standby Power | 22 kW",
+        "| Voltage | 400/230V",
+        "| Frequency | 50Hz",
+        "| Power Factor | 0.8",
+        "| Speed | 1500 RPM"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "100kW Diesel Generator Set | Commercial & Industrial Power Solutions",
+      "header": [],
+      "rows": [
+        "| Prime Power | 100 kW",
+        "| Standby Power | 110–125 kVA",
+        "| Voltage | 400/230V",
+        "| Frequency | 50Hz",
+        "| Power Factor | 0.8",
+        "| Speed | 1500 RPM",
+        "| Starting System | 24V Electric Start",
+        "| Protection Grade | IP23"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "75kW Diesel Generator | Commercial & Industrial Power Solution",
+      "header": [],
+      "rows": [
+        "| Prime Power | 75 kW",
+        "| Standby Power | 82.5 kW",
+        "| Voltage | 400/230V",
+        "| Frequency | 50Hz",
+        "| Power Factor | 0.8",
+        "| Speed | 1500 RPM",
+        "| Starting System | 24V Electric Start",
+        "| Fuel Consumption | Approx. 14–18 L/H",
+        "| Protection Class | IP23"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "200kW Diesel Generator Set | Industrial & Backup Power Solution",
+      "header": [],
+      "rows": [
+        "| Power Output | 200 kW / 250 kVA",
+        "| Standby Power | 220 kW / 275 kVA",
+        "| Voltage | 400/230 V",
+        "| Frequency | 50 Hz",
+        "| Fuel Consumption | ~52 L/h (100% load)"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "370KW Perkins Generator Set | Industrial Backup Power Solution",
+      "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Type | Dimension Open type L*W*H(mm) | Weight",
+        "| KVA | KW | KVA | KW | (kg)"
+      ],
+      "rows": [
+        "| KCP-10GF | 10 | 8 | 9 | 7 | 403A-11 G1 | 1350*500 * 1090 | 335",
+        "| KCP-10GF* | 10 | 8 | 9 | 7 | 403D-11G | 1350*500 * 1090 | 335",
+        "| KCP-15GF | 14 | 11 | 13 | 10 | 403A-15G1 | 1430*500*1150 | 400",
+        "| KCP-15GF* | 14 | 11 | 13 | 10 | 403D-15G | 1430*500*1150 | 415",
+        "| KCP-20GF | 16 | 13 | 15 | 12 | 403A-15G2 | 1430*500*1150 | 415",
+        "| KCP-25GF | 22 | 18 | 20 | 16 | 404A-22G1 | 1610*560*1195 | 525",
+        "| KCP-25GF* | 22 | 18 | 20 | 16 | 404D-22G | 1610*560*1195 | 525",
+        "| KCP-30GF | 30 | 24 | 27 | 22 | 404D-22TG | 1610*560*1195 | 550",
+        "| KCP-35GF | 32 | 26 | 30 | 24 | 1103A-33G | 1840*700*1270 | 860",
+        "| KCP-50GF | 50 | 40 | 45 | 36 | 1103A-33TG1 | 1960*700*1350 | 870",
+        "| KCP-70GF | 66 | 53 | 60 | 48 | 1103A-33TG2 | 2050*700*1350 | 980",
+        "| KCP-80GF | 72 | 57 | 65 | 52 | 1104A-44TG1 | 2200*700*1350 | 1050",
+        "| KCP-90GF | 88 | 70 | 80 | 64 | 1104A-44TG2 | 2200*700*1350 | 1080",
+        "| KCP-90GF* | 88 | 70 | 80 | 64 | 1104C-44TAG1 | 2280*700*1350 | 1150",
+        "| KCP-110GF | 110 | 88 | 100 | 80 | 1104C-44TAG2 | 2280*700*1350 | 1250",
+        "| KCP-150GF | 150 | 120 | 135 | 108 | 1106A-70TG1 | 2565*850*1425 | 1522",
+        "| KCP-170GF | 165 | 132 | 150 | 120 | 1106A-70TAG2 | 2750*850*1350 | 1580",
+        "| KCP-200GF | 200 | 160 | 180 | 144 | 1106A-70TAG3 | 2850*850*1350 | 1590",
+        "| KCP-220GF | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 2850*1045*1825 | 1600",
+        "| KCP-260GF | 254 | 203 | 231 | 185 | 1506A-E88TAG2 | 2980*1055*1695 | 2335",
+        "| KCP-300GF | 283 | 226 | 257 | 206 | 1506A-E88TAG3 | 2980*1055*1695 | 2350",
+        "| KCP-350GF | 338 | 270 | 307 | 246 | 1506A-E88TAG5 | 3080*1090*1700 | 2500",
+        "| KCP-400GF | 400 | 320 | 350 | 280 | 2206C-E13TAG2 | 3460*1150*2030 | 2980",
+        "| KCP-450GF | 450 | 360 | 400 | 320 | 2206C-E13TAG3 | 3460*1150*2030 | 3135",
+        "| KCP-500GF | 500 | 400 | 455 | 364 | 2506C-E15TAG1 | 3780*1270*2020 | 3760",
+        "| KCP-550GF | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3780*1270*2020 | 3880",
+        "| KCP-650GF | 650 | 520 | 591 | 473 | 2806C-E18TAG1A | 3780*1536*2180 | 4555",
+        "| KCP-700GF | 700 | 560 | 650 | 520 | 2806A-E18TAG2 | 3780*1536*2180 | 4600",
+        "| KCP-900GF | 820 | 656 | 746 | 597 | 4006-23TAG2A | 4250*1690*2150 | 6460",
+        "| KCP-900GF* | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4250*1690*2150 | 6500",
+        "| KCP-1000GF | 1000 | 800 | 910 | 728 | 4008TAG1A | 4735*2261*2256 | 7400",
+        "| KCP-1200GF | 1125 | 900 | 1022 | 818 | 4008TAG2A | 4735*2261*2256 | 7450",
+        "| KCP-1200GF* | 1125 | 900 | 1022 | 818 | 4008TAG2 | 4735*2261*2256 | 7450",
+        "| KCP-1250GF | 1250 | 1000 | 1125 | 900 | 4008-30TAG3 | 4735*2261*2256 | 7450",
+        "| KCP-1400GF | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | 4800*2100*2297 | 9030",
+        "| KCP-1400GF* | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2 | 4800*2100*2297 | 9050",
+        "| KCP-1500GF | 1500 | 1200 | 1375 | 1100 | 4012-46TWG3A | 4800*2100*2297 | 9100",
+        "| KCP-1700GF | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 4900*2100*2297 | 9730",
+        "| KCP-1900GF | 1850 | 1480 | 1688 | 1350 | 4012-46TAG3A | 4900*2100*2297 | 9730",
+        "| KCP-2000GF | 2000 | 1600 | 1850 | 1480 | 4016TAG1A | 5035*2597*2150 | 10300",
+        "| KCP-2200GF | 2200 | 1760 | 2000 | 1600 | 4016TAG2A | 5035 * 2597 * 2150 | 10300",
+        "| KCP-2200GF | 2200 | 1760 | 2000 | 1600 | 4016-61TRG2 | 5250 * 2600 * 2150 | 10270",
+        "| KCP-2500GF | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 5250 * 2600 * 2150 | 11000"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "200KW Perkins Diesel Generator | Reliable Industrial Backup Power",
+      "header": [],
+      "rows": [
+        "| Genset Model | KCP-300GF",
+        "| Standby Power | 283 kVA / 226 kW",
+        "| Prime Power | 257 kVA / 206 kW",
+        "| Engine Model | Perkins 1506A-E88TAG3",
+        "| Dimensions (Open Type) | 2980 × 1055 × 1695 mm",
+        "| Weight | 2350 kg"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "320kW Cummins Diesel Generator Set | Industrial Power Solution",
+      "header": [],
+      "rows": [
+        "Engine: Cummins NTAA855-G7",
+        "Alternator: KCC-375GF",
+        "| Genset Model | KCC-375GF",
+        "| Standby Power | 413 kVA / 330 kW",
+        "| Prime Power | 375 kVA / 300 kW",
+        "| Engine Model | NTAA855-G7",
+        "| Displacement | 14 L",
+        "| Fuel Consumption | 209 g/kW·h",
+        "| Voltage | 400/230 V",
+        "| Frequency | 50 Hz"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 5 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCC-25GF | 22 | 27 | 24 | 30 | 4B3.9-G2 |",
+        "| KCC-40GF | 32 | 40 | 35 | 44 | 4BT3.9-G2 |",
+        "| KCC-63GF | 50 | 62.5 | 55 | 69 | 4BTA3.9-G2 |",
+        "| KCC-70GF | 52 | 65 | 56 | 70 | 4BTA3.9-G2 |",
+        "| KCC-80GF | 64 | 80 | 72 | 90 | 4BTA3.9-G11 |",
+        "| KCC-100GF | 80 | 100 | 88 | 110 | 4BTA3.9-G13 |",
+        "| KCC-100GF | 80 | 100 | 88 | 110 | 6BT5.9-G2 |",
+        "| KCC-113GF | 90 | 113 | 100 | 125 | 6BT5.9-G2 |",
+        "| KCC-125GF | 100 | 125 | 110 | 138 | 6BTA5.9-G2 |",
+        "| KCC-160GF | 128 | 160 | 140 | 175 | 6BTAA5.9-G12 |",
+        "| KCC-200GF | 160 | 200 | 172 | 215 | 6CTAA8.3-G2 |",
+        "| KCC-250GF | 200 | 250 | 211 | 264 | 6LTAA8.9-G2 |",
+        "| KCC-250GF | 200 | 250 | 220 | 275 | 6LTAA8.9-G3 |",
+        "| KCC-275GF | 220 | 275 | 250 | 313 | NTA855-G1A |",
+        "| KCC-313GF | 250 | 313 | 272 | 340 | 6LTAA9.5-G1 |",
+        "| KCC-350GF | 280 | 350 | 300 | 375 | NTA855-G2A |",
+        "| KCC-400GF | 280 | 350 | 310 | 388 | NTA855-G4 |",
+        "| KCC-380GF | 310 | 388 | 340 | 425 | 6ZTAA13-G3 |",
+        "| KCC-375GF | 300 | 375 | 330 | 413 | NTAA855-G7 |",
+        "| KCC-400GF3 | 320 | 400 | 350 | 438 | QSNT-G3 |",
+        "| KCC-500GF | 400 | 500 | 410 | 513 | QSZ13-G3 |",
+        "| KCC-450GF | 360 | 450 | 400 | 500 | KTA19-G3 |",
+        "| KCC-500GF | 400 | 500 | 450 | 563 | KTA19-G3A |",
+        "| KCC-560GF | 450 | 563 | 500 | 625 | KTAA19-G5 |",
+        "| KCC-725GF | 580 | 725 | 640 | 800 | KT38-GA |",
+        "| KCC-750GF | 600 | 750 | 660 | 825 | KTA38-G2 |",
+        "| KCC-800GF | 640 | 800 | 710 | 888 | KTA38-G2B |",
+        "| KCC-900GF | 728 | 910 | 800 | 1000 | KTA38-G2A |",
+        "| KCC-1000GF | 800 | 1000 | 880 | 1100 | KTA38-G5 |",
+        "| KCC-1250GF | 1000 | 1250 | 1100 | 1375 | KTA50-G3 |",
+        "| KCC-1380GF | 1100 | 1375 | 1320 | 1650 | KTA50-G8 |",
+        "| KCC-1500GF | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 |",
+        "| KCC-1680GF | 1340 | 1675 | 1500 | 1875 | KTA50-G15X |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 5 phải (60Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCC-25GF | 20 | 25 | 22 | 28 | 4B3.9-G11 |",
+        "| KCC-35GF | 28 | 35 | 30 | 38 | 4B3.9-G12 |",
+        "| KCC-45GF | 36 | 45 | 40 | 50 | 4BT3.9-G2 |",
+        "| KCC-64GF | 51 | 64 | 56 | 70 | 4BTA3.9-G2 |",
+        "| KCC-75GF | 60 | 75 | 70 | 88 | 4BTA3.9-G2 |",
+        "| KCC-90GF | 72 | 90 | 80 | 100 | 4BTA3.9-G11 |",
+        "| KCC-100GF | 84 | 105 | 92 | 115 | 6BT5.9-G2 |",
+        "| KCC-190GF | 152 | 190 | 167 | 209 | 6CTA8.3-G2 |",
+        "| KCC-210GF | 168 | 210 | 184 | 230 | 6CTAA8.3-G2 |",
+        "| KCC-250GF | 208 | 260 | 228 | 285 | 6LTAA8.9-G2 |",
+        "| KCC-325GF | 260 | 325 | 280 | 350 | 6LTAA9.5-G1 |",
+        "| KCC-388GF | 310 | 388 | 340 | 425 | 6ZTAA13-G3 |",
+        "| KCC-438GF | 350 | 438 | 380 | 475 | 6ZTAA13-G2 |",
+        "| KCC-500GF | 400 | 500 | 420 | 525 | QSZ13-G3 |",
+        "| KCC-350GF | 250 | 313 | 280 | 350 | NTA855-G1 |",
+        "| KCC-380GF | 280 | 350 | 300 | 375 | NTA855-G1B |",
+        "| KCC-450GF | 315 | 394 | 350 | 438 | NTA855-G3 |",
+        "| KCC-560GF | 450 | 563 | 500 | 625 | KTA19-G3A |",
+        "| KCC-625GF | 470 | 588 | 550 | 688 | KTAA19-G5 |",
+        "| KCC-720GF | 500 | 625 | 570 | 713 | QSK19-G4 |",
+        "| KCC-688GF | 550 | 688 | 600 | 750 | QSK19-G5 |",
+        "| KCC-875GF | 700 | 875 | 770 | 963 | KTA38-G1 |",
+        "| KCC-1000GF | 800 | 1000 | 900 | 1125 | KTA38-G2A |",
+        "| KCC-1100GF | 900 | 1125 | 1000 | 1250 | KTA38-G4 |",
+        "| KCC-1375GF | 1100 | 1375 | 1250 | 1563 | KTA50-G3 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 6 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCP-900GF | 640 | 800 | 704 | 880 | 4006-23TAG3A |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 6 phải (60Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCP-15GF | 9 | 11 | 10 | 13 | 403D-11G |",
+        "| KCP-30GF | 19 | 24 | 21 | 26 | 404D-22G |",
+        "| KCP-40GF | 28 | 35 | 30 | 38 | 1103A-33G |",
+        "| KCP-60GF | 43 | 54 | 47 | 59 | 1103A-33TG1 |",
+        "| KCP-90GF | 61 | 76 | 67 | 84 | 1104A-44TG1 |",
+        "| KCP-130GF | 92 | 115 | 100 | 125 | 1104C-44TAG2 |",
+        "| KCP-170GF | 122 | 152 | 135 | 169 | 1106A-70TG1 |",
+        "| KCP-200GF | 135 | 169 | 150 | 188 | 1106A-70TAG2 |",
+        "| KCP-220GF | 158 | 197 | 175 | 219 | 1106A-70TAG3 |",
+        "| KCP-280GF | 198 | 248 | 218 | 273 | 1506A-E88TAG2 |",
+        "| KCP-440GF | 320 | 400 | 350 | 438 | 2206C-E13TAG2 |",
+        "| KCP-580GF | 400 | 500 | 450 | 563 | 2506C-E15TAG1 |",
+        "| KCP-830GF | 600 | 750 | 660 | 825 | 4006-23TAG2A |",
+        "| KCP-1100GF | 800 | 1000 | 880 | 1100 | 4008TAG2 |",
+        "| KCP-1375GF | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 7 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCV-95GF | 68 | 85 | 75 | 94 | TAD530GE |",
+        "| KCV-175GF | 125 | 156 | 138 | 173 | TAD731GE |",
+        "| KCV-210GF | 150 | 188 | 165 | 206 | TAD732GE |",
+        "| KCV-220GF | 160 | 200 | 176 | 220 | TAD733GE |",
+        "| KCV-280GF | 200 | 250 | 220 | 275 | TAD734GE |",
+        "| KCV-400GF | 280 | 350 | 308 | 385 | TAD1342GE |",
+        "| KCV-420GF | 300 | 375 | 330 | 413 | TAD1342GE |",
+        "| KCV-450GF | 320 | 400 | 352 | 440 | TAD1343GE |",
+        "| KCV-500GF | 360 | 450 | 400 | 500 | TAD1344GE |",
+        "| KCV-550GF | 400 | 500 | 440 | 550 | TAD1345GE |",
+        "| KCV-630GF | 450 | 563 | 500 | 625 | TAD1641GE |",
+        "| KCV-760GF | 550 | 688 | 605 | 756 | TWD1643GE |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 8 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCD-15GF | 11 | 14 | 12 | 15 | SP173NA |",
+        "| KCD-30GF | 20 | 25 | 22 | 28 | SP244TA |",
+        "| KCD-55GF | 40 | 50 | 44 | 55 | SP344CA |",
+        "| KCD-95GF | 66 | 83 | 73 | 91 | D1146 |",
+        "| KCD-130GF | 95 | 119 | 105 | 131 | D1146T |",
+        "| KCD-190GF | 135 | 169 | 149 | 186 | P086TI-1 |",
+        "| KCD-220GF | 160 | 200 | 176 | 220 | PO86TI |",
+        "| KCD-220GF | 160 | 200 | 176 | 220 | DPO86LA |",
+        "| KCD-300GF | 220 | 275 | 242 | 303 | P126TI |",
+        "| KCD-630GF | 460 | 575 | 506 | 633 | DP180LA |",
+        "| KCD-688GF | 500 | 625 | 550 | 688 | DP180LB |",
+        "| KCD-825GF | 600 | 750 | 660 | 825 | DP222LC |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 8 phải (60Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCD-10GF | 7 | 9 | 8 | 10 | SP103NE |",
+        "| KCD-20GF | 13 | 16 | 14 | 18 | SP173NC |",
+        "| KCD-30GF | 19 | 24 | 21 | 26 | SP224NC |",
+        "| KCD-35GF | 24 | 30 | 26 | 33 | SP244TC |",
+        "| KCD-50GF | 35 | 44 | 40 | 50 | SP244CA |",
+        "| KCD-80GF | 58 | 73 | 64 | 80 | SP344CB |",
+        "| KCD-110GF | 80 | 100 | 88 | 110 | D1146 |",
+        "| KCD-150GF | 109 | 136 | 120 | 150 | D1146T |",
+        "| KCD-240GF | 175 | 219 | 193 | 241 | PO86TI |",
+        "| KCD-455GF | 330 | 413 | 363 | 454 | DP126LB |",
+        "| KCD-500GF | 360 | 450 | 400 | 500 | P158LE |",
+        "| KCD-605GF | 440 | 550 | 484 | 605 | DP158LD |",
+        "| KCD-700GF | 504 | 630 | 554 | 693 | DP180LA |",
+        "| KCD-880GF | 640 | 800 | 704 | 880 | DP222LB |",
+        "| KCD-935F | 680 | 850 | 748 | 935 | DP222LC |",
+        "| KCD-950GF | 690 | 863 | 760 | 950 | DP222CA |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 9 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCW-30GF | 24 | 30 | 26 | 33 | WP2.3D33E200 |",
+        "| KCW-38GF | 30 | 38 | 33 | 41 | WP2.3D40E200 |",
+        "| KCW-40GF | 36 | 45 | 40 | 50 | WP2.3D48E200 |",
+        "| KCW-60GF | 50 | 63 | 55 | 69 | WP4.1D66E200 |",
+        "| KCW-80GF | 64 | 80 | 70 | 88 | WP4.1D80E200 |",
+        "| KCW-100GF | 80 | 100 | 100 | 125 | WP4.1D113E200 |",
+        "| KCW-125GF | 100 | 125 | 120 | 150 | WP6D132E200 |",
+        "| KCW-150GF | 120 | 150 | 132 | 165 | WP6D152E200 |",
+        "| KCW-175GF | 140 | 175 | 150 | 188 | WP6D167E200 |",
+        "| KCW-200GF | 160 | 200 | 176 | 220 | WP10D200E200 |",
+        "| KCW-230GF | 184 | 230 | 200 | 250 | WP10D238E200 |",
+        "| KCW-250GF | 200 | 250 | 220 | 275 | WP10D264E200 |",
+        "| KCW-313GF | 250 | 313 | 280 | 350 | WP10D320E200 |",
+        "| KCW-375GF | 300 | 375 | 320 | 400 | WP13D385E200 |",
+        "| KCW-400GF | 320 | 400 | 352 | 440 | WP13D405E200 |",
+        "| KCW-450GF | 360 | 450 | 400 | 500 | WP13D440E310 |",
+        "| KCW-500GF | 400 | 500 | 440 | 550 | WP13D490E310 |",
+        "| KCW-650GF | 520 | 650 | 580 | 725 | 6M33D633E200 |",
+        "| KCW-675GF | 540 | 675 | 600 | 750 | 6M33D670E200 |",
+        "| KCW-750GF | 600 | 750 | 660 | 825 | 12M26D748E200 |",
+        "| KCW-800GF | 640 | 800 | 720 | 900 | 8M33D800E200 |",
+        "| KCW-900GF | 720 | 900 | 800 | 1000 | 8M33D890E200 |",
+        "| KCW-800GF | 640 | 800 | 700 | 875 | 12M26D792E200 |",
+        "| KCW-900GF | 720 | 900 | 800 | 1000 | 12M26D902E200 |",
+        "| KCW-1000GF | 800 | 1000 | 880 | 1100 | 12M26D968E200 |",
+        "| KCW-1000GF | 800 | 1000 | 880 | 1100 | 12M33D968E310 |",
+        "| KCW-1125GF | 900 | 1125 | 1000 | 1250 | 12M33D1108E200 |",
+        "| KCW-1250GF | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200 |",
+        "| KCW-1375GF | 1100 | 1375 | 1200 | 1500 | 12M33D1320E200 |",
+        "| KCW-1125GF | 900 | 1125 | 1000 | 1250 | 12M33D1108E310 |",
+        "| KCW-1250GF | 1000 | 1250 | 1100 | 1375 | 12M33D1240E310 |",
+        "| KCW-1375GF | 1100 | 1375 | 1200 | 1500 | 12M33D1320E310 |",
+        "| KCW-1560GF | 1250 | 1563 | 1400 | 1750 | 16M33D1530E310 |",
+        "| KCW-1690GF | 1350 | 1688 | 1485 | 1856 | 16M33D1580E310 |",
+        "| KCW-1750GF | 1400 | 1750 | 1520 | 1900 | 16M33D1680E310 |",
+        "| KCW-2000GF | 1600 | 2000 | 1760 | 2200 | 12M55D2020E310 |",
+        "| KCW-2250GF | 1800 | 2250 | 1980 | 2475 | 12M55D2200E310 |",
+        "| KCW-2500GF | 2000 | 2500 | 2200 | 2750 | 12M55D2450E310 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 9 phải (60Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCW-25GF | 20 | 25 | 24 | 30 | WP2.3D30E201 |",
+        "| KCW-44GF | 35 | 44 | 40 | 50 | WP2.3D47E201 |",
+        "| KCW-50GF | 40 | 50 | 50 | 63 | WP2.3D58E201 |",
+        "| KCW-75GF | 60 | 75 | 66 | 83 | WP4.1D80E201 |",
+        "| KCW-94GF | 75 | 94 | 83 | 104 | WP4.1D95E201 |",
+        "| KCW-110GF | 90 | 113 | 100 | 125 | WP4.1D115E201 |",
+        "| KCW-125GF | 100 | 125 | 110 | 138 | WP6D132E201 |",
+        "| KCW-150GF | 120 | 150 | 132 | 165 | WP6D158E201 |",
+        "| KCW-188GF | 150 | 188 | 165 | 206 | WP10D200E201 |",
+        "| KCW-225GF | 180 | 225 | 200 | 250 | WP10D238E201 |",
+        "| KCW-375GF | 300 | 375 | 320 | 400 | WP10D360E201 |",
+        "| KCW-375GF | 300 | 375 | 330 | 413 | WP13D385E201 |",
+        "| KCW-500GF | 400 | 500 | 460 | 575 | WP13D510E311 |",
+        "| KCW-563GF | 450 | 563 | 500 | 625 | 6M33D572E201 |",
+        "| KCW-650GF | 520 | 650 | 580 | 725 | 6M33D633E201 |",
+        "| KCW-688GF | 550 | 688 | 600 | 750 | 6M33D670E201 |",
+        "| KCW-725GF | 580 | 725 | 640 | 800 | 6M33D710E201 |",
+        "| KCW-750GF | 600 | 750 | 660 | 825 | 6M33D740E311 |",
+        "| KCW-1000GF | 800 | 1000 | 900 | 1125 | 8M33D1012E311 |",
+        "| KCW-1500GF | 1200 | 1500 | 1320 | 1650 | 12M33D1320E201 |",
+        "| KCW-1750GF | 1400 | 1750 | 1540 | 1925 | 16M33D1680E311 |",
+        "| KCW-2250GF | 1800 | 2250 | 1980 | 2475 | 20M33D2230E311 |",
+        "| KCW-2500GF | 2000 | 2500 | 2200 | 2750 | 20M33D2460E311 |",
+        "| KCW-3000GF | 2400 | 3000 | 2640 | 3300 | 16M55D2960E311 |",
+        "| KCW-3250GF | 2600 | 3250 | 2800 | 3500 | 16M55D3150E311 |",
+        "| KCW-3375GF | 2700 | 3375 | 3000 | 3750 | 16M55D3350E311 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 10 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCS-25GF | 20 | 25 | 22 | 28 | 4H4.3-G21 |",
+        "| KCS-40GF | 32 | 40 | 35 | 44 | 4H4.3-G22 |",
+        "| KCS-50GF | 40 | 50 | 44 | 55 | 4HT4.3-G21 |",
+        "| KCS-80GF | 64 | 80 | 70 | 88 | 4HT4.3-G23 |",
+        "| KCS-125GF | 100 | 125 | 108 | 135 | 4HTAA4.3-G22 |",
+        "| KCS-250GF | 200 | 250 | 220 | 275 | 6DTAA8.9-G22 |",
+        "| KCS-350GF | 280 | 350 | 308 | 385 | 6ETAA11.8-G21 |",
+        "| KCS-400GF | 320 | 400 | 350 | 438 | 6ETAA12.8-G32 |",
+        "| KCS-438GF | 350 | 438 | 400 | 500 | 6ETAA12.8-G31 |",
+        "| KCS-375GF | 300 | 375 | 330 | 413 | 6ETAA11.8-G31 |",
+        "| KCS-500GF | 400 | 500 | 450 | 563 | 6ETAA12.8-G310 |",
+        "| KCS-625GF | 500 | 625 | 550 | 688 | 6KTAA25-G34 |",
+        "| KCS-688GF | 550 | 688 | 600 | 750 | 6KTAA25-G33 |",
+        "| KCS-800GF | 640 | 800 | 700 | 875 | 6KTAA25-G31 |",
+        "| KCS-900GF | 720 | 900 | 800 | 1000 | 6WTAA35-G32 |",
+        "| KCS-1000GF | 800 | 1000 | 880 | 1100 | 6WTAA35-G31 |",
+        "| KCS-1125GF | 900 | 1125 | 1000 | 1250 | 6WTAA35-G310 |",
+        "| KCS-1250GF | 1000 | 1250 | 1100 | 1375 | 6WTAA35-G311 |",
+        "| KCS-1375GF | 1100 | 1375 | 1250 | 1563 | 12KTA58-G36 |",
+        "| KCS-1500GF | 1200 | 1500 | 1350 | 1688 | 12KTA58-G35 |",
+        "| KCS-1688GF | 1350 | 1688 | 1500 | 1875 | 12KTA58-G34 |",
+        "| KCS-1875GF | 1500 | 1875 | 1600 | 2000 | 12KTA58-G32 |",
+        "| KCS-2125GF | 1700 | 2125 | 1800 | 2250 | 12KTA58-G31 |",
+        "| KCS-63GF | 50 | 63 | 55 | 69 | SC4H95D2 |",
+        "| KCS-80GF | 64 | 80 | 70 | 88 | SC4H115D2 |",
+        "| KCS-113GF | 90 | 113 | 99 | 124 | SC4H160D2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 10 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCS-125GF | 100 | 125 | 108 | 135 | SC4H180D2 |",
+        "| KCS-169GF | 135 | 169 | 149 | 186 | SC7H230D2 |",
+        "| KCS-206GF | 165 | 206 | 182 | 227 | SC8D280D2 |",
+        "| KCS-225GF | 180 | 225 | 198 | 248 | SC9D310D2 |",
+        "| KCS-250GF | 200 | 250 | 220 | 275 | SC9D340D2 |",
+        "| KCS-350GF | 280 | 350 | 308 | 385 | SC12E460D2 |",
+        "| KCS-375GF | 300 | 375 | 330 | 413 | SC15G500D2 |",
+        "| KCS-450GF | 360 | 450 | 396 | 495 | SC25G610D2 |",
+        "| KCS-500GF | 400 | 500 | 440 | 550 | SC25G690D2 |",
+        "| KCS-563GF | 450 | 563 | 492 | 615 | SC27G755D2 |",
+        "| KCS-625GF | 500 | 625 | 544 | 680 | SC27G830D2 |",
+        "| KCS-750GF | 600 | 750 | 660 | 825 | SC33W990D2 |",
+        "| KCS-900GF | 720 | 900 | 792 | 990 | SC33W1150D2 |",
+        "| KCS-50GF | 40 | 50 | 44 | 55 | 4H4.3-G22 |",
+        "| KCS-85GF | 68 | 85 | 74 | 93 | 4HT4.3-G23 |",
+        "| KCS-125GF | 100 | 125 | 110 | 138 | 4HTAA4.3-G22 |",
+        "| KCS-150GF | 120 | 150 | 132 | 165 | 6HTAA6.5-G21 |",
+        "| KCS-275GF | 220 | 275 | 240 | 300 | 6DTAA8.9-G23 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 11 trái (50Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCY-20GF | 16 | 20 | 18 | 23 | YC4V35-D20 |",
+        "| KCY-30GF | 24 | 30 | 27 | 34 | YC4V45Z-D20 |",
+        "| KCY-40GF | 32 | 40 | 35 | 44 | YC4D60-D25 |",
+        "| KCY-63GF | 50 | 63 | 55 | 69 | YC4D90Z-D25 |",
+        "| KCY-70GF | 55 | 69 | 60 | 75 | YC4A100Z-D20 |",
+        "| KCY-100GF | 80 | 100 | 90 | 113 | YC4A140L-D25 |",
+        "| KCY-125GF | 100 | 125 | 110 | 138 | YC4A180L-D20 |",
+        "| KCY-150GF | 120 | 150 | 132 | 165 | YC6B205L-D20 |",
+        "| KCY-175GF | 140 | 175 | 154 | 193 | YC6A230L-D20 |",
+        "| KCY-188GF | 150 | 188 | 165 | 206 | YC6A245L-D21 |",
+        "| KCY-250GF | 200 | 250 | 220 | 275 | YC6MK350L-D20 |",
+        "| KCY-313GF | 250 | 313 | 275 | 344 | YC6MK420L-D20 |",
+        "| KCY-350GF | 280 | 350 | 310 | 388 | YC6MK460L-D20 |",
+        "| KCY-400GF | 320 | 400 | 352 | 440 | YC6MJ540-D30 |",
+        "| KCY-450GF | 360 | 450 | 396 | 495 | YC6MJ600-D30 |",
+        "| KCY-500GF | 400 | 500 | 440 | 550 | YC6T660L-D20 |",
+        "| KCY-563GF | 450 | 563 | 500 | 625 | YC6TD780-D31 |",
+        "| KCY-625GF | 500 | 625 | 550 | 688 | YC6TD840-D31 |",
+        "| KCY-688GF | 550 | 688 | 600 | 750 | YC6TD900-D31 |",
+        "| KCY-750GF | 600 | 750 | 660 | 825 | YC6TD1000-D31 |",
+        "| KCY-910GF | 730 | 913 | 800 | 1000 | YC6TH1220-D31 |",
+        "| KCY-1000GF | 800 | 1000 | 900 | 1125 | YC6TH1320-D31 |",
+        "| KCY-1250GF | 1000 | 1250 | 1100 | 1375 | YC6C1660-D31 |",
+        "| KCY-1500GF | 1200 | 1500 | 1320 | 1650 | YC12VTD2000 |",
+        "| KCY-1688GF | 1350 | 1688 | 1485 | 1856 | YC16VTD2270-D30 |",
+        "| KCY-1875GF | 1500 | 1875 | 1650 | 2063 | YC16VTD2510-D30 |",
+        "| KCY-2000GF | 1600 | 2000 | 1760 | 2200 | YC16VTD2700-D30 |",
+        "| KCY-2250GF | 1800 | 2250 | 1980 | 2475 | YC16VC3000-D31 |",
+        "| KCY-2500GF | 2000 | 2500 | 2200 | 2750 | YC16VC3300-D31 |",
+        "| KCY-2750GF | 2200 | 2750 | 2400 | 3000 | YC16VC3600-D31 |",
+        "| KCY-3000GF | 2400 | 3000 | 2600 | 3250 | YC16VC4000-D31 |",
+        "| KCY-3125GF | 2500 | 3125 | 2700 | 3375 | YC16VC4200-D30 |",
+        "| KCY-3250GF | 2600 | 3250 | 2800 | 3500 | YC16VC4500-D30 |",
+        "| KCY-3500GF | 2800 | 3500 | 3000 | 3750 | YC16VC4900-D30 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 11 phải (60Hz)",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCY-20GF | 18 | 23 | 20 | 25 | YC4V35-D21 |",
+        "| KCY-30GF | 25 | 31 | 28 | 35 | YC4V45Z-D21 |",
+        "| KCY-44GF | 35 | 44 | 40 | 50 | YC4D65-D20 |",
+        "| KCY-56GF | 45 | 56 | 50 | 63 | YC4D80Z-D20 |",
+        "| KCY-70GF | 55 | 69 | 60 | 75 | YC4D100Z-D20 |",
+        "| KCY-88GF | 70 | 88 | 80 | 100 | YC6B130Z-D20 |",
+        "| KCY-90GF | 75 | 94 | 85 | 106 | YC4D140-D33 |",
+        "| KCY-100GF | 80 | 100 | 90 | 113 | YC4D155-D33 |",
+        "| KCY-113GF | 90 | 113 | 100 | 125 | YC4D180-D33 |",
+        "| KCY-150GF | 120 | 150 | 132 | 165 | YC4A205-D32 |",
+        "| KCY-188GF | 150 | 188 | 160 | 200 | YC6A245-D32 |",
+        "| KCY-206GF | 165 | 206 | 180 | 225 | YC6A285-D32 |",
+        "| KCY-213GF | 170 | 213 | 190 | 238 | YC6A305-D32 |",
+        "| KCY-313GF | 250 | 313 | 280 | 350 | YC6MK420L-D21 |",
+        "| KCY-375GF | 300 | 375 | 320 | 400 | YC6MJ515L-D22 |",
+        "| KCY-500GF | 400 | 500 | 440 | 550 | YC6T660L-D21 |",
+        "| KCY-575GF | 460 | 575 | 520 | 650 | YC6TD780-D32 |",
+        "| KCY-625GF | 500 | 625 | 550 | 688 | YC6TD840-D32 |",
+        "| KCY-650GF | 520 | 650 | 570 | 713 | YC6TD940-D32 |",
+        "| KCY-750GF | 600 | 750 | 660 | 825 | YC6TD1020-D32 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog kaichen-jiangsu-catalog — trang 14 phải",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KCC-30GF | 30 | 37.5 | 33 | 41.25 | 4BT3.9-G1 |",
+        "| KCC-40GF | 40 | 50 | 44 | 55 | 4BT3.9-G2 |",
+        "| KCC-50GF | 50 | 62.5 | 55 | 68.75 | 4BTA3.9-G2 |",
+        "| KCC-80GF | 80 | 100 | 88 | 110 | 6BTA5.9-G2 |",
+        "| KCC-100GF | 100 | 125 | 110 | 137.5 | 6BTAA5.9-G2 |",
+        "| KCC-120GF | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 |",
+        "| KCC-150GF | 150 | 187.5 | 165 | 206.25 | 6CTA8.3-G2 |",
+        "| KCC-200GF | 200 | 250 | 220 | 275 | 6CTAA8.9-G2 |",
+        "| KCC-300GF | 300 | 375 | 330 | 412.5 | 6ZTAA13-G3 |",
+        "| KCC-600GF | 600 | 750 | 660 | 825 | KTA38-G2 |",
+        "| KCC-800GF | 800 | 1000 | 880 | 1100 | KTA38-G5 |",
+        "| KCC-1200GF | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 |"
+      ]
+    },
+    {
+      "n": 5002,
+      "title": "Báo giá Kaichen 2026-11-10 — Ricardo, 50 Hz, 1500 rpm, 220/380 V, 3 pha (kW quy đổi cosφ 0,8)",
+      "header": [
+        "| Prime kW | Prime kVA | Standby kW | Standby kVA | Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Battery | Fuel tank"
+      ],
+      "rows": [
+        "| 24 | 30 | 26.4 | 33 | 30KVA | Ricardo | ZH4100D | Kaichen | KCI-30 | mechanical | Silent Type | 2200*950*1400 | 980 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 32 | 40 | 35.2 | 44 | 40KVA | Ricardo | ZH4105ZLD | Kaichen | KCI-40 | mechanical | Silent Type | 2200*950*1400 | 1120 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 40 | 50 | 44 | 55 | 50KVA | Ricardo | R4105ZD | Kaichen | KCI-50 | mechanical | Silent Type | 2400*1000*1500 | 1250 | 60A H | Capable of continuous use for over 8 hours |",
+        "| 60 | 75 | 64 | 80 | 75KVA | Ricardo | R6105ZD | Kaichen | KCI-75 | mechanical | Silent Type | 2700*1100*1700 | 1860 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 80 | 100 | 88 | 110 | 100KVA | Ricardo | R6105AZLD | Kaichen | KCI-100 | mechanical | Silent Type | 2700*1100*1700 | 2320 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 96 | 120 | 105.6 | 132 | 120KVA | Ricardo | R6105IZLD | Kaichen | KCI-120 | mechanical | Silent Type | 2700*1100*1700 | 2250 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 120 | 150 | 132 | 165 | 150KVA | Ricardo | R6108IZLD | Kaichen | KCI-150 | mechanical | Silent Type | 3300*1300*1800 | 2450 | 80A H | Capable of continuous use for over 8 hours |",
+        "| 160 | 200 | 176 | 220 | 200KVA | Ricardo | P10 | Kaichen | KCI-200 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 2850 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 200 | 250 | 220 | 275 | 250KVA | Ricardo | 618ZLD | Kaichen | KCI-250 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3300 | 100A H | Capable of continuous use for over 8 hours |",
+        "| 240 | 300 | 264 | 330 | 300KVA | Ricardo | P12 | Kaichen | KCI-300 | Electronic 4-fold protection + automatic start | Silent Type | 3600*1400*1950 | 3700 | 100A H | Capable of continuous use for over 8 hours |"
+      ]
+    },
+    {
+      "n": 5002,
+      "title": "Báo giá Kaichen 2026-11-10 — Yuchai, 50 Hz, 1500 rpm, 220/380 V, 3 pha",
+      "header": [
+        "| Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Prime output (kW) | Standby output (kW) | Battery | Fuel tank"
+      ],
+      "rows": [
+        "| 16KW/20KVA | YUCHAI | YC4V35-D20 | Kaichen | KCI-16 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 860 | 16 | 18 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 24KW/30KVA | YUCHAI | YC4V45Z-D20 | Kaichen | KCI-24 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 920 | 24 | 26 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 30KW/37.5KVA | YUCHAI | YC4V55Z-D20 | Kaichen | KCI-30 | HGM6110 Four-fold protection + auto-start | Silent Type | 2200*950*1400 | 960 | 30 | 33 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 50KW/62.5KVA | YUCHAI | YC4D90Z-D25 | Kaichen | KCI-50 | HGM6110 Four-fold protection + auto-start | Silent Type | 2400*1000*1500 | 1300 | 50 | 55 | 60AH | Capable of continuous use for over 10 hours |",
+        "| 60KW/75KVA | YUCHAI | YC4A100Z-D25 | Kaichen | KCI-60 | HGM6110 Four-fold protection + auto-start | Silent Type | 2400*1000*1500 | 1450 | 60 | 66 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 80KW/100KVA | YUCHAI | YC4A140L-D25 | Kaichen | KCI-80 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 1650 | 80 | 88 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 100KW/125KVA | YUCHAI | YC4A180L-D20 | Kaichen | KCI-100 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 2300 | 100 | 110 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 120KW/150KVA | YUCHAI | YC6B205L-D20 | Kaichen | KCI-120 | HGM6110 Four-fold protection + auto-start | Silent Type | 2700*1100*1700 | 2420 | 120 | 132 | 80AH | Capable of continuous use for over 10 hours |",
+        "| 150KW/187.5KVA | YUCHAI | YC6A245L-D21 | Kaichen | KCI-150 | HGM6110 Four-fold protection + auto-start | Silent Type | 3300*1300*1800 | 2420 | 150 | 165 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 200KW/250KVA | YUCHAI | YC6MK350L-D20 | Kaichen | KCI-200 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 2850 | 200 | 220 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 250KW/312.5KVA | YUCHAI | YC6MK420L-D20 | Kaichen | KCI-250 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3280 | 250 | 280 | 100AH | Capable of continuous use for over 10 hours |",
+        "| 300KW/375KVA | YUCHAI | YC6MJ500L-D21 | Kaichen | KCI-300 | HGM6110 Four-fold protection + auto-start | Silent Type | 3600*1400*1950 | 3800 | 300 | 330 | 100AH | Capable of continuous use for over 10 hours |"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "Controller: Smartgen HGM6110",
+      "src": [
+        101
+      ]
+    }
+  ]
+}

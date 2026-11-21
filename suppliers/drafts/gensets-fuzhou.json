@@ -1,0 +1,51 @@
+{
+ "id": "gensets-fuzhou",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Fuzhou Gen-Sets Mech & Elec Co., Ltd. Fuzhou Multi-Union Electric Equipment Co., Ltd",
+ "zh": null,
+ "brands": [],
+ "web": "http://www.gesaisi.com",
+ "prov": "Fujian",
+ "city": "Fuzhou",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "STAMFORD | AvK Authorised Distributors",
+   "Fuzhou Gen-Sets Mech & Elec Co., Ltd. Fuzhou Multi-Union Electric Equipment Co., Ltd",
+   "12th Floor, Building D, Ziguang Science and Technology Park",
+   "No.30 Shunhua Wulong Jiangnan Avenue",
+   "Minhou County, Fuzhou City",
+   "Fujian Province",
+   "http://www.gesaisi.com"
+  ]
+ },
+ "str": [
+  [
+   "Nhà phân phối ủy quyền STAMFORD tại Trung Quốc, có tên trong danh sách 'Authorised Distributors' trên website chính thức của STAMFORD",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "alternator",
+   "s": "STAMFORD alternators (authorised distributor)",
+   "alt": [
+    "STAMFORD"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là danh sách nhà phân phối ủy quyền trên website của STAMFORD; chưa lưu website riêng của nhà phân phối"
+ ],
+ "by": "discover-bot"
+}

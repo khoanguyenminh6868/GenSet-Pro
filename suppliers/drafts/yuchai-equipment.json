@@ -1,0 +1,5 @@
+{"id":"yuchai-equipment","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":"Guangxi Yuchai Equipment Technology Co., Ltd.","zh":null,"brands":["Yuchai"],"web":"https://www.yuchaicm.com/","prov":"Guangxi","city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Copyright @ Guangxi Yuchai Equipment Technology Co., Ltd. All Rights Reserved","Yuchai Diesel Generators, Power ranging from 16KW to 1000KW , are engineered to meet a variety of power needs","120KW/150KVA"]},
+"str":[["Tổ máy diesel Yuchai 16–1000 kW",1]],"cert":[],
+"lines":[{"k":"genset","s":"Yuchai Diesel Generators","fuel":"diesel","eng":["Yuchai"],"p":[16,1000,"kW","unspecified",1],"src":[1]}],
+"miss":["Trang lưu bằng Chromium; chưa có năm thành lập, chứng chỉ; quan hệ với Yuchai (bản ghi yuchai) theo tên công ty, chưa có câu trích riêng"],"by":"discover-bot (Claude)"}

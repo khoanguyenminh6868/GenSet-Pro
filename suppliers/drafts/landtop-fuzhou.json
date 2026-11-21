@@ -1,0 +1,5 @@
+{"id":"landtop-fuzhou","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"Fuzhou Landtop Co., Ltd.","zh":null,"brands":["LANDTOP"],"web":"https://www.landtop.cn/","prov":"Fujian","city":"Fuzhou","founded":2011,"fsrc":[2],"related":["tecgen-fujian"],
+"src":{"1":["A","FUZHOU LANDTOP CO., LTD. (Sales Headquarter)","FUAN LANDTOP POWER CO., LTD. (Manufacturing Base)","our company participated in the 57th International Algeria Fair under the name of our generator set factory, FUJIAN TECGEN POWER CO., LTD."],"2":["A","Fuzhou Landtop Co., Ltd. was founded in 2011 in Fuzhou, Fujian Province, with our own production factories in Fu'an City."]},
+"str":[["Trụ sở kinh doanh tại Phúc Châu, cơ sở sản xuất tại Phúc An; nhà máy tổ máy là Fujian Tecgen Power (bản ghi tecgen-fujian)",1],["Thành lập 2011",2]],"cert":[],
+"lines":[{"k":"genset","s":"Generator sets","src":[1]},{"k":"alternator","s":"Alternators","src":[1]}],
+"miss":["Trang chủ / tin tức không ghi dải công suất"],"by":"discover-bot (Claude)"}

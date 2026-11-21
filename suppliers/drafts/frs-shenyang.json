@@ -1,0 +1,19 @@
+{
+  "id": "frs-shenyang", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "沈阳福瑞斯动力设备有限公司", "brands": ["福瑞斯"],
+  "web": "http://frs-power.com/", "prov": "Liaoning", "city": "Shenyang", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "燃气发电机组 - 沈阳福瑞斯动力设备有限公司", "康明斯系列 帕金斯系列 五十铃系列 玉柴系列 沃尔沃系列 奔驰系列 上柴系列 柴油发电机组 高压发电机组 燃气发电机组", "| 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 |", "| 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 |"]
+  },
+  "str": [
+    ["Có tổ máy diesel (các dòng Cummins, Perkins, Isuzu, Yuchai, Volvo, 奔驰 (Benz), SDEC), tổ máy cao thế và tổ máy khí", 1],
+    ["Tổ máy khí dùng đầu phát 利莱森玛 (Leroy-Somer), 马拉松 (Marathon), 斯坦福 (Stamford), 德科, 普得利; kiểu trần, cách âm, rơ-moóc, container, gắn xe", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "燃气发电机组 (tổ máy khí)", "fuel": "gas", "alt": ["利莱森玛", "马拉松", "斯坦福", "德科"], "types": ["open", "silent", "trailer", "container"], "src": [1] },
+    { "k": "genset", "s": "柴油发电机组 (康明斯、帕金斯、五十铃、玉柴、沃尔沃、奔驰、上柴系列)", "fuel": "diesel", "eng": ["康明斯", "帕金斯", "五十铃", "玉柴", "沃尔沃", "奔驰", "上柴"], "src": [1] }
+  ],
+  "miss": ["Mới lưu trang tổ máy khí; chưa có trang giới thiệu nên chưa có năm thành lập, chứng chỉ, dải công suất"],
+  "by": "discover-bot"
+}

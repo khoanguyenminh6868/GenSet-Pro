@@ -1,0 +1,15 @@
+{
+  "id": "liangzi-yangzhou", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "扬州量子电力设备有限公司", "brands": ["量子"],
+  "web": "https://www.lzpower.cn/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "欢迎来到扬州量子电力设备有限公司官方网站", "扬州量子电力设备有限公司位于中国历史名城扬州市江都区", "有着多年柴油发电机组、相关配套设备（如：移动电站、静音箱、控制器等）的研发、制造经验", "20KW发电机组", "2000KW发电机组"]
+  },
+  "str": [["Tổ máy diesel tại Giang Đô (Dương Châu), danh mục từ 20 kW đến 2000 kW; có trạm phát di động, vỏ cách âm", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "p": [20, 2000, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Dải công suất theo danh mục sản phẩm trang chủ; chưa có năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

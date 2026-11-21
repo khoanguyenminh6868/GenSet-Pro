@@ -1,0 +1,13 @@
+{
+  "id": "lepron", "country": "FR", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "LEPRON SAS", "zh": null, "brands": ["LEPRON"],
+  "web": "https://www.lepron-sa.com/", "prov": "Indre-et-Loire", "city": null, "founded": 1980, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "LEPRON SAS : groupes électrogènes conçus et assemblés en France", "Concepteur, assembleur et distributeur depuis 1980 | France - Europe - Monde", "Depuis 1980, la société LEPRON propose des groupes électrogènes à acheter et à louer, d'une puissance allant jusqu'à 4500 kVA.", "Depuis notre siège social en Indre-et-Loire (37), nous gérons un parc de plus de 5 000 groupes électrogènes installés en France et dans 47 pays"]
+  },
+  "str": [["Thiết kế, lắp ráp tổ máy tại Pháp, công suất tới 4500 kVA; bán và cho thuê", 1], ["Hoạt động từ 1980, hơn 5.000 tổ máy lắp đặt ở Pháp và 47 nước", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Groupes électrogènes", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chỉ ghi mức tối đa (jusqu'à 4500 kVA), chưa có dải công suất; chưa có chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

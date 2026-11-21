@@ -1,0 +1,15 @@
+{
+  "id": "calsion-hefei", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Hefei Calsion Electric System Co., Ltd.", "zh": null, "brands": ["Calsion"],
+  "web": "https://www.calsionpower.com/", "prov": "Anhui", "city": "Hefei", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© 2026 Hefei Calsion Electric System Co., Ltd.", "Calsion, headquartered in Hefei, China, is a national high-tech enterprise with a 33,000 m² integrated R&D, production, and testing facility.", "On October 26, 2012,started the operation of Hefei Calsion Electric System Co., Ltd.", "Calsion had been providing security services for the Boao Forum for Asia for 23 years."],
+    "2": ["A", "Address: No. 158, Yunmen Road, Economic and Technological Development Zone, Hefei, China"],
+    "3": ["A", "Power range:9 kVA to 3750 kVA"]
+  },
+  "str": [["Tổ máy diesel 9–3750 kVA", 3], ["Doanh nghiệp công nghệ cao quốc gia, cơ sở R&D–sản xuất–thử nghiệm 33.000 m² tại Hợp Phì", 1], ["Pháp nhân Hợp Phì hoạt động từ 26/10/2012; tập đoàn có công ty tại Đông Hoản, Bắc Kinh, Thượng Hải, Hải Nam, Hàng Châu", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "p": [9, 3750, "kVA", "unspecified", 3], "src": [3] } ],
+  "miss": ["Năm 2012 là năm pháp nhân Hợp Phì bắt đầu hoạt động, tập đoàn hoạt động 'over 30 years' — không ghi năm thành lập; trang about lấy từ calsionenergy.com (cùng tập đoàn)"],
+  "by": "discover-bot (Claude)"
+}

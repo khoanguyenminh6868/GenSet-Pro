@@ -1,0 +1,531 @@
+[
+ {
+  "n": 1004,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/Marine-DualFuel-EN.pdf/_jcr_content/renditions/original./Marine-DualFuel-EN.pdf",
+  "title": "Datasheet: MAN Dual Fuel Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/commercial-shipping.html",
+  "header": [
+   "| Performance data | D2862 LE448 | Consumption data 1)",
+   "| Diesel | Hydrogen",
+   "| Rated power | kW"
+  ],
+  "rows": [
+   "| (PS) | 749 (1 019) | Specific fuel consumption 2) | 164.5 g/kWh | 16 g/kWh",
+   "| Speed | rpm | 2 100 | Absolute fuel consumption 2) | 148 l/h | 12 kg/h",
+   "| Bore | mm | 128 | Highest fuel saving 3) | 44 l/h"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/marine-auxiliary-en.pdf/_jcr_content/renditions/original./marine-auxiliary-en.pdf",
+  "title": "Datasheet: Marine Auxiliary Engines Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+  "header": [
+   "| Type designation | LE | 332",
+   "| LE | 322"
+  ],
+  "rows": [
+   "| Rated speed | rpm (Hz) | 1,500 (50) | 1,800 (60) | 1,500 (50) | 1,800 (60)",
+   "| Displacement | l | 12.42 | 12.42 | 12.42 | 12.42",
+   "| Nominal rating 1) | kW (hp) | 190 (258) | 220 (299) | 280 (381) | 330 (449)"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/marine-auxiliary-en.pdf/_jcr_content/renditions/original./marine-auxiliary-en.pdf",
+  "title": "Datasheet: Marine Auxiliary Engines Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+  "header": [
+   "| Type designation | LE | 328",
+   "| LE | 327"
+  ],
+  "rows": [
+   "| Rated speed | rpm (Hz) | 1,500 (50) | 1,800 (60) | 1,500 (50) | 1,800 (60)",
+   "| Displacement | l | 12.42 | 12.42 | 12.42 | 12.42",
+   "| Nominal rating 1) | kW (hp) | 290 (394) | 290 (394) | 360 (490) | 410 (558)"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/marine-auxiliary-en.pdf/_jcr_content/renditions/original./marine-auxiliary-en.pdf",
+  "title": "Datasheet: Marine Auxiliary Engines Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+  "header": [
+   "| Type designation | LE | 322",
+   "| LE | 328"
+  ],
+  "rows": [
+   "| Rated speed | rpm (Hz) | 1,500 (50) | 1,800 (60) | 1,500 (50) | 1,800 (60)",
+   "| Displacement | l | 24.24 | 24.24 | 24.24 | 24.24",
+   "| Nominal rating 1) | kW (hp) | 600 (816) | 700 (952) | 600 (816) | 700 (952)"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/marine-auxiliary-en.pdf/_jcr_content/renditions/original./marine-auxiliary-en.pdf",
+  "title": "Datasheet: Marine Auxiliary Engines Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+  "header": [],
+  "rows": [
+   "| Type designation | LE 32B | LE 32E",
+   "| Rated speed | rpm (Hz) | 1,500 (50) | 1,800 (60) | 1,500 (50) | 1,800 (60)",
+   "| Displacement | l | 24.24 | 24.24 | 24.24 | 24.24",
+   "| Nominal rating 1) | kW (hp) | 600 (816) | 700 (952) | 700 (952) | 800 (1088)"
+  ]
+ },
+ {
+  "n": 1005,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/produkte/marine-1/marine-auxiliary-en.pdf/_jcr_content/renditions/original./marine-auxiliary-en.pdf",
+  "title": "Datasheet: Marine Auxiliary Engines Brochure",
+  "from": "https://www.man.eu/engines/en/products/marine/auxiliary-motors/auxiliary-motors.html",
+  "header": [],
+  "rows": [
+   "| Type designation | LE 327 | LE 321 | LE 324 | LE 331 | LE 334 | LE 337",
+   "| Rated speed | rpm (Hz) | 1,500 (50) | 1,500 (50) | 1,500 (50) | 1,800 (60) | 1,800 (60) | 1,800 (60)",
+   "| Displacement | l | 29.62 | 29.62 | 29.62 | 29.62 | 29.62 | 29.62",
+   "| Nominal rating 1) | kW (hp) | 800 (1,088) | 840 (1,142) | 840 | (1,142) | 960 (1,305) | 960 (1,305) | 960 (1,305)"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [
+   "| TYPE | iCylinders | 4",
+   "| Power | kW | 37–80",
+   "| Bore | mm | 108",
+   "| iStroke | mm | 125",
+   "| Displacement | l | 4.6"
+  ],
+  "rows": [
+   "| Overall length | mm | 862 | 1 055",
+   "| mm | 742 | 809",
+   "| mm | 870 | 866",
+   "| kg | 430 | 495"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [
+   "| TYPE | iCylinders | 6",
+   "| Power | kW | 56–110",
+   "| Bore | mm | 108",
+   "| iStroke | mm | 125",
+   "| Displacement | l | 6.9"
+  ],
+  "rows": [
+   "| Overall length | mm | 1 090 | 1 300",
+   "| mm | 740 | 740",
+   "| mm | 930 | 1 030",
+   "| kg | 520 | 605"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [
+   "| TYPE | iCylinders | 6",
+   "| Power | kW | 130–220",
+   "| Bore | mm | 128",
+   "| iStroke | mm | 166",
+   "| Displacement | l | 12.8"
+  ],
+  "rows": [
+   "| Overall length | mm | 1 330 | 1 520 | 1 545",
+   "| mm | 830 | 830 | 835",
+   "| mm | 1 166 | 1 226 | 1 226",
+   "| kg | 830 | 990 | 920"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [
+   "| TYPE | iCylinders | 12",
+   "| Power | kW | 275–580",
+   "| Bore | mm | 132",
+   "| iStroke | mm | 157",
+   "| Displacement | l | 25.8"
+  ],
+  "rows": [
+   "| Overall length | mm | 1 743 | 1 748",
+   "| mm | 1 245 | 1 243",
+   "| mm | 1 494 | 1 500",
+   "| kg | 1 763 | 1 849"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 37 kW | 4",
+   "| E08 | E0834 LE302 | 68 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 56 kW | 6",
+   "| E0836 LE302 | 110 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E28 | E2876 LE302 | 12.8 l | 210 kW",
+   "| E3268 LE242 | 17.2 l",
+   "| – | 320 kW | 8 | 90° V | 132 mm",
+   "| E3268 LE212 | 370 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E3262 LE202 | 25.8 l | 550 kW",
+   "| – | 12 | 90° V | 132 mm",
+   "| E3262 LE252 | 530 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE201 | 29.6 l | 735 kW",
+   "| – | 12 | 90° V | 138 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E08 | E0834 LE302 | 4.6 l | 68 kW",
+   "| E0836 LE302 | 6.9 l | 110 kW",
+   "| E3268 LE242 | 17.2 l",
+   "| – | 320 kW | 8 | 90° V | 132 mm",
+   "| E3268 LE212 | 370 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E3262 LE202 | 25.8 l | 550 kW",
+   "| – | 12 | 90° V | 132 mm",
+   "| E3262 LE252 | 480 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE201 | 29.6 l | 735 kW",
+   "| – | 12 | 90° V | 138 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E08 | E0834 E302 | 4.6 l",
+   "| – | 54 kW | 4",
+   "| E0836 E302 | 6.9 l",
+   "| – | 75 kW | 6",
+   "| E28 | E2876 E312 | 12.8 l",
+   "| – | 150 kW | 6",
+   "| E32 | E3262 E302 | 25.8 l",
+   "| – | 275 kW | 12 | 90° V | 132 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 45 kW | 4",
+   "| E08 | E0834 LE302 | 68 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 64 kW | 6",
+   "| E0836 LE302 | 110 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E28 | E2876 LE302 | 12.8 l | 210 kW",
+   "| E3268 LE242 | 17.2 l",
+   "| – | 340 kW | 8 | 90° V | 132 mm",
+   "| E3268 LE212 | 390 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E3262 LE202 | 25.8 l | 580 kW",
+   "| – | 12 | 90° V | 132 mm",
+   "| E3262 LE252 | 530 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE202 | 29.6 l | 840 kW",
+   "| – | 12 | 90° V | 138 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E08 | E0834 LE302 | 4.6 l | 68 kW",
+   "| E0836 LE302 | 6.9 l | 110 kW",
+   "| E3268 LE212 | 17.2 l | 390 kW",
+   "| – | 8 | 90° V | 132 mm",
+   "| E32 | E3262 LE232",
+   "| E3262 LE252 | 25.8 l | 480 kW",
+   "| – | 12 | 90° V | 132 mm",
+   "| E3262 LE202 | 580 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE202 | 29.6 l | 800 kW",
+   "| – | 12 | 90° V | 138 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E08 | E0834 E302 | 4.6 l | 62 kW",
+   "| E0836 E302 | 6.9 l | 85 kW",
+   "| E28 | E2876 E312 | 12.8 l | 170 kW",
+   "| E32 | E3262 E302 | 25.8 l | 300 kW",
+   "| – | 12 | 90° V | 132 mm"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 80 kW | 4",
+   "| E0836 LE302 | 6.9 l",
+   "| E2876 LE202 | – | 220 kW",
+   "| E28 | E2876 LE302 | 12.8 l | 200 kW",
+   "| E2876 TE302 | – | 130 kW",
+   "| E3268 LE222 | – | 370 kW",
+   "| E3268 LE232 | 17.2 l",
+   "| – | 370 kW | 8 | 90° V | 132 mm",
+   "| E3268 LE252 | – | 320 kW",
+   "| E32 | E3268 LE262",
+   "| E3262 LE242 | – | 450 kW",
+   "| E3262 LE212 | 25.8 l",
+   "| – | 550 kW | 12 | 90° V | 132"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE201 | 29.6 l | 735 kW",
+   "| – | 12 | 90° V | 138"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 370 kW | 8 | 90° V | 132 mm",
+   "| E32 | E3262 LE212 | 25.8 l",
+   "| – | 550 kW | 12 | 90° V | 132 mm",
+   "| E3262 LE242 | – | 450 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E2876 TE302 | – | 130 kW",
+   "| E3268 LE222 | – | 390 kW",
+   "| E3268 LE252 | 17.2 l",
+   "| – | 340 kW | 8 | 90° V | 132 mm",
+   "| E3268 LE262 | – | 340 kW",
+   "| E32 | E3262 LE242",
+   "| E3262 LE212 | 25.8 l",
+   "| – | 580 kW | 12 | 90°"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| E38 | E3872 LE202 | 29.6 l | 840 kW",
+   "| – | 12 | 90°"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| – | 390 kW | 8 | 90° V | 132 mm",
+   "| E32 | E3262 LE212 | 25.8 l",
+   "| – | 580 kW | 12 | 90° V | 132 mm",
+   "| E3262 LE242 | – | 450 kW"
+  ]
+ },
+ {
+  "n": 1006,
+  "url": "https://www.man.eu/content/dam/man/man-engines/doc/Power_Gas_EN_261015.pdf/_jcr_content/renditions/original./Power_Gas_EN_261015.pdf",
+  "title": "Datasheet: Brochure Power Gas",
+  "from": "https://www.man.eu/engines/en/products/power-generation/gas/power-generation-gas.html",
+  "header": [],
+  "rows": [
+   "| Gas Engines | for",
+   "| ­Power | Generation",
+   "| How do naturally aspirated engines | differ",
+   "General data",
+   "| Engine version | Naturally",
+   "| aspirated | engine",
+   "| Power | kW | 37–80",
+   "| Bore | mm | 108",
+   "| iStroke | mm | 125",
+   "| Displacement | l | 4.6",
+   "| Overall length | mm | 862 | 1 055",
+   "| kg | Overall width",
+   "| kg | 430 | 495",
+   "General data",
+   "| Power | kW | 56–110",
+   "| Displacement | l | 6.9",
+   "| Overall length | mm | 1 090 | 1 300",
+   "| kg | 520 | 605",
+   "General data",
+   "| Engine version | aspirated engine",
+   "| Turbocharged engine | without charge air cooler",
+   "| Power | kW | 130–220",
+   "| Bore | mm | 128",
+   "| iStroke | mm | 166",
+   "| Displacement | l | 12.8",
+   "| Overall length | mm | 1 330 | 1 520 | 1 545",
+   "| kg | 830 | 990 | 920",
+   "General data",
+   "| Engine version | Turbocharged engine",
+   "| Power | kW | 320–390",
+   "| Bore | mm | 132",
+   "| iStroke | mm | 157",
+   "| Displacement | l | 17.2",
+   "| Overall length | mm | 1 620",
+   "| kg | 1 497",
+   "General data",
+   "| Power | kW | 275–580",
+   "| Displacement | l | 25.8",
+   "| Overall length | mm | 1 743 | 1 748",
+   "| kg | 1 763 | 1 849",
+   "General data",
+   "| Power | kW | 735–840",
+   "| Bore | mm | 138",
+   "| iStroke | mm | 165",
+   "| Displacement | l | 29.6",
+   "| Overall length | mm | 1 789",
+   "General data",
+   "| Engine version | ­including cooling system",
+   "| Power | kW | 480–530",
+   "| Overall length | (incl.",
+   "| cooling | system)",
+   "| kg | Overall width (incl. cooling system)",
+   "| kg | 2 014",
+   "| Engine | Displace-",
+   "| standard power | Cylinders",
+   "| depend on engine | configuration options",
+   "| Cylinders | Arrangement",
+   "| depend on engine | configuration"
+  ]
+ }
+]

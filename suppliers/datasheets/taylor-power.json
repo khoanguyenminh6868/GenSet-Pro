@@ -1,0 +1,64 @@
+[
+ {
+  "n": 1001,
+  "url": "https://www.taylorpowergenerators.com/spec-sheets/TM1000.pdf",
+  "title": "Datasheet: Download",
+  "from": "https://www.taylorpowergenerators.com/generators/trailer-mounted-generators",
+  "header": [
+   "| kW/kVA | Amps | 30% Voltage Dip"
+  ],
+  "rows": [
+   "| Single Genset | Marathon | 277/480 | 573RSL4033 | 3 | 60 | 500/625 | 753 | 2300",
+   "| 120/208 | 573RSL4033 | 3 | 60 | 460/575 | 1598 | 1730",
+   "| Dual Genset | 277/480 | 573RSL4033 | 3 | 60 | 1000/1250 | 1505 | 4600",
+   "| 120/208 | 573RSL4033 | 3 | 60 | 920/1150 | 3196 | 3460"
+  ]
+ },
+ {
+  "n": 1002,
+  "url": "https://www.taylorpowergenerators.com/spec-sheets/TG800.pdf",
+  "title": "Datasheet: Download",
+  "from": "https://www.taylorpowergenerators.com/generators/select-series",
+  "header": [
+   "| kW/kVA | Amps | 30% Voltage Dip"
+  ],
+  "rows": [
+   "| Marathon | 600 | 574RSS4278 | 3 | 60 | 800/1000 | 963 | 3100",
+   "| 277/480 | 574RSL6437 | 3 | 60 | 800/1000 | 1204 | 3400",
+   "| 120/208 | 574RSL6437 | 3 | 60 | 770/963 | 2675 | 2550",
+   "| 120/240 | 574RSL6437 | 3 | 60 | 770/963 | 2318 | 2550"
+  ]
+ },
+ {
+  "n": 1003,
+  "url": "https://www.taylorpowergenerators.com/spec-sheets/TG1000.pdf",
+  "title": "Datasheet: Download",
+  "from": "https://www.taylorpowergenerators.com/generators/select-series",
+  "header": [
+   "| kW/kVA | Amps | 30% Voltage Dip"
+  ],
+  "rows": [
+   "| Stamford | 600 | S6L1D-F4-07 | 3 | 60 | 1000/1250 | 1204 | 2750",
+   "| 277/480 | S6L1D-F41-311 | 3 | 60 | 1000/1250 | 1505 | 3550",
+   "| 120/208 | S6L1D-F41-311 | 3 | 60 | 1000/1250 | 3474 | 2650",
+   "| 120/240 | S6L1D-F41-311 | 3 | 60 | 1000/1250 | 3011 | 3550",
+   "| Marathon | 600 | 741RSS4282 | 3 | 60 | 1000/1250 | 1204 | 1550",
+   "| 277/480 | 575RSL4044 | 3 | 60 | 1000/1250 | 1505 | 4200",
+   "| 120/208 | 575RSL4044 | 3 | 60 | 950/1188 | 3300 | 4200",
+   "| 120/240 | 575RSL4044 | 3 | 60 | 950/1188 | 2860 | 4200"
+  ]
+ },
+ {
+  "n": 1004,
+  "url": "https://www.taylorpowergenerators.com/spec-sheets/TG1250.pdf",
+  "title": "Datasheet: Download",
+  "from": "https://www.taylorpowergenerators.com/generators/select-series",
+  "header": [
+   "| kW/kVA | Amps | 30% Voltage Dip"
+  ],
+  "rows": [
+   "| Stamford | 600 | S6L1D-H4-07 | 3 | 60 | 1250/1563 | 1505 | 5100",
+   "| 277/480 | S6L1D-H41-312 | 3 | 60 | 1250/1563 | 1882 | 4900"
+  ]
+ }
+]

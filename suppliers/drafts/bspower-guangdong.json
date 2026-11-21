@@ -1,0 +1,20 @@
+{
+  "id": "bspower-guangdong", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "广东宾士动力科技有限公司", "brands": ["宾士"],
+  "web": "http://www.bspower.cn/", "prov": "Guangdong", "city": null, "founded": 2002, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "广东宾士动力科技有限公司成立于2002年1月，具有多年的发电机组制造和服务经验，注册资本已超过1亿元，是一家专业从事燃气、柴油和双燃料发电机组设计、生产、销售和服务的专业化企业", "我们和世界著名品牌的燃气发电机组制造商美国康明斯Cummins、西班牙高斯科尔Guascor、德国奔驰MTU、韩国现代、德国道依茨DEUTZ、韩国斗山Doosan等形成了长期的合作伙伴关系，机组配用国际著名品牌的发电机如美国马拉松、法拉第等。", "公司已经通过了ISO9001国际质量认证、ISO14001国际环保认证及OHSAS18001职业健康安全管理体系认证"]
+  },
+  "str": [
+    ["Làm tổ máy khí, diesel và song nhiên liệu; vốn đăng ký trên 100 triệu NDT", 1],
+    ["Tổ máy khí dùng cho biogas (xử lý nước thải, bãi rác), khí thiên nhiên, khí than, khí đồng hành", 1],
+    ["Hợp tác với Cummins, Guascor, MTU, Hyundai, Deutz, Doosan; đầu phát Marathon, Faraday", 1]
+  ],
+  "cert": [["ISO9001", 1], ["ISO14001", 1], ["OHSAS18001", 1]],
+  "lines": [
+    { "k": "genset", "s": "燃气、双燃料发电机组 (tổ máy khí, song nhiên liệu)", "fuel": "gas", "eng": ["Cummins", "Guascor", "MTU", "现代", "DEUTZ", "Doosan"], "alt": ["马拉松", "法拉第"], "src": [1] },
+    { "k": "genset", "s": "柴油发电机组 (tổ máy diesel)", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang giới thiệu không ghi dải công suất", "Không thấy tên tiếng Anh và thành phố"],
+  "by": "discover-bot"
+}

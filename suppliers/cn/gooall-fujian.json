@@ -1,0 +1,98 @@
+{
+  "id": "gooall-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "Fujian GOOALL Power Technology Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "GOOALL"
+    ]
+  },
+  "website": "https://www.gooallpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 1996,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Chuyên sản xuất đầu phát và tổ máy diesel (khung hở, cách âm) tại Phúc An",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 1996, xưởng 4.500 m²",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Alternators",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang không ghi dải công suất, chứng chỉ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gooallpower.com/Company-Establishment-Development-id04956745.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright © 2026 Fujian GOOALL Power Technology Co., Ltd. All Rights Reserved.",
+        "Founded in 1996, Fujian GOOALL Power Technology Co., Ltd. has developed into a professional manufacturer specializing in alternators and diesel generator sets.",
+        "Located in Fu'an City, Fujian Province, GOOALL Power now operates a modern facility of 4,500 square meters"
+      ],
+      "file": "sources/gooall-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

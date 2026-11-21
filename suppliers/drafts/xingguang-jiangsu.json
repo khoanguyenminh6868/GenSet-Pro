@@ -1,0 +1,19 @@
+{
+  "id": "xingguang-jiangsu", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "江苏星光发电设备有限公司", "brands": ["星光"],
+  "web": "https://www.jsxggx.com/", "prov": "Jiangsu", "city": "Taixing", "founded": 2000, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "版权所有：江苏星光发电设备有限公司", "1974年 成立于江苏泰兴，前身为苏北电机厂泰兴分厂", "2000年 江苏星光发电设备有限公司成立", "2002年 通过了ISO9001质量管理认证与IT产业部颁发的电信设备进网许可证。", "2005年 通过了ISO14000环境管理体系认证", "2010-2017年期间，连续八年荣获康明斯世界销售冠军，成为美国康明期Cummins中国规模较大OEM合作厂商。", "2009年 成为上柴动力在中国较大的OEM配套工厂"]
+  },
+  "str": [
+    ["Tiền thân thành lập 1974 tại Thái Hưng (Giang Tô); pháp nhân hiện tại thành lập năm 2000", 1],
+    ["Theo hãng: đối tác OEM lớn của Cummins tại Trung Quốc, 8 năm liền giải doanh số Cummins (2010–2017)", 1],
+    ["Nhà máy OEM lớn của SDEC (上柴动力) từ 2009", 1]
+  ],
+  "cert": [["ISO9001", 1], ["ISO14000", 1]],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "eng": ["Cummins", "上柴动力"], "src": [1] }
+  ],
+  "miss": ["Trang giới thiệu không ghi dải công suất; chưa lưu trang sản phẩm"],
+  "by": "discover-bot (Claude)"
+}

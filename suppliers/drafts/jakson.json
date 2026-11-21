@@ -1,0 +1,53 @@
+{
+  "id": "jakson",
+  "country": "IN",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "Jakson Group",
+  "zh": null,
+  "brands": [
+    "Jakson"
+  ],
+  "web": "https://www.jakson.com/",
+  "prov": null,
+  "city": null,
+  "founded": 1979,
+  "fsrc": [
+    1
+  ],
+  "related": [
+    "cummins-inc"
+  ],
+  "src": {
+    "1": [
+      "A",
+      "Jakson Group – Diesel Generators, Solar & EPC Company in India",
+      "In 1979, we started manufacturing gensets, partnered with Cummins in 1982, and pioneered acoustic enclosures in 1998"
+    ]
+  },
+  "str": [
+    [
+      "Làm tổ máy từ 1979, hợp tác Cummins từ 1982, làm vỏ cách âm từ 1998",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Jakson diesel generators",
+      "fuel": "diesel",
+      "eng": [
+        "Cummins"
+      ],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang chủ không ghi dải công suất; năm 1979 là năm bắt đầu làm tổ máy"
+  ],
+  "by": "discover-bot (Claude)"
+}

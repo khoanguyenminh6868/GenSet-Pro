@@ -1,0 +1,19 @@
+{
+  "id": "mecc-alte", "country": "IT", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Mecc Alte SpA", "zh": null, "brands": ["Mecc Alte"],
+  "web": "https://www.meccalte.com/", "prov": "Vicenza", "city": "Creazzo", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Mecc Alte SpA - Società unipersonale - Via Roma, 20 - 36051 Creazzo, Vicenza - ITALY", "The World's Largest Independent Producer of Alternators 1 - 5,000kVA", "We are a worldwide group providing alternator solutions with our sales plants and manufacturers in Italy, the UK, China and India.", "Mecc Alte Nantong has been awarded one of only two main prizes at this year's Panda d'Oro ceremony"]
+  },
+  "str": [
+    ["Đầu phát đồng bộ 1–5000 kVA", 1],
+    ["Có nhà máy tại Ý, Anh, Trung Quốc (Mecc Alte Nantong) và Ấn Độ", 1],
+    ["Theo hãng: nhà sản xuất đầu phát độc lập lớn nhất thế giới", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "alternator", "s": "Synchronous alternators", "p": [1, 5000, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa lưu trang của nhà máy Mecc Alte Nantong (Trung Quốc) và năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

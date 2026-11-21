@@ -1,0 +1,13 @@
+{
+  "id": "xinshengan-shandong", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "新盛安动力科技（山东）有限公司", "brands": ["新盛安"],
+  "web": "http://www.xsasd.com/", "prov": "Shandong", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2022 新盛安动力科技（山东）有限公司", "本系列发电机组可以使用天然气、沼气、秸秆气、生物质气、石油液化气以及煤层气作为燃料", "300kW甲醇发电机组"]
+  },
+  "str": [["Tổ máy khí đa nhiên liệu (khí tự nhiên, biogas, khí sinh khối, LPG, khí mỏ than) và tổ máy chạy methanol", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "燃气发电机组", "fuel": "gas", "src": [1] } ],
+  "miss": ["Trang sản phẩm không ghi dải công suất toàn dòng, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

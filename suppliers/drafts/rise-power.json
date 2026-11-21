@@ -1,0 +1,18 @@
+{
+  "id": "rise-power", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "RISE Power Equipment Inc.", "zh": null, "brands": ["RISE Power"],
+  "web": "https://dieselpower-en.com/", "prov": "Guangdong", "city": "Guangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "RISE Power Equipment Inc.", "Factory Add.: Xianchong, Panyu District, Guangzhou, China", "Cummins Engine Powered 16 - 1825kW Cummins Generator", "Perkins Diesel Engine Powered 7—1800kW Industrial Diesel Generator", "As an ISO9001 certified company"]
+  },
+  "str": [
+    ["Nhà máy ở Phiên Ngung, Quảng Châu; có dòng tổ máy Cummins, Perkins, Caterpillar, Volvo và máy phát tàu thủy", 1]
+  ],
+  "cert": [["ISO9001", 1]],
+  "lines": [
+    { "k": "genset", "s": "Cummins Generator", "fuel": "diesel", "eng": ["Cummins"], "p": [16, 1825, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Perkins Industrial Diesel Generator", "fuel": "diesel", "eng": ["Perkins"], "p": [7, 1800, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Có website thứ hai risepower.net cùng tên RISE Power, chưa đối chiếu", "Không thấy năm thành lập và tên tiếng Trung"],
+  "by": "discover-bot"
+}

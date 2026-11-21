@@ -1,0 +1,84 @@
+{
+ "id": "cummins-china-investment",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Cummins (China) Investment Co., Ltd.",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": null,
+ "city": null,
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Cummins (China) Investment Co., Ltd. - Chengdu Distribution Branch",
+   "Welcome to Cummins (China) Investment Co., Ltd. - Chengdu Distribution Branch, located in Chengdu, Sichuan, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Commercial Industrial, Generator, Automotive, Mining, Construction, Railroad",
+   "Cummins Power Generation, Cummins"
+  ],
+  "2": [
+   "A",
+   "Cummins (China) Investment Co., Ltd. - Shanghai Distribution Branch",
+   "Welcome to Cummins (China) Investment Co., Ltd. - Shanghai Distribution Branch, located in Shanghai, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Generator, Automotive, Construction, Commercial Industrial, Mining, Marine, Railroad",
+   "Cummins, Cummins Power Generation"
+  ],
+  "3": [
+   "A",
+   "Cummins China Investment Co.Ltd. - Shenyang Distribution Branch",
+   "Welcome to Cummins China Investment Co.Ltd. - Shenyang Distribution Branch, located in Shenyang, Liaoning, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Automotive, Commercial Industrial, Mining, Construction, Bus",
+   "Cummins, Cummins Power Generation, Nhl, Foton, Baotou"
+  ],
+  "4": [
+   "A",
+   "Cummins (China) Investment Co., Ltd. - Urumqi Distribution Branch",
+   "Welcome to Cummins (China) Investment Co., Ltd. - Urumqi Distribution Branch, located in Urumqi, Xinjiang, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Automotive, Construction, Light Duty-Step-Vans/Dodge Ram, Commercial Industrial, Generator, Bus",
+   "Cummins, Foton, Hyundai, Cummins Power Generation, Komatsu Ltd, Xaingfan Electric Machinery"
+  ],
+  "5": [
+   "A",
+   "Cummins (China) Investment Co., Ltd. - Wuhan Distribution Branch",
+   "Welcome to Cummins (China) Investment Co., Ltd. - Wuhan Distribution Branch, located in Wuhan, Hubei, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Bus, Construction, Automotive, Generator, Commercial Industrial, Mining",
+   "Cummins, Cummins Power Generation"
+  ],
+  "6": [
+   "A",
+   "Cummins (China) Investment Co., Ltd. - Xi'An Distribution Branch",
+   "Welcome to Cummins (China) Investment Co., Ltd. - Xi'An Distribution Branch, located in Xi'An, Shaanxi, China. Our team is ready to help with your power needs. Let us know how we can help you.",
+   "Automotive, Railroad, Bus, Commercial Industrial, Construction, Generator, Mining, Oil & Gas",
+   "Cummins, Cummins Power Generation"
+  ]
+ },
+ "str": [
+  [
+   "Mạng chi nhánh phân phối của Cummins tại Trung Quốc (6 chi nhánh có ứng dụng phát điện trên trang Cummins)",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Cummins engines / power generation (authorised location)",
+   "fuel": "diesel",
+   "eng": [
+    "Cummins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang địa điểm trên cummins.com (lưu qua firecrawl vì website chặn máy Windows); chưa lưu website riêng"
+ ],
+ "by": "discover-bot"
+}

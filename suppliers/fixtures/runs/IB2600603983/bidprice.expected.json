@@ -1,0 +1,47 @@
+{
+ "problems": 0,
+ "samples": [
+  "S1:different",
+  "S2:different",
+  "S3:different",
+  "S4:different",
+  "S5:different",
+  "S6:different",
+  "S7:different",
+  "S8:different",
+  "S9:different",
+  "S10:different",
+  "S11:different",
+  "S12:different"
+ ],
+ "chosen": [],
+ "stats": {
+  "basis": "same+close",
+  "n": 0,
+  "same": 0,
+  "close": 0,
+  "nPrior": 10,
+  "pool": 10,
+  "enough": true,
+  "levels": [
+   "low:3993961000",
+   "mid:4580690000",
+   "high:4903511000"
+  ],
+  "calib": [
+   "low:3933257000",
+   "mid:4600998000",
+   "high:5298994000"
+  ],
+  "perKva": 1832727000
+ },
+ "byConfig": [
+  {
+   "rank": 1,
+   "group": "cnmade",
+   "main": true,
+   "n": null,
+   "levels": []
+  }
+ ]
+}

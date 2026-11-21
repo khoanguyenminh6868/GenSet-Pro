@@ -1,0 +1,5 @@
+{"id":"geshin-marathon","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"上海马拉松·革新电气有限公司","brands":["Marathon","革新"],"web":null,"prov":"Shanghai","city":"Shanghai","founded":1996,"fsrc":[1],"related":["marathon-generators"],
+"src":{"1":["B","上海马拉松·革新电气有限公司 （以下简称“公司”）是巴西WEG集团和上海电气集团旗下的上海机电股份有限公司共同投资的合资企业，成立于1996年。","公司引进美国马拉松发电机的设计和制造工艺技术，生产具有行业先进水平、具有安全性和可靠性的无刷单、三相交流同步发电机（发电机容量从5KW—3000KW","出口产品获美国UL、欧洲CE和加拿大CSA的工"]},
+"str":[["Đầu phát không chổi than một pha / ba pha 5–3000 kW theo công nghệ Marathon (Mỹ)",1],["Liên doanh WEG (Brazil) và Shanghai Mechanical & Electrical (thuộc Shanghai Electric), thành lập 1996; sản phẩm xuất khẩu đạt UL, CE, CSA",1]],"cert":[["UL",1],["CE",1],["CSA",1]],
+"lines":[{"k":"alternator","s":"无刷单、三相交流同步发电机","p":[5,3000,"kW","unspecified",1],"src":[1]}],
+"miss":["Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng"],"by":"discover-bot (Claude)"}

@@ -1,0 +1,4357 @@
+{
+  "id": "koten-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Fuzhou Koten Power Equipment Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "Koten"
+    ]
+  },
+  "website": "https://www.kotenpower.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuzhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Theo hãng: nhà máy hơn 50.000 m², công suất 20.000 bộ/năm; tự sản xuất đầu phát AC",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Có dạng trần, giảm âm, container, rơ-moóc; dải 10–2000 kW",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets (Cummins DCEC/CCEC, Perkins, Weichai, Baudouin series)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)",
+        "Cummins (CCEC)",
+        "Perkins",
+        "Weichai",
+        "Baudouin"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "container",
+        "trailer"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        2
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        2
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.kotenpower.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "covering the power from 10kW to 2000kW.",
+        "covers an area of more than 50,000 square meters and has a professional R&D center, a modern production base and excellent testing system with an annual capacity of 20,000 sets.",
+        "Cummins DCEC Series Diesel Generator Set",
+        "Baudouin Series Diesel Generator Set",
+        "Koten Power AC alternator production line"
+      ],
+      "file": "sources/koten-power/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.kotenpower.com/aboutus",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "Kotenpower has passed the ISO9001 quality management system certification, ISO14001 environmental management system certification."
+      ],
+      "file": "sources/koten-power/2.md"
+    },
+    {
+      "n": 4001,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Cummins%20Series%20Silent%20Diesel%20Generator%20Set(5).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KC30D5 | 24 | 30 | 26 | 33 | 4B3.9-G12 |"
+      ],
+      "file": "sources/koten-power/4001.md"
+    },
+    {
+      "n": 4002,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Cummins%20Series%20Silent%20Diesel%20Generator%20Set(5).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KC30D6 | 24 | 30 | 26 | 33 | 4B3.9-G2 |"
+      ],
+      "file": "sources/koten-power/4002.md"
+    },
+    {
+      "n": 4003,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Weichai%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KW50D5 | 40 | 50 | 44 | 55 | WP2.3D48E200 |"
+      ],
+      "file": "sources/koten-power/4003.md"
+    },
+    {
+      "n": 4004,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Weichai%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KW38D6 | 30 | 38 | 33 | 41 | WP2.3D41E201 |"
+      ],
+      "file": "sources/koten-power/4004.md"
+    },
+    {
+      "n": 4005,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Baudouin%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KB30DS | 24 | 30 | 26 | 33 | 4M06G35/5 |"
+      ],
+      "file": "sources/koten-power/4005.md"
+    },
+    {
+      "n": 4006,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Baudouin%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KB45D6 | 36 | 45 | 40 | 50 | 4M06G41/6 |"
+      ],
+      "file": "sources/koten-power/4006.md"
+    },
+    {
+      "n": 4007,
+      "url": "https://img.35cloud.cn/30012/50HZ%20SDEC%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KS69D5 | 55 | 69 | 61 | 76 | 4ZTAA4.1-G21 |"
+      ],
+      "file": "sources/koten-power/4007.md"
+    },
+    {
+      "n": 4008,
+      "url": "https://img.35cloud.cn/30012/60HZ%20SDEC%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KS125D6 | 100 | 125 | 110 | 138 | 4HTAA4.3-G22 |"
+      ],
+      "file": "sources/koten-power/4008.md"
+    },
+    {
+      "n": 4009,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Kofo%20Series%20Silent%20Diesel%20Generator%20Set(8).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KR20D5 | 16 | 20 | 18 | 22 | 4YT23-20D |"
+      ],
+      "file": "sources/koten-power/4009.md"
+    },
+    {
+      "n": 4010,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Kofo%20Series%20Silent%20Diesel%20Generator%20Set(11).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KR23D6 | 18 | 23 | 20 | 25 | 4YT23-20D |"
+      ],
+      "file": "sources/koten-power/4010.md"
+    },
+    {
+      "n": 4011,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Yangdong%20Series%20Silent%20Diesel%20Generator%20Set(8).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KY13D5 | 10 | 13 | 11 | 14 | YD480D |"
+      ],
+      "file": "sources/koten-power/4011.md"
+    },
+    {
+      "n": 4012,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Yangdong%20Series%20Silent%20Diesel%20Generator%20Set(8).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KY16D6 | 13 | 16 | 14 | 18 | YD480D |"
+      ],
+      "file": "sources/koten-power/4012.md"
+    },
+    {
+      "n": 4013,
+      "url": "https://img.35cloud.cn/30012/50HZ%20-%20Denyo%20Type%20Fawde%20Series%20Silent%20Diesel%20Generator%20Set.pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KF20D5 | 16 | 20 | 18 | 22 | 4DW91-29D |"
+      ],
+      "file": "sources/koten-power/4013.md"
+    },
+    {
+      "n": 4014,
+      "url": "https://img.35cloud.cn/30012/50HZ%20Perkins%20Series%20Silent%20Diesel%20Generator%20Set(5).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KP13D5 | 10 | 13 | 11 | 14 | 403A-15G1 |"
+      ],
+      "file": "sources/koten-power/4014.md"
+    },
+    {
+      "n": 4015,
+      "url": "https://img.35cloud.cn/30012/60HZ%20Perkins%20Series%20Silent%20Diesel%20Generator%20Set(5).pdf",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "| KP25D6 | 20 | 25 | 22 | 28 | 404D-22G |"
+      ],
+      "file": "sources/koten-power/4015.md"
+    },
+    {
+      "n": 5001,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-catalog-2025.pdf",
+      "accessedAt": "2026-11-12",
+      "tier": "A",
+      "quote": [
+        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |"
+      ],
+      "file": "sources/koten-power/5001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.kotenpower.com/product/40kva-cummins-seires-diesel-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Frequency | 50Hz | 60Hz"
+      ],
+      "file": "sources/koten-power/101.md"
+    },
+    {
+      "n": 102,
+      "url": "https://www.kotenpower.com/product/38kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW38D5 | KW45D6"
+      ],
+      "file": "sources/koten-power/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://www.kotenpower.com/product/40kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB40D5 | KB45D6"
+      ],
+      "file": "sources/koten-power/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://www.kotenpower.com/product/30kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW30D5 | KW38D6"
+      ],
+      "file": "sources/koten-power/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://www.kotenpower.com/product/60kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW60D5 | KS63D6"
+      ],
+      "file": "sources/koten-power/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://www.kotenpower.com/product/50kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW50D5 | KW50D6"
+      ],
+      "file": "sources/koten-power/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://www.kotenpower.com/product/20kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW20D5 | KW25D6"
+      ],
+      "file": "sources/koten-power/107.md"
+    },
+    {
+      "n": 112,
+      "url": "https://www.kotenpower.com/product/650kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB650D5 | KB688D6"
+      ],
+      "file": "sources/koten-power/112.md"
+    },
+    {
+      "n": 113,
+      "url": "https://www.kotenpower.com/product/750kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KBB750D5 | KB750D6"
+      ],
+      "file": "sources/koten-power/113.md"
+    },
+    {
+      "n": 114,
+      "url": "https://www.kotenpower.com/product/800kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB800D5 | KB875D6"
+      ],
+      "file": "sources/koten-power/114.md"
+    },
+    {
+      "n": 115,
+      "url": "https://www.kotenpower.com/product/30kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB30D5 | KB38D6"
+      ],
+      "file": "sources/koten-power/115.md"
+    },
+    {
+      "n": 122,
+      "url": "https://www.kotenpower.com/product/400kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB400D5 | KB438D6"
+      ],
+      "file": "sources/koten-power/122.md"
+    },
+    {
+      "n": 124,
+      "url": "https://www.kotenpower.com/product/450kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB450D5 | KB450D6"
+      ],
+      "file": "sources/koten-power/124.md"
+    },
+    {
+      "n": 126,
+      "url": "https://www.kotenpower.com/product/500kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB500D5 | KB500D6"
+      ],
+      "file": "sources/koten-power/126.md"
+    },
+    {
+      "n": 128,
+      "url": "https://www.kotenpower.com/product/600kva-baudouin-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KB600D5 | KB650D6"
+      ],
+      "file": "sources/koten-power/128.md"
+    },
+    {
+      "n": 130,
+      "url": "https://www.kotenpower.com/product/150kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW150D5 | KW150D6"
+      ],
+      "file": "sources/koten-power/130.md"
+    },
+    {
+      "n": 132,
+      "url": "https://www.kotenpower.com/product/125kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW125D5 | KW125D6"
+      ],
+      "file": "sources/koten-power/132.md"
+    },
+    {
+      "n": 134,
+      "url": "https://www.kotenpower.com/product/100kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW100D5 | KW113D6"
+      ],
+      "file": "sources/koten-power/134.md"
+    },
+    {
+      "n": 136,
+      "url": "https://www.kotenpower.com/product/80kva-weichai-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KW80D5 | KW90D6"
+      ],
+      "file": "sources/koten-power/136.md"
+    },
+    {
+      "n": 138,
+      "url": "https://www.kotenpower.com/product/sdec-75kva-silent-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS75D5 | KS80D6"
+      ],
+      "file": "sources/koten-power/138.md"
+    },
+    {
+      "n": 139,
+      "url": "https://www.kotenpower.com/product/sdec-30kva-silent-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS30D5 | KS30D6"
+      ],
+      "file": "sources/koten-power/139.md"
+    },
+    {
+      "n": 140,
+      "url": "https://www.kotenpower.com/product/sdec-40kva-silent-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS40D5 | KS43D6"
+      ],
+      "file": "sources/koten-power/140.md"
+    },
+    {
+      "n": 141,
+      "url": "https://www.kotenpower.com/product/sdec-series-25kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS25D5 | KS25D6"
+      ],
+      "file": "sources/koten-power/141.md"
+    },
+    {
+      "n": 142,
+      "url": "https://www.kotenpower.com/product/20kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS20D5 | KS20D6"
+      ],
+      "file": "sources/koten-power/142.md"
+    },
+    {
+      "n": 143,
+      "url": "https://www.kotenpower.com/product/15kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS15D5"
+      ],
+      "file": "sources/koten-power/143.md"
+    },
+    {
+      "n": 150,
+      "url": "https://www.kotenpower.com/product/sdec-69kva-silent-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS69D5 | KS75D6"
+      ],
+      "file": "sources/koten-power/150.md"
+    },
+    {
+      "n": 152,
+      "url": "https://www.kotenpower.com/product/sdec-60kva-soundproof-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS60D5 | KS70D6"
+      ],
+      "file": "sources/koten-power/152.md"
+    },
+    {
+      "n": 154,
+      "url": "https://www.kotenpower.com/product/sdec-50kva-soundproof-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Model | KS50D5 | KS60D6"
+      ],
+      "file": "sources/koten-power/154.md"
+    },
+    {
+      "n": 156,
+      "url": "https://www.kotenpower.com/product/yto-series-120kw-150kva-enmergency-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-150/S | KDY-160/S"
+      ],
+      "file": "sources/koten-power/156.md"
+    },
+    {
+      "n": 157,
+      "url": "https://www.kotenpower.com/product/yto-series-48kw-60kva-silent-power-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-60/S | KDY-68/S"
+      ],
+      "file": "sources/koten-power/157.md"
+    },
+    {
+      "n": 158,
+      "url": "https://www.kotenpower.com/product/yto-series-52kw-65kva-diesel-generator-diesel-power",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-65/S | KDY-70/S"
+      ],
+      "file": "sources/koten-power/158.md"
+    },
+    {
+      "n": 159,
+      "url": "https://www.kotenpower.com/product/yto-series-40kw-50kva-supper-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-50/S | KDY-55/S"
+      ],
+      "file": "sources/koten-power/159.md"
+    },
+    {
+      "n": 160,
+      "url": "https://www.kotenpower.com/product/yto-series-30kw-38kva-silent-electric-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-38/S | KDY-40/S"
+      ],
+      "file": "sources/koten-power/160.md"
+    },
+    {
+      "n": 161,
+      "url": "https://www.kotenpower.com/product/yto-series-24kw-30kva-hot-sales-silent-diesel-genset",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-30/S | KDY-38/S"
+      ],
+      "file": "sources/koten-power/161.md"
+    },
+    {
+      "n": 168,
+      "url": "https://www.kotenpower.com/product/yto-series-100kw-125kva-silent-diesel-generator-with-ats",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-125/S | KDY-138/S"
+      ],
+      "file": "sources/koten-power/168.md"
+    },
+    {
+      "n": 170,
+      "url": "https://www.kotenpower.com/product/yto-series-80kw-100kva-silent-diesel-power-generators",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-100/S | KDY-100/S"
+      ],
+      "file": "sources/koten-power/170.md"
+    },
+    {
+      "n": 172,
+      "url": "https://www.kotenpower.com/product/yto-series-64kw-80kva-diesel-power-generators",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDY-80/S | KDY-85/S"
+      ],
+      "file": "sources/koten-power/172.md"
+    },
+    {
+      "n": 174,
+      "url": "https://www.kotenpower.com/product/kofo-series-80kw-100kva-ricardo-silent-diesel-generator-setkofo-series-80kw-100kva-ricardo-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR100D5 | KR118D6"
+      ],
+      "file": "sources/koten-power/174.md"
+    },
+    {
+      "n": 175,
+      "url": "https://www.kotenpower.com/product/kofo-series-32kw-40kva-sound-proof-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR40D5 | KR50D6"
+      ],
+      "file": "sources/koten-power/175.md"
+    },
+    {
+      "n": 176,
+      "url": "https://www.kotenpower.com/product/kofo-series-40kw-50kva-three-phase-diesel-power-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR50D5 | KR63D6"
+      ],
+      "file": "sources/koten-power/176.md"
+    },
+    {
+      "n": 177,
+      "url": "https://www.kotenpower.com/product/kofo-series-24kw-30kva-supper-silent-diesel-genset",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR30D5 | KR33D6"
+      ],
+      "file": "sources/koten-power/177.md"
+    },
+    {
+      "n": 178,
+      "url": "https://www.kotenpower.com/product/kofo-series-20kw-25kva-silent-diesel-power-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR25D5 | KR30D6"
+      ],
+      "file": "sources/koten-power/178.md"
+    },
+    {
+      "n": 179,
+      "url": "https://www.kotenpower.com/product/kofo-series-16kw-20kva-home-use-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR20D5 | KR23D6"
+      ],
+      "file": "sources/koten-power/179.md"
+    },
+    {
+      "n": 186,
+      "url": "https://www.kotenpower.com/product/kofo-series-68kw-85kva-ricardo-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR85D5 | KR100D6"
+      ],
+      "file": "sources/koten-power/186.md"
+    },
+    {
+      "n": 188,
+      "url": "https://www.kotenpower.com/product/kofo-series-58kw-73kva-silent-diesel-generator-for-home-use",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR73D5 | KR80D6"
+      ],
+      "file": "sources/koten-power/188.md"
+    },
+    {
+      "n": 190,
+      "url": "https://www.kotenpower.com/product/kofo-series-48kw-60kva-soundproof-diesel-power-generation",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KR60D5 | KR70D6"
+      ],
+      "file": "sources/koten-power/190.md"
+    },
+    {
+      "n": 192,
+      "url": "https://www.kotenpower.com/product/63kva-yangdong-series-diesel-genset",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY60D5 | KY70D6"
+      ],
+      "file": "sources/koten-power/192.md"
+    },
+    {
+      "n": 193,
+      "url": "https://www.kotenpower.com/product/25kva-yangdong-series-silent-diesel-generator-denyo-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY25D5 | KY30D6"
+      ],
+      "file": "sources/koten-power/193.md"
+    },
+    {
+      "n": 194,
+      "url": "https://www.kotenpower.com/product/30kva-yangdong-series-soundproof-type-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY31D5 | KY40D6"
+      ],
+      "file": "sources/koten-power/194.md"
+    },
+    {
+      "n": 195,
+      "url": "https://www.kotenpower.com/product/20kva-yangdong-series-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY20D5 | KY25D6"
+      ],
+      "file": "sources/koten-power/195.md"
+    },
+    {
+      "n": 196,
+      "url": "https://www.kotenpower.com/product/15kva-yangdong-series-diesel-generator-set-soundproof-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY15D5 | KY16D6"
+      ],
+      "file": "sources/koten-power/196.md"
+    },
+    {
+      "n": 197,
+      "url": "https://www.kotenpower.com/product/10kva-yangdong-series-diesel-generator-set-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY10D5 | KY13D6"
+      ],
+      "file": "sources/koten-power/197.md"
+    },
+    {
+      "n": 204,
+      "url": "https://www.kotenpower.com/product/50kva-yangdong-series-generator-diesel",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY50D5 | KY55D6"
+      ],
+      "file": "sources/koten-power/204.md"
+    },
+    {
+      "n": 206,
+      "url": "https://www.kotenpower.com/product/45kva-yangdong-series-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY48D5 | KY53D6"
+      ],
+      "file": "sources/koten-power/206.md"
+    },
+    {
+      "n": 208,
+      "url": "https://www.kotenpower.com/product/38kva-yangdong-series-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KY40D5 | KY48D6"
+      ],
+      "file": "sources/koten-power/208.md"
+    },
+    {
+      "n": 210,
+      "url": "https://www.kotenpower.com/product/fawde-series-125kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF125D5 | KF145D6"
+      ],
+      "file": "sources/koten-power/210.md"
+    },
+    {
+      "n": 211,
+      "url": "https://www.kotenpower.com/product/fawde-series-24kw-30kva-silent-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF30D5 | KF40D6"
+      ],
+      "file": "sources/koten-power/211.md"
+    },
+    {
+      "n": 212,
+      "url": "https://www.kotenpower.com/product/fawde-series-40kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF40D5 | KF45D6"
+      ],
+      "file": "sources/koten-power/212.md"
+    },
+    {
+      "n": 213,
+      "url": "https://www.kotenpower.com/product/fawde-series-20kw-25kva-denyo-type-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF25D5 | KF30D6"
+      ],
+      "file": "sources/koten-power/213.md"
+    },
+    {
+      "n": 214,
+      "url": "https://www.kotenpower.com/product/fawde-series-16kw-20kva-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF20D5 | KF28D6"
+      ],
+      "file": "sources/koten-power/214.md"
+    },
+    {
+      "n": 215,
+      "url": "https://www.kotenpower.com/product/fawde-series-15kva-diesel-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF15D5 | KF20D6"
+      ],
+      "file": "sources/koten-power/215.md"
+    },
+    {
+      "n": 222,
+      "url": "https://www.kotenpower.com/product/fawde-series-80kw-100kva-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF100D5 | KF106D6"
+      ],
+      "file": "sources/koten-power/222.md"
+    },
+    {
+      "n": 224,
+      "url": "https://www.kotenpower.com/product/fawde-series-48kw-60kva-generator-set-deny-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF60D5 | KF60D6"
+      ],
+      "file": "sources/koten-power/224.md"
+    },
+    {
+      "n": 226,
+      "url": "https://www.kotenpower.com/product/fawde-series-40kw-50kva-soudproof-diesel-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KF50D5 | KF55D6"
+      ],
+      "file": "sources/koten-power/226.md"
+    },
+    {
+      "n": 228,
+      "url": "https://www.kotenpower.com/product/40kva-isuzu-series-generator-silent-type-price",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KI40D5 | KI45D6"
+      ],
+      "file": "sources/koten-power/228.md"
+    },
+    {
+      "n": 229,
+      "url": "https://www.kotenpower.com/product/30kva-isuzu-series-silent-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KI30D5 | KI35D6"
+      ],
+      "file": "sources/koten-power/229.md"
+    },
+    {
+      "n": 230,
+      "url": "https://www.kotenpower.com/product/25kva-isuzu-series-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KI25D5 | KI30D6"
+      ],
+      "file": "sources/koten-power/230.md"
+    },
+    {
+      "n": 231,
+      "url": "https://www.kotenpower.com/product/20kva-isuzu-series-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KI20D5 | KI25D6"
+      ],
+      "file": "sources/koten-power/231.md"
+    },
+    {
+      "n": 236,
+      "url": "https://www.kotenpower.com/product/perkins-series-22kw-28kva-generator-silent-type",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KP28D5 | KP30D6"
+      ],
+      "file": "sources/koten-power/236.md"
+    },
+    {
+      "n": 237,
+      "url": "https://www.kotenpower.com/product/perkins-series-24kw-30kva-silent-diesel-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KP30D5 | KP35D6"
+      ],
+      "file": "sources/koten-power/237.md"
+    },
+    {
+      "n": 238,
+      "url": "https://www.kotenpower.com/product/perkins-series-16kw-20kva-silent-diesel-generator-set",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KDP-20/S | KDP-25/S"
+      ],
+      "file": "sources/koten-power/238.md"
+    },
+    {
+      "n": 239,
+      "url": "https://www.kotenpower.com/product/perkins-series-12kw-15kva-silent-diesel-generator",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Genset Specification | Genset Model | KP15D5 | KP18D6"
+      ],
+      "file": "sources/koten-power/239.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://img.35cloud.cn/30012/50Hz%20and%2060Hz%20YTO%20Series%20Diesel%20Generator%20Set%20List(8).pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "| 3Phase | Genset Specification 400/230V | 50HZ/1500RPM"
+      ],
+      "file": "sources/koten-power/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%20150KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%20160KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1003.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2060KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2068KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1006.md"
+    },
+    {
+      "n": 1008,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2065KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1008.md"
+    },
+    {
+      "n": 1009,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2070KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1009.md"
+    },
+    {
+      "n": 1011,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2050KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1011.md"
+    },
+    {
+      "n": 1012,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2055KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1012.md"
+    },
+    {
+      "n": 1014,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2038KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1014.md"
+    },
+    {
+      "n": 1015,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2040KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1015.md"
+    },
+    {
+      "n": 1017,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2030KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1017.md"
+    },
+    {
+      "n": 1018,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2038KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1018.md"
+    },
+    {
+      "n": 1020,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%20125KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1020.md"
+    },
+    {
+      "n": 1021,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%20138KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1021.md"
+    },
+    {
+      "n": 1023,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%20100KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1023.md"
+    },
+    {
+      "n": 1024,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%20100KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1024.md"
+    },
+    {
+      "n": 1026,
+      "url": "https://img.35cloud.cn/30012/50HZ%20YTO%2080KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1026.md"
+    },
+    {
+      "n": 1027,
+      "url": "https://img.35cloud.cn/30012/60HZ%20YTO%2085KVA%20Diesel%20Generator%20Set%20Specification.pdf",
+      "accessedAt": "2026-11-03",
+      "tier": "A",
+      "quote": [
+        "Generator"
+      ],
+      "file": "sources/koten-power/1027.md"
+    },
+    {
+      "n": 1028,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-kb700d5-700kva-datasheet.pdf",
+      "accessedAt": "2026-11-20",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | KB700D5",
+        "| Engine Model | Baudouin 6M33G825/5",
+        "| Engine model | 6M33G8D3/5",
+        "From: PDF do Khoa cung cấp 20/11/2026 (tờ tổ máy KB700D5 50 Hz của Koten, đặt trên release datasheets-upload)"
+      ],
+      "file": "sources/koten-power/1028.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "Supply 40kVA Cummins Seires Diesel Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 40kVA | 36kW | 45kVA",
+        "| Standby Power | 35kW | 44kVA | 40kW | 50kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 91.8A",
+        "| Rated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 36kW | 40kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 38kW"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Supply 38kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW38D5 | KW45D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 30kW/38kVA | 36kW/45kVA",
+        "| Standby Power | 33kW/41kVA | 37kW/46kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Supply 38kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP2.3D40E200 | WP2.3D47E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 39 kW | 43 kW"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Supply 38kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 9.3 | 11.1",
+        "| 75% Prime power | 6.7 | 8.2",
+        "| 50% Prime power | 4.6 | 5.7"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Supply 40kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB40D5 | KB45D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 32kW/40kVA | 36kW/45kVA",
+        "| Standby Power | 35.2kW/44kVA | 40kW/50kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Supply 40kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 4M06G44/5 | 4M06G41/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 37 kW | 43 kW"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Supply 40kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 9.3 | 10.9",
+        "| 75% Prime power | 6.8 | 8.1",
+        "| 50% Prime power | 4.6 | 5.6"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Supply 30kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW30D5 | KW38D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 24kW/30kVA | 30kW/38kVA",
+        "| Standby Power | 26.4kW/33kVA | 33kW/41kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Supply 30kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP2.3D33E200 | WP2.3D41E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 32 kW | 37 kW"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Supply 30kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 7.3 | 9.01",
+        "| 75% Prime power | 5.8 | 6.8",
+        "| 50% Prime power | 3.65 | 4.5"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Supply 60kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW60D5 | KS63D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 48kW/60kVA | 50kW/63kVA",
+        "| Standby Power | 53kW/66kVA | 55kW/69kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Supply 60kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP4.1D66E200 | WP4.1D80E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 60 kW | 72 kW"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Supply 60kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 15.6 | 18.3",
+        "| 75% Prime power | 11.1 | 13.8",
+        "| 50% Prime power | 7.9 | 9.8"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW50D5 | KW50D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 40kW/50kVA | 40kW/50kVA",
+        "| Standby Power | 44kW/55kVA | 44kW/55kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP2.3D48E200 | WP2.3D58E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 44 kW | 53 kW"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 10.8 | 13.1",
+        "| 75% Prime power | 7.9 | 9.1",
+        "| 50% Prime power | 5.3 | 6.7"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Supply 20kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW20D5 | KW25D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 16kW/20kVA | 20kW/25kVA",
+        "| Standby Power | 17.6kW/22kVA | 22kW/28kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Supply 20kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 5.6 | 6.58",
+        "| 75% Prime power | 4.2 | 4.9",
+        "| 50% Prime power | 2.8 | 3.28"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Supply 650kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB650D5 | KB688D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 520 kW/650 kVA | 550 kW/687.5 kVA",
+        "| Standby Power | 572 kW/715 kVA | 600 kW/750 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Supply 650kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M33G715/5 | 6M33G600/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 575 kW | 550 kW"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Supply 650kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 135.1 | 133.9",
+        "| 75% Prime power | 99.3 | 100.5",
+        "| 50% Prime power | 66.4 | 67"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Model | KBB750D5 | KB750D6"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 600 kW/750 kVA | 600 kW/750 kVA",
+        "| Standby Power | 660 kW/825 kVA | 660 kW/825 kVA",
+        "| Fuel Tank Capacity | 6hrs | 6hrs"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M33G825/5 | 6M33G660/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 659 kW | 670 kW"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 161.5 | 167.8"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Supply 800kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB800D5 | KB875D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 640 kW/800 kVA | 700 kW/875 kVA",
+        "| Standby Power | 720 kW/900 kVA | 770 kW/962.5 kVA",
+        "| Fuel Tank Capacity | 6hrs | 6hrs"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Supply 800kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 8M33G900/5 | 8M33G770/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 730 kW | 768 kW"
+      ]
+    },
+    {
+      "n": 114,
+      "title": "Supply 800kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 177.7 | 187.0",
+        "| 75% Prime power | 133.9 | 140.0",
+        "| 50% Prime power | 88.8 | 93.5"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Supply 30kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB30D5 | KB38D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 24kW/30kVA | 30kW/38kVA",
+        "| Standby Power | 26kW/33kVA | 33kW/42kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Supply 30kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 4M06G35/5 | 4M06G33/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 30 kW | 37 kW"
+      ]
+    },
+    {
+      "n": 115,
+      "title": "Supply 30kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 7.6 | 9.3",
+        "| 75% Prime power | 5.7 | 7.1",
+        "| 50% Prime power | 4 | 5"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Supply 400kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB400D5 | KB438D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 320 kW/400 kVA | 350 kW/438 kVA",
+        "| Standby Power | 352 kW/440 kVA | 384 kW/480 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Supply 400kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M21G440/5 | 6M21G390/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 368 kW | 407 kW"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "Supply 400kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 82.1 | 98.1",
+        "| 75% Prime power | 60.7 | 71.5",
+        "| 50% Prime power | 41 | 48.6"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB450D5 | KB450D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 360 kW/450 kVA | 360 kW/450 kVA",
+        "| Standby Power | 400 kW/500 kVA | 400 kW/500 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M21G500/5 | 6M21G400/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 409 kW | 418 kW"
+      ]
+    },
+    {
+      "n": 124,
+      "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 85 | 100.3"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Supply 500kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB500D5 | KB500D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 400 kW/500 kVA | 400 kW/500 kVA",
+        "| Standby Power | 440 kW/550 kVA | 440 kW/550 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Supply 500kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M21G550/5 | 6M21G460/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 450 kW | 450 kW"
+      ]
+    },
+    {
+      "n": 126,
+      "title": "Supply 500kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 109.5 | 109.6",
+        "| 75% Prime power | 75.3 | 77.8",
+        "| 50% Prime power | 51 | 53.7"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "Supply 600kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KB600D5 | KB650D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 480 kW/600 kVA | 520 kW/650 kVA",
+        "| Standby Power | 528 kW/660 kVA | 572 kW/715 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "Supply 600kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 6M33G660/5 | 6M33G575/6",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 536 kW | 575 kW"
+      ]
+    },
+    {
+      "n": 128,
+      "title": "Supply 600kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 122.7 | 139",
+        "| 75% Prime power | 91.4 | 101.8",
+        "| 50% Prime power | 61.7 | 70.2"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "Supply 150kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW150D5 | KW150D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 120 kW/150 kVA | 120 kW/150 kVA",
+        "| Standby Power | 132kW/165 kVA | 132kW/165 kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "Supply 150kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP6D152E200 | WP6D158E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 138 kW | 144 kW"
+      ]
+    },
+    {
+      "n": 130,
+      "title": "Supply 150kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 32.9 | 34.4",
+        "| 75% Prime power | 24.2 | 25.9",
+        "| 50% Prime power | 16.5 | 18"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Supply 125kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW125D5 | KW125D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 100 kW/125 kVA | 100kW/125kVA",
+        "| Standby Power | 110 kW/137.5 kVA | 110kW/137.5kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Supply 125kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP6D132E200 | WP6D132E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 120 kW | 120 kW"
+      ]
+    },
+    {
+      "n": 132,
+      "title": "Supply 125kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 30.1 | 28.5",
+        "| 75% Prime power | 21.5 | 21.8",
+        "| 50% Prime power | 15.0 | 15.2"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "Supply 100kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW100D5 | KW113D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 80 kW/100 kVA | 90kW/113kVA",
+        "| Standby Power | 88 kW/110 kVA | 100kW/125kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "Supply 100kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP4.1D100E200 | WP4.1D115E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 90 kW | 105 kW"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "Supply 100kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 21.4 | 26.2",
+        "| 75% Prime power | 15.8 | 19.3",
+        "| 50% Prime power | 10.5 | 13.3"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "Supply 80kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KW80D5 | KW90D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 64kW/80kVA | 72kW/90kVA",
+        "| Standby Power | 70.4kW/88kVA | 80kW/100kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "Supply 80kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Engine Model | WP4.1D80E200 | WP4.1D95E201"
+      ],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 72 kW | 85 kW"
+      ]
+    },
+    {
+      "n": 136,
+      "title": "Supply 80kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 18.9 | 21.7",
+        "| 75% Prime power | 13.3 | 16.5",
+        "| 50% Prime power | 8.9 | 11"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "Supply SDEC series 60kw 75kva Silent Electric Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS75D5 | KS80D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 60kW/75kVA | 64kW/80kVA",
+        "| Standby Power | 66kW/83kVA | 70kW/88kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "Supply SDEC series 60kw 75kva Silent Electric Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 74 kW | 80 kW"
+      ]
+    },
+    {
+      "n": 138,
+      "title": "Supply SDEC series 60kw 75kva Silent Electric Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 12.77 | 13.45",
+        "| 75% Prime power | 9.76 | 10.14",
+        "| 50% Prime power | 6.67 | 7.22"
+      ]
+    },
+    {
+      "n": 139,
+      "title": "Supply SDEC series 24kw 30kva Silent Electric Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS30D5 | KS30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 24kW/30kVA | 24kW/30kVA",
+        "| Standby Power | 26.4kW/33kVA | 26.4kW/33kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 139,
+      "title": "Supply SDEC series 24kw 30kva Silent Electric Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 4Z3.2-G11 | 4Z3.0-G12",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 32 kW | 30 kW",
+        "| Bore | 98mm | 95mm",
+        "| Strock | 105mm | 105mm",
+        "| Displacement | 3.2L | 3.0L"
+      ]
+    },
+    {
+      "n": 139,
+      "title": "Supply SDEC series 24kw 30kva Silent Electric Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 7.11 | 5.76",
+        "| 75% Prime power | 5.14 | 4.16",
+        "| 50% Prime power | 3.65 | 2.95"
+      ]
+    },
+    {
+      "n": 140,
+      "title": "Supply SDEC series 32kw 40kva Silent Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS40D5 | KS43D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 32kW/40kVA | 34kW/43kVA",
+        "| Standby Power | 35kW/44kVA | 37kW/46kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 140,
+      "title": "Supply SDEC series 32kw 40kva Silent Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 39 kW | 42 kW"
+      ]
+    },
+    {
+      "n": 140,
+      "title": "Supply SDEC series 32kw 40kva Silent Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 8.34 | 9.04",
+        "| 75% Prime power | 6.29 | 7.0",
+        "| 50% Prime power | 4.46 | 5.16"
+      ]
+    },
+    {
+      "n": 141,
+      "title": "Supply SDEC series 20kw 25kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS25D5 | KS25D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 20kW/25kVA | 20kW/25kVA",
+        "| Standby Power | 22kW/27.5kVA | 22kW/27.5kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 141,
+      "title": "Supply SDEC series 20kw 25kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine Model | 4Z3.0-G11 | 4Z2.7-G12",
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 27 kW | 26 kW",
+        "| Bore | 95mm | 90mm",
+        "| Strock | 105mm | 105mm",
+        "| Displacement | 3.0L | 2.7L"
+      ]
+    },
+    {
+      "n": 141,
+      "title": "Supply SDEC series 20kw 25kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 5.76 | 4.92",
+        "| 75% Prime power | 4.13 | 3.79",
+        "| 50% Prime power | 2.95 | 2.69"
+      ]
+    },
+    {
+      "n": 142,
+      "title": "Supply SDEC series 16kw 20kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS20D5 | KS20D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 16kW/20kVA | 16kW/20kVA",
+        "| Standby Power | 17.6kW/22kVA | 17.6kW/22kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 142,
+      "title": "Supply SDEC series 16kw 20kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 4.68 | 4.92",
+        "| 75% Prime power | 3.6 | 3.79",
+        "| 50% Prime power | 2.6 | 2.69"
+      ]
+    },
+    {
+      "n": 143,
+      "title": "Supply SDEC series 12kw 15kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS15D5",
+        "| Frequency | 50Hz",
+        "| Phase | 3Ph",
+        "| Voltage | 230/400V",
+        "| Prime Power | 12kW/15kVA",
+        "| Standby Power | 13.2kW/17.5kVA",
+        "| Fuel Tank Capacity | 8hrs",
+        "| Engine Model | 4Z2.3-G11",
+        "| Rated power | 16kW",
+        "| Bore | 85mm",
+        "| Displacement | 2.3L",
+        "| Engine speed | 1500rpm",
+        "| Weight | 750kgs"
+      ]
+    },
+    {
+      "n": 150,
+      "title": "Supply SDEC series 55kw 69kva Silent Electric Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS69D5 | KS75D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 55kW/69kVA | 60kW/75kVA",
+        "| Standby Power | 61kW/76kVA | 66kW/83kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 150,
+      "title": "Supply SDEC series 55kw 69kva Silent Electric Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 64 kW | 76 kW"
+      ]
+    },
+    {
+      "n": 152,
+      "title": "Supply SDEC series 48kw 60kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS60D5 | KS70D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 48kW/60kVA | 56kW/70kVA",
+        "| Standby Power | 53kW/66kVA | 62kW/77kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 152,
+      "title": "Supply SDEC series 48kw 60kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 60 kW | 70 kW"
+      ]
+    },
+    {
+      "n": 152,
+      "title": "Supply SDEC series 48kw 60kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 12.48 | 12.82",
+        "| 75% Prime power | 9.53 | 9.65",
+        "| 50% Prime power | 6.58 | 6.7"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "Supply SDEC series 40kw 50kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Model | KS50D5 | KS60D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Phase | 3Ph | 3Ph",
+        "| Voltage | 230/400V | 127/220V",
+        "| Prime Power | 40kW/50kVA | 48kW/60kVA",
+        "| Standby Power | 44kW/55kVA | 53kW/66kVA",
+        "| Fuel Tank Capacity | 8hrs | 8hrs"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "Supply SDEC series 40kw 50kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Engine speed | 1500rpm | 1800rpm",
+        "| Rated power | 49 kW | 60 kW"
+      ]
+    },
+    {
+      "n": 154,
+      "title": "Supply SDEC series 40kw 50kva Soundproof Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| 100% Prime power | 10.2 | 11.0",
+        "| 75% Prime power | 7.8 | 8.63",
+        "| 50% Prime power | 5.51 | 6.31"
+      ]
+    },
+    {
+      "n": 156,
+      "title": "Supply YTO Series 120KW 150KVA Enmergency Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-150/S | KDY-160/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 120kW | 150kVA | 128kW | 160kVA",
+        "| Standby Power | 132kW | 165kVA | 141kW | 176kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 238A | 462A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 138kW | 145kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 120kW | 140kW"
+      ]
+    },
+    {
+      "n": 157,
+      "title": "Supply YTO Series 48KW 60KVA Silent Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-60/S | KDY-68/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 60kVA | 54kW | 68kVA",
+        "| Standby Power | 53kW | 66kVA | 59kW | 74kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 95A | 195A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 60kW | 63kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 56kW"
+      ]
+    },
+    {
+      "n": 158,
+      "title": "Supply YTO Series 52KW 65KVA Diesel Generator Diesel Power Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-65/S | KDY-70/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 52kW | 65kVA | 56kW | 70kVA",
+        "| Standby Power | 57kW | 72kVA | 62kW | 77kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 103A | 195A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 62kW | 65kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 56kW"
+      ]
+    },
+    {
+      "n": 159,
+      "title": "Supply YTO Series 40KW 50KVA Supper Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-50/S | KDY-55/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kVA | 44kW | 55kVA",
+        "| Standby Power | 44kW | 55kVA | 48kW | 60kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 79A | 159A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 48kW | 50kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 44kW"
+      ]
+    },
+    {
+      "n": 160,
+      "title": "Supply YTO Series 30KW 38KVA Silent Electric Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-38/S | KDY-40/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 30kW | 38kVA | 32kW | 40kVA",
+        "| Standby Power | 33kW | 41kVA | 35kW | 44kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 60A | 115A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 36kW | 38kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 30kW | 32kW"
+      ]
+    },
+    {
+      "n": 161,
+      "title": "Supply YTO Series 24KW 30KVA Hot Sales Silent Diesel Genset Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-30/S | KDY-38/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 30kVA | 30kW | 38kVA",
+        "| Standby Power | 26kW | 33kVA | 33kW | 41kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 98A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 30kW | 36kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 32kW"
+      ]
+    },
+    {
+      "n": 168,
+      "title": "Supply YTO Series 100KW 125KVA Silent Diesel Generator With ATS Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-125/S | KDY-138/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 100kW | 125kVA | 110kW | 138kVA",
+        "| Standby Power | 110kW | 138kVA | 120kW | 150kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 198A | 397A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 110kW | 125kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 100kW | 119kW"
+      ]
+    },
+    {
+      "n": 170,
+      "title": "Supply YTO Series 80kW 100KVA Silent Diesel Power Generators Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-100/S | KDY-100/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 100kVA | 80kW | 100kVA",
+        "| Standby Power | 88kW | 110kVA | 88kW | 110kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 159A | 289A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 88kW | 90kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 80kW"
+      ]
+    },
+    {
+      "n": 172,
+      "title": "Supply YTO Series 64KW 80KVA Diesel Power Generators Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDY-80/S | KDY-85/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 64kW | 80kVA | 68kW | 85kVA",
+        "| Standby Power | 70kW | 88kVA | 75kW | 94kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 127A | 240A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 75kW | 80kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 68kW | 70kW"
+      ]
+    },
+    {
+      "n": 174,
+      "title": "Supply Kofo Series 80KW 100KVA Ricardo Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR100D5 | KR118D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 100kVA | 94kW | 118kVA",
+        "| Standby Power | 88kW | 110kVA | 103kW | 129kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 144A | 308A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 110kW | 121kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 94kW"
+      ]
+    },
+    {
+      "n": 175,
+      "title": "Supply Kofo Series 32KW 40KVA Sound Proof Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR40D5 | KR50D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 40kVA | 40kW | 50kVA",
+        "| Standby Power | 35kW | 44kVA | 44kW | 55kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 57.6A | 131A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 42kW | 46kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 34kW | 40kW"
+      ]
+    },
+    {
+      "n": 176,
+      "title": "Supply Kofo Series 40KW 50KVA Three Phase Diesel Power Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR50D5 | KR63D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kVA | 50kW | 63kVA",
+        "| Standby Power | 44kW | 55kVA | 55kW | 69kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 72A | 164A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 56kW | 62kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kW"
+      ]
+    },
+    {
+      "n": 177,
+      "title": "Supply Kofo Series 24KW 30KVA Supper Silent Diesel Genset Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR30D5 | KR33D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 30kVA | 26kW | 33kVA",
+        "| Standby Power | 26kW | 33kVA | 29kW | 36kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 85A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 30kW | 33kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 25kW | 27kW"
+      ]
+    },
+    {
+      "n": 178,
+      "title": "Supply Kofo Series 20KW 25KVA Silent Diesel Power Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR25D5 | KR30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kVA | 24kW | 30kVA",
+        "| Standby Power | 22kW | 28kVA | 26kW | 33kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 36A | 78.7A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 30kW | 33kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kW"
+      ]
+    },
+    {
+      "n": 179,
+      "title": "Supply Kofo Series 16KW 20KVA Home Use Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR20D5 | KR23D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 20kVA | 18kW | 23kVA",
+        "| Standby Power | 18kW | 22kVA | 20kW | 25kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 28.8A | 59A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 20kW | 22kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 19kW"
+      ]
+    },
+    {
+      "n": 186,
+      "title": "Supply Kofo Series 68KW 85KVA Ricardo Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR85D5 | KR100D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 68kW | 85kVA | 80kW | 100kVA",
+        "| Standby Power | 75kW | 94kVA | 88kW | 110kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 122A | 262A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 88kW | 97kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 68kW | 80kW"
+      ]
+    },
+    {
+      "n": 188,
+      "title": "Supply Kofo Series 58kW 73KVA Silent Diesel Generator For Home Use Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR73D5 | KR80D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 58kW | 73kVA | 64kW | 80kVA",
+        "| Standby Power | 64kW | 80kVA | 70kW | 88kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 104A | 209.9A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 66kW | 73kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 58kW | 70kW"
+      ]
+    },
+    {
+      "n": 190,
+      "title": "Supply Kofo Series 48KW 60KVA Soundproof Diesel Power Generation Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KR60D5 | KR70D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 60kVA | 56kW | 70kVA",
+        "| Standby Power | 53kW | 66kVA | 62kW | 77kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 86A | 183.7A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 56kW | 62kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kW"
+      ]
+    },
+    {
+      "n": 192,
+      "title": "Supply 60kVA Yangdong Series Diesel Genset Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY60D5 | KY70D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 60kVA | 56kW | 70kVA",
+        "| Standby Power | 53kW | 66kVA | 62kW | 77kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 90A | 180A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 63kW | 70kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 50kW | 55kW"
+      ]
+    },
+    {
+      "n": 193,
+      "title": "Supply 25kVA Yangdong Series Silent Diesel Generator Denyo Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY25D5 | KY30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kVA | 24kW | 30kVA",
+        "| Standby Power | 22kW | 28kVA | 26.4kW | 33kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 36A | 72A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 27kW | 30kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 23kW"
+      ]
+    },
+    {
+      "n": 194,
+      "title": "Supply 30kVA Yangdong Series Soundproof Type Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY31D5 | KY40D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 25kW | 31kVA | 32kW | 40kVA",
+        "| Standby Power | 28kW | 34kVA | 35kW | 44kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 98A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 33kW | 39.6kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 25kW | 30kW"
+      ]
+    },
+    {
+      "n": 195,
+      "title": "Supply 20kVA Yangdong Series Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY20D5 | KY25D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 20kVA | 20kW | 25kVA",
+        "| Standby Power | 18kW | 22kVA | 22kW | 27.5kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 28.8A | 62A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 21kW | 25kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 19kW"
+      ]
+    },
+    {
+      "n": 196,
+      "title": "Supply 15kVA Yangdong Series Diesel Generator Set Soundproof Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY15D5 | KY16D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12kW | 15kVA | 13kW | 16kVA",
+        "| Standby Power | 13kW | 16kVA | 14kW | 18kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 21.6A | 42.6A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 15kW | 17kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12.8kW | 13.5kW"
+      ]
+    },
+    {
+      "n": 197,
+      "title": "Supply 10kVA Yangdong Series Diesel Generator Set Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY10D5 | KY13D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 8kW | 10kVA | 10kW | 13kVA",
+        "| Standby Power | 9kW | 11kVA | 11kW | 14kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 14.4A | 32.8A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 11kW | 13kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 8.8kW | 11kW"
+      ]
+    },
+    {
+      "n": 204,
+      "title": "Supply 50kVA Yangdong Series Generator Diesel Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY50D5 | KY55D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kVA | 44kW | 55kVA",
+        "| Standby Power | 44kW | 55kVA | 48kW | 61kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 72A | 144A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 55kW | 60kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kW"
+      ]
+    },
+    {
+      "n": 206,
+      "title": "Supply 48kVA Yangdong Series Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY48D5 | KY53D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 38kW | 48kVA | 42kW | 53kVA",
+        "| Standby Power | 42kW | 52kVA | 46kW | 58kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 64.8A | 131A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 48kW | 53kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 40kW"
+      ]
+    },
+    {
+      "n": 208,
+      "title": "Supply 40kVA Yangdong Series Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KY40D5 | KY48D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 40kVA | 38kW | 48kVA",
+        "| Standby Power | 35.2kW | 44kVA | 42kW | 52kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 54A | 118A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 40kW | 48kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 30kW | 37.5kW"
+      ]
+    },
+    {
+      "n": 210,
+      "title": "Supply Fawde Series 125kVA Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF125D5 | KF145D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 100kW | 125kVA | 116kW | 145kVA",
+        "| Standby Power | 110kW | 138kVA | 128kW | 160kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 180A | 419A",
+        "| Displacement | 7.13L | 6.56L",
+        "| Bore * Stroke | 110*125mm | 110*125mm",
+        "| Compression Ratio | 17:1 | 17:1",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 125kW | 132kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 100kW | 119kW"
+      ]
+    },
+    {
+      "n": 211,
+      "title": "Supply Fawde Series 24kW 30kVA Silent Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF30D5 | KF40D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 30kVA | 32kW | 40kVA",
+        "| Standby Power | 26kW | 33kVA | 35kW | 44kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 98A",
+        "| Model | 4DW92-39D | 4DW21-53D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 29kW | 39kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 32kW"
+      ]
+    },
+    {
+      "n": 212,
+      "title": "Supply Fawde Series 40kVA Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF40D5 | KF45D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 40kVA | 36kW | 45kVA",
+        "| Standby Power | 35kW | 44kVA | 40kW | 50kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 57.6A | 118A",
+        "| Model | 4DX21-53D | 4DX21-61D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 39kW | 44kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 37.6kW"
+      ]
+    },
+    {
+      "n": 213,
+      "title": "Supply Fawde Series 20kW 25kVA Denyo Type Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF25D5 | KF30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kVA | 24kW | 30kVA",
+        "| Standby Power | 22kW | 28kVA | 26.4kW | 33kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 36A | 82A",
+        "| Model | 4DW92-35D | 4DW92-42D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 26kW | 33kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kW"
+      ]
+    },
+    {
+      "n": 214,
+      "title": "Supply Fawde Series 16kW 20kVA Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF20D5 | KF28D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 20kVA | 22kW | 28kVA",
+        "| Standby Power | 18kW | 22kVA | 24kW | 30kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 28.8A | 72A",
+        "| Model | 4DW91-29D | 4DW91-38D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 21kW | 28kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 22kW"
+      ]
+    },
+    {
+      "n": 215,
+      "title": "Supply Fawde Series 15kva Diesel Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF15D5 | KF20D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12kW | 15kVA | 16kW | 20kVA",
+        "| Standby Power | 13kW | 17kVA | 18kW | 22kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 21.6A | 52A",
+        "| Model | 4DW81-23D | 4DW81-28D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 17kW | 20kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12kW | 16kW"
+      ]
+    },
+    {
+      "n": 222,
+      "title": "Supply Fawde Series 80kW 100kVA Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF100D5 | KF106D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 100kVA | 85kW | 106kVA",
+        "| Standby Power | 88kW | 110kVA | 94kW | 117kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 144A | 278A",
+        "| Displacement | 6.55L | 4.75L",
+        "| Bore * Stroke | 110*115mm | 110*125mm",
+        "| Compression Ratio | 17.0:1 | 17.5:1",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 96kW | 101kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 80kW | 94kW"
+      ]
+    },
+    {
+      "n": 224,
+      "title": "Supply Fawde Series 48kW 60kVA Generator Set Deny Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF60D5 | KF60D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 48kW | 60kVA | 48kW | 60kVA",
+        "| Standby Power | 53kW | 66kVA | 53kW | 66kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 86A | 157A",
+        "| Model | 4DX23-78D | 4DX23-82D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 57kW | 60kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kW"
+      ]
+    },
+    {
+      "n": 226,
+      "title": "Supply Fawde Series 40kW 50kVA Soudproof Diesel Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KF50D5 | KF55D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kVA | 44kW | 55kVA",
+        "| Standby Power | 44kW | 55kVA | 48kW | 60kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 72A | 147A",
+        "| Model | 4DX22-65D | 4DX22-75D",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 48kW | 55kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 40kW | 50kW"
+      ]
+    },
+    {
+      "n": 228,
+      "title": "Supply 40kVA Isuzu Series Generator Silent Type Price Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KI40D5 | KI45D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 40kVA | 36kW | 45kVA",
+        "| Standby Power | 35kW | 44kVA | 40kW | 50kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 57A | 118A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 38kW | 46kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 32kW | 37.6kW"
+      ]
+    },
+    {
+      "n": 229,
+      "title": "Supply 30kVA Isuzu Series Silent Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KI30D5 | KI35D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 30kVA | 28kW | 35kVA",
+        "| Standby Power | 26kW | 33kVA | 31kW | 39kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43A | 91A",
+        "| Model | JE493ZDB-04 | JE493ZDB-03",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 28kW | 34kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 28kW"
+      ]
+    },
+    {
+      "n": 230,
+      "title": "Supply 25kVA Isuzu Series Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KI25D5 | KI30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 25kVA | 24kW | 30kVA",
+        "| Standby Power | 22kW | 28kVA | 26kW | 33kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 21A | 78A",
+        "| Model | JE493DB-02 | JE493DB-01",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 24kW | 28kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 20kW | 23.5kW"
+      ]
+    },
+    {
+      "n": 231,
+      "title": "Supply 20kVA Isuzu Series Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KI20D5 | KI25D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 20kVA | 20kW | 25kVA",
+        "| Standby Power | 18kW | 22kVA | 22kW | 28kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 28.8A | 65A",
+        "| Model | JE493DB-04 | JE493DB-03",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 21kW | 24kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 19kW"
+      ]
+    },
+    {
+      "n": 236,
+      "title": "Supply Perkins Series 22kW 28kVA Generator Silent Type Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KP28D5 | KP30D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 22kW | 28kVA | 24kW | 30kVA",
+        "| Standby Power | 24kW | 30kVA | 26kW | 33kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 39.6A | 78.7A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 25.2kW | 30.3kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 22kW | 24kW"
+      ]
+    },
+    {
+      "n": 237,
+      "title": "Supply Perkins Series 24kW 30kVA Silent Diesel Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KP30D5 | KP35D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 30kVA | 28kW | 35kVA",
+        "| Standby Power | 26kW | 33kVA | 31kW | 39kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 43.2A | 92.4A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 28.2 kW | 33.3kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 24kW | 28.2kW"
+      ]
+    },
+    {
+      "n": 238,
+      "title": "Supply Perkins Series 16kW 20kVA Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [
+        "| Genset Specification | Genset Model | KDP-20/S | KDP-25/S"
+      ],
+      "rows": [
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16kW | 20kVA | 20kW | 25kVA",
+        "| Standby Power | 18kW | 22kVA | 22kW | 28kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 28.8A | 65.6A",
+        "| Model | 404D-22G1 | 404D-22G",
+        "| Displacement | 2.21 L | 2.216 L",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 18.7kW | 22kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 16 kW | 20 kW"
+      ]
+    },
+    {
+      "n": 239,
+      "title": "Supply Perkins Series 12kW 15kVA Silent Diesel Generator Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
+      "header": [],
+      "rows": [
+        "| Genset Specification | Genset Model | KP15D5 | KP18D6",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12kW | 15kVA | 14kW | 18kVA",
+        "| Standby Power | 13kW | 17kVA | 16kW | 20kVA",
+        "| Rated Voltage | 400/230V | 220/127V",
+        "| Rated Current | 21.6A | 45.9A",
+        "| Raated Speed | 1500rpm | 1800rpm",
+        "| Rated Power (With Fan) | 13.7kW | 16kW",
+        "| Voltage | 400/230V | 220/127V",
+        "| Frequency | 50Hz | 60Hz",
+        "| Prime Power | 12 kW | 14.1 kW"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: &#xe785; 50Hz and 60Hz YTO Series Diesel Generator Set List.pdf",
+      "header": [],
+      "rows": [
+        "| 3Phase | Genset Specification 400/230V | 50HZ/1500RPM",
+        "| Engine | Specification",
+        "| Alternator | Silent Type",
+        "| Engine | Cyl",
+        "| Gov | Displacement",
+        "| Model | kW",
+        "Standard reference Conditions",
+        "| 3Phase | Genset Specification 127/220V | 60HZ/1800RPM"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: &#xe785; 50HZ YTO 150KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR6B3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 31.2 L/hr",
+        "| Net Weight | 1300KG | 1800KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR6B3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 6",
+        "| Bore | 108mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 6.87 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 138KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: &#xe785; 60HZ YTO 160KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR6B3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 31.2 L/hr",
+        "| Net Weight | 1300KG | 1800KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR6B3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 6",
+        "| Bore | 108mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 6.87 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 145KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: &#xe785; 50HZ YTO 60KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT4B2Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 13 L/hr",
+        "| Net Weight | 875KG | 1150KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT4B2Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 108mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.4 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 60KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: &#xe785; 60HZ YTO 68KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT4B2Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 13 L/hr",
+        "| Net Weight | 875KG | 1150KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT4B2Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 108mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.4 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 63KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: &#xe785; 50HZ YTO 65KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4B3Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 14.56 L/hr",
+        "| Net Weight | 895KG | 1180KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4B3Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 108mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.58 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 62KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: &#xe785; 60HZ YTO 70KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4B3Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 14.56 L/hr",
+        "| Net Weight | 895KG | 1180KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4B3Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 108mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.58 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 65KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1011,
+      "title": "Datasheet: &#xe785; 50HZ YTO 50KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4B5-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 7.8 L/hr",
+        "| Net Weight | 875KG | 1150KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4B5-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 105mm",
+        "| Stroke | 135mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.95L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 48KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Natural Aspiration",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1012,
+      "title": "Datasheet: &#xe785; 60HZ YTO 55KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4B5-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 7.8 L/hr",
+        "| Net Weight | 875KG | 1150KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4B5-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 105mm",
+        "| Stroke | 135mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.95L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 50KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Natural Aspiration",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1014,
+      "title": "Datasheet: &#xe785; 50HZ YTO 38KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT3A2Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 7.8 L/hr",
+        "| Net Weight | 738KG | 900KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT3A2Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 3",
+        "| Bore | 105mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 3.12L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 36KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbochaged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1015,
+      "title": "Datasheet: &#xe785; 60HZ YTO 40KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT3A2Z-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 7.8 L/hr",
+        "| Net Weight | 738KG | 900KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT3A2Z-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 3",
+        "| Bore | 105mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 3.12L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 38KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbochaged",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1017,
+      "title": "Datasheet: &#xe785; 50HZ YTO 30KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT3B2-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 6.76 L/hr",
+        "| Net Weight | 703KG | 850KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT3B2-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 3",
+        "| Bore | 108mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 3.3L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 30KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Natural Aspiration",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1018,
+      "title": "Datasheet: &#xe785; 60HZ YTO 38KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO YT3B2-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 6.76 L/hr",
+        "| Net Weight | 703KG | 850KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO YT3B2-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 3",
+        "| Bore | 108mm",
+        "| Stroke | 120mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 3.3L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 36KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Natural Aspiration",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1020,
+      "title": "Datasheet: &#xe785; 50HZ YTO 125KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4M3L-D88",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 26 L/hr",
+        "| Net Weight | 1180KG | 1620KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4M3L-D88",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 110mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.75 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 110KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "Datasheet: &#xe785; 60HZ YTO 138KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4M3L-D88",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 26 L/hr",
+        "| Net Weight | 1180KG | 1620KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4M3L-D88",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 110mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.75 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 125KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1023,
+      "title": "Datasheet: &#xe785; 50HZ YTO 100KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4M3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 19.5 L/hr",
+        "| Net Weight | 1095KG | 1550KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4M3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 110mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.75 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 88KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1024,
+      "title": "Datasheet: &#xe785; 60HZ YTO 100KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4M3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 19.5 L/hr",
+        "| Net Weight | 1095KG | 1550KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4M3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 110mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.75 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 90KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Electronic",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 24V"
+      ]
+    },
+    {
+      "n": 1026,
+      "title": "Datasheet: &#xe785; 50HZ YTO 80KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4A3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 16.64 L/hr",
+        "| Net Weight | 915KG | 1250KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4A3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 105mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.58 L",
+        "| Engine speed | 1500 rpm",
+        "| Rated power | 75KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1027,
+      "title": "Datasheet: &#xe785; 60HZ YTO 85KVA Diesel Generator Set Specification.pdf",
+      "header": [],
+      "rows": [
+        "Generator",
+        "| Voltage/Ph | Hz/rpm",
+        "| Engine Make /Model | YTO LR4A3L-D",
+        "| Alternator Make /Model | Brushless, self-exciting",
+        "| Control Panel | Smartgen HGM6110N",
+        "| Built in Base Fuel Tank Capacity | 8-12hrs",
+        "| Dimension and | Weight",
+        "| Dimension | Open",
+        "| power | 16.64 L/hr",
+        "| Net Weight | 915KG | 1250KG",
+        "Generator",
+        "| Engine | Alternator",
+        "| Engine Brand /Model | YTO LR4A3L-D",
+        "| Number of phase | 3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| No. of cylinders | 4",
+        "| Bore | 105mm",
+        "| Stroke | 125mm",
+        "| Compression ratio | 17.0:1",
+        "| Insulation type | H class",
+        "| Displacement | 4.58 L",
+        "| Engine speed | 1800 rpm",
+        "| Rated power | 80KW",
+        "| Excitation system | Self-excited",
+        "| Intake type | Turbocharged With After Cooler",
+        "| Governor | Mechanical",
+        "| Voltage regulator | A.V.R",
+        "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1028,
+      "title": "Datasheet: KB700D5",
+      "header": [],
+      "rows": [
+        "| Genset Model | KB700D5",
+        "| Frequency | 50Hz",
+        "| Voltage | 380V",
+        "| PRP | 560KW/700KVA",
+        "| ESP | 616KW/770KVA",
+        "| Phase | 3-PH",
+        "| Speed | 1500rpm",
+        "| Power Factor | 0.8",
+        "| Fuel Tank Capacity | 8hrs",
+        "| Engine Model | Baudouin 6M33G825/5",
+        "| Alternator | Leroysomer LSA49.3 M65",
+        "| Controller | Deepsea DSE7320",
+        "| Length (L) | mm | 3800 | 5600",
+        "| Width (W] | mm | 1600 | 1830",
+        "| Height (H) | mm | 2205 | 2500",
+        "| Dry weight | kgs | 4523 | 6526",
+        "| Engine brand | Baudouin",
+        "| Prime engine power output | 675kW",
+        "| Engine model | 6M33G8D3/5",
+        "| Speed governor | ECU",
+        "| Displacement | 19.6L",
+        "| Coolant capacity | 159.0L",
+        "| No. of cyl / arrangement | 6 L",
+        "| Lubrication capacity | 64.0L",
+        "| Bore | 150mm",
+        "| Start type | Electrical",
+        "| Stroke | 185mm",
+        "| Consumption 100% @ load ESP | 174L/H",
+        "| Compression ratio | 15.0:1",
+        "| Consumption 100% @ load PRP | 155L/H",
+        "| Engine speed | 1500rpm",
+        "| Consumption 75% @ load PRP | 111L/H",
+        "| Aspiration | Turbo, intercooling",
+        "| Consumption 50% @ load PRP | 77L/H",
+        "| Number of phase | 3",
+        "| Winding Pitch | 2/3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| IP rating | IP23",
+        "| Poles | 4",
+        "| Excitation system | Self-excited",
+        "| Winding Connections | Star-serie",
+        "| Bearing | Single bearing",
+        "| Terminals | 6 or 12",
+        "| Coating | Vacuum impregnation",
+        "| Insulation | Class H",
+        "| Voltage regulator | A.V.R",
+        "| Couping | Flexible disc",
+        "| Type | Brushless"
+      ]
+    },
+    {
+      "n": 4001,
+      "title": "SILENT DIESEL GENERATOR (OEM) of diesel generator sets powered by Cummins diesel",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC30D5 | 24 | 30 | 26 | 33 | 4B3.9-G12 |",
+        "| KC40D5 | 32 | 40 | 35 | 44 | 4BT3.9-G2 |",
+        "| KC50D5 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 |",
+        "| KC60D5 | 48 | 60 | 53 | 66 | 4BTA3.9-G2 |",
+        "| KC73D5 | 58 | 73 | 64 | 80 | 4BTA3.9-G11 |",
+        "| KC94D5 | 75 | 94 | 80 | 100 | 6BT5.9-G2 |",
+        "| KC100D5 | 80 | 100 | 88 | 110 | 6BT5.9-G2 |",
+        "| KC113D5 | 90 | 113 | 100 | 125 | 6BTA5.9-G2 |",
+        "| KC125D5 | 100 | 125 | 110 | 138 | 6BTAA5.9-G2 |",
+        "| KC135D5 | 108 | 135 | 120 | 150 | 6BTAA5.9-G2 |",
+        "| KC225D5 | 180 | 225 | 200 | 250 | 6LTAA8.9-G2 |",
+        "| KC250D5 | 200 | 250 | 220 | 275 | 6LTAA8.9-G3 |",
+        "| KC275D5 | 220 | 275 | 240 | 300 | 6LTAA9.5-G3 |",
+        "| KC400D5 | 320 | 400 | 360 | 450 | 6ZTAA13-G2 |",
+        "| KC438D5 | 350 | 438 | 384 | 480 | 6ZTAA13-G4 |",
+        "| KC450D5 | 360 | 450 | 400 | 500 | QSZ13-G2 |",
+        "| KC500D5 | 400 | 500 | 440 | 550 | QSZ13-G10 |",
+        "| KC250D5 | 200 | 250 | 220 | 275 | NT855-GA |",
+        "| KC250D5 | 200 | 250 | 220 | 275 | NTA855-G1 |",
+        "| KC275D5 | 220 | 275 | 240 | 300 | NTA855-G1A |",
+        "| KC350D5 | 280 | 350 | 308 | 385 | NTA855-G4 |",
+        "| KC375D5 | 300 | 375 | 320 | 400 | NTAA855-G7 |",
+        "| KC500D5 | 400 | 500 | 440 | 550 | KTA19-G3A |",
+        "| KC575D5 | 460 | 575 | 500 | 625 | KTAA19-G6 |",
+        "| KC625D5 | 500 | 625 | 550 | 688 | KT38-G |",
+        "| KC650D5 | 520 | 650 | 572 | 715 | QSK19-G4 |",
+        "| KC675D5 | 540 | 675 | 600 | 750 | QSK19-G11 |",
+        "| KC712D5 | 570 | 712 | 624 | 780 | KTA38-G1 |",
+        "| KC725D5 | 580 | 725 | 640 | 800 | KT38-GA |",
+        "| KC750D5 | 600 | 750 | 660 | 825 | KTA38-G2 |",
+        "| KC910D5 | 728 | 910 | 800 | 1000 | KTA38-G2A |",
+        "| KC1250D5 | 1000 | 1250 | 1100 | 1375 | QSK38-G5 |",
+        "| KC1250D5 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 |",
+        "| KC1375D5 | 1100 | 1375 | 1200 | 1500 | KTA50-G8 |",
+        "| KC1650D5 | 1320 | 1650 | 1440 | 1800 | KTA50-G15 |"
+      ]
+    },
+    {
+      "n": 4002,
+      "title": "SILENT DIESEL GENERATOR (OEM) of diesel generator sets powered by Cummins diesel",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC30D6 | 24 | 30 | 26 | 33 | 4B3.9-G2 |",
+        "| KC68D6 | 54 | 68 | 60 | 75 | 4BTA3.9-G2 |",
+        "| KC75D6 | 60 | 75 | 66 | 83 | 4BTA3.9-G2 |",
+        "| KC90D6 | 72 | 90 | 80 | 100 | 4BTA3.9-G11 |",
+        "| KC113D6 | 90 | 113 | 100 | 125 | 6BT5.9-G2 |",
+        "| KC125D6 | 100 | 125 | 110 | 138 | 6BT5.9-G2 |",
+        "| KC135D6 | 108 | 135 | 119 | 149 | 6BTA5.9-G2 |",
+        "| KC150D6 | 120 | 150 | 132 | 165 | 6BTAA5.9-G2 |",
+        "| KC188D6 | 150 | 188 | 164 | 205 | 6CTA8.3-G2 |",
+        "| KC213D6 | 170 | 213 | 184 | 230 | 6CT AA8.3-G2 |",
+        "| KC250D6 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 |",
+        "| KC275D6 | 220 | 275 | 240 | 300 | 6LTAA8.9-G3 |",
+        "| KC388D6 | 310 | 388 | 340 | 425 | 6ZTAA13-G3 |",
+        "| KC440D6 | 352 | 440 | 384 | 480 | 6ZTAA13-G4 |",
+        "| KC500D6 | 400 | 500 | 440 | 550 | QSZ13-G3 |",
+        "| KC550D6 | 440 | 550 | 480 | 600 | QSZ13-G11 |",
+        "| KC250D6 | 200 | 250 | 220 | 275 | NT855-GA |",
+        "| KC300D6 | 240 | 300 | 264 | 330 | NTA855-G1 |",
+        "| KC344D6 | 275 | 344 | 300 | 375 | NTA855-G1B |",
+        "| KC400D6 | 320 | 400 | 360 | 450 | NTA855-G3 |",
+        "| KC438D6 | 350 | 438 | 400 | 500 | KTA19-G2 |",
+        "| KC500D6 | 400 | 500 | 440 | 550 | KTA19-G3 |",
+        "| KC563D6 | 450 | 563 | 500 | 625 | KTA19-G3A |",
+        "| KC625D6 | 500 | 625 | 570 | 713 | QSK19-G4 |",
+        "| KC775D6 | 620 | 775 | 680 | 850 | KT38-G |",
+        "| KC875D6 | 700 | 875 | 770 | 963 | KTA38-G1 |",
+        "| KC900D6 | 720 | 900 | 800 | 1000 | KTA38-G2 |",
+        "| KC938D6 | 750 | 938 | 830 | 1038 | KTA38-G2B |",
+        "| KC1000D6 | 800 | 1000 | 900 | 1125 | KTA38-G2A |",
+        "| KC1125D6 | 900 | 1125 | 1000 | 1250 | KTA38-G4 |",
+        "| KC1250D6 | 1000 | 1250 | 1100 | 1375 | KTA38-G9 |",
+        "| KC1375D6 | 1100 | 1375 | 1210 | 1513 | KTA50-G3 |",
+        "| KC1575D6 | 1260 | 1575 | 1500 | 1875 | KTA50-G9 |"
+      ]
+    },
+    {
+      "n": 4003,
+      "title": "400V / 50Hz 3 PHASE the field of diesel generator sets to provide diesel generator",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW50D5 | 40 | 50 | 44 | 55 | WP2.3D48E200 |",
+        "| KW60D5 | 48 | 60 | 53 | 66 | WP4.1D66E200 |",
+        "| KW80D5 | 64 | 80 | 70 | 88 | WP4.1D80E200 |",
+        "| KW100D5 | 80 | 100 | 88 | 110 | WP4.1D100E200 |",
+        "| KW125D5 | 100 | 125 | 110 | 138 | WP6D132E200 |",
+        "| KW150D5 | 120 | 150 | 132 | 165 | WP6D152E200 |",
+        "| KW200D5 | 160 | 200 | 176 | 220 | WP10D200E200 |",
+        "| KW225D5 | 180 | 225 | 200 | 250 | WP10D238E200 |",
+        "| KW250D5 | 200 | 250 | 220 | 275 | WP10D264E200 |",
+        "| KW400D5 | 320 | 400 | 360 | 450 | WP13D385E200 |",
+        "| KW440D5 | 352 | 440 | 400 | 500 | WP13D440E310 |",
+        "| KWS500D5 | 400 | 500 | 440 | 550 | WP13D490E310 |",
+        "| KW625D5 | 500 | 625 | 550 | 688 | 6M33D633E200 |",
+        "| KW750D5 | 600 | 750 | 660 | 825 | 6M33D725E310 |",
+        "| KW800D5 | 640 | 800 | 704 | 880 | 8M33D800E200 |",
+        "| KW900D5 | 720 | 900 | 792 | 990 | 8M33D890E200 |",
+        "| KW1000D5 | 800 | 1000 | 880 | 1100 | 8M33D975E310 |",
+        "| KW1125D5 | 900 | 1125 | 990 | 1238 | 12M33D1108E200 |",
+        "| KW1250D5 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200 |"
+      ]
+    },
+    {
+      "n": 4004,
+      "title": "220V / 60Hz 3 PHASE the field of diesel generator sets to provide diesel generator",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW38D6 | 30 | 38 | 33 | 41 | WP2.3D41E201 |",
+        "| KW45D6 | 36 | 45 | 37 | 46 | WP2.3D47E201 |",
+        "| KW63D6 | 50 | 63 | 55 | 69 | WP4.1D80E201 |",
+        "| KW90D6 | 72 | 90 | 80 | 100 | WP4.1D95E201 |",
+        "| KW113D6 | 90 | 113 | 100 | 125 | WP4.1D115E201 |",
+        "| KW125D6 | 100 | 125 | 110 | 138 | WP6D132E201 |",
+        "| KW150D6 | 120 | 150 | 132 | 165 | WP6D158E201 |",
+        "| KW200D6 | 160 | 200 | 176 | 220 | WP10D200E201 |",
+        "| KW250D6 | 200 | 250 | 220 | 275 | WP10D264E201 |",
+        "| KW350D6 | 280 | 350 | 308 | 385 | WP10D360E201 |",
+        "| KW400D6 | 320 | 400 | 360 | 450 | WP13D385E201 |",
+        "| KWA450D6 | 360 | 450 | 400 | 500 | WP13D460E311 |",
+        "| KW500D6 | 400 | 500 | 440 | 550 | WP13D510E311 |",
+        "| KW600D6 | 480 | 600 | 528 | 660 | 6M33D633E201 |",
+        "| KW688D6 | 550 | 688 | 605 | 756 | 6M33D670E201 |",
+        "| KW750D6 | 600 | 750 | 660 | 825 | 6M33D740E311 |",
+        "| KW800D6 | 640 | 800 | 704 | 880 | 8M33D800E200 |"
+      ]
+    },
+    {
+      "n": 4005,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KB30DS | 24 | 30 | 26 | 33 | 4M06G35/5 |",
+        "| KB60DS | 48 | 60 | 53 | 66 | 4M10G70/5 |",
+        "| KB135D5 | 108 | 135 | 120 | 150 | 6M11G150/5 |",
+        "| KB150D5 | 120 | 150 | 132 | 165 | 6M11G165/5 |",
+        "| KB200D5 | 160 | 200 | 176 | 220 | 6M16G220/5 |",
+        "| KB250D5 | 200 | 250 | 220 | 275 | 6M16G275/5 |",
+        "| KB320D5 | 256 | 320 | 280 | 350 | 6M16G350/5 |",
+        "| KB375D5 | 300 | 375 | 330 | 413 | 6M21G400/5 |",
+        "| KB450D5 | 360 | 450 | 400 | 500 | 6M21G500/5 |",
+        "| KB500D5 | 400 | 500 | 440 | 550 | 6M21G550/5 |",
+        "| KB650D5 | 520 | 650 | 572 | 715 | 6M33G715/5 |",
+        "| KB750D5 | 600 | 750 | 660 | 825 | 6M33G825/5 |",
+        "| KB1125D5 | 900 | 1125 | 990 | 1238 | 12M33G1250/5 |",
+        "| KB1250D5 | 1000 | 1250 | 1100 | 1375 | 12M33G1400/5 |",
+        "| KB1375D5 | 1100 | 1375 | 1210 | 1513 | 12M33G1500/5 |",
+        "| KB1500D5 | 1200 | 1500 | 1320 | 1650 | 12M33G1650/5 |"
+      ]
+    },
+    {
+      "n": 4006,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KB45D6 | 36 | 45 | 40 | 50 | 4M06G41/6 |",
+        "| KB53D6 | 42 | 53 | 46 | 58 | 4M06G50/6 |",
+        "| KB75D6 | 60 | 75 | 66 | 83 | 4M10G66/6 |",
+        "| KB113D6 | 90 | 113 | 100 | 125 | 4M10G105/6 |",
+        "| KB125D6 | 100 | 125 | 110 | 138 | 6M11G110/6 |",
+        "| KB150D6 | 120 | 150 | 132 | 165 | 6M11G135/6 |",
+        "| KB200D6 | 160 | 200 | 176 | 220 | 6M11G176/6 |",
+        "| KB250D6 | 200 | 250 | 220 | 275 | 6M16G220/6 |",
+        "| KB350D6 | 280 | 350 | 308 | 385 | 6M16G308/6 |",
+        "| KB375D6 | 300 | 375 | 330 | 413 | 6M21G330/6 |",
+        "| KB438D6 | 350 | 438 | 384 | 480 | 6M21G390/6 |",
+        "| KB450D6 | 360 | 450 | 400 | 500 | 6M21G400/6 |",
+        "| KB500D6 | 400 | 500 | 440 | 550 | 6M21G460/6 |",
+        "| KB650D6 | 520 | 650 | 572 | 715 | 6M33G575/6 |",
+        "| KB688D6 | 550 | 688 | 605 | 756 | 6M33G600/6 |",
+        "| KB750D6 | 600 | 750 | 660 | 825 | 6M33G660/6 |",
+        "| KB875D6 | 700 | 875 | 770 | 963 | 8M33G770/6 |",
+        "| KB900D6 | 720 | 900 | 792 | 990 | 8M33G800/6 |",
+        "| KB1000D6 | 800 | 1000 | 880 | 1100 | 8M33G900/6 |",
+        "| KB1250D6 | 1000 | 1250 | 1100 | 1375 | 12M33G1100/6 |",
+        "| KB1365D6 | 1092 | 1365 | 1200 | 1500 | 12M33G1200/6 |",
+        "| KB1470D6 | 1176 | 1470 | 1300 | 1625 | 12M33G1300/6 |"
+      ]
+    },
+    {
+      "n": 4007,
+      "title": "and generator sets.",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KS69D5 | 55 | 69 | 61 | 76 | 4ZTAA4.1-G21 |",
+        "| KS75D5 | 60 | 75 | 66 | 83 | 4ZTAA4.1-G31 |",
+        "| KS125D5 | 100 | 125 | 110 | 138 | 4HTAA4.3-G22 |",
+        "| KS150D5 | 120 | 150 | 132 | 165 | 6HTAA6.5-G22 |",
+        "| KS180D5 | 144 | 180 | 160 | 200 | 6HTAA6.5-G23 |",
+        "| KS200D5 | 160 | 200 | 176 | 220 | 6DTAA8.9-G21 |",
+        "| KS225D5 | 180 | 225 | 200 | 250 | 6DTAA8.9-G24 |",
+        "| KS250D5 | 200 | 250 | 220 | 275 | 6DTAA8.9-G23 |",
+        "| KS350D5 | 280 | 350 | 308 | 385 | 6ETAA11.8-G21 |",
+        "| KS375D5 | 300 | 375 | 330 | 413 | 6ETAA12.8-G22 |",
+        "| KS400D5 | 320 | 400 | 360 | 450 | 6ETAA12.8-G21 |",
+        "| KS450D5 | 360 | 450 | 400 | 500 | 6ETAA12.8-G31 |",
+        "| KS500D5 | 400 | 500 | 440 | 550 | 6ETAA12.8-G310 |",
+        "| KS550D5 | 440 | 550 | 484 | 605 | 6KTAA25-G310 |",
+        "| KS625D5 | 500 | 625 | 550 | 688 | 6KTAA25-G39 |",
+        "| KS675D5 | 540 | 675 | 594 | 743 | 6KTAA25-G38 |",
+        "| KS750D5 | 600 | 750 | 660 | 825 | 6KTAA25-G32 |",
+        "| KS800D5 | 640 | 800 | 704 | 880 | 6KTAA25-G31 |",
+        "| KS900D5 | 720 | 900 | 792 | 990 | 6KTAA25-G320 |",
+        "| KS1250D5 | 1000 | 1250 | 1100 | 1375 | 6WTAA35-G311 |"
+      ]
+    },
+    {
+      "n": 4008,
+      "title": "and generator sets.",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KS125D6 | 100 | 125 | 110 | 138 | 4HTAA4.3-G22 |",
+        "| KS160D6 | 128 | 160 | 141 | 176 | 6HTAA6.5-G22 |",
+        "| KS225D6 | 180 | 225 | 200 | 250 | 6DTAA8.9-G21 |",
+        "| KS250D6 | 200 | 250 | 220 | 275 | 6DTAA8.9-G24 |",
+        "| KS275D6 | 220 | 275 | 242 | 303 | 6DTAA8.9-G23 |",
+        "| KS400D6 | 320 | 400 | 360 | 450 | 6ETAA12.8-G21 |",
+        "| KS438D6 | 350 | 438 | 384 | 480 | 6ETAA12.8-G32 |",
+        "| KS550D6 | 440 | 550 | 484 | 605 | 6KTAA25-G311 |",
+        "| KS600D6 | 480 | 600 | 528 | 660 | 6KTAA25-G310 |",
+        "| KS700D6 | 560 | 700 | 616 | 770 | 6KTAA25-G39 |"
+      ]
+    },
+    {
+      "n": 4009,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KR20D5 | 16 | 20 | 18 | 22 | 4YT23-20D |",
+        "| KR25D5 | 20 | 25 | 22 | 28 | N4100DS-30 |",
+        "| KR30D5 | 24 | 30 | 26 | 33 | N4100DS-30 |",
+        "| KR50D5 | 40 | 50 | 44 | 55 | N4105ZDS |",
+        "| KR60D5 | 48 | 60 | 53 | 66 | N4105ZDS |",
+        "| KR73D5 | 58 | 73 | 64 | 80 | N4105ZLDS |",
+        "| KR85D5 | 68 | 85 | 75 | 94 | 4RT55-88D |",
+        "| KR120D5 | 96 | 120 | 106 | 132 | 4RT55-110D |",
+        "| KR140D5 | 112 | 140 | 123 | 154 | 6RT80-132D |",
+        "| KR180D5 | 144 | 180 | 158 | 198 | 6RT80-176DE |",
+        "| KR225D5 | 180 | 225 | 198 | 248 | WT10B-231DE |",
+        "| KR250D5 | 200 | 250 | 220 | 275 | WT10B-231DE |"
+      ]
+    },
+    {
+      "n": 4010,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KR23D6 | 18 | 23 | 20 | 25 | 4YT23-20D |",
+        "| KR30D6 | 24 | 30 | 26 | 33 | N4100DS-30 |",
+        "| KR33D6 | 26 | 33 | 29 | 36 | N4100DS-30 |",
+        "| KR63D6 | 50 | 63 | 55 | 69 | N4105ZDS |",
+        "| KR70D6 | 56 | 70 | 62 | 77 | N4105ZDS |",
+        "| KR80D6 | 64 | 80 | 70 | 88 | N4105ZLDS |",
+        "| KR100D6 | 80 | 100 | 88 | 110 | 4RT55-88D |",
+        "| KR118D6 | 94 | 118 | 104 | 130 | 4RT55-110D |",
+        "| KR150D6 | 120 | 150 | 132 | 165 | 6RT80-132D |",
+        "| KR190D6 | 152 | 190 | 168 | 210 | 6RT80-176DE |",
+        "| KR245D6 | 196 | 245 | 216 | 270 | WT10B-231DE |",
+        "| KR280D6 | 224 | 280 | 246 | 308 | WT10B-231DE |"
+      ]
+    },
+    {
+      "n": 4011,
+      "title": "world’ s generator sets for over 30 years , providing vital power",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY13D5 | 10 | 13 | 11 | 14 | YD480D |",
+        "| KY16D5 | 13 | 16 | 14 | 18 | YND485D |",
+        "| KY20D5 | 16 | 20 | 18 | 22 | YSD490D |",
+        "| KY23D5 | 18 | 23 | 20 | 25 | Y490D |",
+        "| KY25D5 | 20 | 25 | 22 | 28 | Y495D |",
+        "| KY30D5 | 24 | 30 | 26 | 33 | Y4100D |",
+        "| KY38D5 | 30 | 38 | 33 | 41 | Y4105D |",
+        "| KY40D5 | 32 | 40 | 35 | 44 | Y4102ZD |",
+        "| KY48D5 | 38 | 48 | 42 | 52 | Y4102ZLD |",
+        "| KY50D5 | 40 | 50 | 44 | 55 | Y4105ZLD |"
+      ]
+    },
+    {
+      "n": 4012,
+      "title": "world\" s generator sets for over 30 years , providing vital power",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY16D6 | 13 | 16 | 14 | 18 | YD480D |",
+        "| KY20D6 | 16 | 20 | 18 | 22 | YND485D |",
+        "| KY25D6 | 20 | 25 | 22 | 28 | YSD490D |",
+        "| KY26D6 | 21 | 26 | 23 | 29 | Y490D |",
+        "| KY30D6 | 24 | 30 | 26 | 33 | Y495D |",
+        "| KY35D6 | 28 | 35 | 31 | 39 | Y4100D |",
+        "| KY40D6 | 32 | 40 | 35 | 44 | Y4102D |",
+        "| KY45D6 | 36 | 45 | 40 | 50 | Y4105D |",
+        "| KY48D6 | 38 | 48 | 42 | 52 | Y4102ZD |",
+        "| KY53D6 | 42 | 53 | 46 | 58 | Y4102ZLD |",
+        "| KY55D6 | 44 | 55 | 48 | 60 | Y4105ZLD |",
+        "| KY70D6 | 56 | 70 | 62 | 77 | YD4EZLD |",
+        "| KY80D6 | 64 | 80 | 70 | 88 | Y4110ZLD |"
+      ]
+    },
+    {
+      "n": 4013,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KF20D5 | 16 | 20 | 18 | 22 | 4DW91-29D |",
+        "| KF25D5 | 20 | 25 | 22 | 28 | 4DW92-35D |",
+        "| KF30D5 | 24 | 30 | 26 | 33 | 4DW92-39D |",
+        "| KF40D5 | 32 | 40 | 35 | 44 | 4DX21-53D |",
+        "| KF50D5 | 40 | 50 | 44 | 55 | 4DX22-65D |",
+        "| KF60D5 | 48 | 60 | 53 | 66 | 4DX23-78D |"
+      ]
+    },
+    {
+      "n": 4014,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KP13D5 | 10 | 13 | 11 | 14 | 403A-15G1 |",
+        "| KP20D5 | 16 | 20 | 18 | 22 | 404A-22G1 |",
+        "| KP30D5 | 24 | 30 | 26 | 33 | 1103A-33G | PI144G",
+        "| KP80D5 | 64 | 80 | 70 | 88 | 1104A-44TG2 | 224G",
+        "| KP100D5 | 80 | 100 | 88 | 110 | 1104C-44TAG2 | 274C",
+        "| KP135D5 | 108 | 135 | 120 | 150 | 1106A-70TG1 | 274E",
+        "| KP150D5 | 120 | 150 | 132 | 165 | 1106A-70TAG2 | 274F",
+        "| KP180DS5 | 144 | 180 | 160 | 200 | 1106A-70TAG3 | 274G",
+        "| KP200D5 | 160 | 200 | 176 | 220 | 1106A-70TAG4 |",
+        "| KP225D5 | 180 | 225 | 200 | 250 | 1206A-E70TTAG2 |",
+        "| KP250D5 | 200 | 250 | 220 | 275 | 1206A-E70TTAG3 | 274K",
+        "| KP231D5 | 185 | 231 | 206 | 257 | 1506A-E88TAG2 |",
+        "| KP257D5 | 206 | 257 | 226 | 282 | 1506A-E88TAG3 | 274K",
+        "| KP350D5 | 280 | 350 | 308 | 385 | 1706A-E93TAG2 |",
+        "| KP400D5 | 320 | 400 | 360 | 450 | 2206C-E13TAG3 | 444F",
+        "| KP650D5 | 520 | 650 | 576 | 720 | 2806A-E18TAG2 | 544F",
+        "| KP750D5 | 600 | 750 | 660 | 825 | 4006-23TAG2A | LVI634B",
+        "| KP1125D5 | 900 | 1125 | 1000 | 1250 | 4008-30TAG3 | LVI634F",
+        "| KP1250D5 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 634G",
+        "| KP1500D5 | 1200 | 1500 | 1320 | 1650 | 4012-46TAG2A | 734C",
+        "| KP1700D5 | 1360 | 1700 | 1500 | 1875 | 4012-46TAG3A | PI734E",
+        "| KP2000D5 | 1600 | 2000 | 1760 | 2200 | 4016TAG2A | 734F",
+        "| KP2250D5 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | PI734H"
+      ]
+    },
+    {
+      "n": 4015,
+      "title": "® Genset Color",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KP25D6 | 20 | 25 | 22 | 28 | 404D-22G |",
+        "| KP75D6 | 60 | 75 | 66 | 83 | 1104A-44TG1 | 224F",
+        "| KP113D6 | 90 | 113 | 100 | 125 | 1104C-44TAG2 | 274C",
+        "| KP150D6 | 120 | 150 | 132 | 165 | 1106A-70TG1 | 274E",
+        "| KP170D6 | 136 | 170 | 150 | 188 | 1106A-70TAG2 | 274E",
+        "| KP200D6 | 160 | 200 | 176 | 220 | 1106A-70TAG3 | 274G",
+        "| KP225D6 | 180 | 225 | 200 | 250 | 1206A-E70TTAG1 | 274G",
+        "| KP245D6 | 196 | 245 | 216 | 270 | 1206A-E70TTAG2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 5",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KF70D5 | 56 | 70 | 62 | 77 | 4110/125Z-09D |",
+        "| KF85D5 | 68 | 85 | 75 | 94 | CA4F2-12D |",
+        "| KF100D5 | 80 | 100 | 88 | 110 | CA6DF2D-14D |",
+        "| KF125D5 | 100 | 125 | 110 | 138 | CA6DF2-17D |",
+        "| KF150D5 | 120 | 150 | 132 | 165 | CA6DF2-19D |",
+        "| KF188D5 | 150 | 188 | 165 | 206 | CA6DL1-24D |",
+        "| KF225D5 | 180 | 225 | 198 | 248 | CA6DL2-27D |",
+        "| KF250D5 | 200 | 250 | 220 | 275 | CA6DL2-30D |",
+        "| KF313D5 | 250 | 313 | 275 | 344 | CA6DM2J-39D |",
+        "| KF338D5 | 270 | 338 | 297 | 371 | CA6DM2J-41D |",
+        "| KF375D5 | 300 | 375 | 330 | 413 | CA6DN1J-45D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 6",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KF25D6 | 16 | 20 | 18 | 22 | 4DW81-28D |",
+        "| KF28D6 | 22 | 28 | 24 | 30 | 4DW91-38D |",
+        "| KF30D6 | 24 | 30 | 26 | 33 | 4DW92-42D |",
+        "| KF33D6 | 26 | 33 | 29 | 36 | 4DW92-45D |",
+        "| KF38D6 | 30 | 38 | 32 | 40 | 4DW93-50D |",
+        "| KF40D6 | 32 | 40 | 35 | 44 | 4DX21-53D |",
+        "| KF45D6 | 36 | 45 | 40 | 50 | 4DX21-61D |",
+        "| KF55D6 | 44 | 55 | 48 | 60 | 4DX22-75D |",
+        "| KF60D6 | 48 | 60 | 53 | 66 | 4DX23-82D |",
+        "| KF70D6 | 56 | 70 | 62 | 77 | 4DX23-90D |",
+        "| KF80D6 | 64 | 80 | 70 | 88 | 4110/125Z-11D |",
+        "| KF106D6 | 85 | 106 | 94 | 117 | CA4DF2-14D |",
+        "| KF120D6 | 96 | 120 | 106 | 132 | CA6DF2D-16D |",
+        "| KF145D6 | 116 | 145 | 128 | 160 | CA6DF2-18D |",
+        "| KF206D6 | 165 | 206 | 182 | 227 | CA6DL1-27D |",
+        "| KF250D6 | 200 | 250 | 220 | 275 | CA6DL2-32D |",
+        "| KF340D6 | 272 | 340 | 299 | 374 | CA6DM2J-42D |",
+        "| KF400D6 | 320 | 400 | 352 | 440 | CA6DM3J-49D |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 8",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KI20D5 | 16 | 20 | 18 | 22 | JE493DB-04 |",
+        "| KI25D5 | 20 | 25 | 22 | 28 | JE493DB-02 |",
+        "| KI30D5 | 24 | 30 | 26 | 33 | JE493ZDB-04 |",
+        "| KI40D5 | 32 | 40 | 35 | 44 | JE493ZLDB-02 |",
+        "| KI25D6 | 20 | 25 | 22 | 28 | JE493DB-03 |",
+        "| KI30D6 | 24 | 30 | 26 | 33 | JE493DB-01 |",
+        "| KI35D6 | 28 | 35 | 31 | 39 | JE493ZDB-03 |",
+        "| KI45D6 | 36 | 45 | 40 | 50 | JE493ZLDB-01 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 10",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KDI-30S | 24 | 30 | 26 | 33 | JE493ZDB-04 |",
+        "| KR40D5 | 32 | 40 | 35 | 44 | N4100ZDS-42 |",
+        "| KR55D5 | 44 | 55 | 48 | 60 | N4105ZDS |",
+        "| KR60D5 | 48 | 60 | 53 | 66 | N4105ZLDS |",
+        "| KR100D5 | 80 | 100 | 88 | 110 | 4RT55-110D |",
+        "| KR125D5 | 100 | 125 | 110 | 138 | 6RT80-132D |",
+        "| KR160D5 | 128 | 160 | 140 | 175 | 6RT80-176DE |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 11",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KR38D6 | 30 | 38 | 33 | 41 | N4105DS-38 |",
+        "| KR45D6 | 36 | 45 | 40 | 50 | N4100ZDS-42 |",
+        "| KR60D6 | 48 | 60 | 53 | 66 | N4105ZDS |",
+        "| KR70D6 | 56 | 70 | 62 | 77 | N4105ZLDS |",
+        "| KR90D6 | 72 | 90 | 80 | 100 | 4RT55-88D |",
+        "| KR115D6 | 92 | 115 | 100 | 125 | 4RT55-110D |",
+        "| KR140D6 | 112 | 140 | 120 | 150 | 6RT80-132D |",
+        "| KR175D6 | 140 | 175 | 152 | 190 | 6RT80-176DE |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 13",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY9D5 | 7 | 9 | 8 | 10 | YD380D |",
+        "| KY10D5 | 8 | 10 | 9 | 11 | YD385D |",
+        "| KY45D5 | 36 | 45 | 40 | 50 | Y4102ZLD |",
+        "| KY60D5 | 48 | 60 | 53 | 66 | YD4EZLD |",
+        "| KY75D5 | 60 | 75 | 66 | 83 | Y4110ZLD |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 14",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY13D6 | 10 | 13 | 11 | 14 | YD385D |",
+        "| KY56D6 | 45 | 56 | 50 | 63 | Y4105ZLD |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 17",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC20D5 | 16 | 20 | 18 | 22 | 4B3.9-G11 |",
+        "| KC25D5 | 20 | 25 | 22 | 28 | 4B3.9-G2 |",
+        "| KC56D5 | 45 | 56 | 48 | 60 | 4BTA3.9-G2 | UCI 224E",
+        "| KC73D5 | 58 | 73 | 64 | 80 | 4BTA3.9-G11 | UCI 224F",
+        "| KC80D5 | 64 | 80 | 70 | 88 | 4BTA3.9-G11 | UCI 224G",
+        "| KC100D5 | 80 | 100 | 88 | 110 | 6BT5.9-G2 | UCI 274C",
+        "| KC138D5 | 110 | 138 | 120 | 150 | 6BTAA5.9-G2 | UCI 274E",
+        "| KC180D5 | 144 | 180 | 160 | 200 | 6CTA8.3-G2 |",
+        "| KC200D5 | 160 | 200 | 176 | 220 | 6CTAA8.3-G2 |",
+        "| KC250D5 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 |",
+        "| KC300D5 | 240 | 300 | 264 | 330 | 6LTAA9.5-G1 |",
+        "| KC318D5 | 254 | 318 | 280 | 350 | 6LTAA9.5-G1 |",
+        "| KC375D5 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 | HCI 444FS",
+        "| KC400D5 | 320 | 400 | 360 | 450 | 6ZTAA13-G2 | HCI 444F",
+        "| KC425D5 | 340 | 425 | 374 | 467.5 | 6ZTAA13-G2 | HCI 544C",
+        "| KC438D5 | 350 | 438 | 384 | 480 | 6ZTAA13-G4 | HCI 544C",
+        "| KC450D5 | 360 | 450 | 400 | 500 | QSZ13-G5 | HCI 544C",
+        "| KC500D5 | 400 | 500 | 440 | 550 | QSZ13-G3 | HCI 544C",
+        "| KC50D5 | 40 | 50 | 44 | 55 | 4BTA3.9-G2 | UCI 224D",
+        "| KC60D5 | 48 | 60 | 53 | 66 | 4BTA3.9-G2 | UCI 224E",
+        "| KC150D5 | 120 | 150 | 132 | 165 | 6BTAA5.9-G12 | UCI 274F"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 18",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC313D5 | 250 | 313 | 280 | 350 | NTA855-G1B |",
+        "| KC400D5 | 320 | 400 | 360 | 450 | NTAA855-G7A |",
+        "| KC450D5 | 360 | 450 | 400 | 500 | KTA19-G3 |",
+        "| KC500D5 | 400 | 500 | 440 | 550 | KTA19-G4 |",
+        "| KC525D5 | 420 | 525 | 480 | 600 | KTAA19-G5 |",
+        "| KC550D5 | 440 | 550 | 500 | 625 | KTA19-G8 |",
+        "| KC625D5 | 500 | 625 | 550 | 688 | KTAA19-G6A |",
+        "| KC800D5 | 640 | 800 | 704 | 880 | KTA38-G2B |",
+        "| KC1000D5 | 800 | 1000 | 880 | 1100 | KTA38-G5 |",
+        "| KC1125D5 | 900 | 1125 | 1000 | 1250 | KTA38-G9 |",
+        "| KC1500D5 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 |",
+        "| KC1320D5 | 1320 | 1650 | 1440 | 1800 | KTA50-G15 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 19",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC34D6 | 27 | 34 | 30 | 37 | 4B3.9-G2 |",
+        "| KC138D6 | 110 | 138 | 120 | 150 | 6BTA5.9-G2 |",
+        "| KC190D6 | 152 | 190 | 168 | 210 | 6CTA8.3-G2 |",
+        "| KC280D6 | 224 | 280 | 246 | 308 | 6LTAA8.9-G3 |",
+        "| KC315D6 | 252 | 315 | 276 | 345 | 6LTAA9.5-G1 |",
+        "| KC375D6 | 300 | 375 | 330 | 413 | 6ZTAA13-G3 |",
+        "| KC438D6 | 350 | 438 | 384 | 480 | 6ZTAA13-G2 |",
+        "| KC450D6 | 360 | 450 | 400 | 500 | 6ZTAA13-G4 |",
+        "| KC25D6 | 20 | 25 | 22 | 28 | 4B3.9-G11 |",
+        "| KC38D6 | 30 | 38 | 32 | 40 | 4B3.9-G12 |",
+        "| KC45D6 | 36 | 45 | 40 | 50 | 4BT3.9-G2 |",
+        "| KC210D6 | 168 | 210 | 184 | 230 | 6CTAA8.3-G2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 20",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KC323D6 | 258 | 323 | 284 | 355 | NTA855-G1 |",
+        "| KC550D6 | 440 | 550 | 480 | 600 | KTA19-G3A |",
+        "| KC563D6 | 450 | 563 | 500 | 625 | KTA19-G4 |",
+        "| KC594D6 | 475 | 594 | 520 | 650 | KTAA19-G5 |",
+        "| KC675D6 | 540 | 675 | 600 | 750 | KTAA19-G6A |",
+        "| KC350D6 | 280 | 350 | 308 | 385 | NTA855-G1B |",
+        "| KC520D6 | 416 | 520 | 456 | 570 | KTA19-G3 |",
+        "| KC906D6 | 725 | 906 | 800 | 1000 | KTA38-G2 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 21",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW230D5 | 184 | 230 | 202 | 253 | WP10D238E200 |",
+        "| KW313D5 | 250 | 313 | 275 | 344 | WP10D320E200 |",
+        "| KW375D5 | 300 | 375 | 330 | 413 | WP13D385E200 |",
+        "| KW400D5 | 320 | 400 | 360 | 450 | WP13D405E200 |",
+        "| KW500D5 | 400 | 500 | 440 | 550 | WP13D490E310 |",
+        "| KW575D5 | 460 | 575 | 506 | 633 | 6M33D572E200 |",
+        "| KW675D5 | 540 | 675 | 594 | 743 | 6M33D670E200 |",
+        "| KW800D5 | 640 | 800 | 704 | 880 | 12M26D792E200 |",
+        "| KW900D5 | 720 | 900 | 792 | 990 | 12M26D902E200 |",
+        "| KW1000D5 | 800 | 1000 | 880 | 1100 | 12M26D968E200 |",
+        "| KW1375D5 | 1100 | 1375 | 1210 | 1513 | 12M33D1320E200 |",
+        "| KW170D5 | 136 | 170 | 150 | 187 | WP6D167E200 |",
+        "| KW650D5 | 520 | 650 | 572 | 715 | 6M33D633E200 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 22",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KW170D6 | 136 | 170 | 150 | 187 | WP6D180E201 |",
+        "| KW225D6 | 180 | 225 | 200 | 250 | WP10D238E201 |",
+        "| KW375D6 | 300 | 375 | 330 | 413 | WP13D385E201 |",
+        "| KW650D6 | 520 | 650 | 572 | 715 | 6M33D633E201 |",
+        "| KW900D6 | 720 | 900 | 792 | 990 | 12M26D902E201 |",
+        "| KW1000D6 | 800 | 1000 | 880 | 1100 | 12M26D1012E201 |",
+        "| KW1250D6 | 1000 | 1250 | 1100 | 1375 | 12M33D1265E201 |",
+        "| KW1750D6 | 1400 | 1750 | 1540 | 1925 | 16M33D1680E311 |",
+        "| KW1875D6 | 1500 | 1875 | 1650 | 2063 | 16M33D1785E311 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 23",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KS100D5 | 80 | 100 | 88 | 110 | 4HTAA4.3-G21 |",
+        "| KS313D5 | 250 | 313 | 275 | 344 | 6ETAA11.8-G22 |",
+        "| KS438D5 | 350 | 438 | 385 | 481 | 6ETAA12.8-G31 |",
+        "| KS110D6 | 88 | 110 | 96 | 120 | 4HTAA4.3-G21 |",
+        "| KS125D6 | 100 | 125 | 110 | 138 | 4HTAA4.3-G23 |",
+        "| KS150D6 | 120 | 150 | 132 | 165 | 6HTAA6.5-G21 |",
+        "| KS200D6 | 160 | 200 | 176 | 220 | 6HTAA6.5-G23 |",
+        "| KS228D6 | 182 | 228 | 200 | 250 | 6DTAA8.9-G21 |",
+        "| KS350D6 | 280 | 350 | 308 | 385 | 6ETAA11.8-G22 |",
+        "| KS375D6 | 300 | 375 | 330 | 413 | 6ETAA12.8-G22 |"
+      ]
+    },
+    {
+      "n": 5001,
+      "title": "Catalog 2025 KOTENGEN CATALOGUE — trang 24",
+      "header": [
+        "| Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator"
+      ],
+      "rows": [
+        "| KY90D5 | 72 | 90 | 80 | 100 | LR4M3L-D |",
+        "| KY100D5 | 80 | 100 | 88 | 110 | LR6A3Z-D |",
+        "| KY125D5 | 100 | 125 | 110 | 138 | LR6A3L-D |",
+        "| KY150D5 | 120 | 150 | 132 | 165 | LR6B3L-D |",
+        "| KY170D5 | 136 | 170 | 150 | 187 | LR6M3L-D |",
+        "| KY200D5 | 160 | 200 | 176 | 220 | YM6H4L-D |",
+        "| KY225D5 | 180 | 225 | 200 | 250 | YM6H4LF-D |",
+        "| KY250D5 | 200 | 250 | 220 | 275 | YM6S4L-D |",
+        "| KY313D5 | 250 | 313 | 275 | 344 | YM6S9L-D |",
+        "| KY375D5 | 300 | 375 | 330 | 413 | YM6S9LF-D |",
+        "| KY400D5 | 320 | 400 | 360 | 450 | YM6S9LF-D |",
+        "| KY100D6 | 80 | 100 | 88 | 110 | LR4M3L-D |",
+        "| KY110D6 | 88 | 110 | 96 | 120 | LR4M3L-DA |",
+        "| KY135D6 | 108 | 135 | 120 | 150 | LR6A3L-D |",
+        "| KY160D6 | 128 | 160 | 140 | 175 | LR6B3L-D |",
+        "| KY175D6 | 140 | 175 | 152 | 190 | LR6M3L-D |",
+        "| KY220D6 | 176 | 220 | 192 | 240 | YM6H4L-D |",
+        "| KY240D6 | 192 | 240 | 212 | 265 | YM6H4LF-D |",
+        "| KY270D6 | 216 | 270 | 240 | 300 | YM6S4L-D |",
+        "| KY300D6 | 240 | 300 | 264 | 330 | YM6S4LF-D |",
+        "| KY350D6 | 280 | 350 | 308 | 385 | YM6S9L-D |",
+        "| KY375D6 | 300 | 375 | 330 | 413 | YM6S9L-DB |"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "ComAp",
+      "line": "3- Controller optional: Smartgen/Deepsea/ComAp.",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "3- Controller optional: Smartgen/Deepsea/ComAp.",
+      "src": [
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110N",
+      "text": "HGM6110N",
+      "line": "| Control Panel | Smartgen HGM6110N",
+      "src": [
+        1002,
+        1003,
+        1005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6120N",
+      "text": "HGM6120N",
+      "line": "Standard Smartgen HGM6120N control moduel with AMF function, Optional for Deepsea, ComAp, Datakom,Deif ect.",
+      "src": [
+        101,
+        102,
+        103
+      ]
+    }
+  ]
+}

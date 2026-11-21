@@ -1,0 +1,13 @@
+{
+  "id": "wacker-neuson", "country": "DE", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Wacker Neuson SE", "zh": null, "brands": ["Wacker Neuson"],
+  "web": "https://www.wackerneuson.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© 2022 - 2026 Wacker Neuson SE", "Wacker Neuson mobile generators can handle all the requirements for most applications on a construction site."]
+  },
+  "str": [["Tổ máy di động cho công trường xây dựng", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Mobile generators", "src": [1] } ],
+  "miss": ["Trang danh mục (bản Mỹ) không ghi dải công suất, nhiên liệu, hãng động cơ"],
+  "by": "discover-bot (Claude)"
+}

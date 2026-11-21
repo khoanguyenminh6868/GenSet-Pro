@@ -1,0 +1,16 @@
+{
+  "id": "hipower", "country": "US", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "HIMOINSA POWER SYSTEMS, INC", "zh": null, "brands": ["HIPOWER SYSTEMS"],
+  "web": "https://www.hipowersystems.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["yanmar"],
+  "src": {
+    "1": ["A", "HIPOWER SYSTEMS a Yanmar Company, Generator Sets", "© HIMOINSA POWER SYSTEMS, INC 2026", "Equipment for stationary applications. Continuous or backup power with an immediate response time", "HIPOWER Mobile generators are engineered specifically for the needs of the North American marke"]
+  },
+  "str": [["Tổ máy dự phòng tĩnh tại và tổ máy di động (diesel, khí) cho thị trường Bắc Mỹ, 60 Hz", 1], ["Thuộc Yanmar", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Standby Diesel / Mobile Diesel", "fuel": "diesel", "freq": ["60Hz"], "src": [1] },
+    { "k": "genset", "s": "Spark Ignited", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất (chỉ có trong trang 'Know the ranges' chưa lưu)"],
+  "by": "discover-bot (Claude)"
+}

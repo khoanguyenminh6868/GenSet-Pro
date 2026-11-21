@@ -1,0 +1,127 @@
+{
+  "id": "shanghai-mhi-engine",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Shanghai MHI Engine Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Mitsubishi",
+      "SME"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Shanghai",
+    "city": "Shanghai"
+  },
+  "founded": 2013,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [
+    "sdec"
+  ],
+  "strengths": [
+    {
+      "text": "Liên doanh của Mitsubishi Heavy Industries Engine & Turbocharger (MHIET) tại Thượng Hải, sản xuất động cơ diesel theo license MHIET cho tổ máy phát dự phòng, 500–1.800 kW",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Bán động cơ cho các hãng lắp tổ máy; đạt 2.000 động cơ cộng dồn năm 2022",
+      "src": [
+        1,
+        2
+      ]
+    },
+    {
+      "text": "Dòng SR: S12R-PTA-C 1.190 kW ở 1.500 rpm; S16R2-PTAW-C 2.167 kW (cơ)",
+      "src": [
+        2,
+        3
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "SR series diesel engines for power generation",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [
+        "S12R-PTA-C",
+        "S16R2-PTAW-C"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 500,
+        "max": 1800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Không thấy website riêng của SME; nguồn là thông cáo trên mhi.com",
+    "Đối tác liên doanh ghi khác nhau theo thời gian: SDEC (thông cáo 2013, 2019), SNAT thuộc SAIC Motor (thông cáo 2023)",
+    "Không thấy tên tiếng Trung trên các trang đã lưu"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.mhi.com/group/mhiet/news/20230530.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "Shanghai MHI Engine Co., Ltd. (SME), a joint venture of Shanghai New Power Automotive Technology Company Ltd. (SNAT) and Mitsubishi Heavy Industries Engine & Turbocharger, Ltd. (MHIET)",
+        "SME was founded in 2013 as a joint venture of MHIET and SNAT",
+        "SME manufactures industrial diesel engines ranging between 500 and 1,800kW for emergency generator sets and others",
+        "reached cumulative sales of 2,000 units in 2022",
+        "SME office building in Yangpu District, Shanghai"
+      ],
+      "file": "sources/shanghai-mhi-engine/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.mhi.com/group/mhiet/news/20190128.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "The S16R2-PTAW-C engine newly added to SME’s lineup delivers an output of 2,167kW (mechanical), topping the previously available eight models which have featured outputs in the 635kW to 1,895kW range.",
+        "Engines manufactured by SME will be sold to genset manufacturers."
+      ],
+      "file": "sources/shanghai-mhi-engine/2.md"
+    },
+    {
+      "n": 3,
+      "url": "https://www.mhi.com/news/1312201749.html",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "The model first to go into mass production at Shanghai MHI Engine is the \"S12R-PTA-C,\" a diesel engine featuring an output of 1,190kW at 1,500 revolutions per minute (rpm) for use in power generation systems."
+      ],
+      "file": "sources/shanghai-mhi-engine/3.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

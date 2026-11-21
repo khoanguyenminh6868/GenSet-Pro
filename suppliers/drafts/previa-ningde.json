@@ -1,0 +1,11 @@
+{
+  "id": "previa-ningde", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "low",
+  "en": "Ningde Previa Power Co., Ltd.", "zh": null, "brands": ["PR POWER"],
+  "web": null, "prov": "Fujian", "city": "Ningde", "founded": null, "fsrc": [], "related": [],
+  "src": { "1": ["C", "Ningde Previa Power Co., Ltd.", "Main categories: Diesel Generators Sets"] },
+  "str": [["Gian hàng Alibaba: tổ máy diesel", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "Diesel Generators Sets", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Chỉ có gian hàng Alibaba; chưa có website, dải công suất, năm thành lập", "Hàng chào trúng thầu: R-YD11 11 kVA (gói IB2400508791)"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

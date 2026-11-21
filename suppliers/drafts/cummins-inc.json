@@ -1,0 +1,16 @@
+{
+  "id": "cummins-inc", "country": "US", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Cummins Inc.", "zh": null, "brands": ["Cummins"],
+  "web": "https://www.cummins.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["dcec", "cummins-china-investment"],
+  "src": {
+    "1": ["A", "from Cummins Inc., and its affiliates", "Cummins diesel generator sets remain the industry benchmark for efficiency, quality, reliability, and performance. Power ranges from 15 to 3,750 kVA.", "Flexible, powerful, and sustainable solutions from 13 to 2,000 kW."]
+  },
+  "str": [["Tổ máy diesel 15–3750 kVA và tổ máy khí tự nhiên 13–2000 kW", 1], ["Theo hãng: tổ máy diesel là chuẩn mực của ngành về hiệu suất, chất lượng", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Cummins diesel generator sets", "fuel": "diesel", "eng": ["Cummins"], "p": [15, 3750, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Natural gas generator sets", "fuel": "gas", "p": [13, 2000, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["cummins.com chặn trình đọc thường, trang lưu qua firecrawl; chưa có năm thành lập, nhà máy"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,4 @@
+{ "id": "vm-motori", "country": "IT", "role": "engine_maker", "status": "partial", "conf": "medium", "en": "VM Motori S.r.l.", "zh": null, "brands": ["VM Motori"], "web": "https://www.vmmotori.it/", "prov": "Ferrara", "city": "Cento", "founded": 1947, "fsrc": [1], "related": [],
+  "src": { "1": ["A", "VM Motori S.r.l.", "Fondata nel 1947 a Cento, VM nasce come produttore di motori diesel agricoli."] },
+  "str": [["Hãng động cơ diesel Ý, thành lập 1947 tại Cento", 1]], "cert": [], "lines": [ { "k": "engine", "s": "motori diesel", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang chủ không ghi dải công suất động cơ cho máy phát"], "by": "claude (rà nhà cung cấp G7, 04/11)" }

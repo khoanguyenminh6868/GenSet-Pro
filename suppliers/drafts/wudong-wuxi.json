@@ -1,0 +1,16 @@
+{
+  "id": "wudong-wuxi", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": null, "zh": "无锡动力工程股份有限公司", "brands": ["万迪", "Wudong", "WDPOWER"],
+  "web": "http://www.wdpower.com/", "prov": "Jiangsu", "city": "Wuxi", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "COPYRIGHT © 2017 WDPOWER.COM 无锡动力工程股份有限公司 ALL RIGHT RESERVED.", "万迪集团由主体企业无锡动力工程股份有限公司和中外合资无锡范尼韦尔工程有限公司组成。", "无锡万迪动力集团有限公司是研制生产内燃机、涡轮增压器、柴油发电机组及其零部件的大型骨干企业。", "公司1995年6月在行业中首批取得GB/T19001 idt ISO9001（94版）质量体系认证证书，2009年又通过了ISO9001：2008质量认证。"]
+  },
+  "str": [["Sản xuất động cơ đốt trong, turbo tăng áp và tổ máy diesel (tập đoàn 万迪)", 1], ["Đạt ISO9001 từ 1995", 1]],
+  "cert": [["ISO9001", 1]],
+  "lines": [
+    { "k": "engine", "s": "柴油机 (WP系列 / 电站系列)", "fuel": "diesel", "src": [1] },
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi dải công suất, năm thành lập; chưa lưu được trang sản phẩm 'Trạm phát điện'"],
+  "by": "discover-bot (Claude)"
+}

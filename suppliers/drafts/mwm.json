@@ -1,0 +1,15 @@
+{
+  "id": "mwm", "country": "DE", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Caterpillar Energy Solutions GmbH", "zh": null, "brands": ["MWM"],
+  "web": "https://www.mwm.net/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": ["caterpillar"],
+  "src": {
+    "1": ["A", "© Caterpillar Energy Solutions GmbH, 2026", "MWM gas engines and generator sets cover an electrical output range from 400 to 4,500 kW.", "MWM provides gas engines and power generators for different gas types used in various applications such as combined generation of heat and power.", "MWM looks back on more than 150 years of experience in the field of decentralized energy supply."]
+  },
+  "str": [["Động cơ khí và tổ máy khí 400–4500 kW, cho đồng phát nhiệt điện (CHP)", 1], ["Theo hãng: hơn 150 năm kinh nghiệm cấp điện phân tán", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "MWM gas engines and generator sets", "fuel": "gas", "eng": ["MWM"], "p": [400, 4500, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi địa chỉ nhà máy, năm thành lập cụ thể"],
+  "by": "discover-bot (Claude)"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "shangyan-jiangsu", "country": "CN", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Shangyan Power Technology Jiangsu Co., Ltd", "zh": null, "brands": ["Gloria", "SHANGYAN"],
+  "web": "https://www.sypower.com/", "prov": "Jiangsu", "city": null, "founded": 1993, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Shangyan Power Technology Jiangsu Co., Ltd", "Shangyan Power, which includes Shanghai Dongfeng Diesel Engine Research Institute and Shanghai Stanford Power Equipment Co., Ltd, was founded in 1993", "Annual output of 17000 sets and alternators", "Our products have passed ISO and CE certification, as well as having earned marine product licensing.", "SY6D8D210-S 210KW 6-Cylinder Diesel Engine", "SY12G27D680-S 680KW 12-Cylinder Diesel Engine"],
+    "2": ["A", "Gloria series alternator is flagship brand by Shanghai Stamford power equipment co.", "5.4KVA-13.5KVA GR160 2-Pole Single Phase Alternator", "1253.8KVA-3125KVA GR450 4-Pole Three Phase Alternator", "455KVA-1012.5KVA GR355 4-Pole Three Phase Alternator"]
+  },
+  "str": [
+    ["Đầu phát Gloria (GR160–GR450) 5,4–3125 kVA", 2],
+    ["Có động cơ diesel SY (ví dụ 210 kW 6 xi lanh, 680 kW 12 xi lanh) và tổ máy; 17.000 bộ/năm", 1],
+    ["Gồm Viện nghiên cứu động cơ Dongfeng Thượng Hải và Shanghai Stanford Power Equipment, thành lập 1993", 1]
+  ],
+  "cert": [["ISO", 1], ["CE", 1]],
+  "lines": [
+    { "k": "alternator", "s": "Gloria series (GR160–GR450)", "p": [5.4, 3125, "kVA", "unspecified", 2], "src": [2] },
+    { "k": "engine", "s": "SY diesel engines", "fuel": "diesel", "models": ["SY6D8D210-S", "SY12G27D680-S"], "p": [210, 680, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Dải động cơ 210–680 kW chỉ theo hai model trên trang chủ; trang Gloria còn ghi '8kva to 2150kva' (khác bảng GR450 tới 3125KVA)"],
+  "by": "discover-bot (Claude)"
+}

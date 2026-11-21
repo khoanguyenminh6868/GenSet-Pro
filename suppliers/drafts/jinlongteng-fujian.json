@@ -1,0 +1,16 @@
+{
+  "id": "jinlongteng-fujian", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "FUJIAN JINLONGTENG POWER ENGINE AND MACHINERY CO.,LTD", "zh": null, "brands": ["JLT POWER"],
+  "web": "https://www.jlt-power.com/", "prov": "Fujian", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "FUJIAN JINLONGTENG POWER ENGINE AND MACHINERY CO.,LTD", "10 KVA -2750 KVA", "POWER RANGE : 800kVA – 1500kVA", "Containerised Diesel Generator Sets"]
+  },
+  "str": [["Tổ máy diesel 10–2750 kVA, tổ máy container 800–1500 kVA", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "DIESEL GENERATOR SET", "fuel": "diesel", "p": [10, 2750, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Containerised Diesel Generator Sets", "fuel": "diesel", "p": [800, 1500, "kVA", "unspecified", 1], "types": ["container"], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi năm thành lập, địa chỉ thành phố, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

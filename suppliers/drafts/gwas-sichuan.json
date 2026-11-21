@@ -1,0 +1,18 @@
+{
+  "id": "gwas-sichuan", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "四川格瓦斯电力科技有限公司", "brands": ["格瓦斯"],
+  "web": "https://www.china-gwas.com/", "prov": "Sichuan", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "四川格瓦斯电力科技有限公司是一家集发电机组研发、生产、销售、租赁、维保、售后为一体的现化化技术企业", "格瓦斯拥有35000余平方米的现代化专业厂房，汇集21大发动机品牌，覆盖 30-2400KW，7大特殊装置", "**上柴发电机组** _功率范围：50-2000KW_ _发动机品牌：上柴动力_", "**东风康明斯发电机组** _功率范围：20-250KW_ _发动机品牌：东风康明斯_", "**德国奔驰发电机组** _功率范围：200-2400KW_ _发动机品牌：德国MTU发动机_"]
+  },
+  "str": [["Nhà xưởng hơn 35.000 m², tổ máy 30–2400 kW với 21 hãng động cơ", 1], ["Dòng SDEC 50–2000 kW, Dongfeng Cummins 20–250 kW, MTU 200–2400 kW", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "p": [30, 2400, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "上柴发电机组", "fuel": "diesel", "eng": ["上柴动力"], "p": [50, 2000, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "东风康明斯发电机组", "fuel": "diesel", "eng": ["东风康明斯"], "p": [20, 250, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "德国奔驰发电机组", "fuel": "diesel", "eng": ["MTU"], "p": [200, 2400, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Website có chứng chỉ SSL tự ký, trang lưu qua firecrawl; chưa có năm thành lập (chỉ ghi '15年专注'), chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

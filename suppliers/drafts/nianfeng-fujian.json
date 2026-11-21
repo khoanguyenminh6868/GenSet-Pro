@@ -1,0 +1,5 @@
+{"id":"nianfeng-fujian","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":"NIANFENG (FUJIAN) MOTOR CO., LTD.","zh":null,"brands":[],"web":null,"prov":"Fujian","city":"Fuan","founded":2018,"fsrc":[1],"related":[],
+"src":{"1":["B","NIANFENG (FUJIAN) MOTOR CO., LTD. founded in July 2018, is located in Fu'an City, Fujian Province. The company covers an area of 40,000 square meters and has more than 200 employees.","It is a professional manufacturer for the ac generator, brushless alternator and high-voltage generator. The power covers 8kVA to 6250kVA, the production capacity is over 60000 pieces per year."]},
+"str":[["Đầu phát không chổi than và đầu phát cao áp 8–6250 kVA, hơn 60.000 chiếc/năm",1],["Thành lập 7/2018 tại Phúc An, 40.000 m², hơn 200 nhân viên",1]],"cert":[],
+"lines":[{"k":"alternator","s":"AC generator, brushless alternator and high-voltage generator","p":[8,6250,"kVA","unspecified",1],"src":[1]}],
+"miss":["Nguồn là trang danh mục nhà triển lãm Heat & Electro 2025 (hạng B), chưa có website riêng"],"by":"discover-bot (Claude)"}

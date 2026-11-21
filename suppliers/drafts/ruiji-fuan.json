@@ -1,0 +1,15 @@
+{
+  "id": "ruiji-fuan", "country": "CN", "role": "engine_maker", "status": "verified", "conf": "medium",
+  "en": null, "zh": "福安瑞吉动力有限公司", "brands": ["福康"],
+  "web": "http://www.fjkmspower.com/", "prov": "Fujian", "city": "Fuan", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2026 福安瑞吉动力有限公司( fjkmspower.com )", "福安瑞吉动力有限公司引进专业技术，致力于重型和大功率发动机的研发与生产。", "福康6缸（220KW-255KW）柴油机", "福康12缸（820KW-965KW）柴油机", "FK1100-TLD11 /1100KW柴油机是我公司为满足大功率需求自主研发的一款产品。"]
+  },
+  "str": [["Động cơ diesel công suất lớn thương hiệu 福康: 6 xi lanh 220–255 kW, 12 xi lanh 410–965 kW, FK1100 1100 kW", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "福康柴油机", "fuel": "diesel", "models": ["FK1100-TLD11"], "p": [220, 965, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa có năm thành lập, chứng chỉ; tên miền fjkmspower.com không khớp tên công ty"],
+  "by": "discover-bot (Claude)"
+}

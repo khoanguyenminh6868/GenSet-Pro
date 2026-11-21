@@ -1,0 +1,13 @@
+{
+  "id": "comler-power", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Shandong Comler Power Group", "zh": "山东康姆勒电力集团有限公司", "brands": ["康姆勒", "COMLER"],
+  "web": "http://www.comler.cn/", "prov": "Shandong", "city": "Jining", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "公 司 名 称： 山东康姆勒电力集团有限公司", "地 址：山东省汶上圣泽大街西段2895号（康姆勒国际产业园）", "发电机组产品3kw-10000kw，系列分为发电机组、智能自动化机组、智能并机并网机组、移动电站、低噪音机组、超静音机组、高压发电机组、汽油发电机组、燃气机组、船用机组、移动灯塔", "采用国际标准（ISO8528:5-2022）严格检测"]
+  },
+  "str": [["Tổ máy 3–10000 kW: tự động, hoà lưới, di động, cách âm, cao áp, khí, tàu thuỷ", 1], ["Có trung tâm thử nghiệm tổ máy theo ISO 8528-5:2022", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "康姆勒发电机组", "fuel": "diesel", "p": [3, 10000, "kW", "unspecified", 1], "src": [1] } ],
+  "miss": ["Chưa có năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

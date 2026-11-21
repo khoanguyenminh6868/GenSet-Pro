@@ -1,0 +1,15 @@
+{
+  "id": "pengpai-yangzhou", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": null, "zh": "扬州澎湃动力设备有限公司", "brands": ["澎湃"],
+  "web": "http://yzppdl.cn/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "扬州澎湃动力设备有限公司是一个以先进智能柴油发电机组技术开发为先导，拥有数字检测设备的发电机组专业生产企业。产品主要有基本型、自动化（应急）型、多机并网型、低噪音型、移动电站型、无人值守和远程集中监控型船用、陆用柴油发电机组，产品功率覆盖范围从10KW—2500KW。", "扬州澎湃动力设备有限公司坐落于中国历史文化名城扬州市-江都邵伯工业园区"]
+  },
+  "str": [["Tổ máy diesel trên bộ và tàu thủy 10–2500 kW: cơ bản, tự động, hòa lưới, giảm ồn, di động, giám sát từ xa", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "船用、陆用柴油发电机组", "fuel": "diesel", "p": [10, 2500, "kW", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa có năm thành lập, chứng chỉ, hãng động cơ"],
+  "by": "discover-bot (Claude)"
+}

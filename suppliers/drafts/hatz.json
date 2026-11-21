@@ -1,0 +1,15 @@
+{
+  "id": "hatz", "country": "DE", "role": "engine_maker", "status": "verified", "conf": "medium",
+  "en": "Motorenfabrik Hatz GmbH & Co. KG", "zh": null, "brands": ["Hatz"],
+  "web": "https://www.hatz-diesel.com/", "prov": null, "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "© 2023 Motorenfabrik Hatz GmbH & Co. KG", "Power Systems, diesel power generator - Hatz", "Our standard range of conventional generating sets covers a performance spectrum from 2 to 9.5 kVA delivering 230 or 400 V.", "| 2.0-2-1/S100 | 1B20 | 3000 |", "| 9.5-2-3/S73Z | 1D81Z | 3000 |"]
+  },
+  "str": [["Tổ máy nhỏ 2–9,5 kVA, 230/400 V, dùng động cơ diesel Hatz (1B, 1D)", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Conventional generating sets", "fuel": "diesel", "eng": ["Hatz"], "models": ["1B20", "1D81Z"], "p": [2, 9.5, "kVA", "unspecified", 1], "freq": ["50Hz"], "volt": ["230 V", "400 V"], "src": [1] }
+  ],
+  "miss": ["Trang lưu từ es.hatz-diesel.com (bản tiếng Anh); chưa lưu trang giới thiệu công ty / danh mục động cơ"],
+  "by": "discover-bot (Claude)"
+}

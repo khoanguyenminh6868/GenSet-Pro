@@ -1,0 +1,20 @@
+{
+  "id": "gordon-power", "country": "CN", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Fujian Gordon Industry Co., Ltd.", "zh": null, "brands": ["Gordon"],
+  "web": "https://www.gordon-powers.com/", "prov": "Fujian", "city": "Fu'an", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "Copyright © 2025 Fujian Gordon Industry Co., Ltd .All rights reserved.", "Fujian Gordon Industry Co., Ltd. Located in Fu'an City, Fujian, which is famous motor manufacturing city in China.", "Brushless alternator, power range 8.5KVA to 2500KVA", "Synchronour AC Alternator, power range 2KW to 75KW", "Diesel generator sets, power range from 6KVA to 2500KVA, covering engine Cummins, Deutz, Perkins, Ricardo and Chinese high quality brand(Yuchai, Weichai, Shangchai, Nantong etc.).", "All products are manufactured in accordance with ISO9001-2015 production standard to assure best quality, and are complied with CE certificate."]
+  },
+  "str": [
+    ["Đầu phát không chổi than 8,5–2500 kVA và đầu phát đồng bộ 2–75 kW", 1],
+    ["Có lắp tổ máy diesel 6–2500 kVA dùng động cơ Cummins, Deutz, Perkins, Ricardo, Yuchai, Weichai, Shangchai", 1]
+  ],
+  "cert": [["ISO9001", 1], ["CE", 1]],
+  "lines": [
+    { "k": "alternator", "s": "Brushless alternator", "p": [8.5, 2500, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "alternator", "s": "Synchronous AC Alternator", "p": [2, 75, "kW", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "eng": ["Cummins", "Deutz", "Perkins", "Ricardo", "Yuchai", "Weichai", "Shangchai"], "p": [6, 2500, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Năm 2005 trên trang là của 'Fujian Gordon Pump Industry Co., Ltd.' (tên khác), nên không ghi năm thành lập", "Không thấy tên tiếng Trung"],
+  "by": "discover-bot"
+}

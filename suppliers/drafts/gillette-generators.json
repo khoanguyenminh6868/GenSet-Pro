@@ -1,0 +1,59 @@
+{
+ "id": "gillette-generators",
+ "country": "US",
+ "role": "genset_oem",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Gillette Generators",
+ "zh": null,
+ "brands": [
+  "Gillette"
+ ],
+ "web": "https://www.gillettegenerators.com/",
+ "prov": "Indiana",
+ "city": "Elkhart",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Gillette Generators builds UL 2200 certified industrial and commercial backup power systems from 25 kW to 2 MW.",
+   "John Deere, Volvo, Mitsubishi, PSI, Perkins"
+  ]
+ },
+ "str": [
+  [
+   "Tổ máy công nghiệp dự phòng 25 kW–2 MW (diesel, khí, LPG), đạt UL 2200, 3 nhà máy ở Mỹ",
+   1
+  ]
+ ],
+ "cert": [
+  [
+   "UL 2200",
+   1
+  ]
+ ],
+ "lines": [
+  {
+   "k": "genset",
+   "s": "industrial and commercial backup power systems",
+   "fuel": "diesel",
+   "eng": [
+    "John Deere",
+    "Volvo",
+    "Mitsubishi",
+    "Perkins"
+   ],
+   "models": [],
+   "alt": [],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Trang ghi dải 25 kW đến 2 MW; không quy đổi MW sang kW nên không ghi dải công suất"
+ ],
+ "by": "claude (rà nhà cung cấp G7, 04/11)"
+}

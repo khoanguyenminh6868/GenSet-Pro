@@ -1,0 +1,13 @@
+{
+  "id": "isuzu-motors", "country": "JP", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "ISUZU MOTORS LIMITED", "zh": null, "brands": ["ISUZU"],
+  "web": "https://www.isuzu.co.jp/world/product/industrial/", "prov": null, "city": null, "founded": 1916, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Copyrights © ISUZU MOTORS LIMITED", "ISUZU Motors was founded in 1916, making it one of Japan's oldest automobile manufacturers.", "ISUZU was the first to start working on industrial diesel engines, starting sales in 1952.", "Today, ISUZU produces an extensive line-up of industrial-purpose diesel engines with models ranging from a 4-cylinder 2.2-liter engine to a 6-cylinder 15.7-liter engine.", "Generator Tier4 Final"]
+  },
+  "str": [["Động cơ diesel công nghiệp từ 4 xi lanh 2,2 L đến 6 xi lanh 15,7 L, có dòng cho máy phát (Stage IIIA, Tier 4 Final)", 1], ["Thành lập 1916, bán động cơ công nghiệp từ 1952", 1]],
+  "cert": [],
+  "lines": [ { "k": "engine", "s": "Industrial diesel engines (Generator)", "fuel": "diesel", "src": [1] } ],
+  "miss": ["Trang giới thiệu ghi dung tích, không ghi dải công suất kW"],
+  "by": "discover-bot (Claude)"
+}

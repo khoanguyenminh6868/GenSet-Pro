@@ -1,0 +1,16 @@
+{
+  "id": "waeta-fujian", "country": "CN", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Fujian Waeta Power Co., Ltd.", "zh": null, "brands": ["WAETA"],
+  "web": "https://www.waetapower.com/", "prov": "Fujian", "city": "Zhangzhou", "founded": 2010, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Found in 2010, Fujian Waeta Power Co., Ltd., located in Zhangzhou City, Fujian Province, is specialized in manufacturing diesel generator sets", "Product scope covers diesel generator sets, natural gas generator sets, generator set control systems, parallel systems, hybrid generator sets, variable-speed DC generator sets and lighting towers, whose power ranges 10kVA-4000kVA."]
+  },
+  "str": [["Tổ máy diesel, khí, hybrid, DC biến tốc, tháp đèn; 10–4000 kVA", 1], ["Thành lập 2010 tại Chương Châu (Phúc Kiến)", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Diesel generator sets", "fuel": "diesel", "p": [10, 4000, "kVA", "unspecified", 1], "src": [1] },
+    { "k": "genset", "s": "Natural gas generator sets", "fuel": "gas", "src": [1] }
+  ],
+  "miss": ["Dải 10kVA-4000kVA ghi chung cho mọi dòng; chưa có chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

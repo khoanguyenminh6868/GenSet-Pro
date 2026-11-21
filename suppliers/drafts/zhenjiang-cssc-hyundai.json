@@ -1,0 +1,5 @@
+{"id":"zhenjiang-cssc-hyundai","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"镇江中船现代发电设备有限公司","brands":["中船现代"],"web":null,"prov":"Jiangsu","city":"Zhenjiang","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","镇江中船现代发电设备有限公司","公司通过引进德国西门子、韩国现代许可证，生产300kW至6400kW中低压发电机，并能独立研制1000kw至10Mw高压发电机。用作各类船舶、海工装备、大型陆用电站的主电源和应急电源。","公司同康明斯、斯堪尼亚、沃尔沃等公司合作，提供40kw-2500kw高速柴油发电机组、箱式电站、移动式电站。"]},
+"str":[["Đầu phát hạ / trung áp 300–6400 kW (license Siemens, Hyundai), đầu phát cao áp 1000 kW–10 MW",1],["Tổ máy diesel tốc độ cao 40–2500 kW (Cummins, Scania, Volvo), trạm phát container, di động",1]],"cert":[],
+"lines":[{"k":"alternator","s":"中低压发电机","p":[300,6400,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"高速柴油发电机组","fuel":"diesel","eng":["康明斯","斯堪尼亚","沃尔沃"],"p":[40,2500,"kW","unspecified",1],"src":[1]}],
+"miss":["Nguồn là trang nhà triển lãm trên powershow.cn (动力展, hạng B); chưa tìm thấy website riêng"],"by":"discover-bot (Claude)"}

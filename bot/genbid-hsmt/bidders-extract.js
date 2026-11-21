@@ -1,0 +1,79 @@
+// Chạy trong trang Kết quả lựa chọn nhà thầu (kqlcnt) hoặc Biên bản mở thầu (kqmt) của một gói trên muasamcong
+// (url do bidders-ids.js trả về), bằng javascript_tool. Đọc dữ liệu mà chính trang đã tải (Vue $data).
+// Không tự gọi API, không đụng tới reCAPTCHA.
+// Kết quả: tài liệu bidders/<TBMT> đúng dạng phần "Nhà thầu tham dự" của GenBid Pro:
+// {list: [{rank, name, taxCode, bidPrice, discount, priceAfterDiscount, won, note}], at, source, auto, final, ...}, hoặc {error}.
+await (async () => {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const vnd = (n) => (n == null ? "" : Number(n).toLocaleString("vi-VN"));
+  const tax = (code) => String(code || "").replace(/^vn/i, "");
+  let root = null, kq = null, mt = null;
+  //@include goods-read.js
+  for (let i = 0; i < 40; i++) {
+    root = [...document.querySelectorAll("[id]")].map((e) => e.__vue__).find((v) => v && v === v.$root && v.$data && ("dtlKqlcnt" in v.$data || "dtlRoundMngRes" in v.$data));
+    kq = root?.$data.dtlKqlcnt?.bideContractorInputResultDTO;
+    mt = root?.$data.dtlRoundMngRes?.bidSubmissionByContractorViewResponse;
+    if ((kq && (kq.lotResultDTO?.length || kq.lotOpenDetails?.length)) || mt?.bidSubmissionDTOList?.length) break;
+    // Gói chào giá trực tuyến rút gọn: trang mở ở tab TBMT, KQLCNT chỉ tải khi bấm tab "Kết quả lựa chọn nhà thầu".
+    if (i === 4 && root && root.$data.isLoadedKqlcnt === false && /step=kqlcnt/.test(location.search))
+      [...document.querySelectorAll("a")].find((a) => a.textContent.trim() === "Kết quả lựa chọn nhà thầu")?.click();
+    await sleep(500);
+  }
+  // Báo cáo đánh giá E-HSDT (BCĐG): tệp ở kq.reportFileId hoặc evalReportFileInfo[].fileId (nằm ở root hoặc một component con).
+  const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const reportFiles = (() => {
+    const out = [], add = (id, name) => { if (typeof id === "string" && UUID.test(id) && !out.some((x) => x.id === id)) out.push({ id, name: String(name || "") }); };
+    add(kq?.reportFileId, kq?.reportFileName);
+    const seen = new Set(), walk = (vm, d) => {
+      if (!vm || seen.has(vm) || d > 12) return; seen.add(vm);
+      const e = vm.$data?.evalReportFileInfo;
+      if (Array.isArray(e)) e.forEach((x) => add(x?.fileId, x?.fileName || x?.name));
+      (vm.$children || []).forEach((c) => walk(c, d + 1));
+    };
+    walk(root, 0);
+    return out;
+  })();
+  const notifyNo = new URLSearchParams(location.search).get("notifyNo") || "";
+  const at = new Date().toISOString();
+  const ranked = (list) => list
+    .sort((a, b) => (b.won ? 1 : 0) - (a.won ? 1 : 0) || (a.priceAfterDiscount ?? a.bidPrice ?? 9e15) - (b.priceAfterDiscount ?? b.bidPrice ?? 9e15))
+    .map((x, i) => ({ rank: i + 1, ...x }));
+
+  if (kq && (kq.lotResultDTO?.length || kq.lotOpenDetails?.length)) {
+    const multi = (kq.lotResultDTO || []).length > 1;
+    const opens = kq.lotOpenDetails || [];
+    const list = [];
+    for (const lot of kq.lotResultDTO || []) {
+      // Hàng hoá nhà thầu trúng chào (hãng, model, xuất xứ): goodsList của phần, đọc bằng goods-read.js (chung với
+      // history-extract.js: mẫu cũ formValue.lotContent.Table, mẫu BD.CG.02.0192 dsHhKq[].dsHH, danh sách dùng chung).
+      const goodsOf2 = (code) => goodsOf(lot, [code]).slice(0, 4).map((r) => [r.label || r.maker, r.code, r.origin && `(${r.origin})`].filter(Boolean).join(" ")).filter(Boolean).join("; ");
+      for (const c of contractorsOf(lot)) {
+        const o = opens.find((x) => x.contractorCode === c.orgCode && (!x.lotNo || x.lotNo === lot.lotNo)) || {};
+        const won = c.bidResult === 1;
+        // muasamcong lặp bảng hàng của nhà thầu trúng cho mọi nhà thầu, nên chỉ tin bảng của nhà thầu trúng.
+        const g = won ? goodsOf2(c.orgCode) : "";
+        const note = [multi && lot.lotName, won ? `Trúng thầu, giá trúng ${vnd(c.bidWiningPrice ?? c.lotFinalPrice)}` : c.reason ? `Không được chọn: ${c.reason}` : "", g && `Hàng chào: ${g}`].filter(Boolean).join(" · ");
+        const pct = c.discountPercent ?? o.discountPercent;
+        list.push({ name: c.orgFullname || o.contractorName, taxCode: c.taxCode || tax(c.orgCode), bidPrice: c.lotOpenPrice ?? o.lotPrice ?? c.lotPrice ?? null,
+          discount: pct ? `${pct}%` : "", priceAfterDiscount: c.lotFinalPrice ?? o.lotFinalPrice ?? c.adjustPrice ?? null, won, note });
+      }
+    }
+    // Kết quả chưa có danh sách nhà thầu: dùng giá mở thầu.
+    if (!list.length) for (const o of opens) list.push({ name: o.contractorName, taxCode: tax(o.contractorCode), bidPrice: o.lotPrice ?? null, discount: o.discountPercent ? `${o.discountPercent}%` : "", priceAfterDiscount: o.lotFinalPrice ?? null, won: false, note: "" });
+    return { notifyNo, list: ranked(list), at, source: "muasamcong (kết quả lựa chọn nhà thầu)", auto: true, final: true,
+      packagePrice: kq.bidPrice ?? null, decisionNo: kq.decisionNo || "", decisionDate: kq.decisionDate || "", url: location.href, reportFiles };
+  }
+  if (mt?.bidSubmissionDTOList?.length) {
+    const list = [];
+    for (const s of mt.bidSubmissionDTOList) {
+      const lots = s.lotNoValueDTOList?.length > 1 ? s.lotNoValueDTOList : [null];
+      for (const l of lots) list.push({
+        name: s.contractorName, taxCode: tax(s.contractorCode), bidPrice: (l ? l.lotPrice : s.bidPrice) ?? null,
+        discount: (l ? l.saleNumber : s.saleNumber) ? String(l ? l.saleNumber : s.saleNumber) : "",
+        priceAfterDiscount: (l ? l.lotFinalPrice : s.bidFinalPrice) ?? null, won: false, note: l ? l.lotName : "",
+      });
+    }
+    return { notifyNo, list: ranked(list), at, source: "muasamcong (biên bản mở thầu)", auto: true, final: false, url: location.href };
+  }
+  return { notifyNo, error: "Trang chưa có biên bản mở thầu hoặc kết quả (có thể chưa mở thầu, hoặc trang đang hiện CAPTCHA)." };
+})()

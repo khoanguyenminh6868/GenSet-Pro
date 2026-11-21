@@ -1,0 +1,18 @@
+{
+  "id": "yanmar-shandong", "country": "CN", "role": "engine_maker", "status": "partial", "conf": "medium",
+  "en": "Yanmar Engine (Shandong) Co., Ltd.", "zh": null, "brands": ["Yanmar"],
+  "web": null, "prov": "Shandong", "city": "Qingdao", "founded": 2003, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Name : Yanmar Engine (Shandong) Co., Ltd.", "Established : February 2003", "Location : No. 278 Shaohai Road, Hetao, Hongdao Economic Zone, Tsingtao, Shandong Province, China, 266113", "Business scope : production and sales of industrial diesel engines, and assembly and sales of small-sized construction machinery", "Yanmar will start production of vertical water cooled diesel engines in Tsingtao, China, as of November 2013.", "Employees : approx. 250 (as of October 2013)"]
+  },
+  "str": [
+    ["Công ty con của Yanmar tại Thanh Đảo, sản xuất và bán động cơ diesel công nghiệp; sản xuất động cơ diesel đứng làm mát bằng nước từ 11/2013", 1],
+    ["Khoảng 250 nhân viên (10/2013)", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "engine", "s": "Vertical water cooled diesel engines", "fuel": "diesel", "src": [1] }
+  ],
+  "miss": ["Nguồn duy nhất là thông cáo Yanmar năm 2013; không thấy website riêng và thông tin hiện tại của công ty", "Thông cáo không ghi động cơ dùng cho máy phát điện và không ghi dải công suất (chỉ ghi model 70HP dự kiến)", "Không thấy tên tiếng Trung trên các trang đã lưu"],
+  "by": "discover-bot"
+}

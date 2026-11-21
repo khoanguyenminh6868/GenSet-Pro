@@ -1,0 +1,5 @@
+{"id":"falande-jiangsu","country":"CN","role":"alternator_maker","status":"partial","conf":"medium","en":null,"zh":"江苏法兰德电机科技有限公司","brands":["法兰德"],"web":null,"prov":"Jiangsu","city":"Wuxi","founded":2009,"fsrc":[1],"related":[],
+"src":{"1":["B","江苏法兰德电机科技有限公司 成立于2009年， 是一家专业生产无刷交流发电机的厂家。 公司坐落于江苏省无锡市，工厂占地15000平方米，拥有120名技术工人","主要产品有工业交流发电机、船用交流发电机、高压交流发电机，特种交流发电机，功率范围覆盖5kva～3750kva，电压110V～13800v","公司通过ISO9001：2008质量管理体系。同时，所有交流发电机项目均通过CE认证"]},
+"str":[["Đầu phát không chổi than công nghiệp, tàu thủy, cao áp 5–3750 kVA, 110–13800 V",1],["Thành lập 2009 tại Vô Tích, xưởng 15.000 m², 120 công nhân kỹ thuật",1]],"cert":[["ISO9001",1],["CE",1]],
+"lines":[{"k":"alternator","s":"工业/船用/高压交流发电机","p":[5,3750,"kVA","unspecified",1],"src":[1]}],
+"miss":["Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa tìm website riêng"],"by":"discover-bot (Claude)"}

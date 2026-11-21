@@ -1,0 +1,15 @@
+{
+  "id": "weiman-fujian", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": "Fujian Weiman Power Technology Co., Ltd.", "zh": null, "brands": ["Weiman"],
+  "web": null, "prov": "Fujian", "city": "Fuan", "founded": 1993, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["B", "Fujian Weiman Power Technology Co., Ltd has been manufacturing generator sets since 1993", "The generator sets range from 8 to 4000 kVA and are exported to more than 50 countries and regions.", "Weiman generator sets are built in a 15,000 m2 facility in Fuan", "Weiman’s decision to use the full range of Perkins electric power engines, from the 400 through to the 4000 Series, in its generator sets"]
+  },
+  "str": [["Theo trang Perkins: hơn 8.000 tổ máy/năm, xưởng 15.000 m² ở Phúc An; dùng động cơ Perkins 400–4000 Series", 1]],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Weiman generator sets", "fuel": "diesel", "eng": ["Perkins"], "models": [], "alt": [], "p": [8, 4000, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa tìm được website chính thức (energy-xprt 403); nguồn là trang case study của Perkins (hạng B)", "Nhãn hàng chào 'Wantong' (WT-WP27.5, gói IB2400494037) chưa có nguồn nối với Weiman"],
+  "by": "claude (rà hàng chào trúng thầu 04/11)"
+}

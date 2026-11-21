@@ -1,0 +1,14 @@
+{
+  "id": "zhengchi-power", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "正驰动力有限公司", "brands": ["正驰"],
+  "web": "https://www.zcdl.com.cn/", "prov": "Jiangsu", "city": "Yangzhou", "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "地　　址：江苏省扬州市高新技术开发区中曼路"],
+    "2": ["A", "正驰动力有限公司 有限公司位于“中国发电组之乡”江苏扬州。公司集设计、研发、生产、销售、售后为一体"]
+  },
+  "str": [["Nhà máy tổ máy ở khu công nghệ cao Dương Châu, Giang Tô; tự thiết kế, sản xuất, bán và bảo hành", 1, 2]],
+  "cert": [],
+  "lines": [{ "k": "genset", "s": "柴油发电机组 (tổ máy diesel)", "fuel": "diesel", "src": [2] }],
+  "miss": ["Trang 'Sản phẩm' ghi '10KW-280KW' nhưng không rõ của dòng nào, nên không dùng làm dải công suất", "Không thấy năm thành lập, chứng chỉ, tên tiếng Anh"],
+  "by": "discover-bot"
+}

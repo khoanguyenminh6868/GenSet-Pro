@@ -1,0 +1,46 @@
+{
+  "id": "powgen-argentina",
+  "country": "AR",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "POWGEN",
+  "zh": null,
+  "brands": [
+    "POWGEN"
+  ],
+  "web": "https://www.powgen.com.ar/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Diseño y fabricación de equipos industriales de generación a diésel, gas natural, GLP, biogás y gas de pozo",
+      "POWGEN - Soluciones Energéticas"
+    ]
+  },
+  "str": [
+    [
+      "Thiết kế, sản xuất thiết bị phát điện chạy diesel, khí tự nhiên, LPG, biogas, khí giếng",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "POWGEN generadores",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang chủ không ghi dải công suất, năm thành lập, chứng chỉ"
+  ],
+  "by": "discover-bot (Claude)"
+}

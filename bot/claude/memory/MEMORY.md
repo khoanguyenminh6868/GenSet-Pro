@@ -1,0 +1,17 @@
+- [Quy tắc theo luồng](quy-tac-luong.md) — quyết định của Khoa về Sync, chuỗi tự động, specs, phân tích; vì sao từng bị loại kỹ thuật
+- [Kiểm chéo toàn bộ](kiem-cheo-toan-bo.md) — sửa mã đọc dữ liệu: so mọi bản ghi, giải thích mọi dòng top 30, không lấy mẫu; script sẵn
+- [Không viết ẩu](khong-viet-au.md) — thứ chưa có (màn hình, người xem, quy trình) không được viết như đã có; nói rõ ai, ở đâu, phải làm mới
+- [Quy trình git](git-workflow.md) — pull main trước, làm trong wt-*, tự merge PR (squash), tự xoá worktree của mình
+- [Vận hành bot](bot-ops.md) — sửa genbid-hsmt xong Backup + PR + restart task; thử ở genbid-test; trả bằng API key
+- [Bot dự phòng Vercel Sandbox](vercel-sandbox.md) — chạy theo nhu cầu khi máy Windows tắt; quyết định của Khoa, Gemini, việc chưa thử
+- [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; đầu phiên đọc `genbid-work\dieu-phoi\so-dieu-phoi.md`
+- [Gợi ý cấu hình](config-suggest.md) — quy tắc Khoa chốt về xếp hạng, xuất xứ, nguồn thông số; nguồn datasheet hãng
+- [Giá gợi ý](bidprice-suggest.md) — quy tắc chọn gói tương tự, báo giá/giá vốn, số liệu thị trường, việc chờ quyết
+- [Supplier DB](supplier-db.md) — không bịa + verify, quy tắc thu thập, mẹo tìm NCC, mức prime/standby (ESP = standby), luật số đông + gán hãng, hãng chưa làm được
+- [Công ty của Khoa](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
+- [Không dùng bản artifact](no-artifact-version.md) — chỉ web Vercel + bot Windows, bỏ qua nhánh claude.ai
+- [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
+- [Repo public tạm, private lại 01/12](repo-public-khong-hoi.md) — hết phút Actions tháng 11; tác vụ hẹn giờ tự chuyển private; CI chỉ chạy trên PR
+- [Gọi Gemini 4 Argon](argon-delegate.md) — CHỈ khi Khoa bảo; qua OpenRouter, script `genbid-work\argon`, quy trình rẻ, giá, bẫy
+- [Compact ở 50%](compact-50.md) — context quá 50%: ghi bộ nhớ, compact, làm tiếp; cấu hình trong ~/.claude/settings.json
+- [Argon qua Gemini web](argon-gemini-web.md) — Edge + extension, tải tệp tự động (Khoa cho phép); LiteLLM đang tắt

@@ -1,0 +1,55 @@
+{
+  "id": "excel-power-ningde",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "NINGDE EXCEL POWER CO.,LTD.",
+  "zh": null,
+  "brands": [
+    "Excel Power"
+  ],
+  "web": null,
+  "prov": "Fujian",
+  "city": "Fuan",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "B",
+      "Excel Power devotes itself to researching, manufacturing, and maintenance of generator sets and power systems, provides comprehensive, specialized, scale and systematic power system solutions.",
+      "Address:NO.156 ZHIZHUAN NORTH ROAD,BANZHONG,FUAN,FUJIAN,CHINA",
+      "ISO9001:2008, ISO4001, CE, products are exported to mor"
+    ]
+  },
+  "str": [
+    [
+      "Nghiên cứu, sản xuất, bảo trì tổ máy và hệ thống nguồn tại Phúc An",
+      1
+    ]
+  ],
+  "cert": [
+    [
+      "ISO9001",
+      1
+    ],
+    [
+      "CE",
+      1
+    ]
+  ],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Generator sets",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "by": "discover-bot (Claude)"
+}

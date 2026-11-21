@@ -1,0 +1,5 @@
+{"id":"huatai-power-fujian","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"FUJIAN HUATAI POWER SUPPLY CO.,LTD.","zh":null,"brands":["HTP"],"web":null,"prov":"Fujian","city":"Fuzhou","founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","FUJIAN HUATAI POWER SUPPLY CO.,LTD.","Huatai Power(HTP) generator sets are manufactured and tested in Fuzhou, the capital of Fujian Province in China.","Address:TIELING INDUSTRIAL ZONE,MINHOU,FUZHOU.","Together with the world famous alternator LEROY SOMER, STAMFORD, MARATHON"]},
+"str":[["Lắp ráp, bán và bảo trì tổ máy diesel tại Phúc Châu; đầu phát Leroy Somer, Stamford, Marathon",1]],"cert":[],
+"lines":[{"k":"genset","s":"HTP generator sets","fuel":"diesel","alt":["LEROY SOMER","STAMFORD","MARATHON"],"src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất, năm thành lập"],"by":"discover-bot (Claude)"}

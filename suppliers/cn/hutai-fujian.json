@@ -1,0 +1,203 @@
+{
+  "id": "hutai-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "verified",
+  "names": {
+    "en": null,
+    "zh": "互泰发电机（福建）有限公司",
+    "brands": [
+      "互泰",
+      "HUTAI"
+    ]
+  },
+  "website": "http://hutaifdj.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than HUTAI 6,5–1000 kW (khung 164 đến 404), kèm tổ máy",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "互泰无刷发电机 (164–404系列)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 6.5,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Chưa có năm thành lập, chứng chỉ; trang chủ cũng ghi tên 广东隆宏机电设备有限公司 (longhong-foshan), quan hệ chưa rõ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://hutaifdj.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "互泰发电机（福建）有限公司 —— 发电机及发电机组制造",
+        "地址：福建省福安市世纪大道137号",
+        "164系列 6.5KW-12.8KW互泰无刷发电机",
+        "404系列 600KW-1000KW互泰无刷发电机",
+        "354系列 360KW-550KW互泰无刷发电机"
+      ],
+      "file": "sources/hutai-fujian/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://hutaifdj.com/products_97/966.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/101.md"
+    },
+    {
+      "n": 102,
+      "url": "http://hutaifdj.com/products_97/964.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/102.md"
+    },
+    {
+      "n": 103,
+      "url": "http://hutaifdj.com/products_97/967.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/103.md"
+    },
+    {
+      "n": 104,
+      "url": "http://hutaifdj.com/products_97/965.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 频率 Frequency Hz | 50 | 60"
+      ],
+      "file": "sources/hutai-fujian/104.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "7-8KW家用便捷移动式互泰柴油发电机工地道路抢修应急小型柴油发电机-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 5.7 | 6",
+        "| 备用功率 Max.AC output kW | 6 | 6.5",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 7.1 | 7.7",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.55 | ≤1.75"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "3KW小型互泰风冷柴油发电机组 便捷式家用停电应急户外电源-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 3.0 | 3.7",
+        "| 备用功率 Max.AC output kW | 3.7 | 4.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 4.1 | 4.4",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 12.5",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.0 | ≤1.2"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "9-10KW静音柴油发电机福建互泰小功率发电机停电应急备用-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 8.0 | 8.5",
+        "| 备用功率 Max.AC output kW | 8.5 | 9.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 9.2 | 9.7",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.8 | ≤1.95"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "5-6KW风冷柴油发电机组220/380v双电压移动式备用电源小功率-互泰发电机",
+      "header": [],
+      "rows": [
+        "| 频率 Frequency Hz | 50 | 60",
+        "| 持续功率 Cont.AC output kW | 4.8 | 5.2",
+        "| 备用功率 Max.AC output kW | 5.5 | 6.0",
+        "| 发电机 Generator | 电机型式 Type | 自励、恒压、旋转磁场、两极电机 Self excitation、constant voltage、field rotating、2 pole generator",
+        "| 发动机 Engine | 动力类型 Type | 单缸、V型/直列、四冲程、风冷柴油机 V-twin/L-single、4-cycle、air-cooled diesel engine",
+        "| 额定转速 Engine speed rpm | 3000 | 3600",
+        "| 额定功率 Rated output kW | 7.0 | 7.2",
+        "| 发电机组 Unit | 油箱容积 Fuel tank capacity L | 15",
+        "| 燃油消耗 Fuel consunmption L/h | ≤1.25 | ≤1.4"
+      ]
+    }
+  ]
+}

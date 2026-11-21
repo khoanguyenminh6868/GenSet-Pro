@@ -1,0 +1,20 @@
+{
+  "id": "pramac", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "PR Industrial S.r.l", "zh": null, "brands": ["Pramac"],
+  "web": "https://www.pramac.com/", "prov": "Siena", "city": "Casole d'Elsa", "founded": null, "fsrc": [], "related": ["generac"],
+  "src": {
+    "1": ["A", "PR Industrial S.r.l - Loc. Il Piano - 53031 Casole d'Elsa (SI) - ITALY.", "Company subject to the management and coordination of Generac Power Systems Inc."],
+    "2": ["A", "Start-up and load in a matter of seconds, reliable and performant. Up to 830 kVA.", "From 815 to 3600kVA, these heavy-duty generating sets are designed for high power demands."]
+  },
+  "str": [
+    ["Tổ máy diesel công nghiệp tới 830 kVA và dòng Higher Power Series 815–3600 kVA", 2],
+    ["Thuộc Generac Power Systems", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "Higher Power Series (Diesel Generators >815 kVA)", "fuel": "diesel", "p": [815, 3600, "kVA", "unspecified", 2], "src": [2] },
+    { "k": "genset", "s": "Industrial diesel generators (up to 830 kVA)", "fuel": "diesel", "src": [2] }
+  ],
+  "miss": ["Trang ghi mức tối đa không thống nhất (Up to 3360 kVa ở một trang, 3600kVA ở trang khác)", "Dòng dưới 830 kVA không ghi mức thấp nhất", "Chưa có năm thành lập"],
+  "by": "discover-bot (Claude)"
+}

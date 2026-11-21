@@ -1,0 +1,88 @@
+{
+  "id": "yukun-qiangwei",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "FUJIAN YUKUN QIANGWEI MOTOR CO., LTD.",
+    "zh": "福建省煜坤强威电机有限公司",
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2010,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Nghiên cứu, sản xuất, xuất khẩu thiết bị phát điện (tổ máy diesel, đầu phát) tại Phúc An, thành lập 5/2010",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Alternator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cn2225033954/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "FUJIAN YUKUN QIANGWEI MOTOR CO., LTD.福建省煜坤强威电机有限公司",
+        "Fujian Yukun Qiangwei Motor Co., Ltd. is a power generation equipment industry and trade enterprise integrating R & D, production, sales and export. It was founded in May 2010",
+        "Address:No. 2, Jinye Road, Tiehu Village, Chengyang Town,Fuan City",
+        "Main Products: Diesel generator , alternator"
+      ],
+      "file": "sources/yukun-qiangwei/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

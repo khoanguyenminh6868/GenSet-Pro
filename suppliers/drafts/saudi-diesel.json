@@ -1,0 +1,48 @@
+{
+  "id": "saudi-diesel",
+  "country": "SA",
+  "role": "genset_oem",
+  "status": "partial",
+  "conf": "medium",
+  "en": "Saudi Diesel Equipment Co (SDEC)",
+  "zh": null,
+  "brands": [
+    "SDEC"
+  ],
+  "web": "https://www.saudidiesel.com.sa/",
+  "prov": null,
+  "city": null,
+  "founded": 1978,
+  "fsrc": [
+    1
+  ],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "Saudi Diesel has been manufacturing diesel power generator sets & other related accessories since 1978",
+      "Copyright © 2025 Saudi Diesel Equipment Co"
+    ]
+  },
+  "str": [
+    [
+      "Sản xuất tổ máy diesel và phụ kiện từ 1978; có tủ điện INNVI sản xuất tại chỗ",
+      1
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Saudi Diesel generator sets",
+      "fuel": "diesel",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "miss": [
+    "Trang chủ không ghi dải công suất, địa chỉ nhà máy"
+  ],
+  "by": "discover-bot (Claude)"
+}

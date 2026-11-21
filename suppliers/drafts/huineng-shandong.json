@@ -1,0 +1,5 @@
+{"id":"huineng-shandong","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"Shandong Huineng Power Co.,Ltd","zh":null,"brands":["Huineng"],"web":null,"prov":"Shandong","city":"Weifang","founded":1996,"fsrc":[1],"related":["xinshengan-shandong"],
+"src":{"1":["B","Shandong Huineng Power Co.,Ltd","Huineng power group was founded in 1996, is located in the world-famous kite - weifang. Group sets Xinshengan power technology (shandong) Co., Ltd., anhui dasheng power Co., Ltd.","Group research and development production of different kinds of generator set, including diesel generating sets, gas generating set"]},
+"str":[["Tập đoàn sản xuất tổ máy diesel và khí tại Duy Phường, thành lập 1996",1],["Có công ty thành viên 新盛安动力科技（山东） (bản ghi xinshengan-shandong)",1]],"cert":[],
+"lines":[{"k":"genset","s":"Diesel generating sets","fuel":"diesel","src":[1]},{"k":"genset","s":"Gas generating set","fuel":"gas","src":[1]}],
+"miss":["Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"],"by":"discover-bot (Claude)"}

@@ -1,0 +1,13 @@
+{
+  "id": "ruiying-jiangsu", "country": "CN", "role": "genset_oem", "status": "partial", "conf": "medium",
+  "en": null, "zh": "江苏瑞营机械制造有限公司", "brands": ["瑞营"],
+  "web": "https://www.cnriyi.net/", "prov": "Jiangsu", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "版权所有©江苏瑞营机械制造有限公司", "瑞营开架型柴油发电机组由柴油发动机，发电机，底盘和控制系统等组成", "瑞营拖车型柴油发电机组，由柴油发动机，发电机，底盘，控制系统，静音外壳和拖车等组成。"]
+  },
+  "str": [["Tổ máy diesel khung hở và tổ máy rơ-moóc cách âm", 1]],
+  "cert": [],
+  "lines": [ { "k": "genset", "s": "柴油发电机组", "fuel": "diesel", "types": ["open", "silent"], "src": [1] } ],
+  "miss": ["Trang không ghi dải công suất, năm thành lập, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

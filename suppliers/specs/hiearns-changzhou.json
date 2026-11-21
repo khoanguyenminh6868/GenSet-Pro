@@ -1,0 +1,117 @@
+[
+ {
+  "n": 101,
+  "url": "https://www.hiearns.com/Product/2KVAsldgcyfdj.html",
+  "title": "200KVA水冷多缸柴油发电机,200KVA柴油发电机-常州市海润机电有限公司",
+  "header": [
+   "| 电压 | 频率 (HZ) | 相数 | 功率因素 | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+  ],
+  "rows": [
+   "| 440/254 | 50 | 3 | 0.8 | 269 | 164/205 | 150/188",
+   "| 415/240 | 50 | 3 | 0.8 | 285 | 164/205 | 150/188",
+   "| 400/230 | 50 | 3 | 0.8 | 296 | 164/205 | 150/188",
+   "| 380/220 | 50 | 3 | 0.8 | 311 | 164/205 | 150/188"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.hiearns.com/Product/1KVAslsgcyfdj.html",
+  "title": "10KVA水冷双缸柴油发电机,10KVA柴油发电机-常州市海润机电有限公司",
+  "header": [
+   "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 (V) | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+  ],
+  "rows": [
+   "| 440/254 | 50 | 3 | 0.8 | 14 | 8.5/11 | 8/10",
+   "| 415/240 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+   "| 400/230 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+   "| 380/220 | 50 | 3 | 0.8 | 16 | 8.5/11 | 8/10"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.hiearns.com/Product/12KVAslsgjycyfdj.html",
+  "title": "12KVA水冷四缸静音柴油发电机,12KVA柴油发电机-常州市海润机电有限公司",
+  "header": [
+   "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+  ],
+  "rows": [
+   "| 440/254 | 50 | 3 | 0.8 | 18 | 11/14 | 10/12",
+   "| 415/240 | 50 | 3 | 0.8 | 19 | 11/14 | 10/12",
+   "| 400/230 | 50 | 3 | 0.8 | 20 | 11/14 | 10/12",
+   "| 380/220 | 50 | 3 | 0.8 | 21 | 11/14 | 10/12"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.hiearns.com/Product/1KVAsldgjycyfdj.html",
+  "title": "10KVA水冷多缸静音柴油发电机,多缸柴油发电机组-常州市海润机电有限公司",
+  "header": [
+   "| 电压 | 频率 (HZ) | 相数 | 功率因素 (COS ￠ ) | 备用电流 (V) | 备用功率 (KW/KVA) | 主用功率 (KW/KVA)"
+  ],
+  "rows": [
+   "| 440/254 | 50 | 3 | 0.8 | 14 | 8.5/11 | 8/10",
+   "| 415/240 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+   "| 400/230 | 50 | 3 | 0.8 | 15 | 8.5/11 | 8/10",
+   "| 380/220 | 50 | 3 | 0.8 | 16 | 8.5/11 | 8/10"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.hiearns.com/Product/14kvakjfdj.html",
+  "title": "常州市海润机电有限公司",
+  "header": [],
+  "rows": [
+   "| 转速 (rpm) | 3000 | 3600",
+   "| 最大输出功率 (kw) | 12.5 | 12.5",
+   "| 持续功率 (kw) | 12.0 | 12.0"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.hiearns.com/Product/18mlflcyfdj.html",
+  "title": "18马力风冷柴油发动机,18马力柴油发动机生产厂家-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR1102F",
+   "| Bore×Stroke 缸径 × 行程 (mm) | 102×88",
+   "| Displacement capacity 排量 (cc) | 718",
+   "| Speed 转速 (rpm) | 3000",
+   "| Rated output 持续功率 (kw) | 11.5",
+   "| Fuel 燃油 | o# or -10# light diesel oil 0# 或 -10 号轻柴油",
+   "| Fuel consumption rate 燃油消耗率 (g/kw.h) | 250",
+   "| Dimension 尺寸 (mm) | 530x530x595"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.hiearns.com/Product/198378.html",
+  "title": "18马力风冷柴油发动机,18马力柴油发动机生产厂家-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR1105FD",
+   "| Bore×Stroke 缸径 × 行程 (mm) | 105×88",
+   "| Displacement capacity 排量 (cc) | 762",
+   "| Speed 转速 (rpm) | 3000/3600",
+   "| Rated output 持续功率 (kw) | 12",
+   "| Fuel 燃油 | o# or -10# light diesel oil 0# 或 -10 号轻柴油",
+   "| Fuel consumption rate 燃油消耗率 (g/kw.h) | 245",
+   "| Dimension 尺寸 (mm) | 545x620x725"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.hiearns.com/Product/3mlflcyj.html",
+  "title": "30马力风冷柴油机,30马力柴油机-海润机电",
+  "header": [],
+  "rows": [
+   "| Model 型号 | HR2V98F",
+   "| Bore×Stroke(mm) 缸径 × 行程 | 98×88",
+   "| Displacement capacity(cc) 排量 | 1326",
+   "| Speed(rpm) 转速 | 3000",
+   "| Rated output （ kw) 额定功率 | 20",
+   "| Fuel 燃油 | 0# (Summer) -10# (Winter) -20#(Cold Winter) -35# (Cold Winter) Light diesel oil 轻质柴油： 0# （夏季）， -10# （冬季）， -20# 或者 -35# （寒冬 )",
+   "| Fuel oil consumption rate(g/kw.h) 油耗 | 240",
+   "| Dimension(mm) 包装尺寸 | 570×580×660"
+  ]
+ }
+]

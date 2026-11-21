@@ -1,0 +1,5 @@
+{"id":"lingdong-hunan","country":"CN","role":"genset_oem","status":"verified","conf":"medium","en":null,"zh":"湖南翎动科技有限公司","brands":["翎动"],"web":"http://www.lingdongenergy.com/","prov":"Hunan","city":"Changsha","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","湖南翎动科技有限公司 湘ICP备2023013221号-1","湖南翎动科技有限公司，坐落于著名的湖湘文化之都-长沙，是一家专注于智慧能源综合解决方案的服务提供商，集自主研发、设计、生产、销售、服务为一体的能源科技企业","公司产品生产基地拥有占地面积近30000平方米的专业厂房","玉柴发电机组(20-3000kw)","天燃气发电机(200-2000kw)"]},
+"str":[["Tổ máy diesel Yuchai 20–3000 kW và tổ máy khí tự nhiên 200–2000 kW",1],["Cơ sở sản xuất gần 30.000 m² tại Trường Sa",1]],"cert":[],
+"lines":[{"k":"genset","s":"玉柴发电机组","fuel":"diesel","eng":["玉柴"],"p":[20,3000,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"天燃气发电机","fuel":"gas","p":[200,2000,"kW","unspecified",1],"src":[1]}],
+"miss":["Trang lưu bằng Chromium; chưa có năm thành lập, chứng chỉ cụ thể"],"by":"discover-bot (Claude)"}

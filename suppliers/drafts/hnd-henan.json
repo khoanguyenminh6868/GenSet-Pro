@@ -1,0 +1,5 @@
+{"id":"hnd-henan","country":"CN","role":"engine_maker","status":"verified","conf":"medium","en":null,"zh":"河南柴油机重工有限责任公司","brands":["河柴重工","HND"],"web":"http://www.hnd.com.cn/","prov":"Henan","city":null,"founded":1958,"fsrc":[1],"related":[],
+"src":{"1":["A","Copyright © 2022 河南柴油机重工有限责任公司","前身是河南柴油机厂，始建于1958年5月,是我国“一五”期间156项重点项目之一，新中国第一个高速柴油机厂","产品结构包括高速柴油机、中速柴油机、气体机及成套装置。柴油机功率覆盖范围为110kW-4000kW，柴油发电机组覆盖范围为90 kW-3200 kW。气体发电机组覆盖范围为50 kW-2000 kW。产品取得CCS、ABS、BV、DNV、LR、RS等多家船机社认可证书"]},
+"str":[["Động cơ diesel tốc độ cao / trung bình 110–4000 kW, tổ máy diesel 90–3200 kW, tổ máy khí 50–2000 kW",1],["Tiền thân thành lập 5/1958; có chứng nhận các đăng kiểm tàu CCS, ABS, BV, DNV, LR, RS",1]],"cert":[["CCS",1],["ABS",1],["BV",1],["DNV",1],["LR",1],["RS",1]],
+"lines":[{"k":"engine","s":"高速/中速柴油机","fuel":"diesel","p":[110,4000,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"柴油发电机组","fuel":"diesel","p":[90,3200,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"气体发电机组","fuel":"gas","p":[50,2000,"kW","unspecified",1],"src":[1]}],
+"miss":["1958 là năm thành lập tiền thân (河南柴油机厂)"],"by":"discover-bot (Claude)"}

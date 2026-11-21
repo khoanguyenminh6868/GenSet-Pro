@@ -1,0 +1,5 @@
+{"id":"xinchai","country":"CN","role":"engine_maker","status":"partial","conf":"medium","en":null,"zh":"浙江新柴股份有限公司","brands":["新柴"],"web":null,"prov":"Zhejiang","city":null,"founded":null,"fsrc":[],"related":[],
+"src":{"1":["B","浙江新柴股份有限公司","产品涵盖N、D、K、E、B、H、F七大平台，100多个机型、1300多个变型产品形成了完整的市场配套结构，构筑起了工程机械、农业机械、发电机组等市场的良好发展格局。发电机组动力功率覆盖范围10KVA-140KVA。"]},
+"str":[["Động cơ diesel 7 nền tảng (N, D, K, E, B, H, F), hơn 100 model; động cơ cho tổ máy 10–140 kVA",1]],"cert":[],
+"lines":[{"k":"engine","s":"发电机组动力","fuel":"diesel","p":[10,140,"kVA","unspecified",1],"src":[1]}],
+"miss":["Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa lưu website riêng, năm thành lập"],"by":"discover-bot (Claude)"}

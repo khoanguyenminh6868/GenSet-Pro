@@ -1,0 +1,6 @@
+{"id":"astra-fuan","country":"CN","role":"genset_oem","status":"partial","conf":"medium","en":"ASTRA (FUAN) POWER TECHNOLOGY CO.,LTD.","zh":null,"brands":["ASTRA"],"web":"https://www.intelecgen.com/","prov":"Fujian","city":"Fu'an","founded":2014,"fsrc":[1],"related":[],
+"src":{"1":["A","ASTRA (FUAN) POWER TECHNOLOGY CO.,LTD., founded in 2014, registered in 2024,located in Fuan city,Fujian Province,China.","We’re a modern factory,occupying a total space of 6000M2,specializing in R&D and manufacturing of diesel generator sets, AC synchronous alternators and related accessories","Our products have obtained CE and ISO9001 certificate"]},
+"str":[["Xưởng 6.000 m², làm tổ máy diesel và đầu phát đồng bộ",1],["Thành lập 2014, đăng ký pháp nhân hiện tại năm 2024",1]],
+"cert":[["CE",1],["ISO9001",1]],
+"lines":[{"k":"genset","s":"Diesel generator sets","fuel":"diesel","src":[1]},{"k":"alternator","s":"AC synchronous alternators","src":[1]}],
+"miss":["Trang giới thiệu không ghi dải công suất"],"by":"discover-bot"}

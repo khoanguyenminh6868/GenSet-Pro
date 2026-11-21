@@ -1,0 +1,58 @@
+{
+  "id": "kirloskar-oil-engines",
+  "country": "IN",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Kirloskar Oil Engines Ltd",
+  "zh": null,
+  "brands": [
+    "Kirloskar",
+    "KOEL"
+  ],
+  "web": "https://www.kirloskaroilengines.com/",
+  "prov": null,
+  "city": null,
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": [
+      "A",
+      "are owned by Kirloskar Proprietary Limited and Kirloskar Oil Engines L"
+    ],
+    "2": [
+      "A",
+      "At Kirloskar Oil Engines, we deliver high-performance gensets ranging from 2.8 kW to 3000 kVA",
+      "Our standard genset range, from 7.5 kVA to 3000 kVA, is built for dependable performance"
+    ]
+  },
+  "str": [
+    [
+      "Tổ máy dải chuẩn 7.5–3000 kVA (toàn bộ từ 2.8 kW)",
+      2
+    ]
+  ],
+  "cert": [],
+  "lines": [
+    {
+      "k": "genset",
+      "s": "Kirloskar standard genset range",
+      "fuel": "diesel",
+      "p": [
+        7.5,
+        3000,
+        "kVA",
+        "unspecified",
+        2
+      ],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "miss": [
+    "Chưa có địa chỉ, năm thành lập; chưa lưu trang động cơ công nghiệp"
+  ],
+  "by": "discover-bot (Claude)"
+}

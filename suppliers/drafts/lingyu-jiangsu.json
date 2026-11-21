@@ -1,0 +1,13 @@
+{
+  "id": "lingyu-jiangsu", "country": "CN", "role": "alternator_maker", "status": "verified", "conf": "medium",
+  "en": "Jiangsu Lingyu Motor", "zh": "江苏领驭电机有限公司", "brands": ["科弘"],
+  "web": "http://www.yzlingyu.net/", "prov": "Jiangsu", "city": null, "founded": null, "fsrc": [], "related": [],
+  "src": {
+    "1": ["A", "江苏领驭电机有限公司是一家集科研、教学、生产无刷发电机为一体的新型现代化发电机专业制造商。总占地71280平方米，总装车间占地46200平方米。", "生产的“科弘”牌无刷发电机", "[6.5-12.8KW纯铜无刷发电机](http://www.yzlingyu.net/show-14-21-1.html)", "[1120-2000KW纯铜无刷发电机](http://www.yzlingyu.net/show-14-20-1.html)"]
+  },
+  "str": [["Đầu phát không chổi than dây đồng, thương hiệu 科弘, các dòng từ 6.5 đến 2000 kW", 1], ["Nhà xưởng 71280 m², xưởng lắp ráp 46200 m²", 1]],
+  "cert": [],
+  "lines": [ { "k": "alternator", "s": "科弘纯铜无刷发电机", "p": [6.5, 2000, "kW", "unspecified", 1], "src": [1] } ],
+  "miss": ["Dải công suất gộp từ danh mục trang chủ (nhỏ nhất 6.5-12.8KW, lớn nhất 1120-2000KW); chưa có năm thành lập, thành phố, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}

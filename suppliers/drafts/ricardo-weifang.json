@@ -1,0 +1,5 @@
+{"id":"ricardo-weifang","country":"CN","role":"engine_maker","status":"verified","conf":"medium","en":"Weifang Ricardo Power Technology","zh":null,"brands":["Ricardo"],"web":"https://www.ricardoengine.com/","prov":"Shandong","city":"Weifang","founded":null,"fsrc":[],"related":[],
+"src":{"1":["A","Weifang Ricardo Power Technology , is a leading supplier of diesel engine, Diesel Generator, and engine parts in China.Ricardo engine for generator, with power range 10kw to 350kw, 1500rpm and 1800rpm"]},
+"str":[["Động cơ diesel 'Ricardo' cho máy phát 10–350 kW, 1500/1800 vòng/phút, kèm tổ máy",1],["Theo hãng: nhà cung cấp động cơ diesel hàng đầu Trung Quốc",1]],"cert":[],
+"lines":[{"k":"engine","s":"Ricardo engine for generator","fuel":"diesel","p":[10,350,"kW","unspecified",1],"src":[1]},{"k":"genset","s":"Diesel Generator","fuel":"diesel","eng":["Ricardo"],"src":[1]}],
+"miss":["Theo nhật ký 2026-10-29, 'Ricardo' là tên dòng động cơ do nhiều xưởng Duy Phường làm, không liên quan Ricardo Plc — bản ghi này là một trong các xưởng đó; chưa có tên pháp nhân đầy đủ (Co., Ltd.), năm thành lập"],"by":"discover-bot (Claude)"}

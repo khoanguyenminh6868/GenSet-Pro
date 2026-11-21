@@ -1,0 +1,49 @@
+{
+ "id": "xuchao-shaanxi",
+ "country": "CN",
+ "role": "distributor",
+ "status": "partial",
+ "conf": "medium",
+ "en": "Shaanxi Xuchao Electromechanical Equipment Engineering Co., Ltd.",
+ "zh": null,
+ "brands": [],
+ "web": null,
+ "prov": "Shaanxi",
+ "city": "Xi'an",
+ "founded": null,
+ "fsrc": [],
+ "related": [],
+ "src": {
+  "1": [
+   "A",
+   "Perkins distributor locator",
+   "Shaanxi Xuchao Electromechanical Equipment Engineering Co., Ltd.",
+   "Local Branch / Dealer",
+   "2nd Floor of Happy Harbor, Sanqiao Changcheng International Auto Parts"
+  ]
+ },
+ "str": [
+  [
+   "Đại lý (Local Branch / Dealer) trong mạng Perkins, có tên trên trang tra nhà phân phối chính thức của Perkins",
+   1
+  ]
+ ],
+ "cert": [],
+ "lines": [
+  {
+   "k": "engine",
+   "s": "Perkins engines (local dealer)",
+   "fuel": "diesel",
+   "eng": [
+    "Perkins"
+   ],
+   "src": [
+    1
+   ]
+  }
+ ],
+ "miss": [
+  "Nguồn là trang tra nhà phân phối của Perkins (tìm theo thành phố); website ghi trên trang: http://www.simedarbyindustrial.com (chưa lưu, nhiều đại lý ghi website của nhà phân phối chính)"
+ ],
+ "by": "discover-bot"
+}

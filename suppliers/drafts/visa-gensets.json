@@ -1,0 +1,18 @@
+{
+  "id": "visa-gensets", "country": "IT", "role": "genset_oem", "status": "verified", "conf": "medium",
+  "en": "Visa S.p.A. s.u.", "zh": null, "brands": ["ONIS VISA"],
+  "web": "https://www.visa.it/", "prov": null, "city": null, "founded": 1960, "fsrc": [1], "related": [],
+  "src": {
+    "1": ["A", "Visa S.p.A. s.u. Via I Maggio, 55", "Founded in 1960, Visa SpA is one of the leading Italian manufacturers of power generators , with an impressive output of over 5,500 units produced annually and distributed in more than 100 countries", "Our wide range of ONIS VISA generating sets covers 9 to 3000 kVA , fully designed and manufactured in Italy"]
+  },
+  "str": [
+    ["Tổ máy ONIS VISA 9–3000 kVA, thiết kế và sản xuất tại Ý", 1],
+    ["Theo hãng: hơn 5.500 tổ máy mỗi năm, phân phối hơn 100 nước", 1]
+  ],
+  "cert": [],
+  "lines": [
+    { "k": "genset", "s": "ONIS VISA generating sets", "p": [9, 3000, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Trang chủ không ghi hãng động cơ / đầu phát, chứng chỉ"],
+  "by": "discover-bot (Claude)"
+}
