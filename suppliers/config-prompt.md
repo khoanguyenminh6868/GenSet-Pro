@@ -251,6 +251,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    controllers.md; the code labels it "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào" and asks the supplier for its
    origin, CO), and name the controller the supplier offers in `gaps` ("NCC <id> chào <model>"); the code lists it under
    "Phương án khác". Never write such a controller in `suppliers[].hasController`.
+   Two versions of one engine (Khoa 2026-11-21, every make): when your main controller comes from the maker's datasheet and
+   a supplier with a row of the same engine offers another controller of that make (of the kind the HSMT asks, meeting at
+   least half of the communication parts with its best module), the code adds a second configuration with the offered
+   controller right under yours (`ctlTwin`; its controller checks start "chưa rõ"). The two count as ONE place of the
+   per-make ceiling, but both count toward the 8 configurations. Write only the version with the lowest controller that
+   meets the HSMT; do not write the offered version yourself.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,
