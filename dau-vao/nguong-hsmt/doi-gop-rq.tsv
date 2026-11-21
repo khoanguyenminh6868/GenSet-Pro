@@ -1,0 +1,6 @@
+lượt	đổi
+S:IB2500403535#0	maxFuel75: null → 2.5
+S:IB2500403535#1	maxFuel75: null → 3.5
+H:IB2300296794#0	minPrime: {"kVA":19.8} → {"kVA":20}
+H:IB2500403535#0	maxFuel75: null → 2.5
+H:IB2500403535#1	maxFuel75: null → 3.5
