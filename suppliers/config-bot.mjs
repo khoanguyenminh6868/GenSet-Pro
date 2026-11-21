@@ -106,7 +106,7 @@ const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
 // want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
 export function normFig(s, ctx, want = {}) {
-  const r = SN.normalize({ key: s.key, label: s.label, value: s.value }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
   // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
   const at100 = want.load === 100 && r.cond?.load == null;
@@ -781,6 +781,7 @@ const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role])), rowsMap = normRowsOf(suppliers);
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
+  const partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
   for (const s of suppliers) {
     if (s?.role === "controller_maker") {
       for (const t of s.specTables || []) for (const { model, f } of controllerSheetFacts(s, t)) add(`controller:${model}`, f);
@@ -790,7 +791,8 @@ export function modelFacts(cat, suppliers = []) {
     for (const t of s.specTables || []) {
       if (t.header?.length) continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
-      const models = [...new Set(String(t.title || "").split(/[\s:–—|,/()]+/).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+      // A word with "/" that is itself a model of the catalog ("6M31G825/5") stays one code; any other splits at "/".
+      const models = [...new Set(String(t.title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
       if (models.length !== 1) continue;
       // A genset maker's own datasheet of a part it makes (Wintpower "WT544C - Technical Data Sheet", Khoa 2026-11-03),
       // saved by maker-datasheets.mjs ("Datasheet: …"), gives the figures of that model when the catalog knows it.
@@ -800,13 +802,19 @@ export function modelFacts(cat, suppliers = []) {
       const known = new Set((kind === "engine" ? cat.engines : cat.alternators || []).map((e) => e.key));
       // A frame's datasheet (Leroy-Somer "TAL-A46", Khoa 2026-11-02) gives its figures to the models of that frame
       // its own lines name ("TAL-A46-C ... TAL-A46-H" in its ratings table), each a model of the catalog.
-      const covered = known.has(models[0]) ? [models[0]]
+      let covered = known.has(models[0]) ? [models[0]]
         : [...new Set(t.rows.flatMap((l) => CAT.cellsOf(l)).filter((c) => CAT.isCode(c)).map((c) => CAT.keyOf(c)))].filter((k) => k !== models[0] && k.startsWith(models[0]) && FRAME_SUFFIX.test(k.slice(models[0].length)) && known.has(k));
+      // An engine maker's page of a series ("6M31 - Baudouin PowerKit Diesel Engines": rating tables, then the series' engine
+      // data with no model): the data are of the models the SAME page (same source, same title) lists under the series code.
+      if (!covered.length && own === "engine" && kind === "engine") covered = [...new Set((s.specTables || []).filter((x) => x !== t && x.n === t.n && x.title === t.title).flatMap((x) => x.rows.map((l) => CAT.cellsOf(l)[0]).filter((w) => w && CAT.isCode(w)).map((w) => CAT.keyOf(w))))].filter((k) => k !== models[0] && k.startsWith(models[0]) && known.has(k));
       // The part maker's own sheet of exactly this model (not a frame's sheet given to its models, not a genset maker's
       // "Datasheet:"): `sheet`, the source makerSheetChecks follows when the sources disagree (cfg-r4, quy tắc B).
       const sheet = !!own && covered.length === 1 && covered[0] === models[0];
       for (const line of t.rows) {
-        const c = CAT.cellsOf(line), key = c.length >= 2 ? CAT.specKey(c[0]) : null;
+        // "| Cylinders 6", "| Bore & Stroke (mm) 149x177", "| Cylinders: 4": label and figure in one cell (series pages of a maker).
+        let c = CAT.cellsOf(line);
+        if (c.length === 1 && own === "engine") { const m = c[0].match(/^([^\d:：]{3,60}?)\s*[:：]?\s*(\d.*)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
+        const key = c.length >= 2 ? CAT.specKey(c[0]) : null;
         if (key === "engPower" && kind === "engine") { for (const f of ratedFacts(c[0], c.slice(1).join(" | "), { maker: s.role === "engine_maker" })) for (const m of covered) add(`${kind}:${m}`, { ...f, supplierId: s.id, n: t.n, line, text: line }); continue; }
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
@@ -822,7 +830,9 @@ export function modelFacts(cat, suppliers = []) {
     const out = facts.get(`${kind}:${e.key}`) || [];
     for (const u of e.uses) for (const s of u.specs || []) {
       const rated = kind === "engine" && s.key === "engPower" ? ratedFacts(s.label, s.value, { maker: roleOf.get(u.supplierId) === "engine_maker", setPower: u.power }) : [];
-      if (!rated.length && (CAT.SPEC[s.key]?.scope !== kind || ROW_ONLY.has(s.key))) continue;
+      // Fuel is a genset figure, except on the engine maker's own table: there it is the engine's (bo-doc-tieu-hao, fuelChecks).
+      const makerFuel = kind === "engine" && /^fuel(75|50)?$/.test(s.key) && roleOf.get(u.supplierId) === "engine_maker";
+      if (!rated.length && !makerFuel && (CAT.SPEC[s.key]?.scope !== kind || ROW_ONLY.has(s.key))) continue;
       let line, text;
       if (u.line) { line = u.line; text = [...(u.header || []), u.line, u.title || ""].join(" \n "); }
       else {
@@ -833,7 +843,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -3525,7 +3535,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     c.checks = (c.checks || []).filter((x) => !isSyncItem(x.item));
     const row = rowOf(c.genset?.src || c.engine?.src), altAttrs = ratingsFor(RT.attr, c.alternator?.model);
     stdChecks(c, result.requirements || [], row);
-    fuelChecks(c, result.requirements || [], row);
+    fuelChecks(c, result.requirements || [], row, factsOf(c, "engine"));
     powerChecks(c, result.requirements || [], row);
     pfChecks(c, result.requirements || [], row);
     currentChecks(c, result.requirements || [], row);
@@ -4858,25 +4868,56 @@ const FUEL_CODE = { fuel_consumption: "fuel", fuel_consumption_75: "fuel75", fue
 export function fuelAt(x, load) {
   const pcts = [...String(x.label || "").matchAll(/(\d{2,3})\s*%/g)].map((m) => Number(m[1])), nums = numbersIn(x.value);
   if (pcts.length >= 2 && nums.length >= pcts.length) { const i = pcts.indexOf(load); return i >= 0 ? nums[i] : null; }
+  // "342.9 / 457.1 L/h (@75% / @100%)": the loads are named in the cell, after its figures.
+  const inCell = String(x.value || "").match(/^([^(（]*)[(（]([^)）]*%[^)）]*)[)）]\s*$/);
+  if (inCell) {
+    const ls = [...inCell[2].matchAll(/(\d{2,3})\s*%/g)].map((m) => Number(m[1])), ns = numbersIn(inCell[1]);
+    if (ls.length >= 2 && ns.length === ls.length) { const i = ls.indexOf(load); return i >= 0 ? ns[i] : null; }
+  }
   return nums[0] ?? null;
 }
 const LH_UNIT = /l\s*\/\s*h|l\/hr|lph|l[íi]t\s*\/\s*(gi[ờo]|h)|litres?\s*\/\s*h(our)?/i;
-export function fuelChecks(c, reqs, row) {
-  if (!row) return;
+// The figure in L/h at a load on the engine maker's own sheet of this engine (`sheet` facts): one value, else none.
+function sheetFuel(engFacts, key) {
+  if (!specNormOn("fuel")) return null;
+  const hits = (engFacts || []).filter((f) => f.sheet && f.key === key).map((f) => ({ f, n: normFig(f, NORM_CTX.get(f), { unit: "L/h", load: FUEL_LOAD[key] }) })).filter((x) => x.n.ok && x.n.r.num != null && x.n.r.cond?.load === FUEL_LOAD[key]);
+  return hits.length && new Set(hits.map((x) => x.n.r.num)).size === 1 ? { f: hits[0].f, v: hits[0].n.r.num } : null;
+}
+// The fuel tolerance the fact's own table writes ("Fuel consumption tolerance +/- 5%"), as written; null when it writes none.
+function fuelTolOf(f) {
+  for (const l of NORM_CTX.get(f)?.rows || []) {
+    const m = String(l).match(/(?:fuel|consumption)[^|]*?toleran\w*[^\d|]*?(?:\+\s*\/\s*-|±)\s*(\d+(?:[.,]\d+)?)\s*%/i);
+    if (m) return m[1];
+  }
+  return null;
+}
+export function fuelChecks(c, reqs, row, engFacts = []) {
+  if (!row && !engFacts.length) return;
   for (const r of reqs) {
     const key = FUEL_CODE[r.code];
     if (!key) continue;
     const m = `${r.requirement || ""} ${r.quote || ""}`.match(/(?:≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(?:l[ớo]n|v[ưư][ợo]t|qu[áa])(?:\s*h[ơo]n)?)\s*:?\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t|l|L)\s*\/\s*(?:gi[ờo]|h)(?![a-z])/i);
     if (!m) continue;
     const max = Number(m[1].replace(",", "."));
-    let s = (row.specs || []).find((x) => x.key === key && LH_UNIT.test(`${x.label} ${x.value}`));
+    let s = (row?.specs || []).find((x) => x.key === key && LH_UNIT.test(`${x.label} ${x.value} ${x.unitCell || ""}`));
     let v = s ? fuelAt(s, FUEL_LOAD[key]) : null, skip = null;
     // GENBID_SPEC_NORM=1: the first figure of the key in L/h at the HSMT's load (normFig); a figure the old reading would
     // have compared but the layer cannot → "Chưa rõ" with why.
     if (specNormOn("fuel")) {
       const old = s, ctx = useNormCtx(row);
       s = null; v = null;
-      for (const y of (row.specs || []).filter((q) => q.key === key)) { const n = normFig(y, ctx, { unit: "L/h", load: FUEL_LOAD[key] }); if (n.ok && n.r.num != null) { s = y; v = n.r.num; break; } if (y === old) skip = n.why; }
+      for (const y of (row?.specs || []).filter((q) => q.key === key)) { const n = normFig(y, ctx, { unit: "L/h", load: FUEL_LOAD[key] }); if (n.ok && n.r.num != null) { s = y; v = n.r.num; break; } if (y === old) skip = n.why; }
+      // The configuration's row gives no comparable figure: the engine maker's own sheet of this engine, when it gives one.
+      const sh = v == null ? sheetFuel(engFacts, key) : null;
+      if (sh) {
+        const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+        if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
+        const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${sh.v} L/h (${sh.f.label})`, sourceQuote: sh.f.line, factSrc: { supplierId: sh.f.supplierId, n: sh.f.n, line: sh.f.line }, part: "genset", level: r.level || "core", status: sh.v <= max + 1e-9 ? "met" : "not_met", byCode: true, rule: "to-hang-tieu-hao",
+          // Khoa 21/11/2026: a figure of the engine maker stays met at the limit; the check says it is the engine's, and its tolerance when the sheet writes one.
+          note: `Số của động cơ theo tờ hãng${fuelTolOf(sh.f) ? `, dung sai ±${fuelTolOf(sh.f)} %` : ""}. Code so ${sh.v} L/h trên tờ hãng động cơ ${c.engine?.model || ""} (${sh.f.supplierId} [${sh.f.n}], ${sh.f.label}) với mức HSMT ≤ ${max} L/h; dòng tổ máy không ghi số so được.` };
+        if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+        continue;
+      }
       if (v == null && old && skip) {
         const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
         if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
@@ -4889,7 +4930,7 @@ export function fuelChecks(c, reqs, row) {
     if (v == null) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
-    const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${s.value} (${s.label})`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: v <= max + 1e-9 ? "met" : "not_met", byCode: true,
+    const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${s.value}${s.unitCell ? ` ${s.unitCell}` : ""} (${s.label})`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: v <= max + 1e-9 ? "met" : "not_met", byCode: true,
       note: `Code so ${v} L/h của dòng tổ máy với mức HSMT ≤ ${max} L/h.` };
     if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
   }
