@@ -260,7 +260,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    The other way round (Khoa 2026-11-21): when you keep a controller a supplier offers and the lowest of that make that meets
    every communication function ("← thấp nhất đủ" in catalog.md) is another one, the code adds that version right under
    yours, labelled from the maker's datasheet unless a supplier of the configuration offers it. Same rules: one place of the
-   per-make ceiling, both count toward the 8, its controller checks start "chưa rõ".   When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
+   per-make ceiling, both count toward the 8, its controller checks start "chưa rõ".
+   A version the code adds only takes a free place of the 8: it never pushes out a configuration you wrote. With no place
+   left, it is named on your configuration's line instead. Only suppliers inside this run's origin group count.   When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,
    alternator and controller made by the genset's own maker. The code adds that requirement and writes its check in

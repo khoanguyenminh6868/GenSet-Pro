@@ -147,6 +147,23 @@ test("11:44Z: NCC chào chính bộ chính không sinh DSE4520, cấu hình gố
   }
 });
 
+test("11:44Z, lượt nhóm Trung Quốc: NCC đặt tại GB không sinh bản, không được ghi là bên chào", () => {
+  const o = CB.check(six(), { hsmtText, suppliers: [...suppliers, rec("longkai-power"), rec("interpower-international")], readWeb: () => null, sized: false, origin: "all" });
+  CB.rankConfigs(o.result);
+  const by = o.result.configs.flatMap((c) => [...(c.ctlTwin?.by || []), ...(c.controller.offeredMain?.by || [])]);
+  assert.ok(!by.includes("interpower-international"));
+  assert.ok(!o.result.configs.some((c) => c.controller.model === "DSE4520"));
+});
+
+test("đã đủ 8 cấu hình agent: bản sinh không đẩy cấu hình nào, ghi vào cấu hình gốc", () => {
+  const b = base();
+  for (let i = 2; i <= 8; i++) b.configs.push({ ...structuredClone(b.configs[0]), rank: i, engine: { ...b.configs[0].engine, make: "Khác", model: `6M31G825/5` }, alternator: { make: "X", model: `ALT${i}` } });
+  const o = CB.check(b, { hsmtText, suppliers, readWeb: () => null, sized: false });
+  assert.equal(o.result.configs.length, 8);
+  assert.equal(o.result.configs.filter((c) => c.ctlTwin).length, 0);
+  assert.match(o.result.configs[0].controller.offerNote, /đã đủ 8 cấu hình: DSE7420 \(NCC voltgent chào\)/);
+});
+
 test("cặp hai bản là một chỗ của trần mỗi hãng", () => {
   const b = base();
   b.configs[0].engine.make = "Volvo Penta"; // trần 1 cấu hình mỗi hãng

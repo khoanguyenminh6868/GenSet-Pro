@@ -4084,7 +4084,8 @@ function cfgCtlMoreHtml(p) {
   const alts = p.alternatives || [];
   const alt = alts.length ? h`<div class="small cfgblk cfgalt"><b>Phương án khác đạt tương đương:</b><ul class="suplist">${raw(alts.map((a) => h`<li class="small"><b>${[a.model, ...(a.modules || []).map((m) => `${m.model}${m.order ? ` (${m.order})` : ""}`)].join(" + ")}</b>${raw(a.make ? h` <span class="muted">(${a.make})</span>` : "")} ${raw(a.kind ? h`<span class="chip mut">${CTL_KIND_VI[a.kind] || a.kind}</span>` : "")} · truyền thông đạt ${a.met}/${a.total}${a.unclear?.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""} · ${raw(cfgOfferHtml(a.notOffered ? null : a.offeredBy, a.label))}</li>`).join(""))}</ul></div>`
     : p.altLine ? h`<div class="small cfgblk cfgalt">${p.altLine}</div>` : "";
-  return mods + alt;
+  const held = p.offerNote ? h`<div class="small cfgblk cfgalt">${p.offerNote}</div>` : "";
+  return mods + alt + held;
 }
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.

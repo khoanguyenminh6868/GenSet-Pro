@@ -2968,9 +2968,17 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(weaker ? { weaker: true } : {}) };
     return t;
   };
+  // The rows of c's engine, of suppliers inside this run's origin group (the filter below that drops a supplier from a
+  // configuration): a supplier based in GB neither gets a copy nor counts as offering the main controller in a China run.
+  let twinGroup;
+  const inTwinGroup = (id) => {
+    if (!origin) return true;
+    if (twinGroup === undefined) { const po = partsOnlyOf(origin, hsmtText); twinGroup = groupSuppliers(suppliers, origin, !!sync, po, basis === "brand" && !po) || null; }
+    return !twinGroup || twinGroup.has(id);
+  };
   const engineRows = (c) => {
     const rowBy = new Map();
-    for (const u of (built.engines || []).find((e) => e.key === CAT.keyOf(c.engine?.model || ""))?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    for (const u of (built.engines || []).find((e) => e.key === CAT.keyOf(c.engine?.model || ""))?.uses || []) if (u.line && sup.has(u.supplierId) && inTwinGroup(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
     return rowBy;
   };
   const isMakerCtl = (c) => !!c.controller?.model && c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker" && !!c.engine?.model;
@@ -3279,8 +3287,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
   // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
   // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
-  // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
-  // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  // A copy only takes a free place of the 8: it never pushes out a configuration the agent checked (điều phối 21/11/2026;
+  // IB2600603983 00:43Z: two copies pushed out Baudouin 6M33G825/5 + DSE7420 MKII). Copies that meet as many communication
+  // parts as the main one go first, `weaker` ones after; one with no place is named on its configuration (`offerNote`).
   // One controller under two names (DSE7320 on a supplier's line, DSE7320 MKII on the maker's sheet) is the same one.
   const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
   const ctlKeysOf = (m) => new Set([CAT.keyOf(m || ""), ...factsFor(facts, "controller", m || "").map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean));
@@ -3292,8 +3301,15 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     const same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && !!o.controller?.model && [...ctlKeysOf(ctlModelOf(o.controller))].some((k) => tk.has(k));
     return { c, t: twinBases.some(same) ? null : t };
   });
-  let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
-  result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
+  let twinRoom = Math.max(0, MAX_CONFIGS - twinBases.length);
+  const twinKept = new Set();
+  for (const p of [...twinPairs.filter((x) => x.t && !x.t.ctlTwin.weaker), ...twinPairs.filter((x) => x.t?.ctlTwin.weaker)]) if (twinRoom > 0) { twinRoom--; twinKept.add(p); }
+  for (const p of twinPairs) {
+    if (!p.c.controller) continue;
+    if (p.t && !twinKept.has(p)) p.c.controller.offerNote = `Phương án khác, chưa thành cấu hình riêng vì đã đủ ${MAX_CONFIGS} cấu hình: ${p.t.controller.model} (${p.t.ctlTwin.by.length ? `NCC ${p.t.ctlTwin.by.join(", ")} chào` : "theo tài liệu hãng, NCC chưa chào"}).`;
+    else delete p.c.controller.offerNote;
+  }
+  result.configs = twinPairs.flatMap((p) => (twinKept.has(p) ? [p.c, p.t] : [p.c]));
   result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
