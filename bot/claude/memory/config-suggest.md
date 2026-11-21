@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-21T06:48:04.700Z
+  modified: 2026-11-21T08:18:51.617Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -125,3 +125,5 @@ Khoa 21/11/2026 (đợt "fix luôn các lỗi đã phát hiện"), các quyết 
 - **Nhiên liệu**: simpson n124 "loại cả bảng" khỏi gói diesel (dòng Honda GX xăng theo hãng; dòng ZS loại theo QUYẾT ĐỊNH, không có nguồn: `fuel` dual mức K); jianghao n104 GIỮ khí; man-engines ghi theo trang hãng (catalog không có giá trị "diesel": để trống = diesel, ghi nhiên liệu nào cũng bị loại khỏi gói diesel); bảng chỉ có bản ghi đầu phát (kingway n117) thì không ghi nhiên liệu.
 - **Ô ghi hai mã động cơ** kiểu sanq "TAD1650GE(1345GE)": dòng không cho bản ghi động cơ, giữ đầu phát (Khoa chọn "A"; nguồn không nói mã trong ngoặc là gì, 2 / 15 cặp khác dung tích).
 - **Dấu `^` Baudouin / Weichai**: Khoa bảo "tách ra", nhưng đo cho thấy tách làm 66 lượt-dòng lọt luật xi lanh / dung tích / tần số (mã `^` hoặc mã trơn mất số); Khoa bảo "thử cách 2" (vẫn tách, luật loại mượn số X ↔ X^) rồi mới quyết: CHƯA chốt, xem sổ điều phối.
+- **Hai bản bộ điều khiển (#1039), Khoa chốt 21/11/2026**: (1) "ok làm theo đề xuất": bộ NCC chào đạt dưới nửa mục truyền thông thì KHÔNG sinh bản NCC chào; (3) "có": làm cả chiều ngược (agent chọn bộ NCC chào mà bộ thấp nhất đủ theo tài liệu hãng là bộ khác → code thêm bản tài liệu hãng).
+- **HSMT ghi hai số tiêu hao cùng một mức tải kiểu MRQ / RQ** (IB2500403535: 75 % tải ≤ 2,6 MRQ / ≤ 2,5 RQ): Khoa 21/11/2026 chọn "RQ" làm ngưỡng.
