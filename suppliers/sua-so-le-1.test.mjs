@@ -32,3 +32,17 @@ test("depco n2102 P158LE-1: 6 xi lanh / 11.051 L (số P126TI) sửa thành 8 / 
   assert.equal(eng("depco-power", 2101).find((x) => x.model === "P158LE").fixed, undefined);
   assert.equal(spec(eng("depco-power", 2182).find((x) => x.model === "P158LE"), "disp"), "14.62");
 });
+
+test("TAD1345GE 16,12 L (số của TAD1642GE): huatai n103 360GF bỏ bore + disp, liangzi n113 / n140 / n141 bỏ disp; 6 xi lanh và dòng TAD1642GE kế bên giữ", () => {
+  const h = eng("huatai-yangzhou", 103).find((r) => r.genset === "360GF" && r.model === "TAD1345GE");
+  assert.equal(spec(h, "bore"), undefined); assert.equal(spec(h, "disp"), undefined); assert.equal(spec(h, "cyl"), "6L");
+  assert.equal(spec(eng("huatai-yangzhou", 103).find((r) => r.model === "TAD1642GE"), "disp"), "16.12");
+  for (const n of [113, 140]) {
+    const l = eng("liangzi-yangzhou", n).find((r) => r.model === "TAD1345GE");
+    assert.equal(spec(l, "disp"), undefined, `n${n}`); assert.equal(spec(l, "cyl"), "6 L", `n${n}`);
+  }
+  // n141 chép nguyên văn dòng n113: mergeRepeats không được đưa 16.12 lại
+  const all = C.fromSupplier(real("liangzi-yangzhou")).filter((r) => r.kind === "engine" && r.model === "TAD1345GE");
+  assert.ok(all.length && all.every((r) => spec(r, "disp") === undefined));
+  assert.equal(spec(C.fromSupplier(real("liangzi-yangzhou")).find((r) => r.kind === "engine" && r.model === "TAD1642GE" && r.n === 112), "disp"), "16.12");
+});

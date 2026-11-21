@@ -1789,6 +1789,13 @@
       fixes: [{ key: "cyl", from: "6", to: "8", why: "P158LE-1 ở bdadl n133, fukangsi n2008, jianghao n106, haifeng n2006, taihai n105, huatai n108, wintpower n146 ghi 8 xi lanh; depco n2101 / n2182 (P158LE, cùng 128 X 142) ghi 8", src: "dòng khác của chính trang depco (n2101 / n2182) và NCC khác" },
         { key: "disp", from: "11.051", to: "14.618", why: "8 | 128 X 142 → 14.62 L (lệch 0 %); P158LE-1 ghi 14.618 ở bdadl, fukangsi, jianghao, haifeng, taihai, huatai, wintpower; 11.051 là dung tích của P126TI", src: "hình học dòng: 128×142×8 xi lanh = 14.62 L" }],
       why: "nguồn ghi 6 xi lanh / 11,051 L (số của P126TI) cho P158LE-1: sửa thành 8 / 14,618" },
+    // TAD1345GE "16.12" L (huatai n103 360GF also "144/165"): 16.12 L = 6 x 144 x 165 is Volvo's TAD1642GE (aoke, bdadl, fukangsi, huipu, lees, pengpai give it for that
+    // engine); TAD1345GE is 131 x 158 x 6 = 12.78 L (Volvo Penta bulletin sources/volvo-penta/1011.md "12.78 liter, in-line 6 cylinder", haifeng / taihai / jianghao / huipu bore 131/158,
+    // aoke / bdadl / fukangsi / pengpai / lees 12.78). Only the keys that are wrong go (the 6 cylinders are right); no figure is written.
+    // liangzi repeats the row word for word in n141: `mergeRepeats` would put the figure back, so it is listed too (điều phối 21/11/2026).
+    { supplierId: "huatai-yangzhou", n: 103, genset: "360GF", line: "| 360GF | 360 | TAD1345GE | 6L | 144/165 | 16.12 | 48 | 3100 | 3200*1100*1800", act: "dropspec", keys: ["bore", "disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 144/165 và 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (131×158, 12,78 L): bỏ riêng đường kính × hành trình và dung tích, giữ 6 xi lanh" },
+    ...[[113, "瑞典沃尔沃"], [140, "沃尔沃遍达"], [141, "瑞典沃尔沃"]].map(([n, mk]) => (
+      { supplierId: "liangzi-yangzhou", n, genset: "LZ- V360", line: `| LZ- V360 | 360/450 | ${mk} | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | 3200*1100*1200 | 3100 | 详细参数`, act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
