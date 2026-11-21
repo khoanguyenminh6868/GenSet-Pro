@@ -212,6 +212,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    SNMP / CAN come from the controller's own lines only. Ethernet the controller's lines do not show may come from a
    module that has it (Khoa 2026-11-20): leave it `unclear`, the code adds the module with the note "Ethernet nằm trên
    mô-đun <model>, không phải trên bộ điều khiển".
+   A part that asks for remote monitoring / control and names no function ("Cổng kết nối với hệ thống kiểm soát từ xa";
+   Khoa 2026-11-21) is `met` when the controller has RS485 or Modbus on its own lines, or Ethernet / 4G on its own lines
+   or a module's; the code writes this part itself, the same way for every controller.
    A BMS connection is `met` when a controller line says BMS / building management, or Modbus, BACnet or SNMP: then
    write in `note` "BMS qua Modbus/SNMP, cần NCC xác nhận." (Khoa Q3). 4G / 5G / GSM / SMS / Internet / Ethernet that only a
    module gives: leave the part `unclear` and do not add the module yourself; the code pairs the controller with a
@@ -222,14 +225,24 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    through one: no supplier has offered one.
    catalog.md section "Bộ điều khiển theo datasheet hãng (NCC chưa chào)" (Khoa 2026-11-20) lists the other controllers of
    those makes that only the maker's datasheet gives, each with its kind as the datasheet writes it (tự động khi mất lưới
-   (AMF) / chỉ tự khởi động / hòa đồng bộ; every controller title in controllers.md carries it too). When the HSMT has an ATS,
-   "chuyển nguồn tự động" or "khi mất điện lưới", only an AMF controller fits that requirement. Never write a controller of
+   (AMF) / chỉ tự khởi động / hòa đồng bộ; every controller title in controllers.md carries it too). Only an AMF controller fits when the HSMT
+   asks it of the GENSET CONTROLLER (Khoa 2026-11-20, "ATS: 1"): AMF / auto mains failure named outright, or an ATS,
+   "chuyển nguồn tự động" or "mất điện lưới" in the controller's own requirement or a sentence tying it to the genset's
+   controller ("Chức năng điều khiển: Kết hợp với tủ ATS", "Bộ ATS phải được đấu nối … với bộ điều khiển của máy"). An ATS
+   cabinet of its own, a controller of the ATS, a list of parts, or a maintenance / repair tender does not ask it; the
+   catalog.md section says when the code read that the HSMT asks it. Never write a controller of
    that section as offered by a supplier: wherever you name one, say "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào".
    The main controller is the LOWEST of its make that meets the HSMT (Khoa 2026-11-20, "2"): among the controllers the
    configuration's suppliers offer and those of that section, of the make the configuration's supplier offers, take the
-   lowest one whose datasheet meets every controller requirement as well as the one offered, and check EVERY controller
-   requirement on that controller's datasheet (controllers.md), as for any controller. The HSMT has an ATS / "chuyển nguồn
-   tự động" / "khi mất điện lưới" → an AMF one; the HSMT asks for synchronising / parallel running ("hòa đồng bộ", "chạy
+   lowest one that meets every controller requirement as well as the one offered, and check EVERY controller
+   requirement on that controller's datasheet (controllers.md), as for any controller. "Meets" counts the controller WITH
+   its best communication module (4G / Internet / Ethernet the module gives count, by the module rule above; điều phối
+   2026-11-21, IB2600603983: DSE7320 MKII + DSE890 MKII meets what DSE7420 MKII + DSE890 MKII meets, so DSE7320 MKII is the
+   one): never go up a step only for a function a module gives. catalog.md section "Bộ điều khiển thấp nhất đủ yêu cầu
+   theo code" scores each controller of a make with its best module on the HSMT's communication functions and the kind
+   the HSMT asks, and marks the lowest ("← thấp nhất đủ"); start from it, still check every requirement on its datasheet,
+   and go higher only for a requirement that controller's datasheet does not meet and the higher one's does (say which in `why`). The HSMT asks the controller for AMF (as
+   above) → an AMF one; the HSMT asks for synchronising / parallel running ("hòa đồng bộ", "chạy
    song song") → keep a synchronising one; otherwise a synchronising one may go down to an AMF or auto start one (a single
    set with an ATS: DSE8610 → DSE7320). Exception (Khoa, same answer): when the controller offered meets fewer than half of
    the communication parts (DSE6120: 3 of 7), do not go lower; look for one of the same make that meets more. When no
@@ -238,6 +251,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    controllers.md; the code labels it "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào" and asks the supplier for its
    origin, CO), and name the controller the supplier offers in `gaps` ("NCC <id> chào <model>"); the code lists it under
    "Phương án khác". Never write such a controller in `suppliers[].hasController`.
+   Two versions of one engine (Khoa 2026-11-21, every make): when your main controller comes from the maker's datasheet and
+   a supplier with a row of the same engine offers another controller of that make (of the kind the HSMT asks, meeting at
+   least half of the communication parts with its best module), the code adds a second configuration with the offered
+   controller right under yours (`ctlTwin`; its controller checks start "chưa rõ"). The two count as ONE place of the
+   per-make ceiling, but both count toward the 8 configurations. Write only the version with the lowest controller that
+   meets the HSMT; do not write the offered version yourself.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,

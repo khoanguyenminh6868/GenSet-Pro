@@ -258,6 +258,22 @@
       ],
       "file": "sources/leroy-somer-fuzhou/6003.md",
       "official": true
+    },
+    {
+      "n": 6004,
+      "url": "https://www.leroy-somer.com/documentation_pdf/5706_en.pdf",
+      "accessedAt": "2026-11-21",
+      "tier": "A",
+      "quote": [
+        "TAL Rating Table",
+        "Multiply nominal rating by derating factors indicated in the following table.",
+        "Ambient T °C 25 40 45 50 55 60 (*)",
+        "Class H 1.076 1 0.973 0.946 0.918 0.889",
+        "Altitude (m) 1 000 1 500 2 000 2 500 3 000 3 500 4 000",
+        "Derating factor 1 0.975 0.949 0.922 0.894 0.866 0.837"
+      ],
+      "file": "sources/leroy-somer-fuzhou/6004.md",
+      "official": true
     }
   ],
   "confidence": "high",
