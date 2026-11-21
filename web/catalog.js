@@ -1460,7 +1460,9 @@
         const twoG = cellsOf(line).filter((c) => /-G\d+\s*[(（]\s*G\d+\s*[)）]$/i.test(c));
         if (twoG.length) { note(t, ti, ri, "một ô ghi hai mã", twoG.join(", ")); return; }
         // "CG250-H1 CONTACT" (fdk-energy): the page's "Contact" link text run into the model cell (catalog-a).
-        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
+        // An emission stage in ASCII brackets after the code ("TAD1351GE(欧三)", "YC6T660-D31( 国三)", bdadl / pengpai) is the same kind
+        // of note: without this the cell failed isCode and the row gave no engine (doc-ma-2).
+        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$|\s*\(\s*[国欧][一二三四五六]\s*\)\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
         const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, "")).map((c) => {
