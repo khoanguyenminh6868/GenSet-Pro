@@ -1,0 +1,89 @@
+IB2600574589	#1	6ETAA12.8-G21	Tiêu hao nhiên liệu 100% tải	unclear (190 g/kWh × 320 kW / (820–845 g/L) = 72,0–74,1 L/h (đầu xấu nhất 74,1 L/h))	Cột "Fuel Cons." (g/Kw.H) không ghi mức tải và công suất quy chiếu; phép đổi lấy 320 kW Prime của cùng dòng. Dòng mecca-power n151 (MC440SC, cùng động cơ 6ETAA12.8-G21) ghi 84.1 L/H(100%).
+IB2600574589	#2	YC6K520-D30	Tiêu hao nhiên liệu 100% tải	unclear (Dòng này không ghi)	Cùng động cơ YC6K520-D30: keypower n118 (KP-YC400P) ghi Fuel cons 100%(L/H): 89; westinpower n109 (TY425) ghi 87 L/h, 12.16 L.
+IB2600574589	#3	YC6T600L-D22	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn không ghi)	
+IB2600574589	#4	WP13D385E200	Tiêu hao nhiên liệu 100% tải	met (89 (Fuel consumption @100% Load（L/h）))	Code so 89 L/h của dòng tổ máy với mức HSMT ≤ 90 L/h.
+IB2600581294	#1	SC25G690D2	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#1	SC25G690D2	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#1	SC25G690D2	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581294	#2	WP13D490E310	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#2	WP13D490E310	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#2	WP13D490E310	Tiêu hao nhiên liệu 100% tải	unclear (Fuel cons. 108,7 L/h (không ghi mức tải))	Nguồn không ghi mức tải của số 108.7 L/h.
+IB2600581294	#3	6ETAA12.8-G310	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#3	6ETAA12.8-G310	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#3	6ETAA12.8-G310	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581294	#4	WP13D490E310	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#4	WP13D490E310	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#4	WP13D490E310	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581294	#5	YCT16660-G31	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#5	YCT16660-G31	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#5	YCT16660-G31	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581294	#6	YC6T660L-D20	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#6	YC6T660L-D20	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#6	YC6T660L-D20	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581294	#7	YC6T660L-D20	Tiêu hao nhiên liệu 50% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 50% tải.
+IB2600581294	#7	YC6T660L-D20	Tiêu hao nhiên liệu 75% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 75% tải.
+IB2600581294	#7	YC6T660L-D20	Tiêu hao nhiên liệu 100% tải	unclear (Chưa rõ)	Nguồn không ghi tiêu hao ở 110% tải.
+IB2600581977	#1	TAD1351GE	Tiêu hao nhiên liệu 100% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#1	TAD1351GE	Tiêu hao nhiên liệu 75% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#1	TAD1351GE	Tiêu hao nhiên liệu 50% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#2	P126TI	Tiêu hao nhiên liệu 100% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#2	P126TI	Tiêu hao nhiên liệu 75% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#2	P126TI	Tiêu hao nhiên liệu 50% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#3	WP12D317E200	Tiêu hao nhiên liệu 100% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#3	WP12D317E200	Tiêu hao nhiên liệu 75% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#3	WP12D317E200	Tiêu hao nhiên liệu 50% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#4	BF6M1015C-LA G1	Tiêu hao nhiên liệu 100% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#4	BF6M1015C-LA G1	Tiêu hao nhiên liệu 75% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600581977	#4	BF6M1015C-LA G1	Tiêu hao nhiên liệu 50% tải	unclear (Dòng tổ máy không ghi suất tiêu hao)	
+IB2600586587	#1	YC6A245L-D21	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600586587	#2	YC6A245-D30	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600586587	#3	6CTA8.3-G2	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600586587	#4	WP6D167E200	Tiêu hao nhiên liệu 100% tải	met (36,7 L/h)	
+IB2600586587	#5	1106A-70TAG3	Tiêu hao nhiên liệu 100% tải	unclear (206,9 g/kWh)	Chưa có số L/h ở 100% tải Prime; cần xác nhận
+IB2600586587	#6	TAD752GE	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600601812	#1	HY4A140Z-D25	Tiêu hao nhiên liệu 100% tải	met (24,6 L/h)	
+IB2600601812	#1	HY4A140Z-D25	Tiêu hao nhiên liệu 50% tải	met (13,2 L/h)	
+IB2600601812	#2	YC4D140-D31	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600601812	#2	YC4D140-D31	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600601812	#4	1104C-44TAG2	Tiêu hao nhiên liệu 100% tải	unclear (205 g/kWh)	Cần lít/giờ ở 100% tải để so
+IB2600601812	#4	1104C-44TAG2	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600601812	#5	6BT5.9-G2	Tiêu hao nhiên liệu 100% tải	met (18,7 L/h)	
+IB2600602880	#1	6BTAA5.9-G12	Tiêu hao nhiên liệu 100% tải	unclear (Chưa có nguồn ghi)	
+IB2600603983	#1	6M31G825/5	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#1	6M31G825/5	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#1	6M31G825/5	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#2	S6R2-PTAA-C	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#2	S6R2-PTAA-C	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#2	S6R2-PTAA-C	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#3	12V2000G63	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#3	12V2000G63	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#3	12V2000G63	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#4	QSK23-G2	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#4	QSK23-G2	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#4	QSK23-G2	Tiêu hao nhiên liệu 100% tải	met (151 (Fuel Consumption (L/h)))	Code so 151 L/h của dòng tổ máy với mức HSMT ≤ 156 L/h.
+IB2600603983	#5	4006-23TAG2A	Tiêu hao nhiên liệu 100% tải	met (140 L/h ở công suất định mức)	
+IB2600603983	#5	4006-23TAG2A	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#5	4006-23TAG2A	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#6	TWD1744GE	Tiêu hao nhiên liệu 100% tải	unclear (147 L/h, chưa ghi mức tải)	Cần xác nhận là ở 100% tải
+IB2600603983	#6	TWD1744GE	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#6	TWD1744GE	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#7	6M33G825/5	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#7	6M33G825/5	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#7	6M33G825/5	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#8	12V1600G11F	Tiêu hao nhiên liệu 100% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#8	12V1600G11F	Tiêu hao nhiên liệu 75% tải	unclear (Nguồn chưa ghi)	
+IB2600603983	#8	12V1600G11F	Tiêu hao nhiên liệu 50% tải	unclear (Nguồn chưa ghi)	
+IB2600609805	#1	6BTAA5.9-G12	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600609805	#2	6BTAA5.9-G12	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600609805	#3	6BTAA5.9-G12	Tiêu hao nhiên liệu 100% tải	unclear	
+IB2600612866	#1	D1105	Tiêu hao nhiên liệu 100% tải	unclear	Nguồn chưa ghi
+IB2600613475	#1	403A-15G2	Tiêu hao nhiên liệu 100% tải	unclear (Chưa có số liệu)	
+IB2600613475	#1	403A-15G2	Tiêu hao nhiên liệu 75% tải	unclear (Chưa có số liệu)	
+IB2600613475	#2	4DW81-23D	Tiêu hao nhiên liệu 100% tải	met (4 L/h)	Bằng đúng ngưỡng 4 L/h; cần xác nhận ở bản 1 pha
+IB2600613475	#2	4DW81-23D	Tiêu hao nhiên liệu 75% tải	unclear (Chưa có số liệu)	
+IB2600613475	#3	4TNV88-GGE	Tiêu hao nhiên liệu 100% tải	unclear (Chưa có số liệu)	
+IB2600613475	#3	4TNV88-GGE	Tiêu hao nhiên liệu 75% tải	unclear (Chưa có số liệu)	
+IB2600613475	#4	4Z2.3-G21	Tiêu hao nhiên liệu 100% tải	not_met (Cao hơn mức HSMT cho phép ở 100% tải)	
+IB2600613475	#4	4Z2.3-G21	Tiêu hao nhiên liệu 75% tải	unclear (Chưa có số liệu)	
+IB2600613475	#5	YND485D	Tiêu hao nhiên liệu 100% tải	unclear (Chưa có số liệu)	
+IB2600613475	#5	YND485D	Tiêu hao nhiên liệu 75% tải	unclear (Chưa có số liệu)	

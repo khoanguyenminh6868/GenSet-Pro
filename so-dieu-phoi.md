@@ -24,7 +24,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 - (21/11) CHƯA GIAO, chờ S2 merge (cùng `web/catalog.js`): **S4** 29 bảng đầu phát rời (20 bảng, 593 dòng) / động cơ rời (9 bảng, 198 dòng) thành bản ghi theo DANH SÁCH TƯỜNG MINH như `GENSET_TABLES` (`catalog-c-de-xuat.md` mục 1.1, 4.4), Opus; kèm huatai n111 không đọc cột công suất động cơ / xi lanh (`huatai-n111-1.md` mục 4). Hàng chờ cũ: "đếm `win` theo số"; (D) bảng dọc → (E) nhóm T1 → (F) nhóm P1. Chưa kiểm: Phân tích gói 3,4 triệu ký tự; Sandbox / `ingest.py` sau #946. Dọn: máy KayenGram xoá `genbid-work\dieu-phoi` trước khi Sync (lịch sử đã viết lại 20/11); ~50 worktree cũ chưa kiểm; thư mục rỗng `wt-mem1120`.
 
 ## Chờ Khoa
-- (21/11) Điều phối đã trả lời, chờ Khoa nói: (a) trường nhiên liệu cho dòng tổ máy không mã động cơ (đề xuất: chưa cần vì đã KHÔNG nối Gợi ý); (b) 2.605 dòng tổ máy không mã động cơ ngoài 46 bảng (đề xuất: chưa làm, chờ việc (D) bảng dọc); (c) simpson n124 nhiên liệu X / L / G (`simpson-n124-nhien-lieu.md`; đề xuất L) + 4 bảng "không rõ" còn lại chưa tra.
+- (21/11, KHOA QUYẾT) simpson n124: LOẠI CẢ BẢNG khỏi gói diesel (phương án L) → đã thêm vào PR S1 (commit riêng, 10 bản ghi đổi `fuel`). Khoa hỏi bảng dọc (D) làm chưa: CHƯA (chưa có bộ đọc bảng dọc; đang ở hàng chờ sau S4); điều phối đề xuất làm (D) sau S2 / S4, chờ Khoa nói. Còn chờ Khoa: 4 bảng nhiên liệu "không rõ" còn lại có tra không; trường nhiên liệu cho dòng tổ máy (đề xuất chưa cần); 2.605 dòng tổ máy ngoài 46 bảng (đề xuất chờ (D)).
 - Chưa kiểm (không chặn): Phân tích gói 3,4 triệu ký tự (`trimHsmt`); Sandbox Ubuntu / `ingest.py` sau #946; IB2600576655 và IB2500441397 chỉ đọc 30 tệp đầu trong tệp nén (giới hạn Khoa bảo "chưa" đổi).
 
 ## Khoa đã bảo BỎ (đừng đề xuất lại)
