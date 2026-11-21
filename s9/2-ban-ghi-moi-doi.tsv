@@ -1,0 +1,11 @@
+NCC	n	bảng (chỉ số)	mới / đổi	vai	model	khoá	tổ máy	công suất	nhãn	disp thô	disp → L	công thức	dòng mã động cơ (nguyên văn)
+endress-stromerzeuger	129	26	mới	engine	3TNV80-FPGE	3TNV80FPGE		không (power null)	Displacement [ccm]	1267	1.267	{"formula": "l_from_cc", "from": {"num": 1267, "unit": "cc"}}	| Engine Type | Yanmar - 3TNV80-FPGE
+endress-stromerzeuger	130	27	mới	engine	3TNM74F	3TNM74F		không (power null)	Displacement [ccm]	993	0.993	{"formula": "l_from_cc", "from": {"num": 993, "unit": "cc"}}	| Engine Type | Yanmar - 3TNM74F
+endress-stromerzeuger	137	34	mới	engine	2TNV70-APGE	2TNV70APGE		không (power null)	Displacement [ccm]	570	0.57	{"formula": "l_from_cc", "from": {"num": 570, "unit": "cc"}}	| Engine Type | Yanmar - 2TNV70-APGE
+gillette-generators	101	0	mới	engine	GX390	GX390		không (power null)	ENGINE DISPLACEMENT	23.7 CU. IN. (390 CC)	0.39	{"formula": "l_from_cc", "from": {"num": 390, "unit": "cc"}, "same": {"num": 23.7, "unit": "in³"}}	| ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)
+gillette-generators	103	2	mới	engine	GX630	GX630		không (power null)	ENGINE DISPLACEMENT	41.97 CU. IN. (688 CC)	0.688	{"formula": "l_from_cc", "from": {"num": 688, "unit": "cc"}, "same": {"num": 41.97, "unit": "in³"}}	| ENGINE MODEL (WARRANTY) | HONDA GX630 V-TWIN O.H.V. (3 YEARS)
+gillette-generators	105	4	mới	engine	KD440	KD440		không (power null)	ENGINE DISPLACEMENT	26.9 CU. IN. (440 CC)	0.44	{"formula": "l_from_cc", "from": {"num": 440, "unit": "cc"}, "same": {"num": 26.9, "unit": "in³"}}	| ENGINE MODEL | KOHLER KD440 EPA/CARB TIER IV CERT. & 3 YEAR LIMITED WARRANTY
+victory-generator	123	35	đổi (bản ghi sẵn có nhận disp)	engine	LA186FAG	LA186FAG		không (power null)	Displacement (cc)	418	0.418	{"formula": "l_from_cc", "from": {"num": 418, "unit": "cc"}}	
+winco	1002	6	đổi (bản ghi sẵn có nhận disp)	engine	GC160	GC160		không (power null)	DISPLACEMENT/TYPE	160CC	0.16	{"formula": "l_from_cc", "from": {"num": 160, "unit": "cc"}}	
+winco	1003	7	đổi (bản ghi sẵn có nhận disp)	engine	VANGUARD 3564	VANGUARD3564		không (power null)	DISPLACEMENT/TYPE	570CC	0.57	{"formula": "l_from_cc", "from": {"num": 570, "unit": "cc"}}	
+winco	1001	5	mới	engine	GC160	GC160		không (power null)	DISPLACEMENT/TYPE	160 CC	0.16	{"formula": "l_from_cc", "from": {"num": 160, "unit": "cc"}}	| ENGINE MODEL | GC160 OHC

@@ -1,0 +1,60 @@
+bản ghi cũ 61863, mới 61870 | khác 3 | chỉ cũ 0, chỉ mới 7 | bảng có đổi 10
+{"disp thêm":3}
+
+[endress-stromerzeuger n129 bảng 26] ×1
+    2 | Engine Type | Yanmar - 3TNV80-FPGE
+        ⇒ THÊM bản ghi engine 3TNV80-FPGE
+
+[endress-stromerzeuger n130 bảng 27] ×1
+    2 | Engine Type | Yanmar - 3TNM74F
+        ⇒ THÊM bản ghi engine 3TNM74F
+
+[endress-stromerzeuger n137 bảng 34] ×1
+    2 | Engine Type | Yanmar - 2TNV70-APGE
+        ⇒ THÊM bản ghi engine 2TNV70-APGE
+
+[gillette-generators n101 bảng 0] ×1
+    7 | ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)
+        ⇒ THÊM bản ghi engine GX390
+
+[gillette-generators n103 bảng 2] ×1
+    7 | ENGINE MODEL (WARRANTY) | HONDA GX630 V-TWIN O.H.V. (3 YEARS)
+        ⇒ THÊM bản ghi engine GX630
+
+[gillette-generators n105 bảng 4] ×1
+    9 | ENGINE MODEL | KOHLER KD440 EPA/CARB TIER IV CERT. & 3 YEAR LIMITED WARRANTY
+        ⇒ THÊM bản ghi engine KD440
+
+[victory-generator n123 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ disp: ∅ → 418
+
+[winco n1001 bảng 5] ×1
+    4 | ENGINE MODEL | GC160 OHC
+        ⇒ THÊM bản ghi engine GC160
+
+[winco n1002 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ disp: ∅ → 160CC
+
+[winco n1003 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ disp: ∅ → 570CC
+
+==== tự kiểm số (verSpec) ====
+(!) [victory-generator n123 bảng 35 disp] dòng undefined: ∅ → 418 (nhãn "Displacement (cc)") | null | undefined
+(!) [winco n1002 bảng 6 disp] dòng undefined: ∅ → 160CC (nhãn "DISPLACEMENT/TYPE") | null | undefined
+(!) [winco n1003 bảng 7 disp] dòng undefined: ∅ → 570CC (nhãn "DISPLACEMENT/TYPE") | null | undefined
+
+3  disp thêm: mới KHÔNG xác nhận
+
+cần soát tay: 3
+
+==== chuẩn hoá ====
+disp thêm | victory-generator n123 b35 dòng L LA186FAG: "418": ∅ → 0.418 L
+disp thêm | winco n1002 b6 dòng L GC160: "160CC": ∅ → 0.16 L
+disp thêm | winco n1003 b7 dòng L VANGUARD 3564: "570CC": ∅ → 0.57 L
+
+==== tổ máy (gensetsOf) ====
+bản ghi cũ 1700, mới 1700 | khác 0 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 0
+{}

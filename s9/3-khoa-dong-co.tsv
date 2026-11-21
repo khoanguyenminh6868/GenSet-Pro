@@ -1,0 +1,10 @@
+khoá	model	hãng trước	hãng sau	nguồn gốc trước	nguồn gốc sau	số lượt dùng trước → sau	NCC trước	NCC sau	phiếu disp trước	phiếu disp sau	số thắng trước / sau	dispExact trước / sau	kết luận
+2TNV70APGE	2TNV70-APGE	—	Yanmar	—	other	0 → 1		endress-stromerzeuger	null	{"0.57": ["endress-stromerzeuger"]}	None / None	None / None	khoá MỚI (không NCC nào khác dùng)
+3TNM74F	3TNM74F	Yanmar	Yanmar	other	other	1 → 2	green-power-generators	endress-stromerzeuger,green-power-generators	null	{"0.993": ["endress-stromerzeuger"]}	None / None	None / None	bản ghi mới là NGUỒN DUY NHẤT dung tích của khoá mà green-power-generators dùng
+3TNV80FPGE	3TNV80-FPGE	—	Yanmar	—	other	0 → 1		endress-stromerzeuger	null	{"1.267": ["endress-stromerzeuger"]}	None / None	None / None	khoá MỚI (không NCC nào khác dùng)
+GC160	GC160	Honda	Honda	other	other	1 → 2	winco	winco	null	{"0.16": ["winco"]}	None / None	None / None	chỉ thêm phiếu / lượt dùng của chính NCC, không đổi số thắng
+GX390	GX390		Honda		other	1 → 2	simpson-power	gillette-generators,simpson-power	null	{"0.39": ["gillette-generators"]}	None / None	None / None	HÃNG khoá đổi '' → 'Honda' (ảnh hưởng bản ghi của simpson-power); bản ghi mới là NGUỒN DUY NHẤT dung tích của khoá mà simpson-power dùng
+GX630	GX630		Honda		other	2 → 3	simpson-power	gillette-generators,simpson-power	null	{"0.688": ["gillette-generators"]}	None / None	None / None	HÃNG khoá đổi '' → 'Honda' (ảnh hưởng bản ghi của simpson-power); bản ghi mới là NGUỒN DUY NHẤT dung tích của khoá mà simpson-power dùng
+KD440	KD440	—	Kohler	—	other	0 → 1		gillette-generators	null	{"0.44": ["gillette-generators"]}	None / None	None / None	khoá MỚI (không NCC nào khác dùng)
+LA186FAG	LA186FAG			cn	cn	4 → 4	victory-generator	victory-generator	{"0.418": ["victory-generator"]}	{"0.418": ["victory-generator"]}	None / None	None / None	chỉ thêm phiếu / lượt dùng của chính NCC, không đổi số thắng
+VANGUARD3564	VANGUARD 3564					1 → 1	winco	winco	null	{"0.57": ["winco"]}	None / None	None / None	chỉ thêm phiếu / lượt dùng của chính NCC, không đổi số thắng
