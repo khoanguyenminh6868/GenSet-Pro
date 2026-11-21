@@ -1,6 +1,6 @@
 # nguong-hsmt PR 1: nghiệm thu (21/11/2026)
 
-**Kết luận:** PR DRAFT https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1036, nhánh `nguong-hsmt-1`, commit `bf9e62a5`, làm trên origin/main `ae205b52`. Chưa merge. **Top 30 chưa đo** (điều phối giao đo cloud).
+**Kết luận:** PR DRAFT https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1036, nhánh `nguong-hsmt-1`, commit `2b199862`, làm trên origin/main `ae205b52`. Chưa merge. **Top 30 chưa đo** (điều phối giao đo cloud).
 
 ## Sửa
 - `suppliers/config-bot.mjs`, chỉ vùng đọc ngưỡng:
@@ -24,8 +24,21 @@
 - 2 lượt mất `minPrime` (IB2300245748#2, IB2400377239#0): không loại thêm dòng.
 - Phần lớn lượt đổi là từ không có ngưỡng sang có ngưỡng, nên PR sẽ LOẠI THÊM dòng ở các gói đó.
 
-## Soát 69 ngưỡng tiêu hao mới (đọc nguồn từng ngưỡng, 21/11/2026; `soat-fuel.mjs`, `fuel-lech.mjs`)
-Commit vẫn `bf9e62a5`, chưa sửa (điều phối dặn không đẩy thêm trong lúc đo cloud).
+## Bản sửa `powerRead` (21/11/2026, commit `2b199862`, thay `bf9e62a5`)
+Điều phối đã dừng lượt đo `bf9e62a5` và cho sửa trong #1036. Các số ở mục "Đo" phía trên là của `bf9e62a5`; số dưới đây là bản cuối.
+- Sửa: mức tải đứng SAU số trong cùng vế câu là của số đó (`inClause`), gồm "(100% tải)", "ở tải 75% định mức", "(75%)", "ở 75%". Test `fuel-load-after.test.mjs`: 5 ca sai, ca mức tải đứng trước số, ca dự phòng, ca sai số %.
+- **Lệch mức tải** (`fuel-lech.mjs`): main **21 / 1.602**, `bf9e62a5` **24 / 1.660**, bản cuối **2 / 1.782**. 2 ca còn lại là báo nhầm của phép so: IB2300245556#1 (75% = 3,5) và IB2400497000#1 (75% = 6) đúng ở cỡ của lượt, số đó trùng mức 100% của cỡ khác trong cùng HSMT.
+- **Main ↔ bản cuối:** specs 3 / 1.880 lượt đổi (2 gói, đều là tiêu hao mới đọc được); bidhist 159 / 1.093. Theo trường: maxFuel 108, maxFuel75 86, minCyl 48, maxFuel50 35, minDisp 30, minPrime 22, maxDisp 20, cylExact 1. Danh sách `dau-vao/nguong-hsmt/doi-nguong.tsv`.
+- **`bf9e62a5` ↔ bản cuối:** 77 lượt đổi, chỉ ở tiêu hao (`doi-powerread.tsv`). **Đã đọc nguồn cả 77** (`soat-pr.mjs`). Cùng với mục "Đã soát" phía trên, mọi ngưỡng đổi so với main đều đã đọc nguồn.
+- `hints-audit` 1.499 gói: lệch 10 → 10, thiếu 298 → 296.
+- Test: 1385 + 148 + 11 pass.
+- Các ca code không đặt ngưỡng vì nguồn ghi hai số cùng một mức tải (không loại thêm dòng): IB2300349583#0 75% ("bắt buộc ≤ 5,5", "nâng cao ≤ 4,5"), IB2200020538#0 (hai bậc điểm), IB2400365165#0 75% (4,25 và 4).
+
+**Trình Khoa (không tự quyết):**
+1. IB2500403535: HSMT ghi hai số cùng 75% tải: #0 "≤ 2,6 (MRQ)" và "≤ 2.5 (RQ)", #1 "≤ 4 (MRQ)" và "≤ 3,5 (RQ)". Main lấy 2,5 / 3,5 do gán nhầm; bản cuối KHÔNG có ngưỡng 75% ở hai lượt này. Khoa muốn lấy số nào, hay giữ không lọc?
+2. Luật có sẵn "Tại 100% công suất dự phòng ≤ X" tính như 100% tải (IB2400375383#0/#1, IB2400448320#0/#1, 34 và 65 L/h): giữ nguyên, không đổi ở PR này.
+
+## Soát 69 ngưỡng tiêu hao mới của `bf9e62a5` (đọc nguồn từng ngưỡng, 21/11/2026; `soat-fuel.mjs`, `fuel-lech.mjs`)
 
 | Nhóm | Số ngưỡng | Kết luận |
 |---|---|---|
@@ -45,7 +58,7 @@ Hệ quả: các ngưỡng này chặt hơn HSMT, nên #1036 sẽ trừ 300 đi�
 
 **Lỗi này có sẵn ở main, rộng hơn #1036:** `fuel-lech.mjs` so mức tải trong vế câu với ngưỡng code đọc: main 21 ngưỡng lệch / 1.602, nhánh 24 / 1.660 (20 ngưỡng lệch ở cả hai, gồm 2 ngưỡng ở `specs`, ví dụ IB2300222010, IB2500442970, IB2600434462). Phép so chỉ bắt vế có đúng một mức tải nên là số tối thiểu (nó không bắt được IB2300190927#1).
 
-**Đề xuất:** dừng lượt đo cloud đang chạy, sửa `powerRead` ngay trong #1036 (mức tải đứng sau số trong cùng vế câu), đo lại ngưỡng rồi đo cloud một lần. Chờ điều phối quyết.
+Đã sửa ở bản cuối (mục "Bản sửa `powerRead`").
 
 ## Danh sách soát sau của #998 (không chặn #998)
 `nghiem-thu/ma-dong-co-trung-1-soat-sau.tsv`: các nhóm chỉ một NCC ghi số, và lượt chưa rõ ngưỡng (IB2500291421#1). Số "20 dòng chưa rõ" gồm dòng của lượt này và phần dòng còn lại của IB2300162912#0 (dòng có thêm luật bố trí); đo lại #998 sau khi #1036 merge sẽ cho số mới.
