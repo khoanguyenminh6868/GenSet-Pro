@@ -18,6 +18,14 @@ test("giai đoạn khí thải trong ngoặc ASCII sau mã là ghi chú: (欧三
   assert.deepEqual(r.map((x) => x.genset), ["BDA-V270", "BDA-Y2200", "BDA-W900"]);
 });
 
+test("'^' cuối mã Baudouin / Weichai giữ ở model và khoá, không gộp với mã trơn (aosif n123)", () => {
+  const r = C.fromSupplier(sup("aosif", [{ n: 123, title: "Weichai Series(50HZ)-Xiamen Aosif Engineering Ltd.",
+    header: ["| Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement", "| KVA/KW | KVA/KW | | L/h"],
+    rows: ["| AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |"] }])).filter((x) => x.kind === "engine");
+  assert.deepEqual(r.map((x) => x.model), ["8M33D1012E311^"]);
+  assert.notEqual(C.keyOf(r[0].model), C.keyOf("8M33D1012E311"));
+});
+
 test("ngoặc ASCII khác sau mã không bị bỏ như ghi chú khí thải", () => {
   const r = engines("bdadl-shanghai", 118, ["| BDA-X | 270/337.5 | 沃尔沃遍达 | TAD1351GE(1341GE) | 6 | 12.78 | 34 | ≤192 | 2900*1100*1600 | 2400"]);
   assert.deepEqual(r.map((x) => x.model), ["TAD1351GE(1341GE)"]);
