@@ -1,0 +1,318 @@
+{
+  "id": "quanchai",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "verified",
+  "names": {
+    "en": "Quanchai Engine Co., Ltd. (QuanChai Group)",
+    "zh": "全柴动力",
+    "brands": [
+      "Quanchai"
+    ]
+  },
+  "website": "https://en.quanchai.com.cn/",
+  "hq": {
+    "province": "Anhui",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ công suất nhỏ 15–380 hp, có dòng chuyên cho tổ máy phát điện (Generator Set Diesel Engines)",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Theo hãng: năng lực sản xuất hơn 600.000 động cơ diesel nhiều xi-lanh; đội R&D 350 kỹ sư",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Generator Set Diesel Engines",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Quanchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 15,
+        "max": 380,
+        "unit": "hp",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "vietnam": {
+    "distributors": [],
+    "note": null
+  },
+  "exportMarkets": [],
+  "missing": [
+    "Trang ghi hai năm thành lập khác nhau (1998 và 1949) nên để trống",
+    "Dải 15–380 hp là của toàn bộ động cơ, không riêng dòng phát điện",
+    "Chưa có trang chi tiết dòng động cơ phát điện"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://en.quanchai.com.cn/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "QuanChai engine, with power range of 15 to 380 hp, which is widely used in automobile, forklift, agricultural equipment, construction machinery and Generating Sets",
+        "Generator Set Diesel Engines",
+        "It has the manufacturing capacity of more than 600000 multi cylinder diesel engines",
+        "QUANCHAI has a technology R&D team with 350 engineers",
+        "Quanchai Engine Co., Ltd, founded in 1998",
+        "Quanchai Engine Co, Ltd, founded in 1949"
+      ],
+      "file": "sources/quanchai/1.md"
+    },
+    {
+      "n": 102,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=1203",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Engine platform | Model | Bore×Stroke | Displacement | Fuel system | Intake way | Standby | Speed r/min | Output frequency （Hz） | Flywhee lcover type | Flywheel type"
+      ],
+      "file": "sources/quanchai/102.md"
+    },
+    {
+      "n": 103,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=2306",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Compression ratio 压缩比 | 17.5:1 |"
+      ],
+      "file": "sources/quanchai/103.md"
+    },
+    {
+      "n": 104,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=2304",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| Compression ratio 压缩比 | 17.5:1 |"
+      ],
+      "file": "sources/quanchai/104.md"
+    },
+    {
+      "n": 105,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=2302",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| RATED POWER(KW) 常用功率 | 9 | 11"
+      ],
+      "file": "sources/quanchai/105.md"
+    },
+    {
+      "n": 106,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=2290",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| RATED POWER(KW) 常用功率 | 149 | 164"
+      ],
+      "file": "sources/quanchai/106.md"
+    },
+    {
+      "n": 107,
+      "url": "https://en.quanchai.com.cn/p_display.php?id=2286",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| RATED POWER(KW) 常用功率 | 25 | 30"
+      ],
+      "file": "sources/quanchai/107.md"
+    }
+  ],
+  "confidence": "high",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 102,
+      "title": "Generator Sets Diesel Engine - Anhui Quanchai Engine Co.,ltd",
+      "header": [
+        "| Engine platform | Model | Bore×Stroke | Displacement | Fuel system | Intake way | Standby | Speed r/min | Output frequency （Hz） | Flywhee lcover type | Flywheel type"
+      ],
+      "rows": [
+        "| A | QC380D | 80×90 | 1.357 | (Mechanical or Electronical) | Natural intake | 10 | 1500 | 50 | SAE4 # | SAE7.5\"",
+        "| 12 | 1800 | 60",
+        "| QC385D | 85×90 | 1.532 | 11 | 1500 | 50",
+        "| 13.2 | 1800 | 60",
+        "| QC480D | 80×90 | 1.809 | 14 | 1500 | 50",
+        "| 17 | 1800 | 60",
+        "| B | N485D | 85×95 | 2.156 | 17 | 1500 | 50",
+        "| 20 | 1800 | 60",
+        "| N490D | 90×100 | 2.544 | 23 | 1500 | 50",
+        "| 27 | 1800 | 60",
+        "| 4B5-52C31 | 95×100 | 2.83 | common rail | Turbocharged | 38 | 1500 | 50 | SAE3# | SAE11.5\"",
+        "| 4B5-62C31 | 45.5 | 1800 | 60",
+        "| C | QC490D | 90×105 | 2.67 | (Mechanical or Electronical) | Natural intake | 24 | 1500 | 50 | SAE4# OR SAE3# | SAE7.5\"or SAE10 \"or SAE11.5\"",
+        "| 28 | 1800 | 60",
+        "| QC498D | 98×105 | 3.17 | 28 | 1500 | 50",
+        "| 33 | 1800 | 60",
+        "| 4C2-40C31 | 90×105 | 2.67 | common rail | 30 | 1800 | 60",
+        "| 4C2-35C31 | 25.8 | 1500 | 50",
+        "| D | 4102D | 102×118 | 3.857 | (Mechanical o r Electronical) | 33 | 1500 | 50 | SAE3# | SAE10\" or SAE11.5\"",
+        "| 39.6 | 1800 | 60",
+        "| 4105D | 105×118 | 4.087 | 38 | 1500 | 50",
+        "| 45 | 1800 | 60",
+        "| M | QC4115D | 115×135 | 5.61 | 60 | 1500 | 50 | SAE11.5\"",
+        "| 66 | 1800 | 60",
+        "| QC4112D | 112×135 | 5.32 | 55 | 1500 | 50",
+        "| 60 | 1800 | 60",
+        "| QC4112ZD | Turbocharged | 80 | 1500 | 50",
+        "| 88 | 1800 | 60",
+        "| QC4112ZLD | Turbocharged and Inter-cooled | 95 | 1500 | 50",
+        "| 105 | 1800 | 60",
+        "| QC6112ZLD | 7.98 | Electronical | 165 | 1500 | 50 | SAE2#",
+        "| 182 | 1800 | 60",
+        "| QC6112ZD | (Mechanical o r Electronical) | Turbocharged | 125 | 1500 | 50",
+        "| 138 | 1800 | 60",
+        "| J | 4J1-110C31 | 105×124 | 4.294 | common rail | Turbocharged | 81 | 1500 | 50 | SAE3#",
+        "| 4J1-130C31 | 95 | 1800 | 60"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Strong power , low vibration , low steady state speed governing rate.",
+      "header": [
+        "| Compression ratio 压缩比 | 17.5:1 |",
+        "| BATTERY VOLTAGE 电池电压 | 12v |",
+        "| Charging generator 发电机 | 750W 14V",
+        "| Starting motor 发动机 | 12v 3.7W"
+      ],
+      "rows": [
+        "| RATED POWER(KW)常用功率 | 89 | 98",
+        "| STANDBY POWER(KW)备用功率 | 71 | 78.4",
+        "| REATED SPEED(R/MIN)标定转速 | 1500 | 1800",
+        "| OUTPUT FRENQUENCY ( 输出电源频率） HZ | 50 | 60",
+        "| FLYWHEEL COVER TYPE ( 飞轮壳接口） | SAE3# | SAE3#",
+        "| FLYWHEEL TYPE （飞轮接口） | SAE 10'' or SAE 11.5'' | SAE 10'' or SAE 11.5''"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Strong power , low vibration , low steady state speed governing rate.",
+      "header": [
+        "| Compression ratio 压缩比 | 17.5:1 |",
+        "| BATTERY VOLTAGE 电池电压 | 12v |",
+        "| Charging generator 发电机 | 750W 14V",
+        "| Starting motor 发动机 | 12v 3.7W"
+      ],
+      "rows": [
+        "| RATED POWER(KW)常用功率 | 66 | 79",
+        "| STANDBY POWER(KW)备用功率 | 52.8 | 63",
+        "| REATED SPEED(R/MIN)标定转速 | 1500 | 1800",
+        "| OUTPUT FRENQUENCY ( 输出电源频率） HZ | 50 | 60",
+        "| FLYWHEEL COVER TYPE ( 飞轮壳接口） | SAE3# | SAE3#",
+        "| FLYWHEEL TYPE （飞轮接口） | SAE 10'' or SAE 11.5'' | SAE 10'' or SAE 11.5''"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "380D - Anhui Quanchai Engine Co.,ltd",
+      "header": [],
+      "rows": [
+        "| RATED POWER(KW) 常用功率 | 9 | 11",
+        "| STANDBY POWER(KW) 备用功率 | 10 | 12",
+        "| REATED SPEED(R/MIN) 标定转速 | 1500 | 1800",
+        "| REATED POWER FOR GENERATOR SETS (KVA) 机组常用输出功率 | 9 | 11",
+        "| STANDBY POWER FOR GENERATOR SETS (KVA) 机组备用输出功率 | 10 | 12",
+        "| REATED POWER FOR GENERATOR SETS(KW ) 机组常用输出功率 | 7.2 | 8.8",
+        "| STANDBY POWER FOR GENERATOR SETS (KW) 机组备用输出功率 | 8 | 10"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "380D - Anhui Quanchai Engine Co.,ltd",
+      "header": [
+        "| POWER 功率 | RATED 常用 | STANDBY 备用"
+      ],
+      "rows": [
+        "| 100% FULL LOAD 100% 负荷 | 2.61 | 2.7",
+        "| 75% LOAD 75% 负荷 | 1.9 | 2.1",
+        "| 50% LOAD 50% 负荷 | 1.35 | 1.5",
+        "| 25%LOAD 25% 负荷 | 0.99 | 1.1"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "QC6112ZLD - Anhui Quanchai Engine Co.,ltd",
+      "header": [],
+      "rows": [
+        "| RATED POWER(KW) 常用功率 | 149 | 164",
+        "| STANDBY POWER(KW) 备用功率 | 165 | 182",
+        "| REATED SPEED(R/MIN) 标定转速 | 1500 | 1800",
+        "| REATED POWER FOR GENERATOR SETS (KVA) 机组常用输出功率 | 149 | 164",
+        "| STANDBY POWER FOR GENERATOR SETS (KVA) 机组备用输出功率 | 165 | 182",
+        "| REATED POWER FOR GENERATOR SETS(KW ) 机组常用输出功率 | 119 | 131",
+        "| STANDBY POWER FOR GENERATOR SETS (KW) 机组备用输出功率 | 132 | 146"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "QC6112ZLD - Anhui Quanchai Engine Co.,ltd",
+      "header": [
+        "| POWER 功率 | RATED 常用 | STANDBY 备用"
+      ],
+      "rows": [
+        "| 100% FULL LOAD100% 负荷 | 30.36 | 33.06",
+        "| 75% LOAD 75% 负荷 | 23.79 | 24.5",
+        "| 50% LOAD 50% 负荷 | 16.75 | 17.2",
+        "| 25%LOAD 25% 负荷 | 12.1 | 13.1"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "QC498D - Anhui Quanchai Engine Co.,ltd",
+      "header": [],
+      "rows": [
+        "| RATED POWER(KW) 常用功率 | 25 | 30",
+        "| STANDBY POWER(KW) 备用功率 | 28 | 33",
+        "| REATED SPEED(R/MIN) 标定转速 | 1500 | 1800",
+        "| REATED POWER FOR GENERATOR SETS (KVA) 机组常用输出功率 | 25 | 30",
+        "| STANDBY POWER FOR GENERATOR SETS (KVA) 机组备用输出功率 | 28 | 33",
+        "| REATED POWER FOR GENERATOR SETS(KW ) 机组常用输出功率 | 20 | 24",
+        "| STANDBY POWER FOR GENERATOR SETS (KW) 机组备用输出功率 | 22.5 | 26.4"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "QC498D - Anhui Quanchai Engine Co.,ltd",
+      "header": [
+        "| POWER 功率 | RATED 常用 | STANDBY 备用"
+      ],
+      "rows": [
+        "| 100% FULL LOAD100% 负荷 | 2.61 | 2.7",
+        "| 75% LOAD 75% 负荷 | 1.9 | 2.1",
+        "| 50% LOAD 50% 负荷 | 1.35 | 1.5",
+        "| 25%LOAD 25% 负荷 | 0.99 | 1.1"
+      ]
+    }
+  ]
+}

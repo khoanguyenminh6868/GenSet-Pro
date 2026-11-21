@@ -1,0 +1,69 @@
+{
+  "id": "zt-power",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "ZT Power Equipment Co.,Ltd",
+    "zh": null,
+    "brands": [
+      "ZT Power"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": null,
+    "city": "Taizhou"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Thiết kế, sản xuất, bán và hậu mãi tổ máy, có mạng lưới nhà phân phối quốc tế",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cn1412726116/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "ZT Power Equipment Co.,Ltd",
+        "Based on many years experience of generator set’s design,manufacture,sale and after-sale service,ZT Power has built many distributors in the world.",
+        "Address:TaiAn Road, TaiZhou City, China"
+      ],
+      "file": "sources/zt-power/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

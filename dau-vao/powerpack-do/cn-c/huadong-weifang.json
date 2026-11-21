@@ -1,0 +1,67 @@
+{
+  "id": "huadong-weifang",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": "Weifang Huadong Diesel Engine Co.,Ltd",
+    "zh": null,
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Lắp ráp động cơ diesel cỡ trung tại Duy Phường",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "Middle-sized diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất; khác công ty với 扬州市华东动力机械 (huadong-yangzhou)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.cccme.cn/shop/cn2020g4654/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "Weifang Huadong Diesel Engine Co.,Ltd",
+        "Huadong Diesel Engine Co,.Ltd is a young company assembling middle-sized diesel engines, which locates in Weifang City, Shandong Province of China.",
+        "Address:1800 DEMOCRACY EAST STREET, WEIFANG ECONOMIC AND TECHNOLOGICAL DEVELOPMENT ZONE, SHANDONG"
+      ],
+      "file": "sources/huadong-weifang/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

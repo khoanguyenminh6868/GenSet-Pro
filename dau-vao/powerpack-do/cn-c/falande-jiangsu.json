@@ -1,0 +1,99 @@
+{
+  "id": "falande-jiangsu",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "江苏法兰德电机科技有限公司",
+    "brands": [
+      "法兰德"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Jiangsu",
+    "city": "Wuxi"
+  },
+  "founded": 2009,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than công nghiệp, tàu thủy, cao áp 5–3750 kVA, 110–13800 V",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2009 tại Vô Tích, xưởng 15.000 m², 120 công nhân kỹ thuật",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "工业/船用/高压交流发电机",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 5,
+        "max": 3750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang nhà triển lãm GPOWER (hạng B); chưa tìm website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.powerchinashow.com/news2.asp?id=2755",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "江苏法兰德电机科技有限公司 成立于2009年， 是一家专业生产无刷交流发电机的厂家。 公司坐落于江苏省无锡市，工厂占地15000平方米，拥有120名技术工人",
+        "主要产品有工业交流发电机、船用交流发电机、高压交流发电机，特种交流发电机，功率范围覆盖5kva～3750kva，电压110V～13800v",
+        "公司通过ISO9001：2008质量管理体系。同时，所有交流发电机项目均通过CE认证"
+      ],
+      "file": "sources/falande-jiangsu/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
