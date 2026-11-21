@@ -15,9 +15,14 @@ Nhánh `dau-phat-hang-d2` (từ D1). Đo: `dieu-phoi\dau-vao\dau-phat-hang-d2\` 
 - Leroy-Somer: thêm nguồn [6004] "TAL Rating Table" (leroy-somer.com 5706_en.pdf).
 - `makerAltFix` xét suy giảm khi quyết đầu phát NCC chào có dưới mức.
 
-## Cần Khoa / điều phối quyết
-1. **TAL-A40…A49**: bảng [6004] chỉ nêu "TAL 040 … TAL 049", không nêu TAL-A, nên TAL-A vẫn "chưa rõ". Có coi bảng này áp cho TAL-A không?
-2. **Stamford S4 / S5**: đang ghi Trung Quốc (Khoa 20/11), mâu thuẫn [6003] "The Stamford facility manufactures the STAMFORD range, including the S4, S5, S6 and S7".
+## Khoa đã quyết (21/11/2026: "1. Giữ chưa rõ 2. Ghi chưa rõ")
+1. **TAL-A40…A49**: không áp bảng [6004], giữ "chưa rõ".
+2. **Stamford S4 / S5**: ghi "chưa rõ, cần NCC xác nhận CO" như S6 / S7 (`NO_PLANT` = S4–S7). Dải ngoài S4–S7 (UCI / UCDI, PI, HCI) vẫn Trung Quốc theo Khoa 20/11.
+
+## Đo lại sau quyết định (bản e8173a33, gốc = main fe79f3af)
+- Test 1.356 / 1.356; verify 435 bản ghi, 0 lỗi. Fixture không đổi. Sửa kỳ vọng 2 test nơi SX (S5 → chưa rõ; ca "Trung Quốc" dùng UCI274F).
+- check-all 17 lượt / 47 cấu hình: vẫn đổi đúng 1 cấu hình, IB2600603983 TWD1744GE (ECO40 VL4C → LSA 49.3 M8, nay ở hạng #5).
+- **Hai cấu hình S5L1D-H41 KHÔNG đổi mục xuất xứ** (IB2600603983 #1 S6R2-PTAA-C, #6 4006-23TAG2A; vẫn đạt "Stamford (Anh)"): đầu phát do NCC chào (`fromMaker: false`) nên không qua `makerMadeOf`, và HSMT đòi "Nhà sản xuất/nhãn hiệu thuộc nhóm nước G7, EU" tức xét theo thương hiệu (Anh). Luật "chưa rõ" chỉ áp cho đầu phát chọn theo tờ hãng; đầu phát NCC chào ở gói đòi NƠI SX vẫn theo nơi mặc định của hãng (Anh), chưa đổi.
 
 ## Chưa làm
 - Kích từ PMG của Mecc Alte: tờ ghi tuỳ chọn theo dải, chưa đọc, HSMT đòi PMG thì để "chưa rõ".
