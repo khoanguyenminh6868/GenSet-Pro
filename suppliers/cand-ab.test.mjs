@@ -75,15 +75,17 @@ const B = () => [
 ];
 const models = (top, mk) => top.filter((r) => (r.e.make || "").startsWith(mk)).map((r) => r.e.model);
 
-test("B: a make's places go to its different models first, then to a second row of the same model", () => {
-  const off = withEnv({ GENBID_CAND_B: "0" }, () => run(B(), { max: 4, makeCap: 2, pinTop: 0 }).top);
-  assert.deepEqual(models(off, "Cummins"), ["KTA19-G3", "KTA19-G3"]);
-  const on = run(B(), { max: 4, makeCap: 2, pinTop: 0 }).top;
-  assert.deepEqual(models(on, "Cummins").sort(), ["KTA19-G3", "NTA855-G2A"]);
-  assert.equal(models(on, "Yuchai").length, 2);
-  // Once every model has a row, a second row of a model comes in.
-  const more = run(B(), { max: 5, makeCap: 3, pinTop: 0 }).top;
-  assert.deepEqual(models(more, "Cummins").sort(), ["KTA19-G3", "KTA19-G3", "NTA855-G2A"]);
+test("B: a model takes rows of B_MIN_SUPPLIERS (2) suppliers first, then the make's other models, then more rows (Khoa 21/11/2026)", () => {
+  // KTA19-G3: 3 suppliers, high scores; NTA855-G2A: 1 supplier, low score. Two places: both KTA19-G3 (two suppliers).
+  const two = run(B(), { max: 4, makeCap: 2, pinTop: 0 }).top;
+  assert.deepEqual(models(two, "Cummins"), ["KTA19-G3", "KTA19-G3"]);
+  assert.equal(new Set(two.filter((r) => r.e.model === "KTA19-G3").map((r) => r.u.supplierId)).size, 2);
+  assert.equal(models(two, "Yuchai").length, 2);
+  // Three places: the third supplier of KTA19-G3 waits for NTA855-G2A (B off: three KTA19-G3).
+  const off = withEnv({ GENBID_CAND_B: "0" }, () => run(B(), { max: 5, makeCap: 3, pinTop: 0 }).top);
+  assert.deepEqual(models(off, "Cummins"), ["KTA19-G3", "KTA19-G3", "KTA19-G3"]);
+  const on = run(B(), { max: 5, makeCap: 3, pinTop: 0 }).top;
+  assert.deepEqual(models(on, "Cummins").sort(), ["KTA19-G3", "KTA19-G3", "NTA855-G2A"]);
 });
 
 test("B: not when the HSMT names an engine make (no places per make: the order of the scores as before)", () => {
@@ -128,8 +130,8 @@ test("B in the 12 places of Chinese makes (CN_ROWS, Khoa 20/11/2026 \"áp luôn 
     set("w1", "Weichai", ["| W1 | 420 | 336 | WP13D405E200 |"], "high"), set("w2", "Weichai", ["| W2 | 420 | 336 | WP13D405E200 |"], "high"),
     set("w3", "Weichai", ["| W3 | 420 | 336 | WP13D405E200 |"], "high"), set("w4", "Weichai", ["| W4 | 420 | 336 | WP13D385E200 |"], "low"),
   ];
-  const o = { max: 2, makeCap: 0, patches: true, origin: "all", pinTop: 0 };
+  const o = { max: 3, makeCap: 0, patches: true, origin: "all", pinTop: 0 };
   const on = run(list, o).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top);
-  assert.deepEqual(models(off, "Weichai"), ["WP13D405E200", "WP13D405E200"]);
-  assert.deepEqual(models(on, "Weichai").sort(), ["WP13D385E200", "WP13D405E200"]);
+  assert.deepEqual(models(off, "Weichai"), ["WP13D405E200", "WP13D405E200", "WP13D405E200"]);
+  assert.deepEqual(models(on, "Weichai").sort(), ["WP13D385E200", "WP13D405E200", "WP13D405E200"]);
 });

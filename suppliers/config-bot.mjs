@@ -1513,6 +1513,9 @@ export const MAKE_CAP = 10;
 const CAND_DEFAULT = { A: "0", B: "1" };
 // Luật B không đụng 5 dòng đầu của xếp hạng cũ (B tắt): Khoa 20/11/2026 "Sửa luật B rồi chạy lại".
 const PIN_TOP = 5;
+// Luật B: một model chỉ nhường chỗ cho model khác của hãng khi đã có dòng của B_MIN_SUPPLIERS NCC KHÁC NHAU (Khoa 21/11/2026,
+// đo cloud lần 2: số NCC mỗi model trong top 30 tụt 3,03 → 1,92, 1.769 cặp lượt-model còn 1 NCC).
+const B_MIN_SUPPLIERS = 2;
 const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? "").trim() || CAND_DEFAULT[k]; return v !== "0"; };
 // Luật A: động cơ có datasheet của CHÍNH hãng động cơ. Chặt: một fact của model (modelFacts) mang `sheet` (bảng của NCC
 // `role: engine_maker` có tiêu đề ghi đúng một mã là model này, hoặc dòng bảng của chính NCC đó ghi đúng mã model; không
@@ -1823,7 +1826,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // xếp hạng cũ; `choose(true, 5 dòng đầu của nó)` giữ 5 dòng đó ở hạng 1–5 (vẫn tính vào trần mỗi động cơ / NCC / hãng),
   // luật B chỉ chia các chỗ từ hạng 6. Thân `choose` không thụt lề thêm để diff gọn.
   const choose = (ruleB, pinned = []) => {
-  const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
+  const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [], engSups = new Map();
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
   // The ceiling per make: not when the HSMT names an engine make or model; a make "A / B" counts for A, a row of no make
   // for "?". `exempt` rows (the places held for the genset makers of Đồng bộ) do not count and are never stopped;
@@ -1832,7 +1835,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
   const open = (r, exempt, free) => !seen.has(choiceKey(r)) && (perEngine.get(r.e.key) || 0) < (r.named ? PER_NAMED_ENGINE : PER_ENGINE) && (perSupplier.get(r.u.supplierId) || 0) < PER_SUPPLIER
     && !(capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap);
-  const take = (r, exempt) => { if (!exempt) add(perMake, makeOf(r)); seen.add(choiceKey(r)); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r); };
+  const take = (r, exempt) => { if (!exempt) add(perMake, makeOf(r)); seen.add(choiceKey(r)); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); engSups.set(r.e.key, (engSups.get(r.e.key) || new Set()).add(r.u.supplierId)); out.push(r); };
   // Luật B (`models`, Khoa 20/11/2026): chỗ của một hãng động cơ chia cho các MODEL khác nhau trước. Một dòng của model đã
   // có k dòng được chọn chờ, khi hãng đó (có hãng; dòng không rõ hãng không xét) còn dòng mở (`open`) điểm > 0 của model
   // mới có ít hơn k dòng; hết model như vậy thì tới dòng thứ hai của cùng model. Xét lại sau mỗi dòng chọn (trần mỗi NCC /
@@ -1845,7 +1848,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     while (out.length < n) {
       const avail = list.filter((r) => open(r, exempt, free)), least = new Map();
       for (const r of avail) if (r.e.make && r.score > 0) { const m = makeOf(r), c = perEngine.get(r.e.key) || 0; if (!least.has(m) || c < least.get(m)) least.set(m, c); }
-      const r = avail.find((x) => !x.e.make || (perEngine.get(x.e.key) || 0) <= (least.get(makeOf(x)) ?? Infinity));
+      // Một model chưa đủ B_MIN_SUPPLIERS NCC nhận ngay dòng của NCC MỚI (dòng thứ hai của cùng NCC vẫn chờ như trên).
+      const fresh = (x) => { const s = engSups.get(x.e.key); return (s?.size || 0) < B_MIN_SUPPLIERS && !s?.has(x.u.supplierId); };
+      const r = avail.find((x) => !x.e.make || fresh(x) || (perEngine.get(x.e.key) || 0) <= (least.get(makeOf(x)) ?? Infinity));
       if (!r) break;
       take(r, exempt);
     }
