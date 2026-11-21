@@ -47,3 +47,11 @@ Tách `^` gây hai việc: khoá trơn mất dữ liệu (6M31, tần số 8M33G
 Dự kiến theo logic, **chưa chạy**: 66 lượt-dòng vào thêm bị loại lại; 21 lượt 8M33D1012E311 vẫn rời; 7 lượt chỉ vì tần số quay lại như main. Điểm −32 của 6M31 vẫn còn trừ khi mượn cả loại thông số; đề xuất không mượn điểm.
 
 Cần quyết: cách mượn này coi `X^` là `X` **chỉ để loại**, có hợp với "tách ra" của Khoa không. Nếu không hợp thì #1026 giữ nguyên sẽ có 66 lượt-dòng lọt như trên.
+
+## Cập nhật: ĐO THỬ cách 2 (Khoa 21/11/2026 "thử cách 2 xem như thế nào rồi tính", chưa duyệt merge)
+
+**Kết quả trên 162 lượt có dòng nhóm `^`, so main: 0 dòng lọt thêm, 21 lượt-dòng 8M33D1012E311 rời (đúng hướng), 7 lượt chỉ vì tần số trở lại như main; top 30 đổi 1 lượt.** Đầu nhánh `15a6b6186c2e1944abd0171c5023233bf415739f`, đã gộp main `6ed2aca5`. Số 162 lượt đo trước khi gộp #1020 (main `7bca1582`, bidhist máy); top 30 toàn bộ chờ đo cloud.
+
+- Code: `twinFacts` trong `suppliers/config-bot.mjs`, không đụng `rowOrder` / `makeGroup`. Test `suppliers/tach-mu-muon-so.test.mjs` (4 ca đọc hồ sơ thật). `suppliers/*.test.mjs` 1379/1379, `quality --check` đạt.
+- **Điểm không mượn** (đề xuất): mượn số là coi `X^` là `X` chỉ để loại; cộng điểm "có thông số" cho số của khoá khác là dùng giả định đó để đẩy dòng lên. Hệ quả đo được: 147 lượt-dòng thấp điểm hơn main (−8 tới −68, gồm 6M31G1000/5 × 25 và 6M31G800/6 × 17 ở −32). Top 30 đổi đúng 1 lượt: IB2200021335#0, jet-power WP6D180E201^ (−48) rời, bobig-power vào.
+- **Hiển thị:** số mượn KHÔNG hiện ở màn nào; bản ghi và thông số của dòng `^` giữ nguyên. Chỉ khi luật dùng số mượn thì `why` của dòng có câu "có dùng số của mã X (nguồn không chú thích ^)".

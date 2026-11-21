@@ -1,0 +1,78 @@
+lượt	đổi
+S:IB2300356147#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+S:IB2400275648#0	maxFuel: null → 8
+S:IB2400275648#1	maxFuel: null → 14.5
+H:IB2200016981#0	maxFuel: null → 3.2; maxFuel75: null → 2.6
+H:IB2200020538#0	maxFuel50: 110 → null
+H:IB2200039869#0	maxFuel: null → 6; maxFuel75: null → 5.21
+H:IB2200062073#1	maxFuel: 5.7 → 7.4; maxFuel75: null → 5.7
+H:IB2200083057#0	maxFuel: null → 104; maxFuel75: null → 80
+H:IB2200087789#1	maxFuel: 36 → 60; maxFuel50: null → 36
+H:IB2300002060#0	maxFuel: null → 60; maxFuel50: null → 36
+H:IB2300002060#1	maxFuel: null → 105; maxFuel50: null → 55
+H:IB2300031444#0	maxFuel: null → 104; maxFuel75: null → 82
+H:IB2300048642#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2300067312#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2300088930#0	maxFuel: null → 7; maxFuel75: null → 5.6
+H:IB2300096122#0	maxFuel: null → 181; maxFuel75: null → 137
+H:IB2300165131#0	maxFuel: 23.1 → null; maxFuel75: null → 23.1
+H:IB2300190927#0	maxFuel: null → 24; maxFuel75: 13 → 18; maxFuel50: null → 13
+H:IB2300190927#1	maxFuel: null → 34; maxFuel75: 18 → 26; maxFuel50: null → 18
+H:IB2300198424#0	maxFuel: null → 10.6; maxFuel75: null → 8.26
+H:IB2300214975#0	maxFuel: null → 70.5; maxFuel75: null → 52.5
+H:IB2300222010#0	maxFuel: null → 4.72; maxFuel75: 2.6 → 3.71; maxFuel50: 2.1 → 2.6
+H:IB2300233670#0	maxFuel: null → 400; maxFuel75: null → 300
+H:IB2300273061#2	maxFuel: 36 → 60; maxFuel50: null → 36
+H:IB2300312776#0	maxFuel: null → 4; maxFuel75: null → 3.5
+H:IB2300349583#0	maxFuel: null → 7.5; maxFuel75: 4.5 → null
+H:IB2300356137#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+H:IB2300356147#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+H:IB2400062394#0	maxFuel: 9 → 12; maxFuel75: null → 9
+H:IB2400062394#1	maxFuel: 17 → 23; maxFuel75: null → 17
+H:IB2400111737#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400111929#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400114476#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400114476#1	maxFuel: null → 10.8; maxFuel75: null → 8
+H:IB2400133175#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400182235#0	maxFuel75: null → 3.8
+H:IB2400191578#0	maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400255232#0	maxFuel: 5.4 → 7.5; maxFuel75: null → 5.4
+H:IB2400257256#0	maxFuel: null → 4.5; maxFuel75: null → 4
+H:IB2400275648#0	maxFuel: null → 8
+H:IB2400275648#1	maxFuel: null → 14.5
+H:IB2400291063#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400298819#0	maxFuel: null → 58.1; maxFuel75: 30 → 43.6; maxFuel50: null → 30
+H:IB2400311120#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400311120#1	maxFuel: null → 10; maxFuel75: null → 8
+H:IB2400311120#2	maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400313681#0	maxFuel: null → 11; maxFuel75: null → 8
+H:IB2400365165#0	maxFuel: null → 4.5
+H:IB2400389856#0	maxFuel: null → 24.2; maxFuel75: 12.5 → 18.2; maxFuel50: null → 12.5
+H:IB2400427929#0	maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → null
+H:IB2400428063#0	maxFuel: null → 6; maxFuel75: null → 5
+H:IB2400434949#0	maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400453359#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400457172#0	maxFuel: null → 3.6; maxFuel75: null → 3.2
+H:IB2400473260#0	maxFuel: null → 4.5; maxFuel75: null → 3.5
+H:IB2400487460#0	maxFuel: null → 3.5; maxFuel75: null → 3
+H:IB2400542354#0	maxFuel: null → 4.5; maxFuel75: null → 4
+H:IB2500177769#0	maxFuel: null → 70; maxFuel75: 35 → 52; maxFuel50: null → 35
+H:IB2500336823#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500385135#0	maxFuel: null → 2.94; maxFuel75: null → 2.2
+H:IB2500385135#1	maxFuel: null → 5.3; maxFuel75: null → 4
+H:IB2500386455#0	maxFuel: 8.6 → 11.6; maxFuel75: null → 8.6
+H:IB2500403212#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500403535#0	maxFuel: null → 3.3; maxFuel75: 2.5 → null
+H:IB2500403535#1	maxFuel: null → 4.5; maxFuel75: 3.5 → null
+H:IB2500442970#0	maxFuel: 4.8 → 4.5; maxFuel75: 4.5 → 3.5; maxFuel50: 3.5 → 3
+H:IB2500465111#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500474803#0	maxFuel: null → 101; maxFuel75: 48.8 → 74; maxFuel50: 26 → 48.8
+H:IB2500531255#0	maxFuel: null → 4.5; maxFuel75: null → 3.6
+H:IB2500531255#1	maxFuel: null → 21; maxFuel75: null → 16
+H:IB2500571943#0	maxFuel: null → 4.5; maxFuel75: null → 3.5
+H:IB2600072892#0	maxFuel: null → 53; maxFuel75: 27 → 39; maxFuel50: null → 27
+H:IB2600334541#0	maxFuel: null → 60; maxFuel50: null → 36
+H:IB2600334541#1	maxFuel: null → 105; maxFuel50: null → 55
+H:IB2600434462#0	maxFuel: 4.8 → 4.5; maxFuel75: 4.5 → 3.5; maxFuel50: 3.5 → 3
+H:IB2600562009#0	maxFuel: 5.4 → 7.5; maxFuel75: null → 5.4
+H:IB2600588204#0	maxFuel: null → 4.8; maxFuel75: null → 3.6
