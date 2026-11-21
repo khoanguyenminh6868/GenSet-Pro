@@ -7,4 +7,4 @@
 - Thời gian chạy: GỐC 2045 s, NHÁNH 2062 s
 - So top 30 (khoá dòng + điểm): giống 1054 lượt, khác 39 lượt
 - Tệp: `gop-goc.json.gz`, `gop-nhanh.json.gz` (chỉ số thông báo, khoá dòng, điểm, cờ; không có bidhist, token hay chữ HSMT)
-- create_trigger: sẽ thử một lần sau khi đẩy; kết quả ghi bên dưới.
+- create_trigger: đã thử một lần, công cụ TỪ CHỐI (routine_bridge_target_other_session: phiên này không được đánh thức phiên khác của chủ). Không tìm đường khác.
