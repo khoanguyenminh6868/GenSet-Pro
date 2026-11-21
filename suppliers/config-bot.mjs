@@ -4427,6 +4427,14 @@ function sheetFuel(engFacts, key) {
   const hits = (engFacts || []).filter((f) => f.sheet && f.key === key).map((f) => ({ f, n: normFig(f, NORM_CTX.get(f), { unit: "L/h", load: FUEL_LOAD[key] }) })).filter((x) => x.n.ok && x.n.r.num != null && x.n.r.cond?.load === FUEL_LOAD[key]);
   return hits.length && new Set(hits.map((x) => x.n.r.num)).size === 1 ? { f: hits[0].f, v: hits[0].n.r.num } : null;
 }
+// The fuel tolerance the fact's own table writes ("Fuel consumption tolerance +/- 5%"), as written; null when it writes none.
+function fuelTolOf(f) {
+  for (const l of NORM_CTX.get(f)?.rows || []) {
+    const m = String(l).match(/(?:fuel|consumption)[^|]*?toleran\w*[^\d|]*?(?:\+\s*\/\s*-|±)\s*(\d+(?:[.,]\d+)?)\s*%/i);
+    if (m) return m[1];
+  }
+  return null;
+}
 export function fuelChecks(c, reqs, row, engFacts = []) {
   if (!row && !engFacts.length) return;
   for (const r of reqs) {
@@ -4449,7 +4457,8 @@ export function fuelChecks(c, reqs, row, engFacts = []) {
         const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
         if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
         const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${sh.v} L/h (${sh.f.label})`, sourceQuote: sh.f.line, factSrc: { supplierId: sh.f.supplierId, n: sh.f.n, line: sh.f.line }, part: "genset", level: r.level || "core", status: sh.v <= max + 1e-9 ? "met" : "not_met", byCode: true, rule: "to-hang-tieu-hao",
-          note: `Code so ${sh.v} L/h trên tờ hãng động cơ ${c.engine?.model || ""} (${sh.f.supplierId} [${sh.f.n}], ${sh.f.label}) với mức HSMT ≤ ${max} L/h; dòng tổ máy không ghi số so được.` };
+          // Khoa 21/11/2026: a figure of the engine maker stays met at the limit; the check says it is the engine's, and its tolerance when the sheet writes one.
+          note: `Số của động cơ theo tờ hãng${fuelTolOf(sh.f) ? `, dung sai ±${fuelTolOf(sh.f)} %` : ""}. Code so ${sh.v} L/h trên tờ hãng động cơ ${c.engine?.model || ""} (${sh.f.supplierId} [${sh.f.n}], ${sh.f.label}) với mức HSMT ≤ ${max} L/h; dòng tổ máy không ghi số so được.` };
         if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
         continue;
       }

@@ -22,6 +22,7 @@ test("Baudouin 6M31G825/5 [1021]: cột L/hr, không phải gr/kWh; số xi lanh
   fuelChecks(c, reqs, { specs: [], line: "x" }, facts);
   assert.deepEqual(c.checks.map((x) => x.status), ["met", "met", "met"]);
   assert.ok(c.checks[0].note.includes("156 L/h"));
+  assert.ok(c.checks.every((x) => x.note.startsWith("Số của động cơ theo tờ hãng, dung sai ±5 %")), "Khoa 21/11/2026: ghi nguồn là động cơ + dung sai");
   const over = { engine: { model: "6M31G825/5" }, checks: [] };
   fuelChecks(over, [{ code: "fuel_consumption", item: "Tiêu hao", requirement: "≤ 150 lít/giờ", level: "core" }], { specs: [], line: "x" }, facts);
   assert.equal(over.checks[0].status, "not_met");

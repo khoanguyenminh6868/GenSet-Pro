@@ -1803,8 +1803,10 @@
       ["pengpai-yangzhou", 126, "PPDL-V250", "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"],
       ["pengpai-yangzhou", 126, "PPDL-V280", "| PPDL-V280 | 280/350 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 9.36 L (dung tích TAD940GE / TAD941GE) cho động cơ Volvo Penta D13 (12,8 L): bỏ riêng dung tích" })),
-    // longkai n1158 / n1159 / n1016 (bo-doc-tieu-hao 21/11/2026): "No. cylinders | 6 in line" on 20M33 (150*185, 65.4 L = 20 cylinders),
-    // "12 in line" on SC25G610D2 (a V engine). Unread before "N in line" was read; left unread, no figure written in its place.
+    // longkai n1158 / n1159 / n1016 (bo-doc-tieu-hao 21/11/2026, chờ điều phối duyệt): "6 in line" on 20M33D2020E310 (the sheet's 159*159, 19 L
+    // are a 6-cylinder engine's; other suppliers write 20, 150*185, 65.4 L), "6 in line" on 20M33D2210E310 (its own 150*185, 65.4 L = 20
+    // cylinders), "12 in line" on SC25G610D2 (12 fits its 135*150, 25.8 L; "in line" is against 8 suppliers writing V, 2 write L).
+    // Unread before "N in line" was read; left unread, no figure written in its place.
     ...[[1158, "LG1600WP", "| No. cylinders | 6 in line"], [1159, "LG1800WP", "| No. cylinders | 6 in line"], [1016, "LG350SC", "| No. cylinders | 12 in line"]].map(([n, genset, line]) => (
       { supplierId: "longkai-power", n, genset, line, act: "dropspec", keys: ["cyl"], khoa: "điều phối, bo-doc-tieu-hao 21/11/2026", why: "mẫu datasheet ghi số xi lanh / kiểu trái động cơ của dòng: bỏ riêng xi lanh, giữ dòng" })),
     // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
