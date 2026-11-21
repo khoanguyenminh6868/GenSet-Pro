@@ -142,10 +142,10 @@ test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E32
   assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
 });
 
-test("kingway-power n117 (sua-so-le-1, Khoa 21/11/2026 \"Khí\"): bản ghi KGD250B ghi khí theo dòng \"Fuel | Biogas\" của bảng Engine Specifications của trang (mức B)", () => {
+test("kingway-power n117 (sua-so-le-1, Khoa 21/11/2026 \"Khí\"): bản ghi SC9D340D2 ghi khí theo dòng \"Fuel | Biogas\" của bảng Engine Specifications của trang (mức B)", () => {
   const k = rec("kingway-power", 117);
   assert.equal(k.length, 1);
-  assert.equal(k[0].genset, "KGD250B");   // bản ghi duy nhất của n117 là vai đầu phát "Kingway KAI250" (bộ đọc không tạo bản ghi động cơ SC9D340D2), mang cả thông số động cơ
+  assert.equal(k[0].model, "SC9D340D2");
   assert.deepEqual([k[0].fuel, k[0].fuelFrom], ["gas", "B"]);
   assert.ok(/\| Fuel \| Biogas/.test(k[0].fuelWhy) && /Engine Specifications/.test(k[0].fuelWhy));
 });
