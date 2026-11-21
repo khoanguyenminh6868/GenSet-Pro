@@ -23,7 +23,7 @@ H:IB2300190927#1	maxFuel75: null → 18
 H:IB2300236743#1	maxDisp: null → 2.8; minCyl: null → 4; maxFuel: null → 6; maxFuel75: null → 4.5
 H:IB2300243355#0	minPrime: null → {"kVA":100}
 H:IB2300243355#1	minCyl: null → 6
-H:IB2300245748#0	minDisp: null → 55; minPrime: null → {"kVA":8.5}
+H:IB2300245748#0	minPrime: null → {"kVA":8.5}
 H:IB2300245748#2	minPrime: {"kVA":12} → null
 H:IB2300253227#0	minDisp: null → 5.9; minCyl: null → 6
 H:IB2300260615#0	maxDisp: null → 20
@@ -44,7 +44,7 @@ H:IB2400237184#0	minDisp: null → 3.62; maxFuel75: null → 8.25
 H:IB2400237184#1	minDisp: null → 11.6; maxFuel75: null → 71.25
 H:IB2400265203#0	minCyl: null → 3; minPrime: null → {"kW":40,"kVA":50}
 H:IB2400265203#1	minCyl: null → 3; minPrime: null → {"kW":80,"kVA":100}
-H:IB2400275648#0	minDisp: null → 3.3; minCyl: null → 4
+H:IB2400275648#0	minDisp: null → 3.3; maxDisp: 8 → null; minCyl: null → 4
 H:IB2400275648#1	maxDisp: 8 → null
 H:IB2400291063#0	minDisp: null → 1.8; minCyl: null → 3
 H:IB2400291063#1	minDisp: 1.8 → null; minCyl: 3 → null
@@ -83,6 +83,7 @@ H:IB2500403535#1	minCyl: null → 3; maxFuel75: null → 3.5
 H:IB2500410768#0	maxFuel: null → 7.5
 H:IB2500410768#2	maxFuel: 7.5 → null
 H:IB2500460613#0	minCyl: null → 3
+H:IB2500460613#2	minDisp: 2.3 → null
 H:IB2500500319#1	minPrime: null → {"kVA":12}
 H:IB2500531255#0	minDisp: null → 2.3; minCyl: null → 4
 H:IB2500531255#1	minCyl: null → 4
