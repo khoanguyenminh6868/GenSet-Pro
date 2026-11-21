@@ -20,3 +20,11 @@ IB2500430242#0 gốc hạng 5 | uleengen 404A-22G1 điểm 281 | top có: cùng 
 
 === HSMT ghi số xi lanh trơ ≤ 3
 IB2200005266#0 =1 (4 dòng): Máy phát điện 10kVA: Kiểu động cơ: Động cơ Diesel 4 thì, 1 xi lanh, phun nhiên liệu trực t
+IB2200035219#0 =1 (1 dòng): Động cơ - Kiểu động cơ: Động cơ diesel 4 thì, 1 xi lanh, phun nhiên liệu trực tiếp // Động cơ - Dung tích xi lanh: 0.499 (L)
+IB2200062524#0 =1 (1 dòng): Máy 6,5 KVA - Động cơ: kiểu động cơ: Động cơ diezel 4 thì, 1 xi lanh, phun nhiên liệu trực // Máy 6,5 KVA - Động cơ: dung tích xi lanh: 0.499 (L).
+IB2300026252#0 =3 (11 dòng): Máy phát điện dự phòng: Động cơ - kiểu: 4 thì, 3 xylanh thẳng hàng, làm mát bằng nước kết  // Máy phát điện dự phòng: Động cơ - hệ số nén, dung tích xy lanh: Hệ số nén ≤ 21.0; dung tíc
+IB2300107769#0 =2 (8 dòng): Máy phát điện 3 pha 13KVA: Động cơ - Kiểu động cơ: Động cơ xăng 4 kì kiểu OHV, trục P.T.O  // Máy phát điện 3 pha 13KVA: Động cơ - Số xi lanh: 2 // Máy phát điện 3 pha 13KVA: Động cơ - Dung tích xi lanh: 720 cc
+IB2300108940#1 =2 (7 dòng): Mục 1 - Máy 20/22 kVA: Động cơ - dung tích xilanh: ≥ 2.197 L // Mục 2 - Máy 11 kVA/11 kW: Động cơ - số xy lanh: 2 xi lanh // Mục 2 - Máy 11 kVA/11 kW: Động cơ - tổng dung tích xy lanh: ≥ 674 cc
+IB2300220876#0 =3 (8 dòng): Động cơ: Kiểu động cơ: 4 thì, 3 xi lanh thẳng hàng, làm mát bằng nước kết hợp quạt gió // Động cơ: Dung tích xy lanh: ≤ 1830 cc
+IB2300281362#0 =3 (8 dòng): Động cơ: Kiểu động cơ: 4 thì, 3 xi lanh thẳng hàng, làm mát bằng nước kết hợp quạt gió // Động cơ: Dung tích xy lanh: ≤ 1830 cc
+IB2300305914#0 =1 (2 dòng): Động cơ: Dung tích xilanh: Không nhỏ hơn 500 cc. // Động cơ: Số xilanh: Không ít hơn 1 xilanh.
