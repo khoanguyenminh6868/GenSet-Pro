@@ -1,0 +1,320 @@
+nhom	ncc	n	bang	ket-cuc	moi-note	tieu-de
+V2	airman	2002	1	không có mã động cơ	không có mã động cơ	SDG220S-8E1 – AIRMAN® 220 kVA Generator (technical specifications)
+V2	airman	2009	8	không có mã động cơ	không có mã động cơ	SDG150S-8E1 – AIRMAN® 150 kVA Generator (technical specifications)
+V5	baudouin	121	58	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		12M55 - Baudouin PowerKit Diesel Engines
+V2	bauer-generator	2002	1	không có mã động cơ	không có mã động cơ	Bauer GFS-16 ATS – Technische Daten
+F1	biao-xiamen	105	4	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		50 Degree 1000kva Soundproof Perkins Diesel Generator Set 4008TAG2
+F1	biao-xiamen	105	5	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		50 Degree 1000kva Soundproof Perkins Diesel Generator Set 4008TAG2
+F1	bobig-power	115	4	không có mã động cơ	không có mã động cơ	500kw 625kVA Diesel Generator Set Weichai Engine 6M33D572E200 500kW 625kVA 50Hz 400V 3 Phase Silent Type Genset
+F1	bobig-power	119	8	tiêu đề không có mã	tiêu đề không có mã [Weichai 800KW Silent Diesel Generator Set with DSE6120 Panel]	Weichai 800KW Silent Diesel Generator Set with DSE6120 Panel
+F1	bobig-power	140	22	không có mã động cơ	không có mã động cơ	Silent Type 250KW 313KVA Diesel Generator Set Powered by YTO YM6S9L-D Engine OEM Price Generator
+V2	cgen-alternator	2001	0	tiêu đề có mã lẫn công suất / nhiều lựa chọn	tiêu đề có mã lẫn công suất / nhiều lựa chọn [MYI182/184]	MYI182/184 Brushless Alternator
+V2	cgen-alternator	2003	2	không có mã động cơ	không có mã động cơ	MYI274 Brushless Alternator
+V2	cgen-alternator	2004	3	không có mã động cơ	không có mã động cơ	MYI4 Brushless Alternator
+V2	cgen-alternator	2005	4	không có mã động cơ	không có mã động cơ	MYI5 Brushless Alternator
+V2	cgen-alternator	2006	5	không có mã động cơ	không có mã động cơ	MYI6 Brushless Alternator
+F1	conductorjasa	115	47	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Output | 2250 kVA | 1980 kW] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Output | 2475 kVA | 2178 kW] ¦ không có mã động cơ	Genset Perkins 2250 kVA – PJPS-2250 WP (2500 kVA Stdby)
+V2	cps-generators	2015	16	không có mã động cơ	không có mã động cơ	CPS AV500S – thông số tổ máy
+V2	deman-power	2001	0	không có mã động cơ	không có mã động cơ	Optional Configurations (38 kVA-250 kVA Generator)
+V2	dianbida	101	0	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：18(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：25(kw)] ¦ không có mã động cơ	DD-16-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	102	1	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：22(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：28(kw)] ¦ không có mã động cơ	DD-20-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	103	2	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：24(kw)] ¦ không có mã động cơ	DD-20-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	104	3	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：24(kw)] ¦ không có mã động cơ	DD-20-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	105	4	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：28(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：42(kw)] ¦ không có mã động cơ	DD-25-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	106	5	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ không có mã động cơ	DD-30-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	107	6	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：41(kw)] ¦ không có mã động cơ	DD-30-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	109	7	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：42(kw)] ¦ không có mã động cơ	DD-30-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	110	8	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ không có mã động cơ	DD-30-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	111	9	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：40(kw)] ¦ không có mã động cơ	DD-30-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	112	10	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：40(kw)] ¦ không có mã động cơ	DD-30-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	113	11	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：33(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：36(kw)] ¦ không có mã động cơ	DD-30-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	115	12	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：40(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：48(kw)] ¦ không có mã động cơ	DD-36-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	116	13	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-45-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	117	14	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-40-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	118	15	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：56(kw)] ¦ không có mã động cơ	DD-40-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	119	16	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：44(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-40-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	120	17	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：50(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-45-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	121	18	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：69(kw)] ¦ không có mã động cơ	DD-50-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	122	19	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-50-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	123	20	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ không có mã động cơ	DD-50-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	124	21	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：68(kw)] ¦ không có mã động cơ	DD-50-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	125	22	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：68(kw)] ¦ không có mã động cơ	DD-50-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	126	23	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：66(kw)] ¦ không có mã động cơ	DD-50 -潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	128	24	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：66(kw)] ¦ không có mã động cơ	DD-50-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	129	25	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：70(kw)] ¦ không có mã động cơ	DD-50-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	130	26	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：55(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：70(kw)] ¦ không có mã động cơ	DD-50-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	131	27	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：66(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：83(kw)] ¦ không có mã động cơ	DD-60-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	132	28	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：66(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：74(kw)] ¦ không có mã động cơ	DD-60-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	134	29	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：66(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：86(kw)] ¦ không có mã động cơ	DD-60-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	135	30	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：70(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：86(kw)] ¦ không có mã động cơ	DD-64-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	136	31	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：70(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：84(kw)] ¦ không có mã động cơ	DD-64-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	137	32	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：70(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：80(kw)] ¦ không có mã động cơ	DD-64-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	138	33	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：72(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：80(kw)] ¦ không có mã động cơ	DD-65-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	139	34	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：77(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：84(kw)] ¦ không có mã động cơ	DD-70-沃尔沃发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	140	35	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：77(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：84(kw)] ¦ không có mã động cơ	DD-70-沃尔沃发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	141	36	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：77(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ không có mã động cơ	DD-70-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	142	37	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：77(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：74(kw)] ¦ không có mã động cơ	DD-70-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	143	38	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：77(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ không có mã động cơ	DD-70-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	144	39	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：83(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：105(kw)] ¦ không có mã động cơ	DD-75-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	145	40	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：82(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：90(kw)] ¦ không có mã động cơ	DD-75-潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	146	41	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：82(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ không có mã động cơ	DD-75-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	147	42	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：96(kw)] ¦ không có mã động cơ	DD-80-沃尔沃发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	148	43	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ không có mã động cơ	DD-80-沃尔沃发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	149	44	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：105(kw)] ¦ không có mã động cơ	DD-80-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	151	45	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：110(kw)] ¦ không có mã động cơ	DD-80-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	153	46	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：105(kw)] ¦ không có mã động cơ	DD-80-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	154	47	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：105(kw)] ¦ không có mã động cơ	DD-80-上柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	155	48	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：100(kw)] ¦ không có mã động cơ	DD-80 -潍柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	156	49	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：92(kw)] ¦ không có mã động cơ	DD-80-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	157	50	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：97(kw)] ¦ không có mã động cơ	DD-80-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	158	51	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：88(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：97(kw)] ¦ không có mã động cơ	DD-80-康明斯发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+V2	dianbida	159	52	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：99(kw)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [备用功率：112(kw)] ¦ không có mã động cơ	DD-90-玉柴发电机组-柴油发电机组厂家_价格_移动/静音发电机组-电必达动力设备(江苏)有限公司-官网
+F1	gfe-power	103	1	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 2200 | 2750] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 2400 | 3000] ¦ không có mã động cơ	Baudouin 2750kVA Diesel Generator - GFE3000BSC
+F1	gfe-power	104	2	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 1600 | 2000] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 1760 | 2200] ¦ không có mã động cơ	GFE2200CSC 2200kVA Diesel Generator Fitted With A Cummins Engine
+F1	gfe-power	105	3	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 1500 | 1875] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 1600 | 2000] ¦ không có mã động cơ	GFE2000CSC 2000kVA Diesel Generator Fitted With A Cummins Engine
+F1	gfe-power	106	4	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 2000 | 2500] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 2200 | 2750] ¦ không có mã động cơ	Baudouin 2500kVA Diesel Generator - GFE2750BSSC
+F1	gfe-power	108	5	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 1150 | 1500] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 1250 | 1650] ¦ không có mã động cơ	GFE1650PSO Perkins Diesel Generator - 1500kVA | GFE Power Products
+F1	gfe-power	110	6	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 720 | 900] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 792 | 990] ¦ không có mã động cơ	Baudouin 900kVA Diesel Generator - GFE990BSC
+F1	gfe-power	112	7	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 600 | 750] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power (ERP) | 660 | 825] ¦ không có mã động cơ	KOHLER-SDMO D830 825kVA Diesel Generator | GFE Power Products
+F1	gfe-power	114	8	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 560 | 700] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power (ERP) | 616 | 770] ¦ không có mã động cơ	KOHLER-SDMO V770C2 770kVA Diesel Generator | GFE Power Products
+F1	gfe-power	116	9	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 520 | 650] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 572 | 715] ¦ không có mã động cơ	KOHLER-SDMO V715C2 715kVA Diesel Generator | GFE Power Products
+F1	gfe-power	118	10	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 800 | 1000] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 880 | 1100] ¦ không có mã động cơ	Baudouin 1000kVA Diesel Generator - GFE1100BSC
+F1	gfe-power	120	11	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 473 | 591] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 520 | 650] ¦ không có mã động cơ	KOHLER-SDMO V650C2 650kVA Diesel Generator | GFE Power Products
+F1	gfe-power	122	12	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 472 | 590] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 520 | 650] ¦ không có mã động cơ	GFE650CSC 650kVA Diesel Generator Fitted With A Cummins Engine
+F1	gfe-power	123	13	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 400 | 500] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power (ERP) | 440 | 550] ¦ không có mã động cơ	KOHLER-SDMO V550C2 550kVA Diesel Generator | GFE Power Products
+F1	gfe-power	125	14	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 240 | 300] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 280 | 350] ¦ không có mã động cơ	GFE 300kVA Diesel Generator - GFE350GGF
+F1	gfe-power	126	15	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 280 | 350] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 308 | 385] ¦ không có mã động cơ	GFE Perkins PRO 350kVA Diesel Generator - GFE385PLC PRO | GFE Power Products
+F1	gfe-power	128	16	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 240 | 300] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 264 | 330] ¦ không có mã động cơ	KOHLER-SDMO D330 330kVA Diesel Generator | GFE Power Products
+F1	gfe-power	130	17	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 220 | 275] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 240 | 300] ¦ không có mã động cơ	Baudouin 275kVA Diesel Generator - GFE300BSC
+F1	gfe-power	134	18	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 184 | 230] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 200 | 250] ¦ không có mã động cơ	Baudouin 230kVA Diesel Generator - GFE250BSC
+F1	gfe-power	136	19	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 160 | 200] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 176 | 220] ¦ không có mã động cơ	KOHLER-SDMO J220K 200kVA Diesel Generator | GFE Power Products
+F1	gfe-power	138	20	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 120 | 150] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power (ERP) | 132 | 165] ¦ không có mã động cơ	KOHLER-SDMO J165 165kVA Diesel Generator | GFE Power Products
+F1	gfe-power	140	21	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 80 | 100] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 99 | 124] ¦ không có mã động cơ	GFE 100kVA Diesel Generator - GFE110GGF
+F1	gfe-power	145	24	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 40 | 50] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 44 | 55] ¦ không có mã động cơ	Baudouin 50kVA Diesel Generator - GFE55BSC
+F1	gfe-power	147	25	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 32 | 40] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Emergency Standby Power (ESP) | 35 | 44] ¦ không có mã động cơ	Baudouin 40kVA Diesel Generator - GFE44BSC
+F1	gfe-power	1007	30	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY: | 1760 | kW(2360 HP)@1500 RPM] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| PRIME: | 1650 | kW(2213 HP)@1500 RPM] ¦ không có mã động cơ	Datasheet: KTA50-G16A.pdf
+F1	gfe-power	1033	70	không có mã động cơ	không có mã động cơ	Datasheet: J220.pdf
+F1	gfe-power	1034	72	không có mã động cơ	không có mã động cơ	Datasheet: KOHLER-SDMO-J165.pdf
+V2	gfe-power	1036	74	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Maximum stand-by power at rated RPM | (kW) | 85] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| PRP | ESP] ¦ không có mã động cơ	Datasheet: KOHLER-SDMO-J88.pdf
+F1	gfe-power	1040	77	không có mã động cơ	không có mã động cơ	Datasheet: S1L2-R1.pdf
+F1	grupel	101	0	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Stand-by Power (STP) | 3,8 | 3] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 3,5 | 2,8] ¦ không có mã động cơ	Portable Generator GR3000 - 3kW - GRUPEL
+F1	grupel	103	1	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Stand-by Power (STP) | 8,6 | 6,9] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 7,9 | 6,3] ¦ không có mã động cơ	Portable Gasoline Generator GR6500 | Grupel
+F1	grupel	105	2	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Stand-by Power (STP) | 2,8 | 2,2] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 2,5 | 2] ¦ không có mã động cơ	Portable Inverter Generator GR2500 - 2.2kW - GRUPEL
+F1	grupel	107	3	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Stand-by Power (STP) | 13,8 | 11] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power (PRP) | 15 | 12] ¦ không có mã động cơ	Portable Gasoline Generator GR12000 | Grupel
+V2	hgi-generators	2001	0	không có công suất prime / standby ghi rõ ở phần tổ máy	không có công suất prime / standby ghi rõ ở phần tổ máy [HRD270T1]	HRD270T1 21.6kW (27kVA) (Multi Phase)
+V2	hgi-generators	2006	5	không có mã động cơ	không có mã động cơ	HRD200T1 16kW (20kVA) (Multi Phase)
+V2	hyundai-power-products	5001	1	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Power | KVA / KW | 100 / 80] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power | KVA / KW | 110 / 88] ¦ không có mã động cơ	DHY110KSE
+V2	hyundai-power-products	5001	6	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Genset prime power Kw | ● standard] ¦ không có mã động cơ	DHY110KSE Control panel measurement, displayment
+V2	hyundai-power-products	5001	7	không có mã động cơ	không có mã động cơ	DHY110KSE Control panel alarm, shutdown function
+V2	kachai-hangzhou	104	3	tiêu đề nêu dòng sản phẩm / series, không phải một model	tiêu đề nêu dòng sản phẩm / series, không phải một model [Diesel Generators from 9kVA to 100kVA-KACHAI]	Diesel Generators from 9kVA to 100kVA-KACHAI
+V2	kaichen-genset-jiangsu	101	0	không có mã động cơ	không có mã động cơ	3KW小型柴油发电机ECP3500E-江苏凯宸发电机有限公司
+V2	kaichen-genset-jiangsu	102	1	không có mã động cơ	không có mã động cơ	5KW小型柴油发电机ECP5500E-江苏凯宸发电机有限公司
+V2	kaichen-genset-jiangsu	103	2	không có mã động cơ	không có mã động cơ	6KW小型柴油发电机ECP6800E-江苏凯宸发电机有限公司
+V2	kaichen-genset-jiangsu	106	3	không có mã động cơ	không có mã động cơ	7KW小型柴油发电机ECP7800E-江苏凯宸发电机有限公司
+V2	kaichen-genset-jiangsu	108	4	không có mã động cơ	không có mã động cơ	8KW小型柴油发电机ECP9500T-江苏凯宸发电机有限公司
+V2	kaichen-genset-jiangsu	110	5	không có mã động cơ	không có mã động cơ	10KW小型柴油发电机ECP11000T-江苏凯宸发电机有限公司
+V2	lei-shing-hong	2001	1	không có mã động cơ	không có mã động cơ	4006-23TAG3A E-unit
+V2	lei-shing-hong	2001	2	không có mã động cơ	không có mã động cơ	4008TAG1A E-unit
+V2	lei-shing-hong	2001	4	không có mã động cơ	không có mã động cơ	4008TAG3A E-unit
+V2	lei-shing-hong	2001	5	không có mã động cơ	không có mã động cơ	4008-30TAG3 E-unit
+V2	lei-shing-hong	2001	6	không có mã động cơ	không có mã động cơ	4012-46TWG2A E-unit
+V2	lei-shing-hong	2001	7	không có mã động cơ	không có mã động cơ	4012-46TAG2A E-unit
+V2	lei-shing-hong	2001	8	không có mã động cơ	không có mã động cơ	4012-46TAG3A E-unit
+V2	lei-shing-hong	2001	9	không có mã động cơ	không có mã động cơ	4016TAG1A E-unit
+V2	lei-shing-hong	2001	11	không có mã động cơ	không có mã động cơ	4016-61TRG1 E-unit
+V2	lei-shing-hong	2001	12	không có mã động cơ	không có mã động cơ	4016-61TRG2 E-unit
+V2	lei-shing-hong	2001	13	không có mã động cơ	không có mã động cơ	4016-61TRG3 E-unit
+V2	lei-shing-hong	2003	19	không có mã động cơ	không có mã động cơ	1506A-E88TAG5
+V2	lei-shing-hong	2004	21	không có mã động cơ	không có mã động cơ	1103A-33TG 1
+V2	lei-shing-hong	2004	22	không có mã động cơ	không có mã động cơ	1103A-33TG2
+V2	lei-shing-hong	2004	23	không có mã động cơ	không có mã động cơ	1104A-441G1
+V2	lei-shing-hong	2004	24	không có mã động cơ	không có mã động cơ	1104A-441G2
+V2	lei-shing-hong	2004	25	không có mã động cơ	không có mã động cơ	1104C-44TAG1
+V2	lei-shing-hong	2004	26	không có mã động cơ	không có mã động cơ	1104C-44TAG2
+V2	lei-shing-hong	2004	27	không có mã động cơ	không có mã động cơ	1104D-44TG1
+V2	lei-shing-hong	2004	28	không có mã động cơ	không có mã động cơ	1104D-F44TG1
+V2	lei-shing-hong	2004	29	không có mã động cơ	không có mã động cơ	1104D-E44TAG1
+V2	lei-shing-hong	2004	30	không có mã động cơ	không có mã động cơ	1104D-E44TAG2
+V2	lei-shing-hong	2004	31	không có mã động cơ	không có mã động cơ	1106A-70TG1
+V2	lei-shing-hong	2004	32	không có mã động cơ	không có mã động cơ	1106A-70TAG2
+V2	lei-shing-hong	2004	33	không có mã động cơ	không có mã động cơ	1106A-70TAG3
+V2	lei-shing-hong	2004	34	không có mã động cơ	không có mã động cơ	1106A-70TAG4
+V2	lei-shing-hong	2005	36	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| 机组功率主用 | 主用12KW/备用15KVA] ¦ không có mã động cơ	403A-15G2
+V2	lei-shing-hong	2005	37	không có mã động cơ	không có mã động cơ	404A-22G1
+V2	lei-shing-hong	2005	38	không có mã động cơ	không có mã động cơ	403D-15G
+V2	lei-shing-hong	2005	39	không có mã động cơ	không có mã động cơ	404D-22G
+V2	lei-shing-hong	2005	40	không có mã động cơ	không có mã động cơ	404D-22TG
+V2	lei-shing-hong	2005	41	không có mã động cơ	không có mã động cơ	404D-22TAG
+V2	lei-shing-hong	2006	43	không có mã động cơ	không có mã động cơ	1206A-E70TTAG2
+V2	lei-shing-hong	2006	44	không có mã động cơ	không có mã động cơ	1206A-E70TTAG3
+V2	lei-shing-hong	2006	45	không có mã động cơ	không có mã động cơ	1204F-E44TTAG2
+V2	lei-shing-hong	2006	46	không có mã động cơ	không có mã động cơ	1206F-E70TTAG3
+V2	lei-shing-hong	2006	47	không có mã động cơ	không có mã động cơ	1206F-E70TTAG4
+V2	lei-shing-hong	2007	49	không có mã động cơ	không có mã động cơ	1706A-E93TAG2
+V2	lei-shing-hong	2008	51	không có mã động cơ	không có mã động cơ	2206C-E13TAG3
+V2	lei-shing-hong	2008	52	không có mã động cơ	không có mã động cơ	2506C-E15TAG1
+V2	lei-shing-hong	2008	53	không có mã động cơ	không có mã động cơ	2506C-E15TAG2
+V2	nanni-industries	2005	4	tiêu đề nêu dòng sản phẩm / series, không phải một model	tiêu đề nêu dòng sản phẩm / series, không phải một model [Q6800 Series - generator ratings (John Deere engine base, Leroy Somer LSAM 44.3 M8)]	Q6800 Series - generator ratings (John Deere engine base, Leroy Somer LSAM 44.3 M8)
+V2	nenjo-generator	102	1	tiêu đề có mã lẫn công suất / nhiều lựa chọn	tiêu đề có mã lẫn công suất / nhiều lựa chọn [HJM12-600KW-Jiangsu]	HJM12-600KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+V2	perkins	101	0	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 1750-2250 kVA (1400-1800 kWe) 1750-2250 kVA (1400-1800 kWe)] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 1925-2500 kVA (1540-2000 kWe) 1925-2500 kVA (1540-2000 kWe)] ¦ không có mã động cơ	5016A-E61TRG Diesel Engines | Perkins
+V2	perkins	105	4	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 20.1 kVA 20.1 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 22.3 kVA 22.3 kVA] ¦ không có mã động cơ	404J-22G Diesel Engines | Perkins
+V2	perkins	106	5	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 40 kVA 40 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 44 kVA 44 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 36 kWe 36 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 40 kWe 40 kWe] ¦ không có mã động cơ	404J-E22TAG Diesel Engines | Perkins
+V2	perkins	107	6	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 60 kVA 60 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 66 kVA 66 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 43 kWe 43 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 47 kWe 47 kWe] ¦ không có mã động cơ	904J-E36TAG Diesel Engines | Perkins
+V2	perkins	109	8	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 32 kVA 32 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 35 kVA 35 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 29 kWe 29 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 32 kWe 32 kWe] ¦ không có mã động cơ	1103D-33G Diesel Engines | Perkins
+V2	perkins	111	10	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 43.7 kVA 43.7 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 48.2 kVA 48.2 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 39.1 - 42.6 kWe 39.1 - 42.6 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 43.1 - 47.1 kWe 43.1 - 47.1 kWe] ¦ không có mã động cơ	1104C-44G Diesel Engines | Perkins
+V2	perkins	114	13	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 60 kVA 60 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 66 kVA 66 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 52 kWe 52 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 56.7-58 kWe 56.7-58 kWe] ¦ không có mã động cơ	1104D-44TG Diesel Engines | Perkins
+V2	perkins	116	15	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 80.0-100 kVA 80.0-100 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 88.0-110 kVA 88.0-110 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 72.7-90.9 kWe 72.7-90.9 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 80.0-100 kWe 80.0-100 kWe] ¦ không có mã động cơ	1104D-E44TAG Diesel Engines | Perkins
+V2	perkins	119	18	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 123.0-180 kVA 123.0-180 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 135.0-200 kVA 135.0-200 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 130.0-182 kWe 130.0-182 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 143.0-200 kWe 143.0-200 kWe] ¦ không có mã động cơ	1106D-E70TAG Diesel Engines | Perkins
+V2	perkins	120	19	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 120 kVA 120 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 132 kVA 132 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 91 kWe 91 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 100 kWe 100 kWe] ¦ không có mã động cơ	1204J-E44TTAG Diesel Engines | Perkins
+V2	perkins	121	20	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 200-250 kVA 200-250 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 225-275 kVA 225-275 kVA] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime | 180 kWe 180 kWe] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby | 200 kWe 200 kWe] ¦ không có mã động cơ	1206A-E70TTAG Diesel Engines | Perkins
+V2	perkins	2001	113	không có mã động cơ	không có mã động cơ	1106A-70TAG — Product Specifications
+V2	perkins	2002	114	không có mã động cơ	không có mã động cơ	404J-22G — Product Specifications
+V2	perkins	2003	115	không có mã động cơ	không có mã động cơ	2606C-E13TAG — Product Specifications
+V2	perkins	2004	116	không có mã động cơ	không có mã động cơ	1103A-33TG — Product Specifications
+V2	perkins	2006	118	không có mã động cơ	không có mã động cơ	2806J-E18TAG1 — Product Specifications
+V2	perkins	2007	119	không có mã động cơ	không có mã động cơ	1104C-44TAG — Product Specifications
+V2	perkins	2008	120	không có mã động cơ	không có mã động cơ	404A-22G — Product Specifications
+V2	perkins	2009	121	không có mã động cơ	không có mã động cơ	403D-11G — Product Specifications
+V2	perkins	2010	122	không có mã động cơ	không có mã động cơ	2406J-E13TAG3 — Product Specifications
+V5	powerlink-shanghai	2003	83	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		QSV Series QSV250PS
+V2	pramac	2002	3	không có mã động cơ	không có mã động cơ	GCW1500 (Pramac Reference Book)
+V2	pramac	2002	4	không có mã động cơ	không có mã động cơ	GCW1015 (Pramac Reference Book)
+V2	pramac	2002	5	không có mã động cơ	không có mã động cơ	GSW330V (Pramac Reference Book)
+V2	pramac	2002	6	không có mã động cơ	không có mã động cơ	GSW560V (Pramac Reference Book)
+V2	pramac	2002	7	không có mã động cơ	không có mã động cơ	GCW2600 (Pramac Reference Book)
+V2	pramac	2002	8	không có mã động cơ	không có mã động cơ	GCW665 (Pramac Reference Book)
+V2	pramac	2002	9	không có mã động cơ	không có mã động cơ	GCW1260 (Pramac Reference Book)
+V2	pramac	2002	10	không có mã động cơ	không có mã động cơ	GCW1120M (Pramac Reference Book)
+V2	pramac	2002	11	không có mã động cơ	không có mã động cơ	GCW2030 (Pramac Reference Book)
+V2	pramac	2002	12	không có mã động cơ	không có mã động cơ	GCW1900 (Pramac Reference Book)
+V2	pramac	2002	13	không có mã động cơ	không có mã động cơ	GCW2060 (Pramac Reference Book)
+V2	pramac	2002	14	không có mã động cơ	không có mã động cơ	GCW2260 (Pramac Reference Book)
+V2	pramac	2002	15	không có mã động cơ	không có mã động cơ	GCW1500 (Pramac Reference Book)
+V2	pramac	2002	16	không có mã động cơ	không có mã động cơ	GCW1770M (Pramac Reference Book)
+V2	pramac	2002	17	không có mã động cơ	không có mã động cơ	GCW1360 (Pramac Reference Book)
+V2	pramac	2002	18	không có mã động cơ	không có mã động cơ	GCW1140 (Pramac Reference Book)
+V2	pramac	2002	19	không có mã động cơ	không có mã động cơ	GCW1400 (Pramac Reference Book)
+V2	pramac	2002	20	không có mã động cơ	không có mã động cơ	GCW205 (Pramac Reference Book)
+V2	pramac	2002	21	không có mã động cơ	không có mã động cơ	GCW1750 (Pramac Reference Book)
+V2	pramac	2002	22	không có mã động cơ	không có mã động cơ	GCW870M (Pramac Reference Book)
+V2	pramac	2002	23	không có mã động cơ	không có mã động cơ	GSW665M (Pramac Reference Book)
+V2	pramac	2002	24	không có mã động cơ	không có mã động cơ	GCW1130P (Pramac Reference Book)
+V2	pramac	2002	25	không có mã động cơ	không có mã động cơ	GSW1000M (Pramac Reference Book)
+V2	pramac	2002	26	không có mã động cơ	không có mã động cơ	GCW2600 (Pramac Reference Book)
+V2	pramac	2002	28	không có mã động cơ	không có mã động cơ	GCW630V (Pramac Reference Book)
+V2	pramac	2002	29	không có mã động cơ	không có mã động cơ	GCW1770M (Pramac Reference Book)
+V2	pramac	2002	30	không có mã động cơ	không có mã động cơ	GCW1260M (Pramac Reference Book)
+V2	pramac	2002	31	không có mã động cơ	không có mã động cơ	GSW815M (Pramac Reference Book)
+V2	pramac	2002	32	không có mã động cơ	không có mã động cơ	GSW280V (Pramac Reference Book)
+V2	pramac	2002	33	không có mã động cơ	không có mã động cơ	GSW1260M (Pramac Reference Book)
+V2	pramac	2002	34	không có mã động cơ	không có mã động cơ	GSW875M (Pramac Reference Book)
+V2	pramac	2002	35	không có mã động cơ	không có mã động cơ	GCW1000M (Pramac Reference Book)
+V2	pramac	2002	36	không có mã động cơ	không có mã động cơ	GCW1650P (Pramac Reference Book)
+V2	pramac	2002	37	không có mã động cơ	không có mã động cơ	GCW1120M (Pramac Reference Book)
+V2	pramac	2002	38	không có mã động cơ	không có mã động cơ	GCW1400 (Pramac Reference Book)
+V2	pramac	2002	39	không có mã động cơ	không có mã động cơ	GCW815P (Pramac Reference Book)
+V2	quanchai	106	5	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| RATED POWER(KW) 常用功率 | 149 | 164] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER(KW) 备用功率 | 165 | 182] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| REATED POWER FOR GENERATOR SETS (KVA) 机组常用输出功率 | 149 | 164] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER FOR GENERATOR SETS (KVA) 机组备用输出功率 | 165 | 182] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| REATED POWER FOR GENERATOR SETS(KW ) 机组常用输出功率 | 119 | 131] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER FOR GENERATOR SETS (KW) 机组备用输出功率 | 132 | 146] ¦ không có mã động cơ	QC6112ZLD - Anhui Quanchai Engine Co.,ltd
+V2	quanchai	106	6	không có mã động cơ	không có mã động cơ	QC6112ZLD - Anhui Quanchai Engine Co.,ltd
+V2	quanchai	107	7	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| RATED POWER(KW) 常用功率 | 25 | 30] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER(KW) 备用功率 | 28 | 33] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| REATED POWER FOR GENERATOR SETS (KVA) 机组常用输出功率 | 25 | 30] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER FOR GENERATOR SETS (KVA) 机组备用输出功率 | 28 | 33] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| REATED POWER FOR GENERATOR SETS(KW ) 机组常用输出功率 | 20 | 24] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| STANDBY POWER FOR GENERATOR SETS (KW) 机组备用输出功率 | 22.5 | 26.4] ¦ không có mã động cơ	QC498D - Anhui Quanchai Engine Co.,ltd
+F1	ruiji-fuan	2001	0	không có mã động cơ	không có mã động cơ	福康四气门FK1100-TLD11 /1100KW
+F1	ruiji-fuan	2002	1	không có mã động cơ	không có mã động cơ	福康四增压FK1200-TLD11 /1200KW
+V2	stephill	2008	6	không có công suất prime / standby ghi rõ ở phần tổ máy	không có công suất prime / standby ghi rõ ở phần tổ máy [SSDP140V]	SSDP140V
+F1	stone-power	125	28	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		180kw 225kva WEICHAI Open Diesel Generator 4 Cylinders WP10D238E200
+F1	stone-power	126	30	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		Anti Vibration Mounted Weichai Power Generator 200kw 250kva WP10D264E200
+V5	teksan	107	6	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ8BD-1
+V5	teksan	108	7	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ8PE-1
+V5	teksan	109	8	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ9PE6-1
+V5	teksan	110	9	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ10ER
+V5	teksan	111	10	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ10PE
+V5	teksan	112	11	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ10BD
+V5	teksan	113	12	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ11PE-1
+V5	teksan	114	13	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ12BD-1
+V5	teksan	116	15	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ12PE6-1
+V5	teksan	117	16	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ15BD
+V5	teksan	118	17	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ15PE
+V5	teksan	119	18	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ14PE-1
+V5	teksan	120	19	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ14BD-1
+V5	teksan	121	20	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ15PE-1
+V5	teksan	124	23	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ18PE-1
+V5	teksan	125	24	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ26PE6-1
+V5	teksan	126	25	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ19PE6-1
+V5	teksan	127	26	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ20BD
+V5	teksan	128	27	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ22PE
+V5	teksan	129	28	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ22PE-1
+V5	teksan	130	29	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ23BD-1
+V5	teksan	133	32	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ25BD
+V5	teksan	134	33	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ25PE-1
+V5	teksan	135	34	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ30BD-1
+V5	teksan	136	35	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ30PE-1
+V5	teksan	138	37	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ32PE6-1
+V5	teksan	139	38	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ33PE
+V5	teksan	140	39	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ35BD
+V5	teksan	141	40	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ35YM
+V5	teksan	143	42	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ40BD-1
+V5	teksan	144	43	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ40PE-1
+V5	teksan	145	44	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ43PE6-1
+V5	teksan	147	46	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ45YM
+V5	teksan	148	47	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ45PE
+V5	teksan	149	48	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ45BD
+V5	teksan	150	49	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ30-RPE
+V2	teksan	151	50	không có mã động cơ	không có mã động cơ	TJT4F36HD
+V2	teksan	152	51	không có mã động cơ	không có mã động cơ	TJ40YM-NG5
+V2	teksan	154	53	không có mã động cơ	không có mã động cơ	TJ25PS-NG5
+V5	teksan	155	54	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ45BD-1
+V5	teksan	156	55	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ45PE-1
+V5	teksan	157	56	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ49PE6-1
+V5	teksan	158	57	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ50BD
+V5	teksan	159	58	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ50PE
+V5	teksan	161	60	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ50BD-1
+V5	teksan	163	61	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ60BD
+V5	teksan	165	62	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ55BD-1
+V5	teksan	166	63	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ60PE-1
+V5	teksan	167	64	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ60PE5L
+V5	teksan	169	66	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ62PE6-1
+V5	teksan	170	67	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ66PE
+V5	teksan	171	68	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ70BD
+V5	teksan	173	70	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ69PE6-1
+V5	teksan	174	71	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ70BD-1
+V5	teksan	175	72	(không note) không phải bố cục dọc (< 60% dòng ≤ 3 ô hoặc ≥ 3 dòng chấm dẫn)		TJ70YM
+V2	vpower-hk	1001	3	không có mã động cơ	không có mã động cơ	Datasheet: PPU4500NG
+V2	vpower-hk	1002	5	không có mã động cơ	không có mã động cơ	Datasheet: PPU3300NG
+V2	vpower-hk	1003	7	không có mã động cơ	không có mã động cơ	Datasheet: PPU2535NG
+V2	vpower-hk	1004	9	không có mã động cơ	không có mã động cơ	Datasheet: PPU2300NG
+V2	vpower-hk	1005	11	không có mã động cơ	không có mã động cơ	Datasheet: PPU2028NG
+V2	vpower-hk	1006	13	không có mã động cơ	không có mã động cơ	Datasheet: PPU1500NG
+V2	vpower-hk	1007	15	không có mã động cơ	không có mã động cơ	Datasheet: PPU1000NG
+V2	vpower-hk	1008	17	không có mã động cơ	không có mã động cơ	Datasheet: PPU900NG
+V2	vpower-hk	1009	18	không có mã động cơ	không có mã động cơ	Datasheet: PPU800NG
+V2	vpower-hk	1010	20	không có mã động cơ	không có mã động cơ	Datasheet: PPU600NG
+V2	vpower-hk	1011	23	không có mã động cơ	không có mã động cơ	Datasheet: PPU550NG
+V2	vpower-hk	1012	25	không có mã động cơ	không có mã động cơ	Datasheet: PPU420NG
+V2	vpower-hk	1013	27	không có mã động cơ	không có mã động cơ	Datasheet: PPU360NG
+V2	vpower-hk	1014	29	không có mã động cơ	không có mã động cơ	Datasheet: PPU250NG
+V2	vpower-hk	1015	31	không có mã động cơ	không có mã động cơ	Datasheet: PPU2300BG
+V2	vpower-hk	1016	33	không có mã động cơ	không có mã động cơ	Datasheet: PPU2000BG
+V2	vpower-hk	1017	35	không có mã động cơ	không có mã động cơ	Datasheet: PPU1500BG
+V2	vpower-hk	1018	37	không có mã động cơ	không có mã động cơ	Datasheet: PPU1000BG
+V2	vpower-hk	1019	39	không có mã động cơ	không có mã động cơ	Datasheet: PPU900BG
+V2	vpower-hk	1020	41	không có mã động cơ	không có mã động cơ	Datasheet: PPU800BG
+V2	vpower-hk	1021	43	không có mã động cơ	không có mã động cơ	Datasheet: PPU600BG
+V2	vpower-hk	1022	45	không có mã động cơ	không có mã động cơ	Datasheet: PPU400BG
+V2	winco	105	2	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Watts | 120/240 1-PH: 20,000 120/208 3-PH: 23,000 120/240 3-PH: 23,000 277/480 3-PH: 23,000] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Watts | 120/240 1-PH: 19,800 120/208 3-PH: 20,700 120/240 3-PH: 20,700 277/480 3-PH: 20,700] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Amps | 120/240 1-PH: 91 120/208 3-PH: 79 120/240 3-PH: 69 277/480 3-PH: 34] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Amps | 120/240 1-PH: 82 120/208 1-PH: 71 120/240 3-PH: 62 277/480 3-PH: 31] ¦ không có mã động cơ	Support for Model: DE23 Gen 3 | WINCO
+V2	winco	106	3	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 3-PH: 49,000] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Watts | 120/240 1-PH: 40,500 120/208 3-PH: 44,100 120/240 3-PH: 44,100 277/480 3-PH: 44,100 346/480 3-PH: 44,100] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Amps | 120/240 1-PH: 187 120/208 3-PH: 170 120/240 3-PH: 147 277/480 3-PH: 73 346/600 3-PH: 59] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Amps | 120/240 1-PH: 168 120/208 1-PH: 153 120/240 3-PH: 132 277/480 3-PH: 66 346/600 3-PH: 53] ¦ không có mã động cơ	Support for Model: DE4040F4 Gen 3 | WINCO
+V2	winco	107	4	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 3-PH: 49,000] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Watts | 120/240 1-PH: 40,500 120/208 3-PH: 44,100 120/240 3-PH: 44,100 277/480 3-PH: 44,100 346/480 3-PH: 44,100] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Amps | 120/240 1-PH: 187 120/208 3-PH: 170 120/240 3-PH: 147 277/480 3-PH: 73 346/600 3-PH: 59] ¦ công suất có nhãn mức nhưng không đọc được số / đơn vị [| Prime Amps | 120/240 1-PH: 168 120/208 1-PH: 153 120/240 3-PH: 132 277/480 3-PH: 66 346/600 3-PH: 53] ¦ không có mã động cơ	Support for Model: DE50F4 Gen 3 | WINCO
+V2	xinhengxin-fujian	1002	24	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power | Prime Power] ¦ không có mã động cơ	Datasheet: GF-C600.pdf
+V2	xinhengxin-fujian	1004	27	không có mã động cơ	công suất có nhãn mức nhưng không đọc được số / đơn vị [| Standby Power | Prime Power] ¦ không có mã động cơ	Datasheet: XHX-D320
+V2	yanmar	102	1	không có mã động cơ	không có mã động cơ	6EY26LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	yanmar	103	2	không có mã động cơ	không có mã động cơ	8EY26LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	yanmar	104	3	không có mã động cơ	không có mã động cơ	6EY33LW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	yanmar	105	4	không có mã động cơ	không có mã động cơ	6EY18ALW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	yanmar	106	5	không có mã động cơ	không có mã động cơ	6EY22ALW｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	yanmar	107	6	không có mã động cơ	không có mã động cơ	AY20L-ET｜Diesel Generators(Over 500kw)｜Products Lineup｜Power Generation｜YANMAR
+V2	zhongdong-jiangsu	101	0	không có mã động cơ	không có mã động cơ	YC16VC3600-D31-玉柴2500KW柴油发电机-玉柴2500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	102	1	không có mã động cơ	không có mã động cơ	S12R-PTAA2-C-上海菱重1200KW柴油发电机-上海菱重1200千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	103	2	không có mã động cơ	không có mã động cơ	S16R-PTAA2-C-上海菱重1500KW柴油发电机-上海菱重1500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	104	3	không có mã động cơ	không có mã động cơ	S16R-PTA-C-上海菱重1500KW柴油发电机-上海菱重1500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	105	4	không có mã động cơ	không có mã động cơ	YC12VC2510-D31-玉柴1500KW柴油发电机-玉柴1500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	106	5	không có mã động cơ	không có mã động cơ	YC12VC2270-D31-玉柴1500KW柴油发电机-玉柴1500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	107	6	không có mã động cơ	không có mã động cơ	YC12VC2070-D31-玉柴1500KW柴油发电机-玉柴1500千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	108	7	không có mã động cơ	không có mã động cơ	YC12VC2700-D31-玉柴1800KW柴油发电机-玉柴1800千瓦柴油发电机组-江苏中动电力设备有限公司
+V2	zhongdong-jiangsu	109	8	không có mã động cơ	không có mã động cơ	YC16VC3000-D31-玉柴2000KW柴油发电机-玉柴2000千瓦柴油发电机组-江苏中动电力设备有限公司
