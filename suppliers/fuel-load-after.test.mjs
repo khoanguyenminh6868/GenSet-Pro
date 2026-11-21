@@ -38,6 +38,20 @@ test("luật 100% công suất dự phòng giữ nguyên (tính như 100% tải)
   assert.deepEqual(fuel("Động cơ - tiêu hao nhiên liệu: Tại 100% công suất dự phòng ≤ 34 L/hr; tại 75% ≤ 25 L/hr; tại 50% ≤ 18 L/hr."), [34, 25, 18]);
 });
 
+test("IB2500403535: hai số cùng mức tải MRQ / RQ → lấy số RQ (Khoa 21/11/2026)", () => {
+  assert.deepEqual(fuel("Tiêu hao nhiên liệu: ≤ 3,3 lít/giờ tại 100% tải định mức (MRQ); ≤ 2,6 lít/giờ tại 75% tải (MRQ); ≤ 2.5 lít/giờ tại 75% tải (RQ)."), [3.3, 2.5, null]);
+  assert.deepEqual(fuel("Tiêu hao nhiên liệu: ≤ 4,5 lít/giờ tại 100% tải định mức (MRQ); ≤ 4 lít/giờ tại 75% tải (MRQ); ≤ 3,5 lít/giờ tại 75% tải (RQ)."), [4.5, 3.5, null]);
+});
+test("hai số cùng mức tải không có nhãn RQ: vẫn không có ngưỡng", () => {
+  assert.equal(fuel("Tiêu hao nhiên liệu: ≤ 2,6 lít/giờ tại 75% tải (MRQ); ≤ 2,4 lít/giờ tại 75% tải (MRQ).")[1], null);
+  assert.equal(fuel("Tiêu hao nhiên liệu: ≤ 2,6 lít/giờ tại 75% tải; ≤ 2,5 lít/giờ tại 75% tải.")[1], null);
+  assert.equal(fuel("Tiêu hao nhiên liệu: ≤ 5,5 lít/giờ tại 75% tải (bắt buộc); ≤ 4,5 lít/giờ tại 75% tải (nâng cao).")[1], null);
+  assert.equal(fuel("Tiêu hao nhiên liệu: ≤ 2,6 lít/giờ tại 75% tải; ≤ 2,5 lít/giờ tại 75% tải (RQ).")[1], null);
+});
+test("một số có nhãn MRQ: giữ số đó", () => {
+  assert.equal(fuel("Tiêu hao nhiên liệu: ≤ 2,6 lít/giờ tại 75% tải (MRQ).")[1], 2.6);
+});
+
 test("số ± % sau số không phải mức tải", () => {
   assert.equal(fuel("Tiêu hao nhiên liệu ở 100% tải ≤ 20 lít/giờ (sai số 5%)")[0], 20);
   assert.equal(fuel("Tiêu hao nhiên liệu ở 100% tải ≤ 20 lít/giờ (sai số 10%)")[0], 20);
