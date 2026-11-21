@@ -1,0 +1,58 @@
+IB2300046353#0 cỡ 15: minDisp - → 1.95; minCyl - → 4; maxFuel - → 4.93; maxFuel75 - → 3.61; maxFuel50 - → 2.7 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300046353#1 cỡ 20: minDisp 1.95 → -; minCyl 4 → -; maxFuel 4.93 → -; maxFuel75 3.61 → -; maxFuel50 2.7 → - | dòng mất dựa vào: 3, chỉ vì ngưỡng này: 3 (4B3.9-G2, 4B3.9-G11, 4B3.9-G1)
+IB2300102941#0 cỡ 15: maxFuel - → 4.93; maxFuel75 - → 3.61; maxFuel50 - → 2.7 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300102941#1 cỡ 20: maxFuel - → 5.12; maxFuel75 - → 3.84; maxFuel50 - → 2.95 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300108940#1 cỡ 20: minDisp - → 2.197; minCyl 2 → -; maxFuel - → 5.5 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300134577#0 cỡ 50: minCyl - → 3; maxFuel - → 12; maxFuel75 - → 9 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300134577#1 cỡ 100: minCyl - → 3; maxFuel - → 23; maxFuel75 - → 17 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300134577#2 cỡ 150: maxFuel - → 37; maxFuel75 - → 30 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300162912#0 cỡ 750: minDisp 78 → -; maxFuel 503.2 → -; maxFuel75 370 → -; maxFuel50 251.8 → - | dòng mất dựa vào: 5, chỉ vì ngưỡng này: 5 (8M33G770/6, 12M26G704/6, 6M31G700/6)
+IB2300162912#1 cỡ 2275: minDisp - → 78; maxFuel - → 503.2; maxFuel75 - → 370; maxFuel50 - → 251.8 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300163186#2 cỡ 100: minDisp 2.3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300163186#3 cỡ 200: minDisp 2.3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300163844#0 cỡ 8: minCyl 3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300163844#1 cỡ 30: minCyl - → 3 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300243355#1 cỡ 450: minCyl - → 6 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300253227#0 cỡ 100: minDisp - → 5.9; minCyl - → 6 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300260615#0 cỡ 500: maxDisp - → 20 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300260615#1 cỡ 2000: maxDisp 20 → - | dòng mất dựa vào: 25, chỉ vì ngưỡng này: 25 (20M33G2000/6, 20M33G2250/5, 12M55G2250/6, 20M33G2200/6, 12M55G2550/5)
+IB2300293753#0 cỡ 10: maxDisp - → 1.3 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2300293753#2 cỡ 200: maxDisp 1.3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400058723#0 cỡ 630: maxDisp - → 19.6 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400058723#1 cỡ 800: maxDisp - → 32 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400114476#0 cỡ 12: maxDisp - → 1.826 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400114476#1 cỡ 45: maxDisp 1.826 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400237184#0 cỡ 53: minDisp - → 3.62; maxFuel75 - → 8.25 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400237184#1 cỡ 405: minDisp - → 11.6; maxFuel75 - → 71.25 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400275648#0 cỡ 30: maxDisp 8 → -; minCyl - → 4 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400275648#1 cỡ 60: maxDisp 8 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400291063#1 cỡ 132: minDisp 1.8 → -; minCyl 3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400365165#0 cỡ 7.2: maxFuel75 - → 4.25 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400433961#0 cỡ 600: maxDisp - → 19.6; minCyl - → 6 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400433961#1 cỡ 1500: maxDisp - → 39.2; minCyl - → 12 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400487460#0 cỡ 8.8: maxDisp - → 2.3 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400487460#1 cỡ 40: maxDisp 2.3 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400495696#0 cỡ 30: maxFuel - → 9.5 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400495696#2 cỡ 200: minCyl 4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400589278#0 cỡ 300: minCyl - → 6; maxFuel - → 70 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400589278#1 cỡ 400: minCyl - → 6; maxFuel - → 89.1 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2400589278#2 cỡ 450: maxFuel - → 89.1 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500089757#0 cỡ 30: minDisp - → 2.54; minCyl - → 4; maxFuel - → 9.5 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500089757#1 cỡ 100: minDisp - → 4.837; minCyl - → 4; maxFuel - → 28.3 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500089757#2 cỡ 200: minCyl 4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500177469#0 cỡ 8.5: minCyl - → 3 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500385135#0 cỡ 10.5: minDisp 2.197 → -; minCyl 4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500385135#1 cỡ 20: minDisp - → 2.197; minCyl - → 4 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500403535#0 cỡ 8.5: minCyl 3 → -; maxFuel75 - → 2.5 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500410768#0 cỡ 30: maxFuel - → 7.5 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500410768#2 cỡ 200: maxFuel 7.5 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500533266#0 cỡ 100: minDisp - → 4.3; minCyl - → 4 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2500533266#1 cỡ 250: minDisp 4.3 → -; minCyl 4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2600128010#0 cỡ 250: maxFuel - → 60; maxFuel50 - → 36 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2600128010#1 cỡ 500: maxFuel - → 105; maxFuel50 - → 55 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2600477305#1 cỡ 15: minCyl 3 → -; maxFuel 4 → -; maxFuel75 3.2 → -; maxFuel50 2.4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2600562009#0 cỡ 30: maxFuel - → 5.4 | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+IB2600562009#1 cỡ 50: maxFuel 5.4 → - | dòng mất dựa vào: 0, chỉ vì ngưỡng này: 0
+
+Lượt nhiều cỡ: 361 | ngưỡng đổi: 55 lượt [["minDisp",17],["minCyl",26],["maxFuel",23],["maxFuel75",14],["maxFuel50",9],["maxDisp",14]]
+Dòng mất chỉ vì ngưỡng của cỡ khác: 33 (trong top 30 gốc: 8); còn luật khác vẫn loại: 0
