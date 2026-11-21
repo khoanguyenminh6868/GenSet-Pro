@@ -7,9 +7,9 @@ import { pathToFileURL } from "node:url";
 const [WT, CN, BH, OUT] = process.argv.slice(2), HERE = import.meta.dirname;
 process.env.GENBID_SPEC_NORM = "1";
 const B = await import(pathToFileURL(path.join(WT, "suppliers", "config-bot.mjs")).href);
-const CAT = globalThis.GenbidCatalog, BP = globalThis.GenbidBidprice, J = (f) => JSON.parse(fs.readFileSync(f, "utf8")), Z = (f) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(HERE, f))));
+const CAT = globalThis.GenbidCatalog, BP = globalThis.GenbidBidprice, J = (f) => JSON.parse(fs.readFileSync(f, "utf8")), Z = (f) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(process.env.GOP_DIR || HERE, f))));
 const noAlt = (k) => { const p = k.split("|"); p[2] = ""; return p.join("|"); };
-const G = Z("goc.json.gz"), N = Z("nhanh.json.gz"), want = new Map();
+const G = Z(process.env.GOP_DIR ? "gop-goc.json.gz" : "goc.json.gz"), N = Z(process.env.GOP_DIR ? "gop-nhanh.json.gz" : "nhanh.json.gz"), want = new Map();
 for (const [run, g] of Object.entries(G)) {
   const n = N[run]; if (!n?.all || !g?.all) continue;
   const gm = new Map(), nm = new Map();

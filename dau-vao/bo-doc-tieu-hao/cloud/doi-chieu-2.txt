@@ -1,0 +1,23 @@
+Lượt lần 2: 1093 | mất 1137 | thêm 1 | đổi điểm 8728 | ra top 495 | vào top 472
+Lần 1: mất 1087 | thêm 0 | đổi điểm 8771 | ra top 488 | vào top 469
+
+MẤT: trùng lần 1 987 | mới 150 | lần 1 có, lần 2 không 100
+Mất mới theo NCC + động cơ: [["longkai-power 6KTAA25G36",6],["longkai-power QSZ13G10",6],["longkai-power 6KTAA25G35",5],["xinhengxin-fujian KTA19G4",5],["longkai-power 4B39G1",4],["longkai-power QSB67G4",4],["ade-power 6M16G2D0/S",4],["longkai-power 4BT39G1",4],["longkai-power SC10E380D2",3],["lees-power P126TIII",3],["longkai-power SC25G690D2",3],["longkai-power SC27G755D2",3],["longkai-power 4B39G2",3],["longkai-power 4B39G11",3],["longkai-power 4HT43G21",3],["longkai-power SC4H160D2",3],["longkai-power 6BT59G2",3],["longkai-power 4HTAA43G23",3],["longkai-power SC7H220D2",3],["longkai-power SC7H230D2",3],["longkai-power 6ETAA128G31",3],["longkai-power QSZ13G3",3],["cgm-italia 4M10G6D0/S",3],["longkai-power 4HTAA43G21",2],["longkai-power SC12E420D2",2],["longkai-power 6ETAA118G21",2],["longkai-power SC12E460D2",2],["longkai-power QSZ13G6",2],["lees-power 16V4000G63",2],["longkai-power 6BT59G286KW",2],["genmac 4M06G8D0/S",2],["ade-power 4M10G6D0/S",2],["longkai-power 6BTAA59G12",2],["longkai-power 6HTAA65G22",2],["cgm-italia 6M21G2D0/S",2],["longkai-power 4BTA39G11",2],["longkai-power QSZ13G5",2],["longkai-power 4BT39G2",2],["longkai-power 12M55G2750/5",1],["voltgent 12M55G2750/5",1],["westinpower 12M55G2750/5",1],["voltgent 12M55G2550/5",1],["mecca-power 12M55G2750/5",1],["previa-ningde 12M55G2750/5",1],["mecca-power 12M55G2550/5",1],["weichai-power 12M55G2750/5",1],["agg-fuzhou 12M55G2750/5",1],["yanan-power 12M55G2750/5",1],["longkai-power SC25G610D2",1],["lees-power DP158LC",1],["cgm-italia 4M06G6D0/S",1],["coelmo 4M06G6D0/S",1],["cgm-italia 4M06G8D0/S",1],["genmac 4M06G10D0/S",1],["ade-power 4M06G10D0/S",1],["cgm-italia 4M06G10D0/S",1],["electra-molins 4M10G6D0/S",1],["agg-fuzhou 16M33G1400/6",1],["longkai-power WP41D80E200",1],["longkai-power QSB39G3",1]]
+Hết mất theo NCC + động cơ: [["longkai-power QSB39G2",16],["longkai-power QSB67G3",9],["longkai-power QSNTG6",4],["longkai-power 6LTAA89G2",3],["longkai-power MTA11G2",3],["longkai-power SC9D340D2",3],["longkai-power WP23D33E200",2],["generatordieselchina 4BT39G1",2],["longkai-power 6LTAA89G3",2],["longkai-power WP10D264E200",2],["longkai-power 6CTAA83G9",2],["longkai-power 6LTAA95G3",2],["longkai-power 6DTAA89G23",2],["longkai-power 4B39G11",2],["longkai-power 4B39G2",1],["longkai-power 4B39G1",1],["koten-power 8M33G770/6",1],["landtop-fuzhou 8M33G770/6",1],["agg-fuzhou 12M26G704/6",1],["agg-fuzhou 6M31G700/6",1],["agg-fuzhou 8M33G770/6",1],["longkai-power SC4H160D2",1],["longkai-power 6BT59G2",1],["longkai-power 4HTAA43G23",1],["longkai-power SC25G690D2",1],["longkai-power 6KTAA25G36",1],["longkai-power SC27G755D2",1],["longkai-power 6KTAA25G35",1],["longkai-power 20M33G2000/6",1],["longkai-power 20M33G2250/5",1]]
+
+ĐỔI ĐIỂM: cùng mức lần 1 8569 | khác mức 16 | mới 143 | lần 1 có, lần 2 không 186
+Mức lần 2: [[8,7658],[24,742],[-300,213],[16,115]]
+Mức của dòng đổi mới: [[8,73],[-300,59],[16,8],[24,3]]
+Khác mức (lần 1→lần 2): [["8→24",16]]
+Đổi mới theo NCC: [["westinpower",60],["eastern-lion-fuan",12],["longkai-power",7],["agg-fuzhou",7],["previa-ningde",6],["weichai-power",6],["victory-generator",4],["mecca-power",4],["yanan-power",4],["elitech-power",3],["rcg-power",3],["jet-power",2],["xinhengxin-fujian",2],["landtop-fuzhou",2],["voltgent",2],["liangzi-yangzhou",2],["gordon-power",2],["sunny-weifang",1],["uleengen",1],["minsun-motor",1],["xingguang-jiangsu",1],["weiman-fujian",1],["comappower",1],["koten-power",1],["weichai-heavy-machinery",1],["vantek-jiangsu",1],["taihai-taizhou",1],["waeta-fujian",1],["kaihua-genset",1],["penlucky",1]]
+
+THÊM vào all theo NCC + động cơ: [["longkai-power 6M33D633E200",1]]
+
+RA TOP: trùng lần 1 240 | mới 255 | trong đó dòng mất mới 42 | dòng còn trong all 164
+Hạng 1–5 ra top lần 2: 33 | không có ở lần 1: 6
+   IB2300162912#1 longkai-power|12M55G2750/5|||LG2000WP|2200|2750|2000|2500|12M55G2750/5|LK734H|LSA523L12|OP6200*2850*3290|40HQ*| hạng 4 MẤT
+   IB2300254479#0 rcg-power|S12A2PTA|||RJM800D5S|800KVA/640KW|880KVA/704KW|S12A2PTA|TALA49C|PDF hạng 5 còn all
+   IB2400152304#0 uleengen|404A22G1|||UP20GF|16|20|404A22G1|PERKINS|18|4L|84×100|2216|38|S0L2G1|1580X810X990|540 hạng 5 còn all
+   IB2400275648#0 genmac|4M06G8D0/S||EDITG31BO33304M06G8D0/S1500DIESEL4230016030QTVA732015108901250700 hạng 1 MẤT
+   IB2500415487#1 genmac|4TNV88BIECS||DUPLEXG20YOE320184TNV88BIECS1500DIESEL4219010026QFIAG450014006601360459 hạng 5 còn all
+   IB2600477305#1 genmac|4TNV88BIECS||DUPLEXG20YOE320184TNV88BIECS1500DIESEL4219010026QFIAG450014006601360459 hạng 5 còn all

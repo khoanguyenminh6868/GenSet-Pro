@@ -8,9 +8,9 @@ const [WT, CN, BH, OUT] = process.argv.slice(2), HERE = import.meta.dirname;
 process.env.GENBID_SPEC_NORM = "1";
 const B = await import(pathToFileURL(path.join(WT, "suppliers", "config-bot.mjs")).href);
 const RF = await import(pathToFileURL(path.join(WT, "suppliers", "row-flags-lib.mjs")).href);
-const CAT = globalThis.GenbidCatalog, BP = globalThis.GenbidBidprice, J = (f) => JSON.parse(fs.readFileSync(f, "utf8")), Z = (f) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(HERE, f))));
+const CAT = globalThis.GenbidCatalog, BP = globalThis.GenbidBidprice, J = (f) => JSON.parse(fs.readFileSync(f, "utf8")), Z = (f) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(process.env.GOP_DIR || HERE, f))));
 const noAlt = (k) => { const p = k.split("|"); p[2] = ""; return p.join("|"); };
-const G = Z("goc.json.gz"), N = Z("nhanh.json.gz");
+const G = Z(process.env.GOP_DIR ? "gop-goc.json.gz" : "goc.json.gz"), N = Z(process.env.GOP_DIR ? "gop-nhanh.json.gz" : "nhanh.json.gz");
 const want = new Map(); // lượt -> { lost:Map(khoá -> điểm gốc), chg:Map(khoá -> [gốc, nhánh]) }
 for (const [run, g] of Object.entries(G)) {
   const n = N[run]; if (!n?.all || !g?.all) continue;
@@ -21,6 +21,7 @@ for (const [run, g] of Object.entries(G)) {
   for (const [k, s] of gm) { if (!nm.has(k)) lost.set(k, s); else if (nm.get(k) !== s) chg.set(k, [s, nm.get(k)]); }
   if (lost.size || chg.size) want.set(run, { lost, chg, topG: g.top.map(noAlt), topN: new Set(n.top.map(noAlt)) });
 }
+if (process.env.ONLY_RUNS) { const only = new Set(JSON.parse(fs.readFileSync(process.env.ONLY_RUNS, "utf8"))); for (const r of [...want.keys()]) if (!only.has(r)) want.delete(r); }
 console.error("lượt có đổi", want.size);
 const docs = J(BH).docs, sups = fs.readdirSync(CN).filter((f) => f.endsWith(".json")).sort().map((f) => J(path.join(CN, f))).filter((d) => d.status !== "incomplete");
 const blocked = RF.blockedRows(sups, {}), full = CAT.build(sups), cn = B.cnSuppliers(sups), cache = new Map();

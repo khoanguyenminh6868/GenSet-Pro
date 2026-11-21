@@ -161,3 +161,27 @@ Cột: trang | hãng | model động cơ | xi lanh | dung tích (L) | đường 
 | yanmar-diesel-generator-pg46-ym | YANMAR | 4TNV98T-GGEA | 4 | 3,319 | 98 × 110 | 18.1:1 | 8,2/6,4/4,5 | 400V, 50 Hz ; 42 kVA / 33,6 kW ; 46 kVA / 36,8 kW | chưa | mới | mới/mới/mới/mới |
 | yanmar-diesel-generator-pg55-ym | YANMAR | 4TNV106-GGEA | 4 | 4,412 | 106 × 125 | 18:1 | 10,1/7,5/5,3 | 400V, 50 Hz ; 50 kVA / 40 kW ; 55 kVA / 44 kW | chưa | mới | mới/mới/mới/mới |
 | yanmar-diesel-generator-pg63-ym | YANMAR | 4TNV106T-GGEA | 4 | 4,412 | 106 × 125 | 18:1 | 11,2/8,5/6,1 | 400V, 50 Hz ; 57 kVA / 45,6 kW ; 63 kVA / 50,4 kW | chưa | mới | mới/mới/mới/mới |
+
+## Cho điều phối (22/11/2026): 5 bản ghi động cơ mới ở NCC khác
+Do luật bảng dọc mới (mã Doosan "…CC" nhận trong bảng dọc). `cn/<NCC>.json`, `specTables[i]` (i = chỉ số bảng):
+| NCC | n | bảng | dòng nguồn (model) | bản ghi mới |
+|---|---|---|---|---|
+| aosif | 1109 | 237 ("Datasheet: 264723127178.pdf") | `\| Model \| SP344CC` | động cơ SP344CC, prime 80 kVA / 64 kW, hãng Doosan |
+| aosif | 1113 | 245 ("…264725580181.pdf") | `\| Model \| DP054CC` | động cơ DP054CC, prime 200 / 160 |
+| aosif | 1118 | 255 ("…264728007604.pdf") | `\| Model \| DP086CC` | động cơ DP086CC, prime 253 / 202 |
+| aosif | 1130 | 279 ("…264737007395.pdf") | `\| Model \| DP158CC` | động cơ DP158CC, prime 562 / 450, hãng ghi Hyundai |
+| lees-power | 1199 | 232 ("Datasheet: PDF") | `\| Doosan engine Model: \| DP222CC` / `\| Engine Model \| DP222CC` | động cơ DP222CC, tổ máy LSDS1000S3, prime 912 kVA, standby 800 kW |
+Tên tổ máy của 4 bản ghi aosif là tên tệp PDF (chữ nguồn). Kiểm chéo: 0 bản ghi cũ đổi / mất.
+
+## 9 ca số Powerpack ≠ nguồn sẵn có (7 tỉ số nén, 1 đường kính, 1 dung tích)
+Số Powerpack ghi / số NCC khác ghi (NCC: giá trị). Chưa phân biệt tờ hãng với NCC; không ca nào có tờ hãng được kiểm tay.
+- CR16TE1W.S550 (fpt-iveco PG660-I): nén 15,5 : 1 / depco-power 16.5:1.
+- DP222CB (hyundai-doosan PG900-D): nén 14,6 : 1 / depco-power 15.0:1, lees-power 17.3:1.
+- 4012-46TWG2A (perkins PG1385-P): nén 12.8:1 / depco-power 13.1:1, fdk-energy 13:1, gb-power 13.6:1, weiman-fujian 13.6:1, westinpower 13.0:1.
+- 4012-46TAG2A (PG1650-P): nén 12.8:1 / cùng năm NCC trên.
+- 4012-46TAG3A (PG1875-P): nén 12.8:1 / depco-power 13.1:1, fdk-energy 13:1, gb-power 13.6:1, weiman-fujian 13.6:1.
+- 4016-61TRG1 (PG2000-P): nén 13 : 1 / weiman-fujian 13.6:1.
+- 4016-61TRG2 (PG2250-P): nén 13 : 1 / weiman-fujian 13.6:1.
+- 6RT80-176DE (kofo PG220-K): đường kính 110 / jet-power 113 × 130.
+- Y4105D (yangdong PG55-Y): dung tích 4,33 / depco-power 4.1, lees-power 4.087 L, waeta-fujian 4.08, wintpower 4.1.
+Khoa chốt 22/11: số nén của Powerpack được dùng để loại như mọi nguồn NCC khác (không tờ hãng nên không ca nào "tờ hãng thắng").
