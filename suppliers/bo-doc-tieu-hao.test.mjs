@@ -12,6 +12,17 @@ const real = (id) => JSON.parse(fs.readFileSync(new URL(`./cn/${id}.json`, impor
 const sup = (id, tables, role = "genset_oem") => ({ id, country: "CN", confidence: "high", role, specTables: tables });
 const fuelOf = (r, k) => (r.specs || []).filter((x) => x.key === k).map((x) => SN.normalize(x, { title: r.title, header: r.header || r.lines?.header || [] }));
 
+test("longkai n1053 / n1069 / n1144: thân tờ là số động cơ khác, bỏ số đó, giữ dòng; tờ khác cùng n không đổi", () => {
+  const rs = C.fromSupplier(real("longkai-power"), []), keys = (n, m) => rs.find((x) => x.n === n && x.model === m && x.other).specs.map((x) => x.key);
+  for (const [n, m, gone] of [[1053, "QSB3.9-G2", ["cyl", "bore", "fuel", "fuel75", "fuel50"]], [1069, "QSB6.7-G3", ["bore", "fuel", "fuel75", "fuel50"]], [1144, "6M33D633E200", ["cyl", "bore", "fuel"]]]) {
+    const k = keys(n, m);
+    assert.ok(gone.every((x) => !k.includes(x)), m);
+    assert.ok(k.includes("weight") && k.includes("speed"), `${m}: giữ dòng`);
+  }
+  assert.ok(keys(1069, "QSB6.7-G3").includes("cyl"), "QSB6.7-G3 giữ 6 xi lanh");
+  assert.ok(rs.some((x) => x.model === "4BT3.9-G2" && x.other && (x.specs || []).some((y) => y.key === "fuel")), "tờ khác của longkai còn tiêu hao");
+});
+
 test("Baudouin 6M31G825/5 [1021]: cột L/hr, không phải gr/kWh; số xi lanh; fuelChecks đạt 156 / 113 / 77", () => {
   const s = real("baudouin"), cat = C.build([s]), facts = modelFacts(cat, [s]).get(`engine:${C.keyOf("6M31G825/5")}`);
   const r = C.fromSupplier(s, []).find((x) => x.n === 1021 && x.model === "6M31G825/5");

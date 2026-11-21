@@ -1809,6 +1809,12 @@
       [1159, "LG1800WP", "| No. cylinders | 6 in line", "20M33D2210E310: tờ ghi 150*185, 65.4 L; 6 xi lanh = 19,62 L, 20 xi lanh = 65,38 L; aosif, hanyang-weifang, yunding-jiangsu ghi 20 xi lanh"],
       [1016, "LG350SC", "| No. cylinders | 12 in line", "SC25G610D2: số 12 đúng (12 × π/4 × 135² × 150 = 25,76 L) và đã đủ phiếu 12 từ NCC khác; bỏ vì KIỂU \"in line\" trái 8 NCC ghi V"]].map(([n, genset, line, why]) => (
       { supplierId: "longkai-power", n, genset, line, act: "dropspec", keys: ["cyl"], khoa: "điều phối 21/11/2026", why: `${why}: bỏ riêng xi lanh, giữ dòng` })),
+    // longkai n1053 / n1069 / n1144 (bo-doc-tieu-hao-3): the sheet's title names one engine, its body is another engine's set, so its
+    // fuel figures left the row out of tenders on another engine's numbers. `line` is the sheet's title: an n holds several sheets.
+    ...[[1053, "LG48C", "QSB3.9-G2", ["cyl", "disp", "bore", "fuel", "fuel75", "fuel50"], "tờ QSB3.9-G2 ghi 6 in line, 5.9 L, net 96 kW, 26 L/h cho Prime 48 kW (0,54 L/kWh): bộ số của động cơ 5.9 L"],
+      [1069, "LG120C", "QSB6.7-G3", ["disp", "bore", "fuel", "fuel75", "fuel50"], "tờ QSB6.7-G3 ghi 5.9 L, 102*120: bộ số của động cơ 5.9 L"],
+      [1144, "LG520WP", "6M33D633E200", ["cyl", "disp", "bore", "fuel", "fuel75", "fuel50"], "tờ 6M33D633E200 (Prime 520 kW) ghi V 12, 18.9 L, 159*159, Prime 536 kW: bộ số của động cơ khác"]].map(([n, genset, model, keys, why]) => (
+      { supplierId: "longkai-power", n, genset, line: `| POWER YOUR FUTURE | ${model}`, act: "dropspec", keys, khoa: "điều phối 21/11/2026", why: `${why}: bỏ các số đó, giữ dòng` })),
     // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
     { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
     // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
