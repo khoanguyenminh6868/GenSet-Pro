@@ -27,7 +27,7 @@ const blocked = RF.blockedRows(sups, {}), full = CAT.build(sups), cn = B.cnSuppl
 const catFor = (o, s, p, b) => { const k = [o, !!s, p, b].join("|"); if (!cache.has(k)) { const grp = B.groupSuppliers(sups, o, !!s, p, b), cat = { ...full, engines: B.byOrigin(full.engines, o, cn, grp) }; cache.set(k, { cat, facts: grp ? B.modelFacts({ ...full, engines: B.byOrigin(full.engines, o, cn) }, sups) : B.modelFacts(cat, sups) }); } return cache.get(k); };
 const rowKey = (r) => `${r.u.supplierId}||${""}|`.slice(0, 0) + `${r.u.supplierId}|${r.e.key}||${CAT.keyOf(r.u.line || (r.u.lines?.rows || []).join(" "))}`;
 const specs = (u, re) => (u.specs || []).filter((s) => re.test(s.key)).map((s) => ({ k: s.key, l: s.label, v: s.value, c: s.unitCell }));
-const out = { lost: [], fuelMinus: [], noRun: [], top5: [] };
+const out = { lost: [], fuelMinus: [], noRun: [], top5: [], eng: {} };
 const hist = Object.values(docs).map((x) => x.d).filter((d) => d && BP.isGensetName(d.bidName) && BP.bidKind(d.bidName) === "supply" && d.config?.text);
 let i = 0;
 for (const d of hist) {
@@ -43,7 +43,8 @@ for (const d of hist) {
     const dropBy = new Map(); for (const x of R.dropped) { const k = rowKey(x); if (!dropBy.has(k)) dropBy.set(k, x); }
     for (const [k, s] of w.lost) {
       const x = dropBy.get(k);
-      out.lost.push({ run, k: k.slice(0, 120), sup: k.split("|")[0], model: x?.e?.model || k.split("|")[1], score: s, ruled: x?.ruled || ["(không thấy trong dropped)"], lim,
+      if (x?.e?.key && !out.eng[x.e.key]) out.eng[x.e.key] = { model: x.e.model, make: x.e.make, f: (facts.get(`engine:${x.e.key}`) || []).filter((f) => ["cyl", "disp", "bore"].includes(f.key)).map((f) => ({ k: f.key, v: f.value, s: f.supplierId, n: f.n, sheet: !!f.sheet, maker: !!f.maker })) };
+      out.lost.push({ run, k: k.slice(0, 120), sup: k.split("|")[0], ekey: x?.e?.key, why: x?.why || [], model: x?.e?.model || k.split("|")[1], score: s, ruled: x?.ruled || ["(không thấy trong dropped)"], lim,
         cyl: x ? specs(x.u, /^cyl$/) : [], fuel: x ? specs(x.u, /^fuel/) : [], disp: x ? specs(x.u, /^disp$/) : [], line: String(x?.u?.line || (x?.u?.lines?.rows || []).slice(0, 2).join(" ¦ ")).slice(0, 220), top: w.topG.indexOf(k) });
     }
     const byK = new Map(R.all.map((r) => [rowKey(r), r]));
