@@ -16,11 +16,11 @@ const lk = (u) => CAT.keyOf(u.line || (u.lines?.rows || []).join(" "));
 const map = {};
 for (const e of full.engines) {
   const n = new Set((allFacts.get(`engine:${e.key}`) || []).map((f) => f.key)).size;
-  for (const u of e.uses) if (u.line || u.lines) map[`${u.supplierId}|${lk(u)}`] = [e.key, n];
+  for (const u of e.uses) if (u.line || u.lines) map[`${u.supplierId}|${lk(u)}`] = [e.key, n, e.make ? 1 : 0];
 }
 fs.writeFileSync(path.join(HERE, `diem-${NAME}.json`), JSON.stringify(map));
 console.log(`${Object.keys(map).length} dòng → diem-${NAME}.json`);
-if (NAME !== "nhanh") process.exit(0);
+if (!process.env.DIEM_THEM) process.exit(0);
 
 const docs = J("C:/Projects/GenSet Pro/genbid-work/doc-cache/bidhist.json").docs;
 const byKey = new Map(Object.values(docs).map((x) => x.d).filter((d) => d?.notifyNo).map((d) => [d.notifyNo, d]));
