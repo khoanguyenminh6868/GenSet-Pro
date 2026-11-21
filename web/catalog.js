@@ -1558,7 +1558,10 @@
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
         const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power, note: (reason, detail) => note(t, ti, ri, reason, detail) }), power, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)) };
-        if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
+        const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
+        if (twoCodes) note(t, ti, ri, "một ô ghi hai mã", cells[ei]);
+        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
@@ -1644,6 +1647,10 @@
   // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
   // their own codes and are NOT listed (not approved).
   const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }];
+  // An engine cell naming two codes, the second shortened ("TAD1650GE(1345GE)", sanq-power n111 / n117; Khoa 21/11/2026 "A"): the page
+  // does not say what the bracket means, and other suppliers give the two codes different displacements (TAD750GE 7.15 L /
+  // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.
+  const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" }];
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];
