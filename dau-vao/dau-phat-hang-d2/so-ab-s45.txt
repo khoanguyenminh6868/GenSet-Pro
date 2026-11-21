@@ -1,0 +1,45 @@
+## IB2600574589 (4 → 4 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 400 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 415 V (lấy số nhỏ nhất), không quá 130 %; kích từ PMG","used":0}
+  giống hệt
+## IB2600581294 (7 → 7 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %","used":0}
+  giống hệt
+## IB2600581977 (4 → 4 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 250 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; xuất xứ G7 / EU","used":0}
+  giống hệt
+## IB2600586587 (6 → 6 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 160 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600592658 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
+  giống hệt
+## IB2600592684 (0 → 0 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
+  giống hệt
+## IB2600594596 (0 → 0 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 400 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
+  giống hệt
+## IB2600595853 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
+  giống hệt
+## IB2600599817 (0 → 0 cấu hình)
+  giống hệt
+## IB2600601812 (6 → 6 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 100 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600602880 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+  giống hệt
+## IB2600603983 (8 → 8 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 750 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ngắn mạch 300 % / 10 s; ổn định điện áp ±0,5 %; xuất xứ G7 / EU","used":5}
+  #6→#6 TWD1744GE | LSA 49.3 M8
+    đầu phát: ECO40 VL4C → LSA 49.3 M8 [datasheet hãng, code đặt] — 750 kVA ở cột Continuous cấp H 125 K / 40 °C, 50 Hz, 3 pha, 380 V × hệ số suy giảm 0.96 của hãng theo hiện trường HSMT = 720 kVA < 750 kVA cần — Kích từ AREP / PMG; AVR D350
+    hạng 6 → 6; điểm [1,0,0,38,11,0,2] → [1,0,0,38,6,0,2]
+    check alternator|Kiểu đầu phát (không chổi than, tự kích): unclear → (không có)
+    check alternator|Công suất đầu phát: unclear → met — (797,9 kVA sau suy giảm (820 kVA Continuous cấp H 125 K / 40 °C, 50 Hz, 3 pha, 380 V; datas)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+    check alternator|Ổn định điện áp: unclear → met — (±0,25%)
+    check alternator|Kích từ đầu phát (PMG / AREP): unclear → (không có)
+    check alternator|Dòng ngắn mạch duy trì (300% / 10 s): unclear → met — (300% (3 IN) trong 10 giây (tờ hãng))
+    check alternator|Quá tốc đầu phát: unclear → met — (Quá tốc độ tối đa 2.250 v/p)
+## IB2600604739 (0 → 0 cấu hình)
+  giống hệt
+## IB2600607539 (0 → 0 cấu hình)
+  giống hệt
+## IB2600609805 (3 → 3 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+  giống hệt
+## IB2600612866 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 9 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600613475 (5 → 5 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 12 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+
+Tổng: 47 cấu hình ở nhánh; đổi đầu phát 1; đổi hạng / điểm 1; check đổi trạng thái 7.
