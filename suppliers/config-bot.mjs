@@ -491,6 +491,8 @@ const primeTol = (p, text) => {
   const unit = p.kVA != null ? "kVA" : "kW";
   for (const x of String(text).matchAll(TOL_AFTER)) {
     if (!x[2] || x[2].trim().toLowerCase() !== unit.toLowerCase() || Math.abs(numOf(x[1]) - p[unit]) > 1e-9) continue;
+    // The text doubts its own "±" ("20 kVA ± 1% (văn bản ghi "+ 1%")", IB2300296794): not lowered.
+    if (/^\s*\([^)\n;]{0,30}["“']\s*\+\s*\d/.test(String(text).slice(x.index + x[0].length, x.index + x[0].length + 45))) return p;
     const before = text.slice(Math.max(0, x.index - 80), x.index), clause = before.slice(Math.max(before.lastIndexOf("\n"), before.lastIndexOf(";")) + 1);
     if (/li[êe]n\s*t[ụu]c|c[ơo]\s*b[ảa]n|prime|continuous/i.test(clause) && !/đầu\s*phát|d[ựu]\s*ph[òo]ng|standby/i.test(clause)) { const out = { ...p, [unit]: lowOf(x[1], x[3], !!x[4]) }; return out; }
   }

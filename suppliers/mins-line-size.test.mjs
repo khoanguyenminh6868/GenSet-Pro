@@ -2,7 +2,7 @@
 // Các dòng theo mẫu chữ HSMT thật (IB2400114476, IB2300260615, IB2300108940, IB2300305914).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { minsForSize, engineMins } from "./config-bot.mjs";
+import { minsForSize, engineMins, powerMins } from "./config-bot.mjs";
 
 const size = (v) => ({ kva: v, cap: { value: v, unit: "kVA" }, label: `${v} kVA` });
 
@@ -54,6 +54,11 @@ test("dung sai ghi ngay sau ngưỡng được tính (Khoa 21/11/2026)", () => {
   assert.equal(minsForSize(t, sizes[0], sizes).mins.minPrime?.kVA, 8);
   assert.equal(engineMins("Động cơ: số xy lanh ≤ 3 và tổng dung tích xy lanh ≤ 1,3 lít ± 5%.").maxDisp, 1.365);
   assert.equal(engineMins("Dung tích xi lanh ≤ 1,3 lít; dung sai điện áp ± 5%").maxDisp, 1.3);
+});
+
+test("IB2300296794: chữ tự ghi bản gốc là '+ 1%' thì không hạ ngưỡng", () => {
+  assert.equal(powerMins('Tổ máy: Công suất liên tục: 20 kVA ± 1% (văn bản ghi "+ 1%")').minPrime?.kVA, 20);
+  assert.equal(powerMins("Tổ máy: Công suất liên tục: 20 kVA ± 1%").minPrime?.kVA, 19.8);
 });
 
 test("dòng 'Phần 1 - Máy 500 kVA' trong khối 2000 kVA thuộc 500 kVA", () => {
