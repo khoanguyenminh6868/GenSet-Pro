@@ -2062,24 +2062,28 @@
     return [String(c[0] || "").replace(/[:：\s]+$/, "").trim(), ...c.slice(1).map((x) => String(x).trim())];
   }
   const V_CODE_BRANDS = [...ENGINE_BRANDS, ...ALT_CELL_BRANDS];
-  const V_MAKE_TAIL = /^(penta|deere|somer|alte|petter|wilson|power|infracore|heavy)$/i;
+  const V_MAKE_TAIL = /^(penta|deere|somer|alte|petter|wilson|infracore)$/i;
+  const V_GENERIC = /^(engine|model|brand|type|make|motor|heavy|industries|industry|power|co|ltd|corp|inc|group|company|manufacturer|by)\.?$/i;
   // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
   // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
   function verticalCode(v) {
     const s = String(v || "").normalize("NFKC").trim();
     if (!s || /\bor\b|equiv|series|optional|select|custom|[/／]|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
     const words = s.split(/[\s,，]+/).filter(Boolean);
-    // Letter-only words before the code: when one of them IS a make, they are brand words only up to the last make (or the
-    // second word of a two-word make: "Volvo Penta", "John Deere", "Leroy Somer", "Mecc Alte"): "CCEC Cummins NTA855-G2A" →
-    // "NTA855-G2A", but "Kohler KDI 2504M" → "KDI 2504M" (bang-doc-ma-hang, điều phối 21/11/2026: "KDI" is part of Kohler's
-    // code). No make among them: all are passed over as before ("SGC 420" stays no code: westinpower's controller).
+    // Letter-only words before the code. No make among them: all are passed over as before ("SGC 420" stays no code:
+    // westinpower's controller). With a make (bang-doc-ma-hang, điều phối 21/11/2026), words after the last make are still
+    // passed over when they cannot be part of a code: the second word of a two-word make ("Volvo Penta", "Leroy Somer"),
+    // a common word ("Engine", "Model", "Heavy Industries", V_GENERIC), a word in lower / mixed case ("Shanghai") or with no
+    // letter ("-", "&"). The first ALL-CAPS word left stays with the code only when the code after it starts with a digit
+    // ("Kohler KDI 2504M" → "KDI 2504M", "Leroy Somer LSA 46.3", "Kubota V 2203"); before a code that starts with a letter it
+    // is a series / company word and goes ("FPT NEF N67TM4" → "N67TM4", "Mitsubishi SME S6R2-PTAA-C" → "S6R2-PTAA-C").
     let run = 0, last = 0;
     while (run < words.length - 1 && /^[a-z&.-]+$/i.test(words[run])) {
       if (brandIn(words[run], V_CODE_BRANDS).length) last = run + 1;
-      else if (last === run && run > 0 && V_MAKE_TAIL.test(words[run])) last = run + 1;
       run++;
     }
-    const i = last || run;
+    let i = last || run;
+    if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
     return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }

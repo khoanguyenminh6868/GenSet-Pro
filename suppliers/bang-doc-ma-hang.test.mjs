@@ -31,6 +31,32 @@ test("ca đang đúng giữ nguyên: CCEC Cummins, PERKINS , mã, Volvo Penta, Y
   assert.deepEqual(engineOf("Y4110ZLD"), ["Y4110ZLD", ""]);
 });
 
+test("sau tên hãng vẫn bóc từ chung / chữ thường / không chữ; chỉ giữ từ TOÀN HOA trước mã bắt đầu bằng số", () => {
+  // không đổi so với cách cũ (điều phối kiểm #1058: bản trước làm các ca này lùi)
+  assert.deepEqual(engineOf("Cummins Engine NTA855-G2A"), ["NTA855-G2A", "Cummins"]);
+  assert.deepEqual(engineOf("Cummins Model NTA855-G2A"), ["NTA855-G2A", "Cummins"]);
+  assert.deepEqual(engineOf("SDEC Shanghai SC9D340D2"), ["SC9D340D2", "SDEC"]);
+  assert.deepEqual(engineOf("Mitsubishi Heavy Industries S6R2-PTA"), ["S6R2-PTA", "Mitsubishi"]);
+  assert.deepEqual(engineOf("Perkins Engine Model 404D-22G"), ["404D-22G", "Perkins"]);
+  // ô thật trong cn/: từ toàn hoa trước mã bắt đầu bằng CHỮ là tên dòng / công ty, bóc
+  assert.deepEqual(engineOf("FPT NEF N67TM4"), ["N67TM4", "FPT"]); // cgm-italia n101
+  assert.deepEqual(engineOf("Mitsubishi SME S6R2-PTAA-C"), ["S6R2-PTAA-C", "Mitsubishi"]); // fudiankang-hunan n2009
+  assert.deepEqual(engineOf("HYUNDAI INFRACORE DM01VP"), ["DM01VP", "Hyundai"]); // cgm-italia n101
+  assert.deepEqual(engineOf("Yanmar - 3TNV80-FPGE"), ["3TNV80-FPGE", "Yanmar"]); // endress n129
+  // giữ: từ toàn hoa ngay trước mã bắt đầu bằng số là phần của mã
+  assert.deepEqual(engineOf("Kubota V 2203"), ["V 2203", "Kubota"]);
+  assert.deepEqual(engineOf("KOHLER KDW 702"), ["KDW 702", "Kohler"]); // bruno n101
+  // ca mơ hồ: "UK" toàn hoa, 2 chữ, trước mã bắt đầu bằng số → luật GIỮ (không phân biệt được nước với tiền tố dòng);
+  // 0 ô thật trong cn/ có dạng này (đếm 21/11/2026), nêu trong mô tả PR #1058
+  assert.deepEqual(engineOf("Perkins UK 1106A-70TAG4"), ["UK 1106A-70TAG4", "Perkins"]);
+});
+
+test("đầu phát: Leroy Somer LSA 46.3, Stamford HCI 444D giữ tiền tố dòng", () => {
+  const alt = (cell) => { const s = sheet("Cummins NTA855-G2A"); s.specTables[0].rows.push(`| Alternator Brand / Model | ${cell}`); const r = C.fromSupplier(s).filter(V); return r.find((o) => o.kind === "engine")?.other; };
+  assert.equal(alt("Leroy Somer LSA 46.3"), "LSA 46.3");
+  assert.equal(alt("Stamford HCI 444D"), "HCI 444D");
+});
+
 test("không có tên hãng trong dãy chữ: bóc như cũ ('SGC 420' của westinpower không thành mã)", () => {
   assert.equal(engineOf("SGC 420"), null);
 });
