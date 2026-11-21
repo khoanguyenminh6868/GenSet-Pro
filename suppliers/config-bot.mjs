@@ -479,7 +479,26 @@ const numOf = (s) => Number(/^\d{1,3}([.,]\d{3})+$/.test(s) ? s.replace(/[.,]/g,
 const noTolerance = (t) => String(t || "").replace(/(?:±|\+\s*\/\s*-)\s*\d+(?:[.,]\d+)?/g, "");
 // "≥ 12 ± 0,5 kVA" asks at least 11.5 kVA: the lowest value the tolerance allows. A tolerance of a fifth or more of the
 // value ("8,5 ±5KVA", a percent written without %) is left out.
-const lowest = (t) => String(t || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)/g, (_, a, b) => (numOf(b) < numOf(a) * 0.2 ? String(Math.round((numOf(a) - numOf(b)) * 100) / 100) : a));
+// The tolerance may stand after the unit ("≥ 8.5 KVA ± 0.5") and be a percent ("≥ 100 kVA ± 5%"): Khoa 21/11/2026, a tolerance the HSMT writes
+// right after the figure counts in the limit.
+const lowOf = (a, b, pct) => (pct ? Math.round(numOf(a) * (1 - numOf(b) / 100) * 1000) / 1000 : numOf(b) < numOf(a) * 0.2 ? Math.round((numOf(a) - numOf(b)) * 100) / 100 : numOf(a));
+const TOL_AFTER = /(\d+(?:[.,]\d+)?)(\s*(?:kVA|kW)\b)?\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)(\s*%)?/gi;
+// `lowest` handles only the tolerance right after the number, not a percent; the rest is applied to the prime already chosen (primeTol), so
+// that a lowered figure does not change which statements agree (12.5 ± 0.5 of the genset, 15 of its alternator).
+const lowest = (t) => String(t || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)(?![\d.,]*\s*%)/g, (_, a, b) => String(lowOf(a, b, false)));
+const primeTol = (p, text) => {
+  if (!p) return p;
+  const unit = p.kVA != null ? "kVA" : "kW";
+  for (const x of String(text).matchAll(TOL_AFTER)) {
+    if (!x[2] || x[2].trim().toLowerCase() !== unit.toLowerCase() || Math.abs(numOf(x[1]) - p[unit]) > 1e-9) continue;
+    const before = text.slice(Math.max(0, x.index - 80), x.index), clause = before.slice(Math.max(before.lastIndexOf("\n"), before.lastIndexOf(";")) + 1);
+    if (/li[êe]n\s*t[ụu]c|c[ơo]\s*b[ảa]n|prime|continuous/i.test(clause) && !/đầu\s*phát|d[ựu]\s*ph[òo]ng|standby/i.test(clause)) { const out = { ...p, [unit]: lowOf(x[1], x[3], !!x[4]) }; return out; }
+  }
+  return p;
+};
+// A tolerance written right after a displacement ("≤ 1,3 lít ± 5%", "(± 0,1)"): the limit moves by it (`sign` +1 for a most, -1 for a least).
+const tolAt = (cell, end) => { const t = cell.slice(end, end + 24).match(/^\s*\(?\s*(?:±|\+\s*\/\s*-|\+-)\s*(\d{1,2}(?:[.,]\d+)?)\s*(%)?/); return t ? { n: Number(t[1].replace(",", ".")), pct: !!t[2] } : null; };
+const withTol = (v, t, sign) => (!t ? v : Math.round((t.pct ? v * (1 + (sign * t.n) / 100) : t.n < v * 0.2 ? v + sign * t.n : v) * 1000) / 1000);
 // The genset's figure, not a transformer's or a UPS's in the same text (web/bidprice.js capPick, 2026-11-04 regression);
 // a text whose every figure is another device's gives none.
 export function capacity(texts) {
@@ -1158,7 +1177,17 @@ export function engineLists(t) {
     // candidates were 19.6 L engines that the agent then marked not met.
     if (MAXIMUM.test(cell)) {
       const m = (DISP_LABEL.test(cell) || (DISP_BARE.test(cell) && ENGINE_LINES.test(lines.slice(Math.max(0, i - 3), i + 4).join(" ")))) && !tankNear(cell) && cell.match(/(?:≤|<=|<(?!=)|tối đa|không (?:lớn|vượt|quá)(?: hơn)?|(?<!không\s)(?:nhỏ hơn|dưới))\s*:?\s*(\d{1,3}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
-      if (m) dmax.push(Number(m[1].replace(",", ".")));
+      if (m) dmax.push(withTol(Number(m[1].replace(",", ".")), tolAt(cell, m.index + m[0].length), 1));
+      // "tối đa" of another figure in the same cell ("dung tích > 1,950 lít; công suất tối đa ≥ 28.6 HP", IB2300046353; "tối đa ≥ 12 KW …;
+      // ≥ 3 xilanh", IB2500403535): a least written with its sign next to its own label still counts.
+      const near = lines.slice(Math.max(0, i - 3), i + 4).join(" ");
+      // A bare "dung tích" only in a cell about the engine that names no vessel ("phun nhiên liệu trực tiếp; dung tích > 1,950 lít" is the
+      // engine's; "… vỏ cách âm, có khóa; dung tích ≥ 65 lít" of a fuel tank is not).
+      const isDisp = DISP_LABEL.test(cell) ? !tankNear(cell) : DISP_BARE.test(cell) && ENGINE_LINES.test(near) && /đ[ộo]ng\s*c[ơo]|(?:xi|xy)[\s-]?lanh/i.test(cell) && !/th[ùu]ng|b[ồo]n\b|b[ìi]nh\b|k[ée]t\b|\btank\b/i.test(cell);
+      const least = isDisp && cell.match(/dung\s*t[íi]ch(?:\s*(?:xi|xy)[\s-]?lanh)?\s*:?\s*(?:≥|>=|>)\s*(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+      if (least) disp.push(withTol(Number(least[1].replace(",", ".")), tolAt(cell, least.index + least[0].length), -1));
+      const cylLeast = cell.match(/(?:≥|>=)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i);
+      if (cylLeast && Number(cylLeast[1]) >= 1 && Number(cylLeast[1]) <= 20) cyl.push(Number(cylLeast[1]));
       return;
     }
     // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
@@ -1175,7 +1204,7 @@ export function engineLists(t) {
     // "12,9 L (± 3%)" / "≥ 1,3 (lít) ± 5%": the HSMT accepts a figure that much below the one it gives (2026-11-12 soát ngưỡng:
     // IB2300087393's 12,9 L (± 3%) left out the 12,78 L engines). A plus-or-minus after the figure lowers the minimum by it.
     const tolOf = (m) => { const t = cell.slice(m.index + m[0].length, m.index + m[0].length + 24).match(/^[^\d±+]{0,12}(?:±|\+\s?\/\s?-|\+-)\s*(\d{1,2}(?:[.,]\d+)?)\s*%/); return t ? Number(t[1].replace(",", ".")) / 100 : 0; };
-    const lowered = (v, m) => Math.round(v * (1 - tolOf(m)) * 1000) / 1000;
+    const lowered = (v, m) => (tolOf(m) ? Math.round(v * (1 - tolOf(m)) * 1000) / 1000 : withTol(v, tolAt(cell, m.index + m[0].length), -1));
     if (d) disp.push(lowered(Number(d[1].replace(",", ".")), d));
     else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
     // Not a figure with a decimal part: "Số xilanh, đường kính x hành trình mm: 2.197" (IB2200029975, a table whose values
@@ -1332,11 +1361,23 @@ export function minsForSize(t, size, sizes, extra = "") {
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
+  // Figures of the prime that disagree only because the alternator's is read too ("Công suất liên tục ≥ 12.5 ±0.5 kVA", "Đầu phát: công
+  // suất liên tục ≥ 15 KVA", IB2300245748): the one that is this size is the genset's. One machine whose prime and standby were
+  // taken for two sizes ("Tổ máy 450 kVA: Công suất dự phòng tối thiểu 450 kVA", "Công suất liên tục tối thiểu 400 kVA", IB2400377239):
+  // the prime stated beside the standby that is the other size is the prime of this size.
+  if (!mins.minPrime && size.cap) {
+    const isSize = (p) => { const v = size.cap.unit === "kW" ? p.kW ?? (p.kVA != null ? p.kVA * 0.8 : null) : p.kVA ?? (p.kW != null ? p.kW / 0.8 : null); return v != null && Math.abs(v / size.cap.value - 1) <= 0.006; };
+    const standbyOfOther = sizes.some((s, k) => k !== j && s.cap && L.some((l, i) => { if (tags[i] !== k) return false; const m = l.match(/(?:d[ựu]\s*ph[òo]ng|standby)[^\d\n]{0,40}?(\d[\d.,]*)\s*(kVA|kW)\b/i); return !!m && m[2].toLowerCase() === s.cap.unit.toLowerCase() && Math.abs(numOf(m[1]) / s.cap.value - 1) <= 0.006; }));
+    const hit = how.minPrime === "own: disagree" ? powerRead(own).prime.find(isSize) : how.minPrime === "of another size" && standbyOfOther ? powerRead(foreign).prime.find(isSize) : null;
+    if (hit) { mins.minPrime = { ...hit }; how.minPrime = how.minPrime === "own: disagree" ? "own: the size" : "one machine"; }
+  }
   // The prime a size asks for is the size itself: a block whose text gives another (the prime of the next genset read in
   // it, 20 kVA's block giving 30) is a misreading, not a minimum.
   if (mins.minPrime && size.cap) {
     const mp = mins.minPrime, v = size.cap.unit === "kW" ? mp.kW ?? (mp.kVA != null ? mp.kVA * 0.8 : null) : mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null);
-    if (v == null || Math.abs(v / size.cap.value - 1) > 0.006) { mins.minPrime = null; how.minPrime = "not the size"; }
+    // The size less the tolerance the HSMT writes after it ("≥ 8.5 KVA ± 0.5" for 8.5 kVA reads 8) is still the size.
+    const tolerated = v != null && [...own.matchAll(TOL_AFTER)].some((x) => Math.abs(numOf(x[1]) / size.cap.value - 1) <= 0.006 && Math.abs(lowOf(x[1], x[3], !!x[4]) - v) < 0.001);
+    if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
   const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
@@ -1489,7 +1530,7 @@ export function powerRead(t) {
   // another size, 42 kVA for 40): marked `fromOther`.
   const list = own.length && prime.every(altFits) ? own : prime, viaOther = !own.length;
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
-  const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
+  const p = primeTol(same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, ft), full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
   return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
 }
