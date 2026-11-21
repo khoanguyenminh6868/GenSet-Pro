@@ -81,6 +81,9 @@ Thứ tự đề xuất: E → A → C → D → B; F, G sau khi Khoa trả lờ
 - Q1 CÓ, ghi rõ nguồn là động cơ / đầu phát. Q2 CÓ, bắt đầu DSE7320 MKII, chức năng tuỳ chọn → "cần xác nhận" (nhóm F: điều phối giao phiên riêng). Q3 ĐẠT THEO THƯƠNG HIỆU + ghi chú "nơi sản xuất cần CO"; chỉ khi hãng nguồn ghi (`keptMakes`) thuộc nhóm HSMT nêu, chưa rõ hãng vẫn chưa rõ; HSMT đòi NƠI SẢN XUẤT vẫn cần CO. Nhóm G phải soát tay, liệt kê hết mọi check xuất xứ đổi.
 - Thứ tự (điều phối): xong bo-doc-tieu-hao-3 trước; khi #1022 merge thì E → A → C → D → G → B, mỗi nhóm hoặc cụm nhỏ một PR draft, không merge.
 
+- Khoa 21/11/2026 (điều phối chuyển lời) "sửa luôn 4 việc đầu tiên": E, A, C, D làm ngay, nhánh chồng lên `fix/bo-doc-tieu-hao`, chia PR (i) E + C + D chỉ `config-bot.mjs`, (ii) A `catalog.js` + `spec-norm.js`. Mỗi PR: test toàn bộ, quality, spec-diff (PR ii), check-all 17 lượt + IB2600603983, liệt kê MỌI check đổi ở gói khác. PR draft, không merge. Sau đó G.
+- Khoa "ok" nhóm B, phạm vi HẸP (làm sau E / A / C / D / G, PR draft riêng, `modelFacts`): chỉ gắn khi (1) tờ của NCC `engine_maker` là hãng của chính động cơ, (2) tiêu đề tờ ghi ĐÚNG MỘT mã model (tờ dải, Spec Sheet 1008–1020, tờ nhiều model: không gắn), (3) kiểm chéo TOÀN BỘ fact mới với NCC khác và hình học, 0 lệch chưa giải thích mới trình. Đo modelFacts mất 0 / thêm theo hãng, check-all, quality; ghi luật + bẫy vào `suppliers/CLAUDE.md`.
+
 ## Câu đã hỏi Khoa
 - **Q1.** Tổ máy dùng động cơ tờ hãng ghi Diesel, đầu phát ghi 50 Hz: có chấm "đạt" nhiên liệu và tần số của tổ máy không? Đề xuất: **có**, ghi rõ nguồn là động cơ / đầu phát.
 - **Q2.** Có lưu operator manual của BĐK vào nguồn không (bắt đầu từ DSE7320 MKII)? Đề xuất: **có**, chỉ chấm chức năng manual ghi là có sẵn, chức năng tuỳ chọn để "cần xác nhận".
