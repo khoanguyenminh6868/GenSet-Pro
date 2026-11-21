@@ -3505,7 +3505,21 @@ export function rfqOf(c, reqs = []) {
   }
   // Questions of the combination checks (comboChecks: site, load types, load step) and of the origin (originChecks).
   for (const q of [...(c.comboAsk || []), ...(c.originAsk || [])]) add({ ...q, status: q.status === "confirm" ? "confirm" : "unclear", confirm: q.kind === "document" ? "document" : undefined }, null, { code: "" });
-  const order = { engine: 0, controller: 1, alternator: 2, genset: 3 }, po = (p) => order[p] ?? 4;
+  // A controller / module chosen from its maker's datasheet that no supplier of the configuration offers (controller.fromMaker,
+  // controller.modules offeredBy null; bdk-mo-dun-4, Khoa 20/11/2026): ask whether the supplier can supply it (model + order
+  // code) and its origin (CO), in tier 1 (make / model / origin).
+  const ctl = c.controller;
+  if (ctl?.model) {
+    const ctlName = `${ctl.model}${ctl.make ? ` (${ctl.make})` : ""}`;
+    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: CM.CTL_ALT_LABEL,
+      ask: `Xác nhận NCC cấp được bộ điều khiển ${ctlName}; nêu nước sản xuất, gửi CO` }, null);
+    for (const m of (ctl.modules || []).filter((x) => !x.offeredBy)) {
+      const order = m.order ? `, mã đặt hàng ${m.order}` : "";
+      add({ part: "controller", item: `Mô-đun ${m.model}${order}`, requirement: m.why?.length ? `cho ${m.why.join(", ")}` : "", kind: "model", status: "unclear", code: "ctl_model", why: m.label || CM.MODULE_LABEL,
+        ask: `Xác nhận NCC cấp được mô-đun ${m.model}${m.make ? ` (${m.make})` : ""}${order} lắp kèm bộ điều khiển ${ctl.model}; nêu nước sản xuất, gửi CO` }, null);
+    }
+  }
+  const order ={ engine: 0, controller: 1, alternator: 2, genset: 3 }, po = (p) => order[p] ?? 4;
   const line = (q) => `${q.item}${q.requirement ? `: ${q.requirement}` : ""}${q.note ? ` (${q.note})` : ""}`;
   const out = [];
   const one = (q) => out.push({ tier: q.tier, part: q.part, of: what(q.part), item: q.item, requirement: q.requirement, kind: q.kind, status: q.status, ask: q.ask, ...(q.note ? { note: q.note } : {}) });
