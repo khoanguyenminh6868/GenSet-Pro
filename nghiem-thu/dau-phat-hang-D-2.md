@@ -27,3 +27,6 @@ Nhánh `dau-phat-hang-d2` (từ D1). Đo: `dieu-phoi\dau-vao\dau-phat-hang-d2\` 
 ## Chưa làm
 - Kích từ PMG của Mecc Alte: tờ ghi tuỳ chọn theo dải, chưa đọc, HSMT đòi PMG thì để "chưa rõ".
 - Dải Mecc Alte đời cũ (ECO38 A, ECO40 B …) NCC hay chào: không có tờ nên không có định mức, đầu phát đó được giữ nguyên.
+
+## Stamford S4–S7 do NCC chào (Khoa 21/11/2026 "có")
+Chỉ sửa `madeChecks` (config-bot), không sửa catalog.js. Đo 17 lượt / 47 cấu hình so e8173a33: 0 cấu hình đổi. Có 2 cấu hình Stamford S4–S7 (IB2600603983 #1, #6, S5L1D-H41), HSMT ghi "Nhà sản xuất/nhãn hiệu" nên vẫn đạt theo thương hiệu; không lượt chụp nào có Stamford S4–S7 ở gói đòi nơi sản xuất, luật mới chỉ được kiểm bằng test. Danh sách: dau-vao/dau-phat-hang-d2/stamford-s4-s7.txt.
