@@ -2209,11 +2209,15 @@ export function hsmtCommNames(hsmtText) {
 // and the answer is DSE7320 MKII + DSE890 MKII): each controller with a datasheet, per make, scored with its best modules
 // (CM.bestPair) on the communication functions the HSMT names; the kind the HSMT asks (AMF, synchronising) only; the lowest
 // step (CM.ctlStep, inferred from the names) among those meeting the most is marked. The agent still checks every function.
+// The kind of controller the HSMT asks for: "sync" (hòa đồng bộ, chạy song song), "amf" (CM.needsAmf) or null.
+export function ctlKindNeed(hsmtText) {
+  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
+  return /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+}
 export function lowestCtlMd(models, facts, suppliers, hsmtText, kinds) {
   const names = hsmtCommNames(hsmtText);
   if (!names.length || !models.length) return "";
-  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
-  const need = /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+  const need = ctlKindNeed(hsmtText);
   const modFacts = CM.moduleFacts(suppliers), byMake = new Map();
   for (const m of models) {
     const list = factsFor(facts, "controller", m), x = CAT.controllersIn(m).find((y) => y.model);
@@ -2830,6 +2834,42 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     c.controller.alternatives = alts.slice(0, 2).map(({ parts, step: _s, ...a }) => a);
     c.controller.altLine = CM.altLineOf(c.controller.alternatives);
   };
+  // Hai bản bộ điều khiển (Khoa 21/11/2026 "sửa theo phương án 2", every make): a configuration whose main controller comes from
+  // the maker's datasheet (no supplier of it offers that one) also shown with the controller a supplier of the same engine DOES
+  // offer: same make, the kind the HSMT asks, a datasheet, at least half of the communication parts with its best module
+  // (fewer: not kept, điều phối's proposal). The code writes the copy; the agent has not read that datasheet, so every
+  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. A genset row of the
+  // configuration keeps the copy to that row's supplier.
+  const ctlNeed = ctlKindNeed(hsmtText);
+  const ctlTwinOf = (c) => {
+    if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
+    const ek = CAT.keyOf(c.engine.model), only = c.genset?.model ? c.genset.src?.supplierId : null, rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId) && (!only || u.supplierId === only)) rowBy.set(u.supplierId, u);
+    if (!rowBy.size) return null;
+    const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
+    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
+    const step = (a) => (a.step == null ? Infinity : a.step);
+    const pick = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names).out
+      .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
+      .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
+    if (!pick) return null;
+    const key = CAT.keyOf(pick.offeredAs), hasIt = (id) => (sup.get(id).controllers || []).find((x) => x.model && CAT.keyOf(x.model) === key);
+    const by = ids.filter(hasIt).slice(0, 3), o = hasIt(pick.offeredBy);
+    const note = `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`;
+    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
+    const t = structuredClone(c);
+    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
+    t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
+    t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
+    t.checks = (t.checks || []).map((x) => (x.part !== "controller" ? x : { ...blank(x), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
+    const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
+    const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
+    t.gaps = [gap, ...rest];
+    t.rank = (c.rank ?? 0) + 0.5;
+    t.ctlTwin = { of: ctlModelOf(c.controller), by };
+    return t;
+  };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
   const sync = BP.brandSyncOf(hsmtText);
@@ -3049,7 +3089,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   }
   // The genset the HSMT names is never the one cut by the limit: it goes before the equivalents (stable order otherwise).
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
-  result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
+  // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
+  // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
+  result.configs = (result.configs || []).filter((c) => !c.ctlTwin).flatMap((c, _i, all) => {
+    const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
+    return t && !all.some(same) ? [c, t] : [c];
+  });
+  result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
   // Kiểm tra tổ hợp (2026-11-10): what the HSMT says about site, overload, load step and load types, read once.
@@ -3210,6 +3256,15 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     // supplier's line offers, each with its best modules, as "Phương án khác đạt tương đương".
     if (c.controller?.model) {
       const ctlF = factsOf(c, "controller");
+      // The copy with the offered controller (ctlTwin): the agent read no datasheet of it, so a communication part whose every
+      // function is on that controller's own datasheet is met by code, quoting the line; the modules below do the rest.
+      if (c.ctlTwin) for (const x of c.checks.filter((y) => isComm(y) && y.status !== "met")) {
+        const e = CM.commEval(x.name || x.item, ctlF, []);
+        if (!e.subs.length || !e.per.every((p) => p.by)) continue;
+        const first = e.per[0], also = e.per.slice(1).map((p) => ({ sub: p.sub.k, supplierId: p.f.supplierId, n: p.f.n, line: p.line }));
+        Object.assign(x, { status: "met", byCode: true, offered: e.per.map((p) => p.sub.k).join(", "), sourceQuote: first.line, factSrc: { supplierId: first.f.supplierId, n: first.f.n, line: first.f.line }, note: `Code đọc trên datasheet ${c.controller.model}.`, ...(also.length ? { alsoQuotes: also } : {}) });
+        delete x.hint; delete x.unverified; delete x.wordsMissing;
+      }
       CM.commModules(c, c.checks.filter(isComm), ctlF, compatOf(ctlModelOf(c.controller), ctlF), modFacts);
       ctlAlternatives(c, result.requirements || []);
     } else if (c.controller) { delete c.controller.modules; delete c.controller.alternatives; delete c.controller.altLine; }
@@ -5299,7 +5354,11 @@ export function rankConfigs(result) {
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
     // trần 2 cấu hình cho hãng đó"; check has already left only that make).
-    const mate = (c.alternator?.fromMaker || offered(c)) && kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && CAT.keyOf(o.engine?.model || "") === ek && (c.alternator?.fromMaker ? offered(o) : !!o.alternator?.fromMaker));
+    // Hai bản bộ điều khiển (Khoa 21/11/2026): the copy with the controller a supplier offers and the configuration it was made
+    // from are one place too, whichever ranks first.
+    const twinOf = (a, b) => !!a.ctlTwin && CAT.keyOf(a.ctlTwin.of || "") === ctlKey(b);
+    const ctlMate = kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && `${CAT.keyOf(o.engine?.model || "")}|${CAT.keyOf(o.alternator?.model || "")}` === k && (twinOf(c, o) || twinOf(o, c)));
+    const mate = ctlMate || ((c.alternator?.fromMaker || offered(c)) && kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && CAT.keyOf(o.engine?.model || "") === ek && (c.alternator?.fromMaker ? offered(o) : !!o.alternator?.fromMaker)));
     if (!mate && mk && mk !== traitMk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
@@ -5312,7 +5371,8 @@ export function rankConfigs(result) {
   // The second of a pair right under the first.
   for (const [c, mate] of pairOf) {
     const from = list.findIndex((x) => x.c === c), item = list.splice(from, 1)[0];
-    list.splice(list.findIndex((x) => x.c === mate) + 1, 0, item);
+    // Of the two controller versions, the one the agent checked (the lowest that meets the HSMT) stays above its copy.
+    list.splice(list.findIndex((x) => x.c === mate) + (mate.ctlTwin ? 0 : 1), 0, item);
   }
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
