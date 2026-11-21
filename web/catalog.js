@@ -1779,8 +1779,9 @@
       fixes: [{ key: "cyl", from: "16", to: "12", why: "mã 12V 1600 G31F; tài liệu MTU Series 1600 Gx0 / Gx1 ghi 12V 1600 G31F 806 kW, Cylinder configuration 12 cyl", src: "https://www.mtu-solutions.com/content/dam/mtu/products/power-generation/powergeneration-product-list-latest/3239091_MTU_Gendrive_spec_12V1600Gx0_Gx1_3B_A2A.pdf (mở 21/11/2026)" }], why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F: sửa thành 12 theo tài liệu hãng" },
     // aosif n1079 (PDF datasheet "255705512637.pdf", engine QSL9-G5): the "Engine specification" block is the QSL9-G7 sheet's
     // ("Model | QSL9-G7 | No. of cylinder | 4", bore 107x124, 6.69 L), so the 4 is not the QSL9-G5's; aosif n1078 (same sheet, 6 cylinders)
-    // and its AC330 / AC395 rows (6L) say 6. Only the cylinder count is dropped (Khoa 21/11/2026 "fix", `dropspec`, no figure written).
-    { supplierId: "aosif", n: 1079, model: "QSL9-G5", line: "| No. of cylinder | 4", act: "dropspec", keys: ["cyl"], khoa: "Khoa 21/11/2026", why: "datasheet QSL9-G5 chép khối động cơ của QSL9-G7 (ghi 4 xi lanh; cùng NCC ghi 6 cho QSL9-G5): bỏ riêng số xi lanh" },
+    // and its AC330 / AC395 rows (6L) say 6. The whole block's figures are dropped (cyl; điều phối 21/11/2026 added bore, disp, compr
+    // of the same block: 107x124 / 6.69 L / 17.3:1 are not the QSL9's 114x145 / 8.9 L); `dropspec`, no figure written.
+    { supplierId: "aosif", n: 1079, model: "QSL9-G5", line: "| No. of cylinder | 4", act: "dropspec", keys: ["cyl", "bore", "disp", "compr"], khoa: "Khoa 21/11/2026", why: "datasheet QSL9-G5 chép khối \"Engine specification\" của QSL9-G7 (4 xi lanh, 107x124, 6.69 L, 17.3:1; cùng NCC ghi 6 cho QSL9-G5): bỏ xi lanh, đường kính × hành trình, dung tích, tỉ số nén của khối đó" },
     // depco n2102 P158LE-1 (DPK-DD-441): "Cylinder 6 | Displacement 11.051" are the P126TI's figures; the same row's bore x stroke 128 X 142
     // x 8 = 14.62 L, depco's own P158LE rows (n2101, n2182) say 8 / 14.618 / 14.62, and bdadl, fukangsi, jianghao, haifeng, taihai, huatai,
     // wintpower, zhengdian, legapower ... write 8 cylinders and 14.618 L for P158LE-1: both (a) and (b) hold → `fixspec`.

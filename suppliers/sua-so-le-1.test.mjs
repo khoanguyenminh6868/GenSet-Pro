@@ -14,7 +14,8 @@ test("aosif n1079 QSL9-G5: xi lanh 4 (khối QSL9-G7 của datasheet) bỏ; n107
   const notes = [];
   const a = eng("aosif", 1079, notes).find((r) => r.model === "QSL9-G5");
   assert.equal(spec(a, "cyl"), undefined);
-  assert.equal(spec(a, "bore"), "107x124mm");          // chưa được duyệt bỏ: ghi vào nghiệm thu, không sửa ở đây
+  for (const k of ["bore", "disp", "compr"]) assert.equal(spec(a, k), undefined, k);   // cùng khối QSL9-G7 (điều phối 21/11/2026)
+  assert.equal(spec(a, "current"), "433A");            // số khác của dòng giữ
   assert.equal(a.fixed, undefined);
   assert.ok(notes.some((x) => x.n === 1079 && /ngoại lệ theo dòng/.test(x.reason) && /dropspec/.test(x.detail)));
   assert.equal(spec(eng("aosif", 1078).find((r) => r.model === "QSL9-G5"), "cyl"), "6");
