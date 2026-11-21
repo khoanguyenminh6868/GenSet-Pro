@@ -1,0 +1,296 @@
+model	hãng	luật	dòng	lượt	số NCC	NCC	model ở gốc
+3TNV88-GGE	Yanmar	disp	151	20	7	powerzoo,voltgent,hosem-power,mecca-power,gb-power,weiman-fujian,excel-power-ningde	3TNV88-GGE
+4DW81-23D	FAWDE	maxDisp	91	7	10	victory-generator,voltgent,powerzoo,mecca-power,world-power-fuzhou,depco-power,excel-power-ningde,waeta-fujian,weiman-fujian,xinhengxin-fujian	4DW81-23D
+3TNV88-GGE	Yanmar	KHONG_TRONG_DROPPED	90	20	5	sanq-power,wintpower,acepow-fuan,sr-genset,tesla-fujian	3TNV88-GGE
+4DW81-23D	FAWDE	KHONG_TRONG_DROPPED	56	7	6	wintpower,uleengen,minsun-motor,rcg-power,agestar,keliang-fuan	4DW81-23D
+CA6DL2-30	FAWDE	KHONG_TRONG_DROPPED	50	10	3	uleengen,rcg-power,agestar	CA6DL2-30
+WD287TAD58/1500		KHONG_TRONG_DROPPED	42	21	1	eastern-lion-fuan	WD287TAD58/1500
+1103A-33G(India)	Perkins	KHONG_TRONG_DROPPED	39	25	1	landtop-fuzhou	1103A-33G(India)
+YD380D	Yangdong	disp	38	8	17	mecca-power,elitech-power,gordon-power,comappower,koten-power,longkai-power,victory-generator,wintpower,xingguang-jiangsu,world-power-fuzhou,excel-power-ningde,legapower,mamo-power,waeta-fujian,yanan-power,xinhengxin-fujian,previa-ningde	YD380D/12KW ; YD380D/10KW ; YD380D
+YD485D	Yangdong	disp	38	13	2	mamo-power,excel-power-ningde	YD485D
+WD269TAD56/1500		KHONG_TRONG_DROPPED	36	18	1	eastern-lion-fuan	WD269TAD56/1500
+WD269TAD50/1500		KHONG_TRONG_DROPPED	34	17	1	eastern-lion-fuan	WD269TAD50/1500
+4DW92-39D-HMS20W	FAWDE	KHONG_TRONG_DROPPED	30	6	4	acepow-fuan,bobig-power,agestar,landtop-fuzhou	4DW92-39D-HMS20W
+403D-11G commodity	Perkins	KHONG_TRONG_DROPPED	28	28	1	sr-genset	403D-11G commodity
+WD269TAD43/1500		KHONG_TRONG_DROPPED	28	14	1	eastern-lion-fuan	WD269TAD43/1500
+WD269TAD45/1500		KHONG_TRONG_DROPPED	28	14	1	eastern-lion-fuan	WD269TAD45/1500
+WD269TAD48/1500		KHONG_TRONG_DROPPED	28	14	1	eastern-lion-fuan	WD269TAD48/1500
+1103A-33TG1(India)	Perkins	KHONG_TRONG_DROPPED	24	18	1	landtop-fuzhou	1103A-33TG1(India)
+1103A-33TG2(India)	Perkins	KHONG_TRONG_DROPPED	22	17	1	landtop-fuzhou	1103A-33TG2(India)
+WD269TAD38/1500		KHONG_TRONG_DROPPED	22	11	1	eastern-lion-fuan	WD269TAD38/1500
+WD269TAD41/1500		KHONG_TRONG_DROPPED	22	11	1	eastern-lion-fuan	WD269TAD41/1500
+YD385D	Yangdong	cyl,disp	21	16	1	mecca-power	YD385D/12KW ; YD385D/14.4KW
+CA6DF2D-14D	FAWDE	KHONG_TRONG_DROPPED	21	3	5	uleengen,wintpower,rcg-power,keliang-fuan,agestar	CA6DF2D-14D
+1104D-E44TAG2 EU	Perkins	KHONG_TRONG_DROPPED	20	20	1	sr-genset	1104D-E44TAG2 EU
+4DX22-65D-HMS20W	FAWDE	KHONG_TRONG_DROPPED	20	5	3	acepow-fuan,bobig-power,agestar	4DX22-65D-HMS20W
+YD485D	Yangdong	KHONG_TRONG_DROPPED	19	19	1	minsun-motor	YD485D
+WP2.3D33E200	Weichai	disp	17	14	1	weiman-fujian	WP2.3D33E200/30KW
+1506A-E88TAG5(USA/EU)	Perkins	KHONG_TRONG_DROPPED	16	16	1	landtop-fuzhou	1506A-E88TAG5(USA/EU)
+WD180TAD61/1500		KHONG_TRONG_DROPPED	16	8	1	eastern-lion-fuan	WD180TAD61/1500
+D1105-E2BG-CHN-1	Kubota	KHONG_TRONG_DROPPED	15	15	1	long-gen	D1105-E2BG-CHN-1
+V1505-E2BG-CHN-1	Kubota	KHONG_TRONG_DROPPED	15	15	1	long-gen	V1505-E2BG-CHN-1
+4DX23-65D	FAWDE / Xichai	KHONG_TRONG_DROPPED	15	5	2	keliang-fuan,agestar	4DX23-65D
+D1703-E2BG-CHN-1	Kubota	KHONG_TRONG_DROPPED	15	15	1	long-gen	D1703-E2BG-CHN-1
+2806C-E18TAG1A (USA/EU)	Perkins	KHONG_TRONG_DROPPED	15	15	1	landtop-fuzhou	2806C-E18TAG1A (USA/EU)
+CA6DF2-17D	FAWDE	KHONG_TRONG_DROPPED	14	2	6	wintpower,uleengen,minsun-motor,rcg-power,agestar,keliang-fuan	CA6DF2-17D
+India 4006-23TAG2A	Perkins	KHONG_TRONG_DROPPED	14	14	1	kaihua-genset	India 4006-23TAG2A
+UK 4006-23TAG2A	Perkins	KHONG_TRONG_DROPPED	14	14	1	kaihua-genset	UK 4006-23TAG2A
+4006-23TAG2A Switchable	Perkins	KHONG_TRONG_DROPPED	14	14	1	sr-genset	4006-23TAG2A Switchable
+4006-23TAG2A(India)	Perkins	KHONG_TRONG_DROPPED	14	14	1	landtop-fuzhou	4006-23TAG2A(India)
+4006-23TAG2A(UK)	Perkins	KHONG_TRONG_DROPPED	14	14	1	landtop-fuzhou	4006-23TAG2A(UK)
+4DX23-78D-HMS20W	FAWDE	KHONG_TRONG_DROPPED	14	6	3	acepow-fuan,bobig-power,landtop-fuzhou	4DX23-78D-HMS20W
+YD485D	Yangdong	maxDisp	14	7	2	mamo-power,excel-power-ningde	YD485D
+WD327TAD73/1500		KHONG_TRONG_DROPPED	14	7	1	eastern-lion-fuan	WD327TAD73/1500
+YD380D	Yangdong	cyl	13	10	1	mecca-power	YD380D/12KW ; YD380D/10KW
+1706A-E93TAG1(USA/EU)	Perkins	KHONG_TRONG_DROPPED	13	13	1	landtop-fuzhou	1706A-E93TAG1(USA/EU)
+YD380D	Yangdong	KHONG_TRONG_DROPPED	13	1	8	acepow-fuan,tecgen-fujian,uleengen,eastern-lion-fuan,minsun-motor,landtop-fuzhou,depco-power,tesla-fujian	YD380D
+YD485D	Yangdong	cyl	13	6	2	mamo-power,excel-power-ningde	YD485D
+4DW92-39D-HMS20W	FAWDE	disp	12	6	2	longkai-power,previa-ningde	4DW92-39D-HMS20W
+1103A-33TG1 Derate	Perkins	KHONG_TRONG_DROPPED	12	6	1	aj-power	1103A-33TG1 Derate
+4006-23TAG3A Derate	Perkins	KHONG_TRONG_DROPPED	12	6	1	aj-power	4006-23TAG3A Derate
+YD380D	Yangdong	cyl,disp	11	9	1	mecca-power	YD380D/10KW ; YD380D/12KW
+V2203-E2BG-CHN-1	Kubota	KHONG_TRONG_DROPPED	11	11	1	long-gen	V2203-E2BG-CHN-1
+1506A-E88TAG3(USA/EU)	Perkins	KHONG_TRONG_DROPPED	11	11	1	landtop-fuzhou	1506A-E88TAG3(USA/EU)
+1706A-E93TAG2(USA/EU)	Perkins	KHONG_TRONG_DROPPED	11	11	1	landtop-fuzhou	1706A-E93TAG2(USA/EU)
+4TNV106-GGE	Yanmar	KHONG_TRONG_DROPPED	10	2	5	sanq-power,wintpower,sr-genset,tesla-fujian,long-gen	4TNV106-GGE
+403A-15G1 Derate		KHONG_TRONG_DROPPED	10	10	1	aj-power	403A-15G1 Derate
+403A-15G2 Derate		KHONG_TRONG_DROPPED	10	10	1	aj-power	403A-15G2 Derate
+1206A-E70TTAG3(UK/EP)	Perkins	KHONG_TRONG_DROPPED	10	10	1	landtop-fuzhou	1206A-E70TTAG3(UK/EP)
+2806A-E18TAG2 (USA/EU)	Perkins	KHONG_TRONG_DROPPED	10	10	1	landtop-fuzhou	2806A-E18TAG2 (USA/EU)
+WD287TAD61L/1500		KHONG_TRONG_DROPPED	10	5	1	eastern-lion-fuan	WD287TAD61L/1500
+WX287TAD68/1500		KHONG_TRONG_DROPPED	10	5	1	eastern-lion-fuan	WX287TAD68/1500
+WD129TAD25/1500		KHONG_TRONG_DROPPED	10	5	1	eastern-lion-fuan	WD129TAD25/1500
+WD135TAD28/1500		KHONG_TRONG_DROPPED	10	5	1	eastern-lion-fuan	WD135TAD28/1500
+WD145TAD30/1500		KHONG_TRONG_DROPPED	10	5	1	eastern-lion-fuan	WD145TAD30/1500
+4DX23-65D	FAWDE / Xichai	disp	9	4	3	weiman-fujian,xinhengxin-fujian,maverick-generators	4DX23-65D
+404D-22G	Perkins	disp	9	9	1	superwatt-swt	404D-22G PERKINS
+3TNV82A-GGE/9.9KW	Yanmar	KHONG_TRONG_DROPPED	8	8	1	jet-power	3TNV82A-GGE/9.9KW
+YD385D	Yangdong	disp	8	5	1	mecca-power	YD385D/12KW ; YD385D/14.4KW
+4DX22-65D-HMS20W	FAWDE	disp	8	4	2	longkai-power,previa-ningde	4DX22-65D-HMS20W
+Y4102ZLD	Yangdong	disp	8	4	1	mecca-power	Y4102ZLD/48KW ; Y4102ZLD/53KW
+V2003-T-E2BG-CHN-1	Kubota	KHONG_TRONG_DROPPED	8	8	1	long-gen	V2003-T-E2BG-CHN-1
+India 4006-23TAG3A	Perkins	KHONG_TRONG_DROPPED	8	8	1	kaihua-genset	India 4006-23TAG3A
+UK 4006-23TAG3A	Perkins	KHONG_TRONG_DROPPED	8	8	1	kaihua-genset	UK 4006-23TAG3A
+4006-23TAG3A(India)	Perkins	KHONG_TRONG_DROPPED	8	8	1	landtop-fuzhou	4006-23TAG3A(India)
+4DX23-78D-HMS20W	FAWDE	disp	8	4	2	longkai-power,previa-ningde	4DX23-78D-HMS20W
+4TNV88-GGE/16.4KW	Yanmar	KHONG_TRONG_DROPPED	8	6	1	jet-power	4TNV88-GGE/16.4KW
+WD327TAD78/1500		KHONG_TRONG_DROPPED	8	4	1	eastern-lion-fuan	WD327TAD78/1500
+WD327TAD82/1500		KHONG_TRONG_DROPPED	8	4	1	eastern-lion-fuan	WD327TAD82/1500
+WD164TAD43/1500		KHONG_TRONG_DROPPED	8	4	1	eastern-lion-fuan	WD164TAD43/1500
+8M33D890E200	Weichai	cyl	7	7	1	weiman-fujian	8M33D890E200/815/890KW
+CA6DF2-17D	FAWDE	layout	7	1	6	koten-power,uleengen,depco-power,excel-power-ningde,weiman-fujian,xinhengxin-fujian	CA6DF2-17D
+6ZTAA13-G2	Cummins	maxDisp	7	4	1	jiuan-power	6ZTAA13-G2 (DCEC)
+2506C-E15TAG2 (USA/EU)	Perkins	KHONG_TRONG_DROPPED	7	7	1	landtop-fuzhou	2506C-E15TAG2 (USA/EU)
+WP2.3D25E200	Weichai	disp	7	7	1	weiman-fujian	WP2.3D25E200/23KW
+YND485D	Yangdong	disp	7	7	1	mecca-power	YND485D/17KW
+WP7D264E310	Weichai	disp	7	7	1	superwatt-swt	WP7D264E310 Weichai
+CA6DF2D-14D	FAWDE	cyl	7	3	3	koten-power,weiman-fujian,excel-power-ningde	CA6DF2D-14D
+WP2.3D40E200	Weichai	disp	7	7	1	weiman-fujian	WP2.3D40E200/36KW
+4DX22-50D	FAWDE / Xichai	maxDisp	7	2	4	uleengen,runda-fujian,xinhengxin-fujian,weiman-fujian	4DX22-50D
+YD385D	Yangdong	cyl	6	5	1	mecca-power	YD385D/12KW ; YD385D/14.4KW
+4TNV106-GGE	Yanmar	disp	6	1	6	powerzoo,voltgent,mecca-power,excel-power-ningde,gb-power,weiman-fujian	4TNV106-GGE
+1206A-E70TTAG1(UK/EP)	Perkins	KHONG_TRONG_DROPPED	6	6	1	landtop-fuzhou	1206A-E70TTAG1(UK/EP)
+1206A-E70TTAG2(UK/EP)	Perkins	KHONG_TRONG_DROPPED	6	6	1	landtop-fuzhou	1206A-E70TTAG2(UK/EP)
+WD327TAD88/1500		KHONG_TRONG_DROPPED	6	3	1	eastern-lion-fuan	WD327TAD88/1500
+404D-22G Derate		KHONG_TRONG_DROPPED	6	6	1	aj-power	404D-22G Derate
+404A-22G1 Derate		KHONG_TRONG_DROPPED	6	6	1	aj-power	404A-22G1 Derate
+WD164TAD45/1500		KHONG_TRONG_DROPPED	6	3	1	eastern-lion-fuan	WD164TAD45/1500
+8M33D800E200	Weichai	cyl	6	6	1	weiman-fujian	8M33D800E200/730/800KW
+CA6DF2-17D	FAWDE	cyl	6	1	5	koten-power,uleengen,mecca-power,excel-power-ningde,weiman-fujian	CA6DF2-17D
+India 4008TAG2	Perkins	KHONG_TRONG_DROPPED	6	6	1	kaihua-genset	India 4008TAG2
+UK 4008TAG2	Perkins	KHONG_TRONG_DROPPED	6	6	1	kaihua-genset	UK 4008TAG2
+India 4008-30TAG3	Perkins	KHONG_TRONG_DROPPED	6	6	1	kaihua-genset	India 4008-30TAG3
+UK 4008-30TAG3	Perkins	KHONG_TRONG_DROPPED	6	6	1	kaihua-genset	UK 4008-30TAG3
+4008TAG2 Switchable	Perkins	KHONG_TRONG_DROPPED	6	6	1	sr-genset	4008TAG2 Switchable
+2806A-E18TAG2	Perkins	cyl,disp,layout	6	6	1	superwatt-swt	2806A-E18TAG2 PERKINS
+TWD1653GE	Volvo Penta	cyl,disp,layout	6	6	1	superwatt-swt	TWD1653GE VOLVO
+2206C-E13TAG3 (USA/EU)	Perkins	KHONG_TRONG_DROPPED	6	6	1	landtop-fuzhou	2206C-E13TAG3 (USA/EU)
+4TNV106-GGE	Yanmar	maxDisp	6	1	6	powerzoo,voltgent,mecca-power,excel-power-ningde,gb-power,weiman-fujian	4TNV106-GGE
+WP4.1D66E200	Weichai	disp	5	5	1	weiman-fujian	WP4.1D66E200/60KW
+4008TAG2A(India)	Perkins	KHONG_TRONG_DROPPED	5	5	1	landtop-fuzhou	4008TAG2A(India)
+4008TAG2A(UK)	Perkins	KHONG_TRONG_DROPPED	5	5	1	landtop-fuzhou	4008TAG2A(UK)
+4TNV84T-GGE/19.1KW	Yanmar	KHONG_TRONG_DROPPED	5	5	1	jet-power	4TNV84T-GGE/19.1KW
+404D-22G	Perkins	cyl	5	5	1	superwatt-swt	404D-22G PERKINS
+WP2.3D25E200	Weichai	cyl	5	5	1	weiman-fujian	WP2.3D25E200/23KW
+YSD490D	Yangdong	cyl	5	5	1	mecca-power	YSD490D/21KW
+V3300-T-E2BG2-CHN-1	Kubota	KHONG_TRONG_DROPPED	5	5	1	long-gen	V3300-T-E2BG2-CHN-1
+4DX21-53D-HMS20W	FAWDE	KHONG_TRONG_DROPPED	5	2	3	bobig-power,acepow-fuan,landtop-fuzhou	4DX21-53D-HMS20W
+WP10D320E200	Weichai	disp	5	5	1	weiman-fujian	WP10D320E200/291kw
+WP2.3D48E200	Weichai	disp	4	4	1	weiman-fujian	WP2.3D48E200/44KW
+WP13D440E310	Weichai	disp	4	4	1	superwatt-swt	WP13D440E310 Weichai
+WP13D490E310	Weichai	disp	4	4	1	weiman-fujian	WP13D490E310/450KW
+YND485D	Yangdong	cyl	4	4	1	mecca-power	YND485D/17KW
+WJ97TAD24/1500		KHONG_TRONG_DROPPED	4	2	1	eastern-lion-fuan	WJ97TAD24/1500
+WP10D264E200	Weichai	disp	4	4	1	weiman-fujian	WP10D264E200/240kw
+India 4012-46TAG3A	Perkins	KHONG_TRONG_DROPPED	4	2	1	kaihua-genset	India 4012-46TAG3A
+UK 4012-46TAG3A	Perkins	KHONG_TRONG_DROPPED	4	2	1	kaihua-genset	UK 4012-46TAG3A
+12M55D2450E310	Weichai	cyl	4	4	1	weiman-fujian	12M55D2450E310/2200KW
+12M55D2700E310	Weichai	cyl	4	4	1	weiman-fujian	12M55D2700E310/2420KW
+CA6DN1-45D	FAWDE / Xichai	disp	4	2	2	weiman-fujian,xinhengxin-fujian	CA6DN1-45D
+JE493DB-04	Isuzu	layout	4	2	1	elitech-power	JE493DB-04
+YD380D	Yangdong	disp,layout	4	2	1	mecca-power	YD380D/10KW ; YD380D/12KW
+India 4012-46TAG2A	Perkins	KHONG_TRONG_DROPPED	4	4	1	kaihua-genset	India 4012-46TAG2A
+UK 4012-46TAG2A	Perkins	KHONG_TRONG_DROPPED	4	4	1	kaihua-genset	UK 4012-46TAG2A
+4012-46TAG2A Switchable	Perkins	KHONG_TRONG_DROPPED	4	4	1	sr-genset	4012-46TAG2A Switchable
+YD4EZLD	Yangdong	cyl	4	2	1	mecca-power	YD4EZLD/63KW ; YD4EZLD/68KW
+4DX22-50D	FAWDE / Xichai	KHONG_TRONG_DROPPED	4	2	2	agestar,keliang-fuan	4DX22-50D
+6M33D725E310	Weichai	cyl,disp,layout	4	4	1	weiman-fujian	6M33D725E310/675KW
+1104D-E44TAG1 EU	Perkins	KHONG_TRONG_DROPPED	4	4	1	sr-genset	1104D-E44TAG1 EU
+Y4110ZLD	Yangdong	disp	4	2	1	mecca-power	Y4110ZLD/80KW ; Y4110ZLD/85KW
+2506A-E15TAG2		maxDisp	3	3	1	cgm-italia	440 2506A-E15TAG2
+2806A-E18TAG1A		maxDisp	3	3	1	cgm-italia	528 2806A-E18TAG1A
+403D-11G Derate		KHONG_TRONG_DROPPED	3	3	1	aj-power	403D-11G Derate
+WP6D152E200	Weichai	disp	3	3	1	weiman-fujian	WP6D152E200/138KW
+1106D-E70TAG2 EU	Perkins	KHONG_TRONG_DROPPED	3	3	1	sr-genset	1106D-E70TAG2 EU
+YSD490D	Yangdong	disp	3	3	1	mecca-power	YSD490D/21KW
+4TNV98-GGE/30.7KW	Yanmar	KHONG_TRONG_DROPPED	3	2	1	jet-power	4TNV98-GGE/30.7KW
+Y490PD	Yangdong	cyl	3	2	1	mecca-power	Y490PD/24KW ; Y490PD/28KW
+WP2.3D33E200	Weichai	cyl	3	2	1	weiman-fujian	WP2.3D33E200/30KW
+CA6DN1-45D	FAWDE / Xichai	KHONG_TRONG_DROPPED	3	3	1	keliang-fuan	CA6DN1-45D
+2206C-E13TAG2 (USA/EU)	Perkins	KHONG_TRONG_DROPPED	3	3	1	landtop-fuzhou	2206C-E13TAG2 (USA/EU)
+CA6DM2-41D	FAWDE / Xichai	disp	3	3	1	xinhengxin-fujian	CA6DM2-41D
+V3300-E2BG2-CHN-1	Kubota	KHONG_TRONG_DROPPED	3	3	1	long-gen	V3300-E2BG2-CHN-1
+1706A-E93TAG2		disp	3	3	1	cgm-italia	308 1706A-E93TAG2
+WP10D264E200	Weichai	maxDisp	3	3	1	weiman-fujian	WP10D264E200/240kw
+India 4012-46TWG2A	Perkins	KHONG_TRONG_DROPPED	3	3	1	kaihua-genset	India 4012-46TWG2A
+UK 4012-46TWG2A	Perkins	KHONG_TRONG_DROPPED	3	3	1	kaihua-genset	UK 4012-46TWG2A
+4012-46TWG2A Switchable	Perkins	KHONG_TRONG_DROPPED	3	3	1	sr-genset	4012-46TWG2A Switchable
+Y4100D	Yangdong	disp	3	2	1	mecca-power	Y4100D/38KW ; Y4100D/32KW
+6ZTAA13-G2	Cummins	cyl,disp,layout	3	1	1	jiuan-power	6ZTAA13-G2 (DCEC)
+2506C-E15TAG1 (USA/EU)	Perkins	KHONG_TRONG_DROPPED	3	3	1	landtop-fuzhou	2506C-E15TAG1 (USA/EU)
+6M33D725E310	Weichai	cyl,layout	3	3	1	weiman-fujian	6M33D725E310/675KW
+6M33D633E200	Weichai	cyl,disp,layout	3	3	1	weiman-fujian	6M33D633E200 /575KW
+6ZTAA13-G2	Cummins	cyl	3	1	1	jiuan-power	6ZTAA13-G2 (DCEC)
+1106A-70TAG2 Switchable	Perkins	KHONG_TRONG_DROPPED	2	2	1	sr-genset	1106A-70TAG2 Switchable
+1106D-E70TAG4 EU	Perkins	KHONG_TRONG_DROPPED	2	2	1	sr-genset	1106D-E70TAG4 EU
+Y4105D	Yangdong	disp	2	2	1	mecca-power	Y4105D/45KW
+QSZ13-G10	Cummins	maxDisp	2	2	1	superwatt-swt	QSZ13-G10 cummins
+QSZ13-G10	Cummins	disp	2	2	1	superwatt-swt	QSZ13-G10 cummins
+2506A-E15TAG2		disp	2	2	1	cgm-italia	440 2506A-E15TAG2
+2806A-E18TAG1A		disp	2	2	1	cgm-italia	528 2806A-E18TAG1A
+WJ78TAD17/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WJ78TAD17/1500
+6M33D725E310	Weichai	cyl	2	2	1	weiman-fujian	6M33D725E310/675KW
+6M33D633E200	Weichai	cyl,layout	2	2	1	weiman-fujian	6M33D633E200 /575KW
+YD385D	Yangdong	cyl,layout	2	1	1	mecca-power	YD385D/12KW ; YD385D/14.4KW
+6ZTAA13-G2	Cummins	disp	2	1	1	jiuan-power	6ZTAA13-G2 (DCEC)
+WP13D385E200	Weichai	disp	2	2	1	weiman-fujian	WP13D385E200/350kw
+WP13D405E200	Weichai	disp	2	2	1	weiman-fujian	WP13D405E200/368kw
+1506A-E88TAG5		disp	2	2	1	cgm-italia	264 1506A-E88TAG5
+4006-23TAG3A(UK)	Perkins	KHONG_TRONG_DROPPED	2	2	1	landtop-fuzhou	4006-23TAG3A(UK)
+8M33D800E200	Weichai	disp	2	2	1	weiman-fujian	8M33D800E200/730/800KW
+4016-61TRG3	Perkins	disp	2	1	1	kaihua-genset	India 4016-61TRG3 ; UK 4016-61TRG3
+WP6D132E200	Weichai	disp	2	2	1	weiman-fujian	WP6D132E200/120KW
+WD360TAD120/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WD360TAD120/1500
+WP4.1D80E200	Weichai	cyl	2	2	1	weiman-fujian	WP4.1D80E200/72KW
+4016-61TRG3	Perkins	maxDisp	2	1	1	kaihua-genset	India 4016-61TRG3 ; UK 4016-61TRG3
+S16R2-PTAW-C		maxDisp	2	2	1	superwatt-swt	S16R2-PTAW-C SME
+4DX21-53D-HMS20W	FAWDE	maxDisp	2	1	2	longkai-power,previa-ningde	4DX21-53D-HMS20W
+Y4100D	Yangdong	maxDisp	2	2	1	mecca-power	Y4100D/38KW
+Y4110ZLD	Yangdong	cyl,disp	2	1	1	mecca-power	Y4110ZLD/80KW ; Y4110ZLD/85KW
+WJ65TD8/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WJ65TD8/1500
+12M33D1210E200	Weichai	layout	2	2	1	weiman-fujian	12M33D1210E200/1108KW
+12M33D1320E200	Weichai	layout	2	2	1	weiman-fujian	12M33D1320E200/1200KW
+12M33D1500E310	Weichai	layout	2	2	1	weiman-fujian	12M33D1500E310/1350KW
+16M33D1530E310	Weichai	cyl	2	2	1	weiman-fujian	16M33D1530E310/1390KW
+16M33D1580E310	Weichai	cyl	2	2	1	weiman-fujian	16M33D1580E310/1430KW
+16M33D1680E310	Weichai	cyl	2	2	1	weiman-fujian	16M33D1680E310/1530KW
+4DX22-65D-HMS20W	FAWDE	maxDisp	2	1	2	longkai-power,previa-ningde	4DX22-65D-HMS20W
+Y4105D	Yangdong	maxDisp	2	2	1	mecca-power	Y4105D/45KW
+Y4102ZLD	Yangdong	maxDisp	2	1	1	mecca-power	Y4102ZLD/48KW ; Y4102ZLD/53KW
+4DX23-65D	FAWDE / Xichai	maxDisp	2	1	2	weiman-fujian,xinhengxin-fujian	4DX23-65D
+Y4110ZLD	Yangdong	cyl	2	1	1	mecca-power	Y4110ZLD/80KW ; Y4110ZLD/85KW
+WD327TAD68/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WD327TAD68/1500
+1206A-E70TTAG2		disp	2	2	1	cgm-italia	202 1206A-E70TTAG2
+404D-22G	Perkins	maxDisp	2	2	1	superwatt-swt	404D-22G PERKINS
+2806A-E18TAG2	Perkins	disp	2	2	1	superwatt-swt	2806A-E18TAG2 PERKINS
+TWD1653GE	Volvo Penta	disp	2	2	1	superwatt-swt	TWD1653GE VOLVO
+WD145TAD35/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WD145TAD35/1500
+CA6DN1-45D	FAWDE / Xichai	maxDisp	2	1	2	weiman-fujian,xinhengxin-fujian	CA6DN1-45D
+6M33D725E310	Weichai	disp	2	2	1	weiman-fujian	6M33D725E310/675KW
+WJ68TAD11/1500		KHONG_TRONG_DROPPED	2	1	1	eastern-lion-fuan	WJ68TAD11/1500
+CA6DM2-41D	FAWDE / Xichai	KHONG_TRONG_DROPPED	2	1	1	agestar	CA6DM2-41D
+V2003-T-E2BG-CHN-1	Kubota	disp	1	1	1	zhengchi-power	V2003-T-E2BG-CHN-1
+6M33D725E310	Weichai	cyl,disp	1	1	1	weiman-fujian	6M33D725E310/675KW
+1106D-E70TAG3 EU	Perkins	KHONG_TRONG_DROPPED	1	1	1	sr-genset	1106D-E70TAG3 EU
+WP6D132E200	Weichai	cyl	1	1	1	weiman-fujian	WP6D132E200/120KW
+1106A-70TAG3 Switchable	Perkins	KHONG_TRONG_DROPPED	1	1	1	sr-genset	1106A-70TAG3 Switchable
+2806A-E18TAG2	Perkins	cyl,disp	1	1	1	superwatt-swt	2806A-E18TAG2 PERKINS
+TWD1653GE	Volvo Penta	cyl,disp	1	1	1	superwatt-swt	TWD1653GE VOLVO
+6M33D633E200	Weichai	cyl	1	1	1	weiman-fujian	6M33D633E200 /575KW
+4012-46TAG3A		cyl	1	1	1	cgm-italia	1496 4012-46TAG3A
+Y4105ZLD	Yangdong	disp	1	1	1	mecca-power	Y4105ZLD/60KW
+YD4EZLD	Yangdong	disp	1	1	1	mecca-power	YD4EZLD/63KW
+8M33D890E200	Weichai	cyl,disp	1	1	1	weiman-fujian	8M33D890E200/815/890KW
+YND485D	Yangdong	cyl,layout	1	1	1	mecca-power	YND485D/17KW
+4006-23TAG3A	Perkins	disp,layout	1	1	1	comappower	4006-23TAG3A(UK)
+6M33D725E310	Weichai	disp,layout	1	1	1	weiman-fujian	6M33D725E310/675KW
+12M55D2450E310	Weichai	cyl,disp	1	1	1	weiman-fujian	12M55D2450E310/2200KW
+12M55D2700E310	Weichai	cyl,disp	1	1	1	weiman-fujian	12M55D2700E310/2420KW
+12M33D1210E200	Weichai	disp	1	1	1	weiman-fujian	12M33D1210E200/1108KW
+12M33D1320E200	Weichai	disp	1	1	1	weiman-fujian	12M33D1320E200/1200KW
+12M33D1500E310	Weichai	disp	1	1	1	weiman-fujian	12M33D1500E310/1350KW
+CA4DF2-12D/84KW	FAWDE	KHONG_TRONG_DROPPED	1	1	1	jet-power	CA4DF2-12D/84KW
+WP7D264E310	Weichai	maxDisp	1	1	1	superwatt-swt	WP7D264E310 Weichai
+1206A-E70TTAG3		maxDisp	1	1	1	cgm-italia	220 1206A-E70TTAG3
+1506A-E88TAG4		maxDisp	1	1	1	cgm-italia	246 1506A-E88TAG4
+1506A-E88TAG5		maxDisp	1	1	1	cgm-italia	264 1506A-E88TAG5
+QSZ13-G10	Cummins	cyl,disp,layout	1	1	1	superwatt-swt	QSZ13-G10 cummins
+WP13D440E310	Weichai	cyl,disp	1	1	1	superwatt-swt	WP13D440E310 Weichai
+WP13D490E310	Weichai	cyl,disp,layout	1	1	1	weiman-fujian	WP13D490E310/450KW
+16M33D1980E310	Weichai	disp	1	1	1	weiman-fujian	16M33D1980E310/1800KW
+12M55D2210E310	Weichai	cyl	1	1	1	weiman-fujian	12M55D2210E310/2010KW
+WP13D405E200	Weichai	cyl,disp,layout	1	1	1	weiman-fujian	WP13D405E200/368kw
+WP13D440E200	Weichai	cyl,disp	1	1	1	weiman-fujian	WP13D440E200/392kw
+8M33D800E200	Weichai	cyl,maxDisp	1	1	1	weiman-fujian	8M33D800E200/730/800KW
+8M33D890E200	Weichai	cyl,maxDisp	1	1	1	weiman-fujian	8M33D890E200/815/890KW
+India 4016TAG2A	Perkins	KHONG_TRONG_DROPPED	1	1	1	kaihua-genset	India 4016TAG2A
+UK 4016TAG2A	Perkins	KHONG_TRONG_DROPPED	1	1	1	kaihua-genset	UK 4016TAG2A
+Mistubishi S16R-PTA2-C	Mitsubishi	KHONG_TRONG_DROPPED	1	1	1	stone-power	Mistubishi S16R-PTA2-C
+16M33D1980E310	Weichai	maxDisp	1	1	1	weiman-fujian	16M33D1980E310/1800KW
+12M55D2210E310	Weichai	maxDisp	1	1	1	weiman-fujian	12M55D2210E310/2010KW
+Yangdong Y4105D	Yangdong	KHONG_TRONG_DROPPED	1	1	1	tecgen-fujian	Yangdong Y4105D
+WP7D264E310	Weichai	cyl	1	1	1	superwatt-swt	WP7D264E310 Weichai
+WP10D264E200	Weichai	cyl	1	1	1	weiman-fujian	WP10D264E200/240kw
+Y4105ZLD	Yangdong	cyl	1	1	1	mecca-power	Y4105ZLD/60KW
+WP4.1D66E200	Weichai	cyl	1	1	1	weiman-fujian	WP4.1D66E200/60KW
+WP4.1D80E200	Weichai	disp	1	1	1	weiman-fujian	WP4.1D80E200/72KW
+WP13D440E200	Weichai	disp	1	1	1	weiman-fujian	WP13D440E200/392kw
+WP7D264E310	Weichai	cyl,disp	1	1	1	superwatt-swt	WP7D264E310 Weichai
+WP10D264E200	Weichai	cyl,layout	1	1	1	weiman-fujian	WP10D264E200/240kw
+WP2.3D48E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP2.3D48E200/44KW
+WP4.1D66E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP4.1D66E200/60KW
+2806A-E18TAG2	Perkins	maxDisp	1	1	1	superwatt-swt	2806A-E18TAG2 PERKINS
+TWD1653GE	Volvo Penta	maxDisp	1	1	1	superwatt-swt	TWD1653GE VOLVO
+6M33D633E200	Weichai	maxDisp	1	1	1	weiman-fujian	6M33D633E200 /575KW
+6M33D725E310	Weichai	maxDisp	1	1	1	weiman-fujian	6M33D725E310/675KW
+2806A-E18TTAG4		maxDisp	1	1	1	cgm-italia	616 2806A-E18TTAG4
+2806A-E18TTAG5		maxDisp	1	1	1	cgm-italia	660 2806A-E18TTAG5
+WP6D132E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP6D132E200/120KW
+WP6D152E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP6D152E200/138KW
+1106A-70TG1		maxDisp	1	1	1	cgm-italia	119,2 1106A-70TG1
+DP222LC/657KW	Doosan	KHONG_TRONG_DROPPED	1	1	1	jet-power	DP222LC/657KW
+FAW 4DX21-45D		KHONG_TRONG_DROPPED	1	1	1	yongcai-elecmama	FAW 4DX21-45D
+Y4100D	Yangdong	cyl	1	1	1	mecca-power	Y4100D/32KW
+WP13D405E200	Weichai	cyl	1	1	1	weiman-fujian	WP13D405E200/368kw
+WP13D440E200	Weichai	cyl	1	1	1	weiman-fujian	WP13D440E200/392kw
+2206A-E13TAG3		cyl	1	1	1	cgm-italia	352 2206A-E13TAG3
+2506A-E15TAG1		cyl	1	1	1	cgm-italia	396 2506A-E15TAG1
+DP158LD/464KW	Doosan	KHONG_TRONG_DROPPED	1	1	1	jet-power	DP158LD/464KW
+QSZ13-G10	Cummins	cyl	1	1	1	superwatt-swt	QSZ13-G10 cummins
+WP13D440E310	Weichai	cyl	1	1	1	superwatt-swt	WP13D440E310 Weichai
+WP13D490E310	Weichai	cyl	1	1	1	weiman-fujian	WP13D490E310/450KW
+6M33D633E200	Weichai	disp	1	1	1	weiman-fujian	6M33D633E200 /575KW
+CA6DM2-41D	FAWDE / Xichai	maxDisp	1	1	1	xinhengxin-fujian	CA6DM2-41D
+WP13D385E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP13D385E200/350kw
+WP13D405E200	Weichai	maxDisp	1	1	1	weiman-fujian	WP13D405E200/368kw
+2206A-E13TAG3		maxDisp	1	1	1	cgm-italia	352 2206A-E13TAG3
+2806A-E18TAG2		disp	1	1	1	cgm-italia	572 2806A-E18TAG2
+2806A-E18TTAG4		disp	1	1	1	cgm-italia	616 2806A-E18TTAG4
+2806A-E18TTAG5		disp	1	1	1	cgm-italia	660 2806A-E18TTAG5
+2806A-E18TTAG5		cyl	1	1	1	cgm-italia	660 2806A-E18TTAG5
+4006-23TAG3A	Perkins	disp	1	1	1	comappower	4006-23TAG3A(UK)
+2806A-E18TAG2		cyl,disp,layout	1	1	1	cgm-italia	572 2806A-E18TAG2
+2806A-E18TTAG4		cyl,disp	1	1	1	cgm-italia	616 2806A-E18TTAG4
+2806A-E18TTAG5		cyl,disp	1	1	1	cgm-italia	660 2806A-E18TTAG5
+WP12D353E200	Weichai	disp	1	1	1	weiman-fujian	WP12D353E200/288kw
+16M55D3600E310	Weichai	cyl	1	1	1	weiman-fujian	16M55D3600E310/3300KW

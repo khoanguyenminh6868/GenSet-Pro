@@ -1,0 +1,31 @@
+cấu hình 53, check chưa rõ + xác nhận 1286
+(khác, genset)	chưa rõ 160 (có dòng 0)	xác nhận 230 (có dòng 0)	
+BĐK: phần khác	chưa rõ 176 (có dòng 0)	xác nhận 0 (có dòng 0)	
+(khác, engine)	chưa rõ 84 (có dòng 0)	xác nhận 27 (có dòng 0)	
+Tiêu hao	chưa rõ 93 (có dòng 18)	xác nhận 0 (có dòng 0)	| Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stro ¦ | (MM) | (L) | （ L/h ） ¦ | Fuel Consumption (g/kw.h) | 206.9
+(khác, alternator)	chưa rõ 87 (có dòng 0)	xác nhận 1 (có dòng 0)	
+Nhiên liệu	chưa rõ 22 (có dòng 14)	xác nhận 48 (có dòng 36)	Diesel Generator Set (50Hz) - FDK Energy ¦ 50HZ Weichai Diesel Generator Set | Jet Power Generator ¦ 180KVA Perkins Standby Diesel Generator 200KVA UK Perkins Engine Stamford Altern
+BĐK: điện áp / tần số	chưa rõ 62 (có dòng 23)	xác nhận 0 (có dòng 0)	 Can measure and display 3 phase voltage, 3 phase current, frequency, power par ¦ | User defined protections and setpoints, integrated PLC logic | Alternative con ¦ | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+BĐK: nhiệt độ	chưa rõ 60 (có dòng 21)	xác nhận 0 (có dòng 0)	| Coolant Capacity | L | 34 ¦ | Operating temperature | -20˚C to +70˚C ¦ Temperature
+Làm mát	chưa rõ 46 (có dòng 2)	xác nhận 12 (có dòng 0)	| Cooling method | Water cooled
+BĐK: áp suất dầu	chưa rõ 57 (có dòng 10)	xác nhận 0 (có dòng 0)	| engine oil pressure | ● standard ¦ data (such as water temperature, oil pressure, speed and fuel consumption, etc.) ¦ | Engine Oil capacity (L) | 9.5
+(khác, controller)	chưa rõ 31 (có dòng 0)	xác nhận 12 (có dòng 0)	
+BĐK: ắc quy	chưa rõ 41 (có dòng 18)	xác nhận 0 (có dòng 0)	and supply recovers to 5 V. This is achieved without the need for internal batte ¦ | ---Governed Speed | 414 - 483 kPa | Min. recommended battery capacity (24V) ¦ | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displa
+BĐK: quá dòng / ngắn mạch	chưa rõ 38 (có dòng 4)	xác nhận 0 (có dòng 0)	functions of over/under voltage, over/under frequency, over current and over pow ¦ | Overcurrent | 50/50TD
+Tiêu chuẩn đầu phát	chưa rõ 2 (có dòng 0)	xác nhận 34 (có dòng 1)	| According to ISO 8528-1, prime power is the maximum power | with specific grav
+BĐK: quá / thấp tốc	chưa rõ 36 (có dòng 10)	xác nhận 0 (có dòng 0)	| engine speed | ● standard ¦ | Underspeed | 14 ¦ | Frequency/Speed | 50Hz/1500rpm
+Tần số	chưa rõ 33 (có dòng 13)	xác nhận 0 (có dòng 0)	Rated Frequency: 50(Hz) ¦ | Model | 400V / 50Hz / 1500RPM | VOLVO PENTA DIESEL ENGINE | Alternator ¦ | Model | 400V / 50Hz / 1500RPM | DOOSAN Diesel Engine | Alternator | Open type 
+Kiểu động cơ	chưa rõ 32 (có dòng 1)	xác nhận 0 (có dòng 0)	| Thermodynamic Cycle | Diesel 4 stroke
+BĐK: giờ chạy / nhật ký	chưa rõ 32 (có dòng 9)	xác nhận 0 (có dòng 0)	| Prime Genset Output | 250kW / 313kVA | Fuel Tank Capacity | Up To 10 Operation ¦ | EN | 61010-1 | EN 60068-2-30 25/55°C, RH 95%, 48hours ¦ | • | Data logging of up to 10 parameters
+AVR / ổn áp	chưa rõ 5 (có dòng 1)	xác nhận 22 (có dòng 8)	| Voltage Regulation, Steady State: | ≤±1% ¦ | VOLTAGE REGULATION | ± 0.5 % | ± 1.0 % | With 4% ENGINE GOVERNING ¦ | Voltage Regulation, Steady State | 1.00%
+Cách điện	chưa rõ 26 (có dòng 1)	xác nhận 0 (có dòng 0)	| INSULATION SYSTEM | CLASS H
+Công suất động cơ	chưa rõ 26 (có dòng 25)	xác nhận 0 (có dòng 0)	| | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original  ¦ | Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stro ¦ 180KVA Perkins Standby Diesel Generator 200KVA UK Perkins Engine Stamford Altern
+Tốc độ quay	chưa rõ 25 (có dòng 2)	xác nhận 0 (có dòng 0)	| Rated Speed: | 1500（r/min） ¦ 63KVA Canopy Diesel Generator , 1500 RPM Diesel Generator
+Hệ thống phun / nhiên liệu	chưa rõ 24 (có dòng 1)	xác nhận 0 (có dòng 0)	| Injection System | Direct
+Cấp bảo vệ IP	chưa rõ 13 (có dòng 2)	xác nhận 10 (có dòng 0)	| Protection Level: | IP22-IP23
+Nhận tải	chưa rõ 22 (có dòng 0)	xác nhận 0 (có dòng 0)	
+Điều tốc	chưa rõ 20 (có dòng 1)	xác nhận 0 (có dòng 0)	| WPG440*8 | 1500 | 440/350 | 400/320 | WP13D405E200 | 6 | 127×165 | Electronic 
+Công suất đầu phát	chưa rõ 20 (có dòng 15)	xác nhận 0 (có dòng 0)	| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) ¦ | KVA | KW | KVA | KW | ¦ | KVA | KW | KVA | KW | (mm) | (L) | g/Kw.H
+BĐK: hệ số công suất	chưa rõ 19 (có dòng 4)	xác nhận 0 (có dòng 0)	| Power Factor | 0.8 ¦ | Rated Power Factor(cosφ) | 0.8 ¦ | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displa
+Khí thải	chưa rõ 18 (có dòng 2)	xác nhận 0 (có dòng 0)	| Emissions | Unregulated ¦ | Emission standard | N/A
+BĐK: công suất ngược	chưa rõ 11 (có dòng 0)	xác nhận 0 (có dòng 0)	
