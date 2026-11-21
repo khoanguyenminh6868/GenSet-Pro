@@ -62,7 +62,7 @@ CI GitHub: server, spec-diff, suppliers, web đều pass. `web` đỏ một lầ
 
 # BỔ SUNG 21/11/2026 (điều phối thêm (a)–(d) vào cùng PR #1016; mỗi mục một commit)
 
-**Kết luận bổ sung: spec-diff so merge-base 95ecba26 = 6 bản ghi đổi thông số (đúng danh sách bên dưới, 0 khác); soat-fuel = 5 bản ghi đổi `fuel` (1 kingway, 1 man-engines, 3 simpson), 0 bản ghi `fuel` khác; test cục bộ 1.336 / 1.336 (chạy lại sau (d): xem dòng cuối). MTU đã tự mở PDF: "Cylinder configuration 12 cyl. - 90°V". Mục (c): không ghi "diesel" cho 8 dòng D vì cơ chế không có giá trị diesel tường minh (nêu bên dưới).**
+**Kết luận bổ sung: spec-diff so merge-base 95ecba26 = 6 bản ghi đổi thông số (đúng danh sách bên dưới, 0 khác); soat-fuel = 5 bản ghi đổi `fuel` (1 kingway, 1 man-engines, 3 simpson), 0 bản ghi `fuel` khác; test cục bộ 1.337 / 1.337 sau (d); CI GitHub (server, spec-diff, suppliers, web) pass trên đầu nhánh 6c332218. MTU đã tự mở PDF: "Cylinder configuration 12 cyl. - 90°V". Mục (c): không ghi "diesel" cho 8 dòng D vì cơ chế không có giá trị diesel tường minh (nêu bên dưới).**
 
 Commit (theo thứ tự): `2e46a386` (a) · `b709cea4` (b) · `80565aa6` (c) · `a938ee72` + `c3034a29` (d) · các commit ghi chú `web/CLAUDE.md`. Đầu nhánh: xem tin báo.
 
