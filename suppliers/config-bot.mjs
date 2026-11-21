@@ -479,7 +479,28 @@ const numOf = (s) => Number(/^\d{1,3}([.,]\d{3})+$/.test(s) ? s.replace(/[.,]/g,
 const noTolerance = (t) => String(t || "").replace(/(?:±|\+\s*\/\s*-)\s*\d+(?:[.,]\d+)?/g, "");
 // "≥ 12 ± 0,5 kVA" asks at least 11.5 kVA: the lowest value the tolerance allows. A tolerance of a fifth or more of the
 // value ("8,5 ±5KVA", a percent written without %) is left out.
-const lowest = (t) => String(t || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)/g, (_, a, b) => (numOf(b) < numOf(a) * 0.2 ? String(Math.round((numOf(a) - numOf(b)) * 100) / 100) : a));
+// The tolerance may stand after the unit ("≥ 8.5 KVA ± 0.5") and be a percent ("≥ 100 kVA ± 5%"): Khoa 21/11/2026, a tolerance the HSMT writes
+// right after the figure counts in the limit.
+const lowOf = (a, b, pct) => (pct ? Math.round(numOf(a) * (1 - numOf(b) / 100) * 1000) / 1000 : numOf(b) < numOf(a) * 0.2 ? Math.round((numOf(a) - numOf(b)) * 100) / 100 : numOf(a));
+const TOL_AFTER = /(\d+(?:[.,]\d+)?)(\s*(?:kVA|kW)\b)?\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)(\s*%)?/gi;
+// `lowest` handles only the tolerance right after the number, not a percent; the rest is applied to the prime already chosen (primeTol), so
+// that a lowered figure does not change which statements agree (12.5 ± 0.5 of the genset, 15 of its alternator).
+const lowest = (t) => String(t || "").replace(/(\d+(?:[.,]\d+)?)\s*(?:±|\+\s*\/\s*-)\s*(\d+(?:[.,]\d+)?)(?![\d.,]*\s*%)/g, (_, a, b) => String(lowOf(a, b, false)));
+const primeTol = (p, text) => {
+  if (!p) return p;
+  const unit = p.kVA != null ? "kVA" : "kW";
+  for (const x of String(text).matchAll(TOL_AFTER)) {
+    if (!x[2] || x[2].trim().toLowerCase() !== unit.toLowerCase() || Math.abs(numOf(x[1]) - p[unit]) > 1e-9) continue;
+    // The text doubts its own "±" ("20 kVA ± 1% (văn bản ghi "+ 1%")", IB2300296794): not lowered.
+    if (/^\s*\([^)\n;]{0,30}["“']\s*\+\s*\d/.test(String(text).slice(x.index + x[0].length, x.index + x[0].length + 45))) return p;
+    const before = text.slice(Math.max(0, x.index - 80), x.index), clause = before.slice(Math.max(before.lastIndexOf("\n"), before.lastIndexOf(";")) + 1);
+    if (/li[êe]n\s*t[ụu]c|c[ơo]\s*b[ảa]n|prime|continuous/i.test(clause) && !/đầu\s*phát|d[ựu]\s*ph[òo]ng|standby/i.test(clause)) { const out = { ...p, [unit]: lowOf(x[1], x[3], !!x[4]) }; return out; }
+  }
+  return p;
+};
+// A tolerance written right after a displacement ("≤ 1,3 lít ± 5%", "(± 0,1)"): the limit moves by it (`sign` +1 for a most, -1 for a least).
+const tolAt = (cell, end) => { const t = cell.slice(end, end + 24).match(/^\s*\(?\s*(?:±|\+\s*\/\s*-|\+-)\s*(\d{1,2}(?:[.,]\d+)?)\s*(%)?/); return t ? { n: Number(t[1].replace(",", ".")), pct: !!t[2] } : null; };
+const withTol = (v, t, sign) => (!t ? v : Math.round((t.pct ? v * (1 + (sign * t.n) / 100) : t.n < v * 0.2 ? v + sign * t.n : v) * 1000) / 1000);
 // The genset's figure, not a transformer's or a UPS's in the same text (web/bidprice.js capPick, 2026-11-04 regression);
 // a text whose every figure is another device's gives none.
 export function capacity(texts) {
@@ -1158,7 +1179,20 @@ export function engineLists(t) {
     // candidates were 19.6 L engines that the agent then marked not met.
     if (MAXIMUM.test(cell)) {
       const m = (DISP_LABEL.test(cell) || (DISP_BARE.test(cell) && ENGINE_LINES.test(lines.slice(Math.max(0, i - 3), i + 4).join(" ")))) && !tankNear(cell) && cell.match(/(?:≤|<=|<(?!=)|tối đa|không (?:lớn|vượt|quá)(?: hơn)?|(?<!không\s)(?:nhỏ hơn|dưới))\s*:?\s*(\d{1,3}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
-      if (m) dmax.push(Number(m[1].replace(",", ".")));
+      if (m) dmax.push(withTol(Number(m[1].replace(",", ".")), tolAt(cell, m.index + m[0].length), 1));
+      // "tối đa" of another figure in the same cell ("dung tích > 1,950 lít; công suất tối đa ≥ 28.6 HP", IB2300046353; "tối đa ≥ 12 KW …;
+      // ≥ 3 xilanh", IB2500403535): a least written with its sign next to its own label still counts.
+      const near = lines.slice(Math.max(0, i - 3), i + 4).join(" ");
+      // A bare "dung tích" only in a cell about the engine that names no vessel ("phun nhiên liệu trực tiếp; dung tích > 1,950 lít" is the
+      // engine's; "… vỏ cách âm, có khóa; dung tích ≥ 65 lít" of a fuel tank is not).
+      const isDisp = DISP_LABEL.test(cell) ? !tankNear(cell) : DISP_BARE.test(cell) && ENGINE_LINES.test(near) && /đ[ộo]ng\s*c[ơo]|(?:xi|xy)[\s-]?lanh/i.test(cell) && !/th[ùu]ng|b[ồo]n\b|b[ìi]nh\b|k[ée]t\b|\btank\b/i.test(cell);
+      const least = isDisp && cell.match(/dung\s*t[íi]ch(?:\s*(?:xi|xy)[\s-]?lanh)?\s*:?\s*(?:≥|>=|>)\s*(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
+      if (least) disp.push(withTol(Number(least[1].replace(",", ".")), tolAt(cell, least.index + least[0].length), -1));
+      // A bare count is a least too when the only "most" of the cell is the engine's largest power ("công suất tối đa ≥ 28.6 HP; 1.500
+      // vòng/ phút; 4 xilanh thẳng hàng", IB2300046353). Any other "most" ("≤ 3 xi lanh", "đường kính ≤ 112") leaves the cell as it was.
+      const onlyPowerMost = !MAXIMUM.test(cell.replace(/c[ôo]ng\s*su[ấa]t\s*t[ốo]i\s*đa\s*(?:≥|>=|>)\s*\d[\d.,]*\s*(?:HP|kW|kVA)/gi, ""));
+      const cylLeast = cell.match(/(?:≥|>=)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i) || (onlyPowerMost ? inlineCyl(line) : null);
+      if (cylLeast && Number(cylLeast[1]) >= 1 && Number(cylLeast[1]) <= 20) cyl.push(Number(cylLeast[1]));
       return;
     }
     // A bare figure is the least the HSMT accepts (Khoa, 2026-11-03), for the engine's displacement and cylinders.
@@ -1175,7 +1209,7 @@ export function engineLists(t) {
     // "12,9 L (± 3%)" / "≥ 1,3 (lít) ± 5%": the HSMT accepts a figure that much below the one it gives (2026-11-12 soát ngưỡng:
     // IB2300087393's 12,9 L (± 3%) left out the 12,78 L engines). A plus-or-minus after the figure lowers the minimum by it.
     const tolOf = (m) => { const t = cell.slice(m.index + m[0].length, m.index + m[0].length + 24).match(/^[^\d±+]{0,12}(?:±|\+\s?\/\s?-|\+-)\s*(\d{1,2}(?:[.,]\d+)?)\s*%/); return t ? Number(t[1].replace(",", ".")) / 100 : 0; };
-    const lowered = (v, m) => Math.round(v * (1 - tolOf(m)) * 1000) / 1000;
+    const lowered = (v, m) => (tolOf(m) ? Math.round(v * (1 - tolOf(m)) * 1000) / 1000 : withTol(v, tolAt(cell, m.index + m[0].length), -1));
     if (d) disp.push(lowered(Number(d[1].replace(",", ".")), d));
     else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
     // Not a figure with a decimal part: "Số xilanh, đường kính x hành trình mm: 2.197" (IB2200029975, a table whose values
@@ -1332,11 +1366,23 @@ export function minsForSize(t, size, sizes, extra = "") {
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
+  // Figures of the prime that disagree only because the alternator's is read too ("Công suất liên tục ≥ 12.5 ±0.5 kVA", "Đầu phát: công
+  // suất liên tục ≥ 15 KVA", IB2300245748): the one that is this size is the genset's. One machine whose prime and standby were
+  // taken for two sizes ("Tổ máy 450 kVA: Công suất dự phòng tối thiểu 450 kVA", "Công suất liên tục tối thiểu 400 kVA", IB2400377239):
+  // the prime stated beside the standby that is the other size is the prime of this size.
+  if (!mins.minPrime && size.cap) {
+    const isSize = (p) => { const v = size.cap.unit === "kW" ? p.kW ?? (p.kVA != null ? p.kVA * 0.8 : null) : p.kVA ?? (p.kW != null ? p.kW / 0.8 : null); return v != null && Math.abs(v / size.cap.value - 1) <= 0.006; };
+    const standbyOfOther = sizes.some((s, k) => k !== j && s.cap && L.some((l, i) => { if (tags[i] !== k) return false; const m = l.match(/(?:d[ựu]\s*ph[òo]ng|standby)[^\d\n]{0,40}?(\d[\d.,]*)\s*(kVA|kW)\b/i); return !!m && m[2].toLowerCase() === s.cap.unit.toLowerCase() && Math.abs(numOf(m[1]) / s.cap.value - 1) <= 0.006; }));
+    const hit = how.minPrime === "own: disagree" ? powerRead(own).prime.find(isSize) : how.minPrime === "of another size" && standbyOfOther ? powerRead(foreign).prime.find(isSize) : null;
+    if (hit) { mins.minPrime = { ...hit }; how.minPrime = how.minPrime === "own: disagree" ? "own: the size" : "one machine"; }
+  }
   // The prime a size asks for is the size itself: a block whose text gives another (the prime of the next genset read in
   // it, 20 kVA's block giving 30) is a misreading, not a minimum.
   if (mins.minPrime && size.cap) {
     const mp = mins.minPrime, v = size.cap.unit === "kW" ? mp.kW ?? (mp.kVA != null ? mp.kVA * 0.8 : null) : mp.kVA ?? (mp.kW != null ? mp.kW / 0.8 : null);
-    if (v == null || Math.abs(v / size.cap.value - 1) > 0.006) { mins.minPrime = null; how.minPrime = "not the size"; }
+    // The size less the tolerance the HSMT writes after it ("≥ 8.5 KVA ± 0.5" for 8.5 kVA reads 8) is still the size.
+    const tolerated = v != null && [...own.matchAll(TOL_AFTER)].some((x) => Math.abs(numOf(x[1]) / size.cap.value - 1) <= 0.006 && Math.abs(lowOf(x[1], x[3], !!x[4]) - v) < 0.001);
+    if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
   const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
@@ -1435,6 +1481,9 @@ export function powerRead(t) {
     // closes the row before (113 L/h of the 70% row was read as the 100% limit, and rows at 138–151 L/h were left out).
     // Only when the figure's own line has a label and no load, and the next line is nothing but the load.
     const ls = ft.lastIndexOf("\n", m.index - 1) + 1, own = ft.slice(ls, m.index), le = ft.indexOf("\n", m.index);
+    // A level the HSMT itself marks optional is no limit: "Tối thiểu (bắt buộc): … ≤ 5,5 lít/giờ ở 75% tải. Nâng cao (lựa chọn): ≤ 4,5
+    // lít/giờ ở 75% tải" (IB2300349583): the limit is the required 5,5.
+    if (/n[âa]ng\s*cao\s*\(\s*l[ựu]a\s*ch[ọo]n\s*\)/i.test(own)) continue;
     const ne = le < 0 ? -1 : ft.indexOf("\n", le + 1), next = le < 0 ? "" : ft.slice(le + 1, ne < 0 ? ft.length : ne);
     const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:ho[ạa]t [đd][ộo]ng\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
     // The load right after the figure on its own line ("≤ 3,7 lít/giờ tại (75 %) tải định mức" then "≤ 5,0 lít/giờ tại
@@ -1474,9 +1523,13 @@ export function powerRead(t) {
     const ownLabel = FUEL_LABEL.test(own) && bl && bl.index < tail60.length - own.length;
     const fromBefore = (bl && below && bl.index < labelAt) || ownLabel ? null : bl;
     const load = after || inClause || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
-    fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
+    const rq = clause.match(/\b(MRQ|RQ)\b/)?.[1];
+    fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null, ...(rq ? { rq } : {}) });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
+  // Two figures at one load tagged MRQ and RQ: the limit is the RQ one (Khoa 2026-11-21, IB2500403535). Only when every figure
+  // at that load carries one of the two tags; two figures with no RQ tag still give no limit.
+  const rqOf = (at) => { const r = at.filter((x) => x.rq === "RQ"), m = at.filter((x) => x.rq === "MRQ"); return r.length && m.length && r.length + m.length === at.length ? r : at; };
   // A figure in the engine's or the alternator's section (an alternator of 11 kVA for an 8.5 kVA genset) is the genset's
   // only when no other is given; the smaller second genset (below) is still looked for among all. An alternator is rated
   // at 1–1.4 times its genset: a figure under "đầu phát" outside that is another genset of the tender (100 and 150 kVA,
@@ -1489,9 +1542,9 @@ export function powerRead(t) {
   // another size, 42 kVA for 40): marked `fromOther`.
   const list = own.length && prime.every(altFits) ? own : prime, viaOther = !own.length;
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
-  const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
+  const p = primeTol(same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, ft), full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
-  return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
+  return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one(rqOf(full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(rqOf(fuel.filter((x) => x.load === 75)).map((x) => x.v)), maxFuel50: one(rqOf(fuel.filter((x) => x.load === 50)).map((x) => x.v)) } };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 // The displacement of an engine in litres as a source gives it: a figure with its unit is taken as it is (litres, or cc /
@@ -2893,44 +2946,125 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // row is of another supplier (IB2600603983 08:52Z: B825E5 of agg-fuzhou, DSE7420 of voltgent), the copy takes the genset of
   // the offering supplier's own row, or none, and its genset checks start "chưa rõ" too: they were read on the other row.
   const ctlNeed = ctlKindNeed(hsmtText);
+  // The copy of c with another controller: its controller checks all "chưa rõ", its other checks as they are.
+  // `rowOf`: the offering supplier's engine row, when the copy leaves a genset row of another supplier.
+  const twinCopy = (c, { controller, suppliers, note, gap, by, rowOf: u = null, weaker = false }) => {
+    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
+    const t = structuredClone(c);
+    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
+    t.controller = controller;
+    t.suppliers = suppliers;
+    if (u) {
+      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
+      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
+      const ra = rowAltOf(u, built);
+      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: u.supplierId, n: u.n, line: u.line } };
+      else delete t.genset;
+    }
+    const open = (x) => x.part === "controller" || (!!u && x.part === "genset");
+    t.checks = (t.checks || []).filter((x) => !(u && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    t.gaps = [gap, ...(Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [])];
+    t.rank = (c.rank ?? 0) + 0.5;
+    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(weaker ? { weaker: true } : {}) };
+    return t;
+  };
+  // The rows of c's engine, of suppliers inside this run's origin group (the filter below that drops a supplier from a
+  // configuration): a supplier based in GB neither gets a copy nor counts as offering the main controller in a China run.
+  let twinGroup;
+  const inTwinGroup = (id) => {
+    if (!origin) return true;
+    if (twinGroup === undefined) { const po = partsOnlyOf(origin, hsmtText); twinGroup = groupSuppliers(suppliers, origin, !!sync, po, basis === "brand" && !po) || null; }
+    return !twinGroup || twinGroup.has(id);
+  };
+  const engineRows = (c) => {
+    const rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === CAT.keyOf(c.engine?.model || ""))?.uses || []) if (u.line && sup.has(u.supplierId) && inTwinGroup(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    return rowBy;
+  };
+  const isMakerCtl = (c) => !!c.controller?.model && c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker" && !!c.engine?.model;
+  // The suppliers with a row of this engine whose record offers the main controller itself, its generation (MKII) aside.
+  const offersMain = (c, rowBy) => {
+    const mk = CM.ctlKey(ctlModelOf(c.controller));
+    return [...rowBy.keys()].sort().flatMap((id) => { const x = (sup.get(id).controllers || []).find((y) => y.model && CM.ctlKey(y.model) === mk); return x ? [{ id, model: x.model }] : []; });
+  };
+  // A main controller "from the maker's datasheet" that such a supplier does offer is not "NCC chưa chào" (IB2600603983 11:44Z:
+  // interpower-international lists DSE7320, the main one is DSE7320 MKII): name it, and ask when the record gives no generation.
+  const markOfferedMain = (c) => {
+    const list = isMakerCtl(c) ? offersMain(c, engineRows(c)) : [];
+    if (!list.length) { if (c.controller) delete c.controller.offeredMain; return; }
+    const main = ctlModelOf(c.controller), gen = String(main).match(/MK\s?I{1,3}\b/i)?.[0], noGen = !!gen && list.every((x) => !/MK\s?I{1,3}\b/i.test(x.model));
+    const by = list.slice(0, 3).map((x) => x.id);
+    c.controller.offeredMain = { by, model: list[0].model, label: `Theo tài liệu hãng; NCC ${by.join(", ")} chào ${list[0].model}${noGen ? ` (hồ sơ không ghi đời ${gen}, cần hỏi)` : ", cần hỏi NCC có lắp cho động cơ này không"}` };
+  };
   const ctlTwinOf = (c) => {
-    if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
-    const ek = CAT.keyOf(c.engine.model), rowBy = new Map();
-    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    if (!isMakerCtl(c)) return null;
+    const rowBy = engineRows(c);
     if (!rowBy.size) return null;
+    // A supplier that offers the main controller itself gives no weaker copy of it.
+    const hasMain = new Set(offersMain(c, rowBy).map((x) => x.id));
     const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
-    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
+    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])].filter((id) => !hasMain.has(id)), names = commNames(result.requirements || []);
+    if (!ids.length) return null;
     const step = (a) => (a.step == null ? Infinity : a.step);
     const cands = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names);
-    const pick = cands.out
-      .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
+    // A supplier offering several controllers counts with one: the kind the HSMT asks, most communication parts, then the HIGHER
+    // step (điều phối 21/11/2026: a line "DSE4520 DSE6120 DSE7320 DSE8610" is not an offer of its lowest one).
+    const offered = cands.out.filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed));
+    const lists = (id, a) => (sup.get(id).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(a.offeredAs));
+    const high = (a) => (a.step == null ? -Infinity : a.step);
+    const bestOf = (id) => offered.filter((a) => lists(id, a)).sort((a, b) => b.met - a.met || high(b) - high(a))[0];
+    const pick = offered
+      .filter((a) => ids.some((id) => bestOf(id) === a) && (!names.length || a.met * 2 >= names.length))
       .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
     if (!pick) return null;
     const key = CAT.keyOf(pick.offeredAs), hasIt = (id) => (sup.get(id).controllers || []).find((x) => x.model && CAT.keyOf(x.model) === key);
     const by = ids.filter(hasIt).slice(0, 3), o = hasIt(pick.offeredBy);
-    const note = `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`;
-    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
-    const t = structuredClone(c);
-    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
-    t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
-    t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
-    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null, otherRow = !!gsBy && !by.includes(gsBy);
-    if (otherRow) {
-      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
-      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
-      const u = rowBy.get(by[0]), ra = rowAltOf(u, built);
-      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: by[0], n: u.n, line: u.line } };
-      else delete t.genset;
-    }
-    const open = (x) => x.part === "controller" || (otherRow && x.part === "genset");
-    t.checks = (t.checks || []).filter((x) => !(otherRow && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
     const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
-    const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
-    const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
-    t.gaps = [gap, ...rest];
-    t.rank = (c.rank ?? 0) + 0.5;
-    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(pick.met < (cands.mainPair?.met ?? 0) ? { weaker: true } : {}) };
-    return t;
+    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null;
+    return twinCopy(c, {
+      rowOf: gsBy && !by.includes(gsBy) ? rowBy.get(by[0]) : null,
+      weaker: pick.met < (cands.mainPair?.met ?? 0),
+      controller: { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } },
+      suppliers: by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` }),
+      note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`,
+      gap: `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`,
+      by,
+    });
+  };
+  // Chiều ngược (Khoa 21/11/2026 "có"): the agent's main controller is one a supplier offers, and the lowest of that make that
+  // meets EVERY communication function of the HSMT with its best module (the table "Bộ điều khiển thấp nhất đủ yêu cầu theo
+  // code") is another one → the copy with that lowest controller, from the maker's datasheet ("NCC chưa chào") unless a
+  // supplier of the configuration offers it. No function list in the HSMT, no such table, no copy. The lowest one's kind
+  // must read as the HSMT asks (unread: no copy); a main controller that meets all at the same or a lower step, or whose
+  // step cannot be compared, stays alone.
+  const ctlLowTwinOf = (c) => {
+    if (!c.controller?.model || c.controller.src?.kind === "maker" || !c.engine?.model) return null;
+    const names = hsmtCommNames(hsmtText || "");
+    if (!names.length) return null;
+    const { out, mainPair } = ctlCands(c, names), step = (a) => (a.step == null ? Infinity : a.step);
+    const fits = (kind) => (ctlNeed === "sync" ? kind === "sync" : ctlNeed === "amf" ? !kind || kind === "amf" : true);
+    const pick = out.filter((a) => fits(a.kind) && a.met === names.length).sort((a, b) => step(a) - step(b) || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0))[0];
+    if (!pick || (ctlNeed && pick.kind !== ctlNeed)) return null;
+    const mainModel = ctlModelOf(c.controller), mainSheet = factsOf(c, "controller").find((f) => f.version)?.version || mainModel;
+    const mainStep = CM.ctlStep(mainSheet);
+    if (mainPair?.met === names.length && fits(CM.kindOf(ctlKinds, mainSheet) || CM.kindOf(ctlKinds, mainModel)) && (pick.step == null || mainStep == null || pick.step >= mainStep)) return null;
+    let src, model = pick.model, by = [];
+    if (pick.notOffered) {
+      const f = factsFor(facts, "controller", pick.model).find((x) => sup.get(x.supplierId)?.role === "controller_maker");
+      if (!f) return null;
+      src = { kind: "maker", supplierId: f.supplierId, n: f.n };
+    } else {
+      const o = (sup.get(pick.offeredBy)?.controllers || []).find((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(pick.offeredAs));
+      src = o ? { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } : { ...c.controller.src };
+      model = pick.offeredAs; by = [pick.offeredBy];
+    }
+    return twinCopy(c, {
+      controller: { make: c.controller.make, model, src },
+      suppliers: structuredClone(c.suppliers || []),
+      note: `Bản bộ điều khiển thấp nhất đủ yêu cầu theo code: chưa chấm hết trên datasheet ${model}.`,
+      gap: pick.notOffered ? `${model} là bộ thấp nhất đủ yêu cầu theo tài liệu hãng, NCC chưa chào; bản trên là ${mainModel} do NCC chào.` : `${pick.offeredBy} chào ${model}, bộ thấp nhất đủ yêu cầu; bản trên là ${mainModel}.`,
+      by,
+    });
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
@@ -3153,15 +3287,29 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
   // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
   // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
-  // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
-  // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  // A copy only takes a free place of the 8: it never pushes out a configuration the agent checked (điều phối 21/11/2026;
+  // IB2600603983 00:43Z: two copies pushed out Baudouin 6M33G825/5 + DSE7420 MKII). Copies that meet as many communication
+  // parts as the main one go first, `weaker` ones after; one with no place is named on its configuration (`offerNote`).
+  // One controller under two names (DSE7320 on a supplier's line, DSE7320 MKII on the maker's sheet) is the same one.
   const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
+  const ctlKeysOf = (m) => new Set([CAT.keyOf(m || ""), ...factsFor(facts, "controller", m || "").map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean));
   const twinPairs = twinBases.map((c) => {
-    const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
-    return { c, t: t && !twinBases.some(same) ? t : null };
+    markOfferedMain(c);
+    const t = ctlTwinOf(c) || ctlLowTwinOf(c);
+    if (!t) return { c, t: null };
+    const tk = ctlKeysOf(t.controller.model);
+    const same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && !!o.controller?.model && [...ctlKeysOf(ctlModelOf(o.controller))].some((k) => tk.has(k));
+    return { c, t: twinBases.some(same) ? null : t };
   });
-  let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
-  result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
+  let twinRoom = Math.max(0, MAX_CONFIGS - twinBases.length);
+  const twinKept = new Set();
+  for (const p of [...twinPairs.filter((x) => x.t && !x.t.ctlTwin.weaker), ...twinPairs.filter((x) => x.t?.ctlTwin.weaker)]) if (twinRoom > 0) { twinRoom--; twinKept.add(p); }
+  for (const p of twinPairs) {
+    if (!p.c.controller) continue;
+    if (p.t && !twinKept.has(p)) p.c.controller.offerNote = `Phương án khác, chưa thành cấu hình riêng vì đã đủ ${MAX_CONFIGS} cấu hình: ${p.t.controller.model} (${p.t.ctlTwin.by.length ? `NCC ${p.t.ctlTwin.by.join(", ")} chào` : "theo tài liệu hãng, NCC chưa chào"}).`;
+    else delete p.c.controller.offerNote;
+  }
+  result.configs = twinPairs.flatMap((p) => (twinKept.has(p) ? [p.c, p.t] : [p.c]));
   result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
@@ -3175,7 +3323,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     // A main controller the agent chose from its maker's datasheet, which no supplier of the configuration offers
     // (bdk-amf, Khoa 20/11/2026 "2"): labelled as such by code; its source is that datasheet table (sourceText "maker").
     if (c.controller) {
-      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = CM.CTL_ALT_LABEL; }
+      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = c.controller.offeredMain?.label || CM.CTL_ALT_LABEL; }
       else { delete c.controller.fromMaker; if (c.controller.label === CM.CTL_ALT_LABEL) delete c.controller.label; }
     }
     for (const part of ["engine", "alternator", "genset", "controller"]) {
@@ -3183,7 +3331,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       if (!p) continue;
       texts[part] = sourceText(p.src, p.model);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
-      if ((!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
+      // The code's copy names the controller as the catalog reads it (DSE7320), its supplier's line may write it otherwise ("Deepsea 7320").
+      const twinNamed = part === "controller" && !!c.ctlTwin && p.src?.kind === "controller" && CAT.controllersIn(p.src.line || "").some((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(p.model));
+      if (!twinNamed && (!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
       // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
@@ -3757,7 +3907,7 @@ export function rfqOf(c, reqs = []) {
   const ctl = c.controller;
   if (ctl?.model) {
     const ctlName = `${ctl.model}${ctl.make ? ` (${ctl.make})` : ""}`;
-    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: CM.CTL_ALT_LABEL,
+    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: ctl.offeredMain?.label || CM.CTL_ALT_LABEL,
       ask: `Xác nhận NCC cấp được bộ điều khiển ${ctlName}; nêu nước sản xuất, gửi CO` }, null);
     for (const m of (ctl.modules || []).filter((x) => !x.offeredBy)) {
       const order = m.order ? `, mã đặt hàng ${m.order}` : "";
