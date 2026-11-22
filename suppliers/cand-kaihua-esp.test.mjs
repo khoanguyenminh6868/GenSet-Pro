@@ -9,12 +9,15 @@ const sup = (id, rows, header = H) => ({ id, country: "CN", confidence: "high", 
 const free = (text) => ({ ...hintsOf(`Chương V. Yêu cầu kỹ thuật\n${text}`), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] });
 const run = (list, text, cap = { value: 700, unit: "kVA" }) => candidates(C.build(list), cap, free(text), { suppliers: list });
 
-test("hzOfName: chỉ kaihua-genset, chỉ HC-BD… đuôi -60", () => {
+test("hzOfName: chỉ kaihua-genset, tên HC-BD… / HC-…GF… đuôi -60", () => {
   const k = (line, supplierId = "kaihua-genset") => hzOfName({ supplierId, line });
   assert.equal(k("| HC-BD1500-60 | 1500 | 12M33D1320E201 |"), 60);
   assert.equal(k("| HC-BD 2060-60 | 2060 | 16M33G1650/6 |"), 60);
   assert.equal(k("| HC-BD1500 | 1500 | 12M33D1320E201 |"), null);
-  assert.equal(k("| HC-34GF-60 | 34 | 1103A-33G |"), null);
+  assert.equal(k("| HC-34GF-60 | 38 | 35 | 1103A-33G |"), 60);
+  assert.equal(k("| HC-2500GF2-60 | 2750 | 2500 | 16V4000G83 |"), 60);
+  assert.equal(k("| HC-34GF | 33 | 30 | 1103A-33G |"), null);
+  assert.equal(k("| HC-60 | 66 | 60 | 1103A-33G |"), null);
   assert.equal(k("| HC-BD1500-60 | 1500 | 12M33D1320E201 |", "other"), null);
 });
 test("gói 50 Hz: dòng kaihua -60 bị loại, dòng NCC khác cùng động cơ ở lại", () => {

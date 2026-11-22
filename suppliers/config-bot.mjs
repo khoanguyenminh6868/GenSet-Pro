@@ -1039,9 +1039,9 @@ export function hzOfRow(u) {
   }
   return null;
 }
-// Tên model kaihua-genset dòng Baudouin đuôi "-60" ("HC-BD1500-60", "HC-BD 2060-60") là máy 60 Hz (Khoa 22/11/2026). CHỈ NCC này,
-// chỉ cho chính dòng đó: không tính vào "động cơ chỉ có một tần số" của dòng NCC khác; dòng tự ghi Hz / tốc độ thì theo chính nó.
-export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /^HC-BD\s*\d+-60$/i.test(String(CAT.cellsOf(u.line)[0] ?? "").trim()) ? 60 : null);
+// Tên model kaihua-genset đuôi "-60" ("HC-BD1500-60", "HC-BD 2060-60", "HC-34GF-60", "HC-2500GF2-60") là máy 60 Hz (Khoa 22/11/2026).
+// CHỈ NCC này, chỉ cho chính dòng đó: không tính vào "động cơ chỉ có một tần số" của dòng NCC khác; dòng tự ghi Hz / tốc độ thì theo chính nó.
+export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /^HC-(?:BD\s*)?\d+(?:GF\d*)?-60$/i.test(String(CAT.cellsOf(u.line)[0] ?? "").trim()) ? 60 : null);
 // Mã Baudouin có dấu "^": tờ hãng chú thích "^ Primarily for ESP applications" (sources/baudouin/1015, 1017–1020).
 // Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
 export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
