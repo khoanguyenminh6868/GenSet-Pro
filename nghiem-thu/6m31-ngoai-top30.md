@@ -248,6 +248,10 @@ Cột không rõ thuộc động cơ hay tổ máy: không có trong 4 bảng đ
 
 **Lỗi dữ liệu phát hiện thêm, chưa sửa:** baifa-power có 6 bảng để cả dòng dữ liệu trong trường `header` (tới 33 dòng), nên các dòng đó không vào danh mục, gồm 5 dòng ghi "UK/ CCEC" (QSK50-G3 / G4 / G7 / G13, QSK60-G23). Chúng hiện không phải ứng viên. Nếu sửa dữ liệu thì "UK/ CCEC" là hai nơi, cần Khoa quyết như "UK/INDIA".
 
+**Cập nhật theo điều phối:** 30 hàng "JAPAN OR CHINA" (Mitsubishi S6R2 / S12R / S16R của comappower, suneco-linyi, yanan-power, mỗi NCC 10) làm giống UK/INDIA: ở G7 / G7EU giữ dòng, không trừ điểm, gắn "cần xác nhận nơi sản xuất động cơ (NCC ghi «JAPAN OR CHINA»)". G20 không áp. Lưu ý: nhóm `g20` trong `web/catalog.js` KHÔNG gồm Trung Quốc (có Ấn Độ), nên dòng ghi nhà máy Trung Quốc ở gói G20 hiện được giữ dù ngoài nhóm; muốn loại cần Khoa quyết.
+
+**Việc dở:** baifa-power có 6 bảng để dòng dữ liệu trong trường `header` nên các dòng đó không vào danh mục (gồm 5 dòng "UK/ CCEC"). Việc riêng, chưa làm.
+
 **Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8, chưa đo cloud).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
 
 ## Lệnh
