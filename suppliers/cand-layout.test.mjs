@@ -60,7 +60,10 @@ test("dòng không ghi bố trí: theo động cơ khi ÍT NHẤT HAI nhà cung 
   assert.ok(ids(r3).includes("clash"));
   // Hai nhà ghi thẳng hàng, hai nhà ghi chữ V: không xét, dòng không ghi bố trí ở lại.
   const clash2 = sup("clash2", ["| d-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12 L |"]);
-  assert.ok(ids(run([...rows, vee2, vee3, other, clash, clash2], ask)).includes("other"));
+  // (Không xét top: dòng chữ V nay cũng ở lại vì hai nhà khác ghi thẳng hàng, nên trần mỗi động cơ có thể đẩy "other" ra khỏi top.)
+  const r4 = run([...rows, vee2, vee3, other, clash, clash2], ask);
+  assert.ok(r4.all.some((x) => x.u.supplierId === "other"));
+  assert.ok(!r4.dropped.some((d) => d.u.supplierId === "other"));
 });
 
 // Khoa 17/11/2026: "nếu HSMT ghi rõ 6 thì nên loại 12".
@@ -105,4 +108,21 @@ test("động cơ chỉ có dòng 60 Hz (hai dòng trở lên): dòng không ghi
 test("động cơ bán ở cả hai tần số: dòng không ghi tần số ở lại", () => {
   const both = [...baud, sup("f50", ["| z-1 | 750 | 600 | 6M33G660/6 | X |"], "Baudouin series 50 Hz", B)];
   assert.ok(ids(run(both, free("Tần số 50 Hz"))).includes("nofreq"));
+});
+
+test("ô của chính dòng bị ≥ 2 NCC khác ghi đúng kiểu HSMT đòi: không dùng để loại (Khoa 22/11/2026)", () => {
+  const row = (id, cyl) => sup(id, [`| ${id}-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | ${cyl} |`]);
+  const hsmtV = free("Số xi lanh 12, kiểu chữ V");
+  assert.ok(ids(run([row("sai", "12 L"), row("a", "12V"), row("b", "V12")], hsmtV)).includes("sai"));
+  // Chỉ một NCC khác ghi đúng kiểu HSMT: ô của dòng vẫn loại dòng đó.
+  assert.ok(!ids(run([row("sai", "12 L"), row("a", "12V")], hsmtV)).includes("sai"));
+  // Hai NCC khác ghi cùng kiểu với dòng không phải lý do giữ dòng: vẫn loại.
+  assert.ok(!ids(run([row("sai", "12 L"), row("a", "12 L"), row("b", "6L")], hsmtV)).includes("sai"));
+});
+
+test("aosif n102: bỏ số xi lanh 12V của QSK19 / KTA19, giữ dòng", () => {
+  const s = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "cn", "aosif.json"), "utf8"));
+  const rows = C.fromSupplier(s).filter((r) => r.kind === "engine" && ["AC700-I", "AC700-II", "AC750-III"].includes(r.genset) && /12V \| 18\.9/.test(r.line || ""));
+  assert.equal(rows.length, 3);
+  for (const r of rows) assert.ok(!(r.specs || []).some((f) => f.key === "cyl"), r.genset);
 });

@@ -1942,7 +1942,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // for its own row. Both arrangements written by two suppliers each: not judged.
         const bySup = { v: new Set(), inline: new Set() };
         for (const f of ef) { const l = f.key === "cyl" ? layoutOf(f.value) : null; if (l) bySup[l].add(f.supplierId ?? ""); }
-        const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
+        // The row's own cell does not rule it out when at least two other suppliers write the arrangement the HSMT asks for this
+        // engine (Khoa 22/11/2026: liangzi "12L" for the V12 KTA38, longkai "V12" for the 6-in-line QSK19).
+        const outvoted = own.length > 0 && own.every((x) => x !== hints.cylLayout) && [...bySup[hints.cylLayout]].filter((x) => x !== u.supplierId).length >= 2;
+        const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
