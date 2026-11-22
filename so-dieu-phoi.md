@@ -85,6 +85,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 | Việc | Ghi chú | Model |
 |---|---|---|
 
+- (22/11, chưa ra) IB2600601812: đường gây 62 ghi chú "xác nhận đời MK" lặp ×3 trên web chưa tìm ra (đúng 3 lần `check` trên đầu ra tái tạo được; không cờ kept; thư mục chạy đã mất). #1080 đã chặn lặp tiếp, dữ liệu web chưa dọn. Chi tiết `nghiem-thu\check-luy-dang-1.md`.
 - (21/11, việc dở, chưa điều tra) Test web "danh mục thiếu model rồi bản nhà cung cấp mới về" (`web/test/cfg-ctl-module.spec.mjs:52`) chập chờn: hết giờ chờ 2/4 lần khi chạy ở nhánh #1059, nguyên nhân chưa xác định, chưa đo trên main.
 
 - (21/11, Khoa chọn "A" cho sanq) #1020 MERGE 017616bd (bản gộp main, CI xanh, diff so main chỉ `web/catalog.js` +9, `web/CLAUDE.md`, test mới): `TWO_CODE_CELLS` sanq-power n111 + n117, ô "TAD1650GE(1345GE)" không cho bản ghi động cơ, giữ đầu phát. Đo cloud `dau-vao\sanq-ma-ghep\top30-cloud\` (gốc 589596ed, nhánh c1893236, 1.093 lượt, 0 lỗi): 15 mã ghép (30 khoá) rời `all` 1.302 lượt-khoá, rời top 41 chỗ / 35 lượt; NGOÀI nhóm 0 rời, 0 vào, 0 đổi điểm ở `all`. Một dòng eastern-lion 1104DE44TAG1 rời top ở IB2600392438 là do hai dòng điểm cao hơn (sanq 1104A44TG2 287, rise-power TAD550GE 214) vào thế chỗ dòng sanq mã ghép. Không đo lại trên bản gộp cuối. Phiên đo lưu trữ. Bộ nhớ bẫy điều phối 21/11: #1031 MERGE 28d7fefe, `Backup -Check` giống.
