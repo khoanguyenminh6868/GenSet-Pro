@@ -200,6 +200,25 @@ Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300
 1. Dòng NCC tự ghi nhà máy Trung Quốc ("Perkins China", "CCEC China") ở gói G7/EU có loại như dòng India không?
 2. 12 trong 51 dòng thuộc 4 lượt mà HSMT chỉ đòi THƯƠNG HIỆU. Luật cũ nhận nhà máy chính hãng ngoài nhóm khi chỉ đòi thương hiệu, còn `placeInRow` (quyết định 21/11) loại ở mọi gói G7/EU. Với lượt chỉ đòi thương hiệu: giữ loại India, hay trả lại cả dòng India lẫn dòng Trung Quốc?
 
+**Khoa 22/11/2026 (qua điều phối):** giữ loại India ở mọi gói G7/EU, kể cả gói chỉ đòi thương hiệu. Dòng NCC tự ghi nhà máy Trung Quốc của động cơ cũng loại, nhưng đếm ảnh hưởng trước khi áp.
+
+**Đếm dòng NCC tự ghi nhà máy Trung Quốc (chỉ đếm, CHƯA sửa luật).** Chỉ tính chữ ở chính dòng, mã không kèm chữ thì không tính. Danh mục `cn/` của 3a323d1b; lượt-dòng lấy từ kết quả đo lần 3 (#1062, 175 lượt G7 / G7EU), chưa trừ tác động của #1088.
+
+| Dạng NCC ghi (hãng ngoài) | Hàng `cn/` | Lượt-dòng G7/G7EU | Trong top 30 |
+|---|---|---|---|
+| Nhà máy: "CCEC", "DCEC", 重庆康明斯, 东风康明斯, "Cummins (CCEC CHINA)" | 659 | 242 | 8 |
+| Hãng + China: "Perkins China", "Cummins (China Dongfeng)" | 172 | 111 | 26 |
+| Mã + China: "403A-15G1 made in china" | 12 | 23 | 5 |
+| 潍柴博杜安 / Weichai Baudouin (tách riêng, cần Khoa xem) | 47 | 0 | 0 |
+| **Cộng** | **890** | **376** (29 lượt, 238 hàng) | **39** (19 lượt) |
+
+- Theo hãng, hàng `cn/`: Cummins 776, Perkins 64, Baudouin 47, Weichai 2, MTU 1. Lượt-dòng: Cummins 302, Perkins 73, MTU 1. Top 30: Cummins 27, Perkins 12.
+- Theo NCC, hàng `cn/`: fdk-energy 279, bdadl-shanghai 137, pengpai-yangzhou 123, jiangchai-xuzhou 80, fukangsi-yangzhou 74, liangzi-yangzhou 70, aosif 61, yongcai-elecmama 20, bobig-power 12, aoke-yangzhou 10, shanhua 9, kc-generatorset 3, yingtai-jiangsu 3, jiuan-power 3, baifa-power 3, sunkings 1, tecgen-fujian 1, generatordieselchina 1.
+- Theo NCC, lượt-dòng: fdk 133, pengpai 62, liangzi 46, fukangsi 41, aosif 27, bobig 23, bdadl 22, yongcai 12, jiangchai 3, baifa 3, sunkings 2, yingtai 2. Top 30: fdk 33, bobig 5, yongcai 1.
+- Chưa tính: 160 hàng có ô đúng "CHINA" mà script chưa gắn được vào cột (baifa 127, comappower 11, suneco-linyi 11, yanan-power 11); 122 lượt-dòng G7/G7EU, 0 trong top 30. Bảng của các NCC này có cột "ENGINE MANUFACTURER / COUNTRY" hoặc "Engine origin", nên nhiều khả năng là nơi sản xuất động cơ, nhưng chưa soát từng hàng.
+- Ngoài ra 504 hàng ghi China của hãng Trung Quốc / chưa rõ hãng không nằm trong bảng trên.
+- Khi loại 39 dòng top, dòng khác sẽ lên thay, có thể gồm dòng Trung Quốc chưa đọc được. Số cuối phải đo cloud sau khi có PR.
+
 **Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8, chưa đo cloud).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
 
 ## Lệnh
