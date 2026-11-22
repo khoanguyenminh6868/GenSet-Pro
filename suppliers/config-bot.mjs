@@ -5313,10 +5313,24 @@ export function engineSheetsOf(cat, suppliers = []) {
   }
   return out;
 }
+// The speed / frequency the configuration's own genset row writes: "1800 rpm", "1800转", "60 Hz" anywhere in its header, line
+// or title, or a bare 1500 / 1800... cell of a line whose header names a speed column (WPG660 | 1800).
+const RUN_RPM = new Set([1000, 1200, 1500, 1800, 3000, 3600]), HZ_OF_RPM = { 1000: 50, 1200: 60, 1500: 50, 1800: 60, 3000: 50, 3600: 60 };
+export function rowRunOf(row) {
+  if (!row) return { speeds: [], hzs: [] };
+  const head = (row.header || []).join(" "), all = [head, row.line || "", row.title || ""].join(" ");
+  const hzs = [...all.matchAll(/\b(50|60)\s*-?\s*Hz/gi)].map((m) => Number(m[1]));
+  const said = [...all.matchAll(/(?<!\d)(\d{3,4})\s*(?:rpm|r\/min|rev\/min|v\/p|vòng|转)/gi)].map((m) => Number(m[1])).filter((v) => v >= 600 && v <= 3600);
+  const cells = /speed|rpm|r\/min|转速|v\/p|v[òo]ng/i.test(head) ? CAT.cellsOf(row.line || "").map(rpmCell).filter((v) => RUN_RPM.has(v)) : [];
+  return { speeds: [...new Set([...said, ...cells])], hzs: [...new Set(hzs)] };
+}
 // Each "met" only, of a check left "unclear", with the part it comes from in the note. Frequency needs both parts: the
-// alternator's sheet rated at that frequency and the engine's sheet at the speed of 4 poles for it.
+// alternator's sheet rated at that frequency and the engine's sheet at the speed of 4 poles for it. The engine's sheet decides
+// a speed only when it gives ONE speed and the genset row writes no other speed or frequency: a 60 Hz / 1800 rpm row of an
+// engine whose sheet also gives 1500 is not "≤ 1500 v/p" (điều phối 22/11/2026, WPG660 6M31G660/6).
 export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], row = null) {
   if (!sheet) return c;
+  const run = rowRunOf(row), runsAt = (v) => !run.speeds.some((s) => s !== v) && !run.hzs.some((h) => h !== HZ_OF_RPM[v]);
   const engine = c.engine?.model || "", where = (f) => `tờ hãng động cơ ${engine} (${f.supplierId} [${f.n}])`;
   const put = (r, o, f, part, offered, note) => putCheck(c, o.x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered, sourceQuote: f.line, part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "to-hang-dong-co",
     sheetSrc: { supplierId: f.supplierId, n: f.n, line: f.line }, note });
@@ -5327,10 +5341,9 @@ export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], r
     if (r.code === "speed" && (!r.part || r.part === "engine")) {
       const o = openCheck(c, r), lim = oneFig(req, /(\d[\d.,]{2,})/g);
       if (!o || lim == null || /≥|>|t[ốo]i\s*thi[ểe]u/i.test(req)) continue;
-      const fit = CEIL.test(req) ? speeds.filter((v) => v <= lim) : speeds.filter((v) => v === lim);
-      if (!fit.length) continue;
-      const v = Math.max(...fit), f = sheet.speeds.find((x) => x.v === v);
-      put(r, o, f, "engine", `${figVi(v, 0)} v/p${speeds.length > 1 ? ` (tờ ghi ${speeds.map((s) => figVi(s, 0)).join(" / ")} v/p)` : ""}`, `Code đọc từ ${where(f)}.`);
+      if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
+      const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
+      put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
     } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
       const o = openCheck(c, r), f = sheet.fuels[0];
       if (o) put(r, o, f, r.part || "genset", "Diesel (động cơ, tờ hãng)", `Code đọc từ ${where(f)}: nhiên liệu của động cơ.`);
@@ -5338,7 +5351,7 @@ export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], r
       const o = openCheck(c, r), hz = Number((`${req} ${r.quote || ""}`.match(/\b(50|60)\s*Hz/i) || [])[1]), rpm = hz === 50 ? 1500 : 1800;
       const own = [...(row?.header || []), row?.line || "", row?.title || ""].join(" ");
       if (!o || !hz || /\b(50|60)\s*-?\s*Hz/i.test(own)) continue;
-      const f = sheet.speeds.find((x) => x.v === rpm), a = altRatings.find((x) => x.hz === hz && (x.rpm == null || x.rpm === rpm));
+      const f = speeds.length === 1 && runsAt(rpm) ? sheet.speeds.find((x) => x.v === rpm) : null, a = altRatings.find((x) => x.hz === hz && (x.rpm == null || x.rpm === rpm));
       if (!f || !a) continue;
       put(r, o, { ...f, line: [f.line, a.lines?.[0]].filter(Boolean).join(" | ") }, "genset", `${hz} Hz (động cơ ${figVi(rpm, 0)} v/p, đầu phát có định mức ${hz} Hz)`, `Code đọc từ ${where(f)} và tờ hãng đầu phát ${c.alternator?.model || ""} (${a.supplierId} [${a.n}]).`);
     }

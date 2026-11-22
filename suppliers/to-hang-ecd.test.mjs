@@ -67,6 +67,23 @@ test("tần số: cần cả động cơ đúng v/p và đầu phát có định
   assert.equal(eng(req("frequency", "Tần số", "60 Hz", "genset"), [{ hz: 60, rpm: 1800, supplierId: "ls", n: 1012, lines: ["x"] }]).status, "unclear");
 });
 
+test("dòng tổ máy tự ghi 1800 v/p / 60 Hz: tờ động cơ 1500 không chấm đạt tốc độ, tần số", () => {
+  const sp = req("speed", "Tốc độ quay", "≤ 1500 vòng/phút", "engine"), hz = req("frequency", "Tần số", "50 Hz", "genset");
+  const rows = [{ header: ["| Model | Speed (rpm) | Prime kW | Engine |"], line: "| WPG660 | 1800 | 480 | 6M31G660/6 |", title: "Gensets" }, { header: ["| Model | kW |"], line: "| X | 480 | 1800 rpm |", title: "" }, { header: ["| Model | kW |"], line: "| X | 480 |", title: "Gensets 60Hz" }];
+  for (const row of rows) assert.equal(eng(sp, undefined, row).status, "unclear", row.line);
+  for (const row of rows.slice(0, 2)) assert.equal(eng(hz, undefined, row).status, "unclear", row.line);
+  assert.equal(eng(sp, undefined, { header: ["| Model | Speed (rpm) | kW |"], line: "| X | 1500 | 600 |", title: "" }).status, "met");
+});
+
+test("tờ động cơ ghi cả 1500 và 1800: không tự chọn tốc độ", () => {
+  const two = { speeds: [{ v: 1500, line: "| 1500 | 680", supplierId: "m", n: 1 }, { v: 1800, line: "| 1800 | 700", supplierId: "m", n: 1 }], fuels: [] };
+  for (const r of [req("speed", "Tốc độ quay", "≤ 1500 vòng/phút", "engine"), req("frequency", "Tần số", "50 Hz", "genset")]) {
+    const c = { engine: { model: "E" }, alternator: { model: "A" }, checks: [chk(r)] };
+    engineSheetChecks(c, [r], two, [{ hz: 50, rpm: 1500, supplierId: "ls", n: 1, lines: ["x"] }], null);
+    assert.equal(c.checks[0].status, "unclear", r.code);
+  }
+});
+
 test("chạy lại confirmChecks + altDocChecks giữ nguyên kết quả", () => {
   const r = req("alt_avr", "Điều chỉnh điện áp (AVR)", "Có AVR", "alternator"), c = { checks: [chk(r)] };
   altDocChecks(c, [r], [avr]);
