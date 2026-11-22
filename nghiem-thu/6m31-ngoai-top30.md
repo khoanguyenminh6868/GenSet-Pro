@@ -174,6 +174,8 @@ Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300
 - Còn chữ India mà `placeInRow` không đọc, có bản ghi động cơ: 1 hàng, shanhua n1011 #18, bảng nhãn "制造商 Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)", động cơ 1103A-33TG2. Chưa sửa, chờ điều phối quyết.
 - Có chữ India nhưng không có bản ghi động cơ nên không vào ứng viên: generatordieselchina 1, mahindra-powerol 1, woodward 4.
 
+**Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8, chưa đo cloud).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
+
 ## Lệnh
 
 ```powershell
