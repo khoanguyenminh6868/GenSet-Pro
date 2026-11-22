@@ -2857,7 +2857,9 @@
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
       [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
     { brand: "ComAp", word: /\bcomap\b/i, models: [
-      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? m[2].toUpperCase() : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      // "InteliSys Gas" is a model of its own (bdk-ds-4: its datasheet is ComAp's). InteliDrive DCU (Marine / Industrial) is an ENGINE
+      // controller, not a genset one: no model of its own, so its datasheet is attached to no model (điều phối 22/11/2026).
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200|Gas\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2][0].toUpperCase() + m[2].slice(1).toLowerCase()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
       // ComAp order codes of InteliGen NT / NTC (IG-NT GC, IG-NTC-BB...).
       [/\bIG-?(NTC?)(?![\w])/gi, (m) => `InteliGen ${m[1].toUpperCase()}`],
       [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],
