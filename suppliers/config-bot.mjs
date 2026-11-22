@@ -1117,6 +1117,12 @@ export function comprLines(t) {
     const m = line.match(COMPR_LABEL);
     if (!m) return;
     let cell = line.slice(m.index + m[0].length).replace(/^\s*\((?:C|yêu cầu tối thiểu)\)\s*\)?/i, (s) => (/t[ốo]i\s*thi/i.test(s) ? " tối thiểu " : " "));
+    // "Số xilanh và tỷ số nén: 6 xilanh; tỷ số nén > 17.5:1" (IB2300046231): số đầu là số xi lanh, giá trị ở nhãn kế tiếp.
+    if (/^[\s:|]*\d{1,2}\s*(?:xi|xy)[\s-]?lanh/i.test(cell)) {
+      const next = cell.match(COMPR_LABEL);
+      if (!next) return;
+      cell = cell.slice(next.index + next[0].length);
+    }
     // The label alone: the value on the next line, when that line is the value and nothing else of a row.
     // A sign left on the label's line ("Tỷ số nén: ≥" / "17:1") stays with the figure.
     if (!/\d/.test(cell) && !/n[êe]u|ghi\s*r[õo]|theo/i.test(cell) && COMPR_NEXT.test(L[i + 1] || "") && !/[a-zà-ỹ]{4}/i.test(String(L[i + 1]).replace(/t[ốo]i\s*(thi[ểe]u|đa)|kho[ảa]ng|đ[ạa]t|kh[ôo]ng|b[ắa]t\s*bu[ộo]c|ho[ặa]c|t[ốo]t|h[ơo]n/gi, ""))) cell = ` ${(cell.match(/≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa/i) || [""])[0]} ${L[i + 1]}`;
@@ -1141,7 +1147,9 @@ export function comprLines(t) {
     const at = cell.indexOf(fig), pre = `${s} ${cell.slice(0, Math.max(0, at))}`, post = cell.slice(at + fig.length).split(/[|;]/)[0].slice(0, 30);
     // Two ratios in the cell ("≥ 13:1 và ≤ 18:1"), or a band word.
     const two = (cell.split(/[;]/)[0].match(/\d{1,2}(?:[.,]\d{1,2})?\s*:\s*0?1(?![\d.,])/g) || []).length > 1;
+    // Bản đọc ghi rõ dấu so sánh trước số bị mất (IB2300343208, IB2400564384): không phải số ghi trơ.
     const kind = /tham\s*kh[ảa]o|t[ươ]+ng\s*(đ[ươ]+ng|t[ựu])/i.test(around) ? "ref"
+      : /k[ýy]\s*hi[ệe]u\s*so\s*s[áa]nh/i.test(cell.slice(at)) ? "lost"
       : two || /kho[ảa]ng|~|±|đ[ếe]n|\bt[ừu]\b/i.test(`${pre} ${post}`) ? "band"
       : COMPR_MIN.test(`${pre} ${post}`) ? "min" : COMPR_MAX.test(`${pre} ${post}`) ? "max" : "exact";
     out.push({ x, kind, line: L[i].trim() });

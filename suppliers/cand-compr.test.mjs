@@ -70,6 +70,14 @@ test("India 4006-23TAG2A bị loại ở g7eu cả khi khoá có tiền tố l�
     assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["in", ["made"]]]);
   }
 });
+test("comprOf: số xi lanh chung ô không là tỉ số nén; dấu so sánh bị mất thì không phải số trơ", () => {
+  const h = (t) => { const x = hintsOf(`Chương V. Yêu cầu kỹ thuật\n${t}`); return [x.compr, x.comprExact]; };
+  assert.deepEqual(h("Động cơ: Số xilanh và tỷ số nén: 6 xilanh; tỷ số nén > 17.5:1"), [17.5, false]);
+  assert.deepEqual(h("Động cơ: Số xilanh và tỷ số nén: 6 xilanh; tỷ số nén 17.5:1"), [17.5, true]);
+  assert.deepEqual(h("Động cơ: Tỷ số nén: 14 : 1 (ký hiệu so sánh bị mất trong văn bản)"), [14, false]);
+  assert.deepEqual(h("Máy 500 kVA: Động cơ - Tỷ số nén: 13,5 : 1 (ký hiệu so sánh trước giá trị không đọc được trong văn bản)"), [13.5, false]);
+  assert.deepEqual(h("Động cơ: Tỷ số nén: 14 : 1"), [14, true]);
+});
 test("comprOff: nguồn mâu thuẫn, không đọc được hoặc không ghi thì không kết luận", () => {
   const f = (...v) => v.map((value) => ({ key: "compr", value }));
   assert.equal(comprOff(f("13.9:1", "13.0:1"), 14), null);
