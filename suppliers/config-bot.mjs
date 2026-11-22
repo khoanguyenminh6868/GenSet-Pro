@@ -2000,6 +2000,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // HSMT đòi thì loại. Không ghi thì không suy ra. Đọc từ ô của CHÍNH dòng, không từ khoá: khoá có thể gộp về mã gốc.
       const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInRow(e, u) : null;
       if (placed && !CAT.COUNTRY_GROUP[origin].includes(placed)) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại ${madeVi(placed)}, HSMT đòi ${GROUP_NAME[origin]}`); }
+      // Nhà máy Trung Quốc NCC tự ghi ở chính dòng, gói G7 / G7EU kể cả chỉ đòi thương hiệu (Khoa 22/11/2026).
+      const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
+      if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
@@ -5566,6 +5569,43 @@ export function placeInRow(e, u) {
   const isIndia = (c) => /^india$/i.test(c || "");
   if (u?.supplierId === "baifa-power" && u?.line && cells.some(isIndia)) return "IN";
   if (u?.supplierId === "sanq-power" && u?.line && cells.some((c, i) => CAT.keyOf(c) === code && isIndia(cells[i + 1]))) return "IN";
+  // Bảng nhãn ghi nhà sản xuất của chính hãng động cơ: "Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)" (shanhua).
+  if (!u?.line) {
+    const makes = String(e?.make || "").split(" / ").filter(Boolean).map((x) => x.toLowerCase());
+    const maker = (u?.lines?.rows || []).filter((l) => /manufacturer|制造商/i.test(l)).flatMap((l) => CAT.cellsOf(l)).map((c) => String(c));
+    if (maker.some((c) => /\bindia\s+factory\b/i.test(c) && makes.some((x) => c.toLowerCase().includes(x)))) return "IN";
+  }
+  return null;
+}
+// Nhà máy Trung Quốc NCC tự ghi ở chính dòng cho động cơ hãng ngoài (Khoa 22/11/2026): tên nhà máy, "hãng + China", "mã + China",
+// hoặc cột xuất xứ động cơ theo danh sách tường minh. Baudouin / Weichai không đọc (Baudouin vẫn tính G7). "UK/ CCEC" là hai nơi: không đọc.
+const CN_PLANTS = [[/cummins/i, /\b(?:ccec|dcec|xcec)\b|(?:chongqing|dongfeng|xi'?an)\s*cummins|重庆康明斯|东风康明斯|西安康明斯/i], [/perkins/i, /perkins\s*wuxi|wuxi\s*perkins|无锡帕金斯/i], [/\bmtu\b/i, /mtu\s*yuchai|yuchai\s*mtu|玉柴\s*mtu/i]];
+const CN_FOREIGN = /cummins|perkins|volvo|\bmtu\b|mitsubishi|doosan|hyundai|daewoo|deutz|kubota|yanmar|isuzu|iveco|\bfpt\b|deere|\bman\b|scania|caterpillar|\bcat\b|kohler|sdmo|liebherr/i;
+const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔沃", mitsubishi: "三菱", doosan: "斗山", deutz: "道依茨" };
+const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
+const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
+const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+export function chinaPlantInRow(e, u) {
+  const make = String(e?.make || "");
+  if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
+  const code = CAT.keyOf(placeCode(e?.model)), names = make.split(" / ").filter(Boolean).flatMap((m) => [m.toLowerCase(), CN_MAKE_ZH[m.toLowerCase()]].filter(Boolean));
+  // Bảng nhãn: dòng nói về động cơ ("| Engine-DCEC Cummins | …", "| ENGINE | CCEC Cummins") hoặc có mã của động cơ ("| Model | CCEC | KTA19-G4").
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /\bengine\b|manufacturer|制造商/i.test(l) || (code.length >= 3 && CAT.keyOf(l).includes(code)));
+  // Dòng chưa rõ hãng (mâu thuẫn nguồn): chỉ tên nhà máy tự nói hãng mới đọc.
+  const plants = CN_PLANTS.filter(([m]) => !make || m.test(make)).map(([, p]) => p);
+  for (const l of lines) for (const raw of CAT.cellsOf(l)) {
+    const cell = String(raw).trim(), c = cell.replace(CN_EMISSION, " ");
+    if (/baudouin|博杜安/i.test(c) || CN_TWO.test(c)) continue;
+    if (plants.some((p) => p.test(c))) return { at: "CN", cell, form: "plant" };
+    if (!make || !CN_WORD.test(c)) continue;
+    if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };
+    if (names.some((n) => c.toLowerCase().includes(n))) return { at: "CN", cell, form: "make" };
+  }
+  const col = ENGINE_ORIGIN_COL[u?.supplierId];
+  if (make && col && u?.line && (u.header || []).some((h) => col[0].test(h))) {
+    const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = col[1] === "last" ? cells.length - 1 : cells.findIndex((c) => CAT.keyOf(c) === code) + 1;
+    if (at > 0 && /^(china|prc|中国)$/i.test(cells[at] || "")) return { at: "CN", cell: cells[at], form: "column" };
+  }
   return null;
 }
 // sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
