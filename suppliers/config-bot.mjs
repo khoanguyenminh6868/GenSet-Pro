@@ -5438,11 +5438,11 @@ export function placeInRow(e, u) {
   if (u?.supplierId === "sanq-power" && u?.line && cells.some((c, i) => CAT.keyOf(c) === code && isIndia(cells[i + 1]))) return "IN";
   return null;
 }
-// sanq ghi "UK/INDIA" ngay sau ô động cơ: hai nơi có thể, không biết nơi nào.
+// sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
 export function placesInRow(e, u) {
   if (u?.supplierId !== "sanq-power" || !u?.line) return null;
   const code = CAT.keyOf(placeCode(e?.model)), cells = CAT.cellsOf(u.line).map((c) => String(c).trim());
-  return cells.some((c, i) => CAT.keyOf(c) === code && /^uk\s*\/\s*india$/i.test(cells[i + 1] || "")) ? ["GB", "IN"] : null;
+  return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
 }
 export function comprOff(facts, exact) {
   const list = (facts || []).filter((f) => f.key === "compr");

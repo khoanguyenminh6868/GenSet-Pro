@@ -84,7 +84,7 @@ test("India 4006-23TAG2A bị loại ở g7eu cả khi khoá có tiền tố l�
   }
 });
 test("sanq ghi UK/INDIA: gói G7/EU giữ dòng, không trừ điểm, gắn cần xác nhận; G20 không gắn", () => {
-  const rows = [sup("sanq-power", ["| s-1 | 750 | 600 | 4006-23TAG2A | UK/INDIA | S5L1D-H41 | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
+  const rows = [sup("sanq-power", ["| s-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | UK/INDIA | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
   const go = (origin) => candidates(C.build(rows), { value: 700, unit: "kVA" }, free("Điện áp 380 V"), { suppliers: rows, origin });
   const tagged = (r) => r.top.find((x) => x.u.supplierId === "sanq-power")?.why.some((w) => w.includes("cần xác nhận nơi sản xuất động cơ"));
   const r = go("g7eu"), x = r.top.find((y) => y.u.supplierId === "sanq-power");
@@ -107,6 +107,8 @@ test("placeInRow: India cạnh hãng, made in India, ô riêng của baifa / san
   assert.equal(placeInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), null);
   assert.equal(placeInRow(Q, { supplierId: "khac", line: "| SQ-1 | 660/825 | VTA28-G6 | INDIA | HCI634G" }), null);
   assert.deepEqual(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), ["GB", "IN"]);
+  assert.deepEqual(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | 600/750 | VTA28-G6 | HCI634G | UK/INDIA | 5525" }), ["GB", "IN"]);
+  assert.equal(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | 600/750 | QSK23-G3 | HCI634G | UK/INDIA | 5525" }), null);
   assert.equal(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | INDIA | HCI634G" }), null);
   assert.equal(placesInRow(Q, { supplierId: "khac", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), null);
 });
