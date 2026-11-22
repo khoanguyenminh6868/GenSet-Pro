@@ -5701,6 +5701,22 @@ function chinaListedCell(e, u, code) {
   const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = cells.findIndex((c) => r[1].test(c));
   return at >= 0 && CAT.keyOf(cells[at - r[2]] || "").includes(code) ? { at: "CN", cell: cells[at], form: "listed" } : null;
 }
+// Bảng nhãn ghi nhà máy SME của động cơ Mitsubishi: "| Engine Make | SME", "| Engine Manufacturer | SME Shanghai", "Manufacturer： SME",
+// "| Brand | SME"; superwatt "| Engine Model | S16R2-PTAW-C SME". Danh sách NCC tường minh; bảng phải có mã của chính động cơ.
+const CN_SME_LABEL = new Set(["fdk-energy", "westinpower", "aosif", "superwatt-swt"]);
+const SME_LABEL = /^\|?\s*(?:engine\s*make|engine\s*manufacturer|manufacturer|brand)\s*[|:：]\s*(sme(?:\s*shanghai)?)\s*\|?\s*$/i;
+function chinaSmeLabel(e, u, code) {
+  if (u?.line || !CN_SME_LABEL.has(u?.supplierId) || code.length < 3 || !/mitsubishi/i.test(String(e?.make || ""))) return null;
+  const rows = u.lines?.rows || [];
+  if (!rows.some((l) => CAT.keyOf(l).includes(code))) return null;
+  for (const l of rows) {
+    const m = String(l).trim().match(SME_LABEL);
+    if (m) return { at: "CN", cell: m[1], form: "label" };
+    const own = u.supplierId === "superwatt-swt" && String(l).trim().match(/^\|?\s*engine\s*model\s*[|:：]\s*(\S+)\s+sme\s*\|?\s*$/i);
+    if (own && CAT.keyOf(own[1]) === code) return { at: "CN", cell: `${own[1]} SME`, form: "label" };
+  }
+  return null;
+}
 export function chinaPlantInRow(e, u) {
   const make = String(e?.make || "");
   if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
@@ -5718,7 +5734,7 @@ export function chinaPlantInRow(e, u) {
     if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };
     if (names.some((n) => c.toLowerCase().includes(n))) return { at: "CN", cell, form: "make" };
   }
-  const listed = chinaListedCell(e, u, code);
+  const listed = chinaListedCell(e, u, code) || chinaSmeLabel(e, u, code);
   if (listed) return listed;
   const col = ENGINE_ORIGIN_COL[u?.supplierId];
   if (make && col && u?.line && (u.header || []).some((h) => col[0].test(h))) {

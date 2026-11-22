@@ -54,6 +54,22 @@ test("ô nhà máy theo danh sách NCC + dạng chữ", () => {
   assert.equal(at({ model: "1104A-44TG2", make: "Cummins" }, "| SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Wuxi | 1037", { supplierId: "sanq-power" }), null);
   assert.equal(at(M, "| FKS-LZ1000 | 900/1000 | 上海菱重 | S12R-PTA-C | 12", { supplierId: "fukangsi-yangzhou", header: ["| 型号 | 输出功率"] }), null);
 });
+test("bảng nhãn ghi SME: đúng NCC, đúng nhãn, bảng có mã của động cơ", () => {
+  const M = { model: "S16R2-PTAW-C", make: "Mitsubishi" }, code = "| Model | S16R2-PTAW-C";
+  const f = (supplierId, rows, e = M) => chinaPlantInRow(e, { supplierId, lines: { rows } })?.form || null;
+  assert.equal(f("fdk-energy", [code, "| Engine Make | SME"]), "label");
+  assert.equal(f("fdk-energy", [code, "| Engine Manufacturer | SME Shanghai"]), "label");
+  assert.equal(f("westinpower", [code, "Manufacturer： SME"]), "label");
+  assert.equal(f("aosif", [code, "| Brand | SME"]), "label");
+  assert.equal(f("superwatt-swt", ["| Engine Model | S16R2-PTAW-C SME"]), "label");
+  // Không mở rộng: NCC khác, hãng khác, bảng không có mã, nhãn khác, chữ khác.
+  assert.equal(f("stone-power", [code, "| Engine Make | SME"]), null);
+  assert.equal(f("fdk-energy", ["| Model | KTA50-G3", "| Engine Make | SME"], { model: "KTA50-G3", make: "Cummins" }), null);
+  assert.equal(f("fdk-energy", ["| Model | S6R2-PTA", "| Engine Make | SME"]), null);
+  assert.equal(f("fdk-energy", [code, "| Alternator manufacturer | SME"]), null);
+  assert.equal(f("fdk-energy", [code, "| Engine Make | Mitsubishi"]), null);
+  assert.equal(f("westinpower", ["| Engine Model | S16R2-PTAW-C SME"]), null);
+});
 test("cột xuất xứ động cơ: chỉ NCC + tiêu đề trong danh sách", () => {
   const baifa = { supplierId: "baifa-power", header: ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY"] };
   const origin = { supplierId: "yanan-power", header: ["| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"] };
