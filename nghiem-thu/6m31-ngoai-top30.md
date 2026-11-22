@@ -158,6 +158,22 @@ Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300
 | Ô riêng "INDIA" | baifa-power | 3 | 1 |
 | Ô "UK/INDIA" (không rõ nơi nào, không suy ra) | sanq-power | 37 | 6 |
 
+**Đối soát PR #1088 (22/11/2026, bản 3a323d1b).** Hai bộ số khác đơn vị, không có dòng nào thất lạc. 28 / 10 / 10 / 3 / 37 (tổng 88) là lượt-dòng ở 10 lượt gói G7 / G7EU của đo lần 3: một hàng nguồn xuất hiện ở nhiều lượt thì đếm nhiều lần. 27 / 8 / 16 / 5 / 35 là hàng trong danh mục `cn/`, không theo gói. Cả 88 lượt-dòng đều khớp được hàng danh mục và bản sửa đều xử lý:
+
+| NCC, dạng ghi | Lượt-dòng | Hàng khác nhau trong 88 | Hàng trong `cn/` | Bản sửa đọc |
+|---|---|---|---|---|
+| fdk "Perkins / Cummins India" | 19 | 11 | 27 | IN |
+| fdk "(India)" | 9 | 6 | 37 (đã đọc từ trước) | IN |
+| bobig "made in India" | 10 | 5 | 8 | IN |
+| sanq ô INDIA | 10 | 6 | 16 | IN |
+| baifa ô INDIA | 3 | 1 | 5 | IN |
+| sanq "UK/INDIA" | 37 | 22 | 35 | giữ, gắn cần xác nhận |
+
+- 35 so với 37: 37 là lượt-dòng của 22 hàng khác nhau; 35 là số hàng UK/INDIA trong `cn/` (bảng n101: 13, n106: 22). Không có 2 hàng lệch.
+- Lỗi đã sửa trong lúc đối soát: bản e6a567c5 tìm "UK/INDIA" ngay sau ô động cơ, nhưng cột thật "C/O of engine" nằm sau ô đầu phát, nên 0 / 35 hàng được gắn nhãn. Bản 3a323d1b gắn đủ 35 / 35. Số đo cloud của e6a567c5 không phản ánh nhãn này.
+- Còn chữ India mà `placeInRow` không đọc, có bản ghi động cơ: 1 hàng, shanhua n1011 #18, bảng nhãn "制造商 Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)", động cơ 1103A-33TG2. Chưa sửa, chờ điều phối quyết.
+- Có chữ India nhưng không có bản ghi động cơ nên không vào ứng viên: generatordieselchina 1, mahindra-powerol 1, woodward 4.
+
 ## Lệnh
 
 ```powershell

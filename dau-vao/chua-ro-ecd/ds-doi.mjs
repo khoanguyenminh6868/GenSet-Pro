@@ -8,6 +8,8 @@ for (const key of Object.keys(a)) for (const c of a[key].configs) {
   const d = (b[key]?.configs || []).find((x) => x.engine === c.engine && x.alt === c.alt && x.controller === c.controller);
   if (!d) { out.push(`| ${key} | ${c.engine} + ${c.alt} + ${c.controller} | MẤT CẤU HÌNH | | | |`); continue; }
   const X = c.checks.map(parse), Y = d.checks.map(parse);
-  for (const y of Y) { const x = X.find((q) => q.id === y.id); if (x?.st === y.st && x?.off === y.off && x?.note === y.note) continue; cfg.add(`${key}|${c.engine}|${c.alt}|${c.controller}`); out.push(`| ${key} | ${c.engine} + ${c.alt} + ${c.controller} | ${y.item} | ${VI[x?.st] || "∅"} → ${VI[y.st]} | ${cell(y.off)} | ${cell(y.q)} |`); }
+  // A configuration can hold two checks of one item: the identical ones are paired off first, only what is left is a change.
+  const same = (p, q) => p.id === q.id && p.st === q.st && p.off === q.off && p.note === q.note, left = [...X], rest = Y.filter((y) => { const i = left.findIndex((x) => same(x, y)); if (i < 0) return true; left.splice(i, 1); return false; });
+  for (const y of rest) { const j = left.findIndex((q) => q.id === y.id), x = j >= 0 ? left.splice(j, 1)[0] : null; cfg.add(`${key}|${c.engine}|${c.alt}|${c.controller}`); out.push(`| ${key} | ${c.engine} + ${c.alt} + ${c.controller} | ${y.item} | ${VI[x?.st] || "∅"} → ${VI[y.st]} | ${cell(y.off)} | ${cell(y.q)} |`); }
 }
 console.log(`Cấu hình đổi: ${cfg.size}. Check đổi: ${out.length}.\n\n| Gói | Cấu hình | Check | Trước → sau | Giá trị (tờ hãng) | Dòng nguồn |\n|---|---|---|---|---|---|\n${out.join("\n")}`);
