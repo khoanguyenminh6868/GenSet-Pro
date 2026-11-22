@@ -15,7 +15,7 @@ if (mode === "snap") {
 }
 const cnDir = path.join(root, "suppliers", "cn");
 const sups = fs.readdirSync(cnDir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(cnDir, f), "utf8"))).filter((s) => s.status !== "incomplete");
-const list = JSON.parse(fs.readFileSync(path.join(OUT, "configmatch.json"), "utf8")), ana = JSON.parse(fs.readFileSync(path.join(old, "snap", "analysis.json"), "utf8")), res = {};
+const list = JSON.parse(fs.readFileSync(process.env.CM_FILE || path.join(OUT, "configmatch.json"), "utf8")), ana = JSON.parse(fs.readFileSync(path.join(old, "snap", "analysis.json"), "utf8")), res = {};
 const dump = (o) => (o.result.configs || []).map((c) => ({ rank: c.rank, engine: c.engine?.model || null, alt: c.alternator?.model || null, controller: c.controller?.model || null, score: CB.scoreOf(c, o.result.requirements || []),
   checks: (c.checks || []).map((x) => ({ k: `${x.part}|${x.item}|${x.status}${x.offered ? ` (${String(x.offered).slice(0, 120)})` : ""}`, note: x.note || "" })) }));
 for (const { id: key, data } of list) {
