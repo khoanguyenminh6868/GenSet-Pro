@@ -5410,7 +5410,9 @@ const placeCode = (cell) => PLACE_MARKS.reduce((s, [re]) => s.replace(re, ""), S
 // Nơi ghi trong ô động cơ của một dòng: ô "<nước> <mã>" / "<mã>(nước)" mà mã đúng là động cơ của bản ghi (khoá riêng hay đã gộp).
 export function placeInRow(e, u) {
   const code = CAT.keyOf(placeCode(e?.model));
-  for (const c of CAT.cellsOf(u?.line || "")) {
+  // Bảng nhãn không có `line`: đọc dòng nhãn động cơ ("| Engine Model | S16R2-PTAW-C SME", superwatt).
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /engine\s*model/i.test(l));
+  for (const c of lines.flatMap((l) => CAT.cellsOf(l))) {
     const at = placeInModel(c);
     if (at && CAT.keyOf(placeCode(c)) === code && (at !== "CN" || /mitsubishi/i.test(e?.make || ""))) return at;
   }

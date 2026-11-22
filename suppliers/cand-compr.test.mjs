@@ -60,6 +60,7 @@ test("placeInRow: đọc đúng ô của động cơ; SME chỉ tính cho Mitsub
   assert.equal(placeInRow({ model: "1103A-33G", make: "Perkins" }, row("1104A-44TG1(India)")), null);
   assert.equal(placeInRow({ model: "S16R2-PTAW-C", make: "Mitsubishi" }, row("S16R2-PTAW-C SME")), "CN");
   assert.equal(placeInRow({ model: "X1234", make: "Perkins" }, row("X1234 SME")), null);
+  assert.equal(placeInRow({ model: "S16R2-PTAW-C", make: "Mitsubishi" }, { lines: { rows: ["| Genset Model | SW-1", "| Engine Model | S16R2-PTAW-C SME"] } }), "CN");
 });
 test("gói G7/EU: dòng NCC ghi India bị loại, dòng UK và dòng không ghi ở lại; G20 giữ India", () => {
   const rows = [sup("in", ["| i-1 | 750 | 600 | India 4006-23TAG2A | S5L1D-H41 | - |"]), sup("gb", ["| g-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
