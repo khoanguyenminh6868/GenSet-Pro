@@ -1824,6 +1824,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // written: kept, "cần xác nhận nơi sản xuất" (the CO). A brand asked keeps the make filter as before.
       const made = {};
       let madeOut = false;
+      // sanq ghi "UK/INDIA": có thể làm ở Anh hoặc Ấn Độ. Một trong hai ngoài nhóm HSMT đòi thì giữ dòng, gắn cần xác nhận (Khoa 22/11/2026).
+      const placeUnsure = GROUP_ORIGIN.has(origin) && placesInRow(e, u)?.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
+      if (placeUnsure) { made.engine = "?"; why.push("cần xác nhận nơi sản xuất động cơ (NCC ghi «UK/INDIA»)"); }
       if (GROUP_ORIGIN.has(origin) && hints.madeRule) {
         const inG = (c) => CAT.COUNTRY_GROUP[origin].includes(c), MR = hints.madeRule;
         const judge = (part, m) => {
@@ -1832,7 +1835,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
           why.push(`${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}${m.why ? ` (${/^(hãng|mặc định)/.test(m.why) ? m.why : `nguồn ghi «${m.why}»`})` : ""}${inG(m.at) ? "" : `, HSMT đòi nơi sản xuất ${GROUP_NAME[origin]}`}`);
           return inG(m.at) ? 1 : -1;
         };
-        if (MR.engine?.basis === "origin" && judge("engine", CAT.madeAt(e, u)) < 0) { score -= 600; madeOut = true; }
+        if (MR.engine?.basis === "origin" && !placeUnsure && judge("engine", CAT.madeAt(e, u)) < 0) { score -= 600; madeOut = true; }
         if (MR.alternator?.basis === "origin" && a && judge("alternator", CAT.madeAt(a, u)) < 0) score -= 300;
         if (MR.controller?.basis === "origin" && offers.length) {
           const ms = offers.map((c) => CAT.madeIn("controller", [c.brand], [u.line, c.line || c.text], c.model));
@@ -5561,19 +5564,34 @@ export const COMPR_SAME = new Map([["6M33G8D3/5", "6M33G825/5"], ["6M33G8D3/5(6M
 // Nước NCC ghi ngay trước mã động cơ. Chỉ hai tiền tố có thật trong suppliers/cn (kaihua n122, soát mọi mã 21/11/2026).
 // "(UK/EP)", "(USA/EU)", đuôi "EU" không đọc: không chắc là nơi sản xuất (EU có thể là tiêu chuẩn khí thải). SME = nhà máy
 // Mitsubishi ở Thượng Hải (CN_PLANT của catalog).
-const PLACE_MARKS = [[/^india\s+(?=\S)/i, "IN"], [/^uk\s+(?=\S)/i, "GB"], [/\s*\(\s*india\s*\)$/i, "IN"], [/\s*\(\s*uk\s*\)$/i, "GB"], [/\s+SME$/, "CN"]];
+const PLACE_MARKS = [[/^india\s+(?=\S)/i, "IN"], [/^uk\s+(?=\S)/i, "GB"], [/\s*\(\s*india\s*\)$/i, "IN"], [/\s*\(\s*uk\s*\)$/i, "GB"], [/\s+SME$/, "CN"], [/\s+made\s*in\s*india$/i, "IN"]];
 export const placeInModel = (cell) => { const s = String(cell || "").trim(); return PLACE_MARKS.find(([re]) => re.test(s))?.[1] || null; };
 const placeCode = (cell) => PLACE_MARKS.reduce((s, [re]) => s.replace(re, ""), String(cell || "").trim());
 // Nơi ghi trong ô động cơ của một dòng: ô "<nước> <mã>" / "<mã>(nước)" mà mã đúng là động cơ của bản ghi (khoá riêng hay đã gộp).
 export function placeInRow(e, u) {
   const code = CAT.keyOf(placeCode(e?.model));
   // Bảng nhãn không có `line`: đọc dòng nhãn động cơ ("| Engine Model | S16R2-PTAW-C SME", superwatt).
-  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /engine\s*model/i.test(l));
-  for (const c of lines.flatMap((l) => CAT.cellsOf(l))) {
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /engine\s*(model|make|brand)/i.test(l));
+  const cells = lines.flatMap((l) => CAT.cellsOf(l)).map((c) => String(c).trim());
+  for (const c of cells) {
     const at = placeInModel(c);
     if (at && CAT.keyOf(placeCode(c)) === code && (at !== "CN" || /mitsubishi/i.test(e?.make || ""))) return at;
   }
+  // Chữ India cạnh tên hãng của chính động cơ ("Perkins India", "Cummins (India)", fdk-energy): cách đọc của catalog, chỉ ở dòng này.
+  const m = CAT.madeIn("engine", String(e?.make || "").split(" / ").filter(Boolean), [lines.join(" \n ")], e?.model);
+  if (m.at === "IN" && /india|印度/i.test(m.why || "")) return "IN";
+  // Ô riêng "INDIA", danh sách tường minh: baifa có cột "ENGINE MANUFACTURER / COUNTRY"; sanq ghi ngay sau ô động cơ.
+  // "UK/INDIA" không phải một nơi: xem placesInRow.
+  const isIndia = (c) => /^india$/i.test(c || "");
+  if (u?.supplierId === "baifa-power" && u?.line && cells.some(isIndia)) return "IN";
+  if (u?.supplierId === "sanq-power" && u?.line && cells.some((c, i) => CAT.keyOf(c) === code && isIndia(cells[i + 1]))) return "IN";
   return null;
+}
+// sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
+export function placesInRow(e, u) {
+  if (u?.supplierId !== "sanq-power" || !u?.line) return null;
+  const code = CAT.keyOf(placeCode(e?.model)), cells = CAT.cellsOf(u.line).map((c) => String(c).trim());
+  return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
 }
 export function comprOff(facts, exact) {
   const list = (facts || []).filter((f) => f.key === "compr");
