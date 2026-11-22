@@ -6,8 +6,8 @@
 // - Đơn vị và điều kiện (mức tải, khoảng cách đo, gross / net, trần / vỏ, chế độ, tốc độ...) chỉ đọc từ chữ có trong
 //   nguồn: ô giá trị, nhãn cột, ô đơn vị của cột ở dòng tiêu đề thứ hai, tên bảng. KHÔNG đoán theo độ lớn con số, không
 //   điền mặc định (không tự coi 50 Hz, cosφ 0,8, 100% tải). Thiếu thì ghi tên vào `missing`.
-// - Quy đổi đơn vị chỉ bằng công thức web/conversions.js (in³ → L, hp → kW, PS → kW), và giữ cả giá trị gốc (`conv`).
-//   cc, gal, cm... không có công thức ở đó thì giữ nguyên đơn vị nguồn.
+// - Quy đổi đơn vị chỉ bằng công thức web/conversions.js (in³ → L, cc / cm³ / ml → L, hp → kW, PS → kW), và giữ cả giá
+//   trị gốc (`conv`). gal, cm... không có công thức ở đó thì giữ nguyên đơn vị nguồn.
 // - Số có dấu phẩy và đúng 3 chữ số sau ("1,642") có thể là phần nghìn hoặc thập phân: không đọc, ghi missing "number".
 // - Thang khí thải (CN / EU Stage / EPA Tier / Euro / IMO) không quy đổi lẫn nhau; "Tier 3", "T3", "Stage II" không
 //   kèm EPA / EU / China thì thang để trống và ghi missing "scale".
@@ -54,7 +54,7 @@
     const c = s.split("|").slice(1).map((x) => x.trim());
     return s.endsWith("|") ? c.slice(0, -1) : c;
   };
-  const UNIT_ONLY = /^[(（]?\s*(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|dba|l\/h|l\/hr|lt\/hr?|lph|mm|cm|m|kg|kgs|t|l|lt|ltr|rpm|r\/min|g\/kw\.?h|g\/kwh|g\/\(kw\.?h\)|%|a|m3\/h|m³\/h|cc|in3|in³|gal|kw\/rpm|kw\/hp|hp|ps)\s*[)）]?$/i;
+  const UNIT_ONLY = /^[(（]?\s*(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|dba|l\/h|l\/hr|lt\/hr?|lph|mm|cm|m|kg|kgs|t|l|lt|ltr|rpm|r\/min|g\/kw\.?h|g\/kwh|g\/\(kw\.?h\)|%|a|m3\/h|m³\/h|cc|ccm|ml|cm3|cm³|in3|in³|gal|kw\/rpm|kw\/hp|hp|ps)\s*[)）]?$/i;
   function headerUnit(label, header) {
     const L = nf(label).toLowerCase();
     if (!L || !header || !header.length || UNIT_ONLY.test(L.replace(/[[\]]/g, ""))) return null;
@@ -152,7 +152,7 @@
 
   // ---- per key ----
   const FUEL_UNITS = [
-    [/g\s*\/\s*\(?\s*k\s*w\s*[.·\-]?\s*h|g\/kwh|克\/千瓦/i, "g/kWh"],
+    [/gr?\s*\/\s*\(?\s*k\s*w\s*[.·\-]?\s*h|g\/kwh|克\/千瓦/i, "g/kWh"],
     // Nm³ (normal cubic metre, gas at reference conditions) is not m³: kept apart, no conversion.
     [/nm3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "Nm³/kWh"],
     [/m3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "m³/kWh"],
@@ -178,6 +178,11 @@
     if (f?.list && loads.length === f.list.length && loads.length > 1) {
       // "Fuel L/h @75% / @100% | 11.9 / 15.8": the figure under the load the key is for (fuel: 100%).
       const w = want || 100, i = loads.findIndex((x) => x.v === w);
+      if (i >= 0) { r.num = f.list[i]; r.cond.load = w; }
+      else return miss(r, "ambiguous");
+    } else if (f?.list && !loads.length && vLoads.length === f.list.length && vLoads.length > 1) {
+      // "342.9 / 457.1 L/h (@75% / @100%)": the loads are named in the cell, in the order of its figures.
+      const w = want || 100, i = vLoads.findIndex((x) => x.v === w);
       if (i >= 0) { r.num = f.list[i]; r.cond.load = w; }
       else return miss(r, "ambiguous");
     } else if (f?.list) { r.options = f.list; miss(r, "ambiguous"); }
@@ -269,15 +274,18 @@
 
   function disp(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
-    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /\bcc\b|\dcc\b|\bccm\b|cm3|\bml\b/i.test(s) ? "cc" : /\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
+    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /(?:\b|\d)(?:cc|ccm|ml)(?![a-z\d])(?!\s*\/)|cm3(?!\s*\/)|\bc\.c\.?(?![a-z])(?!\s*\/)/i.test(s) ? "cc" :/\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
+    // (S8-1, điều phối 22/11/2026) cc / ccm / ml viết liền sau số ("2156ml", "2156ccm") cũng nhận; theo sau bởi "/" ("cm3/min",
+    // "cc/rev") là lưu lượng / thể tích mỗi vòng, không phải dung tích: không nhận.
     r.unit = u(V) || u(L) || u(H);
-    const f = figures(V);
+    // "cm³" / "in³" thành "cm3" / "in3" sau NFKC: số mũ 3 không phải số thứ hai của ô (S8-1; 0 ô như vậy trong cn/ 22/11/2026).
+    const f = figures(V.replace(/(cm|in|dm)\s*3(?![\d.,])/gi, "$1"));
     // Khoa's decision 14/11/2026 ("displacement nên default đơn vị là L hoặc cm³ (cc)"): the ONE exception to "never
     // guess a unit from magnitude", for disp only. When the cell, label, header unit line and table title write no unit,
     // every figure 0.4–100 is L and every figure 400–100000 is cc (the bands catalog.js `likely` uses), then the value is
     // read as if the cell wrote that unit; cond.unitFrom = "default" tells users the unit was not read from the source.
     // A cell, label or header unit that writes some other unit ("Displacement (mm)", "排量 (A)") is not "no unit": missing.
-    const otherUnit = (s) => /[(\[（【]\s*[a-z°³²/.·%\s]+\s*[)\]）】]|\b(mm|cm|m|kg|kw|kva|hp|ps|rpm|bar|kpa|mpa|v|a)\b|毫米|公斤/i.test(s);
+    const otherUnit = (s) => /[(\[（【]\s*[a-z°³²/.·%\s]+\s*[)\]）】]|\b(mm|cm|m|kg|kw|kva|hp|ps|rpm|bar|kpa|mpa|v|a)\b|毫米|公斤|(?:cc|ccm|ml|cm3)\s*\//i.test(s);
     if (!r.unit && f && !f.amb && !u(ctx.title) && ![L, V, H].some(otherUnit)) {
       const xs = f.list || f.range || [f.num];
       r.unit = xs.every((x) => x >= 0.4 && x <= 100) ? "L" : xs.every((x) => x >= 400 && x <= 100000) ? "cc" : null;
@@ -286,13 +294,46 @@
     if (!r.unit) miss(r, "unit");
     if (!f) return miss(r, "value");
     if (f.amb) return miss(r, "number");
-    if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
-    r.num = f.num;
+    // One displacement in two units (S9 cc-129, 22/11/2026): "23.7 CU. IN. (390 CC)" (gillette): the whole cell is a figure in in³
+    // and a figure in cc, one in brackets. Read only when the cc figure is the in³ figure converted and rounded (`sameVolume`): then
+    // the cc figure is read (l_from_cc as S8-1) and r.conv.same keeps the in³ figure. Otherwise nothing changes: unit, options and
+    // "ambiguous" are as before this rule (the unit is set to cc only after the check passed).
+    const two = f.list && f.list.length === 2 ? sameVolume(V) : null;
+    if (two) r.unit = "cc";
+    else if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
+    r.num = two ? two.cc : f.num;
     if (r.unit === "in³" && conv()) {
       const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: r.num }] });
       if (!c.error) { r.conv = { formula: "l_from_cuin", from: { num: r.num, unit: "in³" } }; r.num = c.value; r.unit = "L"; }
     }
+    // cc / cm³ / ml → L (Khoa 22/11/2026, S8-1), CHỈ khi đơn vị ghi ở ô, nhãn hay ô đơn vị tiêu đề. Số trơ mà dải mặc định
+    // 400–100000 gán "cc" (unitFrom "default") KHÔNG đổi: đó là đoán theo độ lớn, giữ "cc" như trước (chờ Khoa quyết).
+    // Số không hợp lý cho cc (điều phối 22/11/2026): có phần thập phân ("2.156 cc" chấm nghìn kiểu châu Âu thành 0,002156 L,
+    // "6.7" dưới nhãn "(cc)", "12.500 cm3") hoặc < 20 → không đổi, không so (missing "number"), như trước S8-1.
+    if (r.unit === "cc" && r.cond.unitFrom !== "default" && (!Number.isInteger(r.num) || r.num < 20)) return miss(r, "number");
+    if (r.unit === "cc" && r.cond.unitFrom !== "default" && conv()?.FORMULAS?.l_from_cc) {
+      const c = conv().compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: r.num }] });
+      if (!c.error) { r.conv = { formula: "l_from_cc", from: { num: r.num, unit: "cc" }, ...(two ? { same: { num: two.in3, unit: "in³" } } : {}) }; r.num = c.value; r.unit = "L"; }
+    }
     return r;
+  }
+  // "a CU. IN. (b CC)" / "b CC (a CU. IN.)", the whole cell (after NFKC: "in³" / "cm³" are "in3" / "cm3") → { in3: a, cc: b } when
+  // b is a in cc rounded: a in³ (l_from_cuin, × 1000, the figure as written, no widening of its own) lies within half a unit of b's
+  // last digit, and ONE trailing zero of an integer b of 3 digits or more counts as rounding to tens ("390" = 385–395, "1000" =
+  // 995–1005, "20" = 19.5–20.5). b must be an integer ≥ 20 (S8-1: else not a cc figure). 23.7 in³ = 388.4 cc → "390" yes; 30 in³ =
+  // 491.6 cc → "1000" no; 1 in³ = 16.4 cc → "20" no, "16" no (< 20). Else null: the cell stays "ambiguous" with its two options.
+  const IN3_U = String.raw`(?:cu\.?\s*in\.?|in3|cubic\s*inch(?:es)?)`, CC_U = String.raw`(?:cc|ccm|cm3|ml)`, FIG = String.raw`(\d+(?:\.\d+)?)`;
+  const IN3_CC = new RegExp(String.raw`^${FIG}\s*${IN3_U}\s*[(（]\s*${FIG}\s*${CC_U}\s*[)）]$`, "i");
+  const CC_IN3 = new RegExp(String.raw`^${FIG}\s*${CC_U}\s*[(（]\s*${FIG}\s*${IN3_U}\s*[)）]$`, "i");
+  function sameVolume(v) {
+    const m1 = v.match(IN3_CC), m2 = m1 ? null : v.match(CC_IN3);
+    if ((!m1 && !m2) || !conv()) return null;
+    const [a, b] = m1 ? [m1[1], m1[2]] : [m2[2], m2[1]];
+    if (b.includes(".") || +b < 20) return null;
+    const half = b.length >= 3 && b.endsWith("0") ? 5 : 0.5;
+    const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: +a }] });
+    if (c.error) return null;
+    return Math.abs(c.value * 1000 - +b) <= half ? { in3: +a, cc: +b } : null;
   }
 
   function bore(spec, ctx, r) {
@@ -322,7 +363,7 @@
     if (!m) return miss(r, "value");
     r.count = Number(m[0]);
     if (/\bv\b|\dv\b|v\d|\bv-?type|\bvee\b|°\s*v|v型|-v\b/i.test(V)) r.cond.layout = "V";
-    else if (/\bl\b|\dl\b|l\d|\bl-|-l\b|in-?line|直列|vertical/i.test(V)) r.cond.layout = "L";
+    else if (/\bl\b|\dl\b|l\d|\bl-|-l\b|in\s*-?\s*line|直列|vertical/i.test(V)) r.cond.layout = "L";
     const a = V.match(/(\d{2,3})\s*°/); if (a) r.cond.angle = Number(a[1]);
     if (!r.cond.layout) miss(r, "layout");
     return r;
@@ -551,9 +592,11 @@
     if (!spec || !BY_KEY[spec.key]) return null;
     const header = ctx.header || [];
     const fam = FAMILY[spec.key];
-    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null) };
+    const hu = headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null);
+    // `unitCell`: the unit cell catalog.js read for this value in a label table (same line, or a unit line above), verbatim.
+    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: hu || spec.unitCell || null };
     const r = base(spec);
-    if (c.hUnit) r.cond.headerUnit = c.hUnit;
+    if (hu) r.cond.headerUnit = hu; else if (spec.unitCell) r.cond.unitCell = spec.unitCell;
     DEC_COMMA = ctx.decimalComma != null ? !!ctx.decimalComma : !!decimalCommaEvidence(ctx.rows);
     try { BY_KEY[spec.key](spec, c, r); } finally { DEC_COMMA = false; }
     if (!Object.keys(r.cond).length) delete r.cond;

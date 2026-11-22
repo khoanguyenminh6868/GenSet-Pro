@@ -50,11 +50,11 @@ test.describe("có mô-đun và phương án khác", () => {
   });
 
   test("danh mục thiếu model rồi bản nhà cung cấp mới về: bỏ chữ chưa có, hiện link", async ({ page }) => {
-    test.setTimeout(150000); // Danh mục dựng lúc trang rảnh, chậm khi chạy song song.
+    test.setTimeout(300000); // Danh mục dựng lúc trang rảnh (headless: 1 bước/giây, ~60 s), chậm khi chạy song song.
     await openApp(page, "#goi/" + RICH);
     await openTab(page, "config");
     const blk = page.locator("#dbody .cfgcard").first().locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
-    await expect(blk).toContainText("chưa có trong danh mục", { timeout: 60000 });
+    await expect(blk).toContainText("chưa có trong danh mục", { timeout: 120000 });
     await page.evaluate(async () => {
       const db = await window.claude.use("db");
       await db.doc("supplier/deep-sea-electronics").set({ id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [{ n: 3001, url: "https://example.test/ds.pdf" }],
@@ -84,5 +84,58 @@ test.describe("đầu phát và mô-đun theo tài liệu hãng", () => {
     await expect(alt).toHaveAttribute("data-catkey", "LSA493M8");
     await expect(card.locator('.cfgmod [data-supopen="deep-sea-electronics"]')).toHaveText("DSE890 MKII");
     await expect(card.locator('a[href="https://example.test/lsa.pdf"]')).toHaveCount(1);
+  });
+});
+
+// IB2600603983 11:44Z: NCC cùng động cơ chào chính bộ chính (hồ sơ không ghi đời); bản sinh hết chỗ thì ghi ở cấu hình gốc.
+test.describe("NCC có chào bộ chính, bản sinh hết chỗ", () => {
+  const c0 = cm.result.configs[0], label = "Theo tài liệu hãng; NCC ncc-thu chào DSE7320 (hồ sơ không ghi đời MKII, cần hỏi)";
+  const controller = { ...c0.controller, model: "DSE7320 MKII", make: "Deep Sea", src: { kind: "maker", supplierId: "deep-sea-electronics", n: 1001 }, fromMaker: true, label,
+    offeredMain: { by: ["ncc-thu"], model: "DSE7320", label },
+    offerNote: "Phương án khác, chưa thành cấu hình riêng vì đã đủ 8 cấu hình: DSE7420 (NCC voltgent chào)." };
+  const doc = { ...cm, result: { ...cm.result, configs: [{ ...c0, controller }, ...cm.result.configs.slice(1)] } };
+  test.use({ patch: { colls: { configmatch: { [RICH]: doc } } } });
+
+  test("chip đổi thành NCC có chào, nhãn nêu đời cần hỏi, dòng bản sinh hết chỗ", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const card = page.locator("#dbody .cfgcard").first(), blk = card.locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
+    const chip = blk.locator(".chip", { hasText: "NCC có chào, cần hỏi" });
+    await expect(chip).toHaveCount(1);
+    await expect(chip).toHaveAttribute("title", label);
+    await expect(blk).not.toContainText("NCC chưa chào");
+    await expect(card.locator(".cfgalt")).toContainText("đã đủ 8 cấu hình: DSE7420 (NCC voltgent chào)");
+  });
+});
+
+// Ngoại lệ 3 của SHOW_SRC (Khoa 22/11/2026): check ctlOption hiện dòng manual + link trang nguồn; chỗ khác vẫn không in câu trích.
+test.describe("chức năng tuỳ chọn theo manual hãng", () => {
+  const c0 = cm.result.configs[0], LINE = "Oil Temperature*";
+  const mk = (extra) => ({ item: "Bảo vệ và đo lường của bộ điều khiển", part: "controller", group: true, level: "core", status: "confirm", hsmtQuote: "SRCQ_hsmt", requirement: "Nhiệt độ dầu",
+    parts: [
+      { item: "Nhiệt độ dầu bôi trơn", status: "confirm", confirm: "order", ctlOption: "oil_temp", offered: "Nhiệt độ dầu: tuỳ động cơ điện tử", sourceQuote: LINE, factSrc: { supplierId: "deep-sea-electronics", n: 3001, line: LINE }, note: "Áp suất dầu có sẵn; nhiệt độ dầu manual đánh dấu là tuỳ động cơ điện tử được hỗ trợ, cần NCC xác nhận.", ...extra },
+      { item: "Áp suất dầu thấp", status: "met", offered: "Oil Pressure", sourceQuote: "SRCQ_Oil Pressure", factSrc: { supplierId: "deep-sea-electronics", n: 3001, line: "Oil Pressure" } },
+    ] });
+  const doc = { ...cm, result: { ...cm.result, configs: [{ ...c0, checks: [...c0.checks, mk()] }, ...cm.result.configs.slice(1)] } };
+  const supplier = { "deep-sea-electronics": { id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [{ n: 3001, url: "https://example.test/dse-manual.pdf" }] } };
+  test.use({ patch: { colls: { configmatch: { [RICH]: doc }, supplier } } });
+
+  test("hiện dòng manual + link nguồn ở check ctlOption, không hiện câu trích của check khác", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const card = page.locator("#dbody .cfgcard").first();
+    const src = card.locator(".cfgoptsrc");
+    await expect(src).toHaveCount(1);
+    await expect(src).toContainText("Manual của hãng ghi:");
+    await expect(src.locator("q")).toHaveText(LINE);
+    await expect(src.locator('a[href="https://example.test/dse-manual.pdf"]')).toHaveText(/Tài liệu gốc/);
+    await expect(card.locator("li", { hasText: "Nhiệt độ dầu bôi trơn" })).toContainText("Cần NCC xác nhận");
+    await expect(page.locator("#dbody")).not.toContainText("SRCQ_");
+  });
+  test("không có link nguồn thì chỉ câu trích, không vỡ", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    await page.evaluate(() => { document.querySelectorAll(".cfgoptsrc a").forEach((a) => a.remove()); });
+    await expect(page.locator("#dbody .cfgoptsrc q")).toHaveText(LINE);
   });
 });

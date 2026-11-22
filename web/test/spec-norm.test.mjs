@@ -92,18 +92,27 @@ const CASES = [
   ["weight", "Dry Weight", "4,095kg", { rows: ["| Dry Weight | 4,095kg"] }, { unit: "kg", num: 4095, cond: { basis: "dry" }, missing: ["enclosure"] }], // ade-power n2001
   ["dims", "Dimension (L × W × H)", "1,381 x 1,138 x 1,207 mm", null, { unit: "mm", dims: { L: 1381, W: 1138, H: 1207 }, missing: ["enclosure"] }], // hd-hyundai-infracore
   ["dims", "Dimensions (L×W×H)", "4300 × 1600 × 2250mm / 4,300kg", null, { unit: "mm", dims: { L: 4300, W: 1600, H: 2250 }, missing: ["enclosure"] }], // jiuan-power: weight after "/"
-  ["disp", "Displacement (cc)", "418", null, { unit: "cc", num: 418, missing: [] }], // mingbang-mbkl: no cc→L formula, kept
+  // cc / cm³ / ml → L by l_from_cc (Khoa 22/11/2026, S8-1) when the unit is written in the cell, label or header unit.
+  ["disp", "Displacement (cc)", "418", null, { unit: "L", num: 0.418, conv: { formula: "l_from_cc", from: { num: 418, unit: "cc" } }, missing: [] }], // mingbang-mbkl
   // No unit written anywhere: disp only takes a default unit by magnitude (Khoa 14/11, "displacement nên default đơn vị là
   // L hoặc cm³ (cc)"): 0.4–100 → L, 400–100000 → cc, cond.unitFrom "default"; outside both bands still missing.
   ["disp", "Displacement", "38", null, { unit: "L", num: 38, cond: { unitFrom: "default" }, missing: [] }], // aosif
   ["disp", "排量", "7.146", null, { unit: "L", num: 7.146, cond: { unitFrom: "default" }, missing: [] }], // kanpor-fuan n122
-  ["disp", "Displacement", "1642", null, { unit: "cc", num: 1642, cond: { unitFrom: "default" }, missing: [] }], // rule test: cc band
+  ["disp", "Displacement", "1642", null, { unit: "cc", num: 1642, cond: { unitFrom: "default" }, missing: [] }], // rule test: cc band, NOT converted (no unit written; S8-1 converts only a written unit)
   ["disp", "Displacement", "171", null, { unit: null, num: 171, missing: ["unit"] }], // rule test: between the bands
   ["disp", "Displacement", "1.6", { title: "Engine data (cc)" }, { unit: null, num: 1.6, missing: ["unit"] }], // rule test: the title writes a unit
   // A label that writes some other unit is not "no unit": no default (jlmech "(mm)", honny "(A)" for displacement).
   ["disp", "Displacement (mm)", "4.3", null, { unit: null, num: 4.3, missing: ["unit"] }], // jlmech-wuhan n102
   ["disp", "排量 (A)", "14", null, { unit: null, num: 14, missing: ["unit"] }], // honny-dongguan n101
-  ["disp", "Displacement [ccm]", "171", null, { unit: "cc", num: 171, missing: [] }], // endress-stromerzeuger n108: ccm = cm³, read from the label
+  ["disp", "Displacement [ccm]", "171", null, { unit: "L", num: 0.171, missing: [] }], // endress-stromerzeuger n108: ccm = cm³, read from the label
+  ["disp", "Displacement", "296cc", null, { unit: "L", num: 0.296, missing: [] }], // bison-zhejiang n101
+  ["disp", "Displacement", "418 cc", null, { unit: "L", num: 0.418, missing: [] }], // zc-power n105
+  ["disp", "Displacement (ml)", "1247", null, { unit: "L", num: 1.247, missing: [] }], // jet-power
+  ["disp", "Displacement(CC)", "499", null, { unit: "L", num: 0.499, missing: [] }], // cameo-power
+  ["disp", "cm3", "2156", null, { unit: "L", num: 2.156, missing: [] }], // tecnogen n2001 column title (S8-2)
+  ["disp", "Displacement", "2156 cm³", null, { unit: "L", num: 2.156, missing: [] }], // rule test: cm³ (NFKC → cm3)
+  ["disp", "Displacement", "2156 c.c.", null, { unit: "L", num: 2.156, missing: [] }], // rule test: c.c.
+  ["disp", "Displacement", "3900", { header: ["| Model | Displacement", "| | cc"] }, { unit: "L", num: 3.9, missing: [] }], // rule test: header unit cell
   ["disp", "Displacement", "6.44L", null, { unit: "L", num: 6.44, missing: [] }], // jiuan-power
   ["disp", "排量(L)", "8.2", null, { unit: "L", num: 8.2, missing: [] }], // zhengchi-power
   // bore
@@ -228,6 +237,68 @@ test("quy đổi chỉ bằng web/conversions.js và giữ giá trị gốc (hp 
   assert.equal(r.unit, "kW");
   assert.ok(Math.abs(r.num - 74.57) < 1e-9);
   assert.deepEqual(r.conv, { formula: "kw_from_hp", from: { num: 100, unit: "hp" } });
+});
+
+test("cc → L (S8-1): l_from_cc chia 1000, đúng chữ số; mọi cách viết đơn vị; số trơ dải mặc định không đổi", () => {
+  const C = globalThis.GenbidConversions;
+  assert.equal(C.compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: 2156 }] }).value, 2.156);
+  assert.equal(String(C.compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: 1498.5 }] }).value), "1.4985");
+  assert.equal(String(C.compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: 3900 }] }).value), "3.9");
+  assert.ok(C.compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: 0 }] }).error);
+  for (const [label, value] of [["Displacement", "2156 cc"], ["Displacement", "2156 cm3"], ["Displacement", "2156 cm³"], ["Displacement", "2156 ml"], ["Displacement", "2156 CC"], ["Displacement", "2156 c.c."], ["Displacement", "2156cc"], ["Displacement (cc)", "2156"], ["cm3", "2156"], ["Displacement [ccm]", "2156"], ["Displacement (ML)", "2156"]]) {
+    const r = SN.normalize({ key: "disp", label, value });
+    assert.equal(r.unit, "L", `${label} | ${value}`);
+    assert.equal(r.num, 2.156, `${label} | ${value}`);
+    assert.deepEqual(r.conv, { formula: "l_from_cc", from: { num: 2156, unit: "cc" } }, `${label} | ${value}`);
+  }
+  // Số trơ không ghi đơn vị: dải mặc định gán "cc" nhưng KHÔNG đổi (không đoán theo độ lớn).
+  const d = SN.normalize({ key: "disp", label: "Displacement", value: "2156" });
+  assert.equal(d.unit, "cc"); assert.equal(d.num, 2156); assert.equal(d.conv, undefined); assert.equal(d.cond.unitFrom, "default");
+  // "cc" không bắt nhầm chữ khác; L vẫn là L.
+  assert.equal(SN.normalize({ key: "disp", label: "Displacement", value: "2.156 L" }).num, 2.156);
+  assert.equal(SN.normalize({ key: "disp", label: "Displacement", value: "2.156 L" }).conv, undefined);
+  // Viết liền / ô đơn vị tiêu đề "ml", "cm3", "ccm" (điều phối 22/11/2026).
+  for (const [label, value, ctx] of [["Displacement", "2156ml", {}], ["Displacement", "2156ccm", {}], ["Displacement", "2156", { header: ["| Model | Displacement", "| | ml"] }],
+    ["Displacement", "2156", { header: ["| Model | Displacement", "| | cm3"] }], ["Displacement", "2156", { header: ["| Model | Displacement", "| | ccm"] }]]) {
+    const r = SN.normalize({ key: "disp", label, value }, ctx);
+    assert.equal(r.unit, "L", `${value} ${JSON.stringify(ctx)}`); assert.equal(r.num, 2.156, `${value} ${JSON.stringify(ctx)}`);
+  }
+  // Số không hợp lý cho cc: phần thập phân hoặc < 20 → không đổi, missing "number" (không so).
+  for (const [label, value, num] of [["Displacement", "2.156 cc", 2.156], ["Displacement (cc)", "6.7", 6.7], ["Displacement", "12.500 cm3", 12.5], ["Displacement (cc)", "15", 15], ["Displacement (ml)", "1498.5", 1498.5]]) {
+    const r = SN.normalize({ key: "disp", label, value });
+    assert.equal(r.unit, "cc", `${label} | ${value}`); assert.equal(r.num, num, `${label} | ${value}`);
+    assert.ok(r.missing.includes("number"), `${label} | ${value}`); assert.equal(r.conv, undefined, `${label} | ${value}`);
+  }
+  assert.equal(SN.normalize({ key: "disp", label: "Displacement (cc)", value: "20" }).num, 0.02);
+  // cc / cm3 theo sau bởi "/" là lưu lượng / thể tích mỗi vòng, không phải dung tích.
+  for (const [label, value] of [["Displacement", "2156 cm3/min"], ["Displacement", "45 cc/rev"], ["Displacement (cc/rev)", "45"], ["Displacement (cm3 / min)", "2156"]]) {
+    const r = SN.normalize({ key: "disp", label, value });
+    assert.equal(r.unit, null, `${label} | ${value}`); assert.ok(r.missing.includes("unit"), `${label} | ${value}`); assert.equal(r.conv, undefined, `${label} | ${value}`);
+  }
+  // selfCheck nay xét được dòng ghi cc (đã là L).
+  const sc = SN.selfCheck([SN.normalize({ key: "cyl", label: "Cylinders", value: "1" }), SN.normalize({ key: "bore", label: "Bore x Stroke (mm)", value: "86*72" }), SN.normalize({ key: "disp", label: "Displacement (cc)", value: "418" })]);
+  assert.equal(sc?.bad, false);
+});
+
+test("ô một dung tích hai đơn vị (S9 cc-129): số cc là số in³ đổi ra rồi làm tròn → đọc số cc; khác thì ambiguous y như trước", () => {
+  // gillette n101 / n103 / n105 (giá trị lấy sau "1 CYLINDER, " của ô "ENGINE DISPLACEMENT"): 23.7 in³ = 388.4 cc trong "390" = 385–395
+  // (số nguyên ≥ 3 chữ số, MỘT số 0 cuối là làm tròn hàng chục); 41.97 in³ = 687.8 cc trong 687.5–688.5; 26.9 in³ = 440.8 cc trong 435–445.
+  for (const [value, cc, in3] of [["23.7 CU. IN. (390 CC)", 390, 23.7], ["41.97 CU. IN. (688 CC)", 688, 41.97], ["26.9 CU. IN. (440 CC)", 440, 26.9], ["390 cc (23.7 cu. in.)", 390, 23.7], ["23.7 in³ (388 cm³)", 388, 23.7]]) {
+    const r = SN.normalize({ key: "disp", label: "ENGINE DISPLACEMENT", value });
+    assert.equal(r.unit, "L", value); assert.equal(r.num, cc / 1000, value); assert.deepEqual(r.missing, [], value);
+    assert.deepEqual(r.conv, { formula: "l_from_cc", from: { num: cc, unit: "cc" }, same: { num: in3, unit: "in³" } }, value);
+  }
+  // Hai thể tích KHÁC nhau (điều phối 22/11/2026: luật đầu nới cả số 0 cuối của số in³ / số cc nhiều chữ số 0 và nhận nhầm các ô này),
+  // số cc thập phân "390.0", số cc < 20, "/" thay ngoặc, ô có thêm chữ: không đọc; đơn vị, options, "ambiguous" y như trước luật.
+  for (const value of ["23.7 CU. IN. (440 CC)", "23.7 CU. IN. (390.0 CC)", "41.97 CU. IN. (683 CC)", "23.7 CU. IN. / 390 CC", "1 CYLINDER, 23.7 CU. IN. (390 CC)",
+    "30 CU. IN. (1000 CC)", "40 CU. IN. (700 CC)", "45 CU. IN. (700 CC)", "46 CU. IN. (700 CC)", "92 CU. IN. (1000 CC)", "20 CU. IN. (400 CC)", "30 CU. IN. (400 CC)",
+    "100 CU. IN. (2000 CC)", "200 CU. IN. (2000 CC)", "275 CU. IN. (5000 CC)", "330 CU. IN. (5000 CC)", "600 CU. IN. (10000 CC)", "900 CU. IN. (10000 CC)",
+    "1000 CU. IN. (10000 CC)", "1 CU. IN. (20 CC)", "1 CU. IN. (16 CC)"]) {
+    const r = SN.normalize({ key: "disp", label: "ENGINE DISPLACEMENT", value });
+    assert.equal(r.unit, "in³", value); assert.equal(r.num, undefined, value); assert.equal(r.conv, undefined, value);
+    assert.ok(r.missing.includes("ambiguous"), value);
+    assert.deepEqual(r.options, value.match(/\d+(?:\.\d+)?/g).map(Number), value);
+  }
 });
 
 test("mã không thuộc lớp này → null; normalizeRecord lấy ngữ cảnh của bản ghi", () => {
