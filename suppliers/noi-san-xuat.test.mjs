@@ -154,4 +154,14 @@ test("madeChecks (engine_origin / alt_origin / ctl_origin): TQ không đạt, G7
   // Thương hiệu: giữ nguyên check của agent.
   const brand = madeChecks(cfg("ccec"), [req("engine_origin", "Xuất xứ động cơ", "Động cơ: Thương hiệu: EU/G7")], rowOf("ccec"), built);
   assert.equal(st(brand)["Xuất xứ động cơ"], "met");
+  // Nhóm G: thương hiệu, check chưa rõ. Hãng nguồn ghi thuộc nhóm → đạt + ghi cần CO; dòng ghi CCEC hoặc HSMT đòi nơi SX thì không.
+  const brandReq = [req("engine_origin", "Xuất xứ động cơ", "Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU")];
+  const open = (sid) => cfg(sid, { checks: [{ item: "Xuất xứ động cơ", status: "unclear" }] });
+  const okB = madeChecks(open("imp"), brandReq, rowOf("imp"), built).checks[0];
+  assert.equal(okB.status, "met"); assert.equal(okB.rule, "thuong-hieu"); assert.match(okB.note, /nơi sản xuất cần CO/);
+  assert.equal(madeChecks(open("ccec"), brandReq, rowOf("ccec"), built).checks[0].status, "unclear");
+  const noMake = madeChecks(cfg("bare", { engine: { model: "KHONG-CO-MA", make: "Cummins" }, checks: [{ item: "Xuất xứ động cơ", status: "unclear" }] }), brandReq, null, built).checks[0];
+  assert.equal(noMake.status, "unclear");
+  const again = madeChecks(open("imp"), brandReq, rowOf("imp"), built);
+  assert.equal(JSON.stringify(madeChecks(JSON.parse(JSON.stringify(again)), brandReq, rowOf("imp"), built)), JSON.stringify(again));
 });

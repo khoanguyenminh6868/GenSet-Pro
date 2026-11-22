@@ -3866,7 +3866,8 @@ export function originChecks(c, result, origin, sup) {
 // the group (a Chinese plant: DCEC, SME, Stamford Wuxi…) is not met; a place in the group, or the country Khoa settled on
 // for the make (Deep Sea, Stamford, Leroy-Somer…), is met; nothing written is "Cần chứng từ" (CO), whatever the agent
 // judged from the make. The group is the one the requirement names ("G7, EU", "G20"). A brand asked ("Thương hiệu
-// thuộc các nước G7"), or a requirement that names no group, stays the agent's.
+// thuộc các nước G7"): the agent's met / not met stays, an open check is decided below (nhóm G). A requirement that names
+// no group stays the agent's.
 const MADE_CODES = { engine_origin: "engine", alt_origin: "alternator", ctl_origin: "controller" };
 export function madeBasisOf(t) {
   const s = String(t || "").replace(/\s+/g, " "), G = /\bG\s?-?(7|20)\b/;
@@ -3884,12 +3885,30 @@ export function madeChecks(c, reqs, row, built) {
     // An alternator chosen from its maker's sheet: makerAltChecks (Khoa's answer 4).
     if (!p?.model || r.byCode || p.fromMaker) continue;
     const t = `${r.requirement || ""} ${r.quote || ""}`;
-    if (!/\bG\s?-?(7|20)\b/.test(t) || (madeBasisOf(r.quote) || madeBasisOf(r.requirement)) !== "origin") continue;
+    const basis = madeBasisOf(r.quote) || madeBasisOf(r.requirement);
+    if (!/\bG\s?-?(7|20)\b/.test(t) || (basis !== "origin" && basis !== "brand")) continue;
     const grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`, G = GROUP_NAME[grp];
     const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
-    const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
+    const entry = (list || []).find((x) => x.key === CAT.keyOf(p.model));
+    const makes = String(p.make || entry?.make || "").split(" / ").filter(Boolean);
     const own = p.src?.kind !== "internet" && row ? row : null;
     let m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    // Nhóm G (Khoa 21/11/2026 "cho đạt theo thương hiệu"): HSMT đòi nhà sản xuất / nhãn hiệu thuộc nhóm → đạt khi MỌI hãng nguồn
+    // ghi (`entry.make` = keptMakes, không theo chữ agent) thuộc nhóm. Chỉ mở check chưa rõ / cần xác nhận; chưa rõ hãng, hoặc chính
+    // dòng ghi nơi ngoài nhóm, thì giữ nguyên.
+    if (basis === "brand") {
+      const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+      const home = entry?.make ? CAT.brandOf(entry) : [];
+      const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at);
+      if (y && (y.status === "unclear" || y.status === "confirm") && !y.unverified && !y.conflict && !y.version && !y.parts?.length && !outside
+        && home.length && home.every((k) => CAT.COUNTRY_GROUP[grp].includes(k))) {
+        delete y.confirm;
+        putCheck(c, y, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `${PART_VI[part]} ${p.model}, thương hiệu ${entry.make} (${home.map(madeVi).join(", ")})`,
+          part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "thuong-hieu",
+          note: `Code ghi: thương hiệu ${entry.make} thuộc nhóm ${G}, đạt theo thương hiệu; nơi sản xuất cần CO.` });
+      }
+      continue;
+    }
     // Stamford S4–S7 a supplier offers (Khoa 21/11/2026 "có"), the PLACE asked: the make's default (UK) proves nothing, the
     // CO is asked. A place the row or the agent's own quote states still counts; a brand asked never comes here.
     const isDefault = (w) => /^(hãng|mặc định)/.test(w || "");
