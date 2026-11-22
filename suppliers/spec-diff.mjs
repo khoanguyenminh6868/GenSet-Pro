@@ -220,7 +220,18 @@ export function normDiff(sa, sb, a, b) {
   const supA = new Map(sa.S.map((s) => [s.id, s])), supB = new Map(sb.S.map((s) => [s.id, s]));
   for (const [k, o] of a) {
     const p = b.get(k); if (!p) continue;
-    const x = normOf(sa.SN, supA, o), y = normOf(sb.SN, supB, p);
+    let x = normOf(sa.SN, supA, o), y = normOf(sb.SN, supB, p);
+    // One spec added in the middle of a record must not pair every later spec with another key: when the keys differ, the
+    // results both sides have are left out and the rest pair by key, in order.
+    const keyIn = (e) => (e.r.startsWith("LỖI") ? "?" : JSON.parse(e.r).key);
+    if (x.map(keyIn).join() !== y.map(keyIn).join()) {
+      const inX = new Set(x.map((e) => e.r)), inY = new Set(y.map((e) => e.r)), xr = x.filter((e) => !inY.has(e.r)), yr = y.filter((e) => !inX.has(e.r)), px = [], py = [];
+      for (const k of new Set([...xr, ...yr].map(keyIn))) {
+        const a = xr.filter((e) => keyIn(e) === k), b = yr.filter((e) => keyIn(e) === k);
+        for (let i = 0; i < Math.max(a.length, b.length); i++) { px.push(a[i]); py.push(b[i]); }
+      }
+      x = px; y = py;
+    }
     for (let i = 0; i < Math.max(x.length, y.length); i++) {
       if (x[i]?.r === y[i]?.r) continue;
       const X = x[i] && JSON.parse(x[i].r.startsWith("LỖI") ? "{}" : x[i].r), Y = y[i] && JSON.parse(y[i].r.startsWith("LỖI") ? "{}" : y[i].r);
