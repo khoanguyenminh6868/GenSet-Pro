@@ -2176,7 +2176,9 @@
   const V_ENGINE = /^((diesel\s*)?engine(\s*(model|type|brand\s*(&|and|\/)\s*model))?|发动机型号|柴油机型号|发动机|柴油机)$/i;
   const V_ALT = /^(alternator(\s*(model|type|brand\s*(&|and|\/)\s*model))?|generator\s*model|发电机型号)$/i;
   const V_BRAND = /^((engine|alternator)\s*)?(brand|make|manufacturer)$|^(发动机|柴油机|发电机)?(品牌|厂家)$/i;
-  const V_NOTPOW = /engine|motor|alternator|generator(?!\s*set)|gross|\bnet\b|kwm|continuous|\bcop\b|fuel|consum|current|factor|%|load|torque|speed|voltage|range|nodes/i;
+  // Unit cells of a vertical sheet that UNIT_CELL (shared by every reader) does not know: "lt" / "lt/h" (Powerpack litres), "kWm", "VDC", "RPM / Hz.".
+  const V_UNIT_MORE = /^\(?(lt|ltr|litres?|liters?|lt\/h|ltr\/h|vdc|vac|mm|bar|kpa)\)?$/i;
+  const V_NOTPOW =/engine|motor|alternator|generator(?!\s*set)|gross|\bnet\b|kwm|continuous|\bcop\b|fuel|consum|current|factor|%|load|torque|speed|voltage|range|nodes/i;
   function verticalCells(l) {
     let c = cellsOf(l);
     // "| Genset Model：SP28GFS", "| Noise(LP1m): 100dB(A)": label and value in one cell.
@@ -2194,9 +2196,12 @@
   const V_PLACE = /^(uk|usa|us|eu|prc|japan|jp|china|germany|india|korea|italy|france|sweden|ltd|inc|co|ag|gmbh)\.?$/i;
   // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
   // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
+  const vIsCode = (x) => isCode(x) || (/^[A-Z]{2}\d{3}CC$/.test(x) && isCode(x.slice(0, -1) + "B"));
   function verticalCode(v) {
     const s = String(v || "").normalize("NFKC").trim();
-    if (!s || /\bor\b|equiv|series|optional|select|custom|[/／]|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
+    // "/" is a choice ("A / B", "6BT5.9/6CT8.3") except as a one-or-two-character suffix of one code (Baudouin "6M33G750/5", "4M06G2D0/S").
+    const slash = /[/／]/.test(s) && !/^[A-Z0-9][A-Z0-9.-]*\d[A-Z0-9.-]*\/[A-Z0-9]{1,2}$/.test(s);
+    if (!s || slash || /\bor\b|equiv|series|optional|select|custom|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
     const words = s.split(/[\s,，]+/).filter(Boolean);
     // Letter-only words before the code. No make among them: all are passed over as before ("SGC 420" stays no code:
     // westinpower's controller). With a make (bang-doc-ma-hang, điều phối 21/11/2026), words after the last make are still
@@ -2213,7 +2218,10 @@
     let i = last || run;
     if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
-    return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
+    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC are no code there (the
+    // same cells in horizontal tables stay unread: a change to `isCode` itself moves other suppliers' rows, not done here). In a vertical
+    // sheet the Model cell is a code: a cell of two letters, three digits and CC is read by its letters before the last C.
+    return vIsCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }
   // The figures of one output cell: [{ kW?, kVA? }] or null when not read.
   function verticalPower(label, vals, decComma) {
@@ -2245,15 +2253,30 @@
       const lines = [...(t.header || []), ...t.rows], cs = lines.map(verticalCells);
       // One genset down the page: most lines a label and at most two values; not the dotted "Manufacturer……CUMMINS" kind.
       if (cs.filter((c) => c.length <= 3).length < lines.length * 0.6 || lines.filter((l) => /[….]{5,}/.test(l)).length >= 3) return;
-      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => isCode(x)))) return;
+      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => vIsCode(x)))) return;
       const say = (reason, detail) => note(t, ti, null, "bảng dọc: " + reason, detail);
       const decComma = lines.some((l) => /\d,\d{1,2}(?![\d,])/.test(l));
       const models = new Map(), engines = new Map(), alts = new Map(), levels = { prime: [], standby: [] }, specs = [];
-      let part = null, partSeen = false, engBrand = null, multi = null;
+      let part = null, partSeen = false, engBrand = null, multi = null, ratingCols = null, pendBore = null;
       cs.forEach((c, li) => {
         if (c.length === 1) { const h = headingOf(c[0]); if (h !== undefined && h !== "keep") { part = h; if (h) partSeen = true; } return; }
         const label = c[0], vals = c.slice(1).filter(Boolean);
         if (!label || !vals.length) return;
+        // A rating table across ("| Voltage, Frequency | Prime | Standby" then "| 400V, 50 Hz | 680 kVA / 544 kW | 750 kVA / 600 kW"): the
+        // header names a level per column, the row under it gives that level's output (Powerpack). Only before any part heading.
+        if (!partSeen && /^voltage/i.test(label) && vals.length >= 2 && vals.every((x) => PRIME_RATE.test(x) !== STANDBY.test(x))) { ratingCols = vals.map((x) => (PRIME_RATE.test(x) ? "prime" : "standby")); return; }
+        if (ratingCols && !partSeen && /^\d{3}\s*V\b/i.test(label) && vals.length === ratingCols.length) {
+          vals.forEach((x, i) => { const p = verticalPower(ratingCols[i], [x], decComma); if (!p) say("công suất có nhãn mức nhưng không đọc được số / đơn vị", lines[li]); else levels[ratingCols[i]].push({ p, line: lines[li] }); });
+          return;
+        }
+        // "| Bore | mm | 150" then "| Stroke | mm | 185": one figure "150 × 185" (the catalog's `bore` is bore × stroke); a Stroke with no Bore line above it reads as before.
+        if (part === "engine" && /^(bore|stroke)$/i.test(label)) {
+          const sv = vals.filter((x) => !UNIT_CELL.test(x)), val = sv.length === 1 ? specVal(sv[0]) : null;
+          if (/^bore$/i.test(label)) { pendBore = val && /^\d+(\.\d+)?$/.test(String(val)) ? val : null; if (pendBore) return; }
+          else if (pendBore && val && /^\d+(\.\d+)?$/.test(String(val))) { const both = `${pendBore} × ${val}`; pendBore = null; if (specFits("bore", both)) { specs.push({ key: "bore", label: "Bore × Stroke", value: both }); return; } }
+        }
+        // "| Speed / Frequency | RPM / Hz. | 1500/50": two units, two figures, in order: the engine speed is the first ("1500 rpm").
+        if (part === "engine" && /^speed\b/i.test(label) && vals.length === 2 && /^rpm\s*\/\s*hz\.?$/i.test(vals[0]) && /^\d{3,4}\s*\/\s*\d{2}$/.test(vals[1])) { specs.push({ key: "speed", label, value: vals[1].split("/")[0].trim() + " rpm" }); return; }
         const codes = vals.map(verticalCode).filter(Boolean);
         if (V_MODEL.test(label) && !V_ENGINE.test(label)) {
           if (codes.length > 1) { multi = lines[li]; return; }
@@ -2279,11 +2302,21 @@
         if (!sk) return;
         const scope = SPEC[sk].scope;
         if (part === "alternator" ? scope !== "alternator" : part === "engine" ? scope === "alternator" : false) return;
-        const sv = vals.filter((x) => !UNIT_CELL.test(x)), val = specVal(sv[0]);
-        if (sv.length === 1 && val && specFits(sk, val)) specs.push({ key: sk, label, value: val });
+        const sv = vals.filter((x) => !UNIT_CELL.test(x) && !V_UNIT_MORE.test(x)), val = specVal(sv[0]);
+        // A unit cell only V_UNIT_MORE knows ("| Displacement | lt | 19,6") goes back after the figure ("19,6 lt"), so the figure keeps its unit.
+        const mu = vals.filter((x) => V_UNIT_MORE.test(x) && !UNIT_CELL.test(x));
+        const withUnit = val && mu.length === 1 && /^\d+(?:[.,]\d+)?$/.test(val) ? `${val} ${mu[0].replace(/^ltr?(?=\/|$)/i, "L")}` : null; // "lt" is the Turkish litre mark: "lt/h" is written L/h (same unit, no conversion)
+        const value = withUnit && specFits(sk, withUnit) ? withUnit : val; // a key whose pattern does not take a unit (disp) keeps the bare figure
+        if (sv.length === 1 && value && specFits(sk, value)) specs.push({ key: sk, label, value });
       });
       const base = { supplierId: s.id, n: t.n, table: ti, title: String(t.title || "") };
       if (multi) { say("một dòng Model ghi hai mã: trang nhiều sản phẩm", multi); return; }
+      // No genset model line but an engine part heading (Powerpack: the page names the genset only in its title, "Baudouin PG750-B 750 kVA
+      // Diesel Generator | Powerpack Generator"): the one code of the title that is not the engine's or the alternator's is the genset.
+      if (!models.size && partSeen && engines.size === 1) {
+        const tcodes = [...new Set(String(t.title || "").split(/\s[|–-]\s|\|/)[0].split(/\s+/).filter((w) => /\d/.test(w) && /[a-z]/i.test(w) && isCode(w)).map(keyOf))].filter((k) => !engines.has(k) && !alts.has(k));
+        if (tcodes.length === 1) { const w = String(t.title || "").split(/\s[|–-]\s|\|/)[0].split(/\s+/).find((x) => keyOf(x) === tcodes[0]); models.set(tcodes[0], { code: w, brand: "" }); }
+      }
       if (models.size !== 1) { say(models.size ? "bảng ghi từ hai model tổ máy trở lên" : "không có model tổ máy", [...models.values()].map((x) => x.code).join(", ")); return; }
       const [gk, g] = [...models][0];
       if (engines.size !== 1) { say(engines.size ? "bảng ghi hai mã động cơ" : "không có mã động cơ", [...engines.values()].map((x) => x.code).join(", ")); return; }
@@ -2313,6 +2346,7 @@
         const ms = [], cell = brandIn(code.brand, list), b = brandIn(brandCell || "", list), ttl = brandIn(titleHead, list);
         if (cell.length === 1) addMake(ms, cell[0], "dòng bảng");
         else if (b.length === 1) addMake(ms, b[0], "dòng bảng");
+        else if (b.length === 2 && b.includes("Doosan") && b.includes("Hyundai")) addMake(ms, "Doosan", "dòng bảng"); // "HYUNDAI DOOSAN" is one maker (SAME_MAKER); the catalog names it Doosan
         else if (ttl.length === 1) addMake(ms, ttl[0], "tên trang");
         return ms;
       };
