@@ -133,6 +133,31 @@ Nơi sản xuất đọc từ ô động cơ của dòng, 55 dòng trong `cn/`:
 
 Số đo lần 2 (8f5f079d, gốc 6f6e7931): 74 lượt đều nằm trong 78 lượt của lần 1, không có lượt mới. 4 lượt rời đi là 3 lượt oan đã sửa và IB2200100465 (gốc mới chỉ còn 100 dòng thay vì 390 nên luật không còn loại thêm). IB2600219527 không nằm trong 78 lượt. **Chưa gán luật từng dòng cho lần 2, và SHA 02c6c4dd cần đo lần 3.**
 
+## Kiểm chéo lần đo 3 (22/11/2026, 02c6c4dd, gốc ae171d54)
+
+Nhánh `do-gop-ti-so-nen3-ket-qua` (949d827b). Chạy lại cục bộ: **78/78 lượt khớp top và all**. Theo khoá duy nhất khớp số cloud: ra all 24.808, ra top 977.
+
+| Dòng ra (đếm cả dòng trùng khoá) | Số dòng |
+|---|---|
+| Tỉ số nén | 24.893 |
+| Nơi sản xuất (landtop India 11, kaihua India 6, superwatt SME 1) | 18 |
+| Chỉ bị đẩy khỏi top | 27 |
+| **Tổng** | **24.938** |
+
+**Dòng loại oan: 0.** 74 lượt lọc tỉ số nén đều ghi trơ một số, không còn lượt có dấu so sánh hay số vô lý. 13 lượt có công suất khác đều nằm trong nhóm đã đọc ở lần 1. 539 động cơ bị loại đều có dòng nguồn thấy trong bảng NCC. **Chưa đối chiếu các số này với tờ của hãng động cơ.** 511 dòng (32 động cơ) chỉ bị loại nhờ số của Powerpack, đúng quyết định Khoa 22/11.
+
+Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300390432, IB2400362458, IB2400495407, IB2500287209#1 (hậu tố India của landtop). Lượt rời: IB2600337362 (gốc mới không còn dòng kaihua 4012 nên nhánh không đổi).
+
+**Còn sót, chưa sửa: dòng ghi India vẫn ở lại gói G7 / G7EU (88 dòng, 10 lượt), vì `placeInRow` chỉ đọc chữ dính ngay ô mã động cơ:**
+
+| Dạng ghi | NCC | Dòng | Trong top 30 |
+|---|---|---|---|
+| "Perkins India", "Cummins India", "Cummins (India)" | fdk-energy | 28 | 4 |
+| "… made in India" | bobig-power | 10 | 0 |
+| Ô riêng "INDIA" | sanq-power | 10 | 0 |
+| Ô riêng "INDIA" | baifa-power | 3 | 1 |
+| Ô "UK/INDIA" (không rõ nơi nào, không suy ra) | sanq-power | 37 | 6 |
+
 ## Lệnh
 
 ```powershell
