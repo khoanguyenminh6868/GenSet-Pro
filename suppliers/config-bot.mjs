@@ -3882,6 +3882,21 @@ export function madeBasisOf(t) {
   }
   return null;
 }
+// Nơi NCC tự ghi ở dòng động cơ của cấu hình (dòng nguồn + dòng của các NCC trong cấu hình) mà có nơi ngoài nhóm:
+// placeInRow (India / UK cạnh mã, ô INDIA), placesInRow (sanq "UK/INDIA": hai nơi). [{ supplierId, at: [nước] }].
+const ROW_PLACE_NOTE = /\s*Code ghi: dòng NCC ghi nơi sản xuất [^.]*, cần xác nhận nơi sản xuất\./g;
+export function rowPlacesOff(c, e, row, grp) {
+  const ids = new Set((c.suppliers || []).map((s) => s.supplierId).filter(Boolean));
+  if (c.engine?.src?.supplierId) ids.add(c.engine.src.supplierId);
+  const rows = [...(row ? [row] : []), ...(e.uses || []).filter((u) => ids.has(u.supplierId))], out = new Map();
+  for (const u of rows) {
+    const one = placeInRow(e, u), at = placesInRow(e, u) || (one ? [one] : []);
+    if (!at.some((k) => !CAT.COUNTRY_GROUP[grp].includes(k))) continue;
+    const id = u.supplierId || c.engine?.src?.supplierId || "?";
+    out.set(id, [...new Set([...(out.get(id) || []), ...at])]);
+  }
+  return [...out].map(([supplierId, at]) => ({ supplierId, at }));
+}
 export function madeChecks(c, reqs, row, built) {
   for (const r of reqs || []) {
     const part = MADE_CODES[r.code], p = part && c[part];
@@ -3903,6 +3918,15 @@ export function madeChecks(c, reqs, row, built) {
       const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
       const home = entry?.make ? CAT.brandOf(entry) : [];
       const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at);
+      // Khoa 22/11/2026: gói chỉ đòi thương hiệu vẫn không nhận dòng NCC tự ghi nơi ngoài nhóm; ô hai nơi là "cần xác nhận".
+      const said = part === "engine" && entry ? rowPlacesOff(c, entry, row, grp) : [];
+      if (y) y.note = String(y.note || "").replace(ROW_PLACE_NOTE, "").trim();
+      if (y && !y.note) delete y.note;
+      if (y && said.length) {
+        if (y.rule === "thuong-hieu" && y.status === "met") { y.status = "unclear"; delete y.rule; delete y.byCode; y.note = String(y.note || "").replace(/\s*Code ghi: thương hiệu [^;]*; nơi sản xuất cần CO\./, "").trim(); }
+        y.note = [y.note, `Code ghi: dòng NCC ghi nơi sản xuất ${said.map((s) => `${s.supplierId}: ${s.at.map(madeVi).join(" hoặc ")}`).join("; ")}, cần xác nhận nơi sản xuất.`].filter(Boolean).join(" ");
+        continue;
+      }
       if (y && (y.status === "unclear" || y.status === "confirm") && !y.unverified && !y.conflict && !y.version && !y.parts?.length && !outside
         && home.length && home.every((k) => CAT.COUNTRY_GROUP[grp].includes(k))) {
         delete y.confirm;

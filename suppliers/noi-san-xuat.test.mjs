@@ -165,3 +165,27 @@ test("madeChecks (engine_origin / alt_origin / ctl_origin): TQ không đạt, G7
   const again = madeChecks(open("imp"), brandReq, rowOf("imp"), built);
   assert.equal(JSON.stringify(madeChecks(JSON.parse(JSON.stringify(again)), brandReq, rowOf("imp"), built)), JSON.stringify(again));
 });
+
+test("nhóm G: dòng NCC tự ghi India hoặc hai nơi thì KHÔNG đạt theo thương hiệu (Khoa 22/11/2026)", () => {
+  const item = "Xuất xứ động cơ", quote = "Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU", reqs = [{ code: "engine_origin", item, requirement: quote, quote, part: "engine", level: "core" }];
+  const E = (uses = []) => ({ key: C.keyOf("4006-23TAG2A"), kind: "engine", model: "4006-23TAG2A", make: "Perkins", uses });
+  const cfg = (sid, extra = {}) => ({ engine: { model: "4006-23TAG2A", make: "Perkins", src: { kind: "catalog", supplierId: sid } }, checks: [{ item, status: "unclear" }], ...extra });
+  const go = (line, sid = "x", uses) => madeChecks(cfg(sid), reqs, { supplierId: sid, line }, { engines: [E(uses)] });
+  for (const [line, sid, place] of [["| P825 | 750 | India 4006-23TAG2A | S5L1D |", "x", "Ấn Độ"], ["| P825 | 750 | 4006-23TAG2A(India) | S5L1D |", "x", "Ấn Độ"], ["| s-1 | 750 | 4006-23TAG2A | S5L1D | UK/INDIA |", "sanq-power", "Ấn Độ"]]) {
+    const r = go(line, sid), x = r.checks[0];
+    assert.equal(x.status, "unclear", line);
+    assert.ok(x.note.includes(place) && x.note.includes("cần xác nhận nơi sản xuất"), line);
+    assert.equal(JSON.stringify(madeChecks(JSON.parse(JSON.stringify(r)), reqs, { supplierId: sid, line }, { engines: [E()] })), JSON.stringify(r), "chạy lại không nối thêm ghi chú");
+  }
+  assert.equal(go("| P825 | 750 | 4006-23TAG2A | S5L1D |").checks[0].status, "met");
+  assert.equal(go("| P825 | 750 | UK 4006-23TAG2A | S5L1D |").checks[0].status, "met");
+  // NCC khác trong cấu hình ghi India cũng chặn.
+  const other = cfg("x", { suppliers: [{ supplierId: "x" }, { supplierId: "y" }] });
+  madeChecks(other, reqs, { supplierId: "x", line: "| P825 | 750 | 4006-23TAG2A | S5L1D |" }, { engines: [E([{ supplierId: "y", line: "| Q | 750 | India 4006-23TAG2A | S5L1D |" }])] });
+  assert.equal(other.checks[0].status, "unclear");
+  // Kết quả cũ code đã chấm đạt, nay dòng ghi India: về chưa rõ.
+  const old = cfg("x", { checks: [{ item, status: "met", rule: "thuong-hieu", byCode: true, note: "Code ghi: thương hiệu Perkins thuộc nhóm G7, EU, đạt theo thương hiệu; nơi sản xuất cần CO." }] });
+  madeChecks(old, reqs, { supplierId: "x", line: "| P825 | 750 | India 4006-23TAG2A | S5L1D |" }, { engines: [E()] });
+  assert.equal(old.checks[0].status, "unclear");
+  assert.ok(!old.checks[0].note.includes("đạt theo thương hiệu"));
+});
