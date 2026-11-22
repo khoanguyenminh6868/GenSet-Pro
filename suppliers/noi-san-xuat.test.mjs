@@ -189,3 +189,27 @@ test("nhóm G: dòng NCC tự ghi India hoặc hai nơi thì KHÔNG đạt theo 
   assert.equal(old.checks[0].status, "unclear");
   assert.ok(!old.checks[0].note.includes("đạt theo thương hiệu"));
 });
+
+test("nhóm G: dòng NCC ghi nhà máy Trung Quốc hoặc JAPAN OR CHINA thì KHÔNG đạt; Baudouin ghi Weichai vẫn đạt", () => {
+  const item = "Xuất xứ động cơ", reqOf = (g) => { const quote = `Động cơ: Nhà sản xuất / nhãn hiệu: ${g}`; return [{ code: "engine_origin", item, requirement: quote, quote, part: "engine", level: "core" }]; };
+  const go = (model, make, u, g = "G7, EU") => {
+    const e = { key: C.keyOf(model), kind: "engine", model, make, uses: [u] };
+    return madeChecks({ engine: { model, make, src: { kind: "catalog", supplierId: u.supplierId } }, checks: [{ item, status: "unclear" }] }, reqOf(g), u, { engines: [e] }).checks[0];
+  };
+  const blocked = [
+    ["KTA38-G2", "Cummins", { supplierId: "x", line: "| C1 | 750 | KTA38-G2 | CCEC Cummins | S5 |" }],
+    ["4006-23TAG2A", "Perkins", { supplierId: "x", line: "| P1 | 750 | 4006-23TAG2A | PERKINS CHINA | S5 |" }],
+    ["4006-23TAG2A", "Perkins", { supplierId: "sanq-power", line: "| S1 | 4006-23TAG2A | S5L1D | Wuxi |", header: ["| Model | Engine | Alternator | C/O of engine |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "fdk-energy", line: "| F1 | 750 | S12R-PTA | Mitsubishi (SME Shanghai) |", header: ["| Model | kVA | Engine | Engine original |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "bdadl-shanghai", line: "| B1 | 750 | 上海菱重 | S12R-PTA |", header: ["| 型号 | 功率 | 柴油机品牌 | 柴油机型号 |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "yanan-power", line: "| Y1 | 750 | S12R-PTA | JAPAN OR CHINA | S5 |", header: ["| Model | kVA | Engine | Engine origin | Alternator |"] }],
+  ];
+  for (const [model, make, u] of blocked) {
+    const x = go(model, make, u);
+    assert.equal(x.status, "unclear", u.line);
+    assert.ok(x.note.includes("Trung Quốc") && x.note.includes("cần xác nhận nơi sản xuất"), u.line);
+  }
+  // Nhóm G20 của catalog không gồm Trung Quốc: dòng CCEC giữ chưa rõ, không chấm đạt.
+  assert.equal(go("KTA38-G2", "Cummins", blocked[0][2], "G20").status, "unclear");
+  for (const cell of ["Weichai Baudouin China", "潍柴博杜安"]) assert.equal(go("6M33G825/5", "Baudouin", { supplierId: "x", line: `| B1 | 750 | 6M33G825/5 | ${cell} | S5 |` }).status, "met", cell);
+});

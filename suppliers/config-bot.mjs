@@ -3907,14 +3907,15 @@ export function madeBasisOf(t) {
   return null;
 }
 // Nơi NCC tự ghi ở dòng động cơ của cấu hình (dòng nguồn + dòng của các NCC trong cấu hình) mà có nơi ngoài nhóm:
-// placeInRow (India / UK cạnh mã, ô INDIA), placesInRow (sanq "UK/INDIA": hai nơi). [{ supplierId, at: [nước] }].
+// placeInRow (India / UK cạnh mã, ô INDIA), chinaPlantInRow (nhà máy Trung Quốc), placesInRow (hai nơi: sanq "UK/INDIA",
+// "JAPAN OR CHINA"). [{ supplierId, at: [nước] }].
 const ROW_PLACE_NOTE = /\s*Code ghi: dòng NCC ghi nơi sản xuất [^.]*, cần xác nhận nơi sản xuất\./g;
 export function rowPlacesOff(c, e, row, grp) {
   const ids = new Set((c.suppliers || []).map((s) => s.supplierId).filter(Boolean));
   if (c.engine?.src?.supplierId) ids.add(c.engine.src.supplierId);
   const rows = [...(row ? [row] : []), ...(e.uses || []).filter((u) => ids.has(u.supplierId))], out = new Map();
   for (const u of rows) {
-    const one = placeInRow(e, u), at = placesInRow(e, u) || (one ? [one] : []);
+    const one = placeInRow(e, u) || chinaPlantInRow(e, u)?.at, at = placesInRow(e, u) || (one ? [one] : []);
     if (!at.some((k) => !CAT.COUNTRY_GROUP[grp].includes(k))) continue;
     const id = u.supplierId || c.engine?.src?.supplierId || "?";
     out.set(id, [...new Set([...(out.get(id) || []), ...at])]);
@@ -3941,7 +3942,8 @@ export function madeChecks(c, reqs, row, built) {
     if (basis === "brand") {
       const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
       const home = entry?.make ? CAT.brandOf(entry) : [];
-      const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at);
+      // Baudouin: chữ "Weichai Baudouin" / "潍柴博杜安" ở dòng không chặn (Khoa 22/11/2026 "không loại", Baudouin vẫn tính G7; như chinaPlantInRow).
+      const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at) && !(part === "engine" && /^baudouin$/i.test(entry?.make || ""));
       // Khoa 22/11/2026: gói chỉ đòi thương hiệu vẫn không nhận dòng NCC tự ghi nơi ngoài nhóm; ô hai nơi là "cần xác nhận".
       const said = part === "engine" && entry ? rowPlacesOff(c, entry, row, grp) : [];
       if (y) y.note = String(y.note || "").replace(ROW_PLACE_NOTE, "").trim();
