@@ -1,0 +1,28 @@
+{
+  "id": "powerpack",
+  "country": "TR",
+  "role": "genset_oem",
+  "status": "verified",
+  "conf": "medium",
+  "en": "Powerpack Generator",
+  "zh": null,
+  "brands": ["Powerpack"],
+  "web": "https://www.powerpackgenerator.com/",
+  "prov": null,
+  "city": "Istanbul",
+  "founded": null,
+  "fsrc": [],
+  "related": [],
+  "src": {
+    "1": ["A", "Powerpack Generator manufactures diesel generator sets from 10 kVA to 2750 kVA", "BAUDOUIN", "FPT IVECO", "HYUNDAI DOOSAN", "YANGDONG","Factory - Istanbul Industry and Trade Free Zone Aydinli Serbest Bolge Mah. 9.Sk. Tuzla Istanbul – Turkey"],
+    "2": ["A", "Powerpack Generator holds ISO and CE certifications"]
+  },
+  "str": [["Dải tổ máy diesel 10–2750 kVA, lắp động cơ Baudouin, FPT Iveco, Hyundai Doosan, Yangdong", 1]],
+  "cert": [["ISO", 2], ["CE", 2]],
+  "lines": [
+    { "k": "genset", "s": "Powerpack diesel generator sets", "fuel": "diesel", "eng": ["Baudouin", "FPT Iveco", "Hyundai Doosan", "Yangdong"], "models": [], "alt": [],
+      "p": [10, 2750, "kVA", "unspecified", 1], "src": [1] }
+  ],
+  "miss": ["Chưa có năm thành lập; nhà máy ở Thổ Nhĩ Kỳ, không phải NCC Trung Quốc: chỉ dùng làm nguồn thông số động cơ"],
+  "by": "powerpack-1"
+}
