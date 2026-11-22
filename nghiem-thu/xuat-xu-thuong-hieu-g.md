@@ -6,10 +6,13 @@ Nhánh `fix/xuat-xu-thuong-hieu-g`, gốc đo `a903498c`. Không dựa vào mã 
 HSMT đòi "nhà sản xuất / nhãn hiệu" thuộc nhóm (G7, EU, G20): check xuất xứ đang chưa rõ / cần xác nhận thành đạt, ghi "nơi sản xuất cần CO", khi mọi hãng của `keptMakes` thuộc nhóm.
 Giữ nguyên khi: chưa rõ hãng, model không có trong danh mục, chính dòng ghi nơi ngoài nhóm, check `unverified` / `conflict` / `version` / `parts`. HSMT đòi NƠI sản xuất vẫn cần CO. Check đạt / không đạt của agent không đổi.
 
-## Đo
-- check-all 17 lượt, bản chụp 21/11 (47 cấu hình): 6 cấu hình, 7 check, chỉ gói IB2600603983. 0 check đổi ở gói khác.
+## Vá theo phản biện điều phối (22/11/2026)
+`rowPlacesOff`: dòng nguồn và dòng các NCC của cấu hình mà `placeInRow` / `placesInRow` báo nơi ngoài nhóm ("India <mã>", "<mã>(India)", "Perkins India", ô INDIA, sanq "UK/INDIA") thì KHÔNG đạt theo thương hiệu, giữ trạng thái, ghi nơi NCC ghi. Phần `chinaPlantInRow` thêm sau khi #1095 merge.
+
+## Đo (bản vá, SHA 5a9937b2, gốc a5db53ca)
+- check-all 17 lượt, bản chụp 21/11 (47 cấu hình): 6 cấu hình, 7 check, chỉ gói IB2600603983. 0 check đổi ở gói khác. Bản vá không chặn check nào trong 7 check này, vì dòng của chúng không ghi nơi ngoài nhóm.
 - Thứ tự và danh sách cấu hình: 0 gói đổi. Chạy `check` hai lần giống nhau ở cả 17 lượt.
-- Test `suppliers` 1.542 / 1.542. Không đổi `candidates`, `web/catalog.js`, nên không cần đo top 30.
+- Test `suppliers` 1.547 / 1.547. Không đổi `candidates`, `web/catalog.js`, nên không cần đo top 30.
 
 ## Danh sách đủ, đã soát tay từng hãng
 
