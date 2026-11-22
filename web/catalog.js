@@ -1651,6 +1651,7 @@
     }
     out.push(...listedEngineRows(s, out, note));
     out.push(...verticalRecords(s, out, note));
+    out.push(...engineLines(s, out, note));
     // Fuel of each record (may-khi-2): from its table's signs and its own row; kept on the record, so it reaches `uses` of build().
     const fuelSg = new Map();
     for (const o of out) {
@@ -2320,6 +2321,72 @@
       if (a && !ALT_PREFIX.test(a.code)) out.push({ ...common, kind: "alternator", model: a.code, makes: makesOf(a, ALT_BRANDS, null), other: e.code, specs: sp.filter((x) => SPEC[x.key].scope !== "engine") });
     });
     return out;
+  }
+  // Engine lines of label sheets, an explicit list (S9 cc-129, Khoa 22/11/2026: read the 129 displacement cells written in cc that
+  // gave no figure; not a rule). Each entry names the table by supplier + n and its lines WORD FOR WORD (a re-crawl that changes
+  // one lapses the entry, noted): `engine` = [line, code]: the line names the ENGINE role ("Engine Type", "ENGINE MODEL") and the
+  // code is the part of its value cell that is the model; `make` = the line whose value cell writes the make (true: the engine
+  // line; none: no make); `specs` = [key, line, value]: the value is the part of the line's value cell taken, the label is the
+  // line's first cell. The table's own engine record of that model gets the figures it lacks (victory n123, winco n1002 / n1003);
+  // none → a new engine record, no genset, no power (as ENGINE_TABLES: not a candidate; endress writes "Continuous Power" only,
+  // gillette / winco n1001 are read for the engine's figures, the set's line is not touched).
+  //   endress n129 / n130 / n137: "Engine Type | Yanmar - 3TNV80-FPGE" (no "Model" line, so verticalRecords skips the sheet), "Displacement [ccm]".
+  //   gillette n101–n105: "ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)" is no code for isCode; the set's "GENERATOR MODEL"
+  //     line was read as an alternator before this list (not changed here). "1 CYLINDER, 23.7 CU. IN. (390 CC)": the value taken is
+  //     "23.7 CU. IN. (390 CC)", read by spec-norm only when the two figures are one displacement (see spec-norm `disp`).
+  //   victory n123: "Displacement (cc) | 418" of a table read row by row (not a label sheet), so the figure was never its engine's.
+  //     n124 is NOT listed: it writes 418 for LT420 where victory's own n131 writes 420 (418 is n123's LA186FAG figure).
+  //   winco n1001–n1003: "DISPLACEMENT/TYPE | 160 CC / OHV" (OHV is the valve type, not a second figure); n1001's model cell
+  //     "GC160 OHC" is no code for isCode (OHC: overhead cam), the code is "GC160", the make "ENGINE BRAND | HONDA".
+  // Not listed (no engine role written for the code, Khoa 21/11/2026, kingway n117): endress n123 / n126–n128 / n135 / n142–n146
+  // ("Model | 1103A-33TG2" over "Displacement [ccm]"), bison n114 ("Model | 1E45F | BS156F …"), slong (second "Model | SL460").
+  const ENGINE_LINES = (() => {
+    const EN = (n, code, disp) => ({ supplierId: "endress-stromerzeuger", n, engine: [`| Engine Type | Yanmar - ${code}`, code], make: true, specs: [["disp", `| Displacement [ccm] | ${disp}`, disp]] });
+    const GI = (n, line, code, disp) => ({ supplierId: "gillette-generators", n, engine: [line, code], make: true, specs: [["disp", `| ENGINE DISPLACEMENT | ${disp}`, disp.replace(/^\d CYLINDER, /, "")]] });
+    const GX390 = "| ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)", GX630 = "| ENGINE MODEL (WARRANTY) | HONDA GX630 V-TWIN O.H.V. (3 YEARS)";
+    return [
+      EN(129, "3TNV80-FPGE", "1267"), EN(130, "3TNM74F", "993"), EN(137, "2TNV70-APGE", "570"),
+      GI(101, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"), GI(102, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"),
+      GI(103, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"), GI(104, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"),
+      GI(105, "| ENGINE MODEL | KOHLER KD440 EPA/CARB TIER IV CERT. & 3 YEAR LIMITED WARRANTY", "KD440", "1 CYLINDER, 26.9 CU. IN. (440 CC)"),
+      { supplierId: "victory-generator", n: 123, engine: ["| Engine | Model | LA186FAG", "LA186FAG"], specs: [["disp", "| Displacement (cc) | 418", "418"]] },
+      { supplierId: "winco", n: 1001, engine: ["| ENGINE MODEL | GC160 OHC", "GC160"], make: "| ENGINE BRAND | HONDA", specs: [["disp", "| DISPLACEMENT/TYPE | 160 CC / OHV", "160 CC"]] },
+      { supplierId: "winco", n: 1002, engine: ["| ENGINE MODEL | GC160", "GC160"], specs: [["disp", "| DISPLACEMENT/TYPE | 160CC/ OHV", "160CC"]] },
+      { supplierId: "winco", n: 1003, engine: ["| ENGINE MODEL | VANGUARD 3564", "VANGUARD 3564"], specs: [["disp", "| DISPLACEMENT/TYPE | 570CC/ OHV", "570CC"]] },
+    ].map((x) => ({ why: "S9 cc-129, Khoa 22/11/2026", ...x }));
+  })();
+  // New records of ENGINE_LINES; the table's own engine record of the listed model gets its missing figures in place (`out`).
+  function engineLines(s, out, note) {
+    const add = [], tables = s.specTables || [];
+    for (const x of ENGINE_LINES.filter((x) => x.supplierId === s.id)) {
+      const [eLine, code] = x.engine, makeLine = typeof x.make === "string" ? x.make : x.make ? eLine : "";
+      const lines = [eLine, ...(makeLine ? [makeLine] : []), ...x.specs.map((p) => p[1])];
+      const ti = tables.findIndex((t) => t.n === x.n && lines.every((l) => (t.rows || []).includes(l)));
+      if (ti < 0) {
+        const tj = tables.findIndex((t) => t.n === x.n);
+        note(tj >= 0 ? tables[tj] : { n: x.n, title: "" }, tj >= 0 ? tj : null, null, "dòng động cơ trong danh sách đổi chữ: không đọc", eLine);
+        continue;
+      }
+      const t = tables[ti], value = (line) => cellsOf(line).slice(1).join(" | ");
+      if (!value(eLine).includes(code)) { note(t, ti, null, "mã trong danh sách không có ở dòng động cơ: không đọc", eLine); continue; }
+      const specs = [];
+      for (const [key, line, v] of x.specs) {
+        if (!value(line).includes(v)) { note(t, ti, null, "số trong danh sách không có ở dòng: không đọc", line); continue; }
+        specs.push({ key, label: cellsOf(line)[0], value: v });
+      }
+      const i = out.findIndex((o) => o.table === ti && o.kind === "engine" && keyOf(o.model) === keyOf(code));
+      if (i >= 0) {
+        const o = out[i], more = specs.filter((p) => !(o.specs || []).some((q) => q.key === p.key));
+        for (const p of specs) if (!more.includes(p)) note(t, ti, o.row ?? null, "bản ghi đã có thông số này: giữ số cũ", `${p.key}=${p.value}`);
+        if (more.length) out[i] = { ...o, specs: [...(o.specs || []), ...more] };
+        continue;
+      }
+      const mk = brandIn(makeLine, ENGINE_BRANDS), makes = [];
+      if (mk.length === 1) addMake(makes, mk[0], "dòng bảng");
+      add.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(eLine), line: eLine, header: t.header || [], kind: "engine", model: code,
+        genset: null, power: null, freq: null, specs, makes, other: null, own: false });
+    }
+    return add;
   }
   // Genset models of vertical sheets that are an engine's or an alternator's code elsewhere in the catalog (bang-doc-1: the
   // test checks every vertical record against build(); a model found there goes on this list).
