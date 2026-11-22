@@ -219,6 +219,35 @@ Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300
 - Ngoài ra 504 hàng ghi China của hãng Trung Quốc / chưa rõ hãng không nằm trong bảng trên.
 - Khi loại 39 dòng top, dòng khác sẽ lên thay, có thể gồm dòng Trung Quốc chưa đọc được. Số cuối phải đo cloud sau khi có PR.
 
+**Luật nhà máy Trung Quốc (Khoa 22/11/2026), nhánh local `nha-may-tq` 28895472 dựng trên 3a323d1b, CHƯA đẩy, chờ #1088 merge.** `chinaPlantInRow`, `ruled: made` ở gói G7 / G7EU kể cả chỉ đòi thương hiệu; gói G20 không áp. Gộp shanhua "(India Factory)" đọc IN. Test `suppliers/*.test.mjs` 1536/1536 trước lần sửa ghi chú cuối. Chưa đo cloud. Danh sách từng hàng: `nghiem-thu/nha-may-tq-danh-sach.txt` (1.921 dòng, `DOC` / `KHONG` + lý do).
+
+Đọc: **1.013 hàng** trong `cn/`.
+
+| Dạng chữ | Hàng | Ví dụ nguyên văn |
+|---|---|---|
+| Tên nhà máy | 729 | 重庆康明斯 228, 东风康明斯 219, Cummins (CCEC CHINA) 84, Engine-DCEC Cummins 68, dongfeng Cummins 47, Cummins (DCEC CHINA) 26, CCEC 22, Chongqing Cummins 13, CCEC CUMMINS 9 |
+| Hãng + China | 170 | Cummins (China Dongfeng), Perkins China, Cummins CHINA, MTU JV CHINA |
+| Mã + China | 12 | 403A-15G1 made in china |
+| Cột xuất xứ động cơ = CHINA | 102 | baifa cột "ENGINE MANUFACTURER / COUNTRY"; comappower n111, suneco-linyi n103, yanan-power n105 cột "Engine origin" |
+
+Theo NCC: fdk-energy 277, bdadl-shanghai 125, pengpai-yangzhou 114, baifa-power 72, jiangchai-xuzhou 71, longkai-power 68, fukangsi-yangzhou 65, liangzi-yangzhou 62, aosif 61, yongcai-elecmama 20, bobig-power 12, comappower 11, suneco-linyi 11, yanan-power 11, aoke-yangzhou 10, shanhua 9, kc-generatorset 3, yingtai-jiangsu 3, jiuan-power 3, xinhengxin-fujian 2, sunkings 1, tecgen-fujian 1, generatordieselchina 1.
+
+Có chữ China mà KHÔNG đọc: **908 hàng**.
+
+| Lý do | Hàng |
+|---|---|
+| Hãng Trung Quốc (Yuchai 298, SDEC 114 …) | 406 |
+| Baudouin / Weichai / 潍柴博杜安 (Khoa giữ) | 324 |
+| Địa chỉ NCC (westinpower 126 …) | 133 |
+| "JAPAN OR CHINA", hai nơi (comappower, suneco-linyi, yanan-power, mỗi NCC 10) | 30 |
+| Chưa rõ hãng (baifa 9: mã M33 / M55 ô CHINA hoặc CHINA STAGE3; acepow 1) | 10 |
+| Chỉ là thang khí thải (baifa 1, mecca-power 2) | 3 |
+| "China brand AP186FA" của acepow-fuan (không phải nơi sản xuất động cơ) | 2 |
+
+Cột không rõ thuộc động cơ hay tổ máy: không có trong 4 bảng đã đọc; cả 4 đều ghi rõ là của động cơ.
+
+**Lỗi dữ liệu phát hiện thêm, chưa sửa:** baifa-power có 6 bảng để cả dòng dữ liệu trong trường `header` (tới 33 dòng), nên các dòng đó không vào danh mục, gồm 5 dòng ghi "UK/ CCEC" (QSK50-G3 / G4 / G7 / G13, QSK60-G23). Chúng hiện không phải ứng viên. Nếu sửa dữ liệu thì "UK/ CCEC" là hai nơi, cần Khoa quyết như "UK/INDIA".
+
 **Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8, chưa đo cloud).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
 
 ## Lệnh
