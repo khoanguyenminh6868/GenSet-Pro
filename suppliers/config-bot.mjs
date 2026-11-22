@@ -5295,6 +5295,24 @@ export function altDocChecks(c, reqs = [], attrs = []) {
 const SHEET_SPEED = /^(?:engine\s+)?(?:rated\s+)?speed(?:\s*(?:rpm|r\/min))?$|^rpm$/i, SHEET_FUEL = /^(?:thermodynamic\s+cycle|working\s+cycle|fuel\s+type|type\s+of\s+fuel)$/i;
 const sheetLabel = (s) => String(s || "").replace(/[​-‍﻿]/g, "").replace(/[()[\]:：]/g, " ").replace(/\s+/g, " ").trim();
 const rpmCell = (s) => { const m = String(s).trim().match(/^(\d{3,4})\s*(?:rpm|r\/min)?$/i), v = m ? Number(m[1]) : 0; return v >= 600 && v <= 3600 ? v : null; };
+const SHEET_ATTR = [["cycle", /^thermodynamic\s+cycle$/i], ["cooling", /^cooling\s+system$/i], ["inject", /^injection\s+system$/i], ["fuelSys", /^fuel\s+system$/i], ["gov", /^governor$/i]];
+// Kiểu động cơ / hệ thống phun (nhóm A): each term the requirement names must be on the sheet; a word of the requirement the
+// code does not know leaves the check as it is. [term in the HSMT, sheet attribute, what that attribute must say]
+const ENGINE_TYPE_TERMS = [[/diesel/i, "cycle", /diesel/i], [/4\s*(?:k[ỳy]|th[ìi])|4\s*-?\s*stroke/i, "cycle", /\b4[\s-]*stroke/i], [/l[àa]m\s*m[áa]t\s*(?:b[ằa]ng\s*)?(?:n[ưướ]+c|ch[ấa]t\s*l[ỏo]ng)/i, "cooling", /liquid|water/i]];
+const FUEL_SYSTEM_TERMS = [[/phun\s*tr[ựu]c\s*ti[ếe]p|direct\s*injection/i, "inject", /^direct\b/i], [/common\s*rail/i, "fuelSys", /common\s*rail/i], [/cao\s*[áa]p/i, "fuelSys", /high\s*pressure/i], [/đi[ềe]u\s*khi[ểe]n\s*đi[ệe]n\s*t[ửu]/i, "gov", /\bECU\b|electronic/i], [/\bECU\b/i, "gov", /\bECU\b/i]];
+const TERM_FILLER = /(?<!\p{L})(?:đ[ộo]ng\s*c[ơo]|ki[ểe]u|h[ệe]\s*th[ốo]ng|nhi[êe]n\s*li[ệe]u|b[ằa]ng|v[àa])(?!\p{L})|[(),;:./\s-]/giu;
+function sheetTerms(req, terms, attrs = {}) {
+  let rest = String(req || "");
+  const hits = [];
+  for (const [re, key, says] of terms) {
+    if (!re.test(req)) continue;
+    const l = attrs[key] || [];
+    if (!l.length || new Set(l.map((x) => x.value)).size !== 1 || !says.test(l[0].value)) return null;
+    if (!hits.includes(l[0])) hits.push(l[0]);
+    rest = rest.replace(new RegExp(re.source, "gi"), " ");
+  }
+  return hits.length && !rest.replace(TERM_FILLER, "") ? hits : null;
+}
 export function engineSheetsOf(cat, suppliers = []) {
   const out = new Map(), engines = new Set((cat.engines || []).map((e) => e.key)), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
   for (const s of suppliers || []) {
@@ -5302,18 +5320,20 @@ export function engineSheetsOf(cat, suppliers = []) {
     for (const t of s.specTables || []) {
       const models = titleModelKeys(t.title, partKeys);
       if (models.length !== 1 || !engines.has(models[0])) continue;
-      const e = out.get(models[0]) || { speeds: [], fuels: [] }, at = { supplierId: s.id, n: t.n };
+      const e = out.get(models[0]) || { speeds: [], fuels: [], attrs: {} }, at = { supplierId: s.id, n: t.n };
       if (!t.header?.length) {
         for (const line of t.rows || []) {
           const cells = CAT.cellsOf(line), label = sheetLabel(cells[0]);
           if (cells.length < 2) continue;
           if (SHEET_SPEED.test(label)) { const v = cells.slice(1).map(rpmCell); if (v.every((x) => x != null)) for (const x of v) e.speeds.push({ v: x, line, ...at }); }
           if (SHEET_FUEL.test(label) && /\bdiesel\b/i.test(cells[1]) && !/\bgas\b|gasoline|petrol/i.test(cells[1])) e.fuels.push({ line, ...at });
+          const attr = SHEET_ATTR.find(([, re]) => re.test(label));
+          if (attr) (e.attrs[attr[0]] ||= []).push({ value: cells[1], line, ...at });
         }
       } else if (t.header.some((h) => /^rpm$/i.test(sheetLabel(CAT.cellsOf(h)[0])))) {
         for (const line of t.rows || []) { const v = rpmCell(CAT.cellsOf(line)[0]); if (v != null) e.speeds.push({ v, line, ...at }); }
       }
-      if (e.speeds.length || e.fuels.length) out.set(models[0], e);
+      if (e.speeds.length || e.fuels.length || Object.keys(e.attrs).length) out.set(models[0], e);
     }
   }
   return out;
@@ -5349,6 +5369,9 @@ export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], r
       if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
       const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
       put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
+    } else if ((r.code === "engine_type" || r.code === "fuel_system") && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), hits = o && sheetTerms(req, r.code === "engine_type" ? ENGINE_TYPE_TERMS : FUEL_SYSTEM_TERMS, sheet.attrs);
+      if (hits) put(r, o, { ...hits[0], line: hits.map((h) => h.line).join(" | ") }, "engine", `${hits.map((h) => h.value).join(", ")} (tờ hãng)`, `Code đọc từ ${where(hits[0])}.`);
     } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
       const o = openCheck(c, r), f = sheet.fuels[0];
       if (o) put(r, o, f, r.part || "genset", "Diesel (động cơ, tờ hãng)", `Code đọc từ ${where(f)}: nhiên liệu của động cơ.`);

@@ -194,11 +194,10 @@
     ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
     ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|over\s*-?\s*speed|超速|torque|扭矩|\d\s*v\s*\/\s*\d+\s*hz/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
-    // Labels of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke", "Injection System |
-    // Direct", "Fuel System | High Pressure Common Rail". Whole labels only: "fuel" alone is a consumption or a tank.
+    // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
+    // "Fuel System": they are COLUMNS of many tables with the maker's own codes ("EUI", "ECR", "m-FIP+e-gov."), and a new key there
+    // stops the walk along the row (sdec, sr-genset, jichai lost cylinders, emission, speed). config-bot reads them from the sheet.
     ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
-    ["inject", "engine", "Kiểu phun nhiên liệu", /^injection\s*(system|type)$|^fuel\s*injection(\s*(system|type))?$/i, null, /direct|indirect|common\s*rail|unit\s*(injector|pump)|\bEUI\b|\bHPCR\b|直喷|共轨/i],
-    ["fuelSys", "engine", "Hệ thống nhiên liệu", /^fuel\s*system$/i, null, /common\s*rail|unit\s*(injector|pump)|in-?line\s*pump|rotary|mechanical|electronic|\bECU\b|\bEUI\b|\bECR\b|\bHPCR\b|共轨|电控/i],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
