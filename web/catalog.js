@@ -2372,14 +2372,24 @@
   //     n124 is NOT listed: it writes 418 for LT420 where victory's own n131 writes 420 (418 is n123's LA186FAG figure).
   //   winco n1001–n1003: "DISPLACEMENT/TYPE | 160 CC / OHV" (OHV is the valve type, not a second figure); n1001's model cell
   //     "GC160 OHC" is no code for isCode (OHC: overhead cam), the code is "GC160", the make "ENGINE BRAND | HONDA".
-  // Not listed (no engine role written for the code, Khoa 21/11/2026, kingway n117): endress n123 / n126–n128 / n135 / n142–n146
-  // ("Model | 1103A-33TG2" over "Displacement [ccm]"), bison n114 ("Model | 1E45F | BS156F …"), slong (second "Model | SL460").
+  // A bare "Model | <code>" line (no engine role written) right over engine figures (Khoa 22/11/2026: "có cho ngoại lệ"), listed table
+  // by table, only where the code is CHECKED as an engine's: the same code is already an engine key of ANOTHER supplier in cn/ (a make
+  // written in the table would do too; none of these writes one, so `make` is left out):
+  //   endress n123 / n135 "Model | 1103A-33TG2" (Perkins key of 83 suppliers on 2aa92830), n126 "F34TEVP01" (FPT, green-power n121), n145
+  //   "4TNV98CT-IYE" (Yanmar, cgm / stephill / voltgent), n146 "4TNV98C-IYE" (Yanmar, cgm / voltgent); the lines under it are
+  //   "Displacement [ccm]", "Engine output (PRP) [kW]", "RPM": the engine's. Only the displacement is read, as above.
+  // Left out (cc-129-model-tro): endress n127 "3TNV88F-UGPGE", n128 "3TNV80F-NGPGE", n142 "4TNV98CT-IPGE", n143 "4TNV98C-IPGE" (no
+  // supplier has the key, no make written: "TNV" is Yanmar only by a pattern, not by the table); bison n114 ("Model | 1E45F |
+  // BS156F …": Bison's own codes, no other supplier has them, no engine make written), bison n1003 b34 (OCR "8S170"), slong n103 /
+  // n108 / n116 / n144 (second "Model | SL460" / "GB1000": keys of slong itself only).
   const ENGINE_LINES = (() => {
     const EN = (n, code, disp) => ({ supplierId: "endress-stromerzeuger", n, engine: [`| Engine Type | Yanmar - ${code}`, code], make: true, specs: [["disp", `| Displacement [ccm] | ${disp}`, disp]] });
+    const EM = (n, code, disp) => ({ supplierId: "endress-stromerzeuger", n, engine: [`| Model | ${code}`, code], specs: [["disp", `| Displacement [ccm] | ${disp}`, disp]], why: "Khoa 22/11/2026 (cc-129-model-tro)" });
     const GI = (n, line, code, disp) => ({ supplierId: "gillette-generators", n, engine: [line, code], make: true, specs: [["disp", `| ENGINE DISPLACEMENT | ${disp}`, disp.replace(/^\d CYLINDER, /, "")]] });
     const GX390 = "| ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)", GX630 = "| ENGINE MODEL (WARRANTY) | HONDA GX630 V-TWIN O.H.V. (3 YEARS)";
     return [
       EN(129, "3TNV80-FPGE", "1267"), EN(130, "3TNM74F", "993"), EN(137, "2TNV70-APGE", "570"),
+      EM(123, "1103A-33TG2", "3300"), EM(135, "1103A-33TG2", "3300"), EM(126, "F34TEVP01", "3400"), EM(145, "4TNV98CT-IYE", "3319"), EM(146, "4TNV98C-IYE", "3319"),
       GI(101, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"), GI(102, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"),
       GI(103, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"), GI(104, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"),
       GI(105, "| ENGINE MODEL | KOHLER KD440 EPA/CARB TIER IV CERT. & 3 YEAR LIMITED WARRANTY", "KD440", "1 CYLINDER, 26.9 CU. IN. (440 CC)"),
