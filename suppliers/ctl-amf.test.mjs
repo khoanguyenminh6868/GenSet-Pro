@@ -32,10 +32,14 @@ test("ctlKinds: SmartGen / ComAp / Datakom / DEIF / Woodward theo chữ của da
   const k = CM.ctlKinds(["smartgen", "comap", "datakom", "deif", "woodward"].map(read), { modelsIn: ctlModelsIn });
   const want = { HGM6110N: "start", HGM6110NC: "start", HGM6120N: "amf", HGM6120CAN: "amf", HGM6110U: "start", HGM6120UC: "amf", HGM9510: "sync",
     INTELILITE4AMF25: "amf", INTELILITE4AMF9: "amf", INTELILITE4MRS16: "start", INTELIGENNT: "sync", INTELIGEN1000: "sync",
-    DKG309: "amf", DKG116: "start", SGC420: "amf", EASYGEN1800: "amf", EASYGEN3500: "sync" };
+    DKG309: "amf", DKG116: "start", SGC420: "amf", EASYGEN1800: "amf", EASYGEN3500: "sync",
+    // bdk-ds-3: easYgen-1700 (tờ "1000 Series of AMF genset controllers"), 3100 / 3200 (tờ guideform "peer-to-peer system with up to 32 synchronous").
+    EASYGEN1700: "amf", EASYGEN3100: "sync", EASYGEN3200: "sync" };
   for (const [m, v] of Object.entries(want)) assert.equal(k.get(m), v, m);
-  // Không đọc được thì để trống: DEIF AGC-4 / AGC-200, easYgen-1700 / 3100 / 3200.
-  for (const m of ["AGC4", "AGC200", "EASYGEN1700", "EASYGEN3200"]) assert.equal(k.get(m), undefined, m);
+  // Không đọc được thì để trống: DEIF AGC-4 / AGC-200 (tờ nền tảng nhiều chế độ).
+  for (const m of ["AGC4", "AGC200"]) assert.equal(k.get(m), undefined, m);
+  // "easYgen-3500XT" của NCC → khoá tờ easYgen-3500.
+  assert.equal(CM.kindOf(k, "easYgen-3500XT"), "sync");
   // Nhà cung cấp ghi tắt "AMF25" → tờ "InteliLite 4 AMF25".
   assert.equal(CM.kindOf(k, "AMF25"), "amf");
 });
