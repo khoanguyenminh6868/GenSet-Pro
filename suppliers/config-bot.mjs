@@ -1825,8 +1825,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const made = {};
       let madeOut = false;
       // sanq ghi "UK/INDIA": có thể làm ở Anh hoặc Ấn Độ. Một trong hai ngoài nhóm HSMT đòi thì giữ dòng, gắn cần xác nhận (Khoa 22/11/2026).
-      const placeUnsure = GROUP_ORIGIN.has(origin) && placesInRow(e, u)?.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
-      if (placeUnsure) { made.engine = "?"; why.push("cần xác nhận nơi sản xuất động cơ (NCC ghi «UK/INDIA»)"); }
+      // "JAPAN OR CHINA": như UK/INDIA, nhưng luật nhà máy Trung Quốc chỉ áp ở G7 / G7EU (Khoa 22/11/2026).
+      const twoPlaces = GROUP_ORIGIN.has(origin) ? placesInRow(e, u) : null, placeCn = twoPlaces?.includes("CN");
+      const placeUnsure = !!twoPlaces && (!placeCn || origin === "g7" || origin === "g7eu") && twoPlaces.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
+      if (placeUnsure) { made.engine = "?"; why.push(`cần xác nhận nơi sản xuất động cơ (NCC ghi «${placeCn ? "JAPAN OR CHINA" : "UK/INDIA"}»)`); }
       if (GROUP_ORIGIN.has(origin) && hints.madeRule) {
         const inG = (c) => CAT.COUNTRY_GROUP[origin].includes(c), MR = hints.madeRule;
         const judge = (part, m) => {
@@ -5609,10 +5611,16 @@ export function chinaPlantInRow(e, u) {
   return null;
 }
 // sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
+// comappower, suneco-linyi, yanan-power có cột "Engine origin" ghi "JAPAN OR CHINA" ngay sau ô động cơ (Mitsubishi): cũng là hai nơi.
 export function placesInRow(e, u) {
-  if (u?.supplierId !== "sanq-power" || !u?.line) return null;
+  if (!u?.line) return null;
   const code = CAT.keyOf(placeCode(e?.model)), cells = CAT.cellsOf(u.line).map((c) => String(c).trim());
-  return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
+  if (u.supplierId === "sanq-power") return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
+  if (ENGINE_ORIGIN_COL[u.supplierId]?.[1] === "after" && (u.header || []).some((h) => /engine origin/i.test(h))) {
+    const at = cells.findIndex((c) => CAT.keyOf(c) === code);
+    if (at >= 0 && /^japan\s+or\s+china$/i.test(cells[at + 1] || "")) return ["JP", "CN"];
+  }
+  return null;
 }
 export function comprOff(facts, exact) {
   const list = (facts || []).filter((f) => f.key === "compr");

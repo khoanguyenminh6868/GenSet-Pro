@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — NCC tự ghi nhà máy Trung Quốc của động cơ ở chính dòng (Khoa 22/11/2026).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, chinaPlantInRow, placeInRow } from "./config-bot.mjs";
+import { candidates, hintsOf, chinaPlantInRow, placeInRow, placesInRow } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const K = { model: "KTA50-GS8", make: "Cummins" }, P = { model: "403A-15G1", make: "Perkins" };
@@ -51,6 +51,25 @@ test("shanhua: nhãn Manufacturer ghi India Factory đọc IN, chỉ khi đúng 
   const rows = ["| Engine Model | 1103A-33TG2", "| 制造商 Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)"];
   assert.equal(placeInRow({ model: "1103A-33TG2", make: "Perkins" }, { lines: { rows } }), "IN");
   assert.equal(placeInRow({ model: "1103A-33TG2", make: "Cummins" }, { lines: { rows } }), null);
+});
+test("JAPAN OR CHINA: G7/EU giữ dòng, không trừ điểm, gắn cần xác nhận; G20 không gắn; chỉ đúng cột của NCC trong danh sách", () => {
+  const H = "| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data";
+  const line = "| Y1 | 825 | 750 | S6R2-PTAA | JAPAN OR CHINA | 6 | PDF", S = { model: "S6R2-PTAA", make: "Mitsubishi" };
+  assert.deepEqual(placesInRow(S, { supplierId: "yanan-power", line, header: [H] }), ["JP", "CN"]);
+  assert.equal(placesInRow(S, { supplierId: "khac", line, header: [H] }), null);
+  assert.equal(placesInRow(S, { supplierId: "yanan-power", line, header: ["| Model | a | b | Engine | Note | c | d"] }), null);
+  assert.equal(placesInRow(S, { supplierId: "yanan-power", line: "| Y1 | 825 | 750 | S6R2-PTAA | 6 | JAPAN OR CHINA | PDF", header: [H] }), null);
+  assert.equal(chinaPlantInRow(S, { supplierId: "yanan-power", line, header: [H] }), null);
+  const rows = [{ id: "yanan-power", country: "CN", confidence: "high", specTables: [{ n: 105, title: "Mitsubishi gensets", header: [H], rows: ["| Y1 | 825kVA | 750kVA | S6R2-PTAA | JAPAN OR CHINA | 6 | PDF"] }] }];
+  const hints = { ...hintsOf("Chương V. Yêu cầu kỹ thuật\nĐiện áp 380 V"), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] };
+  const go = (origin) => candidates(C.build(rows), { value: 700, unit: "kVA" }, hints, { suppliers: rows, origin });
+  const r = go("g7eu"), x = r.top.find((y) => y.e.model === "S6R2-PTAA");
+  assert.deepEqual(r.dropped, []);
+  assert.deepEqual(x.ruled, []);
+  assert.equal(x.made.engine, "?");
+  assert.ok(x.why.some((w) => w.includes("cần xác nhận nơi sản xuất động cơ (NCC ghi «JAPAN OR CHINA»)")));
+  const g20 = go("g20").top.find((y) => y.e.model === "S6R2-PTAA");
+  assert.ok(g20 && !g20.why.some((w) => w.includes("JAPAN OR CHINA")));
 });
 test("candidates: loại ở G7/EU, giữ ở G20 và gói không đòi nhóm; Baudouin ở lại", () => {
   const H = "| Model | Prime kVA | Prime kW | Engine | Engine make | Alternator |";
