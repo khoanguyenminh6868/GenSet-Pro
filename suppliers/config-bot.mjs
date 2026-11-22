@@ -1043,6 +1043,7 @@ export function hzOfRow(u) {
 // CHỈ NCC này, chỉ cho chính dòng đó: không tính vào "động cơ chỉ có một tần số" của dòng NCC khác; dòng tự ghi Hz / tốc độ thì theo chính nó.
 export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /^HC-(?:BD\s*)?\d+(?:GF\d*)?-60$/i.test(String(CAT.cellsOf(u.line)[0] ?? "").trim()) ? 60 : null);
 // Mã Baudouin có dấu "^": tờ hãng chú thích "^ Primarily for ESP applications" (sources/baudouin/1015, 1017–1020).
+// Tờ có chú thích chỉ ghi 3 mã trong danh mục (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^); các mã khác theo cùng ký hiệu do NCC ghi.
 // Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
 export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
 export function freqOfHsmt(t) {
