@@ -19,7 +19,8 @@ function judge(key, supplierId, extra) {
   const u = e.uses.find((x) => x.supplierId === supplierId && !x.freq && Object.keys(x.power || {}).length);
   assert.ok(u, `${key} ${supplierId}`);
   const p = Object.values(u.power)[0], unit = p.kVA != null ? "kVA" : "kW";
-  const R = candidates(cat, { value: p[unit], unit }, { ...base, ...extra }, { suppliers: list, facts, focus: new Set([key]) });
+  // Cỡ lấy từ mức đầu của dòng (có thể là standby): ghi rõ để luật "không ghi mức = prime" không đụng ca này.
+  const R = candidates(cat, { value: p[unit], unit, rating: "standby" }, { ...base, ...extra }, { suppliers: list, facts, focus: new Set([key]) });
   const same = (x) => x.u === u;
   return { out: R.dropped.find(same), kept: R.all.find(same) };
 }

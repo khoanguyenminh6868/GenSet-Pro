@@ -503,12 +503,21 @@ const tolAt = (cell, end) => { const t = cell.slice(end, end + 24).match(/^\s*\(
 const withTol = (v, t, sign) => (!t ? v : Math.round((t.pct ? v * (1 + (sign * t.n) / 100) : t.n < v * 0.2 ? v + sign * t.n : v) * 1000) / 1000);
 // The genset's figure, not a transformer's or a UPS's in the same text (web/bidprice.js capPick, 2026-11-04 regression);
 // a text whose every figure is another device's gives none.
+// Whether the HSMT writes this size as a STANDBY figure (Khoa 21/11/2026: a size with no rating written is the prime). Only
+// the words that rate the figure: "Công suất dự phòng 100 kVA", "Standby ≥ 100 kVA", "100 kVA dự phòng". "Máy phát điện dự
+// phòng 100 kVA", "nguồn dự phòng", "Standby generator" say what the set is for, not the rating.
+const SB_BEFORE = /c[ôo]ng su[ấa]t[^\d]{0,20}(?:d[ựu] ph[òo]ng|stand-?by|stanby|\bESP\b)|(?:stand-?by|stanby|\bESP)(?:\s+power)?\)?\s*[:≥>=]*\s*$|(?<!m[áa]y |ph[áa]t |đi[ệe]n |di[eê]s[eê]l |ngu[ồo]n )d[ựu] ph[òo]ng\)?\s*[:≥>=]*\s*$/i;
+const SB_AFTER = /^\s*\(?\s*(?:d[ựu] ph[òo]ng|stand-?by|stanby|ESP)\b/i, SB_PRIME = /li[êe]n t[ụu]c|prime|\bPRP\b|\bCOP\b|continuous|c[ơo] b[ảa]n/i;
+export function standbySize(text, at, len) {
+  const t = String(text || ""), before = t.slice(Math.max(0, at - 60), at).normalize("NFC").split(/[;\n]|,(?!\d)/).pop(), after = t.slice(at + len, at + len + 20).normalize("NFC");
+  return SB_AFTER.test(after) || (SB_BEFORE.test(before) && !SB_PRIME.test(before));
+}
 export function capacity(texts) {
   for (const t of texts) {
     const s = noTolerance(t), m = BP.capPick(s, [...s.matchAll(new RegExp(CAP.source, "gi"))]);
     if (!m) continue;
     const u = m[2].toLowerCase().replace(/^e/, "");
-    return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW" };
+    return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW", ...(standbySize(s, m.index, m[0].length) ? { rating: "standby" } : {}) };
   }
   return null;
 }
@@ -550,7 +559,7 @@ export function sizesOf(texts, name = "") {
       // "Tổng 97 máy: 27 x 15 kVA": 27, not the total.
       const before = clause.slice(0, m.index), q = before.match(SIZE_QTY_X) || before.match(SIZE_QTY_N) || clause.slice(m.index + m[0].length).match(/^\D{0,6}(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái)\b/i);
       const qty = q && !/tổng\W*$/i.test(before.slice(0, q.index + q[0].indexOf(q[1]))) ? Number(q[1]) : null;
-      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW" }, qty, rank, quote: clause.trim() });
+      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank, quote: clause.trim() });
     }
     const best = Math.min(...figs.map((f) => f.rank));
     let use = figs.filter((f) => f.rank === best);
@@ -564,7 +573,7 @@ export function sizesOf(texts, name = "") {
     // A size in kVA as written (the catalog's unit); MVA / MW as kVA / kW.
     let sizes = groups.map((g) => {
       const f = g.find((x) => x.cap.unit === "kVA" || x.cap.unit === "MVA") || g[0], big = f.cap.unit.startsWith("M");
-      const cap = big ? { value: f.cap.value * 1000, unit: f.cap.unit === "MVA" ? "kVA" : "kW" } : f.cap;
+      const cap = big ? { value: f.cap.value * 1000, unit: f.cap.unit === "MVA" ? "kVA" : "kW", ...(f.cap.rating ? { rating: f.cap.rating } : {}) } : f.cap;
       return { cap, kva: Math.round(g[0].kva * 100) / 100, qty: Math.max(0, ...g.map((x) => x.qty || 0)) || null, label: `${cfgNumOf(cap.value)} ${cap.unit}`, quote: g[0].quote.slice(0, 200) };
     });
     // Another rating of the same set: "4 x 4000 kVA ... liên tục ≥ 3250kVA" (a size with no quantity up to 30% below one
@@ -1753,7 +1762,10 @@ function twinFacts(e, ef, facts) {
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
-  const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
+  const inRange = (x) => x != null && x >= cap.value * band.low && x <= cap.value * band.high + 1e-9;
+  // First gate: any rating of the row in the band. A size the HSMT writes as standby stops here. A size with no rating written
+  // is the prime (Khoa 21/11/2026): the row's prime must be in the band too, judged below (`ruled: "band"`, with its reason).
+  const near = (u) => !cap || Object.values(u.power || {}).some((p) => inRange(p[cap.unit]));
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
   const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x]));
   for (const e of cat.engines || []) {
@@ -1906,6 +1918,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
       if (lowPrime) { score -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
+      // The size read as prime (Khoa 21/11/2026): a row in the band only by another rating (prime 95 / standby 105 for 100 kVA).
+      else if (cap && !gNamed && cap.rating !== "standby" && !inRange(rowPower(u, cap))) { const x = rowPower(u, cap); score -= 600; ruled.push("band"); why.push(`công suất tính theo prime ${Math.round(x * 100) / 100} ${cap.unit}, ngoài ${band.text} của ${cap.value} ${cap.unit}`); }
       // Its own fuel consumption in L/h above the most the HSMT allows (Khoa, 2026-11-12): the row is left out like one under
       // a minimum (same exception: `named` stays, with 300 points off). A row with no L/h figure at that load is kept.
       let fuelOver = false, fuelNoLoad = false;
@@ -2429,7 +2443,14 @@ function suppliersMd(suppliers) {
   }
   return out.join("\n");
 }
-const rowPower = (u, cap) => Math.min(...Object.values(u.power || {}).map((p) => p[cap.unit] ?? 1e9), 1e9);
+// The row's power to compare with the HSMT's size. A size with no rating written is the prime (Khoa 21/11/2026): the row's
+// prime; only a standby: ÷ 1.1 (BP.STANDBY_FACTOR, as `gap` and webInBand); only a figure of no rating: that figure. None in
+// the size's unit: 1e9 (out of every band). A size written as standby: the smallest rating of the row, as before.
+const rowPower = (u, cap) => {
+  const p = u.power || {}, unit = cap.unit;
+  if (cap.rating === "standby") return Math.min(...Object.values(p).map((x) => x[unit] ?? 1e9), 1e9);
+  return p.prime?.[unit] ?? (p.standby?.[unit] != null ? p.standby[unit] / (BP.STANDBY_FACTOR || 1.1) : p.rated?.[unit]) ?? 1e9;
+};
 
 // The HSMT text of a tender (its files, then the notice); `parts` alone is what the requirements are read from.
 export async function hsmtTextOf(key, read = doc) {

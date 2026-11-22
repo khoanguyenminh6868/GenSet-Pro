@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-22T03:32:48.741Z
+  modified: 2026-11-22T07:34:47.560Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -134,5 +134,7 @@ Khoa 21/11/2026 (đợt "fix luôn các lỗi đã phát hiện"), các quyết 
 - **Gói đòi đồng bộ thương hiệu: NCC ngoài Trung Quốc (vd Powerpack, Thổ Nhĩ Kỳ) ĐƯỢC vào danh sách** (Khoa 22/11/2026 "có"; IB2300329776): giữ luật nới `groupSuppliers` hiện có, đừng chặn.
 - **Bố trí xi lanh (luật 17/11 sửa)**: ô bố trí của chính dòng mà có từ HAI NCC khác ghi ngược lại cho cùng động cơ thì không dùng để loại (Khoa 22/11/2026 "Ok đồng ý"; ca: longkai QSK19-G4 "V12", liangzi KTA38 "12 L", jianghao DP222 "12 L"). 3 dòng aosif (KTA19-G9A, QSK19-G35, QSK19-G31 ghi "12V") phải sửa dữ liệu / gắn cờ.
 - **Bước chọn ứng viên lọc theo tỉ số nén HSMT ghi trơ** (Khoa 21–22/11/2026, PR #1062): nguồn NCC / bên lắp máy (vd Powerpack ghi 6M33G750/5 15:1) ghi số khác cũng được dùng để loại ("có loại"), không cần tờ hãng. Dòng NCC tự ghi nước sản xuất ngoài nhóm HSMT đòi ("India 4006-23TAG2A" ở gói G7/EU) thì loại. Tiêu hao trên tờ hãng động cơ phải thành thông số động cơ (Khoa 22/11 "có làm đi").
+- **sanq-power ghi "UK/INDIA"** (37 dòng, 6 trong top 30 IB2600603983): Khoa 22/11/2026: gói đòi G7/EU thì giữ dòng và gắn "cần xác nhận nơi sản xuất".
 - **HSMT tự ghi dung sai ngay sau ngưỡng** ("≥ 8,5 ± 0,5", "≤ 1,3 L ± 5 %"): Khoa 21/11/2026 "có": tính dung sai vào ngưỡng (nhận từ 8,0; nhận tới 1,365). Áp cho MỌI ngưỡng kể cả công suất ("≥ 400 kVA ± 5 %" nhận từ 380; Khoa: "nếu có +- % thì cứ áp"); ca chữ nguồn nghi là "+ 1 %" chứ không phải ± (IB2300296794) thì KHÔNG hạ.
 - **Máy lớn hơn công suất HSMT, tiêu hao 100 % tải của chính nó vượt ngưỡng HSMT** (#1022, 538 dòng): Khoa 21/11/2026 "loại như hiện tại"; KHÔNG quy tỉ lệ công suất (đó là ước lượng).
+- **Cỡ máy HSMT không ghi mức**: Khoa 21/11/2026 "nếu không ghi thì hiểu là prime": dòng phải có prime trong dải. Dòng chỉ ghi standby: Khoa 22/11/2026 chọn "A" = prime tính bằng standby ÷ 1,1 (không chọn B: giữ dòng, gắn "chưa rõ prime"). HSMT ghi rõ công suất standby: giữ luật cũ (em quyết, Khoa chưa xét riêng).
