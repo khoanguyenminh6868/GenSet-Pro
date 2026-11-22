@@ -2834,7 +2834,8 @@
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
       [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
     { brand: "ComAp", word: /\bcomap\b/i, models: [
-      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? m[2].toUpperCase() : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      // "InteliSys Gas", "InteliDrive DCU Marine" / "DCU Industrial" are models of their own (bdk-ds-4: their datasheets are ComAp's).
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200|Gas\b|DCU\s?Marine\b|DCU\s?Industrial\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2].replace(/\s+/g, " ").replace(/^dcu\s?/i, "DCU ").replace(/\b(gas|marine|industrial)\b/i, (w) => w[0].toUpperCase() + w.slice(1).toLowerCase()).trim()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
       // ComAp order codes of InteliGen NT / NTC (IG-NT GC, IG-NTC-BB...).
       [/\bIG-?(NTC?)(?![\w])/gi, (m) => `InteliGen ${m[1].toUpperCase()}`],
       [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],

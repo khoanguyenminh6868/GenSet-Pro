@@ -862,6 +862,11 @@ const GENERATION = [
   (key, k) => /^HGM\d{4}$/.test(key) && k === `${key}N`,
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
   (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
+  // bdk-ds-4 (Khoa/điều phối 22/11/2026): suppliers' short names of ComAp's own order codes ("IG-NT GC", "IG-NTC-BB", IG500, IG1000)
+  // take the datasheet of that InteliGen, to be confirmed (IG200 is not mapped: InteliGen 200 and InteliGen4 200 are two products).
+  (key, k) => ({ IGNT: "INTELIGENNT", IGNTCBB: "INTELIGENNTC", IG500: "INTELIGEN500", IG1000: "INTELIGEN1000" })[key] === k,
+  // "InteliLite 4", "InteliMains", "InteliSys" written without a model: every datasheet of that family, to be confirmed.
+  (key, k) => (key === "INTELILITE4" && /^INTELILITE4(AMF|MRS)\d+$/.test(k)) || (key === "INTELIMAINS" && /^INTELIMAINS(NTC?|\d{1,4})$/.test(k)) || (key === "INTELISYS" && /^INTELISYS(NTC?|GAS|\d{1,4})$/.test(k)),
 ];
 // ---------- Datasheet một model của tổ máy, dạng dọc (2026-11-13, IB2600601812) ----------
 // A genset maker's datasheet of one genset, written as label tables, one per block of the sheet ("DHY110KSE",
