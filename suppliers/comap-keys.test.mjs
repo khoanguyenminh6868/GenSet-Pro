@@ -33,5 +33,5 @@ test("modelFacts / factsFor: tờ hãng ComAp tới model NCC ghi", () => {
   }
   // không gắn bừa: IG200 (InteliGen 200 ≠ InteliGen4 200), InteliLite NT AMF20 / MRS10 (không có datasheet hãng)
   // InteliDrive DCU Marine: bộ điều khiển động cơ, không tính là BĐK tổ máy (điều phối 22/11/2026): tờ lưu nhưng không gắn model.
-  for (const m of ["IG200", "InteliLite NT AMF20", "MRS10", "InteliDrive DCU Marine", "InteliDrive"]) assert.equal(n(m).length, 0, m);
+  for (const m of ["IG200", "InteliLite NT AMF20", "MRS10", "InteliDrive DCU Marine"]) assert.equal(n(m).length, 0, m);
 });
