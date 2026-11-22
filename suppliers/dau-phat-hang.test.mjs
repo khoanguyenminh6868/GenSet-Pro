@@ -199,7 +199,7 @@ test("makerAlts: model HSMT nêu đứng đầu (IB2600602880: TAL-A44-J trướ
 
 test("altAttrChecks đọc khối General characteristics của Leroy-Somer (cả model trong tờ dải)", () => {
   const attrs = ratingsFor(RT.attr, "LSA 49.3 M8");
-  assert.deepEqual([...new Set(attrs.map((a) => a.key))].sort(), ["altitude", "avr", "excitation", "insulation", "ip", "overspeed", "sc300", "vreg"]);
+  assert.deepEqual([...new Set(attrs.map((a) => a.key))].sort(), ["altitude", "avr", "excitation", "insulation", "ip", "overspeed", "sc300", "standards", "vreg"]);
   const c = { alternator: { model: "LSA 49.3 M8" }, checks: [] };
   altAttrChecks(c, [
     { code: "alt_short_circuit", item: "Ngắn mạch", requirement: "300% (3 IN) trong 10 giây", part: "alternator" },

@@ -30,7 +30,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
-import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs, meccDerate, meccSheetAttrs } from "./ratings.mjs";
+import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs, lsStandards, stdCodes, meccDerate, meccSheetAttrs } from "./ratings.mjs";
 import { apiMeter, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as FC from "./firecrawl.mjs";
@@ -778,6 +778,7 @@ export function controllerSheetFacts(s, t) {
 }
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
+const titleModelKeys = (title, partKeys) => [...new Set(String(title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role])), rowsMap = normRowsOf(suppliers);
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
@@ -792,7 +793,7 @@ export function modelFacts(cat, suppliers = []) {
       if (t.header?.length) continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
       // A word with "/" that is itself a model of the catalog ("6M31G825/5") stays one code; any other splits at "/".
-      const models = [...new Set(String(t.title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+      const models = titleModelKeys(t.title, partKeys);
       if (models.length !== 1) continue;
       // A genset maker's own datasheet of a part it makes (Wintpower "WT544C - Technical Data Sheet", Khoa 2026-11-03),
       // saved by maker-datasheets.mjs ("Datasheet: …"), gives the figures of that model when the catalog knows it.
@@ -2866,7 +2867,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir), engSheets = engineSheetsOf(built, suppliers);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
   // A row catalog.js merged from several tables (`also`) answers to each of their sources.
@@ -3631,7 +3632,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         c.checks.unshift({ item: "Nhiên liệu (HSMT)", requirement: `Nhiên liệu của tổ máy: ${want} (${fh.why})`, hsmtQuote: fh.stated ? fh.why : "", offered: `Dòng bảng của ${u.supplierId} ghi ${kind(u.fuel)}`, part: "engine", level: "core", byCode: true, fuelRule: true, status: "not_met", note: `Code ghi: dòng catalog ${u.supplierId} [${u.n}] ${u.fuelWhy || ""} (mức ${u.fuelFrom || "?"}); HSMT ${fh.stated ? "nêu" : "không nêu nhiên liệu nên coi là"} ${want}.` });
       }
     }
+    engineSheetChecks(c, result.requirements || [], c.engine?.model ? engSheets.get(CAT.keyOf(c.engine.model)) : null, ratingsFor(RT.alt, c.alternator?.model), row);
     confirmChecks(c, result.requirements || []);
+    altDocChecks(c, result.requirements || [], altAttrs);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
     makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") }, { hsmtCompr });
@@ -4279,6 +4282,7 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
         const L = text.split("\n"), i = L.findIndex((l) => /Short-circuit current/i.test(l)), two = i >= 0 ? `${L[i]} ${L[i + 1] || ""}` : "", m = two.match(/(\d(?:\.\d+)?)\s*In\s*:?\s*(\d+)\s*sec/i);
         if (m && (Number(m[1]) < 3 || Number(m[2]) < 10)) lsa.push({ key: "scLow", value: { pct: Math.round(Number(m[1]) * 100), s: Number(m[2]) }, lines: [L[i], /In\s*:/i.test(L[i]) ? null : L[i + 1]].filter(Boolean) });
       }
+      if (lsa.length) lsa.push(...lsStandards(text));
       if (lsa.length) for (const m of new Set(rs.filter((r) => r.part === "alternator" && /^(TAL|LSA)\b/i.test(r.model)).map((r) => r.model)))
         for (const k of keysOfModel(m)) for (const a of lsa) add(attr, k, { ...a, model: m, supplierId: s.id, n: src.n, url: src.url, range: true });
       // A Mecc Alte range sheet (D2): insulation and sustained short circuit, of every model of its ratings.
@@ -5250,6 +5254,111 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
       const as = alts.map((g) => g.has.map((k) => one(attrs, k)).filter(Boolean)), ok = alts.every((g, i) => (g.or ? as[i].length > 0 : as[i].length === g.has.length));
       if (ok) { const a = as.flat()[0]; putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: [...new Set(as.flat().map((x) => x.lines[0].replace(/^\|\s*|\s*\|\s*$/g, "").replace(/\s*\|\s*/g, ": ")))].join("; "), sourceQuote: [...new Set(as.flat().map(quoteOf))].join(" | "), part: "alternator", level: r.level || "core", status: "met", byCode: true,
         sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines }, note: `Code đọc từ ${sheet(a)}.` }); }
+    }
+  }
+  return c;
+}
+// ---------- AVR, tiêu chuẩn đầu phát từ tờ hãng (nhóm E, Khoa 21/11/2026) ----------
+// Runs after confirmChecks, whose "nguồn của cấu hình không nói tới" is wrong when the alternator's sheet says it. AVR: a
+// requirement that only asks for an AVR is met by the AVR the sheet names; one naming a model or a band is left as it is.
+// Standards: each code the HSMT names against the sheet's sentence, code for code (stdCodes). All there → met; some →
+// stays "cần chứng từ", the note saying which the sheet gives and which it does not.
+const AVR_ONLY = /(?<!\p{L})(?:t[ựu]\s*đ[ộo]ng|[ổo]n\s*đ[ịi]nh|đi[ềe]u\s*ch[ỉi]nh|đi[ệe]n\s*[áa]p|b[ằa]ng|c[óo]|b[ộo]|AVR)(?!\p{L})|[:;,.()\s]/giu;
+export function altDocChecks(c, reqs = [], attrs = []) {
+  if (!attrs.length) return c;
+  const sheet = (a) => `tờ thông số ${a.model} của hãng (${a.supplierId} [${a.n}])`;
+  for (const r of reqs) {
+    if (r.part !== "alternator" || r.byCode || (r.code !== "alt_avr" && r.code !== "alt_standard")) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if ((x && x.status !== "unclear" && x.status !== "confirm") || x?.unverified || x?.conflict || x?.version || x?.parts?.length) continue;
+    const base = { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", part: "alternator", level: r.level === "option" ? "option" : "core", byCode: true, rule: "to-hang-dau-phat" };
+    const src = (a) => ({ sourceQuote: quoteOf(a), sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines } });
+    if (r.code === "alt_avr") {
+      const a = one(attrs, "avr") || one(attrs, "avrStd");
+      if (!a || String(r.requirement || "").replace(AVR_ONLY, "")) continue;
+      putCheck(c, x, { ...base, ...src(a), offered: `AVR ${a.value.join(" / ")} (tờ hãng)`, status: "met", note: `Code đọc từ ${sheet(a)}.` });
+      if (x) delete x.confirm;
+      continue;
+    }
+    const a = one(attrs, "standards"), want = stdCodes(r.requirement);
+    if (!a || !want.length) continue;
+    const have = want.filter((w) => a.value.includes(w)), miss = want.filter((w) => !a.value.includes(w));
+    if (!miss.length) { putCheck(c, x, { ...base, ...src(a), offered: `${have.join(", ")} (tờ hãng)`, status: "met", note: `Code đọc từ ${sheet(a)}.` }); if (x) delete x.confirm; }
+    else if (x?.status === "confirm" && have.length) Object.assign(x, { ...base, ...src(a), offered: `${have.join(", ")} (tờ hãng)`, note: `Code đọc từ ${sheet(a)}: tờ ghi ${have.join(", ")}; không ghi ${miss.join(", ")}, cần NCC cung cấp chứng từ.` });
+  }
+  return c;
+}
+// ---------- Tốc độ, nhiên liệu, tần số từ tờ hãng động cơ (nhóm C, D; Khoa 21/11/2026 "1. có") ----------
+// The sheet of exactly one engine: a table of an engine_maker supplier whose title names that one catalog model. Speed from a
+// row "Rated Speed | 1500" or a table whose header's first column is RPM; fuel from "Thermodynamic Cycle | Diesel 4 stroke" or
+// "Fuel type | Diesel". Kept apart from modelFacts: speed is ROW_ONLY there, and the labels are not catalog specs.
+const SHEET_SPEED = /^(?:engine\s+)?(?:rated\s+)?speed(?:\s*(?:rpm|r\/min))?$|^rpm$/i, SHEET_FUEL = /^(?:thermodynamic\s+cycle|working\s+cycle|fuel\s+type|type\s+of\s+fuel)$/i;
+const sheetLabel = (s) => String(s || "").replace(/[​-‍﻿]/g, "").replace(/[()[\]:：]/g, " ").replace(/\s+/g, " ").trim();
+const rpmCell = (s) => { const m = String(s).trim().match(/^(\d{3,4})\s*(?:rpm|r\/min)?$/i), v = m ? Number(m[1]) : 0; return v >= 600 && v <= 3600 ? v : null; };
+export function engineSheetsOf(cat, suppliers = []) {
+  const out = new Map(), engines = new Set((cat.engines || []).map((e) => e.key)), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
+  for (const s of suppliers || []) {
+    if (s?.role !== "engine_maker") continue;
+    for (const t of s.specTables || []) {
+      const models = titleModelKeys(t.title, partKeys);
+      if (models.length !== 1 || !engines.has(models[0])) continue;
+      const e = out.get(models[0]) || { speeds: [], fuels: [] }, at = { supplierId: s.id, n: t.n };
+      if (!t.header?.length) {
+        for (const line of t.rows || []) {
+          const cells = CAT.cellsOf(line), label = sheetLabel(cells[0]);
+          if (cells.length < 2) continue;
+          if (SHEET_SPEED.test(label)) { const v = cells.slice(1).map(rpmCell); if (v.every((x) => x != null)) for (const x of v) e.speeds.push({ v: x, line, ...at }); }
+          if (SHEET_FUEL.test(label) && /\bdiesel\b/i.test(cells[1]) && !/\bgas\b|gasoline|petrol/i.test(cells[1])) e.fuels.push({ line, ...at });
+        }
+      } else if (t.header.some((h) => /^rpm$/i.test(sheetLabel(CAT.cellsOf(h)[0])))) {
+        for (const line of t.rows || []) { const v = rpmCell(CAT.cellsOf(line)[0]); if (v != null) e.speeds.push({ v, line, ...at }); }
+      }
+      if (e.speeds.length || e.fuels.length) out.set(models[0], e);
+    }
+  }
+  return out;
+}
+// The speed / frequency the configuration's own genset row writes: "1800 rpm", "1800转", "60 Hz" anywhere in its header, line
+// or title, or a bare 1500 / 1800... cell of a line whose header names a speed column (WPG660 | 1800).
+const RUN_RPM = new Set([1000, 1200, 1500, 1800, 3000, 3600]), HZ_OF_RPM = { 1000: 50, 1200: 60, 1500: 50, 1800: 60, 3000: 50, 3600: 60 };
+export function rowRunOf(row) {
+  if (!row) return { speeds: [], hzs: [] };
+  const head = (row.header || []).join(" "), all = [head, row.line || "", row.title || ""].join(" ");
+  const hzs = [...all.matchAll(/\b(50|60)\s*-?\s*Hz/gi)].map((m) => Number(m[1]));
+  const said = [...all.matchAll(/(?<!\d)(\d{3,4})\s*(?:rpm|r\/min|rev\/min|v\/p|vòng|转)/gi)].map((m) => Number(m[1])).filter((v) => v >= 600 && v <= 3600);
+  const cells = /speed|rpm|r\/min|转速|v\/p|v[òo]ng/i.test(head) ? CAT.cellsOf(row.line || "").map(rpmCell).filter((v) => RUN_RPM.has(v)) : [];
+  return { speeds: [...new Set([...said, ...cells])], hzs: [...new Set(hzs)] };
+}
+// Each "met" only, of a check left "unclear", with the part it comes from in the note. Frequency needs both parts: the
+// alternator's sheet rated at that frequency and the engine's sheet at the speed of 4 poles for it. The engine's sheet decides
+// a speed only when it gives ONE speed and the genset row writes no other speed or frequency: a 60 Hz / 1800 rpm row of an
+// engine whose sheet also gives 1500 is not "≤ 1500 v/p" (điều phối 22/11/2026, WPG660 6M31G660/6).
+export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], row = null) {
+  if (!sheet) return c;
+  const run = rowRunOf(row), runsAt = (v) => !run.speeds.some((s) => s !== v) && !run.hzs.some((h) => h !== HZ_OF_RPM[v]);
+  const engine = c.engine?.model || "", where = (f) => `tờ hãng động cơ ${engine} (${f.supplierId} [${f.n}])`;
+  const put = (r, o, f, part, offered, note) => putCheck(c, o.x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered, sourceQuote: f.line, part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "to-hang-dong-co",
+    sheetSrc: { supplierId: f.supplierId, n: f.n, line: f.line }, note });
+  const speeds = [...new Set(sheet.speeds.map((x) => x.v))];
+  for (const r of reqs) {
+    if (r.byCode) continue;
+    const req = String(r.requirement || "");
+    if (r.code === "speed" && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), lim = oneFig(req, /(\d[\d.,]{2,})/g);
+      if (!o || lim == null || /≥|>|t[ốo]i\s*thi[ểe]u/i.test(req)) continue;
+      if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
+      const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
+      put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
+    } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
+      const o = openCheck(c, r), f = sheet.fuels[0];
+      if (o) put(r, o, f, r.part || "genset", "Diesel (động cơ, tờ hãng)", `Code đọc từ ${where(f)}: nhiên liệu của động cơ.`);
+    } else if (r.code === "frequency" && r.part === "genset") {
+      const o = openCheck(c, r), hz = Number((`${req} ${r.quote || ""}`.match(/\b(50|60)\s*Hz/i) || [])[1]), rpm = hz === 50 ? 1500 : 1800;
+      const own = [...(row?.header || []), row?.line || "", row?.title || ""].join(" ");
+      if (!o || !hz || /\b(50|60)\s*-?\s*Hz/i.test(own)) continue;
+      const f = speeds.length === 1 && runsAt(rpm) ? sheet.speeds.find((x) => x.v === rpm) : null, a = altRatings.find((x) => x.hz === hz && (x.rpm == null || x.rpm === rpm));
+      if (!f || !a) continue;
+      put(r, o, { ...f, line: [f.line, a.lines?.[0]].filter(Boolean).join(" | ") }, "genset", `${hz} Hz (động cơ ${figVi(rpm, 0)} v/p, đầu phát có định mức ${hz} Hz)`, `Code đọc từ ${where(f)} và tờ hãng đầu phát ${c.alternator?.model || ""} (${a.supplierId} [${a.n}]).`);
     }
   }
   return c;
