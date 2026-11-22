@@ -1967,8 +1967,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // xét: comprOf đọc cả HSMT, chưa biết con số thuộc cỡ nào.
       if (hints.comprExact && hints.compr != null && !hints.multiSize) {
         // Mã có tiền tố nước ("UK 4006-23TAG2A") là mã gốc do NCC ghi kèm nơi sản xuất: dùng số của mã gốc.
-        const sameKey = COMPR_SAME.get(e.key) || (placeInModel(e.model) ? CAT.keyOf(String(e.model).trim().replace(/^\S+\s+/, "")) : null);
-        const off = comprOff([...ef, ...(facts.get(`engine:${sameKey}`) || [])], hints.compr);
+        const off = comprOff([...ef, ...(facts.get(`engine:${COMPR_SAME.get(e.key)}`) || [])], hints.compr);
         if (off) { score -= 600; ruled.push("compr"); why.push(`tỉ số nén ${[...new Set(off.map((f) => String(f.value).trim()))].join(" / ")}, HSMT ghi ${hints.compr}:1`); }
       }
       // NCC tự ghi nước sản xuất ngay trước mã động cơ ("India 4006-23TAG2A", kaihua n122; Khoa 21/11/2026): nước ngoài nhóm
@@ -5403,13 +5402,17 @@ export function comprExactOf(r, hsmtCompr) {
 // "Baudouin 6M33G825/5" và "6M33G8D3/5", tỉ số nén 15.0:1; kaihua ghi "6M33G8D3/5 (6M33G825/5)".
 export const COMPR_SAME = new Map([["6M33G8D3/5", "6M33G825/5"], ["6M33G8D3/5(6M33G825/5)", "6M33G825/5"]]);
 // Nước NCC ghi ngay trước mã động cơ. Chỉ hai tiền tố có thật trong suppliers/cn (kaihua n122, soát mọi mã 21/11/2026).
-export const placeInModel = (model) => (/^india\s+\S/i.test(String(model || "").trim()) ? "IN" : /^uk\s+\S/i.test(String(model || "").trim()) ? "GB" : null);
-// Nước ghi trong ô động cơ của một dòng: ô "<nước> <mã>" mà mã đúng là động cơ của bản ghi (khoá có tiền tố hay đã gộp).
+// "(UK/EP)", "(USA/EU)", đuôi "EU" không đọc: không chắc là nơi sản xuất (EU có thể là tiêu chuẩn khí thải). SME = nhà máy
+// Mitsubishi ở Thượng Hải (CN_PLANT của catalog).
+const PLACE_MARKS = [[/^india\s+(?=\S)/i, "IN"], [/^uk\s+(?=\S)/i, "GB"], [/\s*\(\s*india\s*\)$/i, "IN"], [/\s*\(\s*uk\s*\)$/i, "GB"], [/\s+SME$/, "CN"]];
+export const placeInModel = (cell) => { const s = String(cell || "").trim(); return PLACE_MARKS.find(([re]) => re.test(s))?.[1] || null; };
+const placeCode = (cell) => PLACE_MARKS.reduce((s, [re]) => s.replace(re, ""), String(cell || "").trim());
+// Nơi ghi trong ô động cơ của một dòng: ô "<nước> <mã>" / "<mã>(nước)" mà mã đúng là động cơ của bản ghi (khoá riêng hay đã gộp).
 export function placeInRow(e, u) {
-  const code = CAT.keyOf(String(e?.model || "").trim().replace(/^(india|uk)\s+/i, ""));
+  const code = CAT.keyOf(placeCode(e?.model));
   for (const c of CAT.cellsOf(u?.line || "")) {
     const at = placeInModel(c);
-    if (at && CAT.keyOf(String(c).trim().replace(/^\S+\s+/, "")) === code) return at;
+    if (at && CAT.keyOf(placeCode(c)) === code && (at !== "CN" || /mitsubishi/i.test(e?.make || ""))) return at;
   }
   return null;
 }

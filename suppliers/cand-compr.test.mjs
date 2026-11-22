@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — candidates(): tỉ số nén HSMT ghi trơ phải khớp (Khoa 21/11/2026, IB2600603983).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, comprOff, placeInModel } from "./config-bot.mjs";
+import { candidates, hintsOf, comprOff, placeInModel, placeInRow } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Compression ratio |";
@@ -49,7 +49,17 @@ test("mã có tiền tố nước dùng tỉ số nén của mã gốc", () => {
 test("placeInModel: chỉ đọc nước NCC ghi ngay trước mã", () => {
   assert.equal(placeInModel("India 4006-23TAG2A"), "IN");
   assert.equal(placeInModel("UK 4006-23TAG2A"), "GB");
-  for (const m of ["4006-23TAG2A", "UK-12Y", "US TIER3", ""]) assert.equal(placeInModel(m), null, m);
+  assert.equal(placeInModel("1103A-33G(India)"), "IN");
+  assert.equal(placeInModel("1103A-33G (UK)"), "GB");
+  assert.equal(placeInModel("S16R2-PTAW-C SME"), "CN");
+  for (const m of ["4006-23TAG2A", "UK-12Y", "US TIER3", "", "1103A-33G(UK/EP)", "1103A-33G(USA/EU)", "1104D-44TG2 EU"]) assert.equal(placeInModel(m), null, m);
+});
+test("placeInRow: đọc đúng ô của động cơ; SME chỉ tính cho Mitsubishi", () => {
+  const row = (cell) => ({ line: `| a-1 | 750 | 600 | ${cell} | S5L1D-H41 |` });
+  assert.equal(placeInRow({ model: "1103A-33G", make: "Perkins" }, row("1103A-33G(India)")), "IN");
+  assert.equal(placeInRow({ model: "1103A-33G", make: "Perkins" }, row("1104A-44TG1(India)")), null);
+  assert.equal(placeInRow({ model: "S16R2-PTAW-C", make: "Mitsubishi" }, row("S16R2-PTAW-C SME")), "CN");
+  assert.equal(placeInRow({ model: "X1234", make: "Perkins" }, row("X1234 SME")), null);
 });
 test("gói G7/EU: dòng NCC ghi India bị loại, dòng UK và dòng không ghi ở lại; G20 giữ India", () => {
   const rows = [sup("in", ["| i-1 | 750 | 600 | India 4006-23TAG2A | S5L1D-H41 | - |"]), sup("gb", ["| g-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
@@ -62,9 +72,11 @@ test("gói G7/EU: dòng NCC ghi India bị loại, dòng UK và dòng không ghi
 test("India 4006-23TAG2A bị loại ở g7eu cả khi khoá có tiền tố lẫn khi khoá đã gộp về mã gốc", () => {
   const rows = [sup("in", ["| i-1 | 750 | 600 | India 4006-23TAG2A | S5L1D-H41 | - |"]), sup("gb", ["| g-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
   const built = C.build(rows), bare = "4006-23TAG2A", key = C.keyOf(bare), mine = built.engines.filter((e) => C.keyOf(String(e.model).replace(/^(india|uk)\s+/i, "")) === key);
-  assert.equal(mine.length, 3, "fixture: ba khoá riêng trước khi gộp");
-  const merged = { ...built, engines: [...built.engines.filter((e) => !mine.includes(e)), { ...mine[0], key, model: bare, uses: mine.flatMap((e) => e.uses) }] };
-  for (const cat of [built, merged]) {
+  const uses = mine.flatMap((e) => e.uses), rest = built.engines.filter((e) => !mine.includes(e));
+  assert.equal(uses.length, 3, "fixture: ba dòng của cùng một mã");
+  const merged = { ...built, engines: [...rest, { ...mine[0], key, model: bare, uses }] };
+  const apart = { ...built, engines: [...rest, ...uses.map((u) => { const m = C.cellsOf(u.line).find((c) => c.includes(bare)); return { ...mine[0], key: C.keyOf(m), model: m, uses: [u] }; })] };
+  for (const cat of [apart, merged]) {
     const r = candidates(cat, { value: 700, unit: "kVA" }, free("Điện áp 380 V"), { suppliers: rows, origin: "g7eu" });
     assert.deepEqual(ids(r), ["gb", "none"]);
     assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["in", ["made"]]]);
