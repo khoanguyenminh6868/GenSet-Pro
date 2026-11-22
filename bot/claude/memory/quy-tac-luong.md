@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-21T14:08:54.106Z
+  modified: 2026-11-22T02:47:15.087Z
 ---
 
 Chỉ ghi quyết định của Khoa và hiểu biết nghiệp vụ. Bẫy code ghi ở `web/CLAUDE.md`, `suppliers/CLAUDE.md` trong repo; việc còn dở ghi ở sổ điều phối ([[orchestrator-delegate-by-model]]). Không có tệp nhật ký gom.
@@ -20,6 +20,8 @@ Chỉ ghi quyết định của Khoa và hiểu biết nghiệp vụ. Bẫy code
 - **Tiêu hao lấy từ tờ hãng động cơ** (Khoa 21/11/2026 "Giữ đạt", IB2600603983): số của ĐỘNG CƠ bằng đúng ngưỡng HSMT vẫn "đạt", nhưng check luôn ghi rõ nguồn là động cơ + dung sai nếu tờ ghi.
 - **Chấm từ tờ hãng** (Khoa 21/11/2026 "1. có 2. có 3. cho đạt theo thương hiệu", điều phối chuyển lời; chưa làm, xem `nghiem-thu\chua-ro-tu-datasheet-1.md`): (1) nhiên liệu / tần số tổ máy được đạt từ tờ động cơ / đầu phát, ghi rõ nguồn; (2) lưu operator manual BĐK vào nguồn, bắt đầu DSE7320 MKII, chức năng tuỳ chọn → "cần xác nhận"; (3) HSMT đòi "nhà sản xuất / nhãn hiệu G7, EU" → đạt theo thương hiệu nguồn ghi (Baudouin = Pháp) + ghi chú "nơi sản xuất cần CO"; chưa rõ hãng vẫn chưa rõ; HSMT đòi NƠI SẢN XUẤT thì vẫn cần CO.
 - **Tiêu hao của máy lớn hơn công suất HSMT** (Khoa 21/11/2026, điều phối chuyển lời, 538 dòng ở #1022): "loại như hiện tại", so thẳng L/h với ngưỡng HSMT, không quy tỉ lệ theo công suất.
+- **Tiêu hao tờ hãng ở bước chọn ứng viên** (Khoa 22/11/2026 "có làm đi", điều phối chọn hướng A, PR #1081 draft): dòng có số thì theo dòng; dòng không có số dùng số tờ hãng động cơ; vượt thì loại như số của dòng; đạt không cộng điểm.
+- **Sổ điều phối và chữ HSMT** (Khoa 22/11/2026 "Giữ nguyên" lịch sử nhánh `dieu-phoi`, không viết lại, không force-push): Sync đẩy mọi tệp trong sổ, nên tệp soát có trích chữ HSMT phải ghi ở `genbid-work\doc-cache\soat-1022\` hoặc scratchpad, không ghi trong `dieu-phoi\`.
 - **NCC trên web:** yêu thích (☆, chung cả nhóm; dropdown Báo giá chỉ hiện NCC yêu thích); Loại trừ (mọi bot bỏ qua). Nhật ký hoạt động chỉ giữ 1 ngày.
 - **Egress Supabase:** PR liên quan phải qua nghiệm thu của phiên điều phối. Khoa đã bảo bỏ (12/11/2026): lọc realtime `hsmttext`, chờ số Usage để lên Pro — đừng đề xuất lại.
 
