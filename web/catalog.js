@@ -2341,7 +2341,7 @@
   // A bare "Model | <code>" line (no engine role written) right over engine figures (Khoa 22/11/2026: "có cho ngoại lệ"), listed table
   // by table, only where the code is CHECKED as an engine's: the same code is already an engine key of ANOTHER supplier in cn/ (a make
   // written in the table would do too; none of these writes one, so `make` is left out):
-  //   endress n123 / n135 "Model | 1103A-33TG2" (Perkins key of 40+ suppliers), n126 "F34TEVP01" (FPT, green-power n121), n145
+  //   endress n123 / n135 "Model | 1103A-33TG2" (Perkins key of 83 suppliers on 2aa92830), n126 "F34TEVP01" (FPT, green-power n121), n145
   //   "4TNV98CT-IYE" (Yanmar, cgm / stephill / voltgent), n146 "4TNV98C-IYE" (Yanmar, cgm / voltgent); the lines under it are
   //   "Displacement [ccm]", "Engine output (PRP) [kW]", "RPM": the engine's. Only the displacement is read, as above.
   // Left out (cc-129-model-tro): endress n127 "3TNV88F-UGPGE", n128 "3TNV80F-NGPGE", n142 "4TNV98CT-IPGE", n143 "4TNV98C-IPGE" (no
