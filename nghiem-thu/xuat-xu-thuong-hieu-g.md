@@ -19,7 +19,10 @@ Giữ nguyên khi: chưa rõ hãng, model không có trong danh mục, chính d�
 - check-all 17 lượt: 7 cấu hình, 8 check đổi, chỉ IB2600603983. 7 check là danh sách dưới (chưa rõ → đạt). Check thứ 8 chỉ thêm ghi chú, trạng thái không đổi.
 - Thứ tự và danh sách cấu hình: 0 gói đổi. Chạy `check` hai lần giống nhau ở cả 17 lượt. Test `suppliers` 1.560 / 1.560.
 
-**Ca cần điều phối quyết:** S6R2-PTAA + S5L1D-H41 + DSE7320, "Xuất xứ động cơ": agent đã chấm ĐẠT ("Mitsubishi (Nhật), sản xuất tại SME Thượng Hải"), dòng fdk-energy ghi "Mitsubishi (SME Shanghai)". Theo dặn "giữ nguyên trạng thái" nên vẫn đạt, chỉ thêm ghi chú "cần xác nhận nơi sản xuất". Luật Khoa 22/11 loại dòng này ở bước ứng viên; kết quả cũ của agent chưa bị hạ.
+## Bản cuối (SHA 078f9f38, gốc 5500c45b)
+Điều phối 22/11/2026: check đang "đạt" mà dòng của cấu hình bị `rowPlacesOff` báo nơi ngoài nhóm hoặc hai nơi về "cần xác nhận", ghi nguyên chữ NCC. HSMT đòi NƠI sản xuất mà `madeIn` đọc đúng một nơi ngoài nhóm thì vẫn "không đạt" như luật cũ.
+- check-all 17 lượt: 7 cấu hình, 8 check, chỉ IB2600603983. 7 check chưa rõ → đạt (bảng dưới). Check thứ 8: S6R2-PTAA + S5L1D-H41 + DSE7320, Xuất xứ động cơ, **đạt → cần xác nhận** (fdk-energy ghi "Mitsubishi (SME Shanghai)").
+- Thứ tự và danh sách cấu hình: 0 gói đổi. Chạy `check` hai lần giống nhau ở cả 17 lượt. Test `suppliers` 1.561 / 1.561.
 
 ## Danh sách đủ, đã soát tay từng hãng
 
