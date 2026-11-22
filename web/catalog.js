@@ -1659,7 +1659,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note));
+    return mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -1890,6 +1890,59 @@
   TWO_CODE_CELLS.push(
     { supplierId: "comappower", n: [113], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" },
     { supplierId: "yanan-power", n: [111], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" });
+  // One engine cell naming several codes (ma-dong-co-trung PR 2, Khoa 20/11/2026 "1. b"): an explicit list "cell=code+code", not a
+  // rule ("6M11G150/5", "4D24TG2/A", "8300D/M-2" are one code). Each code gets its own record; figures of the engine are left out
+  // (`splitEngineCells`: the row does not say which code they belong to). "cell=code": the bracket is the supplier's own code that
+  // no other key uses, so the code outside it stays, with its figures. Not listed (no source says what they are): "DE2V1000 (2V92)",
+  // koop "X:KD156FA/XE:KD186FAE", "(M)", "(E)", a bare figure in brackets. Nor sunny-weifang "ZS1110/295D", "ZS1115/2100D": two makers
+  // in one cell, and the row's one make on both records took the make off all four keys (Changchai, Ricardo).
+  const ENGINE_CELL_LIST = [
+    "1104A-44TG1/ 1104D-E44TG1=1104A-44TG1+1104D-E44TG1", "1104C-44TAG2/ 1104D-E44TAG2=1104C-44TAG2+1104D-E44TAG2", "1104D-44TG1/ 1103A-33TG2=1104D-44TG1+1103A-33TG2",
+    "1106A-70TAG2/ 1106D-E70TAG2=1106A-70TAG2+1106D-E70TAG2", "1106A-70TG1/ 1106D-E70TAG3=1106A-70TG1+1106D-E70TAG3", "12M33G14D3/5 (12M33G1650/5)=12M33G14D3/5+12M33G1650/5",
+    "2206D-E13TAG3 /2206A-E13TAG6=2206D-E13TAG3+2206A-E13TAG6", "4012-46TWG3A/ 4012-46TAG1A=4012-46TWG3A+4012-46TAG1A", "4012-46TWG4A/ 4012-46TAG2A=4012-46TWG4A+4012-46TAG2A",
+    "403A-11G1/ 403D-11G=403A-11G1+403D-11G", "403A-15G1/ 403D-15G=403A-15G1+403D-15G", "404A-22G1/ 404D-22G=404A-22G1+404D-22G", "4B3.9-G1/ 4B3.9-G2=4B3.9-G1+4B3.9-G2",
+    "4BT3.9-G1/ 4BT3.9-G2=4BT3.9-G1+4BT3.9-G2", "4M10G100/6 WP4.1D115E201=4M10G100/6+WP4.1D115E201", "4M10G83/6 WP4.1D95E201=4M10G83/6+WP4.1D95E201",
+    "6LTAA8.9-G2/ 6LTAA8.9-G3=6LTAA8.9-G2+6LTAA8.9-G3", "6M11G110/6 WP6D132E201=6M11G110/6+WP6D132E201", "6M11G135/6 WP6D158E201=6M11G135/6+WP6D158E201",
+    "6M33G8D3/5 (6M33G825/5)=6M33G8D3/5+6M33G825/5", "P126TI-II / P126TI=P126TI-II+P126TI", "S16R2-PTA/S16R2-PTAW=S16R2-PTA+S16R2-PTAW",
+    "DX22 (DP222CC)=DX22+DP222CC", "DX37 (DP372CC)=DX37+DP372CC",
+    "12V4000G14F(3B) 12V4000G74F(3D)=12V4000G14F+12V4000G74F", "12V4000G14S(3B) 12V4000G74S(3D)=12V4000G14S+12V4000G74S", "12V4000G24F(3B) 12V4000G84F(3D)=12V4000G24F+12V4000G84F",
+    "12V4000G24S(3B) 12V4000G84S(3D)=12V4000G24S+12V4000G84S", "16V4000G14F(3B) 16V4000G74F(3D)=16V4000G14F+16V4000G74F", "16V4000G14S(3B) 16V4000G74S(3D)=16V4000G14S+16V4000G74S",
+    "16V4000G24F(3B) 16V4000G84F(3D)=16V4000G24F+16V4000G84F", "20V4000G14F(3B) 20V4000G64F(3D)=20V4000G14F+20V4000G64F", "20V4000G14S(3B) 20V4000G64S(3D)=20V4000G14S+20V4000G64S",
+    "20V4000G24F(3B) 20V4000G74F(3D)=20V4000G24F+20V4000G74F", "20V4000G24S(3B) 20V4000G74S(3D)=20V4000G24S+20V4000G74S", "20V4000G34F(3B) 20V4000G84F(3D)=20V4000G34F+20V4000G84F",
+    "20V4000G44S(3B) 20V4000G94S(3D)=20V4000G44S+20V4000G94S",
+    // The second code written short.
+    "10V1600G10F/G70F=10V1600G10F+10V1600G70F", "10V1600G10S/G70S=10V1600G10S+10V1600G70S", "10V1600G20F/G80F=10V1600G20F+10V1600G80F", "10V1600G20S/G80S=10V1600G20S+10V1600G80S",
+    "12V1600G10F/G70F=12V1600G10F+12V1600G70F", "12V1600G10S/G70S=12V1600G10S+12V1600G70S", "12V1600G20F/G80F=12V1600G20F+12V1600G80F", "12V1600G20S/G80S=12V1600G20S+12V1600G80S",
+    "18V2000G26F/G76F=18V2000G26F+18V2000G76F", "1103D-33G3/G2=1103D-33G3+1103D-33G2", "1104D-44TG3/G2=1104D-44TG3+1104D-44TG2", "1206J-E70TTAG3/4=1206J-E70TTAG3+1206J-E70TTAG4",
+    "2206A/C-E13TAG2=2206A-E13TAG2+2206C-E13TAG2", "2206A/C-E13TAG3=2206A-E13TAG3+2206C-E13TAG3", "2206C-E13TAG2/3=2206C-E13TAG2+2206C-E13TAG3", "2206C/D-E13TAG2=2206C-E13TAG2+2206D-E13TAG2",
+    "2506A/C-E15TAG1=2506A-E15TAG1+2506C-E15TAG1", "2506A/C-E15TAG2=2506A-E15TAG2+2506C-E15TAG2", "2506C-E15TAG1/2=2506C-E15TAG1+2506C-E15TAG2", "2506C/D-E15TAG1=2506C-E15TAG1+2506D-E15TAG1",
+    "2606A/C-E13TAG2=2606A-E13TAG2+2606C-E13TAG2", "2606A/C-E13TAG3=2606A-E13TAG3+2606C-E13TAG3", "2806A-E18TTAG4/5=2806A-E18TTAG4+2806A-E18TTAG5", "2806A/C-E18TAG1A=2806A-E18TAG1A+2806C-E18TAG1A",
+    "2806A/C-E18TAG2=2806A-E18TAG2+2806C-E18TAG2", "2806A/C-E18TAG3=2806A-E18TAG3+2806C-E18TAG3", "4008-TAG2A/2=4008-TAG2A+4008-TAG2", "4008TAG1A/1=4008TAG1A+4008TAG1",
+    "4B3.9-G1/G2=4B3.9-G1+4B3.9-G2", "4BT3.9-G1/G2=4BT3.9-G1+4BT3.9-G2", "4Z2.3-G11/G21=4Z2.3-G11+4Z2.3-G21", "4Z2.3-G12/21=4Z2.3-G12+4Z2.3-G21", "4Z2.7-G11/21=4Z2.7-G11+4Z2.7-G21",
+    "4Z2.7-G12/21=4Z2.7-G12+4Z2.7-G21", "4Z3.0-G11/21=4Z3.0-G11+4Z3.0-G21", "4Z3.0-G12/21=4Z3.0-G12+4Z3.0-G21", "4Z3.2-G12/21=4Z3.2-G12+4Z3.2-G21", "4ZT3.2-G11/21=4ZT3.2-G11+4ZT3.2-G21",
+    "4ZT3.2-G12/21=4ZT3.2-G12+4ZT3.2-G21", "6BT5.9-G1/2=6BT5.9-G1+6BT5.9-G2", "6BT5.9-G1/G2=6BT5.9-G1+6BT5.9-G2", "6CTA8.3-G1/2=6CTA8.3-G1+6CTA8.3-G2",
+    "BF8M1015CP-G3/4/5=BF8M1015CP-G3+BF8M1015CP-G4+BF8M1015CP-G5", "E3262LE202/212=E3262LE202+E3262LE212", "E3262LE212/202=E3262LE212+E3262LE202", "HC12V132ZL-LAG1/2A=HC12V132ZL-LAG1+HC12V132ZL-LAG2A",
+    "KTA19-G3A/G4=KTA19-G3A+KTA19-G4", "KTA19-G4/G3A=KTA19-G4+KTA19-G3A", "KTA50-GS8/G8=KTA50-GS8+KTA50-G8", "QSK38-G3/G5=QSK38-G3+QSK38-G5", "QSK50-G4/G11=QSK50-G4+QSK50-G11",
+    "QSK60-G3/G7=QSK60-G3+QSK60-G7", "QSK60-G4/G11=QSK60-G4+QSK60-G11", "QSK60-G6/G7=QSK60-G6+QSK60-G7",
+    // The bracket is the supplier's own code.
+    "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
+    "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
+    "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+  ];
+  let engineCellCodes = null; // built on first use: `keyOf` is declared further down
+  function splitEngineCells(s, list, note) {
+    engineCellCodes ||= new Map(ENGINE_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    const engineKeys = new Set(SPECS.filter((x) => x[1] === "engine").map((x) => x[0])), out = [];
+    for (const o of list) {
+      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : null;
+      if (!codes) { out.push(o); continue; }
+      if (codes.length === 1) { out.push({ ...o, model: codes[0] }); continue; }
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "một ô ghi hai mã", `tách thành ${codes.join(", ")}; bỏ thông số động cơ của dòng`);
+      const specs = (o.specs || []).filter((sp) => !engineKeys.has(sp.key));
+      for (const model of codes) out.push({ ...o, model, specs: [...specs] });
+    }
+    return out;
+  }
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];
