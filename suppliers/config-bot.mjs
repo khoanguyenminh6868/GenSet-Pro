@@ -1023,6 +1023,22 @@ export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas
 // frequency are enough, `ruled: freq`; Khoa 20/11/2026, IB2400073761 "Tần số: 50 & 60hz"). A pair needs a "Hz" on one side and
 // no unit / second figure after the second number ("380V-50Hz-60/66 kVA" is 60 kVA, not 60 Hz).
 const FREQ_PAIR = /(?<![\d.,])(?:50|60)\s*(?:hz|hertz)?\s*(?:\/|&|-|–|—|÷|,|;|~|hoặc|hay|và|or|and|đến|to)\s*(?:50|60)(?![\d])(?!\s*(?:\/\s*\d|kva|kw|kvar|va\b|a\b|v\b|%))\s*(?:hz|hertz)?/gi;
+// Tần số của một dòng: ô tần số đã đọc, nếu không thì cột tốc độ của chính dòng (đúng một cột tên "Speed" / "rpm" / 转速,
+// ô đúng 1500 hoặc 1800). Không đoán từ ô số không có tiêu đề; cột ghép "Power/Speed (kWm/rpm)" không đọc.
+export function hzOfRow(u) {
+  if (u?.freq) return u.freq;
+  if (!u?.line) return null;
+  const trimmed = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), cells = trimmed(u.line);
+  for (const h of u.header || []) {
+    const heads = trimmed(h);
+    if (heads.length !== cells.length) continue;
+    const at = heads.flatMap((c, i) => (/^(rated\s+)?speed\b|^rpm\b|^转速/i.test(c) ? [i] : []));
+    if (at.length !== 1) continue;
+    const m = cells[at[0]].match(/^(1500|1800)(?:\s*(?:rpm|r\/min))?$/i);
+    return m ? (m[1] === "1500" ? 50 : 60) : null;
+  }
+  return null;
+}
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1984,11 +2000,14 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
       if (hints.freq && !u.freq) {
+        // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
+        const own = hzOfRow(u);
         // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
-        const known = [...e.uses, ...twinUses].map((x) => x.freq).filter(Boolean);
-        if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
+        const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
+        if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (!own && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some(hzOfRow));
       if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
       // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
@@ -5324,6 +5343,24 @@ export function altDocChecks(c, reqs = [], attrs = []) {
 const SHEET_SPEED = /^(?:engine\s+)?(?:rated\s+)?speed(?:\s*(?:rpm|r\/min))?$|^rpm$/i, SHEET_FUEL = /^(?:thermodynamic\s+cycle|working\s+cycle|fuel\s+type|type\s+of\s+fuel)$/i;
 const sheetLabel = (s) => String(s || "").replace(/[​-‍﻿]/g, "").replace(/[()[\]:：]/g, " ").replace(/\s+/g, " ").trim();
 const rpmCell = (s) => { const m = String(s).trim().match(/^(\d{3,4})\s*(?:rpm|r\/min)?$/i), v = m ? Number(m[1]) : 0; return v >= 600 && v <= 3600 ? v : null; };
+const SHEET_ATTR = [["cycle", /^thermodynamic\s+cycle$/i], ["cooling", /^cooling\s+system$/i], ["inject", /^injection\s+system$/i], ["fuelSys", /^fuel\s+system$/i], ["gov", /^governor$/i]];
+// Kiểu động cơ / hệ thống phun (nhóm A): each term the requirement names must be on the sheet; a word of the requirement the
+// code does not know leaves the check as it is. [term in the HSMT, sheet attribute, what that attribute must say]
+const ENGINE_TYPE_TERMS = [[/diesel/i, "cycle", /diesel/i], [/4\s*(?:k[ỳy]|th[ìi])|4\s*-?\s*stroke/i, "cycle", /\b4[\s-]*stroke/i], [/l[àa]m\s*m[áa]t\s*(?:b[ằa]ng\s*)?(?:n[ưướ]+c|ch[ấa]t\s*l[ỏo]ng)/i, "cooling", /liquid|water/i]];
+const FUEL_SYSTEM_TERMS = [[/phun\s*tr[ựu]c\s*ti[ếe]p|direct\s*injection/i, "inject", /^direct\b/i], [/common\s*rail/i, "fuelSys", /common\s*rail/i], [/cao\s*[áa]p/i, "fuelSys", /high\s*pressure/i], [/đi[ềe]u\s*khi[ểe]n\s*đi[ệe]n\s*t[ửu]/i, "gov", /\bECU\b|electronic/i], [/\bECU\b/i, "gov", /\bECU\b/i]];
+const TERM_FILLER = /(?<!\p{L})(?:đ[ộo]ng\s*c[ơo]|ki[ểe]u|h[ệe]\s*th[ốo]ng|nhi[êe]n\s*li[ệe]u|b[ằa]ng|v[àa])(?!\p{L})|[(),;:./\s-]/giu;
+function sheetTerms(req, terms, attrs = {}) {
+  let rest = String(req || "");
+  const hits = [];
+  for (const [re, key, says] of terms) {
+    if (!re.test(req)) continue;
+    const l = attrs[key] || [];
+    if (!l.length || new Set(l.map((x) => x.value)).size !== 1 || !says.test(l[0].value)) return null;
+    if (!hits.includes(l[0])) hits.push(l[0]);
+    rest = rest.replace(new RegExp(re.source, "gi"), " ");
+  }
+  return hits.length && !rest.replace(TERM_FILLER, "") ? hits : null;
+}
 export function engineSheetsOf(cat, suppliers = []) {
   const out = new Map(), engines = new Set((cat.engines || []).map((e) => e.key)), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
   for (const s of suppliers || []) {
@@ -5331,18 +5368,20 @@ export function engineSheetsOf(cat, suppliers = []) {
     for (const t of s.specTables || []) {
       const models = titleModelKeys(t.title, partKeys);
       if (models.length !== 1 || !engines.has(models[0])) continue;
-      const e = out.get(models[0]) || { speeds: [], fuels: [] }, at = { supplierId: s.id, n: t.n };
+      const e = out.get(models[0]) || { speeds: [], fuels: [], attrs: {} }, at = { supplierId: s.id, n: t.n };
       if (!t.header?.length) {
         for (const line of t.rows || []) {
           const cells = CAT.cellsOf(line), label = sheetLabel(cells[0]);
           if (cells.length < 2) continue;
           if (SHEET_SPEED.test(label)) { const v = cells.slice(1).map(rpmCell); if (v.every((x) => x != null)) for (const x of v) e.speeds.push({ v: x, line, ...at }); }
           if (SHEET_FUEL.test(label) && /\bdiesel\b/i.test(cells[1]) && !/\bgas\b|gasoline|petrol/i.test(cells[1])) e.fuels.push({ line, ...at });
+          const attr = SHEET_ATTR.find(([, re]) => re.test(label));
+          if (attr) (e.attrs[attr[0]] ||= []).push({ value: cells[1], line, ...at });
         }
       } else if (t.header.some((h) => /^rpm$/i.test(sheetLabel(CAT.cellsOf(h)[0])))) {
         for (const line of t.rows || []) { const v = rpmCell(CAT.cellsOf(line)[0]); if (v != null) e.speeds.push({ v, line, ...at }); }
       }
-      if (e.speeds.length || e.fuels.length) out.set(models[0], e);
+      if (e.speeds.length || e.fuels.length || Object.keys(e.attrs).length) out.set(models[0], e);
     }
   }
   return out;
@@ -5378,6 +5417,9 @@ export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], r
       if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
       const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
       put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
+    } else if ((r.code === "engine_type" || r.code === "fuel_system") && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), hits = o && sheetTerms(req, r.code === "engine_type" ? ENGINE_TYPE_TERMS : FUEL_SYSTEM_TERMS, sheet.attrs);
+      if (hits) put(r, o, { ...hits[0], line: hits.map((h) => h.line).join(" | ") }, "engine", `${hits.map((h) => h.value).join(", ")} (tờ hãng)`, `Code đọc từ ${where(hits[0])}.`);
     } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
       const o = openCheck(c, r), f = sheet.fuels[0];
       if (o) put(r, o, f, r.part || "genset", "Diesel (động cơ, tờ hãng)", `Code đọc từ ${where(f)}: nhiên liệu của động cơ.`);

@@ -84,6 +84,22 @@ test("tờ động cơ ghi cả 1500 và 1800: không tự chọn tốc độ", 
   }
 });
 
+test("nhóm A: kiểu động cơ, hệ thống phun đạt khi tờ ghi đủ mọi ý HSMT nêu", () => {
+  const t = (code, item, text) => eng(req(code, item, text, "engine"));
+  assert.equal(t("engine_type", "Kiểu động cơ", "Diesel 4 kỳ, làm mát bằng nước").status, "met");
+  assert.equal(t("fuel_system", "Hệ thống nhiên liệu (phun)", "Phun trực tiếp, điều khiển điện tử (ECU, common rail cao áp)").status, "met");
+  assert.equal(t("engine_type", "Kiểu động cơ", "Diesel 2 kỳ").status, "unclear");
+  assert.equal(t("engine_type", "Kiểu động cơ", "Diesel 4 kỳ, tăng áp hai tầng").status, "unclear");
+  assert.equal(t("fuel_system", "Hệ thống nhiên liệu (phun)", "Phun gián tiếp").status, "unclear");
+  assert.equal(t("fuel_system", "Hệ thống nhiên liệu (phun)", "Bơm cao áp cơ khí").status, "unclear");
+});
+
+test("nhóm A: Injection System, Fuel System không vào SPECS (là cột mã riêng của nhiều bảng)", () => {
+  assert.equal(C.specKey("Thermodynamic Cycle"), "engType");
+  assert.equal(C.specKey("Injection System"), null);
+  assert.equal(C.specKey("Fuel System"), null);
+});
+
 test("chạy lại confirmChecks + altDocChecks giữ nguyên kết quả", () => {
   const r = req("alt_avr", "Điều chỉnh điện áp (AVR)", "Có AVR", "alternator"), c = { checks: [chk(r)] };
   altDocChecks(c, [r], [avr]);
