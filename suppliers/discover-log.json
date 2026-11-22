@@ -3142,5 +3142,14 @@
   "url": "https://www.hichaipower.com/",
   "tables": 2,
   "rows": 19
+ },
+ {
+  "at": "2026-11-21",
+  "result": "added",
+  "id": "powerpack",
+  "name": "Powerpack Generator",
+  "url": "https://www.powerpackgenerator.com/",
+  "tables": 1,
+  "rows": 4
  }
 ]
