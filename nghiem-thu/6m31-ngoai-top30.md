@@ -271,8 +271,15 @@ Cột không rõ thuộc động cơ hay tổ máy: không có trong 4 bảng đ
 - 9 dòng RA không có chữ nơi SX: chỉ bị đẩy khỏi top, không `ruled` (aosif QSK60-G8, cgm-italia 403A-11G, ettes-power 4BT3.9-G, gordon-power 404D-22G, mecca-power 5016A-E61TRG3, mingbang 4B3.9-G1/G2, powerzoo 4TNV98-GGE, rise-power 4BT3.9-G2, stone-power 6CTA8.3-G2).
 - Các dòng RA còn lại có chữ ở đúng dòng hoặc đúng bảng của nó: aosif `Manufacturer | Chongqing/dongfeng Cummins` (datasheet một model), fdk `Engine Make | Cummins CHINA`, `Perkins CHINA`, shanhua `制造商 Manufacturer | CCEC CUMMINS`, sunkings, jiuan, xinhengxin, yingtai.
 - **(B) baifa:** chỉ đọc ô cuối của bảng n101 có cột "ENGINE MANUFACTURER / COUNTRY". 72 hàng: "CHINA" 69, "CUMMINS (CHINA)" 2, "MTU JV CHINA" 1. Không dòng nào bị đọc theo cột mà ô cuối khác CHINA; dòng chỉ có "CHINA STAGE3" không bị đọc.
-- **(C) Chưa đọc, chưa sửa, chờ quyết:** sanq ô "Wuxi" 44; fdk "Mitsubishi (SME Shanghai)" 27; 上海菱重 25 (bdadl-shanghai 9, fukangsi-yangzhou 8, pengpai-yangzhou 8); simpson "SME" 3. Bốn ô stone-power "refer to SO…, guangxi neihe market" là ghi chú thị trường, không phải nơi SX.
+- **(C) Đã đọc theo lệnh điều phối, ở 5500c45b (99 hàng):** sanq ô "Wuxi" 44; fdk "Mitsubishi (SME Shanghai)" 27; 上海菱重 25 (bdadl-shanghai 9, fukangsi-yangzhou 8, pengpai-yangzhou 8); simpson "SME" 3. Sanq: 16 hàng ở bảng có tiêu đề "C/O of engine", 28 hàng ở bảng cùng bố cục nhưng thiếu tên cột hoặc ghi nhầm "Fuel Consumption"; cột đó ở cả ba bảng chỉ có Wuxi, UK/INDIA, USA, UK. Bốn ô stone-power "refer to SO…, guangxi neihe market" là ghi chú thị trường, không đọc.
 - **(D) 59 dòng VÀO top:** không dòng nào ghi nơi SX ngoài nhóm đã đọc. 12 dòng có chữ nơi SX: trong nhóm (bobig "made in UK", fdk "PERKINS USA" 2, fdk "CUMMINS(UK)", kaihua "UK 4006-23TAG3A", sanq "USA"), nhãn chỉ ghi hãng (aosif QSK23-G2, fdk NTA855-G1B), và 3 dòng thuộc (C): fdk "SME Shanghai" 2, sanq 403A-15G1 "Wuxi" 1.
+
+**PR chồng #1098 (`kaihua-60-esp`, 614d8b8b, base `nha-may-tq` 5500c45b; 22/11/2026, chưa đo cloud).**
+
+- **kaihua "-60":** áp 35 hàng `HC-BD…-60` (số 32 báo trước đó thiếu 3 hàng viết "HC-BD 2060-60"). Không hàng nào tự ghi Hz hoặc tốc độ. Hai ô "1500" ở HC-BD1500-60 và HC-BD1650-60 là kVA (cột Standby / Prime), không phải v/p, nên không mâu thuẫn. 4 mã không mang "/6": 12M33D1265E201, 12M26D1012E201, 12M33D1320E201, 12M33D1108E201. Luật chỉ áp cho chính dòng, không làm động cơ thành "chỉ 60 Hz" với NCC khác.
+- **Chưa áp, cần quyết:** 26 hàng kaihua khác cũng có tên đuôi "-60" (`HC-…GF…-60`, Perkins 25 + MTU 16V4000G83). Khoa được trình số 32 của dòng HC-BD, chưa thấy nhóm này.
+- **Mã "^":** 16 mã dạng Baudouin, 24 hàng, 9 NCC (baudouin 7, baifa 5, mecca 3, weichai-heavy 2, weichai-power 2, chuangyuan 2, landtop 1, aosif 1, voltgent 1). `WP6D180E201^` không áp. Gói prime xác định bằng `cap.rating !== "standby"` (cỡ không ghi mức là prime, Khoa 21/11). Lý do loại `esp`; model HSMT nêu đích danh ở lại.
+- Số lượt-dòng và top 30 của hai luật: chờ lượt đo cloud chung.
 
 ## Lệnh
 
