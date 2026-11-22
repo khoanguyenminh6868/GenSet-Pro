@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T09:23:20.238Z
+  modified: 2026-11-22T04:55:56.893Z
 ---
 
 Repo GenSet-Pro public từ 05/11/2026 (để CI không tính phút). 17/11 Khoa bảo chuyển private; chuyển xong thì Actions từ chối
@@ -22,3 +22,4 @@ lượt cũ, PR chỉ sao lưu bộ nhớ (`bot/claude/**`) không chạy test, 
 **How to apply:** trong lúc public, không hỏi lại về bảo mật repo. Đừng thêm trigger `push`/`schedule` tốn phút cho workflow mới.
 Sau khi private, CI bỗng không chạy giữa tháng → nghi hết phút (github.com/settings/billing/usage), báo Khoa. Vẫn không đưa
 token / khoá vào git ([[bot-ops]]).
+Chữ HSMT đã nằm trên nhánh `dieu-phoi` (2 tệp soát 5b0099d7; 17 tệp `dau-vao/dau-phat-hang-b/hsmt/`, các `snap/*.json`): Khoa 22/11/2026 hai lần "Giữ nguyên" (không viết lại lịch sử, không gỡ, không private sớm). Đừng hỏi lại việc này trước 01/12; phiên con hỏi thì trả lời luôn.
