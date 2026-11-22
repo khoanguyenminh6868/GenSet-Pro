@@ -1897,7 +1897,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       let fuelOver = false, fuelNoLoad = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
         let fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`) && !/g\s*\/\s*(k?w|hp|ps)/i.test(String(x.value)));
-        let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null, nNoLoad = false;
+        let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null, nNoLoad = false, fromSheet = false;
         // Normalized: the first figure of the key in L/h at the HSMT's load (100 / 75 / 50%), the load written in the
         // source (a 75 / 50% cell counts, loadFrom "key"); none → not compared, the row stays with no points off.
         if (NF && hints[hk]) {
@@ -1906,6 +1906,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
             const r = nfig(x, { unit: "L/h", load: FUEL_LOAD[fk] });
             if (r && r.num != null) { fl = x; fv = r.num; nNoLoad = r.cond?.load == null; break; }
           }
+          // The row gives no comparable figure: the engine maker's own sheet of this engine, as fuelChecks grades it (điều phối
+          // 22/11/2026, Khoa "có làm đi"), so a row is not picked to be graded not_met on the same figure. Within the limit: no points.
+          if (fv == null) { const sh = sheetFuel(ef, fk); if (sh) { fl = sh.f; fv = sh.v; fromSheet = true; } }
         }
         // Not judged: a bound ("< 10": only says it is under 10) and a figure no genset of this size burns (> 0.6 L/h per kVA: a
         // kW / kVA pair or a g/kWh figure under a wrong heading, "Cons 100% (L/H) 220/275" for 242 kVA).
@@ -1913,7 +1916,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // A 100% figure whose heading names no load (the catalog files "Fuel consumption (L/h)" under 100%) is not left out either (the old
         // 300 points off stay): only a load written in the label that is the HSMT's (100% / full load) counts. 75% and 50% are in the label by construction.
         const loadUnstated = fk === "fuel" && fl && (NF ? nNoLoad : !LOAD_100.test(String(fl.label)));
-        if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
+        if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h${fromSheet ? " (tờ hãng động cơ)" : ""} > ${hints[hk]} L/h HSMT cho phép`); }
       }
       // An alternator the supplier labels with its own brand (OWN_BRAND_ALTS) is found in the catalog only from that supplier's
       // own tables: "found" says nothing of it, so neither the +40 nor its figures' bonus; named by the HSMT still counts.
