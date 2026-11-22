@@ -5591,13 +5591,14 @@ export function chinaPlantInRow(e, u) {
   const make = String(e?.make || "");
   if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
   const code = CAT.keyOf(placeCode(e?.model)), names = make.split(" / ").filter(Boolean).flatMap((m) => [m.toLowerCase(), CN_MAKE_ZH[m.toLowerCase()]].filter(Boolean));
-  // Bảng nhãn: dòng nói về động cơ ("| Engine-DCEC Cummins | …", "| ENGINE | CCEC Cummins") hoặc có mã của động cơ ("| Model | CCEC | KTA19-G4").
+  // Bảng nhãn: dòng nói về động cơ ("| ENGINE | CCEC Cummins") hoặc có mã của động cơ ("| Model | CCEC | KTA19-G4").
+  // Ô "Engine-DCEC Cummins" (longkai) là tên họ của mẫu trang, ghi cả trên KTA38 / QSK19 mà NCC khác ghi CCEC: không đọc.
   const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /\bengine\b|manufacturer|制造商/i.test(l) || (code.length >= 3 && CAT.keyOf(l).includes(code)));
   // Dòng chưa rõ hãng (mâu thuẫn nguồn): chỉ tên nhà máy tự nói hãng mới đọc.
   const plants = CN_PLANTS.filter(([m]) => !make || m.test(make)).map(([, p]) => p);
   for (const l of lines) for (const raw of CAT.cellsOf(l)) {
     const cell = String(raw).trim(), c = cell.replace(CN_EMISSION, " ");
-    if (/baudouin|博杜安/i.test(c) || CN_TWO.test(c)) continue;
+    if (/baudouin|博杜安/i.test(c) || CN_TWO.test(c) || (!u?.line && /^engine\s*[-–]/i.test(cell))) continue;
     if (plants.some((p) => p.test(c))) return { at: "CN", cell, form: "plant" };
     if (!make || !CN_WORD.test(c)) continue;
     if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };

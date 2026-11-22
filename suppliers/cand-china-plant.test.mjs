@@ -31,9 +31,12 @@ test("Weichai Baudouin và hãng Baudouin không đọc", () => {
 });
 test("bảng nhãn: dòng động cơ ghi nhà máy; chưa rõ hãng chỉ đọc tên nhà máy", () => {
   const u = (rows) => ({ lines: { rows } });
-  assert.equal(chinaPlantInRow(K, u(["| Prime power | KW | 18", "| Engine-DCEC Cummins | Power factor | 0.8"]))?.form, "plant");
+  assert.equal(chinaPlantInRow(K, u(["| Prime power | KW | 18", "| Manufacturer | Chongqing Cummins"]))?.form, "plant");
   assert.equal(chinaPlantInRow({ model: "KTA19-G4", make: "Cummins" }, u(["| Model | CCEC | KTA19-G4"]))?.form, "plant");
-  assert.equal(chinaPlantInRow({ model: "4BTA3.9-G2-58KW", make: null }, u(["| Engine-DCEC Cummins | Power factor | 0.8"]))?.form, "plant");
+  assert.equal(chinaPlantInRow({ model: "4BTA3.9-G2-58KW", make: null }, u(["| Manufacturer | dongfeng Cummins"]))?.form, "plant");
+  // Chữ mẫu theo họ trang của longkai, không phải nơi sản xuất của chính động cơ.
+  assert.equal(chinaPlantInRow(K, u(["| Prime power | KW | 18", "| Engine-DCEC Cummins | Power factor | 0.8"])), null);
+  assert.equal(chinaPlantInRow({ model: "4BTA3.9-G2-58KW", make: null }, u(["| Engine-DCEC Cummins | Power factor | 0.8"])), null);
   assert.equal(chinaPlantInRow({ model: "12M33G5D2/5", make: null }, { line: "| B1 | 66 | 12M33G5D2/5 | S7 | STAGE3 | CHINA", supplierId: "baifa-power", header: ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY"] }), null);
   assert.equal(chinaPlantInRow(K, u(["| Address | Shantou, Guangdong, China"])), null);
 });
