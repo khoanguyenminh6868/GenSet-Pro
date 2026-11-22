@@ -47,3 +47,29 @@ Kiểm chéo toàn bộ `ctlKinds` (mọi hãng, gốc ↔ nhánh, `kinds-all.mj
 - Top 30 ứng viên và điểm cấu hình: CHƯA đo. Đổi loại BĐK easYgen (1700 / 3100 / 3200 / 3500XT) và 4 tờ ComAp mới có thể đổi chỗ +50 / +40 điểm BĐK; deif / woodward đang `status: incomplete` nên bot bỏ cả hồ sơ khi nạp NCC (bẫy trong CLAUDE.md) → khả năng đổi rất nhỏ, nhưng cần đo cloud để chắc. Ca dùng loại: ctlKinds chạy trên mọi hồ sơ `controller_maker`.
 - Nguồn trong repo công khai: [1017–1020] mỗi tệp ~200 dòng, cùng cỡ các nguồn datasheet ComAp đã có.
 - Câu hỏi cho điều phối: có chấp nhận Reference Guide InteliLite NT (manual) làm nguồn cho AMF20 / MRS10 / MRS15 không? Không làm khi chưa có lệnh.
+
+---
+# Phần 2 (bdk-ds-4, 22/11/2026): PR DRAFT https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1084, SHA `f2549881`, từ main `dbaa4149`. Chưa merge.
+Đo: `dau-vao\bdk-ds-3\` (`comap-all.mjs`, `comap-truoc/sau.json`, `build-md5.mjs`, `md5-*.json`, `sd4.md`).
+
+## A. Gắn khoá (MỌI model ComAp trong `cn/`, trước → sau, số NCC chào, số dòng datasheet qua `factsFor`)
+Phát hiện: AMF20/25/8/9, MRS16 ĐÃ có dòng từ trước qua `GENERATION` (đo trước đó bằng `facts.get` nên thấy 0: sai). Đổi:
+| Model | NCC | Dòng trước → sau |
+|---|---|---|
+| IG1000 | 2 | 0 → 280 (InteliGen 1000, version) |
+| IG500 | 1 | 0 → 219 (InteliGen 500) |
+| IG-NT | 1 | 0 → 354 |
+| IG-NTC-BB | 1 | 0 → 319 |
+| InteliDrive DCU Marine | 1 | 0 → 184 (catalog.js đọc DCU Marine là model riêng) |
+| InteliLite 4 (trơn) | 1 | 0 → 911 (5 tờ IL4, version) |
+| InteliSys | 1 | 192 → 384 (NTC + Gas, version; Gas không còn là "chính" của InteliSys trơn) |
+Không đổi (đã có): AMF20 175, AMF25 188, AMF8 175, AMF9 183, MRS16 190, InteliGen (trơn) 1371, InteliGen NT 354, IL4 AMF20/25/MRS16.
+Còn 0 dòng (lý do): AC03, AMF5 (InteliNano, không tờ), IG200 (InteliGen 200 ≠ InteliGen4 200, cố ý không gắn), InteliGen 1000 Marine (sản phẩm riêng, không tờ), InteliLITE trơn (nhiều đời), InteliLite NT AMF20, InteliLITE (NT) MRS15, MRS10 (không datasheet), InteliVision 15 Touch (màn hình), "ComAp (không ghi model)" 34 NCC. InteliMains: không model nào trong `built.controllers` (chỉ nằm trong chữ tương thích của nanni).
+Đổi `web/catalog.js`: md5 `build()` engines / alternators / controllers / gensets GIỐNG gốc; spec-diff 62.001 → 62.001, 0 đổi, đảo vai 0; `quality --check` không xấu đi; test 1680 qua. CẦN ĐO CLOUD (điểm BĐK +50/+40 có thể đổi khi `factsFor` trả thêm dòng; deif/woodward/datakom incomplete nên chỉ ComAp liên quan).
+
+## B. Reference Guide IL-NT AMF20 / MRS10 — KHÔNG làm được, cần Khoa
+Tệp `productfile` của "InteliLite NT AMF 2.2 Reference Guide" (38dad0e6-3913-4e0d-b4a7-474540ef147d) và "InteliLite NT MRS 2.2 Reference Guide" (cd0e7fd5-c7a1-40c5-ba85-f897540be224) trả trang Log In (HTML 141 KB) chứ không phải PDF: hãng đòi tài khoản ComAp (trang ghi "You need an account to access this content"). Không tạo tài khoản / đăng nhập thay Khoa. KHOA CẦN: đăng nhập comap-control.com, tải hai tệp trên (trang IL-NT AMF 20 và NT MRS 10, mục Manuals) vào `C:\Projects\GenSet Pro\Datasheets\`; sau đó phiên làm tiếp trích dòng bảng / chức năng như #1032. MRS15: không có trang hãng, để trống (hướng dẫn MRS 2.2 có thể áp cho cả MRS15, chưa xác nhận).
+
+## C. DEIF AGC-4 / AGC-200
+- AGC-200 [deif 1002]: chữ có đủ ("AGC 213 Mains failure…", "AGC 233/243 Mains failure…", "AGC 212/222 Island", mục 2.2 liệt kê variant 212–246) nhưng tên model bị PDF vỡ qua ô ("| AGC | 213 Mains failure,") và bảng "Comparisons" mất tiêu đề cột (hàng "Island operation | X | X…" không biết cột nào là variant nào). Kết hợp variant ↔ loại sẽ là đoán. CẦN: trang so sánh variant trên deif.com hoặc "AGC 200 Designer's Reference Handbook" (bảng variant × ứng dụng), Khoa tải tay vào `Datasheets\`. Cho model nhiều biến thể mà tờ chỉ 'AGC 200' thì để rỗng.
+- AGC-4 Mk II [deif 1004]: "Genset, Mains, BTB, Group, Plant controller": một bộ, loại tuỳ cấu hình, không có loại cố định để đọc. Không tờ nào sửa được: để rỗng.

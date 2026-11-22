@@ -111,6 +111,28 @@ So `comprOf` mã cũ và mã sửa trên 1.259 gói: chỉ 4 gói đổi, gồm 
 
 Sau sửa, gói IB2600603983 trên main mới: Baudouin = #6 6M33G750/5 kaihua, #10 6M31G825/5 voltgent, #20 6M31G825/5 weichai. Toàn bộ test `suppliers/*.test.mjs`: 1492/1492. **Số đo cloud là của d0edb654, cần đo lại trên SHA mới của #1062.**
 
+## Sau #998 và Powerpack (22/11/2026, SHA 02c6c4dd, đã gộp main ae171d54)
+
+`prep` thật IB2600603983: Baudouin = #9 6M31G825/5 voltgent, #19 6M31G825/5 weichai, #20 6M31G660/6 weichai-heavy. Không còn dòng India, không còn 6M33G750/5.
+
+**Lỗi riêng, chưa sửa:** #20 ghi 1800 vòng/phút (60 Hz) mà vẫn vào gói 50 Hz, vì dòng không ghi tần số và luật tần số không đọc tốc độ.
+
+Nơi sản xuất đọc từ ô động cơ của dòng, 55 dòng trong `cn/`:
+
+| NCC | Dạng | Đọc thành | Dòng |
+|---|---|---|---|
+| kaihua-genset | India … | IN | 11 |
+| kaihua-genset | UK … | GB | 11 |
+| landtop-fuzhou | …(India) | IN | 9 |
+| landtop-fuzhou | …(UK) | GB | 3 |
+| comappower | …(UK) | GB | 1 |
+| superwatt-swt | … SME | CN (nhà máy Mitsubishi Thượng Hải) | 1 |
+| landtop-fuzhou | …(USA/EU) | không đọc | 10 |
+| landtop-fuzhou | …(UK/EP) | không đọc | 3 |
+| sr-genset | … EU | không đọc (có thể là tiêu chuẩn khí thải) | 6 |
+
+Số đo lần 2 (8f5f079d, gốc 6f6e7931): 74 lượt đều nằm trong 78 lượt của lần 1, không có lượt mới. 4 lượt rời đi là 3 lượt oan đã sửa và IB2200100465 (gốc mới chỉ còn 100 dòng thay vì 390 nên luật không còn loại thêm). IB2600219527 không nằm trong 78 lượt. **Chưa gán luật từng dòng cho lần 2, và SHA 02c6c4dd cần đo lần 3.**
+
 ## Lệnh
 
 ```powershell
