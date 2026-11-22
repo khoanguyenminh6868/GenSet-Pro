@@ -2397,6 +2397,16 @@
       { supplierId: "winco", n: 1001, engine: ["| ENGINE MODEL | GC160 OHC", "GC160"], make: "| ENGINE BRAND | HONDA", specs: [["disp", "| DISPLACEMENT/TYPE | 160 CC / OHV", "160 CC"]] },
       { supplierId: "winco", n: 1002, engine: ["| ENGINE MODEL | GC160", "GC160"], specs: [["disp", "| DISPLACEMENT/TYPE | 160CC/ OHV", "160CC"]] },
       { supplierId: "winco", n: 1003, engine: ["| ENGINE MODEL | VANGUARD 3564", "VANGUARD 3564"], specs: [["disp", "| DISPLACEMENT/TYPE | 570CC/ OHV", "570CC"]] },
+      // kingway n117 (Khoa 22/11/2026: "coi lại vụ kingway nếu data hợp lý thì lấy luôn", replaces the 21/11 refusal of S6-2): the
+      // block "| Model | SC9D340D2" names no role, but the same page's other tables write "SDEC Engine Model : SC9D340D2" for the same
+      // set KGD250B (n109 / n124 / n125 / n128), SC9D340D2 is the SDEC engine key of 60+ suppliers, and the block's figures fit:
+      // 6 cylinders (25 suppliers), 114x144 (13 suppliers; 6 × π/4 × 114² × 144 = 8.82 L), 8.9 L (4 suppliers write 8.9, 12 write
+      // 8.82: within 1 % of the geometry). `set`: the record takes the genset, power and frequency of the table's alternator record
+      // of that model (the block's own set KGD250B, 250 kVA / 200 kW prime) and names it as `other`. No make (the table writes
+      // none). NOT read: "Rated /Standby Power(KW) | 228/255" ("Rated" is no prime here; spec-norm reads the pair as ambiguous),
+      // "Rated speed (RPM) | 1500/1800" (two speeds).
+      { supplierId: "kingway-power", n: 117, engine: ["| Model | SC9D340D2", "SC9D340D2"], set: "Kingway KAI250", why: "Khoa 22/11/2026 (kingway-n117)",
+        specs: [["cyl", "| Cylinder Number | 6", "6"], ["bore", "| Bore x Stroke (mm) | 114x144", "114x144"], ["disp", "| Displacement (L) | 8.9", "8.9"]] },
     ].map((x) => ({ why: "S9 cc-129, Khoa 22/11/2026", ...x }));
   })();
   // New records of ENGINE_LINES; the table's own engine record of the listed model gets its missing figures in place (`out`).
@@ -2427,8 +2437,11 @@
       }
       const mk = brandIn(makeLine, ENGINE_BRANDS), makes = [];
       if (mk.length === 1) addMake(makes, mk[0], "dòng bảng");
+      // `set`: the genset of the table's alternator record of that model (none found → the entry lapses, noted).
+      const g = x.set ? out.find((o) => o.table === ti && o.kind === "alternator" && o.model === x.set && o.genset) : null;
+      if (x.set && !g) { note(t, ti, null, "tổ máy trong danh sách không còn bản ghi đầu phát: không đọc", x.set); continue; }
       add.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(eLine), line: eLine, header: t.header || [], kind: "engine", model: code,
-        genset: null, power: null, freq: null, specs, makes, other: null, own: false });
+        genset: g ? g.genset : null, power: g?.power ? JSON.parse(JSON.stringify(g.power)) : null, freq: g ? g.freq : null, specs, makes, other: g ? g.model : null, own: false });
     }
     return add;
   }
