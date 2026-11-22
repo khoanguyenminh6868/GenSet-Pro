@@ -99,7 +99,7 @@ So `comprOf` mã cũ và mã sửa trên 1.259 gói: chỉ 4 gói đổi, gồm 
 
 **(b) Nguồn:** 537 động cơ bị loại đều có dòng nguồn thấy trong bảng của NCC, số trong 12–24, không có số lấy từ bảng nhiều model mà dòng không nêu model. 398 động cơ chỉ có một NCC ghi; Khoa 22/11 cho dùng nguồn NCC để loại. **Chưa đối chiếu các số này với tờ của hãng động cơ.**
 
-**Đáng ngờ, chờ Khoa:** 657 dòng (14 dòng top 30) lệch đúng 0,1 so với HSMT; theo luật hiện tại vẫn loại.
+**Lệch 0,1: Khoa quyết 22/11 "loại" (điều phối chuyển lời), luật không đổi.** 657 dòng (14 dòng top 30) lệch đúng 0,1 so với HSMT vẫn bị loại.
 
 | Số của động cơ / HSMT | Dòng |
 |---|---|
