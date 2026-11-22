@@ -3310,7 +3310,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       return false;
     });
     const note = `HSMT ghi ${terms} ở yêu cầu động cơ, là công nghệ riêng của ${result.engineTrait.make}: chỉ gợi ý động cơ ${result.engineTrait.make} (Khoa, 18/11/2026).`;
-    result.notes = [...(result.notes || []).filter((n) => !/^HSMT ghi .* ở yêu cầu động cơ, là công nghệ riêng của /.test(n)), note];
+    // Already there: stays where it is, so that checking a saved result again does not move it.
+    const isTraitNote = (n) => /^HSMT ghi .* ở yêu cầu động cơ, là công nghệ riêng của /.test(n);
+    result.notes = (result.notes || []).includes(note) ? result.notes.filter((n) => n === note || !isTraitNote(n)) : [...(result.notes || []).filter((n) => !isTraitNote(n)), note];
   } else result.notes = (result.notes || []).filter((n) => !/^HSMT ghi .* ở yêu cầu động cơ, là công nghệ riêng của /.test(n));
   // (2) A genset found on the internet stays in the power band of the run's size (bandOf: 100–120%, to 30 kVA 100–140%), as
   // the candidates of the catalog do (Khoa 18/11/2026; IB2600612866: Denyo 13 kVA for 8.5 kVA). Only when the saved page
@@ -3425,7 +3427,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         // A controller written without its generation ("DSE7320") read from the datasheet of the current one ("DSE7320 MKII").
         if (mine[0]?.version) {
           x.version = mine[0].version;
-          x.note = [x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`].filter(Boolean).join(" ");
+          x.note = withVersionNote(x.note, `Nguồn là datasheet ${mine[0].version}; nhà cung cấp ghi ${c[x.part].model}, cần xác nhận đời (MK) của bộ điều khiển.`);
           const gap = `Xác nhận đời bộ điều khiển: ${c[x.part].model} hay ${mine[0].version}.`;
           if (!(c.gaps || []).includes(gap)) c.gaps = [...(c.gaps || []), gap];
           // What another generation lacks the one offered may have ("HGM6110N without RS485", the HGM6110NC has it):
@@ -3498,10 +3500,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         }
       }
       if (!src && x.status !== "unclear") reasons.push("nguồn");
-      if (reasons.length) {
+      // A "met" an earlier check lowered to "unclear" is no longer compared with its source (only met / not_met are): it
+      // is still a point that did not match, reported with the reasons written then.
+      const lowered = x.unverified && x.status === "unclear" ? LOWERED_NOTE.exec(x.note || "")?.[1] : null;
+      if (reasons.length || lowered) {
         x.unverified = true;
         if (x.status === "met") { x.status = "unclear"; x.note = [x.note, `Code chưa tìm thấy nguyên văn (${reasons.join(", ")}) nên chưa tính là đạt.`].filter(Boolean).join(" "); }
-        problems.push(`#${c.rank} ${x.item}: ${reasons.join(", ")}`);
+        problems.push(`#${c.rank} ${x.item}: ${lowered || reasons.join(", ")}`);
       }
       // Truyền thông (Q5, Khoa 20/11/2026): a part that names 4G / Ethernet / BMS... is met only when its quote says it.
       if (isComm(x)) CM.commWords(x, factsOf(c, "controller"));
@@ -3637,9 +3642,48 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // Tổ máy HSMT nêu đích danh: c.named / c.equivalent, result.named, result.namedWarn and its question (after clarifyOf,
   // which rebuilds the code's questions).
   NG.markNamed(result, namedHere, { ...namedCtx, problems });
-  if (problems.length) result.notes = [...(result.notes || []), `Kiểm tra bằng code: ${problems.length} điểm chưa khớp nguồn, đã đánh dấu ⚠.`];
+  for (const c of result.configs) orderChecks(c, result.requirements || []);
+  syncMarkNote(result);
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems, hints };
+}
+// check() runs again on results it already wrote (keepFound, restoreWeb), so what it writes must not pile up
+// (check-luy-dang, 22/11/2026: 15 of 17 saved runs changed on a second check).
+const LOWERED_NOTE = /Code chưa tìm thấy nguyên văn \((.*?)\) nên chưa tính là đạt\./;
+const VERSION_NOTE = /\s*Nguồn là datasheet [^;]*; nhà cung cấp ghi [^,]*, cần xác nhận đời \(MK\) của bộ điều khiển\./g;
+// One sentence about the controller's generation, where the first one stood (a saved note may hold it many times).
+function withVersionNote(note, sentence) {
+  let first = true;
+  const out = String(note || "").replace(VERSION_NOTE, (m) => { if (!first) return ""; first = false; return `${/^\s/.test(m) ? " " : ""}${sentence}`; });
+  return first ? [note, sentence].filter(Boolean).join(" ") : out;
+}
+// The order of a configuration's checks: those the code always puts first, then by requirement, then the rest by part
+// and name. Without it a check written again (the alternator's, when one is chosen from its maker's datasheet) moves.
+function orderChecks(c, reqs) {
+  const at = new Map();
+  reqs.forEach((r, i) => { const k = norm(r.item || ""); if (!at.has(k)) at.set(k, i); });
+  // NO_CONTROLLER first of all: rankConfigs writes it at the very top after this runs.
+  const first = (x) => x.fuelRule || isSyncItem(x.item) || isTraitCtlItem(x);
+  const keyOf = (x) => (x.item === NO_CONTROLLER ? -2 : first(x) ? -1 : at.get(norm(x.item || "")) ?? Infinity);
+  c.checks = (c.checks || []).map((x, i) => ({ x, i, k: keyOf(x) })).sort((a, b) => {
+    if (a.k !== b.k) return a.k < b.k ? -1 : 1;
+    if (a.k === Infinity) { const t = `${a.x.part || ""}|${a.x.item || ""}`.localeCompare(`${b.x.part || ""}|${b.x.item || ""}`, "vi"); if (t) return t; }
+    return a.i - b.i;
+  }).map((e) => e.x);
+}
+// "N điểm … đã đánh dấu ⚠" counts the marks the result holds, so that it says the same however often it is checked and
+// leaves out a configuration rankConfigs dropped. One note, where it stood.
+const MARK_NOTE = /^Kiểm tra bằng code: \d+ điểm chưa khớp nguồn/;
+function syncMarkNote(result) {
+  const marked = (list) => (list || []).filter((x) => x?.unverified).length;
+  let n = marked(result.requirements);
+  for (const c of result.configs || []) {
+    n += marked(PARTS.map((p) => c[p])) + marked(c.suppliers) + marked(c.checks);
+    for (const x of c.checks || []) n += marked(x.parts);
+  }
+  const text = `Kiểm tra bằng code: ${n} điểm chưa khớp nguồn, đã đánh dấu ⚠.`, notes = result.notes || [], i = notes.findIndex((x) => MARK_NOTE.test(x));
+  if (i < 0) { if (n) result.notes = [...notes, text]; return; }
+  result.notes = notes.flatMap((x, j) => (j === i ? (n ? [text] : []) : MARK_NOTE.test(x) ? [] : [x]));
 }
 // The agent's summary counts the configurations it wrote; the code may drop some after (IB2600612866, 2026-11-17: the
 // summary said 6 with a Kubota J112, the list showed 5). The summary's count follows the list, and a note says which
@@ -5625,6 +5669,12 @@ function variantRule(list) {
   return list.filter(({ c }) => !goneFor.has(c));
 }
 export function rankConfigs(result) {
+  const out = rankConfigsOf(result);
+  // A configuration dropped here takes its marks with it.
+  if ((result.notes || []).some((n) => MARK_NOTE.test(n))) syncMarkNote(result);
+  return out;
+}
+function rankConfigsOf(result) {
   const reqs = result.requirements || [];
   for (const c of result.configs || []) noController(c, reqs);
   const cmp = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
