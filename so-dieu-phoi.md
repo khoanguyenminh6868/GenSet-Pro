@@ -85,6 +85,8 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 | Việc | Ghi chú | Model |
 |---|---|---|
 
+- (22/11, chờ Khoa) IB2300329776#0: xuất xứ "all" + HSMT đòi đồng bộ thương hiệu nới luật "chỉ NCC Trung Quốc" → Powerpack (TR) lọt 1 dòng vào top 30; muốn chặn phải sửa `groupSuppliers` (đụng mọi NCC ngoài Trung Quốc). Nguồn: nghiem-thu\powerpack-1.md.
+
 - (22/11, chưa ra) IB2600601812: đường gây 62 ghi chú "xác nhận đời MK" lặp ×3 trên web chưa tìm ra (đúng 3 lần `check` trên đầu ra tái tạo được; không cờ kept; thư mục chạy đã mất). #1080 đã chặn lặp tiếp, dữ liệu web chưa dọn. Chi tiết `nghiem-thu\check-luy-dang-1.md`.
 - (21/11, việc dở, chưa điều tra) Test web "danh mục thiếu model rồi bản nhà cung cấp mới về" (`web/test/cfg-ctl-module.spec.mjs:52`) chập chờn: hết giờ chờ 2/4 lần khi chạy ở nhánh #1059, nguyên nhân chưa xác định, chưa đo trên main.
 

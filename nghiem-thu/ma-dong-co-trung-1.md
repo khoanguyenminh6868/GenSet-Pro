@@ -2,6 +2,20 @@
 
 **Kết luận:** PR DRAFT https://github.com/khoanguyenminh6868/GenSet-Pro/pull/998, nhánh `ma-dong-co-trung-1`, commit `9c80eada`. Làm trên origin/main `cf0b0448`. PR xếp CUỐI hàng chờ `web/catalog.js`: trước khi merge phải gộp main mới vào nhánh và đo lại. Không tự merge.
 
+## Giải thích đo cloud lần 2: `5e1304df` ↔ `1ab27de7` (kết quả `do-gop-ma-trung2-ket-qua` 289dedbd; 22/11/2026)
+
+**Kết luận: 0 dòng oan theo số đa số của động cơ và ngưỡng HSMT của code mới nhất.** Chưa mở lại trang nguồn NCC của từng dòng.
+
+- **Tái lập khớp cloud 656 / 656 lượt đổi tập** (top 30 giống hệt).
+- **1.478 dòng ra, 100% quy về khoá gộp (263 khoá mới):** 1.060 bị đẩy bởi dòng của khoá gộp cùng lượt, 162 là chính dòng của khoá gộp (vẫn ở `all`, vượt trần mỗi động cơ), 256 bị luật loại.
+- **256 dòng bị loại:** động cơ đều thuộc khoá gộp; luật chạy được vì nay có số từ cách ghi khác của cùng mã. Lượt tính theo luật (một dòng có thể hai luật): dung tích tối thiểu 156, xi lanh 92, dung tích tối đa 39, bố trí 22. Cả 256 đều trái ngưỡng thật khi lấy số đa số của động cơ.
+- **1.358 dòng vào:** 662 là chính khoá gộp, 686 lấp chỗ trong lượt có khoá gộp, 10 lấp đúng chỗ của dòng khoá gộp bị loại (6 lượt).
+- **65 dòng hạng 1–5 ra (55 lượt):** 38 bị loại đúng ngưỡng (dung tích 21, xi lanh 12, bố trí 3, dung tích + xi lanh 1, dung tích tối đa 1), 27 bị đẩy nhưng còn ở `all`.
+
+Cần biết:
+- Số của vài khoá gộp còn lẫn giá trị lạ từ NCC (403D-11G có 1,496; CA6DF2-17D có "4 L"; 4006-23TAG3A có "8L"). Không đổi kết luận vì số đa số vẫn đúng, nhưng là dữ liệu NCC cần soát riêng.
+- Xung đột với #1062: sau gộp, `e.model` mất chữ "India", nên `placeInModel(e.model)` không loại được 11 dòng kaihua "India …" ở G7/EU. Chữ nước còn trong `u.line`: #1062 phải đọc từ đó.
+
 ## Giải thích đo cloud: 2.173 dòng mất, 57 dòng hạng 1–5, 548 dòng đổi điểm (21/11/2026)
 
 **Kết luận:** #998 không làm mất dòng do trùng khoá. Không sửa code, head vẫn `cc38bda8`. Việc gộp khoá làm luật số liệu chạy được trên dòng trước đây không có số. Phần lớn là loại đúng, nhưng **ít nhất 78 dòng / 7 lượt bị loại oan** vì 2 lỗi đọc ngưỡng HSMT có sẵn ở `config-bot.mjs` (không nằm trong `catalog.js`). Cần điều phối chọn sửa trước hay sau khi merge.

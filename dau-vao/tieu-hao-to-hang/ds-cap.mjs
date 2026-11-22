@@ -23,10 +23,14 @@ for (const d of hist) {
       if (x.e?.model !== "6M31G825/5" || x.u.supplierId === "baudouin" && false) continue; const id = `${run}|${x.u.supplierId}`, sh = sheetOf(facts.get(`engine:${x.e.key}`) || []), parts = [];
       for (const [, k, hk, lab] of LOADS) if (h[hk] != null && sh[k] != null && !own(x.u, k, pctLoad[k])) parts.push({ lab, lim: h[hk], v: sh[k], over: sh[k] > h[hk] });
       if (!parts.length || seen.has(id)) continue; seen.add(id);
-      rows.push({ run, sup: x.u.supplierId, parts, over: parts.some((p) => p.over), dropped: R.dropped.includes(x), inTop: top.has(x.u), named: !!x.named });
+      rows.push({ run, sup: x.u.supplierId, parts, over: parts.some((p) => p.over), dropped: R.dropped.includes(x), inTop: top.has(x.u), named: !!x.named, ruled: x.ruled || [], lim: { cap: rn.cap.value, minCyl: h.minCyl, exact: h.cylExact, layout: h.cylLayout, minDisp: h.minDisp, maxDisp: h.maxDisp, freq: h.freq, minPrime: h.minPrime }, pw: x.u.power?.prime, line: String(x.u.line || (x.u.lines?.rows || [])[0] || "").slice(0, 90) });
     }
   });
 }
 rows.sort((a, b) => a.run.localeCompare(b.run) || a.sup.localeCompare(b.sup));
 const md = ["| Lượt | NCC | Động cơ | Ngưỡng HSMT (L/h) | Số tờ hãng (L/h) | Kết quả |", "|---|---|---|---|---|---|", ...rows.map((r) => `| ${r.run} | ${r.sup} | 6M31G825/5 | ${r.parts.map((p) => `${p.lab} ≤ ${p.lim}`).join("; ")} | ${r.parts.map((p) => `${p.lab} ${p.v}`).join("; ")} | ${r.over ? "vượt" : "đạt"}${r.dropped ? ", loại" : ""}${r.named ? ", HSMT nêu" : ""} |`)].join("\n");
 fs.writeFileSync(OUT, md); console.log(`cặp ${rows.length} | đạt ${rows.filter((r) => !r.over).length} | vượt ${rows.filter((r) => r.over).length} | vượt mà không bị loại ${rows.filter((r) => r.over && !r.dropped).length} | đạt mà bị loại ${rows.filter((r) => !r.over && r.dropped).length}`); console.log(md);
+console.log("\n== Đạt tiêu hao mà bị loại");
+for (const r of rows.filter((y) => !y.over && y.dropped)) console.log(r.run, r.sup, "luật", r.ruled.join(",") || "(không ghi)", JSON.stringify(r.lim), "prime", JSON.stringify(r.pw), "|", r.line);
+const c = new Map(); for (const r of rows.filter((y) => !y.over && y.dropped)) { const k = r.ruled.join(",") || "(không ghi)"; c.set(k, (c.get(k) || 0) + 1); } console.log("Theo luật:", JSON.stringify([...c]));
+console.log("Vượt mà luật không có fuel*:", rows.filter((y) => y.over && !y.ruled.some((x) => /^fuel/.test(x))).length);
