@@ -1,6 +1,6 @@
 # tieu-hao-to-hang-1: tiêu hao tờ hãng động cơ ở bước chọn ứng viên (22/11/2026)
 
-Trạng thái: **đề xuất luật, CHƯA code**, chờ điều phối chọn. Nhánh `fix/tieu-hao-to-hang` từ main 8bc431a3, chưa có commit.
+Trạng thái: **ĐÃ MERGE** (#1081, 8c8d9cc6, hướng A; điều phối báo đo cloud: 1.089 lượt giống hệt, 4 lượt đổi, 11 dòng ra khỏi `all`, đều 6M31G825/5). Xem mục "Kết quả chạy thật" ở cuối; số 16 cặp bên dưới là ước lượng cũ.
 Script: `dau-vao\tieu-hao-to-hang\do-pham-vi.mjs`, `do-fact.mjs`. Số lượt-dòng là ước lượng trên danh sách `all` của đo cloud 669b5ae8, bidhist máy 20/11, chưa chạy `candidates`.
 
 ## Phạm vi đo được
@@ -27,3 +27,12 @@ Script: `dau-vao\tieu-hao-to-hang\do-pham-vi.mjs`, `do-fact.mjs`. Số lượt-d
 - **A (đề xuất):** làm theo 4 luật trên, PR nhỏ, đo cloud.
 - **B:** số tờ hãng vượt chỉ trừ 300, giữ dòng trong bảng.
 - **C:** không làm, vì chỉ 1 động cơ có số dùng được; chuyển sang E/C/D.
+
+## Kết quả chạy thật (22/11/2026, code cabbe660, `candidates` trên bidhist 20/11)
+- Danh sách đủ: `dau-vao\tieu-hao-to-hang\ds-cap.md`, lý do: `ds-cap.log`. **65 cặp**: 29 đạt, 36 vượt; 36 cặp vượt đều bị loại, đều có luật `fuel*`.
+- **24 cặp đạt tiêu hao mà bị loại: soát cả 24, 0 cặp oan.** Mọi lý do so với 6M31G825/5 (6 xi lanh, 18,5 L) hoặc dòng prime 750 kVA:
+  - chỉ công suất: 10 cặp (dòng prime 750 kVA < HSMT 800 / 820 kVA);
+  - xi lanh: 4 cặp (HSMT 12 xi lanh chữ V, máy 6);
+  - dung tích + xi lanh: 4 cặp (HSMT ≥ 21,927 L, ≥ 12 xi lanh);
+  - dung tích + xi lanh + công suất: 5 cặp; dung tích + công suất: 1 cặp (≥ 23 L, 800 kVA).
+- Toàn bộ test `suppliers/*.test.mjs` trên cabbe660: 1.478 / 1.478 đạt.

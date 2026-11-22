@@ -1,0 +1,96 @@
+cặp 65 | đạt 29 | vượt 36 | vượt mà không bị loại 0 | đạt mà bị loại 24
+| Lượt | NCC | Động cơ | Ngưỡng HSMT (L/h) | Số tờ hãng (L/h) | Kết quả |
+|---|---|---|---|---|---|
+| IB2200018828#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 161; 75% ≤ 121; 50% ≤ 85 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200018828#0 | cgm-italia | 6M31G825/5 | 100% ≤ 161; 75% ≤ 121; 50% ≤ 85 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200018828#0 | voltgent | 6M31G825/5 | 100% ≤ 161; 75% ≤ 121; 50% ≤ 85 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200018828#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 161; 75% ≤ 121; 50% ≤ 85 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200018828#0 | weichai-power | 6M31G825/5 | 100% ≤ 161; 75% ≤ 121; 50% ≤ 85 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200065274#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 171; 75% ≤ 145; 50% ≤ 98 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200065274#0 | voltgent | 6M31G825/5 | 100% ≤ 171; 75% ≤ 145; 50% ≤ 98 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200065274#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 171; 75% ≤ 145; 50% ≤ 98 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2200065274#0 | weichai-power | 6M31G825/5 | 100% ≤ 171; 75% ≤ 145; 50% ≤ 98 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300022940#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 139.1 | 100% 156 | vượt, loại |
+| IB2300022940#0 | voltgent | 6M31G825/5 | 100% ≤ 139.1 | 100% 156 | vượt, loại |
+| IB2300022940#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 139.1 | 100% 156 | vượt, loại |
+| IB2300022940#0 | weichai-power | 6M31G825/5 | 100% ≤ 139.1 | 100% 156 | vượt, loại |
+| IB2300254479#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 165; 75% ≤ 120; 50% ≤ 80 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300254479#0 | voltgent | 6M31G825/5 | 100% ≤ 165; 75% ≤ 120; 50% ≤ 80 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300254479#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 165; 75% ≤ 120; 50% ≤ 80 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300254479#0 | weichai-power | 6M31G825/5 | 100% ≤ 165; 75% ≤ 120; 50% ≤ 80 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300269124#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 180; 75% ≤ 150; 50% ≤ 100 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300269124#0 | voltgent | 6M31G825/5 | 100% ≤ 180; 75% ≤ 150; 50% ≤ 100 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300269124#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 180; 75% ≤ 150; 50% ≤ 100 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300269124#0 | weichai-power | 6M31G825/5 | 100% ≤ 180; 75% ≤ 150; 50% ≤ 100 | 100% 156; 75% 113; 50% 77 | đạt, loại |
+| IB2300278513#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 143; 50% ≤ 71.5 | 100% 156; 50% 77 | vượt, loại |
+| IB2300278513#0 | voltgent | 6M31G825/5 | 100% ≤ 143; 50% ≤ 71.5 | 100% 156; 50% 77 | vượt, loại |
+| IB2300278513#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 143; 50% ≤ 71.5 | 100% 156; 50% 77 | vượt, loại |
+| IB2300278513#0 | weichai-power | 6M31G825/5 | 100% ≤ 143; 50% ≤ 71.5 | 100% 156; 50% 77 | vượt, loại |
+| IB2300343668#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 147; 50% ≤ 73 | 100% 156; 50% 77 | vượt, loại |
+| IB2300343668#0 | cgm-italia | 6M31G825/5 | 100% ≤ 147; 50% ≤ 73 | 100% 156; 50% 77 | vượt, loại |
+| IB2300343668#0 | voltgent | 6M31G825/5 | 100% ≤ 147; 50% ≤ 73 | 100% 156; 50% 77 | vượt, loại |
+| IB2300343668#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 147; 50% ≤ 73 | 100% 156; 50% 77 | vượt, loại |
+| IB2300343668#0 | weichai-power | 6M31G825/5 | 100% ≤ 147; 50% ≤ 73 | 100% 156; 50% 77 | vượt, loại |
+| IB2400027592#0 | cgm-italia | 6M31G825/5 | 100% ≤ 145 | 100% 156 | vượt, loại |
+| IB2400058723#0 | cgm-italia | 6M31G825/5 | 100% ≤ 137 | 100% 156 | vượt, loại |
+| IB2400058723#1 | cgm-italia | 6M31G825/5 | 100% ≤ 175 | 100% 156 | đạt, loại |
+| IB2400236068#1 | agg-fuzhou | 6M31G825/5 | 100% ≤ 131; 75% ≤ 100; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400236068#1 | cgm-italia | 6M31G825/5 | 100% ≤ 131; 75% ≤ 100; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400236068#1 | voltgent | 6M31G825/5 | 100% ≤ 131; 75% ≤ 100; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400236068#1 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 131; 75% ≤ 100; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400236068#1 | weichai-power | 6M31G825/5 | 100% ≤ 131; 75% ≤ 100; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400367420#0 | cgm-italia | 6M31G825/5 | 100% ≤ 143; 75% ≤ 107; 50% ≤ 75 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400517601#0 | cgm-italia | 6M31G825/5 | 100% ≤ 150; 75% ≤ 112; 50% ≤ 75 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400533611#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400533611#0 | voltgent | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400533611#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400533611#0 | weichai-power | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400596787#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400596787#0 | voltgent | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400596787#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400596787#0 | weichai-power | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2400617546#0 | cgm-italia | 6M31G825/5 | 100% ≤ 150; 75% ≤ 112; 50% ≤ 75 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2500351271#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 180 | 100% 156 | đạt, loại |
+| IB2500351271#0 | voltgent | 6M31G825/5 | 100% ≤ 180 | 100% 156 | đạt, loại |
+| IB2500351271#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 180 | 100% 156 | đạt, loại |
+| IB2500351271#0 | weichai-power | 6M31G825/5 | 100% ≤ 180 | 100% 156 | đạt, loại |
+| IB2500405459#0 | cgm-italia | 6M31G825/5 | 100% ≤ 160; 75% ≤ 115; 50% ≤ 78 | 100% 156; 75% 113; 50% 77 | đạt |
+| IB2500473200#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2500473200#0 | cgm-italia | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2500473200#0 | voltgent | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2500473200#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2500473200#0 | weichai-power | 6M31G825/5 | 100% ≤ 135; 75% ≤ 105; 50% ≤ 70 | 100% 156; 75% 113; 50% 77 | vượt, loại |
+| IB2600243028#0 | cgm-italia | 6M31G825/5 | 100% ≤ 198.2; 75% ≤ 150.1 | 100% 156; 75% 113 | đạt, loại |
+| IB2600347583#0 | agg-fuzhou | 6M31G825/5 | 100% ≤ 170 | 100% 156 | đạt |
+| IB2600347583#0 | voltgent | 6M31G825/5 | 100% ≤ 170 | 100% 156 | đạt |
+| IB2600347583#0 | weichai-heavy-machinery | 6M31G825/5 | 100% ≤ 170 | 100% 156 | đạt |
+| IB2600347583#0 | weichai-power | 6M31G825/5 | 100% ≤ 170 | 100% 156 | đạt |
+| IB2600438484#0 | cgm-italia | 6M31G825/5 | 100% ≤ 198.2; 75% ≤ 150.1 | 100% 156; 75% 113 | đạt, loại |
+
+== Đạt tiêu hao mà bị loại
+IB2200018828#0 agg-fuzhou luật prime {"cap":820,"minCyl":6,"exact":true,"layout":"inline","minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":820,"kW":656}} prime {"kVA":750,"kW":600} | | B825E5 | 825/660 | 750/600 | 6M31G825/5
+IB2200018828#0 cgm-italia luật prime {"cap":820,"minCyl":6,"exact":true,"layout":"inline","minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":820,"kW":656}} prime {"kVA":750,"kW":600} | | 750B | | 750 | 600 | 825 | 660 | 6M31G825/5 | E | 0 | 6 | 888.7/663 | 400 | B750 | 5750 
+IB2200018828#0 voltgent luật prime {"cap":820,"minCyl":6,"exact":true,"layout":"inline","minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":820,"kW":656}} prime {"kVA":750,"kW":600} | | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+IB2200018828#0 weichai-heavy-machinery luật prime {"cap":820,"minCyl":6,"exact":true,"layout":"inline","minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":820,"kW":656}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2200018828#0 weichai-power luật prime {"cap":820,"minCyl":6,"exact":true,"layout":"inline","minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":820,"kW":656}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2200065274#0 agg-fuzhou luật disp,cyl {"cap":800,"minCyl":12,"exact":false,"layout":null,"minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":null} prime {"kVA":750,"kW":600} | | B825E5 | 825/660 | 750/600 | 6M31G825/5
+IB2200065274#0 voltgent luật disp,cyl {"cap":800,"minCyl":12,"exact":false,"layout":null,"minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":null} prime {"kVA":750,"kW":600} | | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+IB2200065274#0 weichai-heavy-machinery luật disp,cyl {"cap":800,"minCyl":12,"exact":false,"layout":null,"minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":null} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2200065274#0 weichai-power luật disp,cyl {"cap":800,"minCyl":12,"exact":false,"layout":null,"minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":null} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2300254479#0 agg-fuzhou luật cyl {"cap":825,"minCyl":12,"exact":true,"layout":"v","minDisp":null,"maxDisp":22,"freq":50,"minPrime":{"kVA":750}} prime {"kVA":750,"kW":600} | | B825E5 | 825/660 | 750/600 | 6M31G825/5
+IB2300254479#0 voltgent luật cyl {"cap":825,"minCyl":12,"exact":true,"layout":"v","minDisp":null,"maxDisp":22,"freq":50,"minPrime":{"kVA":750}} prime {"kVA":750,"kW":600} | | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+IB2300254479#0 weichai-heavy-machinery luật cyl {"cap":825,"minCyl":12,"exact":true,"layout":"v","minDisp":null,"maxDisp":22,"freq":50,"minPrime":{"kVA":750}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2300254479#0 weichai-power luật cyl {"cap":825,"minCyl":12,"exact":true,"layout":"v","minDisp":null,"maxDisp":22,"freq":50,"minPrime":{"kVA":750}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2300269124#0 agg-fuzhou luật disp,cyl,prime {"cap":800,"minCyl":12,"exact":false,"layout":"v","minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":{"kVA":800}} prime {"kVA":750,"kW":600} | | B825E5 | 825/660 | 750/600 | 6M31G825/5
+IB2300269124#0 voltgent luật disp,cyl,prime {"cap":800,"minCyl":12,"exact":false,"layout":"v","minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":{"kVA":800}} prime {"kVA":750,"kW":600} | | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+IB2300269124#0 weichai-heavy-machinery luật disp,cyl,prime {"cap":800,"minCyl":12,"exact":false,"layout":"v","minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":{"kVA":800}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2300269124#0 weichai-power luật disp,cyl,prime {"cap":800,"minCyl":12,"exact":false,"layout":"v","minDisp":21.927,"maxDisp":null,"freq":50,"minPrime":{"kVA":800}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2400058723#1 cgm-italia luật prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":null,"maxDisp":32,"freq":50,"minPrime":{"kVA":800}} prime {"kVA":750,"kW":600} | | 750B | | 750 | 600 | 825 | 660 | 6M31G825/5 | E | 0 | 6 | 888.7/663 | 400 | B750 | 5750 
+IB2500351271#0 agg-fuzhou luật prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | B825E5 | 825/660 | 750/600 | 6M31G825/5
+IB2500351271#0 voltgent luật prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+IB2500351271#0 weichai-heavy-machinery luật prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2500351271#0 weichai-power luật prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":null,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | No
+IB2600243028#0 cgm-italia luật disp,cyl,prime {"cap":800,"minCyl":12,"exact":true,"layout":"v","minDisp":29.6,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | 750B | | 750 | 600 | 825 | 660 | 6M31G825/5 | E | 0 | 6 | 888.7/663 | 400 | B750 | 5750 
+IB2600438484#0 cgm-italia luật disp,prime {"cap":800,"minCyl":null,"exact":false,"layout":null,"minDisp":23,"maxDisp":null,"freq":50,"minPrime":{"kVA":800,"kW":640}} prime {"kVA":750,"kW":600} | | 750B | | 750 | 600 | 825 | 660 | 6M31G825/5 | E | 0 | 6 | 888.7/663 | 400 | B750 | 5750 
+Theo luật: [["prime",10],["disp,cyl",4],["cyl",4],["disp,cyl,prime",5],["disp,prime",1]]
+Vượt mà luật không có fuel*: 0
