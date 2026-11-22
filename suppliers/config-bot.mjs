@@ -1023,6 +1023,22 @@ export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas
 // frequency are enough, `ruled: freq`; Khoa 20/11/2026, IB2400073761 "Tần số: 50 & 60hz"). A pair needs a "Hz" on one side and
 // no unit / second figure after the second number ("380V-50Hz-60/66 kVA" is 60 kVA, not 60 Hz).
 const FREQ_PAIR = /(?<![\d.,])(?:50|60)\s*(?:hz|hertz)?\s*(?:\/|&|-|–|—|÷|,|;|~|hoặc|hay|và|or|and|đến|to)\s*(?:50|60)(?![\d])(?!\s*(?:\/\s*\d|kva|kw|kvar|va\b|a\b|v\b|%))\s*(?:hz|hertz)?/gi;
+// Tần số của một dòng: ô tần số đã đọc, nếu không thì cột tốc độ của chính dòng (đúng một cột tên "Speed" / "rpm" / 转速,
+// ô đúng 1500 hoặc 1800). Không đoán từ ô số không có tiêu đề; cột ghép "Power/Speed (kWm/rpm)" không đọc.
+export function hzOfRow(u) {
+  if (u?.freq) return u.freq;
+  if (!u?.line) return null;
+  const trimmed = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), cells = trimmed(u.line);
+  for (const h of u.header || []) {
+    const heads = trimmed(h);
+    if (heads.length !== cells.length) continue;
+    const at = heads.flatMap((c, i) => (/^(rated\s+)?speed\b|^rpm\b|^转速/i.test(c) ? [i] : []));
+    if (at.length !== 1) continue;
+    const m = cells[at[0]].match(/^(1500|1800)(?:\s*(?:rpm|r\/min))?$/i);
+    return m ? (m[1] === "1500" ? 50 : 60) : null;
+  }
+  return null;
+}
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1982,11 +1998,14 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
       if (hints.freq && !u.freq) {
+        // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
+        const own = hzOfRow(u);
         // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
-        const known = [...e.uses, ...twinUses].map((x) => x.freq).filter(Boolean);
-        if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
+        const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
+        if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (!own && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some(hzOfRow));
       if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
       // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
