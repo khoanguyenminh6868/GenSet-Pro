@@ -265,6 +265,15 @@ Cột không rõ thuộc động cơ hay tổ máy: không có trong 4 bảng đ
 
 **Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
 
+**Kiểm chéo đo cloud #1095 (`do-gop-nha-may-tq-ket-qua` 2dac2607; 22/11/2026).** 1.061 lượt giống, 20 lượt đổi top (ra 59, vào 59), 12 lượt chỉ đổi `all`. 454 dòng RA = 445 rời `all` + 9 chỉ rời top.
+
+- **(A) Có một lỗi loại oan, đã sửa ở 70abadc3:** longkai-power 27 dòng RA (6 trong top), đọc từ ô `Engine-DCEC Cummins` ở 68 hàng. Ô này là tên họ của mẫu trang (longkai còn có `Engine-SDEC`, `Engine-Weichai`), ghi cả trên KTA38 / KTA50 / QSK19, trong khi NCC khác ghi các mã đó là CCEC (KTA38-G2 11, KT38-GA 3, KTA50-G15 6, QSK19-G11 5) và không nguồn nào ghi DCEC. Sau sửa: 0 hàng longkai bị đọc. Số dòng trả lại phải xác nhận bằng đo cloud trên SHA mới.
+- 9 dòng RA không có chữ nơi SX: chỉ bị đẩy khỏi top, không `ruled` (aosif QSK60-G8, cgm-italia 403A-11G, ettes-power 4BT3.9-G, gordon-power 404D-22G, mecca-power 5016A-E61TRG3, mingbang 4B3.9-G1/G2, powerzoo 4TNV98-GGE, rise-power 4BT3.9-G2, stone-power 6CTA8.3-G2).
+- Các dòng RA còn lại có chữ ở đúng dòng hoặc đúng bảng của nó: aosif `Manufacturer | Chongqing/dongfeng Cummins` (datasheet một model), fdk `Engine Make | Cummins CHINA`, `Perkins CHINA`, shanhua `制造商 Manufacturer | CCEC CUMMINS`, sunkings, jiuan, xinhengxin, yingtai.
+- **(B) baifa:** chỉ đọc ô cuối của bảng n101 có cột "ENGINE MANUFACTURER / COUNTRY". 72 hàng: "CHINA" 69, "CUMMINS (CHINA)" 2, "MTU JV CHINA" 1. Không dòng nào bị đọc theo cột mà ô cuối khác CHINA; dòng chỉ có "CHINA STAGE3" không bị đọc.
+- **(C) Chưa đọc, chưa sửa, chờ quyết:** sanq ô "Wuxi" 44; fdk "Mitsubishi (SME Shanghai)" 27; 上海菱重 25 (bdadl-shanghai 9, fukangsi-yangzhou 8, pengpai-yangzhou 8); simpson "SME" 3. Bốn ô stone-power "refer to SO…, guangxi neihe market" là ghi chú thị trường, không phải nơi SX.
+- **(D) 59 dòng VÀO top:** không dòng nào ghi nơi SX ngoài nhóm đã đọc. 12 dòng có chữ nơi SX: trong nhóm (bobig "made in UK", fdk "PERKINS USA" 2, fdk "CUMMINS(UK)", kaihua "UK 4006-23TAG3A", sanq "USA"), nhãn chỉ ghi hãng (aosif QSK23-G2, fdk NTA855-G1B), và 3 dòng thuộc (C): fdk "SME Shanghai" 2, sanq 403A-15G1 "Wuxi" 1.
+
 ## Lệnh
 
 ```powershell
