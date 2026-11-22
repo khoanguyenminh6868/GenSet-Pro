@@ -174,6 +174,32 @@ Lượt mới so lần 2 (5): IB2200100465 (9 dòng, có số Powerpack); IB2300
 - Còn chữ India mà `placeInRow` không đọc, có bản ghi động cơ: 1 hàng, shanhua n1011 #18, bảng nhãn "制造商 Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)", động cơ 1103A-33TG2. Chưa sửa, chờ điều phối quyết.
 - Có chữ India nhưng không có bản ghi động cơ nên không vào ứng viên: generatordieselchina 1, mahindra-powerol 1, woodward 4.
 
+**Đối chiếu số đo cloud #1088 (e6a567c5 so 8bf8bca6, `do-gop-india-sot-ket-qua` 697df9eb).** Chạy lại đúng 10 lượt trên máy, cùng cách tính của `do-gop` (gốc 8bf8bca6, đầu 3a323d1b, bản bidhist đóng băng của lần đo 3). 5 dòng ra và 5 dòng vào top 30 trùng số đo cloud.
+
+- **Cả 51 lượt-dòng India đều rời `all`, `ruled: made`, không dòng nào sót.** `tom-tat.md` chỉ in 16 vì `cmp.mjs`: lượt có đổi top 30 chỉ liệt kê dòng ra / vào TOP, không liệt kê dòng rời `all`. 4 lượt đổi top có 40 dòng rời `all` (in 5), 6 lượt còn lại có 11 dòng (in đủ). 5 + 11 = 16; 35 dòng không in.
+- **Vì sao không thấy sanq:** 10 dòng sanq ô INDIA nằm ở IB2300000242 (4), IB2300194512 (4), IB2600337362 (2), đều là lượt đổi top, và không dòng nào ở top 30 gốc. Chúng có rời `all` nhưng công cụ không in. 37 dòng UK/INDIA vẫn ở lại (31 `all`, 6 top).
+
+| Lượt | `madeRule.engine` | fdk | bobig | sanq | baifa | Rời `all` | Ra top |
+|---|---|---|---|---|---|---|---|
+| IB2300000242#0 | không có | 9 | 3 | 4 | | 16 | 1 |
+| IB2300194512#0 | không có | 9 | 3 | 4 | | 16 | 1 |
+| IB2300390432#0 | không có | 2 | | | | 2 | 0 |
+| IB2400362458#0 | nơi sản xuất | | 1 | | 1 | 2 | 0 |
+| IB2400495407#0 | nơi sản xuất | | 1 | | 1 | 2 | 0 |
+| IB2500189675#0 | không có | 1 | | | | 1 | 0 |
+| IB2500287209#1 | thương hiệu | 1 | 1 | | | 2 | 0 |
+| IB2500342833#0 | thương hiệu | | | | 1 | 1 | 1 |
+| IB2600337362#0 | thương hiệu | 5 | | 2 | | 7 | 2 |
+| IB2600350175#0 | thương hiệu | 1 | 1 | | | 2 | 0 |
+
+**5 dòng vào top 30: không phải India, nhưng chỉ 1 dòng sạch.**
+- lees-power 4BTA3.9-G2(M), IB2500342833: dòng không ghi nơi sản xuất, giữ theo luật "không ghi thì không suy ra".
+- fdk 4006-23TAG3A ghi "PERKINS CHINA" (IB2300000242, IB2300194512) và fdk KTA50-GS8, QSK50-G4 ghi "CUMMINS (CCEC CHINA)" (IB2600337362): NCC tự ghi nhà máy Trung Quốc ở gói G7/EU. Không có `ruled` vì `placeInRow` chỉ đọc India / UK / SME, và `madeAt` chỉ chạy khi `madeRule.engine` là nơi sản xuất (ba lượt này: không có hoặc thương hiệu). Đây là lỗ hổng cùng loại, #1088 làm chúng lộ ra vì đẩy dòng India đi.
+
+**Cần Khoa quyết (chưa sửa):**
+1. Dòng NCC tự ghi nhà máy Trung Quốc ("Perkins China", "CCEC China") ở gói G7/EU có loại như dòng India không?
+2. 12 trong 51 dòng thuộc 4 lượt mà HSMT chỉ đòi THƯƠNG HIỆU. Luật cũ nhận nhà máy chính hãng ngoài nhóm khi chỉ đòi thương hiệu, còn `placeInRow` (quyết định 21/11) loại ở mọi gói G7/EU. Với lượt chỉ đòi thương hiệu: giữ loại India, hay trả lại cả dòng India lẫn dòng Trung Quốc?
+
 **Lỗi 60 Hz, PR #1089 (22/11/2026, bản 2773e3a8, chưa đo cloud).** Vì sao 6M31G660/6 lọt: luật 17/11 cần ít nhất hai dòng ghi tần số, mà dòng weichai "WPG660*76 | 1800 | …" chỉ có tốc độ, không có chữ Hz, nên động cơ này chỉ có 1 dòng ghi tần số. Bản sửa đọc cột tốc độ của chính dòng (`hzOfRow`). Trong `cn/`: đọc thêm 418 dòng 50 Hz, 100 dòng 60 Hz; 59 động cơ đổi trạng thái "chỉ một tần số"; 0 mã đuôi `/5` thành 60 Hz, 0 mã đuôi `/6` thành 50 Hz. YC20VTD3000-D30 và YC20VTD3300-D30 từ "chỉ 60 Hz" thành có cả hai, do dòng comler ghi 50 Hz / 1500 v/p, nên dòng không ghi tần số của hai mã này không còn bị loại.
 
 ## Lệnh
