@@ -1,0 +1,198 @@
+[
+ {
+  "model": "AC03",
+  "key": "AC03",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "AMF20",
+  "key": "AMF20",
+  "ncc": 8,
+  "lines": 175,
+  "sheets": "InteliLite 4 AMF20"
+ },
+ {
+  "model": "AMF25",
+  "key": "AMF25",
+  "ncc": 11,
+  "lines": 188,
+  "sheets": "InteliLite 4 AMF25"
+ },
+ {
+  "model": "AMF5",
+  "key": "AMF5",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "AMF8",
+  "key": "AMF8",
+  "ncc": 3,
+  "lines": 175,
+  "sheets": "InteliLite 4 AMF8"
+ },
+ {
+  "model": "AMF9",
+  "key": "AMF9",
+  "ncc": 1,
+  "lines": 183,
+  "sheets": "InteliLite 4 AMF9"
+ },
+ {
+  "model": "ComAp (không ghi model)",
+  "key": "BRAND:COMAP",
+  "ncc": 34,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "IG1000",
+  "key": "IG1000",
+  "ncc": 2,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "IG200",
+  "key": "IG200",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "IG500",
+  "key": "IG500",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "IG-NT",
+  "key": "IGNT",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "IG-NTC-BB",
+  "key": "IGNTCBB",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliDrive DCU Marine",
+  "key": "INTELIDRIVEDCUMARINE",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliGen",
+  "key": "INTELIGEN",
+  "ncc": 4,
+  "lines": 1371,
+  "sheets": "InteliGen NT/InteliGen NTC/InteliGen 500/InteliGen 4/InteliGen 1000"
+ },
+ {
+  "model": "InteliGen 1000 Marine",
+  "key": "INTELIGEN1000MARINE",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliGen NT",
+  "key": "INTELIGENNT",
+  "ncc": 1,
+  "lines": 354,
+  "sheets": "InteliGen NT"
+ },
+ {
+  "model": "InteliLITE",
+  "key": "INTELILITE",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliLite 4",
+  "key": "INTELILITE4",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliLite 4 AMF20",
+  "key": "INTELILITE4AMF20",
+  "ncc": 1,
+  "lines": 175,
+  "sheets": "InteliLite 4 AMF20"
+ },
+ {
+  "model": "InteliLite 4 AMF25",
+  "key": "INTELILITE4AMF25",
+  "ncc": 1,
+  "lines": 188,
+  "sheets": "InteliLite 4 AMF25"
+ },
+ {
+  "model": "InteliLite 4 MRS16",
+  "key": "INTELILITE4MRS16",
+  "ncc": 2,
+  "lines": 190,
+  "sheets": "InteliLite 4 MRS16"
+ },
+ {
+  "model": "InteliLITE MRS15",
+  "key": "INTELILITEMRS15",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliLite NT AMF20",
+  "key": "INTELILITENTAMF20",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliLITE NT MRS15",
+  "key": "INTELILITENTMRS15",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "InteliSys",
+  "key": "INTELISYS",
+  "ncc": 1,
+  "lines": 192,
+  "sheets": "InteliSys"
+ },
+ {
+  "model": "InteliVision 15 Touch",
+  "key": "INTELIVISION15TOUCH",
+  "ncc": 1,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "MRS10",
+  "key": "MRS10",
+  "ncc": 2,
+  "lines": 0,
+  "sheets": ""
+ },
+ {
+  "model": "MRS16",
+  "key": "MRS16",
+  "ncc": 2,
+  "lines": 190,
+  "sheets": "InteliLite 4 MRS16"
+ }
+]

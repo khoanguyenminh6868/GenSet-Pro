@@ -1,0 +1,216 @@
+TAP version 13
+# Subtest: prepDir: input.md chia phần, read-order.json, TASK.md có cách đọc (chạy lại không nhân đôi)
+ok 1 - prepDir: input.md chia phần, read-order.json, TASK.md có cách đọc (chạy lại không nhân đôi)
+  ---
+  duration_ms: 150.6724
+  ...
+# Subtest: prepDir: input.md ngắn → một tệp; không có input.md → []
+ok 2 - prepDir: input.md ngắn → một tệp; không có input.md → []
+  ---
+  duration_ms: 7.5325
+  ...
+# Subtest: guardDirs: hai thư mục một lượt — chỉ tính Read trong thư mục của gói
+ok 3 - guardDirs: hai thư mục một lượt — chỉ tính Read trong thư mục của gói
+  ---
+  duration_ms: 215.7018
+  ...
+# Subtest: guardDirs: đường dẫn kiểu Windows, khác hoa thường vẫn tính
+ok 4 - guardDirs: đường dẫn kiểu Windows, khác hoa thường vẫn tính
+  ---
+  duration_ms: 121.479
+  ...
+# Subtest: guardDirs: không đọc gì / Read ở thư mục khác → đọc thiếu; lượt dừng nhưng đọc đủ → giữ kết quả, có ghi chú
+ok 5 - guardDirs: không đọc gì / Read ở thư mục khác → đọc thiếu; lượt dừng nhưng đọc đủ → giữ kết quả, có ghi chú
+  ---
+  duration_ms: 28.4303
+  ...
+# Subtest: guardDirs: thư mục không có read-order.json (lượt cũ) bị bỏ qua
+ok 6 - guardDirs: thư mục không có read-order.json (lượt cũ) bị bỏ qua
+  ---
+  duration_ms: 1.1885
+  ...
+# Subtest: guardDirs: đường dẫn tương đối nối với thư mục chạy (--cwd, hoặc dòng init của log)
+ok 7 - guardDirs: đường dẫn tương đối nối với thư mục chạy (--cwd, hoặc dòng init của log)
+  ---
+  duration_ms: 46.2534
+  ...
+# Subtest: splitForRead: every part under the limit, at headings first, the parts together are the text word for word
+ok 8 - splitForRead: every part under the limit, at headings first, the parts together are the text word for word
+  ---
+  duration_ms: 7.7038
+  ...
+# Subtest: writeForRead: the whole file stays for the code and grep, the parts are written only when needed, old parts go
+ok 9 - writeForRead: the whole file stays for the code and grep, the parts are written only when needed, old parts go
+  ---
+  duration_ms: 30.2599
+  ...
+# Subtest: agentInput: the instructions in the message, then the files in order; no 'read prompt.md'
+ok 10 - agentInput: the instructions in the message, then the files in order; no 'read prompt.md'
+  ---
+  duration_ms: 9.4079
+  ...
+# Subtest: ctlLineFor: the hint's search (module specs left out, words in their order)
+ok 11 - ctlLineFor: the hint's search (module specs left out, words in their order)
+  ---
+  duration_ms: 1.085
+  ...
+# Subtest: ctlLookupMd: the HSMT's controller functions × each datasheet, the line with its factSrc or none
+ok 12 - ctlLookupMd: the HSMT's controller functions × each datasheet, the line with its factSrc or none
+  ---
+  duration_ms: 4.3504
+  ...
+# Subtest: fixNotes: one note per kind of problem, and the numbers of each quote a 'số' problem is about
+ok 13 - fixNotes: one note per kind of problem, and the numbers of each quote a 'số' problem is about
+  ---
+  duration_ms: 1.6339
+  ...
+# Subtest: altOf: ô trơ, ô kèm hãng, ô kèm hãng có gạch nối
+ok 14 - altOf: ô trơ, ô kèm hãng, ô kèm hãng có gạch nối
+  ---
+  duration_ms: 2.8642
+  ...
+# Subtest: altOf: không đoán — hãng lạ hay mã không có trong danh mục thì null
+ok 15 - altOf: không đoán — hãng lạ hay mã không có trong danh mục thì null
+  ---
+  duration_ms: 0.6172
+  ...
+# Subtest: danh mục có đầu phát S5L1D-C41 từ dòng của cả hai NCC
+ok 16 - danh mục có đầu phát S5L1D-C41 từ dòng của cả hai NCC
+  ---
+  duration_ms: 0.3918
+  ...
+# Subtest: FG Wilson: ô đầu phát 'FG Wilson FGL70030' cho bản ghi đầu phát FGL70030, hãng FG Wilson
+ok 17 - FG Wilson: ô đầu phát 'FG Wilson FGL70030' cho bản ghi đầu phát FGL70030, hãng FG Wilson
+  ---
+  duration_ms: 62.3852
+  ...
+# Subtest: FG Wilson: ô hãng riêng 'Alternator Make | FG Wilson' gắn hãng cho đầu phát FGL70030
+ok 18 - FG Wilson: ô hãng riêng 'Alternator Make | FG Wilson' gắn hãng cho đầu phát FGL70030
+  ---
+  duration_ms: 3.1472
+  ...
+# Subtest: FG Wilson chỉ đọc ở ô của đầu phát: tên trang / dòng có 'FG Wilson' không gán hãng cho đầu phát không ghi hãng
+ok 19 - FG Wilson chỉ đọc ở ô của đầu phát: tên trang / dòng có 'FG Wilson' không gán hãng cho đầu phát không ghi hãng
+  ---
+  duration_ms: 1.0648
+  ...
+# Subtest: hai hãng: mỗi model gắn đúng hãng đứng cạnh nó (generatordieselchina n114)
+ok 20 - hai hãng: mỗi model gắn đúng hãng đứng cạnh nó (generatordieselchina n114)
+  ---
+  duration_ms: 18.1824
+  ...
+# Subtest: hai hãng: model Leroy-Somer có dấu cách ('LSA 52.3 L12', n101) đọc nguyên văn, đúng hãng
+ok 21 - hai hãng: model Leroy-Somer có dấu cách ('LSA 52.3 L12', n101) đọc nguyên văn, đúng hãng
+  ---
+  duration_ms: 1.3701
+  ...
+# Subtest: không đoán: danh sách hãng không kèm model, hay hai mã không hãng thì KHÔNG tách
+ok 22 - không đoán: danh sách hãng không kèm model, hay hai mã không hãng thì KHÔNG tách
+  ---
+  duration_ms: 5.3361
+  ...
+# Subtest: altOf: 'FG Wilson FGL70030' → đầu phát FGL70030, hãng FG Wilson (như catalog đọc ô)
+ok 23 - altOf: 'FG Wilson FGL70030' → đầu phát FGL70030, hãng FG Wilson (như catalog đọc ô)
+  ---
+  duration_ms: 13.4909
+  ...
+# Subtest: altOf: hãng hai từ 'Leroy Somer LL5114H' → LL5114H
+ok 24 - altOf: hãng hai từ 'Leroy Somer LL5114H' → LL5114H
+  ---
+  duration_ms: 0.323
+  ...
+# Subtest: altOf: không đoán — hãng lạ, mã không có, hãng một từ + mã có dấu cách, hai hãng trong một ô
+ok 25 - altOf: không đoán — hãng lạ, mã không có, hãng một từ + mã có dấu cách, hai hãng trong một ô
+  ---
+  duration_ms: 0.5692
+  ...
+# Subtest: aiUse: Cấu hình hệ thống đặt gói tháng cho config/bidprice; còn lại API
+ok 26 - aiUse: Cấu hình hệ thống đặt gói tháng cho config/bidprice; còn lại API
+  ---
+  duration_ms: 3.6169
+  ...
+# Subtest: costOf reads the result line whatever its key order, with the [Ns] prefix
+ok 27 - costOf reads the result line whatever its key order, with the [Ns] prefix
+  ---
+  duration_ms: 0.5852
+  ...
+# Subtest: costOf: old key order, no prefix
+ok 28 - costOf: old key order, no prefix
+  ---
+  duration_ms: 0.3016
+  ...
+# Subtest: costOf: plain --output-format json
+ok 29 - costOf: plain --output-format json
+  ---
+  duration_ms: 0.263
+  ...
+# Subtest: costOf: last result wins; none or garbage gives null
+ok 30 - costOf: last result wins; none or garbage gives null
+  ---
+  duration_ms: 0.373
+  ...
+# Subtest: meterLog: ghi phần tăng ≥ 0,05 USD trong lúc chạy, lần cuối ghi đúng tới total_cost_usd
+ok 31 - meterLog: ghi phần tăng ≥ 0,05 USD trong lúc chạy, lần cuối ghi đúng tới total_cost_usd
+  ---
+  duration_ms: 34.7346
+  ...
+# Subtest: bandOf: 30 kVA and 24 kW are small (140%), 30.1 kVA and 24.1 kW are not (120%)
+ok 32 - bandOf: 30 kVA and 24 kW are small (140%), 30.1 kVA and 24.1 kW are not (120%)
+  ---
+  duration_ms: 2.967
+  ...
+# Subtest: candidates: 30 kVA takes a row of 42 kVA, not 42.1; 31 kVA does not take 38 kVA but 37.2
+ok 33 - candidates: 30 kVA takes a row of 42 kVA, not 42.1; 31 kVA does not take 38 kVA but 37.2
+  ---
+  duration_ms: 549.9113
+  ...
+# Subtest: candidates: 24 kW takes 33.6 kW, not 33.7; 24.1 kW takes up to 28.92 kW (36 kVA is 28.8 kW)
+ok 34 - candidates: 24 kW takes 33.6 kW, not 33.7; 24.1 kW takes up to 28.92 kW (36 kVA is 28.8 kW)
+  ---
+  duration_ms: 18.7729
+  ...
+# Subtest: catalog.md says the band of the size
+ok 35 - catalog.md says the band of the size
+  ---
+  duration_ms: 7.7901
+  ...
+# Subtest: Tìm NCC: the same band (fitsCap, engineRows, mergeFind)
+ok 36 - Tìm NCC: the same band (fitsCap, engineRows, mergeFind)
+  ---
+  duration_ms: 23.8489
+  ...
+# Subtest: green-power n115 (MTU): '12V 1600 G10F' là động cơ của GP610 A/M, PRP / ESP kVA 50 Hz, hãng từ tên trang; dòng bản cách âm không ghi động cơ
+ok 37 - green-power n115 (MTU): '12V 1600 G10F' là động cơ của GP610 A/M, PRP / ESP kVA 50 Hz, hãng từ tên trang; dòng bản cách âm không ghi động cơ
+  ---
+  duration_ms: 77.7608
+  ...
+# Subtest: green-power n117 (Kohler): 'KDW 702 (M)' → KDW 702 ('(M)' là cột điều tốc REG của dòng), khí thải, tiêu hao phẩy thập phân giữ nguyên chữ
+ok 38 - green-power n117 (Kohler): 'KDW 702 (M)' → KDW 702 ('(M)' là cột điều tốc REG của dòng), khí thải, tiêu hao phẩy thập phân giữ nguyên chữ
+  ---
+  duration_ms: 4.143
+  ...
+# Subtest: green-power n126 (Scania khí): 'OC16 071A 02 81 (E)' → OC16 071A 02 81, cùng khoá với 'OC16 071A 02-81' (kaihua); ESP '/' để trống
+ok 39 - green-power n126 (Scania khí): 'OC16 071A 02 81 (E)' → OC16 071A 02 81, cùng khoá với 'OC16 071A 02-81' (kaihua); ESP '/' để trống
+  ---
+  duration_ms: 14.2469
+  ...
+# Subtest: lees-power n133: 'MTU 8V4000 GS/L32' → hãng MTU (dòng bảng) + model 8V4000 GS/L32; 'Electrical Power KW' không ghi mức → rated; dòng không model bỏ
+ok 40 - lees-power n133: 'MTU 8V4000 GS/L32' → hãng MTU (dòng bảng) + model 8V4000 GS/L32; 'Electrical Power KW' không ghi mức → rated; dòng không model bỏ
+  ---
+  duration_ms: 1.8827
+  ...
+# Subtest: nhiên liệu: lees n133 khí theo URL trang (mức T); green n115 MTU diesel không ghi nhiên liệu → không có trường fuel
+ok 41 - nhiên liệu: lees n133 khí theo URL trang (mức T); green n115 MTU diesel không ghi nhiên liệu → không có trường fuel
+  ---
+  duration_ms: 4.6745
+  ...
+# Subtest: ngoại lệ theo dòng: GP1000 A/M ghi 16 xi lanh cho '12V 1600 G31F' (12V = 12) → fixspec cyl 12 (sua-so-le-1), dòng và số khác giữ; GP880 A/M không đổi
+ok 42 - ngoại lệ theo dòng: GP1000 A/M ghi 16 xi lanh cho '12V 1600 G31F' (12V = 12) → fixspec cyl 12 (sua-so-le-1), dòng và số khác giữ; GP880 A/M không đổi
+  ---
+  duration_ms: 3.5287
+  ...
+# Subtest: danh sách: tiêu đề đổi → không đọc, ghi note; NCC / bảng khác không đọc theo danh sách
+ok 43 - danh sách: tiêu đề đổi → không đọc, ghi note; NCC / bảng khác không đọc theo danh sách
+  ---
+  duration_ms: 14.3338
+  ...
