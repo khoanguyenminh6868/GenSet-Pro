@@ -5629,6 +5629,16 @@ const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔�
 const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
 const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
 const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+// Ô nhà máy TQ theo NCC + dạng chữ (danh sách tường minh, không mở rộng sang tên thành phố khác): [hãng, chữ của ô, vị trí so với ô động cơ, tiêu đề cột].
+// sanq không xét tiêu đề: ba bảng cùng bố cục, một bảng ghi "C/O of engine", một bảng thiếu tên cột, một bảng ghi nhầm "Fuel Consumption"; cột đó ở cả ba chỉ có Wuxi, UK/INDIA, USA, UK.
+const CN_MITSU = [/mitsubishi/i, /^上海菱重$/, -1, /柴油机品牌/];
+const CN_CELLS = { "sanq-power": [/perkins/i, /^wuxi$/i, 2, null], "fdk-energy": [/mitsubishi/i, /^mitsubishi\s*\(sme shanghai\)$/i, 1, /engine original/i], "bdadl-shanghai": CN_MITSU, "fukangsi-yangzhou": CN_MITSU, "pengpai-yangzhou": CN_MITSU, "simpson-power": [/mitsubishi/i, /^sme$/i, -1, /发动机品牌/] };
+function chinaListedCell(e, u, code) {
+  const r = CN_CELLS[u?.supplierId];
+  if (!r || !u.line || code.length < 3 || !r[0].test(String(e?.make || "")) || (r[3] && !(u.header || []).some((h) => r[3].test(h)))) return null;
+  const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = cells.findIndex((c) => r[1].test(c));
+  return at >= 0 && CAT.keyOf(cells[at - r[2]] || "").includes(code) ? { at: "CN", cell: cells[at], form: "listed" } : null;
+}
 export function chinaPlantInRow(e, u) {
   const make = String(e?.make || "");
   if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
@@ -5646,6 +5656,8 @@ export function chinaPlantInRow(e, u) {
     if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };
     if (names.some((n) => c.toLowerCase().includes(n))) return { at: "CN", cell, form: "make" };
   }
+  const listed = chinaListedCell(e, u, code);
+  if (listed) return listed;
   const col = ENGINE_ORIGIN_COL[u?.supplierId];
   if (make && col && u?.line && (u.header || []).some((h) => col[0].test(h))) {
     const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = col[1] === "last" ? cells.length - 1 : cells.findIndex((c) => CAT.keyOf(c) === code) + 1;

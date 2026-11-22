@@ -40,6 +40,20 @@ test("bảng nhãn: dòng động cơ ghi nhà máy; chưa rõ hãng chỉ đọ
   assert.equal(chinaPlantInRow({ model: "12M33G5D2/5", make: null }, { line: "| B1 | 66 | 12M33G5D2/5 | S7 | STAGE3 | CHINA", supplierId: "baifa-power", header: ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY"] }), null);
   assert.equal(chinaPlantInRow(K, u(["| Address | Shantou, Guangdong, China"])), null);
 });
+test("ô nhà máy theo danh sách NCC + dạng chữ", () => {
+  const M = { model: "S12R-PTA-C", make: "Mitsubishi" }, S = { model: "1104A-44TG2", make: "Perkins" };
+  const zh = { header: ["| 型号 | 输出功率 | 柴油机品牌 | 柴油机型号 | 缸数"] };
+  assert.equal(at(S, "| SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Wuxi | 1037", { supplierId: "sanq-power" }), "listed");
+  assert.equal(at(M, "| M1375 | 1375KVA | 1250KVA | S12R-PTA-C | Mitsubishi (SME Shanghai) | S6 |", { supplierId: "fdk-energy", header: ["| Genset Model | Engine Model | Engine Original"] }), "listed");
+  assert.equal(at(M, "| FKS-LZ1000 | 900/1000 | 上海菱重 | S12R-PTA-C | 12", { supplierId: "fukangsi-yangzhou", ...zh }), "listed");
+  assert.equal(at(M, "| SP1100D-L | 1100/1375 | SME | S12R-PTA-C | 4654", { supplierId: "simpson-power", header: ["| 机组型号 | 备用功率 | 发动机品牌 | 发动机型号"] }), "listed");
+  // Không mở rộng: NCC ngoài danh sách, thành phố khác, ô không kề ô động cơ, sai hãng, thiếu tiêu đề cột.
+  assert.equal(at(S, "| X | 70 | 64 | 1104A-44TG2 | UCI224G | Wuxi | 1037", { supplierId: "stone-power" }), null);
+  assert.equal(at(S, "| SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Shanghai | 1037", { supplierId: "sanq-power" }), null);
+  assert.equal(at(S, "| SQP88 | Wuxi | 64/80 | 1104A-44TG2 | UCI224G | UK | 1037", { supplierId: "sanq-power" }), null);
+  assert.equal(at({ model: "1104A-44TG2", make: "Cummins" }, "| SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Wuxi | 1037", { supplierId: "sanq-power" }), null);
+  assert.equal(at(M, "| FKS-LZ1000 | 900/1000 | 上海菱重 | S12R-PTA-C | 12", { supplierId: "fukangsi-yangzhou", header: ["| 型号 | 输出功率"] }), null);
+});
 test("cột xuất xứ động cơ: chỉ NCC + tiêu đề trong danh sách", () => {
   const baifa = { supplierId: "baifa-power", header: ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY"] };
   const origin = { supplierId: "yanan-power", header: ["| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"] };
