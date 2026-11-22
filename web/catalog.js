@@ -2753,7 +2753,8 @@
   // missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is known (MARK_KEEP). O/0 and I/1
   // are NOT merged.
   // "^" STAYS in the key (Khoa 21/11/2026 "tách ra", doc-ma-2): on Baudouin / Weichai codes (baifa, aosif, mecca, landtop,
-  // Weichai's own sheets…) no source says what it means, so "X^" is not known to be X. The merge of catalog-b also brought
+  // Weichai's own sheets…). Baudouin's sheets (sources/baudouin/1015, 1017–1020) footnote it "^ Primarily for ESP applications",
+  // so "X^" is not the same offer as X. The merge of catalog-b also brought
   // one supplier's wrong figures to the others' rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L.
   // Doosan P-engine only (DOOSAN_P: P126TI / P222LE…): the suffix "II" typed "11" or "Il" ("P126TI-11", "P222LE-11", "P126TI-Il")
   // is the same engine as "-II" (Khoa duyệt 20/11/2026). NFKC already makes "-Ⅰ" / "-Ⅱ" "-I" / "-II". "-1" / "-2" stay apart
