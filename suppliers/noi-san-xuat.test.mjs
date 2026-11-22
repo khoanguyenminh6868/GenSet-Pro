@@ -3,7 +3,7 @@
 // madeChecks (engine_origin / alt_origin / ctl_origin). Dòng nguồn và dòng HSMT lấy nguyên văn từ dữ liệu thật.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, partOriginOfHsmt, madeChecks, madeBasisOf } from "./config-bot.mjs";
+import { candidates, hintsOf, partOriginOfHsmt, madeChecks, madeBasisOf, confirmChecks } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const at = (kind, makes, text, model) => C.madeIn(kind, makes, text, model).at;
@@ -183,11 +183,41 @@ test("nhóm G: dòng NCC tự ghi India hoặc hai nơi thì KHÔNG đạt theo 
   const other = cfg("x", { suppliers: [{ supplierId: "x" }, { supplierId: "y" }] });
   madeChecks(other, reqs, { supplierId: "x", line: "| P825 | 750 | 4006-23TAG2A | S5L1D |" }, { engines: [E([{ supplierId: "y", line: "| Q | 750 | India 4006-23TAG2A | S5L1D |" }])] });
   assert.equal(other.checks[0].status, "unclear");
-  // Kết quả cũ code đã chấm đạt, nay dòng ghi India: về chưa rõ.
+  // Kết quả cũ code đã chấm đạt, nay dòng ghi India: về cần xác nhận.
   const old = cfg("x", { checks: [{ item, status: "met", rule: "thuong-hieu", byCode: true, note: "Code ghi: thương hiệu Perkins thuộc nhóm G7, EU, đạt theo thương hiệu; nơi sản xuất cần CO." }] });
   madeChecks(old, reqs, { supplierId: "x", line: "| P825 | 750 | India 4006-23TAG2A | S5L1D |" }, { engines: [E()] });
-  assert.equal(old.checks[0].status, "unclear");
+  assert.equal(old.checks[0].status, "confirm");
   assert.ok(!old.checks[0].note.includes("đạt theo thương hiệu"));
+});
+
+test("check đang đạt mà dòng ghi nơi ngoài nhóm hoặc hai nơi: về cần xác nhận, ghi nguyên chữ NCC, lũy đẳng, hết ghi thì trả lại", () => {
+  const item = "Xuất xứ động cơ", model = "S6R2-PTAA", make = "Mitsubishi";
+  const reqOf = (q) => [{ code: "engine_origin", item, requirement: q, quote: q, part: "engine", level: "core" }];
+  const brand = reqOf("Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU"), place = reqOf("Động cơ: Xuất xứ: G7, EU");
+  const sme = { supplierId: "fdk-energy", line: `| F1 | 750 | ${model} | Mitsubishi (SME Shanghai) |`, header: ["| Model | kVA | Engine | Engine original |"] };
+  const two = { supplierId: "yanan-power", line: `| Y1 | 750 | ${model} | JAPAN OR CHINA | S5 |`, header: ["| Model | kVA | Engine | Engine origin | Alternator |"] };
+  const clean = { supplierId: "x", line: `| X1 | 750 | ${model} | S5 |` };
+  const built = (u) => ({ engines: [{ key: C.keyOf(model), kind: "engine", model, make, uses: [u] }] });
+  const cfg = (u, status = "met") => ({ engine: { model, make, src: { kind: "catalog", supplierId: u.supplierId } }, checks: [{ item, status, offered: "Mitsubishi (Nhật)", note: "Nhãn hiệu Mitsubishi" }] });
+  for (const [u, word] of [[sme, "Mitsubishi (SME Shanghai)"], [two, "JAPAN OR CHINA"]]) for (const reqs of [brand, place]) {
+    const c = madeChecks(cfg(u), reqs, u, built(u)), x = c.checks[0];
+    // HSMT đòi NƠI sản xuất, dòng ghi đúng một nơi ngoài nhóm: "không đạt" như luật cũ.
+    if (reqs === place && u === sme) { assert.equal(x.status, "not_met"); continue; }
+    assert.equal(x.status, "confirm", word);
+    assert.equal(x.confirm, "document");
+    assert.ok(x.note.includes(`«${word}»`), x.note);
+    assert.ok(x.note.startsWith("Nhãn hiệu Mitsubishi"));
+    const first = JSON.stringify(c);
+    confirmChecks(c, reqs); madeChecks(c, reqs, u, built(u));
+    assert.equal(JSON.stringify(c), first, "chạy lại giống hệt");
+    // Dòng không còn ghi nơi đó: trả về trạng thái cũ, bỏ ghi chú.
+    madeChecks(c, reqs, clean, built(clean));
+    assert.ok(!c.checks[0].placeHold);
+    assert.ok(!String(c.checks[0].note || "").includes("dòng NCC ghi nơi sản xuất"));
+  }
+  // Không đạt / chưa rõ: không bị nâng thành cần xác nhận theo luật này.
+  assert.equal(madeChecks(cfg(sme, "not_met"), brand, sme, built(sme)).checks[0].status, "not_met");
+  assert.equal(madeChecks(cfg(sme, "unclear"), brand, sme, built(sme)).checks[0].status, "unclear");
 });
 
 test("nhóm G: dòng NCC ghi nhà máy Trung Quốc hoặc JAPAN OR CHINA thì KHÔNG đạt; Baudouin ghi Weichai vẫn đạt", () => {
