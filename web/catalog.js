@@ -1485,7 +1485,7 @@
             return false;
           });
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
-            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "engine", model: engineCode(c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, "")), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           // A cell that offers two alternators, each with its own make ("Stamford UCI274H / Leroy-Somer TAL-A44-M"): one record per
           // model, each with the make written next to it (a make is never guessed from a code, the two are not merged).
           const altSplit = splitAltCell(c.alternator);
@@ -2714,7 +2714,44 @@
     const m = s.match(/^(\S+)\s+(?:penta\s+)?(?=\S*\d)/i);
     if (m && brandIn(m[1], list).length && isCode(s.slice(m[0].length))) s = s.slice(m[0].length);
     else { const w = brandedCode(s, list); if (w) s = w; }
-    return s + kept;
+    return (list === ENGINE_BRANDS ? engineCode(s) : s) + kept;
+  };
+  // An engine cell with words or figures written next to the code (ma-dong-co-trung PR 1, Khoa 20/11/2026: one engine stood
+  // under two keys and took two places of the top 30). Each part goes only when what remains is still a code; the row's own
+  // line keeps every word (madeAt, makesFor read the line, not the model).
+  //   the genset's power after the code: jet-power "YD385D/11KW", weiman "8M33D890E200/815/890KW", jinlongteng "(360KW)";
+  //   a figure of the next cell run in: eastern-lion "WD129TAD23/1500" (speed), nenjo "4006-23TAG3A 1800", cgm-italia
+  //     "1320 4012-46TAG2A" / "119,2 1106A-70TG1" (the kW cell before);
+  //   the place of manufacture: kaihua "India 4006-23TAG2A" / "UK …", landtop "1103A-33G(India)", "(UK/EP)", "(USA/EU)",
+  //     sr-genset "1104D-44TG2 EU", superwatt "S16R2-PTAW-C SME";
+  //   a make or plant: "FAW CA6DL2-27D", "Mistubishi S16R-PTA2-C" (stone), "DCEC QSZ13-G10", "6ZTAA13-G2 (DCEC)", after the code
+  //     ("QSK38-G5 cummins", superwatt), before a "/" (kc-generatorset "Chongkang/KTA38-G1B", "Dongfeng Cummins/4BT3.9-G2");
+  //   nenjo "4006-23TAG2A Switchable" (its column "转速可调 Switchable": speed can be switched), aj-power "403D-11G Derate",
+  //     "403D-11G commodity" (Khoa 20/11/2026: merged with the code).
+  // NOT here: Perkins "… L" (no source says what L is; Khoa: kept apart), "3512B HD" (another displacement), codes written two
+  // in one cell (PR 2), "(M)" / "(E)" (PR 3), a bare figure in brackets (elitech "4BTA3.9-G13(40)" / "(50)" for sets of 85 / 90
+  // kVA: no source says what it is; bobig "6BT5.9-G2(115)").
+  const MAKE_WORD = /^(faw|dcec|mistubishi)$/i;
+  const PLANT_SLASH = /^(chongkang|shigeyasu|pangu\s+power|dongfeng\s+cummins|guangxi\s+yuchai)\s*\/\s*/i;
+  const engineMakeWord = (w) => MAKE_WORD.test(w) || brandIn(w, ENGINE_BRANDS).length > 0;
+  const ENGINE_TRIM = [
+    (s) => s.replace(/\s+(switchable|derate|commodity)$/i, ""),
+    (s) => s.replace(/^(india|uk)\s+/i, "").replace(/\s*\(\s*(india|uk|uk\s*\/\s*ep|usa\s*\/\s*eu)\s*\)$/i, "").replace(/\s+(EU|SME)$/, ""),
+    (s) => s.replace(/\s*(?:\/\s*\d+(?:[.,]\d+)?\s*)?\/\s*\d+(?:[.,]\d+)?\s*k(?:w|va)$/i, "").replace(/\s*\(\s*\d+(?:[.,]\d+)?\s*k(?:w|va)\s*\)$/i, ""),
+    // A leading figure only before a code that starts with a digit and has a hyphen and a letter ("1106A-70TG1"): a code written
+    // with a space stays whole ("4006 23TAG2A", Jichai "6190 TL-2", "4190 ZLT1-2", Mahindra "3285 GM-C2", JCB "444 G-TCA-100").
+    (s) => s.replace(/\s*\/\s*(1500|1800)$/, "").replace(/\s+(1500|1800)$/, "").replace(/^\d{3,4}(?:,\d+)?\s+(?=\d[\dA-Z.]*-\S*[A-Z])/i, ""),
+    (s) => s.replace(PLANT_SLASH, ""),
+    (s) => { const m = s.match(/^([a-z]+)\s+(?=\S*\d)/i); return m && engineMakeWord(m[1]) ? s.slice(m[0].length) : s; },
+    (s) => { const m = s.match(/\s+\(?([a-z]+)\)?$/i); return m && engineMakeWord(m[1]) ? s.slice(0, m.index) : s; },
+  ];
+  const engineCode = (cell) => {
+    let s = String(cell || "");
+    for (let again = true; again;) {
+      again = false;
+      for (const f of ENGINE_TRIM) { const t = f(s).trim(); if (t !== s && isCode(t) && keyOf(t).length >= 3) { s = t; again = true; } }
+    }
+    return s;
   };
   // "Volvo Penta TAD734GE", "Hyundai Infracore DM01VP", "Weichai Power WP13D490E310": a make of two words before the code
   // (isCode allows one space). Returns the code, or null. The second word must be part of a make's name, not a series
