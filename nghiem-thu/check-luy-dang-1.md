@@ -1,5 +1,15 @@
 # `check` chạy lại trên kết quả của chính nó (điều tra, 22/11/2026)
 
+## Cập nhật: đã sửa ở PR draft #1080 (nhánh `check-luy-dang`, 97a6b70e), chưa merge
+
+Điều phối duyệt A, B1, B2, B3, C. Phần "Đề xuất" bên dưới là bản trước khi sửa.
+
+- **Lần MỘT, gốc 6f6e7931 ↔ nhánh, 17 lượt = 20 phần theo cỡ:** 0 đổi status, điểm, số cấu hình, cấu hình, rank, số check. Đổi: thứ tự check (50 cấu hình ở 13 phần, cùng tập), `rfq` theo thứ tự đó (19 cấu hình, cùng tập nội dung), 43 ghi chú check hết lặp MK, `notes` ở 6 phần (chỉ dòng "Kiểm tra bằng code"), `problems` ở 1 phần (IB2600574589 8 → 13, do B2 báo lại check đã bị hạ trong bản lưu).
+- **Lũy đẳng:** gốc 2/20 phần (2 phần có 0 cấu hình), nhánh 20/20. Test `suppliers/check-idempotent.test.mjs` chạy trên mọi fixture `config*`, CI `suppliers` tự chạy. Toàn bộ test `suppliers`: 1496/1496 sau rebase lên 0bf3c083. Phép đo 17 lượt chưa chạy lại sau rebase (hai commit mới không đụng `config-bot.mjs`).
+- **`checkDir` thật** (`check --dir`, IB2600603983): cùng `result.json` hai lần giống hệt. Đưa `result.checked.json` làm đầu vào: 414 status giữ nguyên, thêm ghi chú "1 điểm" và đổi thứ tự check, vì `checkDir` cố ý gỡ `byCode`; đây không phải đường chạy lại hợp lệ.
+- **62 ghi chú lặp của IB2600601812: CHƯA RA đường gây.** Đã biết: mỗi ghi chú lặp đúng 3 lần; phát lại bằng code lúc đó (ff502d93) từ bản sạch thì đúng 3 lần `check` trên đầu ra cho đúng 62 ghi chú ×3; script agent của lượt cuối không chứa câu này và không đọc `result.checked.json`; cấu hình không có cờ kept; thư mục chạy đã mất.
+- **Dọn dữ liệu web (chưa làm, không sửa configmatch):** Gợi ý lại gói đó thay cấu hình bằng câu trả lời mới của agent nên hết lặp, nhưng tốn một lượt agent và cấu hình có thể đổi. Chưa chạy thử trên web.
+
 Chỉ điều tra: không sửa mã, không commit, không PR. Code: `origin/main` 65dd6cec (worktree `wt-check-2-lan`). Dữ liệu: bản chụp 17 lượt `dau-vao\dau-phat-hang-b\snap` (20/11).
 
 ## Kết luận
