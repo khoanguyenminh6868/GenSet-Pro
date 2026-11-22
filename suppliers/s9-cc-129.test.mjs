@@ -25,8 +25,17 @@ test("endress n129 / n130 / n137: 'Engine Type | Yanmar - X' → bản ghi độ
   assert.equal(r.unit, "L"); assert.equal(r.num, 1.267);
 });
 
-test("endress: bảng 'Model | <mã>' trơ (không ghi vai động cơ) vẫn không có bản ghi (Khoa 21/11/2026, kingway n117)", () => {
-  assert.deepEqual(recs("endress-stromerzeuger", [123, 126, 127, 128, 135, 142, 143, 145, 146]), []);
+test("endress 'Model | <mã>' trơ (Khoa 22/11/2026 cho ngoại lệ): chỉ bảng có mã đã là khoá động cơ của NCC khác ra bản ghi; n135 chép nguyên văn n123 nên gộp", () => {
+  const got = recs("endress-stromerzeuger", [123, 126, 127, 128, 135, 142, 143, 145, 146]).map((r) => [r.n, r.kind, r.model, r.makes.length, r.genset, r.power, disp(r), (r.also || []).map((x) => x.n)]);
+  assert.deepEqual(got, [
+    [123, "engine", "1103A-33TG2", 0, null, null, [["Displacement [ccm]", "3300"]], [135]],
+    [126, "engine", "F34TEVP01", 0, null, null, [["Displacement [ccm]", "3400"]], []],
+    [145, "engine", "4TNV98CT-IYE", 0, null, null, [["Displacement [ccm]", "3319"]], []],
+    [146, "engine", "4TNV98C-IYE", 0, null, null, [["Displacement [ccm]", "3319"]], []],
+  ]);
+  // Mã đó là khoá động cơ của NCC khác (điều kiện của danh sách); n127 / n128 / n142 / n143 (mã không NCC nào khác có) để ngoài.
+  const b = C.build(["green-power-generators", "cgm-italia", "voltgent", "stephill", "agestar"].map(sup));
+  for (const k of ["F34TEVP01", "4TNV98CTIYE", "4TNV98CIYE", "1103A33TG2"]) assert.ok(b.engines.some((e) => e.key === k), k);
 });
 
 test("gillette n101–n105: bản ghi động cơ GX390 / GX630 / KD440 có hãng ghi trong ô; n102 / n104 chép nguyên văn n101 / n103 nên gộp (mergeRepeats)", () => {

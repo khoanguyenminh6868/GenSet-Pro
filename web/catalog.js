@@ -2372,14 +2372,24 @@
   //     n124 is NOT listed: it writes 418 for LT420 where victory's own n131 writes 420 (418 is n123's LA186FAG figure).
   //   winco n1001–n1003: "DISPLACEMENT/TYPE | 160 CC / OHV" (OHV is the valve type, not a second figure); n1001's model cell
   //     "GC160 OHC" is no code for isCode (OHC: overhead cam), the code is "GC160", the make "ENGINE BRAND | HONDA".
-  // Not listed (no engine role written for the code, Khoa 21/11/2026, kingway n117): endress n123 / n126–n128 / n135 / n142–n146
-  // ("Model | 1103A-33TG2" over "Displacement [ccm]"), bison n114 ("Model | 1E45F | BS156F …"), slong (second "Model | SL460").
+  // A bare "Model | <code>" line (no engine role written) right over engine figures (Khoa 22/11/2026: "có cho ngoại lệ"), listed table
+  // by table, only where the code is CHECKED as an engine's: the same code is already an engine key of ANOTHER supplier in cn/ (a make
+  // written in the table would do too; none of these writes one, so `make` is left out):
+  //   endress n123 / n135 "Model | 1103A-33TG2" (Perkins key of 83 suppliers on 2aa92830), n126 "F34TEVP01" (FPT, green-power n121), n145
+  //   "4TNV98CT-IYE" (Yanmar, cgm / stephill / voltgent), n146 "4TNV98C-IYE" (Yanmar, cgm / voltgent); the lines under it are
+  //   "Displacement [ccm]", "Engine output (PRP) [kW]", "RPM": the engine's. Only the displacement is read, as above.
+  // Left out (cc-129-model-tro): endress n127 "3TNV88F-UGPGE", n128 "3TNV80F-NGPGE", n142 "4TNV98CT-IPGE", n143 "4TNV98C-IPGE" (no
+  // supplier has the key, no make written: "TNV" is Yanmar only by a pattern, not by the table); bison n114 ("Model | 1E45F |
+  // BS156F …": Bison's own codes, no other supplier has them, no engine make written), bison n1003 b34 (OCR "8S170"), slong n103 /
+  // n108 / n116 / n144 (second "Model | SL460" / "GB1000": keys of slong itself only).
   const ENGINE_LINES = (() => {
     const EN = (n, code, disp) => ({ supplierId: "endress-stromerzeuger", n, engine: [`| Engine Type | Yanmar - ${code}`, code], make: true, specs: [["disp", `| Displacement [ccm] | ${disp}`, disp]] });
+    const EM = (n, code, disp) => ({ supplierId: "endress-stromerzeuger", n, engine: [`| Model | ${code}`, code], specs: [["disp", `| Displacement [ccm] | ${disp}`, disp]], why: "Khoa 22/11/2026 (cc-129-model-tro)" });
     const GI = (n, line, code, disp) => ({ supplierId: "gillette-generators", n, engine: [line, code], make: true, specs: [["disp", `| ENGINE DISPLACEMENT | ${disp}`, disp.replace(/^\d CYLINDER, /, "")]] });
     const GX390 = "| ENGINE MODEL (WARRANTY) | HONDA GX390 O.H.V. (3 YEARS)", GX630 = "| ENGINE MODEL (WARRANTY) | HONDA GX630 V-TWIN O.H.V. (3 YEARS)";
     return [
       EN(129, "3TNV80-FPGE", "1267"), EN(130, "3TNM74F", "993"), EN(137, "2TNV70-APGE", "570"),
+      EM(123, "1103A-33TG2", "3300"), EM(135, "1103A-33TG2", "3300"), EM(126, "F34TEVP01", "3400"), EM(145, "4TNV98CT-IYE", "3319"), EM(146, "4TNV98C-IYE", "3319"),
       GI(101, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"), GI(102, GX390, "GX390", "1 CYLINDER, 23.7 CU. IN. (390 CC)"),
       GI(103, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"), GI(104, GX630, "GX630", "2 CYLINDER, 41.97 CU. IN. (688 CC)"),
       GI(105, "| ENGINE MODEL | KOHLER KD440 EPA/CARB TIER IV CERT. & 3 YEAR LIMITED WARRANTY", "KD440", "1 CYLINDER, 26.9 CU. IN. (440 CC)"),
@@ -2387,6 +2397,16 @@
       { supplierId: "winco", n: 1001, engine: ["| ENGINE MODEL | GC160 OHC", "GC160"], make: "| ENGINE BRAND | HONDA", specs: [["disp", "| DISPLACEMENT/TYPE | 160 CC / OHV", "160 CC"]] },
       { supplierId: "winco", n: 1002, engine: ["| ENGINE MODEL | GC160", "GC160"], specs: [["disp", "| DISPLACEMENT/TYPE | 160CC/ OHV", "160CC"]] },
       { supplierId: "winco", n: 1003, engine: ["| ENGINE MODEL | VANGUARD 3564", "VANGUARD 3564"], specs: [["disp", "| DISPLACEMENT/TYPE | 570CC/ OHV", "570CC"]] },
+      // kingway n117 (Khoa 22/11/2026: "coi lại vụ kingway nếu data hợp lý thì lấy luôn", replaces the 21/11 refusal of S6-2): the
+      // block "| Model | SC9D340D2" names no role, but the same page's other tables write "SDEC Engine Model : SC9D340D2" for the same
+      // set KGD250B (n109 / n124 / n125 / n128), SC9D340D2 is the SDEC engine key of 60+ suppliers, and the block's figures fit:
+      // 6 cylinders (25 suppliers), 114x144 (13 suppliers; 6 × π/4 × 114² × 144 = 8.82 L), 8.9 L (4 suppliers write 8.9, 12 write
+      // 8.82: within 1 % of the geometry). `set`: the record takes the genset, power and frequency of the table's alternator record
+      // of that model (the block's own set KGD250B, 250 kVA / 200 kW prime) and names it as `other`. No make (the table writes
+      // none). NOT read: "Rated /Standby Power(KW) | 228/255" ("Rated" is no prime here; spec-norm reads the pair as ambiguous),
+      // "Rated speed (RPM) | 1500/1800" (two speeds).
+      { supplierId: "kingway-power", n: 117, engine: ["| Model | SC9D340D2", "SC9D340D2"], set: "Kingway KAI250", why: "Khoa 22/11/2026 (kingway-n117)",
+        specs: [["cyl", "| Cylinder Number | 6", "6"], ["bore", "| Bore x Stroke (mm) | 114x144", "114x144"], ["disp", "| Displacement (L) | 8.9", "8.9"]] },
     ].map((x) => ({ why: "S9 cc-129, Khoa 22/11/2026", ...x }));
   })();
   // New records of ENGINE_LINES; the table's own engine record of the listed model gets its missing figures in place (`out`).
@@ -2417,8 +2437,11 @@
       }
       const mk = brandIn(makeLine, ENGINE_BRANDS), makes = [];
       if (mk.length === 1) addMake(makes, mk[0], "dòng bảng");
+      // `set`: the genset of the table's alternator record of that model (none found → the entry lapses, noted).
+      const g = x.set ? out.find((o) => o.table === ti && o.kind === "alternator" && o.model === x.set && o.genset) : null;
+      if (x.set && !g) { note(t, ti, null, "tổ máy trong danh sách không còn bản ghi đầu phát: không đọc", x.set); continue; }
       add.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(eLine), line: eLine, header: t.header || [], kind: "engine", model: code,
-        genset: null, power: null, freq: null, specs, makes, other: null, own: false });
+        genset: g ? g.genset : null, power: g?.power ? JSON.parse(JSON.stringify(g.power)) : null, freq: g ? g.freq : null, specs, makes, other: g ? g.model : null, own: false });
     }
     return add;
   }
