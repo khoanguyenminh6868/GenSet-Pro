@@ -272,3 +272,12 @@ Giả thuyết "G10 / G20 là 50 Hz, G70 / G80 là 60 Hz" không khớp nguồn:
 - Phương án 1 (đề xuất): danh sách tường minh một dòng (long-gen, n109, đúng chữ dòng) được miễn nhánh `known` của luật tần số trong `candidates`, cộng mục tần số "cần xác nhận" ở `check`, why "NCC ghi 50 Hz, tờ hãng chỉ ghi 60 Hz". `candidates` đổi đúng một dòng, chỉ ở gói 50 Hz có cỡ phù hợp; chứng minh bằng so toàn bộ trước / sau; cần đo top 30.
 - Phương án 2: giữ nguyên `candidates`, dòng vẫn bị loại ở gói 50 Hz, tức không thực hiện "giữ dòng".
 - Script đo: scratchpad của phiên (`tag4-uses.mjs`, `tag4-cand.mjs`), đọc `cn/` của worktree truyền vào.
+- Điều phối 24/11: chọn PA 1 về nội dung, CHUYỂN Việc A sang phiên `session_011tAj4QGuLtbVAYecVJRQbZ` (đang viết lại luật freq của `candidates`). Phiên PR 3 không làm Việc A.
+
+## Việc B (PR 3, gộp khoá ngoặc) 24/11/2026
+
+- PR draft https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1115, nhánh `ma-dong-co-keyof`, head `8fe1f98d`, gốc `2090afc4`, worktree `wt-ma-dong-co-keyof`. CÓ đổi đầu vào `candidates`. CHƯA đo top 30.
+- Cách làm: 33 mục `ô=mã` trong `ENGINE_CELL_LIST`, KHÔNG đổi hàm `keyOf`. 27 MTU "(3B)" / "(3D)" (comappower), 6 Cummins "(M)" (lees, xingguang, huayuan).
+- Soát đủ 62 khoá có ngoặc (`dau-vao\ma-dong-co-keyof\soat-ngoac.mjs`, `ngoac.tsv`, `ngoac-dong.tsv`; so khoá `so-khoa.mjs`): 33 gộp; 3 lệch không gộp (zc-power `186FA(E)`, `192F(E)` tỉ số nén; `1100F(E)` công suất 10 ↔ 5,5 kW); 4 số trơ không gộp; 22 không có khoá trơn.
+- Số đo: khoá động cơ 6.241 → 6.208; 0 dòng mất / thêm; 0 đổi hãng; đầu phát giống hệt; spec-diff 39 bản ghi đổi đúng `model`, đảo vai 0 → 0. Test 1.760 đạt, quality đạt.
+- Điểm yếu cần người xem: 26 / 33 khoá không có thông số động cơ chung để so, căn cứ chỉ là công suất tổ máy trong dải ±5 % của khoá trơn; 7 khoá có thêm số xi lanh trùng. Nghĩa của "(M)" chưa có nguồn; nếu là biến thể khác thì bỏ 6 mục đó.
