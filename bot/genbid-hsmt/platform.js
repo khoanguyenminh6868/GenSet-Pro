@@ -80,6 +80,7 @@ const agyExe = () => {
 function killAgent() {
   if (IS_WIN) { cp.spawnSync("taskkill", ["/F", "/IM", "egp-edoc-agent.exe"], { windowsHide: true }); return; }
   cp.spawnSync("pkill", ["-f", "egp-edoc-agent"]);
+  cp.spawnSync("pkill", ["-f", "com.fis.egp.ServiceApp"]); // start-egp-agent.sh chạy thẳng Java của Agent (23/11/2026)
   cp.spawnSync("pkill", ["-f", "EGP-AGENT.*javaw"]);
   cp.spawnSync("wineserver", ["-k"]);
 }

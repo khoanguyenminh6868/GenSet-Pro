@@ -55,6 +55,9 @@ phông DejaVu (`/_blob/<id>`, `ITALIC_URL`) được trả từ `node_modules` (
 được trình duyệt kiểm. Đổi phiên bản trong `LIBS` thì đổi cả `package.json` và bảng `LOCAL` trong `fixtures.mjs`.
 
 ## Bẫy
+- Thông báo (`toast()` của trang) là một thẻ `.toast` riêng cho mỗi lần, sống 2,6 giây: khẳng định bằng `.last()` (thẻ mới nhất),
+  không `.first()`. Hai thông báo nối nhau thì `.first()` là thẻ cũ tới khi nó tự xoá, thẻ mới chỉ còn là `.first()` trong đúng
+  khoảng cách giữa hai lần; đo 23/11/2026: cách 50 ms đỏ 5/5, 150 ms đỏ 2/5, ≥ 250 ms 0/5 (`.last()` 0/35).
 - `page.clock.setFixedTime` làm giờ đứng yên: `updatedAt` của hai lần lưu liền nhau trùng nhau nên khung chi tiết không vẽ
   lại. Dùng `page.clock.install({ time })` (giờ chạy tiếp). Đồng hồ giả còn làm lệch mốc 3 giây của "Đã gửi yêu cầu phân
   tích": chỉ cài giờ cho ca cần ngày cố định (báo giá cũ, nhịp tim bot, mã dự án).
