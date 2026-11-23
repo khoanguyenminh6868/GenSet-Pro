@@ -59,7 +59,8 @@
   // A Scania engine written as the maker does, in four words ("DC09 072A 02-11", "DC13 072A 02 11", "OC16 071A 02-82" gas,
   // "DC9 65A 10-93"): a code with up to three spaces (catalog-bang-r1: agg-fuzhou, kaihua, voltgent, green-power, huadong
   // had rows whose only engine cell failed isCode, so the row gave no record).
-  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s\d{2}[\s-]\d{2}$/i;
+  // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
+  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -274,6 +275,12 @@
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
+    // Cells that are a duration, a pressure, a weight, a count of wheels, a rating written as a model, a standard or a
+    // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
+    // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
+    // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
     // "195(g/kw.h)", "208g /kwh", "300 W", "330+250 W", "1800k W", "6-cylinder/inline", "Container 20'", "0,11 m3/s",
@@ -2866,6 +2873,8 @@
     // with a space stays whole ("4006 23TAG2A", Jichai "6190 TL-2", "4190 ZLT1-2", Mahindra "3285 GM-C2", JCB "444 G-TCA-100").
     (s) => s.replace(/\s*\/\s*(1500|1800)$/, "").replace(/\s+(1500|1800)$/, "").replace(/^\d{3,4}(?:,\d+)?\s+(?=\d[\dA-Z.]*-\S*[A-Z])/i, ""),
     (s) => s.replace(PLANT_SLASH, ""),
+    // Scania code + the kVA of the set ("DC13 505A 400KVA", baifa): the figure is a rating, not part of the code.
+    (s) => s.replace(/^([DO]C\s?\d{1,2}\s\d{2,3}[A-Z])\s\d{2,4}\s?kva$/i, "$1"),
     (s) => { const m = s.match(/^([a-z]+)\s+(?=\S*\d)/i); return m && engineMakeWord(m[1]) ? s.slice(m[0].length) : s; },
     (s) => { const m = s.match(/\s+\(?([a-z]+)\)?$/i); return m && engineMakeWord(m[1]) ? s.slice(0, m.index) : s; },
   ];
