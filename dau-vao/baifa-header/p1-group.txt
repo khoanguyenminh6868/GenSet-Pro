@@ -1,0 +1,16 @@
+﻿2 dòng | baifa-power | tiêu đề: POWER | con: Standby KVA ¦ Prime KVA | đơn vị kVA (prime từ sub, standby từ sub)
+      vd: standby 2500 prime 2000 | BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 |  | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+20 dòng | bdadl-shanghai | tiêu đề: 输出功率(kw) | con: 主用 ¦ 备用 | đơn vị kW (prime từ title, standby từ title)
+      vd: standby 62.5 prime 50 | BDA-50GF | 50 | 62.5 | 韩国斗山 | DB58 | 6 | 102*118 | 5.785 | 215 | 2000×730×1150 | 900
+14 dòng | kingway-power | tiêu đề: KVA | con: ESP ¦ PRP | đơn vị kVA (prime từ title, standby từ title)
+      vd: standby 42 prime 34 | KGZS38 | 42 | 34 | 37.5 | 30 | 6.9 | 1860x780x1290 | 2280x900x1146 | F4M2011
+8 dòng | taihai-taizhou | tiêu đề: 输出功率 (kw) | con: 常用 ¦ 备用 | đơn vị kW (prime từ title, standby từ title)
+      vd: standby 325 prime 260 | T H-260GF | 260 | 325 | 468 | PTA780G1 | 6 | 128*166 | 40 | 72 | 3150*1050*1430 | 2400
+1145 dòng | teksan | tiêu đề: Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | con: Standby (ESP) ¦ Prime (PRP) | đơn vị kVA (prime từ title, standby từ title)
+      vd: standby 8 prime 6.4 |  | TJ8BD-1 | 1 | 50 | 8 | 6.4 | 7 | 5.6 | 230 | BAUDOUIN
+1 dòng | walter-yangzhou | tiêu đề: Power（kVA） | con: Standby ¦ Prime | đơn vị kVA (prime từ title, standby từ title)
+      vd: standby 63 prime 50 | WET-WC63 | 63 | 50 | Weichai | WP2.3D58E201 | 1850*800*1100
+3 dòng | xingguang-jiangsu | tiêu đề: Power（kVA） | con: Standby ¦ Prime | đơn vị kVA (prime từ title, standby từ title)
+      vd: standby 2500 prime 2000 | XG2500S3 | 2500 | 2000 | Cummins | QSK60G8 | PDF
+2 dòng | yingtai-jiangsu | tiêu đề: 功率（KW） | con: 主用 ¦ 备用 | đơn vị kW (prime từ title, standby từ title)
+      vd: standby 2000 prime 1600 | 1600GF | 1600 | 2000 | 182.9 | 20000 | 7.50×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷

@@ -1,0 +1,22 @@
+﻿bản ghi đầu phát: 13330; mã thuộc 3 họ: 5333; bản ghi mang hãng khác họ của mã: 39
+theo mức bằng chứng của hãng gán: tiêu đề cột = 39
+
+6 bản ghi | Leroy-Somer ← gán Stamford (tiêu đề cột) | baifa-power | bảng: n101 b1, n101 b3
+   mã: LSA52.3 UL16, LSA 53.2M12, LSA 54.2L14, LSA 53.2M9
+   tiêu đề: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+   vd dòng: | BF-C3000Q-T2 | 3000 | 2750 | QSK78-G15 | | LSA52.3 UL16 | TIER 2/ CHINA STAGE3 | UK
+
+26 bản ghi | Leroy-Somer ← gán Stamford (tiêu đề cột) | kaihua-genset | bảng: n119 b23, n127 b33
+   mã: TAL-A42-H, TAL-A44-C, TAL-A44-D, TAL-A44-E, TAL-A44-H, TAL-A44-J, TAL-A46-D, TAL-A46-F, LSA52.3 UL16, LSA 53.2M9, LSA 53.2M12, LSA 54.2L14
+   tiêu đề: | HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF
+   vd dòng: | HC-BD70 | 68.8 | 62.5 | 4M10G70/5 | TAL-A42-H | | 2440*1060*1680 | Download
+
+4 bản ghi | Leroy-Somer ← gán Stamford (tiêu đề cột) | sr-genset | bảng: n2009 b13
+   mã: TAL-A40-F, TAL-A42-C, TAL-A40-G
+   tiêu đề: | | Standby | Prime | Engine | Alternator
+   vd dòng: | PERKINS | 22 | 18 | 20 | 16 | 404D-22G L | Perkins | SOL2-G1 | TAL-A40-F | /
+
+3 bản ghi | Stamford ← gán Leroy-Somer (tiêu đề cột) | penlucky | bảng: n103 b4
+   mã: PI734E1, PI734F1, PI734G1
+   tiêu đề: | | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF
+   vd dòng: | PLW2500B73 | 2500 | 2272 | 20M33G2000/6 | PI734E1 | 7010*2680*2980 | | view

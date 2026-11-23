@@ -118,5 +118,6 @@ Câu cần quyết: dòng không có model tổ máy ("TBA" / ô gộp) có đư
 
 ## Tệp đo
 
-Script và đầu ra đầy đủ nằm ở thư mục tạm của phiên (không vào git): `p1-veto.mjs` + `p1.txt` + `p1-group.txt`, `p2-alt.mjs` +
-`p2.txt`, `p3-cand.mjs` + `p3.txt`, `p3b-cand.mjs`. Cần giữ thì báo, tôi chép sang `dau-vao\`.
+Script và đầu ra đầy đủ: `dieu-phoi\dau-vao\baifa-header\` (`p1-veto.mjs` + `p1.txt` + `p1-group.txt`, `p2-alt.mjs` + `p2.txt`,
+`p3-cand.mjs` + `p3.txt`, `p3b-cand.mjs`; kèm các script đo của #1101: `hdr-scan.mjs`, `lines.mjs`, `rec-diff.mjs`,
+`build-diff.mjs`, `dropped.mjs`, `src-lines.mjs`). Mỗi script nhận gốc repo làm đối số đầu.

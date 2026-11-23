@@ -1,0 +1,14 @@
+﻿luật kích hoạt: 1195 dòng (khác nhau) ở 8 NCC
+teksan 1145, bdadl-shanghai 20, kingway-power 14, taihai-taizhou 8, xingguang-jiangsu 3, baifa-power 2, yingtai-jiangsu 2, walter-yangzhou 1
+đơn vị lấy từ: prime:sub standby:sub = 2; prime:title standby:title = 1193
+
+cả hai tiêu đề con tự ghi đơn vị: 2 dòng ở 1 NCC
+baifa-power 2
+  baifa-power | tiêu đề: POWER | con: Standby KVA ¦ Prime KVA | kVA standby 2500 prime 2000 | BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 |  | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+  baifa-power | tiêu đề: POWER | con: Standby KVA ¦ Prime KVA | kVA standby 37.5 prime 30 | BF-BD38-T3 | 37.5 | 30 | 4M08G8D3/5 |  | STAGE 3A/ CHINA STAGE3 | CHINA
+
+điều kiện đề xuất: 3 bản ghi đổi ở 1 NCC; chỉ đổi công suất: 3
+baifa-power 3
+  baifa-power n101 b1 r27 engine QSK60-G18 | {"rated":{"kVA":2500,"kW":2000}} → {"standby":{"kVA":2500},"prime":{"kVA":2000}} | | BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 | | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+  baifa-power n101 b1 r27 alternator S7L1D-G41 | {"rated":{"kVA":2500,"kW":2000}} → {"standby":{"kVA":2500},"prime":{"kVA":2000}} | | BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 | | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+  baifa-power n101 b1 r42 engine 4M08G8D3/5 | {"rated":{"kVA":37.5,"kW":30}} → {"standby":{"kVA":37.5},"prime":{"kVA":30}} | | BF-BD38-T3 | 37.5 | 30 | 4M08G8D3/5 | | STAGE 3A/ CHINA STAGE3 | CHINA
