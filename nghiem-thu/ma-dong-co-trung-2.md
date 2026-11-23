@@ -226,3 +226,29 @@ NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 - Chờ Khoa: 51 dòng sát ngưỡng dung tích, chưa đổi.
 - Bẫy: máy thiếu RAM, không chạy dump lớn song song; `node --test suppliers/ web/test/` ghi đè `web/test/fixtures/seed.json`, chỉ chạy `suppliers/*.test.mjs`, `web/test/spec-norm.test.mjs`, `static.test.mjs`.
 - Luật Khoa 23/11: context quá 40 % thì lưu việc dở vào đây rồi Sync, tới 50 % tự compact; chỉ nhắn điều phối khi xong hoặc cần quyết định, ≤ 10 dòng.
+
+## Soát 2 nhóm nghi oan sau đo gộp `f1db5c86` (23/11/2026)
+
+Đầu #1087 mới: `63c167d6` (thêm một commit trên `214f1e42`). Test suppliers 1572, spec-norm 158, static 11, quality đạt. CHƯA đo lại top 30.
+
+**Nhóm 1, "động cơ chỉ có dòng 60 Hz".** Tên tab "50Hz / 60Hz" của trang không vào `specTables`, nên phải đọc tệp nguồn.
+
+| Khoá | Dòng bị loại | Chính dòng thuộc tần số nào | Kết luận 60 Hz lấy từ | Kết quả |
+|---|---|---|---|---|
+| 12V1600G20S | comappower COM750MTU | khối dưới nhãn "60Hz" (`sources/comappower/106.md` dòng 120 → 125) | camda "S1600/60HZ", mecca catalog trang 12 phải (60Hz) | loại ĐÚNG |
+| 12V1600G20S | yanan YN750MTU | khối thứ ba trong 4 tab 50 / 50 II / 60 / 60 II (103.md dòng 263 → 267) | như trên | loại ĐÚNG |
+| 1206JE70TTAG3 | long-gen LGPL-220EV | bảng đầu của tab "Perkins 50Hz / 60Hz" (109.md dòng 69 → 89); số 160/200 khớp bản 50 Hz của Perkins (159/198) | baifa n104 + n105; n104 ĐỌC SAI | loại OAN |
+| 1206JE70TTAG4 | long-gen LGPL-220EV | cùng bảng 50 Hz | baifa n104 + n105; n104 ĐỌC SAI | loại sai căn cứ, xem dưới |
+| 2206AE13TAG6 | ettes EP-500 | "Perinks Gensets List (60Hz, 1800rpm)" (146.md dòng 217 → 242) | Perkins selector trang 22 (60Hz), gb-power, legapower, uleengen | loại ĐÚNG |
+| QSK60G6 | lees LSIC2500S3-6 | khối thứ hai dưới tab 50HZ / 60HZ (107.md dòng 170 → 186), đuôi "-6" | aosif, fdk-energy, jet-power, legapower ghi 60 Hz | loại ĐÚNG |
+| 2806AE18TAG3 | victory V600P | cột Frequency của chính dòng ghi 60 | chính dòng + Perkins selector trang 22 | loại ĐÚNG |
+
+Giả thuyết "G10 / G20 là 50 Hz, G70 / G80 là 60 Hz" không khớp nguồn: comappower và yanan xếp hậu tố F ở khối 50 Hz (G10F/G70F, G20F/G80F), hậu tố S ở khối 60 Hz (G10S/G70S, G20S/G80S); wintpower ghi G80F ở bảng 50 Hz, G80S ở bảng 60 Hz.
+
+**Gốc lỗi TAG3 / TAG4.** Tiêu đề cột baifa n104 "1500/1800 RPM SWITCHABLE" bị `freqIn` đọc thành 60 Hz (chỉ "1800 RPM" khớp mẫu), dù trang là `50Hz-STAGE-V5`. Lỗi đọc có sẵn trên main; #1087 làm lộ vì tách ô "1206J-E70TTAG3/4" nên dòng 60 Hz sai sang khoá của long-gen.
+
+**Phần sửa (`63c167d6`).** "1500/1800 rpm" không cho tần số nào. `spec-diff` so `214f1e42`: 153 bản ghi đổi `freq` 60 → không ghi (baifa 79, lister-petter 74), 0 mất, 0 thêm, không trường nào khác đổi. Hai NCC này có thể đổi dòng ngoài các khoá trên, nên CẦN ĐO LẠI.
+
+**Điểm cần quyết, TAG4.** Perkins selector chỉ có TAG4 ở trang 60 Hz (180/225), còn long-gen ghi TAG4 trong bảng 50 Hz với đúng số của TAG3. Sau sửa dòng này quay lại gợi ý 50 Hz. Chưa thêm ngoại lệ.
+
+**Nhóm 2, 12V1600G80F = 23,88 L.** Từ 3 dòng cùng mẫu: bdadl n135 BDA-M580, fukangsi n2007 FKS-M580, pengpai n127 PPDL-M580. 23,88 là dung tích của 12V2000 (bdadl ghi cùng số cho 12V2000G65 ở dòng gần đó). wintpower ghi G80F = 21; G10F, G20F, G70F, G80S đều 21. Lỗi dữ liệu nguồn có sẵn trên main, không do #1087, CHƯA sửa. Đề xuất `dropspec` disp cho các dòng này (kể cả bản chép ở bảng khác của cùng NCC); không dùng `fixspec` vì dòng không ghi đường kính × hành trình.

@@ -1,3 +1,7 @@
 verify 0
 quality 1
 spec-diff 0
+test 1
+# pass 1586
+# fail 1
+not ok 864 - đơn vị tiêu hao theo tiêu đề của chính bảng con, không suy từ độ lớn (Khoa 23/11/2026: taihai 163 / 196 /
