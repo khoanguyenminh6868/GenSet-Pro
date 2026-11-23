@@ -401,7 +401,24 @@ export function altSheetAttrs(text) {
   // "This alternator is capable of achieving a balanced 300% sustained short circuit for up to 10 | seconds." (S-range).
   const sc = L.findIndex((l) => /300%\s*sustained\s*short\s*circuit\s*for\s*up\s*to\s*10\b/i.test(l));
   if (sc >= 0 && /capable of achieving a\b/i.test(L[sc - 1] || "") && /^\|?\s*seconds\b/i.test((L[sc + 1] || "").trim())) add("sc300", { pct: 300, s: 10 }, L[sc - 1], L[sc], L[sc + 1]);
+  // The AVR the sheet fits as standard ("| AS440 AVR - STANDARD", "AS480 AVR fitted as STANDARD"). Its own key: "avr" is the
+  // list of a range sheet that makerAlts reads. An obsolete or optional AVR is not one.
+  const avrL = L.map((l) => l.match(/^\|?\s*([A-Z]{2}\d{3})\s+AVR\s*(?:-\s*STANDARD|fitted\s+as\s+STANDARD)\b/i)).filter(Boolean);
+  if (avrL.length) add("avrStd", [...new Set(avrL.map((m) => m[1].toUpperCase()))], ...new Set(avrL.map((m) => m.input)));
   return out;
+}
+// The codes of the standards a text names, one spelling each ("ISO 8528/3" = "ISO 8528-3", "BS 5000 Part 99" = "BS 5000-99"):
+// a part is a code of its own, so "IEC 60034" does not answer "IEC 60034-1", nor "BS 5000" "BS 5514/1".
+export const stdCodes = (text) => [...new Set([...String(text || "").matchAll(/\b(?:ISO\s*\d{4,5}|IEC\s*\d{5}|BS\s*\d{4}|VDE\s*\d{4}|UL\s*\d{3,4}|NEMA\s*MG\s*\d+(?:\.\d+)?)(?:\s*(?:Part\s*\d+|[-/]\s*\d+))?/gi)]
+  .map((m) => m[0].toUpperCase().replace(/\s+/g, "").replace(/PART|\//g, "-").replace(/^(ISO|IEC|BS|VDE|UL)(\d)/, "$1 $2").replace(/^NEMAMG/, "NEMA MG ")))];
+// The sentence of a Leroy-Somer range sheet that lists the standards the range meets, with the lines it runs over (at most 3).
+export function lsStandards(text) {
+  const L = String(text).split("\n"), i = L.findIndex((l) => /(meets?\s+all\s+key|in\s+compliance\s+to\s+the\s+main)\s+international\s+standards/i.test(l));
+  if (i < 0) return [];
+  const lines = [L[i]];
+  for (let q = i + 1; q < i + 3 && q < L.length && L[q].trim() && !/\.\s*$/.test(lines[lines.length - 1]); q++) lines.push(L[q]);
+  const value = stdCodes(lines.join(" "));
+  return value.length ? [{ key: "standards", value, lines }] : [];
 }
 
 // ---------- Thuộc tính chung của một tờ Leroy-Somer (dau-phat-hang A, 20/11/2026) ----------
