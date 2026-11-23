@@ -3,7 +3,7 @@
 ## Trạng thái
 - Worktree `C:\Projects\GenSet Pro\wt-crawl-dropped`, nhánh `fix/crawl-dropped-rows` (chồng lên #1101 `fix/baifa-header-rows` f713a80f). Commit tạm a95b8ab5 (chưa push lúc ghi tệp này; xem cuối tệp để biết PR / SHA).
 - Đã xong: sửa `tablesOf`, dựng lại 15 hồ sơ (cn/ + specs/), test `suppliers/crawl-dropped.test.mjs` (9 ca), bẫy trong `suppliers/CLAUDE.md`, verify 436 hồ sơ 0 lỗi, quality --check xanh, spec-diff --gate qua (đảo vai 0 → 0), `merge-specs` trên bản sao ra đúng từng byte 15 hồ sơ.
-- Đang chờ: `node --test suppliers/*.test.mjs` (chạy bằng Bash; PowerShell không mở rộng `*`). Xong thì push, mở PR DRAFT (base `fix/baifa-header-rows`), thân PR soạn sẵn. KHÔNG merge, KHÔNG đo 1.093 lượt.
+- PR DRAFT #1105 https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1105 (base `fix/baifa-header-rows`), SHA a95b8ab5f8eafcfc3ad4b32b93b02bc179ad2018. `node --test suppliers/*.test.mjs` 1.580 / 1.580 (chạy bằng Bash; PowerShell không mở rộng `*`). CHƯA đo top 30 (1.093 lượt) / row-flags; KHÔNG tự merge.
 - Việc kế (Khoa quyết 23/11, điều phối giao): MỘT PR draft nhỏ riêng từ origin/main cho (1) không veto "prime = 0,8 × standby" khi đơn vị của CẢ prime lẫn standby lấy từ tiêu đề con của chính cột (3 bản ghi baifa đổi, không mở rộng sang tiêu đề phủ); (2) 39 bản ghi / 4 NCC mã đầu phát mang tiền tố hãng dưới cột hãng khác → "cần xác nhận hãng" (giữ dòng, hãng "?", why "mã … dưới cột …"; bảng tiền tố chỉ để PHÁT HIỆN, ghi rõ là hiểu biết chung, liệt kê đủ tiền tố; đo build() + bước chấm hãng đầu phát, liệt kê đủ 39 trước / sau). (3) dòng không có model tổ máy: được làm ứng viên, không đổi.
 - Luật phiên con (Khoa 23/11): context > 40 % ghi tệp này + Sync; 50 % compact; nhắn điều phối ≤ 10 dòng, chỉ khi xong / cần quyết.
 
