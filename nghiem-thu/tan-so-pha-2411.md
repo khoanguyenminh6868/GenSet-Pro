@@ -33,6 +33,40 @@ Bảy mã của yêu cầu: 12M33G1000/6, 16M33G1400/6, 12M55G2500/6 đọc đư
 - Gói 60 Hz: 8.124 lượt-dòng từ loại về cần xác nhận (động cơ chỉ có NCC ghi 50 Hz). Đúng luật đối xứng, nhưng gói 60 Hz sẽ có nhiều dòng thực chất là máy 50 Hz.
 - Mã `/6` có NCC ghi ở bảng 50 Hz: dòng tự ghi 50 Hz vẫn ở lại, dòng không ghi thì bị loại theo mã. Test cũ "bán ở cả hai tần số" đã đổi sang mã không tự nói tần số.
 
+### PR 1, vòng sửa sau đo lượt 3 (24/11/2026): SHA `45e49abe8c6727c1d0ab712e85e31bdab3ba361c`, CHƯA merge, CHƯA đo lại top 30
+Đã gộp `origin/main` (`b153c9bb`). Test `node --test suppliers/*.test.mjs`: 1.620 pass, 0 fail.
+
+Luật mới của `freqVerdict` (dòng không tự ghi Hz):
+- `sheet` (loại): chỉ khi tờ RIÊNG của chính model, do chính hãng phát hành, ghi đúng một tốc độ (`engineSheetsOf`).
+- `makerList` (giữ, cần xác nhận): model chỉ nằm ở phần một tần số của tài liệu hãng liệt kê nhiều model; why nêu tệp.
+- `only50` (loại, Khoa 24/11): gói 60 Hz, các dòng khác của động cơ chỉ ghi 50 Hz (≥ 2 dòng). KHÔNG đối xứng: gói 50 Hz thì giữ, cần xác nhận.
+- `dropped` nay mang `why`. Lý do các dòng cũ "why rỗng": `dropped` không lưu `why`, không phải luật thiếu căn cứ.
+
+Căn cứ từng khoá (877 lần RA `freq` của `t-tan-so-ruled.tsv`, dữ liệu `00bbdc25`, xét đủ 10 tổ hợp nhóm xuất xứ; đếm trên tệp là 368 lần ngoài Baudouin, phiếu giao ghi 353):
+| Khoá | Lần | NCC | Nhánh cũ, tài liệu | Dòng NCC ghi Hz? | Nay |
+|---|---|---|---|---|---|
+| WP10D264E201 | 335 | 9 | `sheet`: bảng liệt kê weichai-power n113, dòng "WPG220*86, 1800" | không | cần xác nhận |
+| WP10D288E201 | 8 | 1 | `sheet`: weichai-power n113, dòng "WPG250*86, 1800" | không | cần xác nhận |
+| 404D22TG | 12 | 2 | `sheet` trong nhóm xuất xứ: perkins n5001 (catalog power selector) | không | cần xác nhận |
+| 2806C-E18TTAG6 / 2806A-E18TTAG6 | 5 / 4 | 1 / 1 | `sheet`: perkins n5001 | không | cần xác nhận |
+| 403F15G | 2 | 1 | `sheet`: perkins n5001 | không | cần xác nhận |
+| 1206AE70TTAG1 | 2 | 1 | `sheet` trong nhóm xuất xứ: perkins n5001 | không | cần xác nhận |
+| Mã Baudouin `/6` | 509 | | đuôi mã | không | vẫn loại, có why |
+
+Bẫy: `e.uses` trong `candidates` đã lọc theo nhóm xuất xứ, nên 404D22TG / 1206AE70TTAG1 của tecnogen, aurora chỉ bị loại ở nhóm không có NCC ghi 50 Hz. Dòng tecnogen tự có cột "kWm 1500 rpm" và "kWm 1800 rpm".
+
+Đổi trạng thái so với luật của `019d251e` (cùng dữ liệu main, 89.828 lượt dòng × gói):
+| Gói | Đổi | Số dòng |
+|---|---|---|
+| 50 Hz | loại → cần xác nhận | 53 |
+| 60 Hz | cần xác nhận → loại (`only50`) | 8.124 |
+| 60 Hz | loại → cần xác nhận | 35 |
+| 60 Hz | vẫn loại, đổi căn cứ `sheet` → `only50` | 343 |
+
+Đang loại: 10.338 lượt, 0 lượt why rỗng. Đủ theo khoá, NCC: `tan-so-pha-2411/doi-v2-toan-bo.tsv`; theo nhóm xuất xứ: `doi-v2-theo-nhom.tsv`. Trên main, excel-power-ningde n109 đọc WP10D264E201 là 50 Hz, trên `00bbdc25` đọc là 60 Hz.
+
+**Đề xuất Weichai E200 / E201 (CHƯA mã hoá, chờ Khoa):** trên tờ Weichai đọc được tốc độ, E200: 7 / 7 khoá 1500 v/p; E201: 9 / 9 khoá 1800 v/p, 0 mã trái. Mẫu nhỏ: 16 / 170 khoá (101 E200, 69 E201). Không tờ nào nói thẳng quy ước. NCC có ghi ngược: 6 khoá E200 chỉ thấy 60 Hz, 1 khoá E201 chỉ thấy 50 Hz, 46 khoá thấy cả hai. Đề xuất: giữ "cần xác nhận", chỉ mã hoá khi có câu của hãng hoặc Khoa chấp nhận quy luật đo được.
+
 ## PR 2: CHƯA LÀM (bàn giao cho phiên mới)
 
 - Dựng từ `origin/fix/crawl-dropped-rows` (#1105). Lúc 24/11 nhánh còn ở `a95b8ab5`, CHƯA merge main (merge PR 1 vào đụng `suppliers/CLAUDE.md`, `suppliers/crawl-specs.mjs`): fetch lại, chờ phiên kia merge main xong.
