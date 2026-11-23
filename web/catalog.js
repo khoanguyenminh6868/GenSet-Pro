@@ -306,7 +306,9 @@
     // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
     // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
     // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
-    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/. Also a container size (longkai, previa "20FT",
+    // "40HQ", "20GP") and shengfeng's frequency cell "60HZ?".
+    if (/^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i.test(s) || /^\d{2}\s*hz\?$/i.test(s)) return false;
     if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
