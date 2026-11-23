@@ -32,6 +32,33 @@
     [/\bengga\b|英格/i, "Engga"], [/\bfaraday\b|法拉第/i, "Faraday"], [/\bsiemens\b|西门子/i, "Siemens"],
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
+  // Alternator code families (Khoa 23/11/2026, baifa điểm 2). This table is GENERAL KNOWLEDGE of the makers' product
+  // lines, taken from NO supplier source. It is used ONLY to DETECT a code that sits under another make's column title
+  // (altMakeAsk); it NEVER gives a make to a record. Every prefix in use:
+  //   Leroy-Somer: "LSA" + digit ("LSA52.3 UL16", "LSA 53.2M9"), "TAL-A" / "TAL" + digit ("TAL-A44-C");
+  //   Stamford: "UCI" / "UCD" / "UCM" / "UCDI" / "UCDM" + digit, "HCI" / "HCM" / "HCK" + digit, "PI" + 3 digits ("PI734E1"),
+  //     "S0L"–"S9L" + digit ("S5L1D");
+  //   Mecc Alte: "ECO" / "ECP" + digit.
+  const ALT_CODE_FAMILY = [
+    ["Leroy-Somer", /^(LSA\s?\d|TAL[\s-]?A?\d)/i],
+    ["Stamford", /^(UC[DIM]{1,2}\s?\d|HC[IMK]\s?\d|PI\s?\d{3}|S\dL\d)/i],
+    ["Mecc Alte", /^EC[OP]\s?\d/i],
+  ];
+  // A code of one family under the column title of ANOTHER make ("LSA52.3 UL16" under "STAMFORD", baifa n101; "PI734E1"
+  // under "Alternator Leroy-Somer", penlucky n103): neither side is trusted (Khoa 23/11/2026). The row stays, the column's
+  // make is taken off the record (it no longer votes at build()), and `makeAsk` says what to confirm with the supplier.
+  // Only a make read from a column title: a make in the row's own cell or on the page title is left as it is.
+  function altMakeAsk(list) {
+    for (const o of list) {
+      if (o.kind !== "alternator" || !o.makes?.length) continue;
+      const fam = ALT_CODE_FAMILY.find(([, re]) => re.test(String(o.model || "").trim()));
+      const off = fam ? o.makes.filter((m) => m.via === "tiêu đề cột" && m.name !== fam[0]) : [];
+      if (!off.length) continue;
+      o.makeAsk = `mã ${o.model} dưới cột ${off.map((m) => m.name).join(" / ")}`;
+      o.makes = o.makes.filter((m) => !off.includes(m));
+    }
+    return list;
+  }
   // FG Wilson as an alternator's make (genlitec: "| Alternator Make | FG Wilson", "| Alternator | FG Wilson FGL70030"). Read ONLY from
   // the alternator's own cell or its make cell, never from a page title / column header / whole row (those name the genset's
   // make), so it is not in ALT_BRANDS (which title, header and HSMT readings use).
@@ -59,7 +86,8 @@
   // A Scania engine written as the maker does, in four words ("DC09 072A 02-11", "DC13 072A 02 11", "OC16 071A 02-82" gas,
   // "DC9 65A 10-93"): a code with up to three spaces (catalog-bang-r1: agg-fuzhou, kaihua, voltgent, green-power, huadong
   // had rows whose only engine cell failed isCode, so the row gave no record).
-  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s\d{2}[\s-]\d{2}$/i;
+  // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
+  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -274,6 +302,12 @@
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
+    // Cells that are a duration, a pressure, a weight, a count of wheels, a rating written as a model, a standard or a
+    // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
+    // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
+    // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
     // "195(g/kw.h)", "208g /kwh", "300 W", "330+250 W", "1800k W", "6-cylinder/inline", "Container 20'", "0,11 m3/s",
@@ -287,7 +321,10 @@
     for (const [re, name] of list) if (re.test(text) && !hit.includes(name)) hit.push(name);
     return hit;
   };
-  const freqIn = (text, labelOnly = false) => {
+  const freqIn = (raw, labelOnly = false) => {
+    // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
+    // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
@@ -406,7 +443,7 @@
       const perTitle = k === 1 && sub.length === run;
       // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
       if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
-      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set();
+      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set(), subU = new Set();
       let pos = p0, any = false, twoUsed = false, same = false, own = false, ordered = false;
       const put = (rate, unit, v, soft, key) => {
         if (!rate || rate === "other" || rate === "mixed" || !unit || !(v > 0)) return;
@@ -469,6 +506,8 @@
           const unit = unitOfCell(c) || (k > 1 ? sUnit || tUnit : tUnit || sUnit) || null;
           if (!unit && !dualU && wider <= 0 && (rate === "prime" || rate === "standby")) bare.add(rate);
           if (unitOfCell(c)) own = true;
+          // the unit written in the sub-title of this very column ("Standby KVA | Prime KVA" under "POWER", baifa)
+          else if (k > 1 && sUnit) subU.add(rate);
           put(rate, unit, val(c), inherits, key);
         }
       }
@@ -495,8 +534,10 @@
         if (!p || !s) continue;
         if (p > s * 1.001) return null;
         // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", or that
-        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand)
-        if (!own && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
+        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand; so do figures whose unit is
+        // written in the sub-title of each of the two columns, "Standby KVA | Prime KVA" under one title "POWER" over
+        // "2500 | 2000": the source says the unit twice (Khoa 23/11/2026; a unit in the covering title only still vetoes)
+        if (!own && !(subU.has("prime") && subU.has("standby")) && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
       }
       let n = 0;
       for (const r of Object.values(got)) n += Object.keys(r).length;
@@ -1662,7 +1703,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note));
+    return altMakeAsk(mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note)));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -1893,6 +1934,59 @@
   TWO_CODE_CELLS.push(
     { supplierId: "comappower", n: [113], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" },
     { supplierId: "yanan-power", n: [111], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" });
+  // One engine cell naming several codes (ma-dong-co-trung PR 2, Khoa 20/11/2026 "1. b"): an explicit list "cell=code+code", not a
+  // rule ("6M11G150/5", "4D24TG2/A", "8300D/M-2" are one code). Each code gets its own record; figures of the engine are left out
+  // (`splitEngineCells`: the row does not say which code they belong to). "cell=code": the bracket is the supplier's own code that
+  // no other key uses, so the code outside it stays, with its figures. Not listed (no source says what they are): "DE2V1000 (2V92)",
+  // koop "X:KD156FA/XE:KD186FAE", "(M)", "(E)", a bare figure in brackets. Nor sunny-weifang "ZS1110/295D", "ZS1115/2100D": two makers
+  // in one cell, and the row's one make on both records took the make off all four keys (Changchai, Ricardo).
+  const ENGINE_CELL_LIST = [
+    "1104A-44TG1/ 1104D-E44TG1=1104A-44TG1+1104D-E44TG1", "1104C-44TAG2/ 1104D-E44TAG2=1104C-44TAG2+1104D-E44TAG2", "1104D-44TG1/ 1103A-33TG2=1104D-44TG1+1103A-33TG2",
+    "1106A-70TAG2/ 1106D-E70TAG2=1106A-70TAG2+1106D-E70TAG2", "1106A-70TG1/ 1106D-E70TAG3=1106A-70TG1+1106D-E70TAG3", "12M33G14D3/5 (12M33G1650/5)=12M33G14D3/5+12M33G1650/5",
+    "2206D-E13TAG3 /2206A-E13TAG6=2206D-E13TAG3+2206A-E13TAG6", "4012-46TWG3A/ 4012-46TAG1A=4012-46TWG3A+4012-46TAG1A", "4012-46TWG4A/ 4012-46TAG2A=4012-46TWG4A+4012-46TAG2A",
+    "403A-11G1/ 403D-11G=403A-11G1+403D-11G", "403A-15G1/ 403D-15G=403A-15G1+403D-15G", "404A-22G1/ 404D-22G=404A-22G1+404D-22G", "4B3.9-G1/ 4B3.9-G2=4B3.9-G1+4B3.9-G2",
+    "4BT3.9-G1/ 4BT3.9-G2=4BT3.9-G1+4BT3.9-G2", "4M10G100/6 WP4.1D115E201=4M10G100/6+WP4.1D115E201", "4M10G83/6 WP4.1D95E201=4M10G83/6+WP4.1D95E201",
+    "6LTAA8.9-G2/ 6LTAA8.9-G3=6LTAA8.9-G2+6LTAA8.9-G3", "6M11G110/6 WP6D132E201=6M11G110/6+WP6D132E201", "6M11G135/6 WP6D158E201=6M11G135/6+WP6D158E201",
+    "6M33G8D3/5 (6M33G825/5)=6M33G8D3/5+6M33G825/5", "P126TI-II / P126TI=P126TI-II+P126TI", "S16R2-PTA/S16R2-PTAW=S16R2-PTA+S16R2-PTAW",
+    "DX22 (DP222CC)=DX22+DP222CC", "DX37 (DP372CC)=DX37+DP372CC",
+    "12V4000G14F(3B) 12V4000G74F(3D)=12V4000G14F+12V4000G74F", "12V4000G14S(3B) 12V4000G74S(3D)=12V4000G14S+12V4000G74S", "12V4000G24F(3B) 12V4000G84F(3D)=12V4000G24F+12V4000G84F",
+    "12V4000G24S(3B) 12V4000G84S(3D)=12V4000G24S+12V4000G84S", "16V4000G14F(3B) 16V4000G74F(3D)=16V4000G14F+16V4000G74F", "16V4000G14S(3B) 16V4000G74S(3D)=16V4000G14S+16V4000G74S",
+    "16V4000G24F(3B) 16V4000G84F(3D)=16V4000G24F+16V4000G84F", "20V4000G14F(3B) 20V4000G64F(3D)=20V4000G14F+20V4000G64F", "20V4000G14S(3B) 20V4000G64S(3D)=20V4000G14S+20V4000G64S",
+    "20V4000G24F(3B) 20V4000G74F(3D)=20V4000G24F+20V4000G74F", "20V4000G24S(3B) 20V4000G74S(3D)=20V4000G24S+20V4000G74S", "20V4000G34F(3B) 20V4000G84F(3D)=20V4000G34F+20V4000G84F",
+    "20V4000G44S(3B) 20V4000G94S(3D)=20V4000G44S+20V4000G94S",
+    // The second code written short.
+    "10V1600G10F/G70F=10V1600G10F+10V1600G70F", "10V1600G10S/G70S=10V1600G10S+10V1600G70S", "10V1600G20F/G80F=10V1600G20F+10V1600G80F", "10V1600G20S/G80S=10V1600G20S+10V1600G80S",
+    "12V1600G10F/G70F=12V1600G10F+12V1600G70F", "12V1600G10S/G70S=12V1600G10S+12V1600G70S", "12V1600G20F/G80F=12V1600G20F+12V1600G80F", "12V1600G20S/G80S=12V1600G20S+12V1600G80S",
+    "18V2000G26F/G76F=18V2000G26F+18V2000G76F", "1103D-33G3/G2=1103D-33G3+1103D-33G2", "1104D-44TG3/G2=1104D-44TG3+1104D-44TG2", "1206J-E70TTAG3/4=1206J-E70TTAG3+1206J-E70TTAG4",
+    "2206A/C-E13TAG2=2206A-E13TAG2+2206C-E13TAG2", "2206A/C-E13TAG3=2206A-E13TAG3+2206C-E13TAG3", "2206C-E13TAG2/3=2206C-E13TAG2+2206C-E13TAG3", "2206C/D-E13TAG2=2206C-E13TAG2+2206D-E13TAG2",
+    "2506A/C-E15TAG1=2506A-E15TAG1+2506C-E15TAG1", "2506A/C-E15TAG2=2506A-E15TAG2+2506C-E15TAG2", "2506C-E15TAG1/2=2506C-E15TAG1+2506C-E15TAG2", "2506C/D-E15TAG1=2506C-E15TAG1+2506D-E15TAG1",
+    "2606A/C-E13TAG2=2606A-E13TAG2+2606C-E13TAG2", "2606A/C-E13TAG3=2606A-E13TAG3+2606C-E13TAG3", "2806A-E18TTAG4/5=2806A-E18TTAG4+2806A-E18TTAG5", "2806A/C-E18TAG1A=2806A-E18TAG1A+2806C-E18TAG1A",
+    "2806A/C-E18TAG2=2806A-E18TAG2+2806C-E18TAG2", "2806A/C-E18TAG3=2806A-E18TAG3+2806C-E18TAG3", "4008-TAG2A/2=4008-TAG2A+4008-TAG2", "4008TAG1A/1=4008TAG1A+4008TAG1",
+    "4B3.9-G1/G2=4B3.9-G1+4B3.9-G2", "4BT3.9-G1/G2=4BT3.9-G1+4BT3.9-G2", "4Z2.3-G11/G21=4Z2.3-G11+4Z2.3-G21", "4Z2.3-G12/21=4Z2.3-G12+4Z2.3-G21", "4Z2.7-G11/21=4Z2.7-G11+4Z2.7-G21",
+    "4Z2.7-G12/21=4Z2.7-G12+4Z2.7-G21", "4Z3.0-G11/21=4Z3.0-G11+4Z3.0-G21", "4Z3.0-G12/21=4Z3.0-G12+4Z3.0-G21", "4Z3.2-G12/21=4Z3.2-G12+4Z3.2-G21", "4ZT3.2-G11/21=4ZT3.2-G11+4ZT3.2-G21",
+    "4ZT3.2-G12/21=4ZT3.2-G12+4ZT3.2-G21", "6BT5.9-G1/2=6BT5.9-G1+6BT5.9-G2", "6BT5.9-G1/G2=6BT5.9-G1+6BT5.9-G2", "6CTA8.3-G1/2=6CTA8.3-G1+6CTA8.3-G2",
+    "BF8M1015CP-G3/4/5=BF8M1015CP-G3+BF8M1015CP-G4+BF8M1015CP-G5", "E3262LE202/212=E3262LE202+E3262LE212", "E3262LE212/202=E3262LE212+E3262LE202", "HC12V132ZL-LAG1/2A=HC12V132ZL-LAG1+HC12V132ZL-LAG2A",
+    "KTA19-G3A/G4=KTA19-G3A+KTA19-G4", "KTA19-G4/G3A=KTA19-G4+KTA19-G3A", "KTA50-GS8/G8=KTA50-GS8+KTA50-G8", "QSK38-G3/G5=QSK38-G3+QSK38-G5", "QSK50-G4/G11=QSK50-G4+QSK50-G11",
+    "QSK60-G3/G7=QSK60-G3+QSK60-G7", "QSK60-G4/G11=QSK60-G4+QSK60-G11", "QSK60-G6/G7=QSK60-G6+QSK60-G7",
+    // The bracket is the supplier's own code.
+    "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
+    "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
+    "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+  ];
+  let engineCellCodes = null; // built on first use: `keyOf` is declared further down
+  function splitEngineCells(s, list, note) {
+    engineCellCodes ||= new Map(ENGINE_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    const engineKeys = new Set(SPECS.filter((x) => x[1] === "engine").map((x) => x[0])), out = [];
+    for (const o of list) {
+      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : null;
+      if (!codes) { out.push(o); continue; }
+      if (codes.length === 1) { out.push({ ...o, model: codes[0] }); continue; }
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "một ô ghi hai mã", `tách thành ${codes.join(", ")}; bỏ thông số động cơ của dòng`);
+      const specs = (o.specs || []).filter((sp) => !engineKeys.has(sp.key));
+      for (const model of codes) out.push({ ...o, model, specs: [...specs] });
+    }
+    return out;
+  }
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];
@@ -2000,7 +2094,14 @@
       ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
       { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
     // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
+    // 12V1600G80F (23/11/2026): 23.88 L is the 12V2000's figure (bdadl writes it for 12V2000G65 in the same family of rows); wintpower
+    // writes 21 for G80F, and G10F / G20F / G70F / G80S are 21. The row has no bore x stroke, so `dropspec`, not `fixspec`. All five copies.
+    ...[["bdadl-shanghai", 112, "BDA-M580"], ["bdadl-shanghai", 135, "BDA-M580"], ["fukangsi-yangzhou", 2007, "FKS-M580"], ["pengpai-yangzhou", 111, "PPDL-M580"], ["pengpai-yangzhou", 127, "PPDL-M580"]].map(([supplierId, n, genset]) =>
+      ({ supplierId, n, genset, line: `| ${genset} | 528/580 | 奔驰MTU | 12V1600G80F | 12 | 23.88 | 50 | ≤198 | 3500*1350*1850 | 4350`, act: "dropspec", keys: ["disp"], khoa: "điều phối 23/11/2026", why: "nguồn ghi 23,88 L (số của 12V2000) cho 12V1600G80F; wintpower ghi 21: bỏ riêng dung tích, giữ dòng" })),
     { supplierId: "aosif", n: 123, genset: "AW1000", line: "| AW1000 | 900/720 | 1000/800 | 8M33D979E201 | 205.4 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8M33 (cùng bảng ghi 8V / 26,1 L cho 8M33D845E201): bỏ riêng số xi lanh và dung tích" },
+    // aosif n102: "12V" for QSK19 / KTA19 (6 in line; the same 18.9 L). Too few other sources for the layout rule to overrule the cell.
+    ...[["AC700-I", "| AC700-I | 625/500 | 700/560 | QSK19-G31 | 136.5 | 12V | 18.9 |"], ["AC700-II", "| AC700-II | 625/500 | 700/560 | QSK19-G35 | 138 | 12V | 18.9 |"], ["AC750-III", "| AC750-III | 681/545 | 750/600 | KTA19-G9A | 147 | 12V | 18.9 |"]].map(([genset, line]) => (
+      { supplierId: "aosif", n: 102, genset, line, act: "dropspec", keys: ["cyl"], khoa: "Khoa 22/11/2026", why: "nguồn ghi 12V cho động cơ QSK19 / KTA19 dung tích 18,9 L: bỏ riêng số xi lanh, không ghi số thay" })),
     // cameo-power n107 SC-70YC (column of a table written across): Engine Power 35/41 kW under a 64/70 kW set (the two other columns repeat the set's power).
     { supplierId: "cameo-power", n: 107, genset: "SC-70YC", line: "| Engine Power(kw) (prime/standby) | 50/55 | 55/60 | 35/41", act: "dropspec", keys: ["engPower"], khoa: "Khoa 20/11/2026", why: "nguồn ghi công suất động cơ 35/41 kW nhỏ hơn tổ máy 64/70 kW: bỏ riêng công suất động cơ" },
     // jiangchai-xuzhou n107 J20B400M (6M33D506E310): current "7200" A for a 450 kVA set (neighbours: 846 A for 520 kVA).
@@ -2803,6 +2904,8 @@
     // with a space stays whole ("4006 23TAG2A", Jichai "6190 TL-2", "4190 ZLT1-2", Mahindra "3285 GM-C2", JCB "444 G-TCA-100").
     (s) => s.replace(/\s*\/\s*(1500|1800)$/, "").replace(/\s+(1500|1800)$/, "").replace(/^\d{3,4}(?:,\d+)?\s+(?=\d[\dA-Z.]*-\S*[A-Z])/i, ""),
     (s) => s.replace(PLANT_SLASH, ""),
+    // Scania code + the kVA of the set ("DC13 505A 400KVA", baifa): the figure is a rating, not part of the code.
+    (s) => s.replace(/^([DO]C\s?\d{1,2}\s\d{2,3}[A-Z])\s\d{2,4}\s?kva$/i, "$1"),
     (s) => { const m = s.match(/^([a-z]+)\s+(?=\S*\d)/i); return m && engineMakeWord(m[1]) ? s.slice(m[0].length) : s; },
     (s) => { const m = s.match(/\s+\(?([a-z]+)\)?$/i); return m && engineMakeWord(m[1]) ? s.slice(0, m.index) : s; },
   ];

@@ -118,7 +118,10 @@ test("catalog: dòng phân đoạn cho tần số và hãng của bảng (awt-ai
   assert.deepEqual(p10.makes.map((m) => m.name), ["Perkins"]);
   const p8 = awt.find((r) => r.genset === "AWT-P8" && r.model === "403D-11G");
   assert.equal(p8.freq, 50);
-  assert.equal(awt.length, 562);
+  // 562 trước #1087; nay 566: `ENGINE_CELL_LIST` (ma-dong-co-trung PR 2) tách bốn ô động cơ ghi hai mã ("1206J-E70TTAG3/4",
+  // "2206C-E13TAG2/3", "2506C-E15TAG1/2", "2806A-E18TTAG4/5" của AWT-P175 / P350 / P450 / P710) thành mỗi mã một bản ghi:
+  // +4 bản ghi động cơ, 0 mất. Số bản ghi của bảng đọc lại do #1105 không đổi.
+  assert.equal(awt.length, 566);
   const ao = C.fromSupplier(read("cn", "aosif.json"), []).find((r) => r.genset === "AD33" && r.model === "DP023CAV");
   assert.deepEqual(ao.makes.map((m) => m.name), ["Hyundai"]);
   assert.deepEqual(ao.power, { prime: { kVA: 30, kW: 24 }, standby: { kVA: 33, kW: 26 } });

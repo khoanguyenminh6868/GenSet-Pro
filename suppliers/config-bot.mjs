@@ -788,10 +788,40 @@ export function controllerSheetFacts(s, t) {
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
 const titleModelKeys = (title, partKeys) => [...new Set(String(title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+// Nhóm B (Khoa 23/11/2026): hằng số động cơ trên tờ của CHÍNH hãng, tiêu đề ghi đúng một model. Ô nhãn | giá trị, mỗi nhãn một
+// giá trị trong bảng. Trang Perkins ghi một ô hai lần ("6 inline 6 inline") và hai đơn vị ("3.3 in 84 mm"): lấy đúng phần mm hãng
+// ghi, không quy đổi. Đường kính cần cả dòng hành trình (khoá `bore` là cặp). Ô dung tích hai đơn vị ("69 in³ 1.1 l") KHÔNG lấy:
+// số lít làm tròn một chữ số (1.1 của động cơ 1.131 L) thành phiếu chống số chính xác ở luật dung tích chặt.
+export const undoubled = (v) => { const w = String(v || "").trim().split(/\s+/), h = w.length / 2; return w.length % 2 === 0 && w.slice(0, h).join(" ") === w.slice(h).join(" ") ? w.slice(0, h).join(" ") : w.join(" "); };
+const MAKER_CONST = { cyl: (v) => v.match(/^(\d{1,2})\s+(?:vertical\s+)?(?:inline|in-line|vee)$/i)?.[1] || (/^\d{1,2}$/.test(v) ? v : null), disp: (v) => (/^[\d.]+\s*l$/i.test(v) ? v : null), compr: (v) => (/^\d+(\.\d+)?\s*:\s*1$/.test(v) ? v : null), asp: (v) => (CAT.SPEC.asp.ok.test(v) ? v : null) };
+const sheetMm = (v) => v.match(/^[\d.]+\s*in\s+([\d.]+)\s*mm$/i)?.[1] || v.match(/^([\d.]+)\s*mm$/i)?.[1] || null;
+export function makerConstCells(rows = []) {
+  const got = new Map(), put = (key, x) => got.set(key, [...(got.get(key) || []), x]);
+  for (const line of rows) {
+    const c = CAT.cellsOf(line);
+    if (c.length !== 2) continue;
+    const v = undoubled(c[1]);
+    if (/^bore$/i.test(c[0])) { const x = sheetMm(v); put("boreOnly", { label: c[0], value: x, line }); continue; }
+    if (/^stroke$/i.test(c[0])) { const x = sheetMm(v); put("strokeOnly", { label: c[0], value: x, line }); continue; }
+    const key = CAT.specKey(c[0]), read = MAKER_CONST[key];
+    if (read) put(key, { label: c[0], value: read(v), line });
+  }
+  const one = (k) => { const l = got.get(k) || []; return l.length && l.every((x) => x.value) && new Set(l.map((x) => x.value)).size === 1 ? l[0] : null; };
+  const out = Object.keys(MAKER_CONST).map((key) => ({ key, x: one(key) })).filter((y) => y.x).map(({ key, x }) => ({ key, ...x }));
+  const b = one("boreOnly"), st = one("strokeOnly");
+  if (b && st) out.push({ key: "bore", label: "Bore × Stroke", value: `${b.value} × ${st.value}`, line: `${b.line} ${st.line}` });
+  return out;
+}
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role])), rowsMap = normRowsOf(suppliers);
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
-  const partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
+  const partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key)), engineOf = new Map((cat.engines || []).map((e) => [e.key, e]));
+  const addMakerConst = (s, t, model) => {
+    const e = engineOf.get(model);
+    if (!e || !isEngineMakerOf(e, s) || (t.header || []).flatMap((h) => CAT.cellsOf(h)).some((h) => { const k = CAT.keyOf(h); return k !== model && partKeys.has(k); })) return;
+    const k = `engine:${model}`, had = new Set((facts.get(k) || []).filter((f) => f.supplierId === s.id && f.n === t.n).map((f) => f.key));
+    for (const x of makerConstCells(t.rows)) if (!had.has(x.key)) { const f = { ...x, supplierId: s.id, n: t.n, text: x.line, sheet: true, makerConst: true }; NORM_CTX.set(f, { title: t.title || "", header: [], rows: [x.line] }); add(k, f); }
+  };
   for (const s of suppliers) {
     if (s?.role === "controller_maker") {
       for (const t of s.specTables || []) for (const { model, f } of controllerSheetFacts(s, t)) add(`controller:${model}`, f);
@@ -799,11 +829,12 @@ export function modelFacts(cat, suppliers = []) {
     }
     const own = MAKER_PART[s?.role];
     for (const t of s.specTables || []) {
-      if (t.header?.length) continue;
+      if (t.header?.length && s?.role !== "engine_maker") continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
       // A word with "/" that is itself a model of the catalog ("6M31G825/5") stays one code; any other splits at "/".
       const models = titleModelKeys(t.title, partKeys);
       if (models.length !== 1) continue;
+      if (t.header?.length) { addMakerConst(s, t, models[0]); continue; }
       // A genset maker's own datasheet of a part it makes (Wintpower "WT544C - Technical Data Sheet", Khoa 2026-11-03),
       // saved by maker-datasheets.mjs ("Datasheet: …"), gives the figures of that model when the catalog knows it.
       const isPart = (k) => (cat[k === "engine" ? "engines" : "alternators"] || []).some((e) => e.key === models[0]);
@@ -830,6 +861,7 @@ export function modelFacts(cat, suppliers = []) {
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
         if (value) for (const m of covered) { const f = { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(f, { title: t.title || "", header: t.header || [], rows: t.rows || [] }); add(`${kind}:${m}`, f); }
       }
+      if (own === "engine") addMakerConst(s, t, models[0]);
     }
   }
   const parts = [["engine", cat.engines || []], ["alternator", cat.alternators || []]];
@@ -977,6 +1009,12 @@ function squashTokens(s) {
 // the candidates were KTA38, 12 cylinders in V, which the agent then turned down; QSK23-G2, in line, stood 127th).
 // Of the HSMT: "inline" / "v" when its lines about the cylinders name one arrangement only, else null.
 export function cylLayoutOf(text) {
+  const seen = cylLayoutsIn(text);
+  return seen.size === 1 ? [...seen][0] : null;
+}
+// Every arrangement the lines about the cylinders name. A tender of several sizes reads it per size (`minsForSize`): "chữ V" of the
+// 2.500 kVA set ruled out V engines for its 750 kVA set (IB2300162912).
+function cylLayoutsIn(text) {
   const seen = new Set(), L = String(text || "").split("\n");
   for (let i = 0; i < L.length; i++) {
     if (!/(?:xi|xy)\s*-?\s*lanh|cylinders?/i.test(L[i])) continue;
@@ -985,7 +1023,7 @@ export function cylLayoutOf(text) {
     if (/th[ẳa]ng\s*h[àa]ng|in-?\s*line/i.test(s)) seen.add("inline");
     if (/ch[ữu]\s*V\b|ki[ểe]u\s*V\b|h[ìi]nh\s*(?:ch[ữu]\s*)?V\b|\bV\s*-?\s*type|\bvee\b/i.test(s)) seen.add("v");
   }
-  return seen.size === 1 ? [...seen][0] : null;
+  return seen;
 }
 // Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
 // null when it gives the count only.
@@ -1387,13 +1425,13 @@ export function sizeBlocks(t, sizes) {
   });
   return { L, runs, tags };
 }
-const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
+const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
 function minsRead(t) {
-  const e = engineLists(t), p = powerRead(t), has = {
-    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, minPrime: p.prime.length > 0,
+  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), has = {
+    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, minPrime: p.prime.length > 0,
     maxFuel: p.fuel.some((x) => x.load === 100 || x.load == null), maxFuel75: p.fuel.some((x) => x.load === 75), maxFuel50: p.fuel.some((x) => x.load === 50) };
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl) };
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]) };
   return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
 }
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
@@ -1429,7 +1467,7 @@ export function minsForSize(t, size, sizes, extra = "") {
   const allFound = sizes.every((_, k) => runs.some((r) => r.size === k));
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
-    else if (["minDisp", "maxDisp", "minCyl"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
+    else if (["minDisp", "maxDisp", "minCyl", "cylLayout"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
@@ -1452,7 +1490,7 @@ export function minsForSize(t, size, sizes, extra = "") {
     if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
-  const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
+  const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", cylLayout: "bố trí xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
   const unsure = MIN_KEYS.filter((k) => how[k] === "size unknown" || how[k] === "own: disagree").map((k) => LABEL[k]);
   const note = unsure.length ? `Gói nhiều cỡ: code không xác định được ngưỡng ${[...new Set(unsure)].join(", ")} của HSMT thuộc máy ${size.label || `${size.cap?.value} ${size.cap?.unit}`} nên không dùng để loại dòng; tự đối chiếu với phần HSMT của máy này.`.slice(0, 300) : null;
   return { mins, how, note, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
@@ -1690,15 +1728,14 @@ const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? 
 // `maker` (công suất động cơ do NCC engine_maker ghi), VÀ NCC đó là hãng của động cơ: một hãng của `e.make` có trong
 // tên / thương hiệu / id của NCC (weichai-power ghi thương hiệu "Baudouin", dcec "Cummins", perkins "Perkins"). NCC
 // engine_maker ghi động cơ hãng khác, hay động cơ chưa rõ hãng: không tính. → id các NCC đó (rỗng: không có).
-export function engineMakerSheets(e, ef, sup) {
+export function isEngineMakerOf(e, s) {
   const makes = String(e?.make || "").split(" / ").map((m) => m.trim().toLowerCase()).filter(Boolean);
-  if (!makes.length) return [];
-  const ofMake = (s) => {
-    if (s?.role !== "engine_maker") return false;
-    const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
-    return makes.some((m) => names.some((n) => n.includes(m)));
-  };
-  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && ofMake(sup.get(f.supplierId))).map((f) => f.supplierId))];
+  if (!makes.length || s?.role !== "engine_maker") return false;
+  const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
+  return makes.some((m) => names.some((n) => n.includes(m)));
+}
+export function engineMakerSheets(e, ef, sup) {
+  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && isEngineMakerOf(e, sup.get(f.supplierId))).map((f) => f.supplierId))];
 }
 // The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
@@ -1771,6 +1808,10 @@ export function altOf(alts, cell) {
   }
   return null;
 }
+// Hãng đầu phát cần xác nhận (Khoa 23/11/2026, baifa điểm 2): dòng của NCC ghi mã thuộc họ của một hãng dưới tiêu đề cột của
+// hãng khác (catalog.js altMakeAsk gắn `makeAsk` = "mã … dưới cột …" lên bản ghi đầu phát của dòng). Không tin bên nào: với
+// CHÍNH dòng đó hãng đầu phát là "cần xác nhận", dù khoá đầu phát có hãng từ dòng của NCC khác. `u`: bản ghi động cơ của dòng.
+export const altMakeAskOf = (a, u) => (a?.uses || []).find((x) => x.makeAsk && x.supplierId === u?.supplierId && x.n === u?.n && x.table === u?.table && x.row === u?.row)?.makeAsk || null;
 // Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (tờ Baudouin chú thích "^ Primarily for ESP applications"). Chỉ để LOẠI ở `candidates`:
 // khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
 // (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
@@ -1977,7 +2018,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // An alternator the supplier labels with its own brand (OWN_BRAND_ALTS) is found in the catalog only from that supplier's
       // own tables: "found" says nothing of it, so neither the +40 nor its figures' bonus; named by the HSMT still counts.
       const ownAlt = a && OWN_BRAND_ALTS.some((x) => x.supplierId === u.supplierId && x.code.test(String(a.model).trim()));
-      if (a) { if (!ownAlt) score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } if (!ownAlt) score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
+      // altAsk: hãng đầu phát của dòng này cần xác nhận (altMakeAskOf): không cộng 80 điểm theo HÃNG (model HSMT nêu thì vẫn cộng).
+      const altAsk = a ? altMakeAskOf(a, u) : null;
+      if (altAsk) why.push(`cần xác nhận hãng đầu phát (NCC ghi ${altAsk})`);
+      if (a) { if (!ownAlt) score += 40; if ((!altAsk && (a.make || "").split(" / ").some((m) => hints.altMakes.includes(m))) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } if (!ownAlt) score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       // Not for the named genset model: its table may give no figure in the HSMT's unit (rowPower is then huge).
       if (cap && !gNamed) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
@@ -1995,7 +2039,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // for its own row. Both arrangements written by two suppliers each: not judged.
         const bySup = { v: new Set(), inline: new Set() };
         for (const f of ef) { const l = f.key === "cyl" ? layoutOf(f.value) : null; if (l) bySup[l].add(f.supplierId ?? ""); }
-        const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
+        // The row's own cell does not rule it out when at least two other suppliers write the arrangement the HSMT asks for this
+        // engine AND they outnumber the suppliers on the row's side, the row's own included (Khoa 22 and 23/11/2026: liangzi
+        // "12L" for the V12 KTA38 and longkai "V12" for the 6-in-line QSK19 stay; a "10V" DP180LB, 6 suppliers against 2, goes).
+        const against = own.length ? [...bySup[hints.cylLayout]].filter((x) => x !== u.supplierId).length : 0;
+        const outvoted = own.length > 0 && own.every((x) => x !== hints.cylLayout) && against >= 2 && against > new Set([...bySup[own[0]], u.supplierId]).size;
+        const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
@@ -2036,7 +2085,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
       if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(altAsk ? { altAsk } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
@@ -2239,7 +2288,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     const { e, u, a } = r, s = sup.get(u.supplierId);
     shown.add(u.supplierId);
     if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
-    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : e.makeConflict ? ` (chưa rõ hãng: nguồn ghi khác nhau ${e.makeConflict.map((x) => x.name).join(" / ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
+    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : e.makeConflict ? ` (chưa rõ hãng: nguồn ghi khác nhau ${e.makeConflict.map((x) => x.name).join(" / ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${r.altAsk ? ` (CẦN XÁC NHẬN HÃNG: NCC ghi ${r.altAsk}; không ghi make cho đầu phát của dòng này)` : a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
     // The genset's one-model datasheet (gensetSheetOf), every block, once per source.
@@ -3701,6 +3750,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     madeChecks(c, result.requirements || [], row, built);
+    altMakeAskChecks(c, result.requirements || [], row, built);
     makerCtlChecks(c, result.requirements || []);
     makerAltChecks(c, result.requirements || [], altNeed, { sourcesDir });
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
@@ -4036,6 +4086,34 @@ export function confirmChecks(c, reqs = []) {
     if (have.has(norm(r.item)) || !k || r.byCode) continue;
     c.checks = [...(c.checks || []), { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core",
       status: "confirm", confirm: k, byCode: true, note: "Code ghi: nguồn của cấu hình không nói tới điểm này." }];
+  }
+  return c;
+}
+// Hãng đầu phát cần xác nhận ở bước chấm (Khoa 23/11/2026, baifa điểm 2; altMakeAskOf): cấu hình lấy đầu phát của CHÍNH dòng
+// có cờ (không phải đầu phát chọn theo datasheet hãng) thì `c.alternator.makeAsk` ghi lý do, bỏ `make` agent ghi cho đầu phát,
+// và check "hãng đầu phát" (alt_make) đang "đạt" hạ về "cần xác nhận" (document) kèm ghi chú; "không đạt" / "chưa rõ" giữ nguyên,
+// chỉ thêm ghi chú. `makeHold` giữ trạng thái cũ như `placeHold` (confirmChecks chạy trước, trả "confirm" về "unclear"); dòng
+// hết cờ thì trả lại. Chạy sau madeChecks.
+const ALT_ASK_NOTE = /\s*Code ghi: cần xác nhận hãng đầu phát, NCC ghi .*?; không tin bên nào\./g;
+export function altMakeAskChecks(c, reqs, row, built) {
+  const p = c.alternator;
+  const a = p?.model && !p.fromMaker && row?.other ? altOf(new Map((built?.alternators || []).map((x) => [x.key, x])), row.other) : null;
+  const ask = a && a.key === CAT.keyOf(p.model) ? altMakeAskOf(a, row) : null;
+  if (p) { if (ask) { p.makeAsk = ask; delete p.make; } else delete p.makeAsk; }
+  for (const r of reqs || []) {
+    if (r.code !== "alt_make" || r.byCode) continue;
+    const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+    if (!y) continue;
+    const old = String(y.note || "").replace(ALT_ASK_NOTE, "").trim();
+    if (!ask) {
+      if (y.makeHold) { y.status = y.makeHold; delete y.makeHold; delete y.confirm; }
+      if (old !== String(y.note || "")) { delete y.note; if (old) y.note = old; }
+      continue;
+    }
+    delete y.note;
+    const note = [old, `Code ghi: cần xác nhận hãng đầu phát, NCC ghi ${ask}; không tin bên nào.`].filter(Boolean).join(" ");
+    if (y.status === "met" || (y.makeHold && y.status !== "not_met")) { delete y.confirm; delete y.makeHold; y.status = "confirm"; y.confirm = "document"; y.makeHold = "met"; }
+    y.note = note;
   }
   return c;
 }
@@ -5416,10 +5494,11 @@ export function altDocChecks(c, reqs = [], attrs = []) {
 const SHEET_SPEED = /^(?:engine\s+)?(?:rated\s+)?speed(?:\s*(?:rpm|r\/min))?$|^rpm$/i, SHEET_FUEL = /^(?:thermodynamic\s+cycle|working\s+cycle|fuel\s+type|type\s+of\s+fuel)$/i;
 const sheetLabel = (s) => String(s || "").replace(/[​-‍﻿]/g, "").replace(/[()[\]:：]/g, " ").replace(/\s+/g, " ").trim();
 const rpmCell = (s) => { const m = String(s).trim().match(/^(\d{3,4})\s*(?:rpm|r\/min)?$/i), v = m ? Number(m[1]) : 0; return v >= 600 && v <= 3600 ? v : null; };
-const SHEET_ATTR = [["cycle", /^thermodynamic\s+cycle$/i], ["cooling", /^cooling\s+system$/i], ["inject", /^injection\s+system$/i], ["fuelSys", /^fuel\s+system$/i], ["gov", /^governor$/i]];
+const SHEET_ATTR = [["cycle", /^thermodynamic\s+cycle$/i], ["cooling", /^cooling\s+system$/i], ["inject", /^injection\s+system$/i], ["fuelSys", /^fuel\s+system$/i], ["gov", /^governor$/i], ["asp", /^aspiration(?:\s+asp\.?)?$/i]];
 // Kiểu động cơ / hệ thống phun (nhóm A): each term the requirement names must be on the sheet; a word of the requirement the
 // code does not know leaves the check as it is. [term in the HSMT, sheet attribute, what that attribute must say]
-const ENGINE_TYPE_TERMS = [[/diesel/i, "cycle", /diesel/i], [/4\s*(?:k[ỳy]|th[ìi])|4\s*-?\s*stroke/i, "cycle", /\b4[\s-]*stroke/i], [/l[àa]m\s*m[áa]t\s*(?:b[ằa]ng\s*)?(?:n[ưướ]+c|ch[ấa]t\s*l[ỏo]ng)/i, "cooling", /liquid|water/i]];
+const ENGINE_TYPE_TERMS = [[/diesel/i, "cycle", /diesel/i], [/4\s*(?:k[ỳy]|th[ìi])|4\s*-?\s*stroke/i, "cycle", /\b4[\s-]*stroke/i], [/l[àa]m\s*m[áa]t\s*(?:b[ằa]ng\s*)?(?:n[ưướ]+c|ch[ấa]t\s*l[ỏo]ng|dung\s*d[ịi]ch)/i, "cooling", /liquid|water/i], [/l[àa]m\s*m[áa]t\s*kh[íi]\s*n[ạa]p(?:\s*sau\s*(?:turbo|t[ăa]ng\s*[áa]p))?|after\s*-?cool\w*|inter\s*-?cool\w*/i, "asp", /after\s*-?cool|inter\s*-?cool|charge\s*cool|air-to-air/i], [/t[ăa]ng\s*[áa]p|turbo\w*/i, "asp", /turbo/i]];
+const ASPIRATION_TERMS = ENGINE_TYPE_TERMS.filter((x) => x[1] === "asp");
 const FUEL_SYSTEM_TERMS = [[/phun\s*tr[ựu]c\s*ti[ếe]p|direct\s*injection/i, "inject", /^direct\b/i], [/common\s*rail/i, "fuelSys", /common\s*rail/i], [/cao\s*[áa]p/i, "fuelSys", /high\s*pressure/i], [/đi[ềe]u\s*khi[ểe]n\s*đi[ệe]n\s*t[ửu]/i, "gov", /\bECU\b|electronic/i], [/\bECU\b/i, "gov", /\bECU\b/i]];
 const TERM_FILLER = /(?<!\p{L})(?:đ[ộo]ng\s*c[ơo]|ki[ểe]u|h[ệe]\s*th[ốo]ng|nhi[êe]n\s*li[ệe]u|b[ằa]ng|v[àa])(?!\p{L})|[(),;:./\s-]/giu;
 function sheetTerms(req, terms, attrs = {}) {
@@ -5435,7 +5514,7 @@ function sheetTerms(req, terms, attrs = {}) {
   return hits.length && !rest.replace(TERM_FILLER, "") ? hits : null;
 }
 export function engineSheetsOf(cat, suppliers = []) {
-  const out = new Map(), engines = new Set((cat.engines || []).map((e) => e.key)), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
+  const out = new Map(), engineOf = new Map((cat.engines || []).map((e) => [e.key, e])), engines = new Set(engineOf.keys()), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
   for (const s of suppliers || []) {
     if (s?.role !== "engine_maker") continue;
     for (const t of s.specTables || []) {
@@ -5449,10 +5528,15 @@ export function engineSheetsOf(cat, suppliers = []) {
           if (SHEET_SPEED.test(label)) { const v = cells.slice(1).map(rpmCell); if (v.every((x) => x != null)) for (const x of v) e.speeds.push({ v: x, line, ...at }); }
           if (SHEET_FUEL.test(label) && /\bdiesel\b/i.test(cells[1]) && !/\bgas\b|gasoline|petrol/i.test(cells[1])) e.fuels.push({ line, ...at });
           const attr = SHEET_ATTR.find(([, re]) => re.test(label));
-          if (attr) (e.attrs[attr[0]] ||= []).push({ value: cells[1], line, ...at });
+          // Nạp khí (nhóm B): chỉ từ tờ của chính hãng động cơ; trang Perkins ghi ô hai lần.
+          if (attr && (attr[0] !== "asp" || isEngineMakerOf(engineOf.get(models[0]), s))) (e.attrs[attr[0]] ||= []).push({ value: attr[0] === "asp" ? undoubled(cells[1]) : cells[1], line, ...at });
         }
       } else if (t.header.some((h) => /^rpm$/i.test(sheetLabel(CAT.cellsOf(h)[0])))) {
         for (const line of t.rows || []) { const v = rpmCell(CAT.cellsOf(line)[0]); if (v != null) e.speeds.push({ v, line, ...at }); }
+      }
+      // Bảng có dòng tiêu đề của chính hãng (trang Perkins): nạp khí, khi tiêu đề cột không nêu model khác.
+      if (t.header?.length && isEngineMakerOf(engineOf.get(models[0]), s) && !t.header.flatMap((h) => CAT.cellsOf(h)).some((h) => { const k = CAT.keyOf(h); return k !== models[0] && partKeys.has(k); })) {
+        for (const x of makerConstCells(t.rows)) if (x.key === "asp") (e.attrs.asp ||= []).push({ value: x.value, line: x.line, ...at });
       }
       if (e.speeds.length || e.fuels.length || Object.keys(e.attrs).length) out.set(models[0], e);
     }
@@ -5490,8 +5574,8 @@ export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], r
       if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
       const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
       put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
-    } else if ((r.code === "engine_type" || r.code === "fuel_system") && (!r.part || r.part === "engine")) {
-      const o = openCheck(c, r), hits = o && sheetTerms(req, r.code === "engine_type" ? ENGINE_TYPE_TERMS : FUEL_SYSTEM_TERMS, sheet.attrs);
+    } else if ((r.code === "engine_type" || r.code === "fuel_system" || r.code === "aspiration") && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), hits = o && sheetTerms(req, r.code === "engine_type" ? ENGINE_TYPE_TERMS : r.code === "aspiration" ? ASPIRATION_TERMS : FUEL_SYSTEM_TERMS, sheet.attrs);
       if (hits) put(r, o, { ...hits[0], line: hits.map((h) => h.line).join(" | ") }, "engine", `${hits.map((h) => h.value).join(", ")} (tờ hãng)`, `Code đọc từ ${where(hits[0])}.`);
     } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
       const o = openCheck(c, r), f = sheet.fuels[0];

@@ -38,7 +38,8 @@ test("6M33G8D3/5 (cả cách ghi kèm ngoặc) nhận tỉ số nén của 6M33G
   const more = [...list, sup("ngoac", ["| e-1 | 750 | 600 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | - |"]), sup("tron8", ["| f-1 | 750 | 600 | 6M33G8D3/5 | S5L1D-H41 | - |"])];
   const r = run(more, free("Tỉ số nén | 14:1"));
   assert.deepEqual(ids(r), ["dung", "tron", "trong"]);
-  assert.deepEqual(r.dropped.map((d) => d.u.supplierId).sort(), ["khac", "ngoac", "tron8"]);
+  // Ô hai mã nay là hai bản ghi (ma-dong-co-trung PR 2), cả hai đều bị loại.
+  assert.deepEqual(r.dropped.map((d) => d.u.supplierId).sort(), ["khac", "ngoac", "ngoac", "tron8"]);
 });
 test("mã có tiền tố nước dùng tỉ số nén của mã gốc", () => {
   const rows = [sup("goc", ["| g-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | 13.6:1 |"]), sup("uk", ["| u-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("dung", ["| b-1 | 750 | 600 | 6M31G825/5 | S5L1D-H41 | 14:1 |"])];
