@@ -5,12 +5,12 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-23T11:18:12.268Z
+  modified: 2026-11-23T23:47:22.458Z
 ---
 
 Chỉ ghi quyết định của Khoa và hiểu biết nghiệp vụ. Bẫy code ghi ở `web/CLAUDE.md`, `suppliers/CLAUDE.md` trong repo; việc còn dở ghi ở sổ điều phối ([[orchestrator-delegate-by-model]]). Không có tệp nhật ký gom.
 
-- **Sync:** 10:10, 14:10, 18:10 giờ VN, thứ Hai–thứ Sáu; thứ Bảy, Chủ nhật KHÔNG Sync theo lịch, cả máy Windows lẫn sandbox (Khoa 18/11/2026; trước đó chạy cả tuần). Mọi máy Windows tắt thì Vercel Cron đánh thức sandbox để Sync ([[vercel-sandbox]]). Chỉ tìm gói "máy phát điện" chưa đóng. Sync KHÔNG cào lịch sử, KHÔNG chạy specs — `genbid-sync.js history` / `history-config` / `specs` chỉ chạy tay.
+- **Sync:** 10:10, 14:10, 18:10 giờ VN, thứ Hai–thứ Sáu; thứ Bảy, Chủ nhật KHÔNG Sync theo lịch, cả máy Windows lẫn sandbox (Khoa 18/11/2026; trước đó chạy cả tuần). Mọi máy Windows tắt thì Vercel Cron đánh thức sandbox để Sync ([[vercel-sandbox]]). Chỉ tìm gói "máy phát điện" chưa đóng. Sync KHÔNG cào lịch sử, KHÔNG chạy specs — `genbid-sync.js history` / `history-config` / `specs` chỉ chạy tay. Sync theo lịch lỗi thì KHÔNG tính xong mốc: tự thử lại, lưu ảnh trang lỗi, nhật ký và banner báo "Sync lỗi" (Khoa 24/11/2026).
 - **Chuỗi tự động sau Sync:** gói MỚI → tải tệp → Phân tích → Gợi ý cấu hình → Giá gợi ý. Bấm Phân tích tay giữa chừng thì chuỗi dừng. Gói dịch vụ (bảo dưỡng, sửa chữa, thuê, di dời, vật tư…) không tự Gợi ý cấu hình (12/11/2026).
 - **Gói lịch sử và gói hiện tại là MỘT khái niệm** (web gộp theo key; bot vẫn 3 nơi lưu, chưa gộp).
 - **Nhà thầu gói Đã đóng** (04/11/2026): lấy biên bản mở thầu/kết quả cho mọi gói Đã đóng và Bỏ qua, trừ Đã hủy, Không trúng, dự án. Thấy công ty mình ([[company-thao-nguyen]]) thì gói tự sang Đã nộp / Trúng / Không trúng.
