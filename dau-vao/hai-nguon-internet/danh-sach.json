@@ -1,0 +1,30 @@
+{
+  "ngay": "2026-11-24",
+  "trang_thai": "DO DANG - dung vi luat context 30%. Moi xong mot phan HGM9320.",
+  "du_2_nguon": [],
+  "chua_du": [
+    {
+      "model": "SmartGen HGM9320 (MPU/CAN)",
+      "truong": ["dc_supply", "operating_temp", "dimensions", "display", "can", "rs485", "usb", "scheduler", "event_log", "kind_amf", "languages", "front_ip"],
+      "gia_tri_thay": {
+        "dc_supply": "DC(8-35)V",
+        "operating_temp": "(-25~+70)C",
+        "dimensions": "Case 237*172*45 mm; panel cutout 214*160 mm",
+        "display": "4.3 inches TFT-LCD (480*272)",
+        "rs485": "Monitor Interface RS485",
+        "usb": "Programmable Interface USB/RS485",
+        "scheduler": "Scheduled Start Genset",
+        "event_log": "RTC & Event Log",
+        "front_ip": "IP55 (muc 26 'Waterproof security level IP55')"
+      },
+      "ly_do": "Cac trang tim duoc deu la ban chep cung mot tai lieu hang SmartGen (brochure / manual), nen chi tinh la MOT nguon. Khong co nguon doc lap thu hai.",
+      "nguon": [
+        {"url": "https://www.smartgen-america.com/catalog/products/genset-controllers/amf/smartgen-hgm9320mpu-generator-controller-schedule-function-real-time-clock-event-logs-sms-amf/", "da_doc": true, "trich": "DC Supply DC(8-35)V / Case Dimensions(mm) 237*172*45 / Panel Cutout(mm) 214*160 / Operating Temp. (-25~+70)℃", "ghi_chu": "trang cua nha phan phoi SmartGen My, chep nguyen van bang thong so cua hang"},
+        {"url": "https://www.ats4pro.com/products/smartgen-hgm9320can-generator-controller-real-time-clock-event-logs-sms-amf", "da_doc": false, "trich": "DC Supply DC(8-35)V Case Dimensions(mm) 237*172*45. Panel Cutout(mm) 214*160. Operating Temp. (-25~+70)℃", "ghi_chu": "chi thay doan trich cua ket qua tim kiem, cung chu voi trang tren => ban chep"},
+        {"url": "https://presertec.cl/img/productos-smartgen/modulos-de-control-GE/HGM93XX%20Series/HGM9320mpu-ingles.pdf", "da_doc": false, "trich": "Power Supply：DC(8-35)V. Case Dimensions：237*172*45(mm). Panel Cutout：214*160(mm). Operating Temp. ：(-25~+70)℃", "ghi_chu": "doan trich tu ket qua tim kiem; tai truc tiep tra 404 (chua ro do ma hoa URL). Cung brochure hang"},
+        {"url": "https://doc.diytrade.com/docdvr/1306637/43602887/1433217562.pdf", "da_doc": "mot phan", "trich": "tieu de PDF: HGM9200-HGM9300-HGM9400 INSTRUCTION V-1.0 en (74 trang)", "ghi_chu": "la MANUAL cua SmartGen do dai ly dang lai, tai khong can dang nhap => thuoc 'to hang', khong thuoc luat 2 nguon. Chua trich duoc chu (truy van Firecrawl loi, ton 78 credit)."}
+      ]
+    }
+  ],
+  "chua_lam": ["HGM9520", "HGM9220/9210", "HGM9410", "HGM9500", "HGM6100CAN", "SICES GC310/GC350/GC500Plus", "dau phat Stamford LVI634B-G, PI734, UCI274J/K, 164/184, P126TI, P086TI, LVSI804"]
+}
