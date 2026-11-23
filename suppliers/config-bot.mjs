@@ -1039,6 +1039,13 @@ export function hzOfRow(u) {
   }
   return null;
 }
+// Tên model kaihua-genset đuôi "-60" ("HC-BD1500-60", "HC-BD 2060-60", "HC-34GF-60", "HC-2500GF2-60") là máy 60 Hz (Khoa 22/11/2026).
+// CHỈ NCC này, chỉ cho chính dòng đó: không tính vào "động cơ chỉ có một tần số" của dòng NCC khác; dòng tự ghi Hz / tốc độ thì theo chính nó.
+export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /^HC-(?:BD\s*)?\d+(?:GF\d*)?-60$/i.test(String(CAT.cellsOf(u.line)[0] ?? "").trim()) ? 60 : null);
+// Mã Baudouin có dấu "^": tờ hãng chú thích "^ Primarily for ESP applications" (sources/baudouin/1015, 1017–1020).
+// Tờ có chú thích chỉ ghi 3 mã trong danh mục (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^); các mã khác theo cùng ký hiệu do NCC ghi.
+// Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
+export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1764,7 +1771,7 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
+// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (tờ Baudouin chú thích "^ Primarily for ESP applications"). Chỉ để LOẠI ở `candidates`:
 // khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
 // (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
 const TWIN_KEYS = new Set(["cyl", "disp", "bore"]);
@@ -1999,16 +2006,20 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
+      let hzName = null;
       if (hints.freq && !u.freq) {
         // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
         const own = hzOfRow(u);
+        hzName = own ? null : hzOfName(u);
         // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
         const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
         if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
-        else if (!own && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (hzName && hzName !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`tên model NCC ghi đuôi "-60" (${hzName} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (!own && !hzName && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some(hzOfRow));
-      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && !hzName && twinUses.some(hzOfRow));
+      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (mã cùng gốc, khác dấu "^")`);
+      if (cap && cap.rating !== "standby" && isEspCode(e)) { score -= 600; ruled.push("esp"); why.push(`mã "^": tờ hãng ghi chủ yếu cho dự phòng (ESP), HSMT đòi công suất liên tục`); }
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
       // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
       // xét: comprOf đọc cả HSMT, chưa biết con số thuộc cỡ nào.
