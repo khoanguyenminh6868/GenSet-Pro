@@ -1,0 +1,63 @@
+loai	khoa_ngoac	khoa_goc	dong_ngoac	dong_goc	ncc_ngoac	so_ncc_goc	hang_ngoac	hang_goc	lech	khong_so_duoc	da_so	cyl_ngoac	cong_suat	cs_lech	cs_so_duoc
+khong_co_goc	KTA38D(M)		7		mecca-power,walter-yangzhou	0	Cummins					12V			0
+khong_co_goc	KTA19D(M)		5		mecca-power,walter-yangzhou	0	Cummins					6L			0
+khong_co_goc	LR4M3LRD(G3)		4		longkai-power,previa-ningde	0	YTO								0
+gop_duoc	4BTA39G2(M)	4BTA39G2	2	322	lees-power,xingguang-jiangsu	97	Cummins	Cummins					prime 48–48 ↔ 34–67; standby 53–53 ↔ 37–74		2
+gop_duoc	6BT59G2(M)	6BT59G2	2	288	lees-power,xingguang-jiangsu	90	Cummins	Cummins					prime 100–100 ↔ 30–115; standby 110–110 ↔ 40–127		2
+khong_co_goc	LR6M3LRD(G3)		2		longkai-power,previa-ningde	0	YTO								0
+khong_co_goc	NT855D(M)		5		mecca-power	0	Cummins					6L			0
+gop_duoc	12V4000G14F(3B)	12V4000G14F	2	13	comappower	9	MTU	MTU			cyl=12	12	prime 1240–1320 ↔ 1200–1320; standby 1364–1464 ↔ 1320–1464		2
+gop_duoc	12V4000G14S(3B)	12V4000G14S	2	8	comappower	7	MTU	MTU		cyl		12	prime 1300–1400 ↔ 1300–1400; standby 1352–1600 ↔ 1352–1600		2
+gop_duoc	12V4000G74F(3D)	12V4000G74F	2	2	comappower	1	MTU	MTU		cyl		12	prime 1240–1320 ↔ 1240–1320; standby 1364–1464 ↔ 1364–1464		2
+gop_duoc	12V4000G74S(3D)	12V4000G74S	2	2	comappower	1	MTU	MTU		cyl		12	prime 1300–1400 ↔ 1300–1400; standby 1352–1600 ↔ 1352–1600		2
+khong_co_goc	DE2V1000(2V92)		2		genlitec	0									0
+khong_co_goc	DE2V1250(2V95)		2		genlitec	0									0
+khong_co_goc	DE2V920(2V88)		2		genlitec	0									0
+khong_co_goc	NTA885G1(M)		2		huayuan-weifang	0	Cummins								0
+khong_co_goc	(YD485D)		1		acepow-fuan	0									0
+gop_duoc	1100F(E)	1100F	1	1	zc-power	1				compr	disp=660 cc; bore=100 x 84 mm		standby 10.5–10.5 ↔ không ghi; rated 10–10 ↔ 5.5–5.5	rated	1
+gop_duoc	12V4000G24F(3B)	12V4000G24F	1	13	comappower	9	MTU	MTU			cyl=12	12	prime 1472–1472 ↔ 1440–1472; standby 1628–1628 ↔ 1584–1628		2
+gop_duoc	12V4000G24S(3B)	12V4000G24S	1	8	comappower	8	MTU	MTU		cyl		12	prime 1630–1630 ↔ 1600–1630; standby 1790–1790 ↔ 1760–1800		2
+gop_duoc	12V4000G84F(3D)	12V4000G84F	1	1	comappower	1	MTU	MTU		cyl		12	prime 1472–1472 ↔ 1472–1472; standby 1628–1628 ↔ 1628–1628		2
+gop_duoc	12V4000G84S(3D)	12V4000G84S	1	1	comappower	1	MTU	MTU		cyl		12	prime 1630–1630 ↔ 1630–1630; standby 1790–1790 ↔ 1790–1790		2
+gop_duoc	16V4000G14F(3B)	16V4000G14F	1	14	comappower	9	MTU	MTU			cyl=16	16	prime 1664–1664 ↔ 1640–1680; standby 1840–1840 ↔ 1800–1848		2
+gop_duoc	16V4000G14S(3B)	16V4000G14S	1	10	comappower	8	MTU	MTU		cyl		16	prime 1880–1880 ↔ 1800–1890; standby 2100–2100 ↔ 2000–2100		2
+gop_duoc	16V4000G24F(3B)	16V4000G24F	1	11	comappower	10	MTU	MTU			cyl=16	16	prime 1800–1800 ↔ 1800–1800; standby 2000–2000 ↔ 1920–2000		2
+gop_duoc	16V4000G24S(3B)	16V4000G24S	1	6	comappower	6	MTU	MTU		cyl		16	prime 2028–2028 ↔ 2100–2130; standby 2300–2300 ↔ 2300–2350		2
+gop_duoc	16V4000G74F(3D)	16V4000G74F	1	1	comappower	1	MTU	MTU		cyl		16	prime 1664–1664 ↔ 1664–1664; standby 1840–1840 ↔ 1840–1840		2
+gop_duoc	16V4000G74S(3D)	16V4000G74S	1	1	comappower	1	MTU	MTU		cyl		16	prime 1880–1880 ↔ 1880–1880; standby 2100–2100 ↔ 2100–2100		2
+gop_duoc	16V4000G84F(3D)	16V4000G84F	1	1	comappower	1	MTU	MTU		cyl		16	prime 1800–1800 ↔ 1800–1800; standby 2000–2000 ↔ 2000–2000		2
+khong_co_goc	16V4000G84S(3D)		1		comappower	0	MTU					16			0
+mau_thuan	186FA(E)	186FA	1	3	zc-power	3			compr: 19:1 ↔ 19.5/20:1		disp=418 cc; bore=86 x 72 mm; compr=19:1		standby 5.5–5.5 ↔ 5.5–5.5; rated 5–5 ↔ 4.2–4.2	rated	2
+mau_thuan	192F(E)	192F	1	2	zc-power	1			disp: 498 cc ↔ 0.498; compr: 19:1 ↔ 19.5		disp=498 cc; bore=92 x 75 mm; compr=19:1		standby 7–7 ↔ không ghi; rated 6.5–6.5 ↔ 6–6	rated	1
+gop_duoc	20V4000G14F(3B)	20V4000G14F	1	12	comappower	9	MTU	MTU			cyl=20	20	prime 2000–2000 ↔ 2000–2000; standby 2240–2240 ↔ 2144–2240		2
+gop_duoc	20V4000G14S(3B)	20V4000G14S	1	7	comappower	7	MTU	MTU		cyl		20	prime 2320–2320 ↔ 2300–2320; standby 2560–2560 ↔ 2500–2560		2
+gop_duoc	20V4000G24F(3B)	20V4000G24F	1	13	comappower	9	MTU	MTU			cyl=20	20	prime 2240–2240 ↔ 2200–2240; standby 2400–2400 ↔ 2400–2464		2
+gop_duoc	20V4000G24S(3B)	20V4000G24S	1	7	comappower	7	MTU	MTU		cyl		20	prime 2540–2540 ↔ 2500–2545; standby 2800–2800 ↔ 2750–2800		2
+gop_duoc	20V4000G34F(3B)	20V4000G34F	1	12	comappower	9	MTU	MTU			cyl=20	20	prime 2400–2400 ↔ 2400–2400; standby 2640–2640 ↔ 2600–2640		2
+gop_duoc	20V4000G44S(3B)	20V4000G44S	1	7	comappower	7	MTU	MTU		cyl		20	prime 2800–2800 ↔ 2800–2900; standby 3200–3200 ↔ 3080–3200		2
+gop_duoc	20V4000G64F(3D)	20V4000G64F	1	1	comappower	1	MTU	MTU		cyl		20	prime 2000–2000 ↔ 2000–2000; standby 2240–2240 ↔ 2240–2240		2
+gop_duoc	20V4000G64S(3D)	20V4000G64S	1	1	comappower	1	MTU	MTU		cyl		20	prime 2320–2320 ↔ 2320–2320; standby 2560–2560 ↔ 2560–2560		2
+gop_duoc	20V4000G74F(3D)	20V4000G74F	1	1	comappower	1	MTU	MTU		cyl		20	prime 2240–2240 ↔ 2240–2240; standby 2400–2400 ↔ 2400–2400		2
+gop_duoc	20V4000G74S(3D)	20V4000G74S	1	1	comappower	1	MTU	MTU		cyl		20	prime 2540–2540 ↔ 2540–2540; standby 2800–2800 ↔ 2800–2800		2
+gop_duoc	20V4000G84F(3D)	20V4000G84F	1	1	comappower	1	MTU	MTU		cyl		20	prime 2400–2400 ↔ 2400–2400; standby 2640–2640 ↔ 2640–2640		2
+gop_duoc	20V4000G94S(3D)	20V4000G94S	1	1	comappower	1	MTU	MTU		cyl		20	prime 2800–2800 ↔ 2800–2800; standby 3200–3200 ↔ 3200–3200		2
+khong_co_goc	404D22(EPA/EUIIIA)		1		gtl-power	0	Perkins					4			0
+so_tro	4BTA39G13(40)	4BTA39G13	1	47	elitech-power	32	Cummins	Cummins							0
+so_tro	4BTA39G13(50)	4BTA39G13	1	47	elitech-power	32	Cummins	Cummins							0
+khong_co_goc	6135HF475(C)		1		cooltech-shanghai	0	John Deere								0
+so_tro	6BT59G2(115)	6BT59G2	1	288	bobig-power	90	Cummins	Cummins			engPower=115		prime 100–100 ↔ 30–115; standby 110–110 ↔ 40–127		2
+khong_co_goc	B5178F(E)		1		bison-zhejiang	0									0
+khong_co_goc	B5186F(E)		1		bison-zhejiang	0									0
+so_tro	DC1372A(0213)		1		jcb-power	0	Scania								0
+khong_co_goc	KLA38G2(M)		1		huayuan-weifang	0	Cummins								0
+gop_duoc	KTA19G3(M)	KTA19G3	1	152	huayuan-weifang	88	Cummins	Cummins					rated 350–350 ↔ 45–450		1
+gop_duoc	KTA19G4(M)	KTA19G4	1	128	huayuan-weifang	67	Cummins	Cummins					rated 400–400 ↔ 45–450		1
+gop_duoc	KTA38G(M)	KTA38G	1	19	huayuan-weifang	13	Cummins	Cummins					rated 500–500 ↔ 450–500		1
+khong_co_goc	KTA50D(M1)		1		mecca-power	0	Cummins					16V			0
+khong_co_goc	KTA50D(M2)		1		mecca-power	0	Cummins					16V			0
+khong_co_goc	KTALGG2(M)		1		huayuan-weifang	0	Cummins								0
+khong_co_goc	NTA855D(M)		1		walter-yangzhou	0	Cummins								0
+gop_duoc	NTA855G2(M)	NTA855G2	1	43	huayuan-weifang	28	Cummins	Cummins					rated 250–250 ↔ 250–260		1
+khong_co_goc	NTA885GL(M)		1		huayuan-weifang	0	Cummins								0
+khong_co_goc	QSK60D(M)		1		mecca-power	0	Cummins					16V			0
