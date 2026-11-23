@@ -1052,6 +1052,34 @@ export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /
 // Tờ có chú thích chỉ ghi 3 mã trong danh mục (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^); các mã khác theo cùng ký hiệu do NCC ghi.
 // Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
 export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
+// Đuôi mã Baudouin: "/5" = 1500 v/p (50 Hz), "/6" = 1800 v/p (60 Hz). Căn cứ: mọi tờ hãng sources/baudouin/*.md, 87 mã có cột
+// RPM đọc được (43 mã /5, 44 mã /6), 0 mã trái đuôi (soát 24/11/2026). Đuôi "/S" = "switchable 50/60 Hz" (chú thích tờ hãng):
+// không kết luận. CHỈ dạng mã này; không đặt quy ước cho hãng khác.
+export const hzOfCode = (e) => { const m = String(e?.key || "").match(/^\d+M\d+G[A-Z0-9]*\/([56])\^?$/); return m ? (m[1] === "5" ? 50 : 60) : null; };
+// Danh sách tường minh, KHÔNG phải luật (Khoa 23/11/2026): long-gen đặt dòng này ở tab 50 Hz của trang (tên tab không lưu trong
+// specTables), còn tờ Perkins [perkins 5001] và baifa n105 chỉ ghi mã này ở 60 Hz. Giữ ở gói 50 Hz, tần số "cần xác nhận".
+const FREQ_ASK_ROWS = [{ supplierId: "long-gen", n: 109, model: "LGPL-220EV", engine: "1206JE70TTAG4", want: 50, why: "NCC ghi 50 Hz, tờ hãng chỉ ghi 60 Hz" }];
+const freqAskRow = (e, u, want) => FREQ_ASK_ROWS.find((x) => x.want === want && x.engine === e?.key && x.supplierId === u?.supplierId && [u?.n, ...(u?.also || []).map((a) => a.n)].includes(x.n) && String(CAT.cellsOf(u?.line || "")[0] ?? "").trim() === x.model);
+// Dòng không tự ghi tần số, gói đòi `want` Hz (Khoa 24/11/2026). LOẠI (`out`) khi chính dòng, mã động cơ hoặc tờ của chính hãng
+// động cơ cho thấy tần số kia. Chỉ NCC khác ghi tần số kia (≥ 2 dòng) thì GIỮ, `ask` = cần xác nhận: trước đây một NCC có bảng
+// 60HZ làm mất dòng TAD1350GE của ba NCC không ghi tần số. Động cơ có dòng ghi đúng `want` thì không xét theo các dòng khác.
+export function freqVerdict(e, u, want, { twinUses = [], sup = new Map() } = {}) {
+  if (!want || u?.freq) return null;
+  const own = hzOfRow(u);
+  if (own) return own !== want ? { out: true, kind: "row", why: `dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${want} Hz` } : null;
+  const name = hzOfName(u);
+  if (name) return name !== want ? { out: true, kind: "name", why: `tên model NCC ghi đuôi "-60" (${name} Hz), HSMT yêu cầu ${want} Hz` } : null;
+  const listed = freqAskRow(e, u, want);
+  if (listed) return { ask: true, kind: "listed", why: listed.why };
+  const code = hzOfCode(e);
+  if (code && code !== want) return { out: true, kind: "code", why: `mã ${e.key} đuôi "/${code === 60 ? 6 : 5}" là bản ${code} Hz theo tờ hãng Baudouin, HSMT yêu cầu ${want} Hz` };
+  const all = [...(e?.uses || []), ...twinUses], known = all.map(hzOfRow).filter(Boolean);
+  if (known.some((f) => f === want)) return null;
+  const maker = all.filter((x) => hzOfRow(x) && isEngineMakerOf(e, sup.get(x.supplierId))).map(hzOfRow);
+  if (maker.length) return { out: true, kind: "sheet", why: `tờ hãng động cơ chỉ ghi ${maker[0]} Hz, HSMT yêu cầu ${want} Hz` };
+  if (known.length >= 2) return { ask: true, kind: "others", why: `cần xác nhận tần số: dòng không ghi tần số; NCC khác chỉ ghi ${known[0]} Hz` };
+  return null;
+}
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1696,15 +1724,14 @@ const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? 
 // `maker` (công suất động cơ do NCC engine_maker ghi), VÀ NCC đó là hãng của động cơ: một hãng của `e.make` có trong
 // tên / thương hiệu / id của NCC (weichai-power ghi thương hiệu "Baudouin", dcec "Cummins", perkins "Perkins"). NCC
 // engine_maker ghi động cơ hãng khác, hay động cơ chưa rõ hãng: không tính. → id các NCC đó (rỗng: không có).
-export function engineMakerSheets(e, ef, sup) {
+export function isEngineMakerOf(e, s) {
   const makes = String(e?.make || "").split(" / ").map((m) => m.trim().toLowerCase()).filter(Boolean);
-  if (!makes.length) return [];
-  const ofMake = (s) => {
-    if (s?.role !== "engine_maker") return false;
-    const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
-    return makes.some((m) => names.some((n) => n.includes(m)));
-  };
-  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && ofMake(sup.get(f.supplierId))).map((f) => f.supplierId))];
+  if (!makes.length || s?.role !== "engine_maker") return false;
+  const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
+  return makes.some((m) => names.some((n) => n.includes(m)));
+}
+export function engineMakerSheets(e, ef, sup) {
+  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && isEngineMakerOf(e, sup.get(f.supplierId))).map((f) => f.supplierId))];
 }
 // The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
@@ -2013,22 +2040,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
       // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
       if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
-      // An engine of the other frequency (Khoa, 2026-11-17: Baudouin 6M33G660/6 and 6M33G633/6, the 1800 rpm / 60 Hz
-      // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
-      // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
-      // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
-      let hzName = null;
-      if (hints.freq && !u.freq) {
-        // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
-        const own = hzOfRow(u);
-        hzName = own ? null : hzOfName(u);
-        // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
-        const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
-        if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
-        else if (hzName && hzName !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`tên model NCC ghi đuôi "-60" (${hzName} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
-        else if (!own && !hzName && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
-      }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && !hzName && twinUses.some(hzOfRow));
+      // Dòng không tự ghi tần số (Khoa 24/11/2026, `freqVerdict`): chính dòng / mã / tờ hãng trái gói thì loại; chỉ NCC khác ghi
+      // tần số kia thì giữ, gắn cần xác nhận. Dòng của cả "X" và "X^" (tach-mu-2) cùng tính.
+      const hzV = hints.freq ? freqVerdict(e, u, hints.freq, { twinUses, sup }) : null;
+      if (hzV?.out) { score -= 600; ruled.push("freq"); why.push(hzV.why); }
+      else if (hzV?.ask) why.push(hzV.why);
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (hzV?.out && hzV.kind === "sheet" && twinUses.some(hzOfRow));
       if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (mã cùng gốc, khác dấu "^")`);
       if (cap && cap.rating !== "standby" && isEspCode(e)) { score -= 600; ruled.push("esp"); why.push(`mã "^": tờ hãng ghi chủ yếu cho dự phòng (ESP), HSMT đòi công suất liên tục`); }
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
@@ -2047,7 +2064,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
       if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(hzV?.ask ? { freqAsk: hzV.kind } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
@@ -3704,6 +3721,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     engineSheetChecks(c, result.requirements || [], c.engine?.model ? engSheets.get(CAT.keyOf(c.engine.model)) : null, ratingsFor(RT.alt, c.alternator?.model), row);
     confirmChecks(c, result.requirements || []);
+    freqAskCheck(c, result.requirements || [], row, built, sup);
     altDocChecks(c, result.requirements || [], altAttrs);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
@@ -5299,6 +5317,23 @@ export function freqChecks(c, reqs, row, poles = []) {
   const f = CONV.FORMULAS.rpm_from_poles;
   putCheck(c, o.x, { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${hz} Hz: n = 120 × ${hz} / 4 cực = ${rpm} v/p`, sourceQuote: [rl, four[0].lines?.[0] || four[0].line].filter(Boolean).join(" | "), part: "genset", level: r.level || "core", status: "met", byCode: true,
     conversions: [{ ...conv, value: v, unit: f.unit, label: f.label, basis: f.basis }], note: `Code: dòng tổ máy ghi ${rpm} v/p, tờ hãng đầu phát ghi 4 cực; ${f.label}.` });
+  return c;
+}
+// Dòng `candidates` giữ với tần số "cần xác nhận" (freqVerdict.ask): mục tần số của HSMT là "confirm", kể cả khi agent ghi đạt
+// (dòng không ghi tần số nên không có gì để đạt). Mục đã "không đạt" giữ nguyên. Chạy lại `check` ra cùng kết quả.
+export function freqAskCheck(c, reqs, row, built, sup) {
+  if (!row) return c;
+  const r = reqs.find((q) => q.code === "frequency" && q.part === "genset" && !q.byCode);
+  const hz = r && freqOfHsmt(`${r.requirement || ""} ${r.quote || ""}`);
+  if (!hz) return c;
+  const e = (built?.engines || []).find((x) => x.uses.includes(row));
+  const twin = e && (built.engines || []).find((x) => x.key === caretTwin(e.key));
+  const v = e && freqVerdict(e, row, hz, { twinUses: twin?.uses || [], sup });
+  if (!v?.ask) return c;
+  const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+  if (x?.status === "not_met") return c;
+  putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "Dòng tổ máy không xác nhận được tần số", part: "genset", level: r.level || "core", status: "confirm", confirm: "order", byCode: true, rule: "tan-so", note: `Cần NCC xác nhận tần số ${hz} Hz: ${v.why.replace(/^cần xác nhận tần số: /, "")}.` });
+  if (x) { delete x.sourceQuote; delete x.factSrc; }
   return c;
 }
 // ---------- Thuộc tính đầu phát theo model (cfg-r3) ----------
