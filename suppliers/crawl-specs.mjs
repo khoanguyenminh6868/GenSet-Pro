@@ -84,6 +84,15 @@ export const linksOf = (html, base, host, lang = null) => [...new Set([...html.m
   try { const u = new URL(m[1].replace(/&amp;/g, "&"), base).href; const label = m[2].replace(/<[^>]+>/g, " "); return LINK.test(u) || (LINK.test(label) && !SKIP.test(label)) ? (STRONG.test(label) && !STRONG.test(u) ? u + "#0kva" : u) : null; } catch { return null; }
 }).filter((u) => u && /^https?:/.test(u) && new URL(u).hostname.replace(/^www\.|^m\./, "") === host && !SKIP.test(lang ? u.replace(`/${lang}/`, "/") : u)))];
 const isNumCell = (c) => /\d/.test(c) && c.replace(/[\d.,~\-–/()%\s]|kva|kw|v|hz|rpm|l\/h|mm|kg|db|a\b/gi, "").length <= 3;
+// A machine row: its first cell with text is a model code (letters and digits) and at least two cells are plain numbers
+// ("| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | …"). A title line has no two plain numbers ("| Model | 50Hz | 60Hz").
+export const isMachineRow = (l) => {
+  const c = String(l).split("|").map((x) => x.trim()).filter(Boolean);
+  return c.length >= 3 && /[a-z]/i.test(c[0]) && /\d/.test(c[0]) && c.filter((x) => /^\d+(\.\d+)?$/.test(x)).length >= 2;
+};
+// Where the header of a table ends: the index of the first machine row after the first line, else the number of lines.
+// Used on the leading lines of a block (tablesOf) and on a saved table's `header` (the test over cn/).
+export const headerEnd = (lines) => { const i = lines.findIndex((l, j) => j >= 1 && isMachineRow(l)); return i < 0 ? lines.length : i; };
 // Table blocks: 2+ consecutive lines of 3+ cells; header = the leading lines that are mostly not numbers.
 export function tablesOf(text) {
   const lines = text.split(/\r?\n/), out = [];
@@ -97,7 +106,13 @@ export function tablesOf(text) {
     // A line as wide as the first data line stays even with few numbers: in a table with the models across
     // ("| Engine Model | YC4D60-D21 | YC4D80-D34") it is the engine or alternator of each model.
     const width = (l) => l.split("|").length, w = width(block[k]);
-    const header = block.slice(0, k).filter((l) => l.replace(/[|\s]/g, "")), rows = block.slice(k).filter((l) => isData(l) || (w >= 4 && width(l) === w));
+    // A machine row above the first "data" line is a row, not a header line (baifa-power n101, 23/11/2026: a wide row
+    // of mostly text cells, "| BF-C1540Q-T2 | 1540 | 1400 | QSK50-G3 | | S6L1D-H4 | TIER 2/ CHINA STAGE3 | UK/ CCEC", has
+    // too few number cells for isData, so 31 rows were saved as header lines and never read). The header ends at the
+    // first such line after the title line; every line from there to the first "data" line is kept as a row, in the
+    // order of the page (no line is added or dropped by this).
+    const h0 = headerEnd(block.slice(0, k)), nonBlank = (l) => l.replace(/[|\s]/g, "");
+    const header = block.slice(0, h0).filter(nonBlank), rows = [...block.slice(h0, k).filter(nonBlank), ...block.slice(k).filter((l) => isData(l) || (w >= 4 && width(l) === w))];
     if (rows.length < 2 && !POWER.test(block.join(" "))) continue;
     if (!POWER.test(header.join(" ") + rows.join(" "))) continue;
     out.push({ header, rows });
