@@ -1,0 +1,282 @@
+ncc	n	bang	so_dong	noi_ghi	co_3pha	dong_ghi_1pha	chu	title	dong_dau
+acepow-fuan	n107	b10	3	head		0	Single Phase	Single Phase 100KVA 80KW Diesel Home Standby Generator	
+acepow-fuan	n110	b13	5	row		1		R6105ZLDS 100KVA 400 Volt Diesel Engine Generator Set	| Rated Voltage: | 400/230V,220/380V | Output Type: | AC Three Phase/ Single Phase
+acepow-fuan	n136	b42	16	head		0	Single Phase	1000KVA Single Phase 75KW Portable Electric Power Generator	
+ade-power	n2017	b16	20	head		0	Single Phase	ADE Perkins AP8D5-1P | 8 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2018	b17	20	head		0	Single Phase	ADE Baudouin AB8D5-1P | 8 kVA 50Hz Single Phase Silent Diesel Generato	
+ade-power	n2020	b19	20	head		0	Single Phase	ADE Perkins AP15D5-1P | 15 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2022	b21	20	head		0	Single Phase	ADE Perkins AP18D5-1P | 18 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2030	b29	20	head		0	1ph	Cummins C33D5 1ph | 28 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2031	b30	20	head		0	Single Phase	ADE Perkins AP40D5-1P | 40 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2050	b49	20	head		0	Single Phase	ADE Perkins AP50D5-1P | 50 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2051	b50	20	head		0	Single Phase	ADE Perkins AP60D5-1P | 60 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2053	b52	20	head		0	Single Phase	ADE Perkins AP75D5-1P | 75 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2057	b56	20	head		0	Single Phase	ADE Perkins AP90D5-1P | 90 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2058	b57	20	head		0	Single Phase	ADE Baudouin AB90D5-1P | 90 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2119	b118	20	head		0	Single Phase	ADE Perkins AP11D5-1P | 11 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2120	b119	20	head		0	Single Phase	ADE Baudouin AB12D5-1P | 12 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2121	b120	20	head		0	1ph	Cummins C17D5 1ph | 13 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2122	b121	20	head		0	Single Phase	ADE Baudouin AB14D5-1P | 14 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2124	b123	20	head		0	Single Phase	ADE Baudouin AB16D5-1P | 16 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2126	b125	20	head		0	1ph	Cummins C22D5 1ph | 17 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2133	b132	20	head		0	1ph	Cummins C38D5 1ph | 30 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2178	b177	20	head		0	1ph	Cummins C28D5 1ph | 22 kVA 50Hz Single Phase Silent Diesel Generator	
+ade-power	n2179	b178	20	head		0	Single Phase	ADE Perkins AP25D5-1P | 25 kVA 50Hz Single Phase Silent Diesel Generat	
+ade-power	n2180	b179	20	head		0	Single Phase	ADE Baudouin AB30D5-1P | 30 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2196	b195	20	head		0	Single Phase	ADE Baudouin AB40D5-1P | 40 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2199	b198	20	head		0	Single Phase	ADE Baudouin AB55D5-1P | 55 kVA 50Hz Single Phase Silent Diesel Genera	
+ade-power	n2223	b222	20	head		0	Single Phase	ADE Baudouin AB70D5-1P | 70 kVA 50Hz Single Phase Silent Diesel Genera	
+airman	n2002	b1	20	row		3		SDG220S-8E1 – AIRMAN® 220 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V
+airman	n2003	b2	19	row		3		SDG13LAX-8E1 – AIRMAN® Compact Diesel Generator (technical specificati	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V
+airman	n2004	b3	20	row		3		SDG25S-8E1 – AIRMAN® 25 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V
+airman	n2005	b4	20	row	head-also-3ph	3		SDG40S-8E1 – AIRMAN® Three Phase Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V /240V 277V
+airman	n2006	b5	20	row		3		SDG45S-8E2 – AIRMAN® 45 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V
+airman	n2007	b6	20	row		4		SDG65S-8E1 – AIRMAN® 65 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V
+airman	n2008	b7	20	row		4		SDG125S-8E1 – AIRMAN® 125 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V
+airman	n2009	b8	20	row		4		SDG150S-8E1 – AIRMAN® 150 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 240V 277V
+airman	n2010	b9	20	row		4		SDG400S-8E1 – AIRMAN® 400 kVA Generator (technical specifications)	| VOLTAGE 1 PHASE (SWITCHABLE) | 120V / 127V / 139V 240V / 254V / 277V
+aj-power	n101	b0	36	row		14		3 Series Diesel Generators | AJ Power	| AJ10 | 50hz | Single Phase | 1500 | 6.6 | 7.3 | | 403A-11G1 | MA1114B | AJ10 Single Phase 50Hz
+aj-power	n102	b1	35	row		6		5 Series Diesel Generators | AJ Power	| AJ33 | 50hz | Single Phase | 1500 | 22.5 | 25.0 | | 1103A-33G | MA2114A | AJ33 Single Phase 50Hz 5 Series
+atlas-copco-power	n1001	b6	46	row		2		Datasheet: Brochure QES LRC market English	| Genset phase number | 1PH | 3PH | 3PH | 3PH | 3PH
+bertoli	n101	b0	49	row		2		WATER-COOLED GENERATORS - Bertoli	Power: 6 KVA single-phase
+bertoli	n102	b1	15	row		4		AIR-COOLED GENERATORS - Bertoli	Power: 5 KVA single-phase or three-phase
+bison-zhejiang	n108	b7	8	head		0	single phase	Purchase 6.5kva single phase diesel generator from China - BISON	
+bruno-generators	n101	b0	10	head		1	SINGLE-PHASE	Bruno Generators - SITE LIGHT - SOFT LIGHT EN	| SINGLE-PHASE | | | | | | | | | | | | | | | | | | | | | | | | |
+bruno-generators	n104	b2	2	head		0	SINGLE -PHASE	Bruno Generators - MINING TOWER LED EN	
+changchai	n2001	b0	31	row		1		常柴G系列多缸柴油发电机组	| 接线方式 | 单相两线 | 单相两线 | 单相两线 | 三相四线 | 单相两线 | 三相四线 | 三相四线
+comap	n1006	b5	218	row		1		Datasheet: InteliGen NT	| Measurement | 1 ph Mainscurrent
+comap	n1007	b6	202	row		1		Datasheet: InteliGen NTC	| Measurement inputs | 1 ph Mains current
+comap	n1008	b7	219	row		1		Datasheet: InteliGen 500 G2	| Measurement inputs | 3ph Gen current, 1ph Mains current
+comap	n1009	b8	199	row		1		Datasheet: InteliGen4 200	| panel) | Measurement inputs | 3ph Gen current, 1ph Mains current
+comap	n1013	b11	280	row		1		Datasheet: InteliGen 1000	| Measurement inputs | 1 phase Mains current (Aux current)
+comap	n1017	b15	192	row		1		Datasheet: InteliSys NTC BaseBox	| Measurement inputs | 1 ph Mains current | RS485
+comap	n1018	b16	192	row		1		Datasheet: InteliSys Gas	| Gen | current, 1 ph Mains current
+comap	n1019	b17	192	row		1		Datasheet: InteliMains NTC BaseBox	| Measurement | 1ph Bus current | External modules, 250kbps, max 200
+cps-generators	n2001	b1	9	row		2		CPS – tổ máy liên quan (Related products)	AP30S 30KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G
+cps-generators	n2002	b2	6	row		3		CPS – Perkins Generators Page 3	AP150 150KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1106A-70TAG2
+cps-generators	n2003	b3	5	row		1		CPS – Perkins Generators Page 4	AP24S 24KVA 1PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 1103A-33G
+cps-generators	n2004	b4	6	row		2		CPS – Perkins Generators Page 5	AP30 30KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1103A-33G
+cps-generators	n2005	b5	8	row		1		CPS – Perkins Generators Page 6	AP60S 60KVA 1PH CANOPIED DIESEL GENERATOR WITH PERKINS ENGINE
+cps-generators	n2006	b6	6	row		2		CPS – Perkins Generators Page 7	AP80 80KVA 1PH OPEN SET DIESEL GENERATOR POWERED BY PERKINS 1104A-44TG2
+datakom	n1001	b0	700	row		1		Datasheet: | DKG-309 User Manual | V-29 (23.08.2013)	6.27. Single Phase Operation
+datakom	n1002	b1	700	row		1		Datasheet: | DKG-307 User Manual | V-42 (24.05.2013)	6.26. Single Phase Operation
+datakom	n1003	b2	75	row		1		Datasheet: DKG-116	| Maximum humidity: 95% non-condensing. | Number of phases: 0=1ph 1=2ph 2=3ph 3=3ph
+deep-sea-electronics	n1002	b1	249	row		2		Datasheet: | DSE6110 MKIII Auto Start | & DSE6120 MKIII	| AC Voltage Inputs : | 600 V AC, 50 Hz / 60 Hz, 1 ph to 3 ph
+deep-sea-electronics	n1004	b3	253	row		2		Datasheet: | DSE8610 MKII Synchronising & Load Sharing | Auto	| AC Voltage inputs : | 600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+deep-sea-electronics	n1005	b4	223	row		2		Datasheet: | DSE8660 MKII Auto Transfer Switch & Mains | (Utility)	| AC Voltage inputs : | 600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+deep-sea-electronics	n1006	b5	161	row		1		Datasheet: DSE3110 Manual & Auto Start Control Module	| • | Single phase generator sensing with protection
+deep-sea-electronics	n1007	b6	183	row		1		Datasheet: DSEGenset | DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDAR	| 1ph | 1 | 1ph | 1 | 1ph
+deep-sea-electronics	n1008	b7	189	row		1		Datasheet: DSEGenset® | DSE4520 MKII | SPECIFICATIONS	| 1ph | 1 | 1ph | 1 | 1ph
+deep-sea-electronics	n1009	b8	170	row		1		Datasheet: DSEGenset | DSE4610/20 | ENVIRONMENTAL TESTING STANDARDS	| 1ph | 1 | 1ph | 1 | 1ph
+deep-sea-electronics	n1011	b10	172	row		1		Datasheet: DSEGenset | DSE7210/20 | ENVIRONMENTAL TESTING STANDARDS	| 1ph | 1 | 1 | 1ph | 1ph
+deep-sea-electronics	n1016	b15	226	row		1		Datasheet: DSE7310 MKII & DSE7320 MKII Operator Manual 057-253 ISSUE 8	Generator Single Phase Power Factors
+deif	n1001	b0	700	row		1		Datasheet: DEIF AGC 150 Generator, Mains, and BTB	| • 1-phase/2-wire L1 | ● | ● | ●
+deif	n1002	b1	700	row		1		Datasheet: DEIF AGC 200	1-phase/2-wire L1
+deif	n1003	b2	520	row		1		Datasheet: DEIF SGC 420 Mk II	| NOTE | For single phase applications, it is mandatory to connect:
+denyo	n2036	b34	10	head		0	Single Phase	DCA-10LSX — Denyo DCA-LSX/ESX Single Phase Type (5.0-40kVA)	
+denyo	n2035	b35	11	row		1		DCA-10LSX — Specification (Denyo product page)	Single Phase 1.0
+elitech-power	n102	b1	13	row		1		200kVA Weichai Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n104	b3	14	row		1		100kVA YTO Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n105	b4	14	row		3		12.5kVA Perkins Diesel Generator | Diesel Generator | Elitech Power	Model: EPS12.5PKA-3S | 13kVA | 1-Phase, 3-Phase | 50Hz, 60Hz
+elitech-power	n106	b5	15	row		1		15kVA Quanchai Silent Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n107	b6	12	row		1		25kVA Cummins Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n108	b7	15	row		1		40kVA Deutz Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n109	b8	15	row		3		10Kva Perkins Diesel Generator | Diesel Generator | Elitech Power	Model: EPS10PKA-3S | 10kVA | 1-Phase, 3-Phase | 50Hz, 60Hz
+elitech-power	n110	b9	13	row		3		13.8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power	Model: EPS14PKA-3S | 14kVA | 1-Phase, 3-Phase | 50Hz, 60Hz
+elitech-power	n113	b12	14	row		1		40kVA Cummins Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n114	b13	13	row		1		63kVA YTO Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n115	b14	13	row		1		125kVA YTO Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n117	b16	14	row		1		30kVA Cummins Diesel Generator | Engine Model 4B3.9-G2 | Diesel Genera	Phase: 1-Phase, 3-Phase
+elitech-power	n119	b18	6	row		2		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n120	b19	5	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n121	b20	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n122	b21	5	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n124	b23	5	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n127	b26	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n128	b27	8	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n130	b29	6	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n132	b31	6	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n135	b34	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n138	b37	8	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n139	b38	6	row		2		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n140	b39	3	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n141	b40	4	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n142	b41	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n143	b42	6	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n144	b43	4	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n145	b44	6	row		2		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n146	b45	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n147	b46	5	row		2		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase
+elitech-power	n148	b47	7	row		2		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n149	b48	7	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n150	b49	8	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n152	b50	6	row		1		Under 100kVA Diesel Generators | Factory Direct | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n153	b51	13	row		1		13kVA Quanchai Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n154	b52	13	row		1		44kVA Cummins Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n155	b53	15	row		1		22kVA Yuchai Diesel Generator | Engine Model YC4V35-D20 | Diesel Gener	Phase: 1-Phase, 3-Phase
+elitech-power	n161	b59	12	row		1		Generator Finder: Select by Power, Brands & Application | Elitech Powe	Phase: 1-Phase, 3-Phase
+elitech-power	n162	b60	12	row		2		8kVA Kubota Diesel Generator | Diesel Generator | Elitech Power	Model: EPS8KBA-3S | 8kVA | 1-Phase, 3-Phase | 50Hz, 60Hz
+elitech-power	n163	b61	14	row		1		125kVA Isuzu Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+elitech-power	n164	b62	15	row		3		8Kva Perkins Diesel Generator | Diesel Generator | Elitech Power	Model: EPS8PKA-3S | 8kVA | 1-Phase, 3-Phase | 50Hz, 60Hz
+elitech-power	n165	b63	10	row		1		Diesel Generators Under 50kVA | Small Generator Supplier | Elitech Pow	Phase: 1-Phase, 3-Phase
+elitech-power	n166	b64	14	row		1		50Kva/40Kw Prime Power LOVOL Diesel Generator | Diesel Generator | Eli	Phase: 1-Phase, 3-Phase
+elitech-power	n167	b65	15	row		1		55kVA Lovol Diesel Generator | Diesel Generator | Elitech Power	Phase: 1-Phase, 3-Phase
+frs-shenyang	n101	b0	31	head	head-also-3ph	0	单相	帕金斯系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n102	b1	5	head	head-also-3ph	0	单相	ISUZU五十铃系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n103	b2	66	head	head-also-3ph	0	单相	玉柴系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n104	b3	16	head	head-also-3ph	0	单相	沃尔沃系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n105	b4	18	head	head-also-3ph	0	单相	MTU奔驰系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n106	b5	53	head	head-also-3ph	0	单相	上柴新动力系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+frs-shenyang	n108	b7	27	row		27		微小型发电机 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	| FRS-6500E | 5 | 6.25 | 单相 | 1/(0.8) | 88*75 | 465 | 735*525*685 | 110
+frs-shenyang	n108	b8	10	row		10		微小型发电机 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	| FRS-2 | 2 | 2.5 | 单相 | 1 | 70*55 | 212 | 590*435*455 | 43
+frs-shenyang	n112	b10	38	head	head-also-3ph	0	单相	康明斯系列发电机组 - 沈阳福瑞斯动力设备有限公司,福瑞斯动力,福瑞斯官网	
+generatordieselchina	n136	b35	6	row		3		32 Amp Generator: What Size Do You Need? 10–30 kVA	| Single-phase | 120 V | 3.84 | 3.07 | 4.8 | 5 kVA
+generatordieselchina	n136	b36	5	head	head-also-3ph	0	Single-phase	32 Amp Generator: What Size Do You Need? 10–30 kVA	
+gfe-power	n1021	b46	25	row		1		Datasheet: S5L1D-E4.pdf	| 3-phase | 2-phase L-L 1-phase L-N
+gfe-power	n1025	b52	24	row		2		Datasheet: TAL046_-_TAL047_-_TAL049_Elec_Mech_Data.pdf	| Phase | 3 ph. | 1 ph. | 3 ph. | 1
+gfe-power	n1025	b53	24	row		1		Datasheet: TAL046_-_TAL047_-_TAL049_Elec_Mech_Data.pdf	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+gillette-generators	n101	b0	14	row		2		GPE-75EH - Gillette Generators	| PRIME KW @ 1 PH. | 6.5
+gillette-generators	n102	b1	15	row		1		GPE-75EH-3 - Gillette Generators	| GENERATOR REGULATION | 5 % VOLTAGE REGULATION ON SINGLE PHASE GEN-SETS.
+gillette-generators	n103	b2	14	row		2		GPE-125EH - Gillette Generators	| PRIME KW @ 1 PH. | 11
+green-power-generators	n127	b28	16	row		11		Gruppi elettrogeni Benzina 3000 rpm - Green Power Generators	| GP 4000 XM/HM | 1-PHASE | 3.1 | / | HONDA GX 200 | A STRAPPO RECOIL START | 1 | 1 | 3.1 | STAGE V | 700x570x
+green-power-generators	n128	b29	18	row		11		Gruppi elettrogeni Diesel 3000 rpm - Green Power Generators	| GP 4000 XM/LM | 1-PHASE | 3.5 | / | KOHLER KD350 | A STRAPPO RECOIL START | 1 | 1 | 4 | STAGE V | 700x570x63
+green-power-generators	n129	b30	16	row		8		Gruppi elettrogeni Silenziati 3000 rpm - Green Power Generators	| GP6000 SM/LDE | 1-PHASE | 5.5 | / | KOHLER KD15440 | ARIA AIR | 1 | 1.6 | STAGE V | 20 | 940x650x840 | 190 |
+green-power-generators	n135	b37	2	head	head-also-3ph	0	1PH	Generatori portatili - Green Power Generators	
+green-power-generators	n135	b38	10	head	head-also-3ph	0	1PH	Generatori portatili - Green Power Generators	
+hipower	n1001	b22	40	row		2		Datasheet: t4 Brochure	| 1 Phase; 480 Pri. V | panel box to facilitate
+kachai-hangzhou	n2001	b11	5	head		0	1-Phase	Genset (Cummins) 60HZ 1-Phase	
+kanpor-fuan	n136	b15	16	row		1		风冷柴油发电机 10-11kw-福安市康普电机有限公司	| 相数 | 3相/单相 | 3相/单相
+keliang-fuan	n124	b6	19	head		0	Single Phase	Single Phase A.C Synchronous Generator ST series Manufacturer & Factor	
+kigerpower	n2001	b0	16	row		1		KG10000DE - Specifications	| Phase | Single-Phase
+kigerpower	n2002	b1	17	row		1		KG10000DWE - Specifications	| Phase | Single-Phase
+kigerpower	n2003	b2	16	row		1		KG10000LE - Specifications	| Phase | Single-Phase
+kigerpower	n2004	b3	17	row		1		KG12000DWE - Specifications	| Phase | Single-Phase
+kigerpower	n2005	b4	16	row		1		KG13000LE - Specifications	| Phase | Single-Phase
+kigerpower	n2006	b5	16	row		1		KG15000DE - Specifications	| Phase | Single-Phase
+kigerpower	n2007	b6	16	row		1		KG15000LE - Specifications	| Phase | Single-Phase
+kingway-power	n128	b19	7	row		1		China Customized LPG Generator set Manufacturers Suppliers Factory - W	Weight: 6500 lbs | Dimensions: 120 × 40 × 99 in | Fuel type: LPG | Capacity (kw): 100kW @ 3Phase, 65kW @ 1Phas
+kubota-japan	n101	b0	19	row		1		SQ-1120 | SQ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n102	b1	19	row		1		SQ-1150 | SQ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n103	b2	20	row		1		SQ-3140 | SQ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n104	b3	20	row		1		SQ-3200 | SQ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n105	b4	20	row		1		SQ-3300 | SQ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n106	b5	18	row		1		GL-6000 | GL Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n107	b6	18	row		1		GL-9000 | GL Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n108	b7	19	row		1		KJ-S130VX | KJ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n109	b8	2	row		1		KJ-T130DX | KJ Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220 | 240
+kubota-japan	n112	b10	18	row		1		J106 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n113	b11	18	row		1		J108 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n114	b12	18	row		1		J112 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n115	b13	18	row		1		J116 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n116	b14	19	row		1		J310 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n117	b15	19	row		1		J315 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n118	b16	19	row		1		J320 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 220
+kubota-japan	n119	b17	18	row		1		J107 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n120	b18	18	row		1		J110 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n121	b19	18	row		1		J114 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n122	b20	18	row		1		J119 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n123	b21	19	row		1		J313 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 127
+kubota-japan	n124	b22	19	row		1		J318 | J Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 127
+kubota-japan	n125	b23	19	row		1		J324 | J Series | 50Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 127
+kubota-japan	n126	b24	19	row		1		SQ-1140 | SQ Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n127	b25	19	row		1		SQ-1200 | SQ Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n128	b26	2	row		1		SQ-3170| SQ Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 127 | 220
+kubota-japan	n131	b27	18	row		1		GL-7000 | GL Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n132	b28	18	row		1		GL-11000 | GL Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+kubota-japan	n133	b29	18	row		1		KJ-S150VX | KJ Series | 60Hz | Products | Kubota Generator	| Voltage - Single Phase | V | 110/220
+landtop-fuzhou	n114	b2	9	head		0	Single Phase	Single Phase Brush Alternator - LANDTOP	
+lees-power	n111	b21	5	head		0	Single phase	- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!	
+lees-power	n112	b24	12	head		0	Single phase	- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!	
+leroy-somer-fuzhou	n1001	b0	55	row		1		Datasheet: TAL-A40	| Phase | 3ph. | 1ph.* | 3ph. | 1ph.* | 3ph. | 1ph.* | 3ph. | 1ph.*
+leroy-somer-fuzhou	n1002	b1	65	row		1		Datasheet: TAL-A42	| Phase | 3ph. | 1ph. | 3ph. | 1ph. | 3ph. | 1ph. | 3ph. | 1ph.
+leroy-somer-fuzhou	n1003	b2	40	row		1		Datasheet: TAL-A44	| Phase | 3ph. | 1ph. | 3ph. | 1ph. | 3ph. | 1ph. | 3ph. | 1ph.
+leroy-somer-fuzhou	n1004	b3	38	row		1		Datasheet: TAL-A46	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+leroy-somer-fuzhou	n1007	b6	45	row		1		Datasheet: The Leroy-SomerTM LSA40 alternator has been designed to off	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+leroy-somer-fuzhou	n1008	b7	33	row		1		Datasheet: The Leroy-SomerTM LSA42.3 alternator has been designed to o	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+leroy-somer-fuzhou	n1009	b8	31	row		1		Datasheet: The Leroy-SomerTM LSA44.3 alternator has been designed to o	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+leroy-somer-fuzhou	n1010	b9	40	row		1		Datasheet: The Leroy-SomerTM LSA46.3 alternator has been designed to o	| Phase | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph. | 3 ph. | 1 ph.
+long-gen	n1001	b20	81	row		2		Datasheet: download	Protection mechanism: 1-phase, 2-pole circuit breaker, current suitable for machine capacity, overload and sho
+longkai-power	n113	b4	112	head	head-also-3ph	0	1PH	Longkai Brushless Alternator from China manufacturer - Longkai	
+mahindra-powerol	n2002	b13	35	row		1		100 - 200 kVA gensets - 160 kVA	| Current (A) (1 Phase / 3 Phase) | 139 | 174 | 222
+mahindra-powerol	n2003	b14	36	row		1		250 - 320 kVA gensets - 320kVA	| Current (A) (1 Phase / 3 Phase) | 348 | 445
+mahindra-powerol	n2005	b18	33	row		1		20 - 25 kVA gensets - 20 kVA	| Current (A) (1Phase / 3Phase) | 87/27.8
+mahindra-powerol	n2005	b19	33	row		1		20 - 25 kVA gensets - 22.5 kVA	| Current (A) (1Phase / 3Phase) | 97.8 / 31.3
+mahindra-powerol	n2005	b20	33	row		1		20 - 25 kVA gensets - 25 kVA	| Current (A) (1Phase / 3Phase) | 108.7/34.8
+mahindra-powerol	n2006	b21	34	row		3		30 - 40 kVA gensets - 30 kVA	| Current (A) (1Phase / 3Phase) | 130.4/ 41.7 | 130.4/ 41.7
+mahindra-powerol	n2006	b22	34	row		3		30 - 40 kVA gensets - 35 kVA	| Current (A) (1Phase / 3Phase) | 152.2 / 48.7
+mahindra-powerol	n2006	b23	34	row		3		30 - 40 kVA gensets - 40 kVA	| Current (A) (1Phase / 3Phase) | 173.9 / 55.7
+mahindra-powerol	n2006	b24	34	row		3		30 - 40 kVA gensets - 45 kVA	| Current (A) (1Phase / 3Phase) | 195.7/62.6
+mecc-alte	n102	b1	11	head	head-also-3ph	0	Single Phase	Three Phase Alternators | Single Phase Alternators | Zanardi	
+mecc-alte	n102	b2	10	head	head-also-3ph	0	Single Phase	Three Phase Alternators | Single Phase Alternators | Zanardi	
+mecc-alte	n102	b3	14	head	head-also-3ph	0	Single Phase	Three Phase Alternators | Single Phase Alternators | Zanardi	
+mecc-alte	n102	b4	15	head	head-also-3ph	0	Single Phase	Three Phase Alternators | Single Phase Alternators | Zanardi	
+senci-jiangsu	n101	b0	4	row		1		国内无人机30kw - 江苏神驰机电有限公司	| 发电机电流（A） | 117.4A/54A（单相只能90%） | 波形畸变率 | T.H.D≤5%
+sevenpower-chengdu	n111	b8	28	head	head-also-3ph	0	Single Phase	Electric Start Super Silent Low Noise 3 Phase Single Phase 6kw 8kw 10K	
+shangyan-jiangsu	n104	b2	15	head		0	Single Phase	8.4KVA-20.6KVA GR160 4-Pole Single Phase Alternator-SHANGYAN POWER	
+shangyan-jiangsu	n106	b4	12	head		0	Single Phase	20KVA-31KVA GR180 4-Pole Single Phase Alternator-SHANGYAN POWER	
+shangyan-jiangsu	n114	b12	15	head		0	Single Phase	5.4KVA-13.5KVA GR160 2-Pole Single Phase Alternator-SHANGYAN POWER	
+shangyan-jiangsu	n116	b14	21	head		0	Single Phase	12.5KVA-37.5KVA GR180 2-Pole Single Phase Alternator-SHANGYAN POWER	
+shengfeng-fuan	n104	b2	11	head	head-also-3ph	0	单相	STC系列单相/三相三次谐波交流同步发电机-福安市晟丰电机有限公司	
+shengfeng-fuan	n105	b3	33	head	head-also-3ph	0	一相	YHG系列无刷三相交流同步发电机-福安市晟丰电机有限公司	
+shengfeng-fuan	n110	b8	33	head	head-also-3ph	0	1-Phase	YHG Series Brushless Three-phase A.C.Sychronous Generators-Fuan shengf	
+sices	n1001	b0	294	row		1		Datasheet: GC600	single phase. Power and currents maximum reached values are stored with date and time.
+sices	n1003	b2	700	row		2		Datasheet: GC315-GC400	| 5.14.4 | Connection Type: Single phase (1-phase, 2-wires) ..............................................85
+sincro-soga	n124	b0	5	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - ASYNCHRONOUS LOW VOLTAGE AC IP54 - 2 PO	
+sincro-soga	n127	b3	23	head		0	SINGLE PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POL	
+sincro-soga	n128	b4	12	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POL	
+sincro-soga	n129	b5	12	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POL	
+sincro-soga	n130	b6	12	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POL	
+sincro-soga	n131	b7	9	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POL	
+sincro-soga	n133	b9	7	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POL	
+sincro-soga	n134	b10	7	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POL	
+sincro-soga	n135	b11	6	head		0	1 PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 4 POL	
+sincro-soga	n140	b16	2	head		0	SINGLE PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POL	
+sincro-soga	n141	b17	5	head		0	SINGLE PHASE	ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS LOW VOLTAGE AC IP54 - 2 POL	
+sincro-soga	n163	b27	3	head		0	1 PHASE	PTO GENERATORS - IP23 - 1 PHASE - BRUSHLESS / AVR - 4 POLES / HEAVY DU	
+sincro-soga	n167	b31	2	head		0	1 PHASE	PTO GENERATORS - IP23 - 1 PHASE - BRUSHLESS / AVR - 4 POLES / HEAVY DU	
+slong-power	n106	b5	11	head		0	Single Phase	China 7kw Low Noise Gas Generator For Camping Home Backup Natural Gas 	
+smartgen	n1003	b2	699	row		2		Datasheet: HGM9510	|  | Suitable for 3-phase 4-wire, 3-phase 3-wire, single phase 2-wire, and 2-phase 3-wire systems with
+stamford-avk-china	n1001	b0	14	row		1		Datasheet: UCI224F - Winding 14	| 3-phase | 2-phase L-L | 1-phase L-N
+stamford-avk-china	n1003	b2	14	row		1		Datasheet: UCI274D - Winding 14	| 3-phase | 2-phase L-L | 1-phase L-N
+stamford-avk-china	n1007	b6	13	row		1		Datasheet: PI044G - Winding 14	| 3-phase | 2-phase L-L | 1-phase L-N
+stamford-avk-china	n1018	b17	15	row		1		Datasheet: S5L1D-H4 Wdg.311 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1020	b19	15	row		1		Datasheet: S4L1D-G4 Wdg.311 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1021	b20	14	row		1		Datasheet: S6L1D-C4 Wdg.311/312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1022	b21	14	row		1		Datasheet: S6L1D-D4 Wdg.311/312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1023	b22	14	row		1		Datasheet: S6L1D-E4 Wdg.311/312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1024	b23	14	row		1		Datasheet: S6L1D-F4 Wdg.311/312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1025	b24	12	row		1		Datasheet: S6L1D-G4 Wdg.312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1026	b25	12	row		1		Datasheet: S6L1D-H4 Wdg.312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1029	b28	12	row		1		Datasheet: S7L1D-E4 Wdg.312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1030	b29	12	row		1		Datasheet: S7L1D-F4 Wdg.312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+stamford-avk-china	n1033	b32	12	row		1		Datasheet: S7L1D-K4 Wdg.312 - Technical Data Sheet	| 3-phase | 2-phase L-L 1-phase L-N
+sunkings	n102	b1	11	row		1		70db 200Kva Super Silent Backup Diesel Generator Commercial	Voltage : Single phase / three phase , 50hz / 60hz
+superwatt-swt	n102	b1	4	row		2		SWT Kubota Series Diesel Generator Set 24kW 30kVA | SWT	| SK32.5-1P | 50Hz | Single phase, 230V | 24kW / 30kVA | 26kW / 32.5kVA | 1500r/min
+superwatt-swt	n102	b2	9	head	head-also-3ph	0	Single-phase	SWT Kubota Series Diesel Generator Set 24kW 30kVA | SWT	
+superwatt-swt	n122	b22	8	row		6		SWT Kubota Series Small Diesel Generator Set | SWT	| SK8.3-1P | D1105-BG | 50Hz | 1500r/min | 1-phase | 230V | 6kW / 7.5kVA | 6.6kW / 8.3kVA | Naturally aspirate
+superwatt-swt	n129	b29	12	row		4		Perkins Diesel Generator Sets, 7.2–203kW Range | SWT	| SP22-1P | 50Hz | 16kW / 20kVA | 17.6kW / 22kVA | 220/230/240V | 1-phase | 404A-22G1
+superwatt-swt	n130	b30	13	row		5		SWT Perkins Series Diesel Generator Sets 8kw-203kw | SWT	| SP17-1P | 403A-15G2 | 50Hz | 12kW / 15kVA | 13kW / 17kVA | 1500r/min | 220/230/240V | 1-phase
+tecgen-fujian	n118	b16	3	head		0	1 Phase	Home Use Silent Perkins Diesel Generators 60HZ 1 Phase 120V 240V 10KW 	
+victory-generator	n120	b29	31	row		2		2.7KW~6.6KW Silent Diesel Portable Generator	| Phase | Single phase | Single phase | Single phase | Single phase | Single phase
+victory-generator	n120	b30	31	row		2		2.7KW~6.6KW Silent Diesel Portable Generator	| Phase | Single phase | Single phase | Single phase | Single phase | Single phase
+victory-generator	n121	b31	28	row		2		1.7KW~6.5KW Diesel Portable Generator	| Phase | Single phase | Single phase | Single phase | Single phase | Single phase | Single phase
+victory-generator	n121	b32	30	row		2		1.7KW~6.5KW Diesel Portable Generator	| Phase | Single phase | Single phase | Single phase | Single phase | Single phase | Single phase
+victory-generator	n122	b33	30	row		1		4.5KW~5.5KW Diesel Welding Generator	| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase
+victory-generator	n122	b34	30	row		1		4.5KW~5.5KW Diesel Welding Generator	| Alternator type | Self-excited,2-pole,single phase | Self-excited,2-pole,single phase
+victory-generator	n123	b35	23	row		2		4.5KW~5.5KW Silent Diesel Welding Generator	Model of Connection: 1 phase 2 lines, 3 phase 4 lines
+victory-generator	n124	b36	20	row		2		4.5KW~5.5KW Gasoline Welding Generator	Model of Connection: 1 phase 2 lines, 3 phase 4 lines
+victory-generator	n130	b45	31	row		2		8.5KW~10.5KW Gasoline Twin-cylinder Generator	| Phase | Single phase | Three phases
+victory-generator	n130	b46	31	row		2		8.5KW~10.5KW Gasoline Twin-cylinder Generator	| Phase | Single phase | Three phases
+winco	n105	b2	9	row		5		Support for Model: DE23 Gen 3 | WINCO	| Standby Watts | 120/240 1-PH: 20,000 120/208 3-PH: 23,000 120/240 3-PH: 23,000 277/480 3-PH: 23,000
+winco	n106	b3	9	row		5		Support for Model: DE4040F4 Gen 3 | WINCO	| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 
+winco	n107	b4	9	row		5		Support for Model: DE50F4 Gen 3 | WINCO	| Standby Watts | 120/240 1-PH: 45,000 120/208 3-PH: 49,000 120/240 3-PH: 49,000 277/480 3-PH: 49,000 346/600 
+winco	n1007	b10	5	row		3		Datasheet: Tri-Fold	| PSS21 | SINGLE PHASE | 21,000 | 21,000
+winco	n1007	b11	6	row		3		Datasheet: Tri-Fold	| PSS30 | SINGLE PHASE | 25,200 | 24,300
+winco	n1007	b12	21	row		1		Datasheet: Tri-Fold	| SINGLE PHASE | 40,000 | 40,000
+woodward	n1001	b0	240	row		2		Datasheet: Woodward easYgen-1400 / easYgen-1600 / easYgen-1700 / easYg	| Single-Phase 2-Wire | AC15V - AC360V (ph-N) (according to
+woodward	n1003	b2	145	row		2		Datasheet: Woodward easYgen-3100XT / easYgen-3200XT-P1(-LT)	|  | Voltage RMS 0.5% accuracy—L-N, L-L, average; 1-phase or 3-phase generator and mains, 1-phase load bus.
+yanmar	n2002	b9	9	head	head-also-3ph	1	Single Phase	YTG Series specifications (Single Phase / 3 Phase)	| No. of phase | Single Phase (2 Wire) | 3 Phase (4 Wire)
+yongcai-elecmama	n114	b12	24	head		0	Single Phase	Single Phase 20kw Cummins Diesel Generator | Yangzhou Yongcai Machiner	
+yongcai-elecmama	n143	b34	9	head		0	Single Phase	Single Phase 8.6kw Quanchai Diesel Generator | Yangzhou Yongcai Machin	
+zc-power	n107	b7	7	head	head-also-3ph	0	Single-Phase	Commercial Single-Phase Generators | Factory-Direct Pricing | ZC Power	
+zc-power	n108	b8	5	head	head-also-3ph	0	Single-Phase	Industrial Three-Phase Generators | 100kW-2000kW | Factory-Direct Pric	
