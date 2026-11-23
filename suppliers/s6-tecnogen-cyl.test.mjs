@@ -40,14 +40,18 @@ test("không áp: NCC khác, n khác, hoặc tiêu đề đổi chữ (ghi note)
   assert.ok(notes.some((n) => /đổi tiêu đề/.test(n.reason)));
 });
 
+const TWO_CODES = new Set(["1103D-33G3/G2", "1104D-44TG3/G2", "4008-TAG2A/2", "4008TAG1A/1"]);
+const isTwoCodes = (x) => TWO_CODES.has(x.line.split("|")[6].trim());
 test("hồ sơ thật: 10 bảng / 229 dòng có cột Cylinder, 224 bản ghi động cơ đều có cyl = ô 7 của dòng", () => {
   const s = JSON.parse(fs.readFileSync(new URL("./cn/tecnogen.json", import.meta.url), "utf8"));
   const tables = s.specTables.filter((t) => /\| Cylinder \|/.test(t.header?.[0] || ""));
   assert.deepEqual(tables.map((t) => t.n), [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010]);
   assert.equal(tables.reduce((a, t) => a + t.rows.length, 0), 229);
   const r = C.fromSupplier(s, []).filter((x) => x.kind === "engine" && x.n >= 2001 && x.n <= 2010);
-  assert.equal(r.length, 224);
-  for (const x of r) assert.equal(cylOf(x), x.line.split("|")[8].trim(), x.line);
+  // Ô hai mã (ma-dong-co-trung PR 2): mỗi dòng thành hai bản ghi, không mang số xi lanh.
+  const split = r.filter(isTwoCodes);
+  assert.equal(r.length, 224 + split.length / 2);
+  for (const x of r) assert.equal(cylOf(x), isTwoCodes(x) ? undefined : x.line.split("|")[8].trim(), x.line);
 });
 
 test("S6-6: hai cột kWm 1500 / 1800 rpm là hai engPower khác nhãn; ô '--' không cho số; Aspiration / Cons. 70% không đọc", () => {
@@ -78,14 +82,15 @@ test("S8-2: cột 'cm3' → disp nhãn 'cm3' y ô; spec-norm đổi sang L (l_fr
 test("S8-2 hồ sơ thật: 224 bản ghi động cơ, mỗi bản ghi đúng một disp = ô 8 của dòng, nhãn 'cm3'; trừ QSL9G3 / QSL9G7 (dropspec)", () => {
   const s = JSON.parse(fs.readFileSync(new URL("./cn/tecnogen.json", import.meta.url), "utf8"));
   const r = C.fromSupplier(s, []).filter((x) => x.kind === "engine" && x.n >= 2001 && x.n <= 2010);
-  assert.equal(r.length, 224);
+  const split = r.filter(isTwoCodes).length / 2;
+  assert.equal(r.length, 224 + split);
   // điều phối 22/11/2026: n2002 CU275TSX** QSL9G3 / CU331TSX** QSL9G7 "8800" bỏ riêng dung tích (ROW_EXCEPTIONS); QSL9G5 "8900" giữ.
   const dropped = new Set(["CU275TSX**|QSL9G3", "CU331TSX**|QSL9G7"]);
   for (const x of r) {
     const d = x.specs.filter((q) => q.key === "disp");
-    if (x.n === 2002 && dropped.has(`${x.genset}|${x.model}`)) assert.deepEqual(d, [], x.line);
+    if (isTwoCodes(x) || (x.n === 2002 && dropped.has(`${x.genset}|${x.model}`))) assert.deepEqual(d, [], x.line);
     else assert.deepEqual(d, [{ key: "disp", label: "cm3", value: x.line.split("|")[9].trim() }], x.line);
   }
-  assert.equal(r.filter((x) => x.specs.some((q) => q.key === "disp")).length, 222);
+  assert.equal(r.filter((x) => x.specs.some((q) => q.key === "disp")).length, 222 - split);
   assert.equal(r.find((x) => x.model === "QSL9G5").specs.find((q) => q.key === "disp").value, "8900");
 });
