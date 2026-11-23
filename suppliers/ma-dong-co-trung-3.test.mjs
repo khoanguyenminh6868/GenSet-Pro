@@ -17,7 +17,12 @@ test("ngoặc trong danh sách: về mã trơn, dòng vẫn giữ nguyên chữ 
   const [r] = C.fromSupplier(sup([line])).filter((x) => x.kind === "engine");
   assert.equal(r.model, "12V4000G74F");
   assert.equal(r.line, line);
-  assert.deepEqual(models(["| a-1 | 138 | 110 | 6BT5.9-G2 (M) | S5L1D-H41 |"]), ["6BT5.9-G2"]);
+});
+
+test("6 mã Cummins \"(M)\" để riêng (Khoa 24/11/2026): không về mã trơn", () => {
+  for (const code of ["4BTA3.9-G2(M)", "6BT5.9-G2(M)", "KTA19-G3(M)", "KTA19-G4(M)", "KTA38-G(M)", "NTA855-G2(M)"]) {
+    assert.deepEqual(models([`| a-1 | 138 | 110 | ${code} | S5L1D-H41 |`]), [code], code);
+  }
 });
 
 test("cặp có số lệch và số trơ trong ngoặc: vẫn là khoá riêng", () => {
@@ -26,10 +31,10 @@ test("cặp có số lệch và số trơ trong ngoặc: vẫn là khoá riêng"
   }
 });
 
-test("toàn bộ cn/: không còn khoá ngoặc của 33 mã đã gộp", () => {
+test("toàn bộ cn/: không còn khoá ngoặc của 27 mã MTU đã gộp, 6 khoá \"(M)\" vẫn riêng", () => {
   const dir = path.join(HERE, "cn");
   const all = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
   const keys = new Set(C.build(all).engines.map((e) => e.key));
-  for (const k of ["12V4000G14F(3B)", "12V4000G74F(3D)", "20V4000G94S(3D)", "4BTA39G2(M)", "6BT59G2(M)", "KTA19G3(M)", "KTA19G4(M)", "KTA38G(M)", "NTA855G2(M)"]) assert.equal(keys.has(k), false, k);
-  for (const k of ["186FA(E)", "192F(E)", "1100F(E)", "4BTA39G13(40)", "16V4000G84S(3D)"]) assert.equal(keys.has(k), true, k);
+  for (const k of ["12V4000G14F(3B)", "12V4000G74F(3D)", "20V4000G94S(3D)"]) assert.equal(keys.has(k), false, k);
+  for (const k of ["186FA(E)", "192F(E)", "1100F(E)", "4BTA39G13(40)", "16V4000G84S(3D)", "4BTA39G2(M)", "6BT59G2(M)", "KTA19G3(M)", "KTA19G4(M)", "KTA38G(M)", "NTA855G2(M)"]) assert.equal(keys.has(k), true, k);
 });

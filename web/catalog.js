@@ -1973,7 +1973,7 @@
     "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
     "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
     // ma-dong-co-trung PR 3: one code on two keys, the bracket form and the bare form. Listed only when no figure of the two keys
-    // disagrees and the row's genset power lies in the bare key's range. What "(3B)", "(3D)", "(M)" mean is not read: the row keeps
+    // disagrees and the row's genset power lies in the bare key's range. What "(3B)", "(3D)" mean is not read: the row keeps
     // them in its own words. Not listed: zc-power "186FA(E)", "192F(E)" (compression), "1100F(E)" (power); a bare figure in brackets.
     "12V4000G14F(3B)=12V4000G14F", "12V4000G14S(3B)=12V4000G14S", "12V4000G24F(3B)=12V4000G24F", "12V4000G24S(3B)=12V4000G24S",
     "16V4000G14F(3B)=16V4000G14F", "16V4000G14S(3B)=16V4000G14S", "16V4000G24F(3B)=16V4000G24F", "16V4000G24S(3B)=16V4000G24S",
@@ -1983,7 +1983,7 @@
     "16V4000G74F(3D)=16V4000G74F", "16V4000G74S(3D)=16V4000G74S", "16V4000G84F(3D)=16V4000G84F",
     "20V4000G64F(3D)=20V4000G64F", "20V4000G64S(3D)=20V4000G64S", "20V4000G74F(3D)=20V4000G74F", "20V4000G74S(3D)=20V4000G74S",
     "20V4000G84F(3D)=20V4000G84F", "20V4000G94S(3D)=20V4000G94S",
-    "4BTA3.9-G2(M)=4BTA3.9-G2", "6BT5.9-G2(M)=6BT5.9-G2", "KTA19-G3(M)=KTA19-G3", "KTA19-G4(M)=KTA19-G4", "KTA38-G(M)=KTA38-G", "NTA855-G2(M)=NTA855-G2",
+    // Khoa 24/11/2026: the six Cummins "(M)" codes (4BTA3.9-G2, 6BT5.9-G2, KTA19-G3, KTA19-G4, KTA38-G, NTA855-G2) stay on their own keys.
   ];
   let engineCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
