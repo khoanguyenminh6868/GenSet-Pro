@@ -2056,6 +2056,10 @@
       ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
       { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
     // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
+    // 12V1600G80F (23/11/2026): 23.88 L is the 12V2000's figure (bdadl writes it for 12V2000G65 in the same family of rows); wintpower
+    // writes 21 for G80F, and G10F / G20F / G70F / G80S are 21. The row has no bore x stroke, so `dropspec`, not `fixspec`. All five copies.
+    ...[["bdadl-shanghai", 112, "BDA-M580"], ["bdadl-shanghai", 135, "BDA-M580"], ["fukangsi-yangzhou", 2007, "FKS-M580"], ["pengpai-yangzhou", 111, "PPDL-M580"], ["pengpai-yangzhou", 127, "PPDL-M580"]].map(([supplierId, n, genset]) =>
+      ({ supplierId, n, genset, line: `| ${genset} | 528/580 | 奔驰MTU | 12V1600G80F | 12 | 23.88 | 50 | ≤198 | 3500*1350*1850 | 4350`, act: "dropspec", keys: ["disp"], khoa: "điều phối 23/11/2026", why: "nguồn ghi 23,88 L (số của 12V2000) cho 12V1600G80F; wintpower ghi 21: bỏ riêng dung tích, giữ dòng" })),
     { supplierId: "aosif", n: 123, genset: "AW1000", line: "| AW1000 | 900/720 | 1000/800 | 8M33D979E201 | 205.4 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8M33 (cùng bảng ghi 8V / 26,1 L cho 8M33D845E201): bỏ riêng số xi lanh và dung tích" },
     // cameo-power n107 SC-70YC (column of a table written across): Engine Power 35/41 kW under a 64/70 kW set (the two other columns repeat the set's power).
     { supplierId: "cameo-power", n: 107, genset: "SC-70YC", line: "| Engine Power(kw) (prime/standby) | 50/55 | 55/60 | 35/41", act: "dropspec", keys: ["engPower"], khoa: "Khoa 20/11/2026", why: "nguồn ghi công suất động cơ 35/41 kW nhỏ hơn tổ máy 64/70 kW: bỏ riêng công suất động cơ" },
