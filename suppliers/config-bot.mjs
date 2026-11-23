@@ -2002,8 +2002,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const bySup = { v: new Set(), inline: new Set() };
         for (const f of ef) { const l = f.key === "cyl" ? layoutOf(f.value) : null; if (l) bySup[l].add(f.supplierId ?? ""); }
         // The row's own cell does not rule it out when at least two other suppliers write the arrangement the HSMT asks for this
-        // engine (Khoa 22/11/2026: liangzi "12L" for the V12 KTA38, longkai "V12" for the 6-in-line QSK19).
-        const outvoted = own.length > 0 && own.every((x) => x !== hints.cylLayout) && [...bySup[hints.cylLayout]].filter((x) => x !== u.supplierId).length >= 2;
+        // engine AND they outnumber the suppliers on the row's side, the row's own included (Khoa 22 and 23/11/2026: liangzi
+        // "12L" for the V12 KTA38 and longkai "V12" for the 6-in-line QSK19 stay; a "10V" DP180LB, 6 suppliers against 2, goes).
+        const against = own.length ? [...bySup[hints.cylLayout]].filter((x) => x !== u.supplierId).length : 0;
+        const outvoted = own.length > 0 && own.every((x) => x !== hints.cylLayout) && against >= 2 && against > new Set([...bySup[own[0]], u.supplierId]).size;
         const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }

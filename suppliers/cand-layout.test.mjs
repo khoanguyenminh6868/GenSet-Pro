@@ -60,7 +60,7 @@ test("dòng không ghi bố trí: theo động cơ khi ÍT NHẤT HAI nhà cung 
   assert.ok(ids(r3).includes("clash"));
   // Hai nhà ghi thẳng hàng, hai nhà ghi chữ V: không xét, dòng không ghi bố trí ở lại.
   const clash2 = sup("clash2", ["| d-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12 L |"]);
-  // (Không xét top: dòng chữ V nay cũng ở lại vì hai nhà khác ghi thẳng hàng, nên trần mỗi động cơ có thể đẩy "other" ra khỏi top.)
+  // (Không xét top: trần mỗi động cơ có thể đẩy "other" ra khỏi top.)
   const r4 = run([...rows, vee2, vee3, other, clash, clash2], ask);
   assert.ok(r4.all.some((x) => x.u.supplierId === "other"));
   assert.ok(!r4.dropped.some((d) => d.u.supplierId === "other"));
@@ -118,6 +118,33 @@ test("ô của chính dòng bị ≥ 2 NCC khác ghi đúng kiểu HSMT đòi: k
   assert.ok(!ids(run([row("sai", "12 L"), row("a", "12V")], hsmtV)).includes("sai"));
   // Hai NCC khác ghi cùng kiểu với dòng không phải lý do giữ dòng: vẫn loại.
   assert.ok(!ids(run([row("sai", "12 L"), row("a", "12 L"), row("b", "6L")], hsmtV)).includes("sai"));
+});
+
+test("phía ghi ngược phải ĐÔNG HƠN phía của dòng mới giữ dòng (Khoa 23/11/2026, phương án B)", () => {
+  const row = (engine, id, cyl) => sup(id, [`| ${id}-1 | 750 | 600 | ${engine} | S5L1D-H41 | ${cyl} |`]);
+  const many = (engine, prefix, n, cyl) => Array.from({ length: n }, (_, i) => row(engine, `${prefix}${i}`, cyl));
+  const out = (r, id) => r.dropped.some((d) => d.u.supplierId === id && d.ruled.includes("layout"));
+  const stays = (r, id) => r.all.some((x) => x.u.supplierId === id) && !out(r, id);
+  // Không ghi số xi lanh trơ ở gói đòi thẳng hàng: "6 xy lanh" sẽ loại dòng "V12" bằng luật số xi lanh, không phải luật bố trí.
+  const inline = free("Số xi lanh: bố trí thẳng hàng"), vee = free("Số xi lanh 12, kiểu chữ V");
+  // DP180LB: 6 NCC ghi V, 2 NCC ghi thẳng hàng. Gói đòi thẳng hàng: dòng "10V" bị loại.
+  const dp = [...many("DP180LB", "v", 6, "10V"), ...many("DP180LB", "l", 2, "10 L")];
+  const rDp = run(dp, inline);
+  for (let i = 0; i < 6; i++) assert.ok(out(rDp, `v${i}`), `v${i}`);
+  // liangzi "12L" cho KTA38 (1 NCC so với 6 NCC ghi V): gói đòi chữ V vẫn giữ.
+  const kta = run([row("KTA38-G2", "liangzi", "12 L"), ...many("KTA38-G2", "v", 6, "12V")], vee);
+  assert.ok(stays(kta, "liangzi"));
+  // longkai "V12" cho QSK19 (1 NCC so với 2 NCC ghi thẳng hàng): gói đòi thẳng hàng vẫn giữ.
+  const qsk = run([row("QSK19-G6", "longkai", "V12"), ...many("QSK19-G6", "l", 2, "6L")], inline);
+  assert.ok(stays(qsk, "longkai"));
+  // P158LE-1: 4 NCC ghi V, 3 NCC ghi thẳng hàng. Bên ít hơn được giữ, bên đông hơn bị loại.
+  const p = [...many("P158LE-1", "v", 4, "12V"), ...many("P158LE-1", "l", 3, "12 L")];
+  const rInline = run(p, inline), rVee = run(p, vee);
+  for (let i = 0; i < 4; i++) assert.ok(out(rInline, `v${i}`), `v${i}`);
+  for (let i = 0; i < 3; i++) assert.ok(stays(rVee, `l${i}`), `l${i}`);
+  // Bằng nhau (2 NCC mỗi phía): không đông hơn nên ô của dòng vẫn loại dòng.
+  const tie = run([...many("KTA38-G2", "v", 2, "12V"), ...many("KTA38-G2", "l", 2, "12 L")], vee);
+  assert.ok(out(tie, "l0") && out(tie, "l1"));
 });
 
 test("aosif n102: bỏ số xi lanh 12V của QSK19 / KTA19, giữ dòng", () => {
