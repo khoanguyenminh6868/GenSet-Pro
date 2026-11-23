@@ -1,6 +1,6 @@
 # tach-bang-con: tách bảng con trong một khối, giữ dòng máy thiếu ô (23/11/2026)
 
-## Trạng thái: PR 1 XONG, DRAFT, CHƯA MERGE. PR 2 chưa làm, CẦN PHIÊN MỚI
+## Trạng thái: PR 1 (#1110) và PR 2 (#1111) XONG, DRAFT, CHƯA MERGE, CHƯA đo top 30. Chi tiết PR 2 ở mục cuối
 - PR 1: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1110, nhánh `fix/tach-bang-con`, SHA `0d589bda3a5fd8b61734c749d67a8894b403afcf`, base `fix/crawl-dropped-rows` (#1105).
 - Worktree `C:\Projects\GenSet Pro\wt-tach-bang-con`; gốc so sánh chỉ đọc `C:\Projects\GenSet Pro\wt-tach-base` (a95b8ab5). Xoá cả hai khi xong toàn bộ.
 - Cổng kiểm trên SHA trên: `verify` 0 lỗi, `quality --check` đạt (sau khi ghi lại mốc), `spec-diff --gate` đạt (đảo vai 0 → 0), `node --test suppliers/*.test.mjs` 1.587 đạt / 0 lỗi.
@@ -53,4 +53,25 @@ Có điều kiện khác tiêu đề đầu (Hz, RPM, pha, V, đơn vị, Tier):
 4. Đủ cổng kiểm, PR DRAFT, báo SHA.
 
 ## Tệp (`dau-vao\tach-bang-con\`)
-`measure`, `rebuild2`, `audit` (thay `recdiff2`: ghép theo nội dung), `added-why`, `added-power`, `emission-scale`, `heads-of`, `why-whole`, `gap447`, `gap5`, `gap6`. Kết quả: `m7\`, `pr1\audit2\`, `pr1\gap2\`, `pr1\gates2\`.
+`measure`, `rebuild2`, `audit` (thay `recdiff2`: ghép theo nội dung), `added-why`, `added-power`, `emission-scale`, `heads-of`, `why-whole`, `gap447`, `gap5`, `gap6`, `pr2-check`, `pr2-build`, `pr2-gap6`, `pr2-gensets`. Kết quả: `m7\`, `pr1\audit2\`, `pr1\gap2\`, `pr1\gates2\`, `pr2\audit\`, `pr2\check.tsv`, `pr2\build.tsv`, `pr2\gates\`.
+
+## PR 2 (24/11/2026)
+- https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1111, nhánh `fix/tach-bang-con-2`, SHA `19ab0c53b0673fda9f45e9be2a81af0fdbc74afe`, base `fix/tach-bang-con`. Worktree `C:\Projects\GenSet Pro\wt-tach-bang-con-2`.
+- Cổng: `verify` 0 lỗi, `quality --check` đạt (mốc KHÔNG đổi), `spec-diff --gate` đảo vai 0 → 0, 1.592 test đạt. CHƯA đo 1.093 lượt top 30.
+- Mã: `hzSection` (dòng hai ô có Hz ngay trên dòng tiêu đề mở bảng con; trên 3.983 tệp chỉ đổi kaihua n124, n125). `codeLine` trong `splitPoints` sửa LỖI CỦA #1110: dòng máy ít số trơn bị coi là tiêu đề, sinh điểm tách giả (rcg-power 5 tệp, pauway n104), dựng lại thì mất 61 bản ghi. 11 NCC của PR 1 không đổi bảng nào nên #1110 không cần sửa dữ liệu; nhưng merge #1110 một mình thì mã vẫn còn lỗi này khi cào lại rcg / pauway.
+- Dữ liệu: 29 NCC. `baudouin` KHÔNG dựng lại: n116, n120–n124 đã tách tay ở #971, phần khác chỉ là dòng trống `| | |` (0 dòng máy).
+- Kiểm chéo mọi bản ghi: MẤT 0; thêm 9 (kaihua 8, excel-power 1). Tần số đổi 509, mọi bản ghi có tiêu đề bảng con ghi đúng: 50 → 60 excel-power 206, keliang 57, hosem 30, gtl 29; không ghi → 60 kaihua 187. Công suất chỉ thêm (kaihua 142 số, đều có trong dòng). Thông số thêm: frs 132, kaihua 94, xingguang 35, giá trị đều có trong dòng. `gensetsOf` 1.700 → 1.700, nội dung không đổi.
+- Hãng ở bản ghi: comappower 12 (Ricardo+Yanmar+Yangdong → Ricardo), rcg 34 (bỏ Volvo Penta lấy từ dòng trùng của trang khác), kaihua 22 Deutz → không hãng ở n103 (trang không ghi Deutz; n106, n123 vẫn ghi), 34 thêm Stamford theo cột.
+- Danh mục toàn bộ: 0 khoá mất, thêm 12V4000G74S (MTU). Đổi hãng 3 khoá: 12M33D1320E201 Weichai → Baudouin+Weichai (bảng con "Powered by BAUDOUIN"), S7L1DH4 không hãng → Stamford, ECO462L Mecc Alte → Stamford (xem dưới).
+
+### Cần quyết định
+1. kaihua cột "Alternator Stamford" gán Stamford cho ô ghi `ECO 46-2L`, `LSA 52.3 UL16`, `LSA 53.2M9`. Khoá ECO462L vì vậy đổi Mecc Alte → Stamford. Chưa sửa. Đề xuất: không nhận hãng theo tiêu đề cột khi ô ghi mã thuộc dòng của hãng khác, làm bằng danh sách tường minh ba ô này.
+
+### Soát 14 khối của `gap6.tsv`
+- Đã sửa (2): kaihua n124, n125.
+- Không cần tách (4): aj-power n101–n104, tần số / pha là CỘT của từng dòng; 257 bản ghi đều đúng tần số của dòng.
+- Không ra bản ghi nào (5): acepow n103, n124; sevenpower n106, n122; shunfeng n105.
+- CHƯA CHẮC, giữ nguyên (3): huachai-deutz n114 (1 bản ghi 50 Hz, trang có thêm dòng "50Hz/60Hz"); gtl-power n105 (3 bản ghi 60 Hz, dòng không tự ghi tần số); jichai n109 (2 bản ghi, hai bảng tiêu đề khác nhau trong một khối).
+
+### Việc riêng, chưa làm
+36 dòng TWIN của baifa (mã "2*TAD…").
