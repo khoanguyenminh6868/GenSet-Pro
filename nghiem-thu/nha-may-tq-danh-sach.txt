@@ -112,6 +112,36 @@ DOC column | yanan-power | Mitsubishi | S16R-PTAA2-C | CHINA
 DOC column | yanan-power | Mitsubishi | S16R2-PTAW-C | CHINA
 DOC column | yanan-power | Mitsubishi | S6R2-PTA-C | CHINA
 DOC column | yanan-power | Mitsubishi | S6R2-PTAA-C | CHINA
+DOC label | aosif | Mitsubishi | S12R-PTA-C | SME
+DOC label | aosif | Mitsubishi | S12R-PTA2-C | SME
+DOC label | aosif | Mitsubishi | S12R-PTAA2-C | SME
+DOC label | aosif | Mitsubishi | S6R2-PTA-C | SME
+DOC label | aosif | Mitsubishi | S6R2-PTAA-C | SME
+DOC label | fdk-energy | Mitsubishi | S12R-PTA-C | SME
+DOC label | fdk-energy | Mitsubishi | S12R-PTA2-C | SME
+DOC label | fdk-energy | Mitsubishi | S12R-PTAA2-C | SME
+DOC label | fdk-energy | Mitsubishi | S16R-PTA-C | SME
+DOC label | fdk-energy | Mitsubishi | S16R-PTA2-C | SME
+DOC label | fdk-energy | Mitsubishi | S16R-PTAA2-C | SME
+DOC label | fdk-energy | Mitsubishi | S16R2-PTAW-C | SME
+DOC label | fdk-energy | Mitsubishi | S6R2-PTA-C | SME
+DOC label | fdk-energy | Mitsubishi | S6R2-PTA-C | SME
+DOC label | fdk-energy | Mitsubishi | S6R2-PTAA-C | SME
+DOC label | superwatt-swt | Mitsubishi | S16R2-PTAW-C | S16R2-PTAW-C SME
+DOC label | westinpower | Mitsubishi | S12R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S12R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S12R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R-PTAA2-C | SME
+DOC label | westinpower | Mitsubishi | S16R2-PTAW-C | SME
+DOC label | westinpower | Mitsubishi | S16R2-PTAW-C | SME
 DOC listed | bdadl-shanghai | Mitsubishi | S12R-PTA-C | 上海菱重
 DOC listed | bdadl-shanghai | Mitsubishi | S12R-PTA2-C | 上海菱重
 DOC listed | bdadl-shanghai | Mitsubishi | S12R-PTAA2-C | 上海菱重
@@ -1476,20 +1506,6 @@ KHONG dia chi NCC | westinpower | MTU | 20V4000G24F | Westinpower Industrial Zon
 KHONG dia chi NCC | westinpower | MTU | 20V4000G24F | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
 KHONG dia chi NCC | westinpower | MTU | 20V4000G34F | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
 KHONG dia chi NCC | westinpower | MTU | 20V4000G34F | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S12R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S12R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S12R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R-PTAA2-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R2-PTAW-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
-KHONG dia chi NCC | westinpower | Mitsubishi | S16R2-PTAW-C | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
 KHONG dia chi NCC | westinpower | Perkins | 1103A-33G | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
 KHONG dia chi NCC | westinpower | Perkins | 1103A-33G | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 
 KHONG dia chi NCC | westinpower | Perkins | 1103A-33G | Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, 

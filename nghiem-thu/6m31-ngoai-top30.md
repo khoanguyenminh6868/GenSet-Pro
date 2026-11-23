@@ -291,6 +291,22 @@ Cột không rõ thuộc động cơ hay tổ máy: không có trong 4 bảng đ
 5. **61 dòng bị đẩy khỏi top:** cả 61 còn trong `all`, điểm không đổi.
 6. **325 VÀO top:** 0 dòng `ruled`, 0 dòng tự ghi Hz khác gói, 0 tên "-60", 0 mã "^". Một dòng tự ghi 60 Hz (uleengen 403D-11G, IB2400265303) ở gói không ràng buộc tần số, đúng luật.
 
+**So cũ ↔ mới cho commit (A) đọc nhãn SME (23/11/2026; #1095 11d98189, #1098 5d50c0bb; gốc main 8b921737, không đổi).** Quyết định: (A) đọc nhãn SME ở bảng nhãn của đúng fdk-energy, westinpower, aosif, superwatt-swt; (B) 7 lượt có cỡ là số dự phòng kèm số liên tục thấp hơn: giữ loại như hiện tại; (C) Khoa: "áp cho mọi mã" có dấu "^", code giữ nguyên. Tờ hãng chỉ chú thích ESP ở 3 mã (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^), các mã khác theo cùng ký hiệu do NCC ghi.
+
+Cách đo: chạy tuần tự trên máy, `candidates` của hai bản gộp (d871ccca + dca34de1 ↔ 5d50c0bb + dca34de1), cùng bidhist chụp 20/11, cùng `cn`.
+
+- 1.093 lượt, 175 lượt g7 / g7eu. **171 lượt giống hệt** (top, thứ tự, điểm, `all`), **4 lượt đổi**, 0 lượt đổi mà không có dòng nhãn SME. Lượt thứ 5 có dòng nhãn (IB2600350175#0, 2 dòng) không đổi vì hai dòng đó vốn không ở `all`.
+- `all`: RA 16, cả 16 là dòng nhãn SME; VÀO 0; đổi điểm 0.
+- Top: RA 8 = 3 dòng nhãn SME + 5 dòng bị đẩy (cả 5 còn trong `all`, cùng điểm). VÀO 8, cả 8 đã có trong `all` cũ, cùng điểm.
+- IB2300000242#0 (g7eu): RA `all` fdk, aosif S6R2-PTAA-C. RA top: fdk S6R2PTAAC (loại), longkai 6M33G825/5, rcg S6R2PTAA (đẩy). VÀO top: sanq S6R2PTAAC [269], longkai QSK19G11 [254], koten 6M33G825/5 [229].
+- IB2300194512#0 (g7eu): RA `all` fdk, aosif S6R2PTAAC. RA top: fdk S6R2PTAAC (loại), depco S12A2PTA (đẩy). VÀO top: uleengen KTA38G2B [277], sanq S6R2PTAAC [269].
+- IB2500189675#0 (g7eu): RA `all` fdk S16R2PTAWC, westinpower S16R2PTAWC ×2. RA top: fdk S16R2PTAWC (loại), wintpower, ettes 20V4000G23 (đẩy). VÀO top: koten 401661TRG3 [269], fdk QSK78G18 [246], sr-genset S16R2PTAWC [233].
+- IB2600337362#0 (g7eu): RA `all` 9 (fdk S12RPTAA2C, S16RPTAC; aosif S12RPTAA2C; westinpower S12RPTAA2C ×3, S16RPTAC ×3). Top không đổi.
+- **Vì sao 918 lượt còn lại không đổi:** khác biệt code giữa hai bản chỉ là `chinaSmeLabel` và một chú thích; trong `candidates`, `chinaPlantInRow` chỉ được gọi khi origin là g7 / g7eu. Đây là chứng minh theo code, 918 lượt đó không chạy so.
+- **Chưa phủ:** `chinaPlantInRow` còn được gọi ở `rowPlacesOff` của #1096 (`config-bot.mjs:3929` trong bản gộp), nên (A) cũng đổi bước chấm nơi sản xuất: cấu hình dùng 30 bản ghi SME sẽ ghi "cần xác nhận nơi sản xuất" thay vì đạt theo thương hiệu. Phép so trên chỉ đo `candidates`; phiên #1096 cần xem khi dựng lại trên `nha-may-tq`.
+- Danh sách `nha-may-tq-danh-sach.txt` đã chạy lại: +30 hàng `DOC label` (westinpower 14, fdk 10, aosif 5, superwatt 1); 14 hàng westinpower trước đó xếp "KHONG, địa chỉ NCC" nay thuộc nhóm đọc.
+- Dạng chưa đọc: `| Diesel Engine: SME , <mã>` của westinpower (không thuộc danh sách nhãn).
+
 ## Lệnh
 
 ```powershell
