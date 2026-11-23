@@ -261,3 +261,14 @@ Giả thuyết "G10 / G20 là 50 Hz, G70 / G80 là 60 Hz" không khớp nguồn:
 - Căn cứ yếu: 70 / 71 động cơ chỉ có MỘT dòng hãng ghi tần số, hồ sơ perkins `status: partial`. 15 / 71 động cơ có nhiều dòng NCC ghi ngược hãng hơn ghi giống hãng (4012-46TAG3A: 27 ngược, 7 giống; 403D-15G: 24 / 22). "Không thấy ở trang kia" chưa chắc là hãng không bán ở tần số đó.
 - Nếu mở rộng cho cả dòng không ghi tần số thì thêm tới 3.592 dòng (chưa soát).
 - Đề xuất: chỉ gắn "cần xác nhận" cho dòng long-gen TAG4 bằng danh sách tường minh (NCC + n + chữ dòng), không làm luật chung cho tới khi tờ hãng đủ cả hai tần số.
+
+## Việc A (TAG4) 24/11/2026: CHẶN, chờ điều phối quyết. Chưa sửa mã
+
+Đo ở main `7a825711`, worktree `wt-ma-dong-co-tag4` (nhánh `ma-dong-co-tag4`, sạch), gọi thật `candidates` cỡ 200 kVA:
+
+- Gói 50 Hz: dòng long-gen n109 LGPL-220EV mã TAG4 bị LOẠI, `ruled: ["freq"]`. Mã TAG3 cùng bảng được giữ (điểm 130). Gói 60 Hz và gói không ghi tần số: giữ cả hai.
+- Lý do: khoá `1206JE70TTAG4` có 7 dòng, đúng 2 dòng đọc được tần số và đều 60 Hz: baifa n105 `BF-P220-60T4F`, perkins n5001. Đủ điều kiện "động cơ chỉ có dòng 60 Hz" (`known.length >= 2`). Câu "sau sửa dòng này quay lại gợi ý 50 Hz" ở mục trên KHÔNG đúng: sửa baifa n104 chỉ bớt một dòng 60 Hz, vẫn còn hai.
+- Hệ quả: quyết định "giữ dòng" và ràng buộc "chỉ đổi bước chấm, không đổi `candidates`" không làm cùng lúc được. Chỉ sửa bước chấm thì ở gói 50 Hz dòng không tới được cấu hình, phần sửa không có tác dụng.
+- Phương án 1 (đề xuất): danh sách tường minh một dòng (long-gen, n109, đúng chữ dòng) được miễn nhánh `known` của luật tần số trong `candidates`, cộng mục tần số "cần xác nhận" ở `check`, why "NCC ghi 50 Hz, tờ hãng chỉ ghi 60 Hz". `candidates` đổi đúng một dòng, chỉ ở gói 50 Hz có cỡ phù hợp; chứng minh bằng so toàn bộ trước / sau; cần đo top 30.
+- Phương án 2: giữ nguyên `candidates`, dòng vẫn bị loại ở gói 50 Hz, tức không thực hiện "giữ dòng".
+- Script đo: scratchpad của phiên (`tag4-uses.mjs`, `tag4-cand.mjs`), đọc `cn/` của worktree truyền vào.
