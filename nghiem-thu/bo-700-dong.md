@@ -67,6 +67,24 @@ Phần bị cắt, phân loại thô theo từ khoá (mỗi dòng một nhóm, n
 - `--max 40` trang mỗi site (`crawl-specs`, `crawl-datasheets`, `controllers`): 24 hồ sơ có ≥ 40 trang nguồn 101–999, là dấu hiệu có thể đã chạm trần. Không biết số trang bị bỏ nếu không cào lại.
 - Trần ký tự khác: `crawl-specs` bỏ dòng tờ thông số ≥ 200 ký tự; `controllers.mjs` bỏ dòng > 4.000 ký tự và rút câu trích > 300 ký tự còn khoảng 120 ký tự mỗi bên tên model (tệp nguồn vẫn đủ); `crawl-datasheets` bỏ tệp > 20 MB. Cắt tiêu đề ở 120–200 ký tự không làm mất dòng.
 
-## PR 2 (chưa bắt đầu)
+## PR 2: BÀN GIAO cho phiên mới (chưa làm gì, 24/11/2026)
 
-Chờ: Khoa chọn phương án, điều phối duyệt PR 1, hai phiên dữ liệu BĐK đã merge. Gồm gộp lại nguồn của trần 700 (theo phương án) và 14 tài liệu của trần 60.
+PR 1 = #1131 đã merge (7d15b54c). Điều phối chốt **phương án A, kể cả SICES**, theo câu của Khoa 24/11: "giới hạn 700 đó cần bỏ cho toàn bộ các tài liệu". Ngưỡng dừng 3 lần không còn áp dụng.
+
+**Yêu cầu của điều phối:** nhánh mới từ `origin/main` mới nhất (đã có #1127: SICES 1004, ComAp 1021, tiêu đề SmartGen 1008 / 1010; #1128: Stamford). Bỏ `.slice(0, 700)` và sửa câu chú thích "first 700 lines" ở `maker-datasheets.mjs`. Sinh lại bảng BĐK từ `sources/`, không tải lại. Hồ sơ chỉ THÊM dòng, bảng / dòng cũ giữ nguyên thứ tự và nội dung. `verify.mjs` 0 lỗi, toàn bộ test `suppliers` đạt. Đo `regress-config` và `CAT.build` trước / sau (vài lần, lấy trung vị). Tìm lý do 3 tờ aosif lệch 1 dòng (1052, 1108, 1109), ghi vào đây. PR nháp, không tự merge.
+
+Từ brief gốc, vẫn áp dụng: đo khoá `controller:*` của `modelFacts` và `factsFor`, `ctlKinds` trước / sau (model nào thêm dòng, có nhận dòng của mục không thuộc nó không); chạy `ctl-twin`, `ctl-module`, `ctl-amf`, `regress-config`; loại / kết quả đổi thì liệt kê từng ca, nói đúng hay sai theo chữ tài liệu; KHÔNG cập nhật fixture hồi quy khi chưa được điều phối đồng ý. Thêm test `controllerSheet` giữ đủ tài liệu > 700 dòng.
+
+**Cần hỏi điều phối:** tin mở rộng phạm vi nói PR 2 gồm cả nguồn của ba script, tin mới nhất chỉ nói "bảng BĐK". 14 tài liệu của trần 60 (329 dòng, `bo-700-dong-tran.tsv`) có gộp trong PR 2 không?
+
+**Bẫy đã thấy khi đo:**
+- `merge-specs` đọc `datasheets/<id>.json`, nên phải nối dòng vào đó (thụt 1 dấu cách) rồi mới chạy `merge-specs`; giữ nguyên `title` đã sửa tay. `maker-datasheets.mjs` không có chế độ đọc lại từ tệp nguồn (gặp URL đã có thì bỏ qua), phải viết script riêng dùng `controllerSheet`.
+- Bỏ phần đầu tệp nguồn (`URL:`, `Accessed:`, có thể `From:`) trước khi gọi `controllerSheet`.
+- Một `n` có thể có hai bảng: DSE 1016 có bảng "Datasheet" và bảng "Options and configuration-dependent lines". Chỉ nối vào đúng bảng datasheet.
+- Chỉ xử lý tài liệu có > 700 dòng sau lọc. DSE 1016 và vài nguồn khác lệch vài dòng mà không do trần (17 dòng ở lần đo đầu): không đụng.
+- SmartGen 1003 / 1004 lưu 699 dòng vì `controllerSheet` bỏ dòng đầu ngắn hơn 8 ký tự, nên so bằng tập dòng, đừng so theo vị trí.
+- Số ở trên đo trước #1127: SICES 1004 và ComAp 1021 phải đo lại.
+
+**Script đo** (đối số là đường dẫn worktree): `genbid-work\dieu-phoi\dau-vao\bo-700-dong\`. `do-tran.mjs` đo ba trần, `do-pa.mjs` đo cỡ và CPU của `CAT.build`, `soat.mjs` / `soat2.mjs` soát bảng đúng số trần. `do-tran.mjs` và `do-pa.mjs` cần code ĐÃ bỏ trần. Mỗi lượt `CAT.build` mất 30–110 s trên máy đang bận: chạy nền.
+
+Worktree cũ `wt-bo-700-dong` còn trên máy, đã merge, không có thay đổi dở.
