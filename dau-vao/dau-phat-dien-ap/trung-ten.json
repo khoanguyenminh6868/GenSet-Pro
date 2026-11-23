@@ -1,0 +1,292 @@
+[
+ {
+  "make": "Stamford",
+  "model": "S7L1D-F41",
+  "nSup": 10,
+  "to": "S7L1D-F4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1030.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S4L1D-G41",
+  "nSup": 9,
+  "to": "S4L1D-G4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1020.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-G41",
+  "nSup": 9,
+  "to": "S7L1D-G4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1031.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-C41",
+  "nSup": 7,
+  "to": "S7L1D-C4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1027.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S5L1D-H41",
+  "nSup": 7,
+  "to": "S5L1D-H4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1018.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-H41",
+  "nSup": 7,
+  "to": "S7L1D-H4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1032.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-G41",
+  "nSup": 6,
+  "to": "S6L1D-G4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1025.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-D41",
+  "nSup": 6,
+  "to": "S7L1D-D4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1028.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-E41",
+  "nSup": 6,
+  "to": "S7L1D-E4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1029.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-E41",
+  "nSup": 5,
+  "to": "S6L1D-E4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1023.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S4L1D-D4",
+  "nSup": 5,
+  "to": "S4L1D-D41",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1016.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-C41",
+  "nSup": 5,
+  "to": "S6L1D-C4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1021.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-D41",
+  "nSup": 4,
+  "to": "S6L1D-D4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1022.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-H41",
+  "nSup": 4,
+  "to": "S6L1D-H4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1026.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S6L1D-F41",
+  "nSup": 4,
+  "to": "S6L1D-F4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1024.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274H1",
+  "nSup": 4,
+  "to": "UCI274H",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1012.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCDI 274K1",
+  "nSup": 4,
+  "to": "UCDI274K",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1014.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 224G1",
+  "nSup": 4,
+  "to": "UCI224G",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1015.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274C1",
+  "nSup": 4,
+  "to": "UCI274C",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1002.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274E1",
+  "nSup": 4,
+  "to": "UCI274E",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1011.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274F1",
+  "nSup": 4,
+  "to": "UCI274F",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1004.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S4L1D-E4",
+  "nSup": 3,
+  "to": "S4L1D-E41",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1017.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274D1",
+  "nSup": 3,
+  "to": "UCI274D",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1003.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 274G1",
+  "nSup": 3,
+  "to": "UCI274G",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1005.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCDI 274J1",
+  "nSup": 3,
+  "to": "UCDI274J",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1013.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "UCI 224F1",
+  "nSup": 3,
+  "to": "UCI224F",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1001.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S4L1D-C4",
+  "nSup": 3,
+  "to": "S4L1D-C41",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1019.md"
+  ]
+ },
+ {
+  "make": "Stamford",
+  "model": "S7L1D-K41",
+  "nSup": 2,
+  "to": "S7L1D-K4",
+  "hoSo": "stamford-avk-china",
+  "tep": [
+   "1033.md"
+  ]
+ },
+ {
+  "make": "Leroy-Somer",
+  "model": "TAL-A49-B1",
+  "nSup": 1,
+  "to": "TAL-A49-B",
+  "hoSo": "leroy-somer-fuzhou",
+  "tep": [
+   "1006.md"
+  ]
+ }
+]
