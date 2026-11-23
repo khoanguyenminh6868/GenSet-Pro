@@ -1,0 +1,39 @@
+=== mecca-power: 17 bản ghi thêm, 1 nhóm
+17 × engine n144
+   cũ (34 dòng): | KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (
+   mới (17 dòng): | Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displac // | KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (
+   vd MC52Y 4TNV98T-ZGGE
+=== hnd-henan: 2 bản ghi thêm, 1 nhóm
+2 × engine n101
+   cũ (6 dòng): | 用途 | 连续工况 | 间歇工况 | 燃油消耗率/ 平均有效压力* // | 工作船 | 高速船 | 快艇、高速公务船 // | 环境状况 | 空气/增压空气冷却介质/大气压力/相对湿度：45℃/32℃/0.1MPa/60% // | 功率代号 | MCFN | MCFN | MXN 2h/12h | MC15N | MOFN 2h/12h | MOFN
+   mới (6 dòng): | 用途 | 连续工况 | 间歇工况 | 燃油消耗率/ 平均有效压力* // | 工作船 | 高速船 | 快艇、高速公务船 // | 环境状况 | 空气/增压空气冷却介质/大气压力/相对湿度：45℃/32℃/0.1MPa/60% // | 功率代号 | MCFN | MCFN | MXN 2h/12h | MC15N | MOFN 2h/12h | MOFN
+   vd  TD234V8
+=== taihai-taizhou: 106 bản ghi thêm, 17 nhóm
+10 × engine n104
+   cũ (34 dòng): 
+   mới (5 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/k // | | KVA | KW | | | | | | |
+   vd TH-800GF WD327TAD88
+10 × engine n107
+   cũ (29 dòng): 
+   mới (13 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (L/h // | | KVA | KW | | | | | | | |
+   vd TH-80GF 1006TG2A
+10 × engine n107
+   cũ (22 dòng): 
+   mới (10 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 燃油消耗量 (L/h) | 外形尺寸 ( // | | KVA | KW | | | | | | // | 水冷系列Water-cooled Series
+   vd TH-100GF WP6D132E200
+8 × engine n106
+   cũ (59 dòng): 
+   mới (11 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (L/h
+   vd TH-280GF 2206A-E13TAG2
+8 × engine n107
+   cũ (29 dòng): 
+   mới (9 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/k // | | KVA | KW | | | | | | | // | 东风康明斯系列DCEC CUMMINS SERIES
+   vd TH-92GF 6BTA5.9-G2
+8 × engine n107
+   cũ (không có bảng): —
+   mới (8 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 燃油消耗量 (L/h) | 外形尺寸 ( // | | KVA | KW | | | | | | // | 风冷系列Air-cooled Series
+   vd TH-76GF BF6L913C
+7 × engine n101
+   cũ (29 dòng): 
+   mới (8 dòng): | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程(mm) | 排气量(L) | 燃油消耗量(g/kwh) // | | KVA | KW | | | | | | | |
+   vd TH-2500GF 20V4000G63L

@@ -1,0 +1,4 @@
+kaihua-genset n102 1 dòng, 2 tiêu đề: | Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+kaihua-genset n118 1 dòng, 2 tiêu đề: | Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+taylor-power n103 1 dòng, 1 tiêu đề: | | Model | Model | kW | Engine | Spec Sheet
+taylor-power n104 1 dòng, 1 tiêu đề: | | Model | Model | kW | Engine | Spec Sheet

@@ -1,0 +1,31 @@
+baifa-power: 424 → 499; thêm 75, MẤT 0, đổi 34, y nguyên 390; cần xem 0
+   35	THÊM alternator: dòng ngoài mọi bảng cũ
+   40	THÊM engine: dòng ngoài mọi bảng cũ
+   9	makes Stamford → — (tên hãng có trong tiêu đề bảng con)
+   17	makes — → Baudouin (tên hãng có trong tiêu đề bảng con)
+taihai-taizhou: 311 → 417; thêm 106, MẤT 0, đổi 85, y nguyên 226; cần xem 1
+   8	THÊM engine: dòng ngoài mọi bảng cũ
+   98	THÊM engine: dòng đã ở bảng cũ, trước không ra bản ghi
+   1	makes — → Cummins (KHÔNG thấy ở tiêu đề)
+   25	specs bore chỉ đổi nhãn
+   30	specs dims chỉ đổi nhãn
+   3	specs fuel chỉ đổi nhãn g/kWh→L/h
+   29	specs fuel chỉ đổi nhãn
+   5	specs fuel thêm
+   28	specs weight chỉ đổi nhãn
+   13	title (kèm đổi khác)
+   42	title: đổi trang (dòng trùng giữa trang)
+hnd-henan: 10 → 12; thêm 2, MẤT 0, đổi 0, y nguyên 10; cần xem 0
+   2	THÊM engine: dòng ngoài mọi bảng cũ
+acepow-fuan: 918 → 918; thêm 0, MẤT 0, đổi 27, y nguyên 891; cần xem 0
+   27	freq: 50 → 60
+huayuan-weifang: 144 → 144; thêm 0, MẤT 0, đổi 20, y nguyên 124; cần xem 20
+   20	makes Perkins → Cummins (KHÔNG thấy ở tiêu đề)
+jet-power: 1079 → 1079; thêm 0, MẤT 0, đổi 0, y nguyên 1079; cần xem 0
+lees-power: 536 → 536; thêm 0, MẤT 0, đổi 0, y nguyên 536; cần xem 0
+longkai-power: 1354 → 1354; thêm 0, MẤT 0, đổi 0, y nguyên 1354; cần xem 0
+mecca-power: 1676 → 1693; thêm 17, MẤT 0, đổi 0, y nguyên 1676; cần xem 0
+   17	THÊM engine: dòng đã ở bảng cũ, trước không ra bản ghi
+previa-ningde: 972 → 972; thêm 0, MẤT 0, đổi 36, y nguyên 936; cần xem 0
+   36	title: đổi trang (dòng trùng giữa trang)
+shengfeng-fuan: 186 → 186; thêm 0, MẤT 0, đổi 0, y nguyên 186; cần xem 0

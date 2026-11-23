@@ -1,0 +1,9 @@
+tệp nguồn: 3983
+1. luật hiện tại TÁCH	202 khối	40 NCC	10515 dòng máy
+2. khối không phải bảng công suất	55 khối	4 NCC	518 dòng máy
+3. không tách: dưới 3 ô	8 khối	5 NCC	242 dòng máy
+3. không tách: hẹp dưới 60 % tiêu đề + trùng dưới 60 % ô	1 khối	1 NCC	36 dòng máy
+3. không tách: hẹp dưới 60 % tiêu đề	58 khối	1 NCC	163 dòng máy
+3. không tách: trùng dưới 60 % ô	46 khối	24 NCC	449 dòng máy
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	21 khối	6 NCC	426 dòng máy
+luật lỏng, tổng: 391 khối, 61 NCC

@@ -1,0 +1,75 @@
+THÊM	n101	engine	1104D-E44TAG1	BF-P88-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":88},"prime":{"kVA":80}}	| BF-P88-T3 | 88 | 80 | 1104D-E44TAG1 | | UCI 224G | STAGE 3A | CHINA
+THÊM	n101	alternator	UCI 224G	BF-P88-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":88},"prime":{"kVA":80}}	| BF-P88-T3 | 88 | 80 | 1104D-E44TAG1 | | UCI 224G | STAGE 3A | CHINA
+THÊM	n101	engine	1104D-E44TAG2	BF-P110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-P110-T3 | 110 | 100 | 1104D-E44TAG2 | | UCI 274C | STAGE 3A | CHINA
+THÊM	n101	alternator	UCI 274C	BF-P110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-P110-T3 | 110 | 100 | 1104D-E44TAG2 | | UCI 274C | STAGE 3A | CHINA
+THÊM	n101	engine	1106D-E70TAG2	BF-P154-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":154},"prime":{"kVA":140}}	| BF-P154-T3 | 154 | 140 | 1106D-E70TAG2 | | UCI 274E | STAGE 3A | CHINA
+THÊM	n101	alternator	UCI 274E	BF-P154-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":154},"prime":{"kVA":140}}	| BF-P154-T3 | 154 | 140 | 1106D-E70TAG2 | | UCI 274E | STAGE 3A | CHINA
+THÊM	n101	engine	1106D-E70TAG3	BF-P165-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":165},"prime":{"kVA":150}}	| BF-P165-T3 | 165 | 150 | 1106D-E70TAG3 | | UCI 274F | STAGE 3A | CHINA
+THÊM	n101	alternator	UCI 274F	BF-P165-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":165},"prime":{"kVA":150}}	| BF-P165-T3 | 165 | 150 | 1106D-E70TAG3 | | UCI 274F | STAGE 3A | CHINA
+THÊM	n101	engine	1106D-E70TAG4	BF-P198-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":198},"prime":{"kVA":180}}	| BF-P198-T3 | 198 | 180 | 1106D-E70TAG4 | | UCI 274G | STAGE 3A | CHINA
+THÊM	n101	alternator	UCI 274G	BF-P198-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":198},"prime":{"kVA":180}}	| BF-P198-T3 | 198 | 180 | 1106D-E70TAG4 | | UCI 274G | STAGE 3A | CHINA
+THÊM	n101	engine	1206D-E70TTAG1	BF-P220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-P220-T3 | 220 | 200 | 1206D-E70TTAG1 | | UCI 274H | STAGE 3A | UK
+THÊM	n101	alternator	UCI 274H	BF-P220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-P220-T3 | 220 | 200 | 1206D-E70TTAG1 | | UCI 274H | STAGE 3A | UK
+THÊM	n101	engine	1206D-E70TTAG2	BF-P248-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":248},"prime":{"kVA":225}}	| BF-P248-T3 | 248 | 225 | 1206D-E70TTAG2 | | UCD274J | STAGE 3A | UK
+THÊM	n101	alternator	UCD274J	BF-P248-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":248},"prime":{"kVA":225}}	| BF-P248-T3 | 248 | 225 | 1206D-E70TTAG2 | | UCD274J | STAGE 3A | UK
+THÊM	n101	engine	1206D-E70TTAG3	BF-P275-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":275},"prime":{"kVA":250}}	| BF-P275-T3 | 275 | 250 | 1206D-E70TTAG3 | | UCD274K | STAGE 3A | UK
+THÊM	n101	alternator	UCD274K	BF-P275-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":275},"prime":{"kVA":250}}	| BF-P275-T3 | 275 | 250 | 1206D-E70TTAG3 | | UCD274K | STAGE 3A | UK
+THÊM	n101	engine	2206D-E13TAG3	BF-P440-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":440},"prime":{"kVA":400}}	| BF-P440-T3 | 440 | 400 | 2206D-E13TAG3 | | S4L1D-F41 | STAGE 3A | USA
+THÊM	n101	alternator	S4L1D-F41	BF-P440-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":440},"prime":{"kVA":400}}	| BF-P440-T3 | 440 | 400 | 2206D-E13TAG3 | | S4L1D-F41 | STAGE 3A | USA
+THÊM	n101	engine	2506D-E15TAG2	BF-P550-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":550},"prime":{"kVA":500}}	| BF-P550-T3 | 550 | 500 | 2506D-E15TAG2 | | S5L1D-C4 | STAGE 3A | USA
+THÊM	n101	alternator	S5L1D-C4	BF-P550-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":550},"prime":{"kVA":500}}	| BF-P550-T3 | 550 | 500 | 2506D-E15TAG2 | | S5L1D-C4 | STAGE 3A | USA
+THÊM	n101	engine	QSB5-G2	BF-C80-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":80},"prime":{"kVA":72}}	| BF-C80-T3 | 80 | 72 | QSB5-G2 | | UCI 224F | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	alternator	UCI 224F	BF-C80-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":80},"prime":{"kVA":72}}	| BF-C80-T3 | 80 | 72 | QSB5-G2 | | UCI 224F | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	engine	QSB5-G3	BF-C90-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":90},"prime":{"kVA":82}}	| BF-C90-T3 | 90 | 82 | QSB5-G3 | | UCI 224G | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 224G	BF-C90-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":90},"prime":{"kVA":82}}	| BF-C90-T3 | 90 | 82 | QSB5-G3 | | UCI 224G | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB5-G4	BF-C100-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":100},"prime":{"kVA":91}}	| BF-C100-T3 | 100 | 91 | QSB5-G4 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274C	BF-C100-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":100},"prime":{"kVA":91}}	| BF-C100-T3 | 100 | 91 | QSB5-G4 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB5-G5	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB5-G5 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274C	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB5-G5 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB5-G6	BF-C150-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":150},"prime":{"kVA":136}}	| BF-C150-T3 | 150 | 136 | QSB5-G6 | | UCI 274E | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274E	BF-C150-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":150},"prime":{"kVA":136}}	| BF-C150-T3 | 150 | 136 | QSB5-G6 | | UCI 274E | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB5-G13	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB5-G13 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274C	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB5-G13 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB7-G1	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB7-G1 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	alternator	UCI 274C	BF-C110-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":110},"prime":{"kVA":100}}	| BF-C110-T3 | 110 | 100 | QSB7-G1 | | UCI 274C | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	engine	QSB7-G2	BF-C150-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":150},"prime":{"kVA":136}}	| BF-C150-T3 | 150 | 136 | QSB7-G2 | | UCI 274E | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	alternator	UCI 274E	BF-C150-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":150},"prime":{"kVA":136}}	| BF-C150-T3 | 150 | 136 | QSB7-G2 | | UCI 274E | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	engine	QSB7-G3	BF-C175-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":175},"prime":{"kVA":150}}	| BF-C175-T3 | 175 | 150 | QSB7-G3 | | UCI 274F | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274F	BF-C175-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":175},"prime":{"kVA":150}}	| BF-C175-T3 | 175 | 150 | QSB7-G3 | | UCI 274F | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB7-G4	BF-C200-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":200},"prime":{"kVA":180}}	| BF-C200-T3 | 200 | 180 | QSB7-G4 | | UCI 274G | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274G	BF-C200-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":200},"prime":{"kVA":180}}	| BF-C200-T3 | 200 | 180 | QSB7-G4 | | UCI 274G | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSB7-G5	BF-C220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-C220-T3 | 220 | 200 | QSB7-G5 | | UCI 274H | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCI 274H	BF-C220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-C220-T3 | 220 | 200 | QSB7-G5 | | UCI 274H | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSL9-G1	BF-C220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-C220-T3 | 220 | 200 | QSL9-G1 | | UCI 274H | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	alternator	UCI 274H	BF-C220-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":220},"prime":{"kVA":200}}	| BF-C220-T3 | 220 | 200 | QSL9-G1 | | UCI 274H | TIER 3/ STAGE 3A/ CHINA STAGE3 | TBA
+THÊM	n101	engine	QSL9-G2	BF-C250-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":250},"prime":{"kVA":225}}	| BF-C250-T3 | 250 | 225 | QSL9-G2 | | UCD274J | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCD274J	BF-C250-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":250},"prime":{"kVA":225}}	| BF-C250-T3 | 250 | 225 | QSL9-G2 | | UCD274J | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSL9-G3	BF-C275-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":275},"prime":{"kVA":250}}	| BF-C275-T3 | 275 | 250 | QSL9-G3 | | UCD274K | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	UCD274K	BF-C275-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":275},"prime":{"kVA":250}}	| BF-C275-T3 | 275 | 250 | QSL9-G3 | | UCD274K | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSL9-G4	BF-C300-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":300},"prime":{"kVA":275}}	| BF-C300-T3 | 300 | 275 | QSL9-G4 | | S4L1D-D41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	S4L1D-D41	BF-C300-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":300},"prime":{"kVA":275}}	| BF-C300-T3 | 300 | 275 | QSL9-G4 | | S4L1D-D41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSL9-G7	BF-C330-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":330},"prime":{"kVA":300}}	| BF-C330-T3 | 330 | 300 | QSL9-G7 | | S4L1D-D41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	alternator	S4L1D-D41	BF-C330-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":330},"prime":{"kVA":300}}	| BF-C330-T3 | 330 | 300 | QSL9-G7 | | S4L1D-D41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA/UK
+THÊM	n101	engine	QSM11-G4	BF-C353-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":353},"prime":{"kVA":318}}	| BF-C353-T3 | 353 | 318 | QSM11-G4 | | S4L1D-E41 | TIER 3 | CHINA
+THÊM	n101	alternator	S4L1D-E41	BF-C353-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":353},"prime":{"kVA":318}}	| BF-C353-T3 | 353 | 318 | QSM11-G4 | | S4L1D-E41 | TIER 3 | CHINA
+THÊM	n101	engine	QSX15-G11	BF-C400-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":400},"prime":{"kVA":364}}	| BF-C400-T3 | 400 | 364 | QSX15-G11 | | S4L1D-E41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	alternator	S4L1D-E41	BF-C400-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":400},"prime":{"kVA":364}}	| BF-C400-T3 | 400 | 364 | QSX15-G11 | | S4L1D-E41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	engine	QSX15-G12	BF-C450-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":450},"prime":{"kVA":409}}	| BF-C450-T3 | 450 | 409 | QSX15-G12 | | S4L1D-F41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	alternator	S4L1D-F41	BF-C450-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":450},"prime":{"kVA":409}}	| BF-C450-T3 | 450 | 409 | QSX15-G12 | | S4L1D-F41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	engine	QSX15-G13	BF-C500-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":500},"prime":{"kVA":455}}	| BF-C500-T3 | 500 | 455 | QSX15-G13 | | S4L1D-G41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	alternator	S4L1D-G41	BF-C500-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":500},"prime":{"kVA":455}}	| BF-C500-T3 | 500 | 455 | QSX15-G13 | | S4L1D-G41 | TIER 3/ STAGE 3A/ CHINA STAGE3 | USA
+THÊM	n101	engine	QSX15-G16	BF-C550-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":550},"prime":{"kVA":500}}	| BF-C550-T3 | 550 | 500 | QSX15-G16 | | S5L1D-C4 | STAGE 3A | USA
+THÊM	n101	alternator	S5L1D-C4	BF-C550-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":550},"prime":{"kVA":500}}	| BF-C550-T3 | 550 | 500 | QSX15-G16 | | S5L1D-C4 | STAGE 3A | USA
+THÊM	n101	engine	4M08G2D3/5	BF-BD20-T3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":20},"prime":{"kVA":17.5}}	| BF-BD20-T3 | 20 | 17.5 | BAUDOUIN | 4M08G2D3/5 | | VARIOUS | STAGE 3A/ CHINA STAGE3 | CHINA
+THÊM	n101	engine	6M33G6D2/5	BF-BD725-T2	dòng ngoài mọi bảng cũ	{"standby":{"kVA":725},"prime":{"kVA":650}}	| BF-BD725-T2 | 725 | 650 | BAUDOUIN | 6M33G6D2/5 | | VARIOUS | TIER 2 | CHINA
+THÊM	n101	engine	DP222CAS	BF-DW840-T2	dòng ngoài mọi bảng cũ	{"standby":{"kVA":839},"prime":{"kVA":763}}	| BF-DW840-T2 | 839 | 763 | DOOSAN | DP222CAS | | VARIOUS | TIER 2 | KOREA
+THÊM	n101	engine	S16R2-A2PTAW-C	BF-SM2250-T2	dòng ngoài mọi bảng cũ	{"standby":{"kVA":2250},"prime":{"kVA":2050}}	| BF-SM2250-T2 | 2250 | 2050 | SME MITSUBISHI | S16R2-A2PTAW-C | Elec | S7L1D-G41 | TIER 2/ CHINA STAGE3 | CHINA
+THÊM	n101	alternator	S7L1D-G41	BF-SM2250-T2	dòng ngoài mọi bảng cũ	{"standby":{"kVA":2250},"prime":{"kVA":2050}}	| BF-SM2250-T2 | 2250 | 2050 | SME MITSUBISHI | S16R2-A2PTAW-C | Elec | S7L1D-G41 | TIER 2/ CHINA STAGE3 | CHINA
+THÊM	n101	engine	KTA38-G2E	BF-C875-3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":875},"prime":{"kVA":812.5}}	| BF-C875-3 | 875 | 812.5 | CUMMINS (CHINA) | KTA38-G2E | | VARIOUS | CHINA STAGE3 | CHINA
+THÊM	n101	engine	8M33G2D3/5	BF-BD875-3	dòng ngoài mọi bảng cũ	{"standby":{"kVA":875},"prime":{"kVA":800}}	| BF-BD875-3 | 875 | 800 | BAUDOUIN | 8M33G2D3/5 | | VARIOUS | CHINA STAGE3 | CHINA
+THÊM	n101	engine	2406J-E13TAG3	BF-P450-V	dòng ngoài mọi bảng cũ	{"standby":{"kVA":452},"prime":{"kVA":410}}	| BF-P450-V | 452 | 410 | PERKINS | 2406J-E13TAG3 | ECU | S4L1D-F41 | 63.53 | STAGE V | USA | 16-24WKS LT | ●
+THÊM	n101	alternator	S4L1D-F41	BF-P450-V	dòng ngoài mọi bảng cũ	{"standby":{"kVA":452},"prime":{"kVA":410}}	| BF-P450-V | 452 | 410 | PERKINS | 2406J-E13TAG3 | ECU | S4L1D-F41 | 63.53 | STAGE V | USA | 16-24WKS LT | ●
+THÊM	n101	engine	2406J-E13TAG3	BF-P450-60T4F	dòng ngoài mọi bảng cũ	{"standby":{"kVA":452},"prime":{"kVA":410}}	| BF-P450-60T4F | 452 | 410 | PERKINS | 2406J-E13TAG3 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | USA | | ●
+THÊM	n101	alternator	S4L1D-F41	BF-P450-60T4F	dòng ngoài mọi bảng cũ	{"standby":{"kVA":452},"prime":{"kVA":410}}	| BF-P450-60T4F | 452 | 410 | PERKINS | 2406J-E13TAG3 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | USA | | ●
+THÊM	n101	engine	TWD1682GE	BF-V660-60T4F	dòng ngoài mọi bảng cũ	{"standby":{"kVA":698},"prime":{"kVA":635}}	| BF-V660-60T4F | 698 | 635 | VOLVO PENTA | TWD1682GE | ECU | S5L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+THÊM	n101	alternator	S5L1D-E41	BF-V660-60T4F	dòng ngoài mọi bảng cũ	{"standby":{"kVA":698},"prime":{"kVA":635}}	| BF-V660-60T4F | 698 | 635 | VOLVO PENTA | TWD1682GE | ECU | S5L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●

@@ -1,0 +1,14 @@
+acepow-fuan n124 L95	2 dòng	3phase,kw	| Power factor | 0.8 | Connection type | 3 phase 4 wires
+aj-power n101 L232	36 dòng	50hz,singlephase,threephase,60hz	| Frequency | 50hz
+aj-power n102 L236	35 dòng	50hz,singlephase,60hz,threephase	| Frequency | 50hz
+aj-power n103 L235	27 dòng	50hz,threephase,60hz	| Frequency | 50hz
+aj-power n104 L239	37 dòng	50hz,threephase,60hz	| Frequency | 50hz
+huachai-deutz n114 L20	7 dòng	50hz,threephase,kva,kw,60hz	| Power factor | 0.8 | Cylinder arrangement | V | Frequency | 50Hz
+acepow-fuan n103 L75	1 dòng	50hz,60hz,230v,kva,380v	| Frequency: | 50Hz Or 60Hz | Engine: | Cummins
+gtl-power n105 L60	8 dòng	l/h,kva	| Fuel Consumption (L/H) | 1.5∽2.5
+jichai n109 L88	2 dòng	kw	| Description | Gensets Model | Rated power kw | Rotation speed r/min | Engine model | Hydraulic tra
+kaihua-genset n124 L224	36 dòng	440v,1800rpm,60hz	| Powered by VOLVO | 440V, 1800RPM, 60Hz
+kaihua-genset n125 L225	40 dòng	440v,1800rpm,60hz	| Powered by MTU | 440V, 1800RPM, 60Hz
+sevenpower-chengdu n106 L170	4 dòng	3phase	| phase | — | 3 phase 4 wires
+sevenpower-chengdu n122 L178	1 dòng	3phase	| phase | — | 3 phase 4 wires
+shunfeng-changzhou n105 L60	9 dòng	单相,singlephase	| 相数 | Phase | 单相 Single phase | 单相 Single phase

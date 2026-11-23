@@ -1,0 +1,268 @@
+SPEC	bore	chỉ đổi nhãn	n102	4012-46TWG2A	TH-1000GF	缸径/行程 (mm)=160/190 → 缸径/行程(mm)=160/190
+SPEC	fuel	chỉ đổi nhãn g/kWh→L/h	n102	4012-46TWG2A	TH-1000GF	燃油消耗量 (g/kw.h)=196 → 燃油消耗量(L/h)=196
+SPEC	dims	chỉ đổi nhãn	n102	4012-46TWG2A	TH-1000GF	外形尺寸 (L×W×H) (mm)=5220×2130×2600 → 外形尺寸 (L×W×H)(mm)=5220×2130×2600
+SPEC	weight	chỉ đổi nhãn	n102	4012-46TWG2A	TH-1000GF	重量 (kg)=9230 → 重量=9230
+SPEC	bore	chỉ đổi nhãn	n101	4012-46TAG2A	TH-1200GF	缸径/行程 (mm)=160/190 → 缸径/行程(mm)=160/190
+SPEC	fuel	chỉ đổi nhãn g/kWh→L/h	n101	4012-46TAG2A	TH-1200GF	燃油消耗量 (g/kw.h)=237 → 燃油消耗量 (L/h)=237
+SPEC	dims	chỉ đổi nhãn	n101	4012-46TAG2A	TH-1200GF	外形尺寸 (L×W×H) (mm)=5220×2130×2600 → 外形尺寸(L×W×H)(mm)=5220×2130×2600
+SPEC	weight	chỉ đổi nhãn	n101	4012-46TAG2A	TH-1200GF	重量 (kg)=9720 → 重量=9720
+SPEC	bore	chỉ đổi nhãn	n102	12V4000G21R	TH-1000GF	缸径/行程 (mm)=165/190 → 缸径/行程(mm)=165/190
+SPEC	fuel	chỉ đổi nhãn	n102	12V4000G21R	TH-1000GF	燃油消耗量 (g/kw.h)=246.2 → 燃油消耗量(g/kwh)=246.2
+SPEC	dims	chỉ đổi nhãn	n102	12V4000G21R	TH-1000GF	外形尺寸 (L×W×H) (mm)=6150×2150×2400 → 外形尺寸(L×W×H) (mm)=6150×2150×2400
+SPEC	weight	chỉ đổi nhãn	n102	12V4000G21R	TH-1000GF	重量 (kg)=11500 → 重量(kg)=11500
+SPEC	bore	chỉ đổi nhãn	n102	12V4000G23R	TH-1150GF	缸径/行程 (mm)=170/210 → 缸径/行程(mm)=170/210
+SPEC	fuel	chỉ đổi nhãn	n102	12V4000G23R	TH-1150GF	燃油消耗量 (g/kw.h)=269.7 → 燃油消耗量(g/kwh)=269.7
+SPEC	dims	chỉ đổi nhãn	n102	12V4000G23R	TH-1150GF	外形尺寸 (L×W×H) (mm)=6150×2150×2400 → 外形尺寸(L×W×H) (mm)=6150×2150×2400
+SPEC	weight	chỉ đổi nhãn	n102	12V4000G23R	TH-1150GF	重量 (kg)=12000 → 重量(kg)=12000
+SPEC	bore	chỉ đổi nhãn	n101	12V4000G23	TH-1280GF	缸径/行程 (mm)=170/210 → 缸径/行程(mm)=170/210
+SPEC	fuel	chỉ đổi nhãn	n101	12V4000G23	TH-1280GF	燃油消耗量 (g/kw.h)=288.2 → 燃油消耗量(g/kwh)=288.2
+SPEC	dims	chỉ đổi nhãn	n101	12V4000G23	TH-1280GF	外形尺寸 (L×W×H) (mm)=6150×2150×2400 → 外形尺寸(L×W×H) (mm)=6150×2150×2400
+SPEC	weight	chỉ đổi nhãn	n101	12V4000G23	TH-1280GF	重量 (kg)=13000 → 重量(kg)=13000
+TITLE	n102→n101	A12V190ZLD	1000KW-1200KW发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+SPEC	fuel	chỉ đổi nhãn g/kWh→L/h	n103	4008TAG2A	TH-800GF	燃油消耗量 (g/kw.h)=163 → 燃油消耗量 (L/h)=163
+SPEC	dims	chỉ đổi nhãn	n103	4008TAG2A	TH-800GF	外形尺寸 (L×W×H) (mm)=4700×2045×2475 → 外形尺寸 (L×W×H)(mm)=4700×2045×2475
+SPEC	weight	chỉ đổi nhãn	n103	4008TAG2A	TH-800GF	重量 (kg)=7639 → 重量=7639
+SPEC	bore	chỉ đổi nhãn	n103	16V2000G65	TH-800GF	缸径/行程 (mm)=130/150 → 缸径/行程(mm)=130/150
+SPEC	fuel	chỉ đổi nhãn	n103	16V2000G65	TH-800GF	燃油消耗量 (g/kw.h)=200.9 → 燃油消耗量(g/kwh)=200.9
+SPEC	dims	chỉ đổi nhãn	n103	16V2000G65	TH-800GF	外形尺寸 (L×W×H) (mm)=4500×2000×2300 → 外形尺寸(L×W×H) (mm)=4500×2000×2300
+SPEC	weight	chỉ đổi nhãn	n103	16V2000G65	TH-800GF	重量 (kg)=7850 → 重量(kg)=7850
+SPEC	bore	chỉ đổi nhãn	n103	18V2000G65	TH-910GF	缸径/行程 (mm)=130/150 → 缸径/行程(mm)=130/150
+SPEC	fuel	chỉ đổi nhãn	n103	18V2000G65	TH-910GF	燃油消耗量 (g/kw.h)=226 → 燃油消耗量(g/kwh)=226
+SPEC	dims	chỉ đổi nhãn	n103	18V2000G65	TH-910GF	外形尺寸 (L×W×H) (mm)=4750×1800×2400 → 外形尺寸(L×W×H) (mm)=4750×1800×2400
+SPEC	weight	chỉ đổi nhãn	n103	18V2000G65	TH-910GF	重量 (kg)=9000 → 重量(kg)=9000
+TITLE	n105→n104	KTAA19-G6A	300KW-500KW发电机组-产品展示_泰州泰海机电设备有限公司 → 500KW-800KW发电机组-产品展示_泰州泰海机电设备有限公司
+SPEC	weight	chỉ đổi nhãn	n105	TAD1344GE	TH-320GF	重量 (kg)=3000 → 重量=3000
+SPEC	weight	chỉ đổi nhãn	n105	TAD1345GE	TH-360GF	重量 (kg)=3200 → 重量=3200
+SPEC	weight	chỉ đổi nhãn	n105	TAD1641GE	TH-400GF	重量 (kg)=3800 → 重量=3800
+SPEC	weight	chỉ đổi nhãn	n105	TAD1642GE	TH-450GF	重量 (kg)=3810 → 重量=3810
+SPEC	weight	chỉ đổi nhãn	n105	TWD1643GE	TH-500GF	重量 (kg)=4050 → 重量=4050
+SPEC	dims	chỉ đổi nhãn	n105	2206A-E13TAG3	TH-320GF	外形尺寸 (L×W×H) (mm)=3500×1105×1960 → 外形尺寸 (L×W×H)(mm)=3500×1105×1960
+SPEC	weight	chỉ đổi nhãn	n105	2206A-E13TAG3	TH-320GF	重量 (kg)=3385 → 重量=3385
+SPEC	fuel	thêm	n105	2206A-E13TAG3	TH-320GF	— → 燃油消耗量 (L/h)=62
+SPEC	dims	chỉ đổi nhãn	n105	2506A-E15TAG1	TH-360GF	外形尺寸 (L×W×H) (mm)=3935×1150×2080 → 外形尺寸 (L×W×H)(mm)=3935×1150×2080
+SPEC	weight	chỉ đổi nhãn	n105	2506A-E15TAG1	TH-360GF	重量 (kg)=3583 → 重量=3583
+SPEC	fuel	thêm	n105	2506A-E15TAG1	TH-360GF	— → 燃油消耗量 (L/h)=72
+SPEC	dims	chỉ đổi nhãn	n105	2506A-E15TAG2	TH-400GF	外形尺寸 (L×W×H) (mm)=3935×1150×2080 → 外形尺寸 (L×W×H)(mm)=3935×1150×2080
+SPEC	weight	chỉ đổi nhãn	n105	2506A-E15TAG2	TH-400GF	重量 (kg)=3691 → 重量=3691
+SPEC	fuel	thêm	n105	2506A-E15TAG2	TH-400GF	— → 燃油消耗量 (L/h)=76
+SPEC	dims	chỉ đổi nhãn	n105	2806A-E18TAG1A	TH-480GF	外形尺寸 (L×W×H) (mm)=3960×1535×2100 → 外形尺寸 (L×W×H)(mm)=3960×1535×2100
+SPEC	weight	chỉ đổi nhãn	n105	2806A-E18TAG1A	TH-480GF	重量 (kg)=4298 → 重量=4298
+SPEC	fuel	thêm	n105	2806A-E18TAG1A	TH-480GF	— → 燃油消耗量 (L/h)=90
+SPEC	bore	chỉ đổi nhãn	n104	2806A-E18TAG2	TH-500GF	缸径/行程 (mm)=145/183 → 缸径/行程(mm)=145/183
+SPEC	dims	chỉ đổi nhãn	n104	2806A-E18TAG2	TH-500GF	外形尺寸 (L×W×H) (mm)=3960×1535×2100 → 外形尺寸(L×W×H)(mm)=3960×1535×2100
+SPEC	weight	chỉ đổi nhãn	n104	2806A-E18TAG2	TH-500GF	重量 (kg)=4453 → 重量=4453
+SPEC	fuel	thêm	n104	2806A-E18TAG2	TH-500GF	— → 燃油消耗量(L/h)=97
+SPEC	bore	chỉ đổi nhãn	n105	8V1600G20F	TH-320GF	缸径/行程 (mm)=122/150 → 缸径/行程(mm)=122/150
+SPEC	fuel	chỉ đổi nhãn	n105	8V1600G20F	TH-320GF	燃油消耗量 (g/kw.h)=190 → 燃油消耗量(g/kwh)=190
+SPEC	dims	chỉ đổi nhãn	n105	8V1600G20F	TH-320GF	外形尺寸 (L×W×H) (mm)=3000×1590×1940 → 外形尺寸(L×W×H) (mm)=3000×1590×1940
+SPEC	weight	chỉ đổi nhãn	n105	8V1600G20F	TH-320GF	重量 (kg)=3570 → 重量(kg)=3570
+SPEC	bore	chỉ đổi nhãn	n105	10V1600G10F	TH-360GF	缸径/行程 (mm)=122/150 → 缸径/行程(mm)=122/150
+SPEC	fuel	chỉ đổi nhãn	n105	10V1600G10F	TH-360GF	燃油消耗量 (g/kw.h)=191 → 燃油消耗量(g/kwh)=191
+SPEC	dims	chỉ đổi nhãn	n105	10V1600G10F	TH-360GF	外形尺寸 (L×W×H) (mm)=3095×1590×1970 → 外形尺寸(L×W×H) (mm)=3095×1590×1970
+SPEC	weight	chỉ đổi nhãn	n105	10V1600G10F	TH-360GF	重量 (kg)=4065 → 重量(kg)=4065
+SPEC	bore	chỉ đổi nhãn	n105	10V1600G20F	TH-400GF	缸径/行程 (mm)=122/150 → 缸径/行程(mm)=122/150
+SPEC	fuel	chỉ đổi nhãn	n105	10V1600G20F	TH-400GF	燃油消耗量 (g/kw.h)=190 → 燃油消耗量(g/kwh)=190
+SPEC	dims	chỉ đổi nhãn	n105	10V1600G20F	TH-400GF	外形尺寸 (L×W×H) (mm)=3095×1590×1970 → 外形尺寸(L×W×H) (mm)=3095×1590×1970
+SPEC	weight	chỉ đổi nhãn	n105	10V1600G20F	TH-400GF	重量 (kg)=4065 → 重量(kg)=4065
+SPEC	bore	chỉ đổi nhãn	n105	12V1600G10F	TH-480GF	缸径/行程 (mm)=122/150 → 缸径/行程(mm)=122/150
+SPEC	fuel	chỉ đổi nhãn	n105	12V1600G10F	TH-480GF	燃油消耗量 (g/kw.h)=192 → 燃油消耗量(g/kwh)=192
+SPEC	dims	chỉ đổi nhãn	n105	12V1600G10F	TH-480GF	外形尺寸 (L×W×H) (mm)=3330×1590×1970 → 外形尺寸(L×W×H) (mm)=3330×1590×1970
+SPEC	weight	chỉ đổi nhãn	n105	12V1600G10F	TH-480GF	重量 (kg)=4100 → 重量(kg)=4100
+SPEC	bore	chỉ đổi nhãn	n105	P158LE-1	TH-300GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n105	P158LE-1	TH-300GF	外形尺寸 (L×W×H) (mm)=3120×1390×1690 → 长宽高 (L×W×H)(mm)=3120×1390×1690
+SPEC	weight	chỉ đổi nhãn	n105	P158LE-1	TH-300GF	重量 (kg)=2885 → Weight(kg)=2885
+SPEC	fuel	chỉ đổi nhãn	n105	P158LE-1	TH-300GF	燃油消耗量 (L/h)=78.7 → 燃油消耗量(L/h)=78.7
+SPEC	bore	chỉ đổi nhãn	n105	P158LE	TH-320GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n105	P158LE	TH-320GF	外形尺寸 (L×W×H) (mm)=3120×1390×1690 → 长宽高 (L×W×H)(mm)=3120×1390×1690
+SPEC	weight	chỉ đổi nhãn	n105	P158LE	TH-320GF	重量 (kg)=2885 → Weight(kg)=2885
+SPEC	fuel	chỉ đổi nhãn	n105	P158LE	TH-320GF	燃油消耗量 (L/h)=89.3 → 燃油消耗量(L/h)=89.3
+SPEC	bore	chỉ đổi nhãn	n105	DP158LC	TH-368GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n105	DP158LC	TH-368GF	外形尺寸 (L×W×H) (mm)=3300×1390×1780 → 长宽高 (L×W×H)(mm)=3300×1390×1780
+SPEC	weight	chỉ đổi nhãn	n105	DP158LC	TH-368GF	重量 (kg)=3285 → Weight(kg)=3285
+SPEC	fuel	chỉ đổi nhãn	n105	DP158LC	TH-368GF	燃油消耗量 (L/h)=99.6 → 燃油消耗量(L/h)=99.6
+SPEC	bore	chỉ đổi nhãn	n105	DP158LD	TH-420GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n105	DP158LD	TH-420GF	外形尺寸 (L×W×H) (mm)=3300×1390×1780 → 长宽高 (L×W×H)(mm)=3300×1390×1780
+SPEC	weight	chỉ đổi nhãn	n105	DP158LD	TH-420GF	重量 (kg)=3285 → Weight(kg)=3285
+SPEC	fuel	chỉ đổi nhãn	n105	DP158LD	TH-420GF	燃油消耗量 (L/h)=115.1 → 燃油消耗量(L/h)=115.1
+SPEC	bore	chỉ đổi nhãn	n105	DP180LA	TH-456GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n105	DP180LA	TH-456GF	外形尺寸 (L×W×H) (mm)=3450×1390×1820 → 长宽高 (L×W×H)(mm)=3450×1390×1820
+SPEC	weight	chỉ đổi nhãn	n105	DP180LA	TH-456GF	重量 (kg)=3900 → Weight(kg)=3900
+SPEC	fuel	chỉ đổi nhãn	n105	DP180LA	TH-456GF	燃油消耗量 (L/h)=120.4 → 燃油消耗量(L/h)=120.4
+SPEC	bore	chỉ đổi nhãn	n104	DP180LB	TH-500GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	dims	chỉ đổi nhãn	n104	DP180LB	TH-500GF	外形尺寸 (L×W×H) (mm)=3600×1420×1700 → 长宽高(L×W×H)(mm)=3600×1420×1700
+SPEC	weight	chỉ đổi nhãn	n104	DP180LB	TH-500GF	重量 (kg)=3980 → Weight(kg)=3980
+SPEC	fuel	chỉ đổi nhãn	n104	DP180LB	TH-500GF	燃油消耗量 (L/h)=121.8 → 燃油消耗量(L/h)=121.8
+TITLE	n105→n104	SC27G830D2	300KW-500KW发电机组-产品展示_泰州泰海机电设备有限公司 → 500KW-800KW发电机组-产品展示_泰州泰海机电设备有限公司
+SPEC	fuel	chỉ đổi nhãn	n105	YC6T550L-D21	TH-320GF	燃油消耗量 (g/kw.h)=195 → 燃油消耗量 (g/kwh)=195
+SPEC	fuel	chỉ đổi nhãn	n105	YC6T600L-D22	TH-360GF	燃油消耗量 (g/kw.h)=195 → 燃油消耗量 (g/kwh)=195
+SPEC	fuel	chỉ đổi nhãn	n105	YC6T660L-D20	TH-400GF	燃油消耗量 (g/kw.h)=195 → 燃油消耗量 (g/kwh)=195
+SPEC	fuel	chỉ đổi nhãn	n105	YC6T700L-D20		燃油消耗量 (g/kw.h)=195 → 燃油消耗量 (g/kwh)=195
+SPEC	fuel	chỉ đổi nhãn	n105	YC6TD780L-D20	TH-450GF	燃油消耗量 (g/kw.h)=192 → 燃油消耗量 (g/kwh)=192
+SPEC	fuel	chỉ đổi nhãn	n104	YC6TD840L-D20	TH-500GF	燃油消耗量 (g/kw.h)=192 → 燃油消耗量 (g/kwh)=192
+TITLE	n105→n104	WD269TAD56	300KW-500KW发电机组-产品展示_泰州泰海机电设备有限公司 → 500KW-800KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n107	TAD530GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n107	TAD531GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n107	TAD531GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n107	TAD532GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n107	TAD532GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD731GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD732GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD733GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD734GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD1341GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD1342GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n111→n106	TAD1343GE	沃尔沃柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+SPEC	bore	chỉ đổi nhãn	n107	1104C-44TAG2		缸径/行程(mm)=105/127 → 缸径/行程 (mm)=105/127
+SPEC	fuel	chỉ đổi nhãn	n107	1104C-44TAG2		燃油消耗量(L/h)=17.1 → 燃油消耗量 (L/h)=17.1
+SPEC	dims	chỉ đổi nhãn	n107	1104C-44TAG2		外形尺寸(L×W×H)(mm)=2235×730×1595 → 外形尺寸 (L×W×H)(mm)=2235×730×1595
+SPEC	bore	chỉ đổi nhãn	n106	1006TAG		缸径/行程(mm)=100/127 → 缸径/行程 (mm)=100/127
+SPEC	fuel	chỉ đổi nhãn	n106	1006TAG		燃油消耗量(L/h)=24.1 → 燃油消耗量 (L/h)=24.1
+SPEC	dims	chỉ đổi nhãn	n106	1006TAG		外形尺寸(L×W×H)(mm)=2565×730×1575 → 外形尺寸 (L×W×H)(mm)=2565×730×1575
+SPEC	bore	chỉ đổi nhãn	n106	1106A-70TAG2		缸径/行程(mm)=105/135 → 缸径/行程 (mm)=105/135
+SPEC	fuel	chỉ đổi nhãn	n106	1106A-70TAG2		燃油消耗量(L/h)=31 → 燃油消耗量 (L/h)=31
+SPEC	dims	chỉ đổi nhãn	n106	1106A-70TAG2		外形尺寸(L×W×H)(mm)=2565×730×1575 → 外形尺寸 (L×W×H)(mm)=2565×730×1575
+SPEC	bore	chỉ đổi nhãn	n106	1106C-E66TAG4		缸径/行程(mm)=105/127 → 缸径/行程 (mm)=105/127
+SPEC	fuel	chỉ đổi nhãn	n106	1106C-E66TAG4		燃油消耗量(L/h)=31 → 燃油消耗量 (L/h)=31
+SPEC	dims	chỉ đổi nhãn	n106	1106C-E66TAG4		外形尺寸(L×W×H)(mm)=2645×730×1630 → 外形尺寸 (L×W×H)(mm)=2645×730×1630
+SPEC	fuel	chỉ đổi nhãn	n101	4016-61TRG2		燃油消耗量(L/h)=326 → 燃油消耗量 (L/h)=326
+TITLE	n114→n107	DB58	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n107	D1146	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n107	D1146T	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n107	D1146T	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n107	P086TI-1	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n106	P086TI-1	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n106	P086TI	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n106	P126TI	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n106	P126TI-II	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n114→n106	P158LE-1	斗山大宇柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+SPEC	bore	chỉ đổi nhãn	n104	DP222LB	TH-560GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	fuel	chỉ đổi nhãn	n104	DP222LB	TH-560GF	燃油消耗量 (L/h)=130.0 → 燃油消耗量(L/h)=130.0
+SPEC	dims	chỉ đổi nhãn	n104	DP222LB	TH-560GF	长宽高 (L×W×H)(mm)=3600×1420×1700 → 长宽高(L×W×H)(mm)=3600×1420×1700
+SPEC	bore	chỉ đổi nhãn	n104	DP222LC	TH-600GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	fuel	chỉ đổi nhãn	n104	DP222LC	TH-600GF	燃油消耗量 (L/h)=134.0 → 燃油消耗量(L/h)=134.0
+SPEC	dims	chỉ đổi nhãn	n104	DP222LC	TH-600GF	长宽高 (L×W×H)(mm)=3700×1500×1800 → 长宽高(L×W×H)(mm)=3700×1500×1800
+SPEC	bore	chỉ đổi nhãn	n104	DP222LC	TH-640GF	缸径/行程 (mm)=128/142 → 缸径/行程(mm)=128/142
+SPEC	fuel	chỉ đổi nhãn	n104	DP222LC	TH-640GF	燃油消耗量 (L/h)=148.5 → 燃油消耗量(L/h)=148.5
+SPEC	dims	chỉ đổi nhãn	n104	DP222LC	TH-640GF	长宽高 (L×W×H)(mm)=3700×1500×1800 → 长宽高(L×W×H)(mm)=3700×1500×1800
+TITLE	n115→n101	H12V190Z	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H12V190Z	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H16V190ZL	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H16V190ZL	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H16V190ZL	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H16V190ZL	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n115→n101	H16V190ZL	济柴柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 1200KW以上发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD150D15	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD129TD16	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD129TD17	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD135TD19	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD129TAD23	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD135TAD28	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD145TAD30	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n106	WD145TAD33L	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 100KW-300KW发电机组-产品展示_泰州泰海机电设备有限公司
+TITLE	n116→n104	WD287TAD61L	无动柴油发电机组-产品展示_泰州泰海机电设备有限公司 → 500KW-800KW发电机组-产品展示_泰州泰海机电设备有限公司
+THÊM	n101	engine	QSK60-G3	TH-1500GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1875,"kW":1500}}	| TH-1500GF | 1875 | 1500 | QSK60-G3 | 16V | 159/190 | 60 | 187 | 6175×2600×2840 | 15152 |
+THÊM	n101	engine	QSK60-G4	TH-1600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2000,"kW":1600}}	| TH-1600GF | 2000 | 1600 | QSK60-G4 | 16V | 159/190 | 60 | 194 | 6175×2600×2840 | 15366 |
+THÊM	n101	engine	QSK60-G13	TH-1800GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2250,"kW":1800}}	| TH-1800GF | 2250 | 1800 | QSK60-G13 | 16V | 159/190 | 60 | 199 | 6175×2600×2840 | 17217 |
+THÊM	n101	engine	QSK78-G9	TH-2000GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2500,"kW":2000}}	| TH-2000GF | 2500 | 2000 | QSK78-G9 | 16V | 170/190 | 77.6 | 201 | 7158×2800×2900 | 24880 |
+THÊM	n101	engine	QSK78-G6	TH-2400GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":3000,"kW":2400}}	| TH-2400GF | 3000 | 2400 | QSK78-G6 | 16V | 170/190 | 77.6 | 203 | 7158×2800×2900 | 25280 |
+THÊM	n101	engine	4012-46TAG3A	TH-1350GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1687,"kW":1350}}	| TH-1350GF | 1687 | 1350 | 4012-46TAG3A | 12V | 160/190 | 45.842 | 275 | 5220×2130×2600 | 10000 |
+THÊM	n101	engine	4016TAG1A	TH-1500GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1875,"kW":1500}}	| TH-1500GF | 1875 | 1500 | 4016TAG1A | 16V | 160/190 | 61.123 | 287 | 5220×2130×2600 | 13155 |
+THÊM	n101	engine	4016TAG2A	TH-1600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2000,"kW":1600}}	| TH-1600GF | 2000 | 1600 | 4016TAG2A | 16V | 160/190 | 61.123 | 326 | 5770×2800×3520 | 13450 |
+THÊM	n101	engine	4016-61TRG3	TH-1800GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2250,"kW":1800}}	| TH-1800GF | 2250 | 1800 | 4016-61TRG3 | 16V | 160/190 | 61.123 | 326 | 5770×2800×3520 | 13450 |
+THÊM	n101	engine	12V4000G23	TH-1360GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1700,"kW":1360}}	| TH-1360GF | 1700 | 1360 | 12V4000G23 | 12 | 170/210 | 57.2 | 303.3 | 6150×2150×2400 | 13500 |
+THÊM	n101	engine	12V4000G63	TH-1450GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1812,"kW":1450}}	| TH-1450GF | 1812 | 1450 | 12V4000G63 | 12 | 170/210 | 57.2 | 342.3 | 6150×2150×2400 | 14000 |
+THÊM	n101	engine	16V4000G23	TH-1640GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2050,"kW":1640}}	| TH-1640GF | 2050 | 1640 | 16V4000G23 | 16 | 170/210 | 76.3 | 384.3 | 6500×2600×2500 | 17000 |
+THÊM	n101	engine	16V4000G63	TH-1880GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2350,"kW":1880}}	| TH-1880GF | 2350 | 1880 | 16V4000G63 | 16 | 170/210 | 76.3 | 423.3 | 6550×2600×2500 | 17600 |
+THÊM	n101	engine	20V4000G23	TH-2000GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2500,"kW":2000}}	| TH-2000GF | 2500 | 2000 | 20V4000G23 | 20 | 170/210 | 95.4 | 478 | 8300×2950×2550 | 24000 |
+THÊM	n101	engine	20V4000G63	TH-2330GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":2912,"kW":2330}}	| TH-2330GF | 2912 | 2330 | 20V4000G63 | 20 | 170/210 | 95.4 | 518.8 | 8300×2950×2550 | 24500 |
+THÊM	n101	engine	20V4000G63L	TH-2500GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":3125,"kW":2500}}	| TH-2500GF | 3125 | 2500 | 20V4000G63L | 20 | 170/210 | 95.4 | 558.9 | 8300×2950×2550 | 25000 |
+THÊM	n104	engine	KTA38-G2	TH-600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":725,"kW":600}}	| TH-600GF | 725 | 600 | KTA38-G2 | 12V | 159/159 | 37.8 | 206 | 4260×1650×2350 | 6350 |
+THÊM	n104	engine	KTA38-G2B	TH-640GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":800,"kW":640}}	| TH-640GF | 800 | 640 | KTA38-G2B | 12V | 159/159 | 37.8 | 206 | 4260×1650×2350 | 6350 |
+THÊM	n104	engine	KTA38-G2A	TH-720GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":900,"kW":720}}	| TH-720GF | 900 | 720 | KTA38-G2A | 12V | 159/159 | 37.8 | 210 | 4350×1650×2350 | 6650 |
+THÊM	n104	engine	4006-23TAG2A	TH-600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":750,"kW":600}}	| TH-600GF | 750 | 600 | 4006-23TAG2A | 6L | 160/190 | 22.921 | 130 | 4450×1650×2290 | 5413 |
+THÊM	n104	engine	4006-23TAG3A	TH-640GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":800,"kW":640}}	| TH-640GF | 800 | 640 | 4006-23TAG3A | 6L | 160/190 | 22.921 | 130 | 4450×1710×2290 | 5422 |
+THÊM	n104	engine	4008TAG1A	TH-700GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":875,"kW":700}}	| TH-700GF | 875 | 700 | 4008TAG1A | 8V | 160/190 | 30.561 | 163 | 4700×2045×2475 | 7600 |
+THÊM	n104	engine	12V1600G20F	TH-528GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":660,"kW":528}}	| TH-528GF | 660 | 528 | 12V1600G20F | 12 | 122/150 | 21.0 | 191 | 3330×1590×1970 | 4100 |
+THÊM	n104	engine	12V2000G25	TH-520GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":650,"kW":520}}	| TH-520GF | 650 | 520 | 12V2000G25 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000 |
+THÊM	n104	engine	12V2000G65	TH-640GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":800,"kW":640}}	| TH-640GF | 800 | 640 | 12V2000G65 | 12 | 130/150 | 23.88 | 161.2 | 4200×1650×2200 | 7000 |
+THÊM	n104	engine	16V2000G25	TH-728GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":910,"kW":728}}	| TH-728GF | 910 | 728 | 16V2000G25 | 16 | 130/150 | 31.84 | 178.6 | 4500×2000×2300 | 7850 |
+THÊM	n104	engine	SC33W990D2	TH-600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":750,"kW":600}}	| TH-600GF | 750 | 600 | SC33W990D2 | 6L | 180/215 | 32.8 | 215 | 4400×1690×2150 | 7000 |
+THÊM	n104	engine	YC6C1020L-D20	TH-600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":750,"kW":600}}	| TH-600GF | 750 | 600 | YC6C1020L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000
+THÊM	n104	engine	YC6C1070L-D20	TH-640GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":800,"kW":640}}	| TH-640GF | 800 | 640 | YC6C1070L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000
+THÊM	n104	engine	YC6C1220L-D20	TH-720GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":900,"kW":720}}	| TH-720GF | 900 | 720 | YC6C1220L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000
+THÊM	n104	engine	YC6C1320L-D20	TH-800GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1000,"kW":800}}	| TH-800GF | 1000 | 800 | YC6C1320L-D20 | 6L | 200/210 | 39.58 | 195 | 4000×1500×2100 | 7000
+THÊM	n104	engine	WD305TAD68	TH-600GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":750,"kW":600}}	| TH-600GF | 750 | 600 | WD305TAD68 | 12 | 140/165 | 30.5 | 196 | 3700×1700×2200 | 4400
+THÊM	n104	engine	WD327TAD78	TH-720GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":900,"kW":720}}	| TH-720GF | 900 | 720 | WD327TAD78 | 12 | 145/165 | 32.7 | 196 | 3700×1700×2200 | 4400
+THÊM	n104	engine	WD327TAD88	TH-800GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":1000,"kW":800}}	| TH-800GF | 1000 | 800 | WD327TAD88 | 12 | 145/165 | 32.7 | 196 | 3700×1700×2200 | 4400
+THÊM	n106	engine	NT855-GA	TH-200GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":250,"kW":200}}	| TH-200GF | 250 | 200 | NT855-GA | 6L | 140/152 | 14 | 206 | 2980×1000×1700 | 2320 |
+THÊM	n106	engine	MTA11-G2A		dòng đã ở bảng cũ, trước không ra bản ghi	null	| | | | MTA11-G2A | 6L | 125/147 | 10.8 | 200 | 2980×1000×1700 | 2320 |
+THÊM	n106	engine	NTA855-G1B	TH-250GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":312.5,"kW":250}}	| TH-250GF | 312.5 | 250 | NTA855-G1B | 6L | 140/152 | 14 | 207 | 2980×1000×1700 | 2450 |
+THÊM	n106	engine	MTAA11-G3		dòng đã ở bảng cũ, trước không ra bản ghi	null	| | | | MTAA11-G3 | 6L | 125/147 | 10.8 | 188 | 3150×1050×1700 | 2450 |
+THÊM	n106	engine	NTA855-G2A	TH-275GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":343.7,"kW":275}}	| TH-275GF | 343.7 | 275 | NTA855-G2A | 6L | 140/152 | 14 | 206 | 3100×1000×1700 | 2600 |
+THÊM	n106	engine	NTAA855-G7	TH-300GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":375,"kW":300}}	| TH-300GF | 375 | 300 | NTAA855-G7 | 6L | 140/152 | 14 | 204 | 3400×1280×1800 | 3050 |
+THÊM	n106	engine	1106A-70TAG1	TH-100GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":125,"kW":100}}	| TH-100GF | 125 | 100 | 1106A-70TAG1 | 6L | 105/135 | 7.01 | 24.1 | 2565×730×1575 | 1376 |
+THÊM	n106	engine	1006TAG2	TH-120GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":150,"kW":120}}	| TH-120GF | 150 | 120 | 1006TAG2 | 6L | 100/127 | 5.99 | 31 | 2565×730×1575 | 1416 |
+THÊM	n106	engine	1106A-70TAG3	TH-140GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":175,"kW":140}}	| TH-140GF | 175 | 140 | 1106A-70TAG3 | 6L | 105/135 | 7.01 | 31 | 2645×730×1630 | 1644 |
+THÊM	n106	engine	1106A-70TAG4	TH-150GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":187.5,"kW":150}}	| TH-150GF | 187.5 | 150 | 1106A-70TAG4 | 6L | 105/135 | 7.01 | 31 | 2645×730×1630 | 1644 |
+THÊM	n106	engine	1306C-E87TAG3	TH-160GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":200,"kW":160}}	| TH-160GF | 200 | 160 | 1306C-E87TAG3 | 6L | 116.6/135.9 | 8.7 | 36.8 | 3035×900×1525 | 1695 |
+THÊM	n106	engine	1306C-E87TAG4	TH-180GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":225,"kW":180}}	| TH-180GF | 225 | 180 | 1306C-E87TAG4 | 6L | 116.6/135.9 | 8.7 | 39.7 | 3035×900×1525 | 1695 |
+THÊM	n106	engine	1306C-E87TAG6	TH-200GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":250,"kW":200}}	| TH-200GF | 250 | 200 | 1306C-E87TAG6 | 6L | 116.6/135.9 | 8.7 | 42.6 | 3035×900×1525 | 2035 |
+THÊM	n106	engine	2206A-E13TAG2	TH-280GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":350,"kW":280}}	| TH-280GF | 350 | 280 | 2206A-E13TAG2 | 6L | 130/157 | 12.5 | 54 | 3500×1105×1960 | 3385 |
+THÊM	n106	engine	6R1600G10F	TH-224GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":280,"kW":224}}	| TH-224GF | 280 | 224 | 6R1600G10F | 6 | 122/150 | 10.5 | 201 | 3000×1335×1880 | 2795 |
+THÊM	n106	engine	6R1600G20F	TH-250GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":312.5,"kW":250}}	| TH-250GF | 312.5 | 250 | 6R1600G20F | 6 | 122/150 | 10.5 | 199 | 3000×1335×1880 | 2795 |
+THÊM	n106	engine	8V1600G10F	TH-300GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":375,"kW":300}}	| TH-300GF | 375 | 300 | 8V1600G10F | 8 | 122/150 | 14.0 | 191 | 3000×1590×1940 | 3570 |
+THÊM	n106	engine	SC8D220D2	TH-120GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":150,"kW":120}}	| TH-120GF | 150 | 120 | SC8D220D2 | 6L | 114/135 | 8.28 | 200 | 2700×1000×1500 | 2200 |
+THÊM	n106	engine	SC7H250D2	TH-150GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":187.5,"kW":150}}	| TH-150GF | 187.5 | 150 | SC7H250D2 | 6L | 105/124 | 6.5 | 193 | 2700×1000×1500 | 2250 |
+THÊM	n106	engine	SC8D280D2	TH-160GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":200,"kW":160}}	| TH-160GF | 200 | 160 | SC8D280D2 | 6L | 114/135 | 8.28 | 200 | 2700×1000×1500 | 2250 |
+THÊM	n106	engine	SC13G310D2	TH-180GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":225,"kW":180}}	| TH-180GF | 225 | 180 | SC13G310D2 | 6L | 135/150 | 12.88 | 200 | 2700×1000×1500 | 2250 |
+THÊM	n106	engine	SC9D340D2	TH-200GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":250,"kW":200}}	| TH-200GF | 250 | 200 | SC9D340D2 | 6L | 114/144 | 8.82 | 195 | 3000×1080×1700 | 2350 |
+THÊM	n106	engine	SC13G420D2	TH-250GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":312.5,"kW":250}}	| TH-250GF | 312.5 | 250 | SC13G420D2 | 6L | 135/150 | 12.88 | 200 | 3150×1240×1750 | 2500 |
+THÊM	n106	engine	SC12E460D2	TH-270GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":337.5,"kW":270}}	| TH-270GF | 337.5 | 270 | SC12E460D2 | 6L | 128/153 | 11.8 | 192 | 3160×1400×1750 | 2500 |
+THÊM	n106	engine	YC6A200L-D20	TH-120GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":150,"kW":120}}	| TH-120GF | 150 | 120 | YC6A200L-D20 | 6L | 108/132 | 7.252 | 192 | 2600×1000×1700 | 1700
+THÊM	n106	engine	YC6A230L-D20	TH-150GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":187.5,"kW":150}}	| TH-150GF | 187.5 | 150 | YC6A230L-D20 | 6L | 108/132 | 7.252 | 192 | 2700×1000×1700 | 1770
+THÊM	n106	engine	YC6G245L-D20	TH-160GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":200,"kW":160}}	| TH-160GF | 200 | 160 | YC6G245L-D20 | 6L | 112/132 | 7.8 | 195 | 2700×1000×1700 | 1770
+THÊM	n106	engine	YC6M350L-D20	TH-180GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":225,"kW":180}}	| TH-180GF | 225 | 180 | YC6M350L-D20 | 6L | 120/145 | 9.839 | 197 | 3010×1040×1820 | 2450
+THÊM	n106	engine	YC6M350L-D20	TH-200GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":250,"kW":200}}	| TH-200GF | 250 | 200 | YC6M350L-D20 | 6L | 120/145 | 9.839 | 197 | 3010×1040×1820 | 2450
+THÊM	n106	engine	YC6MK420L-D20	TH-250GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":312.5,"kW":250}}	| TH-250GF | 312.5 | 250 | YC6MK420L-D20 | 6L | 123/145 | 10.338 | 195 | 3010×1040×1820 | 2450
+THÊM	n106	engine	YC6MJ480L-D20	TH-300GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":375,"kW":300}}	| TH-300GF | 375 | 300 | YC6MJ480L-D20 | 6L | 131/145 | 11.726 | 195 | 3010×1040×1820 | 2450
+THÊM	n107	engine	4B3.9-G2	TH-15GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":18.75,"kW":15}}	| TH-15GF | 18.75 | 15 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |
+THÊM	n107	engine	4B3.9-G2	TH-20GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":25,"kW":20}}	| TH-20GF | 25 | 20 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |
+THÊM	n107	engine	4B3.9-G2	TH-24GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":30,"kW":24}}	| TH-24GF | 30 | 24 | 4B3.9-G2 | 4L | 102/120 | 3.9 | 209 | 1660×750×1200 | 800 |
+THÊM	n107	engine	4BT3.9-G2	TH-32GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":40,"kW":32}}	| TH-32GF | 40 | 32 | 4BT3.9-G2 | 4L | 102/120 | 3.9 | 210 | 1660×750×1200 | 810 |
+THÊM	n107	engine	4BTA3.9-G2	TH-48GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":60,"kW":48}}	| TH-48GF | 60 | 48 | 4BTA3.9-G2 | 4L | 102/120 | 3.9 | 210 | 1860×750×1200 | 850 |
+THÊM	n107	engine	6BT5.9-G2	TH-64GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":80,"kW":64}}	| TH-64GF | 80 | 64 | 6BT5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1040 |
+THÊM	n107	engine	6BT5.9-G2	TH-75GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":93.75,"kW":75}}	| TH-75GF | 93.75 | 75 | 6BT5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1056 |
+THÊM	n107	engine	6BTA5.9-G2	TH-92GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":115,"kW":92}}	| TH-92GF | 115 | 92 | 6BTA5.9-G2 | 6L | 102/120 | 5.9 | 206 | 2160×800×1300 | 1096 |
+THÊM	n107	engine	403D-11G	TH-8GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":10,"kW":8}}	| TH-8GF | 10 | 8 | 403D-11G | 3L | 77/81 | 1.131 | 2.0 | 1100×450×940 | 290 |
+THÊM	n107	engine	403D-15G	TH-10GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":12.5,"kW":10}}	| TH-10GF | 12.5 | 10 | 403D-15G | 3L | 84/90 | 1.496 | 3.2 | 1200×500×1000 | 380 |
+THÊM	n107	engine	404D-22G	TH-16GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":20,"kW":16}}	| TH-16GF | 20 | 16 | 404D-22G | 4L | 84/100 | 2.216 | 4.0 | 1350×530×1000 | 456 |
+THÊM	n107	engine	404D-22TG	TH-20GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":25,"kW":20}}	| TH-20GF | 25 | 20 | 404D-22TG | 4L | 84/100 | 2.216 | 5.0 | 1350×530×1000 | 480 |
+THÊM	n107	engine	1103A-33G	TH-24GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":30,"kW":24}}	| TH-24GF | 30 | 24 | 1103A-33G | 3L | 105/127 | 3.3 | 5.4 | 1740×730×1565 | 762 |
+THÊM	n107	engine	1103A-33TG1	TH-36GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":45,"kW":36}}	| TH-36GF | 45 | 36 | 1103A-33TG1 | 3L | 105/127 | 3.3 | 8.2 | 2030×730×1565 | 870 |
+THÊM	n107	engine	1104A-44TG1	TH-50GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":62.5,"kW":50}}	| TH-50GF | 62.5 | 50 | 1104A-44TG1 | 4L | 105/127 | 4.4 | 11.2 | 2135×730×1595 | 978 |
+THÊM	n107	engine	1104A-44TG2	TH-64GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":80,"kW":64}}	| TH-64GF | 80 | 64 | 1104A-44TG2 | 4L | 105/127 | 4.4 | 14.0 | 2135×730×1595 | 1018 |
+THÊM	n107	engine	1006TG1A	TH-75GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":93.7,"kW":75}}	| TH-75GF | 93.7 | 75 | 1006TG1A | 6L | 100/127 | 5.99 | 16.5 | 2235×730×1595 | 1050 |
+THÊM	n107	engine	1006TG2A	TH-80GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":100,"kW":80}}	| TH-80GF | 100 | 80 | 1006TG2A | 6L | 100/127 | 5.99 | 16.5 | 2235×730×1595 | 1050 |
+THÊM	n107	engine	D226B-3D	TH-15GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":18.75,"kW":15}}	| TH-15GF | 18.75 | 15 | D226B-3D | 3L | 105/120 | 6.5 | 1620×780×1200 | 780
+THÊM	n107	engine	D226B-3D	TH-20GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":25,"kW":20}}	| TH-20GF | 25 | 20 | D226B-3D | 3L | 105/120 | 6.5 | 1620×780×1200 | 780
+THÊM	n107	engine	D226B-3D	TH-24GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":30,"kW":24}}	| TH-24GF | 30 | 24 | D226B-3D | 3L | 105/120 | 9.6 | 1620×780×1200 | 780
+THÊM	n107	engine	D226B-3D	TH-30GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":37.5,"kW":30}}	| TH-30GF | 37.5 | 30 | D226B-3D | 3L | 105/120 | 13.6 | 1620×780×1200 | 780
+THÊM	n107	engine	TD226B-3D	TH-48GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":60,"kW":48}}	| TH-48GF | 60 | 48 | TD226B-3D | 3L | 105/120 | 20.8 | 1950×750×1650 | 810
+THÊM	n107	engine	WP4D66E200	TH-50GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":62.5,"kW":50}}	| TH-50GF | 62.5 | 50 | WP4D66E200 | 4L | 105/130 | 26.4 | 1950×750×1650 | 950
+THÊM	n107	engine	WP4D100E200	TH-64GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":80,"kW":64}}	| TH-64GF | 80 | 64 | WP4D100E200 | 4L | 105/130 | 30.3 | 2230×840×1700 | 1210
+THÊM	n107	engine	WP4D100E200	TH-80GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":100,"kW":80}}	| TH-80GF | 100 | 80 | WP4D100E200 | 4L | 105/130 | 30.3 | 2230×840×1700 | 1210
+THÊM	n107	engine	WP4D108E200	TH-90GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":112.5,"kW":90}}	| TH-90GF | 112.5 | 90 | WP4D108E200 | 4L | 105/130 | 30.3 | 2230×840×1700 | 1210
+THÊM	n107	engine	WP6D132E200	TH-100GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":125,"kW":100}}	| TH-100GF | 125 | 100 | WP6D132E200 | 6L | 105/130 | 31.5 | 2300×840×1740 | 1350
+THÊM	n107	engine	SC4H95D2	TH-40GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":50,"kW":40}}	| TH-40GF | 50 | 40 | SC4H95D2 | 4L | 105/124 | 4.3 | 204 | 2200×760×1380 | 1450
+THÊM	n107	engine	SC4H95D2	TH-50GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":62.5,"kW":50}}	| TH-50GF | 62.5 | 50 | SC4H95D2 | 4L | 105/124 | 4.3 | 204 | 2200×760×1380 | 1450
+THÊM	n107	engine	SC4H115D2	TH-68GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":85,"kW":68}}	| TH-68GF | 85 | 68 | SC4H115D2 | 4L | 105/124 | 4.3 | 204 | 2200×760×1380 | 1485
+THÊM	n107	engine	SC4H160D2	TH-90GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":112.5,"kW":90}}	| TH-90GF | 112.5 | 90 | SC4H160D2 | 4L | 105/124 | 4.3 | 198 | 2500×870×1340 | 1850
+THÊM	n107	engine	SC4H180D2	TH-100GF	dòng đã ở bảng cũ, trước không ra bản ghi	{"prime":{"kVA":125,"kW":100}}	| TH-100GF | 125 | 100 | SC4H180D2 | 4L | 105/124 | 4.3 | 198 | 2500×870×1340 | 1860
+THÊM	n107	engine	F2L912	TH-12GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":15,"kW":12}}	| TH-12GF | 15 | 12 | F2L912 | 2L | 100/120 | 4 | 1400×800×1100 | 500
+THÊM	n107	engine	F3L912	TH-20GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":25,"kW":20}}	| TH-20GF | 25 | 20 | F3L912 | 3L | 100/120 | 4 | 1700×800×1100 | 700
+THÊM	n107	engine	F4L912	TH-24GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":30,"kW":24}}	| TH-24GF | 30 | 24 | F4L912 | 4L | 100/120 | 9.7 | 1900×800×1150 | 800
+THÊM	n107	engine	F4L912T	TH-36GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":45,"kW":36}}	| TH-36GF | 45 | 36 | F4L912T | 4L | 102/125 | 9.7 | 2000×800×1150 | 950
+THÊM	n107	engine	F6L912	TH-40GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":50,"kW":40}}	| TH-40GF | 50 | 40 | F6L912 | 6L | 100/120 | 14.5 | 2250×800×1150 | 1150
+THÊM	n107	engine	F6L912T	TH-48GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":60,"kW":48}}	| TH-48GF | 60 | 48 | F6L912T | 6L | 100/120 | 14.5 | 2250×800×1150 | 1200
+THÊM	n107	engine	BF6L913	TH-64GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":80,"kW":64}}	| TH-64GF | 80 | 64 | BF6L913 | 6L | 102/125 | 24.9 | 2400×800×1250 | 1300
+THÊM	n107	engine	BF6L913C	TH-76GF	dòng ngoài mọi bảng cũ	{"prime":{"kVA":95,"kW":76}}	| TH-76GF | 95 | 76 | BF6L913C | 6L | 102/125 | 30.7 | 2500×800×1350 | 1500

@@ -1,0 +1,391 @@
+1. luật hiện tại TÁCH	acepow-fuan n109	8 dòng	| 3Phases/60Hz/220V/PF=0.8 | | Brand | Engine
+1. luật hiện tại TÁCH	acepow-fuan n114	32 dòng	| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power
+1. luật hiện tại TÁCH	acepow-fuan n126	38 dòng	| Engine Model | | | | |
+1. luật hiện tại TÁCH	acepow-fuan n128	38 dòng	| | Engine Model | | |
+1. luật hiện tại TÁCH	acepow-fuan n129	38 dòng	| GENSET | Alternator | Engine Model
+1. luật hiện tại TÁCH	acepow-fuan n130	38 dòng	| Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator
+1. luật hiện tại TÁCH	acepow-fuan n131	38 dòng	| Model | Frequency | Genset power(KW) | Engine Model | Engine Power(KW) | Alternator Mode
+1. luật hiện tại TÁCH	acepow-fuan n132	38 dòng	| 60HZ Three Phase Genset | Engine Model |
+1. luật hiện tại TÁCH	acepow-fuan n133	38 dòng	| Frequency | Speed | Engine Model
+1. luật hiện tại TÁCH	agestar n105	20 dòng	| Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions |
+1. luật hiện tại TÁCH	agestar n116	20 dòng	| Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions |
+1. luật hiện tại TÁCH	baifa-power n101	165 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUF ACTURER / COU
+1. luật hiện tại TÁCH	baifa-power n101	55 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+1. luật hiện tại TÁCH	baifa-power n101	67 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+1. luật hiện tại TÁCH	baifa-power n101	81 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR
+1. luật hiện tại TÁCH	baifa-power n103	55 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+1. luật hiện tại TÁCH	baifa-power n103	67 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+1. luật hiện tại TÁCH	baifa-power n103	81 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR
+1. luật hiện tại TÁCH	baifa-power n103	91 dòng	| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUF ACTURER / COU
+1. luật hiện tại TÁCH	baifa-power n106	36 dòng	| | POWERED BY VOLVO | 1800RPM | TIER 2
+1. luật hiện tại TÁCH	baudouin n116	11 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	baudouin n120	15 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	baudouin n121	9 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	baudouin n122	13 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	baudouin n123	14 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	baudouin n124	9 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+1. luật hiện tại TÁCH	chuangyuan-zhongshan n103	56 dòng	| 序号 | 主用功率 (KW) | 额定电压 (V) | 额定转速 (RPM) | 额定功率因数 | 频率 (HZ) | 参考机组尺寸 （长*宽*高）mm | 参考重量 (KG)
+1. luật hiện tại TÁCH	chuangyuan-zhongshan n104	60 dòng	| | 重康系列机组参数 | 发动机技术参数表
+1. luật hiện tại TÁCH	comappower n101	30 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n102	84 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n103	72 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n104	24 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n105	67 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n106	68 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n107	41 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n108	30 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n109	16 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n110	34 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n111	41 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	comappower n113	28 dòng	| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinde
+1. luật hiện tại TÁCH	excel-power-ningde n101	22 dòng	| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n103	48 dòng	| Genset Model | 60Hz,200/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n104	18 dòng	| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n106	70 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n109	50 dòng	| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n110	35 dòng	| Genset Model | 60Hz,220/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n111	51 dòng	| Genset Model | 60Hz,220/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n113	29 dòng	| Genset Nodel | Continuous output | Standby output | EVOL Engine model | Fuel Consumption
+1. luật hiện tại TÁCH	excel-power-ningde n114	16 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n115	10 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n116	35 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n117	28 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n118	48 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	excel-power-ningde n119	18 dòng	| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dime
+1. luật hiện tại TÁCH	frs-shenyang n106	53 dòng	| 机组技术参数 | 发动机技术参数
+1. luật hiện tại TÁCH	gordon-power n108	35 dòng	| Genset Perfomance | Engine Performance | Dimension(L×W×H)
+1. luật hiện tại TÁCH	gordon-power n117	28 dòng	| Model | Output | Current | Pole | Frq. | Speed
+1. luật hiện tại TÁCH	gtl-power n102	23 dòng	| Model | 1800 rmp/480v 3P 4W/60HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight
+1. luật hiện tại TÁCH	gtl-power n103	36 dòng	| Model | 1800 rmp/480v 3P 4W/60HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight
+1. luật hiện tại TÁCH	gtl-power n104	26 dòng	| Model | 1800 rmp/480v 3P 4W/60HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight
+1. luật hiện tại TÁCH	gtl-power n112	11 dòng	| Model | 1800 rmp/480v 3P 4W/60HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight
+1. luật hiện tại TÁCH	hosem-power n113	74 dòng	| Model (60Hz) | Standby Power | Prime Power | Engine Model | Dimension | Weight | Datashe
+1. luật hiện tại TÁCH	huayuan-weifang n102	40 dòng	| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）
+1. luật hiện tại TÁCH	jet-power n122	24 dòng	| Model | 400V / 50Hz / 1500rpm | VOLVO PENTA Diesel Engine |
+1. luật hiện tại TÁCH	kaihua-genset n101	19 dòng	| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n102	20 dòng	| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	kaihua-genset n103	62 dòng	| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	kaihua-genset n104	66 dòng	| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	kaihua-genset n105	79 dòng	| Gerset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n106	44 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n107	24 dòng	| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+1. luật hiện tại TÁCH	kaihua-genset n108	31 dòng	| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+1. luật hiện tại TÁCH	kaihua-genset n109	46 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	kaihua-genset n111	57 dòng	| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)
+1. luật hiện tại TÁCH	kaihua-genset n113	66 dòng	| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)
+1. luật hiện tại TÁCH	kaihua-genset n114	76 dòng	| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+1. luật hiện tại TÁCH	kaihua-genset n117	17 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	kaihua-genset n118	15 dòng	| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n119	76 dòng	| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimen
+1. luật hiện tại TÁCH	kaihua-genset n120	60 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n121	54 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n122	73 dòng	| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension 
+1. luật hiện tại TÁCH	kaihua-genset n123	44 dòng	| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+1. luật hiện tại TÁCH	kaihua-genset n126	36 dòng	| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight
+1. luật hiện tại TÁCH	keliang-fuan n116	76 dòng	| Gensets | Technical Data of Diesel Engine(60hz/1800rpm) | Alternator | Size & Weight
+1. luật hiện tại TÁCH	lees-power n133	20 dòng	| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weigh
+1. luật hiện tại TÁCH	lees-power n134	18 dòng	| Model | Electrical Power KW | Electrical Efficiency | Gas Consumption | Open Type | Soun
+1. luật hiện tại TÁCH	legapower n101	54 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	legapower n104	26 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	legapower n105	54 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	legapower n106	34 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	legapower n107	54 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	legapower n109	23 dòng	| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet
+1. luật hiện tại TÁCH	longkai-power n108	86 dòng	| GENSET MODEL | ESP | PRP | ENGINE TYPE | ALTERNATOR | DIMENSION | DATASHEET
+1. luật hiện tại TÁCH	longkai-power n113	112 dòng	| Model | KW/3PH/60Hz | Dimension(cm) | Weight(kg) | PDF
+1. luật hiện tại TÁCH	longkai-power n119	43 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n120	77 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n121	132 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n124	32 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n125	68 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n127	32 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n128	44 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	longkai-power n129	87 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+1. luật hiện tại TÁCH	mamo-power n101	65 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n102	32 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n105	89 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n106	39 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n107	12 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n108	37 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n111	58 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mamo-power n112	106 dòng	| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER
+1. luật hiện tại TÁCH	mecca-power n103	54 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n104	68 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n105	24 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n110	50 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n112	36 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n113	40 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n134	45 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n136	42 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n144	34 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | W
+1. luật hiện tại TÁCH	mecca-power n182	33 dòng	| Model | LTP | PRP | Engine | Fuel Cons. | Cyl. | Disp. | Gov. | Dimention | Weight
+1. luật hiện tại TÁCH	minsun-motor n116	55 dòng	| Model | Output (kW) | Voltage(V) | Current (A) | Power factor | Speed | Pole number | Di
+1. luật hiện tại TÁCH	nenjo-generator n103	83 dòng	| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标
+1. luật hiện tại TÁCH	nenjo-generator n104	138 dòng	| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 50Hz，1500rpm | 排放标准 Emission level
+1. luật hiện tại TÁCH	nenjo-generator n105	83 dòng	| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标
+1. luật hiện tại TÁCH	nenjo-generator n108	162 dòng	| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 50Hz，1500rpm | 排放标准 Emission level
+1. luật hiện tại TÁCH	nenjo-generator n119	91 dòng	| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 机组功率 Genset 
+1. luật hiện tại TÁCH	nenjo-generator n142	30 dòng	| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine
+1. luật hiện tại TÁCH	nenjo-generator n146	46 dòng	| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine
+1. luật hiện tại TÁCH	nenjo-generator n150	187 dòng	| 型号 Model | 排放阶段 Emission Level | 柴油机型号 Engine model | 柴油机常用功率/转速 | 柴油机备用功率/转速 | 发电机组常用功率
+1. luật hiện tại TÁCH	nenjo-generator n154	123 dòng	| 型号 Model | 柴油机型号 Engine model | 柴油机额定功率/转速 Engine prime power （KW/rpm) | 柴油机最大功率/转速 Engi
+1. luật hiện tại TÁCH	pauway-tianjin n102	126 dòng	| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载
+1. luật hiện tại TÁCH	pauway-tianjin n103	22 dòng	| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载
+1. luật hiện tại TÁCH	pauway-tianjin n104	67 dòng	| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载
+1. luật hiện tại TÁCH	pauway-tianjin n105	148 dòng	| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载
+1. luật hiện tại TÁCH	pauway-tianjin n106	27 dòng	| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载
+1. luật hiện tại TÁCH	powerzoo n168	8 dòng	| | Model | Prime Power (kW/kVA) | Standby Power (kW/kVA) | Engine | Details
+1. luật hiện tại TÁCH	previa-ningde n101	44 dòng	| ENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n102	132 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n103	77 dòng	| ENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n106	72 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n107	32 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n108	68 dòng	| ENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n111	43 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n112	32 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	previa-ningde n113	87 dòng	| GENSET MODEL | ESP | PRP | Engine type | Dimension
+1. luật hiện tại TÁCH	rcg-power n101	19 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n102	9 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n104	48 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n107	24 dòng	| R-XC313D5-S | 313kVA / 250kW | 344kVA / 275kW | CA6DM2J-39D | WR444ES | PDF
+1. luật hiện tại TÁCH	rcg-power n108	56 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n111	12 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n112	193 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rcg-power n124	22 dòng	| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+1. luật hiện tại TÁCH	rcg-power n124	31 dòng	| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+1. luật hiện tại TÁCH	rcg-power n126	26 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+1. luật hiện tại TÁCH	rise-power n122	19 dòng	| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight
+1. luật hiện tại TÁCH	shengfeng-fuan n106	34 dòng	| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)
+1. luật hiện tại TÁCH	shengfeng-fuan n111	34 dòng	| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)
+1. luật hiện tại TÁCH	sincro-soga n127	21 dòng	| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | 
+1. luật hiện tại TÁCH	taihai-taizhou n102	10 dòng	| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程(mm) | 排气量(L) | 燃油消耗量(L/h) | 外形尺寸 (L×W×H)(mm) | 重量 | 技术文
+1. luật hiện tại TÁCH	taihai-taizhou n103	12 dòng	| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (L/h) | 外形尺寸 (L×W×H)(mm) | 重量 | 
+1. luật hiện tại TÁCH	taihai-taizhou n105	40 dòng	| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量(L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重量
+1. luật hiện tại TÁCH	taylor-power n103	14 dòng	| | Model | Model | kW | Engine | Spec Sheet
+1. luật hiện tại TÁCH	taylor-power n104	43 dòng	| | Model | Model | kW | Engine | Spec Sheet
+1. luật hiện tại TÁCH	victory-generator n110	117 dòng	| Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consum
+1. luật hiện tại TÁCH	victory-generator n111	23 dòng	| Genset Model | Prime Power | Standby Power | Engine model | Emission Standards | Bore*St
+1. luật hiện tại TÁCH	victory-generator n112	67 dòng	| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consum
+1. luật hiện tại TÁCH	voltgent n102	157 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n103	71 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n104	63 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n106	36 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n107	32 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n108	35 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n109	40 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n110	83 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n111	81 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n112	14 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	voltgent n113	19 dòng	| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Powe
+1. luật hiện tại TÁCH	westinpower n110	46 dòng	| Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Cons
+1. luật hiện tại TÁCH	world-power-fuzhou n101	96 dòng	| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD
+1. luật hiện tại TÁCH	world-power-fuzhou n103	39 dòng	| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD
+1. luật hiện tại TÁCH	world-power-fuzhou n103	58 dòng	| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD
+1. luật hiện tại TÁCH	world-power-fuzhou n104	36 dòng	| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD
+1. luật hiện tại TÁCH	wudong-wuxi n105	42 dòng	| 型号 | 常用功率 | 备用功率 | 发动机 | 发电机 | 敞开式 | 静音型
+1. luật hiện tại TÁCH	xingguang-jiangsu n104	32 dòng	| 大连 道依茨 机组型号 | 机组输出 功率 (KW/KVA) | 柴油机 型号 | 柴油机功率（ KW ） 主 / 备用 | 缸径 | 缸数 | 机油 容量 （ L ） | 燃
+1. luật hiện tại TÁCH	xingguang-jiangsu n120	85 dòng	| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+1. luật hiện tại TÁCH	xingguang-jiangsu n121	118 dòng	| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+1. luật hiện tại TÁCH	xingguang-jiangsu n122	68 dòng	| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+1. luật hiện tại TÁCH	xingguang-jiangsu n123	83 dòng	| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+1. luật hiện tại TÁCH	yanan-power n101	210 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n102	71 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n103	75 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n104	96 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n105	41 dòng	| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylin
+1. luật hiện tại TÁCH	yanan-power n106	159 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO.of Cylinder | Detail Data
+1. luật hiện tại TÁCH	yanan-power n107	41 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n108	16 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n109	41 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n110	18 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanan-power n111	32 dòng	| Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Dat
+1. luật hiện tại TÁCH	yanfa-yancheng n107	45 dòng	| 发电机组型号 Generator Model | 备用功率 Reserve Power | 常用功率 Normal power | 发动机型谱 Engine Spectrum 
+1. luật hiện tại TÁCH	yanmar n101	20 dòng	| | Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series
+2. khối không phải bảng công suất	engine-traits n201	1 dòng	| Dimensions | Length x Width x Height | mm | 655 x 517.5 x 622
+2. khối không phải bảng công suất	kubota-japan n106	1 dòng	| L5-30R | - | N/A
+2. khối không phải bảng công suất	kubota-japan n107	1 dòng	| L5-30R | - | N/A
+2. khối không phải bảng công suất	mwm n105	5 dòng	| | TCG 2020 V12 RW = Optimized for high total efficiency at requested power XW = Optimize
+2. khối không phải bảng công suất	yongcai-elecmama n102	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n103	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n104	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n105	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n107	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n108	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n109	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n110	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n111	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n112	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n113	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n114	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n118	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n119	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n120	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n121	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n122	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n123	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n124	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n125	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n126	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n127	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n128	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n129	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n130	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n131	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n132	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n133	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n134	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Engine Speed | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n145	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n147	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n148	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n149	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n150	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n151	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n153	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n155	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n156	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n157	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n158	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n159	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n160	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n161	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n162	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n163	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n164	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n165	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n166	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n167	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n168	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+2. khối không phải bảng công suất	yongcai-elecmama n169	10 dòng	| Frequency | 3P Voltage | Line Voltage | Phase Voltage | Remark
+3. không tách: dưới 3 ô	acepow-fuan n124	2 dòng	| Model | BF4M1013EC
+3. không tách: dưới 3 ô	aj-power n101	36 dòng	| Model | AJ10
+3. không tách: dưới 3 ô	aj-power n102	35 dòng	| Model | AJ33
+3. không tách: dưới 3 ô	aj-power n103	27 dòng	| Model | AJ280
+3. không tách: dưới 3 ô	aj-power n104	37 dòng	| Model | AJ800
+3. không tách: dưới 3 ô	bruno-generators n101	8 dòng	| SINGLE-PHASE | | | | | | | | | | | | | | | | | | | | | | | | |
+3. không tách: dưới 3 ô	huachai-deutz n114	7 dòng	| Output Power | 500 kW
+3. không tách: dưới 3 ô	keliang-fuan n101	90 dòng	| | CONTINUOUS DUTY(H/125K) | STAND-BY(H/163K)
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n101	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n102	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n103	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n104	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n105	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n106	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n107	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n108	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n109	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n110	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n111	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n112	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n113	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n114	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n115	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n116	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n117	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n118	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n119	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n120	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n121	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n122	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n123	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n124	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n125	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n126	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n127	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n128	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n129	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n130	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n131	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n132	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n133	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n134	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n135	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n136	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n137	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n138	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n139	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n140	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n141	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n142	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n143	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n144	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n145	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n146	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n147	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n148	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n149	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n150	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n151	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n152	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n153	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n154	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n155	2 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n156	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n157	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề	younes-bros n158	3 dòng	| | Manufacturer | Model | Year
+3. không tách: hẹp dưới 60 % tiêu đề + trùng dưới 60 % ô	senci-jiangsu n106	36 dòng	| | | 6CTAA8.3-G9 | | | | | ≤ | 国Ⅱ | |
+3. không tách: trùng dưới 60 % ô	acepow-fuan n103	1 dòng	| Noise: | 70-75dB | Type: | Silent(super Silent)or Open,Container
+3. không tách: trùng dưới 60 % ô	acepow-fuan n105	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n106	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n107	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n143	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n144	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n150	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	acepow-fuan n152	3 dòng	| Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm | Net kg (lb) | Gros
+3. không tách: trùng dưới 60 % ô	agg-fuzhou n116	10 dòng	| CU1375G5-NG | 1375/1100 | K50N-G11H | Cummins
+3. không tách: trùng dưới 60 % ô	baudouin n118	12 dòng	| 50Hz | kWm | | kWe | kVA | RPM |
+3. không tách: trùng dưới 60 % ô	eastern-lion-fuan n122	1 dòng	| 60HZ Engine By Yuxing Series | 24 – 371 kW | 0 | — | — | — | View details →
+3. không tách: trùng dưới 60 % ô	engine-traits n604	6 dòng	| Performance | Alternator Output | V-A | 12V-110 |  |
+3. không tách: trùng dưới 60 % ô	excel-power-ningde n102	28 dòng	| Generator Set Model | Continuous output | Standby output | EPA Perkins Engine Model | Fu
+3. không tách: trùng dưới 60 % ô	excel-power-ningde n112	52 dòng	| Generator Set Model | Continuous output | Standby output | EPA Perkins Engine Model | Fu
+3. không tách: trùng dưới 60 % ô	fdk-energy n105	1 dòng	| CC1000-H2 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2 | Cummins (CCEC CHINA) | S
+3. không tách: trùng dưới 60 % ô	fdk-energy n107	1 dòng	| CG825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G5 | Cummins (India) | Stamford
+3. không tách: trùng dưới 60 % ô	gtl-power n105	8 dòng	| Alternator | Model | RF-15
+3. không tách: trùng dưới 60 % ô	huachai-deutz n104	1 dòng	| Fan power consumption | kW | ≤14.1
+3. không tách: trùng dưới 60 % ô	huachai-deutz n130	1 dòng	| Fan power consumption | kW | ≤14
+3. không tách: trùng dưới 60 % ô	jichai n109	2 dòng	| Description | Gensets Model | Rated power kw | Rotation speed r/min | Engine model | Hyd
+3. không tách: trùng dưới 60 % ô	jichai n111	4 dòng	| Genset Model | Engine model | Alternator Model | Power kW | voltage | RPM,r/min | Freque
+3. không tách: trùng dưới 60 % ô	jichai n112	5 dòng	| Genset Model | Engine model | Alternator model | Power kW | voltage | RPM,r/min | Freque
+3. không tách: trùng dưới 60 % ô	jichai n113	4 dòng	| Genset Model | Engine model | Alternator Model | Power kW | voltage | RPM,r/min | Freque
+3. không tách: trùng dưới 60 % ô	kaihua-genset n124	36 dòng	| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension 
+3. không tách: trùng dưới 60 % ô	kaihua-genset n125	40 dòng	| Senset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension 
+3. không tách: trùng dưới 60 % ô	keliang-fuan n108	24 dòng	| Model | Output (KW) | Output (KVA) | Current(A) | Pole Number | Sychronous Speed (r.p.m)
+3. không tách: trùng dưới 60 % ô	keliang-fuan n124	19 dòng	| Model | Output (kW) | Current(A) | Voltage(V) | Power Factor CosØ | Pole Number | Speed 
+3. không tách: trùng dưới 60 % ô	kena-chongqing n101	7 dòng	| Model | 618ZLD | Fuel | Diesel
+3. không tách: trùng dưới 60 % ô	kena-chongqing n103	7 dòng	| Model | PHF4056ZD1 | Fuel | Diesel
+3. không tách: trùng dưới 60 % ô	kubota-japan n109	2 dòng	| Armature Connection | - | Star with neutral
+3. không tách: trùng dưới 60 % ô	kubota-japan n128	2 dòng	| Armature Connection | - | Star with neutral
+3. không tách: trùng dưới 60 % ô	mwm n102	20 dòng	| | Engine type Configuration | TCG 3020 V16 P+ High Efficiency plus 25H2-Kit = Optimized 
+3. không tách: trùng dưới 60 % ô	pauway-tianjin n107	1 dòng	| | | | 高度 | mm | 2534
+3. không tách: trùng dưới 60 % ô	rcg-power n120	8 dòng	| R-C800D5-S | 800 kVA / 640 kW | 880 kVA / 704 kW | QSK23-G3 | TAL-A49-D | PDF
+3. không tách: trùng dưới 60 % ô	sevenpower-chengdu n106	4 dòng	| Certificate | — | CE
+3. không tách: trùng dưới 60 % ô	sevenpower-chengdu n122	1 dòng	| RPM | — | 1500
+3. không tách: trùng dưới 60 % ô	shunfeng-changzhou n105	7 dòng	| 发电机 | 品牌 | Alternator Brand | MeccAlte | MeccAlte
+3. không tách: trùng dưới 60 % ô	simpson-power n103	22 dòng	| SP1100D-M | 1100/1375 | MITSUBISHI | S12R-PTA | 4850×1900×2570 | SP1100D-M.pdf
+3. không tách: trùng dưới 60 % ô	simpson-power n112	26 dòng	| SP1100D-Y | 1100/1375 | 玉柴 | YC12VC1680L-D20 | 5253×2136×2757 | SP1100D-Y.pdf
+3. không tách: trùng dưới 60 % ô	sunkings n117	7 dòng	| Model | | Type | Brushless sel-excited
+3. không tách: trùng dưới 60 % ô	sunkings n117	7 dòng	| Model | | Type | Brushless sel-excited
+3. không tách: trùng dưới 60 % ô	taylor-power n101	10 dòng	| TA65JD kW: 65 Engine: John Deere, 4045HF280D, 4.5L Intercooled Inline 4-Cylinder, Tier I
+3. không tách: trùng dưới 60 % ô	visa-gensets n101	24 dòng	| TORRE FARO URBAN ALOGENI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | DSE-4520 AMF | 
+3. không tách: trùng dưới 60 % ô	visa-gensets n102	12 dòng	| TORRE FARO URBAN ALOGENI | 13 | Soundproof | Kohler | Mecc Alte | 2023 | DSE-4520 AMF | 
+3. không tách: trùng dưới 60 % ô	visa-gensets n105	2 dòng	| VM150U | 150 | Open | Vm | undefined | | Guard Evolution AMF | Stand-By
+3. không tách: trùng dưới 60 % ô	winco n103	3 dòng	| Total Weight (lbs) | 1170 | VARIES
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	agg-fuzhou n115	4 dòng	| DC250G6-NG | 250/200 | LYX12H-G275 | AGG
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	fdk-energy n103	13 dòng	| CD28V2/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G2 | Cummins (China Dongfeng) | St
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	fdk-energy n108	7 dòng	| CD28V2/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G2 | Cummins (China Dongfeng) | St
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	fdk-energy n109	7 dòng	| CG825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G5 | Cummins (India) | Stamford
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	mecc-alte n102	10 dòng	| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	mecc-alte n102	13 dòng	| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	mecc-alte n102	13 dòng	| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	mecc-alte n102	9 dòng	| Code | Poles | Power cl. H [50Hz] | Power cl. H [60Hz]
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	previa-ningde n104	91 dòng	| ENSET MODEL | ESP | PRP | ENGINE TYPE | ALTERNATOR | DIMENSION
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n101	12 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n102	16 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n103	4 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n105	6 dòng	| R-JM1000D5-S | 1000 kVA / 800 kW | 1100 kVA / 880 kW | S12H-PTA | TAL-A49-E | PDF
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n106	3 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n106	30 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n107	48 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n109	23 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n110	34 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n113	15 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
+5. DÒNG LẶP ĐẠT LUẬT MÀ KHÔNG TÁCH (chốt giữ nguyên khối hoặc lặp ở cuối)	rcg-power n114	32 dòng	| | Model | Prime Power | Standby Power | Engine | Alternator | Download
