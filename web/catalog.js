@@ -32,6 +32,33 @@
     [/\bengga\b|英格/i, "Engga"], [/\bfaraday\b|法拉第/i, "Faraday"], [/\bsiemens\b|西门子/i, "Siemens"],
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
+  // Alternator code families (Khoa 23/11/2026, baifa điểm 2). This table is GENERAL KNOWLEDGE of the makers' product
+  // lines, taken from NO supplier source. It is used ONLY to DETECT a code that sits under another make's column title
+  // (altMakeAsk); it NEVER gives a make to a record. Every prefix in use:
+  //   Leroy-Somer: "LSA" + digit ("LSA52.3 UL16", "LSA 53.2M9"), "TAL-A" / "TAL" + digit ("TAL-A44-C");
+  //   Stamford: "UCI" / "UCD" / "UCM" / "UCDI" / "UCDM" + digit, "HCI" / "HCM" / "HCK" + digit, "PI" + 3 digits ("PI734E1"),
+  //     "S0L"–"S9L" + digit ("S5L1D");
+  //   Mecc Alte: "ECO" / "ECP" + digit.
+  const ALT_CODE_FAMILY = [
+    ["Leroy-Somer", /^(LSA\s?\d|TAL[\s-]?A?\d)/i],
+    ["Stamford", /^(UC[DIM]{1,2}\s?\d|HC[IMK]\s?\d|PI\s?\d{3}|S\dL\d)/i],
+    ["Mecc Alte", /^EC[OP]\s?\d/i],
+  ];
+  // A code of one family under the column title of ANOTHER make ("LSA52.3 UL16" under "STAMFORD", baifa n101; "PI734E1"
+  // under "Alternator Leroy-Somer", penlucky n103): neither side is trusted (Khoa 23/11/2026). The row stays, the column's
+  // make is taken off the record (it no longer votes at build()), and `makeAsk` says what to confirm with the supplier.
+  // Only a make read from a column title: a make in the row's own cell or on the page title is left as it is.
+  function altMakeAsk(list) {
+    for (const o of list) {
+      if (o.kind !== "alternator" || !o.makes?.length) continue;
+      const fam = ALT_CODE_FAMILY.find(([, re]) => re.test(String(o.model || "").trim()));
+      const off = fam ? o.makes.filter((m) => m.via === "tiêu đề cột" && m.name !== fam[0]) : [];
+      if (!off.length) continue;
+      o.makeAsk = `mã ${o.model} dưới cột ${off.map((m) => m.name).join(" / ")}`;
+      o.makes = o.makes.filter((m) => !off.includes(m));
+    }
+    return list;
+  }
   // FG Wilson as an alternator's make (genlitec: "| Alternator Make | FG Wilson", "| Alternator | FG Wilson FGL70030"). Read ONLY from
   // the alternator's own cell or its make cell, never from a page title / column header / whole row (those name the genset's
   // make), so it is not in ALT_BRANDS (which title, header and HSMT readings use).
@@ -406,7 +433,7 @@
       const perTitle = k === 1 && sub.length === run;
       // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
       if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
-      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set();
+      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set(), subU = new Set();
       let pos = p0, any = false, twoUsed = false, same = false, own = false, ordered = false;
       const put = (rate, unit, v, soft, key) => {
         if (!rate || rate === "other" || rate === "mixed" || !unit || !(v > 0)) return;
@@ -469,6 +496,8 @@
           const unit = unitOfCell(c) || (k > 1 ? sUnit || tUnit : tUnit || sUnit) || null;
           if (!unit && !dualU && wider <= 0 && (rate === "prime" || rate === "standby")) bare.add(rate);
           if (unitOfCell(c)) own = true;
+          // the unit written in the sub-title of this very column ("Standby KVA | Prime KVA" under "POWER", baifa)
+          else if (k > 1 && sUnit) subU.add(rate);
           put(rate, unit, val(c), inherits, key);
         }
       }
@@ -495,8 +524,10 @@
         if (!p || !s) continue;
         if (p > s * 1.001) return null;
         // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", or that
-        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand)
-        if (!own && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
+        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand; so do figures whose unit is
+        // written in the sub-title of each of the two columns, "Standby KVA | Prime KVA" under one title "POWER" over
+        // "2500 | 2000": the source says the unit twice (Khoa 23/11/2026; a unit in the covering title only still vetoes)
+        if (!own && !(subU.has("prime") && subU.has("standby")) && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
       }
       let n = 0;
       for (const r of Object.values(got)) n += Object.keys(r).length;
@@ -1662,7 +1693,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note));
+    return altMakeAsk(mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note)));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that

@@ -1771,6 +1771,10 @@ export function altOf(alts, cell) {
   }
   return null;
 }
+// Hãng đầu phát cần xác nhận (Khoa 23/11/2026, baifa điểm 2): dòng của NCC ghi mã thuộc họ của một hãng dưới tiêu đề cột của
+// hãng khác (catalog.js altMakeAsk gắn `makeAsk` = "mã … dưới cột …" lên bản ghi đầu phát của dòng). Không tin bên nào: với
+// CHÍNH dòng đó hãng đầu phát là "cần xác nhận", dù khoá đầu phát có hãng từ dòng của NCC khác. `u`: bản ghi động cơ của dòng.
+export const altMakeAskOf = (a, u) => (a?.uses || []).find((x) => x.makeAsk && x.supplierId === u?.supplierId && x.n === u?.n && x.table === u?.table && x.row === u?.row)?.makeAsk || null;
 // Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (tờ Baudouin chú thích "^ Primarily for ESP applications"). Chỉ để LOẠI ở `candidates`:
 // khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
 // (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
@@ -1977,7 +1981,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // An alternator the supplier labels with its own brand (OWN_BRAND_ALTS) is found in the catalog only from that supplier's
       // own tables: "found" says nothing of it, so neither the +40 nor its figures' bonus; named by the HSMT still counts.
       const ownAlt = a && OWN_BRAND_ALTS.some((x) => x.supplierId === u.supplierId && x.code.test(String(a.model).trim()));
-      if (a) { if (!ownAlt) score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } if (!ownAlt) score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
+      // altAsk: hãng đầu phát của dòng này cần xác nhận (altMakeAskOf): không cộng 80 điểm theo HÃNG (model HSMT nêu thì vẫn cộng).
+      const altAsk = a ? altMakeAskOf(a, u) : null;
+      if (altAsk) why.push(`cần xác nhận hãng đầu phát (NCC ghi ${altAsk})`);
+      if (a) { if (!ownAlt) score += 40; if ((!altAsk && (a.make || "").split(" / ").some((m) => hints.altMakes.includes(m))) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } if (!ownAlt) score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
       score += CONF[s?.confidence] || 0;
       // Not for the named genset model: its table may give no figure in the HSMT's unit (rowPower is then huge).
       if (cap && !gNamed) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
@@ -2036,7 +2043,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
       if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(altAsk ? { altAsk } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
@@ -2239,7 +2246,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     const { e, u, a } = r, s = sup.get(u.supplierId);
     shown.add(u.supplierId);
     if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
-    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : e.makeConflict ? ` (chưa rõ hãng: nguồn ghi khác nhau ${e.makeConflict.map((x) => x.name).join(" / ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
+    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : e.makeConflict ? ` (chưa rõ hãng: nguồn ghi khác nhau ${e.makeConflict.map((x) => x.name).join(" / ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${r.altAsk ? ` (CẦN XÁC NHẬN HÃNG: NCC ghi ${r.altAsk}; không ghi make cho đầu phát của dòng này)` : a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
     // The genset's one-model datasheet (gensetSheetOf), every block, once per source.
@@ -3701,6 +3708,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     madeChecks(c, result.requirements || [], row, built);
+    altMakeAskChecks(c, result.requirements || [], row, built);
     makerCtlChecks(c, result.requirements || []);
     makerAltChecks(c, result.requirements || [], altNeed, { sourcesDir });
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
@@ -4036,6 +4044,34 @@ export function confirmChecks(c, reqs = []) {
     if (have.has(norm(r.item)) || !k || r.byCode) continue;
     c.checks = [...(c.checks || []), { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "", part: r.part || "genset", level: r.level === "option" ? "option" : "core",
       status: "confirm", confirm: k, byCode: true, note: "Code ghi: nguồn của cấu hình không nói tới điểm này." }];
+  }
+  return c;
+}
+// Hãng đầu phát cần xác nhận ở bước chấm (Khoa 23/11/2026, baifa điểm 2; altMakeAskOf): cấu hình lấy đầu phát của CHÍNH dòng
+// có cờ (không phải đầu phát chọn theo datasheet hãng) thì `c.alternator.makeAsk` ghi lý do, bỏ `make` agent ghi cho đầu phát,
+// và check "hãng đầu phát" (alt_make) đang "đạt" hạ về "cần xác nhận" (document) kèm ghi chú; "không đạt" / "chưa rõ" giữ nguyên,
+// chỉ thêm ghi chú. `makeHold` giữ trạng thái cũ như `placeHold` (confirmChecks chạy trước, trả "confirm" về "unclear"); dòng
+// hết cờ thì trả lại. Chạy sau madeChecks.
+const ALT_ASK_NOTE = /\s*Code ghi: cần xác nhận hãng đầu phát, NCC ghi .*?; không tin bên nào\./g;
+export function altMakeAskChecks(c, reqs, row, built) {
+  const p = c.alternator;
+  const a = p?.model && !p.fromMaker && row?.other ? altOf(new Map((built?.alternators || []).map((x) => [x.key, x])), row.other) : null;
+  const ask = a && a.key === CAT.keyOf(p.model) ? altMakeAskOf(a, row) : null;
+  if (p) { if (ask) { p.makeAsk = ask; delete p.make; } else delete p.makeAsk; }
+  for (const r of reqs || []) {
+    if (r.code !== "alt_make" || r.byCode) continue;
+    const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+    if (!y) continue;
+    const old = String(y.note || "").replace(ALT_ASK_NOTE, "").trim();
+    if (!ask) {
+      if (y.makeHold) { y.status = y.makeHold; delete y.makeHold; delete y.confirm; }
+      if (old !== String(y.note || "")) { delete y.note; if (old) y.note = old; }
+      continue;
+    }
+    delete y.note;
+    const note = [old, `Code ghi: cần xác nhận hãng đầu phát, NCC ghi ${ask}; không tin bên nào.`].filter(Boolean).join(" ");
+    if (y.status === "met" || (y.makeHold && y.status !== "not_met")) { delete y.confirm; delete y.makeHold; y.status = "confirm"; y.confirm = "document"; y.makeHold = "met"; }
+    y.note = note;
   }
   return c;
 }
