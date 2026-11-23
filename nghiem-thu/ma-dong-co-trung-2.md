@@ -251,4 +251,13 @@ Giả thuyết "G10 / G20 là 50 Hz, G70 / G80 là 60 Hz" không khớp nguồn:
 
 **Điểm cần quyết, TAG4.** Perkins selector chỉ có TAG4 ở trang 60 Hz (180/225), còn long-gen ghi TAG4 trong bảng 50 Hz với đúng số của TAG3. Sau sửa dòng này quay lại gợi ý 50 Hz. Chưa thêm ngoại lệ.
 
-**Nhóm 2, 12V1600G80F = 23,88 L.** Từ 3 dòng cùng mẫu: bdadl n135 BDA-M580, fukangsi n2007 FKS-M580, pengpai n127 PPDL-M580. 23,88 là dung tích của 12V2000 (bdadl ghi cùng số cho 12V2000G65 ở dòng gần đó). wintpower ghi G80F = 21; G10F, G20F, G70F, G80S đều 21. Lỗi dữ liệu nguồn có sẵn trên main, không do #1087, CHƯA sửa. Đề xuất `dropspec` disp cho các dòng này (kể cả bản chép ở bảng khác của cùng NCC); không dùng `fixspec` vì dòng không ghi đường kính × hành trình.
+**Nhóm 2, 12V1600G80F = 23,88 L.** Từ 3 dòng cùng mẫu: bdadl n135 BDA-M580, fukangsi n2007 FKS-M580, pengpai n127 PPDL-M580. 23,88 là dung tích của 12V2000 (bdadl ghi cùng số cho 12V2000G65 ở dòng gần đó). wintpower ghi G80F = 21; G10F, G20F, G70F, G80S đều 21. Lỗi dữ liệu nguồn có sẵn trên main, không do #1087. Điều phối duyệt 23/11: đã `dropspec` disp cả 5 bản chép (bdadl n112, n135; fukangsi n2007; pengpai n111, n127); không dùng `fixspec` vì dòng không ghi đường kính × hành trình. `spec-diff` so `63c167d6`: đúng 3 bản ghi đổi (23.88 → trống; 5 bản chép gộp còn 3 bản ghi), 0 mất, 0 thêm. Test 1576 + 158 + 11, quality đạt. CHƯA đo lại top 30.
+
+## Luật "NCC ghi một tần số, tờ hãng chỉ ghi tần số kia" (Khoa 23/11, CHƯA mã hoá, chờ quyết)
+
+- Căn cứ của TAG4 CÓ trong repo: `perkins` n5001, selector trang 6 (60Hz). Không có TAG4 ở trang 50Hz.
+- Viết đúng chữ luật thì KHÔNG chạm dòng long-gen: `specTables` không giữ tên tab, nên dòng đó không có tần số (`hzOfRow` trống).
+- Viết đúng chữ luật thì chạm 233 dòng trên 71 động cơ (đủ ở `tan-so-trai-to-hang-233-dong.tsv`; cột: loại, khoá, Hz của hãng, NCC, n, dòng). Căn cứ hãng: perkins 32 động cơ, sdec 15, weichai-power 14, huachai-deutz 4, yto 2, baudouin 2, quanchai 2 (một động cơ có thể có hai hãng).
+- Căn cứ yếu: 70 / 71 động cơ chỉ có MỘT dòng hãng ghi tần số, hồ sơ perkins `status: partial`. 15 / 71 động cơ có nhiều dòng NCC ghi ngược hãng hơn ghi giống hãng (4012-46TAG3A: 27 ngược, 7 giống; 403D-15G: 24 / 22). "Không thấy ở trang kia" chưa chắc là hãng không bán ở tần số đó.
+- Nếu mở rộng cho cả dòng không ghi tần số thì thêm tới 3.592 dòng (chưa soát).
+- Đề xuất: chỉ gắn "cần xác nhận" cho dòng long-gen TAG4 bằng danh sách tường minh (NCC + n + chữ dòng), không làm luật chung cho tới khi tờ hãng đủ cả hai tần số.

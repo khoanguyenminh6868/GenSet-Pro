@@ -1,0 +1,233 @@
+ghi-kia	1106A70TAG4	50	minsun-motor	101	| GF-P200 | 200 | 160 | 1106A-70TAG4 | SY-A 274H
+ghi-kia	2806AE18TAG2	50	gb-power	117	| GB-P625 | 688/550 | 625/500 | 2806A-E18TAG2 | 390*160*220 | 540*169*230 |
+ghi-kia	2806AE18TAG2	50	gtl-power	126	| PW-625T6 | 625 | 500 | 688 | 550 | 2806A-E18TAG2
+ghi-kia	2806AE18TAG2	50	mecca-power	5001	| MC688P | 500 | 625 | 550 | 688 | 2806A-E18TAG2 |
+ghi-kia	2806AE18TAG2	50	uleengen	103	| UP625GF | 500 | 625 | 2806A-E18TAG2 | Perkins | 543 | 6 | 145*183 | 18.1 | 116 | 3450x1300x2100 | 4700
+ghi-kia	2806AE18TAG2	50	uleengen	122	| UP625GF | 500 | 625 | 2806A-E18TAG2 | 543 | 6 | 145*183 | 18.1 | 116 | S5L1D-D41 | 3450x1300x2100 | 4700
+ghi-kia	2806AE18TAG2	50	uleengen	5001	| UP625GF | 500 | 625 | 2806A-E18TAG2 | S5L1D-D41
+ghi-kia	401246TAG3A	60	ade-power	2105	(tờ)
+ghi-kia	401246TAG3A	60	ade-power	2172	(tờ)
+ghi-kia	401246TAG3A	60	ade-power	2292	(tờ)
+ghi-kia	401246TAG3A	60	ade-power	2298	(tờ)
+ghi-kia	401246TAG3A	60	aj-power	104	| AJ1770 | 50hz | Three Phase | 1500 | 1650.0 | 1770.0 | | 4012-46TAG3A | MA7014B | AJ1770 Perkins 50Hz
+ghi-kia	401246TAG3A	60	aj-power	104	| AJ1900 | 50hz | Three Phase | 1500 | 1725.0 | 1900.0 | | 4012-46TAG3A | MA7014C | AJ1900 Perkins 50Hz
+ghi-kia	401246TAG3A	60	comler-power	103	| COMLER1350KW | 康姆勒 | 4012-46TAG3A | 1521 | 电调 | 珀金斯 | 400/230 | 2435.8 | 0.8 | 50 | 1500 | 4800*2115*2605 | 
+ghi-kia	401246TAG3A	60	deman-power	2436	DM1875PE      1875kVA  1500kW  1688kVA  1350kW  4012-46TAG3A  12         Contact  us
+ghi-kia	401246TAG3A	60	depco-power	2444	(tờ)
+ghi-kia	401246TAG3A	60	eastern-lion-fuan	111	| GFS-P1900 | 1368 | 1710 | 1520 | 1900 | 4012-46TAG3A | 873117.9856 | EL 504D | 1320 | Smartgen 6120 | Detail
+ghi-kia	401246TAG3A	60	fdk-energy	103	| P1875/H1 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | 4012-46TAG3A | Perkins China | Stamford S7L1D-E41 | C
+ghi-kia	401246TAG3A	60	fdk-energy	1111	(tờ)
+ghi-kia	401246TAG3A	60	gb-power	101	| GB-P1650 | 1815/1452 | 1650/1320 | 4012-46TAG3A | 560*220*260 | 40HQ |
+ghi-kia	401246TAG3A	60	green-power-generators	113	| GP1870 A/P | O | 1705 | 1875 | 4012-46TAG3A | E | 12 | 275 | 800 | 5200 | 2220 | 2660 | 13000 | | | |
+ghi-kia	401246TAG3A	60	gtl-power	109	| PW-1688T5 | 1688 | 1350 | 1875 | 1500 | 4012-46TAG3A
+ghi-kia	401246TAG3A	60	hosem-power	113	| A-P1850 | 1850 | 1480 | 1688 | 1350 | 4012-46TAG3A | 12192x2438x2896 | 13000 | Download
+ghi-kia	401246TAG3A	60	hosem-power	113	| A-P1850H | 1850 | 1480 | 1690 | 1350 | 4012-46TAG3A | 12192x2438x2896 | 13000 | Download
+ghi-kia	401246TAG3A	60	jlmech-wuhan	103	| JL-1360GF | 1360 | 1700 | 2448 | 4012-46TAG3A | 12 | 160*190 | 45.8 | 177 | 208 | 5050*2200*2550 | 9500
+ghi-kia	401246TAG3A	60	legapower	107	| LG1850P | 1850 | 1650 | 370 | 4012-46TAG3A | 12V | Electronic | 45.842 | LG1850P 4012-46TAG3A.pdf
+ghi-kia	401246TAG3A	60	legapower	107	| LG1875P | 1875 | 1705 | 370 | 4012-46TAG3A | 12V | Electronic | 45.842 | LG1875P 4012-46TAG3A.pdf
+ghi-kia	401246TAG3A	60	superwatt-swt	137	| SP1815 | 50Hz | 1320kW / 1650kVA | 1452kW / 1815kVA | 380/400/415V | 4012-46TAG3A
+ghi-kia	401246TAG3A	60	uleengen	102	| UP1650GF | 1320 | 1650 | 4012-46TAG3A | Perkins | 1496 | 12.V | 160×190 | 45.84 | 308 | S7L1D-D41 | 4900x186
+ghi-kia	401246TAG3A	60	uleengen	122	| UP1650GF | 1320 | 1650 | 4012-46TAG3A | 1496 | 12.V | 160×190 | 45.84 | 308 | S7L1D-D41 | 4900x1860x2350 | 1
+ghi-kia	401246TAG3A	60	weiman-fujian	111	| WT-P1856 | 1350 | 1688 | 1485 | 1856 | 4012-46TAG3A | 1440 | 1583 | 208 | 370 | 12×160×190 | 45.842 | 13.6:1
+ghi-kia	401246TAG3A	60	wintpower	109	| WT-P1850 | 1850/1480 | 1650/1320 | 380.6 | 4012-46TAG3A | 12V | 45.8 | 24 | 1496 | Elec. | 5090*2230*2530 | 
+ghi-kia	401246TAG3A	60	wintpower	109	| WT-P1875 | 1875/1500 | 1705/1364 | 380.6 | 4012-46TAG3A | 12V | 45.8 | 24 | 1496 | Elec. | 5090*2230*2530 | 
+ghi-kia	401246TAG3A	60	zhengchi-power	110	| 1368KW | 1505KW | 珀金斯 | ZCDL-P1505 | 4012-46TAG3A | 50Hz | 230/400 | 6.3/10.5 | 200g/kw.h | 三相四线 | 12 | 45.8
+ghi-kia	2506CE15TAG2	50	gb-power	117	| GB-P562 | 619/495 | 562/450 | 2506C-E15TAG2 | 380*125*210 | 540*169*230 |
+ghi-kia	2506CE15TAG2	50	gtl-power	126	| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG2
+ghi-kia	2506CE15TAG2	50	weiman-fujian	111	| WT-P550 | 400 | 500 | 440 | 550 | 2506C-E15TAG2 | 435 | 478 | 199 | 100 | 6×137 x 171 | 15 | 16:1 | TC | Mor
+ghi-kia	2506CE15TAG1	50	gtl-power	126	| PW-500T6 | 500 | 400 | 563 | 450 | 2506C-E15TAG1
+ghi-kia	2506CE15TAG1	50	kaichen-jiangsu	5001	| KCP-580GF | 400 | 500 | 450 | 563 | 2506C-E15TAG1 |
+ghi-kia	2506CE15TAG1	50	legapower	107	| LG560P | 560 | 510 | 100 | 2506C-E15TAG1 | 6L | ECU | 15.2 | LG560P 2506C-E15TAG1.pdf
+ghi-kia	2506CE15TAG1	50	mecca-power	5001	| MC550P | 400 | 500 | 440 | 550 | 2506C-E15TAG1 |
+ghi-kia	2506CE15TAG1	50	uleengen	103	| UP500GF | 400 | 500 | 2506C-E15TAG1 | Perkins | 435 | 6 | 137*171 | 15.2 | 93.5 | 3310x1150x1950 | 3900
+ghi-kia	2506CE15TAG1	50	uleengen	105	| UP500GF | 400 | 500 | 2506C E15TAG1 | Perkins | 435 | 6 | 137*171 | 15.2 | 93.5 | S4L1D-F41 | 3310x1150x1950
+ghi-kia	2506CE15TAG1	50	uleengen	122	| UP500GF | 400 | 500 | 2506C-E15TAG1 | 435 | 6 | 137*171 | 15.2 | 93.5 | S4L1D-F41 | 3310x1150x1950 | 3900
+ghi-kia	2506CE15TAG1	50	weiman-fujian	111	| WT-P500 | 360 | 450 | 396 | 495 | 2506C-E15TAG1 | 396 | 434 | 199 | 100 | 6×137 x 171 | 15 | 16:1 | TC | Mor
+ghi-kia	2506CE15TAG1	50	wintpower	109	| WT-P560 | 560/448 | 510/408 | 100 | 2506C-E15TAG1 | 6L | ECU | 15.2 | 4650*1400*2260 | 4930 | 3830*1190*2050
+ghi-kia	404A22G1	50	gtl-power	126	| PW-24T6 | 24 | 19 | 27 | 21 | 404A-22G1
+ghi-kia	404A22G1	50	minsun-motor	111	| GF-P20 | 20 | 16 | 404A-22G1 | SY-A 184E
+ghi-kia	2206CE13TAG2	50	depco-power	2424	(tờ)
+ghi-kia	2206CE13TAG2	50	gtl-power	126	| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG2
+ghi-kia	2206CE13TAG2	50	kaichen-jiangsu	5001	| KCP-440GF | 320 | 400 | 350 | 438 | 2206C-E13TAG2 |
+ghi-kia	2206CE13TAG2	50	legapower	107	| LG440P | 440 | 400 | 84 | 2206C-E13TAG2 | 6L | ECU | 12.5 | LG440P 2206C-E13TAG2.pdf
+ghi-kia	2206CE13TAG2	50	mecca-power	5001	| MC440P | 320 | 400 | 352 | 440 | 2206C-E13TAG2 |
+ghi-kia	2206CE13TAG2	50	powerzoo	122	(tờ)
+ghi-kia	2206CE13TAG2	50	weiman-fujian	111	| WT-P385 | 280 | 350 | 308 | 385 | 2206C-E13TAG2 | 349 | 381 | 204 | 84 | 6×130 x 157 | 12.5 | 16.3:1 | TC | 
+ghi-kia	2206CE13TAG2	50	wintpower	109	| WT-P440 | 440/352 | 400/320 | 84 | 2206C-E13TAG2 | 6L | ECU | 12.5 | 4350*1400*2260 | 4080 | 3500*1150*2050 
+ghi-kia	2206CE13TAG3	50	depco-power	2423	(tờ)
+ghi-kia	2206CE13TAG3	50	gtl-power	126	| PW-400T6 | 400 | 320 | 438 | 350 | 2206C-E13TAG3
+ghi-kia	2206CE13TAG3	50	legapower	107	| LG500P | 500 | 450 | 84 | 2206C-E13TAG3 | 6L | ECU | 12.5 |
+ghi-kia	2206CE13TAG3	50	mecca-power	5001	| MC440P | 320 | 400 | 352 | 440 | 2206C-E13TAG3 |
+ghi-kia	2206CE13TAG3	50	minsun-motor	101	| GF-P400 | 400 | 320 | 2206C-E13TAG3 | SY-A 314F
+ghi-kia	2206CE13TAG3	50	wintpower	109	| WT-P500 | 500/400 | 450/360 | 84 | 2206C-E13TAG3 | 6L | ECU | 12.5 | 4350*1400*2260 | 4280 | 3500*1150*2050 
+ghi-kia	403D15G	60	aj-power	101	| AJ14 | 50hz | Three Phase | 1500 | 13.0 | 14.3 | | 403D-15G | MA1114C2 | AJ14 Emissions Optimised Three Phas
+ghi-kia	403D15G	60	aj-power	101	| AJ14 | 50hz | Single Phase | 1500 | 9.5 | 10.6 | | 403D-15G | MA1114C2 | AJ14 Emissions Optimised Single Pha
+ghi-kia	403D15G	60	depco-power	2641	(tờ)
+ghi-kia	403D15G	60	eastern-lion-fuan	111	| GFS-P14 | 10.4 | 13 | 12 | 14 | 403D-15G | 20362 | El 164C | 10.8 | Smartgen 6120 | Detail
+ghi-kia	403D15G	60	elitech-power	1001	| EPS11PA-3 | PERKINS | 11kVA | 12kVA | 403D-15G | 50Hz | 3-Phase | DOWNLOAD PDF | eps11pa-3-perkins-11kva-die
+ghi-kia	403D15G	60	elitech-power	1001	| EPS13PA-3 | PERKINS | 13kVA | 15kVA | 403D-15G | 50Hz | 3-Phase | DOWNLOAD PDF | eps13pa-3-perkins-13kva-die
+ghi-kia	403D15G	60	elitech-power	1001	| EPS15PA-3 | PERKINS | 15kVA | 17kVA | 403D-15G | 50Hz | 3-Phase | DOWNLOAD PDF | eps15pa-3-perkins-15kva-die
+ghi-kia	403D15G	60	excel-power-ningde	112	| EP-PE13 | 10 | 13 | 11 | 14 | 403D-15G | 3.01 | 1150*740*990 | 1800*840*1100 |
+ghi-kia	403D15G	60	excel-power-ningde	112	| EP-PE15.6 | 12.5 | 15.6 | 13.75 | 17 | 403D-15G | 3.91 | 1150*740*990 | 1800*840*1100 |
+ghi-kia	403D15G	60	gb-power	101	| GB-P12.5 | 14/11 | 12.5/10 | 403D-15G | 140*55*110 | 185*100*120 |
+ghi-kia	403D15G	60	gb-power	116	| GB-P12.5 | 14/11 | 12.5/10 | 403D-15G | 140*55*110 | 228*100*120 |
+ghi-kia	403D15G	60	genlitec	108	(tờ)
+ghi-kia	403D15G	60	genlitec	1005	(tờ)
+ghi-kia	403D15G	60	genmac	2137	DUPLEX G13PO-E3             14           13           403D-15G       1500 diesel              3          1496 
+ghi-kia	403D15G	60	gtl-power	109	| PW-13T5 | 13 | 10 | 15 | 12 | 403D-15G
+ghi-kia	403D15G	60	hosem-power	113	| A-P14-2 | 14 | 11 | 13 | 10 | 403D-15G | 1950×800×1215 | 700 | Download
+ghi-kia	403D15G	60	hosem-power	113	| A-P16H | 16 | 13 | 15 | 12 | 403D-15G | 1950×800×1215 | 700 | Download
+ghi-kia	403D15G	60	jlmech-wuhan	103	| JL-10GF | 10 | 2.5 | 18 | 403D-15G | 3 | 84*90 | 149 | 6 | 248 | 1250*700*1100 | 350
+ghi-kia	403D15G	60	legapower	107	| LG13.8P | 13.8 | 12.5 | 6.8 | 403D-15G | 3L | M | 1.496 | LG13.8P 403D-15G.pdf
+ghi-kia	403D15G	60	mecca-power	5001	| MC14P | 10 | 13 | 11 | 14 | 403D-15G |
+ghi-kia	403D15G	60	shengfeng-fuan	108	| YH-P10.4KW | 50HZ | 10.4/13 | 11.2/14 | 403D-15G | PT044F | Mech.
+ghi-kia	403D15G	60	weiman-fujian	111	| WT-P15 | 10 | 12.5 | 11 | 14 | 403D-15G | 12 | 13 | 248 | 3.6 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data
+ghi-kia	403D15G	60	wintpower	109	| WT-P15 | 14.5/11.6 | 13/10.4 | 3.7 | 403D-15G | 3L | 1.5 | 12 | 13.5 | Mech. | 1480*750*1300 | 469
+ghi-kia	403D15G	60	zhengchi-power	160	| 10KW | 12KW | 珀金斯：进口 | ZCDL-P11 | 403D-15G | 50Hz | 230/400 | 6.3/10.5 | 200g/kw.h | 三相四线 | 3 | 1.5 | 1320×5
+ghi-kia	403A15G2	50	gb-power	117	| GB-P20 | 22/17.6 | 20/16 | 403A-15G2 | 145*65*110 | 208*90*120 |
+ghi-kia	403A15G2	50	genlitec	173	(tờ)
+ghi-kia	403A15G2	50	gtl-power	126	| PW-18T6 | 18 | 14 | 20 | 16 | 403A-15G2
+ghi-kia	403A15G2	50	superwatt-swt	130	| SP19X-1P | 403A-15G2 | 60Hz | 14kW / 18kVA | 15kW / 19kVA | 1800r/min | 220/230/240V | 1-phase
+ghi-kia	403A15G2	50	weiman-fujian	111	| WT-P18 | 13 | 16 | 14.3 | 18 | 403A-15G2 | 16 | 18 | 261 | 4.32 | 3×84×90 | 1.496 | 22.5:1 | N/A | More data
+ghi-kia	403A15G1	50	gtl-power	126	| PW-16T6 | 16 | 13 | 18 | 14 | 403A-15G1
+ghi-kia	SC4H180D2	50	wintpower	145	| WT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 4.3 | 600 | 24 | 132 | Elec. | 2150*930*1580 | 1170
+ghi-kia	SC27G830D2	50	wintpower	145	| WT-SC688 | 688/550 | 625/500 | 141 | SC27G830D2 | 12V | 26.6 | 650 | 24 | 610 | Elec. | 3630*1720*2230 | 455
+ghi-kia	2806CE18TAG1A	50	gtl-power	126	| PW-625T6 | 625 | 500 | 688 | 550 | 2806C-E18TAG1A
+ghi-kia	2806CE18TAG1A	50	powerzoo	124	(tờ)
+ghi-kia	2806CE18TAG1A	50	weiman-fujian	111	| WT-P715 | 520 | 650 | 572 | 715 | 2806C-E18TAG1A | 543 | 598 | 206 | 130 | 6×145×183 | 18.1 | 14.5:1 | TC | 
+ghi-kia	SC7H250D2	50	wintpower	145	| WT-SC206 | 206/165 | 188/150 | 39.9 | SC7H250D2 | 6L | 6.5 | 600 | 24 | 185 | Elec. | 2460*980*1690 | 1490
+ghi-kia	404D22TG	60	bobig-power	125	| BP28 | 20 | 25 | 22 | 28 | 404D-22TG made in china | 22 | BW-184G | 1550*610*1220 | 2000*850*1050
+ghi-kia	404D22TG	60	comler-power	103	| COMLER22KW | 康姆勒 | 404D-22TG | 27.7 | 电调 | 珀金斯 | 400/230 | 39.7 | 0.8 | 50 | 1500 | 1400*600*950 | 500
+ghi-kia	404D22TG	60	elitech-power	1001	| EPS28PA-3 | PERKINS | 28kVA | 30kVA | 404D-22TG | 50Hz | 3-Phase | DOWNLOAD PDF | eps28pa-3-perkins-28kva-di
+ghi-kia	404D22TG	60	excel-power-ningde	112	| EP-PE32.5 | 26 | 32.5 | 28.6 | 35.75 | 404D-22TG | 6.70 | 1270*740*1010 | 1800*840*1100 |
+ghi-kia	404D22TG	60	gb-power	101	| GB-P25 | 27.5/22 | 25/20 | 404D-22TG | 145*65*120 | 225*100*127 |
+ghi-kia	404D22TG	60	gb-power	116	| GB-P25 | 27.5/22 | 25/20 | 404D-22TG | 145*65*120 | 228*100*120 |
+ghi-kia	404D22TG	60	gtl-power	109	| PW-27T5 | 27 | 22 | 30 | 24 | 404D-22TG
+ghi-kia	404D22TG	60	hosem-power	113	| A-P30 | 30 | 24 | 27 | 22 | 404D-22TG | 2300×980×1270 | 780 | Download
+ghi-kia	404D22TG	60	hosem-power	113	| A-P35H | 35 | 29 | 33 | 26 | 404D-22TG | 2100×740×1115 | 740 | Download
+ghi-kia	404D22TG	60	jet-power	129	| P-30 | 30 | 24 | 27 | 22 | 404D-22TG | 4L | 84 x 100 | 2.216 | 7.1 | PI 144F | 1600*660*1050 | 547 | 2100*90
+ghi-kia	404D22TG	60	lees-power	5001	| LSP30S3-E | 22 | 27 | 24 | 30 | 404D-22TG |
+ghi-kia	404D22TG	60	legapower	107	| LG27.5P | 27.5 | 25 | 7.1 | 404D-22TG | 4L | M | 2.216 | LG27.5P 404D-22TG.pdf
+ghi-kia	404D22TG	60	shengfeng-fuan	108	| YH-P21KW | 50HZ | 21/26 | 23/29 | 404D-22TG | PT144F | Mech.
+ghi-kia	404D22TG	60	uleengen	107	| UP25GF | 20 | 25 | 404D-22TG | Perkins | 25 | 4.L | 84×100 | 2.216 | 4.7 | S0L2-M1 | 1580x810x990 | 540
+ghi-kia	404D22TG	60	uleengen	108	| 25gf以上 | 20 | 25 | 404D-22TG | 帕金斯 | 25 | 4.L | 84×100 | 2.216 | 4.7 | S0L2-M1 | 1580x810x990 | 540
+ghi-kia	404D22TG	60	uleengen	122	| UP25GF | 20 | 25 | 404D-22TG | 25 | 4.L | 84×100 | 2.216 | 4.7 | S0L2-M1 | 1580x810x990 | 540
+ghi-kia	404D22TG	60	uleengen	127	| 25gf以上 | 20 | 25 | 404D-22TG | 25 | 4.L | 84×100 | 2.216 | 4.7 | S0L2-M1 | 1580x810x990 | 540
+ghi-kia	404D22TG	60	wintpower	109	| WT-P28 | 27.5/22 | 25/20 | 7.1 | 404D-22TG | 4L | 2.2 | 12 | 27.4 | Mech. | 1630*750*1350 | 553
+ghi-kia	404D22TG	60	zhengchi-power	158	| 22KW | 24KW | 珀金斯 | ZCDL-P24 | 404D-22TG | 50Hz | 230/400 | 6.3/10.5 | 155g/kw.h | 三相四线 | 6 | 8.2 | 1300×550
+ghi-kia	SC27G755D2	50	wintpower	145	| WT-SC605 | 605/484 | 550/440 | 125.6 | SC27G755D2 | 12V | 26.6 | 650 | 24 | 555 | Elec. | 3630*1720*2230 | 4
+ghi-kia	SC27G755D2	50	wintpower	145	| WT-SC620 | 620/496 | 563/450 | 125.6 | SC27G755D2 | 12V | 26.6 | 650 | 24 | 555 | Elec. | 3630*1720*2230 | 4
+ghi-kia	SC9D340D2	50	wintpower	145	| WT-SC275 | 275/220 | 250/200 | 54.1 | SC9D340D2 | 6L | 8.82 | 600 | 24 | 250 | Elec. | 2600*1080*1800 | 2028
+ghi-kia	SC4H160D2	50	wintpower	145	| WT-SC110 | 110/88 | 100/80 | 25 | SC4H160D2 | 4L | 4.3 | 600 | 24 | 116 | Elec. | 2000*930*1580 | 1115
+ghi-kia	SC4H160D2	50	wintpower	145	| WT-SC125 | 125/100 | 113/90 | 25 | SC4H160D2 | 4L | 4.3 | 600 | 24 | 116 | Elec. | 2000*930*1580 | 1135
+ghi-kia	403A11G1	50	gtl-power	126	| PW-11T6 | 11 | 9 | 12 | 10 | 403A-11G1
+ghi-kia	SC4H95D2	50	wintpower	145	| WT-SC70 | 70/55 | 63/50 | 15.1 | SC4H95D2 | 4L | 4.3 | 600 | 24 | 68 | Elec. | 1980*880*1510 | 960
+ghi-kia	SC25G610D2	50	wintpower	145	| WT-SC500 | 500/400 | 450/360 | 100.4 | SC25G610D2 | 12V | 25.8 | 650 | 24 | 445 | Elec. | 3630*1720*2230 | 4
+ghi-kia	SC15G500D2	50	wintpower	145	| WT-SC413 | 413/330 | 375/300 | 81.2 | SC15G500D2 | 6L | 14.16 | 600 | 24 | 363 | Elec. | 3040*1380*1880 | 30
+ghi-kia	SC25G690D2	50	wintpower	145	| WT-SC550 | 550/440 | 500/400 | 113.1 | SC25G690D2 | 12V | 25.8 | 650 | 24 | 505 | Elec. | 3630*1720*2230 | 4
+ghi-kia	SC4H115D2	50	wintpower	145	| WT-SC88 | 88/70 | 80/64 | 19 | SC4H115D2 | 4L | 4.3 | 600 | 24 | 86 | Elec. | 1980*880*1510 | 1020
+ghi-kia	WP10D238E200	50	aosif	124	| AW250 | 230/184 | 250/200 | WP10D238E200 | 51.2 | 6L | 9.7 |
+ghi-kia	SC7H230D2	50	wintpower	145	| WT-SC165 | 165/132 | 150/120 | 36.5 | SC7H230D2 | 6L | 6.5 | 600 | 24 | 170 | Elec. | 2460*980*1690 | 1410
+ghi-kia	SC7H230D2	50	wintpower	145	| WT-SC185 | 185/148 | 169/135 | 36.5 | SC7H230D2 | 6L | 6.5 | 600 | 24 | 170 | Elec. | 2460*980*1690 | 1490
+ghi-kia	SC12E460D2	50	wintpower	145	| WT-SC385 | 385/308 | 350/280 | 71.6 | SC12E460D2 | 6L | 11.8 | 600 | 24 | 338 | Elec. | 3230*1180*1750 | 284
+ghi-kia	WP6D152E200	50	aosif	124	| AW165 | 150/120 | 165/132 | WP6D152E200 | 32.9 | 6L | 6.8 |
+ghi-kia	WP10D200E200	50	aosif	124	| AW220 | 200/160 | 200/176 | WP10D200E200 | 42.3 | 6L | 9.7 |
+ghi-kia	WP6D132E200	50	aosif	124	| AW150 | 125/100 | 150/120 | WP6D132E200 | 30.1 | 6L | 6.8 |
+ghi-kia	SC13G420D2	50	wintpower	145	| WT-SC330 | 330/264 | 300/240 | 70.4 | SC13G420D2 | 6L | 12.88 | 600 | 24 | 308 | Elec. | 3040*1380*1880 | 28
+ghi-kia	SC13G420D2	50	wintpower	145	| WT-SC344 | 344/275 | 313/250 | 70.4 | SC13G420D2 | 6L | 12.88 | 600 | 24 | 308 | Elec. | 3040*1380*1880 | 29
+ghi-kia	SC33W990D2	50	wintpower	145	| WT-SC825 | 825/660 | 750/600 | 174.9 | SC33W990D2 | 6L | 32.8 | 680 | 24 | 726 | Elec. | 4360*1620*2140 | 62
+ghi-kia	WP10D320E200	50	aosif	124	| AW350 | 313/250 | 350/280 | WP10D320E200 | 70.9 | 6L | 9.7 |
+ghi-kia	1206AE70TTAG2	60	ade-power	2009	(tờ)
+ghi-kia	1206AE70TTAG2	60	aj-power	102	| AJ250 | 50hz | Three Phase | 1500 | 230.0 | 250.0 | | 1206A-E70TTAG2 | MA4114D | AJ250 Three Phase Perkins 5
+ghi-kia	1206AE70TTAG2	60	bobig-power	125	| BP248 | 180 | 225 | 198 | 248 | 1206A-E70TTAG2 made in UK | 185 | BW-274K | 2600*1000*1850 | 3400*1250*1750
+ghi-kia	1206AE70TTAG2	60	bobig-power	125	| BP275 | 200 | 250 | 220 | 275 | 1206A-E70TTAG2 made in UK | 206 | BW-C4DS | 2600*1000*1850 | 3400*1250*1750
+ghi-kia	1206AE70TTAG2	60	deman-power	2108	DM250PE       250kVA  200kW  225kVA  180kW  1206A-E70TTAG2  6          Contact  us
+ghi-kia	1206AE70TTAG2	60	depco-power	2519	(tờ)
+ghi-kia	1206AE70TTAG2	60	eastern-lion-fuan	111	| GFS-P256 | 184 | 230 | 204 | 256 | 1206A-E70TTAG2 | 114635 | EL 274J | 184 | Smartgen 6120 | Detail
+ghi-kia	1206AE70TTAG2	60	excel-power-ningde	112	| EP-PE225 | 180 | 225 | 200 | 250 | 1206A-E70TTAG2 | 51.00 | 2620*1100*1620 | 3600*1300*1900 |
+ghi-kia	1206AE70TTAG2	60	green-power-generators	113	| GP250 A/P | O | 225 | 250 | 1206A-E70TTAG2 | E | 6 | 38 | 150 | 3000 | 1100 | 1500 | 2090 | | | |
+ghi-kia	1206AE70TTAG2	60	gtl-power	109	| PW-230T5 | 230 | 184 | 250 | 200 | 1206A-E70TTAG2
+ghi-kia	1206AE70TTAG2	60	mecca-power	5001	| MC250P | 180 | 225 | 200 | 250 | 1206A-E70TTAG2 |
+ghi-kia	1206AE70TTAG2	60	tecgen-fujian	125	(tờ)
+ghi-kia	1104C44TAG1	50	depco-power	2433	(tờ)
+ghi-kia	1104C44TAG1	50	gtl-power	126	| PW-90T6 | 90 | 72 | 100 | 80 | 1104C-44TAG1
+ghi-kia	1104C44TAG1	50	legapower	107	| LG100P | 100 | 90 | 22 | 1104C-44TAG1 | 4L | N.A | 4.4 | LG100P 1104C-44TAG1.pdf
+ghi-kia	1104C44TAG1	50	weiman-fujian	111	| 72 | 90 | 79.2 | 99 | 1104C-44TAG1 | 80 | 89 | 223 | 22 | 4×105 x 127 | 4.41 | 18.2:1 | TC | More data
+ghi-kia	1104C44TAG1	50	wintpower	109	| WT-P100 | 100/80 | 90/72 | 22 | 1104C-44TAG1 | 4L | Elec | 4.4 | 2670*1080*1865 | 1458 | 2220*750*1530 | 105
+ghi-kia	1206AE70TTAG1	60	deman-power	2107	DM250PE       250kVA  200kW  225kVA  180kW  1206A-E70TTAG1  6          Contact  us
+ghi-kia	1206AE70TTAG1	60	depco-power	2520	(tờ)
+ghi-kia	1206AE70TTAG1	60	eastern-lion-fuan	111	| GFS-P222 | 160 | 200 | 178 | 222 | 1206A-E70TTAG1 | 110277 | EL 274H | 160 | Smartgen 6120 | Detail
+ghi-kia	1206AE70TTAG1	60	gtl-power	109	| PW-200T5 | 200 | 160 | 220 | 176 | 1206A-E70TTAG1
+ghi-kia	1206AE70TTAG1	60	mecca-power	5001	| MC220P | 160 | 200 | 176 | 220 | 1206A-E70TTAG1 |
+ghi-kia	1206AE70TTAG1	60	tecgen-fujian	115	(tờ)
+ghi-kia	2806AE18TAG1A	50	ade-power	2302	(tờ)
+ghi-kia	2806AE18TAG1A	50	legapower	107	| LG688P | 688 | 625 | 127 | 2806A-E18TAG1A | 6L | Electronic | 18.13 |
+ghi-kia	2806AE18TAG1A	50	wintpower	109	| WT-P688 | 688/550 | 625/500 | 127 | 2806A-E18TAG1A | 6L | Elec | 18.1 | 4750*1760*2260 | 4930 | 3750*1550*20
+ghi-kia	1706AE93TAG1	50	ade-power	2036	(tờ)
+ghi-kia	1706AE93TAG1	50	ade-power	2112	(tờ)
+ghi-kia	1706AE93TAG1	50	ade-power	2194	(tờ)
+ghi-kia	1706AE93TAG1	50	ade-power	2195	(tờ)
+ghi-kia	1706AE93TAG1	50	gtl-power	126	| PW-356T6 | 356 | 285 | 394 | 315 | 1706A-E93TAG1
+ghi-kia	1706AE93TAG1	50	minsun-motor	101	| GF-P300 | 300 | 240 | 1706A-E93TAG1 | SY-A 314D
+ghi-kia	2506AE15TAG1	50	ade-power	2300	(tờ)
+ghi-kia	2806AE18TTAG5	50	gtl-power	126	| PW-826T6 | 826 | 661 | 909 | 727 | 2806A-E18TTAG5
+ghi-kia	WP13D385E201	60	aosif	123	| AW413 | 375/300 | 413/330 | WP13D385E201 | 82.8 | 6L | 12.5 |
+ghi-kia	WP13D385E201	60	excel-power-ningde	109	| EP-WC375 | 300 | 375 | 330 | 412.5 | WP13D385E201 | 67.72 | 3130*1140*1870 | 4200*1400*2130 |
+ghi-kia	WP6D132E201	60	aosif	123	| AW138 | 125/100 | 138/110 | WP6D132E201 | 28.5 | 6L | 6.8 |
+ghi-kia	WP6D132E201	60	excel-power-ningde	109	| EP-WC125 | 100 | 125 | 110 | 137.5 | WP6D132E201 | 23.37 | 2460*1000*1430 | 3300*1100*1700 |
+ghi-kia	WP6D158E201	60	aosif	123	| AW165 | 150/120 | 165/132 | WP6D158E201 | 34.4 | 6L | 6.8 |
+ghi-kia	WP6D158E201	60	excel-power-ningde	109	| EP-WC150 | 120 | 150 | 132 | 165 | WP6D158E201 | 28.04 | 2460*1000*1430 | 3300*1100*1700 |
+ghi-kia	2806AE18TTAG4	50	gtl-power	126	| PW-826T6 | 826 | 661 | 909 | 727 | 2806A-E18TTAG4
+ghi-kia	WP10D238E201	60	aosif	123	| AW250 | 225/180 | 250/200 | WP10D238E201 | 51.7 | 6L | 9.7 |
+ghi-kia	WP10D238E201	60	excel-power-ningde	109	| EP-WC225 | 180 | 225 | 198 | 247.5 | WP10D238E201 | 44.12 | 2800*1050*1850 | 3800*1300*2000 |
+ghi-kia	2506CE15TAG3	60	excel-power-ningde	112	| EP-PE562 | 450 | 562.5 | 495 | 629 | 2506C-E15TAG3 | 121.00 | 3450*1200*1980 | 4700*1600*2230 |
+ghi-kia	WP10D264E201	60	excel-power-ningde	109	| EP-WC250 | 200 | 250 | 220 | 275 | WP10D264E201 | 49.02 | 2910*1050*1850 | 3950*1300*2000 |
+ghi-kia	2806CE18TAG3	60	excel-power-ningde	112	| EP-PE737.5 | 590 | 737.5 | 649 | 822 | 2806C-E18TAG3 | 145.00 | 3450*1200*1980 | 4700*1600*2230 |
+ghi-kia	2206DE13TAG3	60	comler-power	103	| COMLER320KW | 康姆勒 | 2206D-E13TAG3 | 349 | 电喷 | 珀金斯 | 400/230 | 577.4 | 0.8 | 50 | 1500 | 3300*1250*2100 | 31
+ghi-kia	2206DE13TAG3	60	excel-power-ningde	112	| EP-PE450 | 360 | 450 | 396 | 495 | 2206D-E13TAG3 | 98.50 | 3450*1200*1980 | 4700*1600*2230 |
+ghi-kia	2206DE13TAG3	60	zhengchi-power	129	| 320KW | 350KW | 珀金斯 | ZCDL-P350 | 2206D-E13TAG3 | 50Hz | 230/400 | 6.3/10.5 | 204g/kw.h | 三相四线 | 6 | 14.6 | 
+ghi-kia	WP13D510E311	60	aosif	123	| AW575 | 500/400 | 575/460 | WP13D510E311 | 126.1 | 6L | 15.9 |
+ghi-kia	1104D44TG2	50	gb-power	117	| GB-P90 | 100/80 | 90/72 | 1104D-44TG2 | 185*90*135 | 308*113*130 |
+ghi-kia	WP6D180E201	60	aosif	123	| AW188 | 170/136 | 188/150 | WP6D180E201 | 39.8 | 6L | 6.8 |
+ghi-kia	WP10D360E201	60	aosif	123	| AW385 | 350/280 | 385/308 | WP10D360E201 | 65 | 6L | 9.7 |
+ghi-kia	1206DE70TTAG2	60	comler-power	103	| COMLER180KW | 康姆勒 | 1206D-E70TTAG2 | 226.8 | 电喷 | 珀金斯 | 400/230 | 324.8 | 0.8 | 50 | 1500 | 2600*950*1850 | 
+ghi-kia	1206DE70TTAG2	60	eastern-lion-fuan	111	| GFS-P256 | 184 | 230 | 204 | 256 | 1206D-E70TTAG2 | 117360 | EL 274J | 184 | Smartgen 6120 | Detail
+ghi-kia	1206DE70TTAG2	60	gtl-power	109	| PW-230T5 | 230 | 184 | 250 | 200 | 1206D-E70TTAG2
+ghi-kia	1506AE88TAG1	50	legapower	107	| LG235P | 235 | 215 | 44.6 | 1506A-E88TAG1 | 6L | Electronic | 8.8 |
+ghi-kia	1506AE88TAG1	50	legapower	107	| LG270P | 270 | 245 | 44.6 | 1506A-E88TAG1 | 6L | Electronic | 8.8 | LG270P 1506A-E88TAG1.pdf
+ghi-kia	1506AE88TAG1	50	weiman-fujian	111	| WT-P270 | 196 | 245 | 216 | 270 | 1506A-E88TAG1 | 218 | 239 | 199 | 54.2 | 6×112 x 149 | 8.8 | 16.1:1 | TC |
+ghi-kia	1506AE88TAG1	50	wintpower	109	| WT-P235 | 235/188 | 215/172 | 44.6 | 1506A-E88TAG1 | 6L | Elec | 8.8 | 3700*1080*2120 | 2880 | 2920*930*1810
+ghi-kia	1506AE88TAG1	50	wintpower	109	| WT-P270 | 270/216 | 245/196 | 44.6 | 1506A-E88TAG1 | 6L | Elec | 8.8 | 3700*1080*2120 | 2880 | 2920*930*1810
+ghi-kia	1206DE70TTAG1	60	comler-power	103	| COMLER160KW | 康姆勒 | 1206D-E70TTAG1 | 204.9 | 电喷 | 珀金斯 | 400/230 | 288.7 | 0.8 | 50 | 1500 | 2600*950*1850 | 
+ghi-kia	1206DE70TTAG1	60	eastern-lion-fuan	111	| GFS-P222 | 160 | 200 | 178 | 222 | 1206D-E70TTAG1 | 112892 | EL 274H | 160 | Smartgen 6120 | Detail
+ghi-kia	1206DE70TTAG1	60	gtl-power	109	| PW-200T5 | 200 | 160 | 220 | 176 | 1206D-E70TTAG1
+ghi-kia	1206DE70TTAG1	60	superwatt-swt	103	(tờ)
+ghi-kia	2206DE13TAG2	60	excel-power-ningde	112	| EP-PE400 | 320 | 400 | 352 | 440 | 2206D-E13TAG2 | 80.20 | 3080*1200*1980 | 4700*1600*2230 |
+ghi-kia	2506DE15TAG1	60	excel-power-ningde	112	| EP-PE512 | 410 | 512.5 | 451 | 564 | 2506D-E15TAG1 | 102.00 | 3450*1200*1980 | 4700*1600*2230 |
+ghi-kia	YM6H4LFD	60	acepow-fuan	132	| 180 | 198 | 225 | 248 | YM6H4LF-D | 206 | 227 | Electric | 120x130
+ghi-kia	YM6H4LFD	60	acepow-fuan	132	| 190 | 209 | 238 | 261 | YM6H4LF-D | 215 | 238 | Electric | 120x130
+ghi-kia	YM6H4LFD	60	depco-power	2060	(tờ)
+ghi-kia	6M16G2D0/S	60	ade-power	2141	(tờ)
+ghi-kia	6M16G2D0/S	60	ade-power	2236	(tờ)
+ghi-kia	6M16G2D0/S	60	ade-power	2238	(tờ)
+ghi-kia	6M16G2D0/S	60	green-power-generators	110	| GP220 A/B | O | 200 | 220 | 6M16G2D0/S | E | 6 | 31,6 | 150 | 3000 | 1100 | 1650 | 2000 | | | |
+ghi-kia	6M16G2D0/S	60	interpower-international	2008	400/230                 160                200          176                    220                 288.7      
+ghi-kia	LR4B5D	60	acepow-fuan	132	| 40 | 44 | 50 | 55 | LR4B5-D | 48 | 53 | Mechanically | 108x135
+ghi-kia	LR4B5D	60	acepow-fuan	132	| 44 | 48 | 55 | 61 | LR4B5-D | 50 | 55 | Mechanically | 108x135
+ghi-kia	LR4B5D	60	depco-power	2543	(tờ)
+ghi-kia	QC380D	50	wintpower	132	| WT-Q13 | 9.612 | 10.613 | QC380D | WT164G8.8
+ghi-kia	QC380D	50	yongcai-elecmama	135	| YCM8QC-60 | 11 | 9 | 10 | 8 | Quanchai | QC380D | 11-12 | Elecmama-164A | 8.2kw
+ghi-kia	QC490D	50	wintpower	132	| WT-Q28 | 20/25 | 22/28 | QC490D | WT184G18
+ghi-kia	QC490D	50	yongcai-elecmama	135	| YCM20QC-60 | 28 | 22 | 25 | 20 | Quanchai | QC490D | 23.5-26 | Elecmama-184E | 23kw
+ghi-kia	6M11G2D0/S	60	genmac	2105	EXPRESS G131BO          150          140          6M11G2D0/S    1500           diesel  6          6750     520
+ghi-kia	6M11G2D0/S	60	genmac	2127	PYREX G131BS                145          130          6M11G2D0/S    1500           diesel  6          6750    
+ghi-kia	6M11G2D0/S	60	green-power-generators	110	| GP145 A/B | O | 130 | 143 | 6M11G2D0/S | E | 6 | 23,1 | 125 | 2500 | 1000 | 1400 | 1400 | | | |
+ghi-kia	6M11G2D0/S	60	interpower-international	2007	400/230                 105                131.8        115.5                  145.1               190        
+ghi-kia	BF8L513C	50	gb-power	106	| GB-DA188 | 206/165 | 188/150 | BF8L513C | 268*100*160 | 300*120*180 |
+ghi-kia	WP10D288E201	60	excel-power-ningde	109	| EP-WC275 | 220 | 275 | 242 | 302.5 | WP10D288E201 | 53.92 | 2910*1050*1850 | 3950*1300*2000 |
+ghi-kia	F8L413F	50	gb-power	106	| GB-DA113 | 124/99 | 113/90 | F8L413F | 268*100*160 | 300*120*180 |
+ghi-kia	BF8L513	50	gb-power	106	| GB-DA150 | 165/132 | 150/120 | BF8L513 | 268*100*160 | 300*120*180 |
+ghi-kia	BF6M1015CPLA	50	mecca-power	5001	| MC400D | 290 | 363 | 319 | 399 | BF6M1015CP-LA |
+ghi-kia	BF6M1015CPLA	50	mecca-power	5001	| MC440D | 320 | 400 | 352 | 440 | BF6M1015CP-LA |
+ghi-kia	BF6M1015CPLA	50	uleengen	5001	| UD400GF | 320 | 400 | BF6M1015CP-LA | HCI444ES
+ghi-kia	2806JE18TAG1	50	baifa-power	105	| BF-P610-60T4F | 625 | 569 | PERKINS | 2806J-E18TAG1 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | USA | | ●
