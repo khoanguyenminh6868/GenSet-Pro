@@ -51,7 +51,11 @@ for (const id of idArg.split(",")) {
       return true;
     };
     if (!apply(rec.specTables, "cn")) console.log(`  ${id} n${n}: trang không có bảng trong cn/, bỏ qua`);
-    if (specs) apply(specs, "specs");
+    // specs/ là đầu ra thô của tablesOf (không lọc trùng): cả trang n thay bằng đúng danh sách mới, đúng thứ tự.
+    if (specs) {
+      const at = specs.findIndex((t) => t.n === n);
+      if (at >= 0) { const proto = specs[at], count = specs.filter((t) => t.n === n).length; const rest = specs.filter((t) => t.n !== n); rest.splice(at, 0, ...b.map((t) => ({ ...proto, header: t.header, rows: t.rows }))); specs.length = 0; specs.push(...rest); void count; }
+    }
   }
   console.log(`${id}: thay ${replaced} bảng bằng ${added} bảng; bảng cũ không có trong cn/ ${missing}; bảng mới bị lọc / trùng ${skipped}`);
   if (write) {
