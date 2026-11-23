@@ -16,10 +16,27 @@ if ! pgrep -x Xvfb >/dev/null; then
 fi
 
 cd "$AGENT_DIR" || exit 1
+
+# Chờ cổng 1234 tối đa $1 giây; in kết quả và thoát 0 khi Agent đã nghe.
+wait_port() {
+  for i in $(seq 1 "$1"); do
+    if port_open; then echo "Agent đã sẵn sàng sau ${i} giây."; sleep 2; return 0; fi
+    sleep 1
+  done
+  return 1
+}
+
+# Cách 1 (23/11/2026): chạy thẳng Java của Agent như egp-edoc-agent.bat. Vỏ egp-edoc-agent.exe dưới Wine thoát ngay
+# "exit status 1" (từ 23/11, gói IB2600617747: cả ba lượt sandbox báo "0/2 tệp"), còn Java chạy trực tiếp mở cổng sau ~14 giây.
+if [ -f "$AGENT_DIR/vlxjre/bin/java.exe" ] && [ -f "$AGENT_DIR/vlxlib/vlxapp.jar" ]; then
+  nohup wine 'vlxjre\bin\java.exe' -Dfile.encoding=UTF8 -Xms256M -Xmx1200M -cp 'vlxlib\vlxapp.jar;vlxlib\*' com.fis.egp.ServiceApp >>"$HOME/egp-agent.out" 2>&1 &
+  wait_port 60 && exit 0
+  echo "Java của Agent không mở cổng 1234 sau 60 giây, thử vỏ egp-edoc-agent.exe." >&2
+  wineserver -k 2>/dev/null; sleep 2
+fi
+
+# Cách 2 (dự phòng): vỏ egp-edoc-agent.exe như trước.
 nohup wine egp-edoc-agent.exe >>"$HOME/egp-agent.out" 2>&1 &
-for i in $(seq 1 120); do
-  if port_open; then echo "Agent đã sẵn sàng sau ${i} giây."; sleep 2; exit 0; fi
-  sleep 1
-done
-echo "Agent không mở cổng 1234 sau 120 giây (xem $HOME/egp-agent.out)." >&2
+wait_port 120 && exit 0
+echo "Agent không mở cổng 1234 (Java 60 giây, vỏ .exe 120 giây; xem $HOME/egp-agent.out)." >&2
 exit 1
