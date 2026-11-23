@@ -3904,7 +3904,8 @@ export function originChecks(c, result, origin, sup) {
 // the group (a Chinese plant: DCEC, SME, Stamford Wuxi…) is not met; a place in the group, or the country Khoa settled on
 // for the make (Deep Sea, Stamford, Leroy-Somer…), is met; nothing written is "Cần chứng từ" (CO), whatever the agent
 // judged from the make. The group is the one the requirement names ("G7, EU", "G20"). A brand asked ("Thương hiệu
-// thuộc các nước G7"), or a requirement that names no group, stays the agent's.
+// thuộc các nước G7"): the agent's met / not met stays, an open check is decided below (nhóm G). A requirement that names
+// no group stays the agent's.
 const MADE_CODES = { engine_origin: "engine", alt_origin: "alternator", ctl_origin: "controller" };
 export function madeBasisOf(t) {
   const s = String(t || "").replace(/\s+/g, " "), G = /\bG\s?-?(7|20)\b/;
@@ -3916,18 +3917,75 @@ export function madeBasisOf(t) {
   }
   return null;
 }
+// Nơi NCC tự ghi ở dòng động cơ của cấu hình (dòng nguồn + dòng của các NCC trong cấu hình) mà có nơi ngoài nhóm:
+// placeInRow (India / UK cạnh mã, ô INDIA), chinaPlantInRow (nhà máy Trung Quốc), placesInRow (hai nơi: sanq "UK/INDIA",
+// "JAPAN OR CHINA"). [{ supplierId, at: [nước], cells: [chữ NCC ghi] }].
+const ROW_PLACE_NOTE = /\s*Code ghi: dòng NCC ghi nơi sản xuất .*?, cần xác nhận nơi sản xuất\./g;
+export function rowPlacesOff(c, e, row, grp) {
+  const ids = new Set((c.suppliers || []).map((s) => s.supplierId).filter(Boolean));
+  if (c.engine?.src?.supplierId) ids.add(c.engine.src.supplierId);
+  const rows = [...(row ? [row] : []), ...(e.uses || []).filter((u) => ids.has(u.supplierId))], out = new Map();
+  for (const u of rows) {
+    const plant = chinaPlantInRow(e, u), one = placeInRow(e, u) || plant?.at, at = placesInRow(e, u) || (one ? [one] : []);
+    if (!at.some((k) => !CAT.COUNTRY_GROUP[grp].includes(k))) continue;
+    const id = u.supplierId || c.engine?.src?.supplierId || "?", o = out.get(id) || { at: [], cells: [] };
+    const cells = (u.line ? [u.line] : u.lines?.rows || []).flatMap((l) => CAT.cellsOf(l)).map((x) => String(x).trim());
+    const cell = (placesInRow(e, u) ? cells.find((x) => /^(uk\s*\/\s*india|japan\s+or\s+china)$/i.test(x)) : null) || (!placeInRow(e, u) && plant?.cell) || cells.find((x) => /india|印度/i.test(x)) || plant?.cell;
+    out.set(id, { at: [...new Set([...o.at, ...at])], cells: [...new Set([...o.cells, ...(cell ? [cell] : [])])] });
+  }
+  return [...out].map(([supplierId, v]) => ({ supplierId, ...v }));
+}
+const rowPlaceNote = (said) => `Code ghi: dòng NCC ghi nơi sản xuất ${said.map((s) => `${s.supplierId}: ${s.cells.length ? `«${s.cells.join("», «")}» ` : ""}(${s.at.map(madeVi).join(" hoặc ")})`).join("; ")}, cần xác nhận nơi sản xuất.`;
+// Điều phối 22/11/2026: check đang "đạt" mà dòng của cấu hình ghi nơi ngoài nhóm hoặc hai nơi về "cần xác nhận", không thành
+// "không đạt" (đòi thương hiệu thì thương hiệu vẫn đúng). `placeHold` giữ trạng thái cũ: confirmChecks chạy trước và trả mọi
+// "confirm" về "unclear", nên lượt sau phải biết check này do luật này hạ; dòng hết ghi thì trả lại.
+function holdPlace(y, said) {
+  if (y.rule === "thuong-hieu") { delete y.rule; delete y.byCode; y.note = String(y.note || "").replace(/\s*Code ghi: thương hiệu [^;]*; nơi sản xuất cần CO\./, "").trim(); }
+  const note = [y.note, rowPlaceNote(said)].filter(Boolean).join(" ");
+  // Xoá rồi ghi lại theo một thứ tự: confirmChecks gỡ `confirm` giữa hai lượt, JSON của kết quả phải giống hệt.
+  delete y.confirm; delete y.placeHold; delete y.note;
+  y.status = "confirm"; y.confirm = "document"; y.placeHold = "met"; y.note = note;
+}
 export function madeChecks(c, reqs, row, built) {
   for (const r of reqs || []) {
     const part = MADE_CODES[r.code], p = part && c[part];
     // An alternator chosen from its maker's sheet: makerAltChecks (Khoa's answer 4).
     if (!p?.model || r.byCode || p.fromMaker) continue;
     const t = `${r.requirement || ""} ${r.quote || ""}`;
-    if (!/\bG\s?-?(7|20)\b/.test(t) || (madeBasisOf(r.quote) || madeBasisOf(r.requirement)) !== "origin") continue;
+    const basis = madeBasisOf(r.quote) || madeBasisOf(r.requirement);
+    if (!/\bG\s?-?(7|20)\b/.test(t) || (basis !== "origin" && basis !== "brand")) continue;
     const grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`, G = GROUP_NAME[grp];
     const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
-    const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
+    const entry = (list || []).find((x) => x.key === CAT.keyOf(p.model));
+    const makes = String(p.make || entry?.make || "").split(" / ").filter(Boolean);
     const own = p.src?.kind !== "internet" && row ? row : null;
     let m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    // Nhóm G (Khoa 21/11/2026 "cho đạt theo thương hiệu"): HSMT đòi nhà sản xuất / nhãn hiệu thuộc nhóm → đạt khi MỌI hãng nguồn
+    // ghi (`entry.make` = keptMakes, không theo chữ agent) thuộc nhóm. Chỉ mở check chưa rõ / cần xác nhận; chưa rõ hãng, hoặc chính
+    // dòng ghi nơi ngoài nhóm, thì giữ nguyên.
+    const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+    // Khoa 22/11/2026: gói G7 / EU, kể cả chỉ đòi thương hiệu, không nhận dòng NCC tự ghi nơi ngoài nhóm; ô hai nơi là "cần xác nhận".
+    const said = part === "engine" && entry ? rowPlacesOff(c, entry, row, grp) : [];
+    if (y) { y.note = String(y.note || "").replace(ROW_PLACE_NOTE, "").trim(); if (!y.note) delete y.note; }
+    if (y?.placeHold && !said.length) { y.status = y.placeHold; delete y.placeHold; delete y.confirm; }
+    if (basis === "brand") {
+      const home = entry?.make ? CAT.brandOf(entry) : [];
+      // Baudouin: chữ "Weichai Baudouin" / "潍柴博杜安" ở dòng không chặn (Khoa 22/11/2026 "không loại", Baudouin vẫn tính G7; như chinaPlantInRow).
+      const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at) && !(part === "engine" && /^baudouin$/i.test(entry?.make || ""));
+      if (y && said.length) {
+        if (y.status === "met" || y.placeHold) holdPlace(y, said);
+        else y.note = [y.note, rowPlaceNote(said)].filter(Boolean).join(" ");
+        continue;
+      }
+      if (y && (y.status === "unclear" || y.status === "confirm") && !y.unverified && !y.conflict && !y.version && !y.parts?.length && !outside
+        && home.length && home.every((k) => CAT.COUNTRY_GROUP[grp].includes(k))) {
+        delete y.confirm;
+        putCheck(c, y, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `${PART_VI[part]} ${p.model}, thương hiệu ${entry.make} (${home.map(madeVi).join(", ")})`,
+          part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "thuong-hieu",
+          note: `Code ghi: thương hiệu ${entry.make} thuộc nhóm ${G}, đạt theo thương hiệu; nơi sản xuất cần CO.` });
+      }
+      continue;
+    }
     // Stamford S4–S7 a supplier offers (Khoa 21/11/2026 "có"), the PLACE asked: the make's default (UK) proves nothing, the
     // CO is asked. A place the row or the agent's own quote states still counts; a brand asked never comes here.
     const isDefault = (w) => /^(hãng|mặc định)/.test(w || "");
@@ -3939,13 +3997,17 @@ export function madeChecks(c, reqs, row, built) {
     // A not met / met the agent verified from a source of its own stays, unless the row says otherwise.
     const rowSays = !!m.why && !/^(hãng|mặc định)/.test(m.why);
     const q = x?.sourceQuote ? CAT.madeIn(part, makes, x.sourceQuote, p.model) : null;
-    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why))) continue;
+    const stays = x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why));
+    // HSMT đòi NƠI sản xuất mà dòng ghi đúng một nơi ngoài nhóm: vẫn "không đạt" như cũ (status), luật hạ chỉ cho phần còn lại.
+    if (x && said.length && (x.placeHold || (stays ? x.status === "met" : status !== "not_met" && (x.status === "met" || status === "met")))) { holdPlace(x, said); continue; }
+    if (stays) continue;
     const at = m.at === "?" ? "" : `sản xuất tại ${madeVi(m.at)}${/^(hãng|mặc định)/.test(m.why || "") ? ` (${m.why})` : ""}`;
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: [PART_VI[part], p.model, at].filter(Boolean).join(" "),
       ...(m.why && !/^(hãng|mặc định)/.test(m.why) ? { sourceQuote: m.why } : {}), part, level: r.level === "option" ? "option" : "core", status, byCode: true, rule: "noi-san-xuat",
       ...(status === "confirm" ? { confirm: "document" } : {}),
       note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}${noDefault ? "; Stamford S4–S7 không lấy nơi mặc định của hãng (Khoa 21/11/2026)" : ""}; HSMT đòi nơi sản xuất ${G}.`
         : status === "met" ? `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, thuộc nhóm ${G}.` : `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, ngoài nhóm ${G} HSMT đòi.` });
+    if (said.length && status === "met") { const z = (c.checks || []).find((k) => norm(k.item) === norm(r.item)); if (z) holdPlace(z, said); }
   }
   return c;
 }
