@@ -287,7 +287,10 @@
     for (const [re, name] of list) if (re.test(text) && !hit.includes(name)) hit.push(name);
     return hit;
   };
-  const freqIn = (text, labelOnly = false) => {
+  const freqIn = (raw, labelOnly = false) => {
+    // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
+    // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
