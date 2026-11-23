@@ -9,7 +9,7 @@
 - Khoá động cơ 6.328 → 6.238: mất 107, mới 17, thêm dòng 153, bớt dòng 0.
 - Dòng động cơ 48.702 → 48.822. Đầu phát 3.026 và bộ điều khiển 187 không đổi.
 - Đổi hãng 2 khoá, từ trống sang Cummins: QSK60-G11, QSK50-G11. 1 khoá mới không có hãng.
-- 17 khoá mới: 13 mã MTU 4000, DP372CC, DX22, DX37, PHF4075ZLD1. Cả 13 mã MTU đều CHỈ MỘT NCC ghi (yanan-power, bảng [103]), mỗi mã có nguyên chữ trong dòng; chưa đối chiếu datasheet hãng. Ô ghi hai mã kèm "(3B)" và "(3D)", nguồn không giải thích hai nhãn này.
+- 17 khoá mới: 13 mã MTU 4000, DP372CC, DX22, DX37, PHF4075ZLD1. Cả 13 khoá MTU trong catalog chỉ có dòng của yanan-power (bảng [103]), mỗi mã có nguyên chữ trong dòng; chưa đối chiếu datasheet hãng. SỬA 23/11: nguồn KHÔNG chỉ một NCC ghi. comappower [106] ghi cả 13 mã kèm đuôi "(3D)" (23 dòng), catalog đọc thành khoá riêng "12V4000G74F(3D)", PR 3 `keyOf` mới gộp; krauter [2001] ghi 12V4000G74F, 12V4000G84F, 16V4000G74F (3 dòng), catalog chưa đọc bảng đó. Ô ghi hai mã kèm "(3B)" và "(3D)", nguồn không giải thích hai nhãn này.
 - 107 khoá mất (181 dòng nguồn): khoá nào cũng có khoá thay, 0 dòng mất. Bảng cặp cũ → mới ở mục "Đối chiếu khoá" cuối tệp.
 - Test 1529 + 158 + 11 pass, `quality --check` đạt, CI xanh ở head.
 
@@ -137,81 +137,81 @@
 
 ### 13 khoá MTU 4000 mới
 
-#### 12V4000G74F (CHỈ MỘT NCC)
+#### 12V4000G74F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 2. Dòng ghi nguyên chữ mã này: 2.
 
 - yanan-power [103]: `| YN1705MTU | 1705kVA | 1364kW | 1550kVA | 1240kW | 12V4000G14F(3B) 12V4000G74F(3D) | 12 | YN1705MTU`
 - yanan-power [103]: `| YN1830MTU | 1830kVA | 1464kW | 1650kVA | 1320kW | 12V4000G14F(3B) 12V4000G74F(3D) | 12 | YN1830MTU`
 
-#### 12V4000G74S (CHỈ MỘT NCC)
+#### 12V4000G74S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 2. Dòng ghi nguyên chữ mã này: 2.
 
 - yanan-power [103]: `| YN1690MTU | 1690kVA | 1352kW | 1625kVA | 1300kW | 12V4000G14S(3B) 12V4000G74S(3D) | 12 | YN1690MTU`
 - yanan-power [103]: `| YN2000MTU | 2000kVA | 1600kW | 1750kVA | 1400kW | 12V4000G14S(3B) 12V4000G74S(3D) | 12 | YN2000MTU`
 
-#### 12V4000G84F (CHỈ MỘT NCC)
+#### 12V4000G84F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2035MTU | 2035kVA | 1628kW | 1840kVA | 1472kW | 12V4000G24F(3B) 12V4000G84F(3D) | 12 | YN2035MTU`
 
-#### 12V4000G84S (CHỈ MỘT NCC)
+#### 12V4000G84S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2238MTU | 2238kVA | 1790kW | 2038kVA | 1630kW | 12V4000G24S(3B) 12V4000G84S(3D) | 12 | YN2238MTU`
 
-#### 16V4000G74F (CHỈ MỘT NCC)
+#### 16V4000G74F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2300MTU | 2300kVA | 1840kW | 2080kVA | 1664kW | 16V4000G14F(3B) 16V4000G74F(3D) | 16 | YN2300MTU`
 
-#### 16V4000G74S (CHỈ MỘT NCC)
+#### 16V4000G74S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2625MTU | 2625kVA | 2100kW | 2350kVA | 1880kW | 16V4000G14S(3B) 16V4000G74S(3D) | 16 | YN2625MTU`
 
-#### 16V4000G84F (CHỈ MỘT NCC)
+#### 16V4000G84F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2500MTU | 2500kVA | 2000kW | 2250kVA | 1800kW | 16V4000G24F(3B) 16V4000G84F(3D) | 16 | YN2500MTU`
 
-#### 20V4000G64F (CHỈ MỘT NCC)
+#### 20V4000G64F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN2800MTU | 2800kVA | 2240kW | 2500kVA | 2000kW | 20V4000G14F(3B) 20V4000G64F(3D) | 20 | YN2800MTU`
 
-#### 20V4000G64S (CHỈ MỘT NCC)
+#### 20V4000G64S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN3200MTU | 3200kVA | 2560kW | 2900kVA | 2320kW | 20V4000G14S(3B) 20V4000G64S(3D) | 20 | YN3200MTU`
 
-#### 20V4000G74F (CHỈ MỘT NCC)
+#### 20V4000G74F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN3000MTU | 3000kVA | 2400kW | 2800kVA | 2240kW | 20V4000G24F(3B) 20V4000G74F(3D) | 20 | YN3000MTU`
 
-#### 20V4000G74S (CHỈ MỘT NCC)
+#### 20V4000G74S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN3500MTU | 3500kVA | 2800kW | 3175kVA | 2540kW | 20V4000G24S(3B) 20V4000G74S(3D) | 20 | YN3500MTU`
 
-#### 20V4000G84F (CHỈ MỘT NCC)
+#### 20V4000G84F (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN3300MTU | 3300kVA | 2640kW | 3000kVA | 2400kW | 20V4000G34F(3B) 20V4000G84F(3D) | 20 | YN3300MTU`
 
-#### 20V4000G94S (CHỈ MỘT NCC)
+#### 20V4000G94S (khoá này chỉ có yanan-power)
 
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 

@@ -16,3 +16,5 @@
 **Ca sát nhất:** P158LE-1, 4 NCC ghi V, 3 NCC ghi thẳng hàng. Chưa đối chiếu tờ hãng.
 
 **Giới hạn của số.** Đây là đếm tĩnh trên catalog ở `2a7636f6` (dòng có ô bố trí mà ≥ 2 NCC khác ghi ngược), không phải số dòng đổi trong top 30. B chưa viết vào code. Danh sách đủ 146 dòng: `cyl-layout-146-dong.tsv`.
+
+**Khoa quyết 23/11/2026: chọn B.** Đã vào code ở #1073, đầu nhánh `958d51ec`.
