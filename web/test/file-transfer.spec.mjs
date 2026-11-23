@@ -12,7 +12,11 @@ import { tinyPdf } from "./fixtures/files.mjs";
 const KEY = "IB2600586587"; // RICH
 const PROJ = "DA-2026-11-04-01"; // dự án của dữ liệu mẫu
 const AT = "2026-11-10T02:00:00.000Z";
-const toast = (page) => page.locator("#toast, .toast").first();
+// Thông báo MỚI NHẤT (.last()). Mỗi thông báo là một thẻ .toast riêng, sống 2,6 giây, thẻ mới nằm sau thẻ cũ. Với .first(), khi
+// hai thông báo nối nhau trong vòng 2,6 giây (ca "Bỏ tệp tải tay": "Đã tải lên 2 tệp" rồi "Đã bỏ tệp" sau ~250 ms trên CI) thì
+// .first() là thẻ CŨ cho tới khi nó tự xoá; thẻ mới chỉ là .first() trong đúng khoảng cách giữa hai thông báo, và lần thử lại
+// của expect (cách nhau tới 1 giây) rơi ra ngoài khoảng đó → "element(s) not found" (9 / 157 lượt test-web, 19–22/11/2026).
+const toast = (page) => page.locator("#toast, .toast").last();
 
 // Giả các lời gọi ra ngoài của trang. files: { "/_gh/x": { type, text | bytes } }; apiFail: đường dẫn → thông báo lỗi.
 async function stubNet(page, files = {}, { scratchFail = [] } = {}) {
