@@ -6,8 +6,8 @@ Ngày 24/11/2026. Nguồn: datasheet công khai (tải không cần đăng nhậ
 ## 0. Phạm vi và cách đọc số liệu
 
 - Trang DSEGenset liệt kê 42 sản phẩm đang bán (8 nhóm) + khoảng 95 sản phẩm ngừng bán (trang /genset/obsolete). Hồ sơ trước đó có 17 bảng
-  (nguồn 1001–1016). PR này thêm 23 datasheet đang bán (nguồn 1017–1039): 12 của BĐK / màn hình (DSEG8600, 8660, 8680, 810, 8900, 8007, 8500,
-  7400, 7300, 4500, DSE8680, DSE7570) và 11 của module (DSE2160, 2170, 8003 MKII, 892, 857, DSEG0123, DSE2548, 2157, 2152, 2133, 2131).
+  (nguồn 1001–1016). PR này thêm 21 datasheet đang bán (nguồn 1017–1039, trừ 1032/1033): 12 của BĐK / màn hình (DSEG8600, 8660, 8680, 810, 8900, 8007, 8500,
+  7400, 7300, 4500, DSE8680, DSE7570) và 9 của module (DSE2160, 2170, 8003 MKII, DSEG0123, DSE2548, 2157, 2152, 2133, 2131). Datasheet DSE892 và DSE857 đã tải về genbid-work nhưng KHÔNG đưa vào PR: thêm cả hai làm 3 test của `ctl-twin.test.mjs` hỏng (thuộc phần mô-đun truyền thông của phiên khác).
 - Số liệu dưới đây quét 23 datasheet BĐK (gồm cả các datasheet cũ 1001–1011 và 1016; datasheet chung cho cặp -10/-20 tính 1). Số "datasheet có
   ghi" = số datasheet có dòng khớp từ khoá, không phải số model.
 - Số đếm là số datasheet CÓ DÒNG chứa từ khoá, không phải số datasheet "xác nhận chức năng" — chưa lọc ngữ cảnh. Một số từ khoá ồn
