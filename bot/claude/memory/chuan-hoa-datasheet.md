@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-23T18:30:10.216Z
+  modified: 2026-11-23T18:34:48.284Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -19,6 +19,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Khoa 24/11: đầu phát lấy bộ trường như tờ Leroy-Somer TAL (bước quấn, số đầu dây, độ cao, tốc độ vượt, lưu lượng gió, ngắn mạch duy trì, hệ kích từ, loại AVR, ổn định điện áp, THD không tải / tải tuyến tính, TIF, THF, bảng công suất theo chế độ / nhiệt độ / cấp cách điện / pha / điện áp). Động cơ thêm điện áp hệ thống điện (VDC); nhãn "Cooling System Capacity", "Total Oil Capacity", giá trị "Line" chưa được code nhận (việc bước 4).
 - Khoa có tài khoản Deep Sea, đã đăng nhập trong trình duyệt của Khoa; tài liệu phải đăng nhập mới tải được thì giữ ngoài git chờ Khoa quyết (repo public tới 01/12/2026; cách giữ này là em đặt).
 - HSMT ghi kVA / kW điện ở mục động cơ (đo 24/11 trên 1.298 gói: 16 gói chỉ kVA, 14 gói cặp kVA/kW, 25 gói kW = 0,8 × kVA; đa số còn lại đòi kW cơ, ~68 gói HP): kVA và cặp kVA/kW là yêu cầu của TỔ MÁY, so với kVA / kW điện của tổ máy, không so kWm; chỉ kW bằng 0,8 × kVA thì coi là mức tối thiểu kWm. Khoa 24/11: KHÔNG cần thêm câu hỏi làm rõ HSMT cho trường hợp này. Động cơ thêm trường HP khi nguồn ghi (đề xuất của em, chờ chốt cùng danh sách trường). Chưa kiểm bước chấm đạt (`makerSheetChecks`) xử lý ba trường hợp này thế nào.
+- Khoa 24/11 (việc sau khi chốt trường): (1) chốt xong trường BĐK thì mở phiên KHÁC cào lại data các hãng BĐK ngoài Deep Sea (SmartGen, ComAp, Datakom…) cho đủ bộ trường; (2) đầu phát phải lưu thông tin điện theo TỪNG mức điện áp (380 V, 400 V…), mở phiên RIÊNG cào lại data các đầu phát chưa đủ. Ghi chú của em: `sources/<id>/<n>.md` giữ nguyên chữ datasheet, chỉ `datasheets/<id>.json` lọc dòng theo nhãn code nhận → tờ đã lưu thì đọc lại từ sources, chỉ model thiếu tờ mới phải tải.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
