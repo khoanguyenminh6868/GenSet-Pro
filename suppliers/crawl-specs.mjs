@@ -104,8 +104,12 @@ const widthOf = (l) => l.split("|").length, nonBlank = (l) => l.replace(/[|\s]/g
 const isData = (l) => { const c = cellsIn(l); return c.filter(isNumCell).length >= Math.max(2, c.length * 0.4); };
 const plainNum = (x) => /^\d+(\.\d+)?$/.test(x);
 // One table from the lines of one table: header = the leading lines that are mostly not numbers.
-function tableOf(block) {
-  const k = block.findIndex(isData);
+// byMachine (only for a part of a block being split): a part whose rows are all wide machine rows with few number cells
+// (baifa-power n106 "| BF-V900TWIN-T3 | 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | …") has no "data" line, and
+// starts at its first machine row. A whole block is read as before.
+function tableOf(block, byMachine = false) {
+  let k = block.findIndex(isData);
+  if (k < 0 && byMachine) k = block.findIndex((l, j) => j >= 1 && isMachineRow(l));
   if (k < 0) return null;
   // A line as wide as the first data line stays even with few numbers: in a table with the models across
   // ("| Engine Model | YC4D60-D21 | YC4D80-D34") it is the engine or alternator of each model.
@@ -146,7 +150,7 @@ export function subTables(block) {
   const starts = splitPoints(block).starts;
   if (starts.length > 1 && !block.slice(starts[starts.length - 1]).some(isRowLine)) { block = block.slice(0, starts.pop()); }
   if (starts.length < 2) return [whole];
-  const parts = starts.map((s, x) => tableOf(block.slice(s, starts[x + 1] ?? block.length)));
+  const parts = starts.map((s, x) => tableOf(block.slice(s, starts[x + 1] ?? block.length), true));
   if (parts.some((t) => !t)) return [whole];
   const kept = new Set(parts.flatMap((t) => [...t.rows, ...t.header]));
   if (!whole.rows.every((r) => kept.has(r))) return [whole];

@@ -64,8 +64,10 @@ test("tệp nguồn thật: bảng theo dòng phân đoạn của awt-aiweite, l
   const sect = (id, n) => tablesOf(source(id, n)).map((t) => [t.header[t.header.length - 1], t.rows.length]);
   assert.deepEqual(sect("awt-aiweite", 101).slice(-2), [["| Perkins Series（50HZ）", 64], ["| Perkins Series（60HZ）", 62]]);
   assert.deepEqual(sect("lees-power", 111).slice(-2), [["| Single phase", 5], ["| Three phase", 16]]);
-  // hai khối cùng dưới một dòng phân đoạn (giữa chúng là một dòng bị cắt): cả hai mang dòng đó
-  assert.deepEqual(sect("longkai-power", 126).slice(-2), [["| Weichai Series--Baudouin Engine", 41], ["| Weichai Series--Baudouin Engine", 27]]);
+  // hai khối cùng dưới một dòng phân đoạn (giữa chúng là một dòng bị cắt): mọi bảng đều mang dòng đó.
+  // Khối 41 dòng có tiêu đề lặp nên là hai bảng con 25 + 16 (tach-bang-con); tổng 87 dòng của trang không đổi.
+  assert.deepEqual(sect("longkai-power", 126).slice(-3), [["| Weichai Series--Baudouin Engine", 25], ["| Weichai Series--Baudouin Engine", 16], ["| Weichai Series--Baudouin Engine", 27]]);
+  assert.equal(tablesOf(source("longkai-power", 126)).flatMap((t) => t.rows).length, 87);
   const hy = tablesOf(source("huayuan-weifang", 113)).find((t) => t.rows[0].startsWith("| HY500GF"));
   assert.equal(hy.rows.length, 6);
   // trang một model của tecgen-fujian: bảng "nhãn | giá trị" (sheet) vẫn như trước, không thêm bảng kích thước
@@ -78,16 +80,34 @@ test("hồ sơ: mọi bảng tablesOf đọc ra từ tệp nguồn của 15 NCC 
   const ids = ["aosif", "awt-aiweite", "camda-generator", "huayuan-weifang", "jet-power", "jianghao-genset", "kangwo-guangdong", "lees-power", "longkai-power", "mecca-power", "previa-ningde", "sanq-power", "shengfeng-fuan", "taihai-taizhou", "walter-yangzhou"];
   const pages = { "awt-aiweite": [101, 102, 103, 104, 105], "lees-power": [111, 112, 127, 131], "longkai-power": [103, 121, 122, 126], "previa-ningde": [102, 105, 109, 110], "jianghao-genset": [109, 110, 111], "walter-yangzhou": [115, 116], "mecca-power": [101, 136], "kangwo-guangdong": [105, 106], aosif: [104], "camda-generator": [139], "huayuan-weifang": [113], "jet-power": [136], "sanq-power": [123], "shengfeng-fuan": [108], "taihai-taizhou": [106] };
   assert.deepEqual(Object.keys(pages).sort(), ids);
-  let cut = 0;
+  const cut = [];
   for (const id of ids) {
     const rec = read("cn", `${id}.json`), have = new Set(rec.specTables.map((t) => t.rows.join("\n"))), lines = new Set(rec.specTables.flatMap((t) => [...t.header, ...t.rows]));
     for (const n of pages[id]) for (const t of tablesOf(source(id, n)).filter((t) => t.header.length && !rec.specTables.some((x) => x.n === n && x.header.join("\n") === t.header.join("\n") && x.rows.join("\n") === t.rows.join("\n")))) {
       assert.ok(have.has(t.rows.join("\n")), `${id} n${n}: bảng "${t.rows[0]}" chưa có trong cn/`);
-      cut++;
+      cut.push(`${id} n${n}`);
     }
     for (const n of pages[id]) for (const t of tablesOf(source(id, n))) for (const l of [...t.header, ...t.rows]) assert.ok(lines.has(l) || t.sheet, `${id} n${n}: dòng chưa có trong cn/: ${l}`);
   }
-  assert.equal(cut, 2, "chỉ hai bảng 'Single phase' của lees-power n127 / n131 trùng nguyên dòng với bảng n112 / n111");
+  // Bảng có dòng trùng nguyên văn với bảng trang khác chỉ lưu một lần: lees n127 = n112, n131 = n111, longkai n103 = n101, mecca n136 = n103.
+  assert.deepEqual(cut, ["lees-power n127", "lees-power n131", "longkai-power n103", "mecca-power n136"]);
+});
+
+test("bảng con chỉ có dòng máy nhiều ô chữ vẫn là bảng: baifa n106 sáu bảng theo RPM / Tier, đủ 36 dòng", () => {
+  const twin = tablesOf(source("baifa-power", 106)).filter((t) => t.rows.some((r) => /TWIN/.test(r)));
+  assert.equal(twin.length, 6);
+  assert.equal(twin.flatMap((t) => t.rows).length, 36);
+  assert.deepEqual(twin.map((t) => /1800RPM/.test(t.header.join(" ")) ? 1800 : 1500), [1500, 1800, 1500, 1800, 1800, 1500]);
+  assert.ok(twin.find((t) => t.rows[0].startsWith("| BF-V900TWIN-T3")).header.join(" ").includes("STAGE 3A TIER 3"));
+});
+
+test("đơn vị tiêu hao theo tiêu đề của chính bảng con, không suy từ độ lớn (Khoa 23/11/2026: taihai 163 / 196 / 237 là L/h)", () => {
+  const recs = C.fromSupplier(read("cn", "taihai-taizhou.json"), []);
+  for (const [genset, model, value] of [["TH-800GF", "4008TAG2A", "163"], ["TH-1000GF", "4012-46TWG2A", "196"], ["TH-1200GF", "4012-46TAG2A", "237"]]) {
+    const fuel = recs.find((r) => r.genset === genset && r.model === model && r.kind === "engine").specs.find((s) => s.key === "fuel");
+    assert.equal(fuel.value, value);
+    assert.match(fuel.label, /L\/h/);
+  }
 });
 
 test("catalog: dòng phân đoạn cho tần số và hãng của bảng (awt-aiweite 60HZ, aosif Hyundai)", () => {
