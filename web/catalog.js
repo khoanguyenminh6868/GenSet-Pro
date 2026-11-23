@@ -2001,6 +2001,9 @@
       { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
     // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
     { supplierId: "aosif", n: 123, genset: "AW1000", line: "| AW1000 | 900/720 | 1000/800 | 8M33D979E201 | 205.4 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8M33 (cùng bảng ghi 8V / 26,1 L cho 8M33D845E201): bỏ riêng số xi lanh và dung tích" },
+    // aosif n102: "12V" for QSK19 / KTA19 (6 in line; the same 18.9 L). Too few other sources for the layout rule to overrule the cell.
+    ...[["AC700-I", "| AC700-I | 625/500 | 700/560 | QSK19-G31 | 136.5 | 12V | 18.9 |"], ["AC700-II", "| AC700-II | 625/500 | 700/560 | QSK19-G35 | 138 | 12V | 18.9 |"], ["AC750-III", "| AC750-III | 681/545 | 750/600 | KTA19-G9A | 147 | 12V | 18.9 |"]].map(([genset, line]) => (
+      { supplierId: "aosif", n: 102, genset, line, act: "dropspec", keys: ["cyl"], khoa: "Khoa 22/11/2026", why: "nguồn ghi 12V cho động cơ QSK19 / KTA19 dung tích 18,9 L: bỏ riêng số xi lanh, không ghi số thay" })),
     // cameo-power n107 SC-70YC (column of a table written across): Engine Power 35/41 kW under a 64/70 kW set (the two other columns repeat the set's power).
     { supplierId: "cameo-power", n: 107, genset: "SC-70YC", line: "| Engine Power(kw) (prime/standby) | 50/55 | 55/60 | 35/41", act: "dropspec", keys: ["engPower"], khoa: "Khoa 20/11/2026", why: "nguồn ghi công suất động cơ 35/41 kW nhỏ hơn tổ máy 64/70 kW: bỏ riêng công suất động cơ" },
     // jiangchai-xuzhou n107 J20B400M (6M33D506E310): current "7200" A for a 450 kVA set (neighbours: 846 A for 520 kVA).
