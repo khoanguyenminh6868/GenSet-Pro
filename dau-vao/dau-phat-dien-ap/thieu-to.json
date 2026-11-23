@@ -95,11 +95,6 @@
   "nSup": 7
  },
  {
-  "model": "S5L1D-C4",
-  "make": "Stamford",
-  "nSup": 7
- },
- {
   "model": "S5L1D-H41",
   "make": "Stamford",
   "nSup": 7
@@ -130,11 +125,6 @@
   "nSup": 6
  },
  {
-  "model": "S5L1D-F4",
-  "make": "Stamford",
-  "nSup": 6
- },
- {
   "model": "S7L1D-D41",
   "make": "Stamford",
   "nSup": 6
@@ -151,11 +141,6 @@
  },
  {
   "model": "LVI634G",
-  "make": "Stamford",
-  "nSup": 6
- },
- {
-  "model": "S5L1D-G4",
   "make": "Stamford",
   "nSup": 6
  },
@@ -182,6 +167,11 @@
  {
   "model": "S5L1D-F41",
   "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "LSA 53.2M9",
+  "make": "Leroy-Somer",
   "nSup": 5
  },
  {
@@ -295,11 +285,6 @@
   "nSup": 4
  },
  {
-  "model": "S7L1D-J4",
-  "make": "Stamford",
-  "nSup": 4
- },
- {
   "model": "LVI634F",
   "make": "Stamford",
   "nSup": 4
@@ -372,11 +357,6 @@
  {
   "model": "LSA40 M7",
   "make": "Leroy-Somer",
-  "nSup": 3
- },
- {
-  "model": "S5L1D-D4",
-  "make": "Stamford",
   "nSup": 3
  },
  {
@@ -490,11 +470,6 @@
   "nSup": 2
  },
  {
-  "model": "TAL044M",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
   "model": "MP-H-100-4",
   "make": "Marathon",
   "nSup": 2
@@ -530,22 +505,7 @@
   "nSup": 2
  },
  {
-  "model": "S4L1S-E4",
-  "make": "Stamford",
-  "nSup": 2
- },
- {
-  "model": "TAL042C",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
   "model": "UCI274K",
-  "make": "Stamford",
-  "nSup": 2
- },
- {
-  "model": "LSA 53.2M12",
   "make": "Stamford",
   "nSup": 2
  },
@@ -570,26 +530,6 @@
   "nSup": 2
  },
  {
-  "model": "TAL040D",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL042H",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044B",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044D",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
   "model": "UC224C",
   "make": "Stamford",
   "nSup": 2
@@ -597,11 +537,6 @@
  {
   "model": "ECO46-2L",
   "make": "Mecc Alte",
-  "nSup": 2
- },
- {
-  "model": "LSA 54.2L14",
-  "make": "Stamford",
   "nSup": 2
  },
  {
@@ -655,28 +590,13 @@
   "nSup": 2
  },
  {
-  "model": "S7L1D-K41",
+  "model": "PI734E1",
   "make": "Stamford",
   "nSup": 2
  },
  {
-  "model": "TAL040F",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL042F",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044A",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044J",
-  "make": "Leroy-Somer",
+  "model": "S7L1D-K41",
+  "make": "Stamford",
   "nSup": 2
  },
  {
@@ -751,16 +671,6 @@
  },
  {
   "model": "TAL-A47-C",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044H",
-  "make": "Leroy-Somer",
-  "nSup": 2
- },
- {
-  "model": "TAL044L",
   "make": "Leroy-Somer",
   "nSup": 2
  },
@@ -860,11 +770,6 @@
   "nSup": 1
  },
  {
-  "model": "TAL0473A",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
   "model": "BS184F",
   "make": "Stamford",
   "nSup": 1
@@ -887,11 +792,6 @@
  {
   "model": "S4L1S-F4(320KW)",
   "make": "Stamford",
-  "nSup": 1
- },
- {
-  "model": "TAL0473F",
-  "make": "Leroy-Somer",
   "nSup": 1
  },
  {
@@ -987,26 +887,6 @@
  {
   "model": "SY-A 314C",
   "make": "Stamford",
-  "nSup": 1
- },
- {
-  "model": "TAL042A",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL0473B",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL0473C",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL0473E",
-  "make": "Leroy-Somer",
   "nSup": 1
  },
  {
@@ -1155,6 +1035,11 @@
   "nSup": 1
  },
  {
+  "model": "PI734F1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
   "model": "S1L2-K1(32KW)",
   "make": "Stamford",
   "nSup": 1
@@ -1231,11 +1116,6 @@
  },
  {
   "model": "TAL-A47-F",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL042D",
   "make": "Leroy-Somer",
   "nSup": 1
  },
@@ -1940,11 +1820,6 @@
   "nSup": 1
  },
  {
-  "model": "PI734G1",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
   "model": "S0L2-G1(16KW)",
   "make": "Stamford",
   "nSup": 1
@@ -2081,21 +1956,6 @@
  },
  {
   "model": "TAL-A49-B1",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL040B",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL040C",
-  "make": "Leroy-Somer",
-  "nSup": 1
- },
- {
-  "model": "TAL042G",
   "make": "Leroy-Somer",
   "nSup": 1
  },
