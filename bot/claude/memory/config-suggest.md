@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-22T09:58:50.196Z
+  modified: 2026-11-23T11:04:30.357Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -139,4 +139,4 @@ Khoa 21/11/2026 (đợt "fix luôn các lỗi đã phát hiện"), các quyết 
 - **HSMT tự ghi dung sai ngay sau ngưỡng** ("≥ 8,5 ± 0,5", "≤ 1,3 L ± 5 %"): Khoa 21/11/2026 "có": tính dung sai vào ngưỡng (nhận từ 8,0; nhận tới 1,365). Áp cho MỌI ngưỡng kể cả công suất ("≥ 400 kVA ± 5 %" nhận từ 380; Khoa: "nếu có +- % thì cứ áp"); ca chữ nguồn nghi là "+ 1 %" chứ không phải ± (IB2300296794) thì KHÔNG hạ.
 - **Máy lớn hơn công suất HSMT, tiêu hao 100 % tải của chính nó vượt ngưỡng HSMT** (#1022, 538 dòng): Khoa 21/11/2026 "loại như hiện tại"; KHÔNG quy tỉ lệ công suất (đó là ước lượng).
 - **Cỡ máy HSMT không ghi mức**: Khoa 21/11/2026 "nếu không ghi thì hiểu là prime": dòng phải có prime trong dải. Dòng chỉ ghi standby: Khoa 22/11/2026 chọn "A" = prime tính bằng standby ÷ 1,1 (không chọn B: giữ dòng, gắn "chưa rõ prime"). HSMT ghi rõ công suất standby: giữ luật cũ (em quyết, Khoa chưa xét riêng).
-- **Tần số (sau #1089, Khoa 22/11/2026 "1. Có 2. Có")**: tên model kaihua-genset đuôi "-60" (HC-BD1500-60) coi là dòng 60 Hz, CHỈ riêng kaihua (suy từ tên nên không mở rộng cho NCC khác khi chưa hỏi). Mã Baudouin có dấu "^" (tờ hãng: "^ Primarily for ESP applications"): gói đòi công suất liên tục (prime) thì loại, gói dự phòng giữ. YC20VTD3000-D30 / 3300-D30: một nguồn (comler) ghi 50 Hz, nguồn khác 60 Hz, không có tờ Yuchai → không kết luận "chỉ 60" (điều phối quyết).
+- **Tần số (sau #1089, Khoa 22/11/2026 "1. Có 2. Có")**: tên model kaihua-genset đuôi "-60" (HC-BD1500-60) coi là dòng 60 Hz, CHỈ riêng kaihua (suy từ tên nên không mở rộng cho NCC khác khi chưa hỏi). Mã Baudouin có dấu "^" (tờ hãng: "^ Primarily for ESP applications"): gói đòi công suất liên tục (prime) thì loại, gói dự phòng giữ; Khoa 23/11/2026 (qua điều phối): "áp cho mọi mã" có dấu "^", dù tờ hãng chỉ chú thích ở 3 mã. YC20VTD3000-D30 / 3300-D30: một nguồn (comler) ghi 50 Hz, nguồn khác 60 Hz, không có tờ Yuchai → không kết luận "chỉ 60" (điều phối quyết).
