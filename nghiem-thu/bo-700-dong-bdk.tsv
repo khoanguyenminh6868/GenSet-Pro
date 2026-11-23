@@ -1,0 +1,81 @@
+ho_so	n	tieu_de	dong_nguon	dong_luu	dong_bi_cat	thieu_khac	co_bang	phan_loai_phan_cat
+comap	1001	InteliLite 4 AMF 25	188	188	0	0	1	
+comap	1002	InteliLite 4 AMF 20	175	175	0	0	1	
+comap	1003	InteliLite 4 MRS 16	190	190	0	0	1	
+comap	1004	InteliGen NT	171	171	0	0	1	
+comap	1005	| | InteliGen NTC Datasheet | | Related HW ver: 2.0 | | Rela	170	170	0	0	1	
+comap	1006	InteliGen NT	218	218	0	0	1	
+comap	1007	InteliGen NTC	202	202	0	0	1	
+comap	1008	InteliGen 500 G2	219	219	0	0	1	
+comap	1009	InteliGen4 200	199	199	0	0	1	
+comap	1011	InteliLite 4 AMF 8	175	175	0	0	1	
+comap	1012	InteliLite 4 AMF 9	183	183	0	0	1	
+comap	1013	InteliGen 1000	280	280	0	0	1	
+comap	1014	CM2-4G-GPS	71	71	0	0	1	
+comap	1015	CM3-Ethernet	37	37	0	0	1	
+comap	1016	CM-RS232-485	41	41	0	0	1	
+comap	1017	InteliSys NTC BaseBox	192	192	0	0	1	
+comap	1018	InteliSys Gas	192	192	0	0	1	
+comap	1019	InteliMains NTC BaseBox	192	192	0	0	1	
+comap	1020	InteliDrive DCU Marine	184	184	0	0	1	
+datakom	1001	| DKG-309 User Manual | V-29 (23.08.2013)	2244	700	1544	0	1	khac=554 tieu-de-lap=61 tham-so=158 co-so=565 bao-ve=194 dau-day=12
+datakom	1002	| DKG-307 User Manual | V-42 (24.05.2013)	2051	700	1351	0	1	khac=458 tham-so=137 bao-ve=168 co-so=534 dau-day=9 tieu-de-lap=45
+datakom	1003	DKG-116	76	75	0	1	1	
+deep-sea-electronics	1001	| DSE7310 MKII Auto Start & DSE7320 MKII | Auto	246	246	0	0	1	
+deep-sea-electronics	1002	| DSE6110 MKIII Auto Start | & DSE6120 MKIII	249	249	0	0	1	
+deep-sea-electronics	1003	| DSE7410 MKII Auto Start & DSE7420 MKII | Auto	259	259	0	0	1	
+deep-sea-electronics	1004	| DSE8610 MKII Synchronising & Load Sharing | Auto	253	253	0	0	1	
+deep-sea-electronics	1005	| DSE8660 MKII Auto Transfer Switch & Mains | (Utility)	223	223	0	0	1	
+deep-sea-electronics	1006	DSE3110 Manual & Auto Start Control Module	161	161	0	0	1	
+deep-sea-electronics	1007	DSEGenset | DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDARD	183	183	0	0	1	
+deep-sea-electronics	1008	DSEGenset® | DSE4520 MKII | SPECIFICATIONS	189	189	0	0	1	
+deep-sea-electronics	1009	DSEGenset | DSE4610/20 | ENVIRONMENTAL TESTING STANDARDS	170	170	0	0	1	
+deep-sea-electronics	1010	DSEGenset® | DSE8620 MKII | SPECIFICATIONS	177	177	0	0	1	
+deep-sea-electronics	1011	DSEGenset | DSE7210/20 | ENVIRONMENTAL TESTING STANDARDS	172	172	0	0	1	
+deep-sea-electronics	1012	| DSE890 MKII DSEWebNet® / IoT | Gateway	167	167	0	0	1	
+deep-sea-electronics	1013	| DSE891 MKII DSEWebNet® Gateway | -	153	153	0	0	1	
+deep-sea-electronics	1014	| dse855 | SPECIFICATION	120	120	0	0	1	
+deep-sea-electronics	1015	| DSEWebNet® Remote Monitoring | Software	72	72	0	0	1	
+deep-sea-electronics	1016	DSE7310 MKII & DSE7320 MKII Operator Manual 057-253 ISSUE 8	347	332	0	15	1	
+deep-sea-electronics	1017	Series Data Sheet	342	342	0	0	1	
+deep-sea-electronics	1018	| Series | Data	195	195	0	0	1	
+deep-sea-electronics	1019	Series Data Sheet	190	190	0	0	1	
+deep-sea-electronics	1020	| DSE8680 | Synchronising Generator Bus Tie Control Module |	157	157	0	0	1	
+deep-sea-electronics	1021	Series Data Sheet	254	254	0	0	1	
+deep-sea-electronics	1022	Series Data Sheet	108	108	0	0	1	
+deep-sea-electronics	1023	| DSENet® Data | Sheet	142	142	0	0	1	
+deep-sea-electronics	1024	| DSENet® Data | Sheet	130	130	0	0	1	
+deep-sea-electronics	1025	Series Data Sheet	290	290	0	0	1	
+deep-sea-electronics	1026	DSEGenset® Data Sheet | DSE8680 Synchronising Generator Bus 	171	171	0	0	1	
+deep-sea-electronics	1027	DSEGenset® Data Sheet DSE7570 Remote Sync Lock Controller	128	128	0	0	1	
+deep-sea-electronics	1028	Series Data Sheet	252	252	0	0	1	
+deep-sea-electronics	1029	Series Data Sheet	245	245	0	0	1	
+deep-sea-electronics	1030	Series Data Sheet	192	192	0	0	1	
+deep-sea-electronics	1031	DSEGenset® | DSE8003 MKII | SPECIFICATIONS	108	108	0	0	1	
+deep-sea-electronics	1034	The DSEG0123 also allows the DSEG8600, DSEG8900, DSE8610 MKI	94	94	0	0	1	
+deep-sea-electronics	1035	| DSE8680 | Synchronising Generator Bus Tie Control Module |	118	118	0	0	1	
+deep-sea-electronics	1036	| DSE8680 | Synchronising Generator Bus Tie Control Module |	145	145	0	0	1	
+deep-sea-electronics	1037	| DSE8680 | Synchronising Generator Bus Tie Control Module |	114	114	0	0	1	
+deep-sea-electronics	1038	| DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Cont	121	121	0	0	1	
+deep-sea-electronics	1039	| DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Cont	125	125	0	0	1	
+deif	1001	DEIF AGC 150 Generator, Mains, and BTB	1424	700	724	0	1	co-so=370 khac=294 tieu-de-lap=8 bao-ve=12 tham-so=30 dau-day=10
+deif	1002	DEIF AGC 200	761	700	61	0	1	co-so=39 khac=16 tham-so=1 dau-day=4 tieu-de-lap=1
+deif	1003	DEIF SGC 420 Mk II	520	520	0	0	1	
+deif	1004	DEIF AGC-4 Mk II	1589	700	889	0	1	co-so=493 khac=294 dau-day=29 tham-so=38 tieu-de-lap=17 bao-ve=18
+sices	1001	GC600	295	294	0	1	1	
+sices	1002	GC315 (GC315Plus, GC315Link)	201	201	0	0	1	
+sices	1003	GC315-GC400	9026	700	8326	0	1	co-so=3376 khac=3015 tham-so=1067 bao-ve=561 dau-day=182 tieu-de-lap=125
+smartgen	1001	HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CA	1509	700	809	0	1	tham-so=58 co-so=316 bao-ve=74 khac=282 dau-day=66 tieu-de-lap=13
+smartgen	1002	HGM6100U SERIES (HGM6110U/6110UC/6120U/6120UC)	1099	700	399	0	1	co-so=154 bao-ve=47 khac=166 tieu-de-lap=3 tham-so=21 dau-day=8
+smartgen	1003	HGM9510	2543	699	1844	0	1	co-so=780 bao-ve=213 khac=588 tham-so=118 tieu-de-lap=61 dau-day=84
+smartgen	1004	HGM9530	2416	699	1717	0	1	co-so=798 bao-ve=211 khac=483 tieu-de-lap=55 tham-so=111 dau-day=59
+smartgen	1005	HGM9510N/HGM9530N	3343	700	2643	0	1	khac=781 co-so=1067 bao-ve=348 tieu-de-lap=217 dau-day=92 tham-so=138
+smartgen	1006	HGM9600 SERIES (HGM9610/HGM9620)	2293	700	1593	0	1	bao-ve=180 co-so=683 khac=479 tieu-de-lap=61 tham-so=91 dau-day=99
+smartgen	1007	HGM7100N SERIES (HGM7110N/7120N)	1765	700	1065	0	1	tham-so=90 khac=381 co-so=405 bao-ve=146 tieu-de-lap=28 dau-day=15
+smartgen	1008	HGM7200 SERIES	2175	700	1475	0	1	khac=471 tieu-de-lap=62 co-so=615 tham-so=103 bao-ve=139 dau-day=85
+smartgen	1009	HGM4020T	1529	700	829	0	1	tham-so=76 tieu-de-lap=21 khac=317 dau-day=22 co-so=285 bao-ve=108
+smartgen	1010	HGM400 Series Genset Controller	1278	700	578	0	1	co-so=229 khac=224 bao-ve=62 tieu-de-lap=10 tham-so=36 dau-day=17
+smartgen	1011	HGM9420N_HGM9420LT	3271	700	2571	0	1	co-so=1006 khac=687 bao-ve=381 tham-so=133 tieu-de-lap=261 dau-day=103
+woodward	1001	Woodward easYgen-1400 / easYgen-1600 / easYgen-1700 / easYge	240	240	0	0	1	
+woodward	1002	Woodward easYgen-3400XT / easYgen-3500XT	153	153	0	0	1	
+woodward	1003	Woodward easYgen-3100XT / easYgen-3200XT-P1(-LT)	145	145	0	0	1	

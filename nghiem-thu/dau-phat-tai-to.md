@@ -44,3 +44,7 @@ Stamford 91 (mọi mục ở mục 2 + mục 1 chưa gắn), Leroy-Somer 28, Mec
 - Mecc Alte (ECO46-2L…): chưa soát tên với tờ dải 1007–1016.
 - Marathon (28 model ≥ 2 NCC): chưa thử marathonelectric.com / weg.net.
 - Soát vì sao tờ HCI chỉ 4 điện áp, S0/S1 chỉ 6.
+
+## 5. Bổ sung brief 24/11/2026 (nguồn 2 trang web, CHƯA làm)
+Điều phối: thông số / model hãng không có thì được tìm trên internet, lấy khi có ≥ 2 nguồn ĐỘC LẬP (khác website, không chép cùng bảng) ghi CÙNG giá trị, mỗi nguồn kèm trang + câu trích nguyên văn; lệch nhau thì bỏ, ghi lại. Phiên này KHÔNG đưa vào hồ sơ, chỉ lập danh sách (model, điện áp / trường, giá trị, 2 URL, câu trích) cho model ≥ 2 NCC chào mà không có tờ hãng.
+Trạng thái: chưa làm, phiên đã quá 30 % context. Danh sách ưu tiên: mục 2 "không tìm ra tờ" (LVI634B–G, 164/184, 224D/E/G, P126TI, P086TI, PI734, LVSI804, UCI274J/K, S4L1S-D4) + Leroy-Somer 28 + Marathon 28 (marathonelectric.com 403: ghi, không đổi UA). Gợi ý: một phiên mới đọc tệp này rồi làm tiếp.

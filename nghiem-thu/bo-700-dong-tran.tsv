@@ -1,0 +1,32 @@
+tran	ho_so	n	tieu_de	dong_luu	dong_day_du	dong_bi_cat
+700	datakom	1001	| DKG-309 User Manual | V-29 (23.08.2013)	700	2244	1544
+700	datakom	1002	| DKG-307 User Manual | V-42 (24.05.2013)	700	2051	1351
+700	deif	1001	DEIF AGC 150 Generator, Mains, and BTB	700	1424	724
+700	deif	1002	DEIF AGC 200	700	761	61
+700	deif	1004	DEIF AGC-4 Mk II	700	1589	889
+60	endress-stromerzeuger	109	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	110	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	112	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	113	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	149	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	150	Endress Generators: Detail view	60	74	14
+60	endress-stromerzeuger	151	Endress Generators: Detail view	60	74	14
+60	linz-electric	101	4 POLES ALTERNATORS - Linz Electric	60	108	48
+700	sices	1003	GC315-GC400	700	9026	8326
+700	smartgen	1001	HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CA	700	1509	809
+700	smartgen	1002	HGM6100U SERIES (HGM6110U/6110UC/6120U/6120UC)	700	1099	399
+700	smartgen	1003	HGM9510	699	2542	1843
+700	smartgen	1004	HGM9530	699	2415	1716
+700	smartgen	1005	HGM9510N/HGM9530N	700	3343	2643
+700	smartgen	1006	HGM9600 SERIES (HGM9610/HGM9620)	700	2293	1593
+700	smartgen	1007	HGM7100N SERIES (HGM7110N/7120N)	700	1765	1065
+700	smartgen	1008	HGM7200 SERIES	700	2175	1475
+700	smartgen	1009	HGM4020T	700	1529	829
+700	smartgen	1010	HGM400 Series Genset Controller	700	1278	578
+700	smartgen	1011	HGM9420N_HGM9420LT	700	3271	2571
+60	supermaly	102	OEM Weichai 100KVA Generator Set-1 Supplier, Factory | Super	60	77	17
+60	supermaly	103	OEM Weichai 250KVA Generator Set-1 Supplier, Factory | Super	60	77	17
+60	supermaly	104	OEM Shangchai 312.5KVA Generator Set-1 Supplier, Factory | S	60	78	18
+60	supermaly	106	OEM Weichai 250KVA Generator Set-1 Supplier, Factory | Super	60	77	17
+60	westinpower	118	Diesel Generators | Industrial Generator Set | Westinpower	60	157	97
+60	yongcai-elecmama	170	Chinese Diesel Engines | Yangzhou Yongcai Machinery Co., Ltd	60	77	17
