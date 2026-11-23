@@ -192,7 +192,9 @@
       "title": "",
       "header": [
         "| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY",
-        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD",
+        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+      ],
+      "rows": [
         "| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN",
         "| TBA | 836 | 760 | VOLVO | TWD1744GE | ECM4 | S5L1D-H41 | STAGE II /TIER 2 | SWEDEN",
         "| BF-C825Q-T2 | 825 | 750 | CUMMINS | QSK23-G8 | | S5L1D-H41 | TIER 2/ CHINA STAGE3 | INDIA",
@@ -223,9 +225,7 @@
         "| BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 | | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK",
         "| BF-C2500Q-T2 | 2500 | 2250 | QSK60-G21 | | S7L1D-H41 | TIER 2/ CHINA STAGE3 | UK",
         "| BF-C2750Q-T2 | 2750 | 2500 | QSK60-G23 | | S7L1D-J41 | TIER 2/ CHINA STAGE3 | UK/ CCEC",
-        "| BF-C3000Q-T2 | 3000 | 2750 | QSK78-G15 | | LSA52.3 UL16 | TIER 2/ CHINA STAGE3 | UK"
-      ],
-      "rows": [
+        "| BF-C3000Q-T2 | 3000 | 2750 | QSK78-G15 | | LSA52.3 UL16 | TIER 2/ CHINA STAGE3 | UK",
         "| BF-C3763Q-T2 | 3763 | 3363 | QSK95-G10 | | LSA 53.2M12 | TIER 2 | USA",
         "| BF-M880-T2 | 880 | 800 | MTU | 12V2000G26F | | S6L1D-C4",
         "| BF-M1000-T2 | 1000 | 910 | | 16V2000G16F | | S6L1D-D4",
@@ -340,7 +340,9 @@
       "title": "",
       "header": [
         "| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY",
-        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD",
+        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+      ],
+      "rows": [
         "| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA",
         "| BF-C40Q-3 | 44 | 40 | QSB3.9-G33 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE3 | CHINA",
         "| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA",
@@ -369,9 +371,7 @@
         "| BF-C713Q-3 | 713 | 650 | QSK19-G4 | | CHINA STAGE3 | CHINA",
         "| BF-C750Q-3 | 750 | 688 | QSK19-G11 | | CHINA STAGE3 | CHINA",
         "| BF-C500Q-3 | 500 | 455 | QSK19-G15 | | CHINA STAGE3 | CHINA",
-        "| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA"
-      ],
-      "rows": [
+        "| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA",
         "| BF-C625-3 | 625 | 569 | QSK19-G17 | | CHINA STAGE3 | CHINA",
         "| BF-C700-3 | 700 | 636 | QSK19-G18 | | CHINA STAGE3 | CHINA",
         "| BF-C750-3 | 750 | 681 | QSK19-G19 | | CHINA STAGE3 | CHINA",
@@ -462,7 +462,9 @@
       "title": "",
       "header": [
         "| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY",
-        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD",
+        "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"
+      ],
+      "rows": [
         "| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA",
         "| BF-C40Q-3 | 44 | 40 | QSB3.9-G33 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE3 | CHINA",
         "| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA",
@@ -491,9 +493,7 @@
         "| BF-C713Q-3 | 713 | 650 | QSK19-G4 | | CHINA STAGE3 | CHINA",
         "| BF-C750Q-3 | 750 | 688 | QSK19-G11 | | CHINA STAGE3 | CHINA",
         "| BF-C500Q-3 | 500 | 455 | QSK19-G15 | | CHINA STAGE3 | CHINA",
-        "| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA"
-      ],
-      "rows": [
+        "| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA",
         "| BF-C625-3 | 625 | 569 | QSK19-G17 | | CHINA STAGE3 | CHINA",
         "| BF-C700-3 | 700 | 636 | QSK19-G18 | | CHINA STAGE3 | CHINA",
         "| BF-C750-3 | 750 | 681 | QSK19-G19 | | CHINA STAGE3 | CHINA",
@@ -660,16 +660,16 @@
       "title": "",
       "header": [
         "| | POWERED BY VOLVO | 1500RPM | STAGE 2 TIER 2",
-        "| BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE MODEL | GOV. | ALTERNATOR STAMFORD | DIMENSION MM SOUNDPROOF TYPE",
+        "| BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE MODEL | GOV. | ALTERNATOR STAMFORD | DIMENSION MM SOUNDPROOF TYPE"
+      ],
+      "rows": [
         "| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC",
         "| BF-V1000TWIN-T2 | 1000 | 900 | 2*TAD1345GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC",
         "| BF-V1100TWIN-T2 | 1100 | 1000 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC",
         "| BF-V1320TWIN-T2 | 1320 | 1200 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC",
         "| BF-V1375TWIN-T2 | 1376 | 1250 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC",
         "| BF-V1440TWIN-T2 | 1440 | 1300 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC",
-        "| BF-V1540TWIN-T2 | 1540 | 1400 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-G4 | ISO 20'ft HC"
-      ],
-      "rows": [
+        "| BF-V1540TWIN-T2 | 1540 | 1400 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-G4 | ISO 20'ft HC",
         "| BF-V1670TWIN-T2 | 1672 | 1520 | 2*TWD1744GE | ECM4 | 2*S5L1D-H41 | ISO 20'ft HC",
         "| BF-V1100TWIN-60 | 1128 | 1024 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC",
         "| BF-V1320TWIN-60 | 1376 | 1250 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC",
