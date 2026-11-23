@@ -977,6 +977,12 @@ function squashTokens(s) {
 // the candidates were KTA38, 12 cylinders in V, which the agent then turned down; QSK23-G2, in line, stood 127th).
 // Of the HSMT: "inline" / "v" when its lines about the cylinders name one arrangement only, else null.
 export function cylLayoutOf(text) {
+  const seen = cylLayoutsIn(text);
+  return seen.size === 1 ? [...seen][0] : null;
+}
+// Every arrangement the lines about the cylinders name. A tender of several sizes reads it per size (`minsForSize`): "chữ V" of the
+// 2.500 kVA set ruled out V engines for its 750 kVA set (IB2300162912).
+function cylLayoutsIn(text) {
   const seen = new Set(), L = String(text || "").split("\n");
   for (let i = 0; i < L.length; i++) {
     if (!/(?:xi|xy)\s*-?\s*lanh|cylinders?/i.test(L[i])) continue;
@@ -985,7 +991,7 @@ export function cylLayoutOf(text) {
     if (/th[ẳa]ng\s*h[àa]ng|in-?\s*line/i.test(s)) seen.add("inline");
     if (/ch[ữu]\s*V\b|ki[ểe]u\s*V\b|h[ìi]nh\s*(?:ch[ữu]\s*)?V\b|\bV\s*-?\s*type|\bvee\b/i.test(s)) seen.add("v");
   }
-  return seen.size === 1 ? [...seen][0] : null;
+  return seen;
 }
 // Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
 // null when it gives the count only.
@@ -1387,13 +1393,13 @@ export function sizeBlocks(t, sizes) {
   });
   return { L, runs, tags };
 }
-const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
+const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
 function minsRead(t) {
-  const e = engineLists(t), p = powerRead(t), has = {
-    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, minPrime: p.prime.length > 0,
+  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), has = {
+    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, minPrime: p.prime.length > 0,
     maxFuel: p.fuel.some((x) => x.load === 100 || x.load == null), maxFuel75: p.fuel.some((x) => x.load === 75), maxFuel50: p.fuel.some((x) => x.load === 50) };
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl) };
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]) };
   return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
 }
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
@@ -1429,7 +1435,7 @@ export function minsForSize(t, size, sizes, extra = "") {
   const allFound = sizes.every((_, k) => runs.some((r) => r.size === k));
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
-    else if (["minDisp", "maxDisp", "minCyl"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
+    else if (["minDisp", "maxDisp", "minCyl", "cylLayout"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
@@ -1452,7 +1458,7 @@ export function minsForSize(t, size, sizes, extra = "") {
     if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
-  const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
+  const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", cylLayout: "bố trí xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
   const unsure = MIN_KEYS.filter((k) => how[k] === "size unknown" || how[k] === "own: disagree").map((k) => LABEL[k]);
   const note = unsure.length ? `Gói nhiều cỡ: code không xác định được ngưỡng ${[...new Set(unsure)].join(", ")} của HSMT thuộc máy ${size.label || `${size.cap?.value} ${size.cap?.unit}`} nên không dùng để loại dòng; tự đối chiếu với phần HSMT của máy này.`.slice(0, 300) : null;
   return { mins, how, note, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
@@ -2002,7 +2008,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // for its own row. Both arrangements written by two suppliers each: not judged.
         const bySup = { v: new Set(), inline: new Set() };
         for (const f of ef) { const l = f.key === "cyl" ? layoutOf(f.value) : null; if (l) bySup[l].add(f.supplierId ?? ""); }
-        const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
+        // The row's own cell does not rule it out when at least two other suppliers write the arrangement the HSMT asks for this
+        // engine AND they outnumber the suppliers on the row's side, the row's own included (Khoa 22 and 23/11/2026: liangzi
+        // "12L" for the V12 KTA38 and longkai "V12" for the 6-in-line QSK19 stay; a "10V" DP180LB, 6 suppliers against 2, goes).
+        const against = own.length ? [...bySup[hints.cylLayout]].filter((x) => x !== u.supplierId).length : 0;
+        const outvoted = own.length > 0 && own.every((x) => x !== hints.cylLayout) && against >= 2 && against > new Set([...bySup[own[0]], u.supplierId]).size;
+        const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
