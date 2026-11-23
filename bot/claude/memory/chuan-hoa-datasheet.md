@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-23T22:27:11.367Z
+  modified: 2026-11-23T22:48:58.247Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -23,6 +23,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Khoa 24/11 (ảnh màn "Thông số động cơ" trên web, nguyên văn "những giá trị này nên xem là 1 vì ý nghĩa giống nhau"): các cách viết cùng nghĩa phải gộp thành MỘT giá trị: "150 × 185" = "150 X 185"; "39.2 L" = "39,2 L"; "12" = "12 V" (cùng 12 xi lanh); "15.0:1" = "15 : 1"; điều tốc "Electronic" = "Electronic Governor" = "Electrical"; "&" = "and" (Khoa 24/11: "Turbocharged & Aftercooled" = "Turbocharged and Aftercooled"). Diễn giải của em: gộp theo giá trị SAU chuẩn hoá, cộng dồn số NCC / số dòng; "12 V" giữ thêm bố trí chữ V như thông tin phụ; số khác nhau thật thì vẫn hiện riêng (mâu thuẫn nguồn).
 - Khoa 24/11: "các phiên con sau em chạy trên máy KhoaMiniPC nhé, máy này anh sắp tắt" → phiên con của việc này mở trên máy KhoaMiniPC (phiên điều phối và phiên `dse-datasheet` đang ở chính máy đó; "máy này" là máy Khoa đang ngồi). Em hiểu chỉ áp cho việc chuẩn hoá này, luật chung "chạy cloud khi được" (21/11) chưa bị Khoa bỏ.
 - Khoa CHỐT 24/11/2026 (trả lời bốn câu em hỏi, nguyên văn "1. ok 2. thêm thương hiệu ở đâu nữa (Trung Quốc, G7, G20, EU,...) 3. ok, cứ giữ không xóa 4. ok"): (1) merge PR #1117 dữ liệu Deep Sea; (2) danh sách trường đã trình được duyệt, THÊM trường "thương hiệu ở đâu" (nước của thương hiệu + nhóm Trung Quốc / G7 / G20 / EU…) — em hiểu là áp cho cả bốn phần (tổ máy, động cơ, đầu phát, BĐK) và tách khỏi "nơi sản xuất"; (3) Operator Manual Deep Sea: được tải bằng tài khoản của Khoa (Edge trên KhoaMiniPC), giữ ngoài git ở `genbid-work\dse-datasheets\`, KHÔNG xoá; (4) ~95 sản phẩm Deep Sea ngừng bán chưa đưa vào hồ sơ, trừ model từng có trong HSMT / hàng trúng thầu. Trường HP động cơ đi cùng danh sách đã duyệt.
+- Khoa 24/11/2026 (đăng nhập Deep Sea): Khoa lưu tài khoản trong trình duyệt và bảo "lần sau cứ vào trang login rồi nhấn Log In". Em KHÔNG làm vậy: luật an toàn của em cấm tự xác thực bằng mật khẩu, kể cả mật khẩu trình duyệt điền sẵn; gặp trang đăng nhập thì dừng, nhờ Khoa bấm Log In. Đã nói với Khoa. Bẫy: thông báo kết thúc lượt của phiên con local không về phiên điều phối (phiên mở qua Remote Control, thư mục `C:\Projects\GenSet Pro` không phải repo): dặn phiên con SendMessage về khi dừng, và tự `list_sessions {linked: true}` để kiểm.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
