@@ -1,0 +1,140 @@
+﻿=== baifa-power n101
+L159 [2] | BAIFA 19≤P<560KW NOMINAL POWER, WITH STAGE IIIA/ TIER 3 EU/US CERTIFICATE; P≥560KW NOMIN
+L160 [3] | PREMIUM | 19≤P<560KW NOMINAL POWER, WITH STAGE IIIA/ TIER 3 EU/US CERTIFICATE
+L161 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L162 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×35 (ô 10/9)
+L198 [3] | PREMIUM | 19≤P<560KW NOMINAL POWER, WITH STAGE IIIA/ TIER 3 EU/US CERTIFICATE
+L199 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L200 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×32 (ô 10/9)
+L234 [3] | PREMIUM | P≥560KW NOMINAL POWER, WITH STAGE II/ TIER 2 EU/US CERTIFICATE
+L235 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L236 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×1 (ô 10)
+L238 [10] | TBA | 836 | 760 | VOLVO | TWD1744GE | ECM4 | S5L1D-H41 | STAGE II /TIER 2 | SWEDEN
+   R×4 (ô 10/9)
+L243 [9] | TBA | | 750 | 5006AC-E23TAG1 | | TBA | TIER 2 | TBA
+L244 [7] | | 800 | 5006AC-E23TAG2 | | TIER 2 | TBA
+L245 [7] | | 909 | 5008AC-E30TAG1 | | TIER 2 | TBA
+L246 [7] | | 1011 | 5008AC-E30TAG2 | | TIER 2 | TBA
+L247 [7] | | 1124 | 5008AC-E30TAG3 | | TIER 2 | TBA
+   R×21 (ô 10/9)
+L269 [3] | US TIER 2 EMISSION DATA COMPARISON, reference: https://nepis.epa.gov/Exe/ZyPDF.cgiDockey
+L270 [3] | PREMIUM | P≥560KW NOMINAL POWER, WITH STAGE II/ TIER 2 EU/US CERTIFICATE
+L271 [5] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR
+L272 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×9 (ô 8)
+L282 [3] | ECONOMIC | 19≤P<560KW NOMINAL POWER, WITH STAGE IIIA/ TIER 3 EU/US CERTIFICATE
+L283 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L284 [7] | Standby KVA | Prime KVA | Brand | BAUDOUIN MODEL | Gov. | VARIOUS
+   R×19 (ô 10/8/9)
+L304 [3] | ECONOMIC | P≥560KW NOMINAL POWER, WITH STAGE II/ TIER 2 EU/US CERTIFICATE
+L305 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L306 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | VARIOUS
+   R×27 (ô 10/8/9)
+L334 [5] | | | |
+L335 [2] | CHINA STAGE 3 INTRODUCTION
+L337 [2] | The final Stage III limits in GB20891-2014 are summarized Table 2. Limits for engines be
+L338 [2] |
+L339 [3] | PREMIUM | P≥560KW NOMINAL POWER, WITH STAGE II/ TIER 2 EU/US CERTIFICATE
+L340 [5] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR
+L341 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×9 (ô 8)
+L351 [3] | ECONOMIC | 19≤P<560KW NOMINAL POWER, WITH STAGE IIIA/ TIER 3 EU/US CERTIFICATE
+L352 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L353 [7] | Standby KVA | Prime KVA | Brand | BAUDOUIN MODEL | Gov. | VARIOUS
+   R×19 (ô 10/8/9)
+L373 [3] | ECONOMIC | P≥560KW NOMINAL POWER, WITH STAGE II/ TIER 2 EU/US CERTIFICATE
+L374 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L375 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | VARIOUS
+   R×27 (ô 10/8/9)
+L403 [5] | | | |
+L404 [2] | CHINA STAGE 3 INTRODUCTION
+L406 [2] | The final Stage III limits in GB20891-2014 are summarized Table 2. Limits for engines be
+L407 [2] |
+L408 [3] | PREMIUM | 19≤P<560KW NOMINAL POWER, WITH CHINA STAGE3 CERTIFICATE
+L409 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUN
+L410 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   R×35 (ô 10/9/8)
+L446 [3] | PREMIUM | P≥560KW NOMINAL POWER, WITH CHINA STAGE3 CERTIFICATE
+L447 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUF ACTURER / COU
+L448 [7] | Standby KVA | Prime KVA | Brand | Model | Gov. | VARIOUS
+   R×48 (ô 10/8/9)
+L497 [3] | PREMIUM | P≥560KW NOMINAL POWER, WITH CHINA STAGE3 CERTIFICATE
+L498 [7] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUF ACTURER / COU
+L499 [7] | Standby | Prime | Brand | Model | Gov. | VARIOUS
+L500 [3] | KVA | KVA
+   R×8 (ô 10/9)
+L509 [3] | PREMIUM | P≥8KW NOMINAL POWER, WITH STAGE V CERTIFICATE 1500RPM 50Hz
+L510 [10] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | | | | |
+L511 [13] | | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | FUEL CONSUMPTION 75% L/H |
+   R×43 (ô 13)
+L555 [4] | PREMIUM | P≥8KW NOMINAL POWER, WITH EPA TIER4 FINAL CERTIFICATE 1800RPM 60Hz |
+L556 [10] | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | PRICE | | | |
+L557 [13] | | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | Standard pricelist price O
+   R×31 (ô 13)
+=== acepow-fuan n109
+L51 [3] | | Silent Diesel Generator
+L52 [3] | | 20KW Diesel Home Standby Generator
+L53 [3] | | 25KVA Canopy Diesel Generator
+L56 [4] | | |
+L59 [2] |
+L61 [3] | Place of Origin: | CHINA
+L62 [3] | Brand Name: | ACEPOW
+L63 [3] | Certification: | CE,ISO, SASO
+L64 [3] | Model Number: | API-25
+L66 [3] | Minimum Order Quantity: | 1 PCS
+L67 [3] | Price: | Negotiate
+L68 [3] | Packaging Details: | NUDE PACKING,PLYWOOD CASE
+L69 [3] | Delivery Time: | 25 DAYS
+L70 [3] | Payment Terms: | L/C, D/P, T/T
+L71 [3] | Supply Ability: | 10000SETS/YEAR
+L75 [5] | Genset Engine: | Jiangxi Isuzu | Product Name: | Canopy Diesel Generator
+L76 [5] | Engine Model: | JE493DB-15 | Frequency: | 50 Hz Or 60 Hz Frequency Option
+L77 [5] | Rated Votage: | 400/230V, 380/220V | Type: | Canopy Silent
+L78 [3] | High Light: | 230V Canopy Diesel Generator , 20KVA Canopy Diesel Generator , 40kva 3 pha
+L96 [5] | 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine
+L97 [6] | Generating Sets | Acepow | Model | Prime | Standby
+L98 [8] | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Altern
+   R×4 (ô 10/9)
+L103 [5] | 3Phases/60Hz/220V/PF=0.8 | | Brand | Engine
+L104 [6] | Generating Sets | Acepow | Model | Prime | Standby
+L105 [8] | Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Altern
+   R×4 (ô 10/9)
+=== taihai-taizhou n107
+L52 [11] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重
+L53 [11] | | KVA | KW | | | | | | |
+L54 [2] | 东风康明斯系列DCEC CUMMINS SERIES
+   R×9 (ô 12)
+L64 [11] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重
+L65 [12] | | KVA | KW | | | | | | | |
+   R×5 (ô 12)
+L71 [11] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (L/h) | 外形尺寸 (L×W×H)(mm) | 重量 | 
+L72 [12] | | KVA | KW | | | | | | | |
+   R×13 (ô 12)
+L86 [9] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 燃油消耗量 (L/h) | 外形尺寸 (L×W×H) (mm) | 重量
+L87 [10] | | KVA | KW | | | | | |
+L88 [2] | 风冷系列Air-cooled Series
+   R×8 (ô 10)
+L97 [2] | 水冷系列Water-cooled Series
+   R×10 (ô 10)
+L108 [10] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (L/h) | 长宽高 (L×W×H)(mm) | Weight
+L109 [11] | | KVA | KW | | | | | | |
+   R×5 (ô 11)
+L115 [10] | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重
+L116 [11] | | KVA | KW | | | | | | |
+   R×5 (ô 11)
+=== kaihua-genset n101
+L137 [7] | Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight
+L138 [7] | KVA | KW | kVA | KW | mm | KG
+   R×2 (ô 9)
+L141 [7] | Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+L142 [5] | KVA | KW | KVA | KW
+   R×3 (ô 9)
+L146 [7] | MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight
+L147 [7] | kVA | kW | kVA | kW | mm | KG
+   R×9 (ô 9)
+L157 [7] | Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)
+L158 [5] | KVA | KW | KVA | KW
+   R×5 (ô 9)
