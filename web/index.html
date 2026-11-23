@@ -3859,7 +3859,15 @@ const catReady = () => catMemo.src === state.supplier && catMemo.del === state.s
 // The catalog is read from every supplier table (seconds on a phone): once the Nhà cung cấp or a catalog screen opens,
 // each supplier's rows are read while the page is idle, then the catalog is built, so opening one is quick.
 let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog being spread over idle time ({ src, del, b })
-const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 1000 }) : setTimeout(() => { const t = performance.now(); fn({ timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }); }, 30));
+// A browser may never give idle time (measured 2026-11-23, Edge / Chromium on Windows, also in a visible window: 58 of 59
+// callbacks ran only because the 1 s timeout passed, each with timeRemaining() = 0, so the catalog took a minute for 0.2 s of
+// work). A callback that ran on its timeout therefore gets a fixed 15 ms slice, and the next one waits 50 ms at most; once
+// the browser gives idle time again the steps go back to it. Without requestIdleCallback (Safari): the same slice on a timer.
+const idleSlice = () => { const t = performance.now(); return { timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }; };
+let idleLate = false; // the last callback ran on its timeout, not in idle time
+const idle = (fn) => (window.requestIdleCallback
+  ? requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 })
+  : setTimeout(() => fn(idleSlice()), 30));
 function catWarm() {
   if (!window.GenbidCatalog?.builder || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
   const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();
