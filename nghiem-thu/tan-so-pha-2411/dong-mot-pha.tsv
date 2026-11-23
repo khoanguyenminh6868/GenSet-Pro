@@ -1,0 +1,40 @@
+ncc	n	dong_co	can_cu	chu	dong
+lees-power	n111	1103A33G	segment	Single phase	| LSP33S | 33 | 30 | 26 | 24 | 1103A-33G | PDF
+lees-power	n111	404D22G	segment	Single phase	| LSP22S | 22 | 20 | 18 | 16 | 404D22G | PDF
+superwatt-swt	n129	404A22G1	column	1-phase	| SP22-1P | 50Hz | 16kW / 20kVA | 17.6kW / 22kVA | 220/230/240V | 1-phase | 404A-22G1
+lees-power	n111	403D15G	segment	Single phase	| LSP14S | 14 | 13 | 11 | 10 | 403D-15G | PDF
+superwatt-swt	n129	403D15G	column	1-phase	| SP17X-1P | 60Hz | 12.5kW / 16kVA | 14kW / 17kVA | 220/230/240V | 1-phase | 403D-15G
+superwatt-swt	n130	403D15G	column	1-phase	| SP17X-1P | 403D-15G | 60Hz | 12.5kW / 16kVA | 14kW / 17kVA | 1800r/min | 220/230/240V | 
+lees-power	n111	403A15G2	segment	Single phase	| LSP16S | 17 | 15 | 13 | 12 | 403A-15G2 | PDF
+superwatt-swt	n130	403A15G2	column	1-phase	| SP17-1P | 403A-15G2 | 50Hz | 12kW / 15kVA | 13kW / 17kVA | 1500r/min | 220/230/240V | 1-
+superwatt-swt	n130	403A15G2	column	1-phase	| SP19X-1P | 403A-15G2 | 60Hz | 14kW / 18kVA | 15kW / 19kVA | 1800r/min | 220/230/240V | 1
+bruno-generators	n101	403D11G	segment	SINGLE-PHASE	| SL 9808 PK** | 8 | 250 W | 2000W | AC | 230 V | 8.8 | 8 | 12 | 11 | PERKINS 403D-11G | 1
+bruno-generators	n101	403D11G	segment	SINGLE-PHASE	| SL 9810 PK** | 10 | 250 W | 2500 W | AC | 230 V | 8.8 | 8 | 12 | 11 | PERKINS 403D-11G |
+bruno-generators	n101	403D11G	segment	SINGLE-PHASE	| SL 9810 PK** | 8 + 2 | 330+250 W | 3140 W | AC | 230 V | 8.8 | 8 | 12 | 11 | PERKINS 403
+bruno-generators	n104	403D11G	segment	SINGLE -PHASE	| MT 9810 PK** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,8 | 8 | 12 | 11 | PERKINS 403D-
+lees-power	n111	403D11G	segment	Single phase	| LSP10S | 10 | 9 | 8 | 7 | 403D-11G | PDF
+superwatt-swt	n129	403D11G	column	1-phase	| SP11X-1P | 60Hz | 8kW / 10kVA | 8.8kW / 11kVA | 220/230/240V | 1-phase | 403D-11G
+superwatt-swt	n130	403D11G	column	1-phase	| SP11X-1P | 403D-11G | 60Hz | 8kW / 10kVA | 8.8kW / 11kVA | 1800r/min | 220/230/240V | 1-
+superwatt-swt	n129	404D22TG	column	1-phase	| SP34X-1P | 60Hz | 24.5kW / 31kVA | 27kW / 34kVA | 220/230/240V | 1-phase | 404D-22TG
+superwatt-swt	n130	404D22TG	column	1-phase	| SP34X-1P | 404D-22TG | 60Hz | 24.5kW / 31kVA | 27kW / 34kVA | 1800r/min | 220/230/240V |
+superwatt-swt	n122	D1105BG	column	1-phase	| SK8.3-1P | D1105-BG | 50Hz | 1500r/min | 1-phase | 230V | 6kW / 7.5kVA | 6.6kW / 8.3kVA 
+superwatt-swt	n122	D1105BG	column	1-phase	| SK8.8X-1P | D1105-BG | 60Hz | 1800r/min | 1-phase | 240V | 6.4kW / 8kVA | 7kW / 8.75kVA 
+superwatt-swt	n122	D1703BG	column	1-phase	| SK16.5-1P | D1703-BG | 50Hz | 1500r/min | 1-phase | 230V | 12kW / 15kVA | 13.2kW / 16.5k
+bruno-generators	n101	2TNV70	segment	SINGLE-PHASE	| SL 9606 YM | 6 | 250 W | 2000 W | AC | 230 V | 5 | 4.5 | 6.6 | 6 | YANMAR 2TNV70 | 570 |
+bruno-generators	n101	2TNV70	segment	SINGLE-PHASE	| SL 9608 YM | 8 | 250 W | 2000 W | AC | 230 V | 5 | 4.5 | 6.6 | 6 | YANMAR 2TNV70 | 570 |
+bruno-generators	n101	2TNV70	segment	SINGLE-PHASE	| SB 9608 YM | 8 | 250 W | 2000 W | AC | 230 V | 5 | 4.5 | 6.6 | 6 | YANMAR 2TNV70 | 570 |
+superwatt-swt	n122	V2003TBG	column	1-phase	| SK25-1P | V2003-T-BG | 50Hz | 1500r/min | 1-phase | 230V | 18kW / 23kVA* | 20kW / 25kVA 
+superwatt-swt	n122	V2003TBG	column	1-phase	| SK30X-1P | V2003-T-BG | 60Hz | 1800r/min* | 1-phase | 240V | 22kW / 27kVA* | 24.2kW / 30
+superwatt-swt	n122	V1505BG	column	1-phase	| SK16.5X-1P | V1505-BG | 60Hz* | 1800r/min | 1-phase | 240V | 12kW / 15kVA | 13.2kW / 16.
+lees-power	n112	Y4100DJP203	segment	Single phase	| LSY31S-6 | 31 | 28 | 31 | 28 | Y4100D-JP203 | PDF
+lees-power	n112	Y4102ZLDJ207	segment	Single phase	| LSY46S-6 | 46 | 42 | 46 | 42 | Y4102ZLD-J207 | PDF
+lees-power	n112	Y4105DJP205	segment	Single phase	| LSY39S-6 | 39 | 35 | 39 | 35 | Y4105D-JP205 | PDF
+lees-power	n112	Y4105ZLDJ209	segment	Single phase	| LSY52S-6 | 52 | 47 | 52 | 47 | Y4105ZLD-J209 | PDF
+lees-power	n112	Y4110ZLDF210	segment	Single phase	| LSY77S-6 | 77 | 70 | 77 | 70 | Y4110ZLD-F210 | PDF
+lees-power	n112	Y495DJP201	segment	Single phase	| LSY26S-6 | 26 | 24 | 26 | 24 | Y495D-JP201 | PDF
+lees-power	n112	YD380DJP192	segment	Single phase	| LSY10S-6 | 10 | 9 | 10 | 9 | YD380D-JP192 | PDF
+lees-power	n112	YD385DJP194	segment	Single phase	| LSY11S-6 | 11 | 10 | 11 | 10 | YD385D-JP194 | PDF
+lees-power	n112	YD480DJP196	segment	Single phase	| LSY14S-6 | 14 | 13 | 14 | 13 | YD480D-JP196 | PDF
+lees-power	n112	YD4EZLDJ211	segment	Single phase	| LSY60S-6 | 60 | 55 | 60 | 55 | YD4EZLD-J211 | PDF
+lees-power	n112	YND485DJP198	segment	Single phase	| LSY18S-6 | 18 | 16 | 18 | 16 | YND485D-JP198 | PDF
+lees-power	n112	YND490DFP228	segment	Single phase	| LSY22S-6 | 22 | 20 | 22 | 20 | YND490D-FP228 | PDF

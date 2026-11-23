@@ -40,7 +40,17 @@ Bảy mã của yêu cầu: 12M33G1000/6, 16M33G1400/6, 12M55G2500/6 đọc đư
 - Việc: (a) awt-aiweite bảng "Dual-band 50/60HZ" (13 dòng) đang đọc thành 60 Hz → hai tần số thì không kết luận; (b) dòng dưới phân đoạn "Single phase" (lees-power 17 dòng) mang thuộc tính một pha; gói đòi ba pha → `ruled: phase`, gói không ghi pha → giữ, cần xác nhận số pha; (c) quét toàn bộ hồ sơ tìm bảng / dòng ghi một pha, liệt kê, không suy từ điện áp / công suất; (d) xem HSMT ghi pha ở đâu trong `need`; chưa có trường pha thì BÁO phương án trước khi thêm bước đọc HSMT. Gợi ý điểm vào: `STD` trong `config-bot.mjs` đã có khoá `phase` (`STD_CODE.phase = "phases"`).
 - Script đo dùng lại: `tan-so-pha-2411/freq-all.mjs <worktree> <out.tsv>`, `freq-sheet.mjs <worktree> <233.tsv>`.
 
-### PR 2: tiến độ 24/11 (worktree `wt-tan-so-2`, nhánh `fix/mot-pha-hai-tan-so`, gốc #1105 `28615f52`; chưa sửa mã)
+### PR 2: XONG, draft, chờ đo top 30
+- PR: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1118, nhánh `fix/mot-pha-hai-tan-so`, SHA `fc10692363196222de475b1887081ec77cf50700`, base `fix/crawl-dropped-rows` (`28615f52`). Worktree `wt-tan-so-2`. Điều phối chọn PA A. CHƯA đo 1.093 lượt top 30.
+- Test 1.607 pass, 0 fail; `quality --check` không xấu đi. Thử gộp với #1114 (`019d251e`): không xung đột.
+- Dòng có căn cứ một pha: 39 (lees-power 17, superwatt-swt 15, bruno-generators 7), đủ ở `tan-so-pha-2411/dong-mot-pha.tsv`.
+- Tần số: 60 / 63.474 bản ghi 60 Hz → không kết luận (minsun-motor 44, awt-aiweite 13, plus-power 3), đủ ở `freq-doi.tsv`. Không trường nào khác đổi.
+- Số pha theo lượt (`pha-theo-luot.tsv`, 1.594 lượt bidhist cục bộ, chưa lọc như `do-gop`): 662 ba pha, 214 một pha, 718 không rõ.
+- So với mã `phases` của Phân tích (`pha-lech-goi.tsv`, chỉ số gói + giá trị): 879 khớp, 376 lệch. Chữ HSMT của từng gói lệch để NGOÀI git: `genbid-work\tan-so-pha-2411-local\`.
+- Đã soát bằng chữ HSMT: 13 gói rủi ro (code 3 mà Phân tích 1 / cả hai / không rõ, code 1 mà Phân tích 3): code đúng 13 / 13 khi xét tổ máy, Phân tích lẫn dòng ATS / biến dòng. Nhóm 87 + 13: 41 + 6 gói code ra 3 hoặc 1 đã đọc từng dòng, tìm ra lỗi "1 pha/3 pha" (đã sửa). Nhóm code = null (43 + 6) giữ dòng nên không đọc từng gói. 3 / không ghi: 236 gói, soát 11 gói không có cụm rõ; 225 gói còn lại chỉ kiểm bằng regex cụm rõ.
+- **Việc để Khoa quyết:** (1) gói đòi 1 pha (169 gói theo đếm đầu) chưa loại dòng ba pha; (2) 91 dòng chỉ có đuôi "-1P" (agg-fuzhou 85, kachai-hangzhou 5, voltgent 1) chưa tính một pha vì voltgent "P2500-1P" là máy 2.500 kVA; (3) tên trang ghi "Single Phase" không tính (ade-power, acepow…).
+
+### PR 2: ghi chép lúc đang làm (worktree `wt-tan-so-2`, gốc #1105 `28615f52`)
 - Tham chiếu cục bộ `origin/fix/crawl-dropped-rows` còn ở `a95b8ab5`, đầu thật của #1105 là `28615f52`: dùng SHA.
 - HSMT ghi pha ở đâu: `hintsOf` (đầu vào `candidates`, cả `prep` lẫn `do-gop`) KHÔNG có trường pha. Số pha chỉ có ở yêu cầu mã `phases` của Phân tích, mà `prep` có còn `do-gop` không đọc. → DỪNG phần một pha, chờ điều phối chọn phương án.
 - Phân tích cục bộ (`doc-cache/analysis.json`, bản 17/11): 1.298 gói có thông số, 910 gói nêu pha: 641 ba pha, 169 một pha, 87 có cả hai (phần lớn gói nhiều cỡ), 13 không rõ. Đây là đếm bằng regex trên dòng thông số, chưa soát từng gói.
