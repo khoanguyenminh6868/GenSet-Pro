@@ -993,6 +993,52 @@ function cylLayoutsIn(text) {
   }
   return seen;
 }
+// Số pha của tổ máy trong chữ HSMT (Khoa 24/11/2026): 3 hoặc 1 khi các dòng nêu pha chỉ nêu một loại; hai loại / không nêu = null.
+// Dòng về thiết bị khác (bộ sạc, đồng hồ đo, tủ, aptomat…) không tính, trừ dòng có nhãn "Số pha". Gói nhiều cỡ đọc theo từng cỡ (`minsForSize`).
+const PH3 = /(?<![\d.,])0?3\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])ba\s+pha(?![\p{L}])|three\s*-?\s*phase/iu;
+const PH1 = /(?<![\d.,])0?1\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])m[ộo]t\s+pha(?![\p{L}])|single\s*-?\s*phase/iu;
+const PH_AUX = /s[ạa]c|[ắa]c\s*quy|đ[ồo]ng\s*h[ồo]|hi[ểe]n\s*th[ịi]|c[ảa]m\s*bi[ếe]n|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|aptomat|c[ầa]u\s*dao|m[áa]y\s*c[ắa]t|\bMCCB\b|\bMCB\b|\bACB\b|\bATS\b|r[ơo]\s*-?\s*le|[ổo]\s*c[ắa]m|\bt[ủu]\b|c[áa]p\b|qu[ạa]t|b[ơo]m|đ[èe]n|s[ấa]y|\bUPS\b|b[ảa]o\s*v[ệe]|m[ấa]t\s*pha|l[ệe]ch\s*pha|ng[ắa]n\s*m[ạa]ch|đo\s/iu;
+function phasesIn(text) {
+  const seen = new Set();
+  for (const l of String(text || "").split("\n")) {
+    if (!/pha(?![\p{L}])|phase/iu.test(l) || (PH_AUX.test(l) && !/s[ốo]\s*pha/iu.test(l))) continue;
+    if (PH3.test(l)) seen.add(3);
+    if (PH1.test(l)) seen.add(1);
+  }
+  return seen;
+}
+export function phaseOf(text) {
+  const seen = phasesIn(text);
+  return seen.size === 1 ? [...seen][0] : null;
+}
+// Căn cứ MỘT PHA của chính dòng bảng (Khoa 24/11/2026; không suy từ điện áp hay công suất): dòng phân đoạn trong tiêu đề của bảng
+// ("| Single phase", lees-power) hoặc ô cột pha của chính dòng. Tên trang KHÔNG tính: nhiều trang ghi "Single Phase" mà bảng liệt kê cả
+// máy ba pha. Đuôi model "-1P" KHÔNG tính: voltgent "P2500-1P" là máy 2.500 kVA / 2.000 kW. Có cả căn cứ ba pha thì không kết luận.
+const ROW_PH1 = /single[\s_-]*phase|(?<![\d.])1[\s-]*ph(?:ase)?\b|one[\s-]*phase|单相/i, ROW_PH3 = /three[\s_-]*phase|(?<![\d.])3[\s-]*ph(?:ase)?\b|三相/i;
+export function onePhaseOf(u) {
+  if (!u) return null;
+  const cellsOf = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), hits = [];
+  let three = false;
+  for (const h of u.header || []) {
+    const c = cellsOf(h).filter(Boolean);
+    if (c.length !== 1) continue;
+    if (ROW_PH3.test(c[0])) three = true;
+    else if (ROW_PH1.test(c[0])) hits.push({ from: "segment", text: c[0] });
+  }
+  if (u.line) {
+    const cells = cellsOf(u.line);
+    for (const h of u.header || []) {
+      const heads = cellsOf(h);
+      if (heads.length !== cells.length) continue;
+      heads.forEach((x, i) => {
+        if (!/^(?:no\.?\s*of\s*)?phases?$|^相数$|^ph$/i.test(x)) return;
+        if (/^1$|^1\s*-?\s*ph|single|单相/i.test(cells[i])) hits.push({ from: "column", text: cells[i] });
+        else if (/^3$|^3\s*-?\s*ph|three|三相/i.test(cells[i])) three = true;
+      });
+    }
+  }
+  return hits.length && !three ? hits[0] : null;
+}
 // Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
 // null when it gives the count only.
 export function layoutOf(value) {
@@ -1071,7 +1117,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: freqOfHsmt(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? { multiSize: true, ...sized.mins } : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: freqOfHsmt(t), phase: phaseOf(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? { multiSize: true, ...sized.mins } : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1393,13 +1439,13 @@ export function sizeBlocks(t, sizes) {
   });
   return { L, runs, tags };
 }
-const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
+const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "phase", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
 function minsRead(t) {
-  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), has = {
-    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, minPrime: p.prime.length > 0,
+  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), phases = phasesIn(t), has = {
+    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, phase: phases.size > 0, minPrime: p.prime.length > 0,
     maxFuel: p.fuel.some((x) => x.load === 100 || x.load == null), maxFuel75: p.fuel.some((x) => x.load === 75), maxFuel50: p.fuel.some((x) => x.load === 50) };
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]) };
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]), phase: one([...phases]) };
   return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
 }
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
@@ -1435,7 +1481,7 @@ export function minsForSize(t, size, sizes, extra = "") {
   const allFound = sizes.every((_, k) => runs.some((r) => r.size === k));
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
-    else if (["minDisp", "maxDisp", "minCyl", "cylLayout"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
+    else if (["minDisp", "maxDisp", "minCyl", "cylLayout", "phase"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
@@ -1459,7 +1505,7 @@ export function minsForSize(t, size, sizes, extra = "") {
   }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
   const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", cylLayout: "bố trí xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
-  const unsure = MIN_KEYS.filter((k) => how[k] === "size unknown" || how[k] === "own: disagree").map((k) => LABEL[k]);
+  const unsure = MIN_KEYS.filter((k) => k !== "phase" && (how[k] === "size unknown" || how[k] === "own: disagree")).map((k) => LABEL[k]);
   const note = unsure.length ? `Gói nhiều cỡ: code không xác định được ngưỡng ${[...new Set(unsure)].join(", ")} của HSMT thuộc máy ${size.label || `${size.cap?.value} ${size.cap?.unit}`} nên không dùng để loại dòng; tự đối chiếu với phần HSMT của máy này.`.slice(0, 300) : null;
   return { mins, how, note, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
 }
@@ -2009,6 +2055,11 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
+      // Dòng có căn cứ MỘT PHA (Khoa 24/11/2026, `onePhaseOf`): gói đòi ba pha thì loại; gói không nêu rõ số pha thì giữ, cần xác nhận.
+      // Gói đòi một pha chưa loại dòng ba pha (chờ Khoa quyết).
+      const onePh = hints.phase === 1 ? null : onePhaseOf(u);
+      if (onePh && hints.phase === 3) { score -= 600; ruled.push("phase"); why.push(`bảng NCC ghi một pha («${onePh.text}»), HSMT yêu cầu 3 pha`); }
+      else if (onePh) why.push(`cần xác nhận số pha: bảng NCC ghi một pha («${onePh.text}»), HSMT không nêu rõ số pha`);
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
       // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
       // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
