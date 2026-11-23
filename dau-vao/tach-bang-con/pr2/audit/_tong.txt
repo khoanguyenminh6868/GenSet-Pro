@@ -1,0 +1,92 @@
+agestar: 1519 → 1519; thêm 0, MẤT 0, đổi 0, y nguyên 1519; cần xem 0
+chuangyuan-zhongshan: 223 → 223; thêm 0, MẤT 0, đổi 0, y nguyên 223; cần xem 0
+comappower: 642 → 642; thêm 0, MẤT 0, đổi 12, y nguyên 630; cần xem 12
+   12	makes Ricardo+Yanmar+Yangdong → Ricardo (KHÔNG thấy ở tiêu đề)
+excel-power-ningde: 583 → 584; thêm 1, MẤT 0, đổi 206, y nguyên 377; cần xem 0
+   1	THÊM engine: dòng đã ở bảng cũ, trước không ra bản ghi
+   206	freq: 50 → 60
+frs-shenyang: 225 → 225; thêm 0, MẤT 0, đổi 33, y nguyên 192; cần xem 0
+   33	specs bore thêm
+   33	specs dims chỉ đổi nhãn
+   33	specs disp thêm
+   33	specs fuel thêm
+   33	specs oil thêm
+   33	specs weight chỉ đổi nhãn
+gordon-power: 352 → 352; thêm 0, MẤT 0, đổi 0, y nguyên 352; cần xem 0
+gtl-power: 193 → 193; thêm 0, MẤT 0, đổi 29, y nguyên 164; cần xem 0
+   29	freq: 50 → 60
+hosem-power: 174 → 174; thêm 0, MẤT 0, đổi 30, y nguyên 144; cần xem 0
+   30	freq: 50 → 60
+kaihua-genset: 1102 → 1110; thêm 8, MẤT 0, đổi 324, y nguyên 778; cần xem 90
+   4	THÊM alternator: dòng ngoài mọi bảng cũ
+   4	THÊM engine: dòng ngoài mọi bảng cũ
+   187	freq: null → 60
+   35	makes Baudouin → Baudouin (tên hãng có trong tiêu đề bảng con)
+   22	makes Deutz → — (tên hãng có trong tiêu đề bảng con)
+   17	makes MTU → MTU (tên hãng có trong tiêu đề bảng con)
+   25	makes Perkins → Perkins (tên hãng có trong tiêu đề bảng con)
+   19	makes Volvo Penta → Volvo Penta (KHÔNG thấy ở tiêu đề)
+   34	makes — → Stamford (tên hãng có trong tiêu đề bảng con)
+   2	power: null → {"standby":{"kVA":1000},"prime":{"kVA":910}}
+   2	power: null → {"standby":{"kVA":1137},"prime":{"kVA":1025}}
+   2	power: null → {"standby":{"kVA":1265},"prime":{"kVA":1150}}
+   2	power: null → {"standby":{"kVA":1450},"prime":{"kVA":1338}}
+   2	power: null → {"standby":{"kVA":145},"prime":{"kVA":131}}
+   2	power: null → {"standby":{"kVA":1500},"prime":{"kVA":1362}}
+   4	power: null → {"standby":{"kVA":2200},"prime":{"kVA":2000}}
+   2	power: null → {"standby":{"kVA":220},"prime":{"kVA":200}}
+   2	power: null → {"standby":{"kVA":248},"prime":{"kVA":223}}
+   4	power: null → {"standby":{"kVA":2500},"prime":{"kVA":2275}}
+   2	power: null → {"standby":{"kVA":250},"prime":{"kVA":225}}
+   4	power: null → {"standby":{"kVA":2750},"prime":{"kVA":2500}}
+   4	power: null → {"standby":{"kVA":286},"prime":{"kVA":260}}
+   4	power: null → {"standby":{"kVA":3125},"prime":{"kVA":2813}}
+   2	power: null → {"standby":{"kVA":335},"prime":{"kVA":305}}
+   4	power: null → {"standby":{"kVA":3438},"prime":{"kVA":3125}}
+   2	power: null → {"standby":{"kVA":352},"prime":{"kVA":320}}
+   3	power: null → {"standby":{"kVA":3750},"prime":{"kVA":3450}}
+   2	power: null → {"standby":{"kVA":375},"prime":{"kVA":340}}
+   2	power: null → {"standby":{"kVA":440},"prime":{"kVA":400}}
+   2	power: null → {"standby":{"kVA":450},"prime":{"kVA":410}}
+   2	power: null → {"standby":{"kVA":500},"prime":{"kVA":455}}
+   2	power: null → {"standby":{"kVA":564},"prime":{"kVA":512}}
+   2	power: null → {"standby":{"kVA":642},"prime":{"kVA":570}}
+   2	power: null → {"standby":{"kVA":688},"prime":{"kVA":625}}
+   2	power: null → {"standby":{"kVA":750},"prime":{"kVA":688}}
+   2	power: null → {"standby":{"kVA":752},"prime":{"kVA":684}}
+   2	power: null → {"standby":{"kVA":800},"prime":{"kVA":725}}
+   2	power: null → {"standby":{"kVA":880},"prime":{"kVA":800}}
+   116	specs dims chỉ đổi nhãn
+   94	specs dims thêm
+   82	specs weight chỉ đổi nhãn
+   21	title: đổi trang (dòng trùng giữa trang)
+keliang-fuan: 200 → 200; thêm 0, MẤT 0, đổi 57, y nguyên 143; cần xem 0
+   57	freq: 50 → 60
+legapower: 646 → 646; thêm 0, MẤT 0, đổi 0, y nguyên 646; cần xem 0
+mamo-power: 448 → 448; thêm 0, MẤT 0, đổi 0, y nguyên 448; cần xem 0
+minsun-motor: 716 → 716; thêm 0, MẤT 0, đổi 0, y nguyên 716; cần xem 0
+nenjo-generator: 694 → 694; thêm 0, MẤT 0, đổi 0, y nguyên 694; cần xem 0
+pauway-tianjin: 500 → 500; thêm 0, MẤT 0, đổi 0, y nguyên 500; cần xem 0
+powerzoo: 104 → 104; thêm 0, MẤT 0, đổi 0, y nguyên 104; cần xem 0
+rcg-power: 1636 → 1636; thêm 0, MẤT 0, đổi 34, y nguyên 1602; cần xem 34
+   30	makes Cummins+Baudouin+Volvo Penta → Cummins+Baudouin (KHÔNG thấy ở tiêu đề)
+   4	makes Hyundai+Baudouin+Volvo Penta → Hyundai+Baudouin (KHÔNG thấy ở tiêu đề)
+rise-power: 634 → 634; thêm 0, MẤT 0, đổi 0, y nguyên 634; cần xem 0
+sincro-soga: 0 → 0; thêm 0, MẤT 0, đổi 0, y nguyên 0; cần xem 0
+taylor-power: 0 → 0; thêm 0, MẤT 0, đổi 0, y nguyên 0; cần xem 0
+victory-generator: 652 → 652; thêm 0, MẤT 0, đổi 0, y nguyên 652; cần xem 0
+voltgent: 739 → 739; thêm 0, MẤT 0, đổi 0, y nguyên 739; cần xem 0
+westinpower: 519 → 519; thêm 0, MẤT 0, đổi 0, y nguyên 519; cần xem 0
+world-power-fuzhou: 199 → 199; thêm 0, MẤT 0, đổi 0, y nguyên 199; cần xem 0
+wudong-wuxi: 136 → 136; thêm 0, MẤT 0, đổi 0, y nguyên 136; cần xem 0
+xingguang-jiangsu: 759 → 759; thêm 0, MẤT 0, đổi 7, y nguyên 752; cần xem 7
+   7	makes Deutz → Deutz (KHÔNG thấy ở tiêu đề)
+   7	specs bore thêm
+   7	specs cyl thêm
+   7	specs emission thêm
+   7	specs fuel thêm
+   7	specs oil thêm
+yanan-power: 758 → 758; thêm 0, MẤT 0, đổi 20, y nguyên 738; cần xem 0
+   20	specs cyl chỉ đổi nhãn
+yanfa-yancheng: 272 → 272; thêm 0, MẤT 0, đổi 0, y nguyên 272; cần xem 0
+yanmar: 1 → 1; thêm 0, MẤT 0, đổi 0, y nguyên 1; cần xem 0

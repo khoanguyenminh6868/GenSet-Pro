@@ -1,0 +1,198 @@
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3-G31	FRS-40SP	重量 （kg）=950 → 重量_敞开式 （kg）=950
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3-G31	FRS-40SP	机组尺寸 （长x宽x高）=1848*893*1196 → 机组尺寸_敞开式 （长x宽x高）=1848*893*1196
+SPEC	oil	thêm	n106	4HTAA4.3-G31	FRS-40SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3-G31	FRS-40SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3-G31	FRS-40SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3-G31	FRS-40SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3-G32	FRS-50SP	重量 （kg）=972 → 重量_敞开式 （kg）=972
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3-G32	FRS-50SP	机组尺寸 （长x宽x高）=1938*893*1196 → 机组尺寸_敞开式 （长x宽x高）=1938*893*1196
+SPEC	oil	thêm	n106	4HTAA4.3-G32	FRS-50SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3-G32	FRS-50SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3-G32	FRS-50SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3-G32	FRS-50SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3-G33	FRS-68SP	重量 （kg）=1032 → 重量_敞开式 （kg）=1032
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3-G33	FRS-68SP	机组尺寸 （长x宽x高）=1976*893*1196 → 机组尺寸_敞开式 （长x宽x高）=1976*893*1196
+SPEC	oil	thêm	n106	4HTAA4.3-G33	FRS-68SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3-G33	FRS-68SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3-G33	FRS-68SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3-G33	FRS-68SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3*G34	FRS-80SP	重量 （kg）=1078 → 重量_敞开式 （kg）=1078
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3*G34	FRS-80SP	机组尺寸 （长x宽x高）=1930*943*1196 → 机组尺寸_敞开式 （长x宽x高）=1930*943*1196
+SPEC	oil	thêm	n106	4HTAA4.3*G34	FRS-80SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3*G34	FRS-80SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3*G34	FRS-80SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3*G34	FRS-80SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3-G35	FRS-90SP	重量 （kg）=1107 → 重量_敞开式 （kg）=1107
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3-G35	FRS-90SP	机组尺寸 （长x宽x高）=1930*943*1196 → 机组尺寸_敞开式 （长x宽x高）=1930*943*1196
+SPEC	oil	thêm	n106	4HTAA4.3-G35	FRS-90SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3-G35	FRS-90SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3-G35	FRS-90SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3-G35	FRS-90SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	4HTAA4.3-G36	FRS-100SP	重量 （kg）=1132 → 重量_敞开式 （kg）=1132
+SPEC	dims	chỉ đổi nhãn	n106	4HTAA4.3-G36	FRS-100SP	机组尺寸 （长x宽x高）=1930*943*1196 → 机组尺寸_敞开式 （长x宽x高）=1930*943*1196
+SPEC	oil	thêm	n106	4HTAA4.3-G36	FRS-100SP	— → 机油容量 （L）=13
+SPEC	fuel	thêm	n106	4HTAA4.3-G36	FRS-100SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	4HTAA4.3-G36	FRS-100SP	— → 排量 （L）=4.3
+SPEC	bore	thêm	n106	4HTAA4.3-G36	FRS-100SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	6HTAA6.5-G32	FRS-120SP	重量 （kg）=1352 → 重量_敞开式 （kg）=1352
+SPEC	dims	chỉ đổi nhãn	n106	6HTAA6.5-G32	FRS-120SP	机组尺寸 （长x宽x高）=2312*943*1375 → 机组尺寸_敞开式 （长x宽x高）=2312*943*1375
+SPEC	oil	thêm	n106	6HTAA6.5-G32	FRS-120SP	— → 机油容量 （L）=17.5
+SPEC	fuel	thêm	n106	6HTAA6.5-G32	FRS-120SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6HTAA6.5-G32	FRS-120SP	— → 排量 （L）=6.5
+SPEC	bore	thêm	n106	6HTAA6.5-G32	FRS-120SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	6HTAA6.5-G35	FRS-140SP	重量 （kg）=1404 → 重量_敞开式 （kg）=1404
+SPEC	dims	chỉ đổi nhãn	n106	6HTAA6.5-G35	FRS-140SP	机组尺寸 （长x宽x高）=2312*943*1375 → 机组尺寸_敞开式 （长x宽x高）=2312*943*1375
+SPEC	oil	thêm	n106	6HTAA6.5-G35	FRS-140SP	— → 机油容量 （L）=17.5
+SPEC	fuel	thêm	n106	6HTAA6.5-G35	FRS-140SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6HTAA6.5-G35	FRS-140SP	— → 排量 （L）=6.5
+SPEC	bore	thêm	n106	6HTAA6.5-G35	FRS-140SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	6HTAA6.5-G33	FRS-150SP	重量 （kg）=1440 → 重量_敞开式 （kg）=1440
+SPEC	dims	chỉ đổi nhãn	n106	6HTAA6.5-G33	FRS-150SP	机组尺寸 （长x宽x高）=2363*943*1375 → 机组尺寸_敞开式 （长x宽x高）=2363*943*1375
+SPEC	oil	thêm	n106	6HTAA6.5-G33	FRS-150SP	— → 机油容量 （L）=17.5
+SPEC	fuel	thêm	n106	6HTAA6.5-G33	FRS-150SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6HTAA6.5-G33	FRS-150SP	— → 排量 （L）=6.5
+SPEC	bore	thêm	n106	6HTAA6.5-G33	FRS-150SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	6HTAA6.5-G34	FRS-160SP	重量 （kg）=1480 → 重量_敞开式 （kg）=1480
+SPEC	dims	chỉ đổi nhãn	n106	6HTAA6.5-G34	FRS-160SP	机组尺寸 （长x宽x高）=2363*943*1375 → 机组尺寸_敞开式 （长x宽x高）=2363*943*1375
+SPEC	oil	thêm	n106	6HTAA6.5-G34	FRS-160SP	— → 机油容量 （L）=17.5
+SPEC	fuel	thêm	n106	6HTAA6.5-G34	FRS-160SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6HTAA6.5-G34	FRS-160SP	— → 排量 （L）=6.5
+SPEC	bore	thêm	n106	6HTAA6.5-G34	FRS-160SP	— → 缸径x行程 （mm）=105*124
+SPEC	weight	chỉ đổi nhãn	n106	6DTAA8.9-G32	FRS-180SP	重量 （kg）=1830 → 重量_敞开式 （kg）=1830
+SPEC	dims	chỉ đổi nhãn	n106	6DTAA8.9-G32	FRS-180SP	机组尺寸 （长x宽x高）=2550*991*1382 → 机组尺寸_敞开式 （长x宽x高）=2550*991*1382
+SPEC	oil	thêm	n106	6DTAA8.9-G32	FRS-180SP	— → 机油容量 （L）=19
+SPEC	fuel	thêm	n106	6DTAA8.9-G32	FRS-180SP	— → 燃油消耗率 （g/kw·h）=205.6
+SPEC	disp	thêm	n106	6DTAA8.9-G32	FRS-180SP	— → 排量 （L）=8.9
+SPEC	bore	thêm	n106	6DTAA8.9-G32	FRS-180SP	— → 缸径x行程 （mm）=114*144
+SPEC	weight	chỉ đổi nhãn	n106	6DTAA8.9-G33	FRS-200SP	重量 （kg）=1905 → 重量_敞开式 （kg）=1905
+SPEC	dims	chỉ đổi nhãn	n106	6DTAA8.9-G33	FRS-200SP	机组尺寸 （长x宽x高）=2550*991*1468 → 机组尺寸_敞开式 （长x宽x高）=2550*991*1468
+SPEC	oil	thêm	n106	6DTAA8.9-G33	FRS-200SP	— → 机油容量 （L）=25
+SPEC	fuel	thêm	n106	6DTAA8.9-G33	FRS-200SP	— → 燃油消耗率 （g/kw·h）=205.7
+SPEC	disp	thêm	n106	6DTAA8.9-G33	FRS-200SP	— → 排量 （L）=8.9
+SPEC	bore	thêm	n106	6DTAA8.9-G33	FRS-200SP	— → 缸径x行程 （mm）=114*144
+SPEC	weight	chỉ đổi nhãn	n106	6ETAA11.8-G32	FRS-250SP	重量 （kg）=2370 → 重量_敞开式 （kg）=2370
+SPEC	dims	chỉ đổi nhãn	n106	6ETAA11.8-G32	FRS-250SP	机组尺寸 （长x宽x高）=3100*1105*1626 → 机组尺寸_敞开式 （长x宽x高）=3100*1105*1626
+SPEC	oil	thêm	n106	6ETAA11.8-G32	FRS-250SP	— → 机油容量 （L）=41
+SPEC	fuel	thêm	n106	6ETAA11.8-G32	FRS-250SP	— → 燃油消耗率 （g/kw·h）=205.7
+SPEC	disp	thêm	n106	6ETAA11.8-G32	FRS-250SP	— → 排量 （L）=11.8
+SPEC	bore	thêm	n106	6ETAA11.8-G32	FRS-250SP	— → 缸径x行程 （mm）=128*153
+SPEC	weight	chỉ đổi nhãn	n106	6ETAA11.8-G33	FRS-280SP	重量 （kg）=2480 → 重量_敞开式 （kg）=2480
+SPEC	dims	chỉ đổi nhãn	n106	6ETAA11.8-G33	FRS-280SP	机组尺寸 （长x宽x高）=3100*1105*1626 → 机组尺寸_敞开式 （长x宽x高）=3100*1105*1626
+SPEC	oil	thêm	n106	6ETAA11.8-G33	FRS-280SP	— → 机油容量 （L）=41
+SPEC	fuel	thêm	n106	6ETAA11.8-G33	FRS-280SP	— → 燃油消耗率 （g/kw·h）=205.7
+SPEC	disp	thêm	n106	6ETAA11.8-G33	FRS-280SP	— → 排量 （L）=11.8
+SPEC	bore	thêm	n106	6ETAA11.8-G33	FRS-280SP	— → 缸径x行程 （mm）=128*153
+SPEC	weight	chỉ đổi nhãn	n106	6ETAA11.8-G31	FRS-300SP	重量 （kg）=2550 → 重量_敞开式 （kg）=2550
+SPEC	dims	chỉ đổi nhãn	n106	6ETAA11.8-G31	FRS-300SP	机组尺寸 （长x宽x高）=3164*1105*1626 → 机组尺寸_敞开式 （长x宽x高）=3164*1105*1626
+SPEC	oil	thêm	n106	6ETAA11.8-G31	FRS-300SP	— → 机油容量 （L）=41
+SPEC	fuel	thêm	n106	6ETAA11.8-G31	FRS-300SP	— → 燃油消耗率 （g/kw·h）=205.6
+SPEC	disp	thêm	n106	6ETAA11.8-G31	FRS-300SP	— → 排量 （L）=11.8
+SPEC	bore	thêm	n106	6ETAA11.8-G31	FRS-300SP	— → 缸径x行程 （mm）=128*153
+SPEC	weight	chỉ đổi nhãn	n106	6ETAA12.8-G32	FRS-320SP	重量 （kg）=2620 → 重量_敞开式 （kg）=2620
+SPEC	dims	chỉ đổi nhãn	n106	6ETAA12.8-G32	FRS-320SP	机组尺寸 （长x宽x高）=3164*1105*1626 → 机组尺寸_敞开式 （长x宽x高）=3164*1105*1626
+SPEC	oil	thêm	n106	6ETAA12.8-G32	FRS-320SP	— → 机油容量 （L）=41
+SPEC	fuel	thêm	n106	6ETAA12.8-G32	FRS-320SP	— → 燃油消耗率 （g/kw·h）=202.6
+SPEC	disp	thêm	n106	6ETAA12.8-G32	FRS-320SP	— → 排量 （L）=12.8
+SPEC	bore	thêm	n106	6ETAA12.8-G32	FRS-320SP	— → 缸径x行程 （mm）=130*161
+SPEC	weight	chỉ đổi nhãn	n106	6ETAA12.8-G31	FRS-350SP	重量 （kg）=2690 → 重量_敞开式 （kg）=2690
+SPEC	dims	chỉ đổi nhãn	n106	6ETAA12.8-G31	FRS-350SP	机组尺寸 （长x宽x高）=3164*1105*1626 → 机组尺寸_敞开式 （长x宽x高）=3164*1105*1626
+SPEC	oil	thêm	n106	6ETAA12.8-G31	FRS-350SP	— → 机油容量 （L）=41
+SPEC	fuel	thêm	n106	6ETAA12.8-G31	FRS-350SP	— → 燃油消耗率 （g/kw·h）=202.6
+SPEC	disp	thêm	n106	6ETAA12.8-G31	FRS-350SP	— → 排量 （L）=12.8
+SPEC	bore	thêm	n106	6ETAA12.8-G31	FRS-350SP	— → 缸径x行程 （mm）=130*161
+SPEC	weight	chỉ đổi nhãn	n106	12GTAA27-G34	FRS-400SP	重量 （kg）=4200 → 重量_敞开式 （kg）=4200
+SPEC	dims	chỉ đổi nhãn	n106	12GTAA27-G34	FRS-400SP	机组尺寸 （长x宽x高）=3548*1400*1992 → 机组尺寸_敞开式 （长x宽x高）=3548*1400*1992
+SPEC	oil	thêm	n106	12GTAA27-G34	FRS-400SP	— → 机油容量 （L）=65
+SPEC	fuel	thêm	n106	12GTAA27-G34	FRS-400SP	— → 燃油消耗率 （g/kw·h）=205
+SPEC	disp	thêm	n106	12GTAA27-G34	FRS-400SP	— → 排量 （L）=26.6
+SPEC	bore	thêm	n106	12GTAA27-G34	FRS-400SP	— → 缸径x行程 （mm）=135*155
+SPEC	weight	chỉ đổi nhãn	n106	12GTAA27-G33	FRS-450SP	重量 （kg）=4260 → 重量_敞开式 （kg）=4260
+SPEC	dims	chỉ đổi nhãn	n106	12GTAA27-G33	FRS-450SP	机组尺寸 （长x宽x高）=3548*1400*1992 → 机组尺寸_敞开式 （长x宽x高）=3548*1400*1992
+SPEC	oil	thêm	n106	12GTAA27-G33	FRS-450SP	— → 机油容量 （L）=65
+SPEC	fuel	thêm	n106	12GTAA27-G33	FRS-450SP	— → 燃油消耗率 （g/kw·h）=205
+SPEC	disp	thêm	n106	12GTAA27-G33	FRS-450SP	— → 排量 （L）=26.6
+SPEC	bore	thêm	n106	12GTAA27-G33	FRS-450SP	— → 缸径x行程 （mm）=135*155
+SPEC	weight	chỉ đổi nhãn	n106	12GTAA27-G32	FRS-500SP	重量 （kg）=4400 → 重量_敞开式 （kg）=4400
+SPEC	dims	chỉ đổi nhãn	n106	12GTAA27-G32	FRS-500SP	机组尺寸 （长x宽x高）=3548*1400*1992 → 机组尺寸_敞开式 （长x宽x高）=3548*1400*1992
+SPEC	oil	thêm	n106	12GTAA27-G32	FRS-500SP	— → 机油容量 （L）=65
+SPEC	fuel	thêm	n106	12GTAA27-G32	FRS-500SP	— → 燃油消耗率 （g/kw·h）=205
+SPEC	disp	thêm	n106	12GTAA27-G32	FRS-500SP	— → 排量 （L）=26.6
+SPEC	bore	thêm	n106	12GTAA27-G32	FRS-500SP	— → 缸径x行程 （mm）=135*155
+SPEC	weight	chỉ đổi nhãn	n106	12GTAA27-G31	FRS-550SP	重量 （kg）=4450 → 重量_敞开式 （kg）=4450
+SPEC	dims	chỉ đổi nhãn	n106	12GTAA27-G31	FRS-550SP	机组尺寸 （长x宽x高）=3624*1400*1992 → 机组尺寸_敞开式 （长x宽x高）=3624*1400*1992
+SPEC	oil	thêm	n106	12GTAA27-G31	FRS-550SP	— → 机油容量 （L）=65
+SPEC	fuel	thêm	n106	12GTAA27-G31	FRS-550SP	— → 燃油消耗率 （g/kw·h）=205
+SPEC	disp	thêm	n106	12GTAA27-G31	FRS-550SP	— → 排量 （L）=26.6
+SPEC	bore	thêm	n106	12GTAA27-G31	FRS-550SP	— → 缸径x行程 （mm）=135*155
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G311	FRS-400SP	重量 （kg）=4760 → 重量_敞开式 （kg）=4760
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G311	FRS-400SP	机组尺寸 （长x宽x高）=3900*1608*2138 → 机组尺寸_敞开式 （长x宽x高）=3900*1608*2138
+SPEC	oil	thêm	n106	6KTAA25-G311	FRS-400SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G311	FRS-400SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G311	FRS-400SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G311	FRS-400SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G310	FRS-450SP	重量 （kg）=4820 → 重量_敞开式 （kg）=4820
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G310	FRS-450SP	机组尺寸 （长x宽x高）=3900*1608*2138 → 机组尺寸_敞开式 （长x宽x高）=3900*1608*2138
+SPEC	oil	thêm	n106	6KTAA25-G310	FRS-450SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G310	FRS-450SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G310	FRS-450SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G310	FRS-450SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G39	FRS-500SP	重量 （kg）=4960 → 重量_敞开式 （kg）=4960
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G39	FRS-500SP	机组尺寸 （长x宽x高）=3900*1608*2318 → 机组尺寸_敞开式 （长x宽x高）=3900*1608*2318
+SPEC	oil	thêm	n106	6KTAA25-G39	FRS-500SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G39	FRS-500SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G39	FRS-500SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G39	FRS-500SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G38	FRS-550SP	重量 （kg）=5060 → 重量_敞开式 （kg）=5060
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G38	FRS-550SP	机组尺寸 （长x宽x高）=3910*1608*2138 → 机组尺寸_敞开式 （长x宽x高）=3910*1608*2138
+SPEC	oil	thêm	n106	6KTAA25-G38	FRS-550SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G38	FRS-550SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G38	FRS-550SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G38	FRS-550SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G36	FRS-400SP	重量 （kg）=4760 → 重量_敞开式 （kg）=4760
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G36	FRS-400SP	机组尺寸 （长x宽x高）=3960*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=3960*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G36	FRS-400SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G36	FRS-400SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G36	FRS-400SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G36	FRS-400SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G35	FRS-450SP	重量 （kg）=4820 → 重量_敞开式 （kg）=4820
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G35	FRS-450SP	机组尺寸 （长x宽x高）=3900*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=3900*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G35	FRS-450SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G35	FRS-450SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G35	FRS-450SP	— → 排量 （L）=28.18
+SPEC	bore	thêm	n106	6KTAA25-G35	FRS-450SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G34	FRS-500SP	重量 （kg）=4960 → 重量_敞开式 （kg）=4960
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G34	FRS-500SP	机组尺寸 （长x宽x高）=3900*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=3900*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G34	FRS-500SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G34	FRS-500SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G34	FRS-500SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G34	FRS-500SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G33	FRS-550SP	重量 （kg）=5060 → 重量_敞开式 （kg）=5060
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G33	FRS-550SP	机组尺寸 （长x宽x高）=3910*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=3910*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G33	FRS-550SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G33	FRS-550SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G33	FRS-550SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G33	FRS-550SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G32	FRS-600SP	重量 （kg）=5200 → 重量_敞开式 （kg）=5200
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G32	FRS-600SP	机组尺寸 （长x宽x高）=3910*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=3910*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G32	FRS-600SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G32	FRS-600SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G32	FRS-600SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G32	FRS-600SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6KTAA25-G31	FRS-640SP	重量 （kg）=5400 → 重量_敞开式 （kg）=5400
+SPEC	dims	chỉ đổi nhãn	n106	6KTAA25-G31	FRS-640SP	机组尺寸 （长x宽x高）=4150*1608*2109 → 机组尺寸_敞开式 （长x宽x高）=4150*1608*2109
+SPEC	oil	thêm	n106	6KTAA25-G31	FRS-640SP	— → 机油容量 （L）=70
+SPEC	fuel	thêm	n106	6KTAA25-G31	FRS-640SP	— → 燃油消耗率 （g/kw·h）=195
+SPEC	disp	thêm	n106	6KTAA25-G31	FRS-640SP	— → 排量 （L）=25.18
+SPEC	bore	thêm	n106	6KTAA25-G31	FRS-640SP	— → 缸径x行程 （mm）=170*185
+SPEC	weight	chỉ đổi nhãn	n106	6WTAA35.1-G32	FRS-720SP	重量 （kg）=7100 → 重量_敞开式 （kg）=7100
+SPEC	dims	chỉ đổi nhãn	n106	6WTAA35.1-G32	FRS-720SP	机组尺寸 （长x宽x高）=4471*1975*2410 → 机组尺寸_敞开式 （长x宽x高）=4471*1975*2410
+SPEC	oil	thêm	n106	6WTAA35.1-G32	FRS-720SP	— → 机油容量 （L）=100
+SPEC	fuel	thêm	n106	6WTAA35.1-G32	FRS-720SP	— → 燃油消耗率 （g/kw·h）=200
+SPEC	disp	thêm	n106	6WTAA35.1-G32	FRS-720SP	— → 排量 （L）=35.1
+SPEC	bore	thêm	n106	6WTAA35.1-G32	FRS-720SP	— → 缸径x行程 （mm）=186*215
+SPEC	weight	chỉ đổi nhãn	n106	6WTAA35.1-G31	FRS-800SP	重量 （kg）=7250 → 重量_敞开式 （kg）=7250
+SPEC	dims	chỉ đổi nhãn	n106	6WTAA35.1-G31	FRS-800SP	机组尺寸 （长x宽x高）=4471*1975*2410 → 机组尺寸_敞开式 （长x宽x高）=4471*1975*2410
+SPEC	oil	thêm	n106	6WTAA35.1-G31	FRS-800SP	— → 机油容量 （L）=100
+SPEC	fuel	thêm	n106	6WTAA35.1-G31	FRS-800SP	— → 燃油消耗率 （g/kw·h）=200
+SPEC	disp	thêm	n106	6WTAA35.1-G31	FRS-800SP	— → 排量 （L）=35.1
+SPEC	bore	thêm	n106	6WTAA35.1-G31	FRS-800SP	— → 缸径x行程 （mm）=186*215
