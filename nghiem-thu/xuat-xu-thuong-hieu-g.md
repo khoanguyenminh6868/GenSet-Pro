@@ -24,6 +24,9 @@ Giữ nguyên khi: chưa rõ hãng, model không có trong danh mục, chính d�
 - check-all 17 lượt: 7 cấu hình, 8 check, chỉ IB2600603983. 7 check chưa rõ → đạt (bảng dưới). Check thứ 8: S6R2-PTAA + S5L1D-H41 + DSE7320, Xuất xứ động cơ, **đạt → cần xác nhận** (fdk-energy ghi "Mitsubishi (SME Shanghai)").
 - Thứ tự và danh sách cấu hình: 0 gói đổi. Chạy `check` hai lần giống nhau ở cả 17 lượt. Test `suppliers` 1.561 / 1.561.
 
+## Gộp `nha-may-tq` 11d98189 (SHA 54126e27)
+Commit đó đọc thêm nhãn "SME / SME Shanghai" ở bảng nhãn. check-all 17 lượt (gốc 11d98189): vẫn 7 cấu hình, 8 check như bản 078f9f38; so trực tiếp với 078f9f38: 0 check đổi. 0 gói đổi thứ tự / danh sách, chạy `check` hai lần giống nhau. Test `suppliers` 1.562 / 1.562.
+
 ## Danh sách đủ, đã soát tay từng hãng
 
 | Cấu hình | Check | Trước → sau | Hãng (nước) | Soát nguồn |
