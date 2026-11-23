@@ -1075,7 +1075,35 @@ function batchRows(rows, { rows: maxRows, bytes: maxBytes } = WRITE_BATCH) {
   return out;
 }
 
+// A scheduled Sync that fails is tried again inside the same process (Khoa 24/11/2026): the sandbox stops 5 minutes after
+// its last round, so a later retry might never happen there. waits[i] = ms before try i + 2.
+const SYNC_RETRY_WAITS = [30e3, 120e3];
+async function withRetries(fn, { waits = [], sleep, onRetry } = {}) {
+  for (let i = 0; ; i++) {
+    try { return await fn(i); }
+    catch (e) {
+      if (i >= waits.length) throw e;
+      if (onRetry) onRetry(e, i + 1, waits[i]);
+      await sleep(waits[i]);
+    }
+  }
+}
+// sync-fail-<time>.png / .txt beyond the newest `keep` rounds (names sort by time).
+function failShotsToDrop(names, keep = 10) {
+  const re = /^(sync-fail-[\d-]+)\.(png|txt)$/;
+  const bases = [...new Set(names.map((n) => re.exec(n)?.[1]).filter(Boolean))].sort().reverse();
+  const old = new Set(bases.slice(keep));
+  return names.filter((n) => old.has(re.exec(n)?.[1]));
+}
+// The schedule file after a scheduled Sync of `slot` succeeded: that slot needs no more tries (GenBid-Bot.ps1 sets retry first).
+function scheduleAfterOk(s, slot) {
+  if (!s?.retry || s.retry.slot !== slot) return s;
+  const { retry, ...rest } = s;
+  return rest;
+}
+
 module.exports = {
+  SYNC_RETRY_WAITS, withRetries, failShotsToDrop, scheduleAfterOk,
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
   feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
   sig, isDecisionFile, isGpkd, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender, histWinningPrice,

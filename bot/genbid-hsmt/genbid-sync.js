@@ -31,6 +31,7 @@ const KIT = __dirname;
 const API = "https://genset-pro-web.vercel.app/api";
 const LOCK = path.join(ROOT, ".hsmt-worker.lock");
 const SYNC_LAST = path.join(ROOT, ".genbid-sync-last.json");
+const SCHEDULE_FILE = path.join(ROOT, ".genbid-bot-schedule.json"); // GenBid-Bot.ps1: last slot run, and its retry while not known good
 const DOWNLOADS = path.join(process.env.USERPROFILE || HOME, "Downloads", "GenBid-HSMT");
 // The HSDT files of each Đối chiếu, kept on this PC (Khoa, 2026-11-05): <HSDT_DIR>\\<TBMT>\\<requestedAt>\\<file>. Never in git or GitHub.
 const HSDT_DIR = path.join(process.env.USERPROFILE || HOME, "Downloads", "GenBid-HSDT");
@@ -55,6 +56,7 @@ const {
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
   ARCHIVE_LIMITS, archiveOrder, unreadList, ocrFailNote, unrarList, tarList, archiveRefusal, unrarFail, tarFail, isNulFile, pdfNeedsOcr, batchRows,
+  SYNC_RETRY_WAITS, withRetries, failShotsToDrop, scheduleAfterOk,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1153,6 +1155,21 @@ async function runSpecs() {
 }
 
 // ---------- sync ----------
+// The page as it was when the search gave up (genbid-bot-logs/sync-fail-<time>.png + .txt, newest 10 kept), so the cause
+// can be read later (Khoa 24/11/2026). Never makes the Sync fail in another way.
+async function saveSyncFail(page, err) {
+  try {
+    const dir = path.join(ROOT, "genbid-bot-logs");
+    fs.mkdirSync(dir, { recursive: true });
+    const base = path.join(dir, "sync-fail-" + now().slice(0, 19).replace(/[T:]/g, "-"));
+    await page.screenshot({ path: base + ".png", timeout: 15000 }).catch(() => {});
+    const info = await page.evaluate(() => ({ title: document.title, text: (document.body?.innerText || "").slice(0, 4000) })).catch(() => ({}));
+    fs.writeFileSync(base + ".txt", [`Lúc: ${now()}`, `Lỗi: ${String(err?.message || err).split("\n")[0]}`, `URL: ${page.url()}`, `Tiêu đề: ${info.title || ""}`, "", info.text || ""].join("\n"), "utf8");
+    for (const f of failShotsToDrop(fs.readdirSync(dir))) fs.rmSync(path.join(dir, f), { force: true });
+    log(`Đã lưu ảnh trang lỗi: ${base}.png`);
+  } catch (e) { console.error(`Không lưu được ảnh trang lỗi: ${e.message}`); }
+}
+
 async function runSync() {
   const req = await apiGet("?kind=sync");
   // "Chỉ lấy gói mới" (the web's + button, mode "new"); --new does the same from the command line.
@@ -1185,8 +1202,20 @@ async function runSync() {
     // Tenders already known whose notice was amended (notifyVersion went up, e.g. a new closing date): their notice
     // and files are read again, and a Bỏ qua one goes back to Mới on the web (ingest.js) (Khoa, 2026-10-29).
     const amended = [];
-    try { found = await searchTenders(page, known); }
-    catch (e) { if (!(e instanceof Captcha)) throw e; notes.push("muasamcong yêu cầu xác minh, chưa tìm được gói mới"); }
+    // Scheduled: a few tries, and in the end a failure even for a captcha, so the slot is not counted as done (Khoa 24/11/2026).
+    // Pressed on the web: one try, Khoa is waiting and can press again.
+    const scheduled = typeof opt("scheduled") === "string";
+    try {
+      found = await withRetries(() => searchTenders(page, known), {
+        waits: scheduled ? SYNC_RETRY_WAITS : [],
+        sleep: (ms) => new Promise((r) => setTimeout(r, ms)),
+        onRetry: (e, n, ms) => log(`Tìm thầu lỗi lần ${n}: ${e.message.split("\n")[0]}. Thử lại sau ${ms / 1000} giây.`),
+      });
+    } catch (e) {
+      await saveSyncFail(page, e);
+      if (scheduled || !(e instanceof Captcha)) throw e;
+      notes.push("muasamcong yêu cầu xác minh, chưa tìm được gói mới");
+    }
     if (found) {
       const m = feedMerge(feed, found, { newOnly, knownElsewhere, nowMs: Date.now() });
       const next = m.next;
@@ -2140,7 +2169,8 @@ async function runFinish() {
     }
     else { summary = "Lệnh: sync | files | prep | finish"; code = 1; }
   } catch (e) {
-    summary = `Lỗi: ${e.message.split("\n")[0]}`; code = 1;
+    // "Sync lỗi" at the start is how the activity log (web/shim.js) tells a failed scheduled Sync: its row keeps only slot and summary.
+    summary = `${cmd === "sync" ? "Sync lỗi" : "Lỗi"}: ${e.message.split("\n")[0]}`; code = 1;
     console.error(e.stack || e);
     // A Sync the web is waiting for gets the error, so the page does not stay on "đang đồng bộ".
     if (cmd === "sync") {
@@ -2156,6 +2186,7 @@ async function runFinish() {
   if (cmd === "sync" && typeof slot === "string" && !opt("dry")) {
     try { await post([{ coll: "synclog", id: "current", data: { slot, doneAt: now(), summary: String(summary).replace(/\n/g, " | ").slice(0, 2000), ok: !code } }]); }
     catch (e) { console.error(`Không ghi được synclog: ${e.message}`); }
+    if (!code) { const s = readJson(SCHEDULE_FILE, null), t = scheduleAfterOk(s, slot); if (t !== s) writeJson(SCHEDULE_FILE, t); }
   }
   console.log("SUMMARY: " + String(summary).replace(/\n/g, " | "));
   process.exit(code);

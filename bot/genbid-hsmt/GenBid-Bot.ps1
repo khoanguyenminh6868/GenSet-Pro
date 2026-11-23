@@ -83,6 +83,9 @@ $script:Lane = ''
 # Tạm dừng vì hết hạn mức, nhớ qua các lần khởi động lại bot.
 $PauseFile = Join-Path $Root '.genbid-bot-pause.json'
 $ScheduleFile = Join-Path $Root '.genbid-bot-schedule.json'
+# Sync theo lịch lỗi hoặc chết giữa chừng: chạy lại mốc đó, tối đa 3 lượt, cách nhau 15 phút (Khoa 24/11/2026).
+$ScheduleMaxTries = 3
+$ScheduleRetryMinutes = 15
 $LogDir = Join-Path $Root 'genbid-bot-logs'
 New-Item -ItemType Directory -Force $LogDir | Out-Null
 $Utf8 = New-Object Text.UTF8Encoding $false
@@ -761,10 +764,20 @@ try {
                         $today = $vn.ToString('yyyy-MM-dd')
                         $slot = $ScheduleTimes | Where-Object { $vn -ge [datetime]"$today $_" } | Sort-Object { [datetime]"$today $_" } | Select-Object -Last 1
                         $slotKey = "$today $slot"
-                        if ($slot -and $ScheduleDays -contains $vn.DayOfWeek.ToString() -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $slotKey) {
-                            [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey } | ConvertTo-Json), $Utf8)
-                            if ($script:WebLastSlot -and [string]::CompareOrdinal($script:WebLastSlot, $slotKey) -ge 0) { Log "Sync theo lịch $slotKey đã chạy ở máy khác, bỏ qua." }
-                            else { Start-Lane 'browser' @("schedule:$slotKey") @{ slot = $slotKey } }
+                        # Ghi sẵn "retry" trước khi chạy; genbid-sync.js chỉ xoá nó khi Sync thành công, nên lượt lỗi hay lượt chết đều được thử lại.
+                        $sched = Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })
+                        $retry = if ($sched.PSObject.Properties.Name -contains 'retry') { $sched.retry }
+                        $again = $retry -and $retry.slot -eq $slotKey -and [int]$retry.tries -lt $ScheduleMaxTries -and $now -ge [datetime]$retry.at
+                        if ($slot -and $ScheduleDays -contains $vn.DayOfWeek.ToString() -and ($sched.last -ne $slotKey -or $again)) {
+                            if ($script:WebLastSlot -and [string]::CompareOrdinal($script:WebLastSlot, $slotKey) -ge 0) {
+                                [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey } | ConvertTo-Json), $Utf8)
+                                Log "Sync theo lịch $slotKey đã chạy ở máy khác, bỏ qua."
+                            } else {
+                                $tries = if ($again) { [int]$retry.tries + 1 } else { 1 }
+                                [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey; retry = @{ slot = $slotKey; tries = $tries; at = $now.AddMinutes($ScheduleRetryMinutes).ToString('o') } } | ConvertTo-Json), $Utf8)
+                                if ($again) { Log "Sync theo lịch $slotKey chưa thành công, chạy lại (lượt $tries/$ScheduleMaxTries)." }
+                                Start-Lane 'browser' @("schedule:$slotKey") @{ slot = $slotKey }
+                            }
                         }
                     }
                 }
