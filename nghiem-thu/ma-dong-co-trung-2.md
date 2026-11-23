@@ -1,6 +1,6 @@
 # Nghiệm thu: mã động cơ trùng, PR 2 (tách ô hai mã)
 
-- PR: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1087 (draft), nhánh `ma-dong-co-trung-2`, head `fffd4f9a6819eada102f1b762147698b254db972`, gốc `dccc4669`.
+- PR: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1087 (draft), nhánh `ma-dong-co-trung-2`, head `1c413bea88d24219b31efda3f1ce1c932f6e18a7` (đã gộp main `6169af91`, test 1570 + 158 + 11 pass); số đo khoá bên dưới đo ở `fffd4f9a` so `dccc4669`.
 - Quyết định: Khoa 20/11/2026, câu 1 b): ô hai mã tách hai bản ghi; ngoặc là mã riêng của NCC thì giữ mã ngoài ngoặc.
 - Cách làm: danh sách tường minh `ENGINE_CELL_LIST` trong `web/catalog.js`: 91 ô tách, 16 ô giữ mã ngoài ngoặc. Bản ghi tách bỏ thông số phạm vi động cơ, giữ công suất và thông số tổ máy.
 
