@@ -32,6 +32,33 @@
     [/\bengga\b|英格/i, "Engga"], [/\bfaraday\b|法拉第/i, "Faraday"], [/\bsiemens\b|西门子/i, "Siemens"],
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
+  // Alternator code families (Khoa 23/11/2026, baifa điểm 2). This table is GENERAL KNOWLEDGE of the makers' product
+  // lines, taken from NO supplier source. It is used ONLY to DETECT a code that sits under another make's column title
+  // (altMakeAsk); it NEVER gives a make to a record. Every prefix in use:
+  //   Leroy-Somer: "LSA" + digit ("LSA52.3 UL16", "LSA 53.2M9"), "TAL-A" / "TAL" + digit ("TAL-A44-C");
+  //   Stamford: "UCI" / "UCD" / "UCM" / "UCDI" / "UCDM" + digit, "HCI" / "HCM" / "HCK" + digit, "PI" + 3 digits ("PI734E1"),
+  //     "S0L"–"S9L" + digit ("S5L1D");
+  //   Mecc Alte: "ECO" / "ECP" + digit.
+  const ALT_CODE_FAMILY = [
+    ["Leroy-Somer", /^(LSA\s?\d|TAL[\s-]?A?\d)/i],
+    ["Stamford", /^(UC[DIM]{1,2}\s?\d|HC[IMK]\s?\d|PI\s?\d{3}|S\dL\d)/i],
+    ["Mecc Alte", /^EC[OP]\s?\d/i],
+  ];
+  // A code of one family under the column title of ANOTHER make ("LSA52.3 UL16" under "STAMFORD", baifa n101; "PI734E1"
+  // under "Alternator Leroy-Somer", penlucky n103): neither side is trusted (Khoa 23/11/2026). The row stays, the column's
+  // make is taken off the record (it no longer votes at build()), and `makeAsk` says what to confirm with the supplier.
+  // Only a make read from a column title: a make in the row's own cell or on the page title is left as it is.
+  function altMakeAsk(list) {
+    for (const o of list) {
+      if (o.kind !== "alternator" || !o.makes?.length) continue;
+      const fam = ALT_CODE_FAMILY.find(([, re]) => re.test(String(o.model || "").trim()));
+      const off = fam ? o.makes.filter((m) => m.via === "tiêu đề cột" && m.name !== fam[0]) : [];
+      if (!off.length) continue;
+      o.makeAsk = `mã ${o.model} dưới cột ${off.map((m) => m.name).join(" / ")}`;
+      o.makes = o.makes.filter((m) => !off.includes(m));
+    }
+    return list;
+  }
   // FG Wilson as an alternator's make (genlitec: "| Alternator Make | FG Wilson", "| Alternator | FG Wilson FGL70030"). Read ONLY from
   // the alternator's own cell or its make cell, never from a page title / column header / whole row (those name the genset's
   // make), so it is not in ALT_BRANDS (which title, header and HSMT readings use).
@@ -59,7 +86,8 @@
   // A Scania engine written as the maker does, in four words ("DC09 072A 02-11", "DC13 072A 02 11", "OC16 071A 02-82" gas,
   // "DC9 65A 10-93"): a code with up to three spaces (catalog-bang-r1: agg-fuzhou, kaihua, voltgent, green-power, huadong
   // had rows whose only engine cell failed isCode, so the row gave no record).
-  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s\d{2}[\s-]\d{2}$/i;
+  // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
+  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -274,6 +302,14 @@
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
+    // Cells that are a duration, a pressure, a weight, a count of wheels, a rating written as a model, a standard or a
+    // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
+    // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
+    // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/. Also a container size (longkai, previa "20FT",
+    // "40HQ", "20GP") and shengfeng's frequency cell "60HZ?".
+    if (/^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i.test(s) || /^\d{2}\s*hz\?$/i.test(s)) return false;
+    if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
     // "195(g/kw.h)", "208g /kwh", "300 W", "330+250 W", "1800k W", "6-cylinder/inline", "Container 20'", "0,11 m3/s",
@@ -412,7 +448,7 @@
       const perTitle = k === 1 && sub.length === run;
       // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
       if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
-      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set();
+      const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set(), subU = new Set();
       let pos = p0, any = false, twoUsed = false, same = false, own = false, ordered = false;
       const put = (rate, unit, v, soft, key) => {
         if (!rate || rate === "other" || rate === "mixed" || !unit || !(v > 0)) return;
@@ -475,6 +511,8 @@
           const unit = unitOfCell(c) || (k > 1 ? sUnit || tUnit : tUnit || sUnit) || null;
           if (!unit && !dualU && wider <= 0 && (rate === "prime" || rate === "standby")) bare.add(rate);
           if (unitOfCell(c)) own = true;
+          // the unit written in the sub-title of this very column ("Standby KVA | Prime KVA" under "POWER", baifa)
+          else if (k > 1 && sUnit) subU.add(rate);
           put(rate, unit, val(c), inherits, key);
         }
       }
@@ -501,8 +539,10 @@
         if (!p || !s) continue;
         if (p > s * 1.001) return null;
         // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", or that
-        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand)
-        if (!own && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
+        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand; so do figures whose unit is
+        // written in the sub-title of each of the two columns, "Standby KVA | Prime KVA" under one title "POWER" over
+        // "2500 | 2000": the source says the unit twice (Khoa 23/11/2026; a unit in the covering title only still vetoes)
+        if (!own && !(subU.has("prime") && subU.has("standby")) && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
       }
       let n = 0;
       for (const r of Object.values(got)) n += Object.keys(r).length;
@@ -1668,7 +1708,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note));
+    return altMakeAsk(mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note)));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -2869,6 +2909,8 @@
     // with a space stays whole ("4006 23TAG2A", Jichai "6190 TL-2", "4190 ZLT1-2", Mahindra "3285 GM-C2", JCB "444 G-TCA-100").
     (s) => s.replace(/\s*\/\s*(1500|1800)$/, "").replace(/\s+(1500|1800)$/, "").replace(/^\d{3,4}(?:,\d+)?\s+(?=\d[\dA-Z.]*-\S*[A-Z])/i, ""),
     (s) => s.replace(PLANT_SLASH, ""),
+    // Scania code + the kVA of the set ("DC13 505A 400KVA", baifa): the figure is a rating, not part of the code.
+    (s) => s.replace(/^([DO]C\s?\d{1,2}\s\d{2,3}[A-Z])\s\d{2,4}\s?kva$/i, "$1"),
     (s) => { const m = s.match(/^([a-z]+)\s+(?=\S*\d)/i); return m && engineMakeWord(m[1]) ? s.slice(m[0].length) : s; },
     (s) => { const m = s.match(/\s+\(?([a-z]+)\)?$/i); return m && engineMakeWord(m[1]) ? s.slice(0, m.index) : s; },
   ];
