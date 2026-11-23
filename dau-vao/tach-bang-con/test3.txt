@@ -1,0 +1,162 @@
+﻿TAP version 13
+# Subtest: isMachineRow: dòng máy (mã + hai ô số trơn) khác dòng tiêu đề
+ok 1 - isMachineRow: dòng máy (mã + hai ô số trơn) khác dòng tiêu đề
+  ---
+  duration_ms: 2.812
+  ...
+# Subtest: tablesOf: tiêu đề dừng ở dòng máy đầu tiên; mọi dòng sau đó là dòng, đúng thứ tự trang, không thêm không mất
+ok 2 - tablesOf: tiêu đề dừng ở dòng máy đầu tiên; mọi dòng sau đó là dòng, đúng thứ tự trang, không thêm không mất
+  ---
+  duration_ms: 4.9081
+  ...
+# Subtest: tệp nguồn baifa n101–n106: tablesOf ra đúng bảng đã lưu trong specs/, không bảng nào còn dòng máy trong tiêu đề
+ok 3 - tệp nguồn baifa n101–n106: tablesOf ra đúng bảng đã lưu trong specs/, không bảng nào còn dòng máy trong tiêu đề
+  ---
+  duration_ms: 105.0745
+  ...
+# Subtest: hồ sơ baifa: 31 dòng của n101 b1 nằm ở dòng (trước đây trong tiêu đề) và ra bản ghi; 5 dòng 'UK/ CCEC' đủ
+ok 4 - hồ sơ baifa: 31 dòng của n101 b1 nằm ở dòng (trước đây trong tiêu đề) và ra bản ghi; 5 dòng 'UK/ CCEC' đủ
+  ---
+  duration_ms: 292.626
+  ...
+# Subtest: mọi hồ sơ cn/: không bảng nào ngoài danh sách đã biết còn dòng máy trong tiêu đề
+ok 5 - mọi hồ sơ cn/: không bảng nào ngoài danh sách đã biết còn dòng máy trong tiêu đề
+  ---
+  duration_ms: 707.4637
+  ...
+# Subtest: dòng phân đoạn một ô: các dòng sau nó là bảng riêng, tiêu đề = tiêu đề khối trước + dòng phân đoạn
+ok 6 - dòng phân đoạn một ô: các dòng sau nó là bảng riêng, tiêu đề = tiêu đề khối trước + dòng phân đoạn
+  ---
+  duration_ms: 9.1482
+  ...
+# Subtest: bảng đã có giữ nguyên; phần sau dòng phân đoạn là bảng riêng xếp cuối, không nối vào bảng trước
+ok 7 - bảng đã có giữ nguyên; phần sau dòng phân đoạn là bảng riêng xếp cuối, không nối vào bảng trước
+  ---
+  duration_ms: 1.331
+  ...
+# Subtest: dòng '|' trống hoặc mảnh dòng bị cắt: các dòng sau vẫn dưới dòng phân đoạn cũ, mảnh không được ghép lại
+ok 8 - dòng '|' trống hoặc mảnh dòng bị cắt: các dòng sau vẫn dưới dòng phân đoạn cũ, mảnh không được ghép lại
+  ---
+  duration_ms: 1.4759
+  ...
+# Subtest: mảnh chữ của dòng bị cắt ('| Electric', '| JET634C' cạnh mảnh số) không thành dòng phân đoạn
+ok 9 - mảnh chữ của dòng bị cắt ('| Electric', '| JET634C' cạnh mảnh số) không thành dòng phân đoạn
+  ---
+  duration_ms: 0.7082
+  ...
+# Subtest: khối sau không mở bằng dòng mã máy, có tiêu đề riêng, khác số ô, hoặc sau dòng không '|': vẫn bị bỏ như trước
+ok 10 - khối sau không mở bằng dòng mã máy, có tiêu đề riêng, khác số ô, hoặc sau dòng không '|': vẫn bị bỏ như trước
+  ---
+  duration_ms: 2.0744
+  ...
+# Subtest: tiêu đề chỉ chữ Hán có 额定功率 được nhận; 功率因数 và 备用电源 thì không
+ok 11 - tiêu đề chỉ chữ Hán có 额定功率 được nhận; 功率因数 và 备用电源 thì không
+  ---
+  duration_ms: 1.5356
+  ...
+# Subtest: tệp nguồn thật: bảng theo dòng phân đoạn của awt-aiweite, lees-power, longkai-power, huayuan-weifang
+not ok 12 - tệp nguồn thật: bảng theo dòng phân đoạn của awt-aiweite, lees-power, longkai-power, huayuan-weifang
+  ---
+  duration_ms: 44.8881
+  location: 'C:\\Projects\\GenSet Pro\\wt-tach-bang-con\\suppliers\\crawl-dropped.test.mjs:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected ... Lines skipped
+    
+      [
+        [
+          '| Weichai Series--Baudouin Engine',
+    +     16
+    -     41
+        ],
+    ...
+          27
+        ]
+      ]
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0:
+      0: '| Weichai Series--Baudouin Engine'
+      1: 41
+    1:
+      0: '| Weichai Series--Baudouin Engine'
+      1: 27
+  actual:
+    0:
+      0: '| Weichai Series--Baudouin Engine'
+      1: 16
+    1:
+      0: '| Weichai Series--Baudouin Engine'
+      1: 27
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Projects/GenSet%20Pro/wt-tach-bang-con/suppliers/crawl-dropped.test.mjs:68:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:789:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:517:18)
+    Test.postRun (node:internal/test_runner/test:885:19)
+    Test.run (node:internal/test_runner/test:831:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:517:7)
+  ...
+# Subtest: hồ sơ: mọi bảng tablesOf đọc ra từ tệp nguồn của 15 NCC đã dựng lại đều có trong cn/ (trừ bảng trùng nguyên dòng)
+not ok 13 - hồ sơ: mọi bảng tablesOf đọc ra từ tệp nguồn của 15 NCC đã dựng lại đều có trong cn/ (trừ bảng trùng nguyên dòng)
+  ---
+  duration_ms: 537.9959
+  location: 'C:\\Projects\\GenSet Pro\\wt-tach-bang-con\\suppliers\\crawl-dropped.test.mjs:77:1'
+  failureType: 'testCodeFailure'
+  error: "chỉ hai bảng 'Single phase' của lees-power n127 / n131 trùng nguyên dòng với bảng n112 / n111"
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Projects/GenSet%20Pro/wt-tach-bang-con/suppliers/crawl-dropped.test.mjs:90:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:789:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:517:18)
+    Test.postRun (node:internal/test_runner/test:885:19)
+    Test.run (node:internal/test_runner/test:831:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:517:7)
+  ...
+# Subtest: catalog: dòng phân đoạn cho tần số và hãng của bảng (awt-aiweite 60HZ, aosif Hyundai)
+ok 14 - catalog: dòng phân đoạn cho tần số và hãng của bảng (awt-aiweite 60HZ, aosif Hyundai)
+  ---
+  duration_ms: 798.9962
+  ...
+# Subtest: tiêu đề lặp giữa khối: mỗi bảng con đứng dưới tiêu đề của chính nó, kể cả dòng tiêu đề ngay trên
+ok 15 - tiêu đề lặp giữa khối: mỗi bảng con đứng dưới tiêu đề của chính nó, kể cả dòng tiêu đề ngay trên
+  ---
+  duration_ms: 7.4777
+  ...
+# Subtest: không có tiêu đề lặp: khối đọc như cũ
+ok 16 - không có tiêu đề lặp: khối đọc như cũ
+  ---
+  duration_ms: 0.7805
+  ...
+# Subtest: mảnh nhãn của thẻ một sản phẩm không tách bảng
+ok 17 - mảnh nhãn của thẻ một sản phẩm không tách bảng
+  ---
+  duration_ms: 9.1193
+  ...
+# Subtest: dòng máy thiếu tối đa 2 ô được giữ nguyên chữ, không điền ô
+ok 18 - dòng máy thiếu tối đa 2 ô được giữ nguyên chữ, không điền ô
+  ---
+  duration_ms: 1.5735
+  ...
+# Subtest: dòng phân đoạn ghi dải công suất không vào tiêu đề của bảng con sau
+ok 19 - dòng phân đoạn ghi dải công suất không vào tiêu đề của bảng con sau
+  ---
+  duration_ms: 1.6998
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 17
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1602.8507
