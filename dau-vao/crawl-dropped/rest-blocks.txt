@@ -1,0 +1,299 @@
+﻿khối: 66, dòng: 460
+
+##### baifa-power (70 dòng) — URL: https://www.baifapower.cn/Generatorwithemissioncontrol
+[W] n101 L161 khối 72 dòng, 36 dòng máy ngoài bảng | tên trang: 
+     H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+     H: | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+     M: | BF-P88-T3 | 88 | 80 | 1104D-E44TAG1 | | UCI 224G | STAGE 3A | CHINA
+[W] n101 L235 khối 100 dòng, 4 dòng máy ngoài bảng | tên trang: 
+     H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+     H: | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+     M: | BF-BD20-T3 | 20 | 17.5 | BAUDOUIN | 4M08G2D3/5 | | VARIOUS | STAGE 3A/ CHINA STAGE3 | CHINA
+[W] n101 L409 khối 180 dòng, 11 dòng máy ngoài bảng | tên trang: 
+     H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+     H: | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+     M: | BF-C875-3 | 875 | 812.5 | CUMMINS (CHINA) | KTA38-G2E | | VARIOUS | CHINA STAGE3 | CHINA
+[W] n102 L159 khối 16 dòng, 5 dòng máy ngoài bảng | tên trang: 
+     H: | | POWERED BY VOLVO | 1800RPM TIER 3
+     H: | BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE STAMFORD | GOV. | ALTERNATOR STAMFORD
+     M: | BF-V750TWIN-60 | 750 | 682 | 2*TAD1351GE | EMS2 / ECU | 2*S4L1D-D41
+[W] n106 L159 khối 48 dòng, 14 dòng máy ngoài bảng | tên trang: 
+     H: | | POWERED BY VOLVO | 1500RPM | STAGE 2 TIER 2
+     H: | BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE MODEL | GOV. | ALTERNATOR STAMFORD | DIMENSION MM SOUNDPROOF TYPE
+     M: | BF-V900TWIN-60 | 1000 | 910 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC
+
+##### shunfeng-changzhou (69 dòng) — URL: http://www.sf-fadian.com/Productd/951138199814365184.html
+[P] n101 L79 khối 15 dòng, 14 dòng máy ngoài bảng | tên trang: 顺风牌沃尔沃柴油发电机组-柴油发电机组-港机发电机组-常州顺风发电设备有限公司【官网】
+     H: | 制造商 | 气缸数/ 排列方式 | 缸径×行程 (mm×mm) | 空气 压缩比 | 发动机总排量 (Liter) | 机油容量 (L) | 冷却液总容量 (L) | 100%负载 燃油 消耗量 (g/kwh) | 燃油系统 | 燃气量 (m3/min) | 排烟量 (m3/min)
+     H: | TD520GE | 4 in line | 108×130 | 17.5：1 | 4.76 | 13 | 22 | 215 | 直喷式燃油系统 | 4.8 | 15.4
+     M: | TD520GE | 4 in line | 108×130 | 17.5：1 | 4.76 | 13 | 22 | 215 | 直喷式燃油系统 | 4.8 | 15.4
+[P] n102 L85 khối 22 dòng, 21 dòng máy ngoài bảng | tên trang: 顺风牌康明斯系列柴油发电机组-柴油发电机组-港机发电机组-常州顺风发电设备有限公司【官网】
+     H: | 柴油机型号 | 气缸数/ 排列方式 | 缸径×行程 (mm×mm) | 空气压缩比 | 发动机 总排量 (Liter) | 机油容量 (L) | 冷却液总容量 (L) | 100%负载燃油 消耗量 (g/kwh) | 燃油系统 | 燃气量 (m3/min) | 排烟量 (m3/min)
+     H: | 4B3.9-G | 4 in line | 102×120 | 16.5：1 | 3.9 | 11 | 21 | 228 | 直喷 | 1.98 | 4.27
+     M: | 4B3.9-G | 4 in line | 102×120 | 16.5：1 | 3.9 | 11 | 21 | 228 | 直喷 | 1.98 | 4.27
+[P] n103 L73 khối 7 dòng, 6 dòng máy ngoài bảng | tên trang: 顺风牌道依茨系列柴油发电机组-柴油发电机组-港机发电机组-常州顺风发电设备有限公司【官网】
+     H: | 柴油机型号 | 气缸数/ 排列方式 | 缸径×行程 (mm×mm) | 空气 压缩比 | 发动机 总排量 (Liter) | 机油容 量(L) | 冷却液总容量 (L) | 100%负载燃油 消耗量 (g/kwh) | 启动方式 | 燃气量 (m3/min) | 排烟量 (m3/min)
+     H: | D226B-3D | 3 in line | 105×120 | 16.5：1 | 3.12 | 7.75 | 15 | 215 | 24V直流电启动， 并配有硅整流充电发电机 | 2.7 | 5.8
+     M: | D226B-3D | 3 in line | 105×120 | 16.5：1 | 3.12 | 7.75 | 15 | 215 | 24V直流电启动， 并配有硅整流充电发电机 | 2.7 | 5.8
+[P] n104 L92 khối 29 dòng, 28 dòng máy ngoài bảng | tên trang: 顺风牌帕金斯系列柴油发电机组-柴油发电机组-港机发电机组-常州顺风发电设备有限公司【官网】
+     H: | 制造商 | 气缸数 /排列方式 | 缸径×行程 (mm×mm) | 空气压缩比 | 发动机总排量 (Liter) | 机油容量 (L) | 冷却液总容量 (L) | 100%负载燃油 消耗量 (L/h) | 启动方式 | 燃气量 (m3/min) | 排烟量 (m3/min)
+     H: | 403D-11G | 3 in line | 77×81 | 23;1 | 1.1 | 4.9 | 5.2 | 2.8 | 机械调速 | 0.7 | 1.8
+     M: | 403D-11G | 3 in line | 77×81 | 23;1 | 1.1 | 4.9 | 5.2 | 2.8 | 机械调速 | 0.7 | 1.8
+
+##### shangyan-jiangsu (60 dòng) — URL: https://www.sypower.com/product_1/8.4KVA-20.6KVA_GR160_4-Pole_Single_Phase_Alternator.html
+[P] n104 L88 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: 8.4KVA-20.6KVA GR160 4-Pole Single Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight(kg) | Gross weight (kg) | Package dimension (cm)
+     H: | GR160-2D | 83 | 93 | 64x54x72
+     M: | GR160-2D | 83 | 93 | 64x54x72
+[P] n106 L85 khối 4 dòng, 3 dòng máy ngoài bảng | tên trang: 20KVA-31KVA GR180 4-Pole Single Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight kg | Gross weight kg | Size of the packaging box cm
+     H: | GR180-2H | 130 | 140 | 64x54x72
+     M: | GR180-2H | 130 | 140 | 64x54x72
+[P] n108 L95 khối 7 dòng, 6 dòng máy ngoài bảng | tên trang: 42.5KVA-133KVA GR225 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight kg | Gross weight kg | Size of the packaging box cm
+     H: | GR225C | 250 | 275 | 108x66x94
+     M: | GR225C | 250 | 275 | 108x66x94
+[P] n109 L111 khối 10 dòng, 9 dòng máy ngoài bảng | tên trang: 100KVA-375KVA GR270 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight kg | Gross weight kg | Size of the packaging box cm
+     H: | GR270C | 395 | 435 | 125x76x102
+     M: | GR270C | 395 | 435 | 125x76x102
+[P] n110 L101 khối 9 dòng, 8 dòng máy ngoài bảng | tên trang: 250KVA-600KVA GR314 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight kg | Gross weight kg | Size of the packaging box cm
+     H: | GR314C | 850.5 | 910 | 156x79x107
+     M: | GR314C | 850.5 | 910 | 156x79x107
+[P] n111 L523 khối 9 dòng, 8 dòng máy ngoài bảng | tên trang: 455KVA-1012.5KVA GR355 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net Weight kg | Gross Weight kg | Packing Box Size cm
+     H: | GR355C | 1250 | 1350 | 170x95x116
+     M: | GR355C | 1250 | 1350 | 170x95x116
+[P] n112 L98 khối 8 dòng, 7 dòng máy ngoài bảng | tên trang: 710KVA-1725KVA GR400 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net Weight kg | Gross Weight kg | Packing Box Size cm
+     H: | GR400B | 1960 | 2030 | 200x105x145
+     M: | GR400B | 1960 | 2030 | 200x105x145
+[P] n113 L104 khối 6 dòng, 5 dòng máy ngoài bảng | tên trang: 1253.8KVA-3125KVA GR450 4-Pole Three Phase Alternator-SHANGYAN POWER
+     H: | Model | Net Weight kg | Gross Weight kg | Packing Box Size cm
+     H: | GR450E | 2709 | 2776 | 206x105x154
+     M: | GR450E | 2709 | 2776 | 206x105x154
+[P] n114 L88 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: 5.4KVA-13.5KVA GR160 2-Pole Single Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight(kg) | Gross weight (kg) | Package dimension (cm)
+     H: | GR160A | 85 | 95 | 84x59x75
+     M: | GR160A | 85 | 95 | 84x59x75
+[P] n116 L94 khối 7 dòng, 6 dòng máy ngoài bảng | tên trang: 12.5KVA-37.5KVA GR180 2-Pole Single Phase Alternator-SHANGYAN POWER
+     H: | Model | Net weight(kg) | Gross weight (kg) | Package dimension (cm)
+     H: | GR180E | 120 | 133 | 64x54x72
+     M: | GR180E | 120 | 133 | 64x54x72
+
+##### victory-generator (50 dòng) — URL: https://www.victorygenerator.com/brushless-alternator/5kva-1625kva-victory-brushless-alternator.html
+[P] n102 L165 khối 52 dòng, 50 dòng máy ngoài bảng | tên trang: 5KVA~1625KVA Victory Brushless Alternator
+     H: | New Model | Old Model | 50HZ/ 380V | 50HZ/ 400V | 50HZ/ 415V | 50HZ/440V or YY 220V
+     H: | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby
+     M: | LA106 | VHG-6KW | 6 | 6.6 | 6 | 6.6 | 6 | 6.6 | 6 | 6.5
+
+##### nenjo-generator (45 dòng) — URL: https://en.nenjo.cn/products_details/57.html
+[P] n101 L67 khối 25 dòng, 7 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | | 50Hz 1500rpm | 60Hz 1800rpm
+     H: | 环境温度 Environmental temperature | 常用 Prime power 40 ℃ | 峰值 Peak power 40 ℃ | 峰值 Peak power 27 ℃ | 常用 Prime power 40 ℃ | 峰值 Peak power 40 ℃ | 峰值 Peak power 27 ℃
+     M: | HJI 600 | 额定容量 Rated capacity | 710.0 | 750.0 | 750.0 | 687.5 | 730.0 | 775.0 | 775.0 | 745.0 | 790.0 | 790.0 | 812.5 | 855.0 | 938.0 | 840.0 | 889.0 | 970.0 | 849.0 | 898.0 | 980.0
+[P] n101 L95 khối 8 dòng, 1 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | 铁芯 | A | B | C | C of G
+     H: | 600 | 1337 | 726 | 405 | 587
+     M: | 1120S | 1679 | 826 | 464 | 735
+[P] n101 L110 khối 4 dòng, 3 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | SAE NO. | X | Y | Z | N | R | S | T
+     H: | SAE 00 | 772 | 787.3 | 883 | 16 | 16 | 14 | 851.0
+     M: | SAE 00 | 772 | 787.3 | 883 | 16 | 16 | 14 | 851.0
+[P] n101 L115 khối 8 dòng, 7 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | | 净重 Net weight Kg | 毛重 Gross weight Kg | 包装箱尺寸 Packing case dimensions( cm×cm×cm)
+     H: | HJI 600 | 1855 | 1875 | 180×100×145
+     M: | HJI 600 | 1855 | 1875 | 180×100×145
+[P] n101 L126 khối 8 dòng, 1 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | 铁芯 | A | B | C | D | C of G
+     H: | 600 | 1718 | 640 | 570 | 446 | 587
+     M: | 1120S | 1904 | 826 | 716 | 531 | 735
+[P] n101 L135 khối 4 dòng, 3 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | SAE NO. | W | X | Y | R | S | T
+     H: | SAE 00 | 768 | 787.3 | 882 | 16 | 14 | 851.0
+     M: | SAE 00 | 768 | 787.3 | 882 | 16 | 14 | 851.0
+[P] n101 L146 khối 8 dòng, 7 dòng máy ngoài bảng | tên trang: HJI600-1000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | | 净重 Net weight Kg | 毛重 Gross weight Kg | 包装箱尺寸 Packing case dimensions( cm×cm×cm)
+     H: | HJI 600 | 1855 | 1875 | 200×105×145
+     M: | HJI 600 | 1855 | 1875 | 200×105×145
+[P] n111 L67 khối 38 dòng, 16 dòng máy ngoài bảng | tên trang: HJI1120-2000KW-Jiangsu Nenjo Generator Technology Co., Ltd.
+     H: | | 400V~50Hz 1500rpm | 60Hz 1800rpm | 480V~60Hz 1800rpm
+     H: | 环境温度 Environmental temperature | 常用 Prime power 40 ℃ | 峰值 Peak power 40 ℃ | 峰值 Peak power 27 ℃ | 常用 Prime power 40 ℃ | 常用 Prime power 40 ℃ | 峰值 Peak power 40 ℃ | 峰值 Peak power 27 ℃
+     M: | HJI 1120 | 额定容量 Rated capacity | 1400.0 | 1460.0 | 1500.0 | 1237.5 | 1690.0 | 1760.0 | 1810.0
+
+##### sanq-power (23 dòng) — URL: http://www.gz-sanqpower.com/kms/Powered-by-Joint-Venture-Cummins-cn.html
+[P] n102 L97 khối 11 dòng, 11 dòng máy ngoài bảng | tên trang: 合资康明斯柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司
+     H: | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371
+     H: | SQC800 | 640/800 | 582/728 | KT38-GA/G1 | LVI634B | 225 | 6785 | 11985 | 4200×1805×2383 | 6058×2438×2896
+     M: | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371
+[P] n107 L109 khối 11 dòng, 11 dòng máy ngoài bảng | tên trang: Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Import
+     H: | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371 |
+     H: | SQC800 | 640/800 | 582/728 | KT38-GA/G1 | LVI634B | 225 | 6785 | 11985 | 4200×1805×2383 | 6058×2438×2896 |
+     M: | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371 |
+[P] n123 L49 khối 1 dòng, 1 dòng máy ngoài bảng | tên trang: 德国曼柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司
+     H: | SQN619 | 495/619 | 450/563 | D2840LE211 | HCI544E | 198 | 3350 | 6000 | 3350×1350×1700
+     H: | 5030x1860x2550
+     M: | SQN619 | 495/619 | 450/563 | D2840LE211 | HCI544E | 198 | 3350 | 6000 | 3350×1350×1700
+
+##### wartsila (28 dòng) — URL: https://www.wartsila.com/marine/products/engines-and-generating-sets/generating-sets/wartsila-gensets
+[P] n101 L51 khối 2 dòng, 1 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K | L* | Weight*
+     H: | 6L20DF | 5325 | 2070 | 895 | 1800 | 2731 | 16.7
+     M: | 6L20DF | 5325 | 2070 | 895 | 1800 | 2731 | 16.7
+[P] n101 L55 khối 1 dòng, 1 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | 8L20DF | 6030 | 2070 | 1025 | 1800 | 2791 | 20.8
+     H: | 1075
+     M: | 8L20DF | 6030 | 2070 | 1025 | 1800 | 2791 | 20.8
+[P] n101 L57 khối 1 dòng, 1 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | 9L20DF | 6535 | 2300 | 1075 | 1800 | 2831 | 23.7
+     H: | 1125
+     M: | 9L20DF | 6535 | 2300 | 1075 | 1800 | 2831 | 23.7
+[P] n101 L78 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K* | L* | Weight
+     H: | 6L25DF | 7960 | 2720 | 1360 | 2750 | 3850 | 40
+     M: | 6L25DF | 7960 | 2720 | 1360 | 2750 | 3850 | 40
+[P] n101 L131 khối 4 dòng, 4 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | 6L34DF | 3120 | 2990
+     H: | 7L34DF | 3640 | 3490
+     M: | 6L34DF | 3120 | 2990
+[P] n101 L137 khối 6 dòng, 5 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K | L* | Weight*
+     H: | 6L34DF | 8700 | 2290 | 1450 | 2345 | 4000 | 57
+     M: | 6L34DF | 8700 | 2290 | 1450 | 2345 | 4000 | 57
+[P] n101 L162 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K | L* | Weight*
+     H: | 4L20 | 4910 | 1770 1920 | 990 | 1800 | 2338 | 14.0
+     M: | 4L20 | 4910 | 1770 1920 | 990 | 1800 | 2338 | 14.0
+[P] n101 L186 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K* | L* | Weight
+     H: | 6L25 | 7960 | 2720 | 1360 | 2750 | 3800 | 38
+     M: | 6L25 | 7960 | 2720 | 1360 | 2750 | 3800 | 38
+[P] n101 L262 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: Wärtsilä genset solutions – diesel gensets and marine auxiliary engine
+     H: | Engine type | A* | E* | I* | K* | L* | Weight
+     H: | 6L25 | 7960 | 2720 | 1360 | 2750 | 3800 | 39
+     M: | 6L25 | 7960 | 2720 | 1360 | 2750 | 3800 | 39
+
+##### conductorjasa (26 dòng) — URL: https://conductorjasa.co.id/genset-2000-kva
+[K] n101 L42 khối 3 dòng, 3 dòng máy ngoài bảng | tên trang: Genset 2000 kVA Mitsubishi, Perkins & Cummins – JERBINDO
+     H: | MJPS-2000 S16R-PTAA2 2000 kVA prime | S16R-PTAA2 | 2000 | 2200 | 305 L/jam | –
+     H: | MJPS-2000 WP S16R-PTAA2-C 2000 kVA prime | S16R-PTAA2-C | 2000 | 2200 | 315 L/jam | –
+     M: | MJPS-2000 S16R-PTAA2 2000 kVA prime | S16R-PTAA2 | 2000 | 2200 | 305 L/jam | –
+[K] n102 L42 khối 3 dòng, 3 dòng máy ngoài bảng | tên trang: Genset 1500 kVA Open & Silent – JERBINDO
+     H: | MJPS-1500-C S12R-PTAA2-C 1500 kVA prime | S12R-PTAA2-C | 1500 | 1650 | 237 L/jam | –
+     H: | MJPS-1500-C-leroy S12R-PTAA2-C 1500 kVA prime | S12R-PTAA2-C | 1500 | 1650 | 237 L/jam | –
+     M: | MJPS-1500-C S12R-PTAA2-C 1500 kVA prime | S12R-PTAA2-C | 1500 | 1650 | 237 L/jam | –
+[K] n103 L56 khối 1 dòng, 1 dòng máy ngoài bảng | tên trang: Genset 1000 kVA Open & Silent – JERBINDO
+     H: | MJPS-1000 S12H-PTA 1000 kVA prime | S12H-PTA | 1000 | 1100 | 165 L/jam | –
+     H: Genset Mitsubishi
+     M: | MJPS-1000 S12H-PTA 1000 kVA prime | S12H-PTA | 1000 | 1100 | 165 L/jam | –
+[P] n116 L130 khối 3 dòng, 1 dòng máy ngoài bảng | tên trang: Genset Perkins 13–2250 kVA Open & Silent | Conductorjasa
+     H: | PJPS-13 WP 403A-15G1 | 403A-15G1 | 13 | 14,3
+     H: | PJPS-15 WP 403A-15G2 | 403A-15G2 | 15 | 16,5
+     M: | PJPS-20 WP 404A-22G1 | 404A-22G1 | 20 | 22
+[P] n116 L135 khối 11 dòng, 7 dòng máy ngoài bảng | tên trang: Genset Perkins 13–2250 kVA Open & Silent | Conductorjasa
+     H: | PJPS-30 WP1 1103A-33G | 1103A-33G | 30 | 33
+     H: | PJPS-45 WP1 1103A-33TG1 | 1103A-33TG1 | 45 | 49,5
+     M: | PJPS-30 WP1 1103A-33G | 1103A-33G | 30 | 33
+[P] n116 L148 khối 5 dòng, 4 dòng máy ngoài bảng | tên trang: Genset Perkins 13–2250 kVA Open & Silent | Conductorjasa
+     H: | PJPS-225 WP 1506A-E88TAG2 | 1506A-E88TAG2 | 225 | 247,5
+     H: | PJPS-230 WP 1506A-E88TAG2 | 1506A-E88TAG2 | 230 | 253
+     M: | PJPS-230 WP 1506A-E88TAG2 | 1506A-E88TAG2 | 230 | 253
+[P] n116 L155 khối 8 dòng, 7 dòng máy ngoài bảng | tên trang: Genset Perkins 13–2250 kVA Open & Silent | Conductorjasa
+     H: | PJPS-350 WP 2206 C-E13TAG2 | 2206 C-E13TAG2 | 350 | 385
+     H: | PJPS-400 WP 2206 C-E13TAG3 | 2206 C-E13TAG3 | 400 | 440
+     M: | PJPS-350 WP 2206 C-E13TAG2 | 2206 C-E13TAG2 | 350 | 385
+
+##### jet-power (25 dòng) — URL: https://www.jetgenset.com/50hz-perkins-engine-water-cooled-generator-set.html
+[P] n129 L189 khối 19 dòng, 19 dòng máy ngoài bảng | tên trang: 50Hz Perkins Engine Water Cooled Generator Set | Jet Power
+     H: | 6L | 105 x 135 | 7.01 | 45.8 | UCI274H | 2500*850*1400 | 1683 | 3100*1100*1700 | 2713
+     H: | P-220 | 220 | 176 | 200 | 160 | 1206D-E70TTAG1 | 6L | 105 x 135 | 7.01 | 45.8 | UCI274H | 2850*1150*1660 | 1472 | 3600*1400*1900 | 2572
+     M: | 6L | 105 x 135 | 7.01 | 45.8 | UCI274H | 2500*850*1400 | 1683 | 3100*1100*1700 | 2713
+[P] n129 L212 khối 6 dòng, 6 dòng máy ngoài bảng | tên trang: 50Hz Perkins Engine Water Cooled Generator Set | Jet Power
+     H: | 12V | 160 x 190 mm | 45.842 | 283 | PI734B | 4900*2100*2450 | 10205 | 12192*2435*2896 | 18205
+     H: | P-1650 | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 12V | 160 x 190 mm | 45.842 | 310 | PI734C | 5350*2200*2450 | 10230 | 12192*2435*2896 | 18230
+     M: | 12V | 160 x 190 mm | 45.842 | 283 | PI734B | 4900*2100*2450 | 10205 | 12192*2435*2896 | 18205
+
+##### excel-power-ningde (16 dòng) — URL: https://www.fjexcel.com/product/161.html
+[P] n108 L69 khối 15 dòng, 8 dòng máy ngoài bảng | tên trang: Brushless Alternator-NINGDE EXCEL POWER CO.,LTD. - Professional in gen
+     H: | Duty / Temp Rise / Ambient T° | Cont./125K/40℃ | Cont./125K/40℃
+     H: | PHASE | 3 PHASE | 1 PHASE
+     M: | ZL274C | 100 | 80 | 100 | 80 | 100 | 80 | 60 | 48 | 60 | 48 | 60 | 48
+[P] n108 L86 khối 15 dòng, 8 dòng máy ngoài bảng | tên trang: Brushless Alternator-NINGDE EXCEL POWER CO.,LTD. - Professional in gen
+     H: | Duty / Temp Rise / Ambient T° | Cont./125K/40℃ | Cont./125K/40℃
+     H: | PHASE | 3 PHASE | 1 PHASE
+     M: | ZL274C | 112.5 | 90 | 117.5 | 94 | 117.5 | 94 | 125 | 100 | 61.3 | 49 | 64.4 | 51.5 | 67.5 | 54
+
+##### camda-generator (8 dòng) — URL: https://www.camda-generator.com/product/perkins-powered-container-diesel-genertaor.html
+[P] n155 L136 khối 8 dòng, 8 dòng máy ngoài bảng | tên trang: Perkins Powered Container Diesel Generator for Industrial Power Supply
+     H: | KDGC660S1 | 825 | 660 | 750 | 600 | 4006-23TAG2A | LSA47.2L9 | 6058×2438×2591 | 10172
+     H: | KDGC753S1 | 941 | 753 | 846 | 677 | 4006-23TAG3A | LSA49.1M6 | 6058×2438×2591 | 10420
+     M: | KDGC660S1 | 825 | 660 | 750 | 600 | 4006-23TAG2A | LSA47.2L9 | 6058×2438×2591 | 10172
+
+##### green-power-generators (13 dòng) — URL: https://www.greenpowergen.it/prodotti/motosaldatrici-motosaldatrice/
+[P] n104 L74 khối 3 dòng, 3 dòng máy ngoài bảng | tên trang: Motosaldatrici - Green Power Generators
+     H: | GPW 150 A/H | O | 20-150 | 130 | / | / | HONDA | GX200 | STAGE V | 434 | 373 | 490 | 35 |
+     H: | GPW 200 A/H | O | 20-200 | 200 | / | 3 | HONDA | GX270 | STAGE V | 630 | 490 | 540 | 61 |
+     M: | GPW 150 A/H | O | 20-150 | 130 | / | / | HONDA | GX200 | STAGE V | 434 | 373 | 490 | 35 |
+[P] n104 L78 khối 5 dòng, 5 dòng máy ngoài bảng | tên trang: Motosaldatrici - Green Power Generators
+     H: | GPW180 A/Y | O | 20-200 | 170 | / | 3.3 | YANMAR | L70V | STAGE V | 626 | 490 | 539 | 91 |
+     H: | GPW 200 A/Y | O | 20-170 | 170 | 6 | 5 | YANMAR | L100V | STAGE V | 900 | 400 | 620 | 70 |
+     M: | GPW180 A/Y | O | 20-200 | 170 | / | 3.3 | YANMAR | L70V | STAGE V | 626 | 490 | 539 | 91 |
+[P] n104 L84 khối 5 dòng, 5 dòng máy ngoài bảng | tên trang: Motosaldatrici - Green Power Generators
+     H: | GPW 400 S/Y | S | 20-400 | 400 | 16 | 10 | YANMAR | 4TNV88 | STAGE V | 1720 | 850 | 1128 | 750 |
+     H: | GPW 500 S/Y | S | 20-500 | 500 | 16 | 10 | YANMAR | 4TNV88 | STAGE V | 1720 | 850 | 1128 | 720 |
+     M: | GPW 400 S/Y | S | 20-400 | 400 | 16 | 10 | YANMAR | 4TNV88 | STAGE V | 1720 | 850 | 1128 | 750 |
+
+##### taihai-taizhou (8 dòng) — URL: http://jstaihai.com/InfoProductView.asp?id=2209
+[P] n107 L89 khối 8 dòng, 8 dòng máy ngoài bảng | tên trang: 10KW-100KW发电机组-产品展示_泰州泰海机电设备有限公司
+     H: | TH-12GF | 15 | 12 | F2L912 | 2L | 100/120 | 4 | 1400×800×1100 | 500
+     H: | TH-20GF | 25 | 20 | F3L912 | 3L | 100/120 | 4 | 1700×800×1100 | 700
+     M: | TH-12GF | 15 | 12 | F2L912 | 2L | 100/120 | 4 | 1400×800×1100 | 500
+
+##### acepow-fuan (8 dòng) — URL: http://www.acepow.net/sale-13504694-230v-250-kva-200kw-diesel-standby-generators-for-home-use.html
+[P] n103 L112 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: 230V 250 KVA 200KW Diesel Standby Generators For Home Use
+     H: | Generating Set Model | Length (L) mm (in) | Width (W) mm (in) | Height (H) mm (in) | Net kg (lb) | Gross kg (lb)
+     H: | APC-250 | 2700 | 1100 | 1550 | 1800 |
+     M: | APC-250 | 2700 | 1100 | 1550 | 1800 |
+[P] n127 L119 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: Soundproof 106 KVA 85KW 240 Volt 3 Phase Generator
+     H: | Generating Set Model | Length (L) mm | Width (W) mm | Height (H) mm
+     H: | API-106 | 2200 | 900 | 1450
+     M: | API-106 | 2200 | 900 | 1450
+[P] n140 L112 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: 380V 150 KVA 120KW Diesel Powered Electric Generator
+     H: | Generating Set Model | Length (L) mm (in) | Width (W) mm (in) | Height (H) mm (in) | Net kg (lb) | Gross kg (lb)
+     H: | APC-150 | 2400 | 1000 | 1500 | 1600 | 1680
+     M: | APC-150 | 2400 | 1000 | 1500 | 1600 | 1680
+[P] n148 L114 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: IP45 120KVA 100KW Standby Diesel Generator , Canopy Diesel Generator
+     H: | Generating Set Model | Length (L) mm (in) | Width (W) mm (in) | Height (H) mm (in) | Net kg (lb) | Gross kg (lb)
+     H: | APC-120 | 2300 | 900 | 1300 | 1330 | 1410
+     M: | APC-120 | 2300 | 900 | 1300 | 1330 | 1410
+
+##### hnd-henan (6 dòng) — URL: http://www.hnd.com.cn/cpyyw/cpjs/234xl/index.htm
+[W] n101 L76 khối 10 dòng, 2 dòng máy ngoài bảng | tên trang: 河南柴油机重工有限责任公司
+     H: | 用途 | 连续工况 | 间歇工况 | 燃油消耗率/ 平均有效压力*
+     H: | 船用电站 | 船用泵站 | 应急电站 | 应急消防泵
+     M: | TD234V6 | 116 | 132 | - | - | - | - | - | - | - | - | - | 210/0.85 | 213/0.82
+[K] n101 L98 khối 2 dòng, 1 dòng máy ngoài bảng | tên trang: 河南柴油机重工有限责任公司
+     H: | 121 | 138 | - | - | - | - | - | - | - | - | - | 210/0.90 | 213/0.85
+     H: | TD234V8 | 165 | 190 | - | - | - | - | - | - | - | - | - | 210/0.92 | 213/0.88
+     M: | TD234V8 | 165 | 190 | - | - | - | - | - | - | - | - | - | 210/0.92 | 213/0.88
+[P] n101 L109 khối 3 dòng, 3 dòng máy ngoài bảng | tên trang: 河南柴油机重工有限责任公司
+     H: | TBD234V12 | 383 | 455 | 500 | 421 | 500 | 550 | 573 | 566 | 580 | 600 | 196/14.2 | 198/1.40 | 203/1.32
+     H: | TD234V6 | 121 | 138 | - | - | - | - | - | - | - | - | 210/0.90 | 213/0.85 | -
+     M: | TBD234V12 | 383 | 455 | 500 | 421 | 500 | 550 | 573 | 566 | 580 | 600 | 196/14.2 | 198/1.40 | 203/1.32
+
+##### bobig-power (4 dòng) — URL: https://www.bobigpower.com/sale-54309798-renowned-weichai-2000kw-2500kva-open-diesel-generator-with-quality-assurance.html
+[P] n114 L176 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: Weichai 2000kW Diesel Generator | 2500KVA Power Solution
+     H: | Model | Length (mm) | Width (mm) | Height (mm)
+     H: | BWC2750 (Open type) | 7280 | 2715 | 3164
+     M: | BWC2750 (Open type) | 7280 | 2715 | 3164
+[P] n119 L181 khối 3 dòng, 2 dòng máy ngoài bảng | tên trang: Weichai 800KW Silent Diesel Generator Set with DSE6120 Panel
+     H: | Model Type | Length (mm) | Width (mm) | Height (mm)
+     H: | Open Type (BWC1100) | 4500 | 1800 | 2745
+     M: | Open Type (BWC1100) | 4500 | 1800 | 2745
+
+##### yihua-fujian (1 dòng) — URL: https://www.yihua-genset.com/Powered-By-CCEC-OEM-Engine-800kw-1000kva-Soundproof-Diesel-Generator-set-p5525605.html
+[P] n101 L74 khối 3 dòng, 1 dòng máy ngoài bảng | tên trang: Powered By CCEC OEM Engine 800kw 1000kva Soundproof Diesel Generator s
+     H: | 24V Battery &Connecting cable | Silent Packed size(mm): | 5800*2140*3080 | Open Packed size(mm): | 4800*1950*2400 |
+     H: | Smartgen HGM6120N controller | Net weight(kg): | 9500 | Net weight(kg): | 7900 |
+     M: | Smartgen HGM6120N controller | Net weight(kg): | 9500 | Net weight(kg): | 7900 |

@@ -1,0 +1,448 @@
+﻿tệp có bảng cũ đổi: 0; bảng mới: 66; dòng: 1409; NCC: 15
+
+aosif n104 L145: 29 dòng
+   H | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+   H | KVA/KW | KVA/KW | | L/h
+   H | HYUNDAI EURO STAGE V SERIES
+   R | AD33 | 30/24 | 33/26 | DP023CAV | 5.6 | 3 | 1.8 |
+   R | AD1009 | 909/727 | 1009/807 | DP222CCS | 174 | 12 | 21.9 |
+
+awt-aiweite n101 L79: 64 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Perkins Series（50HZ）
+   R | AWT-P8 | 7 | 9 | 8 | 10 | 403D-11G | 1200*700*1100 | 300 | 2000*850*1250 | 600
+   R | AWT-P2000G | 2000 | 2500 | / | / | 4016-61TRG3X | 5900*2800*3100 | 16000 | / | /
+
+awt-aiweite n101 L144: 62 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Perkins Series（60HZ）
+   R | AWT-P10 | 9 | 11 | 9.9 | 12 | 403F-11G | 1200*700*1100 | 300 | 2000*850*1250 | 600
+   R | AWT-P1504 | 1368 | 1710 | 1504 | 1880 | 4012-46TAG3A | 5100*2200*2550 | 9100 | 6000*2400*2950 | 12100
+
+awt-aiweite n102 L84: 20 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage II 50HZ）
+   R | AWT-Y20 | 20 | 25 | 22 | 28 | YC4V35-D20 | 1440*720*980 | 550 | 2000*850*1250 | 850
+   R | AWT-Y400 | 400 | 500 | 440 | 550 | YC6T660L-D20 | 3500*1500*1970 | 4000 | 4200*1600*2250 | 5450
+
+awt-aiweite n102 L105: 14 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage II 60HZ）
+   R | AWT-Y21 | 21 | 26 | 23 | 29 | YC4V35-D21 | 1440*720*980 | 540 | 2000*850*1250 | 840
+   R | AWT-Y400 | 400 | 500 | 437 | 546 | YC6T660L-D21 | 3500*1500*1970 | 4000 | 4200*1600*2250 | 5450
+
+awt-aiweite n102 L120: 68 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage IIIA 50HZ）
+   R | AWT-Y45 | 45 | 56 | 50 | 63 | YCD4V33H6-75 | 1600*800*1100 | 540 | 2200*1000*1450 | 990
+   R | AWT-Y3000 | 3000 | 3750 | 3300 | 4125 | YC16VC4900-D30 | 7500*3100*3300 | 28750 | / | /
+
+awt-aiweite n102 L189: 26 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage IIIA 60HZ）
+   R | AWT-Y85 | 85 | 106 | 94 | 118 | YC4D140-D33 | 1900*650*1250 | 800 | 2400*1100*1550 | 1250
+   R | AWT-Y1600 | 1600 | 2000 | 1760 | 2200 | YC16VTD2700-D32 | 6200*2150*2600 | 13500 | / | /
+
+awt-aiweite n102 L216: 26 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage IIIB 50HZ）
+   R | AWT-Y18 | 18 | 23 | 20 | 25 | YCDV254FHZ-25 | 1440*720*980 | 500 | 2000*850*1250 | 800
+   R | AWT-Y360 | 360 | 450 | 396 | 495 | YCMJ12600-D40 | 3800*1600*2200 | 3500 | 4500*1800*2380 | 5200
+
+awt-aiweite n102 L243: 21 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Stage IIIB 60HZ）
+   R | AWT-Y18 | 18 | 23 | 20 | 25 | YCDA2530-D42 | 1440*720*980 | 500 | 2000*850*1250 | 800
+   R | AWT-Y375 | 375 | 469 | 413 | 516 | YCMJ12620-D42 | 3580*1500*1830 | 3300 | 4300*1700*2350 | 4900
+
+awt-aiweite n102 L265: 13 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Yuchai Series（Dual-band 50/60HZ）
+   R | AWT-Y55 | 55 | 69 | 61 | 76 | YC4D100Z-D20 | 1850*630*1200 | 950 | 2400*1100*1550 | 1450
+   R | AWT-Y1000 | 1000 | 1250 | 1100 | 1375 | YC12VTD2070-D32 | 5200*2000*2600 | 9300 | / | /
+
+awt-aiweite n103 L84: 39 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Baudouin Series Stage IIIA （50HZ）
+   R | AWT-B14 | 14 | 18 | 16 | 20 | 4M08G2D3/5 | 1600*800*1250 | 650 | 2200*1000*1450 | 1100
+   R | AWT-B3000 | 3000 | 3750 | 3300 | 4125 | 16M55G6D3/5 | 8230*2600*2700 | 29800 | / | /
+
+awt-aiweite n103 L124: 49 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Baudouin Series（50HZ）
+   R | AWT-B15 | 15 | 19 | 16 | 20 | 4M06G20/5 | 1600*800*1250 | 650 | 2200*1000*1450 | 1100
+   R | AWT-B3000 | 3000 | 3750 | 3300 | 4125 | 16M55G4000/5 | 8230*2600*2700 | 29800 | / | /
+
+awt-aiweite n103 L174: 48 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Baudouin Series（60HZ）
+   R | AWT-B18 | 18 | 23 | 20 | 25 | 4M06G20/6 | 1600*800*1250 | 650 | 2200*1000*1450 | 1100
+   R | AWT-B3000 | 3000 | 3750 | 3300 | 4125 | 16M55G3300/6 | 8230*2600*2700 | 22000 | / | /
+
+awt-aiweite n104 L83: 16 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | MTU Series(50HZ）
+   R | AWT-M520 | 480 | 600 | 520 | 650 | 12V1600G10F | 3300*1400*1970 | 3900 | 4000*1600*2150 | 5200
+   R | AWT-M2750 | 2500 | 3125 | 2750 | 3438 | 20V4000G63L | 8300*2950*2700 | 21000 | / | /
+
+awt-aiweite n104 L100: 12 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | MTU Series（60HZ）
+   R | AWT-M700 | 635 | 794 | 700 | 875 | 12V2000G45 | 4200*1650*2280 | 6000 | 4900*2000*2500 | 8000
+   R | AWT-M3090 | 2810 | 3513 | 3090 | 3863 | 20V4000G83L | 8300*2950*2700 | 20500 | / | /
+
+awt-aiweite n105 L83: 14 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Volvo Series Stage II/Tier2（50HZ）
+   R | AWT-V201 | 146 | 183 | 161 | 201 | TAD840GE-B | 2500*1000*1800 | 1200 | 3200*1300*1850 | 2100
+   R | AWT-V748 | 544 | 680 | 598 | 748 | TWD1744GE | 3500*1400*2100 | 4500 | 4300*1700*2350 | 6100
+
+awt-aiweite n105 L98: 14 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Volvo Series Stage II/Tier2 （60HZ）
+   R | AWT-V220 | 160 | 200 | 176 | 220 | TAD840GE-B | 2500*1000*1800 | 1200 | 3200*1300*1850 | 2100
+   R | AWT-V792 | 576 | 720 | 634 | 792 | TWD1744GE | 3500*1400*2100 | 4500 | 4300*1700*2350 | 6100
+
+awt-aiweite n105 L113: 11 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Volvo Series Stage IIIA/Tier3 （50HZ）
+   R | AWT-V251 | 182 | 228 | 201 | 251 | TAD851GE | 2250*735*1550 | 1150 | 3000*1180*1700 | 1850
+   R | AWT-V644 | 468 | 585 | 515 | 644 | TWD1653GE | 3500*1500*2200 | 4100 | 4300*1700*2350 | 5700
+
+awt-aiweite n105 L125: 11 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Volvo Series Stage IIIA/Tier3 （60HZ）
+   R | AWT-V256 | 186 | 233 | 205 | 256 | TAD851GE | 2250*735*1550 | 1150 | 3000*1180*1700 | 1850
+   R | AWT-V574 | 418 | 522 | 459 | 574 | TAD1651GE | 3500*1500*2200 | 4100 | 4300*1700*2350 | 5700
+
+awt-aiweite n105 L137: 14 dòng
+   H | Genset Model | Genset Prime Power | Genset Standby Power | Engine Model | Open Type Dimension(mm) | Open Type Weight(kg) | Silent Type Dimension(mm) | Silent Type Weight(kg)
+   H | kW | kVA | kW | kVA
+   H | Volvo Series Stage IIIB/Tier4F*（60HZ）
+   R | AWT-V107 | 78 | 98 | 86 | 107 | TAD580VE | 2000*1000*1500 | 1200 | 2800*1180*1600 | 1900
+   R | AWT-V770 | 560 | 700 | 616 | 770 | TWD1683GE | 3100*1700*2200 | 4500 | 3800*1500*2100 | 5650
+
+camda-generator n139 L143: 6 dòng
+   H | Container type | kVA | kW | kVA | kW
+   H | 60Hz 3 phases+4 wires, 220/127V, pf 0.8.
+   R | KDGC680S1 | 850 | 680 | 775 | 620 | KT38-G | HCI544F | 6058×2438×2896
+   R | KDGC1386S1 | 1732 | 1386 | 1575 | 1260 | KTA50-G9 | PI734B | 12192×2438×2896
+
+huayuan-weifang n113 L89: 6 dòng
+   H | 机组型号 | 柴油机型号 | 额定功率 | 外形尺寸 (mm) | 净重 （Kg）
+   H | 备用 | 常用
+   H | L | W | H
+   R | HY500GF | TBD604BL6 | 500 | 450 | 4470 | 1505 | 2156 | 5500
+   R | HY1760GF | TBD620V16 | 1760 | 1600 | 5300 | 1700 | 2300 | 9500
+
+jet-power n136 L197: 1 dòng
+   H | Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator
+   H | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless
+   H | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM)
+   R | SD-1000 | 1000 | 800 | 900 | 720 | SC33W1150D2 | L6 | Electric | 32.8 | 180x215 | JET634D
+
+jianghao-genset n109 L79: 12 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | Weichai Standard
+   R | JHW-15GF | 15 | 18.7 | 27 | K4100D | 4 | 100*115 | 3.6 | 236 | 1600*700*1120 | 620 | Click
+   R | JHW-200GF | 200 | 250 | 360 | 6120IZLD | 6 | 120*115 | 3.6 | 226 | 2900*1000*1800 | 2500 | Click
+
+jianghao-genset n109 L92: 12 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | Weichai Huafeng
+   R | JHW-20GF | 20 | 25 | 36 | 495D10-1 | 4 | 95*115 | 3.26 | 231 | 1560*630*1070 | 640 |
+   R | JHW-250GF | 250 | 312.5 | 450 | PHF6308ZLD | 6 | 135*150 | 12.88 | 210 | 2500*850*1600 | 1570 |
+
+jianghao-genset n109 L108: 7 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Oil capacity | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg)
+   H | KW | KVA
+   H | Weichai Power Yang Chai
+   R | JHW-16GF | 16 | 20 | 28.8 | WP2.1D18E2 | 4 | 85*92 | 2.09 | 12 | 235 | 1500*630*1100 | 650
+   R | JHW-58GF | 58 | 72.5 | 104.4 | WP4.3D61E2 | 4 | 108*118 | 4.32 | 12 | 210 | 1800*650*1200 | 950
+
+jianghao-genset n109 L116: 10 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Oil capacity | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg)
+   H | KW | KVA
+   H | Weichai Power Deutz
+   R | JHW-50GF | 50 | 62.5 | 90 | WP4D66E200 | 4 | 105*130 | 4.5 | 28 | 198 | 1950*950*1340 | 1100
+   R | JHW-132GF | 132 | 165 | 237.6 | WP6D152E200 | 6 | 105*130 | 6.75 | 39 | 198
+
+jianghao-genset n109 L127: 6 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Oil capacity | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg)
+   H | KW | KVA
+   H | Weichai Power Land King
+   R | JHW-180GF | 150 | 187.5 | 270 | WP10D200E200 | 6 | 126*130 | 9.726 | 35 | 195 | 2600*950*1400 | 1650
+   R | JHW-350GF | 300 | 375 | 540 | WP13D385E200 | 6 | 127*165 | 12.54 | 48 | 195 | 2950*970*1800 | 2500
+
+jianghao-genset n109 L134: 3 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Oil capacity | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg)
+   H | KW | KVA
+   H | Weichai Power Baudouin
+   R | JHW-440GF | 440 | 550 | 792 | 6M26D484E200 | 6 | 150*150 | 15.9 | 65 | 195 | 3500*1500*2000 | 4800
+   R | JHW-1000GF | 1000 | 1250 | 1800 | 12M33D1210E200 | 12 | 150*185 | 39.2 | 146 | 210 | 4800*1800*2450 | 9500
+
+jianghao-genset n110 L78: 8 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | MTU 1600 series
+   R | JHM-220GF | 220 | 275 | 396 | 6R1600G10F | 6 | 122*150 | 10.5L | 201 | 2800*1150*1650 | 2500 | Click
+   R | JHM-500GF | 500 | 625 | 900 | 12V1600G20F | 12 | 122*150 | 21L | 195 | 3400*1660*2000 | 4410 | Click
+
+jianghao-genset n110 L87: 5 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | MTU 2000 series
+   R | JHM-550GF | 550 | 687.5 | 990 | 12V2000G25 | 12 | 130*150 | 23.88L | 197 | 4000*1650*2280 | 6500 | Click
+   R | JHM-1000GF | 1000 | 1250 | 1800 | 18V2000G65 | 18 | 130*150 | 35.82L | 202 | 4700*2000*2380 | 9000 | Click
+
+jianghao-genset n110 L93: 9 dòng
+   H | Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | MTU 4000 series
+   R | JHM-1100GF | 1100 | 1375 | 1980 | 12V4000G21R | 12 | 165*190 | 48.7L | 199 | 6100*2100*2400 | 11500 | Click
+   R | JHM-2500GF | 2400 | 3125 | 4500 | 20V4000G63L | 20 | 170*210 | 95.4L | 192 | 8300*2950*2550 | 25000 | Click
+
+jianghao-genset n111 L78: 18 dòng
+   H | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | Dongfeng Cummins series.
+   R | JHK-15GF | 15 | 18.75 | 27 | 4B3.9-G2 | 4 | 102*120 | 3.9 | 208 | 1650*720*1200 | 700 | Click
+   R | JHK-450GF | 450 | 562.5 | 810 | QSZ13-G3 | 6 | 130*163 | 13 | 201 | 3100*1250*1800 | 3100 | Click
+
+jianghao-genset n111 L97: 23 dòng
+   H | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight(kg) | Detail
+   H | KW | KVA
+   H | Chongqing Cummins series.
+   R | JHK-200GF | 200 | 250 | 360 | NT855-GA | 6 | 140*152 | 14 | 206 | 3000*1050*1750 | 2600 | Click
+   R | JHK-1840GF | 1840 | 2300 | 3312 | QSK60G13 | 16 | 159*190 | 60 | 205 | 5800*2300*2600 | 13500 | Click
+
+kangwo-guangdong n105 L56: 7 dòng
+   H | 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 机油容量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+   H | KW | KVA
+   H | MTU4000系例（国产）
+   R | GKW-1320GF | 1320 | 1650 | 2376 | 12V4000G23 | 12 | 170*210 | 57.2L | 260 | 189 | 6150*2150*2700 | 13000 | 获取
+   R | GKW-2500GF | 2500 | 3125 | 4500 | 20V4000G63L | 20 | 170*210 | 95.4 | 390 | 192 | 8300*2950*2700 | 25000 |
+
+kangwo-guangdong n106 L56: 15 dòng
+   H | 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+   H | KW | KVA
+   H | 沃尔沃国三排放
+   R | GKW-80GF | 80 | 100 | 144 | TAD550GE | 4 | 108*130 | 4.76 | 213 | 2200*800*1500 | 1150 | 获取
+   R | GKW-550GF | 550 | 687.5 | 990 | TAD1653GE | 6 | 144*165 | 16.12 | 199 | 3500*1480*2200 | 4100 |
+
+lees-power n111 L152: 5 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specificatios
+   H | Single phase
+   R | LSP10S | 10 | 9 | 8 | 7 | 403D-11G | PDF
+   R | LSP33S | 33 | 30 | 26 | 24 | 1103A-33G | PDF
+
+lees-power n111 L158: 16 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specificatios
+   H | Three phase
+   R | LSP10S3-E | 10 | 9 | 8 | 7 | 403D-11G | PDF
+   R | LSP275S3 | 275 | 250 | 220 | 200 | 1206A-E70TTAG3 | PDF
+
+lees-power n112 L195: 12 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Single phase
+   R | LSY10S-6 | 10 | 9 | 10 | 9 | YD380D-JP192 | PDF
+   R | LSY77S-6 | 77 | 70 | 77 | 70 | Y4110ZLD-F210 | PDF
+
+lees-power n112 L208: 32 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Three phase
+   R | LSY13S3-6 | 13 | 12 | 11 | 10 | YD380D-JP192 | PDF
+   R | LSSC300S3-6 | 300 | 273 | 240 | 218 | 6DTAA8.9-G23 | PDF
+
+lees-power n127 L224: 12 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Single phase
+   R | LSY10S-6 | 10 | 9 | 10 | 9 | YD380D-JP192 | PDF
+   R | LSY77S-6 | 77 | 70 | 77 | 70 | Y4110ZLD-F210 | PDF
+
+lees-power n127 L237: 63 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Three phase
+   R | LSY13S3-6 | 13 | 12 | 11 | 10 | YD380D-JP192 | PDF
+   R | LSYC4500S3-6 | 4500 | 4091 | 3600 | 3273 | YC16VTF5400-D32 | PDF
+
+lees-power n131 L153: 5 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Single phase
+   R | LSP10S | 10 | 9 | 8 | 7 | 403D-11G | PDF
+   R | LSP33S | 33 | 30 | 26 | 24 | 1103A-33G | PDF
+
+lees-power n131 L159: 35 dòng
+   H | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+   H | Three phase
+   R | LSP10S3-E | 10 | 9 | 8 | 7 | 403D-11G | PDF
+   R | LSP2500S3 | —— | 2500 | —— | 2000 | 4016-61TRG3X | PDF
+
+longkai-power n103 L99: 46 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | NEW TYPE
+   R | LG45SD | 62 | 50 | 56 | 45 | 4HT4.3-G21 | OP1850*800*1180 | AT2538*1000*1450 | Download
+   R | LG650SD | 894 | 715 | 813 | 650 | 6KTAA25-G31.1 | OP3600*1500*2060 | AT5680*2100*2500 |
+
+longkai-power n121 L213: 14 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Imported Cummins
+   R | LG185C | 250 | 200 | 230 | 185 | QSB7-G5 | OP2650*1000*1800 | AT3588*1180*2150 |
+   R | LG1870C | 3125 | 2500 | 2336 | 1870 | QSK78-G7 | OP5400*2250*2500 | 40HQX |
+
+longkai-power n122 L106: 40 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Air cooled
+   R | LG10DA | 14 | 11 | 13 | 10 | F2L912 | OP1850*800*1160 | AT2008*900*1130 |
+   R | LG600D | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2B | OP4100*2000*2250 | AT5280*2100*2500 |
+
+longkai-power n123 L106: 44 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   R | LG610DS | 840 | 671 | 763 | 610 | DP222CA | OP3700*1700*2200 | 20FT |
+   R | LG800DS/I | 1100 | 880 | 1000 | 800 | DP222CC-2 | OP4400*2000*2250 | 20FT |
+
+longkai-power n126 L96: 41 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Weichai Series--Baudouin Engine
+   R | LG400WP | 550 | 440 | 500 | 400 | 6M26D484E200 | OP3600*1500*2060 | AT4888*1800*2500 | Download
+   R | LG315WP | 433 | 347 | 394 | 315 | WP13D385E201 | OP3350*1150*1800 | AT4218*1400*2250 |
+
+longkai-power n126 L140: 27 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Weichai Series--Baudouin Engine
+   R | LG360WP | 495 | 396 | 450 | 360 | 6M26D447E201 | OP3600*1500*2060 | AT4888*1800*2500 |
+   R | LG2250WP | 3438 | 2750 | 3125 | 2500 | 12M55D2700E311 | 40HQ* | 40HQ* |
+
+mecca-power n101 L215: 11 dòng
+   H | Model | LTP | PRP | Engine | Fuel Cons.L/H | Cylinder | Displacement | Gov.
+   H | KVA / KW | KVA/KW | Model | Origin | 100% | L
+   H | StageⅢ
+   R | MC66C | 66 | 53 | 60 | 48 | QSB3.9-G2 | CN | 18 | 4L | 3.9 | ECU
+   R | MC438C | 438 | 350 | 400 | 320 | QSZ13-G7 | CN | 89.2 | 6L | 13.0 | ECU
+
+mecca-power n101 L256: 2 dòng
+   H | Model | LTP | PRP | Engine | Fuel Cons.L/H | Cylinder | Displacement | Gov.
+   H | KVA / KW | KVA/KW | Model | Origin | 100% | L
+   H | StageⅢ
+   R | MC425C | 425 | 340 | 388 | 310 | QSZ13-G6 | CN | 88.7 | 6L | 13.0 | ECU
+   R | MC488C | 488 | 390 | 450 | 360 | QSZ13-G7 | CN | 101.3 | 6L | 13.0 | ECU
+
+mecca-power n136 L200: 11 dòng
+   H | Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | Weight
+   H | KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS
+   R | MC275D | 275 | 220 | 250 | 200 | BF6M1015-LA GB | CN | 57.60 | 6V/TC | 11.906 | E | 2650*1520*2100 | 2320
+   R | MC756D | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1B | CN | 146.50 | 12V/TCA | 23.812 | E | 3700*1600*2200 | 4200
+
+previa-ningde n102 L204: 14 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Imported Cummins
+   R | PR185C | 250 | 200 | 230 | 185 | QSB7-G5 | OP2650*1000*1800 | AT3588*1180*2150
+   R | PR1870C | 3125 | 2500 | 2336 | 1870 | QSK78-G7 | OP5400*2250*2500 | 40HQX
+
+previa-ningde n105 L99: 40 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Air cooled
+   R | PR10DA | 14 | 11 | 13 | 10 | F2L912 | OP1850*800*1160 | AT2008*900*1130
+   R | PR600D | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2B | OP4100*2000*2250 | AT5280*2100*2500
+
+previa-ningde n109 L92: 46 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | NEW TYPE
+   R | PR45SD | 62 | 50 | 56 | 45 | 4HT4.3-G21 | OP1850*800*1180 | AT2538*1000*1450
+   R | PR650SD | 894 | 715 | 813 | 650 | 6KTAA25-G31.1 | OP3600*1500*2060 | AT5680*2100*2500
+
+previa-ningde n110 L89: 41 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Weichai Series--Baudouin Engine
+   R | PR400WP | 550 | 440 | 500 | 400 | 6M26D484E200 | OP3600*1500*2060 | AT4888*1800*2500
+   R | PR315WP | 433 | 347 | 394 | 315 | WP13D385E201 | OP3350*1150*1800 | AT4218*1400*2250
+
+previa-ningde n110 L133: 27 dòng
+   H | GENSET MODEL | ESP | PRP | Engine type | Dimension
+   H | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+   H | Weichai Series--Baudouin Engine
+   R | PR360WP | 495 | 396 | 450 | 360 | 6M26D447E201 | OP3600*1500*2060 | AT4888*1800*2500
+   R | PR2250WP | 3438 | 2750 | 3125 | 2500 | 12M55D2700E311 | 40HQ* | 40HQ*
+
+sanq-power n123 L51: 8 dòng
+   H | kW/kVa | kW/kVa | 德国曼 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式
+   R | SQN650 | 520/650 | 473/591 | D2840LE203 | HCI544E | 199 | 3200 | 5900 | 3200×1400×2040 | 4800x1683x2200
+   R | SQM1062 | 850/1062 | 772/965 | D2862LE223 | HCI634J | 195 | 4350 | 8000 | 3750×1630×2040 | 6058x2438x2896
+
+shengfeng-fuan n108 L48: 31 dòng
+   H | Genset moodel | Genset Power(Kw/Kva) | PERKINS | STAMFORD | Governor
+   H | Prime | | Prime | Standby | Model | Model | M/E
+   H | UK ORGINAL ENGINE
+   R | YH-P24kw | 50HZ | 24/30 | 26.4/33 | 1103A-33G | PT144G | Mech.
+   R | YH-P19KW | 60HZ | 19/24 | 21/26 | 404D-22G | PT144D | Mech.
+
+shengfeng-fuan n108 L80: 15 dòng
+   H | Genset moodel | Genset Power(Kw/Kva) | PERKINS | STAMFORD | Governor
+   H | Prime | | Prime | Standby | Model | Model | M/E
+   H | UK ORGINAL ENGINE
+   R | YH-P28KW | 60HZ | 28/36 | 30.8/39.6 | 404D-22TAG | PI144F | Elec
+   R | YH-P550KW | 60HZ | 550/687 | 605/756 | 2506C-E15TAG4 | HCI544E | Elec
+
+taihai-taizhou n106 L55: 4 dòng
+   H | 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 (mm) | 排气量 (L) | 燃油消耗量 (g/kw.h) | 外形尺寸 (L×W×H) (mm) | 重量 (kg) | 技术文档
+   H | | KVA | KW | | | | | | |
+   R | TH-104GF | 130 | 104 | 6BTAA5.9-G2 | 6L | 102/120 | 5.9 | 209 | 2300×850×1300 | 1400 |
+   R | TH-200GF | 250 | 200 | 6LTAA8.9-G2 | 6L | 114/144 | 8.9 | 209 | 2640×970×1450 | 2000 |
+
+walter-yangzhou n115 L96: 13 dòng
+   H | Model | Power | Current | Engine model | Cylinder | Bore*Stroke | Displacement | Lubeoil | Fuel Consumption | Size | Weight
+   H | KW | KVA
+   H | Weichai Baudouin
+   R | CCFJ350JW | 350 | 437.5 | 50/400 | 6M26CD447E200 | 406/1500 | 6 | 150*150 | 15.9 | 69 | 3500*1500*1800 | 4000
+   R | CCFJ900JW | 900 | 1125 | 50/400 | 12M33CD1100E200 | h000/1500 | 12 | 150*185 | 39.2 | 189 | 4900*2000*2350 | 8500
+
+walter-yangzhou n116 L87: 8 dòng
+   H | Model | Power | Current | Engine model | Cylinder | Bore*Stroke | Displacement | Lubeoil | Fuel Consumption | Size | Weight
+   H | KW | KVA
+   H | Dongfeng Cummins
+   R | CCFJ30JW | 30 | 37.5 | 50/400 | 4BTA3.9-GM47 | 47/1500 | 4 | 102*102 | 3.9 | 6.39 | 1650*850*1270 | 760
+   R | CCFJ120JW | 120 | 150 | 50/400 | 6CTA8.3-GM155 | 155/1500 | 6 | 114*135 | 8.3 | 29.93 | 2110*860*1360 | 1700
+
+walter-yangzhou n116 L96: 7 dòng
+   H | Model | Power | Current | Engine model | Cylinder | Bore*Stroke | Displacement | Lubeoil | Fuel Consumption | Size | Weight
+   H | KW | KVA
+   H | C2 Emission
+   R | CCFJ40JW | 40 | 50 | 50/400 | B3.9CMII64G | 47/1500 | 4 | 102*102 | 3.9 | 8.8 | 1750*850*1350 | 950
+   R | CCFJ180JW | 180 | 225 | 50/400 | L8.9CMII272G | 200/1500 | 6 | 114*145 | 8.9 | 37.8 | 2650*1050*1450 | 2250
+
+walter-yangzhou n116 L104: 20 dòng
+   H | Model | Power | Current | Engine model | Cylinder | Bore*Stroke | Displacement | Lubeoil | Fuel Consumption | Size | Weight
+   H | KW | KVA
+   H | Chongqing Cummins
+   R | CCFJ150JW | 150 | 187.5 | 50/400 | NT855-DM | 180/1500 | 6 | 140*152 | 14 | 28.65 | 300*1050*1650 | 2600
+   R | CCFJ980JW | 980 | 1225 | 50/400 | K50-DM | 1097/1500 | 12 | 159*159 | 38 | 141.7 | 4250*1500*2600 | 7500

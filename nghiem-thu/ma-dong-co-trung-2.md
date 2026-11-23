@@ -216,3 +216,13 @@ NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 NCC: yanan-power. Dòng: 1. Dòng ghi nguyên chữ mã này: 1.
 
 - yanan-power [103]: `| YN4000MTU | 4000kVA | 3200kW | 3500kVA | 2800kW | 20V4000G44S(3B) 20V4000G94S(3D) | 20 | YN4000MTU`
+
+## Trạng thái 23/11/2026 (để phiên sau làm tiếp)
+
+- Gốc main `2ba6c3b2`. #1073 đầu `958d51ec` (worktree `wt-cyl-layout-co`, đã có luật B Khoa chọn 23/11). #1087 đầu `214f1e42` (worktree `wt-ma-dong-co-trung-2`). Cả hai là draft, không tự merge; điều phối đang đo cloud gộp cùng #1101.
+- Khi có số đo: liệt kê mọi dòng đổi trạng thái của #1073, cập nhật `cyl-layout-theo-co.md` (tệp đó còn ghi theo số đo cũ `9a262370`).
+- PR 3 `keyOf` bỏ ngoặc: chỉ làm sau khi #1087 merge. Nó gộp 13 khoá comappower "12V4000G74F(3D)" với khoá của yanan-power.
+- PR cỡ ảo `sizesOf` làm sau cùng (IB2300005377#1, IB2400145438#3, "605KVA/484KVA").
+- Chờ Khoa: 51 dòng sát ngưỡng dung tích, chưa đổi.
+- Bẫy: máy thiếu RAM, không chạy dump lớn song song; `node --test suppliers/ web/test/` ghi đè `web/test/fixtures/seed.json`, chỉ chạy `suppliers/*.test.mjs`, `web/test/spec-norm.test.mjs`, `static.test.mjs`.
+- Luật Khoa 23/11: context quá 40 % thì lưu việc dở vào đây rồi Sync, tới 50 % tự compact; chỉ nhắn điều phối khi xong hoặc cần quyết định, ≤ 10 dòng.
