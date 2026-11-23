@@ -1,0 +1,27 @@
+ĐỔI	n109→n109	engine	JE493DB-03	freq: 50 → 60	| 20.0 | 25.0 | 22.0 | 27.5 | BC184ES | ISUZU | JE493DB-03 | 24 | 27
+ĐỔI	n109→n109	alternator	BC184ES	freq: 50 → 60	| 20.0 | 25.0 | 22.0 | 27.5 | BC184ES | ISUZU | JE493DB-03 | 24 | 27
+ĐỔI	n109→n109	engine	JE493DB-01	freq: 50 → 60	| 24.0 | 30.0 | 26.4 | 33.0 | BC184F | JE493DB-01 | 28 | 31
+ĐỔI	n109→n109	alternator	BC184F	freq: 50 → 60	| 24.0 | 30.0 | 26.4 | 33.0 | BC184F | JE493DB-01 | 28 | 31
+ĐỔI	n109→n109	engine	JE493ZDB-03	freq: 50 → 60	| 28.0 | 35.0 | 30.8 | 38.5 | BC184H | JE493ZDB-03 | 34 | 38
+ĐỔI	n109→n109	alternator	BC184H	freq: 50 → 60	| 28.0 | 35.0 | 30.8 | 38.5 | BC184H | JE493ZDB-03 | 34 | 38
+ĐỔI	n109→n109	engine	JE493ZLDB-01	freq: 50 → 60	| 38.0 | 47.5 | 41.8 | 52.3 | UC224C | JE493ZLDB-01 | 46 | 51
+ĐỔI	n109→n109	alternator	UC224C	freq: 50 → 60	| 38.0 | 47.5 | 41.8 | 52.3 | UC224C | JE493ZLDB-01 | 46 | 51
+ĐỔI	n132→n132	engine	YT3B2-D	freq: 50 → 60	| 30 | 33 | 38 | 41 | YT3B2-D | 36 | 38 | Mechanically | 108x120
+ĐỔI	n132→n132	engine	YT3A2Z-D	freq: 50 → 60	| 33 | 36 | 41 | 45 | YT3A2Z-D | 38 | 43 | Mechanically | 105x120
+ĐỔI	n132→n132	engine	LR4B5-D	freq: 50 → 60	| 44 | 48 | 55 | 61 | LR4B5-D | 50 | 55 | Mechanically | 108x135
+ĐỔI	n132→n132	engine	YT4B2Z-D	freq: 50 → 60	| 53 | 58 | 66 | 73 | YT4B2Z-D | 63 | 68 | Mechanically | 108x120
+ĐỔI	n132→n132	engine	LR4B3Z-D	freq: 50 → 60	| 55 | 61 | 69 | 76 | LR4B3Z-D | 65 | 72 | Mechanically | 110x125
+ĐỔI	n132→n132	engine	LR4M3L-D	freq: 50 → 60	| 75 | 83 | 94 | 103 | LR4M3L-D | 90 | 98 | Electric | 110x125
+ĐỔI	n132→n132	engine	LR4N5LP-D	freq: 50 → 60	| 88 | 97 | 110 | 121 | LR4N5LP-D | 98 | 110 | Electric | 110x125
+ĐỔI	n132→n132	engine	LR6A3Z-D	freq: 50 → 60	| 88 | 97 | 110 | 121 | LR6A3Z-D | 95 | 105 | Mechanically | 105x125
+ĐỔI	n132→n132	engine	LR6A3L-D	freq: 50 → 60	| 105 | 116 | 130 | 143 | LR6A3L-D | 120 | 130 | Electric | 105x125
+ĐỔI	n132→n132	engine	LR6B3L-D	freq: 50 → 60	| 125 | 138 | 156 | 172 | LR6B3L-D | 145 | 165 | Electric | 108x125
+ĐỔI	n132→n132	engine	LR6M3L-D	freq: 50 → 60	| 135 | 149 | 170 | 187 | LR6M3L-D | 150 | 170 | Electric | 110x125
+ĐỔI	n132→n132	engine	YM6H4L-D	freq: 50 → 60	| 180 | 198 | 225 | 248 | YM6H4L-D | 195 | 220 | Electric | 120x130
+ĐỔI	n132→n132	engine	YM6H4LF-D	freq: 50 → 60	| 190 | 209 | 238 | 261 | YM6H4LF-D | 215 | 238 | Electric | 120x130
+ĐỔI	n132→n132	engine	YM6S4L-D	freq: 50 → 60	| 220 | 242 | 275 | 303 | YM6S4L-D | 240 | 272 | Electric | 126x130
+ĐỔI	n132→n132	engine	YM6S4LF-D	freq: 50 → 60	| 250 | 275 | 313 | 344 | YM6S4LF-D | 270 | 316 | Electric | 126x130
+ĐỔI	n132→n132	engine	YM6S9L-D	freq: 50 → 60	| 280 | 308 | 350 | 385 | YM6S9L-D | 315 | 350 | Electric | 126x155
+ĐỔI	n132→n132	engine	YM6S9L-DB	freq: 50 → 60	| 300 | 330 | 375 | 413 | YM6S9L-DB | 340 | 370 | Electric | 126x155
+ĐỔI	n132→n132	engine	YM6S9LF-D	freq: 50 → 60	| 320 | 352 | 400 | 440 | YM6S9LF-D | 365 | 410 | Electric | 126x155
+ĐỔI	n132→n132	engine	YM6S9LF-DA	freq: 50 → 60	| 350 | 385 | 438 | 481 | YM6S9LF-DA | 380 | 430 | Electric | 126x155

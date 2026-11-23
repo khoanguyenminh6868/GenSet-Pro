@@ -1,0 +1,33 @@
+=== baifa-power
+hãng: {"— → Baudouin(tiêu đề cột)":17,"Stamford(tiêu đề cột) → —":9}
+khác: {}
+công suất đổi: 16
+engine 12V4000G23F: {"standby":{"kVA":1700},"prime":{"kVA":1550}} → {"standby":{"kW":1700},"prime":{"kW":1550}} | | BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F | ADEC | S7L1D-C
+alternator S7L1D-C41: {"standby":{"kVA":1700},"prime":{"kVA":1550}} → {"standby":{"kW":1700},"prime":{"kW":1550}} | | BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F | ADEC | S7L1D-C
+engine 12V4000G23F: {"standby":{"kVA":1800},"prime":{"kVA":1640}} → {"standby":{"kW":1800},"prime":{"kW":1640}} | | BF-M1800 | 1800 | 1640 | 12V4000G23F | ADEC | S7L1D-D41 | CHINA STAG
+alternator S7L1D-D41: {"standby":{"kVA":1800},"prime":{"kVA":1640}} → {"standby":{"kW":1800},"prime":{"kW":1640}} | | BF-M1800 | 1800 | 1640 | 12V4000G23F | ADEC | S7L1D-D41 | CHINA STAG
+engine 16V4000G23F: {"standby":{"kVA":2000},"prime":{"kVA":1850}} → {"standby":{"kW":2000},"prime":{"kW":1850}} | | BF-M2000 | 2000 | 1850 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAG
+alternator S7L1D-G41: {"standby":{"kVA":2000},"prime":{"kVA":1850}} → {"standby":{"kW":2000},"prime":{"kW":1850}} | | BF-M2000 | 2000 | 1850 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAG
+engine 16V4000G23F: {"standby":{"kVA":2250},"prime":{"kVA":2050}} → {"standby":{"kW":2250},"prime":{"kW":2050}} | | BF-M2250 | 2250 | 2050 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAG
+alternator S7L1D-G41: {"standby":{"kVA":2250},"prime":{"kVA":2050}} → {"standby":{"kW":2250},"prime":{"kW":2050}} | | BF-M2250 | 2250 | 2050 | 16V4000G23F | ADEC | S7L1D-G41 | CHINA STAG
+engine 16V4000G63F: {"standby":{"kVA":2500},"prime":{"kVA":2275}} → {"standby":{"kW":2500},"prime":{"kW":2275}} | | BF-M2500 | 2500 | 2275 | 16V4000G63F | ADEC | S7L1D-H41 | CHINA STAG
+alternator S7L1D-H41: {"standby":{"kVA":2500},"prime":{"kVA":2275}} → {"standby":{"kW":2500},"prime":{"kW":2275}} | | BF-M2500 | 2500 | 2275 | 16V4000G63F | ADEC | S7L1D-H41 | CHINA STAG
+engine 20V4000G23F: {"standby":{"kVA":2750},"prime":{"kVA":2500}} → {"standby":{"kW":2750},"prime":{"kW":2500}} | | BF-M2750 | 2750 | 2500 | 20V4000G23F | ADEC | S7L1D-J41 | CHINA STAG
+alternator S7L1D-J41: {"standby":{"kVA":2750},"prime":{"kVA":2500}} → {"standby":{"kW":2750},"prime":{"kW":2500}} | | BF-M2750 | 2750 | 2500 | 20V4000G23F | ADEC | S7L1D-J41 | CHINA STAG
+engine 20V4000G63F: {"standby":{"kVA":3000},"prime":{"kVA":2750}} → {"standby":{"kW":3000},"prime":{"kW":2750}} | | BF-M3000 | 3000 | 2750 | 20V4000G63F | ADEC | LSA52.3 UL16 | CHINA S
+alternator LSA52.3 UL16: {"standby":{"kVA":3000},"prime":{"kVA":2750}} → {"standby":{"kW":3000},"prime":{"kW":2750}} | | BF-M3000 | 3000 | 2750 | 20V4000G63F | ADEC | LSA52.3 UL16 | CHINA S
+engine 20V4000G63LF: {"standby":{"kVA":3300},"prime":{"kVA":3000}} → {"standby":{"kW":3300},"prime":{"kW":3000}} | | BF-M3250 | 3300 | 3000 | 20V4000G63LF | ADEC | LSA 53.2M9 | CHINA ST
+alternator LSA 53.2M9: {"standby":{"kVA":3300},"prime":{"kVA":3000}} → {"standby":{"kW":3300},"prime":{"kW":3000}} | | BF-M3250 | 3300 | 3000 | 20V4000G63LF | ADEC | LSA 53.2M9 | CHINA ST
+=== taihai-taizhou
+hãng: {"— → Cummins(tiêu đề cột)":1}
+khác: {}
+specs bore chỉ đổi nhãn: 25 (vd 4012-46TWG2A: 缸径/行程 (mm)=160/190 → 缸径/行程(mm)=160/190)
+specs fuel chỉ đổi nhãn: 32 (vd 4012-46TWG2A: 燃油消耗量 (g/kw.h)=196 → 燃油消耗量(L/h)=196)
+specs dims chỉ đổi nhãn: 30 (vd 4012-46TWG2A: 外形尺寸 (L×W×H) (mm)=5220×2130×2600 → 外形尺寸 (L×W×H)(mm)=5220×2130×2600)
+specs weight chỉ đổi nhãn: 28 (vd 4012-46TWG2A: 重量 (kg)=9230 → 重量=9230)
+specs fuel thêm: 5 (vd 2206A-E13TAG3: — → 燃油消耗量 (L/h)=62)
+công suất đổi: 0
+=== acepow-fuan
+hãng: {}
+khác: {"freq: 50 → 60":27}
+công suất đổi: 0

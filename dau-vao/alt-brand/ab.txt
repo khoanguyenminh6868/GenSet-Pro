@@ -1,0 +1,189 @@
+== fromSupplier ==
+ĐỔI baifa-power n101 b1 r0 alternator LSA 53.2M12 | tổ máy BF-C3763Q-T2 | kia QSK95-G10
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M12 dưới cột Stamford"
+     dòng: | BF-C3763Q-T2 | 3763 | 3363 | QSK95-G10 | | LSA 53.2M12 | TIER 2 | USA
+ĐỔI baifa-power n101 b1 r8 alternator LSA 53.2M12 | tổ máy BF-M3700-T2 | kia 20V4000G44F
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M12 dưới cột Stamford"
+     dòng: | BF-M3700-T2 | 3575 | 3250 | | 20V4000G44F | | LSA 53.2M12
+ĐỔI baifa-power n101 b1 r9 alternator LSA 54.2L14 | tổ máy BF-M3960-T2 | kia 20V4000G44LF
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 54.2L14 dưới cột Stamford"
+     dòng: | BF-M3960-T2 | 3960 | 3600 | | 20V4000G44LF | | LSA 54.2L14
+ĐỔI baifa-power n101 b1 r11 engine 4M08G8D3/5 | tổ máy BF-BD38-T3 | kia —
+     power: {"rated":{"kVA":37.5,"kW":30}} → {"standby":{"kVA":37.5},"prime":{"kVA":30}}
+     dòng: | BF-BD38-T3 | 37.5 | 30 | 4M08G8D3/5 | | STAGE 3A/ CHINA STAGE3 | CHINA
+ĐỔI baifa-power n101 b3 r58 alternator LSA52.3 UL16 | tổ máy BF-M3000 | kia 20V4000G63F
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA52.3 UL16 dưới cột Stamford"
+     dòng: | BF-M3000 | 3000 | 2750 | 20V4000G63F | ADEC | LSA52.3 UL16 | CHINA STAGE3 | CHINA
+ĐỔI baifa-power n101 b3 r59 alternator LSA 53.2M9 | tổ máy BF-M3250 | kia 20V4000G63LF
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M9 dưới cột Stamford"
+     dòng: | BF-M3250 | 3300 | 3000 | 20V4000G63LF | ADEC | LSA 53.2M9 | CHINA STAGE3 | CHINA
+ĐỔI kaihua-genset n119 b23 r0 alternator TAL-A42-H | tổ máy HC-BD70 | kia 4M10G70/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A42-H dưới cột Stamford"
+     dòng: | HC-BD70 | 68.8 | 62.5 | 4M10G70/5 | TAL-A42-H | | 2440*1060*1680 | Download
+ĐỔI kaihua-genset n119 b23 r1 alternator TAL-A44-C | tổ máy HC-BD90 | kia 4M10G88/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-C dưới cột Stamford"
+     dòng: | HC-BD90 | 90 | 80 | 4M10G88/5 | TAL-A44-C | | 2810*1140*1830 | Download
+ĐỔI kaihua-genset n119 b23 r2 alternator TAL-A44-D | tổ máy HC-BD110 | kia 4M10G110/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-D dưới cột Stamford"
+     dòng: | HC-BD110 | 110 | 100 | 4M10G110/5 | TAL-A44-D | | 2810*1140*1830 | Download
+ĐỔI kaihua-genset n119 b23 r3 alternator TAL-A44-E | tổ máy HC-BD140 | kia 6M11G150/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-E dưới cột Stamford"
+     dòng: | HC-BD140 | 137.5 | 125 | 6M11G150/5 | TAL-A44-E | | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n119 b23 r4 alternator TAL-A44-H | tổ máy HC-BD150 | kia 6M11G150/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-H dưới cột Stamford"
+     dòng: | HC-BD150 | 150 | 135 | 6M11G150/5 | TAL-A44-H | | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n119 b23 r5 alternator TAL-A44-J | tổ máy HC-BD165 | kia 6M11G165/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-J dưới cột Stamford"
+     dòng: | HC-BD165 | 165 | 150 | 6M11G165/5 | TAL-A44-J | | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n119 b23 r7 alternator TAL-A46-D | tổ máy HC-BD275 | kia 6M16G275/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A46-D dưới cột Stamford"
+     dòng: | HC-BD275 | 275 | 250 | 6M16G275/5 | TAL-A46-D | | 3890*1460*2150 | Download
+ĐỔI kaihua-genset n119 b23 r8 alternator TAL-A46-F | tổ máy HC-BD330 | kia 6M16G350/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A46-F dưới cột Stamford"
+     dòng: | HC-BD330 | 330 | 300 | 6M16G350/5 | TAL-A46-F | | 3890*1460*2150 | Download
+ĐỔI kaihua-genset n119 b23 r37 alternator LSA52.3 UL16 | tổ máy HC-BD3000 | kia 12M55G6D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA52.3 UL16 dưới cột Stamford"
+     dòng: | HC-BD3000 | 3000 | 2750 | 12M55G6D3/5 | LSA52.3 UL16 | | | Download
+ĐỔI kaihua-genset n119 b23 r38 alternator LSA 53.2M9 | tổ máy HC-BD3100 | kia 16M55G0D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M9 dưới cột Stamford"
+     dòng: | HC-BD3100 | 3125 | 2813 | 16M55G0D3/5 | LSA 53.2M9 | | | Download
+ĐỔI kaihua-genset n119 b23 r39 alternator LSA 53.2M9 | tổ máy HC-BD3300 | kia 16M55G2D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M9 dưới cột Stamford"
+     dòng: | HC-BD3300 | 3313 | 3000 | 16M55G2D3/5 | LSA 53.2M9 | | | Download
+ĐỔI kaihua-genset n119 b23 r40 alternator LSA 53.2M12 | tổ máy HC-BD3750 | kia 16M55G4D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M12 dưới cột Stamford"
+     dòng: | HC-BD3750 | 3750 | 3250 | 16M55G4D3/5 | LSA 53.2M12 | | | Download
+ĐỔI kaihua-genset n119 b23 r41 alternator LSA 54.2L14 | tổ máy HC-BD4000 | kia 16M55G6D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 54.2L14 dưới cột Stamford"
+     dòng: | HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | | | Download
+ĐỔI kaihua-genset n127 b33 r0 alternator TAL-A42-H | tổ máy HC-BD70 | kia 4M10G70/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A42-H dưới cột Stamford"
+     dòng: | HC-BD70 | 68.8 | 62.5 | 4M10G70/5 | TAL-A42-H | — | 2440*1060*1680 | Download
+ĐỔI kaihua-genset n127 b33 r1 alternator TAL-A44-C | tổ máy HC-BD90 | kia 4M10G88/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-C dưới cột Stamford"
+     dòng: | HC-BD90 | 90 | 80 | 4M10G88/5 | TAL-A44-C | — | 2810*1140*1830 | Download
+ĐỔI kaihua-genset n127 b33 r2 alternator TAL-A44-D | tổ máy HC-BD110 | kia 4M10G110/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-D dưới cột Stamford"
+     dòng: | HC-BD110 | 110 | 100 | 4M10G110/5 | TAL-A44-D | — | 2810*1140*1830 | Download
+ĐỔI kaihua-genset n127 b33 r3 alternator TAL-A44-E | tổ máy HC-BD140 | kia 6M11G150/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-E dưới cột Stamford"
+     dòng: | HC-BD140 | 137.5 | 125 | 6M11G150/5 | TAL-A44-E | — | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n127 b33 r4 alternator TAL-A44-H | tổ máy HC-BD150 | kia 6M11G150/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-H dưới cột Stamford"
+     dòng: | HC-BD150 | 150 | 135 | 6M11G150/5 | TAL-A44-H | — | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n127 b33 r5 alternator TAL-A44-J | tổ máy HC-BD165 | kia 6M11G165/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A44-J dưới cột Stamford"
+     dòng: | HC-BD165 | 165 | 150 | 6M11G165/5 | TAL-A44-J | — | 3230*1170*1800 | Download
+ĐỔI kaihua-genset n127 b33 r7 alternator TAL-A46-D | tổ máy HC-BD275 | kia 6M16G275/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A46-D dưới cột Stamford"
+     dòng: | HC-BD275 | 275 | 250 | 6M16G275/5 | TAL-A46-D | — | 3890*1460*2150 | Download
+ĐỔI kaihua-genset n127 b33 r8 alternator TAL-A46-F | tổ máy HC-BD330 | kia 6M16G350/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A46-F dưới cột Stamford"
+     dòng: | HC-BD330 | 330 | 300 | 6M16G350/5 | TAL-A46-F | — | 3890*1460*2150 | Download
+ĐỔI kaihua-genset n127 b33 r37 alternator LSA52.3 UL16 | tổ máy HC-BD3000 | kia 12M55G6D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA52.3 UL16 dưới cột Stamford"
+     dòng: | HC-BD3000 | 3000 | 2750 | 12M55G6D3/5 | LSA52.3 UL16 | — | — | Download
+ĐỔI kaihua-genset n127 b33 r38 alternator LSA 53.2M9 | tổ máy HC-BD3100 | kia 16M55G0D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M9 dưới cột Stamford"
+     dòng: | HC-BD3100 | 3125 | 2813 | 16M55G0D3/5 | LSA 53.2M9 | — | — | Download
+ĐỔI kaihua-genset n127 b33 r39 alternator LSA 53.2M9 | tổ máy HC-BD3300 | kia 16M55G2D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M9 dưới cột Stamford"
+     dòng: | HC-BD3300 | 3313 | 3000 | 16M55G2D3/5 | LSA 53.2M9 | — | — | Download
+ĐỔI kaihua-genset n127 b33 r40 alternator LSA 53.2M12 | tổ máy HC-BD3750 | kia 16M55G4D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 53.2M12 dưới cột Stamford"
+     dòng: | HC-BD3750 | 3750 | 3250 | 16M55G4D3/5 | LSA 53.2M12 | — | — | Download
+ĐỔI kaihua-genset n127 b33 r41 alternator LSA 54.2L14 | tổ máy HC-BD4000 | kia 16M55G6D3/5
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã LSA 54.2L14 dưới cột Stamford"
+     dòng: | HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | — | — | Download
+ĐỔI penlucky n103 b4 r41 alternator PI734E1 | tổ máy PLW2500B73 | kia 20M33G2000/6
+     makes: [{"name":"Leroy-Somer","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã PI734E1 dưới cột Leroy-Somer"
+     dòng: | PLW2500B73 | 2500 | 2272 | 20M33G2000/6 | PI734E1 | 7010*2680*2980 | | view
+ĐỔI penlucky n103 b4 r42 alternator PI734F1 | tổ máy PLW2500B73 | kia 12M55G2000/6
+     makes: [{"name":"Leroy-Somer","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã PI734F1 dưới cột Leroy-Somer"
+     dòng: | PLW2500B73 | 2500 | 2272 | 12M55G2000/6 | PI734F1 | 6600*2680*2980 | | view
+ĐỔI penlucky n103 b4 r43 alternator PI734G1 | tổ máy PLW2750B73 | kia 20M33G2200/6
+     makes: [{"name":"Leroy-Somer","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã PI734G1 dưới cột Leroy-Somer"
+     dòng: | PLW2750B73 | 2750 | 2500 | 20M33G2200/6 | PI734G1 | 6600*2680*2980 | | view
+ĐỔI sr-genset n2009 b13 r25 alternator TAL-A40-F | tổ máy — | kia 404D-22G L
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A40-F dưới cột Stamford"
+     dòng: | PERKINS | 22 | 18 | 20 | 16 | 404D-22G L | Perkins | SOL2-G1 | TAL-A40-F | /
+ĐỔI sr-genset n2009 b13 r26 alternator TAL-A42-C | tổ máy — | kia 404D-22TG
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A42-C dưới cột Stamford"
+     dòng: | 30 | 24 | 27 | 22 | 404D-22TG | Perkins | SOL2-P1 | TAL-A42-C | /
+ĐỔI sr-genset n2009 b13 r38 alternator TAL-A40-G | tổ máy — | kia R24MAFS01.23A01
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A40-G dưới cột Stamford"
+     dòng: | FPT | 24 | 20 | 24 | 20 | R24MAFS01.23A01 | FPT | SOL2-M1 | TAL-A40-G | /
+ĐỔI sr-genset n2009 b13 r39 alternator TAL-A42-C | tổ máy — | kia R24MSFS01.31A01
+     makes: [{"name":"Stamford","via":"tiêu đề cột"}] → []
+     makeAsk: undefined → "mã TAL-A42-C dưới cột Stamford"
+     dòng: | 33 | 26 | 30 | 24 | R24MSFS01.31A01 | FPT | SOL2-P1 | TAL-A42-C | /
+
+TỔNG fromSupplier: 436 hồ sơ, 62006 bản ghi trước; thêm 0, mất 0, đổi 39
+đổi theo NCC: baifa-power 6; kaihua-genset 26; penlucky 3; sr-genset 4
+đổi theo trường: makes 38; makeAsk 38; power 1
+
+== build() ==
+
+engines: 6328 → 6328 khoá; y nguyên 6327; khác 1
+  ĐỔI 4M08G8D3/5 (4M08G8D3/5; NCC 7): uses đổi (11 → 11 dòng; có cờ makeAsk: 0)
+
+alternators: 3026 → 3026 khoá; y nguyên 3008; khác 18
+  ĐỔI TALA44D (TAL-A44-D; NCC 7): makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihua-genset","n":119},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power"," → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power","n":124}] ; uses đổi (26 → 26 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA46D (TAL-A46-D; NCC 7): makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihua-genset","n":119},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power"," → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power","n":124}] ; uses đổi (26 → 26 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA42H (TAL-A42-H; NCC 7): makesAll: [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":120},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihu → [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":120},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104}] ; uses đổi (24 → 24 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA44C (TAL-A44-C; NCC 7): makesAll: [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":119},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":107},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihu → [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":119},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":107}] ; uses đổi (23 → 23 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA44J (TAL-A44-J; NCC 6): makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihua-genset","n":119},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power"," → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power","n":124}] ; uses đổi (17 → 17 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA46F (TAL-A46-F; NCC 6): makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihua-genset","n":119},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power"," → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104},{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"rcg-power","n":124}] ; uses đổi (16 → 16 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA42C (TAL-A42-C; NCC 5): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104}] ; makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104},{"name":"Stamford","via":"tiêu đề cột","supplierId":"sr-genset","n":2009}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":104}] ; makeConflict: [{"name":"Leroy-Somer","suppliers":2},{"name":"Stamford","suppliers":1}] → null ; make: null → "Leroy-Somer" ; uses đổi (17 → 17 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA44E (TAL-A44-E; NCC 5): makesAll: [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":117},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihu → [{"name":"Leroy-Somer","via":"dòng bảng","supplierId":"generatordieselchina","n":117},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":103}] ; uses đổi (15 → 15 dòng; có cờ makeAsk: 2)
+  ĐỔI TALA40F (TAL-A40-F; NCC 5): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114}] ; makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114},{"name":"Stamford","via":"tiêu đề cột","supplierId":"sr-genset","n":2009}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114}] ; makeConflict: [{"name":"Leroy-Somer","suppliers":2},{"name":"Stamford","suppliers":1}] → null ; make: null → "Leroy-Somer" ; uses đổi (14 → 14 dòng; có cờ makeAsk: 1)
+  ĐỔI LSA532M9 (LSA 53.2M9; NCC 5): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"longkai-power","n":108}] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"longkai-power","n":108}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"longkai-power","n":108}] ; makeConflict: [{"name":"Stamford","suppliers":2},{"name":"Leroy-Somer","suppliers":3}] → null ; make: null → "Leroy-Somer" ; uses đổi (13 → 13 dòng; có cờ makeAsk: 5)
+  ĐỔI TALA44H (TAL-A44-H; NCC 5): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":107}] ; makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":107},{"name":"Stamford","via":"tiêu đề cột","supplierId":"kaihua-genset","n":119}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":107}] ; makeConflict: [{"name":"Leroy-Somer","suppliers":2},{"name":"Stamford","suppliers":1}] → null ; make: null → "Leroy-Somer" ; uses đổi (12 → 12 dòng; có cờ makeAsk: 2)
+  ĐỔI LSA523UL16 (LSA52.3 UL16; NCC 5): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":101}] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":101}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":101}] ; makeConflict: [{"name":"Stamford","suppliers":2},{"name":"Leroy-Somer","suppliers":1}] → null ; make: null → "Leroy-Somer" ; uses đổi (10 → 10 dòng; có cờ makeAsk: 3)
+  ĐỔI TALA40G (TAL-A40-G; NCC 4): makes: [] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114}] ; makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114},{"name":"Stamford","via":"tiêu đề cột","supplierId":"sr-genset","n":2009}] → [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"jet-power","n":114}] ; makeConflict: [{"name":"Leroy-Somer","suppliers":2},{"name":"Stamford","suppliers":1}] → null ; make: null → "Leroy-Somer" ; uses đổi (11 → 11 dòng; có cờ makeAsk: 1)
+  ĐỔI LSA532M12 (LSA 53.2M12; NCC 2): makes: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101}] → [] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101}] → [] ; make: "Stamford" → null ; uses đổi (4 → 4 dòng; có cờ makeAsk: 4)
+  ĐỔI LSA542L14 (LSA 54.2L14; NCC 2): makes: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101}] → [] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"baifa-power","n":101}] → [] ; make: "Stamford" → null ; uses đổi (3 → 3 dòng; có cờ makeAsk: 3)
+  ĐỔI PI734E1 (PI734E1; NCC 2): makes: [] → [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102}] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":103}] → [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102}] ; makeConflict: [{"name":"Stamford","suppliers":1},{"name":"Leroy-Somer","suppliers":1}] → null ; make: null → "Stamford" ; uses đổi (3 → 3 dòng; có cờ makeAsk: 1)
+  ĐỔI PI734F1 (PI734F1; NCC 1): makes: [] → [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102}] ; makesAll: [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102},{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":103}] → [{"name":"Stamford","via":"tiêu đề cột","supplierId":"penlucky","n":102}] ; makeConflict: [{"name":"Stamford","suppliers":1},{"name":"Leroy-Somer","suppliers":1}] → null ; make: null → "Stamford" ; uses đổi (2 → 2 dòng; có cờ makeAsk: 1)
+  ĐỔI PI734G1 (PI734G1; NCC 1): makes: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":103}] → [] ; makesAll: [{"name":"Leroy-Somer","via":"tiêu đề cột","supplierId":"penlucky","n":103}] → [] ; make: "Leroy-Somer" → null ; uses đổi (1 → 1 dòng; có cờ makeAsk: 1)
+
+controllers: 187 → 187 khoá; y nguyên 187; khác 0
+
+gensets: 845 → 845 khoá; y nguyên 845; khác 0

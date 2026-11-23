@@ -1,0 +1,122 @@
+doi-sang-trang-khac(n101)	n104	engine	F34TEVP02.00	→ —	| BF-FP40-V | 40 | 37 | FPT | F34TEVP02.00 | ECU | S1L2-K1 | 5.772 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S1L2-K1	→ —	| BF-FP40-V | 40 | 37 | FPT | F34TEVP02.00 | ECU | S1L2-K1 | 5.772 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	engine	F34TEVP04.00	→ —	| BF-FP50-V | 50 | 45 | FPT | F34TEVP04.00 | ECU | S1L2-N1 | 6.89 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S1L2-N1	→ —	| BF-FP50-V | 50 | 45 | FPT | F34TEVP04.00 | ECU | S1L2-N1 | 6.89 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	engine	F34TEVP01.00	→ —	| BF-FP60-V | 60 | 59 | FPT | F34TEVP01.00 | ECU | S1L2-Y1 | 8.82 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S1L2-Y1	→ —	| BF-FP60-V | 60 | 59 | FPT | F34TEVP01.00 | ECU | S1L2-Y1 | 8.82 | STAGE V | ITALY | 6 months | ●
+doi-sang-trang-khac(n101)	n104	engine	F36ETVP03.A62	→ —	| BF-FP70-V | 67 | 60 | FPT | F36ETVP03.A62 | ECU | S1L2-Y1 | 8.81 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S1L2-Y1	→ —	| BF-FP70-V | 67 | 60 | FPT | F36ETVP03.A62 | ECU | S1L2-Y1 | 8.81 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	F36ETVP03.A85	→ —	| BF-FP90-V | 94 | 85 | FPT | F36ETVP03.A85 | ECU | UCI 224G1 | 12.3 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 224G1	→ —	| BF-FP90-V | 94 | 85 | FPT | F36ETVP03.A85 | ECU | UCI 224G1 | 12.3 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	F36ETVP03.A94	→ —	| BF-FP110-V | 105 | 105 | FPT | F36ETVP03.A94 | ECU | UCI 274C1 | 15.2 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274C1	→ —	| BF-FP110-V | 105 | 105 | FPT | F36ETVP03.A94 | ECU | UCI 274C1 | 15.2 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD580VE	→ —	| BF-V110-V | 107 | 100 | VOLVO PENTA | TAD580VE | ECU | UCI 274C1 | 14.1 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274C1	→ —	| BF-V110-V | 107 | 100 | VOLVO PENTA | TAD580VE | ECU | UCI 274C1 | 14.1 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD581VE	→ —	| BF-V130-V | 130 | 118 | VOLVO PENTA | TAD581VE | ECU | UCI 274D1 | 16.5 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274D1	→ —	| BF-V130-V | 130 | 118 | VOLVO PENTA | TAD581VE | ECU | UCI 274D1 | 16.5 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	engine	1204J-E44TAG2	→ —	| BF-P140-V | 132 | 120 | PERKINS | 1204J-E44TAG2 | ECU | UCI 274D1 | 20.15 | STAGE V | UK | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274D1	→ —	| BF-P140-V | 132 | 120 | PERKINS | 1204J-E44TAG2 | ECU | UCI 274D1 | 20.15 | STAGE V | UK | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD582VE	→ —	| BF-V150-V | 147 | 135 | VOLVO PENTA | TAD582VE | ECU | UCI 274E1 | 18.87 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274E1	→ —	| BF-V150-V | 147 | 135 | VOLVO PENTA | TAD582VE | ECU | UCI 274E1 | 18.87 | STAGE V | FRANCE | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD880GE	→ —	| BF-V165-V | 165 | 150 | VOLVO PENTA | TAD880GE | ECU | UCI 274F1 | 20.86 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274F1	→ —	| BF-V165-V | 165 | 150 | VOLVO PENTA | TAD880GE | ECU | UCI 274F1 | 20.86 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	N67TEVP06.00	→ —	| BF-FP170-V | 167 | 156 | FPT | N67TEVP06.00 | ECU | UCI 274F1 | 21.36 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274F1	→ —	| BF-FP170-V | 167 | 156 | FPT | N67TEVP06.00 | ECU | UCI 274F1 | 21.36 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	1206J-E70TTAG3/4	→ —	| BF-P220-V | 219 | 198 | PERKINS | 1206J-E70TTAG3/4 | ECU | UCI 274H1 | 32.4 | STAGE V | UK | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274H1	→ —	| BF-P220-V | 219 | 198 | PERKINS | 1206J-E70TTAG3/4 | ECU | UCI 274H1 | 32.4 | STAGE V | UK | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD881GE	→ —	| BF-V220-V | 220 | 200 | VOLVO PENTA | TAD881GE | ECU | UCI 274H1 | 27.53 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274H1	→ —	| BF-V220-V | 220 | 200 | VOLVO PENTA | TAD881GE | ECU | UCI 274H1 | 27.53 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	N67TEVP05.00	→ —	| BF-FP230-V | 227 | 205 | FPT | N67TEVP05.00 | ECU | UCI 274H1 | 28.5 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	UCI 274H1	→ —	| BF-FP230-V | 227 | 205 | FPT | N67TEVP05.00 | ECU | UCI 274H1 | 28.5 | STAGE V | ITALY | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD882GE	→ —	| BF-V275-V | 275 | 250 | VOLVO PENTA | TAD882GE | ECU | UCDI 274K1 | 34.4 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	UCDI 274K1	→ —	| BF-V275-V | 275 | 250 | VOLVO PENTA | TAD882GE | ECU | UCDI 274K1 | 34.4 | STAGE V | FRANCE | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	1706J-E93TAG1	→ —	| BF-P290-V | 286 | 260 | ERKINS | 1706J-E93TAG1 | ECU | S4L1D-C41 | 41.38 | STAGE V | USA | 16-24WKS LT |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-C41	→ —	| BF-P290-V | 286 | 260 | ERKINS | 1706J-E93TAG1 | ECU | S4L1D-C41 | 41.38 | STAGE V | USA | 16-24WKS LT |
+doi-sang-trang-khac(n101)	n104	engine	C87TEVP01.00	→ —	| BF-FP290-V | 299 | 271 | FPT | C87TEVP01.00 | ECU | S4L1D-C41 | 38.14 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-C41	→ —	| BF-FP290-V | 299 | 271 | FPT | C87TEVP01.00 | ECU | S4L1D-C41 | 38.14 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	C87TEVP04.00	→ —	| BF-FP330-V | 334 | 303 | FPT | C87TEVP04.00 | ECU | S4L1D-D41 | 42.63 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-D41	→ —	| BF-FP330-V | 334 | 303 | FPT | C87TEVP04.00 | ECU | S4L1D-D41 | 42.63 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD1380GE	→ —	| BF-V330-V | 332 | 302 | VOLVO PENTA | TAD1380GE | ECU | S4L1D-D41 | 42 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-D41	→ —	| BF-V330-V | 332 | 302 | VOLVO PENTA | TAD1380GE | ECU | S4L1D-D41 | 42 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	1706J-E93TAG2	→ —	| BF-P340-V | 341 | 310 | PERKINS | 1706J-E93TAG2 | ECU | S4L1D-D41 | 48.35 | STAGE V | USA | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-D41	→ —	| BF-P340-V | 341 | 310 | PERKINS | 1706J-E93TAG2 | ECU | S4L1D-D41 | 48.35 | STAGE V | USA | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	engine	DC13 320A 02-61	→ —	| BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-E41	→ —	| BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	4 months	→ —	| BF-SC385-V | 385 | 350 | SCANIA | DC13 505A 350KVA | ECU | S4L1D-E41 | 44.9 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-E41	→ —	| BF-SC385-V | 385 | 350 | SCANIA | DC13 505A 350KVA | ECU | S4L1D-E41 | 44.9 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	engine	TAD1381GE	→ —	| BF-V390-V | 387 | 352 | VOLVO PENTA | TAD1381GE | ECU | S4L1D-E41 | 48.7 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-E41	→ —	| BF-V390-V | 387 | 352 | VOLVO PENTA | TAD1381GE | ECU | S4L1D-E41 | 48.7 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	C13ETVP03.A363	→ —	| BF-FP400-V | 402 | 364 | FPT | C13ETVP03.A363 | ECU | S4L1D-E41 | 49.8 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-E41	→ —	| BF-FP400-V | 402 | 364 | FPT | C13ETVP03.A363 | ECU | S4L1D-E41 | 49.8 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	C13ETVP03.A395	→ —	| BF-FP440-V | 444 | 402 | FPT | C13ETVP03.A395 | ECU | S4L1D-F41 | 54.88 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-F41	→ —	| BF-FP440-V | 444 | 402 | FPT | C13ETVP03.A395 | ECU | S4L1D-F41 | 54.88 | STAGE V | FRANCE | 7 months | ●
+doi-sang-trang-khac(n101)	n104	engine	TAD1382GE	→ —	| BF-V440-V | 440 | 400 | VOLVO PENTA | TAD1382GE | ECU | S4L1D-F41 | 55.45 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-F41	→ —	| BF-V440-V | 440 | 400 | VOLVO PENTA | TAD1382GE | ECU | S4L1D-F41 | 55.45 | STAGE V | SWEDEN | 4-5 MONTHS |
+doi-sang-trang-khac(n101)	n104	engine	DC13 320A 02-62	→ —	| BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-F41	→ —	| BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	4 months	→ —	| BF-SC440-V | 440 | 400 | SCANIA | DC13 505A 400KVA | ECU | S4L1D-F41 | 51.1 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-F41	→ —	| BF-SC440-V | 440 | 400 | SCANIA | DC13 505A 400KVA | ECU | S4L1D-F41 | 51.1 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	engine	DC13 320A 02-63	→ —	| BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-G41	→ —	| BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	DC16 320A 02-61	→ —	| BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S4L1D-G41	→ —	| BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	DC16 320A 02-62	→ —	| BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S5L1D-C41	→ —	| BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	4 months	→ —	| BF-SC550-V | 550 | 500 | SCANIA | DC13 505A 500KVA | ECU | S5L1D-C41 | 63.8 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	alternator	S5L1D-C41	→ —	| BF-SC550-V | 550 | 500 | SCANIA | DC13 505A 500KVA | ECU | S5L1D-C41 | 63.8 | STAGE V | SWEDEN | 4 months |
+doi-sang-trang-khac(n101)	n104	engine	DC16 320A 02-63	→ —	| BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	alternator	S5L1D-D41	→ —	| BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●
+doi-sang-trang-khac(n101)	n104	engine	2806J-E18TAG1	→ —	| BF-P610-V | 605 | 550 | PERKINS | 2806J-E18TAG1 | ECU | S5L1D-D41 | 91.48 | STAGE V | USA | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	alternator	S5L1D-D41	→ —	| BF-P610-V | 605 | 550 | PERKINS | 2806J-E18TAG1 | ECU | S5L1D-D41 | 91.48 | STAGE V | USA | 16-24WKS LT | ●
+doi-sang-trang-khac(n101)	n104	engine	TWD1683GE	→ —	| BF-V740-V | 737 | 670 | VOLVO PENTA | TWD1683GE | ECU | S5L1D-F41 | 90.33 | STAGE V | SWEDEN | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n104	alternator	S5L1D-F41	→ —	| BF-V740-V | 737 | 670 | VOLVO PENTA | TWD1683GE | ECU | S5L1D-F41 | 90.33 | STAGE V | SWEDEN | 4-5 MONTHS | ●
+doi-sang-trang-khac(n101)	n105	engine	F34TEVP02.00	→ —	| BF-FP40-T4F | 42 | 38 | FPT | F34TEVP02.00 | ECU | S1L2-K1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S1L2-K1	→ —	| BF-FP40-T4F | 42 | 38 | FPT | F34TEVP02.00 | ECU | S1L2-K1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	404J-E22TAG	→ —	| BF-P44-T4F | 50 | 45 | PERKINS | 404J-E22TAG | ECU | S1L2-K1 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S1L2-K1	→ —	| BF-P44-T4F | 50 | 45 | PERKINS | 404J-E22TAG | ECU | S1L2-K1 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	engine	F34TEVP04.00	→ —	| BF-FP50-60T4F | 52 | 47 | FPT | F34TEVP04.00 | ECU | S1L2-N1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S1L2-N1	→ —	| BF-FP50-60T4F | 52 | 47 | FPT | F34TEVP04.00 | ECU | S1L2-N1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	F34TEVP01.00	→ —	| BF-FP60-60T4F | 60 | 58 | FPT | F34TEVP01.00 | ECU | S1L2-Y1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S1L2-Y1	→ —	| BF-FP60-60T4F | 60 | 58 | FPT | F34TEVP01.00 | ECU | S1L2-Y1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	F36ETVP03.A62	→ —	| BF-FP70-60T4F | 75 | 68 | FPT | F36ETVP03.A62 | ECU | S1L2-Y1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S1L2-Y1	→ —	| BF-FP70-60T4F | 75 | 68 | FPT | F36ETVP03.A62 | ECU | S1L2-Y1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	F36ETVP03.A85	→ —	| BF-FP90-60T4F | 102 | 93 | FPT | F36ETVP03.A85 | ECU | UCI 224G1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 224G1	→ —	| BF-FP90-60T4F | 102 | 93 | FPT | F36ETVP03.A85 | ECU | UCI 224G1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	F36ETVP03.A94	→ —	| BF-FP110-60T4F | 115 | 104 | FPT | F36ETVP03.A94 | ECU | UCI 274C1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 274C1	→ —	| BF-FP110-60T4F | 115 | 104 | FPT | F36ETVP03.A94 | ECU | UCI 274C1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	1204J-E44TTAG2	→ —	| BF-P140-60T4F | 136 | 122 | PERKINS | 1204J-E44TTAG2 | ECU | UCI 274D1 | | EPA TIER 4 FINAL | UK | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 274D1	→ —	| BF-P140-60T4F | 136 | 122 | PERKINS | 1204J-E44TTAG2 | ECU | UCI 274D1 | | EPA TIER 4 FINAL | UK | | ●
+doi-sang-trang-khac(n101)	n105	engine	N67TEVP06.00	→ —	| BF-FP170-60T4F | 191 | 173 | FPT | N67TEVP06.00 | ECU | UCI 274F1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 274F1	→ —	| BF-FP170-60T4F | 191 | 173 | FPT | N67TEVP06.00 | ECU | UCI 274F1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	1206J-E70TTAG3/4	→ —	| BF-P220-60T4F | 188 | 169 | PERKINS | 1206J-E70TTAG3/4 | ECU | UCI 274H1 | | EPA TIER 4 FINAL | UK | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 274H1	→ —	| BF-P220-60T4F | 188 | 169 | PERKINS | 1206J-E70TTAG3/4 | ECU | UCI 274H1 | | EPA TIER 4 FINAL | UK | | ●
+doi-sang-trang-khac(n101)	n105	engine	N67TEVP05.00	→ —	| BF-FP230-60T4F | 257 | 233 | FPT | N67TEVP05.00 | ECU | UCI 274H1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	UCI 274H1	→ —	| BF-FP230-60T4F | 257 | 233 | FPT | N67TEVP05.00 | ECU | UCI 274H1 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	C87TEVP01.00	→ —	| BF-FP290-60T4F | 331 | 300 | FPT | C87TEVP01.00 | ECU | S4L1D-C41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-C41	→ —	| BF-FP290-60T4F | 331 | 300 | FPT | C87TEVP01.00 | ECU | S4L1D-C41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	C87TEVP04.00	→ —	| BF-FP330-60T4F | 380 | 344 | FPT | C87TEVP04.00 | ECU | S4L1D-D41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-D41	→ —	| BF-FP330-60T4F | 380 | 344 | FPT | C87TEVP04.00 | ECU | S4L1D-D41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	1706J-E93TAG2	→ —	| BF-P340-60T4F | 369 | 334 | PERKINS | 1706J-E93TAG2 | ECU | S4L1D-D41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-D41	→ —	| BF-P340-60T4F | 369 | 334 | PERKINS | 1706J-E93TAG2 | ECU | S4L1D-D41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC13 320A 02-61	→ —	| BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-E41	→ —	| BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	C13ETVP03.A363	→ —	| BF-FP400-60T4F | 450 | 406 | FPT | C13ETVP03.A363 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-E41	→ —	| BF-FP400-60T4F | 450 | 406 | FPT | C13ETVP03.A363 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	C13ETVP03.A395	→ —	| BF-FP440-60T4F | 501 | 452 | FPT | C13ETVP03.A395 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-F41	→ —	| BF-FP440-60T4F | 501 | 452 | FPT | C13ETVP03.A395 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | ITALY | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC13 320A 02-62	→ —	| BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-F41	→ —	| BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	2206F-E13TAG2	→ —	| BF-P450-60T4F | 469 | 425 | PERKINS | 2206F-E13TAG2 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-F41	→ —	| BF-P450-60T4F | 469 | 425 | PERKINS | 2206F-E13TAG2 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC13 320A 02-63	→ —	| BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-G41	→ —	| BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC16 320A 02-61	→ —	| BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S4L1D-G41	→ —	| BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC16 320A 02-62	→ —	| BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S5L1D-C41	→ —	| BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	DC16 320A 02-63	→ —	| BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S5L1D-D41	→ —	| BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	engine	2806J-E18TAG1	→ —	| BF-P610-60T4F | 625 | 569 | PERKINS | 2806J-E18TAG1 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S5L1D-D41	→ —	| BF-P610-60T4F | 625 | 569 | PERKINS | 2806J-E18TAG1 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | USA | | ●
+doi-sang-trang-khac(n101)	n105	engine	TWD1683GE	→ —	| BF-V770-60T4F | 770 | 700 | VOLVO PENTA | TWD1683GE | ECU | S5L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+doi-sang-trang-khac(n101)	n105	alternator	S5L1D-F41	→ —	| BF-V770-60T4F | 770 | 700 | VOLVO PENTA | TWD1683GE | ECU | S5L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
