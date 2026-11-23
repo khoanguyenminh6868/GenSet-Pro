@@ -1,0 +1,167 @@
+
+=== leroy-somer-fuzhou: 14 tờ, 84 model đọc ra dòng, 0 tờ không ra dòng
+model có kVA: 84, kW: 80, hiệu suất: 0
+theo hz/pha/điện áp (số model có kVA / kW / eff):
+  50Hz/1ph/1ph: 53 / 49 / 0
+  50Hz/3ph/380V: 83 / 79 / 0
+  50Hz/3ph/400V: 83 / 79 / 0
+  50Hz/3ph/415V: 83 / 79 / 0
+  50Hz/3ph/440V: 61 / 59 / 0
+  60Hz/1ph/1ph: 47 / 46 / 0
+  60Hz/3ph/380V: 71 / 70 / 0
+  60Hz/3ph/416V: 71 / 70 / 0
+  60Hz/3ph/440V: 77 / 76 / 0
+  60Hz/3ph/480V: 77 / 76 / 0
+cột (số model): {"duty":{"Cont.":84,"Standby":84},"rise":{"H:125K Continuous/ 40°C":83,"F:105K Continuous/ 40°C":83,"H:150K Stand-by/ 40°C":83,"H:163K Stand-by/ 27°C":83,"H:125K Continuous / 40 °C":5,"F:105K Continuous / 40 °C":5,"H:150K Stand-by / 40 °C":5,"H:163K Stand-by / 27 °C":5},"hz":{"50":83,"60":77},"phase":{"1":54,"3":84},"conn":{}}
+tờ không ra dòng: 
+thuộc tính code đọc (số tờ): insulation=14, ip=14, excitation=14, avr=14, vreg=14, overspeed=14, altitude=14, standards=14, sc300=8
+tờ có dòng (regex) / mẫu:
+  winding_pitch: 14/14  [1001.md] | Winding pitch | 2/3 ( wind.6 -12-wire)
+  wires: 14/14  [1001.md] | 6-wire | R180
+  altitude: 14/14  [1001.md] | Altitude | ≤ 1000 m
+  overspeed: 14/14  [1001.md] | Overspeed | 2250 R.P.M.
+  air_flow: 14/14  [1001.md] | Air flow 50 Hz (m3/s) | 0.08
+  short_circuit: 12/14  [1002.md] | AREP+ Short-circuit current = 2.7 In: 5 seconds (*) | Waveform : I.E.C. : THF (**) | < 2%
+  excitation: 14/14  [1001.md] | AREP+ | PMG
+  avr: 14/14  [1001.md] | 6-wire | R180
+  voltage_regulation: 14/14  [1001.md] | Voltage regulation (*) |  1 % |  0.5 %
+  thd_no_load: 12/14  [1001.md] | Total | harmonic distortion between phases, no-load
+  thd_linear_load: 3/14  [1003.md] | Total Harmonic distortion THD (**) in linear load | < 5 %
+  tif: 14/14  [1001.md] | Waveform: NEMA = TIF (**) | < 50
+  thf: 10/14  [1001.md] | Waveform : I.E.C. : THF (**) | < 2%
+  poles: 14/14  [1001.md] | Low | Voltage | Alternators - 4 pole
+  bearing: 14/14  [1001.md] ● Single-bearing design to be suitable with most diesel engines
+  cooling: 0/14  
+  standards: 14/14  [1001.md] regulations: -IEC 60034, NEMA MG 1.32-33, VDE 0530, ISO 8528/3 on
+  efficiency: 14/14  [1001.md] | Efficiencies 400 V - 50 Hz (— P.F.: 0.8) (...... | P.F.: 1 ) | 12-wire
+  current_a: 13/14  [1001.md] | AREP+ Short-circuit | current
+
+=== mecc-alte: 16 tờ, 65 model đọc ra dòng, 6 tờ không ra dòng
+model có kVA: 65, kW: 65, hiệu suất: 0
+theo hz/pha/điện áp (số model có kVA / kW / eff):
+  50Hz/3ph/380V: 65 / 65 / 0
+  50Hz/3ph/400V: 65 / 65 / 0
+  50Hz/3ph/415V: 65 / 65 / 0
+  50Hz/3ph/440V: 58 / 58 / 0
+  60Hz/3ph/415V: 65 / 65 / 0
+  60Hz/3ph/440V: 65 / 65 / 0
+  60Hz/3ph/460V: 65 / 65 / 0
+  60Hz/3ph/480V: 65 / 65 / 0
+cột (số model): {"duty":{"Standby":65,"Cont.":65},"rise":{"163/27°C":65,"150/40°C":65,"125/40°C":65,"105/40°C":65,"80/40°C":65},"hz":{"50":65,"60":65},"phase":{"3":65},"conn":{"Series Star Y":45,"Parallel Star YY":20}}
+tờ không ra dòng: 1001.md[URL: https://www.meccalte.com/downloads/|11663]; 1002.md[URL: https://www.meccalte.com/downloads/|9678]; 1003.md[URL: https://www.meccalte.com/downloads/|8943]; 1004.md[URL: https://www.meccalte.com/downloads/|4882]; 1005.md[URL: https://www.meccalte.com/downloads/|6333]; 1006.md[URL: https://www.meccalte.com/downloads/|9167]
+thuộc tính code đọc (số tờ): brushless=12, insulation=10, sc300=10
+tờ có dòng (regex) / mẫu:
+  winding_pitch: 10/16  [1007.md] | Winding pitch | 2/3
+  wires: 10/16  [1007.md] | o | 12 leads: 50 Hz 380–440 V and 220/110–240/120 V (derating may apply); 60 Hz 380–480 V and 220/110–240/120
+  altitude: 10/16  [1007.md] | Altitude (meters) | 25 | 40 | 45 | 50 | 55 | 60 | 65 | 70
+  overspeed: 11/16  [1002.md] | overspeed | power to the governor
+  air_flow: 13/16  [1003.md] | (Kgm²) | (m³/min.) | 50Hz | 60Hz
+  short_circuit: 10/16  [1007.md] |  | Motor Start: Inrush current >300% for 20 seconds
+  excitation: 11/16  [1001.md] | in servicer port and auxiliary connector | PMG
+  avr: 0/16  
+  voltage_regulation: 2/16  [1001.md] | Voltage Regulation | +/-2%
+  thd_no_load: 10/16  [1007.md] | Waveform Distors.(THD) no load LL/LN | % | 2,93 / 2,5 | 2,7 / 2,5 | 2,6 / 2,6 | 2,2 / 2 | 2,8 / 2,7
+  thd_linear_load: 0/16  
+  tif: 10/16  [1007.md] | Telephone Interferance Factor - TIF | <45 | <45 | <45 | <45 | <45
+  thf: 10/16  [1007.md] | Telephone Harmonic Factor - THF | % | <2 | <2 | <2 | <2 | <2
+  poles: 5/16  [1001.md] | Poles | 16 | 16 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20 | 20
+  bearing: 13/16  [1003.md] | REAR BEARING | REULEMENT ARRIERE
+  cooling: 0/16  
+  standards: 10/16  [1007.md] accordance with IEC 60034.
+  efficiency: 11/16  [1001.md] efficiency of the complete power system.
+  current_a: 0/16  
+
+=== stamford-avk-china: 33 tờ, 33 model đọc ra dòng, 0 tờ không ra dòng
+model có kVA: 33, kW: 33, hiệu suất: 33
+theo hz/pha/điện áp (số model có kVA / kW / eff):
+  50Hz/3ph/380V: 30 / 30 / 30
+  50Hz/3ph/400V: 30 / 30 / 30
+  50Hz/3ph/415V: 30 / 30 / 30
+  50Hz/3ph/440V: 22 / 22 / 22
+  60Hz/3ph/380V: 3 / 3 / 3
+  60Hz/3ph/400V: 3 / 3 / 3
+  60Hz/3ph/416V: 29 / 29 / 29
+  60Hz/3ph/440V: 26 / 26 / 26
+  60Hz/3ph/460V: 26 / 26 / 26
+  60Hz/3ph/480V: 26 / 26 / 26
+cột (số model): {"duty":{"Cont.":33,"Standby":33},"rise":{"105/40°C":33,"125/40°C":33,"150/40°C":33,"163/27°C":33},"hz":{"50":30,"60":29},"phase":{"3":33},"conn":{}}
+tờ không ra dòng: 
+thuộc tính code đọc (số tờ): insulation=31, thd=33, overspeed=15, pmg=27, self_excited=17, bearings=31, avrStd=15, poles=18, sc300=4
+tờ có dòng (regex) / mẫu:
+  winding_pitch: 33/33  [1001.md] | Stamford industrial generators meet the requirements of BS | All generator stators are wound to 2/3 pitch.
+  wires: 14/33  [1002.md] | stator. The high efficiency semiconductors of the AVR ensure | Standard generators are 3-phase reconnectable with 12 ends
+  altitude: 33/33  [1001.md] | We recommend three-phase sensing for applications with | 3% for every 500 metres by which the operating altitude
+  overspeed: 15/33  [1001.md] | MAXIMUM OVERSPEED | 2250 Rev/Min
+  air_flow: 33/33  [1001.md] | COOLING AIR | 0.281 m³/sec 595 cfm
+  short_circuit: 33/33  [1001.md] Over voltage protection is built-in and short circuit current
+  excitation: 33/33  [1001.md] With this self excited control system the main stator
+  avr: 31/33  [1001.md] | SX460 AVR - OBSOLETE | ensures very low waveform distortion.
+  voltage_regulation: 33/33  [1001.md] | giving a source of constant excitation power independent of | The stated voltage regulation may not be maintained in
+  thd_no_load: 15/33  [1001.md] | WAVEFORM DISTORTION | NO LOAD < 1.5% NON-DISTORTING BALANCED LINEAR LOAD < 5.0%
+  thd_linear_load: 33/33  [1001.md] | WAVEFORM DISTORTION | NO LOAD < 1.5% NON-DISTORTING BALANCED LINEAR LOAD < 5.0%
+  tif: 33/33  [1001.md] | TELEPHONE INTERFERENCE | THF<2% | TIF<50
+  thf: 33/33  [1001.md] | TELEPHONE INTERFERENCE | THF<2% | TIF<50
+  poles: 18/33  [1016.md] | Number of Poles | 4
+  bearing: 33/33  [1001.md] | power via the AVR to the exciter stator. The high efficiency | operation. Two bearing generators are balanced with a
+  cooling: 0/33  
+  standards: 33/33  [1001.md] | standards such as BS5000, VDE 0530, NEMA MG1-32, | voltage waveform and is found to be the optimum design
+  efficiency: 33/33  [1001.md] | Efficiency (%) | 91.0 | 91.2 | 91.3 | 90.6 | 90.9 | 91.0 | 90.4 | 90.7 | 90.9 | 90.3 | 90.7 | 90.8
+  current_a: 33/33  [1001.md] | CURRENT (Amps) | 1000
+
+=== xinrongbang-fujian: 1 tờ, 0 model đọc ra dòng, 1 tờ không ra dòng
+model có kVA: 0, kW: 0, hiệu suất: 0
+theo hz/pha/điện áp (số model có kVA / kW / eff):
+cột (số model): {"duty":{},"rise":{},"hz":{},"phase":{},"conn":{}}
+tờ không ra dòng: 1001.md[URL: http://www.fujian-motor.com/article|1709]
+thuộc tính code đọc (số tờ): 
+tờ có dòng (regex) / mẫu:
+  winding_pitch: 0/1  
+  wires: 0/1  
+  altitude: 0/1  
+  overspeed: 0/1  
+  air_flow: 0/1  
+  short_circuit: 0/1  
+  excitation: 0/1  
+  avr: 0/1  
+  voltage_regulation: 0/1  
+  thd_no_load: 0/1  
+  thd_linear_load: 0/1  
+  tif: 0/1  
+  thf: 0/1  
+  poles: 0/1  
+  bearing: 0/1  
+  cooling: 1/1  [1001.md] | Engine Dry Weight w/o Cooling System | kg | 240
+  standards: 0/1  
+  efficiency: 0/1  
+  current_a: 0/1  
+
+catalog theo make: {
+ "Stamford": {
+  "models": 326,
+  "sheetRows": 73,
+  "attrOnly": 0,
+  "makerSup": 14,
+  "none": 249
+ },
+ "Leroy-Somer": {
+  "models": 187,
+  "sheetRows": 75,
+  "attrOnly": 0,
+  "makerSup": 0,
+  "none": 112
+ },
+ "Marathon": {
+  "models": 39,
+  "sheetRows": 0,
+  "attrOnly": 0,
+  "makerSup": 0,
+  "none": 39
+ },
+ "Mecc Alte": {
+  "models": 47,
+  "sheetRows": 13,
+  "attrOnly": 0,
+  "makerSup": 0,
+  "none": 34
+ }
+}

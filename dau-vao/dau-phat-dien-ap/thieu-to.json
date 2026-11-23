@@ -1,0 +1,2172 @@
+[
+ {
+  "model": "HCI544FS",
+  "make": "Stamford",
+  "nSup": 14
+ },
+ {
+  "model": "S1L2-Y1",
+  "make": "Stamford",
+  "nSup": 13
+ },
+ {
+  "model": "S1L2-K1",
+  "make": "Stamford",
+  "nSup": 12
+ },
+ {
+  "model": "S0L2-P1",
+  "make": "Stamford",
+  "nSup": 11
+ },
+ {
+  "model": "HCI444FS",
+  "make": "Stamford",
+  "nSup": 11
+ },
+ {
+  "model": "S7L1D-F41",
+  "make": "Stamford",
+  "nSup": 10
+ },
+ {
+  "model": "S0L2-M1",
+  "make": "Stamford",
+  "nSup": 10
+ },
+ {
+  "model": "HCI444ES",
+  "make": "Stamford",
+  "nSup": 10
+ },
+ {
+  "model": "S1L2-N1",
+  "make": "Stamford",
+  "nSup": 10
+ },
+ {
+  "model": "S0L1-P1",
+  "make": "Stamford",
+  "nSup": 10
+ },
+ {
+  "model": "S4L1D-G41",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "S7L1D-G41",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "S1L2-J1",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "S0L2-G1",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "S0L1-H1",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "LVI634B",
+  "make": "Stamford",
+  "nSup": 9
+ },
+ {
+  "model": "S0L1-L1",
+  "make": "Stamford",
+  "nSup": 8
+ },
+ {
+  "model": "S1L2-R1",
+  "make": "Stamford",
+  "nSup": 8
+ },
+ {
+  "model": "S7L1D-C41",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "S5L1D-C4",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "S5L1D-H41",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "S7L1D-H41",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "UCI274ES",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "UCD274K",
+  "make": "Stamford",
+  "nSup": 7
+ },
+ {
+  "model": "S6L1D-G41",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S5L1D-E41",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S5L1D-F4",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S7L1D-D41",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S7L1D-E41",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S7L1D-J41",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "LVI634G",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S5L1D-G4",
+  "make": "Stamford",
+  "nSup": 6
+ },
+ {
+  "model": "S6L1D-E41",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S5L1D-C41",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S4L1D-D4",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S6L1D-C41",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S5L1D-F41",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S0L2.F1",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "LVI634C",
+  "make": "Stamford",
+  "nSup": 5
+ },
+ {
+  "model": "S6L1D-D41",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "S6L1D-H41",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "S4L1D-F4",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "S6L1D-F41",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "S5L1D-D41",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCI 274H1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCDI 274K1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "224F",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCI 224G1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCI 274C1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCI 274E1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "UCI 274F1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "HCI544D1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "LSA 47.2 m7",
+  "make": "Leroy-Somer",
+  "nSup": 4
+ },
+ {
+  "model": "LSA 47.2 S5",
+  "make": "Leroy-Somer",
+  "nSup": 4
+ },
+ {
+  "model": "LSA49.3 S4",
+  "make": "Leroy-Somer",
+  "nSup": 4
+ },
+ {
+  "model": "P126TI",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "HCI544C1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "HCI544F1",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "LVI634D",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "S7L1D-J4",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "LVI634F",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "MX-600-4",
+  "make": "Marathon",
+  "nSup": 4
+ },
+ {
+  "model": "UCI274J",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "LVI634E",
+  "make": "Stamford",
+  "nSup": 4
+ },
+ {
+  "model": "MX-850-4",
+  "make": "Marathon",
+  "nSup": 4
+ },
+ {
+  "model": "224E",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "S4L1D-E4",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "164D",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "LSA 47.2 VS2",
+  "make": "Leroy-Somer",
+  "nSup": 3
+ },
+ {
+  "model": "HCI 544E1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "UCI 274D1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "UCI 274G1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "164C",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "224G",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "LSA40 M7",
+  "make": "Leroy-Somer",
+  "nSup": 3
+ },
+ {
+  "model": "S5L1D-D4",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "UCDI 274J1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "HCI544FS1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "UC224F",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "MP-400-4",
+  "make": "Marathon",
+  "nSup": 3
+ },
+ {
+  "model": "MP-480-4",
+  "make": "Marathon",
+  "nSup": 3
+ },
+ {
+  "model": "MP-500-4",
+  "make": "Marathon",
+  "nSup": 3
+ },
+ {
+  "model": "LSA49.3 M65",
+  "make": "Leroy-Somer",
+  "nSup": 3
+ },
+ {
+  "model": "P086TI",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "PI734C1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "UCI 224F1",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "LSA 47.2 S4",
+  "make": "Leroy-Somer",
+  "nSup": 3
+ },
+ {
+  "model": "PI734ES",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "S4L1D-C4",
+  "make": "Stamford",
+  "nSup": 3
+ },
+ {
+  "model": "224D",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "184G",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "184E",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "S5L1D-G41",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "164B",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "LSA52.3 UL16 C6S/4",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "LL5114H",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "MP-160-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "S4L1S-D4",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044M",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-100-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-150-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-200-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-250-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-300-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-75-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-560-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "S4L1S-E4",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "TAL042C",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "UCI274K",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "LSA 53.2M12",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "LSA54.2M10 2736KW",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "MP-120-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-40-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "P126TI-II",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "TAL040D",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL042H",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044B",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044D",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "UC224C",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "ECO46-2L",
+  "make": "Mecc Alte",
+  "nSup": 2
+ },
+ {
+  "model": "LSA 54.2L14",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "MP-104-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-180-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-200-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-280-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-300-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-50-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-750-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-H-400-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-H-500-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "PI 734ES1",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "S7L1D-K41",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "TAL040F",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL042F",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044A",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044J",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "HCI4E",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "HCI5C",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "LL7224J",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "LL7224L",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "LSA54.2UL14 3456KW",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "LVSI804R",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "LVSI804T",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "MP-140-4A",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MP-H-350-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-640-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "MX-H-630-4",
+  "make": "Marathon",
+  "nSup": 2
+ },
+ {
+  "model": "PI734B1",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "S0L2-N1",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "TAL-A46-B",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL-A47-C",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044H",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "TAL044L",
+  "make": "Leroy-Somer",
+  "nSup": 2
+ },
+ {
+  "model": "UCI 224C1",
+  "make": "Stamford",
+  "nSup": 2
+ },
+ {
+  "model": "SY-A 274C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 224G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274H",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 314E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BC164D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274J",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 314F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 274K",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 314D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS164B",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS184E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS184H",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS164D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-VL",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "TAL0473A",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "BS184F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS184G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS224E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1D-G4(360KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-F4(320KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "TAL0473F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "UCDI274K(200KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274C(80KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS164C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "ECO38-1LC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO38-2LC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-1S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL70/1600KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL70/1680KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA54XL75/2440KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "MP-250-4A",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "PI734D1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S0L2-J1(24KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-E4(280KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1D-H4(600KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1S-C4(400KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SY-A 314C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "TAL042A",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL0473B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL0473C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL0473E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "BS184J",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS224C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS224D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS224F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274H",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274K",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC314E/TAL-A46-G",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354C/ S5L1D-C4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC404E/TAL-A49-D",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "ECO38-2MC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO38-2SC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-2L",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-2S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-3L",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40-3S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO46-1L",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "LSA 50.2 M8",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA46.2VL12/350KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2M8/552KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3S4/528KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "MP-220-4A",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-360-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-70-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-80-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-90-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "N200G4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P126TI/241KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734D/1650KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S1L2-K1(32KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1D-D4(248KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-D4(240KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-D41",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-F4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4LID-F41",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1D-H1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1S-E4(488KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1S-F4(536KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5LID-C4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5LID-E4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-G4(1008KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-H4(1120KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "TAL A44 F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-A47-A",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-A47-F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL042D",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274D(96KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274G(145KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS184ES",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS274J",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS314D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS314ES",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS314F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS314FS",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "BS354C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC164C/ S0L1-L1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC184E/TAL-A40-F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC184G/TAL-A42-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC184H/S1L2-J1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC184H/TAL-A42-E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC184J/S1L2-N1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC224D/TAL-A42-G",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC224E/TAL-A42-H",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC224G/TAL-A44-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274c/TAL-A44-d",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274D/TAL-A44-E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274F/TAL-A44-J",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274G/TAL-A44-K",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274H/TAL-A46-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274J/TAL-A46-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274K/N250G4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC274K/TAL-A46-D",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC314EL/ S4L1S-E4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC314F/ S4L1S-F4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "DPC314F/TAL-A46-H",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354C/TAL-A473-A",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354C/TAL-A473-B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354D/TAL-A473-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354E/TAL-A473-E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354F/ TAL-A473-E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354F/TAL-A473-F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC354F/TAL-A49-B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC404C/TAL-A49-B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC404D/TAL-A49-C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "DPC404F/TAL-A49-E",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "ECO38-1SC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO40 1.5L4B",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-1M",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-1S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-1SN/4",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-2LN",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-2M",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-2S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO43-VL",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO46-1.5L",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO46-1S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO46-2S",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECO46-VL (Mecc Alte)",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP28-MC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP28-VLC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP32-1LC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP32-2LC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP32-2MC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP32-2SC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP34-1LC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP34-2MC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "ECP34-2SC",
+  "make": "Mecc Alte",
+  "nSup": 1
+ },
+ {
+  "model": "HC4D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HC5F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HC6H",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI4D",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI4ES",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI4FS",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI5444FS1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI544F/570KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI5E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI5FS",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI634G/800KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "HCI6K",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "KAL184E3",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "LSA 43.2 L6",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA 46.3 S2",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA 50.2 M7",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA46.2L9/224KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA46.2L9/275KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA46.2VL12/252KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2L9/480KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2M7/400KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2M7/500KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2S4/328KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2S5/364KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2S5/456KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2VS2/300KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA47.2VS2/365KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3L10/1000KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3L10/808KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3L9/728KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3L9/910KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3M6/730KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3M8/656KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3M8/820KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA49.3S4/660KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA50.2M6/1000KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA51.2S6)",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA52.2ZL60/1000KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA52.2ZL70/1200KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL80/1800KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL80/1890KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL85/2000KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA53.1UL85/2100KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA54XL75/2320KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LSA54XL85/2560KW",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "LVI634E-800kw",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "LVSI804S",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "LVSI804T2",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "MP-140-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-320-4A",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-40-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MP-H-280-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "MX-H-800-4",
+  "make": "Marathon",
+  "nSup": 1
+ },
+ {
+  "model": "P086TI-I/149KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P086TI/177KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P126TI-II/265KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P158LE-I/327KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P158LE/363KW",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "P80LVSI804S",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI 734E/1900KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI 734F/2080KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI044E/10KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI044F/12.5KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI044G/15KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI044H/17.5KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI144D/20KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI144E/25KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI144G/30KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI144J/40KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI374A",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI374C",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734A/1260KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734B/1400KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734C/1550KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734E/1850KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734E1 OR S7L1D-J4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734ES/1775KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734G/2200KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734G/2250KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "PI734G1",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "S0L2-G1(16KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1-D41",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S4L1S-E41",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1D-G41(560KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S5L1S-D4(440KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6E",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6F",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6G",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1-C41",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-C4(648KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-D4(752KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-E4(840KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-E5",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6L1D-F4(920KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S6LID-E4",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S7L1D-C4(1240KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S7L1D-D4(1320KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S7L1D-F4(1520KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "S7L1D-G4(1664KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "SOL2-P1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "TAL A49 A",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL A4973 F",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-44-B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-44-D",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-A47-D",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL-A49-B1",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL040B",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL040C",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TAL042G",
+  "make": "Leroy-Somer",
+  "nSup": 1
+ },
+ {
+  "model": "TGI184S-22",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCDI 274H1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCDI274F1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCDI274J(184KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI 274ES1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224D/50KVA",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224D1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224E(48KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224E1",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224F(58KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI224G(68KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274E(112KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274F(128KW)",
+  "make": "Stamford",
+  "nSup": 1
+ },
+ {
+  "model": "UCI274H(160KW)",
+  "make": "Stamford",
+  "nSup": 1
+ }
+]
