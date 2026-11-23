@@ -1841,8 +1841,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const made = {};
       let madeOut = false;
       // sanq ghi "UK/INDIA": có thể làm ở Anh hoặc Ấn Độ. Một trong hai ngoài nhóm HSMT đòi thì giữ dòng, gắn cần xác nhận (Khoa 22/11/2026).
-      const placeUnsure = GROUP_ORIGIN.has(origin) && placesInRow(e, u)?.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
-      if (placeUnsure) { made.engine = "?"; why.push("cần xác nhận nơi sản xuất động cơ (NCC ghi «UK/INDIA»)"); }
+      // "JAPAN OR CHINA": như UK/INDIA, nhưng luật nhà máy Trung Quốc chỉ áp ở G7 / G7EU (Khoa 22/11/2026).
+      const twoPlaces = GROUP_ORIGIN.has(origin) ? placesInRow(e, u) : null, placeCn = twoPlaces?.includes("CN");
+      const placeUnsure = !!twoPlaces && (!placeCn || origin === "g7" || origin === "g7eu") && twoPlaces.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
+      if (placeUnsure) { made.engine = "?"; why.push(`cần xác nhận nơi sản xuất động cơ (NCC ghi «${placeCn ? "JAPAN OR CHINA" : "UK/INDIA"}»)`); }
       if (GROUP_ORIGIN.has(origin) && hints.madeRule) {
         const inG = (c) => CAT.COUNTRY_GROUP[origin].includes(c), MR = hints.madeRule;
         const judge = (part, m) => {
@@ -2019,6 +2021,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // HSMT đòi thì loại. Không ghi thì không suy ra. Đọc từ ô của CHÍNH dòng, không từ khoá: khoá có thể gộp về mã gốc.
       const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInRow(e, u) : null;
       if (placed && !CAT.COUNTRY_GROUP[origin].includes(placed)) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại ${madeVi(placed)}, HSMT đòi ${GROUP_NAME[origin]}`); }
+      // Nhà máy Trung Quốc NCC tự ghi ở chính dòng, gói G7 / G7EU kể cả chỉ đòi thương hiệu (Khoa 22/11/2026).
+      const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
+      if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
@@ -5608,13 +5613,85 @@ export function placeInRow(e, u) {
   const isIndia = (c) => /^india$/i.test(c || "");
   if (u?.supplierId === "baifa-power" && u?.line && cells.some(isIndia)) return "IN";
   if (u?.supplierId === "sanq-power" && u?.line && cells.some((c, i) => CAT.keyOf(c) === code && isIndia(cells[i + 1]))) return "IN";
+  // Bảng nhãn ghi nhà sản xuất của chính hãng động cơ: "Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)" (shanhua).
+  if (!u?.line) {
+    const makes = String(e?.make || "").split(" / ").filter(Boolean).map((x) => x.toLowerCase());
+    const maker = (u?.lines?.rows || []).filter((l) => /manufacturer|制造商/i.test(l)).flatMap((l) => CAT.cellsOf(l)).map((c) => String(c));
+    if (maker.some((c) => /\bindia\s+factory\b/i.test(c) && makes.some((x) => c.toLowerCase().includes(x)))) return "IN";
+  }
+  return null;
+}
+// Nhà máy Trung Quốc NCC tự ghi ở chính dòng cho động cơ hãng ngoài (Khoa 22/11/2026): tên nhà máy, "hãng + China", "mã + China",
+// hoặc cột xuất xứ động cơ theo danh sách tường minh. Baudouin / Weichai không đọc (Baudouin vẫn tính G7). "UK/ CCEC" là hai nơi: không đọc.
+const CN_PLANTS = [[/cummins/i, /\b(?:ccec|dcec|xcec)\b|(?:chongqing|dongfeng|xi'?an)\s*cummins|重庆康明斯|东风康明斯|西安康明斯/i], [/perkins/i, /perkins\s*wuxi|wuxi\s*perkins|无锡帕金斯/i], [/\bmtu\b/i, /mtu\s*yuchai|yuchai\s*mtu|玉柴\s*mtu/i]];
+const CN_FOREIGN = /cummins|perkins|volvo|\bmtu\b|mitsubishi|doosan|hyundai|daewoo|deutz|kubota|yanmar|isuzu|iveco|\bfpt\b|deere|\bman\b|scania|caterpillar|\bcat\b|kohler|sdmo|liebherr/i;
+const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔沃", mitsubishi: "三菱", doosan: "斗山", deutz: "道依茨" };
+const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
+const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
+const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+// Ô nhà máy TQ theo NCC + dạng chữ (danh sách tường minh, không mở rộng sang tên thành phố khác): [hãng, chữ của ô, vị trí so với ô động cơ, tiêu đề cột].
+// sanq không xét tiêu đề: ba bảng cùng bố cục, một bảng ghi "C/O of engine", một bảng thiếu tên cột, một bảng ghi nhầm "Fuel Consumption"; cột đó ở cả ba chỉ có Wuxi, UK/INDIA, USA, UK.
+const CN_MITSU = [/mitsubishi/i, /^上海菱重$/, -1, /柴油机品牌/];
+const CN_CELLS = { "sanq-power": [/perkins/i, /^wuxi$/i, 2, null], "fdk-energy": [/mitsubishi/i, /^mitsubishi\s*\(sme shanghai\)$/i, 1, /engine original/i], "bdadl-shanghai": CN_MITSU, "fukangsi-yangzhou": CN_MITSU, "pengpai-yangzhou": CN_MITSU, "simpson-power": [/mitsubishi/i, /^sme$/i, -1, /发动机品牌/] };
+function chinaListedCell(e, u, code) {
+  const r = CN_CELLS[u?.supplierId];
+  if (!r || !u.line || code.length < 3 || !r[0].test(String(e?.make || "")) || (r[3] && !(u.header || []).some((h) => r[3].test(h)))) return null;
+  const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = cells.findIndex((c) => r[1].test(c));
+  return at >= 0 && CAT.keyOf(cells[at - r[2]] || "").includes(code) ? { at: "CN", cell: cells[at], form: "listed" } : null;
+}
+// Bảng nhãn ghi nhà máy SME của động cơ Mitsubishi: "| Engine Make | SME", "| Engine Manufacturer | SME Shanghai", "Manufacturer： SME",
+// "| Brand | SME"; superwatt "| Engine Model | S16R2-PTAW-C SME". Danh sách NCC tường minh; bảng phải có mã của chính động cơ.
+const CN_SME_LABEL = new Set(["fdk-energy", "westinpower", "aosif", "superwatt-swt"]);
+const SME_LABEL = /^\|?\s*(?:engine\s*make|engine\s*manufacturer|manufacturer|brand)\s*[|:：]\s*(sme(?:\s*shanghai)?)\s*\|?\s*$/i;
+function chinaSmeLabel(e, u, code) {
+  if (u?.line || !CN_SME_LABEL.has(u?.supplierId) || code.length < 3 || !/mitsubishi/i.test(String(e?.make || ""))) return null;
+  const rows = u.lines?.rows || [];
+  if (!rows.some((l) => CAT.keyOf(l).includes(code))) return null;
+  for (const l of rows) {
+    const m = String(l).trim().match(SME_LABEL);
+    if (m) return { at: "CN", cell: m[1], form: "label" };
+    const own = u.supplierId === "superwatt-swt" && String(l).trim().match(/^\|?\s*engine\s*model\s*[|:：]\s*(\S+)\s+sme\s*\|?\s*$/i);
+    if (own && CAT.keyOf(own[1]) === code) return { at: "CN", cell: `${own[1]} SME`, form: "label" };
+  }
+  return null;
+}
+export function chinaPlantInRow(e, u) {
+  const make = String(e?.make || "");
+  if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
+  const code = CAT.keyOf(placeCode(e?.model)), names = make.split(" / ").filter(Boolean).flatMap((m) => [m.toLowerCase(), CN_MAKE_ZH[m.toLowerCase()]].filter(Boolean));
+  // Bảng nhãn: dòng nói về động cơ ("| ENGINE | CCEC Cummins") hoặc có mã của động cơ ("| Model | CCEC | KTA19-G4").
+  // Ô "Engine-DCEC Cummins" (longkai) là tên họ của mẫu trang, ghi cả trên KTA38 / QSK19 mà NCC khác ghi CCEC: không đọc.
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /\bengine\b|manufacturer|制造商/i.test(l) || (code.length >= 3 && CAT.keyOf(l).includes(code)));
+  // Dòng chưa rõ hãng (mâu thuẫn nguồn): chỉ tên nhà máy tự nói hãng mới đọc.
+  const plants = CN_PLANTS.filter(([m]) => !make || m.test(make)).map(([, p]) => p);
+  for (const l of lines) for (const raw of CAT.cellsOf(l)) {
+    const cell = String(raw).trim(), c = cell.replace(CN_EMISSION, " ");
+    if (/baudouin|博杜安/i.test(c) || CN_TWO.test(c) || (!u?.line && /^engine\s*[-–]/i.test(cell))) continue;
+    if (plants.some((p) => p.test(c))) return { at: "CN", cell, form: "plant" };
+    if (!make || !CN_WORD.test(c)) continue;
+    if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };
+    if (names.some((n) => c.toLowerCase().includes(n))) return { at: "CN", cell, form: "make" };
+  }
+  const listed = chinaListedCell(e, u, code) || chinaSmeLabel(e, u, code);
+  if (listed) return listed;
+  const col = ENGINE_ORIGIN_COL[u?.supplierId];
+  if (make && col && u?.line && (u.header || []).some((h) => col[0].test(h))) {
+    const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = col[1] === "last" ? cells.length - 1 : cells.findIndex((c) => CAT.keyOf(c) === code) + 1;
+    if (at > 0 && /^(china|prc|中国)$/i.test(cells[at] || "")) return { at: "CN", cell: cells[at], form: "column" };
+  }
   return null;
 }
 // sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
+// comappower, suneco-linyi, yanan-power có cột "Engine origin" ghi "JAPAN OR CHINA" ngay sau ô động cơ (Mitsubishi): cũng là hai nơi.
 export function placesInRow(e, u) {
-  if (u?.supplierId !== "sanq-power" || !u?.line) return null;
+  if (!u?.line) return null;
   const code = CAT.keyOf(placeCode(e?.model)), cells = CAT.cellsOf(u.line).map((c) => String(c).trim());
-  return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
+  if (u.supplierId === "sanq-power") return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
+  if (ENGINE_ORIGIN_COL[u.supplierId]?.[1] === "after" && (u.header || []).some((h) => /engine origin/i.test(h))) {
+    const at = cells.findIndex((c) => CAT.keyOf(c) === code);
+    if (at >= 0 && /^japan\s+or\s+china$/i.test(cells[at + 1] || "")) return ["JP", "CN"];
+  }
+  return null;
 }
 export function comprOff(facts, exact) {
   const list = (facts || []).filter((f) => f.key === "compr");
