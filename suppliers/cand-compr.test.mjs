@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — candidates(): tỉ số nén HSMT ghi trơ phải khớp (Khoa 21/11/2026, IB2600603983).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, comprOff, placeInModel, placeInRow } from "./config-bot.mjs";
+import { candidates, hintsOf, comprOff, placeInModel, placeInRow, placesInRow } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Compression ratio |";
@@ -83,6 +83,35 @@ test("India 4006-23TAG2A bị loại ở g7eu cả khi khoá có tiền tố l�
     assert.deepEqual(ids(r), ["gb", "none"]);
     assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["in", ["made"]]]);
   }
+});
+test("sanq ghi UK/INDIA: gói G7/EU giữ dòng, không trừ điểm, gắn cần xác nhận; G20 không gắn", () => {
+  const rows = [sup("sanq-power", ["| s-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | UK/INDIA | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
+  const go = (origin) => candidates(C.build(rows), { value: 700, unit: "kVA" }, free("Điện áp 380 V"), { suppliers: rows, origin });
+  const tagged = (r) => r.top.find((x) => x.u.supplierId === "sanq-power")?.why.some((w) => w.includes("cần xác nhận nơi sản xuất động cơ"));
+  const r = go("g7eu"), x = r.top.find((y) => y.u.supplierId === "sanq-power");
+  assert.deepEqual(r.dropped, []);
+  assert.deepEqual(x.ruled, []);
+  assert.equal(x.made.engine, "?");
+  assert.ok(tagged(r));
+  assert.ok(!tagged(go("g20")));
+});
+test("placeInRow: India cạnh hãng, made in India, ô riêng của baifa / sanq; UK/INDIA và ô của NCC khác không đọc", () => {
+  const P = { model: "4006-23TAG2A", make: "Perkins" }, Q = { model: "VTA28-G6", make: "Cummins" };
+  assert.equal(placeInRow(P, { line: "| P825 | 750 | 4006-23TAG2A | Perkins India | S5L1D |" }), "IN");
+  assert.equal(placeInRow(Q, { line: "| C825 | 750 | VTA28-G6 | Cummins (India) | S5L1D |" }), "IN");
+  assert.equal(placeInRow(Q, { line: "| C825 | 750 | VTA28-G6 | Cummins (USA) | S5L1D |" }), null);
+  assert.equal(placeInRow(P, { lines: { rows: ["| Genset Model | P825/H1", "| Engine Model | 4006-23TAG2A", "| Engine Make | Perkins India"] } }), "IN");
+  assert.equal(placeInRow(P, { line: "| B-1 | 750 | 4006-23TAG2A made in India | 597 |" }), "IN");
+  assert.equal(placeInRow(Q, { supplierId: "baifa-power", line: "| BF-1 | 750 | CUMMINS | VTA28-G6 | | S1L2-Y | STAGE 3A | INDIA" }), "IN");
+  assert.equal(placeInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | INDIA | HCI634G | 159" }), "IN");
+  assert.equal(placeInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | HCI634G | INDIA | 159" }), null);
+  assert.equal(placeInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), null);
+  assert.equal(placeInRow(Q, { supplierId: "khac", line: "| SQ-1 | 660/825 | VTA28-G6 | INDIA | HCI634G" }), null);
+  assert.deepEqual(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), ["GB", "IN"]);
+  assert.deepEqual(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | 600/750 | VTA28-G6 | HCI634G | UK/INDIA | 5525" }), ["GB", "IN"]);
+  assert.equal(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | 600/750 | QSK23-G3 | HCI634G | UK/INDIA | 5525" }), null);
+  assert.equal(placesInRow(Q, { supplierId: "sanq-power", line: "| SQ-1 | 660/825 | VTA28-G6 | INDIA | HCI634G" }), null);
+  assert.equal(placesInRow(Q, { supplierId: "khac", line: "| SQ-1 | 660/825 | VTA28-G6 | UK/INDIA | HCI634G" }), null);
 });
 test("comprOf: số xi lanh chung ô không là tỉ số nén; dấu so sánh bị mất thì không phải số trơ", () => {
   const h = (t) => { const x = hintsOf(`Chương V. Yêu cầu kỹ thuật\n${t}`); return [x.compr, x.comprExact]; };

@@ -88,7 +88,7 @@
    "checks": {
     "genset": "3/0/3/6",
     "engine": "2/0/2/3",
-    "alternator": "2/0/1/1",
+    "alternator": "3/0/1/0",
     "controller": "2/0/1/0"
    },
    "unverifiedChecks": 0,

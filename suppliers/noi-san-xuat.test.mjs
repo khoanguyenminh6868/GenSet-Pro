@@ -3,7 +3,7 @@
 // madeChecks (engine_origin / alt_origin / ctl_origin). Dòng nguồn và dòng HSMT lấy nguyên văn từ dữ liệu thật.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, partOriginOfHsmt, madeChecks, madeBasisOf } from "./config-bot.mjs";
+import { candidates, hintsOf, partOriginOfHsmt, madeChecks, madeBasisOf, confirmChecks } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const at = (kind, makes, text, model) => C.madeIn(kind, makes, text, model).at;
@@ -154,4 +154,92 @@ test("madeChecks (engine_origin / alt_origin / ctl_origin): TQ không đạt, G7
   // Thương hiệu: giữ nguyên check của agent.
   const brand = madeChecks(cfg("ccec"), [req("engine_origin", "Xuất xứ động cơ", "Động cơ: Thương hiệu: EU/G7")], rowOf("ccec"), built);
   assert.equal(st(brand)["Xuất xứ động cơ"], "met");
+  // Nhóm G: thương hiệu, check chưa rõ. Hãng nguồn ghi thuộc nhóm → đạt + ghi cần CO; dòng ghi CCEC hoặc HSMT đòi nơi SX thì không.
+  const brandReq = [req("engine_origin", "Xuất xứ động cơ", "Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU")];
+  const open = (sid) => cfg(sid, { checks: [{ item: "Xuất xứ động cơ", status: "unclear" }] });
+  const okB = madeChecks(open("imp"), brandReq, rowOf("imp"), built).checks[0];
+  assert.equal(okB.status, "met"); assert.equal(okB.rule, "thuong-hieu"); assert.match(okB.note, /nơi sản xuất cần CO/);
+  assert.equal(madeChecks(open("ccec"), brandReq, rowOf("ccec"), built).checks[0].status, "unclear");
+  const noMake = madeChecks(cfg("bare", { engine: { model: "KHONG-CO-MA", make: "Cummins" }, checks: [{ item: "Xuất xứ động cơ", status: "unclear" }] }), brandReq, null, built).checks[0];
+  assert.equal(noMake.status, "unclear");
+  const again = madeChecks(open("imp"), brandReq, rowOf("imp"), built);
+  assert.equal(JSON.stringify(madeChecks(JSON.parse(JSON.stringify(again)), brandReq, rowOf("imp"), built)), JSON.stringify(again));
+});
+
+test("nhóm G: dòng NCC tự ghi India hoặc hai nơi thì KHÔNG đạt theo thương hiệu (Khoa 22/11/2026)", () => {
+  const item = "Xuất xứ động cơ", quote = "Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU", reqs = [{ code: "engine_origin", item, requirement: quote, quote, part: "engine", level: "core" }];
+  const E = (uses = []) => ({ key: C.keyOf("4006-23TAG2A"), kind: "engine", model: "4006-23TAG2A", make: "Perkins", uses });
+  const cfg = (sid, extra = {}) => ({ engine: { model: "4006-23TAG2A", make: "Perkins", src: { kind: "catalog", supplierId: sid } }, checks: [{ item, status: "unclear" }], ...extra });
+  const go = (line, sid = "x", uses) => madeChecks(cfg(sid), reqs, { supplierId: sid, line }, { engines: [E(uses)] });
+  for (const [line, sid, place] of [["| P825 | 750 | India 4006-23TAG2A | S5L1D |", "x", "Ấn Độ"], ["| P825 | 750 | 4006-23TAG2A(India) | S5L1D |", "x", "Ấn Độ"], ["| s-1 | 750 | 4006-23TAG2A | S5L1D | UK/INDIA |", "sanq-power", "Ấn Độ"]]) {
+    const r = go(line, sid), x = r.checks[0];
+    assert.equal(x.status, "unclear", line);
+    assert.ok(x.note.includes(place) && x.note.includes("cần xác nhận nơi sản xuất"), line);
+    assert.equal(JSON.stringify(madeChecks(JSON.parse(JSON.stringify(r)), reqs, { supplierId: sid, line }, { engines: [E()] })), JSON.stringify(r), "chạy lại không nối thêm ghi chú");
+  }
+  assert.equal(go("| P825 | 750 | 4006-23TAG2A | S5L1D |").checks[0].status, "met");
+  assert.equal(go("| P825 | 750 | UK 4006-23TAG2A | S5L1D |").checks[0].status, "met");
+  // NCC khác trong cấu hình ghi India cũng chặn.
+  const other = cfg("x", { suppliers: [{ supplierId: "x" }, { supplierId: "y" }] });
+  madeChecks(other, reqs, { supplierId: "x", line: "| P825 | 750 | 4006-23TAG2A | S5L1D |" }, { engines: [E([{ supplierId: "y", line: "| Q | 750 | India 4006-23TAG2A | S5L1D |" }])] });
+  assert.equal(other.checks[0].status, "unclear");
+  // Kết quả cũ code đã chấm đạt, nay dòng ghi India: về cần xác nhận.
+  const old = cfg("x", { checks: [{ item, status: "met", rule: "thuong-hieu", byCode: true, note: "Code ghi: thương hiệu Perkins thuộc nhóm G7, EU, đạt theo thương hiệu; nơi sản xuất cần CO." }] });
+  madeChecks(old, reqs, { supplierId: "x", line: "| P825 | 750 | India 4006-23TAG2A | S5L1D |" }, { engines: [E()] });
+  assert.equal(old.checks[0].status, "confirm");
+  assert.ok(!old.checks[0].note.includes("đạt theo thương hiệu"));
+});
+
+test("check đang đạt mà dòng ghi nơi ngoài nhóm hoặc hai nơi: về cần xác nhận, ghi nguyên chữ NCC, lũy đẳng, hết ghi thì trả lại", () => {
+  const item = "Xuất xứ động cơ", model = "S6R2-PTAA", make = "Mitsubishi";
+  const reqOf = (q) => [{ code: "engine_origin", item, requirement: q, quote: q, part: "engine", level: "core" }];
+  const brand = reqOf("Động cơ: Nhà sản xuất / nhãn hiệu: G7, EU"), place = reqOf("Động cơ: Xuất xứ: G7, EU");
+  const sme = { supplierId: "fdk-energy", line: `| F1 | 750 | ${model} | Mitsubishi (SME Shanghai) |`, header: ["| Model | kVA | Engine | Engine original |"] };
+  const two = { supplierId: "yanan-power", line: `| Y1 | 750 | ${model} | JAPAN OR CHINA | S5 |`, header: ["| Model | kVA | Engine | Engine origin | Alternator |"] };
+  const clean = { supplierId: "x", line: `| X1 | 750 | ${model} | S5 |` };
+  const built = (u) => ({ engines: [{ key: C.keyOf(model), kind: "engine", model, make, uses: [u] }] });
+  const cfg = (u, status = "met") => ({ engine: { model, make, src: { kind: "catalog", supplierId: u.supplierId } }, checks: [{ item, status, offered: "Mitsubishi (Nhật)", note: "Nhãn hiệu Mitsubishi" }] });
+  for (const [u, word] of [[sme, "Mitsubishi (SME Shanghai)"], [two, "JAPAN OR CHINA"]]) for (const reqs of [brand, place]) {
+    const c = madeChecks(cfg(u), reqs, u, built(u)), x = c.checks[0];
+    // HSMT đòi NƠI sản xuất, dòng ghi đúng một nơi ngoài nhóm: "không đạt" như luật cũ.
+    if (reqs === place && u === sme) { assert.equal(x.status, "not_met"); continue; }
+    assert.equal(x.status, "confirm", word);
+    assert.equal(x.confirm, "document");
+    assert.ok(x.note.includes(`«${word}»`), x.note);
+    assert.ok(x.note.startsWith("Nhãn hiệu Mitsubishi"));
+    const first = JSON.stringify(c);
+    confirmChecks(c, reqs); madeChecks(c, reqs, u, built(u));
+    assert.equal(JSON.stringify(c), first, "chạy lại giống hệt");
+    // Dòng không còn ghi nơi đó: trả về trạng thái cũ, bỏ ghi chú.
+    madeChecks(c, reqs, clean, built(clean));
+    assert.ok(!c.checks[0].placeHold);
+    assert.ok(!String(c.checks[0].note || "").includes("dòng NCC ghi nơi sản xuất"));
+  }
+  // Không đạt / chưa rõ: không bị nâng thành cần xác nhận theo luật này.
+  assert.equal(madeChecks(cfg(sme, "not_met"), brand, sme, built(sme)).checks[0].status, "not_met");
+  assert.equal(madeChecks(cfg(sme, "unclear"), brand, sme, built(sme)).checks[0].status, "unclear");
+});
+
+test("nhóm G: dòng NCC ghi nhà máy Trung Quốc hoặc JAPAN OR CHINA thì KHÔNG đạt; Baudouin ghi Weichai vẫn đạt", () => {
+  const item = "Xuất xứ động cơ", reqOf = (g) => { const quote = `Động cơ: Nhà sản xuất / nhãn hiệu: ${g}`; return [{ code: "engine_origin", item, requirement: quote, quote, part: "engine", level: "core" }]; };
+  const go = (model, make, u, g = "G7, EU") => {
+    const e = { key: C.keyOf(model), kind: "engine", model, make, uses: [u] };
+    return madeChecks({ engine: { model, make, src: { kind: "catalog", supplierId: u.supplierId } }, checks: [{ item, status: "unclear" }] }, reqOf(g), u, { engines: [e] }).checks[0];
+  };
+  const blocked = [
+    ["KTA38-G2", "Cummins", { supplierId: "x", line: "| C1 | 750 | KTA38-G2 | CCEC Cummins | S5 |" }],
+    ["4006-23TAG2A", "Perkins", { supplierId: "x", line: "| P1 | 750 | 4006-23TAG2A | PERKINS CHINA | S5 |" }],
+    ["4006-23TAG2A", "Perkins", { supplierId: "sanq-power", line: "| S1 | 4006-23TAG2A | S5L1D | Wuxi |", header: ["| Model | Engine | Alternator | C/O of engine |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "fdk-energy", line: "| F1 | 750 | S12R-PTA | Mitsubishi (SME Shanghai) |", header: ["| Model | kVA | Engine | Engine original |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "bdadl-shanghai", line: "| B1 | 750 | 上海菱重 | S12R-PTA |", header: ["| 型号 | 功率 | 柴油机品牌 | 柴油机型号 |"] }],
+    ["S12R-PTA", "Mitsubishi", { supplierId: "yanan-power", line: "| Y1 | 750 | S12R-PTA | JAPAN OR CHINA | S5 |", header: ["| Model | kVA | Engine | Engine origin | Alternator |"] }],
+  ];
+  for (const [model, make, u] of blocked) {
+    const x = go(model, make, u);
+    assert.equal(x.status, "unclear", u.line);
+    assert.ok(x.note.includes("Trung Quốc") && x.note.includes("cần xác nhận nơi sản xuất"), u.line);
+  }
+  // Nhóm G20 của catalog không gồm Trung Quốc: dòng CCEC giữ chưa rõ, không chấm đạt.
+  assert.equal(go("KTA38-G2", "Cummins", blocked[0][2], "G20").status, "unclear");
+  for (const cell of ["Weichai Baudouin China", "潍柴博杜安"]) assert.equal(go("6M33G825/5", "Baudouin", { supplierId: "x", line: `| B1 | 750 | 6M33G825/5 | ${cell} | S5 |` }).status, "met", cell);
 });

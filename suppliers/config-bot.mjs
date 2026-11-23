@@ -30,7 +30,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
-import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs, meccDerate, meccSheetAttrs } from "./ratings.mjs";
+import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs, lsStandards, stdCodes, meccDerate, meccSheetAttrs } from "./ratings.mjs";
 import { apiMeter, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as FC from "./firecrawl.mjs";
@@ -503,12 +503,21 @@ const tolAt = (cell, end) => { const t = cell.slice(end, end + 24).match(/^\s*\(
 const withTol = (v, t, sign) => (!t ? v : Math.round((t.pct ? v * (1 + (sign * t.n) / 100) : t.n < v * 0.2 ? v + sign * t.n : v) * 1000) / 1000);
 // The genset's figure, not a transformer's or a UPS's in the same text (web/bidprice.js capPick, 2026-11-04 regression);
 // a text whose every figure is another device's gives none.
+// Whether the HSMT writes this size as a STANDBY figure (Khoa 21/11/2026: a size with no rating written is the prime). Only
+// the words that rate the figure: "Công suất dự phòng 100 kVA", "Standby ≥ 100 kVA", "100 kVA dự phòng". "Máy phát điện dự
+// phòng 100 kVA", "nguồn dự phòng", "Standby generator" say what the set is for, not the rating.
+const SB_BEFORE = /c[ôo]ng su[ấa]t[^\d]{0,20}(?:d[ựu] ph[òo]ng|stand-?by|stanby|\bESP\b)|(?:stand-?by|stanby|\bESP)(?:\s+power)?\)?\s*[:≥>=]*\s*$|(?<!m[áa]y |ph[áa]t |đi[ệe]n |di[eê]s[eê]l |ngu[ồo]n )d[ựu] ph[òo]ng\)?\s*[:≥>=]*\s*$/i;
+const SB_AFTER = /^\s*\(?\s*(?:d[ựu] ph[òo]ng|stand-?by|stanby|ESP)\b/i, SB_PRIME = /li[êe]n t[ụu]c|prime|\bPRP\b|\bCOP\b|continuous|c[ơo] b[ảa]n/i;
+export function standbySize(text, at, len) {
+  const t = String(text || ""), before = t.slice(Math.max(0, at - 60), at).normalize("NFC").split(/[;\n]|,(?!\d)/).pop(), after = t.slice(at + len, at + len + 20).normalize("NFC");
+  return SB_AFTER.test(after) || (SB_BEFORE.test(before) && !SB_PRIME.test(before));
+}
 export function capacity(texts) {
   for (const t of texts) {
     const s = noTolerance(t), m = BP.capPick(s, [...s.matchAll(new RegExp(CAP.source, "gi"))]);
     if (!m) continue;
     const u = m[2].toLowerCase().replace(/^e/, "");
-    return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW" };
+    return { value: numOf(m[1]) * (u.startsWith("m") ? 1000 : 1), unit: u.endsWith("va") ? "kVA" : "kW", ...(standbySize(s, m.index, m[0].length) ? { rating: "standby" } : {}) };
   }
   return null;
 }
@@ -550,7 +559,7 @@ export function sizesOf(texts, name = "") {
       // "Tổng 97 máy: 27 x 15 kVA": 27, not the total.
       const before = clause.slice(0, m.index), q = before.match(SIZE_QTY_X) || before.match(SIZE_QTY_N) || clause.slice(m.index + m[0].length).match(/^\D{0,6}(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái)\b/i);
       const qty = q && !/tổng\W*$/i.test(before.slice(0, q.index + q[0].indexOf(q[1]))) ? Number(q[1]) : null;
-      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW" }, qty, rank, quote: clause.trim() });
+      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank, quote: clause.trim() });
     }
     const best = Math.min(...figs.map((f) => f.rank));
     let use = figs.filter((f) => f.rank === best);
@@ -564,7 +573,7 @@ export function sizesOf(texts, name = "") {
     // A size in kVA as written (the catalog's unit); MVA / MW as kVA / kW.
     let sizes = groups.map((g) => {
       const f = g.find((x) => x.cap.unit === "kVA" || x.cap.unit === "MVA") || g[0], big = f.cap.unit.startsWith("M");
-      const cap = big ? { value: f.cap.value * 1000, unit: f.cap.unit === "MVA" ? "kVA" : "kW" } : f.cap;
+      const cap = big ? { value: f.cap.value * 1000, unit: f.cap.unit === "MVA" ? "kVA" : "kW", ...(f.cap.rating ? { rating: f.cap.rating } : {}) } : f.cap;
       return { cap, kva: Math.round(g[0].kva * 100) / 100, qty: Math.max(0, ...g.map((x) => x.qty || 0)) || null, label: `${cfgNumOf(cap.value)} ${cap.unit}`, quote: g[0].quote.slice(0, 200) };
     });
     // Another rating of the same set: "4 x 4000 kVA ... liên tục ≥ 3250kVA" (a size with no quantity up to 30% below one
@@ -778,6 +787,7 @@ export function controllerSheetFacts(s, t) {
 }
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
+const titleModelKeys = (title, partKeys) => [...new Set(String(title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
 export function modelFacts(cat, suppliers = []) {
   const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role])), rowsMap = normRowsOf(suppliers);
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
@@ -792,7 +802,7 @@ export function modelFacts(cat, suppliers = []) {
       if (t.header?.length) continue;
       // Every model code of the title, known or not: a title naming two models gives neither.
       // A word with "/" that is itself a model of the catalog ("6M31G825/5") stays one code; any other splits at "/".
-      const models = [...new Set(String(t.title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+      const models = titleModelKeys(t.title, partKeys);
       if (models.length !== 1) continue;
       // A genset maker's own datasheet of a part it makes (Wintpower "WT544C - Technical Data Sheet", Khoa 2026-11-03),
       // saved by maker-datasheets.mjs ("Datasheet: …"), gives the figures of that model when the catalog knows it.
@@ -862,6 +872,11 @@ const GENERATION = [
   (key, k) => /^HGM\d{4}$/.test(key) && k === `${key}N`,
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
   (key, k) => key === "INTELIGEN" && /^INTELIGEN(NTC?|\d{1,4})$/.test(k),
+  // bdk-ds-4 (Khoa/điều phối 22/11/2026): suppliers' short names of ComAp's own order codes ("IG-NT GC", "IG-NTC-BB", IG500, IG1000)
+  // take the datasheet of that InteliGen, to be confirmed (IG200 is not mapped: InteliGen 200 and InteliGen4 200 are two products).
+  (key, k) => ({ IGNT: "INTELIGENNT", IGNTCBB: "INTELIGENNTC", IG500: "INTELIGEN500", IG1000: "INTELIGEN1000" })[key] === k,
+  // "InteliLite 4", "InteliMains", "InteliSys" written without a model: every datasheet of that family, to be confirmed.
+  (key, k) => (key === "INTELILITE4" && /^INTELILITE4(AMF|MRS)\d+$/.test(k)) || (key === "INTELIMAINS" && /^INTELIMAINS(NTC?|\d{1,4})$/.test(k)) || (key === "INTELISYS" && /^INTELISYS(NTC?|GAS|\d{1,4})$/.test(k)),
 ];
 // ---------- Datasheet một model của tổ máy, dạng dọc (2026-11-13, IB2600601812) ----------
 // A genset maker's datasheet of one genset, written as label tables, one per block of the sheet ("DHY110KSE",
@@ -1008,6 +1023,29 @@ export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas
 // frequency are enough, `ruled: freq`; Khoa 20/11/2026, IB2400073761 "Tần số: 50 & 60hz"). A pair needs a "Hz" on one side and
 // no unit / second figure after the second number ("380V-50Hz-60/66 kVA" is 60 kVA, not 60 Hz).
 const FREQ_PAIR = /(?<![\d.,])(?:50|60)\s*(?:hz|hertz)?\s*(?:\/|&|-|–|—|÷|,|;|~|hoặc|hay|và|or|and|đến|to)\s*(?:50|60)(?![\d])(?!\s*(?:\/\s*\d|kva|kw|kvar|va\b|a\b|v\b|%))\s*(?:hz|hertz)?/gi;
+// Tần số của một dòng: ô tần số đã đọc, nếu không thì cột tốc độ của chính dòng (đúng một cột tên "Speed" / "rpm" / 转速,
+// ô đúng 1500 hoặc 1800). Không đoán từ ô số không có tiêu đề; cột ghép "Power/Speed (kWm/rpm)" không đọc.
+export function hzOfRow(u) {
+  if (u?.freq) return u.freq;
+  if (!u?.line) return null;
+  const trimmed = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), cells = trimmed(u.line);
+  for (const h of u.header || []) {
+    const heads = trimmed(h);
+    if (heads.length !== cells.length) continue;
+    const at = heads.flatMap((c, i) => (/^(rated\s+)?speed\b|^rpm\b|^转速/i.test(c) ? [i] : []));
+    if (at.length !== 1) continue;
+    const m = cells[at[0]].match(/^(1500|1800)(?:\s*(?:rpm|r\/min))?$/i);
+    return m ? (m[1] === "1500" ? 50 : 60) : null;
+  }
+  return null;
+}
+// Tên model kaihua-genset đuôi "-60" ("HC-BD1500-60", "HC-BD 2060-60", "HC-34GF-60", "HC-2500GF2-60") là máy 60 Hz (Khoa 22/11/2026).
+// CHỈ NCC này, chỉ cho chính dòng đó: không tính vào "động cơ chỉ có một tần số" của dòng NCC khác; dòng tự ghi Hz / tốc độ thì theo chính nó.
+export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /^HC-(?:BD\s*)?\d+(?:GF\d*)?-60$/i.test(String(CAT.cellsOf(u.line)[0] ?? "").trim()) ? 60 : null);
+// Mã Baudouin có dấu "^": tờ hãng chú thích "^ Primarily for ESP applications" (sources/baudouin/1015, 1017–1020).
+// Tờ có chú thích chỉ ghi 3 mã trong danh mục (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^); các mã khác theo cùng ký hiệu do NCC ghi.
+// Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
+export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1733,7 +1771,7 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
+// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (tờ Baudouin chú thích "^ Primarily for ESP applications"). Chỉ để LOẠI ở `candidates`:
 // khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
 // (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
 const TWIN_KEYS = new Set(["cyl", "disp", "bore"]);
@@ -1747,7 +1785,10 @@ function twinFacts(e, ef, facts) {
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
-  const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
+  const inRange = (x) => x != null && x >= cap.value * band.low && x <= cap.value * band.high + 1e-9;
+  // First gate: any rating of the row in the band. A size the HSMT writes as standby stops here. A size with no rating written
+  // is the prime (Khoa 21/11/2026): the row's prime must be in the band too, judged below (`ruled: "band"`, with its reason).
+  const near = (u) => !cap || Object.values(u.power || {}).some((p) => inRange(p[cap.unit]));
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
   const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x]));
   for (const e of cat.engines || []) {
@@ -1806,6 +1847,11 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // written: kept, "cần xác nhận nơi sản xuất" (the CO). A brand asked keeps the make filter as before.
       const made = {};
       let madeOut = false;
+      // sanq ghi "UK/INDIA": có thể làm ở Anh hoặc Ấn Độ. Một trong hai ngoài nhóm HSMT đòi thì giữ dòng, gắn cần xác nhận (Khoa 22/11/2026).
+      // "JAPAN OR CHINA": như UK/INDIA, nhưng luật nhà máy Trung Quốc chỉ áp ở G7 / G7EU (Khoa 22/11/2026).
+      const twoPlaces = GROUP_ORIGIN.has(origin) ? placesInRow(e, u) : null, placeCn = twoPlaces?.includes("CN");
+      const placeUnsure = !!twoPlaces && (!placeCn || origin === "g7" || origin === "g7eu") && twoPlaces.some((c) => !CAT.COUNTRY_GROUP[origin].includes(c));
+      if (placeUnsure) { made.engine = "?"; why.push(`cần xác nhận nơi sản xuất động cơ (NCC ghi «${placeCn ? "JAPAN OR CHINA" : "UK/INDIA"}»)`); }
       if (GROUP_ORIGIN.has(origin) && hints.madeRule) {
         const inG = (c) => CAT.COUNTRY_GROUP[origin].includes(c), MR = hints.madeRule;
         const judge = (part, m) => {
@@ -1814,7 +1860,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
           why.push(`${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}${m.why ? ` (${/^(hãng|mặc định)/.test(m.why) ? m.why : `nguồn ghi «${m.why}»`})` : ""}${inG(m.at) ? "" : `, HSMT đòi nơi sản xuất ${GROUP_NAME[origin]}`}`);
           return inG(m.at) ? 1 : -1;
         };
-        if (MR.engine?.basis === "origin" && judge("engine", CAT.madeAt(e, u)) < 0) { score -= 600; madeOut = true; }
+        if (MR.engine?.basis === "origin" && !placeUnsure && judge("engine", CAT.madeAt(e, u)) < 0) { score -= 600; madeOut = true; }
         if (MR.alternator?.basis === "origin" && a && judge("alternator", CAT.madeAt(a, u)) < 0) score -= 300;
         if (MR.controller?.basis === "origin" && offers.length) {
           const ms = offers.map((c) => CAT.madeIn("controller", [c.brand], [u.line, c.line || c.text], c.model));
@@ -1900,6 +1946,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
       if (lowPrime) { score -= 600; ruled.push("prime"); why.push(`Prime ${pr.kVA ?? "?"} kVA / ${pr.kW ?? "?"} kW < ${mp.kVA ? `${mp.kVA} kVA` : `${mp.kW} kW`} HSMT yêu cầu`); }
+      // The size read as prime (Khoa 21/11/2026): a row in the band only by another rating (prime 95 / standby 105 for 100 kVA).
+      else if (cap && !gNamed && cap.rating !== "standby" && !inRange(rowPower(u, cap))) { const x = rowPower(u, cap); score -= 600; ruled.push("band"); why.push(`công suất tính theo prime ${Math.round(x * 100) / 100} ${cap.unit}, ngoài ${band.text} của ${cap.value} ${cap.unit}`); }
       // Its own fuel consumption in L/h above the most the HSMT allows (Khoa, 2026-11-12): the row is left out like one under
       // a minimum (same exception: `named` stays, with 300 points off). A row with no L/h figure at that load is kept.
       let fuelOver = false, fuelNoLoad = false;
@@ -1958,13 +2006,20 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
+      let hzName = null;
       if (hints.freq && !u.freq) {
+        // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
+        const own = hzOfRow(u);
+        hzName = own ? null : hzOfName(u);
         // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
-        const known = [...e.uses, ...twinUses].map((x) => x.freq).filter(Boolean);
-        if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
+        const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
+        if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (hzName && hzName !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`tên model NCC ghi đuôi "-60" (${hzName} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
+        else if (!own && !hzName && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
-      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && !hzName && twinUses.some(hzOfRow));
+      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (mã cùng gốc, khác dấu "^")`);
+      if (cap && cap.rating !== "standby" && isEspCode(e)) { score -= 600; ruled.push("esp"); why.push(`mã "^": tờ hãng ghi chủ yếu cho dự phòng (ESP), HSMT đòi công suất liên tục`); }
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
       // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
       // xét: comprOf đọc cả HSMT, chưa biết con số thuộc cỡ nào.
@@ -1977,6 +2032,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // HSMT đòi thì loại. Không ghi thì không suy ra. Đọc từ ô của CHÍNH dòng, không từ khoá: khoá có thể gộp về mã gốc.
       const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInRow(e, u) : null;
       if (placed && !CAT.COUNTRY_GROUP[origin].includes(placed)) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại ${madeVi(placed)}, HSMT đòi ${GROUP_NAME[origin]}`); }
+      // Nhà máy Trung Quốc NCC tự ghi ở chính dòng, gói G7 / G7EU kể cả chỉ đòi thương hiệu (Khoa 22/11/2026).
+      const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
+      if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
@@ -2423,7 +2481,14 @@ function suppliersMd(suppliers) {
   }
   return out.join("\n");
 }
-const rowPower = (u, cap) => Math.min(...Object.values(u.power || {}).map((p) => p[cap.unit] ?? 1e9), 1e9);
+// The row's power to compare with the HSMT's size. A size with no rating written is the prime (Khoa 21/11/2026): the row's
+// prime; only a standby: ÷ 1.1 (BP.STANDBY_FACTOR, as `gap` and webInBand); only a figure of no rating: that figure. None in
+// the size's unit: 1e9 (out of every band). A size written as standby: the smallest rating of the row, as before.
+const rowPower = (u, cap) => {
+  const p = u.power || {}, unit = cap.unit;
+  if (cap.rating === "standby") return Math.min(...Object.values(p).map((x) => x[unit] ?? 1e9), 1e9);
+  return p.prime?.[unit] ?? (p.standby?.[unit] != null ? p.standby[unit] / (BP.STANDBY_FACTOR || 1.1) : p.rated?.[unit]) ?? 1e9;
+};
 
 // The HSMT text of a tender (its files, then the notice); `parts` alone is what the requirements are read from.
 export async function hsmtTextOf(key, read = doc) {
@@ -2861,7 +2926,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
   // Figures of a model from any supplier's row or datasheet (modelFacts); a check may quote one with factSrc.
-  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir);
+  const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir), engSheets = engineSheetsOf(built, suppliers);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
   // A row catalog.js merged from several tables (`also`) answers to each of their sources.
@@ -3626,7 +3691,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         c.checks.unshift({ item: "Nhiên liệu (HSMT)", requirement: `Nhiên liệu của tổ máy: ${want} (${fh.why})`, hsmtQuote: fh.stated ? fh.why : "", offered: `Dòng bảng của ${u.supplierId} ghi ${kind(u.fuel)}`, part: "engine", level: "core", byCode: true, fuelRule: true, status: "not_met", note: `Code ghi: dòng catalog ${u.supplierId} [${u.n}] ${u.fuelWhy || ""} (mức ${u.fuelFrom || "?"}); HSMT ${fh.stated ? "nêu" : "không nêu nhiên liệu nên coi là"} ${want}.` });
       }
     }
+    engineSheetChecks(c, result.requirements || [], c.engine?.model ? engSheets.get(CAT.keyOf(c.engine.model)) : null, ratingsFor(RT.alt, c.alternator?.model), row);
     confirmChecks(c, result.requirements || []);
+    altDocChecks(c, result.requirements || [], altAttrs);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
     makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") }, { hsmtCompr });
@@ -3837,7 +3904,8 @@ export function originChecks(c, result, origin, sup) {
 // the group (a Chinese plant: DCEC, SME, Stamford Wuxi…) is not met; a place in the group, or the country Khoa settled on
 // for the make (Deep Sea, Stamford, Leroy-Somer…), is met; nothing written is "Cần chứng từ" (CO), whatever the agent
 // judged from the make. The group is the one the requirement names ("G7, EU", "G20"). A brand asked ("Thương hiệu
-// thuộc các nước G7"), or a requirement that names no group, stays the agent's.
+// thuộc các nước G7"): the agent's met / not met stays, an open check is decided below (nhóm G). A requirement that names
+// no group stays the agent's.
 const MADE_CODES = { engine_origin: "engine", alt_origin: "alternator", ctl_origin: "controller" };
 export function madeBasisOf(t) {
   const s = String(t || "").replace(/\s+/g, " "), G = /\bG\s?-?(7|20)\b/;
@@ -3849,18 +3917,75 @@ export function madeBasisOf(t) {
   }
   return null;
 }
+// Nơi NCC tự ghi ở dòng động cơ của cấu hình (dòng nguồn + dòng của các NCC trong cấu hình) mà có nơi ngoài nhóm:
+// placeInRow (India / UK cạnh mã, ô INDIA), chinaPlantInRow (nhà máy Trung Quốc), placesInRow (hai nơi: sanq "UK/INDIA",
+// "JAPAN OR CHINA"). [{ supplierId, at: [nước], cells: [chữ NCC ghi] }].
+const ROW_PLACE_NOTE = /\s*Code ghi: dòng NCC ghi nơi sản xuất .*?, cần xác nhận nơi sản xuất\./g;
+export function rowPlacesOff(c, e, row, grp) {
+  const ids = new Set((c.suppliers || []).map((s) => s.supplierId).filter(Boolean));
+  if (c.engine?.src?.supplierId) ids.add(c.engine.src.supplierId);
+  const rows = [...(row ? [row] : []), ...(e.uses || []).filter((u) => ids.has(u.supplierId))], out = new Map();
+  for (const u of rows) {
+    const plant = chinaPlantInRow(e, u), one = placeInRow(e, u) || plant?.at, at = placesInRow(e, u) || (one ? [one] : []);
+    if (!at.some((k) => !CAT.COUNTRY_GROUP[grp].includes(k))) continue;
+    const id = u.supplierId || c.engine?.src?.supplierId || "?", o = out.get(id) || { at: [], cells: [] };
+    const cells = (u.line ? [u.line] : u.lines?.rows || []).flatMap((l) => CAT.cellsOf(l)).map((x) => String(x).trim());
+    const cell = (placesInRow(e, u) ? cells.find((x) => /^(uk\s*\/\s*india|japan\s+or\s+china)$/i.test(x)) : null) || (!placeInRow(e, u) && plant?.cell) || cells.find((x) => /india|印度/i.test(x)) || plant?.cell;
+    out.set(id, { at: [...new Set([...o.at, ...at])], cells: [...new Set([...o.cells, ...(cell ? [cell] : [])])] });
+  }
+  return [...out].map(([supplierId, v]) => ({ supplierId, ...v }));
+}
+const rowPlaceNote = (said) => `Code ghi: dòng NCC ghi nơi sản xuất ${said.map((s) => `${s.supplierId}: ${s.cells.length ? `«${s.cells.join("», «")}» ` : ""}(${s.at.map(madeVi).join(" hoặc ")})`).join("; ")}, cần xác nhận nơi sản xuất.`;
+// Điều phối 22/11/2026: check đang "đạt" mà dòng của cấu hình ghi nơi ngoài nhóm hoặc hai nơi về "cần xác nhận", không thành
+// "không đạt" (đòi thương hiệu thì thương hiệu vẫn đúng). `placeHold` giữ trạng thái cũ: confirmChecks chạy trước và trả mọi
+// "confirm" về "unclear", nên lượt sau phải biết check này do luật này hạ; dòng hết ghi thì trả lại.
+function holdPlace(y, said) {
+  if (y.rule === "thuong-hieu") { delete y.rule; delete y.byCode; y.note = String(y.note || "").replace(/\s*Code ghi: thương hiệu [^;]*; nơi sản xuất cần CO\./, "").trim(); }
+  const note = [y.note, rowPlaceNote(said)].filter(Boolean).join(" ");
+  // Xoá rồi ghi lại theo một thứ tự: confirmChecks gỡ `confirm` giữa hai lượt, JSON của kết quả phải giống hệt.
+  delete y.confirm; delete y.placeHold; delete y.note;
+  y.status = "confirm"; y.confirm = "document"; y.placeHold = "met"; y.note = note;
+}
 export function madeChecks(c, reqs, row, built) {
   for (const r of reqs || []) {
     const part = MADE_CODES[r.code], p = part && c[part];
     // An alternator chosen from its maker's sheet: makerAltChecks (Khoa's answer 4).
     if (!p?.model || r.byCode || p.fromMaker) continue;
     const t = `${r.requirement || ""} ${r.quote || ""}`;
-    if (!/\bG\s?-?(7|20)\b/.test(t) || (madeBasisOf(r.quote) || madeBasisOf(r.requirement)) !== "origin") continue;
+    const basis = madeBasisOf(r.quote) || madeBasisOf(r.requirement);
+    if (!/\bG\s?-?(7|20)\b/.test(t) || (basis !== "origin" && basis !== "brand")) continue;
     const grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`, G = GROUP_NAME[grp];
     const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
-    const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
+    const entry = (list || []).find((x) => x.key === CAT.keyOf(p.model));
+    const makes = String(p.make || entry?.make || "").split(" / ").filter(Boolean);
     const own = p.src?.kind !== "internet" && row ? row : null;
     let m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    // Nhóm G (Khoa 21/11/2026 "cho đạt theo thương hiệu"): HSMT đòi nhà sản xuất / nhãn hiệu thuộc nhóm → đạt khi MỌI hãng nguồn
+    // ghi (`entry.make` = keptMakes, không theo chữ agent) thuộc nhóm. Chỉ mở check chưa rõ / cần xác nhận; chưa rõ hãng, hoặc chính
+    // dòng ghi nơi ngoài nhóm, thì giữ nguyên.
+    const y = (c.checks || []).find((k) => norm(k.item) === norm(r.item));
+    // Khoa 22/11/2026: gói G7 / EU, kể cả chỉ đòi thương hiệu, không nhận dòng NCC tự ghi nơi ngoài nhóm; ô hai nơi là "cần xác nhận".
+    const said = part === "engine" && entry ? rowPlacesOff(c, entry, row, grp) : [];
+    if (y) { y.note = String(y.note || "").replace(ROW_PLACE_NOTE, "").trim(); if (!y.note) delete y.note; }
+    if (y?.placeHold && !said.length) { y.status = y.placeHold; delete y.placeHold; delete y.confirm; }
+    if (basis === "brand") {
+      const home = entry?.make ? CAT.brandOf(entry) : [];
+      // Baudouin: chữ "Weichai Baudouin" / "潍柴博杜安" ở dòng không chặn (Khoa 22/11/2026 "không loại", Baudouin vẫn tính G7; như chinaPlantInRow).
+      const outside = !!m.why && !/^(hãng|mặc định)/.test(m.why) && m.at !== "?" && !CAT.COUNTRY_GROUP[grp].includes(m.at) && !(part === "engine" && /^baudouin$/i.test(entry?.make || ""));
+      if (y && said.length) {
+        if (y.status === "met" || y.placeHold) holdPlace(y, said);
+        else y.note = [y.note, rowPlaceNote(said)].filter(Boolean).join(" ");
+        continue;
+      }
+      if (y && (y.status === "unclear" || y.status === "confirm") && !y.unverified && !y.conflict && !y.version && !y.parts?.length && !outside
+        && home.length && home.every((k) => CAT.COUNTRY_GROUP[grp].includes(k))) {
+        delete y.confirm;
+        putCheck(c, y, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `${PART_VI[part]} ${p.model}, thương hiệu ${entry.make} (${home.map(madeVi).join(", ")})`,
+          part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "thuong-hieu",
+          note: `Code ghi: thương hiệu ${entry.make} thuộc nhóm ${G}, đạt theo thương hiệu; nơi sản xuất cần CO.` });
+      }
+      continue;
+    }
     // Stamford S4–S7 a supplier offers (Khoa 21/11/2026 "có"), the PLACE asked: the make's default (UK) proves nothing, the
     // CO is asked. A place the row or the agent's own quote states still counts; a brand asked never comes here.
     const isDefault = (w) => /^(hãng|mặc định)/.test(w || "");
@@ -3872,13 +3997,17 @@ export function madeChecks(c, reqs, row, built) {
     // A not met / met the agent verified from a source of its own stays, unless the row says otherwise.
     const rowSays = !!m.why && !/^(hãng|mặc định)/.test(m.why);
     const q = x?.sourceQuote ? CAT.madeIn(part, makes, x.sourceQuote, p.model) : null;
-    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why))) continue;
+    const stays = x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why));
+    // HSMT đòi NƠI sản xuất mà dòng ghi đúng một nơi ngoài nhóm: vẫn "không đạt" như cũ (status), luật hạ chỉ cho phần còn lại.
+    if (x && said.length && (x.placeHold || (stays ? x.status === "met" : status !== "not_met" && (x.status === "met" || status === "met")))) { holdPlace(x, said); continue; }
+    if (stays) continue;
     const at = m.at === "?" ? "" : `sản xuất tại ${madeVi(m.at)}${/^(hãng|mặc định)/.test(m.why || "") ? ` (${m.why})` : ""}`;
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: [PART_VI[part], p.model, at].filter(Boolean).join(" "),
       ...(m.why && !/^(hãng|mặc định)/.test(m.why) ? { sourceQuote: m.why } : {}), part, level: r.level === "option" ? "option" : "core", status, byCode: true, rule: "noi-san-xuat",
       ...(status === "confirm" ? { confirm: "document" } : {}),
       note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}${noDefault ? "; Stamford S4–S7 không lấy nơi mặc định của hãng (Khoa 21/11/2026)" : ""}; HSMT đòi nơi sản xuất ${G}.`
         : status === "met" ? `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, thuộc nhóm ${G}.` : `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, ngoài nhóm ${G} HSMT đòi.` });
+    if (said.length && status === "met") { const z = (c.checks || []).find((k) => norm(k.item) === norm(r.item)); if (z) holdPlace(z, said); }
   }
   return c;
 }
@@ -4274,6 +4403,7 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
         const L = text.split("\n"), i = L.findIndex((l) => /Short-circuit current/i.test(l)), two = i >= 0 ? `${L[i]} ${L[i + 1] || ""}` : "", m = two.match(/(\d(?:\.\d+)?)\s*In\s*:?\s*(\d+)\s*sec/i);
         if (m && (Number(m[1]) < 3 || Number(m[2]) < 10)) lsa.push({ key: "scLow", value: { pct: Math.round(Number(m[1]) * 100), s: Number(m[2]) }, lines: [L[i], /In\s*:/i.test(L[i]) ? null : L[i + 1]].filter(Boolean) });
       }
+      if (lsa.length) lsa.push(...lsStandards(text));
       if (lsa.length) for (const m of new Set(rs.filter((r) => r.part === "alternator" && /^(TAL|LSA)\b/i.test(r.model)).map((r) => r.model)))
         for (const k of keysOfModel(m)) for (const a of lsa) add(attr, k, { ...a, model: m, supplierId: s.id, n: src.n, url: src.url, range: true });
       // A Mecc Alte range sheet (D2): insulation and sustained short circuit, of every model of its ratings.
@@ -5249,6 +5379,134 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
   }
   return c;
 }
+// ---------- AVR, tiêu chuẩn đầu phát từ tờ hãng (nhóm E, Khoa 21/11/2026) ----------
+// Runs after confirmChecks, whose "nguồn của cấu hình không nói tới" is wrong when the alternator's sheet says it. AVR: a
+// requirement that only asks for an AVR is met by the AVR the sheet names; one naming a model or a band is left as it is.
+// Standards: each code the HSMT names against the sheet's sentence, code for code (stdCodes). All there → met; some →
+// stays "cần chứng từ", the note saying which the sheet gives and which it does not.
+const AVR_ONLY = /(?<!\p{L})(?:t[ựu]\s*đ[ộo]ng|[ổo]n\s*đ[ịi]nh|đi[ềe]u\s*ch[ỉi]nh|đi[ệe]n\s*[áa]p|b[ằa]ng|c[óo]|b[ộo]|AVR)(?!\p{L})|[:;,.()\s]/giu;
+export function altDocChecks(c, reqs = [], attrs = []) {
+  if (!attrs.length) return c;
+  const sheet = (a) => `tờ thông số ${a.model} của hãng (${a.supplierId} [${a.n}])`;
+  for (const r of reqs) {
+    if (r.part !== "alternator" || r.byCode || (r.code !== "alt_avr" && r.code !== "alt_standard")) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if ((x && x.status !== "unclear" && x.status !== "confirm") || x?.unverified || x?.conflict || x?.version || x?.parts?.length) continue;
+    const base = { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", part: "alternator", level: r.level === "option" ? "option" : "core", byCode: true, rule: "to-hang-dau-phat" };
+    const src = (a) => ({ sourceQuote: quoteOf(a), sheetSrc: { supplierId: a.supplierId, n: a.n, url: a.url, lines: a.lines } });
+    if (r.code === "alt_avr") {
+      const a = one(attrs, "avr") || one(attrs, "avrStd");
+      if (!a || String(r.requirement || "").replace(AVR_ONLY, "")) continue;
+      putCheck(c, x, { ...base, ...src(a), offered: `AVR ${a.value.join(" / ")} (tờ hãng)`, status: "met", note: `Code đọc từ ${sheet(a)}.` });
+      if (x) delete x.confirm;
+      continue;
+    }
+    const a = one(attrs, "standards"), want = stdCodes(r.requirement);
+    if (!a || !want.length) continue;
+    const have = want.filter((w) => a.value.includes(w)), miss = want.filter((w) => !a.value.includes(w));
+    if (!miss.length) { putCheck(c, x, { ...base, ...src(a), offered: `${have.join(", ")} (tờ hãng)`, status: "met", note: `Code đọc từ ${sheet(a)}.` }); if (x) delete x.confirm; }
+    else if (x?.status === "confirm" && have.length) Object.assign(x, { ...base, ...src(a), offered: `${have.join(", ")} (tờ hãng)`, note: `Code đọc từ ${sheet(a)}: tờ ghi ${have.join(", ")}; không ghi ${miss.join(", ")}, cần NCC cung cấp chứng từ.` });
+  }
+  return c;
+}
+// ---------- Tốc độ, nhiên liệu, tần số từ tờ hãng động cơ (nhóm C, D; Khoa 21/11/2026 "1. có") ----------
+// The sheet of exactly one engine: a table of an engine_maker supplier whose title names that one catalog model. Speed from a
+// row "Rated Speed | 1500" or a table whose header's first column is RPM; fuel from "Thermodynamic Cycle | Diesel 4 stroke" or
+// "Fuel type | Diesel". Kept apart from modelFacts: speed is ROW_ONLY there, and the labels are not catalog specs.
+const SHEET_SPEED = /^(?:engine\s+)?(?:rated\s+)?speed(?:\s*(?:rpm|r\/min))?$|^rpm$/i, SHEET_FUEL = /^(?:thermodynamic\s+cycle|working\s+cycle|fuel\s+type|type\s+of\s+fuel)$/i;
+const sheetLabel = (s) => String(s || "").replace(/[​-‍﻿]/g, "").replace(/[()[\]:：]/g, " ").replace(/\s+/g, " ").trim();
+const rpmCell = (s) => { const m = String(s).trim().match(/^(\d{3,4})\s*(?:rpm|r\/min)?$/i), v = m ? Number(m[1]) : 0; return v >= 600 && v <= 3600 ? v : null; };
+const SHEET_ATTR = [["cycle", /^thermodynamic\s+cycle$/i], ["cooling", /^cooling\s+system$/i], ["inject", /^injection\s+system$/i], ["fuelSys", /^fuel\s+system$/i], ["gov", /^governor$/i]];
+// Kiểu động cơ / hệ thống phun (nhóm A): each term the requirement names must be on the sheet; a word of the requirement the
+// code does not know leaves the check as it is. [term in the HSMT, sheet attribute, what that attribute must say]
+const ENGINE_TYPE_TERMS = [[/diesel/i, "cycle", /diesel/i], [/4\s*(?:k[ỳy]|th[ìi])|4\s*-?\s*stroke/i, "cycle", /\b4[\s-]*stroke/i], [/l[àa]m\s*m[áa]t\s*(?:b[ằa]ng\s*)?(?:n[ưướ]+c|ch[ấa]t\s*l[ỏo]ng)/i, "cooling", /liquid|water/i]];
+const FUEL_SYSTEM_TERMS = [[/phun\s*tr[ựu]c\s*ti[ếe]p|direct\s*injection/i, "inject", /^direct\b/i], [/common\s*rail/i, "fuelSys", /common\s*rail/i], [/cao\s*[áa]p/i, "fuelSys", /high\s*pressure/i], [/đi[ềe]u\s*khi[ểe]n\s*đi[ệe]n\s*t[ửu]/i, "gov", /\bECU\b|electronic/i], [/\bECU\b/i, "gov", /\bECU\b/i]];
+const TERM_FILLER = /(?<!\p{L})(?:đ[ộo]ng\s*c[ơo]|ki[ểe]u|h[ệe]\s*th[ốo]ng|nhi[êe]n\s*li[ệe]u|b[ằa]ng|v[àa])(?!\p{L})|[(),;:./\s-]/giu;
+function sheetTerms(req, terms, attrs = {}) {
+  let rest = String(req || "");
+  const hits = [];
+  for (const [re, key, says] of terms) {
+    if (!re.test(req)) continue;
+    const l = attrs[key] || [];
+    if (!l.length || new Set(l.map((x) => x.value)).size !== 1 || !says.test(l[0].value)) return null;
+    if (!hits.includes(l[0])) hits.push(l[0]);
+    rest = rest.replace(new RegExp(re.source, "gi"), " ");
+  }
+  return hits.length && !rest.replace(TERM_FILLER, "") ? hits : null;
+}
+export function engineSheetsOf(cat, suppliers = []) {
+  const out = new Map(), engines = new Set((cat.engines || []).map((e) => e.key)), partKeys = new Set([...(cat.engines || []), ...(cat.alternators || [])].map((e) => e.key));
+  for (const s of suppliers || []) {
+    if (s?.role !== "engine_maker") continue;
+    for (const t of s.specTables || []) {
+      const models = titleModelKeys(t.title, partKeys);
+      if (models.length !== 1 || !engines.has(models[0])) continue;
+      const e = out.get(models[0]) || { speeds: [], fuels: [], attrs: {} }, at = { supplierId: s.id, n: t.n };
+      if (!t.header?.length) {
+        for (const line of t.rows || []) {
+          const cells = CAT.cellsOf(line), label = sheetLabel(cells[0]);
+          if (cells.length < 2) continue;
+          if (SHEET_SPEED.test(label)) { const v = cells.slice(1).map(rpmCell); if (v.every((x) => x != null)) for (const x of v) e.speeds.push({ v: x, line, ...at }); }
+          if (SHEET_FUEL.test(label) && /\bdiesel\b/i.test(cells[1]) && !/\bgas\b|gasoline|petrol/i.test(cells[1])) e.fuels.push({ line, ...at });
+          const attr = SHEET_ATTR.find(([, re]) => re.test(label));
+          if (attr) (e.attrs[attr[0]] ||= []).push({ value: cells[1], line, ...at });
+        }
+      } else if (t.header.some((h) => /^rpm$/i.test(sheetLabel(CAT.cellsOf(h)[0])))) {
+        for (const line of t.rows || []) { const v = rpmCell(CAT.cellsOf(line)[0]); if (v != null) e.speeds.push({ v, line, ...at }); }
+      }
+      if (e.speeds.length || e.fuels.length || Object.keys(e.attrs).length) out.set(models[0], e);
+    }
+  }
+  return out;
+}
+// The speed / frequency the configuration's own genset row writes: "1800 rpm", "1800转", "60 Hz" anywhere in its header, line
+// or title, or a bare 1500 / 1800... cell of a line whose header names a speed column (WPG660 | 1800).
+const RUN_RPM = new Set([1000, 1200, 1500, 1800, 3000, 3600]), HZ_OF_RPM = { 1000: 50, 1200: 60, 1500: 50, 1800: 60, 3000: 50, 3600: 60 };
+export function rowRunOf(row) {
+  if (!row) return { speeds: [], hzs: [] };
+  const head = (row.header || []).join(" "), all = [head, row.line || "", row.title || ""].join(" ");
+  const hzs = [...all.matchAll(/\b(50|60)\s*-?\s*Hz/gi)].map((m) => Number(m[1]));
+  const said = [...all.matchAll(/(?<!\d)(\d{3,4})\s*(?:rpm|r\/min|rev\/min|v\/p|vòng|转)/gi)].map((m) => Number(m[1])).filter((v) => v >= 600 && v <= 3600);
+  const cells = /speed|rpm|r\/min|转速|v\/p|v[òo]ng/i.test(head) ? CAT.cellsOf(row.line || "").map(rpmCell).filter((v) => RUN_RPM.has(v)) : [];
+  return { speeds: [...new Set([...said, ...cells])], hzs: [...new Set(hzs)] };
+}
+// Each "met" only, of a check left "unclear", with the part it comes from in the note. Frequency needs both parts: the
+// alternator's sheet rated at that frequency and the engine's sheet at the speed of 4 poles for it. The engine's sheet decides
+// a speed only when it gives ONE speed and the genset row writes no other speed or frequency: a 60 Hz / 1800 rpm row of an
+// engine whose sheet also gives 1500 is not "≤ 1500 v/p" (điều phối 22/11/2026, WPG660 6M31G660/6).
+export function engineSheetChecks(c, reqs = [], sheet = null, altRatings = [], row = null) {
+  if (!sheet) return c;
+  const run = rowRunOf(row), runsAt = (v) => !run.speeds.some((s) => s !== v) && !run.hzs.some((h) => h !== HZ_OF_RPM[v]);
+  const engine = c.engine?.model || "", where = (f) => `tờ hãng động cơ ${engine} (${f.supplierId} [${f.n}])`;
+  const put = (r, o, f, part, offered, note) => putCheck(c, o.x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered, sourceQuote: f.line, part, level: r.level === "option" ? "option" : "core", status: "met", byCode: true, rule: "to-hang-dong-co",
+    sheetSrc: { supplierId: f.supplierId, n: f.n, line: f.line }, note });
+  const speeds = [...new Set(sheet.speeds.map((x) => x.v))];
+  for (const r of reqs) {
+    if (r.byCode) continue;
+    const req = String(r.requirement || "");
+    if (r.code === "speed" && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), lim = oneFig(req, /(\d[\d.,]{2,})/g);
+      if (!o || lim == null || /≥|>|t[ốo]i\s*thi[ểe]u/i.test(req)) continue;
+      if (speeds.length !== 1 || !runsAt(speeds[0]) || !(CEIL.test(req) ? speeds[0] <= lim : speeds[0] === lim)) continue;
+      const v = speeds[0], f = sheet.speeds.find((x) => x.v === v);
+      put(r, o, f, "engine", `${figVi(v, 0)} v/p`, `Code đọc từ ${where(f)}.`);
+    } else if ((r.code === "engine_type" || r.code === "fuel_system") && (!r.part || r.part === "engine")) {
+      const o = openCheck(c, r), hits = o && sheetTerms(req, r.code === "engine_type" ? ENGINE_TYPE_TERMS : FUEL_SYSTEM_TERMS, sheet.attrs);
+      if (hits) put(r, o, { ...hits[0], line: hits.map((h) => h.line).join(" | ") }, "engine", `${hits.map((h) => h.value).join(", ")} (tờ hãng)`, `Code đọc từ ${where(hits[0])}.`);
+    } else if (r.code === "fuel" && /diesel/i.test(req) && !/x[ăa]ng|\bgas\b|kh[íi]/i.test(req) && sheet.fuels.length && !(c.checks || []).some((x) => x.fuelRule)) {
+      const o = openCheck(c, r), f = sheet.fuels[0];
+      if (o) put(r, o, f, r.part || "genset", "Diesel (động cơ, tờ hãng)", `Code đọc từ ${where(f)}: nhiên liệu của động cơ.`);
+    } else if (r.code === "frequency" && r.part === "genset") {
+      const o = openCheck(c, r), hz = Number((`${req} ${r.quote || ""}`.match(/\b(50|60)\s*Hz/i) || [])[1]), rpm = hz === 50 ? 1500 : 1800;
+      const own = [...(row?.header || []), row?.line || "", row?.title || ""].join(" ");
+      if (!o || !hz || /\b(50|60)\s*-?\s*Hz/i.test(own)) continue;
+      const f = speeds.length === 1 && runsAt(rpm) ? sheet.speeds.find((x) => x.v === rpm) : null, a = altRatings.find((x) => x.hz === hz && (x.rpm == null || x.rpm === rpm));
+      if (!f || !a) continue;
+      put(r, o, { ...f, line: [f.line, a.lines?.[0]].filter(Boolean).join(" | ") }, "genset", `${hz} Hz (động cơ ${figVi(rpm, 0)} v/p, đầu phát có định mức ${hz} Hz)`, `Code đọc từ ${where(f)} và tờ hãng đầu phát ${c.alternator?.model || ""} (${a.supplierId} [${a.n}]).`);
+    }
+  }
+  return c;
+}
 // ---------- Datasheet một model của tổ máy (2026-11-13, IB2600601812) ----------
 // From the configuration's own genset sheet (gensetSheetOf: tier A, one model, its genset), the code decides three points
 // whose comparison is plain, each "met" only (a figure that falls short, or a check already met / not met, is left as it
@@ -5407,17 +5665,104 @@ export const COMPR_SAME = new Map([["6M33G8D3/5", "6M33G825/5"], ["6M33G8D3/5(6M
 // Nước NCC ghi ngay trước mã động cơ. Chỉ hai tiền tố có thật trong suppliers/cn (kaihua n122, soát mọi mã 21/11/2026).
 // "(UK/EP)", "(USA/EU)", đuôi "EU" không đọc: không chắc là nơi sản xuất (EU có thể là tiêu chuẩn khí thải). SME = nhà máy
 // Mitsubishi ở Thượng Hải (CN_PLANT của catalog).
-const PLACE_MARKS = [[/^india\s+(?=\S)/i, "IN"], [/^uk\s+(?=\S)/i, "GB"], [/\s*\(\s*india\s*\)$/i, "IN"], [/\s*\(\s*uk\s*\)$/i, "GB"], [/\s+SME$/, "CN"]];
+const PLACE_MARKS = [[/^india\s+(?=\S)/i, "IN"], [/^uk\s+(?=\S)/i, "GB"], [/\s*\(\s*india\s*\)$/i, "IN"], [/\s*\(\s*uk\s*\)$/i, "GB"], [/\s+SME$/, "CN"], [/\s+made\s*in\s*india$/i, "IN"]];
 export const placeInModel = (cell) => { const s = String(cell || "").trim(); return PLACE_MARKS.find(([re]) => re.test(s))?.[1] || null; };
 const placeCode = (cell) => PLACE_MARKS.reduce((s, [re]) => s.replace(re, ""), String(cell || "").trim());
 // Nơi ghi trong ô động cơ của một dòng: ô "<nước> <mã>" / "<mã>(nước)" mà mã đúng là động cơ của bản ghi (khoá riêng hay đã gộp).
 export function placeInRow(e, u) {
   const code = CAT.keyOf(placeCode(e?.model));
   // Bảng nhãn không có `line`: đọc dòng nhãn động cơ ("| Engine Model | S16R2-PTAW-C SME", superwatt).
-  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /engine\s*model/i.test(l));
-  for (const c of lines.flatMap((l) => CAT.cellsOf(l))) {
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /engine\s*(model|make|brand)/i.test(l));
+  const cells = lines.flatMap((l) => CAT.cellsOf(l)).map((c) => String(c).trim());
+  for (const c of cells) {
     const at = placeInModel(c);
     if (at && CAT.keyOf(placeCode(c)) === code && (at !== "CN" || /mitsubishi/i.test(e?.make || ""))) return at;
+  }
+  // Chữ India cạnh tên hãng của chính động cơ ("Perkins India", "Cummins (India)", fdk-energy): cách đọc của catalog, chỉ ở dòng này.
+  const m = CAT.madeIn("engine", String(e?.make || "").split(" / ").filter(Boolean), [lines.join(" \n ")], e?.model);
+  if (m.at === "IN" && /india|印度/i.test(m.why || "")) return "IN";
+  // Ô riêng "INDIA", danh sách tường minh: baifa có cột "ENGINE MANUFACTURER / COUNTRY"; sanq ghi ngay sau ô động cơ.
+  // "UK/INDIA" không phải một nơi: xem placesInRow.
+  const isIndia = (c) => /^india$/i.test(c || "");
+  if (u?.supplierId === "baifa-power" && u?.line && cells.some(isIndia)) return "IN";
+  if (u?.supplierId === "sanq-power" && u?.line && cells.some((c, i) => CAT.keyOf(c) === code && isIndia(cells[i + 1]))) return "IN";
+  // Bảng nhãn ghi nhà sản xuất của chính hãng động cơ: "Manufacturer | PERKINS ENGINE COMPANY LIMITED (India Factory)" (shanhua).
+  if (!u?.line) {
+    const makes = String(e?.make || "").split(" / ").filter(Boolean).map((x) => x.toLowerCase());
+    const maker = (u?.lines?.rows || []).filter((l) => /manufacturer|制造商/i.test(l)).flatMap((l) => CAT.cellsOf(l)).map((c) => String(c));
+    if (maker.some((c) => /\bindia\s+factory\b/i.test(c) && makes.some((x) => c.toLowerCase().includes(x)))) return "IN";
+  }
+  return null;
+}
+// Nhà máy Trung Quốc NCC tự ghi ở chính dòng cho động cơ hãng ngoài (Khoa 22/11/2026): tên nhà máy, "hãng + China", "mã + China",
+// hoặc cột xuất xứ động cơ theo danh sách tường minh. Baudouin / Weichai không đọc (Baudouin vẫn tính G7). "UK/ CCEC" là hai nơi: không đọc.
+const CN_PLANTS = [[/cummins/i, /\b(?:ccec|dcec|xcec)\b|(?:chongqing|dongfeng|xi'?an)\s*cummins|重庆康明斯|东风康明斯|西安康明斯/i], [/perkins/i, /perkins\s*wuxi|wuxi\s*perkins|无锡帕金斯/i], [/\bmtu\b/i, /mtu\s*yuchai|yuchai\s*mtu|玉柴\s*mtu/i]];
+const CN_FOREIGN = /cummins|perkins|volvo|\bmtu\b|mitsubishi|doosan|hyundai|daewoo|deutz|kubota|yanmar|isuzu|iveco|\bfpt\b|deere|\bman\b|scania|caterpillar|\bcat\b|kohler|sdmo|liebherr/i;
+const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔沃", mitsubishi: "三菱", doosan: "斗山", deutz: "道依茨" };
+const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
+const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
+const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+// Ô nhà máy TQ theo NCC + dạng chữ (danh sách tường minh, không mở rộng sang tên thành phố khác): [hãng, chữ của ô, vị trí so với ô động cơ, tiêu đề cột].
+// sanq không xét tiêu đề: ba bảng cùng bố cục, một bảng ghi "C/O of engine", một bảng thiếu tên cột, một bảng ghi nhầm "Fuel Consumption"; cột đó ở cả ba chỉ có Wuxi, UK/INDIA, USA, UK.
+const CN_MITSU = [/mitsubishi/i, /^上海菱重$/, -1, /柴油机品牌/];
+const CN_CELLS = { "sanq-power": [/perkins/i, /^wuxi$/i, 2, null], "fdk-energy": [/mitsubishi/i, /^mitsubishi\s*\(sme shanghai\)$/i, 1, /engine original/i], "bdadl-shanghai": CN_MITSU, "fukangsi-yangzhou": CN_MITSU, "pengpai-yangzhou": CN_MITSU, "simpson-power": [/mitsubishi/i, /^sme$/i, -1, /发动机品牌/] };
+function chinaListedCell(e, u, code) {
+  const r = CN_CELLS[u?.supplierId];
+  if (!r || !u.line || code.length < 3 || !r[0].test(String(e?.make || "")) || (r[3] && !(u.header || []).some((h) => r[3].test(h)))) return null;
+  const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = cells.findIndex((c) => r[1].test(c));
+  return at >= 0 && CAT.keyOf(cells[at - r[2]] || "").includes(code) ? { at: "CN", cell: cells[at], form: "listed" } : null;
+}
+// Bảng nhãn ghi nhà máy SME của động cơ Mitsubishi: "| Engine Make | SME", "| Engine Manufacturer | SME Shanghai", "Manufacturer： SME",
+// "| Brand | SME"; superwatt "| Engine Model | S16R2-PTAW-C SME". Danh sách NCC tường minh; bảng phải có mã của chính động cơ.
+const CN_SME_LABEL = new Set(["fdk-energy", "westinpower", "aosif", "superwatt-swt"]);
+const SME_LABEL = /^\|?\s*(?:engine\s*make|engine\s*manufacturer|manufacturer|brand)\s*[|:：]\s*(sme(?:\s*shanghai)?)\s*\|?\s*$/i;
+function chinaSmeLabel(e, u, code) {
+  if (u?.line || !CN_SME_LABEL.has(u?.supplierId) || code.length < 3 || !/mitsubishi/i.test(String(e?.make || ""))) return null;
+  const rows = u.lines?.rows || [];
+  if (!rows.some((l) => CAT.keyOf(l).includes(code))) return null;
+  for (const l of rows) {
+    const m = String(l).trim().match(SME_LABEL);
+    if (m) return { at: "CN", cell: m[1], form: "label" };
+    const own = u.supplierId === "superwatt-swt" && String(l).trim().match(/^\|?\s*engine\s*model\s*[|:：]\s*(\S+)\s+sme\s*\|?\s*$/i);
+    if (own && CAT.keyOf(own[1]) === code) return { at: "CN", cell: `${own[1]} SME`, form: "label" };
+  }
+  return null;
+}
+export function chinaPlantInRow(e, u) {
+  const make = String(e?.make || "");
+  if ((make && !CN_FOREIGN.test(make)) || /baudouin|weichai|博杜安|潍柴/i.test(make)) return null;
+  const code = CAT.keyOf(placeCode(e?.model)), names = make.split(" / ").filter(Boolean).flatMap((m) => [m.toLowerCase(), CN_MAKE_ZH[m.toLowerCase()]].filter(Boolean));
+  // Bảng nhãn: dòng nói về động cơ ("| ENGINE | CCEC Cummins") hoặc có mã của động cơ ("| Model | CCEC | KTA19-G4").
+  // Ô "Engine-DCEC Cummins" (longkai) là tên họ của mẫu trang, ghi cả trên KTA38 / QSK19 mà NCC khác ghi CCEC: không đọc.
+  const lines = u?.line ? [u.line] : (u?.lines?.rows || []).filter((l) => /\bengine\b|manufacturer|制造商/i.test(l) || (code.length >= 3 && CAT.keyOf(l).includes(code)));
+  // Dòng chưa rõ hãng (mâu thuẫn nguồn): chỉ tên nhà máy tự nói hãng mới đọc.
+  const plants = CN_PLANTS.filter(([m]) => !make || m.test(make)).map(([, p]) => p);
+  for (const l of lines) for (const raw of CAT.cellsOf(l)) {
+    const cell = String(raw).trim(), c = cell.replace(CN_EMISSION, " ");
+    if (/baudouin|博杜安/i.test(c) || CN_TWO.test(c) || (!u?.line && /^engine\s*[-–]/i.test(cell))) continue;
+    if (plants.some((p) => p.test(c))) return { at: "CN", cell, form: "plant" };
+    if (!make || !CN_WORD.test(c)) continue;
+    if (code.length >= 3 && CAT.keyOf(c).includes(code)) return { at: "CN", cell, form: "code" };
+    if (names.some((n) => c.toLowerCase().includes(n))) return { at: "CN", cell, form: "make" };
+  }
+  const listed = chinaListedCell(e, u, code) || chinaSmeLabel(e, u, code);
+  if (listed) return listed;
+  const col = ENGINE_ORIGIN_COL[u?.supplierId];
+  if (make && col && u?.line && (u.header || []).some((h) => col[0].test(h))) {
+    const cells = CAT.cellsOf(u.line).map((c) => String(c).trim()), at = col[1] === "last" ? cells.length - 1 : cells.findIndex((c) => CAT.keyOf(c) === code) + 1;
+    if (at > 0 && /^(china|prc|中国)$/i.test(cells[at] || "")) return { at: "CN", cell: cells[at], form: "column" };
+  }
+  return null;
+}
+// sanq có cột "C/O of engine" ghi "UK/INDIA" (thường sau ô đầu phát): hai nơi có thể, không biết nơi nào.
+// comappower, suneco-linyi, yanan-power có cột "Engine origin" ghi "JAPAN OR CHINA" ngay sau ô động cơ (Mitsubishi): cũng là hai nơi.
+export function placesInRow(e, u) {
+  if (!u?.line) return null;
+  const code = CAT.keyOf(placeCode(e?.model)), cells = CAT.cellsOf(u.line).map((c) => String(c).trim());
+  if (u.supplierId === "sanq-power") return cells.some((c) => CAT.keyOf(c) === code) && cells.some((c) => /^uk\s*\/\s*india$/i.test(c)) ? ["GB", "IN"] : null;
+  if (ENGINE_ORIGIN_COL[u.supplierId]?.[1] === "after" && (u.header || []).some((h) => /engine origin/i.test(h))) {
+    const at = cells.findIndex((c) => CAT.keyOf(c) === code);
+    if (at >= 0 && /^japan\s+or\s+china$/i.test(cells[at + 1] || "")) return ["JP", "CN"];
   }
   return null;
 }
