@@ -262,11 +262,23 @@
       "file": "sources/mecca-power/136.md"
     },
     {
-      "n": 144,
-      "url": "https://www.meccapower.com.cn/50-Kva-Silent-Yanmar-Diesel-Generator-with-Stamford-Alternator-pd46292624.html",
-      "accessedAt": "2026-10-28",
+      "n": 159,
+      "url": "https://www.meccapower.com.cn/10-69kva-Prime-Silent-Open-YANMAR-Engine-Diesel-Generators-pd48935895.html",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov./ Emission | Dimention | Weight"
+      ],
+      "file": "sources/mecca-power/159.md"
+    },
+    {
+      "n": 144,
+      "url": "https://www.meccapower.com.cn/50-Kva-Silent-Yanmar-Diesel-Generator-with-Stamford-Alternator-pd46292624.html",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | Weight",
+        "| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov./ Emission | Dimention | Weight",
         "| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS"
       ],
       "file": "sources/mecca-power/144.md"
@@ -280,16 +292,6 @@
         "| Model | STANDBY | PRIME | Engine | Fuel Cons. | Cylinder | Displacement | Gov."
       ],
       "file": "sources/mecca-power/151.md"
-    },
-    {
-      "n": 159,
-      "url": "https://www.meccapower.com.cn/10-69kva-Prime-Silent-Open-YANMAR-Engine-Diesel-Generators-pd48935895.html",
-      "accessedAt": "2026-10-28",
-      "tier": "A",
-      "quote": [
-        "| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS"
-      ],
-      "file": "sources/mecca-power/159.md"
     },
     {
       "n": 180,
@@ -1214,6 +1216,33 @@
       ]
     },
     {
+      "n": 159,
+      "title": "10-69kva Prime Silent/Open YANMAR Engine Diesel Generators from China manufacturer - Mecca Power",
+      "header": [
+        "| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov./ Emission | Dimention | Weight",
+        "| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS"
+      ],
+      "rows": [
+        "| MC11Y | 11 | 9 | 10 | 8 | 3TNV82A-GGE | JP | 3.10 | 3L/NA | 1.331 | M/T2 | 1350*620*1280 | 360",
+        "| MC14Y | 14 | 11 | 13 | 10 | 3TNV88-GGE | JP | 3.56 | 3L/NA | 1.642 | M/T2 | 1350*620*1280 | 380",
+        "| MC17Y | 17 | 13 | 15 | 12 | 3TNV84T-GGE | JP | 4.46 | 3L/TC | 1.496 | M/T2 | 1350*620*1280 | 380",
+        "| MC19Y | 19 | 15 | 18 | 14 | 4TNV88-GGE | JP | 4.78 | 3L/NA | 2.190 | M/T2 | 1500*620*1280 | 420",
+        "| MC22Y | 22 | 18 | 20 | 16 | 4TNV84T-GGE | JP | 5.57 | 4L/TC | 1.995 | M/T2 | 1500*620*1280 | 430",
+        "| MC33Y | 33 | 26 | 30 | 24 | 4TNV98-GGE | JP | 8.44 | 4L/NA | 3.319 | M/T2 | 1650*750*1320 | 580",
+        "| MC47Y | 47 | 37 | 43 | 34 | 4TNV98T-GGE | JP | 9.96 | 4L/TC | 3.319 | M/T2 | 1650*750*1320 | 640",
+        "| MC55Y | 55 | 44 | 50 | 40 | 4TNV106-GGE | JP | 14.90 | 4L/NA | 4.412 | M/T2 | 1680*850*1320 | 715",
+        "| MC62Y | 62 | 50 | 56 | 45 | 4TNV106T-GGE | JP | 14.90 | 4L/TC | 4.412 | M/T2 | 1680*850*1320 | 720",
+        "| MC9Y | 9 | 7 | 8 | 6.6 | 3TNV76-GGE | JP | 3.00 | 3L/NA | 1.116 | E/T3 | 1350*620*1280 | 320",
+        "| MC11Y | 11 | 9 | 10 | 8 | 3TNV82A-BGGE | JP | 3.17 | 3L/NA | 1.331 | E/T3 | 1350*620*1280 | 360",
+        "| MC14Y | 14 | 11 | 13 | 10 | 3TNV88-BGGE | JP | 3.65 | 3L/NA | 1.642 | E/T3 | 1350*620*1280 | 380",
+        "| MC32Y | 32 | 25 | 29 | 23 | 3TNV84T-BGGE | JP | 4.57 | 3L/TC | 1.496 | E/T3 | 1350*620*1280 | 380",
+        "| MC19Y | 19 | 15 | 18 | 14 | 4TNV88-BGGE | JP | 4.90 | 4L/NA | 2.190 | E/T3 | 1500*620*1280 | 420",
+        "| MC22Y | 22 | 18 | 20 | 16 | 4TNV84T-BGGE | JP | 5.57 | 4L/TC | 1.995 | E/T3 | 1500*620*1280 | 430",
+        "| MC33Y | 33 | 26 | 30 | 24 | 4TNV98-ZGGE | JP | 8.55 | 4L/NA | 3.319 | E/T3 | 1650*750*1320 | 580",
+        "| MC47Y | 47 | 37 | 43 | 34 | 4TNV98T-ZGGE | JP | 10.40 | 4L/TC | 3.319 | E/T3 | 1650*750*1320 | 640"
+      ]
+    },
+    {
       "n": 144,
       "title": "50 Kva Silent Yanmar Diesel Generator with Stamford Alternator from China manufacturer - Mecca Power",
       "header": [
@@ -1339,33 +1368,6 @@
         "| MC750SC | 750 | 600 | 700 | 560 | 6KTAA25-G33.1 | CN | 144 | 6L | 25.18 | HPCR",
         "| MC825SC | 825 | 660 | 750 | 600 | 6KTAA25-G32.1 | CN | 159 | 6L | 25.18 | HPCR",
         "| MC900SC | 900 | 720 | 813 | 650 | 6KTAA25-G31.1 | CN | 169 | 6L | 25.18 | HPCR"
-      ]
-    },
-    {
-      "n": 159,
-      "title": "10-69kva Prime Silent/Open YANMAR Engine Diesel Generators from China manufacturer - Mecca Power",
-      "header": [
-        "| Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov./ Emission | Dimention | Weight",
-        "| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS"
-      ],
-      "rows": [
-        "| MC11Y | 11 | 9 | 10 | 8 | 3TNV82A-GGE | JP | 3.10 | 3L/NA | 1.331 | M/T2 | 1350*620*1280 | 360",
-        "| MC14Y | 14 | 11 | 13 | 10 | 3TNV88-GGE | JP | 3.56 | 3L/NA | 1.642 | M/T2 | 1350*620*1280 | 380",
-        "| MC17Y | 17 | 13 | 15 | 12 | 3TNV84T-GGE | JP | 4.46 | 3L/TC | 1.496 | M/T2 | 1350*620*1280 | 380",
-        "| MC19Y | 19 | 15 | 18 | 14 | 4TNV88-GGE | JP | 4.78 | 3L/NA | 2.190 | M/T2 | 1500*620*1280 | 420",
-        "| MC22Y | 22 | 18 | 20 | 16 | 4TNV84T-GGE | JP | 5.57 | 4L/TC | 1.995 | M/T2 | 1500*620*1280 | 430",
-        "| MC33Y | 33 | 26 | 30 | 24 | 4TNV98-GGE | JP | 8.44 | 4L/NA | 3.319 | M/T2 | 1650*750*1320 | 580",
-        "| MC47Y | 47 | 37 | 43 | 34 | 4TNV98T-GGE | JP | 9.96 | 4L/TC | 3.319 | M/T2 | 1650*750*1320 | 640",
-        "| MC55Y | 55 | 44 | 50 | 40 | 4TNV106-GGE | JP | 14.90 | 4L/NA | 4.412 | M/T2 | 1680*850*1320 | 715",
-        "| MC62Y | 62 | 50 | 56 | 45 | 4TNV106T-GGE | JP | 14.90 | 4L/TC | 4.412 | M/T2 | 1680*850*1320 | 720",
-        "| MC9Y | 9 | 7 | 8 | 6.6 | 3TNV76-GGE | JP | 3.00 | 3L/NA | 1.116 | E/T3 | 1350*620*1280 | 320",
-        "| MC11Y | 11 | 9 | 10 | 8 | 3TNV82A-BGGE | JP | 3.17 | 3L/NA | 1.331 | E/T3 | 1350*620*1280 | 360",
-        "| MC14Y | 14 | 11 | 13 | 10 | 3TNV88-BGGE | JP | 3.65 | 3L/NA | 1.642 | E/T3 | 1350*620*1280 | 380",
-        "| MC32Y | 32 | 25 | 29 | 23 | 3TNV84T-BGGE | JP | 4.57 | 3L/TC | 1.496 | E/T3 | 1350*620*1280 | 380",
-        "| MC19Y | 19 | 15 | 18 | 14 | 4TNV88-BGGE | JP | 4.90 | 4L/NA | 2.190 | E/T3 | 1500*620*1280 | 420",
-        "| MC22Y | 22 | 18 | 20 | 16 | 4TNV84T-BGGE | JP | 5.57 | 4L/TC | 1.995 | E/T3 | 1500*620*1280 | 430",
-        "| MC33Y | 33 | 26 | 30 | 24 | 4TNV98-ZGGE | JP | 8.55 | 4L/NA | 3.319 | E/T3 | 1650*750*1320 | 580",
-        "| MC47Y | 47 | 37 | 43 | 34 | 4TNV98T-ZGGE | JP | 10.40 | 4L/TC | 3.319 | E/T3 | 1650*750*1320 | 640"
       ]
     },
     {
