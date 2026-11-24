@@ -1,0 +1,147 @@
+model	nguon	dong
+DKG307	datakom#1002	Applicable only to the DKG-317 model:
+AGC150	deif#1001	| • | AGC-4 Mk II Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4-mk-ii)
+AGC150	deif#1001	| • | AGC-4 Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4)
+AGC150	deif#1001	| • | AGC-4 Mk II Mains (www.deif.com/products/agc-4-mk-ii)
+AGC4	deif#1004	| • | AGC 150 Generator (www.deif.com/products/agc-150-generator)
+AGC4	deif#1004	| • | AGC 150 Mains (www.deif.com/products/agc-150-mains)
+AGC4	deif#1004	| • | AGC 150 BTB (www.deif.com/products/agc-150-btb)
+HGM6110N	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6110N	smartgen#1001	HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+HGM6110N	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6110N	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6110N	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6110N	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6120N	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6120N	smartgen#1001	HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+HGM6120N	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6120N	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6120N	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6120N	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6110NC	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6110NC	smartgen#1001	HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+HGM6110NC	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6110NC	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6110NC	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6110NC	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6120NC	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6120NC	smartgen#1001	HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+HGM6120NC	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6120NC	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6120NC	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6120NC	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6110CAN	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6110CAN	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6110CAN	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6110CAN	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6110CAN	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6120CAN	smartgen#1001	| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+HGM6120CAN	smartgen#1001	HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+HGM6120CAN	smartgen#1001	| 6 | Close Mains Output | HGM6110 without.
+HGM6120CAN	smartgen#1001	This function only suits for HGM6100CAN with engine type
+HGM6120CAN	smartgen#1001	| shutdown alarms. | Only HGM6100N has these
+HGM6120CAN	smartgen#1001	1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+HGM6110U	smartgen#1002	| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39
+HGM6110U	smartgen#1002	| HGM6100U SERIES | GENSET
+HGM6110U	smartgen#1002	HGM6100U series controller can be applicable to (8~35) VDC battery voltage.
+HGM6110U	smartgen#1002	HGM6100U series controller must externally connect to current transformer; CT
+HGM6110UC	smartgen#1002	| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39
+HGM6110UC	smartgen#1002	| HGM6100U SERIES | GENSET
+HGM6110UC	smartgen#1002	HGM6100U series controller can be applicable to (8~35) VDC battery voltage.
+HGM6110UC	smartgen#1002	HGM6100U series controller must externally connect to current transformer; CT
+HGM6120U	smartgen#1002	| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39
+HGM6120U	smartgen#1002	| HGM6100U SERIES | GENSET
+HGM6120U	smartgen#1002	HGM6100U series controller can be applicable to (8~35) VDC battery voltage.
+HGM6120U	smartgen#1002	HGM6100U series controller must externally connect to current transformer; CT
+HGM6120UC	smartgen#1002	| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39
+HGM6120UC	smartgen#1002	| HGM6100U SERIES | GENSET
+HGM6120UC	smartgen#1002	HGM6100U series controller can be applicable to (8~35) VDC battery voltage.
+HGM6120UC	smartgen#1002	HGM6100U series controller must externally connect to current transformer; CT
+HGM9510	smartgen#1003	NOTE: Please refer to HGM9500 Synchronization Plan List for more information on GOV and AVR settings.
+HGM9530	smartgen#1004	Note: Please refer to HGM6500 Synchronization Plan List for more information on GOV and
+HGM9510N	smartgen#1005	| 32 | Remote Start (Island) | (Only available for HGM9520N.)
+HGM9510N	smartgen#1005	| 71 | Grid-Tied Track | (Only available for HGM9520N.)
+HGM9510N	smartgen#1005	| 72 | Island Parallel | (Only available for HGM9520N.)
+HGM9510N	smartgen#1005	NOTE: Please refer to HGM9500 SYNCHRONIZATION PLAN LIST for more information on GOV and AVR settings.
+HGM9530N	smartgen#1005	| 32 | Remote Start (Island) | (Only available for HGM9520N.)
+HGM9530N	smartgen#1005	| 71 | Grid-Tied Track | (Only available for HGM9520N.)
+HGM9530N	smartgen#1005	| 72 | Island Parallel | (Only available for HGM9520N.)
+HGM9530N	smartgen#1005	NOTE: Please refer to HGM9500 SYNCHRONIZATION PLAN LIST for more information on GOV and AVR settings.
+HGM9530N	smartgen#1005	NOTE: Mains parallel function for HGM9510N/9530N controller can be selected via configurable input port. In mains
+HGM9530N	smartgen#1005	NOTE: HGM9510N/9530N controller can suit for wide range of battery voltage (8~35) VDC. Battery negative
+HGM9610	smartgen#1006	HGM9600 series controller’s rear as following:
+HGM9610	smartgen#1006	Fig.3 HGM9600 Rear Panel
+HGM9610	smartgen#1006	| HGM9600 Series Genset Controller | User
+HGM9610	smartgen#1006	| HGM9600 | Series Genset Controller
+HGM9610	smartgen#1006	| HGM9600 | Series Genset Controller User
+HGM9610	smartgen#1006	| HGM9600 Series Genset Controller User Manual | Page | 45
+HGM9610	smartgen#1006	| HGM9600 Series | Genset
+HGM9610	smartgen#1006	| HGM9600 | Series
+HGM9610	smartgen#1006	NOTE: HGM9600 series controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery must be
+HGM9610	smartgen#1006	| HGM9600 Series Genset Controller User Manual | Page 71 of | 73
+HGM9610	smartgen#1006	HGM9600 series controller supports Micro SD card, the controller can regularly save gen-set operation
+HGM9620	smartgen#1006	HGM9600 series controller’s rear as following:
+HGM9620	smartgen#1006	Fig.3 HGM9600 Rear Panel
+HGM9620	smartgen#1006	| HGM9600 Series Genset Controller | User
+HGM9620	smartgen#1006	| HGM9600 | Series Genset Controller
+HGM9620	smartgen#1006	| HGM9600 | Series Genset Controller User
+HGM9620	smartgen#1006	| HGM9600 Series Genset Controller User Manual | Page | 45
+HGM9620	smartgen#1006	| HGM9600 Series | Genset
+HGM9620	smartgen#1006	| HGM9600 | Series
+HGM9620	smartgen#1006	NOTE: HGM9600 series controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery must be
+HGM9620	smartgen#1006	| HGM9600 Series Genset Controller User Manual | Page 71 of | 73
+HGM9620	smartgen#1006	HGM9600 series controller supports Micro SD card, the controller can regularly save gen-set operation
+HGM7110N	smartgen#1007	| HGM7100N Series Genset | Controller User
+HGM7110N	smartgen#1007	| HGM7100N Series Genset | Controller
+HGM7110N	smartgen#1007	| HGM7100N Series Genset Controller User | Manual
+HGM7110N	smartgen#1007	HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of
+HGM7110N	smartgen#1007	Current input of HGM7100N series controller must be connected to outside current transformer. And
+HGM7120N	smartgen#1007	| HGM7100N Series Genset | Controller User
+HGM7120N	smartgen#1007	| HGM7100N Series Genset | Controller
+HGM7120N	smartgen#1007	| HGM7100N Series Genset Controller User | Manual
+HGM7120N	smartgen#1007	HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of
+HGM7120N	smartgen#1007	Current input of HGM7100N series controller must be connected to outside current transformer. And
+HGM7210	smartgen#1008	HGM7200 series controller’s rear panel as following:
+HGM7210	smartgen#1008	| HGM7200 | Series Genset Controller
+HGM7210	smartgen#1008	| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50
+HGM7210	smartgen#1008	| HGM7200 Series | Genset
+HGM7210	smartgen#1008	| HGM7200 | Series
+HGM7210	smartgen#1008	NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must
+HGM7220	smartgen#1008	HGM7200 series controller’s rear panel as following:
+HGM7220	smartgen#1008	| HGM7200 | Series Genset Controller
+HGM7220	smartgen#1008	| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50
+HGM7220	smartgen#1008	| HGM7200 Series | Genset
+HGM7220	smartgen#1008	| HGM7200 | Series
+HGM7220	smartgen#1008	NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must
+HGM7210CAN	smartgen#1008	HGM7200 series controller’s rear panel as following:
+HGM7210CAN	smartgen#1008	| HGM7200 | Series Genset Controller
+HGM7210CAN	smartgen#1008	| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50
+HGM7210CAN	smartgen#1008	| HGM7200 Series | Genset
+HGM7210CAN	smartgen#1008	| HGM7200 | Series
+HGM7210CAN	smartgen#1008	NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must
+HGM7220CAN	smartgen#1008	HGM7200 series controller’s rear panel as following:
+HGM7220CAN	smartgen#1008	| HGM7200 | Series Genset Controller
+HGM7220CAN	smartgen#1008	| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50
+HGM7220CAN	smartgen#1008	| HGM7200 Series | Genset
+HGM7220CAN	smartgen#1008	| HGM7200 | Series
+HGM7220CAN	smartgen#1008	NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must
+HGM9420N	smartgen#1011	| HGM9420LT-S01 | Southeast Asia | WCDMA: B1/B8
+HGM9420N	smartgen#1011	| HGM9420LT-S02 | North America | WCDMA: B2/B5
+HGM9420N	smartgen#1011	HGM9420LT-S03
+HGM9420N	smartgen#1011	| HGM9420LT-S04 | Korea/Thailand/Middle | TDD-LTE: B38/B40/B41 | SGE02-4G-S03
+HGM9420N	smartgen#1011	| HGM9420LT-S05 | New Zealand | TDD-LTE: B40 | SGE02-4G-S04
+HGM9420N	smartgen#1011	| HGM9420LT-S06 | B1/B3/B8/B18/B19/B26
+HGM9420N	smartgen#1011	| HGM9420LT-G | TD-SCDMA: B34/B39
+HGM9310	smartgen#1012	| 25 | ECU CAN L | 0.5mm2 | (HGM9310MPU, HGM9310CAN without).
+HGM9310	smartgen#1012	(HGM9310MPU, HGM9310CAN without).
+HGM9310	smartgen#1012	HGM9310MPU(CAN) controller is applied.
+HGM9310	smartgen#1012	In HGM9310MPU(CAN) controller, there are no items of mains in setting and also no mains
+HGM9310	smartgen#1012	HGM9310MPU(CAN) typical application diagram
+HGM9310	smartgen#1012	HGM9320MPU(CAN) typical application diagram
+HGM9320	smartgen#1012	| 25 | ECU CAN L | 0.5mm2 | (HGM9310MPU, HGM9310CAN without).
+HGM9320	smartgen#1012	(HGM9310MPU, HGM9310CAN without).
+HGM9320	smartgen#1012	HGM9310MPU(CAN) controller is applied.
+HGM9320	smartgen#1012	In HGM9310MPU(CAN) controller, there are no items of mains in setting and also no mains
+HGM9320	smartgen#1012	HGM9310MPU(CAN) typical application diagram
+HGM9320	smartgen#1012	HGM9320MPU(CAN) typical application diagram
+HGM9520	smartgen#1013	Note: Please refer to HGM6500 Synchronization Plan List for more information on

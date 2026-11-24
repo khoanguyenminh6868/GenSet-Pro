@@ -18,15 +18,15 @@
   ]
  },
  "factKeys": {
-  "before": 4038,
-  "after": 4038,
+  "before": 4074,
+  "after": 4074,
   "added": [],
   "lost": []
  },
  "partChanged": {
   "controller": {
-   "keys": 29,
-   "added": 32726,
+   "keys": 32,
+   "added": 37569,
    "lost": 0
   }
  },
@@ -291,6 +291,33 @@
    "addedBySource": {
     "smartgen#1011": 2571
    }
+  },
+  {
+   "key": "controller:HGM9310",
+   "before": 699,
+   "after": 2296,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1012": 1597
+   }
+  },
+  {
+   "key": "controller:HGM9320",
+   "before": 698,
+   "after": 2295,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1012": 1597
+   }
+  },
+  {
+   "key": "controller:HGM9520",
+   "before": 700,
+   "after": 2349,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1013": 1649
+   }
   }
  ],
  "factsFor": [
@@ -405,6 +432,16 @@
    "after": 2171
   },
   {
+   "model": "HGM9310",
+   "before": 699,
+   "after": 2296
+  },
+  {
+   "model": "HGM9320",
+   "before": 698,
+   "after": 2295
+  },
+  {
    "model": "HGM9420N",
    "before": 700,
    "after": 3271
@@ -418,6 +455,11 @@
    "model": "HGM9510N",
    "before": 700,
    "after": 3342
+  },
+  {
+   "model": "HGM9520",
+   "before": 700,
+   "after": 2349
   },
   {
    "model": "HGM9530",
