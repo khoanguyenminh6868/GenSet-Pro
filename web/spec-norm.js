@@ -242,7 +242,9 @@
     r.unit = LEN_UNIT(V) || LEN_UNIT(L) || LEN_UNIT(H);
     if (!r.unit) miss(r, "unit");
     // "4300 × 1600 × 2250mm / 4,300kg" (jiuan-power): the weight after "/" is not a size.
-    const ns = numsIn(V.replace(/\(.*?\)/g, " ").replace(/\/\s*[\d.,]+\s*kgs?\b.*$/i, " "));
+    const vd = V.replace(/\(.*?\)/g, " ").replace(/\/\s*[\d.,]+\s*kgs?\b.*$/i, " ");
+    let ns = numsIn(vd);
+    if (ns.length !== 3) { const j = joinedDims(vd); if (j) ns = numsIn(j); }
     if (ns.some((x) => x.amb)) return miss(r, "number");
     if (ns.length !== 3) { if (ns.length) r.options = ns.map((x) => x.n); return miss(r, ns.length ? "ambiguous" : "value"); }
     const n = ns.map((x) => x.n);
@@ -255,6 +257,16 @@
     const enc = encOf(L, V, H, ctx); if (enc) r.cond.enclosure = enc; else miss(r, "enclosure");
     if (/no\s*fuel\s*tank|without\s*(fuel\s*)?tank|不含油箱/i.test(V + " " + L)) r.cond.tank = "excluded";
     return r;
+  }
+
+  // A size whose figures a stray space split ("240 0×880×1360", "6200 × 1950 ×3 000", "2255 ×8 70 × 1260", zhengdian n101 /
+  // n104 / n108; L1-B2, 24/11/2026): the "×" signs part the cell into exactly three pieces, each only digits with single
+  // spaces between them (no decimal point, no other sign), and at least one piece has such a space. The space is then no
+  // separator: the digits of a piece are one figure ("240 0" = 2400). Any other cell → null (read as before).
+  function joinedDims(v) {
+    const parts = String(v).trim().replace(/\s*(mm|cm|m)\.?$/i, "").split(/\s*[×xX*]\s*/).map((x) => x.trim());
+    if (parts.length !== 3 || !parts.every((x) => /^\d+( \d+)*$/.test(x)) || !parts.some((x) => / /.test(x))) return null;
+    return parts.map((x) => x.replace(/ /g, "")).join(" × ");
   }
 
   function weight(spec, ctx, r) {
@@ -407,8 +419,11 @@
     // "380V/400V/415V、10.5kv(Optional)" (superwatt-swt): V and kV in one cell, no single unit for the figures.
     if (kv && /\d\s*v\b/i.test(V.replace(/\d\s*kv\b/gi, ""))) { r.unit = null; miss(r, "unit"); }
     else if (kv) r.unit = "kV";
+    // "230V - 3 Phase" (hosem n110; L1-B3, 24/11/2026): a figure written with "phase" / "ph" after it is the phase count, not a
+    // voltage (it was read as the range 230-3 V). It is taken out of the figures and kept as the phase of the value.
+    const phV = [...V.matchAll(/(?<![\d.])([13])\s*-?\s*(?:phases?|ph)\b/gi)].map((m) => Number(m[1]));
     // "220V / 50Hz": the frequency is not a voltage; "120V / 240V 277V" → "120/240 277" (a "/" joins, a space parts).
-    const vt = V.replace(/\(.*?\)/g, " ").replace(/\d+(\.\d+)?\s*hz/gi, " ").replace(/(\d)\s*(k?v|vac|volts?)\b/gi, "$1").replace(/\s*\/\s*/g, "/").replace(/\/\s*$/, "").replace(/^\s*\//, "");
+    const vt = V.replace(/(?<![\d.])[13]\s*-?\s*(?:phases?|ph)\b/gi, " ").replace(/\(.*?\)/g, " ").replace(/\d+(\.\d+)?\s*hz/gi, " ").replace(/(\d)\s*(k?v|vac|volts?)\b/gi, "$1").replace(/\s*\/\s*/g, "/").replace(/\/\s*$/, "").replace(/^\s*\//, "");
     const groups = vt.split(/[,;，、]|\bor\b|\band\b/i).map((g) => g.trim()).filter((g) => /\d/.test(g));
     const out = [];
     for (const g of groups) {
@@ -427,6 +442,7 @@
     else if (out.length) r.options = out; // each item: the figures of one "a/b" system, in the order written
     if (/line\s*to\s*line|l-l|线电压/i.test(L)) r.cond.kind = "line-line";
     const ph = L.match(/([13])\s*-?\s*phase/i); if (ph) r.cond.phase = Number(ph[1]);
+    else if (uniq(phV).length === 1) r.cond.phase = phV[0];
     if (/optional|available|switchable|可选/i.test(V + " " + L)) r.cond.choice = true;
     return r;
   }
@@ -497,6 +513,16 @@
     // HP / kW lies in 1.30-1.37 (1 kW = 1.341 HP, 1.36 metric): kW, HP, rpm. Any other ratio stays "ambiguous" as before.
     const t3 = /k\s*w\s*\/\s*hp\s*\/\s*(rpm|r\/min)/i.test(lu) ? V.match(/^\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*$/) : null;
     const t3n = t3 ? [numOf(t3[1]), numOf(t3[2]), numOf(t3[3])] : null;
+    // A speed written beside the power in the cell (L1-B1, 24/11/2026: the speed was read as a second power figure):
+    // - "47@1500" under "Rated power output (kW@RPM)" (penlucky): the label names the figure after "@" a speed;
+    // - "75-118/3000" under "额定功率/转速（kw/rpm）" (yunnei): a range of power, then "/" and the speed the label names;
+    // - "18kw/1500" (eastern-lion "Engine power (kW)"): the cell writes kW on the first figure only, and the second is no output of
+    //   the same engine (one of 1000 / 1200 / 1500 / 1800 / 3000 / 3600 and over 3 times the first: no standby rating is that).
+    //   No speed unit is written anywhere, so the second figure is NOT read as a speed either (missing "speed" stays).
+    const at = /k\s*w\s*m?\s*@\s*(rpm|r\/min|转)/i.test(lu) ? V.match(/^\s*(\d+(?:[.,]\d+)?)\s*(?:kwm?)?\s*@\s*(\d+(?:[.,]\d+)?)\s*(?:rpm|r\/min|转)?\s*$/i) : null;
+    const rs = slash && /rpm|r|转/i.test(slash[1]) ? V.match(/^\s*(\d+(?:[.,]\d+)?)\s*(?:-|–|~)\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*$/) : null;
+    const kwBare = V.match(/^\s*(\d+(?:[.,]\d+)?)\s*kwm?\s*\/\s*(\d{4})\s*$/i);
+    const kwSpeed = kwBare && !slash && [1000, 1200, 1500, 1800, 3000, 3600].includes(Number(kwBare[2])) && !numOf(kwBare[1]).amb && Number(kwBare[2]) > 3 * numOf(kwBare[1]).n;
     if (spec.unitMissing) {
       // catalog.js ROW_EXCEPTIONS `unitspec`: the source writes no unit for this figure, so none is read (never kW).
       const ns = [...V.matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => numOf(m[0]));
@@ -505,6 +531,16 @@
       r.unit = null;
     } else if (t3n && !t3n.some((x) => x.amb) && t3n[0].n > 0 && t3n[1].n / t3n[0].n >= 1.30 && t3n[1].n / t3n[0].n <= 1.37) {
       r.num = t3n[0].n; r.unit = "kW"; r.cond.hp = t3n[1].n; r.cond.rpm = t3n[2].n;
+    } else if (at) {
+      const a = numOf(at[1]), b = numOf(at[2]);
+      if (a.amb || b.amb) return miss(r, "number");
+      r.num = a.n; r.unit = "kW"; r.cond.rpm = b.n;
+    } else if (rs) {
+      const a = numOf(rs[1]), b = numOf(rs[2]), c = numOf(rs[3]);
+      if (a.amb || b.amb || c.amb) return miss(r, "number");
+      r.range = [a.n, b.n]; r.unit = "kW"; r.cond.rpm = c.n;
+    } else if (kwSpeed) {
+      r.num = numOf(kwBare[1]).n; r.unit = "kW";
     } else if (vRates.length >= 2) {
       r.unit = uniq(vRates.map((m) => m[2].toLowerCase())).length === 1 ? (/^kw/i.test(vRates[0][2]) ? "kW" : vRates[0][2].toLowerCase() === "hp" ? "hp" : "PS") : null;
       r.options = vRates.map((m) => numOf(m[1]).n);
@@ -517,8 +553,8 @@
       else if (/rpm|r|转/.test(second)) { r.num = a.n; r.unit = "kW"; r.cond.rpm = b.n; }
       else { r.options = [a.n, b.n]; r.unit = /kw/i.test(vs[2] || "") ? "kW" : null; miss(r, "ambiguous"); }
     } else {
-      // "1,097 kWm at 1,500 rpm": the speed (with its comma) is not a power figure.
-      const f = figures(V.replace(/(\bat\b|@)?\s*\d[\d,.]*\s*(rpm|r\/min|转)/gi, " ").replace(/\(.*?\)/g, " "));
+      // "1,097 kWm at 1,500 rpm": the speed (with its comma) is not a power figure. "24kW At 1500R.P.M." (hosem n136, L1-B1) too.
+      const f = figures(V.replace(/(\bat\b|@)?\s*\d[\d,.]*\s*(rpm|r\.p\.m\.?|r\/min|转)/gi, " ").replace(/\(.*?\)/g, " "));
       if (!f) return miss(r, "value");
       if (f.amb) return miss(r, "number");
       if (f.list) { r.options = f.list; miss(r, "ambiguous"); } else if (f.range) r.range = f.range; else r.num = f.num;
