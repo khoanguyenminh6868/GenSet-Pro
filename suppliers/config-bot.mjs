@@ -6093,7 +6093,8 @@ export function makerSheetChecks(c, reqs, facts = {}, { hsmtCompr = null } = {})
 // The figure x of a compression value ("16.0:1", "16,5 : 1", "17", "14 : 01"), else null (two figures, words).
 export function comprFig(v) {
   // The "1" of each ":1" dropped, the value must hold one figure only ("18.2–18.3:1", "16.5 / 17" are not one ratio).
-  const s = String(v ?? "").replace(/(\d),(\d)/g, "$1.$2").replace(/(\d)\s*:\s*0?1(?![\d.])/g, "$1 ");
+  // NFKC first: the full-width colon "：" (U+FF1A, "17.3：1", "13 ： 1") and full-width digits read as ":" and ASCII digits.
+  const s = String(v ?? "").normalize("NFKC").replace(/(\d),(\d)/g, "$1.$2").replace(/(\d)\s*:\s*0?1(?![\d.])/g, "$1 ");
   const n = [...new Set((s.match(/\d+(?:\.\d+)?/g) || []).map(Number))];
   return n.length === 1 && n[0] >= 5 && n[0] <= 30 ? n[0] : null;
 }
