@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T04:40:50.891Z
+  modified: 2026-11-24T04:53:23.353Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -34,6 +34,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Soát 275 số "kW/Hp" xong (`nghiem-thu\kw-hp-275.md`: 270 kW, 1 HP, 4 không xác định). Khoa 24/11/2026 ("làm như em đề xuất"): ô ettes ET-3750 20V4000G63 `3311` KHÔNG đổi thành HP (nguồn không ghi chữ HP) mà đánh dấu thiếu đơn vị, cần xác nhận; 4 ô không xác định (20V4000G63L ×3, K19-DM `507/580`) cũng thiếu đơn vị; bộ ba ricardo đọc kW / HP / v/p theo thứ tự; KHÔNG đặt luật chung "nhãn kW/Hp một số của NCC X = kW", chỉ danh sách tường minh từng dòng.
 - Bộ kiểm giá trị bản chuẩn đã có (`suppliers/spec-value-check.mjs`, #1158; báo `nghiem-thu\spec-value-check.md`). Khoa 24/11/2026 trả lời 5 điểm: (1) Khoa ĐÃ chạy SQL tạo bảng `spec_std` trên Supabase (điều phối bật biến repo `SPEC_STD_PUBLISH=1` và chạy workflow đăng lần đầu); (2) 28 nhóm trùng mã: soát từng nhóm, chỉ gộp khi có nguồn; (3) 11 khối lượng googol không rõ của động cơ hay tổ máy: em hiểu "làm như đề xuất" = không gán bên nào, đánh dấu cần xác nhận (đã báo Khoa cách hiểu này); (4) giá trị sai do nguồn ghi sai (nguyên văn): "Đưa từng ca vào danh sách để bỏ hoặc sửa" → `dropspec` / `fixspec` tường minh từng dòng, sửa chỉ khi giá trị đúng có trong nguồn; (5) các dải "cần Khoa xem" trình Khoa danh sách, chờ Khoa duyệt.
 - Khoa 24/11/2026 (nguyên văn): "Bộ kiểm giá trị khi nối vào workflow đăng thì cảnh báo cho anh biết để quyết định. 6 pr kia để phiên khác lo" → bộ kiểm giá trị trong workflow đăng CHỈ CẢNH BÁO Khoa (không chặn đăng, không tự bỏ / sửa); 6 PR nháp #1105 #1110 #1111 #1114 #1115 #1118 thuộc phiên điều phối KHÁC, luồng chuẩn hoá không đụng, bước 3 tránh phần chúng đã lo. Bản chuẩn đã đăng thật vào `spec_std` 24/11 (9.685 doc); `SPEC_STD_PUBLISH=1` đã bật.
+- Trùng mã (`nghiem-thu\trung-ma-28.md`), Khoa 24/11/2026 "3 điểm cần a quyết: làm như em đề xuất": (1) RCG "/S" ↔ "-S" (R-C1375D5…) GIỮ RIÊNG (khác đầu phát, nguồn không giải thích dấu); (2) dấu "#" của stone-power (SC250E5#…) coi như `^`: tách có chủ ý, giữ riêng; (3) `KTA19-D(M)` / `KTA38-D(M)` gộp về `-DM` cho CẢ mecca-power lẫn walter-yangzhou (mã của Cummins, không phải của riêng NCC). Gộp tường minh 6 nhóm động cơ + 1 nhóm đầu phát endress ECP28 M4C; `UCI274C(80KW)` và `KH*2000GF` Khoa chưa quyết, không gộp. Khoa cũng dặn: đo top 30 GỘP một lần cho cả đợt, không đo lẻ từng PR.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
