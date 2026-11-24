@@ -71,7 +71,7 @@ Ghi chú: tecgen n127 còn ghi "33kW / 34kVA" cho TG41 (nguồn gõ sai), nhưng
 
 ## 6. Đo ảnh hưởng
 
-- `spec-diff git:8832317f .`: DIFF_SUMMARY
+- `spec-diff git:8832317f .`: bản ghi `fromSupplier` 62.160 → 62.160, **77 đổi, 0 mất, 0 thêm**, 40 bảng / 16 NCC; chỉ dạng: tiêu hao bỏ 60, kích thước bỏ 23, bore bỏ 3, tỉ số nén bỏ 1, công suất (nopower depco) 3; `gensetsOf` 1.700 → 1.700, 26 đổi (yingtai n107 kích thước bỏ), 0 mất, 0 thêm; đảo vai 0 → 0. 87 giá trị "tự kiểm cần soát tay" đều là số BỎ của chính các dòng trong danh sách.
 - Đối chiếu: mọi bảng có bản ghi đổi đều có trong danh sách (0 ngoài danh sách). Mục không làm đổi bản ghi: bảng chép lại (bản ghi đã gộp vào bản đầu qua `mergeRepeats`) và googol (chỉ thêm cờ, `gensetsOf` không đổi số).
 - `quality.mjs --check`: QUALITY.
 - `node --test suppliers/*.test.mjs`: TESTS. `catalog-hy.test.mjs` sửa: đếm ghi chú "ngoại lệ theo dòng" của yingtai chỉ ở n101 / n2003 (n107 / n108 của việc này thêm ghi chú). Test mới `suppliers/gia-tri-sai.test.mjs`.
