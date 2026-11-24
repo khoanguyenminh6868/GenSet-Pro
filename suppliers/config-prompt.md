@@ -34,6 +34,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
     figures, then the alternator.
   - "Thông số theo model": every figure of each engine and alternator above, from ANY supplier's row or datasheet that
     names that model, each with its `factSrc`. A figure marked ⚠ is given differently by its sources.
+    A line starting `[MỘT NGUỒN INTERNET, bậc N, không phải tờ hãng]` is a figure the maker's own documents in the system
+    do not give, read from ONE internet page (bậc 1 the maker's page, 2 a maker's document posted by someone else, 3 any
+    other page), with its URL and quoted words; a table (alternator ratings) is one line per quoted row and condition,
+    and the column titles the conditions were read from are written once under the lines. It is not a fact (no `factSrc`)
+    and the code never uses it to rank or drop a model (Khoa 2026-11-24).
   - "Thông số bộ điều khiển": the first lines of the maker's datasheet of the controllers above (Deep Sea, SmartGen),
     each line of the controller of its heading, with the `supplierId` / `n` to quote it (Deep Sea, SmartGen, ComAp). ALL the lines are in
     `controllers.md` (a datasheet runs to 250 lines, a SmartGen manual to 700): for every controller requirement
@@ -173,6 +178,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Only figures of the engine or alternator itself, never a genset figure (fuel consumption, size, tank, noise) of
    another supplier's row. A figure marked ⚠ (sources disagree) is `unclear`, with the values in `offered`; the code
    also turns such a "met" into "unclear".
+   A figure only a `[MỘT NGUỒN INTERNET …]` line gives (Khoa 2026-11-24): it may answer the check, never as "đạt". Write the
+   check as usual (`met` / `not_met` by the figure, `sourceQuote` = the quoted words of that line exactly, no `factSrc`,
+   `offered` with only the voltage / frequency / kVA… of that line's own condition); the code then makes it "cần xác
+   nhận" (`confirm`, the supplier confirms with its datasheet) and records the URL and bậc. Never take such a figure for
+   a model other than the one its heading names, and do not write the URL or "một nguồn" in `note` / `gaps` yourself.
    A candidate with "datasheet tổ máy <model>" (the maker's own sheet of that one genset, written as blocks of
    label | unit | value: general, Voltage, Frequency, Diesel engine, Alternator, and lines of its own page): every line of
    every block is that genset's. For a configuration of that genset, read every requirement against those blocks

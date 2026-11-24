@@ -42,6 +42,7 @@ import { useBot as rowFlagsUse, blockedRows, lineKey } from "./row-flags-lib.mjs
 import * as ET from "./engine-traits.mjs";
 import { variantFamily } from "./engine-variant.mjs";
 import * as CM from "./ctl-module.mjs";
+import { readOneSource, oneSourcePick, COND_COLS as ONE_COND_COLS } from "./one-source-rules.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -2600,6 +2601,105 @@ export function copyModelChecks(configs, textOf = () => "") {
   }
 }
 const factLine = (f) => `${CAT.SPEC[f.key]?.vi || RATED_VI[f.key] || f.key}: ${f.value} — factSrc: { "supplierId": "${f.supplierId}", "n": ${f.n}, "line": ${JSON.stringify(f.line)} }`;
+// ---------- Giá trị một nguồn internet trong Gợi ý cấu hình (one-source-4: PR 4 của thiết kế gia-tri-mot-nguon) ----------
+// Khoa 24/11/2026: CHỈ HIỂN THỊ kèm nhãn, không cộng điểm, không dùng để loại; check dựa vào giá trị loại này luôn "cần xác
+// nhận", không bao giờ "đạt". Đọc thẳng one-source.json (readOneSource), KHÔNG nhét vào `facts` của modelFacts (sẽ thành phiếu
+// số đông, nguồn của makerSheetChecks / comprChecks) và không chạm candidates / makerAlts / makerAltFix. Bản ghi nào hiện: cùng
+// luật bản chuẩn (oneSourcePick: tờ hãng trong repo đã ghi trường đó thì không hiện, mâu thuẫn thì không bản nào, trùng giữ một).
+export const ONE_LEVEL_VI = { 1: "trang hãng", 2: "bản hãng do bên khác đăng lại", 3: "nguồn khác" };
+// The bản ghi to show for the models `keys` ("engine:KEY", "alternator:KEY", "controller:KEY"): Map(key → [{ rec, f }]). The
+// maker-sheet rule needs sourceRatings (reads the saved pages): built only when a bản ghi of a shown model exists, so a run
+// with none reads nothing more than before.
+export function oneSourceOf(records, keys, { facts = new Map(), suppliers = [], sourcesDir } = {}) {
+  const out = new Map();
+  if (!Array.isArray(records) || !records.length || !keys?.size) return out;
+  const makerCtx = () => {
+    const rt = sourceRatings(suppliers, sourcesDir);
+    return { facts, altRatings: rt.alt, altAttrs: rt.attr, engRatings: rt.eng, suppliers: new Map((suppliers || []).filter(Boolean).map((s) => [s.id, { role: s.role }])) };
+  };
+  for (const x of oneSourcePick(records.filter((r) => keys.has(`${r?.part}:${r?.key}`)), { has: () => true, makerCtx }).keep) {
+    const k = `${x.rec.part}:${x.rec.key}`;
+    out.set(k, [...(out.get(k) || []), x]);
+  }
+  return out;
+}
+const ONE_DUTY_VI = { continuous: "liên tục", standby: "dự phòng (standby)" };
+const ONE_COND_ORDER = ["hz", "rpm", "duty", "rating", "ambient_c", "insulation_rise", "phases", "connection", "kind"];
+const oneCondText = (k, v) => (k === "hz" ? `${v} Hz` : k === "voltage" ? `${v} V` : k === "phases" ? `${v} pha` : k === "ambient_c" ? `${v}°C` : k === "rpm" ? `${v} vòng/phút` : k === "duty" ? ONE_DUTY_VI[v] || v : String(v));
+const ONE_VAL_UNIT = { kva: "kVA", kw: "kW", efficiency_pct: "%", current_a: "A" };
+const oneValText = (v, unit) => {
+  if (v != null && typeof v === "object" && !Array.isArray(v)) return Object.entries(v).filter(([k, x]) => !ONE_COND_COLS.has(k) && x != null).map(([k, x]) => (k === "efficiency_pct" ? `hiệu suất ${x}%` : `${x} ${ONE_VAL_UNIT[k] || k}`)).join(", ");
+  return `${Array.isArray(v) ? v.join(", ") : v}${unit ? ` ${unit}` : ""}`;
+};
+export const ONE_TAG = (level) => `[MỘT NGUỒN INTERNET, bậc ${level}, không phải tờ hãng]`;
+// The lines of one model, after its facts in "Thông số theo model": one per bản ghi, except a table field (`ratings`) whose
+// bản ghi share a quoted row and every condition but the voltage: one line per such group ("50 Hz, liên tục, 40°C, H/125 K,
+// 3 pha, Y: 380 V 180 kVA; 400 V 180 kVA…"), so no condition is lost. The column titles the code read the conditions from
+// (condQuote) are written once per page under the lines.
+export function oneSourceMd(list = []) {
+  const out = [], groups = new Map(), heads = new Map();
+  for (const { rec, f } of list) {
+    const table = f.type === "table" && rec.value && typeof rec.value === "object";
+    const cells = table ? Object.entries(rec.value).filter(([k, v]) => ONE_COND_COLS.has(k) && k !== "voltage" && v != null).sort(([a], [b]) => ONE_COND_ORDER.indexOf(a) - ONE_COND_ORDER.indexOf(b)) : [];
+    const k = JSON.stringify([f.id, rec.level, rec.url, rec.quote || [], table ? cells : rec.id]);
+    if (!groups.has(k)) groups.set(k, { rec, f, table, cells, items: [] });
+    groups.get(k).items.push(rec);
+    if (rec.condQuote?.length) { const h = JSON.stringify([rec.url, rec.condQuote]); if (!heads.has(h)) heads.set(h, rec); }
+  }
+  for (const { rec, f, table, cells, items } of groups.values()) {
+    const cond = table ? cells.map(([c, v]) => oneCondText(c, v)) : Object.entries(rec.cond || {}).filter(([, v]) => v != null).map(([c, v]) => oneCondText(c, v));
+    const vals = table ? items.map((r) => `${r.value.voltage != null ? `${oneCondText("voltage", r.value.voltage)} ` : ""}${oneValText(r.value)}`).join("; ") : oneValText(rec.value, rec.unit);
+    out.push(`- ${ONE_TAG(rec.level)} ${f.vi || f.id}${cond.length ? ` (${cond.join(", ")})` : ""}: ${vals} — ${rec.url} ${(rec.quote || []).map((q) => JSON.stringify(q)).join(" ")}`);
+  }
+  for (const rec of heads.values()) out.push(`  tiêu đề cột trên trang ${rec.url} (điều kiện của các dòng trên): ${rec.condQuote.map((q) => JSON.stringify(q)).join(" ; ")}`);
+  return out;
+}
+// A check that rests on a one-source value: its sourceQuote is a quote / column title of a bản ghi of the configuration's
+// models and NOT in any of the configuration's own sources (`texts`), or it names a bản ghi's URL. → { recs, byQuote }.
+const oneHitOf = (recs, x, texts) => {
+  if (!recs.length) return null;
+  const q = x.sourceQuote ? norm(x.sourceQuote) : "";
+  const own = !q || q.length < 8 || x.factSrc || texts.some((t) => t.includes(q));
+  const byQuote = own ? [] : recs.filter((r) => [...(r.quote || []), ...(r.condQuote || [])].some((s) => norm(s).includes(q)));
+  const said = norm([x.sourceQuote, x.offered, x.note].filter(Boolean).join(" "));
+  const hit = recs.filter((r) => byQuote.includes(r) || (r.url && said.includes(norm(r.url))));
+  return hit.length ? { recs: hit, byQuote } : null;
+};
+const ONE_NOTE = (level) => `Code ghi: số lấy từ một nguồn internet (bậc ${level}: ${ONE_LEVEL_VI[level] || "?"}), không phải tờ hãng; cần nhà cung cấp xác nhận.`;
+const ONE_NOTE_RE = /\s*Code ghi: số lấy từ một nguồn internet \(bậc [^)]*\), không phải tờ hãng; cần nhà cung cấp xác nhận\./g;
+// Undo the hold (oneSourceHold) on entry to check(): the agent's own met / not met is checked against its quote again.
+function oneSourceRelease(y) {
+  if (y.oneHold) { y.status = y.oneHold; delete y.oneHold; delete y.confirm; }
+  if (String(y.note ?? "").includes("Code ghi: số lấy từ một nguồn internet")) { const n = String(y.note).replace(ONE_NOTE_RE, "").trim(); delete y.note; if (n) y.note = n; }
+  delete y.oneSource;
+}
+// A met / not met resting on a one-source value → "cần xác nhận" (confirm, document: the supplier sends its datasheet),
+// never met (Khoa 24/11/2026, Q7). `oneHold` keeps the agent's status like `placeHold` (confirmChecks turns every "confirm"
+// back to "unclear"); `oneSource` = the bản ghi ids, URL and level. Fields deleted and written in one order so that a second
+// check gives the same JSON.
+function oneSourceHold(y) {
+  if (!y.oneSource) return false;
+  if (y.byCode) { delete y.oneSource; return false; }
+  if (y.status !== "met" && y.status !== "not_met") return false;
+  const was = y.status, src = y.oneSource, note = [String(y.note || "").replace(ONE_NOTE_RE, "").trim(), ONE_NOTE(src.level)].filter(Boolean).join(" ");
+  delete y.confirm; delete y.oneHold; delete y.oneSource; delete y.note;
+  y.status = "confirm"; y.confirm = "document"; y.oneHold = was; y.oneSource = src; y.note = note;
+  return true;
+}
+// A grouped check (parts) as check() puts it back together: met only when every part is met, one not met makes it not met.
+function groupStatus(g) {
+  const st = (s) => g.parts.filter((p) => p.status === s).map((p) => p.item);
+  g.status = st("not_met").length ? "not_met" : st("met").length === g.parts.length ? "met" : "unclear";
+  g.offered = `Đạt ${st("met").length}/${g.parts.length}`;
+  g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`, st("confirm").length && `Cần NCC xác nhận: ${st("confirm").join(", ")}.`].filter(Boolean).join(" ");
+}
+export function oneSourceChecks(c) {
+  for (const x of c.checks || []) {
+    oneSourceHold(x);
+    if (x.parts?.length && x.parts.map(oneSourceHold).some(Boolean)) groupStatus(x);
+  }
+  return c;
+}
 export function catalogMd(cat, cap, hints, opts = {}) {
   const facts = opts.facts || modelFacts(cat, opts.suppliers || []), { top, all } = candidates(cat, cap, hints, { ...opts, facts });
   const sup = new Map((opts.suppliers || []).map((s) => [s.id, s])), shown = new Set(), headers = new Map(), sheetShown = new Map();
@@ -2660,6 +2760,8 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     if (!models.some((m) => m.kind === "engine" && m.x.key === r.e.key)) models.push({ kind: "engine", x: r.e });
     if (r.a && !models.some((m) => m.kind === "alternator" && m.x.key === r.a.key)) models.push({ kind: "alternator", x: r.a });
   }
+  // One-source values of these models (one-source-4): their own labelled lines after the model's facts, never facts.
+  const oneOf = oneSourceOf(opts.oneSource ?? readOneSource(), new Set(models.map(({ kind, x }) => `${kind}:${x.key}`)), { facts, suppliers: opts.suppliers || [], sourcesDir: opts.sourcesDir });
   for (const { kind, x } of models) {
     const list = facts.get(`${kind}:${x.key}`) || [], bad = factConflicts(list);
     out.push(`### ${kind === "engine" ? "Động cơ" : "Đầu phát"} ${x.model}${x.make ? ` — hãng: ${x.make}` : ""}`);
@@ -2670,6 +2772,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
       const same = list.filter((g) => g.key === key).sort((a, b) => a.line.length - b.line.length);
       for (const f of bad.has(key) ? same.slice(0, 4) : same.slice(0, 2)) out.push(`- ${factLine(f)}${webTag(f)}`);
     }
+    out.push(...oneSourceMd(oneOf.get(`${kind}:${x.key}`)));
     out.push("");
   }
   // The controllers of the rows above that have their maker's datasheet (the HSMT's make first, then the most offered),
@@ -3308,7 +3411,7 @@ export function webInBand(p, cap) {
 }
 const TRAIT_CTL_ITEM = (term) => `Bộ điều khiển ${term} (HSMT nêu đích danh)`;
 const isTraitCtlItem = (x) => !!x?.trait || /\(HSMT nêu đích danh\)\s*$/.test(String(x?.item || "").normalize("NFC"));
-export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false, sourcesDir, cap = null }) {
+export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false, sourcesDir, cap = null, oneSource = null }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
@@ -3816,8 +3919,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   comboNotes(result, combo);
   // Đầu phát theo datasheet hãng (dau-phat-hang B, Khoa 20/11/2026): before the sources of each part are read below.
   const altNeed = makerAltFix(result, { suppliers, RT, built, rowOf, hsmtText, cap, sync, problems, sourcesDir });
+  // Giá trị một nguồn (one-source-4) of the configurations' engine / alternator / controller: a check resting on one is held
+  // as "cần xác nhận" below (oneSourceChecks); the bản ghi are read only, never facts.
+  const onePartKey = (c, p) => (c[p]?.model ? `${p}:${CAT.keyOf(p === "controller" ? ctlModelOf(c.controller) : c[p].model)}` : null);
+  const oneOf = oneSourceOf(oneSource ?? readOneSource(), new Set(result.configs.flatMap((c) => ["engine", "alternator", "controller"].map((p) => onePartKey(c, p)).filter(Boolean))), { facts, suppliers, sourcesDir });
+  const oneRecsOf = (c) => ["engine", "alternator", "controller"].flatMap((p) => oneOf.get(onePartKey(c, p)) || []).map((x) => x.rec);
   for (const c of result.configs) {
-    const texts = {};
+    const texts = {}, oneRecs = oneRecsOf(c);
     // A main controller the agent chose from its maker's datasheet, which no supplier of the configuration offers
     // (bdk-amf, Khoa 20/11/2026 "2"): labelled as such by code; its source is that datasheet table (sourceText "maker").
     if (c.controller) {
@@ -3860,6 +3968,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       return x.parts.map((p) => ({ ...p, item: `${x.item}: ${p.item}`, part: x.part, level: x.level, hsmtQuote: "", group: x, name: p.item }));
     });
     for (const x of c.checks) {
+      // A check held for a one-source value by an earlier check of this result: the agent's met / not met again.
+      oneSourceRelease(x);
       // "confirm" is the code's (confirmChecks below), never the agent's: one written by the agent, or by an earlier check
       // of this result, is "unclear" again until confirmChecks decides.
       if (x.status === "confirm") { x.status = "unclear"; delete x.confirm; if (x.licensed) { delete x.licensed; delete x.licensedNote; delete x.ask; } }
@@ -3890,6 +4000,13 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         }
       }
       const src = texts[x.part] || texts.genset || texts.engine || texts.alternator;
+      // One-source (one-source-4): a quote of a bản ghi of this configuration's models that none of its own sources has, or a
+      // bản ghi's URL in the check. Its quote counts as a source quote below; the status is held at the end (oneSourceChecks).
+      const one = oneHitOf(oneRecs, x, Object.values(texts).filter(Boolean));
+      if (one) {
+        const urls = [...new Set(one.recs.map((r) => r.url))];
+        x.oneSource = { ids: one.recs.map((r) => r.id), url: urls.join(" "), level: Math.max(...one.recs.map((r) => Number(r.level) || 3)) };
+      }
       // Conversions: recomputed here from web/conversions.js; each input must be in the source / HSMT quote, a standard
       // constant of that formula, or the result of an earlier conversion of this check.
       const calc = [], used = [];
@@ -3918,15 +4035,19 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         else if (x.factSrc && !fact) { /* already a reason */ }
         else {
           const all = fact ? [fact.text] : Object.values(texts).filter(Boolean);
-          if (!all.some((t) => t.includes(norm(x.sourceQuote)))) reasons.push("câu trích nguồn");
+          // A one-source quote: the numbers offered must be of the bản ghi it is quoted from (value and conditions, which
+          // the code read from the page's column titles), not any number of the quoted row.
+          const oneQ = !fact && one?.byQuote.length ? one.byQuote : null;
+          if (!oneQ && !all.some((t) => t.includes(norm(x.sourceQuote)))) reasons.push("câu trích nguồn");
           else {
             // Every number offered is in the source quote (from a factSrc: in the model's own figures on that line), is
             // an input of a conversion, or is a recomputed result.
             // From a table whose models run across: only the label and the model's own column of the quoted row.
-            const col = !fact && ["genset", "engine", "alternator"].map((p) => c[p] && columnOf(c[p].src, c[p].model)).find(Boolean);
+            const col = !fact && !oneQ && ["genset", "engine", "alternator"].map((p) => c[p] && columnOf(c[p].src, c[p].model)).find(Boolean);
             const qrow = col && col.t.rows.map(CAT.cellsOf).find((cs) => norm(cs.join(" | ")).includes(norm(x.sourceQuote).replace(/^\|\s*/, "")) || norm(x.sourceQuote).includes(norm(cs[0] || "-")));
             const quoted = qrow ? `${qrow[0]} ${qrow[qrow.length - col.off] ?? ""}` : x.sourceQuote;
-            const nums = fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(quoted);
+            const oneNums = (r) => (r.value && typeof r.value === "object" ? Object.values(r.value) : [r.value]).flatMap((v) => numbersLoose(String(v ?? "")));
+            const nums = oneQ ? oneQ.flatMap(oneNums) : fact ? fact.nums.filter((v) => numbersLoose(x.sourceQuote).includes(v)) : numbersLoose(quoted);
             const ok = (v) => nums.includes(v) || used.includes(v) || calc.some((c) => CONV.matches(v, c));
             // The configuration's own model names ("8 kVA (cột CP198FE)") are not figures.
             const models = ["engine", "alternator", "genset", "controller"].map((p) => c[p]?.model).filter((m) => m && /\d/.test(m));
@@ -4094,6 +4215,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     makerAltChecks(c, result.requirements || [], altNeed, { sourcesDir });
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
+    // Last of all: a met / not met resting on a one-source value is "cần xác nhận" (Khoa 24/11/2026: never met).
+    oneSourceChecks(c);
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
   }
   clarifyOf(result, hsmtText, combo, problems, { scan: !sized });
