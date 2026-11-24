@@ -130,16 +130,29 @@ test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 kh�
   assert.ok(g.every((e) => e.uses.every((u) => u.fuel === "gasoline")));
 });
 
-test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E3262 ghi khí (trang hãng MAN, mức D); 8 dòng D2676 / D2862 / D3872 để trống (catalog không có giá trị diesel tường minh)", () => {
+test("man-engines n104 (catalog-3-loi, Khoa 21/11/2026 \"ghi fuel theo hãng\"): E3262 khí, 8 dòng D2676 / D2862 / D3872 diesel, cả hai mức D từ trang hãng MAN", () => {
   const m = rec("man-engines", 104);
   assert.equal(m.length, 9);
   const e = m.filter((r) => r.model === "E3262");
   assert.equal(e.length, 1);
   assert.deepEqual([e[0].fuel, e[0].fuelFrom], ["gas", "D"]);
   assert.ok(/E3262 naturally aspired engine with natural gas/.test(e[0].fuelWhy) && /man-motor-e3262/.test(e[0].fuelWhy));
-  assert.ok(m.filter((r) => r.model !== "E3262").every((r) => r.fuel === undefined));
+  const d = m.filter((r) => r.model !== "E3262");
+  assert.equal(d.length, 8);
+  assert.ok(d.every((r) => r.fuel === "diesel" && r.fuelFrom === "D" && /man\.eu\/engines/.test(r.fuelWhy) && /diesel/.test(r.fuelWhy)));
+  assert.deepEqual([...new Set(d.map((r) => r.model))].sort(), ["D2676", "D2862", "D3872"]);
   // bảng khác của man-engines (n105: bảng khí tự ghi) không bị đổi bởi mục này
-  assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
+  assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/trang hãng động cơ MAN|datasheet hãng động cơ MAN/.test(r.fuelWhy)));
+});
+
+test("man-engines n104: fuelOff của config-bot — diesel đúng cho HSMT diesel, sai cho HSMT khí / xăng; E3262 khí ngược lại", async () => {
+  const { fuelOff } = await import("./config-bot.mjs");
+  assert.equal(fuelOff("diesel", "diesel"), false);
+  assert.equal(fuelOff("gas", "diesel"), true);
+  assert.equal(fuelOff("gasoline", "diesel"), true);
+  assert.equal(fuelOff("diesel", "gas"), true);
+  assert.equal(fuelOff("gas", "gas"), false);
+  assert.equal(fuelOff("diesel", undefined), false);
 });
 
 test("mwm n1007 / n1008 (sua-so-le-1, điều phối 21/11/2026): datasheet hãng TCG 3016 V16 ghi khí tự nhiên → mỗi bảng một bản ghi động cơ `gas` mức D", () => {
