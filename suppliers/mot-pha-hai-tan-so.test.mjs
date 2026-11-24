@@ -76,6 +76,24 @@ test("rowPhaseOf: căn cứ dự phòng chỉ khi không có thông tin pha nào
   assert.equal(rowPhaseOf({ genset: "a-1", title: "Single Phase and Three Phase Generators", header: [H], line: ROW }), null);
 });
 
+test("rowPhaseOf: hai ngoại lệ tường minh của căn cứ dự phòng (voltgent P2500-1P, acepow-fuan n136)", () => {
+  const v = { supplierId: "voltgent", n: 101, genset: "P2500-1P", header: [H], line: "| P2500-1P | 2500 | 2000 | 4016-61TRG3X | LL9324R" };
+  assert.equal(rowPhaseOf(v), null);
+  assert.equal(rowPhaseOf({ ...v, supplierId: "khac" }).phase, 1);
+  assert.equal(rowPhaseOf({ ...v, genset: "P100-1P" }).phase, 1, "chỉ đúng model trong danh sách");
+  const a = { supplierId: "acepow-fuan", n: 136, genset: "APYD-10", title: "1000KVA Single Phase 75KW Portable Electric Power Generator", header: [H], line: ROW };
+  assert.equal(rowPhaseOf(a), null);
+  assert.equal(rowPhaseOf({ ...a, n: 137 }).phase, 1, "trang khác của cùng NCC vẫn theo luật");
+  assert.equal(rowPhaseOf({ ...a, header: [H, "| Single phase"] }).phase, 1, "tiêu đề / cột pha vẫn thắng ngoại lệ");
+  assert.equal(rowPhaseOf({ ...a, header: ["| Model | Phase | Engine"], line: "| APYD-10 | 3 | YD480D" }).phase, 3);
+  // Gói đòi 1 pha: giữ dòng, ghi "cần xác nhận số pha" (như dòng không ghi pha), không loại.
+  const list = [sup("voltgent", ["| P2500-1P | 20 | 16 | 404A-22G1 | UCI224D"])];
+  const r = run(list, { ...free("Số pha: 1 pha"), phase: 1 });
+  const row = r.top.find((x) => x.u.supplierId === "voltgent");
+  assert.ok(row && !row.ruled?.includes("phase"));
+  assert.ok(row.why.some((w) => /cần xác nhận số pha/.test(w)));
+});
+
 const one = () => sup("mot-pha", [ROW], [H, "| Single phase"]);
 const three = () => sup("ba-pha", ["| b-1 | 20 | 16 | 404A-22G1 | UCI224E"]);
 

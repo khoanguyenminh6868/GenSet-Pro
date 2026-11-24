@@ -1047,8 +1047,12 @@ export function phaseOf(text) {
 // Căn cứ chính: chữ pha ở tiêu đề bảng / dòng phân đoạn ("| Single phase", "50HZ PF=0.8 400/230V 3Phase 4Wire") và ô cột pha của chính
 // dòng. Có cả một pha lẫn ba pha ("三相0.8或单相1.0") thì không kết luận.
 // Căn cứ dự phòng, CHỈ khi tiêu đề, dòng phân đoạn, cột pha đều không nói gì về pha: đuôi model "-1P", rồi tên trang ghi "Single Phase"
-// (tên trang cũng ghi ba pha thì không kết luận). voltgent "P2500-1P" (máy 2.500 kVA) vẫn theo luật này: điều phối hỏi lại Khoa.
+// (tên trang cũng ghi ba pha thì không kết luận). Ngoại lệ: `PHASE_FALLBACK_SKIP` (voltgent P2500-1P, acepow-fuan n136).
 const ROW_PH1 = /single[\s_-]*phase|(?<![\d.])1[\s-]*ph(?:ases?)?(?![a-z])|one[\s-]*phase|单相/i, ROW_PH3 = /three[\s_-]*phase|(?<![\d.])3[\s-]*ph(?:ases?)?(?![a-z])|三相/i;
+// Hai ngoại lệ tường minh của căn cứ dự phòng (Khoa 24/11/2026), không đổi luật chung: số pha = không rõ ("cần xác nhận số pha"
+// khi HSMT đòi 1 pha; không loại, không coi là ba pha). voltgent "P2500-1P" (n101) là máy 2.500 kVA nên đuôi "-1P" không là một pha;
+// acepow-fuan n136: tên trang "1000KVA Single Phase 75KW Portable Electric Power Generator" tự mâu thuẫn về công suất (16 dòng APYD).
+const PHASE_FALLBACK_SKIP = [{ supplierId: "voltgent", genset: "P2500-1P" }, { supplierId: "acepow-fuan", n: 136 }];
 const PH_COL = /^(?:(?:no\.?|number)\s*of\s*)?phases?$|^相数?$|^ph$/i, PH_WORD = /phase|单相|三相|相数/i;
 export function rowPhaseOf(u) {
   if (!u) return null;
@@ -1082,6 +1086,7 @@ export function rowPhaseOf(u) {
   if (info) return null;
   const title = String(u.title || "");
   if (ROW_PH3.test(title)) return null;
+  if (PHASE_FALLBACK_SKIP.some((x) => x.supplierId === u.supplierId && (x.n == null || x.n === u.n) && (x.genset == null || x.genset === String(u.genset || "").trim()))) return null;
   if (/-1P$/i.test(String(u.genset || "").trim())) return { phase: 1, from: "model", text: String(u.genset).trim(), basis: "tên model đuôi -1P" };
   if (/single[\s_-]*phase/i.test(title)) return { phase: 1, from: "page", text: "Single Phase", basis: "tên trang ghi Single Phase" };
   return null;
