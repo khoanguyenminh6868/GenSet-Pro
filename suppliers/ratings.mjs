@@ -137,6 +137,31 @@ export function lsRatings(text) {
     const old = lsBlockOld(L, i);
     out.push(...(old.length ? old : lsBlock(L, i)));
   });
+  out.push(...lsTable6S(L));
+  return out;
+}
+// Bảng "8.1 - Standard 6 winding" của tờ LSA Rating Table (6003, Series Star 6 dây, 1 500 R.P.M., 380 - 400 - 415 V): mỗi dòng
+// "LSA 53.2 M9 - C6S/4 Option 6" + 12 số = 3 điện áp (D: 380 / 400 / 415 V) × 4 cột. Thứ tự 4 cột chỉ đọc từ dòng "Type …
+// H:125K F:105K H: 150 K H: 163 K" của CHÍNH mục đó (không có thì bỏ). Chỉ lấy LSA 53.2 / 54.2: các cỡ 49.3 / 50.2 / 52.3 của cùng
+// bảng đã đọc từ tờ riêng của chúng (khỏi trùng). Không đủ đúng 12 số (lsFigures) thì bỏ dòng. Tờ này không có dòng kW → kW null.
+const LS6S_COLS = [["H:125K", "Cont.", "H:125K Continuous/ 40°C"], ["F:105K", "Cont.", "F:105K Continuous/ 40°C"], ["H:150K", "Standby", "H:150K Stand-by/ 40°C"], ["H:163K", "Standby", "H:163K Stand-by/ 27°C"]];
+function lsTable6S(L) {
+  const out = [];
+  L.forEach((l, r) => {
+    const m = flatLine(l).match(/^(LSA 5[34]\.2 [A-Z]+\d+)\s+(?:\*+\s+)?-\s+C6T?S\/4\s+Option 6\s+(.*)$/);
+    if (!m) return;
+    let h = r; while (h >= 0 && !/^\d\.\d+ - /.test(L[h].trim())) h--;
+    if (h < 0 || !/^8\.1 - Standard 6 winding\b/.test(L[h].trim())) return;
+    const sec = L.slice(h, r).map(flatLine).filter(Boolean);
+    const type = sec.find((x) => /^Type\b.*H:\s?125\s?K F:\s?105\s?K H:\s?150\s?K H:\s?163\s?K\b/.test(x));
+    const rp = sec.map((x, k) => (/^1 ?500 R\.P\.M\. - 3-phase - P\.F\. 0\.8/.test(x) ? k : -1)).filter((k) => k >= 0).pop();
+    if (!type || rp == null || !/Series Star/.test(sec.slice(0, 3).join(" ")) || !/P\.F\. 0\.8 380 - 400 - 415 V$/.test(sec[rp])) return;
+    const tail = sec.slice(rp).join(" ");
+    if (!/6S winding/.test(tail) || !/D: 380 V.*D: 400 V.*D: 415 V/.test(tail)) return;
+    const f = lsFigures(m[2], 12);
+    if (!f) return;
+    [380, 400, 415].forEach((volt, vi) => LS6S_COLS.forEach(([cls, duty, rise], ci) => out.push({ part: "alternator", model: m[1], hz: 50, duty, rise, phase: 3, volt, kVA: f[vi * 4 + ci], kW: null, eff: null, pf: 0.8, lines: [type, l] })));
+  });
   return out;
 }
 const flatLine = (l) => String(l).replace(/\|/g, " ").replace(/\s+/g, " ").trim();
@@ -171,7 +196,7 @@ function lsBlock(L, i) {
   const jd = find(/^\|\s*Duty/), jc = find(/^\|\s*Class/), jp = find(/^\|\s*Phase/), jy = find(/^\|\s*Y\s*\|/);
   if ([jd, jc, jp, jy].some((x) => x < 0) || !(jd < jc && jc < jp && jp < jy)) return out;
   const join = (a, b) => flatLine(L.slice(a, b).join(" "));
-  const duties = [...join(jd, jc).matchAll(/(Continuous|Stand-?by)(?: duty)?\s*\/\s*(\d{2})\s*°\s*C/gi)].map((m) => ({ duty: /stand/i.test(m[1]) ? "Standby" : "Cont.", word: /stand/i.test(m[1]) ? "Stand-by" : "Continuous", t: m[2] }));
+  const duties = [...join(jd, jc).matchAll(/(Continuous|Stand-?by)(?: duty)?\s*\/?\s*(\d{2})\s*°\s*C/gi)].map((m) => ({ duty: /stand/i.test(m[1]) ? "Standby" : "Cont.", word: /stand/i.test(m[1]) ? "Stand-by" : "Continuous", t: m[2] }));
   const classes = [...join(jc, jp).matchAll(/\b([HF])\s*[:/]?\s*(\d{3})\s*°?\s*K\b/g)].map((m) => `${m[1]}:${m[2]}K`);
   const phases = [...join(jp, jy).matchAll(/\b([13])\s*ph\./g)].map((m) => Number(m[1]));
   const G = duties.length;
@@ -202,6 +227,11 @@ function lsBlock(L, i) {
     let f = flatLine(L[r]), line = [L[r]], model, rest;
     const m = f.match(/^((?:TAL|LSA)\b[\w.\- ]*?)\s*kVA\b\s*(.*)$/);
     if (m) { model = m[1].trim(); rest = L[r].slice(L[r].indexOf("kVA") + 3); }
+    else if (/^\d{2}\.\d\s+[A-Z]+\d+\s*kVA\b/.test(f) && L.some((x) => flatLine(x).startsWith(`LSA ${f.slice(0, 4)} `))) {
+      // Tờ LSA 43.2 (1022): dòng bảng chỉ ghi "43.2 S1 | kVA | …"; chữ "LSA" lấy từ tiêu đề của chính tờ ("LSA 43.2 - 4 Pole").
+      const b = f.match(/^(\d{2}\.\d)\s+([A-Z]+\d+)\s*kVA\b/);
+      model = `LSA ${b[1]} ${b[2]}`; rest = L[r].slice(L[r].indexOf("kVA") + 3);
+    }
     else if (/^(?:TAL|LSA)\b[\w.\- ]*$/.test(f) && /^\|?\s*kVA\b/.test(L[r + 1] || "")) { model = f; line = [L[r], L[r + 1]]; r++; rest = L[r].slice(L[r].indexOf("kVA") + 3); }
     else continue;
     const hit = fit(rest);

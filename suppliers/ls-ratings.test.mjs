@@ -85,3 +85,41 @@ test("lsSheetAttrs: khối General characteristics, giữ dòng nguyên văn", (
   assert.deepEqual(c.excitation.value, ["SHUNT", "AREP", "PMG"]);
   assert.equal(c.sc300, undefined);
 });
+
+// ---- Nguồn 1022 (LSA 43.2): dòng bảng "| 43.2 S1 | kVA | …" không có chữ "LSA"; 4 nhóm × (4 điện áp 3 pha + 1 cột 1 pha) ----
+test("LSA 43.2 (1022): dòng không chữ LSA, 20 cột mỗi model, số khớp dòng nguồn", () => {
+  const r = lsRatings(read(1022));
+  assert.deepEqual([...new Set(r.map((x) => x.model))], ["LSA 43.2 S1", "LSA 43.2 S15", "LSA 43.2 S25", "LSA 43.2 S35", "LSA 43.2 M45", "LSA 43.2 L65", "LSA 43.2 L8"]);
+  assert.equal(r.length, 7 * 2 * 20);
+  // "| 43.2 S35 | kVA | 50 | 53 | 52 | 47 | 33 | 45 | 48 | 47 | 42 | 30 | …" (50 Hz, 380 400 415 440 V)
+  assert.deepEqual([380, 400, 415, 440].map((v) => at(r, "LSA 43.2 S35", 50, "H:125K", v)[0]), [50, 53, 52, 47]);
+  assert.deepEqual([380, 400, 415, 440].map((v) => at(r, "LSA 43.2 S35", 50, "F:105K", v)[0]), [45, 48, 47, 42]);
+  assert.deepEqual(at(r, "LSA 43.2 S35", 50, "H:150K", 400), [56]);
+  assert.deepEqual(at(r, "LSA 43.2 S35", 50, "H:163K", 400), [58]);
+  // "| kW | 40 | 42 | 42 | 38 | 26 | …"
+  assert.equal(r.find((x) => x.model === "LSA 43.2 S35" && x.hz === 50 && x.volt === 400 && x.rise.startsWith("H:125K")).kW, 42);
+  // 60 Hz "| 43.2 L8 | …" dòng cuối nhóm: 380 416 440 480 V
+  const l8 = r.filter((x) => x.model === "LSA 43.2 L8" && x.hz === 60 && x.rise.startsWith("H:125K") && x.phase === 3);
+  assert.deepEqual(l8.map((x) => x.volt), [380, 416, 440, 480]);
+  assert.ok(r.every((x) => x.lines.some((l) => /^\| 43\.2 \w+ \| kVA/.test(l))));
+});
+
+// ---- Nguồn 6003 (LSA Rating Table, mục 8.1 Series Star 6 dây): "LSA 53.2 M9 - C6S/4 Option 6 …" 12 số ----
+test("LSA 53.2 / 54.2 (6003): 12 số = 3 điện áp × [H125, F105, H150, H163]", () => {
+  const r = lsRatings(read(6003));
+  assert.deepEqual([...new Set(r.map((x) => x.model))], ["LSA 53.2 M9", "LSA 53.2 M12", "LSA 54.2 M10", "LSA 54.2 UL14"]);
+  assert.ok(r.every((x) => x.hz === 50 && x.phase === 3 && x.kW === null));
+  // "LSA 53.2 M9 - C6S/4 Option 6 3 000 2 736 3 150 3 300 3 000 2 736 3 150 3 300 3 000 2 736 3 150 3 300"
+  assert.deepEqual([380, 400, 415].map((v) => at(r, "LSA 53.2 M9", 50, "H:125K", v)[0]), [3000, 3000, 3000]);
+  assert.deepEqual(at(r, "LSA 53.2 M9", 50, "F:105K", 400), [2736]);
+  assert.deepEqual(at(r, "LSA 53.2 M9", 50, "H:150K", 400), [3150]);
+  assert.deepEqual(at(r, "LSA 53.2 M9", 50, "H:163K", 400), [3300]);
+  // "LSA 54.2 UL14 - C6TS/4 Option 6 4 320 3 940 4 536 4 752 4 320 3 940 4 536 4 752 3 900 3 557 4 095 4 290"
+  assert.deepEqual([380, 400, 415].map((v) => at(r, "LSA 54.2 UL14", 50, "H:125K", v)[0]), [4320, 4320, 3900]);
+  assert.deepEqual([380, 400, 415].map((v) => at(r, "LSA 54.2 UL14", 50, "F:105K", v)[0]), [3940, 3940, 3557]);
+  assert.deepEqual([380, 400, 415].map((v) => at(r, "LSA 54.2 UL14", 50, "H:163K", v)[0]), [4752, 4752, 4290]);
+  assert.deepEqual(at(r, "LSA 54.2 M10", 50, "H:150K", 415), [3591]);
+  assert.equal(r.filter((x) => x.model === "LSA 53.2 M12").length, 12);
+  // các cỡ 49.3 / 50.2 / 52.3 của cùng bảng đã đọc từ tờ riêng: không đọc lại từ 6003
+  assert.ok(!r.some((x) => /49\.3|50\.2|52\.3/.test(x.model)));
+});
