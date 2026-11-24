@@ -44,3 +44,19 @@ jet n129 có "P- 220" (hàng 1106A -70TAG4) và "P- 1500" / "4012 - 46TWG3A": tr
 - 6 trang cùng thời (Accessed 28/10) còn mảnh ô: camda n138 (2), n139 (1), mecca-power n144, n159 (tiêu đề cột), sanq-power n103, n108 (1 dòng SQIC2500 "PI734H/L-\nVSI804R"). Cùng cách cào lại, 6 trang. Chưa làm vì ngoài danh sách 82 dòng.
 - conductorjasa 26 dòng: sửa `tableOf` (nhận bảng không có dòng "đủ số" khi mọi dòng là dòng máy) cần đo cả 3.983 tệp như #1105.
 - Chưa đo top 30 (1.093 lượt) và row-flags: PR đụng candidates.
+
+## Đợt 2: 6 trang cùng thời còn mảnh ô (cùng nhánh / PR #1208)
+Cào lại đúng cách như 5 trang trước: camda-generator n138, n139; mecca-power n144, n159; sanq-power n103, n108. Chữ trang y hệt tệp cũ khi bỏ khoảng trắng (camda chỉ khác đồng hồ "21:00" → "21:43"). Cắt ở đây là TIÊU ĐỀ cột ("Dimension\nL×W×H（mm)", "Gov./\nEmission", "Genset Weight\nKg") và 1 dòng sanq (SQIC2500 "PI734H/L-\nVSI804R"); số dòng bảng không đổi, trừ sanq.
+
+| Trang | Dòng bảng trước → sau | Bản ghi (so từng bản ghi, `rec-diff`) |
+|---|--:|---|
+| camda n138 / n139 | 68 → 68; 16 → 16 | camda 124 → 272 (+148, mất 0, đổi 0): tiêu đề đủ ô nên đọc ra bản ghi cho các bảng trước đây chỉ có tiêu đề cụt (86 + 50 + 12) |
+| mecca-power n144 / n159 | 34 → 34; 17 → 17 | 1709 → 1726 (+17, mất 0, đổi 0): bảng n159 có thêm dòng tiêu đề đầu "Model \| LTP \| PRP …" (trước chỉ có dòng đơn vị) → 17 dòng MC11Y… ra bản ghi |
+| sanq n103 / n108 | 36 → 37; 57 → 58 | 1320 → 1366 (+46, mất 0, đổi 75: chỉ thêm `specs` fuel / weight / dims) |
+
+Ghi chú mecca: `merge-specs mecca-power` chết ENOENT (`specs/` có trang n106 không có tệp nguồn: bẫy "specs lệch cn" đã ghi), nên `cn/mecca-power.json` chỉ sửa đúng một chỗ: header của bảng n159 lấy từ bảng `specs/` cùng dòng; các bảng n144 trong `cn/` giữ nguyên (cn bỏ bảng trùng nguyên dòng). Test so `specs/` với `tablesOf`, bỏ so `cn/` cho mecca.
+
+Kiểm đợt 2: verify 436 / 0 lỗi; `quality --check` đạt; `spec-diff git:HEAD . --gate` đạt (đảo vai 0 → 0; 64.079 → 64.290, chỉ mới 211, chỉ cũ 0; 75 giá trị "cần soát tay" là fuel / weight / dims của sanq n103 / n108); test `cao-lai-83.test.mjs` 3 / 3 (nay 11 trang).
+
+## conductorjasa: việc riêng
+26 dòng không bị cắt ô, để nguyên. 19 dòng n116 không có chữ công suất trong khối; 7 dòng MJPS (n101–n103) bị `isData` loại vì ô "305 L/jam" và "–". Sửa `tableOf` / `tablesOf` thì đo cả 3.983 tệp nguồn như #1105.
