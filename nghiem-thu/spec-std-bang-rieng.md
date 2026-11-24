@@ -45,9 +45,9 @@ Chạy TAY: `web/README.md` bước 1 "run `supabase/schema.sql` in the SQL edit
 - Đã đăng: xoá biến `SPEC_STD_PUBLISH` (workflow quay về `--dry`), rồi `drop table public.spec_std;` (không bảng khác phụ thuộc; không có nhật ký / realtime để dọn).
 - Revert PR không cần chạm Supabase; bảng thừa vô hại.
 
-## 6. Kiểm
+## 6. Kết quả chạy
 
-Xem kết quả cuối ở mục 7.
-
-## 7. Kết quả chạy
-(điền sau)
+- `node --test suppliers/*.test.mjs`: 1.626 / 1.626 đạt.
+- Nội dung doc không đổi một byte: `--out` của `origin/main` ↔ nhánh, 9.685 tệp, so băm SHA-256 từng tệp: giống hệt (`standardOf` không sửa).
+- `node suppliers/spec-standard.mjs --post --dry` (không khoá Supabase, tính như bảng rỗng): `spec_std: 9685 doc, 9685 sẽ ghi, 0 gone, 67 lô, 45,59 MB` (số doc 9.685 thay 9.681 của báo cáo b2 vì main đã đổi dữ liệu).
+- Chưa chạy SQL, chưa bật `SPEC_STD_PUBLISH`, chưa đăng thật; chưa thử ghi thật nên chưa kiểm `on_conflict=id` với PostgREST: bước 4–5 mục 4 là lần thử đầu (sai thì lỗi HTTP và dừng, không ghi dở quá một lô).
