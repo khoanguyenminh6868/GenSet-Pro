@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { standardOf, FIELDS, stable, enumOf, joinKey, tidyText, planOf, batchesOf, valueOf } from "./spec-standard.mjs";
+import { standardOf, FIELDS, stable, enumOf, joinKey, tidyText, planOf, batchesOf, valueOf, rowOf, TABLE } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const load = () => fs.readdirSync(path.join(ROOT, "cn")).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, "cn", f), "utf8")));
@@ -103,6 +103,16 @@ test("đăng: chỉ doc đổi nội dung, doc mất ghi gone một lần, lô �
   assert.deepEqual(p.write.map((d) => d.id), ["engine:B"]);
   assert.deepEqual(p.gone.map((d) => d.id), ["engine:C"]);
   assert.equal(p.same, 1);
-  const rows = Array.from({ length: 450 }, (_, i) => ({ coll: "specstd", id: `x${i}`, data: {} }));
+  const rows = Array.from({ length: 450 }, (_, i) => ({ id: `x${i}`, part: "engine", hash: "h", data: {} }));
   assert.ok(batchesOf(rows).every((x) => x.rows.length <= 200));
+});
+
+test("đăng vào bảng riêng spec_std: dòng id / part / hash / data, doc nguyên văn, gone có part", () => {
+  assert.equal(TABLE, "spec_std");
+  const d = docs[0], row = rowOf(d);
+  assert.deepEqual(Object.keys(row).sort(), ["data", "hash", "id", "part"]);
+  assert.equal(row.id, d.id); assert.equal(row.part, d.part); assert.equal(row.hash, d.hash);
+  assert.equal(stable(row.data), stable(d)); // nội dung doc không đổi một byte
+  const p = planOf([], new Map([["engine:C", "9"]]));
+  assert.deepEqual(rowOf(p.gone[0]), { id: "engine:C", part: "engine", hash: "gone", data: p.gone[0] });
 });

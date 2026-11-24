@@ -122,6 +122,23 @@ drop trigger if exists docs_activity on public.docs;
 create trigger docs_activity after insert or update or delete on public.docs
 for each row execute function public.log_docs_change();
 
+-- ---------- spec_std: bản chuẩn thông số (suppliers/spec-standard.mjs), Khoa chốt 24/11/2026 (phương án A) ----------
+-- Bảng RIÊNG: không nằm trong publication supabase_realtime, không gắn trigger docs_activity / activity_log
+-- (9.681 doc, ~44 MB: ghi vào docs sẽ phát realtime tới mọi trang và 9.681 dòng nhật ký). Chỉ service role ghi (bỏ qua RLS);
+-- thành viên đọc qua API riêng (bước 5, chưa làm). Chạy tay trong Supabase SQL editor; chạy lại an toàn.
+create table if not exists public.spec_std (
+  id text primary key,               -- "<part>:<key>" (engine / alternator / controller) hoặc "genset:<NCC>"
+  part text not null,                -- genset | engine | alternator | controller
+  hash text not null,                -- hash nội dung; "gone" = doc không còn sinh ra
+  data jsonb not null,
+  updated_at timestamptz not null default now()
+);
+create index if not exists spec_std_part on public.spec_std (part, id);
+alter table public.spec_std enable row level security;
+drop policy if exists spec_std_read on public.spec_std;
+create policy spec_std_read on public.spec_std for select to authenticated using (public.is_member());
+-- Không có policy insert / update / delete: chỉ service role ghi.
+
 -- Events the page reports itself (opening the app, uploading files), always under the caller's own email.
 create or replace function public.log_activity(p_action text, p_detail jsonb default null) returns void
 language sql security definer set search_path = public as $$

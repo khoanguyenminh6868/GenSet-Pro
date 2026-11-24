@@ -1,7 +1,7 @@
 // Bản chuẩn thông số theo suppliers/spec-fields.json (bước 2 của chuẩn hoá datasheet, Khoa chốt 24/11/2026).
 //   node suppliers/spec-standard.mjs --stats             độ phủ theo trường, trường chưa có code đọc
 //   node suppliers/spec-standard.mjs --out <thư mục>     ghi từng doc ra JSON để soát
-//   node suppliers/spec-standard.mjs --post [--dry]      đăng collection specstd (chỉ doc đổi nội dung); xem post()
+//   node suppliers/spec-standard.mjs --post [--dry]      đăng vào bảng spec_std (chỉ doc đổi nội dung); xem post()
 // KHÔNG có bộ đọc bảng mới: mọi giá trị đi từ CAT.build / gensetsOf + SN.normalizeRecord + sourceRatings. Không ngày giờ
 // trong nội dung, khoá sắp xếp: cùng đầu vào ra cùng byte. Chưa nơi nào đọc collection này (web, config-bot là bước 5).
 import crypto from "node:crypto";
@@ -36,26 +36,69 @@ export function tidyText(s) {
 export function joinKey(s) {
   return tidyText(s).text.toLowerCase().replace(/(?<=\p{L})\s*(?:&|\+|\/|,|\band\b)\s*(?=\p{L})/gu, " & ").replace(/\s+/g, " ").trim();
 }
-export function enumOf(f, text) {
-  const k = joinKey(text);
-  for (const v of f.values || []) if (joinKey(v) === k) return { value: v, rule: NFKC(text) === v ? null : "hoa-thuong" };
-  for (const [v, list] of Object.entries(f.same || {})) if (list.some((w) => joinKey(w) === k)) return { value: v, rule: "same" };
+// Every standard value a spelling stands for (values first, then same); `enumOf` takes the first, the join needs exactly one.
+function enumMatches(f, text) {
+  const k = joinKey(text), out = [];
+  for (const v of f.values || []) if (joinKey(v) === k) out.push({ value: v, rule: NFKC(text) === v ? null : "hoa-thuong" });
+  for (const [v, list] of Object.entries(f.same || {})) if (list.some((w) => joinKey(w) === k) && !out.some((o) => o.value === v)) out.push({ value: v, rule: "same" });
+  return out;
+}
+// Luật có tên (spec-standard-check.mjs phải giải thích được từng cái):
+//   tien-to-o  ô dính cả dòng bảng "| Insulation class | H [| …]" (chỉ trường insulation): lấy ô cạnh nhãn.
+//   chu-class  "H class" / "Class H" (chỉ insulation): chữ cái cấp là giá trị chuẩn.
+//   ghep-o     chữ bị cắt ở "and" / "&" / "," / "+" / "/" ghép với ô KẾ TIẾP của cùng dòng nguồn (`next`), chỉ khi ghép ra ĐÚNG MỘT giá trị chuẩn.
+// `joined` = ô kế tiếp đã ghép; `raw` vẫn là chữ nguồn của ô đầu.
+export function enumOf(f, text, next = null) {
+  let t = text, pre = null;
+  if (f.id === "insulation") {
+    const m = /^\|\s*insulation\s+(?:class|system)\s*\|\s*([^|]+?)\s*(?:\||$)/i.exec(NFKC(text));
+    if (m) { t = m[1]; pre = "tien-to-o"; }
+  }
+  const d = enumMatches(f, t)[0];
+  if (d) return { value: d.value, rule: pre || d.rule };
+  if (f.id === "insulation") {
+    const m = /^(?:class\s+([A-Z])|([A-Z])\s+class)$/i.exec(NFKC(t));
+    const c = m && enumMatches(f, m[1] || m[2])[0];
+    if (c) return { value: c.value, rule: pre || "chu-class" };
+  }
+  const nx = NFKC(next);
+  if (nx && /(?:\band\b|&|,|\+|\/)$/i.test(NFKC(t))) {
+    const j = enumMatches(f, `${NFKC(t)} ${nx}`);
+    if (j.length === 1) return { value: j[0].value, rule: "ghep-o", joined: nx };
+  }
   return null;
+}
+// The cell that follows `text` on the same source line (`line` = "| a | b | c |"), or null: the next cell only, never another line.
+export function nextCellOf(line, text) {
+  if (!line) return null;
+  const cells = String(line).split("|").map((c) => NFKC(c));
+  const i = cells.findIndex((c) => c && c === NFKC(text));
+  if (i < 0) return null;
+  const nx = cells.slice(i + 1).find((c) => c);
+  return nx ?? null;
 }
 const LAYOUT = { V: "V", L: "inline" };
 const plainNum = (s) => (/^\d+(\.\d+)?$/.test(NFKC(s)) ? Number(NFKC(s)) : null);
 const COND_SKIP = new Set(["headerUnit", "unitFrom", "layout", "unitCell"]);
 const condOf = (n) => { const c = Object.fromEntries(Object.entries(n?.cond || {}).filter(([k, v]) => !COND_SKIP.has(k) && v != null)); return Object.keys(c).length ? c : null; };
 
+// Emission levels as spec-norm reads them ([{ scale, level, text }]): kept as structure, never turned into text (String()
+// of an object gave "[object Object]" for every emission value). The scale stays null when the source names none (no
+// guess); `text` is the source's spelling, left to `raw`, so "Tier 2" and "T2" of one scale are one value. Sorted, no repeats.
+export function levelsOf(e) {
+  const list = (Array.isArray(e) ? e : [e]).filter((x) => x && typeof x === "object").map((x) => ({ scale: x.scale ?? null, level: x.level ?? null }));
+  const seen = new Map(list.map((x) => [stable(x), x]));
+  return [...seen.keys()].sort(cmp).map((k) => seen.get(k));
+}
 // The standard value of one normalized reading, or { drop } when no figure could be read.
-export function valueOf(f, n, sp) {
+export function valueOf(f, n, sp, next = null) {
   const out = (value, rules = []) => ({ value, unit: n?.unit ?? null, cond: condOf(n), missing: [...(n?.missing || [])], rules });
   if (n) {
     if (!SN.hasValue(n)) return { drop: (n.missing || []).join("+") || "no-value" };
     if (n.count != null) { const o = out(n.count, /v/i.test(n.raw.value) ? ["xi-lanh-v"] : []); o.missing = o.missing.filter((m) => m !== "layout"); o.layout = n.cond?.layout || null; return o; }
     if (n.bore) { const { bore, stroke } = n.bore; return out(stroke != null ? `${bore} × ${stroke}` : `${bore}`, ["dau-nhan"]); }
     if (n.dims) { const d = n.dims.asWritten || Object.values(n.dims); return out(d.join(" × "), ["dau-nhan"]); }
-    if (n.enum) return out(String(n.enum));
+    if (n.enum) return out(levelsOf(n.enum));
     // Engine power written in HP / PS: spec-norm turns it into kW; the standard keeps the source's figure (field power_hp).
     if (f.id === "power_kwm" && n.conv?.from) return { ...out(n.conv.from.num, ["hp-giu-nguyen"]), unit: n.conv.from.unit };
     if (n.num != null) return out(n.num, Number(n.raw.value) === n.num && String(n.num) === NFKC(n.raw.value) ? [] : ["so"]);
@@ -65,8 +108,8 @@ export function valueOf(f, n, sp) {
   }
   const raw = sp.value;
   if (f.type === "enum") {
-    const e = enumOf(f, raw);
-    if (e) return { value: e.value, unit: null, cond: null, missing: [], rules: e.rule ? [e.rule] : [] };
+    const e = enumOf(f, raw, next);
+    if (e) return { value: e.value, unit: null, cond: null, missing: [], rules: e.rule ? [e.rule] : [], ...(e.joined ? { joined: e.joined } : {}) };
     return { value: tidyText(raw).text, unit: null, cond: null, missing: ["enum"], rules: [] };
   }
   if (f.type === "number") {
@@ -139,7 +182,7 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     const n = nOf.get(`${sp.key} ${sp.label ?? ""} ${sp.value ?? ""}`) || null;
     const f = fieldFor(part, sp, n);
     if (!f) { if (byKey[part][sp.key]) audit?.({ part, ...ctx, u, sp, n, drop: "load-khac" }); continue; }
-    const r = valueOf(f, n, sp);
+    const r = valueOf(f, n, sp, f.type === "enum" && !n ? nextCellOf(u.line, sp.value) : null);
     if (r.drop) { audit?.({ part, ...ctx, u, sp, n, fid: f.id, drop: r.drop }); continue; }
     // A value corrected by a listed exception (fixspec): raw is the text of the source, not the corrected figure.
     r.raw = sp.fixed?.from ?? sp.value;
@@ -147,22 +190,28 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     // A vertical sheet: the catalog joins cells into one value ("lt | 3,3" → "3,3 L", "105" + "127" → "105 × 127"), so the
     // text is not verbatim. Marked, and the check requires each of its figures in the table.
     if (!u.line && !sp.fixed) r.rawJoined = !flatText([...(u.lines?.rows || []), ...(u.lines?.header || []), ...(rows || [])].join("\n")).includes(flatText(r.raw));
+    if (r.joined) r.rawJoined = true;
     if (f.cond?.includes("rating") && !n?.cond?.rating && !n?.cond?.ratings && !r.missing.includes("rating")) r.missing.push("rating");
     if (!n) for (const c of f.cond || []) if (!r.missing.includes(c)) r.missing.push(c);
     bag.add(f.id, r, srcOf(u));
-    audit?.({ part, ...ctx, u, sp, n, fid: f.id, value: r.value, rules: r.rules });
+    audit?.({ part, ...ctx, u, sp, n, fid: f.id, value: r.value, rules: r.rules, joined: r.joined });
     if (part === "engine" && f.id === "cylinders" && r.layout) bag.add("cyl_layout", { value: LAYOUT[r.layout] || r.layout, unit: null, cond: null, missing: [], raw: sp.value }, srcOf(u));
   }
 }
 // Engine power is a table: kWm by rating and speed, HP / PS in its own field; never turned into kVA or kW electric.
-function moveEnginePower(fields) {
+// A figure the source gives no unit for (unit null, missing "unit": ettes-power "kW/Hp" cells marked by unitspec, cells
+// whose label names no unit) is neither kWm nor HP: it stays in power_kwm under the column `figure`, with missing "unit",
+// so it is shown with its note and never read as kW. spec-fields.json is unchanged (`figure` is a cell, not a field).
+export function moveEnginePower(fields) {
   const items = fields.power_kwm;
   if (!items) return;
   const kw = [], hp = [];
   for (const it of items) {
     const unit = String(it.unit || "");
     const isHp = /^(hp|bhp|ps)$/i.test(unit) || (!unit && /\b(hp|bhp|ps)\b/i.test(String(it.raw || "")));
-    const row = { rating: it.cond?.rating ?? null, rpm: it.cond?.speed ?? it.cond?.rpm ?? null, [isHp ? "hp" : "kwm"]: it.value };
+    const col = isHp ? "hp" : unit ? "kwm" : "figure";
+    const row = { rating: it.cond?.rating ?? null, rpm: it.cond?.speed ?? it.cond?.rpm ?? null, [col]: it.value };
+    if (col === "figure" && !(it.missing || []).includes("unit")) it.missing = [...(it.missing || []), "unit"].sort();
     (isHp ? hp : kw).push({ ...it, value: row });
   }
   if (kw.length) fields.power_kwm = kw; else delete fields.power_kwm;
@@ -282,9 +331,12 @@ export function statsOf(docs) {
 }
 
 // ---------- Đăng ----------
-// Ghi đúng cách upload.mjs: thẳng bảng docs bằng service key, mỗi lô ≤ 200 dòng / 2 MB, đổi updated_at, CHỈ doc khác hash
-// trên web. Đọc `id + hash` (không đọc data) để so, nên so sánh gần như không tốn egress. Doc không còn sinh ra được ghi
-// { gone: true } thay vì xoá. Chỉ ghi thật khi SPEC_STD_PUBLISH=1: xem tệp nghiệm thu (realtime + activity_log).
+// Ghi thẳng bảng RIÊNG spec_std (web/supabase/schema.sql; Khoa 24/11/2026, phương án A: không realtime, không activity_log,
+// không ghi vào docs) bằng service key, mỗi lô ≤ 200 dòng / 2 MB, đổi updated_at, CHỈ doc khác hash trên web. Đọc `id + hash`
+// (không đọc data) để so, nên so sánh gần như không tốn egress. Doc không còn sinh ra được ghi { gone: true } thay vì xoá.
+// Chỉ ghi thật khi SPEC_STD_PUBLISH=1 (và bảng đã được tạo tay trên Supabase).
+export const TABLE = "spec_std";
+export const rowOf = (d) => ({ id: d.id, part: d.part, hash: d.hash, data: d });
 export function batchesOf(rows) {
   const out = [];
   for (const row of rows) {
@@ -303,10 +355,10 @@ export function planOf(docs, remote) {
 async function remoteHashes(SB, H) {
   const m = new Map();
   for (let from = 0; ; from += 1000) {
-    const r = await fetch(`${SB}/rest/v1/docs?coll=eq.${COLL}&select=id,h:data->>hash&order=id&offset=${from}&limit=1000`, { headers: H });
+    const r = await fetch(`${SB}/rest/v1/${TABLE}?select=id,hash&order=id&offset=${from}&limit=1000`, { headers: H });
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 200)}`);
     const rows = await r.json();
-    for (const x of rows) m.set(x.id, x.h);
+    for (const x of rows) m.set(x.id, x.hash);
     if (rows.length < 1000) return m;
   }
 }
@@ -315,15 +367,15 @@ export async function post(docs, { dry }) {
   const H = SB && SERVICE ? { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } : null;
   const remote = H ? await remoteHashes(SB, H) : new Map();
   const { write, gone, same } = planOf(docs, remote);
-  const rows = [...write, ...gone].map((d) => ({ coll: COLL, id: d.id, data: d }));
+  const rows = [...write, ...gone].map(rowOf);
   const batches = batchesOf(rows), bytes = batches.reduce((a, b) => a + b.bytes, 0);
-  console.log(`${COLL}: ${docs.length} doc, ${write.length} sẽ ghi, ${gone.length} đánh dấu gone, ${same} giữ nguyên; ${batches.length} lô, ${(bytes / 1e6).toFixed(2)} MB${H ? "" : " (không có Supabase: tính như web chưa có doc nào)"}.`);
+  console.log(`${TABLE}: ${docs.length} doc, ${write.length} sẽ ghi, ${gone.length} đánh dấu gone, ${same} giữ nguyên; ${batches.length} lô, ${(bytes / 1e6).toFixed(2)} MB${H ? "" : " (không có Supabase: tính như web chưa có doc nào)"}.`);
   if (dry || !rows.length) return { rows: rows.length, bytes };
   if (!H) throw new Error("thiếu SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY");
   if (process.env.SPEC_STD_PUBLISH !== "1") { console.log("SPEC_STD_PUBLISH chưa bật: không ghi."); return { rows: 0, bytes: 0 }; }
   for (const b of batches) {
     const now = new Date().toISOString();
-    const r = await fetch(`${SB}/rest/v1/docs`, { method: "POST", headers: { ...H, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+    const r = await fetch(`${SB}/rest/v1/${TABLE}?on_conflict=id`, { method: "POST", headers: { ...H, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
       body: JSON.stringify(b.rows.map((x) => ({ ...x, updated_at: now }))) });
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
   }

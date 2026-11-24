@@ -106,7 +106,7 @@ const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
 // want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
 export function normFig(s, ctx, want = {}) {
-  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
   // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
   const at100 = want.load === 100 && r.cond?.load == null;
@@ -885,7 +885,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -5805,7 +5805,8 @@ const CN_FOREIGN = /cummins|perkins|volvo|\bmtu\b|mitsubishi|doosan|hyundai|daew
 const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔沃", mitsubishi: "三菱", doosan: "斗山", deutz: "道依茨" };
 const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
 const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
-const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+// baifa n101: hai bảng con ghi tiêu đề vỡ chữ "ENGINE MANUF ACTURER / COUNTRY" (lớp chữ PDF).
+const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manuf\s*acturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
 // Ô nhà máy TQ theo NCC + dạng chữ (danh sách tường minh, không mở rộng sang tên thành phố khác): [hãng, chữ của ô, vị trí so với ô động cơ, tiêu đề cột].
 // sanq không xét tiêu đề: ba bảng cùng bố cục, một bảng ghi "C/O of engine", một bảng thiếu tên cột, một bảng ghi nhầm "Fuel Consumption"; cột đó ở cả ba chỉ có Wuxi, UK/INDIA, USA, UK.
 const CN_MITSU = [/mitsubishi/i, /^上海菱重$/, -1, /柴油机品牌/];
