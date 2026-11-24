@@ -3,16 +3,22 @@
   "repo": "khoanguyenminh6868/GenSet-Pro",
   "files": [
     {
+      "name": "_Thông báo mời thầu.pdf",
+      "size": 35261,
+      "asset": 787465291,
+      "assetName": "01.pdf"
+    },
+    {
       "name": "Bản vẽ hệ thống Máy phát điện.pdf",
       "size": 19918809,
-      "asset": 786958741,
-      "assetName": "01.pdf"
+      "asset": 787465297,
+      "assetName": "02.pdf"
     },
     {
       "name": "HSMT may phat dien dang tai.pdf",
       "size": 2499810,
-      "asset": 786958736,
-      "assetName": "02.pdf"
+      "asset": 787465248,
+      "assetName": "03.pdf"
     }
   ]
 }
