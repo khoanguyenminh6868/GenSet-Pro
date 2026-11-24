@@ -780,6 +780,331 @@
         "| 150-220 kVA (120-176 kWe) 150-220 kVA (120-176 kWe) | 135-169 kVA (108-135 kWe) 135-169 kVA (108-135 kWe) | 123-219 kVA (114-175 kWe) 123-219 kVA (114-175 kWe)"
       ],
       "file": "sources/perkins/139.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=100033EN-",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2206C-E13TAG2 | 1500 | Prime | 324 (434) | 305 (409) | 350 | 280",
+        "| 2206C-E13TAG2 | 1800 | Prime | 373 (500) | 349 (468) | 400 | 320"
+      ],
+      "file": "sources/perkins/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=100034EN-",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2206D-E13TAG2 | 1800 | Prime | 373 (500) | 349 (468) | 400 | 320"
+      ],
+      "file": "sources/perkins/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20240201-4320b-e9f4c",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1506A-E88TAG1 | 1500 | Prime | 192 (257) | 180 (241) | 207 | 166",
+        "| 1506A-E88TAG1 | 1500 | Standby | 210 (282) | 198 (266) | 228 | 182"
+      ],
+      "file": "sources/perkins/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20190212-19944-32504",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1706A-E93TAG1 | 1500 | Prime | 276 (371) | 267 (358) | 311 | 249",
+        "| 1706A-E93TAG1 | 1500 | Standby | 304 (408) | 295 (396) | 343 | 275"
+      ],
+      "file": "sources/perkins/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20210301-71b53-158d1",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1104C-44TAG1 |  | Prime | 75 (101) | 72 (96) | 80 | 64",
+        "| 1104C-44TAG1 | 1800 | Prime | 86 (115) | 80 (108) | 91 | 72"
+      ],
+      "file": "sources/perkins/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/C10509502",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1104D-44TG2 | 1500 | Prime power | 60 | 48 | 56.6 | 74 | 54 | 72",
+        "| 1104D-44TG2 | 1500 | Standby power | 66 | 53 | 61.6 | 83 | 59 | 79"
+      ],
+      "file": "sources/perkins/1006.md"
+    },
+    {
+      "n": 1007,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20210301-e3760-08c3c",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1106A-70TAG4 | 1500 | Prime | 184 (247) | 174 (240) | 200 | 160 176",
+        "| 1106A-70TAG4 | 1500 | Standby | 202 (271) | 191 (256) | 220 | 160 176"
+      ],
+      "file": "sources/perkins/1007.md"
+    },
+    {
+      "n": 1008,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20180522-38894-46970",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1206A-E70TTAG1 | 1500 | Prime power | 200 | 160 | 185.8 | 249.1 | 176.8 | 236.9",
+        "| 1206A-E70TTAG1 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4"
+      ],
+      "file": "sources/perkins/1008.md"
+    },
+    {
+      "n": 1009,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20180522-38894-00214",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1206A-E70TTAG2 | 1500 | Prime power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206A-E70TTAG2 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4"
+      ],
+      "file": "sources/perkins/1009.md"
+    },
+    {
+      "n": 1010,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=PN3183",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1206D-E70TTAG1 | 1500 | Prime power | 200 | 160 | 185.8 | 249.1 | 176.8 | 236.9",
+        "| 1206D-E70TTAG1 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4"
+      ],
+      "file": "sources/perkins/1010.md"
+    },
+    {
+      "n": 1011,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=PN3182",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1206D-E70TTAG2 | 1500 | Prime power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206D-E70TTAG2 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4"
+      ],
+      "file": "sources/perkins/1011.md"
+    },
+    {
+      "n": 1012,
+      "url": "https://www.ctm.it/Datasheet/2506A-E15TAG1.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Designation Gross engine power | kWb | Prime 50 Hz @ 1500 rev/min 412 | Standby 50 Hz @ 1500 rev/min 451 | Prime 60 Hz @ 1800 rev/min 458 | Standby 60 Hz @ 1800 rev/min 514 |"
+      ],
+      "file": "sources/perkins/1012.md"
+    },
+    {
+      "n": 1013,
+      "url": "https://dinatek.ec/wp-content/uploads/pdf/ficha/FGV27-Ficha-Tecnica-Perkins-2506-Series.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Gross engine power | kWb | Prime 50 Hz @ 1500 rev/min 412 | Standby 50 Hz 451 | Prime 60 Hz @ 1800 rev/min 458 | Standby 60 Hz 514 |"
+      ],
+      "file": "sources/perkins/1013.md"
+    },
+    {
+      "n": 1014,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/C10378960",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2506C-E15TAG1 | 1500 | Prime power | 455 | 364 | 412 | 552 | 396 | 531",
+        "| 2506C-E15TAG1 | 1500 | Standby power | 500 | 400 | 451 | 605 | 435 | 583"
+      ],
+      "file": "sources/perkins/1014.md"
+    },
+    {
+      "n": 1015,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=100295-",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2506C-E15TAG3 | 1800 | Prime power | 585 | 468 | 534 | 716 | 509 | 683"
+      ],
+      "file": "sources/perkins/1015.md"
+    },
+    {
+      "n": 1016,
+      "url": "https://www.teksanus.com/Files/tjud450p-3-engine-datasheet-2506d-e15tag1.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2506D-E15TAG1 | 1800 | Prime Power | 500 | 400 | 458 | 615 | 435 | 583"
+      ],
+      "file": "sources/perkins/1016.md"
+    },
+    {
+      "n": 1017,
+      "url": "https://penpower.co.za/wp-content/uploads/600KVA-2806A-E18TAG1A-Technical-Data-Sheet.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Gross engine power | kWb | 539.7 | 592.7 | 567.7 | 623 |",
+        "| Typical gen set electrical output 0.8 pf | kVa | 650 | 700 | 625 | 687 |"
+      ],
+      "file": "sources/perkins/1017.md"
+    },
+    {
+      "n": 1018,
+      "url": "https://www.ctm.it/Datasheet/2806A-E18TAG4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2806A-E18TTAG4 | 1500 | Prime power | 700 | 560 | 623 | 835 | 596 | 799",
+        "| 2806A-E18TTAG4 | 1800 | Prime power | 826 | 727 | 720 | 965 | 693 | 929"
+      ],
+      "file": "sources/perkins/1018.md"
+    },
+    {
+      "n": 1019,
+      "url": "https://gtipowergeneration.com/wp-content/uploads/products/pdf/P50-2806A-E18TTAG5-2-ElectropaK.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2806A-E18TTAG5 | 1500 | Prime power | 771 | 617 | 671 | 900 | 646 | 866",
+        "| 2806A-E18TTAG5 | 1800 | Prime power | 826 | 661 | 720 | 965 | 693 | 929"
+      ],
+      "file": "sources/perkins/1019.md"
+    },
+    {
+      "n": 1020,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20200225-5a6fa-fae96",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2806C-E18TAG1A | 1500 | Prime | 532 (713) | 514 (689) | 591 | 473",
+        "| 2806C-E18TAG1A | 1800 | Prime | 568 (762) | 543 (728) | 625 | 500"
+      ],
+      "file": "sources/perkins/1020.md"
+    },
+    {
+      "n": 1021,
+      "url": "https://emc.perkins.com/n/api/pubdirect?media_string_id=PN3278EN-",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 2806J-E18TAG1 | 1500 | Prime | 508 (681) | 479 (642) | 554 | 444",
+        "| 2806J-E18TAG1 | 1800 | Prime | 501 (672) | 475 (637) | 569 | 455"
+      ],
+      "file": "sources/perkins/1021.md"
+    },
+    {
+      "n": 1022,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20200428-328e2-922da",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 4012-46TAG3A | 1500 | Baseload | 1281 (1718) | 1200 (1609) | 1425 | 1140",
+        "| 4012-46TAG3A | 1800 | Baseload | 1286 (1725) | 1200 (1609) | 1425 | 1140"
+      ],
+      "file": "sources/perkins/1022.md"
+    },
+    {
+      "n": 1023,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/C10378935",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 403A-11G1 | 1500 | Prime power | 9.0 | 7.2 | 8.6 | 11.5 | 8.4 | 11.3",
+        "| 403A-11G1 | 1500 | Standby power | 9.9 | 7.9 | 9.5 | 12.7 | 9.2 | 12.4"
+      ],
+      "file": "sources/perkins/1023.md"
+    },
+    {
+      "n": 1024,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/C10378936",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 403A-15G1 | 1500 | Prime power | 13.0 | 10.4 | 12.2 | 16.4 | 12.0 | 16.0",
+        "| 403A-15G1 | 1500 | Standby power | 15.0 | 11.4 | 13.5 | 18.1 | 13.2 | 17.6"
+      ],
+      "file": "sources/perkins/1024.md"
+    },
+    {
+      "n": 1025,
+      "url": "https://www.ctm.it/Datasheet/403A-15G2.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Gross engine power | kWb | 14 | 15.4",
+        "| Typical genset electrical output (0.8 pf 25°C) | kVA | 15.05 | 16.57"
+      ],
+      "file": "sources/perkins/1025.md"
+    },
+    {
+      "n": 1026,
+      "url": "https://dinatek.ec/wp-content/uploads/pdf/ficha/FGV21-Ficha-Tecnica-Motor-Perkins-Serie-400-403.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Gross engine power | kWb | 16.33 | 17.96",
+        "| Typical Generator sets electrical output (0.8pf 25°C) | kVA | 17.51 | 19.52"
+      ],
+      "file": "sources/perkins/1026.md"
+    },
+    {
+      "n": 1027,
+      "url": "https://plantaselectricasdemexico.com/pdf/perkins/403D-15G-20(PN1911).pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 403D-15G | 1500 | Prime Power | 13.1 | 10.4 | 12.2 | 16.4 | 12.0 | 16.1",
+        "| 403D-15G | 1800 | Prime Power | 15.8 | 12.7 | 14.7 | 19.7 | 14.4 | 19.3"
+      ],
+      "file": "sources/perkins/1027.md"
+    },
+    {
+      "n": 1028,
+      "url": "https://s7d2.scene7.com/is/content/Caterpillar/CM20150115-18306-03959",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 404A-22G1 | 1500 | Prime power | 20.3 | 16.2 | 18.7 | 25.1 | 18.4 | 24.7",
+        "| 404A-22G1 | 1500 | Standby power | 22.3 | 17.8 | 20.6 | 27.6 | 20.3 | 27.2"
+      ],
+      "file": "sources/perkins/1028.md"
+    },
+    {
+      "n": 1029,
+      "url": "https://casainglesa.co/wp-content/uploads/2022/10/404D-22TG_.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 404D-22TG | 1500 | Prime power | 27.3 | 21.8 | 25.2 | 33.7 | 24.3 | 32.6",
+        "| 404D-22TG | 1800 | Prime power | 32.1 | 25.6 | 30.3 | 40.5 | 28.8 | 38.6"
+      ],
+      "file": "sources/perkins/1029.md"
+    },
+    {
+      "n": 1030,
+      "url": "https://americasgenerators.com/1-tp-spec-sheets/perkins-non-epa/60-hz/tp-p310-t1-60/1706a-e93tag1.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| 1706A-E93 TAG1 | 1500 | Prime power | 307 | 246 | 276.3 | 370.5 | 267.3 | 358.4",
+        "| 1706A-E93 TAG1/TAG2 | 1800 | Prime power | 357 | 286 | 325.8 | 436.9 | 310.8 | 416.8"
+      ],
+      "file": "sources/perkins/1030.md"
     }
   ],
   "confidence": "high",
@@ -2403,6 +2728,400 @@
       ],
       "rows": [
         "| 4012-46TWG4A | 1254 | 1342 | 1204 | 1505 | 1288 | 1610"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "2206C-E13TAG Electric Power Engines (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 2206C-E13TAG2 | 1500 | Prime | 324 (434) | 305 (409) | 350 | 280",
+        "| 2206C-E13TAG2 | 1500 | Standby | 368 (493) | 349 (468) | 400 | 320",
+        "| 2206C-E13TAG2 | 1800 | Prime | 373 (500) | 349 (468) | 400 | 320",
+        "| 2206C-E13TAG2 | 1800 | Standby | 407 (546) | 381 (511) | 438 | 350",
+        "| 2206C-E13TAG3 | 1500 | Prime | 368 (493) | 349 (468) | 400 | 320",
+        "| 2206C-E13TAG3 | 1500 | Standby | 413 (554) | 392 (526) | 450 | 360",
+        "| 2206C-E13TAG3 | 1800 | Prime | 373 (500) | 349 (468) | 400 | 320",
+        "| 2206C-E13TAG3 | 1800 | Standby | 407 (546) | 381 (511) | 438 | 350"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "2206D-E13TAG Electric Power Engines (1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 2206D-E13TAG2 | 1800 | Prime | 373 (500) | 349 (468) | 400 | 320",
+        "| 2206D-E13TAG2 | 1800 | Standby | 407 (546) | 381 (511) | 438 | 350",
+        "| 2206D-E13TAG3 | 1800 | Prime | 407 (546) | 381 (511) | 438 | 350",
+        "| 2206D-E13TAG3 | 1800 | Standby | 462 (620) | 435 (583) | 500 | 400"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "1506A-E88TAG1 Electric Power Engines (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 1506A-E88TAG1 | 1500 | Prime | 192 (257) | 180 (241) | 207 | 166",
+        "| 1506A-E88TAG1 | 1500 | Standby | 210 (282) | 198 (266) | 228 | 182"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "1706A-E93TAG1 Electric Power Engines (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 1706A-E93TAG1 | 1500 | Prime | 276 (371) | 267 (358) | 311 | 249",
+        "| 1706A-E93TAG1 | 1500 | Standby | 304 (408) | 295 (396) | 343 | 275"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "1104C-44TAG1 Electric Power Engines (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 1104C-44TAG1 |  | Prime | 75 (101) | 72 (96) | 80 | 64",
+        "| 1104C-44TAG1 | 1500 | Standby | 83 (111) | 79 (106) | 89 | 71",
+        "| 1104C-44TAG1 | 1800 | Prime | 86 (115) | 80 (108) | 91 | 72",
+        "| 1104C-44TAG1 | 1800 | Standby | 94 (126) | 89 (119) | 100 | 80"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "1104D-44TG2 ElectropaK (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 1104D-44TG2 | 1500 | Prime power | 60 | 48 | 56.6 | 74 | 54 | 72",
+        "| 1104D-44TG2 | 1500 | Standby power | 66 | 53 | 61.6 | 83 | 59 | 79"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "1106A-70TAG4 Electric Power Engines (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 1106A-70TAG4 | 1500 | Prime | 184 (247) | 174 (240) | 200 | 160 176",
+        "| 1106A-70TAG4 | 1500 | Standby | 202 (271) | 191 (256) | 220 | 160 176"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "1206A-E70TTAG1 ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 1206A-E70TTAG1 | 1500 | Prime power | 200 | 160 | 185.8 | 249.1 | 176.8 | 236.9",
+        "| 1206A-E70TTAG1 | 1500 | Standby power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206A-E70TTAG1 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4",
+        "| 1206A-E70TTAG1 | 1800 | Standby power | 250 | 200 | 238.6 | 319.9 | 223.6 | 299.8"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "1206A-E70TTAG2 ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 1206A-E70TTAG2 | 1500 | Prime power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206A-E70TTAG2 | 1500 | Standby power | 250 | 200 | 226.1 | 303.1 | 217.1 | 291",
+        "| 1206A-E70TTAG2 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4",
+        "| 1206A-E70TTAG2 | 1800 | Standby power | 250 | 200 | 238.6 | 319.9 | 223.6 | 299.8"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "1206D-E70TTAG1 ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 1206D-E70TTAG1 | 1500 | Prime power | 200 | 160 | 185.8 | 249.1 | 176.8 | 236.9",
+        "| 1206D-E70TTAG1 | 1500 | Standby power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206D-E70TTAG1 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4",
+        "| 1206D-E70TTAG1 | 1800 | Standby power | 250 | 200 | 238.6 | 319.9 | 223.6 | 299.8"
+      ]
+    },
+    {
+      "n": 1011,
+      "title": "1206D-E70TTAG2 ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 1206D-E70TTAG2 | 1500 | Prime power | 225 | 180 | 204.2 | 273.7 | 195.2 | 261.7",
+        "| 1206D-E70TTAG2 | 1500 | Standby power | 250 | 200 | 226.1 | 303.1 | 217.1 | 291",
+        "| 1206D-E70TTAG2 | 1800 | Prime power | 225 | 180 | 216.6 | 290.5 | 201.6 | 270.4",
+        "| 1206D-E70TTAG2 | 1800 | Standby power | 250 | 200 | 238.6 | 319.9 | 223.6 | 299.8"
+      ]
+    },
+    {
+      "n": 1012,
+      "title": "2506A-E15TAG1 (50 Hz 1500 rpm và 60 Hz 1800 rpm)",
+      "header": [],
+      "rows": [
+        "| Designation Gross engine power | kWb | Prime 50 Hz @ 1500 rev/min 412 | Standby 50 Hz @ 1500 rev/min 451 | Prime 60 Hz @ 1800 rev/min 458 | Standby 60 Hz @ 1800 rev/min 514 |",
+        "| ElectropaK nett engine power | kWm | 396 | 434 | 435 | 490 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kWe | 364 | 400 | 400 | 450 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kVA | 455 | 500 | 500 | 563 |"
+      ]
+    },
+    {
+      "n": 1013,
+      "title": "2506C-E15TAG1 (50 Hz 1500 rpm và 60 Hz 1800 rpm)",
+      "header": [],
+      "rows": [
+        "| Gross engine power | kWb | Prime 50 Hz @ 1500 rev/min 412 | Standby 50 Hz 451 | Prime 60 Hz @ 1800 rev/min 458 | Standby 60 Hz 514 |",
+        "| ElectropaK nett engine power | kWm | 396 | 435 | 435 | 490 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kWe | 364 | 400 | 400 | 450 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kVA | 455 | 500 | 500 | 563 |"
+      ]
+    },
+    {
+      "n": 1013,
+      "title": "2506C-E15TAG2 (50 Hz 1500 rpm và 60 Hz 1800 rpm)",
+      "header": [],
+      "rows": [
+        "| Gross engine power | kWb | Prime 50 Hz @ 1500 rev/min 451 | Standby 50 Hz 495 | Prime 60 Hz @ 1800 rev/min 458 | Standby 60 Hz 514 |",
+        "| ElectropaK nett engine power | kWm | 435 | 478 | 435 | 490 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kWe | 400 | 440 | 400 | 450 |",
+        "| Typical Gen Set electrical output (0.8 pf) | kVA | 500 | 550 | 500 | 563 |"
+      ]
+    },
+    {
+      "n": 1014,
+      "title": "2506C-E15TAG1 ElectropaK (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 2506C-E15TAG1 | 1500 | Prime power | 455 | 364 | 412 | 552 | 396 | 531",
+        "| 2506C-E15TAG1 | 1500 | Standby power | 500 | 400 | 451 | 605 | 435 | 583"
+      ]
+    },
+    {
+      "n": 1015,
+      "title": "2506C-E15TAG3 (1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 2506C-E15TAG3 | 1800 | Prime power | 585 | 468 | 534 | 716 | 509 | 683",
+        "| 2506C-E15TAG3 | 1800 | Standby power | 646 | 517 | 587 | 787 | 562 | 754"
+      ]
+    },
+    {
+      "n": 1016,
+      "title": "2506D-E15TAG1 (1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 2506D-E15TAG1 | 1800 | Prime Power | 500 | 400 | 458 | 615 | 435 | 583",
+        "| 2506D-E15TAG1 | 1800 | Standby Power | 563 | 450 | 514 | 689 | 490 | 657"
+      ]
+    },
+    {
+      "n": 1017,
+      "title": "2806A-E18TAG1A (50 Hz 1500 rpm và 60 Hz 1800 rpm)",
+      "header": [],
+      "rows": [
+        "| Gross engine power | kWb | 539.7 | 592.7 | 567.7 | 623 |",
+        "| Nett engine power | kWm | 522 | 574 | 543 | 598 |",
+        "| Typical gen set electrical output 0.8 pf | kWe | 480 | 528 | 500 | 550 |",
+        "| Typical gen set electrical output 0.8 pf | kVa | 600 | 660 | 625 | 687 |"
+      ]
+    },
+    {
+      "n": 1017,
+      "title": "2806A-E18TAG2 (50 Hz 1500 rpm và 60 Hz 1800 rpm)",
+      "header": [],
+      "rows": [
+        "| Gross engine power | kWb | 584 | 628 | 567.7 | 623 |",
+        "| Nett engine power | kWm | 565 | 609 | 543 | 598 |",
+        "| Typical gen set electrical output 0.8 pf | kWe | 520 | 560 | 500 | 550 |",
+        "| Typical gen set electrical output 0.8 pf | kVa | 650 | 700 | 625 | 687 |"
+      ]
+    },
+    {
+      "n": 1018,
+      "title": "2806A-E18TTAG4 (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 2806A-E18TTAG4 | 1500 | Prime power | 700 | 560 | 623 | 835 | 596 | 799",
+        "| 2806A-E18TTAG4 | 1500 | Standby power | 770 | 616 | 685 | 919 | 655 | 878",
+        "| 2806A-E18TTAG4 | 1800 | Prime power | 826 | 727 | 720 | 965 | 693 | 929",
+        "| 2806A-E18TTAG4 | 1800 | Standby power | 909 | 909 | 793 | 1063 | 766 | 1027"
+      ]
+    },
+    {
+      "n": 1019,
+      "title": "2806A-E18TTAG5 ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 2806A-E18TTAG5 | 1500 | Prime power | 771 | 617 | 671 | 900 | 646 | 866",
+        "| 2806A-E18TTAG5 | 1500 | Standby power | 850 | 678 | 739 | 991 | 714 | 957",
+        "| 2806A-E18TTAG5 | 1800 | Prime power | 826 | 661 | 720 | 965 | 693 | 929",
+        "| 2806A-E18TTAG5 | 1800 | Standby power | 909 | 727 | 793 | 1063 | 766 | 1027"
+      ]
+    },
+    {
+      "n": 1020,
+      "title": "2806C-E18TAG/TTAG Electric Power Engines (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 2806C-E18TAG1A | 1500 | Prime | 532 (713) | 514 (689) | 591 | 473",
+        "| 2806C-E18TAG1A | 1500 | Standby | 584 (783) | 565 (758) | 650 | 520",
+        "| 2806C-E18TAG1A | 1800 | Prime | 568 (762) | 543 (728) | 625 | 500",
+        "| 2806C-E18TAG1A | 1800 | Standby | 623 (835) | 598 (802) | 687 | 550",
+        "| 2806C-E18TAG3 | 1500 | Prime | 540 (724) | 522 (700) | 600 | 480",
+        "| 2806C-E18TAG3 | 1500 | Standby | 584 (783) | 565 (758) | 650 | 520",
+        "| 2806C-E18TAG3 | 1800 | Prime | 618 (829) | 592 (794) | 681 | 545",
+        "| 2806C-E18TAG3 | 1800 | Standby | 678 (909) | 652 (847) | 750 | 600"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "2806J-E18TAG1 Electric Power Engines (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 2806J-E18TAG1 | 1500 | Prime | 508 (681) | 479 (642) | 554 | 444",
+        "| 2806J-E18TAG1 | 1500 | Standby | 559 (750) | 530 (711) | 610 | 488",
+        "| 2806J-E18TAG1 | 1800 | Prime | 501 (672) | 475 (637) | 569 | 455",
+        "| 2806J-E18TAG1 | 1800 | Standby | 555 (744) | 529 (709) | 625 | 500"
+      ]
+    },
+    {
+      "n": 1022,
+      "title": "4012-46TAG Electric Power Engines (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | Gross kW (hp) | Net kW (hp) | kVA | kWe"
+      ],
+      "rows": [
+        "| 4012-46TAG3A | 1500 | Baseload | 1281 (1718) | 1200 (1609) | 1425 | 1140",
+        "| 4012-46TAG3A | 1500 | Prime/DCP | 1521 (2040) | 1440 (1931) | 1710 | 1368",
+        "| 4012-46TAG3A | 1500 | Standby | 1664 (2231) | 1583 (2123) | 1880 | 1504",
+        "| 4012-46TAG3A | 1800 | Baseload | 1286 (1725) | 1200 (1609) | 1425 | 1140",
+        "| 4012-46TAG3A | 1800 | Prime/DCP | 1526 (2046) | 1440 (1931) | 1710 | 1368",
+        "| 4012-46TAG3A | 1800 | Standby | 1669 (2238) | 1583 (2123) | 1880 | 1504"
+      ]
+    },
+    {
+      "n": 1023,
+      "title": "403A-11G1 ElectropaK (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 403A-11G1 | 1500 | Prime power | 9.0 | 7.2 | 8.6 | 11.5 | 8.4 | 11.3",
+        "| 403A-11G1 | 1500 | Standby power | 9.9 | 7.9 | 9.5 | 12.7 | 9.2 | 12.4"
+      ]
+    },
+    {
+      "n": 1024,
+      "title": "403A-15G1 ElectropaK (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 403A-15G1 | 1500 | Prime power | 13.0 | 10.4 | 12.2 | 16.4 | 12.0 | 16.0",
+        "| 403A-15G1 | 1500 | Standby power | 15.0 | 11.4 | 13.5 | 18.1 | 13.2 | 17.6"
+      ]
+    },
+    {
+      "n": 1025,
+      "title": "403A-15G2 (50 Hz 1500 rpm)",
+      "header": [
+        "| Designation | Unit | Prime | Standby"
+      ],
+      "rows": [
+        "| Gross engine power | kWb | 14 | 15.4",
+        "| Typical genset electrical output (0.8 pf 25°C) | kWe | 12.04 | 13.26",
+        "| Typical genset electrical output (0.8 pf 25°C) | kVA | 15.05 | 16.57"
+      ]
+    },
+    {
+      "n": 1026,
+      "title": "403A-15G2 (60 Hz 1800 rpm)",
+      "header": [
+        "| Designation | Unit | Prime | Standby"
+      ],
+      "rows": [
+        "| Gross engine power | kWb | 16.33 | 17.96",
+        "| Typical Generator sets electrical output (0.8pf 25°C) | kWe | 14.01 | 15.62",
+        "| Typical Generator sets electrical output (0.8pf 25°C) | kVA | 17.51 | 19.52"
+      ]
+    },
+    {
+      "n": 1027,
+      "title": "403D-15G ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross bhp | Net kWm | Net bhp"
+      ],
+      "rows": [
+        "| 403D-15G | 1500 | Prime Power | 13.1 | 10.4 | 12.2 | 16.4 | 12.0 | 16.1",
+        "| 403D-15G | 1500 | Standby Power | 14.5 | 11.6 | 13.5 | 18.1 | 13.3 | 17.8",
+        "| 403D-15G | 1800 | Prime Power | 15.8 | 12.7 | 14.7 | 19.7 | 14.4 | 19.3",
+        "| 403D-15G | 1800 | Standby Power | 17.5 | 14.0 | 16.2 | 21.7 | 15.9 | 21.3"
+      ]
+    },
+    {
+      "n": 1028,
+      "title": "404A-22G1 ElectropaK (1500 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 404A-22G1 | 1500 | Prime power | 20.3 | 16.2 | 18.7 | 25.1 | 18.4 | 24.7",
+        "| 404A-22G1 | 1500 | Standby power | 22.3 | 17.8 | 20.6 | 27.6 | 20.3 | 27.2"
+      ]
+    },
+    {
+      "n": 1029,
+      "title": "404D-22TG ElectropaK (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Model | Speed rpm | Type of operation | kVA | kWe | Gross kWm | Gross hp | Net kWm | Net hp"
+      ],
+      "rows": [
+        "| 404D-22TG | 1500 | Prime power | 27.3 | 21.8 | 25.2 | 33.7 | 24.3 | 32.6",
+        "| 404D-22TG | 1500 | Standby power | 30.0 | 24.0 | 27.7 | 37.1 | 26.7 | 35.8",
+        "| 404D-22TG | 1800 | Prime power | 32.1 | 25.6 | 30.3 | 40.5 | 28.8 | 38.6",
+        "| 404D-22TG | 1800 | Standby power | 35.3 | 28.2 | 33.3 | 44.7 | 31.7 | 42.5"
+      ]
+    },
+    {
+      "n": 1030,
+      "title": "1706A-E93TAG1/TAG2 (1500 rpm và 1800 rpm)",
+      "header": [
+        "| Engine model | Speed rpm | Type of operation | Generator output kVA | Generator output kWe | Engine power Gross kWm | Engine power Gross hp | Engine power Net kWm | Engine power Net hp"
+      ],
+      "rows": [
+        "| 1706A-E93 TAG1 | 1500 | Prime power | 307 | 246 | 276.3 | 370.5 | 267.3 | 358.4",
+        "| 1706A-E93 TAG1 | 1500 | Standby power | 339 | 220 | 304.0 | 407.7 | 295.0 | 395.6",
+        "| 1706A-E93 TAG1/TAG2 | 1800 | Prime power | 357 | 286 | 325.8 | 436.9 | 310.8 | 416.8",
+        "| 1706A-E93 TAG1/TAG2 | 1800 | Standby power | 395 | 316 | 358.4 | 480.6 | 343.3 | 460.5"
       ]
     }
   ]

@@ -1287,6 +1287,16 @@ export const hzOfCode = (e) => { const m = String(e?.key || "").match(/^\d+M\d+G
 // Danh sách tường minh, KHÔNG phải luật (Khoa 23/11/2026): long-gen đặt dòng này ở tab 50 Hz của trang (tên tab không lưu trong
 // specTables), còn tờ Perkins [perkins 5001] và baifa n105 chỉ ghi mã này ở 60 Hz. Giữ ở gói 50 Hz, tần số "cần xác nhận".
 const FREQ_ASK_ROWS = [{ supplierId: "long-gen", n: 109, model: "LGPL-220EV", engine: "1206JE70TTAG4", want: 50, why: "NCC ghi 50 Hz, tờ hãng chỉ ghi 60 Hz" }];
+// Danh sách tường minh, KHÔNG phải luật chung (Khoa 24/11/2026: luật chung chờ tờ Perkins đủ hai tần số): động cơ Perkins mà mọi tờ hãng
+// đã tra (sources/perkins/1001–1030) chỉ ghi MỘT tần số cho đúng model. Dòng NCC ghi tần số kia vẫn giữ, gắn "cần xác nhận tần số" (KHÔNG loại).
+// Model có tờ ghi cả hai tần số (2206C-E13TAG2/3, 1206A/D-E70TTAG1/2, 1104C-44TAG1, 2506A/C, 2806A/C/J, 4012-46TAG3A, 403A-15G2, 403D-15G,
+// 404D-22TG, 1706A-E93TAG1…) không có trong danh sách nên không còn bị coi là trái tờ hãng. `n` = số nguồn của hồ sơ perkins.
+const MAKER_ONE_HZ = new Map([
+  ["1104D44TG2", { hz: 50, n: 1006 }], ["1106A70TAG4", { hz: 50, n: 1007 }], ["1506AE88TAG1", { hz: 50, n: 1003 }],
+  ["403A11G1", { hz: 50, n: 1023 }], ["403A15G1", { hz: 50, n: 1024 }], ["404A22G1", { hz: 50, n: 1028 }],
+  ["2206DE13TAG2", { hz: 60, n: 1002 }], ["2206DE13TAG3", { hz: 60, n: 1002 }], ["2506CE15TAG3", { hz: 60, n: 1015 }], ["2506DE15TAG1", { hz: 60, n: 1016 }],
+]);
+export const makerOneHz = (e) => MAKER_ONE_HZ.get(e?.key) || null;
 const freqAskRow = (e, u, want) => FREQ_ASK_ROWS.find((x) => x.want === want && x.engine === e?.key && x.supplierId === u?.supplierId && [u?.n, ...(u?.also || []).map((a) => a.n)].includes(x.n) && String(CAT.cellsOf(u?.line || "")[0] ?? "").trim() === x.model);
 // Tờ RIÊNG của chính model (`engineSheetsOf`: tiêu đề đúng một model) do chính hãng động cơ phát hành, ghi đúng một tốc độ.
 const ownSheetRun = (e, sheets, sup) => {
@@ -1299,6 +1309,10 @@ const ownSheetRun = (e, sheets, sup) => {
 // KHÔNG đủ để loại (Khoa 23/11/2026: tài liệu hãng chưa đủ hai tần số): GIỮ, `ask` = cần xác nhận (`makerList`). Chỉ NCC khác ghi
 // tần số kia (≥ 2 dòng) cũng GIỮ, `ask`. Động cơ có dòng ghi đúng `want` thì không xét theo các dòng khác.
 export function freqVerdict(e, u, want, { twinUses = [], sup = new Map(), sheets = null } = {}) {
+  if (want && (u?.freq === want || (!u?.freq && hzOfRow(u) === want)) && u?.supplierId !== "perkins") {
+    const one = makerOneHz(e);
+    return one && one.hz !== want ? { ask: true, kind: "makerOne", why: `NCC ghi ${want} Hz, tờ hãng Perkins [perkins ${one.n}] chỉ ghi ${one.hz} Hz` } : null;
+  }
   if (!want || u?.freq) return null;
   const own = hzOfRow(u);
   if (own) return own !== want ? { out: true, kind: "row", why: `dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${want} Hz` } : null;
