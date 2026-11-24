@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { standardOf, FIELDS } from "./spec-standard.mjs";
-import { useNormCtx } from "./config-bot.mjs";
+import { useNormCtx, useGeo } from "./config-bot.mjs";
 import { absurdOf } from "./row-flags-lib.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -264,7 +264,7 @@ export function checkDocs(docs, suppliers, { readings = [] } = {}) {
 export function runAll(all) {
   const readings = [], rowsMap = new Map(), geoOf = new WeakMap();
   for (const s of all) (s.specTables || []).forEach((t, i) => rowsMap.set(`${s.id}|${i}`, t.rows || []));
-  const geo = (u) => { if (!geoOf.has(u)) geoOf.set(u, SN.selfCheck(SN.normalizeRecord(u, rowsMap.get(`${u.supplierId}|${u.table}`)))); return geoOf.get(u); };
+  const geo = (u) => { if (!geoOf.has(u)) geoOf.set(u, useGeo(u, rowsMap)); return geoOf.get(u); };
   const audit = (a) => {
     if (a.drop || !RULES[`${a.part}.${a.fid}`]?.relation) return;
     const relation = RULES[`${a.part}.${a.fid}`].relation, ctx = useNormCtx(a.u, rowsMap);
