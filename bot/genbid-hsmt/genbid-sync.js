@@ -326,9 +326,15 @@ async function saveTbmtPdf(page, dir) {
     if (await tab.count()) { await tab.first().click().catch(() => {}); await page.waitForTimeout(500); }
     const btn = page.locator('span.tags-fileAttach', { hasText: "Tải TBMT" }).first();
     if (!(await btn.count())) return false;
-    const dl = page.waitForEvent("download", { timeout: 30000 });
+    const errs = [], onErr = (e) => errs.push(String(e.message || e).split("\n")[0].slice(0, 200)), onCon = (m) => { if (m.type() === "error") errs.push(m.text().slice(0, 200)); };
+    page.on("pageerror", onErr); page.on("console", onCon);
+    const dl = page.waitForEvent("download", { timeout: 15000 });
+    dl.catch(() => {});
     await btn.click();
-    const d = await dl;
+    let d;
+    try { d = await dl; }
+    catch (e) { throw new Error(`${e.message.split("\n")[0]}${errs.length ? " | lỗi trang: " + errs.slice(0, 3).join(" ; ") : ""}`); }
+    finally { page.off("pageerror", onErr); page.off("console", onCon); }
     const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").replace(/^[\s_]+/, "").trim() || "Thông báo mời thầu.pdf";
     fs.mkdirSync(dir, { recursive: true });
     await d.saveAs(path.join(dir, name));
