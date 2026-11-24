@@ -48,6 +48,7 @@
 - Đẩy tệp workflow lên nhánh `crawl/**` sẽ tự chạy CẢ danh sách hãng → merge main vào nhánh crawl bằng commit có `[skip ci]`, rồi `gh workflow run supplier-crawl.yml --ref <nhánh> -f ids="..." -f plain=false -f render=true`.
 - `pdftotext -table` cho bảng (`-layout` lệch cột); pdftotext của Git Bash cần `-enc UTF-8`. Ngày Accessed theo UTC.
 - Lượt chạy nền nạp code lúc khởi động: sửa code xong phải chạy lại.
+- `pdftotext` trên Windows (leroy-thieu-2, 24/11/2026): khi chạy `maker-datasheets.mjs` / `fetch-source.mjs` phải đặt bản xpdf của Git (`C:\Program Files\Git\mingw64\bin`) đứng ĐẦU `PATH` (`$env:PATH = "C:\Program Files\Git\mingw64\bin;" + $env:PATH`). Bản poppler của WinGet đứng trước thì `-table` báo lỗi (thoát mã 99, chỉ in phiên bản) hoặc công cụ rơi về `-layout` (ra khác tờ 1001–1020). Đã thử lại: cùng một PDF, poppler `-table` thoát 99, xpdf `-table` thoát 0.
 
 ## config-bot / bidprice-bot
 - Mỗi lượt là tiến trình node mới (không cần restart bot), nhưng `config-bot.mjs run` đang chạy giữ code cũ tới khi thoát. Khoá `genbid-config.lock` chỉ tính khi PID còn sống.
