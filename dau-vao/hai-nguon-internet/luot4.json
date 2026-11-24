@@ -1,0 +1,26 @@
+{
+  "luot": 4,
+  "ngay": "2026-11-24",
+  "ghiChu": "Trang hãng stamford-avk.com/downloads/data-sheets có tờ cho PI734B/D/E/F, UCI274G, UCDI274J/K, LVSI804. Chi tiết: nghiem-thu/hai-nguon-internet.md mục Lượt 4.",
+  "a": [
+    {"model": "PI734B", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/PI7B-13-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7B-26-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7B-28-TD-EN_Rev_A.pdf"], "trang": 7, "dongDau": "PI734B - Winding 13 / Technical Data Sheet", "capCachDien": "CLASS H"},
+    {"model": "PI734D", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/PI7D-07-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7D-13-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7D-26-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7D-312-TD-EN_Rev_A.pdf"]},
+    {"model": "PI734E", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/PI7E-07-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7E-312-TD-EN_Rev_A.pdf"]},
+    {"model": "PI734F", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/PI7F-07-TD-EN_Rev_B.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7F-13-TD-EN_Rev_A.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/PI7F-26-TD-EN_Rev_A.pdf"]},
+    {"model": "UCI274G", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/UCI274G-311-TD-EN_Rev_C.pdf", "https://www.stamford-avk.com/stamford-avk/sites/stamfordavk/files/UCI274G-14-TD-EN_Rev_A.pdf"], "trang": 9, "dongDau": "UCI274G - Winding 311 / Technical Data Sheet", "capCachDien": "CLASS H"},
+    {"model": "UCDI274J", "nguon": "hang", "ghiChu": "tên có chữ D; không coi là UCI274J nếu không có bằng chứng hãng", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/UCDI274J-311-TD-EN_Rev_C.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/UCDI274J-14-TD-EN_Rev_B.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/UCDI274J-17-TD-EN_Rev_B.pdf"]},
+    {"model": "UCDI274K", "nguon": "hang", "ghiChu": "tên có chữ D", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/UCDI274K-311-TD-EN_Rev_C.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/UCDI274K-17-TD-EN_Rev_B.pdf"]},
+    {"model": "LVSI804 (R/S/T/W/X/Y)", "nguon": "hang", "urls": ["https://www.stamford-avk.com/sites/stamfordavk/files/LVSI804S%20Wdg%2012.pdf", "https://www.stamford-avk.com/sites/stamfordavk/files/LVSI804R%20Wdg%2012.pdf"], "trang": 8, "dongDau": "LV 804 S WDG 12 - Technical Data Sheet / FRAME LV 804 S", "capCachDien": "CLASS H"},
+    {"model": "HGM9510", "nguon": "dang-lai-nha-phan-phoi", "url": "https://www.smartgen-america.com/upload/iblock/0c9/zhr01df3en0stwmaivrnra99eacdr28m.pdf", "tep": "genbid-work/repost-datasheets/smartgen/cand0c9.pdf", "trang": 71, "dongNguyenVan": "This manual is suitable for HGM9510 parallel controller only.", "truongCo": {"nguonDC": "DC8. 0V to 35. 0V", "kichThuoc": "266mm x 182mm x 45mm", "IP": "IP55 Gasket"}}
+  ],
+  "b": [],
+  "c": [
+    {"model": "LVI634B-G", "daThu": ["quét 883 PDF trang hãng stamford-avk.com", "tìm web 2 lần (chỉ thấy HCI634)"]},
+    {"model": "họ 164 / 184", "ghiChu": "tên không rõ; không suy ra"},
+    {"model": "UCI274J, UCI274K (đúng chữ UCI)", "ghiChu": "hãng chỉ có UCDI274J/K"},
+    {"model": "P086TI", "ketLuan": "là động cơ Doosan, không phải đầu phát", "bangChung": "https://m.industrialgeneratorset.com/sale-13073864-stamford-alternator-p086ti-engine-200kva-doosan-generator-set.html: 'Doosan diesel engine P086TI and Stamford brushless alternator UCI 274 H' (đại lý, 1 nguồn)"},
+    {"model": "HGM9210/9220/9410", "thieu": ["nguon DC", "kich thuoc", "IP"], "daThu": ["scribd manual 9200/9300/9400 (cần đăng nhập, bỏ)", "grandnparts.com (IP55 cho 9X10/9X20, 1 nguồn đại lý)"]},
+    {"model": "SICES GC310/GC350/GC500Plus", "thieu": ["nguon DC", "IP mat truoc"], "daThu": ["tờ GC315/GC400 (khác model, không dùng)"]}
+  ],
+  "chuaLam": ["bảng kVA theo winding của từng tờ", "LVI634 tên khác", "manual 9200/9300/9400 ngoài scribd", "datasheet GC310 chính hãng"]
+}

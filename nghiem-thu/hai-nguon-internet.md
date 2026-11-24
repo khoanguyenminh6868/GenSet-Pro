@@ -78,3 +78,37 @@ Tệp tải: `genbid-work\repost-datasheets\sices\` (dl.html, dl2.html = trang t
 
 ### Số model lượt 3
 (a) mới/nâng: GC310, GC350, GC500Plus (một phần) = 3; HGM9210/9220/9410 (một phần, chỉ bảng so sánh cổng) = 3; (b) 0; (c) HGM9500 = không phải model (loại).
+
+## Lượt 4 (24/11/2026) — phát hiện chính: TRANG HÃNG CÓ tờ cho nhiều model "thiếu" (DỪNG vì context)
+Danh sách tờ chính thức: https://www.stamford-avk.com/downloads/data-sheets (125 trang, `?page=0..124`). Đã quét hết, lưu `genbid-work\repost-datasheets\stamford\maker\all-links.txt` (883 PDF) + tải mẫu (PDF + .txt) cùng thư mục. Tệp: `https://www.stamford-avk.com/sites/stamfordavk/files/<tên>.pdf`. Danh sách quét chưa đủ (UCI274G-311 / -14 có trên trang hãng nhưng không nằm trong danh sách quét) → vẫn tìm theo tên.
+
+### Nhóm 1 — Stamford (a) tờ CHÍNH HÃNG (bước 1, không cần luật đăng lại)
+Dòng đầu tờ ghi đúng tên model; mục INSULATION SYSTEM "CLASS H"; kVA theo điện áp ở bảng "Winding … / 0.8 Power Factor" (chưa trích).
+| model | URL (sau `…/sites/stamfordavk/files/`) | trang | dòng đầu |
+|---|---|---|---|
+| PI734B | PI7B-13-TD-EN_Rev_A.pdf (cũng -26, -28) | 7 | "PI734B - Winding 13 / Technical Data Sheet" |
+| PI734D | PI7D-07-TD-EN_Rev_A.pdf (-13, -26, -312) | 7 (312: 9) | "PI734D - Winding …" |
+| PI734E | PI7E-07-TD-EN_Rev_A.pdf, PI7E-312-TD-EN_Rev_A.pdf | 7 / 9 | "PI734E - Winding …" |
+| PI734F | PI7F-07-TD-EN_Rev_B.pdf (-13, -26) | 6–7 | "PI734F - Winding …" |
+| UCI274G | UCI274G-311-TD-EN_Rev_C.pdf; (đường dẫn `/stamford-avk/sites/stamfordavk/files/`) UCI274G-14-TD-EN_Rev_A.pdf | 9 / 8 | "UCI274G - Winding 311 / Technical Data Sheet" |
+| UCDI274J | UCDI274J-311-TD-EN_Rev_C.pdf (-14, -17) | 9 | "UCDI274J …" |
+| UCDI274K | UCDI274K-311-TD-EN_Rev_B.pdf (-17; ES10456664_UCDI274K-06-TD-EN%20_Rev_B.pdf) | 9 | "UCDI274K …" |
+| LVSI804 (R/S/T/W/X/Y) | LVSI804S%20Wdg%2012.pdf (R 12/13, S 07/12/13, T 12/13/65, W 07/12/13/65, X 07/12, Y 65) | 8 | "LV 804 S WDG 12 - Technical Data Sheet / FRAME LV 804 S" |
+Lưu ý: tờ hãng là UCDI274J/K (có chữ D), KHÔNG phải UCI274J/K; theo quy tắc Khoa không coi cùng model nếu không có bằng chứng hãng → điều phối quyết. Chưa chọn winding / hậu tố cho LVSI804.
+
+### Nhóm 1 — (c) không có tờ
+- **LVI634B–G**: trang hãng không có (có HCI634, HCM634, PI734, LVSI804); tìm web 2 lần chỉ ra HCI634.
+- **P086TI**: KHÔNG phải model đầu phát — industrialgeneratorset.com (đại lý, 1 nguồn): "Doosan diesel engine P086TI and Stamford brushless alternator UCI 274 H" → P086TI là động cơ Doosan. Đề nghị loại khỏi danh sách đầu phát.
+- **họ 164 / 184**: tên không rõ; trang hãng chỉ có tên tệp khung "ESA058N184_S4L1M-E4-B-W311.pdf", "A058N165_Rev_A.pdf" (KHÔNG suy ra). Cần tên đầy đủ.
+- **UCI274J, UCI274K** (đúng chữ UCI): không có.
+
+### Nhóm 2 — ứng viên smartgen-america …/0c9/zhr01df3en0stwmaivrnra99eacdr28m.pdf
+Là **"HGM9510 GENSET PARALLEL (WITH GENSET) CONTROLLER USER MANUAL"**, SmartGen Technology, 71 trang, "This manual is suitable for HGM9510 parallel controller only." KHÔNG phải 9210/9220/9410. Tệp `smartgen\cand0c9.pdf/.txt`. Có cho HGM9510: "Working Voltage DC8. 0V to 35. 0V", "Case Dimensions 266mm x 182mm x 45mm", "Protection Level IP55 Gasket" (đăng lại bởi nhà phân phối SmartGen Mỹ).
+
+### Nhóm 3 — luật 2 nguồn
+- SICES GC310/350/500Plus: tờ tìm thấy (scribd, directindustry, ttttglobal…) là GC315 ("Supply voltage: 7-32 Vdc", "IP65") và GC400, KHÔNG phải model cần → không dùng. (b) không có.
+- HGM9210/9220/9410: manual chung "HGM9200/9300/9400 Series V1.2" chỉ thấy trên scribd (cần đăng nhập → bỏ). grandnparts.com (đại lý) ghi HGM9210 IP55 — 1 nguồn, chưa đủ. Nguồn DC, kích thước chưa có. Tờ 93XX có DC(8~35)V / IP55 là của 9310/9320, không dùng.
+
+### Số model lượt 4
+(a) chính hãng 8 (PI734B/D/E/F, UCI274G, UCDI274J, UCDI274K, LVSI804) + HGM9510 (nguồn/kích thước/IP) = 9; (b) 0; (c): LVI634B–G, 164/184, UCI274J/K, HGM9210/9220/9410, GC310/350/500Plus (nguồn DC, IP); P086TI = không phải đầu phát.
+Việc chưa làm: trích bảng kVA theo winding; LVI634 tên khác; manual 9200/9300/9400 ngoài scribd; datasheet GC310 chính hãng.
