@@ -1,0 +1,30 @@
+{
+  "luot": 3,
+  "ngay": "2026-11-24",
+  "ghiChu": "Dừng vì luật context; nhóm 3, 4 chưa làm. Chi tiết: nghiem-thu/hai-nguon-internet.md mục Lượt 3.",
+  "a": [
+    {
+      "model": "SICES GC310 / GC350 / GC500Plus",
+      "muc": "mot-phan",
+      "url": "https://imgusr.tradekey.com/images/uploadedimages/brochures/1/9/3173688-201403310650195339102b7592a.pdf",
+      "tep": "genbid-work/repost-datasheets/sices/sices-brochure-tradekey.pdf (+ .txt)",
+      "trang": 12,
+      "dongNguyenVan": ["Models of genset controllers: GC315 / GC310 / GC350", "Models of genset controllers: GC500Plus / DST4602"],
+      "truongCo": {"kichThuoc": "247x187x70", "congTruyenThong": "J1939/MTU CAN, RS232, RS485 Modbus RTU, USB", "DI": "8+3 (GC310); 18+3 (GC350, GC500Plus)", "DO": "8; 16; 16"},
+      "truongThieu": ["nguon DC", "IP mat truoc"]
+    },
+    {
+      "model": "HGM9210 / HGM9220 / HGM9410",
+      "muc": "mot-phan",
+      "url": "https://smartgen.mx/wp-content/uploads/HGM9510_V1.2_en.pdf",
+      "ghiChu": "Bảng '2 MODULES COMPARISON' trong tờ HGM9510 V1.2 có cột 9210/9220/9410: RS485, J1939, USB, LCD. Không có manual riêng.",
+      "truongThieu": ["nguon DC", "kich thuoc", "IP mat truoc"]
+    }
+  ],
+  "b": [],
+  "c": [
+    {"model": "HGM9500", "ketLuan": "không phải model", "bangChung": "suppliers/cn/smartgen.json dòng 8125-8133, nguồn 1003: 'NOTE: Please refer to HGM9500 Synchronization Plan List for more information on GOV and AVR settings.' (tên họ trong manual 9510/9520)"},
+    {"model": "SICES nguon DC/IP", "daThu": ["sices.eu/en/downloads (liên kết dựng JS, URL đoán 404)", "meccalte.com REWIND3/SS3 manual (không phải tờ GC)", "scribd (cần đăng nhập, bỏ)"]}
+  ],
+  "chuaLam": ["Stamford LVI634B-G, LVSI804, P086TI, 164/184, UCI274G/J/K, PI734 B/D/E/F", "luật 2 nguồn cho mọi model nhóm (c)", "kiểm https://www.smartgen-america.com/upload/iblock/0c9/zhr01df3en0stwmaivrnra99eacdr28m.pdf", "tải yumpu/manualslib GC310 (nếu không cần đăng nhập)"]
+}

@@ -58,3 +58,23 @@ Kiểm bảng thông số SICES brochure; tải yumpu/manualslib SICES; tìm ri�
 | UCI274E | https://www.raad-eng.com/techdata/stamford/uci274e.pdf |
 | UCI274H | https://www.raad-eng.com/techdata/stamford/uci274h.pdf |
 | UCDI274J (winding 14) | https://www.baifapower.com/static/upload/download/FDJ/UCDI274J-14.pdf |
+
+## Lượt 3 (24/11/2026) — DỪNG VÌ LUẬT CONTEXT; làm xong nhóm 1 và một phần nhóm 2
+Tệp tải: `genbid-work\repost-datasheets\sices\` (dl.html, dl2.html = trang tải sices.eu; torcal.pdf hỏng; b.txt cũ).
+
+### Nhóm 1 — SICES GC310 / GC350 / GC500Plus
+- (a) brochure tradekey (12 trang, `sices\sices-brochure-tradekey.pdf` + `.txt`) CÓ bảng so sánh theo model (dòng 121–230 của .txt): kích thước "247x187x70" (GC310, GC350, GC500Plus), màn hình 128x64, cổng J1939/MTU CAN, RS232 + RS485 Modbus RTU, USB, DI 8+3 (GC310) / 18+3 (GC350, GC500Plus), DO 8 / 16 / 16. Bảng KHÔNG có nguồn DC, không có IP mặt trước. Dòng nguyên văn có tên hãng + model: "Models of genset controllers: GC315 / GC310 / GC350" và "Models of genset controllers: GC500Plus / DST4602" (tên hãng "SICES Srl" nằm ở đầu tài liệu). → dùng được cho kích thước / cổng truyền thông; thiếu nguồn DC, IP.
+- sices.eu: trang tải (https://sices.eu/en/downloads/) bảo "No registration is required to download datasheets" nhưng liên kết tải là WordPress download-manager dựng bằng JS; URL đoán (/download/gc310-datasheet/, /en/products/genset-controllers/…) đều 404 — KHÔNG đoán thêm. Chưa tìm được URL tệp datasheet thật.
+- meccalte.com: chỉ thấy User's Manual REWIND II (https://www.meccalte.com/downloads/REWIND3_User_Manual___EAAM069702EN_MA.pdf, có câu "MAIN Positive input main supply (8...32 Vdc)" — là của mô-đun Rewind, KHÔNG phải GC) và SS3 User manual (…SS3_User_Manual___EAAM078400EN_MA.pdf, phần mềm giám sát, nhắc GC310/GC350/GC500). Không phải tờ thông số GC → chưa đạt (a) cho nguồn DC / IP.
+- Nơi chưa tải: scribd "HT GC310/GC350/GC500 User Manual" (scribd: bỏ, cần đăng nhập để tải), yumpu, manualslib.
+- Kết luận: GC310/GC350/GC500Plus = (a) một phần (kích thước, cổng, I/O); nguồn DC + IP còn thiếu (chưa thử luật 2 nguồn).
+
+### Nhóm 2 — SmartGen
+- "HGM9500" trong `suppliers/cn/smartgen.json` (dòng 8125–8133, nguồn 1003) KHÔNG phải model: câu nguồn là "NOTE: Please refer to HGM9500 Synchronization Plan List for more information on GOV and AVR settings." (tên họ trong manual 9510/9520). → loại bỏ khỏi danh sách model cần tờ; model thật là HGM9510 và HGM9520 (đã có ở (a) lượt 2).
+- HGM9210 / 9220 / 9410: manual riêng vẫn không thấy (tìm lại 1 lần). Có bảng "2 MODULES COMPARISON" trong tờ HGM9510 V1.2 (https://smartgen.mx/wp-content/uploads/HGM9510_V1.2_en.pdf, SmartGen, nhà phân phối smartgen.mx): cột HGM9210 | 9220 | 9410…, hàng LCD, RS485 (9410 ●, 9210 trống), J1939 (9410 ●), USB (9210, 9220, 9410 ●) — dùng cho cổng truyền thông (tờ hãng đăng lại, có tên hãng "SMARTGEN (ZHENGZHOU) TECHNOLOGY CO.,LTD."). Chưa có nguồn DC, kích thước, IP của ba model này.
+- Ứng viên chưa tải: https://www.smartgen-america.com/upload/iblock/0c9/zhr01df3en0stwmaivrnra99eacdr28m.pdf (kết quả tìm "USER MANUAL" có bảng tham số, chưa rõ model) — cần kiểm.
+
+### Nhóm 3, 4 — CHƯA LÀM (Stamford LVI634B–G, LVSI804, P086TI, 164/184, UCI274G/J/K, PI734 B/D/E/F; luật 2 nguồn)
+
+### Số model lượt 3
+(a) mới/nâng: GC310, GC350, GC500Plus (một phần) = 3; HGM9210/9220/9410 (một phần, chỉ bảng so sánh cổng) = 3; (b) 0; (c) HGM9500 = không phải model (loại).
