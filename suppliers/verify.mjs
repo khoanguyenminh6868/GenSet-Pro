@@ -27,7 +27,7 @@ try {
 // Same text either side: whitespace collapsed, full-width tildes and dashes read as their ASCII forms.
 export const norm = (s) => String(s ?? "").normalize("NFKC").replace(/[～〜]/g, "~").replace(/[‐-―−]/g, "-").replace(/\s+/g, " ").trim().toLowerCase();
 // "3 000" and "3.750" (space or dot thousands, as European sources write them) also read as 3000 and 3750.
-const numbersIn = (s) => {
+export const numbersIn = (s) => {
   const t = norm(s).replace(/(\d),(\d{3})/g, "$1$2");
   return [...(t.match(/\d+(?:\.\d+)?/g) || []), ...(t.match(/\b\d{1,3}(?:[ .]\d{3})+\b/g) || []).map((g) => g.replace(/[ .]/g, ""))].map(Number);
 };
@@ -170,5 +170,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   for (const { rec } of all) for (const r of rec?.relatedIds || []) if (!ids.includes(r)) console.log(`lưu ý: ${rec.id} liên kết tới ${r} chưa có bản ghi`);
   console.log(`\n${all.length} bản ghi, ${bad} có lỗi`);
   console.log("role:", JSON.stringify(count("role")), " status:", JSON.stringify(count("status")), " confidence:", JSON.stringify(count("confidence")));
-  process.exit(bad ? 1 : 0);
+  // Giá trị một nguồn internet (one-source.json, one-source-check.mjs), cuối lượt; lỗi cộng vào mã thoát. `--one-source <tệp>`
+  // kiểm tệp khác. Import động + .then, KHÔNG top-level await: one-source-check nạp config-bot, config-bot import tệp này;
+  // await ở đây làm tệp này thành module async chưa xong → vòng chờ, node thoát 13.
+  const i = process.argv.indexOf("--one-source");
+  import("./one-source-check.mjs")
+    .then((m) => m.runOneSource(i > 0 ? { file: path.resolve(process.argv[i + 1]) } : {}))
+    .then((n) => process.exit(bad || n ? 1 : 0), (e) => { console.log(`✗ one-source.json: ${e.stack || e}`); process.exit(1); });
 }

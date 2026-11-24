@@ -317,6 +317,31 @@ async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b
 // Fetch a tender's HSMT files through the VNeGP Agent and publish them (GitHub Release + web), as files-fast.md did.
 let agentStarted = false;
 
+// "Tải TBMT" in tab Thông tin chung (Khoa, 2026-11-24): the notice itself, a PDF the page builds in the browser (pdfMake, not a
+// server file, so the VNeGP Agent cannot fetch it). The button is clicked and the download saved next to the other files, where
+// Publish-GenBidHsmt.ps1 picks it up. A page without the button (chào giá trực tuyến rút gọn) or a failure is not an error.
+async function saveTbmtPdf(page, dir) {
+  try {
+    const tab = page.locator('a[href="#info-general"]');
+    if (await tab.count()) { await tab.first().click().catch(() => {}); await page.waitForTimeout(500); }
+    const btn = page.locator('span.tags-fileAttach', { hasText: "Tải TBMT" }).first();
+    if (!(await btn.count())) return false;
+    const errs = [], onErr = (e) => errs.push(String(e.message || e).split("\n")[0].slice(0, 200)), onCon = (m) => { if (m.type() === "error") errs.push(m.text().slice(0, 200)); };
+    page.on("pageerror", onErr); page.on("console", onCon);
+    const dl = page.waitForEvent("download", { timeout: 15000 });
+    dl.catch(() => {});
+    await btn.click();
+    let d;
+    try { d = await dl; }
+    catch (e) { throw new Error(`${e.message.split("\n")[0]}${errs.length ? " | lỗi trang: " + errs.slice(0, 3).join(" ; ") : ""}`); }
+    finally { page.off("pageerror", onErr); page.off("console", onCon); }
+    const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").replace(/^[\s_]+/, "").trim() || "Thông báo mời thầu.pdf";
+    fs.mkdirSync(dir, { recursive: true });
+    await d.saveAs(path.join(dir, name));
+    return true;
+  } catch (e) { log(`    Không tải được TBMT: ${e.message.split("\n")[0]}`); return false; }
+}
+
 async function fetchFiles(page, req) {
   const tag = `${req.key}`;
   if (!okTenderUrl(req.sourceUrl)) {
@@ -341,6 +366,15 @@ async function fetchFiles(page, req) {
     const skipped = r.files.filter((f) => isDecisionFile(f.name));
     r.files = r.files.filter((f) => !skipped.includes(f));
     if (!r.files.length) {
+      // Only the approval decision on the page (IB2600608438; Khoa, 2026-11-24): the notice itself ("Tải TBMT") is still taken
+      // and published, with no VNeGP Agent needed.
+      const tdir = path.join(DOWNLOADS, req.key);
+      if (req.fresh) fs.rmSync(tdir, { recursive: true, force: true });
+      if (fs.existsSync(tdir)) for (const f of fs.readdirSync(tdir)) if (isDecisionFile(f)) fs.rmSync(path.join(tdir, f), { force: true });
+      if (await saveTbmtPdf(page, tdir)) {
+        const code = ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt], 120);
+        return `${tag}: 1/1 tệp (chỉ thông báo mời thầu; quyết định phê duyệt bỏ)${code ? " (đăng tệp bị lỗi)" : ""}`;
+      }
       ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt, "-Reason", "Trang gói thầu chỉ có tệp quyết định phê duyệt."]);
       return `${tag}: chỉ có quyết định phê duyệt (${skipped.map((f) => f.name).join(", ")})`;
     }
@@ -355,6 +389,7 @@ async function fetchFiles(page, req) {
     fs.writeFileSync(list, [`# ${req.key}`, ...r.files.map((f) => `${f.id},${f.name}`)].join("\r\n"), "utf8");
     ps("GenBid-HSMT.ps1", ["-List", list, "-OutDir", DOWNLOADS], 120);
     fs.rmSync(list, { force: true });
+    await saveTbmtPdf(page, kdir);
     const code = ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt], 120);
     const got = fs.existsSync(path.join(DOWNLOADS, req.key)) ? fs.readdirSync(path.join(DOWNLOADS, req.key)).filter((f) => !/^manifest\.csv$|\.part$/.test(f)).length : 0;
     return `${tag}: ${got}/${r.files.length} tệp${code ? " (đăng tệp bị lỗi)" : ""}`;
