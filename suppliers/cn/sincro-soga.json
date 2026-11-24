@@ -397,6 +397,106 @@
         "| model | kVA (S1) – H class 400V 50 Hz | kW driving power | HP (recommended) tractor power | rated rpm pto speed"
       ],
       "file": "sources/sincro-soga/168.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2026/06/DC-ALTERNATORS-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| E3 | IB | SK160"
+      ],
+      "file": "sources/sincro-soga/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2015/12/SK160-2-POLES-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Classe d'isolamento - Insulation class | H"
+      ],
+      "file": "sources/sincro-soga/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2015/12/SK160-4-POLES-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Classe d'isolamento - Insulation class | H"
+      ],
+      "file": "sources/sincro-soga/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2025/04/SK225-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % | In for 10s"
+      ],
+      "file": "sources/sincro-soga/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2025/03/SK280-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Tipo di regolatore di tensione - Voltage regulator | type | AVR BL4-U"
+      ],
+      "file": "sources/sincro-soga/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2025/07/SK355-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Tipo di regolatore di tensione - Voltage regulator | type | AVR DBL1 digital"
+      ],
+      "file": "sources/sincro-soga/1006.md"
+    },
+    {
+      "n": 1007,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2018/04/SK400-450-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % In for 10s"
+      ],
+      "file": "sources/sincro-soga/1007.md"
+    },
+    {
+      "n": 1008,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2015/12/SK500-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % In for 10s"
+      ],
+      "file": "sources/sincro-soga/1008.md"
+    },
+    {
+      "n": 1012,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2015/12/FB4-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Classe d'isolamento - Insulation class | H"
+      ],
+      "file": "sources/sincro-soga/1012.md"
+    },
+    {
+      "n": 1013,
+      "url": "https://www.sogaenergyteam.com/wp-content/uploads/2015/12/HB4-SINCRO.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Classe d'isolamento - Insulation class | H"
+      ],
+      "file": "sources/sincro-soga/1013.md"
     }
   ],
   "confidence": "medium",
@@ -458,13 +558,29 @@
         "| EP 2 95H | 100 | 3,5 | 4,3 | 76 | 78",
         "| EP 2 95L | 100 | 4,2 | 5,2 | 77 | 78",
         "| EP 2 C5L | 100 | 5 | 6,5 | 79 | 81",
-        "| EP 2 C5T | 100 | 5,5 | 6,8 | 79 | 81",
-        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+        "| EP 2 C5T | 100 | 5,5 | 6,8 | 79 | 81"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - SINGLE PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "rows": [
         "| ER 2 CXT | 100 | 3 | 3,7 | 75 | 76",
         "| ER 2 CAH | 100 | 3,5 | 4,3 | 77 | 78",
         "| ER 2 CAT | 100 | 4,2 | 5,2 | 77 | 78",
-        "| ER 2 CBT | 100 | 4,8 | 6 | 78 | 79",
-        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz",
+        "| ER 2 CBT | 100 | 4,8 | 6 | 78 | 79"
+      ]
+    },
+    {
+      "n": 127,
+      "title": "ALTERNATORS - CONSTANT SPEED - SYNCHRONOUS IP23 LOW VOLTAGE AC - 2 POLES - SINGLE PHASE - BRUSHLESS / CAPACITOR",
+      "header": [
+        "| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz | efficiency 4/4 p.f.1 50 Hz | efficiency 4/4 p.f.1 60 Hz"
+      ],
+      "rows": [
         "| EK 2 MCT | 100 | 6 | 7,5 | 79 | 80",
         "| EK 2 LAT | 100 | 7 | 8,8 | 80 | 83",
         "| EK 2 LCT | 100 | 8 | 10 | 81 | 83",
@@ -983,6 +1099,197 @@
         "| AWB 4-90X | 90 | 80,5 | 266 | 400",
         "| AWB 4-115X BUD | 115 | 99,6 | 329 | 1000",
         "| AWB 4-130X BUD | 126 | 112 | 370 | 1000"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: DC alternators 24 VDC | 48 VDC",
+      "header": [],
+      "rows": [
+        "| E3 | IB | SK160",
+        "| 3phase | 3phase | 3phase | 9phase | 9pAhVaRse | -9phase",
+        "| Diode 3-phase or 9-phase (4 poles) | Diode 3-phase or 9-phase (4 poles)",
+        "| Nominal speed | 3000 rpm (2 poles) | 1500 rpm (4 poles)",
+        "| Insulation class | F/H",
+        "| Protection degree | IP23",
+        "| Cooling system | Axial fan cooling ventilation",
+        "| SK160 2-24/100 | 100 | 2,8 | SK160 4-24/100 | 100 | 2,8",
+        "| SK160 2-24/150 | 150 | 4,2 | SK160 4-24/150 | 150 | 4,2",
+        "| SK160 2-24/200 | 200 | 5,6 | SK160 4-24/200 | 200 | 5,6",
+        "| SK160 2-24/250 | 250 | 7 | SK160 4-24/250 | 250 | 7",
+        "| SK160 2-24/300 | 300 | 8,4 | SK160 4-24/300 | 300 | 8,4",
+        "| SK160 2-24/400 | 400 | 11,2 | SK160 4-24/400 | 400 | 11,2",
+        "| SK160 2-48/100 | 100 | 5,6 | IB 4-48/500 | 500 | 28",
+        "| SK160 2-48/150 | 150 | 8,4 | IB 4-48/800 | 800 | 44,8",
+        "| SK160 2-48/200 | 200 | 11,2 | SK160 4-48/100 | 100 | 5,6",
+        "| SK160 2-48/250 | 250 | 14 | SK160 4-48/150 | 150 | 8,4",
+        "| SK160 2-48/300 | 300 | 16,8 | SK160 4-48/200 | 200 | 11,2",
+        "| SK160 2-48/400 | 400 | 22,4 | SK160 4-48/250 | 250 | 14",
+        "| SK160 4-48/300 | 300 | 16,8",
+        "| SK160 4-48/400 | 400 | 22,4"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: SK160",
+      "header": [],
+      "rows": [
+        "| Classe d'isolamento - Insulation class | H",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| Distorsione armonica - Total harmonic content** | < 3%",
+        "| Fattore armonico telefonico - Telephone Harmonic Factor** | < 2,5%",
+        "| tensione - voltage Y | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 400",
+        "| tensione - voltage 6 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 230",
+        "| tensione - voltage Y | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 480",
+        "| tensione - voltage 6 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 277",
+        "| > cos \u00030,8 | > power factor 0,8",
+        "| cos | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: SK160",
+      "header": [],
+      "rows": [
+        "| Classe d'isolamento - Insulation class | H",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| Distorsione armonica - Total harmonic content** | < 3%",
+        "| Fattore armonico telefonico - Telephone Harmonic Factor** | < 2,5%",
+        "| tensione - voltage Y | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 400",
+        "| tensione - voltage 6 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 230",
+        "| tensione - voltage Y | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 480",
+        "| tensione - voltage 6 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 277",
+        "| tensione - voltage | 115/230 V | 115/230 V | 115/230 V | p.f. \u001b\u00031",
+        "| tensione - voltage | 120/240 V | 120/240 V | 120/240 V | p.f. \u001b\u00031",
+        "| > cos \u00030,8 | > power factor 0,8",
+        "| cos | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84",
+        "| SK160MA1 348 | 165 | 168 | 160 | 104"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: SK225",
+      "header": [],
+      "rows": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % | In for 10s",
+        "| Classe d’isolamento - Insulation class | H",
+        "| Distorsione armonica - Total harmonic content*** | < 2 %",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| voltage Y | 380 | 400 | 415 | 380 | 400 | 415 | 380 | 400 | 415 | 400",
+        "| voltage ∆ | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240 | 230",
+        "| voltage Y | 416 | 440 | 480 | 416 | 440 | 480 | 416 | 440 | 480 | 480",
+        "| voltage ∆ | 240 | 254 | 277 | 240 | 254 | 277 | 240 | 254 | 277 | 277",
+        "| power factor | 1 | 0,8 | 0,7 | 0,6 | 0,5"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: SK280",
+      "header": [],
+      "rows": [
+        "| Tipo di regolatore di tensione - Voltage regulator | type | AVR BL4-U",
+        "| Classe d’isolamento - Insulation class | H",
+        "| Distorsione armonica - Total harmonic content*** | < 2 %",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| voltage Y | 380 | 400 | 415 | 380 | 400 | 415 | 380 | 400 | 415 | 400",
+        "| voltage Δ | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240 | 230",
+        "| voltage Y | 416 | 440 | 480 | 416 | 440 | 480 | 416 | 440 | 480 | 480",
+        "| voltage Δ | 240 | 254 | 277 | 240 | 254 | 277 | 240 | 254 | 277 | 277",
+        "| kg | SK | 280"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: SK355",
+      "header": [],
+      "rows": [
+        "| Tipo di regolatore di tensione - Voltage regulator | type | AVR DBL1 digital",
+        "| Classe d’isolamento - Insulation class | H",
+        "| Distorsione armonica - Total harmonic content*** | < 2 %",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| voltage Y | 380 | 400 | 415 | 380 | 400 | 415 | 380 | 400 | 415 | 400",
+        "| voltage Δ | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240 | 230",
+        "| voltage Y | 416 | 440 | 480 | 416 | 440 | 480 | 416 | 440 | 480 | 480",
+        "| voltage Δ | 240 | 254 | 277 | 240 | 254 | 277 | 240 | 254 | 277 | 277",
+        "| kg | SK | 355"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: SK400-450",
+      "header": [],
+      "rows": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % In for 10s",
+        "| Classe d'isolamento - Insulation class | H",
+        "| Precisione regolazione di tensione - Voltage regulation accuracy** | ± 0,25%",
+        "| Sistema di eccitazione - Excitation system | Brushless + PMG*",
+        "| Distorsione armonica - Total harmonic content*** | < 2%",
+        "| tensione - voltage Y | 380 | 400 | 415 | 380 | 400 | 415 | 380 | 400 | 415 | 400",
+        "| tensione - voltage ∆ | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240 | 230",
+        "| tensione - voltage Y | 416 | 440 | 480 | 416 | 440 | 480 | 416 | 440 | 480 | 480",
+        "| tensione - voltage ∆ | 240 | 254 | 277 | 240 | 254 | 277 | 240 | 254 | 277 | 277",
+        "| > cos ϕ 0,8 | > power factor 0,8",
+        "| cos ϕ | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: SK500",
+      "header": [],
+      "rows": [
+        "| Corrente di corto circuito - Short circuit current | > 300 % In for 10s",
+        "| Classe d'isolamento - Insulation class | H",
+        "| Sistema di eccitazione - Excitation system | Brushless + PMG*",
+        "| Distorsione armonica - Total harmonic distorsion*** | < 2%",
+        "| Precisione regolazione di tensione - Voltage regulation accuracy** | ± 0,25%",
+        "| cos | \u0003 | Transient voltage drop for rated step load at 0,8 power",
+        "| tensione - voltage Y | 380 | 400 | 415 | 380 | 400 | 415 | 380 | 400 | 415 | 400",
+        "| tensione - voltage Y | 416 | 440 | 480 | 416 | 440 | 480 | 416 | 440 | 480 | 480",
+        "| > cos \u00030,8 | > power factor 0,8",
+        "| cos | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84"
+      ]
+    },
+    {
+      "n": 1012,
+      "title": "Datasheet: FB4",
+      "header": [],
+      "rows": [
+        "| Classe d'isolamento - Insulation class | H",
+        "| Distorsione armonica - Total harmonic content** | < 3 %",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| tensione - voltage Y | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 400",
+        "| tensione - voltage ∆ | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 230",
+        "| tensione - voltage Y | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 480",
+        "| tensione - voltage ∆ | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 277",
+        "| > cos ϕ 0,8 | > power factor 0,8",
+        "| cos ϕ | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84"
+      ]
+    },
+    {
+      "n": 1013,
+      "title": "Datasheet: HB4",
+      "header": [],
+      "rows": [
+        "| Classe d'isolamento - Insulation class | H",
+        "| Distorsione armonica - Total harmonic content** | < 2,5 %",
+        "| Sistema di eccitazione - Excitation system | Brushless",
+        "| Fattore armonico telefonico - Telephone Harmonic Factor** | < 3%",
+        "| tensione - voltage Y | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 380 | 400 | 415 | 400 | 400",
+        "| tensione - voltage YY | 190 | 200 | 208 | 200 | 190 | 200 | 208 | 200 | 190 | 200 | 208 | 200 | 200",
+        "| tensione - voltage ∆ | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 220 | 230 | 240 | 230 | 230",
+        "| tensione - voltage ∆∆ | 110 | 115 | 120 | 115 | 110 | 115 | 120 | 115 | 110 | 115 | 120 | 115 | 115",
+        "| tensione - voltage Y | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 416 | 440 | 480 | 480 | 480",
+        "| tensione - voltage YY | 208 | 220 | 240 | 240 | 208 | 220 | 240 | 240 | 208 | 220 | 240 | 240 | 240",
+        "| tensione - voltage ∆ | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 240 | 254 | 277 | 277 | 277",
+        "| tensione - voltage ∆∆ | 120 | 127 | 138 | 138 | 120 | 127 | 138 | 138 | 120 | 127 | 138 | 138 | 127",
+        "| > cos ϕ 0,8 | > power factor 0,8",
+        "| cos ϕ | 1,0 | 0,8 | 0,7 | 0,6 | 0,5",
+        "| power factor | 1,00 | 1,00 | 0,93 | 0,88 | 0,84"
       ]
     }
   ]

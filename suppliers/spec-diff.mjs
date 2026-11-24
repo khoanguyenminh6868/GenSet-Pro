@@ -214,6 +214,19 @@ const normOf = (SN, sup, o) => {
   try { return SN.normalizeRecord(o, sup.get(o.supplierId)?.specTables?.[o.table]?.rows).map(({ raw, ...r }) => ({ raw, r: JSON.stringify(r) })); }
   catch (e) { return [{ raw: null, r: "LỖI " + e.message }]; }
 };
+// Hai bên có thể là hai bản spec-norm.js khác nhau: giá trị của cùng một trường có thể là mảng, chuỗi, số hay object ở bên này
+// mà không phải ở bên kia (gốc lỗi: `r.dims.join` sập khi bên main ghi `dims` dạng cũ). Mọi chỗ đọc kết quả chuẩn hoá của MỘT
+// bên đều đi qua các hàm dưới đây, không giả định dạng; dạng lạ vẫn in ra (JSON) để diff thấy khác.
+const showV = (v, sep = ",") => (v == null ? "" : Array.isArray(v) ? v.map((x) => showV(x, sep)).join(sep) : typeof v === "object" ? JSON.stringify(v) : String(v));
+const hasValueOf = (SN, r) => { try { return !!(typeof SN?.hasValue === "function" ? SN.hasValue(r) : r.num != null || r.range || r.options || r.enum || r.dims || r.bore || r.count != null || r.cond?.exempt); } catch { return false; } };
+export function briefOf(r) {
+  if (!r) return "∅";
+  const b = r.bore;
+  const bore = b == null ? undefined : typeof b === "object" && !Array.isArray(b) && ("bore" in b || "stroke" in b) ? `${showV(b.bore)}×${showV(b.stroke)}` : showV(b, "×");
+  const miss = Array.isArray(r.missing) ? r.missing.length : r.missing ? 1 : 0;
+  return [r.num ?? r.count ?? (r.range && showV(r.range, "–")) ?? (r.dims && showV(r.dims, "×")) ?? bore ?? showV(r.enum), r.unit || "", miss ? `missing ${showV(r.missing)}` : ""].map(showV).filter((t) => t !== "").join(" ");
+}
+
 export function normDiff(sa, sb, a, b) {
   const kinds = {}, changes = [];
   if (!sa.SN || !sb.SN) return { kinds, changes, skipped: true };
@@ -236,10 +249,10 @@ export function normDiff(sa, sb, a, b) {
       if (x[i]?.r === y[i]?.r) continue;
       const X = x[i] && JSON.parse(x[i].r.startsWith("LỖI") ? "{}" : x[i].r), Y = y[i] && JSON.parse(y[i].r.startsWith("LỖI") ? "{}" : y[i].r);
       const key = Y?.key || X?.key || "?";
-      const has = (r) => r && sa.SN.hasValue(r);
-      const kind = `${key} ${!X ? "thêm" : !Y ? "bỏ" : has(X) && !has(Y) ? "mất số" : !has(X) && has(Y) ? "có số" : JSON.stringify(X.missing) !== JSON.stringify(Y.missing) ? "đổi missing" : "đổi số / đơn vị"}`;
+      const has = (r, SN) => r && hasValueOf(SN, r);
+      const kind = `${key} ${!X ? "thêm" : !Y ? "bỏ" : has(X, sa.SN) && !has(Y, sb.SN) ? "mất số" : !has(X, sa.SN) && has(Y, sb.SN) ? "có số" : JSON.stringify(X.missing) !== JSON.stringify(Y.missing) ? "đổi missing" : "đổi số / đơn vị"}`;
       kinds[kind] = (kinds[kind] || 0) + 1;
-      const brief = (r) => (r ? [r.num ?? r.count ?? (r.range && r.range.join("–")) ?? (r.dims && r.dims.join("×")) ?? (r.bore && `${r.bore.bore}×${r.bore.stroke}`) ?? r.enum ?? "", r.unit || "", r.missing?.length ? `missing ${r.missing.join(",")}` : ""].filter((t) => t !== "").join(" ") : "∅");
+      const brief = briefOf;
       changes.push({ kind, o, txt: `"${(y[i] || x[i]).raw?.value ?? ""}": ${brief(X)} → ${brief(Y)}` });
     }
   }

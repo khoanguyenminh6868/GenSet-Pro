@@ -106,7 +106,9 @@ test("động cơ chỉ có dòng 60 Hz (hai dòng trở lên): dòng không ghi
   assert.ok(ids(run(baud, free("Công suất liên tục 700 kVA"))).includes("nofreq"));
 });
 test("động cơ bán ở cả hai tần số: dòng không ghi tần số ở lại", () => {
-  const both = [...baud, sup("f50", ["| z-1 | 750 | 600 | 6M33G660/6 | X |"], "Baudouin series 50 Hz", B)];
+  // Mã không tự nói tần số (đuôi Baudouin "/6" nay quyết theo mã: cand-freq-unstated.test.mjs).
+  const row = (id, title) => sup(id, [`| ${id}-1 | 750 | 600 | KTA38-G2 | X |`], title, B);
+  const both = [row("f60a", "Series 60Hz"), row("f60b", "Series 60 Hz"), row("nofreq", "Generator set"), row("f50", "Series 50 Hz")];
   assert.ok(ids(run(both, free("Tần số 50 Hz"))).includes("nofreq"));
 });
 

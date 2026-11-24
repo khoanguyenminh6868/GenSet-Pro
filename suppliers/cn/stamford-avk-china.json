@@ -802,6 +802,66 @@
         "| LV 804 W | WDG 12 - Technical Data Sheet"
       ],
       "file": "sources/stamford-avk-china/1068.md"
+    },
+    {
+      "n": 1069,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/HCI4D-311-TD-EN_Rev_A.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "HCI 434D/444D - Winding 311"
+      ],
+      "file": "sources/stamford-avk-china/1069.md"
+    },
+    {
+      "n": 1070,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/HCI6K-311-312-TD-EN_Rev_A.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "HCI634K - Winding 311 and 312"
+      ],
+      "file": "sources/stamford-avk-china/1070.md"
+    },
+    {
+      "n": 1071,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ES10462001_S5L1S-D4-B-W311.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "S5L1S-D4 Wdg.311 - Technical Data Sheet"
+      ],
+      "file": "sources/stamford-avk-china/1071.md"
+    },
+    {
+      "n": 1072,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ES10462002_S5L1S-E4-B-W311.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "S5L1S-E4 Wdg.311 - Technical Data Sheet"
+      ],
+      "file": "sources/stamford-avk-china/1072.md"
+    },
+    {
+      "n": 1073,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ES10462003_S5L1S-F4-B-W311.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "S5L1S-F4 Wdg.311 - Technical Data Sheet"
+      ],
+      "file": "sources/stamford-avk-china/1073.md"
+    },
+    {
+      "n": 1074,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA057E452_S4L1S-F4-D-W311.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "S4L1S-F4 Wdg.311 - Technical Data Sheet"
+      ],
+      "file": "sources/stamford-avk-china/1074.md"
     }
   ],
   "confidence": "high",
@@ -2225,6 +2285,136 @@
         "| 3 PHASE | 2 PHASE L-L | 1",
         "| Efficiency (%) | 96.2 | 96.3 | 96.4 | 96.5 | 96.1 | 96.2 | 96.3 | 96.4 | 96.0 | 96.1 | 96.2 | 96.4 | 96.0 | 96.1 | 96.2 | 96.3",
         "| Efficiency (%) | 95.8 | 96.0 | 96.1 | 96.2 | 95.7 | 95.9 | 96.0 | 96.2 | 95.7 | 95.8 | 96.0 | 96.1 | 95.6 | 95.8 | 95.9 | 96.1"
+      ]
+    },
+    {
+      "n": 1069,
+      "title": "Datasheet: HCI 434D/444D - Winding 311",
+      "header": [],
+      "rows": [
+        "HCI 434D/444D - Winding 311",
+        "| VOLTAGE REGULATION | ± 0.5 % | ± 1.0 % | With 4% ENGINE GOVERNING",
+        "| VOLTAGE REGULATION | ± 1.0 % | With 4% ENGINE GOVERNING",
+        "| INSULATION SYSTEM | CLASS H",
+        "| PROTECTION | IP23",
+        "| RATED POWER FACTOR | 0.8",
+        "| WEIGHT COMP. GENERATOR | 940 kg | 950 kg",
+        "| WEIGHT WOUND STATOR | 415 kg | 415 kg",
+        "| WEIGHT WOUND ROTOR | 361 kg | 338 kg",
+        "| SHIPPING WEIGHTS in a crate | 1010 kg | 1010 kg",
+        "| PACKING CRATE SIZE | 155 x 87 x 107(cm) | 155 x 87 x 107(cm)",
+        "| VOLTAGE SERIES STAR | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| VOLTAGE PARALLEL STAR | 190/110 | 200/115 | 208/120 | 220/127 | 208/120 | 220/127 | 230/133 | 240/138",
+        "| VOLTAGE SERIES DELTA | 220/110 | 230/115 | 240/120 | 254/127 | 240/120 | 254/127 | 266/133 | 277/138",
+        "| Efficiency (%) | 93.1 | 93.4 | 93.5 | 93.8 | 92.7 | 93.0 | 93.2 | 93.6 | 92.3 | 92.7 | 92.9 | 93.3 | 92.1 | 92.5 | 92.7 | 93.2",
+        "| Efficiency (%) | 93.3 | 93.3 | 93.4 | 93.6 | 92.9 | 93.0 | 93.1 | 93.3 | 92.5 | 92.6 | 92.7 | 93.0 | 92.4 | 92.5 | 92.5 | 92.8"
+      ]
+    },
+    {
+      "n": 1070,
+      "title": "Datasheet: HCI634K - Winding 311 and 312",
+      "header": [],
+      "rows": [
+        "HCI634K - Winding 311 and 312",
+        "| VOLTAGE REGULATION | ± 0.5 % | With 4% ENGINE GOVERNING",
+        "| INSULATION SYSTEM | CLASS H",
+        "| PROTECTION | IP23",
+        "| RATED POWER FACTOR | 0.8",
+        "| WEIGHT COMP. GENERATOR | 2541 kg | 2581 kg",
+        "| WEIGHT WOUND STATOR | 1294 kg | 1294 kg",
+        "| WEIGHT WOUND ROTOR | 1093 kg | 1048 kg",
+        "| SHIPPING WEIGHTS in a crate | 2601kg | 2622kg",
+        "| PACKING CRATE SIZE | 194 x 92 x 147(cm) | 194 x 92 x 147(cm)",
+        "| VOLTAGE STAR | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| VOLTAGE PARALLEL STAR (*) | 190/110 | 200/115 | 208/120 | 220/127 | 208/120 | 220/127 | 230/133 | 240/138",
+        "| VOLTAGE DELTA | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency (%) | 95.6 | 95.7 | 95.8 | 95.9 | 95.4 | 95.5 | 95.6 | 95.7 | 95.2 | 95.3 | 95.5 | 95.6 | 95.1 | 95.2 | 95.4 | 95.5",
+        "| Efficiency (%) | 95.6 | 95.6 | 95.7 | 95.7 | 95.4 | 95.5 | 95.5 | 95.5 | 95.3 | 95.3 | 95.4 | 95.4 | 95.1 | 95.2 | 95.3 | 95.3"
+      ]
+    },
+    {
+      "n": 1071,
+      "title": "Datasheet: S5L1S-D4 Wdg.311 - Technical Data Sheet",
+      "header": [],
+      "rows": [
+        "S5L1S-D4 Wdg.311 - Technical Data Sheet",
+        "| Voltage Regulation | ± 1% | ± 1% | ± 0.5% | ± 0.5% | with 4%",
+        "| Insulation System | H",
+        "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+        "| Voltage Parallel Star (V) | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+        "| Voltage Series Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Weight Wound Stator | 657kg | 657kg",
+        "| Weight Wound Rotor | 527kg | 499kg",
+        "| Weight Complete Alternator | 1393kg | 1395kg",
+        "| Shipping weight in a Crate | 1485kg | 1485kg",
+        "| Packing Crate Size | 166 x 87 x 124(cm) | 166 x 87 x 124(cm)",
+        "| 3-phase | 2-phase L-L 1-phase L-N",
+        "| Efficiency (%) | 94.1 | 94.0 | 94.5 | 94.8 | 94.4 | 94.1 | 94.7 | 94.9 | 94.5 | 94.3 | 94.8 | 94.9 | 94.8 | 94.7 | 95.0 | 95.1",
+        "| Efficiency (%) | 94.3 | 94.3 | 94.4 | 94.4 | 94.4 | 94.4 | 94.5 | 94.5 | 94.4 | 94.6 | 94.6 | 94.7 | 94.7 | 94.8 | 94.9 | 94.9"
+      ]
+    },
+    {
+      "n": 1072,
+      "title": "Datasheet: S5L1S-E4 Wdg.311 - Technical Data Sheet",
+      "header": [],
+      "rows": [
+        "S5L1S-E4 Wdg.311 - Technical Data Sheet",
+        "| Voltage Regulation | ± 1% | ± 1% | ± 0.5% | ± 0.5% | with 4%",
+        "| Insulation System | H",
+        "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+        "| Voltage Parallel Star (V) | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+        "| Voltage Series Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Weight Wound Stator | 722kg | 722kg",
+        "| Weight Wound Rotor | 582kg | 554kg",
+        "| Weight Complete Alternator | 1543kg | 1535kg",
+        "| Shipping weight in a Crate | 1635kg | 1625kg",
+        "| Packing Crate Size | 166 x 87 x 124(cm) | 166 x 87 x 124(cm)",
+        "| 3-phase | 2-phase L-L 1-phase L-N",
+        "| Efficiency (%) | 94.3 | 94.5 | 94.7 | 94.9 | 94.5 | 94.7 | 94.8 | 95.0 | 94.7 | 94.9 | 95.0 | 95.2 | 95.0 | 95.1 | 95.2 | 95.3",
+        "| Efficiency (%) | 94.5 | 94.6 | 94.7 | 94.8 | 94.6 | 94.7 | 94.8 | 94.8 | 94.8 | 94.9 | 95.0 | 95.0 | 95.0 | 95.1 | 95.2 | 95.2"
+      ]
+    },
+    {
+      "n": 1073,
+      "title": "Datasheet: S5L1S-F4 Wdg.311 - Technical Data Sheet",
+      "header": [],
+      "rows": [
+        "S5L1S-F4 Wdg.311 - Technical Data Sheet",
+        "| Voltage Regulation | ± 1% | ± 1% | ± 0.5% | ± 0.5% | with 4%",
+        "| Insulation System | H",
+        "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+        "| Voltage Parallel Star (V) | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+        "| Voltage Series Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Weight Wound Stator | 805kg | 805kg",
+        "| Weight Wound Rotor | 624kg | 596kg",
+        "| Weight Complete Alternator | 1685kg | 1694kg",
+        "| Shipping weight in a Crate | 1775kg | 1780kg",
+        "| Packing Crate Size | 166 x 87 x 124(cm) | 166 x 87 x 124(cm)",
+        "| 3-phase | 2-phase L-L 1-phase L-N",
+        "| Efficiency (%) | 94.4 | 94.6 | 94.8 | 95.1 | 94.6 | 94.8 | 94.9 | 95.1 | 94.8 | 95.0 | 95.1 | 95.3 | 95.0 | 95.2 | 95.3 | 95.4",
+        "| Efficiency (%) | 94.7 | 94.8 | 94.8 | 94.9 | 94.8 | 94.9 | 94.9 | 95.0 | 95.0 | 95.0 | 95.1 | 95.1 | 95.1 | 95.2 | 95.3 | 95.3"
+      ]
+    },
+    {
+      "n": 1074,
+      "title": "Datasheet: S4L1S-F4 Wdg.311 - Technical Data Sheet",
+      "header": [],
+      "rows": [
+        "S4L1S-F4 Wdg.311 - Technical Data Sheet",
+        "| Voltage Regulation ± 1% | ± 1% | ± 0.5% | ± 0.5% | with 4% Engine",
+        "| Excitation Type | Self-Excited PMG",
+        "| Insulation System | Class H",
+        "| Voltage Star | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+        "| Voltage Parallel Star | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+        "| Voltage Series Delta | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Weight Wound Stator | 535kg | 535kg",
+        "| Weight Wound Rotor | 463kg | 440kg",
+        "| Weight Complete Alternator | 1160kg | 1160kg",
+        "| Shipping weight in a Crate | 1230kg | 1230kg",
+        "| Packing Crate Size | 155 x 87 x 107 (cm) | 155 x 87 x 107 (cm)",
+        "| Page | 8 | S4L1S-F4_ESA057E452_ | Rev.D_09.09.2025",
+        "| Efficiency (%) | 92.8 | 92.8 | 93.1 | 93.4 | 92.9 | 93.0 | 93.2 | 93.5 | 93.2 | 93.4 | 93.6 | 93.8 | 93.5 | 93.8 | 93.9 | 94.0",
+        "| Efficiency (%) | 92.9 | 92.9 | 93.0 | 93.2 | 93.1 | 93.1 | 93.1 | 93.4 | 93.4 | 93.4 | 93.5 | 93.7 | 93.7 | 93.8 | 93.8 | 94.0"
       ]
     }
   ],

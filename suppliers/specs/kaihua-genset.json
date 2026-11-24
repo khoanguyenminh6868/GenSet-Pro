@@ -9,10 +9,32 @@
   ],
   "rows": [
    "| KH-1120GF | 1650 | 1320 | 1400 | 1120 | KTA50-G8 | 5100*2280*2500 | 13000",
-   "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | KTA50-GS8 | 5100*2280*2500 | 13000",
+   "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | KTA50-GS8 | 5100*2280*2500 | 13000"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.kaihuagenset.com/products/By-Power/1000--2500KW.html",
+  "title": "1000- 2500KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | QSK60-G3 | 6175x2600x2840 | 15152",
    "| KH-1600GF | 2200 | 1760 | 2000 | 1600 | QSK60-G4 | 6175x2600x2840 | 15366",
-   "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | QSK60-G13 | 6175x2600x2840 | 17217",
+   "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | QSK60-G13 | 6175x2600x2840 | 17217"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.kaihuagenset.com/products/By-Power/1000--2500KW.html",
+  "title": "1000- 2500KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-1150GF | 1581 | 1265 | 1437 | 1150 | 12V4000G23R | 6150x2150x2400 | 12000",
    "| KH-1280GF | 1760 | 1408 | 1600 | 1280 | 12V4000G23 | 6150x2150x2400 | 13000",
    "| KH-1360GF | 1870 | 1496 | 1700 | 1360 | 12V4000G23 | 6150x2150x2400 | 13500",
@@ -21,7 +43,18 @@
    "| KH-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600",
    "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000",
    "| KH-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500",
-   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000",
+   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.kaihuagenset.com/products/By-Power/1000--2500KW.html",
+  "title": "1000- 2500KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 5220x2130x2600 | 9720",
    "| KH-1350GF | 1855.7 | 1485 | 1687 | 1350 | 4012-46TAG3A | 5220x2130x2600 | 10000",
    "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | 4016TAG1A | 5220x2130x2600 | 13155",
@@ -42,16 +75,60 @@
    "| KH-720GF | 1034 | 827 | 900 | 720 | KTA38-G2A | 4350*1650*2350 | 6650",
    "| KH-800GF | 1100 | 880 | 1000 | 800 | KTA38-G5 | 4500*1850*2350 | 6900",
    "| KH-900GF | 1265 | 1012 | 1125 | 900 | KTA38-G9 | 4500*2100*2500 | 7500",
-   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | KTA50-G3 | 5100*2280*2500 | 9600",
-   "| KH-640GF | 880.0 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160",
+   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | KTA50-G3 | 5100*2280*2500 | 9600"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.kaihuagenset.com/products/By-Power/600-1000KW.html",
+  "title": "600-1000KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| KVA | KW | KVA | KW | KG"
+  ],
+  "rows": [
+   "| KH-640GF | 880.0 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.kaihuagenset.com/products/By-Power/600-1000KW.html",
+  "title": "600-1000KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-640GF | 880 | 704 | 800 | 640 | QSK23-G3 | 4593x1562x2086 | 6200",
    "| KH-720GF | 990 | 792 | 900 | 720 | QST30-G3 | 4757x1702x2332 | 6500",
-   "| KH-800GF | 1100 | 880 | 1000 | 800 | QST30-G4 | 4757x1800x2332 | 6700",
+   "| KH-800GF | 1100 | 880 | 1000 | 800 | QST30-G4 | 4757x1800x2332 | 6700"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.kaihuagenset.com/products/By-Power/600-1000KW.html",
+  "title": "600-1000KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-640GF | 880 | 704 | 800 | 640 | 12V2000G65 | 4200x1650x2200 | 7000",
    "| KH-728GF | 1001 | 801 | 910 | 728 | 16V2000G25 | 4500x2000x2300 | 7850",
    "| KH-800GF | 1100 | 880 | 1000 | 800 | 16V2000G65 | 4500x2000x2300 | 7850",
    "| KH-910GF | 1251 | 1001 | 1137 | 910 | 18V2000G65 | 4750x1800x2400 | 9000",
-   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500",
+   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.kaihuagenset.com/products/By-Power/600-1000KW.html",
+  "title": "600-1000KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
    "| KH-640GF | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4450x1710x2290 | 5422",
    "| KH-720GF | 990 | 792 | 900 | 720 | 4008TAG1A | 4700x2450x2475 | 7600",
@@ -93,7 +170,18 @@
   ],
   "rows": [
    "| KH-350GF | 495 | 396 | 437.5 | 350 | QSZ13-G2 | 3150*1360*1870 | 2600",
-   "| KH-400GF | 550 | 440 | 500 | 400 | QSZ13-G3 | 3150*1360*1870 | 2670",
+   "| KH-400GF | 550 | 440 | 500 | 400 | QSZ13-G3 | 3150*1360*1870 | 2670"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| KVA | KW | KVA | KW | KG"
+  ],
+  "rows": [
    "| KH-250GF | 343.8 | 275 | 312.5 | 250 | P126T1-11 | 2960x1030x1500 | 2315",
    "| KH-280GF | 385.0 | 308 | 350 | 280 | P158LE-1 | 3120x1390x1690 | 2715",
    "| KH-300GF | 412.5 | 330 | 375 | 300 | P158LE | 3120x1390x1690 | 2885",
@@ -102,7 +190,18 @@
    "| KH-450GF | 618.8 | 495 | 562.5 | 450 | P222LE-1 | 3300x1390x1780 | 3285",
    "| KH-500GF | 687.5 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900",
    "| KH-560GF | 770.0 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980",
-   "| KH-600GF | 825.0 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100",
+   "| KH-600GF | 825.0 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -124,11 +223,33 @@
    "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
    "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
    "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
-   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-364GF | 500.5 | 400.4 | 455 | 364 | QSX15-G6 | 3430x1200x2065 | 4100",
    "| KH-400GF | 550 | 440 | 500 | 400 | QSX15-G8 | 3430x1200x2065 | 4250",
    "| KH-500GF | 687.5 | 550 | 625 | 500 | VTA28-G5 | 4067x1880x2286 | 5450",
-   "| KH-600GF | 825 | 660 | 750 | 600 | VTA28-G6 | 4047x1880x2286 | 5900",
+   "| KH-600GF | 825 | 660 | 750 | 600 | VTA28-G6 | 4047x1880x2286 | 5900"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-224GF | 308 | 246 | 280 | 224 | 6R1600G10F | 3000x1335x1880 | 2795",
    "| KH-250GF | 344 | 275 | 313 | 250 | 6R1600G20F | 3000x1335x1880 | 2795",
    "| KH-300GF | 413 | 330 | 375 | 300 | 8V1600G10G | 3000x1590x1940 | 3570",
@@ -137,7 +258,18 @@
    "| KH-400GF | 550 | 440 | 500 | 400 | 10V1600G20F | 3095x1590x1970 | 4065",
    "| KH-480GF | 660 | 528 | 600 | 480 | 12V1600G10F | 3330x1590x1970 | 4100",
    "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
-   "| KH-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100",
+   "| KH-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-240GF | 330 | 264 | 300 | 240 | 1506A-E88TAG5 | 3035x900x1525 | 2400",
    "| KH-280GF | 385 | 308 | 350 | 280 | 2206C-E13TAG2 | 3500x1105x1960 | 3385",
    "| KH-320GF | 440 | 352 | 400 | 320 | 2206C-E13TAG3 | 3500x1105x1960 | 3385",
@@ -145,7 +277,18 @@
    "| KH-400GF | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3935x1150x2080 | 3691",
    "| KH-480GF | 660 | 528 | 600 | 480 | 2806C-E18TAG1A | 3960x1532x2100 | 4298",
    "| KH-520GF | 715 | 572 | 650 | 520 | 2806A-E18TAG2 | 3960x1532x2100 | 4453",
-   "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
+   "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.kaihuagenset.com/products/By-Power/200-600KW.html",
+  "title": "200-600KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700",
    "| KH-280GF | 385.0 | 308 | 350 | 280 | TAD1342GE | 2950x1120x1595 | 2700",
    "| KH-300GF | 412.5 | 330 | 375 | 300 | TAD1343GE | 3130x1115x1800 | 3000",
@@ -176,7 +319,18 @@
    "| KH-104GF | 149 | 119 | 130 | 104 | 6BTAA5.9-G2 | 2300*850*1300 | 1400",
    "| KH-150GF | 198 | 158 | 187.5 | 150 | 6CTA8.3-G2 | 2400*860*1380 | 1440",
    "| KH-180GF | 220 | 176 | 225 | 180 | 6CTAA8.3-G2 | 2500*960*1450 | 1700",
-   "| KH-200GF | 275 | 220 | 250 | 200 | 6LTAA8.9-G2 | 2640*970*1450 | 2000",
+   "| KH-200GF | 275 | 220 | 250 | 200 | 6LTAA8.9-G2 | 2640*970*1450 | 2000"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.kaihuagenset.com/products/By-Power/10-200KW.html",
+  "title": "10-200KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| KVA | KW | KVA | KW | KG"
+  ],
+  "rows": [
    "| KH-50GF | 68.8 | 55 | 62.5 | 50 | DB58 | 1800 x730x1250 | 810",
    "| KH-64GF | 88.0 | 70.4 | 80 | 64 | D1126 | 2300x790x1500 | 1500",
    "| KH-75GF | 103.1 | 82.5 | 93.7 | 75 | D1146T | 2300x790x1500 | 1500",
@@ -184,7 +338,18 @@
    "| KH-100GF | 137.5 | 110 | 125 | 100 | P086T1-1 | 2650x950x1400 | 1800",
    "| KH-120GF | 165.0 | 132 | 150 | 120 | P086T1-1 | 2650x950x1400 | 1800",
    "| KH-150GF | 206.3 | 165 | 187.5 | 150 | P086T1 | 2650x950x1400 | 1800",
-   "| KH-200GF | 275.0 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315",
+   "| KH-200GF | 275.0 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.kaihuagenset.com/products/By-Power/10-200KW.html",
+  "title": "10-200KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -206,7 +371,18 @@
    "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
    "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
    "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
-   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.kaihuagenset.com/products/By-Power/10-200KW.html",
+  "title": "10-200KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-8GF | 11 | 8.8 | 10 | 8 | 403A-11G1 | 1100x450x940 | 290",
    "| KH-10GF | 13.75 | 11 | 12.5 | 10 | 403A-15G1 | 1200x500x1000 | 380",
    "| KH-16GF | 22 | 17.6 | 20 | 16 | 404A-22G1 | 1350x530x1000 | 456",
@@ -221,7 +397,18 @@
    "| KH-140GF | 192.5 | 154 | 175 | 140 | 1106A-70TAG3 | 2645x730x1630 | 1644",
    "| KH-160GF | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 2645x730x1630 | 1644",
    "| KH-180GF | 247.5 | 198 | 225 | 180 | 1506A-E88TAG2 | 3035x900x1525 | 1695",
-   "| KH-200GF | 275 | 220 | 250 | 200 | 1506A-E88TAG3 | 3035x900x1525 | 2035",
+   "| KH-200GF | 275 | 220 | 250 | 200 | 1506A-E88TAG3 | 3035x900x1525 | 2035"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.kaihuagenset.com/products/By-Power/10-200KW.html",
+  "title": "10-200KW-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-68GF | 93.5 | 74.8 | 85 | 68 | TAD530GE | 2080x720x1450 | 1090",
    "| KH-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150",
    "| KH-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150",
@@ -286,7 +473,18 @@
    "| KH-1600GF | 2200 | 1760 | 2000 | 1600 | 5016A-E61TRG2 | 5770x2800x3520 | 13450",
    "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | 4016-61TRG3 | 5770x2800x3520 | 13450",
    "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | 5016A-E61TRG3 | 5770x2800x3520 | 13450",
-   "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 4016-61TRG3X | 5770x2800x3520 | 13450",
+   "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 4016-61TRG3X | 5770x2800x3520 | 13450"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Perkins.html",
+  "title": "Perkins Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Gerset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-7GF | 11 | 8.8 | 10 | 8 | 403D-11G | 1100x450x940 | 290",
    "| KH-10GF | 13.75 | 11 | 12.5 | 10 | 403D-15G | 1200x500x1000 | 380",
    "| KH-16GF | 22 | 17.6 | 20 | 16 | 403D-22G | 1350x530x1000 | 456",
@@ -353,7 +551,18 @@
    "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
    "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
    "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
-   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Deutz.html",
+  "title": "Deutz Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF2 | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF2 | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF2 | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -399,7 +608,18 @@
    "| KH-450GF | 618.8 | 495 | 562.5 | 450 | TAD1642GE-B | 3300x1160x2000 | 3810",
    "| KH-500GF | 687.5 | 550 | 625 | 500 | TWD1644GE | 3405x1397x2000 | 4050",
    "| KH-550GF | 756.25 | 605 | 687.5 | 550 | TWD1645GE | 3405x1400x2100 | 4500",
-   "| KH-600GF | 825 | 660 | 750 | 600 | TWD1744GE | 3405x1400x2100 | 5000",
+   "| KH-600GF | 825 | 660 | 750 | 600 | TWD1744GE | 3405x1400x2100 | 5000"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Volvo.html",
+  "title": "Volvo Penta Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-150GF | 2068 | 165 | 188 | 150 | TAD840GE-B | 2600x1050x1500 | 1600",
    "| KH-180GF | 247.5 | 198 | 225 | 180 | TAD841GE | 2600x1050x1670 | 1800",
    "| KH-200GF | 275 | 220 | 250 | 200 | TAD841GE | 2600x1120x1770 | 2700",
@@ -436,7 +656,18 @@
    "| KH-500GF | 687.5 | 550 | 625 | 500 | DP180LB | 3600x1420x1700 | 3980",
    "| KH-550GF | 756.25 | 605 | 687.5 | 550 | DP222LB | 3600x1420x1700 | 4100",
    "| KH-600GF | 825 | 660 | 750 | 600 | DP222LC | 3700x1500x1800 | 4160",
-   "| KH-640GF | 880 | 704 | 800 | 640 | DP222CB | 3700x1500x1800 | 4260",
+   "| KH-640GF | 880 | 704 | 800 | 640 | DP222CB | 3700x1500x1800 | 4260"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/HD-Hyundai-Infracore.html",
+  "title": "Hyundai Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-100GF | 137.5 | 110 | 125 | 100 | PO86TI-1 | 2650x950x1400 | 1800",
    "| KH-120GF | 165 | 132 | 150 | 120 | PO86TI-1 | 2650x950x1400 | 1800",
    "| KH-150GF | 206.25 | 165 | 187.5 | 150 | PO86TI-1 | 2650x950x1400 | 1800",
@@ -486,7 +717,18 @@
    "| KH-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600",
    "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000",
    "| KH-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500",
-   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000",
+   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/MTU.html",
+  "title": "MTU Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-224GF2 | 308 | 246 | 280 | 224 | 6R1600G10F | 3000x1335x1880 | 2795",
    "| KH-250GF2 | 344 | 275 | 313 | 250 | 6R1600G20F | 3000x1335x1880 | 2795",
    "| KH-300GF2 | 413 | 330 | 375 | 300 | 8V1600G10G | 3000x1590x1940 | 3570",
@@ -609,8 +851,18 @@
    "| KH-1800GF | 2475 | 2250 | YC12VC3000-D30 | 8000*2800*3200 | 18000",
    "| KH*2000GF | 2750 | 2500 | YC16VC3300-D31 | 8000*3000*3200 | 18400",
    "| KH-2200GF | 3025 | 2750 | YC16VC3600-D31 | 8000*3000*3200 | 18600",
-   "| KH-2400GF | 3300 | 3000 | YC16VC4000-D31 | 8000*3000*3200 | 18780",
+   "| KH-2400GF | 3300 | 3000 | YC16VC4000-D31 | 8000*3000*3200 | 18780"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Yuchai-Generator_1395379.html",
+  "title": "Yuchai Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)",
+   "| KVA | KVA"
+  ],
+  "rows": [
    "| KH-40GF | 55 | 50 | YC4D65-D20 | 1810*780*1120 | 740",
    "| KH-50GF | 69 | 63 | YC4D80Z-D20 | 1900*750*1120 | 780",
    "| KH-64GF | 88 | 80 | YC4D100Z-D20 | 1950*770*1230 | 1040",
@@ -750,8 +1002,18 @@
    "| KH-1350GF | 1857 | 1688 | 12KTA58-G34 | 4550*2200*2510 | 7380",
    "| KH-1500GF | 2063 | 1875 | 12KTA58-G33 | 4550*2200*2510 | 7400",
    "| KH-1600GF | 2200 | 2000 | 12KTA58-G32 | 4650*2200*2510 | 7420",
-   "| KH-1800GF | 2475 | 2250 | 12KTA58-G31 | 4650*2450*2510 | 7440",
+   "| KH-1800GF | 2475 | 2250 | 12KTA58-G31 | 4650*2450*2510 | 7440"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Shangchai-Generator_1395726.html",
+  "title": "Shangchai Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
    "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)",
+   "| KVA | KVA"
+  ],
+  "rows": [
    "| KH-8GF | 11 | 10 | 3Z1.1-G42 | 1350*600*1100 | 550",
    "| KH-10GF | 14 | 13 | 3ZT1.1-G42 | 1350*600*1100 | 600",
    "| KH-12GF | 17 | 15 | 4Z2.3-G21 | 1350*600*1100 | 610",
@@ -837,7 +1099,18 @@
    "| KH-291GF | 360 | 288 | 364 | 291 | OC16 071A 02-81 | 5200*2100*2390 | 5300",
    "| KH-327GF | 360 | 288 | 409 | 327 | OC16 071A 02-82 | 5200*2100*2390 | 5300",
    "| KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300",
-   "| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300",
+   "| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://www.kaihuagenset.com/products/By-Engine/Scania-Generator_1395357.html",
+  "title": "Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-200GF | None | None | 250 | 200 | DC09 320A 02-61 | 3400*1300*1900 | 2600",
    "| KH-220GF | None | None | 275 | 220 | DC09 320A 02-62 | 3400*1300*1900 | 2600",
    "| KH-240GF | None | None | 300 | 240 | DC09 320A 02-63 | 3400*1300*1900 | 2600",
@@ -960,7 +1233,18 @@
   "rows": [
    "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | QSK60-G3 | 6175x2600x2840 | 15152",
    "| KH-1600GF | 2200 | 1760 | 2000 | 1600 | QSK60-G4 | 6175x2600x2840 | 15366",
-   "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | QSK60-G13 | 6175x2600x2840 | 17217",
+   "| KH-1800GF | 2475 | 1980 | 2250 | 1800 | QSK60-G13 | 6175x2600x2840 | 17217"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://www.hichaipower.com/hichai-power-diesel-generator-product/",
+  "title": "OEM Hichai Power Diesel Generator Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-1150GF | 1581 | 1265 | 1437 | 1150 | 12V4000G23R | 6150x2150x2400 | 12000",
    "| KH-1280GF | 1760 | 1408 | 1600 | 1280 | 12V4000G23 | 6150x2150x2400 | 13000",
    "| KH-1360GF | 1870 | 1496 | 1700 | 1360 | 12V4000G23 | 6150x2150x2400 | 13500",
@@ -969,7 +1253,18 @@
    "| KH-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600",
    "| KH-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000",
    "| KH-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500",
-   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000",
+   "| KH-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://www.hichaipower.com/hichai-power-diesel-generator-product/",
+  "title": "OEM Hichai Power Diesel Generator Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-1200GF | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A | 5220x2130x2600 | 9720",
    "| KH-1350GF | 1855.7 | 1485 | 1687 | 1350 | 4012-46TAG3A | 5220x2130x2600 | 10000",
    "| KH-1500GF | 2062.5 | 1650 | 1875 | 1500 | 4016TAG1A | 5220x2130x2600 | 13155",
@@ -1002,15 +1297,48 @@
    "| KVA | KW | KVA | KW | KG"
   ],
   "rows": [
-   "| KH-640GF | 880.0 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160",
+   "| KH-640GF | 880.0 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://www.hichaipower.com/hichaipower-diesel-generator-set-product/",
+  "title": "OEM Hichaipower Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-640GF | 880 | 704 | 800 | 640 | QSK23-G3 | 4593x1562x2086 | 6200",
    "| KH-720GF | 990 | 792 | 900 | 720 | QST30-G3 | 4757x1702x2332 | 6500",
-   "| KH-800GF | 1100 | 880 | 1000 | 800 | QST30-G4 | 4757x1800x2332 | 6700",
+   "| KH-800GF | 1100 | 880 | 1000 | 800 | QST30-G4 | 4757x1800x2332 | 6700"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://www.hichaipower.com/hichaipower-diesel-generator-set-product/",
+  "title": "OEM Hichaipower Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-640GF | 880 | 704 | 800 | 640 | 12V2000G65 | 4200x1650x2200 | 7000",
    "| KH-728GF | 1001 | 801 | 910 | 728 | 16V2000G25 | 4500x2000x2300 | 7850",
    "| KH-800GF | 1100 | 880 | 1000 | 800 | 16V2000G65 | 4500x2000x2300 | 7850",
    "| KH-910GF | 1251 | 1001 | 1137 | 910 | 18V2000G65 | 4750x1800x2400 | 9000",
-   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500",
+   "| KH-1000GF | 1375 | 1100 | 1250 | 1000 | 12V4000G21R | 6150x2150x2400 | 11500"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://www.hichaipower.com/hichaipower-diesel-generator-set-product/",
+  "title": "OEM Hichaipower Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
    "| KH-640GF | 880 | 704 | 800 | 640 | 4006-23TAG3A | 4450x1710x2290 | 5422",
    "| KH-720GF | 990 | 792 | 900 | 720 | 4008TAG1A | 4700x2450x2475 | 7600",
@@ -1068,8 +1396,18 @@
    "| HC-BD3100 | 3125 | 2813 | 16M55G0D3/5 | LSA 53.2M9 | | | Download",
    "| HC-BD3300 | 3313 | 3000 | 16M55G2D3/5 | LSA 53.2M9 | | | Download",
    "| HC-BD3750 | 3750 | 3250 | 16M55G4D3/5 | LSA 53.2M12 | | | Download",
-   "| HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | | | Download",
-   "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF",
+   "| HC-BD4000 | 4135 | 3750 | 16M55G6D3/5 | LSA 54.2L14 | | | Download"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://www.hichaipower.com/hichai-baudouin-generator-set-series-model-product/",
+  "title": "OEM Hichai Baudouin Generator Set Series Model Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Powered by BAUDOUIN | 440V, 1800RPM, 60Hz",
+   "| HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+  ],
+  "rows": [
    "| HC-BD100-60 | 100 | 94 | 4M10G83/6 WP4.1D95E201 | UCI 224G1 | | | Download",
    "| HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download",
    "| HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download",
@@ -1113,6 +1451,29 @@
   "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
   "header": [
    "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
+   "| KVA | KW | kVA | KW | mm | KG"
+  ],
+  "rows": [
+   "| KH-200GF | 275 | 220 | 250 | 200 | NT855-GA | 2980*1000*1700 | 2320",
+   "| 275 | 220 | MTA11-G2A | 2980*1000*1700 | 2320",
+   "| KH-250GF | 330 | 264 | 312.5 | 250 | NTA855-G1A | 2980*1000*1700 | 2450",
+   "| 358 | 286 | MTAA11-G3 | 3150*1050*1700 | 2450",
+   "| KH-275GF | 385 | 308 | 343.7 | 275 | NTA855-G2A | 3100*1000*1700 | 2600",
+   "| KH-300GF | 418 | 334 | 375 | 300 | NTAA855-G7 | 3400*1280*1800 | 3050",
+   "| KH-320GF | 462 | 370 | 400 | 320 | NTAA855-G7A | 3400*1280*1800 | 3050",
+   "| KH-360GF | 495 | 396 | 450 | 360 | KTA19-G3 | 3300*1350*2000 | 3600",
+   "| KH-400GF | 550 | 440 | 500 | 400 | KTA19-G3A | 3420*1250*1930 | 3720",
+   "| KH-420GF | 605 | 484 | 525 | 420 | KTAA19-G5 | 3550*1550*2100 | 4000",
+   "| KH-500GF | 688 | 550 | 625 | 500 | KTA19-G6A | 3550*1550*2100 | 4400",
+   "| KH-600GF | 858 | 686 | 750 | 600 | KTA38-G2 | 4260*1650*2350 | 6350"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight",
    "| KVA | KW | KVA | KW | mm | KG"
   ],
   "rows": [
@@ -1137,7 +1498,18 @@
    "| KH-450GF | 618.8 | 495 | 562.5 | 450 | P222LE-1 | 3300x1390x1780 | 3285",
    "| KH-500GF | 687.5 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900",
    "| KH-560GF | 770.0 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980",
-   "| KH-600GF | 825.0 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100",
+   "| KH-600GF | 825.0 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -1159,11 +1531,33 @@
    "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
    "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
    "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
-   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-364GF | 500.5 | 400.4 | 455 | 364 | QSX15-G6 | 3430x1200x2065 | 4100",
    "| KH-400GF | 550 | 440 | 500 | 400 | QSX15-G8 | 3430x1200x2065 | 4250",
    "| KH-500GF | 687.5 | 550 | 625 | 500 | VTA28-G5 | 4067x1880x2286 | 5450",
-   "| KH-600GF | 825 | 660 | 750 | 600 | VTA28-G6 | 4047x1880x2286 | 5900",
+   "| KH-600GF | 825 | 660 | 750 | 600 | VTA28-G6 | 4047x1880x2286 | 5900"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| kVA | kW | kVA | kW | mm | KG"
+  ],
+  "rows": [
    "| KH-224GF | 308 | 246 | 280 | 224 | 6R1600G10F | 3000x1335x1880 | 2795",
    "| KH-250GF | 344 | 275 | 313 | 250 | 6R1600G20F | 3000x1335x1880 | 2795",
    "| KH-300GF | 413 | 330 | 375 | 300 | 8V1600G10G | 3000x1590x1940 | 3570",
@@ -1172,7 +1566,18 @@
    "| KH-400GF | 550 | 440 | 500 | 400 | 10V1600G20F | 3095x1590x1970 | 4065",
    "| KH-480GF | 660 | 528 | 600 | 480 | 12V1600G10F | 3330x1590x1970 | 4100",
    "| KH-520GF | 715 | 572 | 650 | 520 | 12V2000G25 | 4200x1650x2200 | 7000",
-   "| KH-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100",
+   "| KH-528GF | 726 | 581 | 660 | 528 | 12V1600G20F | 3330x1590x1970 | 4100"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-240GF | 330 | 264 | 300 | 240 | 1506A-E88TAG5 | 3035x900x1525 | 2400",
    "| KH-280GF | 385 | 308 | 350 | 280 | 2206C-E13TAG2 | 3500x1105x1960 | 3385",
    "| KH-320GF | 440 | 352 | 400 | 320 | 2206C-E13TAG3 | 3500x1105x1960 | 3385",
@@ -1180,7 +1585,18 @@
    "| KH-400GF | 550 | 440 | 500 | 400 | 2506C-E15TAG2 | 3935x1150x2080 | 3691",
    "| KH-480GF | 660 | 528 | 600 | 480 | 2806C-E18TAG1A | 3960x1532x2100 | 4298",
    "| KH-520GF | 715 | 572 | 650 | 520 | 2806A-E18TAG2 | 3960x1532x2100 | 4453",
-   "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413",
+   "| KH-600GF | 825 | 660 | 750 | 600 | 4006-23TAG2A | 4450x1650x2290 | 5413"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.hichaipower.com/hichai-200-600kw-generator-set-product/",
+  "title": "OEM Hichai 200-600KW Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-250GF | 343.8 | 275 | 312.5 | 250 | TAD1341GE | 2950x1120x1595 | 2700",
    "| KH-280GF | 385.0 | 308 | 350 | 280 | TAD1342GE | 2950x1120x1595 | 2700",
    "| KH-300GF | 412.5 | 330 | 375 | 300 | TAD1343GE | 3130x1115x1800 | 3000",
@@ -1230,7 +1646,18 @@
    "| KH-100GF | 137.5 | 110 | 125 | 100 | P086T1-1 | 2650x950x1400 | 1800",
    "| KH-120GF | 165.0 | 132 | 150 | 120 | P086T1-1 | 2650x950x1400 | 1800",
    "| KH-150GF | 206.3 | 165 | 187.5 | 150 | P086T1 | 2650x950x1400 | 1800",
-   "| KH-200GF | 275.0 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315",
+   "| KH-200GF | 275.0 | 220 | 250 | 200 | P126T1 | 2960x1030x1500 | 2315"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://www.hichaipower.com/hichaipower-10-200kw-diesel-generator-set-product/",
+  "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -1252,7 +1679,18 @@
    "| KH-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190",
    "| KH-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190",
    "| KH-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120",
-   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120",
+   "| KH-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://www.hichaipower.com/hichaipower-10-200kw-diesel-generator-set-product/",
+  "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-8GF | 11 | 8.8 | 10 | 8 | 403A-11G1 | 1100x450x940 | 290",
    "| KH-10GF | 13.75 | 11 | 12.5 | 10 | 403A-15G1 | 1200x500x1000 | 380",
    "| KH-16GF | 22 | 17.6 | 20 | 16 | 404A-22G1 | 1350x530x1000 | 456",
@@ -1267,7 +1705,18 @@
    "| KH-140GF | 192.5 | 154 | 175 | 140 | 1106A-70TAG3 | 2645x730x1630 | 1644",
    "| KH-160GF | 220 | 176 | 200 | 160 | 1106A-70TAG4 | 2645x730x1630 | 1644",
    "| KH-180GF | 247.5 | 198 | 225 | 180 | 1506A-E88TAG2 | 3035x900x1525 | 1695",
-   "| KH-200GF | 275 | 220 | 250 | 200 | 1506A-E88TAG3 | 3035x900x1525 | 2035",
+   "| KH-200GF | 275 | 220 | 250 | 200 | 1506A-E88TAG3 | 3035x900x1525 | 2035"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://www.hichaipower.com/hichaipower-10-200kw-diesel-generator-set-product/",
+  "title": "OEM Hichaipower 10-200KW Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-68GF | 93.5 | 74.8 | 85 | 68 | TAD530GE | 2080x720x1450 | 1090",
    "| KH-75GF | 103.1 | 82.5 | 93.75 | 75 | TAD531GE | 2080x720x1450 | 1150",
    "| KH-80GF | 110.0 | 88 | 100 | 80 | TAD531GE | 2080x720x1450 | 1150",
@@ -1333,8 +1782,18 @@
    "| HC-2250GF | 2250 | 2050 | UK 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
    "| HC-2250GF | 2250 | 2050 | India 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download",
    "| HC-2500GF | 2500 | 2272.5 | UK 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download",
-   "| HC-2500GF | 2500 | 2272.5 | India 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download",
-   "| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF",
+   "| HC-2500GF | 2500 | 2272.5 | India 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://www.hichaipower.com/hichai-perkins-diesel-generator-set-product/",
+  "title": "OEM Hichai Perkins Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Powered by PERKINS | 440V, 1800RPM, 60Hz",
+   "| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+  ],
+  "rows": [
    "| HC-10GF-60 | 12 | 11 | 403D-11G | S0L1-H1 | 1300*690*1320 | 1710*880*1350 | Download",
    "| HC-14GF-60 | 17 | 15.8 | 403D-15G or 403A-15G2 | S0L1-P1 | 1300*690*1320 | 1710*880*1350 | Download",
    "| HC-16GF-60 | 20 | 18 | 403A-15G2 | S0L2-F1 | 1470*690*1320 | 1910*880*1450 | Download",
@@ -1393,7 +1852,18 @@
    "| HC-430GF | 591 | 473 | 538 | 430 | BF8M1015CP-LA G4 | 3208x1815x1978 | 3190 | Download",
    "| HC-450GF | 619 | 495 | 563 | 450 | BF8M1015CP-LA G5 | 3208x1815x1978 | 3190 | Download",
    "| HC-550GF | 756 | 605 | 688 | 550 | HC12V132ZL-LAG1A | 4000x1850x2015 | 4120 | Download",
-   "| HC-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120 | Download",
+   "| HC-600GF | 825 | 660 | 750 | 600 | HC12V132ZL-LAG2A | 4000x1850x2015 | 4120 | Download"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://www.hichaipower.com/hichaipower-deutz-diesel-generator-set-product/",
+  "title": "OEM Hichaipower Deutz Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| MODEL | Standby Power | Prime Power | Engine Model | Dimension | Weight (KG)",
+   "| KVA | KW | KVA | KW"
+  ],
+  "rows": [
    "| KH-40GF2 | 55 | 44 | 50 | 40 | BF4M2012 | 2000x750x1300 | 1050",
    "| KH-50GF2 | 69 | 55 | 63 | 50 | BF4M2012C | 2000x750x1300 | 1100",
    "| KH-80GF2 | 110 | 88 | 100 | 80 | BF4M1013EC | 2150x750x1550 | 1200",
@@ -1443,7 +1913,18 @@
    "| HC-360GF | 495.0 | 396 | 450 | 360 | TAD1345GE | 3205x1115x1800 | 3200 | Download",
    "| HC-400GF | 550.0 | 440 | 500 | 400 | TAD1641GE | 3300x1160x2000 | 3800 | Download",
    "| HC-450GF | 618.8 | 495 | 562.5 | 450 | TAD1642GE | 3300x1160x2000 | 3810 | Download",
-   "| HC-500GF | 687.5 | 550 | 625 | 500 | TAD1643GE | 3405x1397x2000 | 4050 | Download",
+   "| HC-500GF | 687.5 | 550 | 625 | 500 | TAD1643GE | 3405x1397x2000 | 4050 | Download"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://www.hichaipower.com/hichaipower-volvo-diesel-generator-set-product/",
+  "title": "OEM Hichaipower Volvo Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Powered by VOLVO | 440V, 1800RPM, 60Hz",
+   "| Genset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+  ],
+  "rows": [
    "| HC-142GF2 | 145 | 131 | TAD532GE | UCI 274D1 | 2150*900*1550 | 2810*1140*1830 | Download",
    "| HC-206GF2 | 220 | 200 | TAD732GE | UCI 274G1 | 2550*930*1670 | 3590*1310*2050 | Download",
    "| HC-220GF2 | 248 | 223 | TAD733GE | UCI 274H1 | 2550*930*1670 | 3590*1310*2050 | Download",
@@ -1496,18 +1977,33 @@
    "| HC-1880GF | 2585 | 2068 | 2350 | 1880 | 16V4000G63 | 6550x2600x2500 | 17600 | Download",
    "| HC-2000GF | 2750 | 2200 | 2500 | 2000 | 20V4000G23 | 8300x2950x2550 | 24000 | Download",
    "| HC-2330GF | 3203 | 2563 | 2912 | 2330 | 20V4000G63 | 8300x2950x2550 | 24500 | Download",
-   "| HC-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000 | Download",
+   "| HC-2500GF | 3438 | 2750 | 3125 | 2500 | 20V4000G63L | 8300x2950x2550 | 25000 | Download"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://www.hichaipower.com/hichai-mtu-diesel-generator-set-product/",
+  "title": "OEM Hichai MTU Diesel Generator Set Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Powered by MTU | 440V, 1800RPM, 60Hz",
+   "| Senset Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF"
+  ],
+  "rows": [
    "| HC-880GF2 | 1000 | 910 | 12V2000G85 | S6L1D-C4 | 4000*1750*2050 | ISO 20'ft GP | Download",
    "| HC-1000GF2 | 1137 | 1025 | 16V2000G45 | S6L1D-D4 | 4500*2100*2080 | ISO 20'ft GP | Download",
    "| HC-1100GF2 | 1265 | 1150 | 16V2000G85 | S6L1D-E4 | 4500*2100*2080 | ISO 20'ft GP | Download",
    "| HC-1250GF2 | 1450 | 1338 | 18V2000G85 | S6L1D-F4 | 4600*2100*2300 | ISO 20'ft GP | Download",
    "| HC-1350GF2 | 1500 | 1362 | 18V2000G85 | S6L1D-G4 | 4600*2100*2300 | ISO 20'ft GP | Download",
+   "| HC-1700GF2-14S | NA | 1700 | 12V4000G14S | S7L1D-F4 | 3960*1835*2260 | ISO 20'ft HQ | Download",
+   "| HC-1800GF2 | 2000 | NA | 12V4000G74S | S7L1D-F4 | 3960*1835*2260 | ISO 20'ft HQ | Download",
    "| HC-2000GF2-G24S | 2200 | 2000 | 12V4000G24S | S7L1D-F4 | 3980*1845*2270 | ISO 40'ft HQ | Download",
    "| HC-2250GF2-G14S | 2500 | 2275 | 16V4000G14S | S7L1D-G4 | 4790*1845*2270 | ISO 40'ft HQ | Download",
    "| HC-2500GF2-G24S | 2750 | 2500 | 16V4000G24S | S7L1D-H4 | 5400*1845*2500 | ISO 40'ft HQ | Download",
    "| HC-2750GF2-G14S | 3125 | 2813 | 20V4000G14S | ECO 46-2L | 5650*1900*2650 | ISO 40'ft HQ | Download",
    "| HC-3000GF2-G24S | 3438 | 3125 | 20V4000G24S | LSA 52.3 UL16 | 5700*1950*2700 | ISO 40'ft HQ | Download",
    "| HC-3250GF2-G44S | 3750 | 3450 | 20V4000G44S | LSA 53.2M9 | 5750*1980*2750 | ISO 40'ft HQ | Download",
+   "| HC-1700GF2-G43 | NA | 1700 | 12V4000G43 | S7L1D-F4 | 3960*1835*2260 | ISO 20'ft HQ | Download",
+   "| HC-1800GF2-G43 | 2000 | NA | 12V4000G43 | S7L1D-F4 | 3960*1835*2260 | ISO 20'ft HQ | Download",
    "| HC-2000GF2-G83 | 2200 | 2000 | 12V4000G83 | S7L1D-F4 | 3980*1845*2270 | ISO 40'ft HQ | Download",
    "| HC-2250GF2-G43 | 2500 | 2275 | 16V4000G43 | S7L1D-G4 | 4790*1845*2270 | ISO 40'ft HQ | Download",
    "| HC-2500GF2-60 | 2750 | 2500 | 16V4000G83 | S7L1D-H4 | 5400*1845*2500 | ISO 40'ft HQ | Download",
@@ -1542,7 +2038,18 @@
    "| HC-500GF | 688 | 550 | 625 | 500 | P222LE-S | 3450x1390x1820 | 3900 | Download",
    "| HC-560GF | 770 | 616 | 700 | 560 | P222LE-11 | 3600x1420x1700 | 3980 | Download",
    "| HC-600GF | 825 | 660 | 750 | 600 | P222FE-11 | 3600x1420x1700 | 4100 | Download",
-   "| HC-640GF | 880 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160 | Download",
+   "| HC-640GF | 880 | 704 | 800 | 640 | P222FE-11 | 3700x1500x1800 | 4160 | Download"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://www.hichaipower.com/hichai-hd-hyundai-infracore-engine-product/",
+  "title": "OEM Hichai HD Hyundai Infracore Engine Exporter, Manufacturers | HiChai Power",
+  "header": [
+   "| Model | Standby Power | Prime Power | Engine Model | Dimension | Weight",
+   "| KVA | KW | KVA | KW | KG"
+  ],
+  "rows": [
    "| KH-50GF2 | 69 | 55 | 63 | 50 | DB58 | 1800 x730x1250 | 810",
    "| KH-64GF2 | 88 | 70 | 80 | 64 | D1126 | 2300x790x1500 | 1500",
    "| KH-75GF2 | 103 | 83 | 94 | 75 | D1146T | 2300x790x1500 | 1500",

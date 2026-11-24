@@ -47,7 +47,7 @@ test("kaihua-genset n111: KH*2000GF gộp về KH-2000GF; KH-2000GF2 và HC-2000
   const at = (n, row) => g.find((r) => r.n === n && r.row === row).genset;
   assert.equal(at(111, 40), "KH-2000GF");
   assert.ok(!g.some((r) => r.genset === "KH*2000GF"));
-  assert.equal(at(109, 43), "KH-2000GF2");
+  assert.equal(at(109, 20), "KH-2000GF2");
   assert.ok(g.some((r) => r.genset === "HC-2000GF"));
   // Chỉ kaihua-genset: cùng ô ở NCC khác không bị đổi.
   const other = C.fromSupplier({ ...sup("khac", [`| KH*2000GF | 2750 | 2500 | YC16VC3300-D31 | 1 | 1 |`]), id: "khac" });
