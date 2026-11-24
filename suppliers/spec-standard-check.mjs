@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, FIELDS } from "./spec-standard.mjs";
+import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, stripBrushless, FIELDS } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const CAT = globalThis.GenbidCatalog;
@@ -49,6 +49,11 @@ const audit = (a) => {
   // Ghép ô: chữ nguồn kết thúc bằng nối từ, ô ghép là ô KẾ TIẾP của chính dòng nguồn (u.line), và chữ đã ghép ra đúng giá trị chuẩn.
   else if (!a.n && rules.includes("ghep-o") && a.joined && /(?:\band\b|&|,|\+|\/)$/i.test(tidyText(a.sp.value).text) && nextCellOf(a.u.line, a.sp.value) === tidyText(a.joined).text
     && enumOf(fieldDef(a.part, a.fid), a.sp.value, a.joined)?.value === a.value) bump(c.byRule, "enum");
+  // Ô kích từ ghi cả "brushless" (Khoa 24/11/2026): giá trị tách đôi. (1) excitation = ô bỏ chữ brushless, phần còn lại đúng là một giá trị chuẩn;
+  // (2) brushless = có, chỉ khi chữ nguồn ghi brushless / brush less / 无刷.
+  else if (!a.n && a.fid === "excitation" && rules.includes("tach-khong-choi-than") && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)
+    && enumOf(fieldDef(a.part, a.fid), stripBrushless(a.sp.value))?.value === a.value) bump(c.byRule, "enum");
+  else if (a.fid === "brushless" && a.part === "alternator" && rules.includes("co-chu-khong-choi-than") && a.value === true && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)) bump(c.byRule, "bool");
   else { c.unexplained++; if (bad.length < 40) bad.push({ model: a.key, fid: a.fid, raw: a.sp.value, norm: from, std: v }); }
   for (const r of rules) bump(c.byRule, `luat:${r}`);
   const raw = a.sp.fixed?.from ?? a.sp.value;
