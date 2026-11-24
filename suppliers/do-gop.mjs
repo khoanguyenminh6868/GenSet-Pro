@@ -69,7 +69,8 @@ let i = 0;
 for (const d of hist) {
   if (++i % 100 === 0) console.error(i);
   const key = d.notifyNo, text = d.config.text, kvaText = (d.config.kvas || []).map((k) => `${k.v} ${k.u}`).join(", ");
-  const found = B.sizesOf([kvaText, d.bidName], d.bidName);
+  // The HSMT text tells what each bare figure of `kvas` is (standby, maximum, engine): sizesOf context.
+  const found = B.sizesOf([kvaText, d.bidName], d.bidName, text);
   const runs = found.length > 1 ? found.slice(0, B.MAX_SIZES).map((s) => ({ cap: s.cap, sizing: { size: s, sizes: found } })) : [{ cap: B.capacity([d.bidName, kvaText]), sizing: null }];
   runs.forEach((rn, ri) => {
     if (!rn.cap) return;
