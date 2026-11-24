@@ -227,7 +227,9 @@
     // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
     // "Fuel System": they are COLUMNS of many tables with the maker's own codes ("EUI", "ECR", "m-FIP+e-gov."), and a new key there
     // stops the walk along the row (sdec, sr-genset, jichai lost cylinders, emission, speed). config-bot reads them from the sheet.
-    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
+    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|vertical|冲程/i],
+    // ^ A cell that only names the aspiration ("Turbocharged": jet-power n125, an "Engine type" title over "No. of Cylinder |
+    //   Aspirated") or only the cylinders ("6 cylinder in line", yihua n106) is no engine type (L1-B4 / B5, 24/11/2026).
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
@@ -242,11 +244,15 @@
     ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
   const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
+  // A label the key's pattern takes that names another property of the same thing (L1-B4, 24/11/2026): "Coolant Ratio | 50%
+  // ethylene glycol" (aosif n1062 / 1078 / 1088) is the mix of the coolant, not its volume; "Type of lub-oil | KCN 7805 (sulfur
+  // content<=200mg/m3)" (repower-gas n1001) is the oil's grade, not its volume. Such a label has no key.
+  const NOT_OF = { coolant: /ratio|mix(ture)?\b|concentrat|配比|比例/i, oil: /\btype\b|grade|viscosit|牌号|标号|粘度/i };
   // Pure in the label and asked for every cell of every row: remembered per label (most of the time of build()).
   const specKeys = new Map();
   function specKey(label) {
     const L = String(label || "").trim();
-    if (!specKeys.has(L)) specKeys.set(L, specKeyOf(L));
+    if (!specKeys.has(L)) { const k = specKeyOf(L); specKeys.set(L, k && NOT_OF[k]?.test(L) ? null : k); }
     return specKeys.get(L);
   }
   function specKeyOf(L) {
@@ -256,7 +262,9 @@
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
-  const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
+  // "mm*mm" (kanpor "| 缸径*行程 | mm*mm | 114×135 | …"; L1-B9, 24/11/2026): the unit of a bore × stroke column. Read as a value it
+  // took the first model's place and every bore moved one model to the right (NTA855-GA got 114×135 for 140×152).
+  const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|mm\s*[*×x]\s*mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
   // A cell that is itself a label ("(瞬态电压偏差):", "Exciter Type") is not a value.
   // A cell that is only a fuel unit ("L/h", "L/hr", "L/H", "lph", "g/kWh", "gr/kWh", "g/kW.h", "升/小时"), read as written.
   const FUEL_UNIT_CELL = /^[(（]?\s*(gr?\s*\/\s*\(?\s*kw\s*[.·-]?\s*h\)?|l\s*\/\s*h(r|our)?|lph|lit(re|er)s?\s*\/\s*h(our)?|kg\s*\/\s*h|升\s*\/\s*小?时)\s*[)）]?$/i;
@@ -693,7 +701,7 @@
     };
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
-    let part = null;
+    let part = null, splitHead = false;
     // GFE datasheets head the sheet with "| Engine | Alternator", then "| Cummins | Stamford | GFE2200CSC" (makes and
     // the genset model) and "| QSK50-G17 | S7L1D-G41" (models): stack counts the lines read after that heading.
     let stack = 0;
@@ -725,6 +733,26 @@
     const labelOf = (x) => String(x || "").replace(/^\|\s*/, "").split(/[:：|]/)[0];
     const plainSheet = !details && lines.every((x) => !String(x).includes("|")) && lines.filter((x) => /^\s*model\s*[:：]/i.test(x)).length >= 2
       && !lines.some((x) => /(engine|alternator|generator|genset)\s*(model|ref)/i.test(labelOf(x)));
+    // A line of the genset's output (its label), and the output labels naming no rating that the sheet repeats with other figures
+    // while another line names prime or standby (L1-B7, 24/11/2026; endress n1017: "Prime power (PRP) [kVA/kW] | 45,5/36,4", then
+    // "Power [kVA/kW] | 21,8/17,5", "| 25/20", … for the other sets of the range): those lines list other products, none is read.
+    const OUT_LINE = (L) => /power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L);
+    const listedOut = new Set();
+    {
+      const seen = new Map();
+      let named = false;
+      for (const l of lines) {
+        const c = cellsOf(l), L = String(c[0] || "").toLowerCase();
+        if (c.length < 2 || !OUT_LINE(L)) continue;
+        if (PRIME_RATE.test(L) || STANDBY.test(L)) { named = true; continue; }
+        const k = L.trim(), v = c.slice(1).join("|");
+        if (!seen.has(k)) seen.set(k, new Set());
+        seen.get(k).add(v);
+      }
+      // Only a label that names the pair of units ("[kVA/kW]") written with two different figures or more (endress n1020: "Power
+      // [kVA/kW] | 35,1/28,1", then "| 43/34,4", its own): a range list.
+      if (named) for (const [k, vs] of seen) if (vs.size >= 2 && /kva\s*\/\s*kw|kw\s*\/\s*kva/i.test(k)) listedOut.add(k);
+    }
     for (const [li, l] of lines.entries()) {
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
@@ -739,9 +767,12 @@
       // longkai): the heading starts the part, the rest is read as a line. Without it the engine's "Model" below was
       // read under "Alternator" (rà soát 18/11/2026: 136 engines read as alternators).
       const lead = c.length >= 3 && c[0].match(/^(engine|alternator)\s*[-–]\s*[a-z][a-z ]*$/i);
-      if (lead) { part = lead[1].toLowerCase(); c = c.slice(1); }
-      const head = c.length === 1 ? headingOf(c[0]) : undefined;
-      if (head !== undefined) { if (head !== "keep") part = head; continue; }
+      if (lead) { part = lead[1].toLowerCase(); splitHead = false; c = c.slice(1); }
+      // "| 发动机 | 参" / "| 发动机 | 参 数 DIESEL ENGINE SPECIFICATION" (shanhua n1024 / n1028; L1-B8, 24/11/2026): the heading
+      // "发动机参数" split by the PDF into two cells, the second starting with "参" (of 参数, parameters). Read as the heading it is.
+      const split = c.length === 2 && /^参/.test(c[1]) && /^(发动机|柴油机|发电机|电球)$/.test(c[0]);
+      const head = c.length === 1 ? headingOf(c[0]) : split ? headingOf(c[0]) : undefined;
+      if (head !== undefined) { if (head !== "keep") { part = head; splitHead = split; } continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
       if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
       if (c.length < 2) continue;
@@ -837,8 +868,13 @@
       else if (ALT_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "altBrand", v));
       else if (ALT_LBL.test(L) && !/power|output|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|speed|frequency|cool/i.test(L)) vals.forEach((v, j) => /\d/.test(v) && put(j, "alternator", v)); // a model has a digit: "| Alternator | Control system" is two headings
       // "Starting power: 1,4 kW" is the starter motor's, a heater's or a charger's power is its own: not the genset's.
-      else if (/power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L)) {
+      else if (OUT_LINE(L)) {
         const kind = PRIME_RATE.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
+        if (kind === "rated" && listedOut.has(L.trim())) { note("dòng công suất không ghi mức lặp lại với số khác (danh sách máy khác)", l); continue; }
+        // An output in kW only, one figure, under the engine's heading recognised from a heading split in two cells ("常用功率 Base
+        // Output Power (kW) | 240" under "| 发动机 | 参", shanhua; L1-B8) is the engine's, not the set's. Only after such a heading:
+        // two-column PDFs set "Engine" before lines of the set ("| Stand by Power | 22KVA/18KW", aosif), so a plain heading is no sign.
+        if (part === "engine" && splitHead && /\bkw\b/i.test(L) && !/kva/i.test(L + " " + vals.join(" ")) && vals.length === 1 && /^\d+(\.\d+)?$/.test(vals[0])) { note("công suất kW ghi dưới mục động cơ, không là công suất tổ máy", l); continue; }
         vals.forEach((v, j) => {
           const both = String(v).match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\s*[/／]\s*(\d+(?:[.,]\d+)?)\s*(kva|kw)/i);
           if (both) {
@@ -850,7 +886,11 @@
           const one = String(v).match(/^(\d+(?:[.,]\d+)?)\s*(kva|kw)?$/i);
           const unit = one?.[2] || unitCell || (L.match(/\((kva|kw)\)|\b(kva|kw)\b\s*$/i) || [])[1] || (L.match(/\((kva|kw)\)/i) || [])[1];
           if (one && unit) { const f = fnum(one[1]); if (f > 0) merge(j, kind, { [unit.toLowerCase() === "kva" ? "kVA" : "kW"]: f }); else note("số có dấu phẩy nghìn / thập phân không rõ", v); return; }
-          const pair = String(v).replace(/\s+/g, "").match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+          // "45,5/36,4" on a sheet that writes decimal commas (endress n1017 "Prime power (PRP) [kVA/kW]"; L1-B7, 24/11/2026): one or
+          // two digits after the comma are decimals there. Unread before, so a later "Power [kVA/kW] | 25/20" of another set won.
+          const pm = String(v).replace(/\s+/g, "").match(/^(\d+(?:[.,]\d+)?)\/(\d+(?:[.,]\d+)?)$/);
+          const pf = (s) => (/^\d+(\.\d+)?$/.test(s) ? +s : decComma && /^\d+,\d{1,2}$/.test(s) ? +s.replace(",", ".") : NaN);
+          const pair = pm && pf(pm[1]) > 0 && pf(pm[2]) > 0 ? [pm[0], pf(pm[1]), pf(pm[2])] : null;
           // "Rate Power(kva) (prime/standby) | 50/55": both figures in one unit, in the order the label names them.
           const order = L.match(/(prime|standby)\s*\/\s*(prime|standby)/);
           if (pair && unit && order && order[1] !== order[2]) {
@@ -1187,6 +1227,17 @@
         const right = Math.max(at.ei ?? -1, at.ai ?? -1);
         const again = right >= 0 && cells.some((c, i) => i > right && +String(c).trim().replace(",", ".").replace(/\s*(kg|db\(a\)|db)$/i, "") === w);
         if (w > 0 && outs.includes(w) && !again) { if (at.note) at.note("số bằng đúng công suất của dòng, không là khối lượng / độ ồn", `${x.key}=${x.value}`); return false; }
+        return true;
+      }
+      // A consumption whose every figure is one of the row's own outputs (L1-B6, 24/11/2026): legapower n101 "Cons 100%（L/h）" = 350
+      // is the PRP kVA under "KVA" over "ESP | PRP"; wintpower n105 "Cons 100% ( L/H )" = "180/225" is the prime kW / kVA of a
+      // header line that lacks the model's title. The cell is the output, left out. Not a g/kWh figure (205 g/kWh on a 205 kW
+      // set is possible), and not when the same figure stands again right of the engine / alternator (its own column).
+      if (/^fuel(75|50)?$/.test(x.key) && !/g\s*\/\s*\(?\s*k\s*w/i.test(`${x.value} ${x.label} ${x.unitCell || ""}`)) {
+        const fs = (String(x.value).match(/\d+(?:[.,]\d+)?/g) || []).map((s) => +s.replace(",", "."));
+        const right = Math.max(at.ei ?? -1, at.ai ?? -1);
+        const again = right >= 0 && cells.some((c, i) => i > right && fs.includes(+String(c).trim().replace(",", ".")));
+        if (fs.length && fs.every((f) => f > 0 && outs.includes(f)) && !again) { if (at.note) at.note("số bằng đúng công suất của dòng, không là tiêu hao", `${x.key}=${x.value}`); return false; }
         return true;
       }
       if (x.key !== "voltage") return true;

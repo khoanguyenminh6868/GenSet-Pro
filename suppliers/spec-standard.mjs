@@ -203,6 +203,9 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     const n = nOf.get(`${sp.key} ${sp.label ?? ""} ${sp.value ?? ""}`) || null;
     const f = fieldFor(part, sp, n);
     if (!f) { if (byKey[part][sp.key]) audit?.({ part, ...ctx, u, sp, n, drop: "load-khac" }); continue; }
+    // The catalog key aircool holds charge-air AND piston cooling; the field charge_cooling is the charge air only. "Piston Cooling |
+    // Oil cooled" (aosif n1086; L1-B4, 24/11/2026) is the pistons', not a value of this field.
+    if (f.id === "charge_cooling" && /piston|活塞/i.test(String(sp.label ?? ""))) { audit?.({ part, ...ctx, u, sp, n, fid: f.id, drop: "piston" }); continue; }
     const r = valueOf(f, n, sp, f.type === "enum" && !n ? nextCellOf(u.line, sp.value) : null);
     // A cell of the excitation system that also says brushless: a second value, in its own field; raw is the source text of both.
     if (part === "alternator" && f.id === "excitation" && !n && brushlessOf(sp.value)) {
