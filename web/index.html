@@ -1711,7 +1711,6 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="#" role="button" data-dlfile="${i}" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
         ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
     </div>
