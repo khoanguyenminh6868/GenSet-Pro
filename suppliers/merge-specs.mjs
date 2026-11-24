@@ -12,11 +12,14 @@ const FOREIGN = /[Ѐ-ӿ֐-ۿऀ-෿฀-๿ᄀ-ᇿ぀-ヿ가-힯]/;
 // Rà soát 17/11/2026 (Khoa): thêm UPS, động cơ máy chính tàu / máy công trình / nông nghiệp, máy xúc, tháp đèn, bơm (chữ Trung).
 const OTHER = /(motor|transformer|pump|compressor|excavator|light(ing)? tower|weld|tractor|truck|vehicle|forklift|load bank|energy storage|bess|solar|inverter|cable|switchgear|fog cannon|agv|mower|washer|\bups\b|uninterrupt|propulsion|wheel loader|agricultur|construction machinery|灯塔|泵|叉车|挖掘|装载|拖拉机|收割)/i;
 const GEN = /(generat|genset|gen-set|alternator|power station|发电)/i;
+const HOLD = JSON.parse(fs.readFileSync(path.join(ROOT, "specs-hold.json"), "utf8"));
 let total = 0, recs = 0;
 const listed = (d) => (fs.existsSync(path.join(ROOT, d)) ? fs.readdirSync(path.join(ROOT, d)).filter((f) => f.endsWith(".json")) : []);
 for (const f of [...new Set([...listed("specs"), ...listed("datasheets")])]) {
   const id = f.slice(0, -5);
   if (only.length && !only.includes(id)) continue;
+  // NCC giữ nguyên specs/ (specs-hold.json: có sửa tay / dựng bằng đường khác): không gộp, không báo lỗi.
+  if (HOLD[id]) { console.log(`bỏ qua ${id}: ${HOLD[id].why} (${HOLD[id].pr})`); continue; }
   const file = path.join(ROOT, "cn", f);
   if (!fs.existsSync(file)) continue;
   const rec = JSON.parse(fs.readFileSync(file, "utf8"));

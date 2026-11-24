@@ -1,6 +1,6 @@
 // specs/ lệch cn/ (specs-dung-lai, 24/11/2026): mọi trang mà merge-specs sẽ dùng (bộ lọc y merge-specs.mjs) phải có tệp nguồn,
 // kẻo `merge-specs <id>` chết ENOENT. Sửa một NCC: `node suppliers/rebuild-specs.mjs <id>` rồi `node suppliers/merge-specs.mjs <id>`.
-// KNOWN = NCC còn lệch, chờ quyết định (xem dieu-phoi\nghiem-thu\mecca-specs.md); bớt khỏi danh sách khi sửa, không thêm.
+// KNOWN = NCC trong specs-hold.json (merge-specs / rebuild-specs bỏ qua, giữ nguyên specs/ có sửa tay hoặc dựng đường khác).
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -14,7 +14,7 @@ const FOREIGN = new RegExp(src.match(/const FOREIGN = \/(.*)\/;/)[1]);
 const OTHER = new RegExp(src.match(/const OTHER = \/(.*)\/i;/)[1], "i");
 const GEN = new RegExp(src.match(/const GEN = \/(.*)\/i;/)[1], "i");
 // zichai n120 / 123 / 124 / 125: tuabin khí M32 và động cơ tàu tốc độ trung bình còn trong specs/ sau #851, chưa vào cn/.
-const KNOWN = new Set(["zichai"]);
+const KNOWN = new Set(Object.keys(JSON.parse(read("specs-hold.json"))));
 
 test("mọi trang merge-specs dùng đều có tệp nguồn", () => {
   const bad = [];

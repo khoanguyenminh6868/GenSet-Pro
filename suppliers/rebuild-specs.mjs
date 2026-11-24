@@ -7,7 +7,7 @@
 // được dựng lại khi tablesOf đổi (#1105, #1110) và specs/ giữ bảng cũ → merge-specs đòi tệp đã xoá và chết ENOENT.
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { get, htmlToText, tablesOf } from "./crawl-specs.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -15,7 +15,7 @@ const argv = process.argv.slice(2);
 const cacheAt = argv.indexOf("--cache");
 const cache = cacheAt >= 0 ? argv[cacheAt + 1] : null;
 const dry = argv.includes("--dry");
-const ids = argv.filter((a, i) => !a.startsWith("--") && i !== cacheAt + 1);
+const ids = argv.filter((a, i) => !a.startsWith("--") && !(cacheAt >= 0 && i === cacheAt + 1));
 const flat = (ts) => ts.flatMap((t) => [...t.header, ...t.rows]).join("\n");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -61,6 +61,7 @@ export async function rebuild(id, { cache = null, dry = false, fetchPage = get }
   return result;
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  for (const id of ids) console.log(JSON.stringify(await rebuild(id, { cache, dry })));
+if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
+  const hold = JSON.parse(fs.readFileSync(path.join(ROOT, "specs-hold.json"), "utf8"));
+  for (const id of ids) console.log(JSON.stringify(hold[id] ? { id, held: true, ...hold[id] } : await rebuild(id, { cache, dry })));
 }

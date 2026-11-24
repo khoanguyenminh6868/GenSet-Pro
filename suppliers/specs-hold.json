@@ -1,0 +1,6 @@
+{
+  "zichai": { "why": "specs/ còn 4 bảng tuabin khí M32 (n120) và động cơ tàu tốc độ trung bình Z210 / N280 / N260 (n123-125) sau khi #851 xoá bảng không phải máy phát; rebuild + merge sẽ thêm 11 bản ghi này vào cn/. Giữ nguyên specs/ hiện có (điều phối 24/11/2026).", "pr": "#851" },
+  "baudouin": { "why": "n116, n120-n124 đã tách bảng tay; rebuild bằng tablesOf chèn chồng (thêm 21, mất 2, đổi 74 bản ghi). Giữ nguyên specs/ hiện có (điều phối 24/11/2026).", "pr": "#971" },
+  "jet-power": { "why": "rebuild thêm 14 bản ghi bảng dọc (KM178FG ... JDE3500SE) và làm hỏng s9-cc-129.test.mjs (bảng n110 không ghi mã / vai động cơ phải không ra bản ghi). Giữ nguyên specs/ hiện có (điều phối 24/11/2026).", "pr": "#1105, #1110, s9-cc-129" },
+  "powerpack": { "why": "hồ sơ dựng bằng bộ đọc bảng dọc riêng, không bằng tablesOf: rebuild + merge làm 126 bản ghi còn 0. Giữ nguyên specs/ hiện có (điều phối 24/11/2026).", "pr": "#1063" }
+}
