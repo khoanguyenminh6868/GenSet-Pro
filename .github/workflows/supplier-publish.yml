@@ -49,3 +49,14 @@ jobs:
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
           node suppliers/row-flags.mjs --post
+      # Bản chuẩn thông số (collection specstd, spec-fields.json). Chưa nơi nào đọc. Ghi thật CHỈ khi biến repo
+      # SPEC_STD_PUBLISH = 1 (mỗi dòng ghi vào docs kéo theo realtime tới mọi trang đang mở + một dòng activity_log,
+      # chờ Khoa quyết); chưa bật thì chỉ in số doc sẽ ghi và tổng byte.
+      - name: Spec standard
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SPEC_STD_PUBLISH: ${{ vars.SPEC_STD_PUBLISH }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          if [ "$SPEC_STD_PUBLISH" = "1" ]; then node suppliers/spec-standard.mjs --post; else node suppliers/spec-standard.mjs --post --dry; fi
