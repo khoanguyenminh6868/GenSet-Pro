@@ -100,7 +100,7 @@ Bẫy gặp: (1) `specs/linz-electric.json` có bảng n103–105 mà `sources/l
 
 ## 7. Lượt 3 (24/11/2026, nhánh `dau-phat-tq-2` từ `origin/dau-phat-tq`, PR #1196 chưa merge)
 
-**Kết quả: Sincro lưu 13 tờ (1001–1013); Nianfeng điền website + nguồn 2; KHÔNG tạo hồ sơ hãng cho LongHong / Hengtong / Kaichen / 欣同辰 (lý do ở 7.2); kiểm nối Linz: 0/33 nối được (7.4). `verify.mjs` 0 lỗi / 436 bản ghi; `node --test suppliers/*.test.mjs` 1731/1731 đạt (đo trước khi sửa tiêu đề Sincro; chạy lại ở cuối, xem PR).**
+**Kết quả: Sincro lưu 13 tờ (1001–1013); Nianfeng điền website + nguồn 2; KHÔNG tạo hồ sơ hãng cho LongHong / Hengtong / Kaichen / 欣同辰 (lý do ở 7.2); kiểm nối Linz: 0/33 nối được (7.4). `verify.mjs` 0 lỗi / 436 bản ghi; `node --test suppliers/*.test.mjs` 1731/1731 đạt (đo sau khi sửa xong).**
 
 ### 7.1 Sincro (`sincro-soga`, Soga S.p.A., hãng Ý) — tờ loại (a) từ `sogaenergyteam.com/wp-content/uploads/`
 NCC tổ máy trong `cn/` KHÔNG ghi mã model Sincro nào (chỉ `visa-gensets` ghi cột "Sincro" cho hai mã tổ máy GSP33TWIS3 / GSK66TWIK, không có mã đầu phát) → không có model ưu tiên; lưu theo dòng đầu phát công nghiệp có tờ riêng.
