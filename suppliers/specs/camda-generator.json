@@ -758,6 +758,7 @@
   "url": "https://www.camda-generator.com/product/cummins-powered-silent-diesel-generator.html",
   "title": "Cummins Powered Silent Diesel Generator for Commercial and Industrial Applications - Camda New Energy Equipment Co., Ltd",
   "header": [
+   "| Genset Model | Standby power | Prime Power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
    "| Silent Canopy | kVA | kW | kVA | kW"
   ],
   "rows": [
@@ -811,6 +812,8 @@
   "url": "https://www.camda-generator.com/product/cummins-powered-silent-diesel-generator.html",
   "title": "Cummins Powered Silent Diesel Generator for Commercial and Industrial Applications - Camda New Energy Equipment Co., Ltd",
   "header": [
+   "| | Camda diesel generator sets powered by Cummins, silent type. 60Hz 3 phases+4 wires, 220/127V, pf 0.8.",
+   "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm) | Weight (kg)",
    "| Silent Canopy | kVA | kW | kVA | kW"
   ],
   "rows": [
@@ -846,6 +849,7 @@
   "url": "https://www.camda-generator.com/product/cummins-powered-container-diesel-generator.html",
   "title": "Cummins Powered Container Diesel Generator with High Efficiency Performance - Camda New Energy Equipment Co., Ltd",
   "header": [
+   "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
    "| Container type | kVA | kW | kVA | kW"
   ],
   "rows": [
@@ -866,6 +870,7 @@
   "url": "https://www.camda-generator.com/product/cummins-powered-container-diesel-generator.html",
   "title": "Cummins Powered Container Diesel Generator with High Efficiency Performance - Camda New Energy Equipment Co., Ltd",
   "header": [
+   "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
    "| Container type | kVA | kW | kVA | kW",
    "| 60Hz 3 phases+4 wires, 220/127V, pf 0.8."
   ],
@@ -1146,6 +1151,7 @@
   "url": "https://www.camda-generator.com/product/perkins-powered-container-diesel-genertaor.html",
   "title": "Perkins Powered Container Diesel Generator for Industrial Power Supply - Camda New Energy Equipment Co., Ltd",
   "header": [
+   "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm) | Weight (kg)",
    "| Container type | kVA | kW"
   ],
   "rows": [
@@ -1160,6 +1166,26 @@
    "| KDGC1600S | 2000 | 1600 | 1825 | 1460 | 4016TAG1A | LSA51.2S55 | 12192×2438×2896 | 21780",
    "| KDGC1800S | 2250 | 1800 | 2050 | 1640 | 4016TAG2A | LSA51.2M60 | 12192×2438×2896 | 21875",
    "| KDGC2000S | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | LSA51.2VL90 | 12192×2438×2896 | 22900"
+  ]
+ },
+ {
+  "n": 155,
+  "url": "https://www.camda-generator.com/product/perkins-powered-container-diesel-genertaor.html",
+  "title": "Perkins Powered Container Diesel Generator for Industrial Power Supply - Camda New Energy Equipment Co., Ltd",
+  "header": [
+   "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm) | Weight (kg)",
+   "| Container type | kVA | kW",
+   "| Camda containerized diesel generator sets powered by Perkins 60Hz 3 phases+4 wires, 220/127V, pf 0.8."
+  ],
+  "rows": [
+   "| KDGC660S1 | 825 | 660 | 750 | 600 | 4006-23TAG2A | LSA47.2L9 | 6058×2438×2591 | 10172",
+   "| KDGC753S1 | 941 | 753 | 846 | 677 | 4006-23TAG3A | LSA49.1M6 | 6058×2438×2591 | 10420",
+   "| KDGC784S1 | 980 | 784 | 892 | 714 | 4008TAG1 | LSA49.1M75 | 6058×2438×2591 | 11517",
+   "| KDGC880S1 | 1100 | 880 | 1000 | 800 | 4008TAG2 | LSA49.1L9 | 6058×2438×2591 | 11717",
+   "| KDGC1100S1 | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A | LSA50.2S4 | 12192×2438×2896 | 17800",
+   "| KDGC1200S1 | 1500 | 1200 | 1368 | 1094 | 4012-46TWG3A | LSA50.2M6 | 12192×2438×2896 | 18000",
+   "| KDGC1324S1 | 1655 | 1324 | 1506 | 1205 | 4012-46TAG2A | LSA50.2M6 | 12192×2438×2896 | 18100",
+   "| KDGC1505S1 | 1880 | 1505 | 1713 | 1370 | 4012-46TAG3A | LSA50.2L8 | 12192×2438×2896 | 18485"
   ]
  },
  {
