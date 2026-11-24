@@ -18,7 +18,18 @@
    "| EP-YM25KW | 25 | 31 | 27.5 | 34 | 4TNV98-GGE | 6.58 | 1490*730*1050 | 2000*890*1280 |",
    "| EP-YM30KW | 30 | 37.5 | 33 | 41.25 | 4TNV98T-GGE | 7.59 | 1550*730*1100 | 2100*890*1280 |",
    "| EP-YM40KW | 40 | 50 | 44 | 55 | 4TNV106-GGE | 10.83 | 1800*850*1300 | 2400*1020*1380 |",
-   "| EP-YM48KW | 48 | 60 | 52.8 | 66 | 4TNV106T-GGE | 12.06 | 1890*850*1300 | 2500*1020*1380 |",
+   "| EP-YM48KW | 48 | 60 | 52.8 | 66 | 4TNV106T-GGE | 12.06 | 1890*850*1300 | 2500*1020*1380 |"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.fjexcel.com/product/145.html",
+  "title": "Yanmar-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-YM8.5KW | 8.5 | 19.6 | 9.4 | 21.6 | 3TNV76-GGE | 2.57 | 1110*730*950 | 1800*840*1150 |",
    "| EP-YM10.8KW | 10.8 | 13.5 | 12 | 15 | 3TNV82A-GGE | 3.02 | 1110*730*950 | 1800*840*1150 |",
    "| EP-YM13KW | 13 | 16.25 | 14.4 | 18 | 3TNV88-GGE | 3.63 | 1230*730*1020 | 1800*840*1150 |",
@@ -107,7 +118,18 @@
    "| EP-YC800 | 640 | 800 | 704 | 880 | YC6C1070L-D20 | 142.27 | 4500*1400*2250 | 5800*2250*2580 |",
    "| EP-YC910 | 728 | 910 | 800 | 1000 | YC6C1220-D31 | 161.83 | 4500*1400*2250 | 5800*2250*2580 |",
    "| EP-YC1000 | 800 | 1000 | 880 | 1100 | YC6C1320-D31 | 177.84 | 4500*1400*2250 | 5800*2250*2580 |",
-   "| EP-YC1125 | 900 | 1125 | 990 | 1237.5 | YC6C1520-D31 | 200.07 | 4600*2100*2230 | 5900*2250*2580 |",
+   "| EP-YC1125 | 900 | 1125 | 990 | 1237.5 | YC6C1520-D31 | 200.07 | 4600*2100*2230 | 5900*2250*2580 |"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.fjexcel.com/product/147.html",
+  "title": "Yuchai-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,200/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power(KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-YC48 | 40 | 50 | 44 | 55 | YC4D65-D20 | 9.35 | 1800*800*1200 | 2300*1100*1240 |",
    "| EP-YC60 | 50 | 62.5 | 55 | 69 | YC4D80Z-D20 | 11.4 | 1900*850*1250 | 2300*1100*1290 |",
    "| EP-YC75 | 60 | 75 | 66 | 82.5 | YC4D100Z-D20 | 13.68 | 1900*850*1250 | 2300*1100*1290 |",
@@ -149,7 +171,18 @@
    "| EP-YN60 | 48 | 60 | 52.8 | 66 | YN48GBZ | 12.59 | 1800*880*1200 | 2400*1150*1250 |",
    "| EP-YN72.5 | 58 | 72.5 | 64 | 80 | YN48GBZ | 15.54 | 1900*850*1250 | 2400*1150*1280 |",
    "| EP-YN85 | 68 | 85 | 74.8 | 93.5 | YN48GBZ | 17.44 | 1950*950*1300 | 2400*1150*1300 |",
-   "| EP-YN100 | 80 | 100 | 88 | 110 | YN48GBZ | 20.52 | 2000*950*1300 | 2500*1150*1300 |",
+   "| EP-YN100 | 80 | 100 | 88 | 110 | YN48GBZ | 20.52 | 2000*950*1300 | 2500*1150*1300 |"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.fjexcel.com/product/148.html",
+  "title": "Yunnei-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-YN25 | 20 | 25 | 22 | 27.5 | YN25GB | 5.13 | 1400*800*1100 | 1900*1100*1200 |",
    "| EP-YN30 | 24 | 30 | 26.4 | 33 | YN27GB | 6.16 | 1650*800*1150 | 2050*1100*1240 |",
    "| EP-YN35 | 28 | 35 | 30.8 | 38.5 | YN36GB | 7.19 | 1650*830*1150 | 2100*1100*1240 |",
@@ -231,7 +264,18 @@
    "| EP-CC728 | 728 | 910 | 800 | 1000 | KTA38-G2A | 191 | 4320*1960*2470 | 6200*2280*2560 |",
    "| EP-CC800 | 800 | 1000 | 880 | 1100 | KTA38-G5 | 209 | 4400*2080*2540 | 6800*2280*2560 |",
    "| EP-CC900 | 900 | 1125 | 990 | 1237.5 | KTA38-G9 | 236 | 4500*2080*2540 | 6800*2280*2560 |",
-   "| EP-CC1000 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 261 | 4930*2080*2530 | 40ft container |",
+   "| EP-CC1000 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 261 | 4930*2080*2530 | 40ft container |"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.fjexcel.com/product/134.html",
+  "title": "Cummins-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-CU25 | 20 | 25 | 22 | 27.5 | 4B3.9-G2 | 7.1 | 1620*840*1250 | 2300*1020*1500 |",
    "| EP-CU30 | 24 | 30 | 26.4 | 33 | 4B3.9-G2 | 7.8 | 1620*840*1250 | 2300*1020*1500 |",
    "| EP-CU41.3 | 33 | 41.3 | 36.3 | 45 | 4BT3.9-G2 | 9.4 | 1620*840*1250 | 2300*1020*1500 |",
@@ -347,7 +391,18 @@
    "| EP-WC910 | 728 | 910 | 800 | 1000 | 12M26D902E200 | 174.28 | 4380*1900*2430 | 6400*2280*2530 |",
    "| EP-WC1000 | 800 | 1000 | 880 | 86 | 12M26D968E200 | 191.52 | 4380*1900*2430 | 6400*2280*2530 |",
    "| EP-WC1125 | 900 | 1125 | 990 | 90 | 12M33D1108E200 | 215.46 | 4490*2100*2430 | \\ |",
-   "| EP-WC1250 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200 | 239.4 | 4600*2100*2430 | \\ |",
+   "| EP-WC1250 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200 | 239.4 | 4600*2100*2430 | \\ |"
+  ]
+ },
+ {
+  "n": 109,
+  "url": "https://www.fjexcel.com/product/144.html",
+  "title": "Weichai-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,200/115V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-WC25 | 20 | 25 | 22 | 27.5 | WP2.3D30E201 | 4.79 | 1430*800*1090 | 2200*890*1280 |",
    "| EP-WC31.3 | 25 | 31 | 27.5 | 34 | WP2.3D36E201 | 5.99 | 1430*800*1090 | 2200*890*1280 |",
    "| EP-WC43.7 | 35 | 44 | 38.5 | 48 | WP2.3D47E201 | 8.5 | 1430*800*1090 | 2200*890*1280 |",
@@ -402,7 +457,18 @@
    "| EP-SC625 | 500 | 625 | 550 | 687.5 | SC27G830D2 | 116.85 | 3600*1900*2050 | 4200*2000*2250 |",
    "| EP-SC687.5 | 550 | 687.5 | 605 | 756 | SC27G900D2 | 128.54 | 3600*1900*2050 | 4200*2000*2250 |",
    "| EP-SC750 | 600 | 750 | 660 | 825 | SC33W990D2 | 140.22 | 3800*2000*2200 | 4500*2100*2250 |",
-   "| EP-SC910 | 728 | 910 | 800 | 1000 | SC33W1150D2 | 170.13 | 3900*2000*2200 | 4600*2100*2250 |",
+   "| EP-SC910 | 728 | 910 | 800 | 1000 | SC33W1150D2 | 170.13 | 3900*2000*2200 | 4600*2100*2250 |"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.fjexcel.com/product/143.html",
+  "title": "SDEC-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,220/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-SC35 | 28 | 35 | 30.8 | 38.5 | 4H4.3-G21 | 6.23 | 1700*800*1200 | 2300*1100*1240 |",
    "| EP-SC40 | 32 | 40 | 35.2 | 44 | 4H4.3-G21 | 7.12 | 1700*800*1200 | 2300*1100*1240 |",
    "| EP-SC52.5 | 42 | 52.5 | 46.2 | 58 | 4H4.3-G22 | 9.34 | 1800*800*1200 | 2300*1100*1240 |",
@@ -457,7 +523,18 @@
    "| EP-KF325 | 260 | 325 | 286 | 357.5 | WT12D-308E | 63.726 | 3000*1150*1800 | 4200*1400*2150 |",
    "| EP-KF380 | 304 | 380 | 334.4 | 418 | WT12-330DE | 74.5104 | 3160*1260*2010 | 4350*1600*2230 |",
    "| EP-KF400 | 320 | 400 | 352 | 440 | WT13-360DE | 78.432 | 3160*1260*2010 | 4350*1600*2230 |",
-   "| EP-KF450 | 360 | 450 | 396 | 495 | WT13A-390DE | 88.236 | 3160*1260*2010 | 4350*1600*2230 |",
+   "| EP-KF450 | 360 | 450 | 396 | 495 | WT13A-390DE | 88.236 | 3160*1260*2010 | 4350*1600*2230 |"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.fjexcel.com/product/142.html",
+  "title": "Ricardo-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,220/110V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT"
+  ],
+  "rows": [
    "| EP-KF17.5 | 14 | 17.5 | 16 | 20 | Y480BD2 | 4.12 | 1300*780*960 | 1800*890*1100 |",
    "| EP-KF20 | 16 | 20 | 17.6 | 22 | Y485BD2 | 4.7 | 1300*780*960 | 1800*890*1100 |",
    "| EP-KF25 | 20 | 25 | 22 | 27.5 | N4100DS2-30 | 5.72 | 1590*780*1150 | 2200*890*1280 |",
@@ -570,7 +647,18 @@
    "| EP-EV140 | 112 | 140 | 123 | 154 | 1006TAG | 29.2 | 2340*850*1450 | 3100*1080*1650 |",
    "| EP-EV150 | 120 | 150 | 132 | 165 | E1046TAG1A | 30.9 | 2670*900*1450 | 3600*1080*1850 |",
    "| EP-EV180 | 144 | 180 | 158 | 198 | E1046TAG2A | 40.8 | 2670*900*1450 | 3600*1080*1850 |",
-   "| EP-EV200 | 160 | 200 | 176 | 220 | E1046TAG3A | 43.5 | 2670*900*1450 | 3600*1080*1850 |",
+   "| EP-EV200 | 160 | 200 | 176 | 220 | E1046TAG3A | 43.5 | 2670*900*1450 | 3600*1080*1850 |"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.fjexcel.com/product/140.html",
+  "title": "Evol-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Nodel | Continuous output | Standby output | EVOL Engine model | Fuel Consumption（L/h） | Dimension（L×W×H）mm | Download",
+   "| kW | kVA | kW | kVA | Open type | silent type"
+  ],
+  "rows": [
    "| EP-EV25 | 20 | 25 | 22 | 27.5 | E904G1A | 5.4 | 1680*720*1200 | 2280*950*1280 |",
    "| EP-EV30 | 24 | 30 | 26 | 33 | E904G2A | 6.5 | 1680*720*1200 | 2280*950*1280 | |",
    "| EP-EV33.8 | 27 | 33.8 | 30 | 37 | E904TG1A | 7.9 | 1680*720*1200 | 2280*950*1280 | |",
@@ -602,7 +690,18 @@
    "| EP-KB15 | 15 | 18.75 | 16.5 | 20.6 | V2203-E2BG | 4.77 | 1400*800*1180 | 1800*1000*1200 |",
    "| EP-KB20 | 20 | 25 | 22 | 27.5 | V2003-T-E2BG | 5.65 | 1400*800*1180 | 1800*1000*1200 |",
    "| EP-KB25 | 25 | 31 | 27.5 | 34 | V3300-E2BG | 7.6 | 1600*800*1180 | 1900*1000*1200 |",
-   "| EP-KB30 | 30 | 37.5 | 33 | 41 | V3300-T-E2BG | 9 | 1600*800*1180 | 1900*1000*1200 |",
+   "| EP-KB30 | 30 | 37.5 | 33 | 41 | V3300-T-E2BG | 9 | 1600*800*1180 | 1900*1000*1200 |"
+  ]
+ },
+ {
+  "n": 114,
+  "url": "https://www.fjexcel.com/product/139.html",
+  "title": "Kubota-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-KB7 | 7 | 8.75 | 7.7 | 9.6 | D905-E2BG | 2.2 | 1200*750*1180 | 1800*1000*1200 |",
    "| EP-KB9.5 | 9.5 | 11.875 | 10.45 | 13 | D1105-E2BG | 2.9 | 1200*750*1180 | 1800*1000*1200 |",
    "| EP-KB12 | 12 | 15 | 13.2 | 16.5 | V1505-E2BG | 3.9 | 1250*750*1180 | 1800*1000*1200 |",
@@ -626,7 +725,18 @@
    "| EP-IS25 | 20 | 25 | 22 | 27.5 | JE493DB-02 | 5.24 | 1450*750*1080 | 2100*890*1100 |",
    "| EP-IS30 | 24 | 30 | 26.4 | 33 | JE493ZDB-04 | 6.02 | 1450*750*1080 | 2100*890*1100 |",
    "| EP-IS37.5 | 30 | 37.5 | 33 | 41.25 | JE493ZLDB-02 | 7.18 | 1510*750*1080 | 2100*890*1100 |",
-   "| EP-IS40 | 32 | 40 | 35 | 44 | JE493ZLDB-02 | 7.66 | 1510*750*1080 | 2100*890*1100 |",
+   "| EP-IS40 | 32 | 40 | 35 | 44 | JE493ZLDB-02 | 7.66 | 1510*750*1080 | 2100*890*1100 |"
+  ]
+ },
+ {
+  "n": 115,
+  "url": "https://www.fjexcel.com/product/138.html",
+  "title": "Isuzu-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-IS25 | 20 | 25 | 22 | 27.5 | JE493DB-03 | 5.24 | 1450*750*1080 | 2100*890*1100 |",
    "| EP-IS30 | 24 | 30 | 26.4 | 33 | JE493DB-01 | 6.29 | 1450*750*1080 | 2100*890*1100 |",
    "| EP-IS35 | 28 | 35 | 31 | 38.5 | JE493ZDB-03 | 7.02 | 1450*750*1080 | 2100*890*1100 |",
@@ -661,7 +771,18 @@
    "| EP-XC250 | 200 | 250 | 220 | 275 | CA6DL2-30D | 44.46 | 2550*1020*1680 | 3530*1180*2150 |",
    "| EP-XC300 | 240 | 300 | 264 | 330 | CA6DM2J-39D | 51.71 | 3100*1100*1850 | 3980*1400*2150 |",
    "| EP-XC325 | 260 | 325 | 286 | 357.5 | CA6DM2J-41D | 56.02 | 3100*1100*1850 | 3980*1400*2150 |",
-   "| EP-XC375 | 300 | 375 | 330 | 412.5 | CA6DN1J-45D | 66.69 | 3250*1200*1850 | 4280*1400*2150 |",
+   "| EP-XC375 | 300 | 375 | 330 | 412.5 | CA6DN1J-45D | 66.69 | 3250*1200*1850 | 4280*1400*2150 |"
+  ]
+ },
+ {
+  "n": 116,
+  "url": "https://www.fjexcel.com/product/137.html",
+  "title": "Fawde-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-XC18.7 | 15 | 18.75 | 16.5 | 20.6 | 4DW81-28D | 4.1 | 1350*720*900 | 2020*900*1150 |",
    "| EP-XC27.5 | 22 | 27.5 | 24.2 | 30.25 | 4DW91-38D | 5.77 | 1450*720*900 | 2020*900*1150 |",
    "| EP-XC31.3 | 25 | 31.25 | 27.5 | 34 | 4DW92-42D | 6.56 | 1450*720*900 | 2020*900*1150 |",
@@ -702,7 +823,18 @@
    "| EP-DS400 | 400 | 500 | 440 | 550 | DP158LD | 115.1 | 3050*1430*1950 | 4700*1700*2230 |",
    "| EP-DS500 | 500 | 625 | 550 | 687.5 | DP180LB | 136.4 | 3300*1430*1950 | 5000*1700*2230 |",
    "| EP-DS536 | 536 | 670 | 589.6 | 737 | DP222LB | 147.1 | 3480*1430*1950 | 5100*1700*2430 |",
-   "| EP-DS600 | 600 | 750 | 660 | 825 | DP222LC | 161 | 3680*1430*1950 | 5300*1700*2430 |",
+   "| EP-DS600 | 600 | 750 | 660 | 825 | DP222LC | 161 | 3680*1430*1950 | 5300*1700*2430 |"
+  ]
+ },
+ {
+  "n": 117,
+  "url": "https://www.fjexcel.com/product/136.html",
+  "title": "Doosan-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-DS140 | 140 | 175 | 154 | 192.5 | DP086TA | 41.3 | 2650*1050*1590 | 3500*1300*1800 |",
    "| EP-DS150 | 150 | 187.5 | 165 | 206 | P086TI-1 | 42.2 | 2580*1050*1600 | 3500*1300*1800 |",
    "| EP-DS180 | 180 | 225 | 198 | 247.5 | P086TI | 50.6 | 2620*1050*1600 | 3500*1300*1800 |",
@@ -752,7 +884,18 @@
    "| EP-DE537.5 | 430 | 537.5 | 473 | 591 | BF8M1015CP-LA G4 | 96.1 | 3150*1560*2150 | 4600*1800*2230 |",
    "| EP-DE600 | 480 | 600 | 528 | 660 | BF8M1015CP-LA G5 | 107.3 | 3150*1560*2150 | 2900*1080*1571 |",
    "| EP-DE670 | 536 | 670 | 590 | 737.5 | HC12V132ZL-LAG2A | 120.4 | 3720*1800*2350 | 5900*2000*2530 |",
-   "| EP-DE750 | 600 | 750 | 660 | 825 | HC12V132ZL-LAG2A | 134.7 | 3720*1800*2350 | 5900*2000*2530 |",
+   "| EP-DE750 | 600 | 750 | 660 | 825 | HC12V132ZL-LAG2A | 134.7 | 3720*1800*2350 | 5900*2000*2530 |"
+  ]
+ },
+ {
+  "n": 118,
+  "url": "https://www.fjexcel.com/product/135.html",
+  "title": "Deutz-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-DE27.5 | 22 | 27.5 | 24 | 30 | BFM3 G1 | 5.7 | 1500*740*1080 | 2300*1020*1500 |",
    "| EP-DE35 | 28 | 35 | 30.8 | 38.5 | BFM3 G2 | 7.2 | 1500*740*1080 | 2300*1020*1500 |",
    "| EP-DE41.3 | 33 | 41 | 36 | 45 | BFM3T | 8.2 | 1600*740*1080 | 2300*1020*1500 |",
@@ -795,7 +938,18 @@
    "| EP-BN50 | 40 | 50 | 44 | 55 | F6L912 | 10.4 | 1760*900*1320 | 2700*1100*1580 |",
    "| EP-BN60 | 48 | 60 | 52.8 | 66 | F6L912T | 12.5 | 1850*900*1320 | 2700*1100*1580 |",
    "| EP-BN100 | 80 | 100 | 88 | 110 | BF6L913ADG | 20.8 | 1930*900*1320 | 2900*1100*1580 |",
-   "| EP-BN125 | 100 | 125 | 110 | 137.5 | BF6L913CADG | 25.54 | 1930*900*1320 | 2900*1100*1580 |",
+   "| EP-BN125 | 100 | 125 | 110 | 137.5 | BF6L913CADG | 25.54 | 1930*900*1320 | 2900*1100*1580 |"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://www.fjexcel.com/product/133.html",
+  "title": "Beinei Deutz-NINGDE EXCEL POWER CO.,LTD. - Professional in generator sets and power systems",
+  "header": [
+   "| Genset Model | 60Hz,120/240V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download",
+   "| Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type"
+  ],
+  "rows": [
    "| EP-BN17.5 | 14 | 17.5 | 15.4 | 19.25 | F2L912 | 3.8 | 1140*80*1080 | 1800*900*1280 |",
    "| EP-BN30 | 24 | 30 | 26.4 | 33 | F3L912 | 6.35 | 1280*800*1160 | 2000*900*1280 |",
    "| EP-BN35 | 28 | 35 | 30.8 | 38.5 | F4L912 | 7.28 | 1500*800*1160 | 2300*900*1280 |",

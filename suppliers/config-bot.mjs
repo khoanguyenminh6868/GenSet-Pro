@@ -1025,6 +1025,80 @@ function cylLayoutsIn(text) {
   }
   return seen;
 }
+// Số pha của tổ máy trong chữ HSMT (Khoa 24/11/2026): 3 hoặc 1 khi các dòng nêu pha chỉ nêu một loại; hai loại / không nêu = null.
+// Dòng về thiết bị khác (bộ sạc, đồng hồ đo, tủ, aptomat…) không tính, trừ dòng có nhãn "Số pha". Gói nhiều cỡ đọc theo từng cỡ (`minsForSize`).
+const PH3 = /(?<![\d.,])0?3\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])ba\s+pha(?![\p{L}])|three\s*-?\s*phase/iu;
+const PH1 = /(?<![\d.,])0?1\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])m[ộo]t\s+pha(?![\p{L}])|single\s*-?\s*phase/iu;
+const PH_AUX = /s[ạa]c|[ắa]c\s*quy|đ[ồo]ng\s*h[ồo]|hi[ểe]n\s*th[ịi]|c[ảa]m\s*bi[ếe]n|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|aptomat|c[ầa]u\s*dao|m[áa]y\s*c[ắa]t|\bMCCB\b|\bMCB\b|\bACB\b|\bATS\b|r[ơo]\s*-?\s*le|[ổo]\s*c[ắa]m|\bt[ủu]\b|c[áa]p\b|qu[ạa]t|b[ơo]m|đ[èe]n|s[ấa]y|\bUPS\b|b[ảa]o\s*v[ệe]|m[ấa]t\s*pha|l[ệe]ch\s*pha|ng[ắa]n\s*m[ạa]ch|đo\s/iu;
+// Cụm mô tả cuộn dây / đại lượng theo pha ("cuộn dây … 2 nhánh song song trên 1 pha", "mỗi pha", "từng pha", "giữa các pha", "per phase")
+// không phải số pha của tổ máy (24/11/2026, IB2300059621: máy 47.000 kVA đọc thành 1 pha): bỏ cụm đó rồi mới đọc.
+const PH_PER = /(?<![\p{L}])(?:tr[êe]n|m[ỗo]i|t[ừu]ng|gi[ữu]a(?:\s+c[áa]c)?|cho\s+m[ỗo]i)\s+(?:(?:0?[13]|m[ộo]t|ba)\s*)?pha(?![\p{L}])|\b(?:per|each|between)\s+(?:(?:1|3|one|three)\s*)?phases?\b/giu;
+function phasesIn(text) {
+  const seen = new Set();
+  for (const raw of String(text || "").split("\n")) {
+    const l = raw.replace(PH_PER, " ");
+    if (!/pha(?![\p{L}])|phase/iu.test(l) || (PH_AUX.test(l) && !/s[ốo]\s*pha/iu.test(l))) continue;
+    if (PH3.test(l)) seen.add(3);
+    if (PH1.test(l)) seen.add(1);
+  }
+  return seen;
+}
+export function phaseOf(text) {
+  const seen = phasesIn(text);
+  return seen.size === 1 ? [...seen][0] : null;
+}
+// Số pha của chính dòng bảng (Khoa 24/11/2026; không suy từ điện áp hay công suất) → { phase: 1 | 3, from, text, basis? } hoặc null.
+// Căn cứ chính: chữ pha ở tiêu đề bảng / dòng phân đoạn ("| Single phase", "50HZ PF=0.8 400/230V 3Phase 4Wire") và ô cột pha của chính
+// dòng. Có cả một pha lẫn ba pha ("三相0.8或单相1.0") thì không kết luận.
+// Căn cứ dự phòng, CHỈ khi tiêu đề, dòng phân đoạn, cột pha đều không nói gì về pha: đuôi model "-1P", rồi tên trang ghi "Single Phase"
+// (tên trang cũng ghi ba pha thì không kết luận). Ngoại lệ: `PHASE_FALLBACK_SKIP` (voltgent P2500-1P, acepow-fuan n136).
+const ROW_PH1 = /single[\s_-]*phase|(?<![\d.])1[\s-]*ph(?:ases?)?(?![a-z])|one[\s-]*phase|单相/i, ROW_PH3 = /three[\s_-]*phase|(?<![\d.])3[\s-]*ph(?:ases?)?(?![a-z])|三相/i;
+// Hai ngoại lệ tường minh của căn cứ dự phòng (Khoa 24/11/2026), không đổi luật chung: số pha = không rõ ("cần xác nhận số pha"
+// khi HSMT đòi 1 pha; không loại, không coi là ba pha). voltgent "P2500-1P" (n101) là máy 2.500 kVA nên đuôi "-1P" không là một pha;
+// acepow-fuan n136: tên trang "1000KVA Single Phase 75KW Portable Electric Power Generator" tự mâu thuẫn về công suất (16 dòng APYD).
+const PHASE_FALLBACK_SKIP = [{ supplierId: "voltgent", genset: "P2500-1P" }, { supplierId: "acepow-fuan", n: 136 }];
+const PH_COL = /^(?:(?:no\.?|number)\s*of\s*)?phases?$|^相数?$|^ph$/i, PH_WORD = /phase|单相|三相|相数/i;
+export function rowPhaseOf(u) {
+  if (!u) return null;
+  const cellsOf = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), one = [], three = [];
+  let info = false;
+  const read = (from, t) => { if (ROW_PH1.test(t)) one.push({ phase: 1, from, text: t }); if (ROW_PH3.test(t)) three.push({ phase: 3, from, text: t }); };
+  for (const h of u.header || []) {
+    const c = cellsOf(h).filter(Boolean);
+    for (const x of c) {
+      if (!PH_WORD.test(x) && !PH_COL.test(x)) continue;
+      info = true;
+      if (!PH_COL.test(x)) read(c.length === 1 ? "segment" : "header", x);
+    }
+  }
+  if (u.line) {
+    const cells = cellsOf(u.line);
+    for (const h of u.header || []) {
+      // Tiêu đề mở bằng ô trống ("| | Genset Model | … | Phase", elitech, aj-power, welland) lệch dòng một ô; dòng có thể thừa ô cuối
+      // ("View", acepow). Giá trị chỉ nhận khi đúng dạng số pha, nên ô lệch khác (50, tên động cơ) không thành căn cứ.
+      const all = cellsOf(h), lead = all[0] === "" && cells[0] !== "" ? 1 : 0, heads = all.slice(lead);
+      if (heads.length > cells.length) continue;
+      heads.forEach((x, i) => {
+        if (!PH_COL.test(x)) return;
+        if (/^1$|^1\s*-?\s*(?:ph|p$|φ|ø)|^single|^单相/i.test(cells[i])) one.push({ phase: 1, from: "column", text: cells[i] });
+        else if (/^3$|^3\s*-?\s*(?:ph|p$|φ|ø)|^three|^三相/i.test(cells[i])) three.push({ phase: 3, from: "column", text: cells[i] });
+      });
+    }
+  }
+  if (one.length && three.length) return null;
+  if (one.length || three.length) return (one[0] || three[0]);
+  if (info) return null;
+  const title = String(u.title || "");
+  if (ROW_PH3.test(title)) return null;
+  if (PHASE_FALLBACK_SKIP.some((x) => x.supplierId === u.supplierId && (x.n == null || x.n === u.n) && (x.genset == null || x.genset === String(u.genset || "").trim()))) return null;
+  if (/-1P$/i.test(String(u.genset || "").trim())) return { phase: 1, from: "model", text: String(u.genset).trim(), basis: "tên model đuôi -1P" };
+  if (/single[\s_-]*phase/i.test(title)) return { phase: 1, from: "page", text: "Single Phase", basis: "tên trang ghi Single Phase" };
+  return null;
+}
+export function onePhaseOf(u) {
+  const r = rowPhaseOf(u);
+  return r && r.phase === 1 ? r : null;
+}
 // Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
 // null when it gives the count only.
 export function layoutOf(value) {
@@ -1084,6 +1158,46 @@ export const hzOfName = (u) => (u?.supplierId === "kaihua-genset" && u.line && /
 // Tờ có chú thích chỉ ghi 3 mã trong danh mục (16M33G2250/5^, 12M55G3000/5^, 16M55G4000/5^); các mã khác theo cùng ký hiệu do NCC ghi.
 // Gói đòi công suất liên tục (cỡ không ghi mức cũng là prime, Khoa 21/11/2026) thì loại, gói ghi cỡ dự phòng thì giữ (Khoa 22/11/2026).
 export const isEspCode = (e) => /^\d+M\d.*\^$/.test(String(e?.key || ""));
+// Đuôi mã Baudouin: "/5" = 1500 v/p (50 Hz), "/6" = 1800 v/p (60 Hz). Căn cứ: mọi tờ hãng sources/baudouin/*.md, 87 mã có cột
+// RPM đọc được (43 mã /5, 44 mã /6), 0 mã trái đuôi (soát 24/11/2026). Đuôi "/S" = "switchable 50/60 Hz" (chú thích tờ hãng):
+// không kết luận. CHỈ dạng mã này; không đặt quy ước cho hãng khác.
+export const hzOfCode = (e) => { const m = String(e?.key || "").match(/^\d+M\d+G[A-Z0-9]*\/([56])\^?$/); return m ? (m[1] === "5" ? 50 : 60) : null; };
+// Danh sách tường minh, KHÔNG phải luật (Khoa 23/11/2026): long-gen đặt dòng này ở tab 50 Hz của trang (tên tab không lưu trong
+// specTables), còn tờ Perkins [perkins 5001] và baifa n105 chỉ ghi mã này ở 60 Hz. Giữ ở gói 50 Hz, tần số "cần xác nhận".
+const FREQ_ASK_ROWS = [{ supplierId: "long-gen", n: 109, model: "LGPL-220EV", engine: "1206JE70TTAG4", want: 50, why: "NCC ghi 50 Hz, tờ hãng chỉ ghi 60 Hz" }];
+const freqAskRow = (e, u, want) => FREQ_ASK_ROWS.find((x) => x.want === want && x.engine === e?.key && x.supplierId === u?.supplierId && [u?.n, ...(u?.also || []).map((a) => a.n)].includes(x.n) && String(CAT.cellsOf(u?.line || "")[0] ?? "").trim() === x.model);
+// Tờ RIÊNG của chính model (`engineSheetsOf`: tiêu đề đúng một model) do chính hãng động cơ phát hành, ghi đúng một tốc độ.
+const ownSheetRun = (e, sheets, sup) => {
+  const speeds = sheets?.get(e?.key)?.speeds || [], v = [...new Set(speeds.map((x) => x.v))];
+  const at = speeds.find((x) => isEngineMakerOf(e, sup.get(x.supplierId)));
+  return at && v.length === 1 && (v[0] === 1500 || v[0] === 1800) ? { rpm: v[0], hz: v[0] === 1500 ? 50 : 60, at } : null;
+};
+// Dòng không tự ghi tần số, gói đòi `want` Hz (Khoa 24/11/2026). LOẠI (`out`) khi chính dòng, mã động cơ hoặc tờ riêng của chính
+// model (ghi đúng một tốc độ) cho thấy tần số kia. Tài liệu hãng LIỆT KÊ nhiều model mà model này chỉ nằm ở phần một tần số thì
+// KHÔNG đủ để loại (Khoa 23/11/2026: tài liệu hãng chưa đủ hai tần số): GIỮ, `ask` = cần xác nhận (`makerList`). Chỉ NCC khác ghi
+// tần số kia (≥ 2 dòng) cũng GIỮ, `ask`. Động cơ có dòng ghi đúng `want` thì không xét theo các dòng khác.
+export function freqVerdict(e, u, want, { twinUses = [], sup = new Map(), sheets = null } = {}) {
+  if (!want || u?.freq) return null;
+  const own = hzOfRow(u);
+  if (own) return own !== want ? { out: true, kind: "row", why: `dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${want} Hz` } : null;
+  const name = hzOfName(u);
+  if (name) return name !== want ? { out: true, kind: "name", why: `tên model NCC ghi đuôi "-60" (${name} Hz), HSMT yêu cầu ${want} Hz` } : null;
+  const listed = freqAskRow(e, u, want);
+  if (listed) return { ask: true, kind: "listed", why: listed.why };
+  const code = hzOfCode(e);
+  if (code && code !== want) return { out: true, kind: "code", why: `mã ${e.key} đuôi "/${code === 60 ? 6 : 5}" là bản ${code} Hz (quy luật đo trên tờ hãng Baudouin: 87 / 87 mã đọc được tốc độ khớp đuôi), HSMT yêu cầu ${want} Hz` };
+  const all = [...(e?.uses || []), ...twinUses], known = all.map(hzOfRow).filter(Boolean);
+  if (known.some((f) => f === want)) return null;
+  const run = ownSheetRun(e, sheets, sup);
+  if (run && run.hz !== want) return { out: true, kind: "sheet", why: `tờ hãng của chính model ${e.key} (${run.at.supplierId} [${run.at.n}]) chỉ ghi ${run.rpm} v/p (${run.hz} Hz), HSMT yêu cầu ${want} Hz` };
+  // KHÔNG đối xứng (Khoa 24/11/2026): danh mục NCC mặc định 50 Hz, nên ở gói 60 Hz dòng không ghi tần số của động cơ chỉ thấy bản
+  // 50 Hz (≥ 2 dòng) vẫn LOẠI như trước; giữ lại thì hàng nghìn dòng 50 Hz lẫn vào gói 60 Hz. Gói 50 Hz thì giữ, cần xác nhận.
+  if (want === 60 && known.length >= 2) return { out: true, kind: "only50", why: `dòng không ghi tần số; các dòng khác của động cơ chỉ ghi 50 Hz (${known.length} dòng), HSMT yêu cầu 60 Hz` };
+  const maker = all.filter((x) => hzOfRow(x) && isEngineMakerOf(e, sup.get(x.supplierId)));
+  if (maker.length) return { ask: true, kind: "makerList", why: `cần xác nhận tần số: dòng không ghi tần số; tài liệu hãng (${[...new Set(maker.map((x) => `${x.supplierId} [${x.n}]`))].join(", ")}) chỉ liệt kê ${hzOfRow(maker[0])} Hz, chưa đủ để loại` };
+  if (known.length >= 2) return { ask: true, kind: "others", why: `cần xác nhận tần số: dòng không ghi tần số; NCC khác chỉ ghi ${known[0]} Hz` };
+  return null;
+}
 export function freqOfHsmt(t) {
   let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
@@ -1103,7 +1217,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: freqOfHsmt(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? { multiSize: true, ...sized.mins } : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: freqOfHsmt(t), phase: phaseOf(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? { multiSize: true, ...sized.mins } : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1425,14 +1539,60 @@ export function sizeBlocks(t, sizes) {
   });
   return { L, runs, tags };
 }
-const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
+const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "phase", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
 function minsRead(t) {
-  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), has = {
-    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, minPrime: p.prime.length > 0,
+  const e = engineLists(t), p = powerRead(t), layouts = cylLayoutsIn(t), phases = phasesIn(t), has = {
+    minDisp: e.disp.length > 0, maxDisp: e.dmax.length > 0, minCyl: e.cyl.length > 0, cylLayout: layouts.size > 0, phase: phases.size > 0, minPrime: p.prime.length > 0,
     maxFuel: p.fuel.some((x) => x.load === 100 || x.load == null), maxFuel75: p.fuel.some((x) => x.load === 75), maxFuel50: p.fuel.some((x) => x.load === 50) };
-  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]) };
+  const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]), phase: one([...phases]) };
   return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
+}
+// Số pha của một cỡ trong gói nhiều cỡ (24/11/2026, IB2300003199: tổ máy chính 80 kW 3 pha và tổ máy sinh hoạt 8 kW 1 pha; dòng "sinh
+// hoạt … 13 kW; máy phát 08 kWe … 1 pha" không mở khối cỡ mới nên nằm trong khối 80 kW, lượt 80 kW thành 1 pha và loại oan dòng ba pha).
+// Khối cỡ (`sizeBlocks` runs) không đủ chắc để gắn số pha. Mỗi dòng nêu pha được gắn với các cỡ nó nói tới:
+//  1. dòng mở bằng máy của nó ("Máy 15 kVA 1 pha: …", `tags` ≥ 0) → cỡ đó; dòng "Cả 3 loại máy: …" (`tags` = -2) → mọi cỡ;
+//  2. dòng tự nêu công suất đúng một hay vài cỡ ("Động cơ 91 kW; máy phát 80 kW, …, 3 pha") → các cỡ đó;
+//  3. dòng thuộc một hạng mục (chữ trước dấu ":" đầu dòng, "Tổ máy phát điện sinh hoạt: Máy phát - Số pha: 1 pha") mà các dòng của
+//     hạng mục đó nêu công suất của một hay vài cỡ → các cỡ đó;
+//  4. còn lại: không gắn được.
+// Cỡ có dòng gắn với nó: một loại pha → loại đó, cả hai → null. Cỡ không có dòng nào gắn: gói có dòng gắn với cỡ khác, hoặc gói nêu cả
+// một pha lẫn ba pha → null (không rõ, "cần xác nhận số pha"; không loại dòng). Gói không gắn dòng nào với cỡ nào và chỉ nêu một loại
+// pha → trả null để giữ kết quả theo khối như cũ. Không suy số pha từ cỡ máy.
+// → { phase, how } hoặc null (giữ kết quả theo khối).
+// Hạng mục chung của mọi máy ("Chung - Máy phát điện (yêu cầu chung): Máy phát 3 pha", IB2200087789): dòng của nó gắn với mọi cỡ.
+const COMMON_ITEM = /^chung(?![\p{L}])|y[êe]u\s*c[ầa]u\s*chung|chung\s*cho\s*(?:c[áa]c|m[ọo]i|t[ấa]t\s*c[ảa])|^(?:c[ảa]|t[ấa]t\s*c[ảa])\s+(?:\d+|hai|ba|b[ốo]n)?\s*(?:lo[ạa]i\s+)?m[áa]y/iu;
+function phaseForSize(L, tags, sizes, j) {
+  const kwSizes = sizes.some((s) => s.cap?.unit === "kW"), all = sizes.map((_, k) => k);
+  const namedIn = (l) => {
+    const out = new Set();
+    for (const m of l.matchAll(new RegExp(CAP_NUM, "gi"))) {
+      const unit = m[2].toLowerCase(), v = numOf(m[1]);
+      if (unit === "kw" && !kwSizes) continue;
+      sizes.forEach((s, k) => { const want = unit === "kw" ? s.kva * 0.8 : s.kva; if (v >= want * NEAR_LOW && v <= want / NEAR_LOW) out.add(k); });
+    }
+    return out;
+  };
+  const itemOf = (l) => { const m = l.match(/^\s*([^:\n]{2,120}?)\s*:\s/); return m ? norm(m[1]).replace(/\s+/g, " ") : null; };
+  const itemSizes = new Map();
+  L.forEach((l) => { const it = itemOf(l); if (!it) return; const s = itemSizes.get(it) || new Set(); for (const k of namedIn(l)) s.add(k); itemSizes.set(it, s); });
+  const stated = [];
+  L.forEach((l, i) => {
+    // Dòng tự nêu cả một lẫn ba pha: gắn với đúng một cỡ ("Máy 10,5 kVA: … 3 pha hoặc 230 V 1 pha", IB2500385135) thì cỡ đó có cả hai
+    // loại (không rõ); gắn với nhiều cỡ ("03 máy 8 kVA 1 pha và 02 máy 40 kVA 3 pha"; "Máy phát điện 3 pha loại 15 kW: Dải điện áp 230V
+    // 1 pha" của một máy bị đọc thành hai cỡ, IB2400152304) thì không biết loại nào của cỡ nào: bỏ dòng đó.
+    const kinds = phasesIn(l);
+    if (!kinds.size) return;
+    const own = namedIn(l), it = itemOf(l);
+    const scope = tags[i] === -2 ? all : tags[i] >= 0 ? [tags[i]] : own.size ? [...own] : it && COMMON_ITEM.test(it) ? all : it && itemSizes.get(it)?.size ? [...itemSizes.get(it)] : null;
+    if (kinds.size > 1 && scope && scope.length > 1) return;    stated.push({ kinds, scope });
+  });
+  if (!stated.length) return null;
+  const mine = new Set(stated.filter((x) => x.scope?.includes(j)).flatMap((x) => [...x.kinds]));
+  if (mine.size) return mine.size === 1 ? { phase: [...mine][0], how: "tied" } : { phase: null, how: "tied: disagree" };
+  if (stated.some((x) => x.scope)) return { phase: null, how: "tied to another size" };
+  if (new Set(stated.flatMap((x) => [...x.kinds])).size > 1) return { phase: null, how: "both, not tied" };
+  return null;
 }
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
 // is outside every block. `how` says per key where the figure came from: own, common, none (and why).
@@ -1467,7 +1627,7 @@ export function minsForSize(t, size, sizes, extra = "") {
   const allFound = sizes.every((_, k) => runs.some((r) => r.size === k));
   for (const k of MIN_KEYS) {
     if (a[k].has) { mins[k] = a[k].v; how[k] = a[k].v == null ? "own: disagree" : "own"; }
-    else if (["minDisp", "maxDisp", "minCyl", "cylLayout"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
+    else if (["minDisp", "maxDisp", "minCyl", "cylLayout", "phase"].includes(k) && agreed(k) != null) { mins[k] = agreed(k); how[k] = "agreed"; }
     else if (!b[k].has && c[k].has && (allFound || k === "minPrime")) { mins[k] = c[k].v; how[k] = "common"; }
     else { mins[k] = null; how[k] = b[k].has ? "of another size" : c[k].has ? "size unknown" : "none"; }
   }
@@ -1489,9 +1649,12 @@ export function minsForSize(t, size, sizes, extra = "") {
     const tolerated = v != null && [...own.matchAll(TOL_AFTER)].some((x) => Math.abs(numOf(x[1]) / size.cap.value - 1) <= 0.006 && Math.abs(lowOf(x[1], x[3], !!x[4]) - v) < 0.001);
     if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
+  // Số pha: theo hạng mục / dòng nêu cỡ (`phaseForSize`), không theo khối.
+  const ph = phaseForSize(L, tags, sizes, j);
+  if (ph) { mins.phase = ph.phase; how.phase = ph.how; }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
   const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", cylLayout: "bố trí xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
-  const unsure = MIN_KEYS.filter((k) => how[k] === "size unknown" || how[k] === "own: disagree").map((k) => LABEL[k]);
+  const unsure = MIN_KEYS.filter((k) => k !== "phase" && (how[k] === "size unknown" || how[k] === "own: disagree")).map((k) => LABEL[k]);
   const note = unsure.length ? `Gói nhiều cỡ: code không xác định được ngưỡng ${[...new Set(unsure)].join(", ")} của HSMT thuộc máy ${size.label || `${size.cap?.value} ${size.cap?.unit}`} nên không dùng để loại dòng; tự đối chiếu với phần HSMT của máy này.`.slice(0, 300) : null;
   return { mins, how, note, blocks: runs.map((r) => ({ size: r.size, from: r.start + 1, to: r.to })) };
 }
@@ -1831,7 +1994,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // is the prime (Khoa 21/11/2026): the row's prime must be in the band too, judged below (`ruled: "band"`, with its reason).
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => inRange(p[cap.unit]));
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
-  const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x]));
+  const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x])), freqSheets = hints.freq ? engineSheetsOf(cat, suppliers) : null;
   for (const e of cat.engines || []) {
     if (focus && !focus.has(e.key)) continue;
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
@@ -2047,26 +2210,22 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
+      // Số pha của dòng (Khoa 24/11/2026, `rowPhaseOf`), hai chiều: dòng có căn cứ khác số pha HSMT đòi thì loại. Gói đòi một pha mà dòng
+      // không có căn cứ pha nào thì giữ, cần xác nhận; gói không nêu rõ số pha mà dòng ghi một pha cũng giữ, cần xác nhận.
+      const rowPh = rowPhaseOf(u), phWhy = rowPh && (rowPh.basis || `bảng NCC ghi ${rowPh.phase === 1 ? "một" : "ba"} pha («${rowPh.text}»)`);
+      if (rowPh && hints.phase && rowPh.phase !== hints.phase) { score -= 600; ruled.push("phase"); why.push(`${phWhy}, HSMT yêu cầu ${hints.phase} pha`); }
+      else if (hints.phase === 1 && !rowPh) why.push("cần xác nhận số pha: dòng không ghi số pha, HSMT yêu cầu 1 pha");
+      else if (!hints.phase && rowPh?.phase === 1) why.push(`cần xác nhận số pha: ${phWhy}, HSMT không nêu rõ số pha`);
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
       // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
       // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
       if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
-      // An engine of the other frequency (Khoa, 2026-11-17: Baudouin 6M33G660/6 and 6M33G633/6, the 1800 rpm / 60 Hz
-      // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
-      // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
-      // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
-      let hzName = null;
-      if (hints.freq && !u.freq) {
-        // Cột tốc độ của chính dòng ("Rated speed (rpm) | 1800", weichai) là tần số của dòng đó; dòng khác cùng động cơ không đè lên.
-        const own = hzOfRow(u);
-        hzName = own ? null : hzOfName(u);
-        // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
-        const known = [...e.uses, ...twinUses].map(hzOfRow).filter(Boolean);
-        if (own && own !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`dòng ghi tốc độ ${own === 60 ? 1800 : 1500} v/p (${own} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
-        else if (hzName && hzName !== hints.freq) { score -= 600; ruled.push("freq"); why.push(`tên model NCC ghi đuôi "-60" (${hzName} Hz), HSMT yêu cầu ${hints.freq} Hz`); }
-        else if (!own && !hzName && known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
-      }
-      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && !hzName && twinUses.some(hzOfRow));
+      // Dòng không tự ghi tần số (Khoa 24/11/2026, `freqVerdict`): chính dòng / mã / tờ hãng trái gói thì loại; chỉ NCC khác ghi
+      // tần số kia thì giữ, gắn cần xác nhận. Dòng của cả "X" và "X^" (tach-mu-2) cùng tính.
+      const hzV = hints.freq ? freqVerdict(e, u, hints.freq, { twinUses, sup, sheets: freqSheets }) : null;
+      if (hzV?.out) { score -= 600; ruled.push("freq"); why.push(hzV.why); }
+      else if (hzV?.ask) why.push(hzV.why);
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || ((hzV?.kind === "makerList" || hzV?.kind === "only50") && twinUses.some(hzOfRow));
       if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (mã cùng gốc, khác dấu "^")`);
       if (cap && cap.rating !== "standby" && isEspCode(e)) { score -= 600; ruled.push("esp"); why.push(`mã "^": tờ hãng ghi chủ yếu cho dự phòng (ESP), HSMT đòi công suất liên tục`); }
       // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
@@ -2084,8 +2243,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // Nhà máy Trung Quốc NCC tự ghi ở chính dòng, gói G7 / G7EU kể cả chỉ đòi thương hiệu (Khoa 22/11/2026).
       const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
       if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
-      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(altAsk ? { altAsk } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
+      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, why, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(hzV?.ask ? { freqAsk: hzV.kind } : {}), ...(altAsk ? { altAsk } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
@@ -3742,6 +3901,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     engineSheetChecks(c, result.requirements || [], c.engine?.model ? engSheets.get(CAT.keyOf(c.engine.model)) : null, ratingsFor(RT.alt, c.alternator?.model), row);
     confirmChecks(c, result.requirements || []);
+    freqAskCheck(c, result.requirements || [], row, built, sup);
     altDocChecks(c, result.requirements || [], altAttrs);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
@@ -5388,6 +5548,23 @@ export function freqChecks(c, reqs, row, poles = []) {
     conversions: [{ ...conv, value: v, unit: f.unit, label: f.label, basis: f.basis }], note: `Code: dòng tổ máy ghi ${rpm} v/p, tờ hãng đầu phát ghi 4 cực; ${f.label}.` });
   return c;
 }
+// Dòng `candidates` giữ với tần số "cần xác nhận" (freqVerdict.ask): mục tần số của HSMT là "confirm", kể cả khi agent ghi đạt
+// (dòng không ghi tần số nên không có gì để đạt). Mục đã "không đạt" giữ nguyên. Chạy lại `check` ra cùng kết quả.
+export function freqAskCheck(c, reqs, row, built, sup) {
+  if (!row) return c;
+  const r = reqs.find((q) => q.code === "frequency" && q.part === "genset" && !q.byCode);
+  const hz = r && freqOfHsmt(`${r.requirement || ""} ${r.quote || ""}`);
+  if (!hz) return c;
+  const e = (built?.engines || []).find((x) => x.uses.includes(row));
+  const twin = e && (built.engines || []).find((x) => x.key === caretTwin(e.key));
+  const v = e && freqVerdict(e, row, hz, { twinUses: twin?.uses || [], sup, sheets: engineSheetsOf(built, [...sup.values()]) });
+  if (!v?.ask) return c;
+  const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+  if (x?.status === "not_met") return c;
+  putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: "Dòng tổ máy không xác nhận được tần số", part: "genset", level: r.level || "core", status: "confirm", confirm: "order", byCode: true, rule: "tan-so", note: `Cần NCC xác nhận tần số ${hz} Hz: ${v.why.replace(/^cần xác nhận tần số: /, "")}.` });
+  if (x) { delete x.sourceQuote; delete x.factSrc; }
+  return c;
+}
 // ---------- Thuộc tính đầu phát theo model (cfg-r3) ----------
 // From the maker's technical data sheet of the configuration's own alternator model (RT.attr, by ratingsFor: the model as
 // written, or its code with a make in front dropped; never a near name). Two sheets of the model that differ, or another
@@ -5805,7 +5982,8 @@ const CN_FOREIGN = /cummins|perkins|volvo|\bmtu\b|mitsubishi|doosan|hyundai|daew
 const CN_MAKE_ZH = { cummins: "康明斯", perkins: "帕金斯", volvo: "沃尔沃", mitsubishi: "三菱", doosan: "斗山", deutz: "道依茨" };
 const CN_WORD = /\bchina\b|\bprc\b|中国|国产/i, CN_EMISSION = /china\s*(?:stage|tier|[ivx]+\b|\d)|国\s*[二三四五六ivx]/gi;
 const CN_TWO = /\b(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\s*[/&,]\s*(?:china|ccec|dcec|xcec)\b|\b(?:china|ccec|dcec|xcec)\s*[/&,]\s*(?:uk|usa?|japan|germany|italy|korea|france|sweden|eu|india)\b/i;
-const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manufacturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
+// baifa n101: hai bảng con ghi tiêu đề vỡ chữ "ENGINE MANUF ACTURER / COUNTRY" (lớp chữ PDF).
+const ENGINE_ORIGIN_COL = { "baifa-power": [/engine manuf\s*acturer\s*\/\s*country/i, "last"], comappower: [/engine origin/i, "after"], "suneco-linyi": [/engine origin/i, "after"], "yanan-power": [/engine origin/i, "after"] };
 // Ô nhà máy TQ theo NCC + dạng chữ (danh sách tường minh, không mở rộng sang tên thành phố khác): [hãng, chữ của ô, vị trí so với ô động cơ, tiêu đề cột].
 // sanq không xét tiêu đề: ba bảng cùng bố cục, một bảng ghi "C/O of engine", một bảng thiếu tên cột, một bảng ghi nhầm "Fuel Consumption"; cột đó ở cả ba chỉ có Wuxi, UK/INDIA, USA, UK.
 const CN_MITSU = [/mitsubishi/i, /^上海菱重$/, -1, /柴油机品牌/];
