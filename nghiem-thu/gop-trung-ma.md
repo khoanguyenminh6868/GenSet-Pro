@@ -11,5 +11,6 @@ Nhánh `gop-trung-ma` (worktree `wt-gop-trung-ma`, từ `origin/main` `2e678d48`
 - `spec-diff`: 62.160 → 62.160 bản ghi, **20 đổi**, 0 mất, 0 thêm; chỉ trường `model` đổi (số liệu giữ nguyên); đảo vai 0 → 0. Đúng 7 nhóm: mecca-power 7 (KTA19-D(M) 3 + KTA38-D(M) 4), walter-yangzhou 6 (KTA19 2, KTA38 3, NTA855 1), endress 4 (đầu phát ECP 28-M/4C: n113, n114, n1013, n1024), acepow n114 1, frs-shenyang n106 1, kangwo n108 1. 16 động cơ + 4 đầu phát. Báo cáo ước "4+4" đầu phát = số lần dùng cả hai khoá; 4 bản ghi còn lại ("ECP28 M4C" n133, n140, n144, n148) đã mang khoá đích nên không đổi: không lệch.
 - `spec-value-check`: nhóm trùng mã 28 → 21 (còn: ^/★ 37 cố ý, ngoặc (M)/(E) 10, còn lại 11), không nhóm mới.
 - `quality.mjs --check`: không chỉ số nào xấu đi.
-- Test: xem PR (CI) và kết quả `node --test` toàn bộ ở báo cáo của phiên.
+- `node --test suppliers/*.test.mjs web/test/*.test.mjs`: 1819 test, 1 lỗi duy nhất là `s6-yd4kd.test.mjs` (ca ghim "(YD485D) vẫn đọc như cũ"): đổi có chủ ý thành gộp về YD485D. Fixture `regress-config` không đổi.
+- PR nháp https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1168 (commit dcd2abf7, đã gộp `origin/main`), CI xanh (server, spec-diff, suppliers, web).
 - Đầu ra đo: `genbid-work\gop-trung-ma-out\` (ngoài git).
