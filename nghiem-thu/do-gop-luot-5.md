@@ -1,6 +1,6 @@
 # Đo gộp lượt 5: 6 PR nháp + `bo-o-lech-4` (nhánh `tich-hop-luot-5-do-gop`)
 
-Phiên con của điều phối, 24/11/2026. Báo cáo không chép chữ HSMT; chỉ mã gói, số liệu, tên model, tên NCC. Phần A xong và ghi trước theo yêu cầu điều phối (16:05); phần B (925 dòng cũ) đang đo, sẽ bổ sung vào mục 6 của chính tệp này.
+Phiên con của điều phối, 24/11/2026. Báo cáo không chép chữ HSMT; chỉ mã gói, số liệu, tên model, tên NCC. Phần A ghi trước theo yêu cầu điều phối (16:05); phần B (925 dòng cũ) ở mục 6; phần C (đo lại #1174 sau sửa `comprFig`) ở mục 7.
 
 ## Kết luận từng PR
 
@@ -149,8 +149,70 @@ Tổng dòng SAI do tỉ số nén không đọc được ở tích hợp: **196
 2. #1174: sửa `comprFig` nhận dấu hai chấm toàn chiều rộng ("N：1", "N ： 1", "N ：1") trước khi merge (thêm test với các ô ở bảng 4.1); đo lại top 30 sau sửa (kỳ vọng 123 dòng "hết bị loại compr" sai biến mất; nếu đã merge #1203 thì 196). Các điểm Khoa cần quyết của lượt 4 (+8 mỗi loại thông số làm đổi hạng hàng loạt; giữ 排气量) vẫn mở.
 3. #1202 rồi `bo-o-lech-4` merge sau #1174: không còn dòng nào dựa dung tích sai.
 
-## 6. Phần B: 925 dòng cũ chưa giải thích (đang đo)
+## 6. Phần B: 925 dòng cũ chưa giải thích (gốc `7d15b54c` → `2917500f`)
 
-Đã có: đo lại gốc `7d15b54c` ↔ `2917500f` cùng bidhist: 469 lượt / 424 gói, **6.960 dòng** (lượt 4: 6.959); khớp **6.958 / 6.959** dòng lượt 4 và **925 / 925** dòng chưa giải thích. Phân nhóm 925 dòng ở mức gốc→cuối: 718 hệ quả trực tiếp, 97 dây chuyền, 96 đổi điểm khớp khoá thông số, 12 đổi đầu phát của dòng, 2 luật loại.
+TSV: `nghiem-thu/do-gop-luot-5-925.tsv` (925 dòng; cột: lượt, loại, NCC, động cơ / đầu phát, băm dòng, hạng / điểm gốc và main, commit, nhóm, cơ chế từng commit, đánh giá).
 
-Đang đo: 14 commit trung gian chạm mã chạy / `cn/` (lọc theo bao đóng import của `config-bot.mjs`: `cn/`, `datasheets/`, `config-bot.mjs`, `ratings.mjs`, `crawl-specs.mjs`, `web/catalog.js`, `spec-norm.js`…), chỉ 469 lượt có đổi. Ước tính xong khoảng 17:15 (dưới 3 giờ), sẽ bổ sung vào mục này và `do-gop-luot-5-925.tsv`.
+**Kết quả: 925 / 925 dòng có giải thích (commit + cơ chế). Không dòng nào là thay đổi SAI trong các nhóm đã soát** (mục 6.4).
+
+### 6.1 Cách đo
+
+- Đo lại hai mốc cùng bidhist: `7d15b54c` ↔ `2917500f`: 469 lượt / 424 gói, **6.960 dòng** (lượt 4: 6.959). Đối chiếu theo (lượt, loại, NCC, động cơ, hai hạng): khớp **6.958 / 6.959** dòng của lượt 4 và **925 / 925** dòng chưa giải thích.
+- Commit trên main giữa hai mốc: 27 (first-parent). Lọc commit đổi một tệp mà phép đo thực sự nạp: `cn/`, `datasheets/`, `config-bot.mjs` và các tệp nó import (`ratings.mjs`, `crawl-specs.mjs`, `firecrawl.mjs`…), `web/catalog.js`, `spec-norm.js`, `conversions.js`, `bidprice.js`. Còn **16 commit**; đo 15 cây (gộp #1144 vào bước #1145 vì #1144 chỉ đổi `firecrawl.mjs`, phần tải trang, không chạy trong `candidates`). 11 commit còn lại chỉ đổi bộ nhớ / CLAUDE.md / công cụ ngoài đường đo (spec-standard, spec-value-check, spec-value-gate, ingest).
+- Ghi chú: bản clone nông của phiên làm `1c9efe19` (#1153) trông như chứa cả #1135 → #1152; đã lấy thêm lịch sử (`--shallow-since`) nên các bước là đúng từng PR.
+- Cây trung gian chỉ đo 469 lượt có đổi giữa hai mốc (mỗi cây 20–26 phút). Giả định: lượt không đổi ở hai mốc thì không đổi rồi đổi ngược ở giữa.
+- Mỗi dòng gốc→cuối được tra trong từng bước (commit N−1 ↔ N) theo khoá đủ: 6.960 / 6.960 dòng có ít nhất một bước (5.880 một bước, 769 hai, 311 ba).
+
+### 6.2 Top 30 đổi theo từng commit (469 lượt)
+
+| Commit | PR | Dòng đổi | Cơ chế gốc (dòng đổi điểm / luật / có mặt) |
+|---|---|---:|---|
+| `ad695792` | #1135 (Leroy) | 0 | |
+| `7aa6c7b9` | #1138 (config-bot) | 0 | |
+| `3c3a5fe3` | #1140 (tờ Stamford / SmartGen) | 497 | +12 đầu phát (`eff`, `insul`, `ip`, `vreg`) 123 dòng |
+| `07dcd57d` | #1144 + #1145 (Mecc Alte ECO38) | 0 | |
+| `0b5203be` | #1149 (Stamford PI734 / LVSI804) | 646 | +12 đầu phát 160, +15 (thêm `excit`) 2 |
+| `af428439` | #1148 (bỏ trần 700, BĐK) | 2 | 1 lượt: chữ dòng supermaly DP126LB đổi (bảng sinh lại), cùng điểm 464, cùng hạng 21 |
+| `b1bd66ac` | #1154 | 0 | |
+| `c41e3fd0` | #1160 (kW/Hp) | **0** | xác nhận lượt 4: #1160 không đổi top 30 |
+| `34d7af54` | #1164 (ratings PI7) | 0 | lượt 4 gán nhầm một phần +12 cho #1164: thực ra là #1140 / #1149 |
+| `03592c68` | #1105 (tách bảng, 15 hồ sơ) | 1.642 | 153 dòng mới (longkai 103, awt 28, aosif 16…); +8 `oil` 48 (6BTA59GM100, 6CT83GM115…); 10 loại `freq`; 10 chữ dòng đổi; 14 dòng wintpower nay tra được đầu phát (WT544G / WT634C / WT634F) |
+| `1765fcdb` | #1110 (tách bảng con, 11 NCC) | 521 | +8 `emission` 79 (QSL9G3 29, QSB5G5 / QSB5G3 / QSB5G4 29…); 17 dòng mất / mới (acepow 11: dòng 60 Hz); 17 chữ dòng đổi; 5 luật loại (layout 3, hết cyl 2) |
+| `bbe79ec2` | #1111 (29 NCC, dòng phân đoạn Hz) | 971 | 90 loại `freq` (dòng nay mang tần số 60 Hz của khối bảng: minsun / victory 4DW8128D…); +8 / +16 `emission`, `oil` 31; 22 dòng mất / mới (excel-power 14, hosem 3: dòng 60 Hz); 19 chữ dòng đổi |
+| `65ed7810` | #1115 (gộp 33 khoá ngoặc) | 48 | 12 đổi khoá model (`20V4000G14F(3B)` → `20V4000G14F`…); +8 `cyl` 4 |
+| `3a43a86d` | #1118 (số pha) | 3.920 | **624 dòng bị loại `phase`** (elitech 337, acepow 107, aj-power 87, wintpower 85…: HSMT đòi 1 pha, bảng NCC ghi 3 pha); 2 dòng mới |
+| `2917500f` | #1114 (tần số chưa ghi) | 818 | 134 dòng hết bị loại `freq` (dòng không ghi tần số giữ lại, cần xác nhận), 3 dòng bị loại; 9 dòng hệ quả của dòng gốc ngoài top (trần NCC / luật B) |
+
+Còn lại mỗi bước là hệ quả trực tiếp / dây chuyền (tiêu chí mục 3).
+
+### 6.3 925 dòng theo commit
+
+| Commit gây đổi | Dòng |
+|---|---:|
+| #1118 | 307 |
+| #1105 | 259 |
+| #1111 | 203 |
+| #1110 | 87 |
+| #1114 | 13 |
+| #1140 / #1149 / cả hai | 2 / 2 / 1 |
+| hai hoặc ba commit (#1105 / #1110 / #1111 / #1118 / #1115 + #1114) | 51 |
+
+Theo cơ chế (một dòng có thể qua nhiều bước): hệ quả trực tiếp ở #1118 300, #1111 204, #1105 172, #1114 56, #1110 56; dây chuyền #1105 58, #1118 34; đổi điểm khớp khoá thông số #1105 37 (+8 `oil`), #1110 29 và #1111 29 (+8 `emission` / `oil`); 12 dòng wintpower tra được đầu phát (#1105); luật loại 5.
+
+Ba nhóm lượt 4 không truy được nay đã rõ:
+- "76 dòng +8 do `emission` / `oil` không commit nào đưa khoá vào code": đúng như lượt 4 nghi, là dữ liệu bảng con mới của NCC khác cho cùng động cơ: `oil` ở #1105, `emission` ở #1110 / #1111.
+- "346 vào + 123 ra, `cn` của NCC không đổi": dòng của NCC khác bị loại / thêm cùng lượt (chủ yếu 624 dòng bị loại số pha ở #1118, dòng 60 Hz tách ở #1110 / #1111) nên dòng giữ điểm được nhường chỗ / bị đẩy.
+- "380 dòng chỉ dịch hạng": cùng các dòng gốc trên.
+
+### 6.4 Soát đúng / sai
+
+Soát theo cơ chế, mỗi nhóm lớn xem dữ liệu nguồn ít nhất một ca:
+- #1118 số pha (624): elitech WP23D25E200 ("3PHASE"), wintpower 4DW8123D, aj-power 403A15G1 ("THREEPHASE"), acepow 4JA1A ("3Phases/50Hz/400V"): HSMT các lượt này đòi 1 pha → loại đúng.
+- #1110 / #1111 dòng mất ở gói 50 Hz: acepow JE493DB-01 / DB-03 nằm ở bảng n109 tiêu đề cột "3Phases/60Hz/220V"; excel-power EP-KB7 (D905-E2BG) ở bảng "60Hz,120/240V", EP-YM48KW 4TNV106-GGE ở khối "60Hz,200/115V" của n101; hosem A-P19H ở bảng "Model (60Hz)" → đúng.
+- #1111 loại `freq` rồi #1114 gỡ: phần lớn là cùng các dòng (minsun / victory / longkai / comappower), nên gốc→cuối ít dòng còn đổi.
+- #1140 / #1149 +12 đầu phát: thông số tờ hãng Stamford (PI734, LVSI804) gắn đúng model.
+- #1115: khoá `(3B)` / `(3D)` gộp đúng ý PR.
+- #1148: chỉ đổi chữ dòng, không đổi điểm / hạng.
+
+Giới hạn: tôi không đối chiếu từng giá trị `oil` / `emission` mới (#1105 / #1110 / #1111) với tờ hãng. Không tìm thấy thay đổi SAI nào ở phần B.
+
