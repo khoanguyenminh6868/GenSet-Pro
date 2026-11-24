@@ -87,7 +87,7 @@ export function sheetOf(text) {
   const kept = rows.filter((l, i) => C.headingOf(l) === undefined || (rows[i + 1] && C.headingOf(rows[i + 1]) === undefined));
   const names = kept.some((l) => /(engine|alternator|generator)\s*(model|type)|发动机型号|发电机型号|^(\|\s*)?(diesel\s*)?engine\s*[|:：]/i.test(l))
     || kept.some((l, i) => ["engine", "alternator"].includes(C.headingOf(l)) && kept.slice(i + 1, i + 30).some((x) => /^\|\s*(model|型号)\s*[|:：]/i.test(x)));
-  return names && kept.filter((l) => C.headingOf(l) === undefined).length >= 4 ? kept.slice(0, 250) : [];
+  return names && kept.filter((l) => C.headingOf(l) === undefined).length >= 4 ? kept : [];
 }
 
 async function download(url) {
