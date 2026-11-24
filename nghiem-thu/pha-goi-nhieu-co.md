@@ -30,7 +30,13 @@ Chữ đối chiếu (có trích Phân tích) để NGOÀI git: `genbid-work\tan
 
 ## 3. Gói một cỡ
 Lượt một cỡ có cỡ > 30 kVA mà code ra 1 pha: **1 lượt**, IB2300059621 (47.000 kVA, máy phát thuỷ điện hiện hữu): **sai**. Chữ "1 pha" là của cuộn dây stator
-("… 2 nhánh song song trên 1 pha"), không phải số pha của máy. Chưa sửa (ngoài phạm vi, gói không phải mua tổ máy diesel). Gói một cỡ: 1 pha 134, 3 pha 454, không rõ 144 lượt, không đổi.
+("… 2 nhánh song song trên 1 pha"), không phải số pha của máy. Gói một cỡ: 1 pha 134, 3 pha 454, không rõ 144 lượt, không đổi ở `96e51b24`.
+
+### Vòng 2 (điều phối 24/11/2026: sửa luôn, theo mẫu chữ): commit `SHA_V2`
+`phasesIn` bỏ cụm mô tả cuộn dây / đại lượng theo pha TRƯỚC khi đọc: "trên / mỗi / từng / giữa (các) / cho mỗi [1|3|một|ba] pha", "per / each / between [one|three] phase(s)" (`PH_PER`).
+Dòng chỉ còn cụm đó thì không có căn cứ → không rõ; dòng có cả số pha thật vẫn đọc số pha thật. Thêm test dữ liệu giả.
+So lại MỌI lượt (1.093, một cỡ lẫn nhiều cỡ) `96e51b24` → `SHA_V2`: đổi đúng **1 lượt**: IB2300059621#0 (một cỡ, 47.000 kVA) 1 → không rõ. Không lượt nhiều cỡ nào đổi.
+Một cỡ sau vòng 2: 1 pha 133, 3 pha 454, không rõ 145. Bảng mới: `pha-goi-nhieu-co/pha-luot-sau-cuon-day.tsv`. Không còn lượt một cỡ > 30 kVA ra 1 pha.
 
 ## 5. Tác động (cùng bidhist, `47d66424` → `96e51b24`)
 | | 1 pha | 3 pha | không rõ |
@@ -44,7 +50,7 @@ Lượt một cỡ có cỡ > 30 kVA mà code ra 1 pha: **1 lượt**, IB2300059
 Script (tham số: worktree, bidhist, out): `pha-goi-nhieu-co/pha-luot.mjs`, `audit.mjs <truoc> <sau> <analysis.json> <out>`, `bang.mjs`, `dbg-goi.mjs <wt> <bidhist> <gói>`.
 
 ## Việc cần Khoa / điều phối quyết
-- IB2300059621 (một cỡ): "trên 1 pha" của cuộn dây đọc thành 1 pha. Sửa `phasesIn` bỏ cụm "trên (mỗi) 1 pha"? Chưa làm.
+- IB2300059621: ĐÃ SỬA ở vòng 2 (mục 3).
 - `sizesOf` đọc công suất động cơ / số dự phòng thành cỡ riêng (IB2300003199 91 / 13 kW; 10 cỡ ảo ở mục 2): việc riêng.
 
 ## Bảng từng lượt (243 lượt; "Cách gắn" = `how.phase` sau sửa)
