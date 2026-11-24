@@ -330,9 +330,10 @@ export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
       // A table whose title names several models none of the lines above tells apart (Woodward easYgen-3400XT /
       // 3500XT): the whole table's kind for each of them. A model of the title the lines above did not tell apart takes it
       // too when its sibling models got a kind (bdk-ds-3: easYgen-1700 beside 1400 / 1600 / 1800, whose sheet says "easYgen-1000
-      // Series of AMF genset controllers"; the 1700 line itself names no kind).
+      // Series of AMF genset controllers"; the 1700 line itself names no kind). A line about a model outside the title
+      // does not take this away (a full HGM9510 manual: "refer to HGM9500 Synchronization Plan List").
       const titled = [...new Set(modelsIn(t.title).map(ctlKey))].filter((m) => !own.has(m));
-      if (titled.length && (own.size === 0 || titled.length < new Set(modelsIn(t.title).map(ctlKey)).size)) {
+      if (titled.length) {
         const ks = new Set(UNIT.filter(([, re]) => rows.some((l) => re.test(l))).map(([k]) => k));
         if (ks.size) for (const m of titled) own.set(m, ks);
       }
