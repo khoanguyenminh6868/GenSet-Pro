@@ -137,4 +137,40 @@ Các trường này chưa có giá trị nào trong bản chuẩn (bước 4 m�
 
 ## 9. Kiểm tra
 
-PR nháp https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1158 (chưa merge). `node --test suppliers/*.test.mjs` đạt 1.638 / 1.638 trên máy; CI (suppliers, server) xanh.
+PR https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1158 (đã merge). `node --test suppliers/*.test.mjs` đạt 1.638 / 1.638 trên máy; CI (suppliers, server) xanh.
+
+## 10. Sửa bộ sinh bản chuẩn (PR 2, nhánh `spec-standard-sua`)
+
+PR nháp https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1161, chưa merge. CI (suppliers, server) xanh. `node --test suppliers/*.test.mjs` đạt 1.648 / 1.648 trên máy.
+
+**Sửa gì:**
+
+- **Khí thải.** Giá trị là danh sách `{ scale, level }` lấy từ lớp chuẩn hoá (`levelsOf`), thay cho `String(n.enum)`. Nguồn không ghi thang thì `scale: null` kèm `missing: scale`, không đoán. Chữ nguồn giữ ở `raw`, nên "Tier 2" và "T2" cùng thang là một giá trị. Đã soát mọi `String(` trong tệp: chỉ dòng này ép object thành chữ.
+- **Công suất động cơ không đơn vị.** Số không đơn vị nằm ở cột `figure` của `power_kwm`, kèm `missing: unit`. Số vẫn hiện, nhưng không mang nghĩa kWm hay HP. Bộ trường không đổi: `figure` là một ô của bảng, không phải trường mới.
+  - Có **71 mục** thuộc loại này, không chỉ 5 ô của ettes-power. 66 mục còn lại (xinhengxin 46, beidou 16, hosem 9, hanyang 1, tính cả trùng doc) cũng được lớp chuẩn hoá ghi `missing: unit`.
+  - Em áp cùng một luật cho cả 71 mục. Nếu chỉ sửa 5 ô thì 66 số không đơn vị vẫn nằm dưới khoá `kwm`, trái nguyên tắc điều phối nêu.
+- **Kiểm chéo** (`spec-standard-check.mjs`). Nay so tập thang + mức với lớp chuẩn hoá, và tính giá trị chứa chữ "[object" là không giải thích được. Chạy bản kiểm mới trên mã cũ (`origin/main`) thì ra `unexplained` 1.977, thoát 1. Trên nhánh này thì ra 0, thoát 0.
+
+**So băm từng doc, toàn `cn/`:**
+
+| Mục | Trước | Sau |
+|---|---:|---:|
+| Doc | 9.685 | 9.685 |
+| Giá trị | 319.712 | 319.721 |
+| Giá trị khí thải | 1.315 | 1.324 |
+| Chuỗi "[object" | 1.315 | 0 |
+| Doc đổi băm | | 1.015 (1.004 khí thải, 69 công suất động cơ) |
+| Doc đổi ở trường khác | | **0** |
+
+Số giá trị khí thải tăng 9, vì trước đây mọi mức của một model bị gộp chung dưới chữ "[object Object]".
+
+**Bộ kiểm giá trị sau khi sửa:**
+
+- `gia-tri-hong` 1.315 → 0.
+- `lan-toc-do` 45 → 35: 10 ô không đơn vị nay ở cột `figure`.
+- Thêm 71 mục "chưa chuẩn" loại `thieu-don-vi`.
+- Các luật khác không đổi. Tổng: 405 sai, 1.408 chưa chuẩn.
+
+Luật khí thải đổi theo cấu trúc mới: danh sách `{ scale, level }`, thang thuộc `QUAL` của `spec-norm.js` hoặc để trống.
+
+Test `kw-hp-sua.test.mjs` của #1160 kỳ vọng khoá `kwm`, nên em sửa sang cột `figure`.
