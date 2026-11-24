@@ -186,6 +186,10 @@
   // (a value of another shape means the column did not line up with its title).
   // A cooling value names a medium or says "cooled" ("ATS auto load transfer screen" from a shifted column is not one).
   const COOL = /water|liquid|wasser|radiator|glycol|coolant|cool|air[\s/-]*(to|water|air)|oil\s*to\s*air|[水风油液]冷|冷却|fan\b/i;
+  // A volume (oil, coolant) is not a "2920*930*1810" size: a walk along a row whose header has fewer titles than the row has cells
+  // lays "Coolant capacity" over the size cell (victory-generator n112).
+  const SIZE3 = "\\d\\s*[*×xX]\\s*\\d+\\s*[*×xX]\\s*\\d";
+  const NO_SIZE_NUM_FIRST = new RegExp(`^(?![\\s\\S]*${SIZE3})\\d`), NO_SIZE_ANY_NUM = new RegExp(`^(?![\\s\\S]*${SIZE3})[\\s\\S]*\\d`);
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
   const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan|run(ning)?\s*(time|hours?)/i;
@@ -205,21 +209,21 @@
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
     ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*(time|hours?)/i, null, N],
     ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
-    ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
+    ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量|排气量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
     ["cyl", "engine", "Số xi lanh", /cylinder|^cyl|^cil|气缸|缸数/i, /air\s*flow/i, /^(\d{1,2}|\d{1,2}\s*[-–]?\s*(l|v|in\s*-?\s*line|cyl\w*)\b.*|\d{1,2}\s*缸.*|[lv]\s?-?\d{1,2}|in-?line.*|vertical.*|v-?type.*)$/i],
     // ^ "6 in line" / "6in line" (longkai, xinhengxin), "12缸V型水冷" (lees): a count before the layout (bo-doc-tieu-hao).
-    ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
+    ["compr", "engine", "Tỉ số nén", /compression|压缩比/i, null, /^(?!\d+\s+\.\d)(?:[\s\S]*\d\s*[:：]\s*1|\d+(\.\d+)?$)/],
     ["asp", "engine", "Nạp khí", /aspirat|intake|进气|吸气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
     ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
     ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /^(?![\s\S]*stage(?:[4-9]|[1-9]\d)\b)[\s\S]*(?:stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b|\bt[1-4]\b)/i],
     // ^ "CHINA STAGE4" … "CHINA STAGE18" (baifa n101, a spreadsheet's fill run counting up from "CHINA STAGE3"): no such
     //   stage; a figure glued to "STAGE" from 4 up is not read (catalog-a; no other value in cn/ is written that way).
-    ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, /^\d/],
+    ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, NO_SIZE_NUM_FIRST],
     // Charge-air / piston cooling is not the engine's cooling system ("Air/Air cooling", "Aftercooling", "Charge Air Cooling").
     ["aircool", "engine", "Làm mát khí nạp / piston", /after\s*-?cool|charge\s*air|piston\s*cool|inter\s*-?cool|air\s*\/\s*(air|water)\s*cool|增压空气|活塞冷却/i, null, COOL],
     ["cooling", "engine", "Làm mát",/cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow|after\s*-?cool|charge\s*air|piston|inter\s*-?cool|air\s*\/|增压空气|活塞/i, COOL],
-    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, N],
-    ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
+    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, NO_SIZE_ANY_NUM],
+    ["start", "engine", "Khởi động", /start|启动方式|起动方式/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
     ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|over\s*-?\s*speed|超速|torque|扭矩|\d\s*v\s*\/\s*\d+\s*hz/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
     // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
@@ -230,7 +234,8 @@
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
     ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, /brush|self|pmg|shunt|aref|separately|\bavr\b|自励|永磁|无刷|有刷/i],
-    ["thd", "alternator", "Méo sóng hài (THD)", /harmonic|\bthd\b|谐波/i, null, /\d\s*[%％]/],
+    // Not "Telephone harmonic factor (THF)" / TIF: the telephone factors are another figure (all 38 values this key had were THF of shanhua; 24/11/2026).
+    ["thd", "alternator", "Méo sóng hài (THD)", /harmonic|\bthd\b|谐波/i, /\bthf\b|\btif\b|telephone|电话/i, /\d\s*[%％]/],
     ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, /time|时间/i, /\d\s*[%％]/i],
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
     ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, /breaker|断路器|空开/i, /^\d/],
@@ -250,7 +255,10 @@
   function specKeyOf(L) {
     if (!L || L.length > 70 || /\bmodel\b|型号|brand|make|品牌|厂家/i.test(L)) return null;
     // Genset power is read on its own (powersIn); an engine's own output is kept here.
-    if (/power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    // "Oil capacity" / "Coolant capacity" are volumes of the engine (keys oil / coolant), not a rating; a heater, cooler or pump
+    // of them, or a kW / kVA figure, stays a power label.
+    const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }

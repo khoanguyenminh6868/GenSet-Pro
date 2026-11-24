@@ -237,3 +237,27 @@ test("saneSpecs: figures the row's own output rules out are left out (rà soát 
   // a weight under 2,5 kg per kVA is no weight of the set
   assert.equal(sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 205 | 594"])).weight, undefined);
 });
+
+// buoc-4 PR A (24/11/2026): labels of keys that already exist; lines are real (suppliers/cn).
+test("thd: the telephone factors THF / TIF are not the harmonic distortion", () => {
+  for (const l of ["电话谐波系数 THF", "Telephone harmonic factor - THF", "Telephone harmonic coefficient THF", "THF", "Telephone Influence Factor (TIF)"]) // shanhua n1001, mecc-alte 1007, kc-generatorset n101, hyundai-power-products 5001, xinhengxin-fujian 1002
+    assert.notEqual(CAT.specKey(l), "thd", l);
+  assert.equal(CAT.specKey("Total harmonic distortion"), "thd");
+  assert.equal(CAT.specKey("THD"), "thd");
+});
+test("oil / coolant: a label with 'capacity' naming the oil or coolant is the volume, a power / tank capacity stays out", () => {
+  for (const l of ["Oil capacity(L) :", "Oil Capacity (L)", "Engine oil capacity", "Lube Oil Capacity (L)", "Total Oil Capacity", "Lubricating oil capacity"]) // acepow-fuan n102, cameo-power n106, tecgen-fujian n101, kigerpower n2001, powerpack n101, gtl-power n105
+    assert.equal(CAT.specKey(l), "oil", l);
+  for (const l of ["Coolant capacity(L) :", "Radiator coolant capacity (liter)", "Coolant Capacity (L)"]) // acepow-fuan n102, mahindra-powerol n2004
+    assert.equal(CAT.specKey(l), "coolant", l);
+  for (const l of ["Capacity (kVA):", "Alternator Capacity:", "Rated Capacity", "Fuel Tank Capacity:", "Engine Capacity (L)", "Cooling System Capacity"]) // acepow-fuan n102 / n148, dingbo n101, cgen-alternator n2001, hosem-power n1001, genlitec n1013
+    assert.notEqual(["oil", "coolant"].includes(CAT.specKey(l)), true, l);
+  assert.equal(CAT.specKey("Fuel Tank Capacity:"), "tank");
+  assert.equal(CAT.specKey("Capacity (kVA):"), null);
+});
+test("compr / disp / start: Chinese labels 压缩比, 排气量, 启动方式, 起动方式", () => {
+  assert.equal(fits("压缩比", "17.25:1 17.25:1"), "compr"); // cat-tianjin n2001
+  assert.equal(fits("排气量 (L)", "12.5"), "disp"); // bdadl-shanghai n133
+  assert.equal(fits("启动方式", "电启动"), "start"); // kusing-guangzhou n2002, hengke-jiangsu n2001
+  assert.equal(fits("起动方式", "电起动"), "start"); // chenxing-weifang n101
+});
