@@ -374,3 +374,10 @@ test("TLKT xong: xoá tlkt/<mã>/; thư mục hsdt không bị đụng", async (
   await post([row("tlktreq", "K1", { requestedAt: "a", doneAt: "b" })]);
   assert.deepEqual(scratch(), ["hsdt/K1/1/h.pdf"]);
 });
+
+test("Chuỗi có ký tự NUL (\u0000) được bỏ NUL trước khi ghi, Postgres không nhận được (22P05)", async () => {
+  const res = await post([row("feed", "current", { items: [{ name: "a\u0000b" }], note: "x\u0000" })]);
+  assert.equal(res.statusCode, 200);
+  assert.ok(!JSON.stringify(sbDocsWrites(db)[0].body).includes("\u0000"));
+  assert.equal(written()[0].data.items[0].name, "ab");
+});
