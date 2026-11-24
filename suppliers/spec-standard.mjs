@@ -36,11 +36,46 @@ export function tidyText(s) {
 export function joinKey(s) {
   return tidyText(s).text.toLowerCase().replace(/(?<=\p{L})\s*(?:&|\+|\/|,|\band\b)\s*(?=\p{L})/gu, " & ").replace(/\s+/g, " ").trim();
 }
-export function enumOf(f, text) {
-  const k = joinKey(text);
-  for (const v of f.values || []) if (joinKey(v) === k) return { value: v, rule: NFKC(text) === v ? null : "hoa-thuong" };
-  for (const [v, list] of Object.entries(f.same || {})) if (list.some((w) => joinKey(w) === k)) return { value: v, rule: "same" };
+// Every standard value a spelling stands for (values first, then same); `enumOf` takes the first, the join needs exactly one.
+function enumMatches(f, text) {
+  const k = joinKey(text), out = [];
+  for (const v of f.values || []) if (joinKey(v) === k) out.push({ value: v, rule: NFKC(text) === v ? null : "hoa-thuong" });
+  for (const [v, list] of Object.entries(f.same || {})) if (list.some((w) => joinKey(w) === k) && !out.some((o) => o.value === v)) out.push({ value: v, rule: "same" });
+  return out;
+}
+// Luật có tên (spec-standard-check.mjs phải giải thích được từng cái):
+//   tien-to-o  ô dính cả dòng bảng "| Insulation class | H [| …]" (chỉ trường insulation): lấy ô cạnh nhãn.
+//   chu-class  "H class" / "Class H" (chỉ insulation): chữ cái cấp là giá trị chuẩn.
+//   ghep-o     chữ bị cắt ở "and" / "&" / "," / "+" / "/" ghép với ô KẾ TIẾP của cùng dòng nguồn (`next`), chỉ khi ghép ra ĐÚNG MỘT giá trị chuẩn.
+// `joined` = ô kế tiếp đã ghép; `raw` vẫn là chữ nguồn của ô đầu.
+export function enumOf(f, text, next = null) {
+  let t = text, pre = null;
+  if (f.id === "insulation") {
+    const m = /^\|\s*insulation\s+(?:class|system)\s*\|\s*([^|]+?)\s*(?:\||$)/i.exec(NFKC(text));
+    if (m) { t = m[1]; pre = "tien-to-o"; }
+  }
+  const d = enumMatches(f, t)[0];
+  if (d) return { value: d.value, rule: pre || d.rule };
+  if (f.id === "insulation") {
+    const m = /^(?:class\s+([A-Z])|([A-Z])\s+class)$/i.exec(NFKC(t));
+    const c = m && enumMatches(f, m[1] || m[2])[0];
+    if (c) return { value: c.value, rule: pre || "chu-class" };
+  }
+  const nx = NFKC(next);
+  if (nx && /(?:\band\b|&|,|\+|\/)$/i.test(NFKC(t))) {
+    const j = enumMatches(f, `${NFKC(t)} ${nx}`);
+    if (j.length === 1) return { value: j[0].value, rule: "ghep-o", joined: nx };
+  }
   return null;
+}
+// The cell that follows `text` on the same source line (`line` = "| a | b | c |"), or null: the next cell only, never another line.
+export function nextCellOf(line, text) {
+  if (!line) return null;
+  const cells = String(line).split("|").map((c) => NFKC(c));
+  const i = cells.findIndex((c) => c && c === NFKC(text));
+  if (i < 0) return null;
+  const nx = cells.slice(i + 1).find((c) => c);
+  return nx ?? null;
 }
 const LAYOUT = { V: "V", L: "inline" };
 const plainNum = (s) => (/^\d+(\.\d+)?$/.test(NFKC(s)) ? Number(NFKC(s)) : null);
@@ -56,7 +91,7 @@ export function levelsOf(e) {
   return [...seen.keys()].sort(cmp).map((k) => seen.get(k));
 }
 // The standard value of one normalized reading, or { drop } when no figure could be read.
-export function valueOf(f, n, sp) {
+export function valueOf(f, n, sp, next = null) {
   const out = (value, rules = []) => ({ value, unit: n?.unit ?? null, cond: condOf(n), missing: [...(n?.missing || [])], rules });
   if (n) {
     if (!SN.hasValue(n)) return { drop: (n.missing || []).join("+") || "no-value" };
@@ -73,8 +108,8 @@ export function valueOf(f, n, sp) {
   }
   const raw = sp.value;
   if (f.type === "enum") {
-    const e = enumOf(f, raw);
-    if (e) return { value: e.value, unit: null, cond: null, missing: [], rules: e.rule ? [e.rule] : [] };
+    const e = enumOf(f, raw, next);
+    if (e) return { value: e.value, unit: null, cond: null, missing: [], rules: e.rule ? [e.rule] : [], ...(e.joined ? { joined: e.joined } : {}) };
     return { value: tidyText(raw).text, unit: null, cond: null, missing: ["enum"], rules: [] };
   }
   if (f.type === "number") {
@@ -147,7 +182,7 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     const n = nOf.get(`${sp.key} ${sp.label ?? ""} ${sp.value ?? ""}`) || null;
     const f = fieldFor(part, sp, n);
     if (!f) { if (byKey[part][sp.key]) audit?.({ part, ...ctx, u, sp, n, drop: "load-khac" }); continue; }
-    const r = valueOf(f, n, sp);
+    const r = valueOf(f, n, sp, f.type === "enum" && !n ? nextCellOf(u.line, sp.value) : null);
     if (r.drop) { audit?.({ part, ...ctx, u, sp, n, fid: f.id, drop: r.drop }); continue; }
     // A value corrected by a listed exception (fixspec): raw is the text of the source, not the corrected figure.
     r.raw = sp.fixed?.from ?? sp.value;
@@ -155,10 +190,11 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     // A vertical sheet: the catalog joins cells into one value ("lt | 3,3" → "3,3 L", "105" + "127" → "105 × 127"), so the
     // text is not verbatim. Marked, and the check requires each of its figures in the table.
     if (!u.line && !sp.fixed) r.rawJoined = !flatText([...(u.lines?.rows || []), ...(u.lines?.header || []), ...(rows || [])].join("\n")).includes(flatText(r.raw));
+    if (r.joined) r.rawJoined = true;
     if (f.cond?.includes("rating") && !n?.cond?.rating && !n?.cond?.ratings && !r.missing.includes("rating")) r.missing.push("rating");
     if (!n) for (const c of f.cond || []) if (!r.missing.includes(c)) r.missing.push(c);
     bag.add(f.id, r, srcOf(u));
-    audit?.({ part, ...ctx, u, sp, n, fid: f.id, value: r.value, rules: r.rules });
+    audit?.({ part, ...ctx, u, sp, n, fid: f.id, value: r.value, rules: r.rules, joined: r.joined });
     if (part === "engine" && f.id === "cylinders" && r.layout) bag.add("cyl_layout", { value: LAYOUT[r.layout] || r.layout, unit: null, cond: null, missing: [], raw: sp.value }, srcOf(u));
   }
 }
