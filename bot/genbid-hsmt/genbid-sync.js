@@ -360,6 +360,15 @@ async function fetchFiles(page, req) {
     const skipped = r.files.filter((f) => isDecisionFile(f.name));
     r.files = r.files.filter((f) => !skipped.includes(f));
     if (!r.files.length) {
+      // Only the approval decision on the page (IB2600608438; Khoa, 2026-11-24): the notice itself ("Tải TBMT") is still taken
+      // and published, with no VNeGP Agent needed.
+      const tdir = path.join(DOWNLOADS, req.key);
+      if (req.fresh) fs.rmSync(tdir, { recursive: true, force: true });
+      if (fs.existsSync(tdir)) for (const f of fs.readdirSync(tdir)) if (isDecisionFile(f)) fs.rmSync(path.join(tdir, f), { force: true });
+      if (await saveTbmtPdf(page, tdir)) {
+        const code = ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt], 120);
+        return `${tag}: 1/1 tệp (chỉ thông báo mời thầu; quyết định phê duyệt bỏ)${code ? " (đăng tệp bị lỗi)" : ""}`;
+      }
       ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt, "-Reason", "Trang gói thầu chỉ có tệp quyết định phê duyệt."]);
       return `${tag}: chỉ có quyết định phê duyệt (${skipped.map((f) => f.name).join(", ")})`;
     }
