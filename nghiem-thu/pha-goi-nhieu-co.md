@@ -1,7 +1,7 @@
 # Số pha gói nhiều cỡ (24/11/2026)
 
 PR #1118, nhánh `fix/mot-pha-hai-tan-so`: `47d66424` → **`96e51b24`** (commit thường, đã push, KHÔNG merge).
-Test `node --test suppliers/*.test.mjs`: 1.640 pass, 0 fail (thêm 3 test, cả 3 hỏng trên mã cũ). `verify` 0 lỗi; `quality --check` không xấu đi;
+Test `node --test suppliers/*.test.mjs`: 1.640 pass ở 96e51b24, 1.641 pass ở bb280392, 0 fail (thêm 4 test, cả 3 hỏng trên mã cũ). `verify` 0 lỗi; `quality --check` không xấu đi;
 `spec-diff git:47d66424 . --gate` xanh (0 đổi, đảo vai 0 → 0). Lưu ý: dòng Co-Authored-By của commit có tên model (theo nhắc của hệ thống); không sửa được vì cấm force-push.
 
 ## 1. Gốc lỗi
@@ -32,10 +32,10 @@ Chữ đối chiếu (có trích Phân tích) để NGOÀI git: `genbid-work\tan
 Lượt một cỡ có cỡ > 30 kVA mà code ra 1 pha: **1 lượt**, IB2300059621 (47.000 kVA, máy phát thuỷ điện hiện hữu): **sai**. Chữ "1 pha" là của cuộn dây stator
 ("… 2 nhánh song song trên 1 pha"), không phải số pha của máy. Gói một cỡ: 1 pha 134, 3 pha 454, không rõ 144 lượt, không đổi ở `96e51b24`.
 
-### Vòng 2 (điều phối 24/11/2026: sửa luôn, theo mẫu chữ): commit `SHA_V2`
+### Vòng 2 (điều phối 24/11/2026: sửa luôn, theo mẫu chữ): commit `bb280392`
 `phasesIn` bỏ cụm mô tả cuộn dây / đại lượng theo pha TRƯỚC khi đọc: "trên / mỗi / từng / giữa (các) / cho mỗi [1|3|một|ba] pha", "per / each / between [one|three] phase(s)" (`PH_PER`).
 Dòng chỉ còn cụm đó thì không có căn cứ → không rõ; dòng có cả số pha thật vẫn đọc số pha thật. Thêm test dữ liệu giả.
-So lại MỌI lượt (1.093, một cỡ lẫn nhiều cỡ) `96e51b24` → `SHA_V2`: đổi đúng **1 lượt**: IB2300059621#0 (một cỡ, 47.000 kVA) 1 → không rõ. Không lượt nhiều cỡ nào đổi.
+So lại MỌI lượt (1.093, một cỡ lẫn nhiều cỡ) `96e51b24` → `bb280392`: đổi đúng **1 lượt**: IB2300059621#0 (một cỡ, 47.000 kVA) 1 → không rõ. Không lượt nhiều cỡ nào đổi.
 Một cỡ sau vòng 2: 1 pha 133, 3 pha 454, không rõ 145. Bảng mới: `pha-goi-nhieu-co/pha-luot-sau-cuon-day.tsv`. Không còn lượt một cỡ > 30 kVA ra 1 pha.
 
 ## 5. Tác động (cùng bidhist, `47d66424` → `96e51b24`)
