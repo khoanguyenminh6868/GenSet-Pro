@@ -45,8 +45,17 @@
    "| TYC2200 | 1600 | 2000 | 1760 | 2200 | YC12VC2700-D31 | 1805 | O | O |",
    "| TYC2500 | 1800 | 2250 | 1980 | 2500 | YC16VC3000-D31 | 2005 | O | O |",
    "| TYC2750 | 2000 | 2500 | 2200 | 2750 | YC16VC3300-D31 | 2205 | O | O |",
-   "| TYC3025 | 2200 | 2750 | 2420 | 3025 | YC16VC3600-D31 | 2405 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TYC3025 | 2200 | 2750 | 2420 | 3025 | YC16VC3600-D31 | 2405 | O | O |"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.mamopower.com/yuchai-product/",
+  "title": "China Yuchai Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TYC55 | 40 | 50 | 44 | 55 | YC4D65-D20 | 44 | O | O | O",
    "| TYC69 | 50 | 63 | 55 | 69 | YC4D80Z-D20 | 55 | O | O | O",
    "| TYC83 | 60 | 75 | 66 | 83 | YC4D100Z-D20 | 66 | O | O | O",
@@ -98,8 +107,17 @@
    "| TYD50 | 36 | 45 | 39.6 | 50 | Y4102ZLD | 48 | O | O | O",
    "| TYD55 | 40 | 50 | 44 | 55 | Y4105ZLD | 55 | O | O | O",
    "| TYD69 | 50 | 63 | 55 | 69 | YD4EZLD | 63 | O | O | O",
-   "| TYD83 | 60 | 75 | 66 | 83 | Y4110ZLD | 80 | O | O | O",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TYD83 | 60 | 75 | 66 | 83 | Y4110ZLD | 80 | O | O | O"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.mamopower.com/yangdong-product/",
+  "title": "China Yangdong Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TYD12 | 9 | 11 | 10 | 12 | YD380D | 12 | O | O | O",
    "| TYD15 | 11 | 14 | 12 | 15 | YD385D | 14 | O | O | O",
    "| TYD18 | 13 | 16 | 14 | 18 | YD480D | 17 | O | O | O",
@@ -257,8 +275,17 @@
    "| TP2200 | 1600 | 2000 | 1760 | 2200 | 4016TAG2A | 1766 | O | O |",
    "| TP2035 | 1480 | 1850 | 1628 | 2035 | 4016-61TRG1 | 1558 | O | O |",
    "| TP2200 | 1600 | 2000 | 1760 | 2200 | 4016-61TRG2 | 1774 | O | O |",
-   "| TP2500 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 1975 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TP2500 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 1975 | O | O |"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://www.mamopower.com/perkinsdieselgenerator-product/",
+  "title": "China Perkins Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TP11 | 8 | 10 | 9 | 11 | 403D-11G | 11 | O | O | O",
    "| TP16 | 12 | 15 | 13 | 16 | 403D-15G | 16 | O | O | O",
    "| TP25 | 18 | 23 | 20 | 25 | 404D-22G | 24 | O | O | O",
@@ -328,8 +355,17 @@
    "| TM3025 | 2200 | 2750 | 2420 | 3025 | 20V4000G63 | 2420 | O | O |",
    "| TM3093 | 2250 | 2813 | 2475 | 3025 | 20V4000G43 | 2550 | O | O |",
    "| TM3438 | 2500 | 3125 | 2750 | 3438 | 20V4000G83 | 2800 | O | O |",
-   "| TM3850 | 2800 | 3500 | 3080 | 3850 | 20V4000G83L | 3100 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TM3850 | 2800 | 3500 | 3080 | 3850 | 20V4000G83L | 3100 | O | O |"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://www.mamopower.com/mtu-product/",
+  "title": "China MTU Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TM880 | 640 | 800 | 704 | 880 | 12V2000G45 | 765 | O | O |",
    "| TM1023 | 744 | 930 | 818 | 1023 | 12V2000G85 | 895 | O | O |",
    "| TM1155 | 840 | 1050 | 924 | 1155 | 16V2000G45 | 1010 | O | O |",
@@ -359,8 +395,17 @@
    "| TJE33 | 24 | 30 | 26 | 33 | JE493ZDB-04 | 36 | O | O | O",
    "| TJE41 | 30 | 38 | 33 | 41 | JE493ZLDB-02 | 28 | O | O | O",
    "| TJE44 | 32 | 40 | 26 | 44 | JE493ZLDB-02 | 36 | O | O | O",
-   "| TJE47 | 34 | 43 | 37 | 47 | JE493ZLDB-02 | 28 | O | O | O",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TJE47 | 34 | 43 | 37 | 47 | JE493ZLDB-02 | 28 | O | O | O"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.mamopower.com/isuzu-product/",
+  "title": "China ISUZU Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TBJ30 | 19 | 24 | 21 | 26 | JE493DB-03 | 24 | O | O | O",
    "| TBJ33 | 24 | 30 | 26 | 33 | JE493DB-01 | 28 | O | O | O",
    "| TBJ39 | 28 | 35 | 31 | 39 | JE493ZDB-03 | 34 | O | O | O",
@@ -395,8 +440,17 @@
    "| TD625 | 450 | 563 | 495 | 625 | DP180LA | 502 | O | O | O",
    "| TD688 | 500 | 625 | 550 | 688 | DP180LB | 556 | O | O |",
    "| TD756 | 550 | 688 | 605 | 756 | DP222LB | 604 | O | O |",
-   "| TD825 | 600 | 750 | 660 | 825 | DP222LC | 657 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TD825 | 600 | 750 | 660 | 825 | DP222LC | 657 | O | O |"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.mamopower.com/doosan-product/",
+  "title": "China Doosan Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TD63 | 45 | 56 | 50 | 63 | SP344CA | 52 | O | O | O",
    "| TD80 | 58 | 73 | 64 | 80 | SP344CB | 67 | O | O | O",
    "| TD100 | 72 | 90 | 79 | 100 | SP344CC | 83 | O | O | O",
@@ -514,8 +568,17 @@
    "| TBF591 | 430 | 538 | 473 | 591 | BF8M1015CP-LAG4 | 480 | O | O | O",
    "| TBF625 | 450 | 563 | 500 | 625 | BF8M1015CP-LAG5 | 509 | O | O | O",
    "| TBF756 | 550 | 688 | 605 | 756 | HC12V132ZL-LAG1A | 600 | O | O |",
-   "| TBF825 | 600 | 750 | 660 | 825 | HC12V132ZL-LAG2A | 666 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TBF825 | 600 | 750 | 660 | 825 | HC12V132ZL-LAG2A | 666 | O | O |"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.mamopower.com/deutz-product/",
+  "title": "China Deutz Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TBF28 | 20 | 25 | 22 | 28 | BFM3 G1 | 25 | O | O | O",
    "| TBF39 | 28 | 35 | 31 | 39 | BFM3 G2 | 34 | O | O | O",
    "| TBF50 | 36 | 45 | 40 | 50 | BFM3T | 45 | O | O | O",
@@ -612,8 +675,17 @@
    "| TC1375 | 1000 | 20 | 1100 | 1375 | QSK38-G5 | 1224 | O | O |",
    "| TC1500 | 1100 | 1375 | 1210 | 1500 | KTA50-G8 | 1429 | O | O |",
    "| TC1650 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 1429 | O | O |",
-   "| TC1875 | 1364 | 1705 | 1500 | 1875 | KTA50-G15 | 1583 | O | O |",
-   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER",
+   "| TC1875 | 1364 | 1705 | 1500 | 1875 | KTA50-G15 | 1583 | O | O |"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.mamopower.com/cumminsdieselgenerator-product/",
+  "title": "China Cummins Series Diesel Generator factory and manufacturers | Mamo Power",
+  "header": [
+   "| GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW) | OPEN | SOUNDPROOF | TRAILER"
+  ],
+  "rows": [
    "| TC28 | 20 | 25 | 22 | 28 | 4B3.9-G11 | 23 | O | O | O",
    "| TC33 | 24 | 30 | 26 | 33 | 4B3.9-G2 | 30 | O | O | O",
    "| TC39 | 28 | 35 | 31 | 39 | 4B3.9-G12 | 33 | O | O | O",

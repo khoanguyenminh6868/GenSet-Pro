@@ -154,18 +154,37 @@ export function subTables(block) {
   if (parts.some((t) => !t)) return [whole];
   const kept = new Set(parts.flatMap((t) => [...t.rows, ...t.header]));
   if (!whole.rows.every((r) => kept.has(r))) return [whole];
+  // A row of the whole block stays a row after the split. A machine row with few plain numbers ("| R-DC113D5-S | 113 kVA /
+  // 90 kW | 124 kVA / 99 kW | 6BTA5.9-G2 | TAL-A44-E | PDF", rcg-power; "| PWP2500P | 2000/2500 | NA/NA | …", pauway-tianjin)
+  // is no "data" line, so a part would take it, and every line up to its first data line, as titles and lose the record.
+  const wholeRows = new Set(whole.rows);
+  const rowsBack = (t) => {
+    const at = t.header.findIndex((h, j) => j >= 1 && wholeRows.has(h) && codeLine(h));
+    return at < 0 ? t : { ...t, header: t.header.slice(0, at), rows: [...t.header.slice(at), ...t.rows] };
+  };
   // A section line naming a range of output ("| PREMIUM | P≥560KW NOMINAL POWER …", baifa) is no column title: left in
   // the header of a later sub-table, its "KW" is read as the unit of columns the page titles "KVA | KVA".
-  return parts.map((t, x) => (x ? { ...t, header: t.header.filter((h) => !/\bP\s*[≤≥<>]/.test(h)) } : t));
+  return parts.map(rowsBack).map((t, x) => (x ? { ...t, header: t.header.filter((h) => !/\bP\s*[≤≥<>]/.test(h)) } : t));
 }
+// First cell a model code (letters and digits, not a condition like "1500RPM" or "50Hz") and a number cell after it.
+const codeLine = (l) => { const c = cellsIn(l); return c.length >= 3 && /[a-z]/i.test(c[0]) && /\d/.test(c[0]) && !/^\d[\d.,]*\s*(hz|rpm|v|kva|kw)\b/i.test(c[0]) && c.slice(1).some(isNumCell); };
+// A two-cell section line that names a frequency, right above a title line, opens a sub-table even when those titles
+// differ from the ones before (kaihua-genset n124 / n125: "| Powered by VOLVO | 440V, 1800RPM, 60Hz" over "| Genset Model |
+// Standby kVA | Prime kVA | …", a 60 Hz table under different columns than the first one).
+const hzSection = (l, next) => {
+  const c = cellsIn(l);
+  return c.length === 2 && !isRowLine(l) && c.some((x) => /(^|[^\d.])\d{2}\s*hz\b/i.test(x)) && next != null && cellsIn(next).length >= 3 && !isRowLine(next) && !cellsIn(next).some(plainNum);
+};
 function splitPoints(block) {
-  const isRow = isRowLine;
+  // A machine row with few plain numbers is a row here too: taken for a title line, its cells joined the titles and later
+  // rows "repeated" them (rcg-power n101, a false split), or it was pulled into the next sub-table's titles (pauway n104).
+  const isRow = (l) => isRowLine(l) || codeLine(l);
   const starts = [0];
   let seen = new Set(), inHead = true, most = 0;
   for (let i = 0; i < block.length; i++) {
     const l = block[i];
     if (isRow(l)) { inHead = false; continue; }
-    if (!inHead && repeatsTitle(l, seen, most)) {
+    if (!inHead && (hzSection(l, block[i + 1]) || repeatsTitle(l, seen, most))) {
       let s = i;
       while (s - 1 > starts[starts.length - 1] && !isRow(block[s - 1]) && nonBlank(block[s - 1]) && !cellsIn(block[s - 1]).some(plainNum)) s--;
       starts.push(s); seen = new Set(); inHead = true; most = 0;
