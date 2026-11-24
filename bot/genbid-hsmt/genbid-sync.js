@@ -319,8 +319,14 @@ let agentStarted = false;
 
 // "Tải TBMT" in tab Thông tin chung (Khoa, 2026-11-24): the notice itself, a PDF the page builds in the browser (pdfMake, not a
 // server file, so the VNeGP Agent cannot fetch it). The button is clicked and the download saved next to the other files, where
-// Publish-GenBidHsmt.ps1 picks it up. A page without the button (chào giá trực tuyến rút gọn) or a failure is not an error.
+// Publish-GenBidHsmt.ps1 picks it up. A page without the button or a failure is not an error.
+// On a chào giá trực tuyến rút gọn page (IB2600608438, 24/11/2026) the button gives no download: it opens a new tab
+// /egp/bidonlinefe/viewer (pdf.js, every biểu mẫu: TBMT, phạm vi cung cấp with the specs; 48 pages) whose own "Tải về" button
+// downloads the PDF through a blank tab that never closes and makes ctx.close() throw an uncaught TargetClosedError. So the
+// PDF the viewer loaded (a blob: response of type application/pdf) is read in the viewer instead and saved as
+// "Thông báo mời thầu.pdf".
 async function saveTbmtPdf(page, dir) {
+  let viewer = null;
   try {
     const tab = page.locator('a[href="#info-general"]');
     if (await tab.count()) { await tab.first().click().catch(() => {}); await page.waitForTimeout(500); }
@@ -328,18 +334,37 @@ async function saveTbmtPdf(page, dir) {
     if (!(await btn.count())) return false;
     const errs = [], onErr = (e) => errs.push(String(e.message || e).split("\n")[0].slice(0, 200)), onCon = (m) => { if (m.type() === "error") errs.push(m.text().slice(0, 200)); };
     page.on("pageerror", onErr); page.on("console", onCon);
-    const dl = page.waitForEvent("download", { timeout: 15000 });
-    dl.catch(() => {});
+    const dl = page.waitForEvent("download", { timeout: 15000 }).then((d) => ({ d }));
+    const pop = page.waitForEvent("popup", { timeout: 15000 }).then((p) => ({ p }));
+    dl.catch(() => {}); pop.catch(() => {});
     await btn.click();
-    let d;
-    try { d = await dl; }
-    catch (e) { throw new Error(`${e.message.split("\n")[0]}${errs.length ? " | lỗi trang: " + errs.slice(0, 3).join(" ; ") : ""}`); }
+    let d, pdf = null;
+    try {
+      const first = await Promise.any([dl, pop]).catch((e) => { throw e.errors?.[0] || e; });
+      if (first.d) d = first.d;
+      else {
+        viewer = first.p;
+        const blobs = [];
+        viewer.on("response", (r) => { if (/^blob:/.test(r.url()) && /application\/pdf/i.test(r.headers()["content-type"] || "")) blobs.push(r.url()); });
+        for (let k = 0; k < 60 && !blobs.length; k++) await viewer.waitForTimeout(1000);
+        if (!blobs.length) throw new Error("không thấy PDF trong 60 giây");
+        const b64 = await viewer.evaluate(async (u) => {
+          const b = new Uint8Array(await (await fetch(u)).arrayBuffer());
+          let s = ""; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode(...b.subarray(i, i + 0x8000));
+          return btoa(s);
+        }, blobs[blobs.length - 1]);
+        pdf = Buffer.from(b64, "base64");
+        if (pdf.subarray(0, 5).toString() !== "%PDF-") throw new Error("tệp đọc được không phải PDF");
+      }
+    }
+    catch (e) { throw new Error(`${viewer ? "trang xem TBMT: " : ""}${e.message.split("\n")[0]}${errs.length ? " | lỗi trang: " + errs.slice(0, 3).join(" ; ") : ""}`); }
     finally { page.off("pageerror", onErr); page.off("console", onCon); }
-    const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").replace(/^[\s_]+/, "").trim() || "Thông báo mời thầu.pdf";
     fs.mkdirSync(dir, { recursive: true });
-    await d.saveAs(path.join(dir, name));
+    if (pdf) fs.writeFileSync(path.join(dir, "Thông báo mời thầu.pdf"), pdf);
+    else await d.saveAs(path.join(dir, (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").replace(/^[\s_]+/, "").trim() || "Thông báo mời thầu.pdf"));
     return true;
   } catch (e) { log(`    Không tải được TBMT: ${e.message.split("\n")[0]}`); return false; }
+  finally { await viewer?.close().catch(() => {}); }
 }
 
 async function fetchFiles(page, req) {
