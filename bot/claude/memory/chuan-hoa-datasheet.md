@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T07:14:44.966Z
+  modified: 2026-11-24T07:19:12.030Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -38,6 +38,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Bước 4 (kiểm kê `nghiem-thu\buoc-4-kiem-ke.md`), Khoa 24/11/2026 trả lời: (1) kích từ "Brushless, self-excited" → thêm giá trị chuẩn "tự kích"; (2) nhãn "Altitude" thuộc MÔI TRƯỜNG của tổ máy (`genset.ambient`), không phải độ cao đầu phát; (3) cột "Open type / Silent type" CÓ đọc thành kiểu tổ máy, nguyên văn "nên gộp chung lại thành kiểu tổ máy chứ không tách 2 dòng" (em hiểu: một trường `genset_type` chứa các kiểu máy có, không tách thành hai bản ghi / hai dòng); (4) nguyên văn: "Short circuit ratio (SCR - Tỷ số ngắn mạch) và Sustained short circuit (Dòng ngắn mạch duy trì) hoàn toàn khác nhau" → SCR KHÔNG vào `short_circuit`; (5) chữ bị cắt ô "Turbocharged and" → ghép ô kế tiếp; (6) việc thêm `key` cho trường đã duyệt: Khoa 24/11 chốt "Làm như đề xuất, không cần trình": chỉ nối thêm khoá đọc / nhãn cho trường ĐÃ duyệt thì không cần trình duyệt lại (thêm TRƯỜNG mới vẫn phải trình). Khoa cũng dặn 24/11: phiên mới chạy được trên cloud thì mở trên cloud cho đỡ CPU máy.
 - Khoa 24/11/2026 "1,2: làm như em đề xuất": (1) giá trị sai còn lại: ca do bộ đọc thì SỬA BỘ ĐỌC theo từng mẫu (không đưa từng ca vào danh sách); ca hình học (đường kính / hành trình / dung tích không khớp) thì cho luật số đông loại ô không tự khớp (`majorityOf` dùng `selfCheck`); (2) dòng BĐK nêu mã ngoài tờ: giữ riêng 2 dòng "RS232 | DSE8610 MKII Com Port" của DSE7570; dòng "HGM6100CAN" chỉ gắn 6110CAN / 6120CAN, nhánh "HGM6100N" để nguyên. Khoa nhắc: điều đã duyệt (câu 6 bước 4) thì KHÔNG hỏi lại; trước khi liệt kê "cần anh quyết" phải rà bộ nhớ, bỏ mục đã có câu trả lời.
 - Kích từ, Khoa 24/11/2026 (nguyên ý): "Brushless và self-excited không liên quan gì cả. Model nào có Self-excited mới là tự kích, Brushless tách ra thành 1 thuộc tính riêng" → thêm giá trị chuẩn `self_excited` cho `alternator.excitation` (chỉ khi nguồn ghi self-excited) và thêm TRƯỜNG riêng "không chổi than" cho đầu phát; ô "Brushless, self-excited" ra hai giá trị, ô chỉ ghi "Brushless" KHÔNG suy ra tự kích.
+- Kênh báo giá trị nghi sai, Khoa 24/11/2026 (nguyên ý): "nên làm thành 1 tab mới trong trang Thông số để anh vào kiểm tra và cập nhật, khi anh cập nhật thì sẽ thành thông số đúng". Tab này CHƯA có, phải làm mới (web + nơi lưu giá trị Khoa sửa + bản chuẩn / Gợi ý cấu hình đọc giá trị đã sửa); không dùng Issue GitHub.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
