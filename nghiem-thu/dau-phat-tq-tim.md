@@ -44,3 +44,54 @@ Chưa có mục nào đủ điều kiện (cần URL + câu trích nguyên văn 
 2. Kwise: lưu tờ KAL184 / KAL164 chính hãng bằng `maker-datasheets.mjs kwise-generator <pdf…>` → `merge-specs.mjs` → `verify.mjs` → `node --test suppliers/*.test.mjs`.
 3. Nianfeng → Engga → Faraday → Longkai (sau khi Khoa duyệt vai trò) → LongHong → Linz → các hãng còn lại, đúng thứ tự (a) → (b) → (c).
 4. Soát tay xếp hạng thô ở mục 2 trước khi dùng.
+
+---
+
+## 6. Lượt trên máy KhoaMiniPC (24/11/2026)
+
+**Kết quả: lưu 3 hãng (Kwise, Linz, Firstall; 49 tờ hãng, dải 1001+), `verify.mjs` 0 lỗi / 436 bản ghi, `node --test suppliers/*.test.mjs` 1731/1731 đạt. Nhánh `dau-phat-tq` (worktree `wt-dau-phat-tq`), PR nháp, chưa merge.**
+
+### 6.1 Xếp hạng đã soát
+Cách đếm lại: quét `suppliers/cn/*.json`, bỏ `role: alternator_maker`, chỉ tính chữ hãng nằm ở (a) cột đầu phát của bảng "|" (tiêu đề cột có "alternator / generator head / 发电机 / 电机品牌…", không phải "genset / engine / control"), (b) dòng "nhãn: giá trị" hoặc "| nhãn | giá trị" có nhãn là đầu phát, (c) `productLines[].alternatorMakes`. Mỗi NCC tính một lần cho mỗi hãng. Chữ hãng nằm ở chỗ khác (dòng mô tả, tên model) KHÔNG tính.
+- **Sai lớn của số thô cloud:** "Kwise 78 dòng" gần như toàn là chữ "clock**wise**" (hướng quay "Clockwise/anticlockwise" của động cơ). Kwise thật chỉ có 3 NCC ghi trong ô đầu phát: welland-power (cột "KWise", 40 dòng), sevenpower-chengdu, sr-genset. Regex hãng phải có ranh giới từ.
+- "Engga 201 / Faraday 200" = cùng MỘT dòng "Alternator option: Leroy Somer, MECC, Marathon, Engga, Faraday" lặp trong 199 bảng của fdk-energy (cùng một nội dung tải xuống). Đếm theo NCC.
+- "Nianfeng 625" phần lớn là cột "Alternator" của bảng model fdk-energy lặp lại; theo NCC: 3.
+- "C.GEN 7" = chữ "gen-set" (không phải hãng); 0 NCC thật ghi C.GEN trong ô đầu phát. Xingnuo = ô "Control System" / "Brand" của bộ điều khiển: bỏ (theo Khoa). LONGKAI bỏ (theo Khoa).
+
+Xếp hạng theo SỐ NCC tổ máy ghi trong ô đầu phát (+ `alternatorMakes`):
+
+| Hạng | Hãng | NCC | Ghi chú |
+|---|---|---|---|
+| 1 | Engga | 7 | acepow-fuan, bspower-guangdong, fdk-energy, fukangsi-yangzhou, panda-power, saintshine-shenzhen, sunkings |
+| 2 | Faraday (法拉第 / Farada) | 3 | bspower-guangdong, fdk-energy, sunkings |
+| 2 | Nianfeng | 3 | fdk-energy (nhiều dòng), fudiankang-hunan, sr-genset |
+| 2 | Kwise | 3 | welland-power, sevenpower-chengdu, sr-genset |
+| 2 | Linz | 3 | avs-aggregatebau, energy-gruppi, green-power-generators (cột LINZ) |
+| 6 | LongHong, Werna, Hengtong 恒通, 欣同辰, Kaichen, 德科, 兰电 | 1 mỗi hãng | |
+| – | Evotec, Agestar, Keliang, Eastern Lion, Nenjo, Gordon, Gloria, Shengfeng, HGI, C.GEN | 0 | có hồ sơ hãng nhưng không NCC tổ máy nào ghi trong ô đầu phát |
+Sincro (Soga) là hãng Ý, không phải TQ: ngoài phạm vi (ghi chú: `sogaenergyteam.com` có nhiều PDF công khai, xem 6.4).
+
+### 6.2 Lưu được (tờ hãng loại a, dải 1001+; `maker-datasheets.mjs` → `merge-specs.mjs`)
+| Hãng | Hồ sơ | Nguồn | Tờ | Model phủ |
+|---|---|---|---|---|
+| Kwise | `kwise-generator` | `kwisegenerator.com/wp-content/uploads/2023/05–06/` (PDF chính hãng, link từ trang sản phẩm / Downloads) | 1001–1009 (9) | KAL164, 184, 224, 274, 314, 354, 404, 454; KLH134 (3–10 kW) |
+| Linz | `linz-electric` | `linzelectric.com/uploads/ProdottiArticoli/*.pdf` (nút "download pdf" trên trang model) | 1001–1033 (33) | PRO18S A/B/C, PRO18M D/E, PRO18L F/G, PRO22S A–D, PRO22M E/F/G, PRO28S A–D, PRO28M E/F, PRO28L G, PRO35S B/C/D, PRO35M E/F/G, PRO35L H, PRO40S A/B, PRO40M C/D, PRO40L E (đủ các model NCC đã ghi: PRO18S C/4, PRO18L G/4, PRO22S D/4) |
+| Firstall | `firstall-power` | `firstallpower.com/upload/file/*.pdf` (trang /download/) | 1001–1007 (7) | QYI454 B, C, D, E, F, G, H |
+Kwise: 8 tờ KAL đã có ở 2001+ (đường Tìm NCC); nay lưu lại ở 1001+ bằng đường tờ hãng (cùng URL).
+Bẫy gặp: (1) `specs/linz-electric.json` có bảng n103–105 mà `sources/linz-electric/103–105.md` không có → `merge-specs` chết ENOENT; đã gộp bằng cách tạm đặt `specs/linz-electric.json` chỉ còn n≤102 rồi trả về như cũ (không đổi tệp đó; `cn/linz-electric.json` chỉ THÊM, 0 dòng bị xoá). (2) Tiêu đề `maker-datasheets` của Linz một số tờ là "ALTERNATOR PRO18L G/4" (có chữ ALTERNATOR trước model) — chưa kiểm xem `modelFacts` có gắn được cho model `PRO18L G/4` không; chưa đo bằng `factsFor`.
+
+### 6.3 Hãng KHÔNG có tài liệu công khai tải được (loại bỏ, theo luật 401/403/CAPTCHA)
+- **Nianfeng** (`zgnfmotor.com`, trang chính thức, 200): trang model `products_detail/10.html` liên kết hai PDF "年丰低压画册2024版.pdf", "年丰画册(终稿).pdf" trên `omo-oss-file110.thefastfile.com` → cả hai HTTP **403** (kể cả URL mã hoá %): bỏ. Trang model chỉ ghi dải công suất (vd. meta "NF274L（J&K) 电压: 110V~690V 功率: 230~343.8kVA"). Hồ sơ `nianfeng-fujian` còn `website: null` (nên điền `zgnfmotor.com` — điều phối quyết, tôi không sửa).
+- **Engga**: `en.engga.cn` không có PDF; trang tải `engga.com.cn/sub_page/download.php` (có Catalogue / Technical Parameters) trả **403 WAF** → bỏ.
+- **Faraday**: `faradaygenerator.com` curl 403 (đọc được qua Node); duy nhất một liên kết `…thefastmake.com/viewfilebizce/…/FD5M-4-311-TD-EN_Rev_A.pdf` là trang xem PDF.js không có tham số tệp, không có URL PDF thật → không lưu; không đoán URL. Bảng sản phẩm FD1–FD7 đã có ở trang web (hồ sơ `faraday-wuxi`, 12 nguồn).
+- **Evotec** (`en.evotecpower.com`), **Werna** (`brushlessacgenerator.com`), **C.GEN** (`wkmachine.com`), **Agestar**, **Eastern Lion**, **Nenjo**, **Gloria (sypower.com)**: quét trang hãng + nguồn trong hồ sơ, không thấy PDF.
+- **Keliang** (`motors-world.com/catalogs/generator.pdf`, `generator-set.pdf`): PDF ảnh, `pdftotext` ra 0 dòng → cần OCR (đường 4001+), chưa làm.
+- **Gordon** (`gordon-powers.com/download.html`): tải qua form popup (cần điền form) → bỏ. **Shengfeng** (`sf-motor.com/download(_en).asp`): trang tải không có liên kết tệp.
+- **LongHong, Hengtong, 欣同辰, Kaichen**: chỉ có hồ sơ NCC tổ máy (`longhong-foshan`, `hengtong-jiangsu`, `hechai-changzhou`, `kaichen-jiangsu`), không có hồ sơ hãng đầu phát; tìm "LongHong alternator datasheet" không ra tài liệu hãng. Không tự tạo hồ sơ.
+- **Lanzhou Electric** (`lec.cn`): curl 403 → bỏ. HV Kwise (`High-voltage-generator-technical-data-sheet.pdf`) và 3 tờ DLA164/184/224 (máy phát DC cho trạm viễn thông) không lưu: DLA là DC; tờ HV đặt sai tiêu đề (chữ "compliance to…"), bỏ để khỏi làm bẩn dữ liệu.
+
+### 6.4 Mục (c) (một nguồn internet) và gợi ý còn lại
+- Chưa có mục (c) đủ điều kiện (cần URL + câu trích nguyên văn + giá trị). Ứng viên khi cần: CCCME `pre.cccme.org.cn/products/detail-8301418.aspx` (Nianfeng "NF274 series power 110kva-300kva brushless alternator"), `fdkenergy.com/yc-series-yuchai/` (NFS274-K 275 kVA standby): chưa đọc đủ trang để trích nguyên văn.
+- Sincro (Soga, Ý): `sogaenergyteam.com/wp-content/uploads/2026/01/INDUSTRIAL-RANGE-SINCRO.pdf`, `…/2017/12/CSA-UL-INDUSTRIAL-RANGE-SINCRO.pdf`, `…/2024/01/CHP-COMPLETE-PROGRAMME-SINCRO_2024.pdf` v.v. (công khai, 200). Ngoài phạm vi "hãng TQ"; điều phối quyết có lưu cho `sincro-soga` không.
+- Linz còn ~100 model khác (alumen, compatto, e1c / e1s / e1x13 4 cực và 2 cực) có PDF; chưa lưu vì NCC không ghi.
+- Chưa làm: C.GEN (không có NCC ghi), HGI (chỉ có bản archive.org 2017), Keliang (cần OCR).
