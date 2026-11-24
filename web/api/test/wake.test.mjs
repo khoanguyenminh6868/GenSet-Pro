@@ -269,4 +269,6 @@ test("nhịp tim trả schedule.last = mốc Sync theo lịch gần nhất (sync
   const r = await poll({ kind: "all" });
   assert.equal(r.yieldTo, "sandbox");
   assert.deepEqual(r.schedule, { last: "2026-11-17 10:10" });
+  db.put("synclog", "current", { slot: "2026-11-17 14:10", doneAt: ago(1), ok: false, summary: "Sync lỗi: x" });
+  assert.equal((await poll({ kind: "all" })).schedule, undefined, "Sync lỗi không tính là xong mốc");
 });

@@ -65,11 +65,12 @@ export default async function handler(req, res) {
       const on = sandboxOn();
       // schedule.last: the last scheduled Sync of any machine (synclog/current.slot, "yyyy-MM-dd HH:mm" in Vietnam time), so a
       // machine that comes back on does not run that slot again (GenBid-Bot.ps1; Khoa 2026-11-18: the sandbox Syncs on schedule too).
+      // A failed Sync (ok: false) does not count: another machine may still run that slot (Khoa 2026-11-24).
       const [marks, settings, sbx, synclog] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && on ? botDoc("sandbox") : null, beat ? botDoc("current", "synclog") : null]);
       const pending = hasPending(marks);
       // apiOthers: what the other machines spent on the shared API key (Windows PCs, sandbox), for the bot's budget.
       const apiOthers = beat ? await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", pending) : null;
-      const extra = { ...(settings !== undefined ? { settings } : {}), ...(apiOthers ? { apiOthers } : {}), ...(synclog?.slot ? { schedule: { last: String(synclog.slot) } } : {}) };
+      const extra = { ...(settings !== undefined ? { settings } : {}), ...(apiOthers ? { apiOthers } : {}), ...(synclog?.slot && synclog.ok !== false ? { schedule: { last: String(synclog.slot) } } : {}) };
       // Each heartbeat of the sandbox bot decides whether the sandbox stops (idle, or a PC is back) or gets more time.
       if (beat && sandbox && on) await background(sandboxTick(req.query.running === "1", pending));
       if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...extra });
