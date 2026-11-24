@@ -30,8 +30,21 @@ Tờ ghi "HCI 534C/544C - Winding 311" (cũng có "1 Bearing | 2 Bearing"); khô
 
 ### Đuôi "S" và tên thiếu tiền tố — theo lệnh Khoa không gộp (HCI544FS, HCI444FS / ES, UCI274ES, "224D" ↔ "UCI224D"): vẫn không có bằng chứng riêng.
 
-## Số liệu trước / sau
-Chưa đo (chưa viết code). Số trước: 243 model Stamford thiếu tờ, 91 có ≥ 2 NCC (PR #1128).
+## Bước 2–3 (làm 24/11/2026, theo chỉ dẫn điều phối: gộp tường minh bốn cặp S4L1D)
+Mã: `SAME_SHEET` + `ratingsFor` trong `suppliers/config-bot.mjs` (bảng tên tương đương C4↔C41, D4↔D41, E4↔E41, F4↔F41, hai chiều, chú thích nêu n1016 / 1017 / 1019 / 1059 và hai cách hãng ghi). Không đổi tên hiển thị, không sửa `cn/*.json`. Test mới trong `suppliers/ratings.test.mjs`: bốn cặp nhận tờ; S4L1D-G4 / G41, S7L1D-F41, S1L2-Y1, HCI544FS, "224D" KHÔNG gộp. Bẫy ghi ở `suppliers/CLAUDE.md` (kể cả: "chữ số cuối = số ổ đỡ" không có bằng chứng hãng). PR nháp: xem dưới.
+
+Đo `CAT.build` (3.024 model đầu phát, 326 Stamford; script `ratingsFor` cũ ↔ mới, MỌI model):
+- Stamford thiếu tờ (không `ratingRows`, không `attrKeys`, không `makerSup`): 243 → 239; có ≥ 2 NCC: 91 → 87.
+- Model đổi trạng thái: ĐÚNG 4, không model nào khác (hãng khác: 0 đổi).
+  | Model | NCC | trước | sau |
+  |---|---|---|---|
+  | S4L1D-D4 | 5 | 0 dòng định mức, 0 thuộc tính | 64 dòng, 4 thuộc tính (tờ D41) |
+  | S4L1D-F4 | 4 | 0 / 0 | 64 dòng, 4 thuộc tính (tờ F41) |
+  | S4L1D-E4 | 3 | 0 / 0 | 32 dòng, 4 thuộc tính (tờ E41) |
+  | S4L1D-C4 | 3 | 0 / 0 | 32 dòng, 6 thuộc tính (tờ C41) |
+- Chiều ngược (C41 / D41 / E41 / F41 nhận tờ gắn khoá …4): không đổi vì danh mục không có tờ khoá …4 (mọi tờ hãng lưu tên …41); chiều ngược có trong test.
+- Fixture `regress-config`: không đổi (test đạt, không cần cập nhật). Test `ratings`, `dau-phat-hang`, `dau-phat-hang-d`, `regress-config` 41/41 đạt. `web/catalog.js` không sửa.
+- Còn thiếu tờ: 239 model (87 có ≥ 2 NCC), các họ không có bằng chứng giữ nguyên.
 
 ## Việc chưa làm / quyết định cần Khoa
 1. Khoa quyết: bằng chứng S4L1D (tờ hãng tự ghi "D4" ở URL và "D41" ở tiêu đề) có đủ để gộp 4 cặp C/D/E/F không? Nếu CÓ: làm Bước 2–3 (luật tường minh trong `suppliers/config-bot.mjs` `keysOfModel` / `ratingsFor`, hoặc `CAT.keyOf` — cần xem lại chỗ nào quyết "thiếu tờ" trong `thieu-to.mjs` của điều phối, vì danh mục đo bằng `r.ratingRows`, `attrKeys`, `makerSup`); thêm tờ bằng chứng nếu cần; test (có ca KHÔNG gộp: "S4L1D-G41", đuôi S, "224D"); đo `CAT.build` MỌI model đổi trạng thái; ghi bẫy vào `suppliers/CLAUDE.md`.
