@@ -453,7 +453,7 @@
     const ctx = title + " " + hs.flat().filter((x) => !PW_NOT.test(x)).join(" ");
     // One reading: the titles PT of line h laid from cell p0, with the sub-titles sub (none: []); two = a title naming both
     // units spans two cells of bare figures. Null when the titles do not fit the row or contradict its figures.
-    const read = (PT, p0, wider, sub, two, lone) => {
+    const read = (PT, p0, wider, sub, two, lone, aligned = false, nextT = "") => {
       const run = PT.length;
       // Cells per title: as many sub-titles as stay different from one another ("KW | KVA", "Rated | Standby"), one when
       // there is a sub-title per title ("(kW) | (kW)": units, not columns) or none.
@@ -463,7 +463,11 @@
         while ((k + 1) * run <= sub.length && new Set(sub.slice(0, k + 1).map(sig)).size === k + 1) k++;
         if (new Set(sub.slice(0, k).map(sig)).size !== k) k = 1;
       }
-      const perTitle = k === 1 && sub.length === run;
+      // One sub-title per title also when the line of sub-titles goes on past the outputs ("(KW) | (KVA) | (KW) | (KVA) | (KW)"
+      // under "PRIME POWER | PRIME POWER | STANDBY POWER | STANDBY POWER | ENGINE MODEL | ENGINE", mamo-power: the fifth is the
+      // engine's kW), but only when the title line is laid cell for cell over the row (`aligned`: as many cells, the titles from
+      // the row's first cell), so that each title is one cell and the sub-titles stand in the titles' order (buoc-3-r3).
+      const perTitle = k === 1 && (sub.length === run || (aligned && sub.length > run));
       // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
       if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
       const got = {}, clash = new Set(), bare = new Set(), at = {}, inh = new Set(), subU = new Set();
@@ -535,6 +539,13 @@
         }
       }
       if (!any || same || (two && !twoUsed)) return null;
+      // The title right after the outputs is the engine's, yet the cell it falls on is a figure and the engine stands further on
+      // ("Standby power | Prime power | Engine Model" over "Container type | kVA | kW" over "KDGC660S | 800 | 660 | 725 | 580 |
+      // 4006-23TAG2A", camda-generator n155: two sub-titles for four figures, so "Standby" took 800 kVA and "Prime" 660 kW, which
+      // is the standby kW): the titles account for only part of the outputs and do not fit this row (buoc-3-r3). Only a reading
+      // that gave each title one sub-title (`perTitle`): a title naming both units over two cells ("Gensets power(KW/KVA)" over
+      // "16 | 20 | 14.9 | 19", weiman n107) is another layout, left as it was.
+      if (perTitle && nextT && engTitle(nextT) && ei > pos && FIG_CELL.test(flat(cells[pos]))) return null;
       for (const r of clash) delete got[r];
       // A unit-only title that took the rating of the title before it ("Prime Power (kW) | Standby (kW) | kVA" over "20 | 22 |
       // 25", jinjia-power: the 25 kVA is the prime 20 kW at 0.8, not the standby 22 kW) and makes with that rating's other
@@ -618,7 +629,7 @@
         if (wide.length > run) tries.push([wide, u.slice(tp, tp + wide.length)]);
       }
       for (const [titles, sub] of tries) for (const two of [false, true]) {
-        const r = read(titles, p0, wider - (titles.length - run), sub, two, tries.length === 1);
+        const r = read(titles, p0, wider - (titles.length - run), sub, two, tries.length === 1, h.length === cells.length && p0 === tp, h[tp + titles.length] || "");
         if (r && r.veto) { veto = true; continue; }
         // The cells this line's titles account for: its outputs and, on a line that goes on, the titles after them.
         if (r && (!best || r.n > best.n)) best = { ...r, start: p0, end: subline ? r.end : Math.max(r.end, p0 + h.length - tp) };
@@ -1487,9 +1498,16 @@
       const ti = (s.specTables || []).findIndex((t) => +t.n === x.n);
       note(ti >= 0 ? s.specTables[ti] : { n: x.n, title: "" }, ti >= 0 ? ti : null, null, "bảng đầu phát / động cơ rời trong danh sách đổi tiêu đề: không đọc", ti >= 0 ? (s.specTables[ti].header || [])[0] : "không còn bảng nào của nguồn này");
     }
+    // A HEADER_LINES entry whose table is not on the page any more (re-crawled, header or first row changed): nothing added, said so.
+    for (const x of HEADER_LINES) if (x.supplierId === s.id && !(s.specTables || []).some((t) => headerLinesOf(s, t) === x)) {
+      const ti = (s.specTables || []).findIndex((t) => +t.n === x.n);
+      note(ti >= 0 ? s.specTables[ti] : { n: x.n, title: "" }, ti >= 0 ? ti : null, null, "dòng tiêu đề bổ sung: bảng đổi tiêu đề / dòng đầu, không áp", `${x.header} / ${x.first}`);
+    }
     (s.specTables || []).forEach((t0, ti) => {
       const url = ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "";
-      const t = tidyTable(t0, (reason, detail) => note(t0, ti, null, reason, detail), url);
+      // Header lines the crawl lost (HEADER_LINES, buoc-3-r3): put back in front of the saved ones, for the reading only.
+      const hl = headerLinesOf(s, t0);
+      const t = tidyTable(hl ? { ...t0, header: [...hl.add, ...(t0.header || [])] } : t0, (reason, detail) => note(t0, ti, null, reason, detail), url);
       const headerText = (t.header || []).join(" ");
       const title = String(t.title || "");
       const titleHead = title.split(/\s[|–-]\s|\|/)[0];
@@ -1743,13 +1761,32 @@
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
         const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (bareEng) { ai = ei; ei = bareEng.engCell; }
+        // A table whose header lines were put back (HEADER_LINES): the engine and the alternator are the cells its entry names
+        // (under "Engine Model" / "Alternator Model" of the source), and only when the cell is a code: a typo'd output cell
+        // ("| KDGC220SL | 275 | 220SL | 250 |", camda n137) is never taken as the engine.
+        if (hl) {
+          const at = (i) => (i != null && isCode(cells[i] || "") ? i : -1), e = at(hl.engine), a = at(hl.alt);
+          if (ei !== e || ai !== a) note(t, ti, ri, "mã ở cột khác cột tiêu đề (bảng có dòng tiêu đề bổ sung): chỉ đọc ô của tiêu đề", line);
+          ei = e; ai = a;
+        }
         // Twin cells: only the engine's is read; with the engine not on a twin cell the row stays unread as before (which code is which is not known).
         const twinEng = twin.find((x) => x.i === ei);
         if (twin.length && !twinEng) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         for (const x of twin) if (x.i === ai) { note(t, ti, ri, "đầu phát ghép đôi, không dựng bản ghi", x.text); ai = -1; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
-        const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
+        // A table whose header lines were put back (HEADER_LINES) is read by its titles only: when they do not fit a row, its
+        // figures are not paired by their ratio and size either (that would name prime / standby against the titles: mamo
+        // "TF33 | 30 | 37.5 | 26 | 33" under PRIME | PRIME | STANDBY | STANDBY).
+        if (hl && !engineTable && !titled) note(t, ti, ri, "công suất không khớp tiêu đề (bảng có dòng tiêu đề bổ sung): không đọc", line);
+        let power = engineTable ? null : titled ? titled.power : hl ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
+        // ... and a rating whose kW and kVA make no genset (fitPair: power factor 0.75–0.86, or 1) is left out, as gensetsOf does
+        // (mamo "TF41 | 36 | 38 | 40 | 41": 0.95 and 0.98, figures typed wrong).
+        if (hl && power) {
+          const bad = Object.entries(power).filter(([, p]) => p && p.kVA && p.kW && !fitPair(p.kVA, p.kW));
+          for (const [rt, p] of bad) note(t, ti, ri, "kW / kVA của một mức không khớp một tổ máy: để trống mức", `${rt} ${p.kW} kW / ${p.kVA} kVA`);
+          if (bad.length) { power = Object.fromEntries(Object.entries(power).filter(([rt]) => !bad.some(([b]) => b === rt))); if (!Object.keys(power).length) power = null; }
+        }
         const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power, note: (reason, detail) => note(t, ti, ri, reason, detail) }), power, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)) };
         // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
         const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
@@ -1806,7 +1843,41 @@
       header: "| 品 牌 Br and | 发 动 机 型 号 En g ine Ty pe | 功 率 (主用) Power (KW) | 功率 (备用) Po wer (KW) | 缸 数 No Of Cylin ders | 缸径 *行程 Bore /Strokse (MM) | 排 气 量 Exha ust Csp acity (L) | 压 缩 比 Com pression Ratio | 机 油 容 量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G / KW.H) | 燃油消耗率 Fuel Con sum ptio (L/H) | 调 速方式 Type Of Gov ernor | 冷却液容量 Liquid coo lind ca paci ty | 排放等级 Emiss ion l eveis",
       cells: 13, brand: /康明斯|cummins/i, model: 0,
       specs: [["engPower", 1, "功率(主用) Power (KW)"], ["engPower", 2, "功率(备用) Power (KW)"], ["cyl", 3, "缸数 No Of Cylinders"], ["bore", 4, "缸径*行程 Bore/Stroke (MM)"], ["disp", 5, "排气量 Exhaust Capacity (L)"], ["compr", 6, "压缩比 Compression Ratio"]] },
+    // Baudouin's "Data Centre Power" tables (buoc-3-r3): the engine model only. DCP is neither prime nor standby, so the kWm,
+    // kWe and kVA under it are not read; the speed of the 60 Hz tables has no unit line (its "Speed" title lies one cell off).
+    { supplierId: "baudouin", n: [116, 118, 120, 121, 122, 123, 124], khoa: "điều phối 24/11/2026 (bước 3, họ R3)",
+      header: "| DCP | Data Centre Engine Power | Data Centre Genset Power", cells: 6, brand: /^$/, model: 0, specs: [] },
   ];
+  // Header lines the crawl lost (buoc-3-r3, điều phối 24/11/2026: bước 3 họ R3). On these pages a header cell runs over two
+  // lines ("Dimension\nL×W×H（mm)", "Fuel consumption\ng.h") and tablesOf kept only the last header line ("| Open Type | kVA |
+  // kW | kVA | kW", "| (KW) | (KVA) | …"): the titles that say which figures are standby / prime and which cell is the engine
+  // were gone, and the rows gave nothing. The table itself cannot tell them (a general rule would have to guess the rating
+  // and the engine column), so this is an explicit list, NOT a rule: supplier + n + the saved FIRST header line + the first
+  // cell of the first row, all word for word (two tables of one page share a header; a re-crawl that changes either lapses
+  // the entry, noted). `add`: the lost lines, copied from suppliers/sources/<id>/<n>.md word for word, a cell's line
+  // break written as one space; only the lines just above the saved header (test buoc-3-r3 checks each against the source).
+  // They are put in front of the saved header for the reading (tidyTable, titledPowers, walkedSpecs); s.specTables is not
+  // changed. A line of the source that is one stray cell ("| RATED POWER" under mamo's "ENGINE", hosem's "| /voltage") is not
+  // added. `engine` / `alt`: the cell under the source's "Engine Model" / "Alternator Model" title (cellsOf of the row); only
+  // that cell is read as the part, and only when it is a code. The outputs of such a table are read by its titles only.
+  const HEADER_LINES = [
+    ...[["KDGC22S", "50Hz 3 phases+4 wires, 400/230V, pf 0.8."], ["KDGC27S1", "60Hz 3 phases+4 wires, 220/127V, pf 0.8."]].map(([first, hz]) => ({
+      supplierId: "camda-generator", n: 137, header: "| Open Type | kVA | kW | kVA | kW", first, engine: 5, alt: 6,
+      add: [`| Camda diesel generator sets powered by Cummins, open type. ${hz}`, "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm) | Weight (kg)"] })),
+    { supplierId: "camda-generator", n: 158, header: "| Open Type | kVA | kW | kVA | kW", first: "KDGP8S", engine: 5,
+      add: ["| Camda Diesel Generator Set s powered by Perkins, open type. 50Hz 3 phases+4 wires, 400/230V, pf 0.8.", "| Genset Model | Standby power | Prime power | Engine Model | Dimension L×W×H（mm) | Weight (kg)"] },
+    { supplierId: "camda-generator", n: 158, header: "| Open Type | kVA | kW | kVA | kW", first: "KDGP10S1", engine: 5,
+      add: ["| Camda diesel generator sets powered by Perkins, open type. 60Hz 3 phases+4 wires, 220/127V, pf 0.8.", "| 60Hz 3Ph 480V Pf0.8", "| Genset Model | Standby power | Prime power | Engine Model | Dimension L×W×H（mm) | Weight (kg)"] },
+    ...[[103, "TF17"], [103, "TF21"]].map(([n, first]) => ({ supplierId: "mamo-power", n, header: "| (KW) | (KVA) | (KW) | (KVA) | (KW)", first, engine: 5,
+      add: ["| GENSET MODEL | PRIME POWER | PRIME POWER | STANDBY POWER | STANDBY POWER | ENGINE MODEL | ENGINE | OPEN | SOUNDPROOF | TRAILER"] })),
+    { supplierId: "mamo-power", n: 109, header: "| (KW) | (KVA) | (KW) | (KVA) | (KW)", first: "TB550", engine: 5,
+      add: ["| GENSET MODEL | PRIME POWER | PRIME POWER | STANDBY POWER | STANDBY POWER | ENGINE MODEL | Engine | OPEN | SOUNDPROOF"] },
+    { supplierId: "jet-power", n: 111, header: "| KVA | KW | KVA | KW | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg", first: "K-7D5", engine: 5, alt: 12,
+      add: ["| Model | 400V / 50Hz / 1500RPM | KUBOTA Diesel Engine | Alternator | Open type | Silent type", "| Standby output | Prime Output | Model | Emission level | Fuel consumption g.h | No. of Cylinder | Governor | Displacement | Bore×Stroke | Brushless type | Packing (mm) | Weight | Packing (mm) | Weight"] },
+    { supplierId: "hosem-power", n: 106, header: "| KW | KVA | Hz/ V | KW/RPM | LXWXH(mm) | (Kgs)", first: "A-WC16M", engine: 4,
+      add: ["| Model | Rated power | Frenquency | Engine model | Power/Speed"] },
+  ];
+  const headerLinesOf = (s, t) => HEADER_LINES.find((x) => x.supplierId === s.id && x.n === +t.n && String(t.header?.[0] ?? "").trim() === x.header && (cellsOf(t.rows?.[0] || "")[0] || "") === x.first) || null;
   // Loose alternator and engine tables (bang-roi-29, chủ dự án 21/11/2026: "đọc cả 29 thành bản ghi đầu phát / động cơ"):
   // an alternator maker's range table, or an engine table, on a page of its own (dau-vao-bang-roi/29-bang.md, lớp A / E).
   // An explicit list checked by hand row by row, NOT a rule: supplier + n + the FIRST header line word for word (a re-crawl
@@ -4103,7 +4174,7 @@
 
   // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
   const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
-  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
