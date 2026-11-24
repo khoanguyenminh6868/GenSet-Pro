@@ -1610,6 +1610,12 @@
         // power (the row's kVA / kW is the SET's: matched against one engine it would call TAD1355GE a 900 kVA engine), and no engine-scope
         // figure (the table does not say whether a displacement / cylinder count / engine rating on the row is one engine's or the
         // set's). A twin cell that is not the engine's (the alternator "2*S4L1D-F41") gives no record.
+        // A power cell written "388VA" (yanan-power n101 / n107 "| YN388C | 388VA | 310kW | 350kVA | 280kW | QSNT-G2", catalog-doc-4): the "k" of
+        // kVA is missing (the page writes "388kVA" in the sibling rows of the same genset). Read as kVA only when a kW cell of the SAME row
+        // is 0.8 x the figure (310 / 388 = 0.80; 286 / 358; 330 / 413): otherwise it stays as written. Without this "388VA" was taken as the
+        // engine model (letters + digits) and the real engine code of the row, QSNT-G2, was never read.
+        const kwOfRow = cells.map((c) => c.match(/^(\d+(?:\.\d+)?)\s*kW$/i)).filter(Boolean).map((m) => +m[1]);
+        cells.forEach((c, i) => { const m = c.match(/^(\d+(?:\.\d+)?)\s*VA$/i); if (m && kwOfRow.some((k) => Math.abs(k / +m[1] - 0.8) <= 0.01)) cells[i] = `${m[1]}kVA`; });
         const twin = [], twinCell = (c) => { const m = c.match(/^([2-4])\s*[x×*]\s*(\S.*)$/i); return m && [m[2], m[2].replace(/\s+/g, ""), m[2].split(/\s+/)[0]].some(isCode) ? m : null; };
         const twinRow = cells.some((c) => twinCell(c));
         if (twinRow && TWIN_ENGINE_SUPPLIERS.includes(s.id)) cells.forEach((c, i) => { const m = twinCell(c); if (m) { twin.push({ i, units: +m[1], text: c }); cells[i] = m[2]; } });
