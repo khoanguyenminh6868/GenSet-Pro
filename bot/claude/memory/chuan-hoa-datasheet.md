@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T00:09:45.430Z
+  modified: 2026-11-24T02:17:17.042Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -29,6 +29,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - KẾT QUẢ + Khoa CHỐT 24/11/2026 ("nhóm Stamford đuôi 1 / 41 không có bằng chứng thì giữ luật"): giả thuyết "chữ số cuối = số ổ đỡ" KHÔNG có bằng chứng hãng → S5 / S6 / S7, S0 / S1, UC / UCD, HC, S4L1D-G KHÔNG gộp, để nguyên là thiếu tờ; đừng đề xuất gộp theo suy luận nữa. Chỉ gộp tường minh 4 cặp S4L1D C4 / D4 / E4 / F4 ↔ …41 (hãng gọi cùng một tờ bằng hai tên: URL "D4", tiêu đề "D41"; em quyết, đã báo Khoa). Báo cáo `nghiem-thu\stamford-ten-lech.md`. Marathon MX- / MP- (28 model) không có trong tài liệu hãng (tên nội bộ nhà máy TQ) → không có tờ.
 - Khoa 24/11/2026: trần 700 → điều phối chọn phương án A (giữ đủ trong `specTables`, kể cả SICES gấp 7,4 lần, +1,70 MB) theo câu "bỏ cho toàn bộ"; đã báo Khoa, Khoa chưa phản đối. #1131 (bỏ trần 250 / 60 trong code) đã merge; sinh lại dữ liệu = PR 2.
 - Khoa 24/11/2026 nhắc: phiên điều phối quá 30 % context mà không tự lưu + compact. Luật ở [[orchestrator-delegate-by-model]]: xong một task mà quá 30 % thì ghi sổ + bộ nhớ rồi NHỜ KHOA gõ /compact (phiên không tự compact được). Em đã ghi nhưng quên nhờ; từ nay cuối mỗi task phải nói rõ câu nhờ đó.
+- Bước 2 đã merge (#1147, `suppliers/spec-standard.mjs`, collection `specstd`, workflow chỉ `--dry`). Khoa 24/11/2026 (nguyên văn "làm HGM9510 trước xong rồi làm cả 3 như đề xuất") chốt ba điểm: (1) bản chuẩn đăng vào BẢNG RIÊNG `spec_std` của Supabase, không realtime, không trigger nhật ký (không ghi vào `docs`); bước 5 đọc qua API riêng; (2) động cơ nguồn ghi HP thì CHỈ giữ số nguồn ghi (`power_hp`), không thêm kWm quy đổi; (3) soát 275 số dưới nhãn "kW/Hp" (ettes-power…) trước khi web đọc bản chuẩn. #1148 đã bỏ trần 700 và sinh lại dữ liệu (+31.991 dòng).
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
