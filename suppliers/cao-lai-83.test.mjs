@@ -1,4 +1,4 @@
-// Cào lại 5 trang có ô bị cắt xuống dòng (24/11/2026): jet-power n129, sanq-power n102 / n107 / n123, camda-generator n155.
+// Cào lại 11 trang (5 đợt đầu, 6 đợt sau: camda n138 / n139, mecca n144 / n159, sanq n103 / n108) có ô bị cắt xuống dòng (24/11/2026): jet-power n129, sanq-power n102 / n107 / n123, camda-generator n155.
 // Các tệp nguồn lưu ngày 28/10/2026, trước khi #123 (29/10) cho htmlToText giữ một ô trên một dòng; bảng và hồ sơ dựng từ
 // tệp cũ mất 56 dòng máy (và cắt tiêu đề cột). Test này giữ cho: (1) không còn mảnh ô giữa hai dòng bảng ở 5 trang,
 // (2) mọi dòng bảng của specs/ nằm đúng trong tệp nguồn, (3) cn/ khớp merge-specs, (4) các dòng từng bị cắt có mặt.
@@ -11,10 +11,13 @@ import { tablesOf } from "./crawl-specs.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const read = (...p) => fs.readFileSync(path.join(ROOT, ...p), "utf8");
-const PAGES = [["jet-power", 129], ["sanq-power", 102], ["sanq-power", 107], ["sanq-power", 123], ["camda-generator", 155]];
+const PAGES = [["jet-power", 129], ["sanq-power", 102], ["sanq-power", 107], ["sanq-power", 123], ["camda-generator", 155],
+  ["camda-generator", 138], ["camda-generator", 139], ["mecca-power", 144], ["mecca-power", 159], ["sanq-power", 103], ["sanq-power", 108]];
+// mecca-power: cn/ bỏ bảng trùng nguyên dòng với bảng khác (merge-specs), nên chỉ so specs/.
+const CN_SAME = (id) => id !== "mecca-power";
 const body = (id, n) => read("sources", id, `${n}.md`).split("\n").slice(3).join("\n");
 
-test("5 trang: không còn mảnh ô nằm giữa hai dòng bảng", () => {
+test("11 trang: không còn mảnh ô nằm giữa hai dòng bảng", () => {
   for (const [id, n] of PAGES) {
     const L = body(id, n).split("\n");
     for (let i = 1; i < L.length - 1; i++) {
@@ -24,13 +27,13 @@ test("5 trang: không còn mảnh ô nằm giữa hai dòng bảng", () => {
   }
 });
 
-test("5 trang: bảng trong specs/ và cn/ đúng bằng tablesOf của tệp nguồn", () => {
+test("11 trang: bảng trong specs/ và cn/ đúng bằng tablesOf của tệp nguồn", () => {
   for (const [id, n] of PAGES) {
     const want = tablesOf(body(id, n)).flatMap((t) => [...t.header, ...t.rows]);
     const spec = JSON.parse(read("specs", `${id}.json`)).filter((t) => t.n === n).flatMap((t) => [...t.header, ...t.rows]);
     const cn = (JSON.parse(read("cn", `${id}.json`)).specTables || []).filter((t) => t.n === n).flatMap((t) => [...t.header, ...t.rows]);
     assert.deepEqual(spec, want, `${id} n${n}: specs/`);
-    assert.deepEqual(cn, want, `${id} n${n}: cn/`);
+    if (CN_SAME(id)) assert.deepEqual(cn, want, `${id} n${n}: cn/`);
   }
 });
 

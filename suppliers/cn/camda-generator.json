@@ -477,9 +477,10 @@
     {
       "n": 138,
       "url": "https://www.camda-generator.com/product/cummins-powered-silent-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| Genset Model | Standby power | Prime Power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
         "| Silent Canopy | kVA | kW | kVA | kW"
       ],
       "file": "sources/camda-generator/138.md"
@@ -487,9 +488,10 @@
     {
       "n": 139,
       "url": "https://www.camda-generator.com/product/cummins-powered-container-diesel-generator.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
         "| Container type | kVA | kW | kVA | kW"
       ],
       "file": "sources/camda-generator/139.md"
@@ -1249,6 +1251,7 @@
       "n": 138,
       "title": "Cummins Powered Silent Diesel Generator for Commercial and Industrial Applications - Camda New Energy Equipment Co., Ltd",
       "header": [
+        "| Genset Model | Standby power | Prime Power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
         "| Silent Canopy | kVA | kW | kVA | kW"
       ],
       "rows": [
@@ -1301,6 +1304,8 @@
       "n": 138,
       "title": "Cummins Powered Silent Diesel Generator for Commercial and Industrial Applications - Camda New Energy Equipment Co., Ltd",
       "header": [
+        "| | Camda diesel generator sets powered by Cummins, silent type. 60Hz 3 phases+4 wires, 220/127V, pf 0.8.",
+        "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm) | Weight (kg)",
         "| Silent Canopy | kVA | kW | kVA | kW"
       ],
       "rows": [
@@ -1335,6 +1340,7 @@
       "n": 139,
       "title": "Cummins Powered Container Diesel Generator with High Efficiency Performance - Camda New Energy Equipment Co., Ltd",
       "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
         "| Container type | kVA | kW | kVA | kW"
       ],
       "rows": [
@@ -1354,6 +1360,7 @@
       "n": 139,
       "title": "Cummins Powered Container Diesel Generator with High Efficiency Performance - Camda New Energy Equipment Co., Ltd",
       "header": [
+        "| Genset Model | Standby power | Prime power | Engine Model | Alternator Model | Dimension L×W×H（mm)",
         "| Container type | kVA | kW | kVA | kW",
         "| 60Hz 3 phases+4 wires, 220/127V, pf 0.8."
       ],
