@@ -98,15 +98,16 @@ export function useNormCtx(u, rowsMap = NORM_ROWS.map) {
   return { title: u?.title || "", header: u?.header || u?.lines?.header || [], rows: rowsMap.get(`${u?.supplierId}|${u?.table}`) || u?.lines?.rows || (u?.line ? [u.line] : []) };
 }
 // What makes a normalized figure not comparable, whatever the HSMT asks; and per key, the condition the HSMT's limit is at.
-const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value"]);
+// "confirm": catalog.js `unsurespec` (gia-tri-sai, Khoa 24/11/2026: googol weight not said to be the engine's or the set's).
+const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value", "confirm"]);
 // dims / weight: open or canopied counts only when the HSMT asks one build (want.enclosure, normFig; Khoa 14/11/2026: "so").
 const NORM_NEED = { fuel: ["load"], fuel75: ["load"], fuel50: ["load"], noise: ["distance"], bore: ["bore", "stroke"] };
-const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
+const NORM_VI = { confirm: "cần xác nhận (nguồn không nói là của động cơ hay tổ máy)", unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
   load: "không ghi mức tải", distance: "không ghi khoảng cách đo", enclosure: "không ghi máy trần hay có vỏ", stroke: "không ghi hành trình", bore: "không ghi đường kính" };
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
 // want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
 export function normFig(s, ctx, want = {}) {
-  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}), ...(s.unconfirmed ? { unconfirmed: s.unconfirmed } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
   // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
   const at100 = want.load === 100 && r.cond?.load == null;
@@ -202,15 +203,60 @@ export const roundCompat = (x, y) => {
 };
 // majorityOf trên nhóm giá trị tương thích làm tròn (bắc cầu; đại diện: số nhỏ nhất của nhóm); trả thêm `group` = mọi số của
 // nhóm thắng, `raw` = số người bỏ phiếu (sau gộp NCC) cho từng số của nhóm.
-export function majorityRound(figs) {
-  const vals = [...new Set(figs.map(([, x]) => x).filter((x) => typeof x === "number" && Number.isFinite(x)))].sort((a, b) => a - b);
+// Nhóm tương thích làm tròn của các số (bắc cầu): → { vals (tăng dần), find (đại diện = số nhỏ nhất của nhóm) }.
+function roundGroups(xs) {
+  const vals = [...new Set(xs.filter((x) => typeof x === "number" && Number.isFinite(x)))].sort((a, b) => a - b);
   const root = new Map(vals.map((v) => [v, v])), find = (v) => (root.get(v) === v ? v : find(root.get(v)));
   for (let i = 0; i < vals.length; i++) for (let j = i + 1; j < vals.length; j++) if (roundCompat(vals[i], vals[j])) { const a = find(vals[i]), b = find(vals[j]); if (a !== b) root.set(Math.max(a, b), Math.min(a, b)); }
+  return { vals, root, find };
+}
+export function majorityRound(figs) {
+  const { vals, root, find } = roundGroups(figs.map(([, x]) => x));
   const mj = majorityOf(figs.map(([s, x]) => [s, typeof x === "number" && root.has(x) ? find(x) : x]));
   if (!mj) return null;
   const group = vals.filter((v) => find(v) === mj.win), raw = {};
   for (const v of group) raw[v] = new Set(figs.filter(([, x]) => x === v).map(([s]) => s)).size;
   return { ...mj, group, raw };
+}
+// Luật hình học trong lá phiếu số đông (Khoa 24/11/2026, thay cho danh sách ngoại lệ 198 ca `hinh-hoc` của
+// spec-value-check): một dòng nguồn mà xi lanh × π/4 × bore² × hành trình lệch dung tích của CHÍNH dòng > 5 % (SN.selfCheck,
+// cùng hàm của quality.mjs và luật hinh-hoc; `useGeo` là MỘT nơi gọi cho config-bot và spec-value-check) không biết ô nào sai,
+// nên khi các nguồn của động cơ ghi số KHÁC nhau, mọi số của dòng đó rời lá phiếu số xi lanh / dung tích, miễn là còn ít
+// nhất một dòng tự khớp có số của khoá đó trong lá phiếu. Không còn dòng tự khớp: như cũ (không suy ra, không tính số thay).
+// Dòng thiếu một trong bốn số (selfCheck null) bỏ phiếu như cũ. Số từ tờ hãng không thuộc dòng nào: như cũ.
+// `GENBID_GEO_VOTE=0` tắt (chỉ để đo).
+export const useGeo = (u, rowsMap = NORM_ROWS.map) => SN.selfCheck(SN.normalizeRecord(u, rowsMap.get(`${u?.supplierId}|${u?.table}`)));
+export const geoVoteOn = () => String(process.env.GENBID_GEO_VOTE ?? "1").trim() !== "0";
+// Các dòng `uses` của một động cơ, chia theo selfCheck. `of(f, own)`: "bad" / "good" / null = dòng của số f (own = dòng khi
+// f là spec của chính dòng đó, không phải fact). Fact gắn dòng qua NCC + n + chữ dòng (modelFacts: `line` = dòng bảng, hoặc
+// dòng nhãn của bảng nhãn); khớp cả dòng tốt lẫn dòng xấu thì không tính là xấu.
+export function geoRows(uses, rowsMap) {
+  const geo = new Map();
+  for (const u of uses || []) { const c = useGeo(u, rowsMap); if (c) geo.set(u, c.bad ? "bad" : "good"); }
+  const has = (u, f) => f.supplierId === u.supplierId && f.n === u.n && (u.line ? f.line === u.line : [...(u.lines?.header || []), ...(u.lines?.rows || [])].includes(f.line));
+  const of = (f, own) => {
+    if (own) return geo.get(own) ?? null;
+    let bad = false;
+    for (const [u, g] of geo) if (has(u, f)) { if (g === "good") return "good"; bad = true; }
+    return bad ? "bad" : null;
+  };
+  return { of, bad: [...geo.values()].filter((g) => g === "bad").length, good: [...geo.values()].filter((g) => g === "good").length };
+}
+// `all`: [fact, số | BLOCK | null] của một khoá (cyl / disp). Khi các số mâu thuẫn (xi lanh: hai số khác nhau; dung tích: hai
+// nhóm không tương thích làm tròn) và có số của dòng tốt: bỏ số (kể cả BLOCK) của dòng xấu mà không dòng tốt nào ghi cùng số.
+// `ownOf(f)` → dòng nếu f là spec của chính dòng.
+export function geoKeep(all, key, geo, ownOf = () => null) {
+  if (!geo || !geo.bad || !geo.good) return all;
+  const nums = all.map(([, x]) => x).filter((x) => typeof x === "number" && Number.isFinite(x));
+  const rg = key === "disp" ? roundGroups(nums) : null;
+  const split = rg ? new Set(rg.vals.map(rg.find)).size > 1 : new Set(nums).size > 1;
+  if (!split) return all;
+  const tag = all.map(([f]) => geo.of(f, ownOf(f))), grp = (x) => (typeof x !== "number" ? null : rg ? rg.find(x) : x);
+  const goodVals = new Set(all.filter(([, x], i) => tag[i] === "good" && typeof x === "number").map(([, x]) => grp(x)));
+  if (!goodVals.size) return all;
+  // Số của dòng xấu mà một dòng tự khớp cũng ghi (cùng số; dung tích: cùng nhóm làm tròn) ở lại: bỏ nó chỉ làm mất phiếu của
+  // số dòng tự khớp ghi (đo 24/11/2026: bỏ hẳn làm 4 mã mất giá trị thắng, WP6D180E201 6.75, YC6C1070L-D20 39.58...).
+  return all.filter(([, x], i) => tag[i] !== "bad" || goodVals.has(grp(x)));
 }
 const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
@@ -540,11 +586,49 @@ const SIZE_QTY_X = /(?:^|[^\d.,])(\d{1,3})\s*(?:x|×|\*)\s*$/i, SIZE_QTY_N = /(?
 // wrote ("tên gói ghi 2000 kVA", "mục giới thiệu ghi 12KVA") are not a size.
 const SIZE_ENGINE = /đ[ộo]ng c[ơo]|engine|\bhp\b|tr[ụu]c khu[ỷy]u/i, SIZE_ELSEWHERE = /tên gói|tiêu đề|giới thiệu/i;
 export const MAX_SIZES = 4;
-export function sizesOf(texts, name = "") {
+const sizePrep = (raw) => noTolerance(String(raw || "").normalize("NFC")).replace(/m[áa]y ph[áa]t(?: đi[ệe]n)?(?: di[eê]s[eê]l)? d[ựu] ph[òo]ng|ngu[ồo]n(?: đi[ệe]n)? d[ựu] ph[òo]ng/gi, "máy phát")
+  // "≥275/220 kVA/kW" and "10.0/11 kW (liên tục/tối đa)": the first figure with its own unit.
+  .replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\s*\/\s*(kVA|kW)\b/gi, "$1 $3 / $2 $4").replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\b(?!\s*\/)/gi, "$1 $3 / $2 $3");
+// What the HSMT text says each figure of a bare list is (sizes-co-ao, 24/11/2026). bidhist `config.kvas` ("1000 kVA, 1132 kVA,
+// 906 kW, 1029 kVA, 823 kW") lost the words around each figure, so a standby / maximum figure ("Công suất dự phòng: 1132 kVA/906KW",
+// "Công suất tối đa: ≥ 12 kVA", "≥ 13.2 kVA (MRQ); ≥ 13.7 kVA (RQ)" after "Công suất dự phòng:") and an engine's shaft power
+// ("Động cơ diesel lai công suất 91 kW", "24hp, công suất >=15.2kw", "kWm") each became a size of its own. For every place the
+// text writes the figure (same value, kVA or kW; MVA / MW as kVA / kW), its rating is (1) the rating word right after it
+// ("275 kVA Standby (dự phòng) / 250 kVA Prime (liên tục)"), else (2) the rating words between the figure before it on the line
+// and it, standby before prime before maximum ("Công suất liên tục tối đa: 2405 kVA" is prime, "dự phòng tối đa" standby), else
+// (3) the nearest rating word before it on its line, else unlabelled. It is an engine's when the nearest of the engine words and
+// the words naming the set ("máy phát", "đầu phát", "tổ máy") before it is an engine word, or the unit is kWm. A kW figure
+// written next to a kVA one ("400,0 kVA / 160,0 kW", "26.4 kW / 34 kVA") is that set's other unit, not a size. A figure is a
+// size like before when one place writes it unlabelled or prime; otherwise it takes the lowest rank of its places, and a kW
+// figure with no place but an engine's or a pair's goes. A figure the text does not write stays as it was.
+const CTX_FIG = /(\d{1,3}(?:\.\d{3})+(?!\d)|\d+(?:[.,]\d+)?)\s*(kVA|kWm|kW|MVA|MW|hp)\b/gi;
+const CTX_RATING = new RegExp(`(${SIZE_PRIME.source}|d[àa]i h[ạa]n)|(${SIZE_STANDBY.source})|(${SIZE_MAX.source})`, "gi");
+const CTX_RATING_AFTER = new RegExp(`^\\s*\\(?\\s*(?:(${SIZE_PRIME.source})|(${SIZE_STANDBY.source})|(${SIZE_MAX.source}))`, "i");
+const CTX_ENGINE = /(đ[ộo]ng c[ơo]|\bengine\b|tr[ụu]c khu[ỷy]u|hp\b)|(m[áa]y ph[áa]t|đ[ầa]u ph[áa]t|t[ổo] m[áa]y|\bgenerator\b|\balternator\b|\bgen-?set\b)/gi;
+const CTX_PAIR_BEFORE = /\d\s*kVA\s*[/(\-–]\s*[≥>]?\s*$/i, CTX_PAIR_AFTER = /^\s*[/(\-–]\s*[≥>]?\s*\d[\d.,]*\s*kVA\b/i;
+const lastMatch = (re, s) => { let m = null; for (const x of s.matchAll(re)) m = x; return m; };
+const rankOf = (m) => (m[2] ? 1 : m[1] ? 0 : 2);
+function figureContext(text) {
+  const out = [];
+  for (const line of sizePrep(text).split("\n")) {
+    let prev = 0;
+    for (const m of line.matchAll(CTX_FIG)) {
+      const u = m[2].toLowerCase(), v = numOf(m[1]), before = line.slice(0, m.index), after = line.slice(m.index + m[0].length);
+      const since = line.slice(prev, m.index);
+      prev = m.index + m[0].length;
+      if (u === "hp") continue;
+      const a = after.match(CTX_RATING_AFTER), seg = [...since.matchAll(CTX_RATING)], r = lastMatch(CTX_RATING, before), e = lastMatch(CTX_ENGINE, before);
+      const rank = a ? rankOf(a) : seg.length ? (seg.some((x) => x[2]) ? 1 : seg.some((x) => x[1]) ? 0 : 2) : r ? rankOf(r) : 0;
+      const kw = u !== "kva" && u !== "mva";
+      out.push({ kw, v: u.startsWith("m") ? v * 1000 : v, rank, engine: u === "kwm" || !!(e && e[1]), pair: kw && (CTX_PAIR_BEFORE.test(before) || CTX_PAIR_AFTER.test(after)) });
+    }
+  }
+  return out;
+}
+export function sizesOf(texts, name = "", context = "") {
+  const ctx = context ? figureContext(context) : null;
   for (const raw of texts) {
-    const t = noTolerance(String(raw || "").normalize("NFC")).replace(/m[áa]y ph[áa]t(?: đi[ệe]n)?(?: di[eê]s[eê]l)? d[ựu] ph[òo]ng|ngu[ồo]n(?: đi[ệe]n)? d[ựu] ph[òo]ng/gi, "máy phát")
-      // "≥275/220 kVA/kW" and "10.0/11 kW (liên tục/tối đa)": the first figure with its own unit.
-      .replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\s*\/\s*(kVA|kW)\b/gi, "$1 $3 / $2 $4").replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\b(?!\s*\/)/gi, "$1 $3 / $2 $3");
+    const t = sizePrep(raw);
     const figs = [];
     let other = false, rank = 0, closed = true;
     for (const clause of t.split(SIZE_SPLIT)) {
@@ -556,10 +640,17 @@ export function sizesOf(texts, name = "") {
       if (!m || other || (m[2].toLowerCase() === "kw" && SIZE_ENGINE.test(clause)) || SIZE_ELSEWHERE.test(clause)) continue;
       const u = m[2].toLowerCase(), v = numOf(m[1]), kva = u === "kw" ? v / 0.8 : u === "mva" ? v * 1000 : u === "mw" ? v * 1250 : v;
       if (!(kva >= 1)) continue;
+      let figRank = rank;
+      if (ctx && !words) {
+        const kw = u === "kw" || u === "mw", val = u.startsWith("m") ? v * 1000 : v, at = ctx.filter((p) => p.kw === kw && Math.abs(p.v - val) < 1e-9);
+        const plain = at.filter((p) => !p.engine && !p.pair);
+        if (at.length && !plain.length && kw) continue;
+        if (plain.length) figRank = Math.min(...plain.map((p) => p.rank));
+      }
       // "Tổng 97 máy: 27 x 15 kVA": 27, not the total.
       const before = clause.slice(0, m.index), q = before.match(SIZE_QTY_X) || before.match(SIZE_QTY_N) || clause.slice(m.index + m[0].length).match(/^\D{0,6}(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái)\b/i);
       const qty = q && !/tổng\W*$/i.test(before.slice(0, q.index + q[0].indexOf(q[1]))) ? Number(q[1]) : null;
-      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank, quote: clause.trim() });
+      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank: figRank, quote: clause.trim() });
     }
     const best = Math.min(...figs.map((f) => f.rank));
     let use = figs.filter((f) => f.rank === best);
@@ -761,7 +852,27 @@ export function controllerSheetFacts(s, t) {
   // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
   // ("compatible with DSE7320") does not give that controller's facts.
   const sheet = new Set(ctlKeys(t.title).map(gen).filter((k) => !isSeries(k)));
-  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? [...sheet] : [k])))].filter((k) => sheet.has(k));
+  // "HGM6100CAN" (Khoa 24/11/2026) is the CAN branch of the series, not the whole series: a line naming it is of the CAN models
+  // of the sheet only (HGM6110CAN / HGM6120CAN). "HGM6100N" / "HGM6100" series names stay of every model of the sheet.
+  const seriesOf = (k) => (k === "HGM6100CAN" ? [...sheet].filter((m) => /CAN$/.test(m)) : [...sheet]);
+  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? seriesOf(k) : [k])))].filter((k) => sheet.has(k));
+  // A line that names controller codes of NONE of the sheet's models ("HGM6120: When mains is abnormal" in the HGM6110N
+  // sheet, "Applicable only to the DKG-317 model" in DKG307's, "(Only available for HGM9520N)" in HGM9510N's) is not of
+  // the models of the section before it (dong-dung-model 24/11/2026). A code that is the start of a sheet model's code
+  // ("HGM6120" → HGM6120N / NC / CAN) or the other way ("HGM9320MPU" → HGM9320) is of those models; any other is of
+  // no model of the sheet and the line is dropped (only that line: a short line after it goes on with the section as
+  // before; carrying the drop through "goes on" lines swallowed 961 ordinary lines of HGM9310 / 9320). A family name (HGM6100N SERIES,
+  // easYgen-1000 Series) says nothing foreign.
+  const family = (k) => isSeries(k) || /^EASYGEN\d000$/.test(k);
+  // Narrow exception (Khoa 24/11/2026): the DSE7570 sheet's two RS232 rows "| RS232 | DSE8610 MKII Com Port" / "... Communications"
+  // name DSE8610 MKII only as the unit on the other end of the cable: the RS232 port is the DSE7570's own, so they stay.
+  const ownPort = (line) => sheet.size === 1 && sheet.has("DSE7570") && /^\|\s*RS232\s*\|\s*DSE8610 MKII (Com Port|Communications)\s*$/.test(line.trim());
+  const foreignOf = (line) => {
+    if (keysOf(line).length || ownPort(line)) return null;
+    const ks = [...new Set(ctlKeys(line).map(gen))].filter((k) => !family(k));
+    if (!ks.length) return null;
+    return [...sheet].filter((m) => ks.some((k) => m.startsWith(k) || k.startsWith(m)));
+  };
   if (!sheet.size) return out;
   let scope = [...sheet], prev = scope, last = "";
   for (const line of t.rows) {
@@ -770,6 +881,16 @@ export function controllerSheetFacts(s, t) {
     // "HGM6120N/6120NC/6120CAN: Based on HGM6110N/..., it adds ..." and "DSE7320 MKII: 2" are of the models before the colon.
     const head = bare.match(/^([^:]{2,60}):/);
     if (head && keysOf(head[1]).length) names = keysOf(head[1]);
+    else if (!names.length) {
+      const f = foreignOf(head ? head[1] : line) ?? (head ? foreignOf(line) : null);
+      if (f) {
+        if (!f.length) continue;
+        // Of those models only: the line neither opens a section nor goes back to all.
+        for (const k of f) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line, sheetModel: nameOf.get(k) || k } });
+        prev = f; last = bare;
+        continue;
+      }
+    }
     if (names.length === sheet.size || /^(common\b|specifications$)/i.test(bare)) scope = [...sheet];
     else {
       // A heading begins with the model ("DSE7320 MKII Automatic ... Key Features"), not with a value ("DSE7320 MKII: 2").
@@ -885,7 +1006,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}), ...(s.unconfirmed ? { unconfirmed: s.unconfirmed } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -899,7 +1020,8 @@ export function modelFacts(cat, suppliers = []) {
 const comapCore = (k) => k.match(/^(?:INTELILITE)?((?:AMF|MRS)\d+)$/)?.[1];
 const GENERATION = [
   (key, k) => !/MK(II|III|2|3)$/.test(key) && new RegExp(`^${key}MK(II|III)$`).test(k),
-  (key, k) => !!comapCore(key) && k.match(/^INTELILITE(?:4|NT)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
+  // bdk-ten-tat: "AMF5" written by a supplier ("ComAp AMF5") takes the datasheet of InteliNano AMF 5 ([comap 1021]).
+  (key, k) => !!comapCore(key) && k.match(/^INTELI(?:LITE(?:4|NT)|NANO)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
   // SmartGen "HGM6110" written without its letter (2026-11-03: 13 suppliers write it so): the current "HGM6110N".
   (key, k) => /^HGM\d{4}$/.test(key) && k === `${key}N`,
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.
@@ -1491,7 +1613,9 @@ const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[�
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
 const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
-const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
+// "Hạng mục 2", "Phần 1", "Mục 3" opening a line (not "Hạng mục 1-3": a range). "Hàng mục" is how some HSMT write it.
+const ITEM_HEAD = /^\s*((?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4})(?![\d\-–])\s*[-–:.]\s/i;
+const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:ch[ạa]y\s+)?(?:b[ằa]ng\s+)?(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -1551,6 +1675,14 @@ export function sizeBlocks(t, sizes) {
     const p = hit("prime"), list = p.length ? p : hit("standby");
     return list.length === 1 ? list[0] : -1;
   });
+  // The other lines of the same item ("Hàng mục 1 - Máy 3 pha: Động cơ - dung tích xy lanh: > 1.758 lít" after "Hàng mục 1 - Máy phát
+  // điện chạy dầu 3 pha 12 kW: Công suất liên tục: 15 kVA/12 kW") go with the size its named lines give, when they give one size
+  // (sizes-co-ao, 24/11/2026, IB2300363623: bidhist text is sorted by topic, so the 3-phase set's engine lines stood after the 1-phase
+  // set's lines and, once the fake 5,8 kW size no longer closed that block, were read for 5 kW).
+  const itemOf = (l) => l.match(ITEM_HEAD)?.[1].toLowerCase().normalize("NFC").replace(/\s+/g, " ").replace(/^h[ạàa]ng/, "hang");
+  const itemSize = new Map();
+  L.forEach((l, i) => { const it = tags[i] >= 0 && itemOf(l); if (it) itemSize.set(it, itemSize.has(it) && itemSize.get(it) !== tags[i] ? -1 : tags[i]); });
+  L.forEach((l, i) => { const it = tags[i] === -1 && itemOf(l); if (it && itemSize.get(it) >= 0) tags[i] = itemSize.get(it); });
   return { L, runs, tags };
 }
 const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "phase", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
@@ -2024,6 +2156,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       return voters.get(s) ?? s;
     };
+    // Dòng tự mâu thuẫn hình học của động cơ (và của khoá X ↔ X^ mượn số), tính một lần khi lá phiếu cần (geoKeep).
+    let geo;
+    const geoOf = () => (geo === undefined ? (geo = geoVoteOn() ? geoRows([...e.uses, ...twinUses], rowsMap) : null) : geo);
     for (const u of e.uses) {
       // The genset model the HSMT names (Khoa 2026-11-12, IB2600601812 "Mã hiệu DHY110K SE"): its row stays whatever its
       // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
@@ -2107,7 +2242,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
       // lanh"). No such value: as before. The displacement too (MAJ_KEYS, Khoa 19/11/2026), its voters merged by dispVoters:
       // Chinese suppliers copy one template table, so counting each made a copied error win (MTU 1600 ×6, TAD1341GE).
-      const majOf = (all, key) => {
+      const majOf = (all0, key) => {
+        // Luật hình học (geoKeep): số của dòng tự mâu thuẫn rời lá phiếu khi nguồn mâu thuẫn và còn dòng tự khớp.
+        const all = geoKeep(all0, key, geoOf(), (f) => ((u.specs || []).includes(f) ? u : null));
         const figs = all.map(([f, x]) => { const s = f.supplierId ?? u.supplierId; return [key === "disp" ? dispVoter(s) : s, x]; });
         // Dung tích: các số chỉ khác độ làm tròn là một phiếu (majorityRound), so ngưỡng bằng số chính xác nhất (dispExact).
         return key === "disp" ? majorityRound(figs) : majorityOf(figs);
@@ -6193,7 +6330,7 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     let ok = null, off = "";
     if (code === "weight") {
       const lim = oneFig(req, /(\d[\d.,]*)\s*kg\b/gi), v = numbersIn(s.value)[0];
-      if (lim != null && v != null && /kg/i.test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} kg (${s.label})`; }
+      if (lim != null && v != null && !s.unconfirmed && /kg/i.test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} kg (${s.label})`; }
     } else if (code === "dimensions") {
       const lim = mmOf(req), v = mmOf(s.value);
       if (lim && v && /mm/i.test(`${s.label} ${s.value} ${req}`)) { ok = v.every((x, i) => x <= lim[i]) ? true : v.some((x, i) => x > lim[i]) ? false : null; off = `${s.value} mm (${s.label})`; }

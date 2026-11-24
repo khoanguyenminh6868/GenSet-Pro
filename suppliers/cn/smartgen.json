@@ -30773,6 +30773,231 @@
       "src": [
         1003
       ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM4020T",
+      "text": "HGM4020T",
+      "line": "HGM4020T",
+      "src": [
+        1009
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM410",
+      "text": "HGM410",
+      "line": "HGM400 Series Genset Controller (HGM410/HGM420)",
+      "src": [
+        1010
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "HGM400 Series Genset Controller (HGM410/HGM420)",
+      "src": [
+        1010
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6500",
+      "text": "HGM6500",
+      "line": "Note: Please refer to HGM6500 Synchronization Plan List for more information on GOV and",
+      "src": [
+        1004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7100A",
+      "text": "HGM7100A",
+      "line": "Add HGM7100A series controller while delete HGM7100 series",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7100N",
+      "text": "HGM7100N",
+      "line": "HGM7100N SERIES",
+      "src": [
+        1007
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7110N",
+      "text": "HGM7110N",
+      "line": "HGM7100N SERIES (HGM7110N/7120N)",
+      "src": [
+        1007
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7120N",
+      "text": "HGM7120N",
+      "line": "5.1 HGM7120N BREAKER CONTROL PROCESS................................................................................. 11",
+      "src": [
+        1007
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7200",
+      "text": "HGM7200",
+      "line": "HGM7200 SERIES",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7210",
+      "text": "HGM7210",
+      "line": "| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7210CAN",
+      "text": "HGM7210CAN",
+      "line": "| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7220",
+      "text": "HGM7220",
+      "line": "| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM7220CAN",
+      "text": "HGM7220CAN",
+      "line": "| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9310CAN",
+      "text": "HGM9310CAN",
+      "line": "| This manual is suitable for HGM9310MPU, HGM9320MPU, | HGM9310CAN",
+      "src": [
+        1012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9310MPU",
+      "text": "HGM9310MPU",
+      "line": "| This manual is suitable for HGM9310MPU, HGM9320MPU, | HGM9310CAN",
+      "src": [
+        1012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320CAN",
+      "text": "HGM9320CAN",
+      "line": "HGM9320CAN series controller only.",
+      "src": [
+        1012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9320MPU",
+      "text": "HGM9320MPU",
+      "line": "| This manual is suitable for HGM9310MPU, HGM9320MPU, | HGM9310CAN",
+      "src": [
+        1012
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9420LT",
+      "text": "HGM9420LT",
+      "line": "| 2023-05-19 | 1.4 | Add HGM9420N-G and HGM9420LT-G.",
+      "src": [
+        1011
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9420N",
+      "text": "HGM9420N",
+      "line": "HGM9420N_HGM9420LT",
+      "src": [
+        1011
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9510N",
+      "text": "HGM9510N",
+      "line": "HGM9510N/HGM9530N",
+      "src": [
+        1005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9520N",
+      "text": "HGM9520N",
+      "line": "| 32 | Remote Start (Island) | (Only available for HGM9520N.)",
+      "src": [
+        1005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9530",
+      "text": "HGM9530",
+      "line": "HGM9530",
+      "src": [
+        1004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9530N",
+      "text": "HGM9530N",
+      "line": "HGM9510N/HGM9530N",
+      "src": [
+        1005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9540",
+      "text": "HGM9540",
+      "line": "| Item | HGM9510 | HGM9520 | HGM9530 | HGM9540",
+      "src": [
+        1004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM9600",
+      "text": "HGM9600",
+      "line": "HGM9600 SERIES",
+      "src": [
+        1006
+      ]
     }
   ]
 }

@@ -170,7 +170,8 @@ export function commWords(x, ctlFacts = []) {
   if (also.length || via) {
     stash(x);
     if (also.length) x.alsoQuotes = also;
-    if (via) { x.bmsVia = via; x.note = [x.note, BMS_NOTE].filter(Boolean).join(" "); }
+    // The agent writes the same sentence (config-prompt.md, Khoa Q3): once is enough (mk-lap-3, IB2600603983 21/11/2026: 7 notes had it twice).
+    if (via) { x.bmsVia = via; if (!String(x.note || "").includes(BMS_NOTE)) x.note = [x.note, BMS_NOTE].filter(Boolean).join(" "); }
   }
 }
 // The agent's own answer, kept once before the code changes a part; restored when check runs again (idempotent).

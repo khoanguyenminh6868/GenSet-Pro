@@ -611,6 +611,9 @@
     if (hu) r.cond.headerUnit = hu; else if (spec.unitCell) r.cond.unitCell = spec.unitCell;
     DEC_COMMA = ctx.decimalComma != null ? !!ctx.decimalComma : !!decimalCommaEvidence(ctx.rows);
     try { BY_KEY[spec.key](spec, c, r); } finally { DEC_COMMA = false; }
+    // catalog.js ROW_EXCEPTIONS `unsurespec` (gia-tri-sai, Khoa 24/11/2026): the source does not say whose figure this is
+    // (googol "Weight (kg)": engine or set). The figure is read as written, but missing "confirm": nothing compares with it.
+    if (spec.unconfirmed) miss(r, "confirm");
     if (!Object.keys(r.cond).length) delete r.cond;
     return r;
   }
