@@ -125,9 +125,10 @@
     {
       "n": 102,
       "url": "http://www.gz-sanqpower.com/kms/Powered-by-Joint-Venture-Cummins-cn.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 Kg | 机组尺寸 LxWxH (mm)",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | 开放式 | 静音式 | 开放式 | 静音式"
       ],
       "file": "sources/sanq-power/102.md"
@@ -175,9 +176,10 @@
     {
       "n": 107,
       "url": "http://www.gz-sanqpower.com/Cummins/Powered-by-Joint-Venture-Cummins.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption | Genset Weight Kg | Genset overall LxWxH (mm) | click for datail data",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | Open type | Silent type | Open Type | Silent type"
       ],
       "file": "sources/sanq-power/107.md"
@@ -325,9 +327,10 @@
     {
       "n": 123,
       "url": "http://www.gz-sanqpower.com/dgm/Powered-by-MAN-cn.html",
-      "accessedAt": "2026-10-28",
+      "accessedAt": "2026-11-24",
       "tier": "A",
       "quote": [
+        "| 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 Kg | 机组尺寸 LXWXH (mm)",
         "| kW/kVa | kW/kVa | 德国曼 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式"
       ],
       "file": "sources/sanq-power/123.md"
@@ -1874,6 +1877,7 @@
       "n": 102,
       "title": "合资康明斯柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司",
       "header": [
+        "| 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 Kg | 机组尺寸 LxWxH (mm)",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | 开放式 | 静音式 | 开放式 | 静音式"
       ],
       "rows": [
@@ -1916,6 +1920,7 @@
       "n": 102,
       "title": "合资康明斯柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司",
       "header": [
+        "| 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 Kg | 机组尺寸 (mm)",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | 开放式 | 静音式 | 开放式 | 静音式"
       ],
       "rows": [
@@ -1937,7 +1942,17 @@
         "| SQC660 | 528/660 | 480/600 | KTA19-G8 | HCI544E | 126 | 4150 | 6800 | 3350×1280×1934 | 4800×1683×2200",
         "| SQC688 | 550/688 | 500/625 | KTAA19-G6A | HCI544FS | 128 | 4220 | 6700 | 3525×1550×2032 | 5000×1983×2371",
         "| SQC700 | 560/700 | 504/630 | KT38-G | HCI544F | 140 | 4220 | 6700 | 3525×1550×2032 | 5000×1983×2371",
-        "| SQC715 | 572/715 | 520/650 | QSKTAA19-G4"
+        "| SQC715 | 572/715 | 520/650 | QSKTAA19-G4 NR2 | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371",
+        "| SQC800 | 640/800 | 582/728 | KT38-GA/G1 | LVI634B | 225 | 6785 | 11985 | 4200×1805×2383 | 6058×2438×2896",
+        "| SQC825 | 660/825 | 600/750 | KTA38-G2 | LVI634B | 167 | 7000 | 12200 | 4200×1805×2383 | 6058×2438×2896",
+        "| SQC880 | 704/880 | 640/800 | KTA38-G2B | HCI634G | 169 | 7140 | 12350 | 4200×1805×2383 | 6058×2438×2896",
+        "| SQC1000 | 800/1000 | 728/910 | KTA38-G2A | HCI634H | 196 | 7140 | 12450 | 4200×1805×2383 | 6058×2438×2896",
+        "| SQC1100 | 880/1100 | 800/1000 | KTA38-G5 | HCI634J | 209 | 7310 | 12510 | 4200×1805×2244 | 6058×2438×2896",
+        "| SQC1250 | 1000/1250 | 900/1125 | KTA38-G9 | HCI634K | 210 | 8100 | 13417 | 4350×2090×2178 | 6058×2438×2896",
+        "| SQC1375 | 1100/1375 | 1000/1250 | QSK38-G5 | PI734A | 274 | 7800 | 15800 | 5140×1850×2340 | 12192×2438×2896",
+        "| SQC1375 | 1100/1375 | 1000/1250 | KTA50-G3 | PI734A | 254 | 9038 | 16850 | 5000×1850×2343 | 12192×2438×2896",
+        "| SQC1540 | 1232/1540 | 1120/1400 | KTA50-G8 | PI734C | 289 | 9522 | 18322 | 5200×2260×2510 | 12192×2438×2896",
+        "| SQC1650 | 1320/1650 | 1200/1500 | KTA50-GS8 | PI734C | 309 | 9900 | 18500 | 5200×2260×2510 | 12192×2438×2896"
       ]
     },
     {
@@ -2129,6 +2144,7 @@
       "n": 107,
       "title": "Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Imported Cummins|Diesel gensets -Guangzhou Sanq Power Equipment Co., Ltd.",
       "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption | Genset Weight Kg | Genset overall LxWxH (mm) | click for datail data",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | Open type | Silent type | Open Type | Silent type"
       ],
       "rows": [
@@ -2171,6 +2187,7 @@
       "n": 107,
       "title": "Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Imported Cummins|Diesel gensets -Guangzhou Sanq Power Equipment Co., Ltd.",
       "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption | Genset Weight Kg | Genset overall LxWxH (mm) | click for datail data",
         "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | Open type | Silent type | Open Type | Silent type"
       ],
       "rows": [
@@ -2192,13 +2209,24 @@
         "| SQC660 | 528/660 | 480/600 | KTA19-G8 | HCI544E | 126 | 4150 | 6800 | 3350×1280×1934 | 4800×1683×2200 |",
         "| SQC688 | 550/688 | 500/625 | KTAA19-G6A | HCI544FS | 128 | 4220 | 6700 | 3525×1550×2032 | 5000×1983×2371 |",
         "| SQC700 | 560/700 | 504/630 | KT38-G | HCI544F | 140 | 4220 | 6700 | 3525×1550×2032 | 5000×1983×2371 |",
-        "| SQC715 | 572/715 | 520/650 | QSKTAA19-G4"
+        "| SQC715 | 572/715 | 520/650 | QSKTAA19-G4 NR2 | HCI544F | 145 | 6600 | 9000 | 3525×1550×2032 | 5000×1983×2371 |",
+        "| SQC800 | 640/800 | 582/728 | KT38-GA/G1 | LVI634B | 225 | 6785 | 11985 | 4200×1805×2383 | 6058×2438×2896 |",
+        "| SQC825 | 660/825 | 600/750 | KTA38-G2 | LVI634B | 167 | 7000 | 12200 | 4200×1805×2383 | 6058×2438×2896 |",
+        "| SQC880 | 704/880 | 640/800 | KTA38-G2B | HCI634G | 169 | 7140 | 12350 | 4200×1805×2383 | 6058×2438×2896 |",
+        "| SQC1000 | 800/1000 | 728/910 | KTA38-G2A | HCI634H | 196 | 7140 | 12450 | 4200×1805×2383 | 6058×2438×2896 |",
+        "| SQC1100 | 880/1100 | 800/1000 | KTA38-G5 | HCI634J | 209 | 7310 | 12510 | 4200×1805×2244 | 6058×2438×2896 |",
+        "| SQC1250 | 1000/1250 | 900/1125 | KTA38-G9 | HCI634K | 210 | 8100 | 13417 | 4350×2090×2178 | 6058×2438×2896 |",
+        "| SQC1375 | 1100/1375 | 1000/1250 | QSK38-G5 | PI734A | 274 | 7800 | 15800 | 5140×1850×2340 | 12192×2438×2896 |",
+        "| SQC1375 | 1100/1375 | 1000/1250 | KTA50-G3 | PI734A | 254 | 9038 | 16850 | 5000×1850×2343 | 12192×2438×2896 |",
+        "| SQC1540 | 1232/1540 | 1120/1400 | KTA50-G8 | PI734C | 289 | 9522 | 18322 | 5200×2260×2510 | 12192×2438×2896 |",
+        "| SQC1650 | 1320/1650 | 1200/1500 | KTA50-GS8 | PI734C | 309 | 9900 | 18500 | 5200×2260×2510 | 12192×2438×2896 |"
       ]
     },
     {
       "n": 107,
       "title": "Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Imported Cummins|Diesel gensets -Guangzhou Sanq Power Equipment Co., Ltd.",
       "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption L/H (full load100%) | Genset Weight Kg | Genset overall LXWXH (mm) | click for datail data",
         "| kW/kVa | kW/kVa | Open type | Silent type | Open Type | Silent type"
       ],
       "rows": [
@@ -2236,6 +2264,7 @@
       "n": 107,
       "title": "Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Imported Cummins|Diesel gensets -Guangzhou Sanq Power Equipment Co., Ltd.",
       "header": [
+        "| Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption L/H (full load100%) | Genset Weight Kg | Genset overall LXWXH (mm) | click for detail data",
         "| kW/kVa | kW/kVa | Open type | Silent type | Open Type | Silent type"
       ],
       "rows": [
@@ -2250,8 +2279,7 @@
         "| SQC625-6 | 500/625 | 450/565 | KTA19-G4 | HCI544C | 117 | 3870 | 6600 | 3350×1280×1934 | 4800×1683×2200 |",
         "| SQC688-6 | 550/688 | 470/588 | KTAA19-G5 | HCI544D | 134 | 3950 | 6720 | 3525×1550×2032 | 5000×1983×2371 |",
         "| SQC750-6 | 600/750 | 546/682 | KTAA19-G6A | HCI544E | 142 | 4100 | 6800 | 3525×1550×2032 | 5000×1983×2371 |",
-        "| SQC750-6 | 600/750 | 546/682 | QSK19-G5",
-        "| HCI544E | 151 | 4100 | 6800 | 3525×1550×2032 | 5000×1983×2371 |",
+        "| SQC750-6 | 600/750 | 546/682 | QSK19-G5 | HCI544E | 151 | 4100 | 6800 | 3525×1550×2032 | 5000×1983×2371 |",
         "| SQC850-6 | 680/850 | 620/775 | KT38-G | HCI544F | 154 | 6500 | 11667 | 4200×1805×2383 | 6058×2438×2896 |",
         "| SQC963-6 | 770/963 | 700/875 | KTA38-G1 | HCI634G | 186 | 6750 | 11889 | 4200×1805×2383 | 6058×2438×2896 |",
         "| SQC1000-6 | 800/1000 | 725/906 | KTA38-G2 | HCI634G | 204 | 6950 | 11947 | 4200×1805×2383 | 6058×2438×2896 |",
@@ -2701,6 +2729,7 @@
       "n": 123,
       "title": "德国曼柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司",
       "header": [
+        "| 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 Kg | 机组尺寸 LXWXH (mm)",
         "| kW/kVa | kW/kVa | 德国曼 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式"
       ],
       "rows": [
@@ -2708,16 +2737,8 @@
         "| SQN482 | 386/482 | 350/438 | D2876LE201 | HCI544C | 209 | 2600 | 5000 | 3360×1135×2000 | 4300x1483x2145",
         "| SQN525 | 420/525 | 382/477 | D2876LE203 | HCI544C | 212 | 2800 | 5200 | 3360×1135×2000 | 4570×1540×2200",
         "| SQN525 | 420/525 | 382/477 | D2676LE223 | HCI544C | 193 | 2800 | 5200 | 3200×1200×1850 | 4570×1540×2200",
-        "| SQN578 | 462/578 | 420/525 | D2840LE201 | HCI544D | 196 | 3350 | 5670 | 3350×1350×1700"
-      ]
-    },
-    {
-      "n": 123,
-      "title": "德国曼柴油发电机组 -进口康明斯系列_帕金斯系列_斗山系列_菱重系列_合资康明斯系列-广州盛康动力设备有限公司",
-      "header": [
-        "| kW/kVa | kW/kVa | 德国曼 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式"
-      ],
-      "rows": [
+        "| SQN578 | 462/578 | 420/525 | D2840LE201 | HCI544D | 196 | 3350 | 5670 | 3350×1350×1700 | 4570×1540×2200",
+        "| SQN619 | 495/619 | 450/563 | D2840LE211 | HCI544E | 198 | 3350 | 6000 | 3350×1350×1700 | 5030x1860x2550",
         "| SQN650 | 520/650 | 473/591 | D2840LE203 | HCI544E | 199 | 3200 | 5900 | 3200×1400×2040 | 4800x1683x2200",
         "| SQN700 | 560/700 | 509/636 | D2840LE213 | HCI544F | 193 | 3400 | 6300 | 3200×1400×2040 | 5030x1860x2550",
         "| SQN750 | 600/750 | 545/682 | D2842LE203 | LVI634B | 196 | 3800 | 7000 | 3520×1600×2040 | 5000x1983x2371",
