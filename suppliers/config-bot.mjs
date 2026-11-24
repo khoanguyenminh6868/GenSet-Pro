@@ -4454,9 +4454,24 @@ const keysOfModel = (m) => { const parts = String(m).split("/"), pre = (parts[0]
 // and "last digit = bearing count" has no maker source at all. Keys as CAT.keyOf writes them.
 const SAME_SHEET = [["S4L1D-C4", "S4L1D-C41"], ["S4L1D-D4", "S4L1D-D41"], ["S4L1D-E4", "S4L1D-E41"], ["S4L1D-F4", "S4L1D-F41"]];
 const SAME_SHEET_KEY = new Map(SAME_SHEET.flatMap(([a, b]) => [[CAT.keyOf(a), CAT.keyOf(b)], [CAT.keyOf(b), CAT.keyOf(a)]]));
+// Mecc Alte ECO38 / ECO43: the catalog (supplier lines) leaves out the pole digit the maker's sheet writes in the name
+// ("ECO38-1LC" ↔ sheet row "ECO38 1L4 C": frame, length "1L" + pole "4", winding "C"). EXACTLY these pairs, catalog → sheet
+// only (nghiem-thu/mecc-ten.md, điều phối 24/11/2026), each checked against a row of the saved sheet. Evidence for "4 poles":
+// the maker's user manuals mecc-alte n1017 (ECO-C 38-40) and n1018 (ECO 43-46) say "ECO Series alternators are
+// self-regulated, 4-pole brushless alternators."; the public download area has no 2- or 6-pole sheet of ECO38 / ECO40 / ECO43
+// (only "ECO46 6 pole", "ECP28C / 32C / 34A / 3 2 pole"); n1018 "(only 6 poles)" sits in section 9.6.2 ECO46. The NCC line itself
+// writes the pole in "ECO43-1SN/4 | ECO43 1S4" and "ECO46-1S/4 | ECO46 1S4" (rise-power n104). NOT merged: every ECP (maker
+// has both "/4" and "/2"), ECO46 without "/4" (6-pole version exists), ECO40 without the type letter (type B and C exist:
+// MA0308 bulletin; sheet n1014 is C only), ECO43-2LN, no general "insert a 4" rule.
+const MECC_SAME = [
+  ["ECO38-1LC", "ECO38 1L4 C"], ["ECO38-1SC", "ECO38 1S4 C"], ["ECO38-2LC", "ECO38 2L4 C"], ["ECO38-2MC", "ECO38 2M4 C"], ["ECO38-2SC", "ECO38 2S4 C"],
+  ["ECO43-1M", "ECO43 1M4 A"], ["ECO43-1S", "ECO43 1S4 A"], ["ECO43-2M", "ECO43 2M4 A"], ["ECO43-2S", "ECO43 2S4 A"], ["ECO43-VL", "ECO43 VL4 A"],
+  ["ECO43-1SN/4", "ECO43 1S4 A"], ["ECO46-1S/4", "ECO46 1S4 A"],
+];
+const MECC_SHEET_KEY = new Map(MECC_SAME.map(([a, b]) => [CAT.keyOf(a), CAT.keyOf(b)]));
 export const ratingsFor = (map, model) => {
   if (!model || !map) return [];
-  const at = (k) => map.get(k) || (SAME_SHEET_KEY.has(k) ? map.get(SAME_SHEET_KEY.get(k)) : undefined);
+  const at = (k) => map.get(k) || (SAME_SHEET_KEY.has(k) ? map.get(SAME_SHEET_KEY.get(k)) : undefined) || (MECC_SHEET_KEY.has(k) ? map.get(MECC_SHEET_KEY.get(k)) : undefined);
   const hit = at(CAT.keyOf(model));
   if (hit) return hit;
   const w = String(model).trim().split(/\s+/), i = w.findIndex((x) => CAT.isCode(x));

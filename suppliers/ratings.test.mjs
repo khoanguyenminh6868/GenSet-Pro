@@ -166,3 +166,17 @@ test("S4L1D C / D / E / F: tờ hãng gọi hai tên (…-D4-D-W311.pdf ↔ tiê
   assert.equal(ratingsFor(only("UCI224D"), "224D").length, 0);
   assert.equal(ratingsFor(all, "S4L1D-E4").length, 0); // E41 vắng trong bản đồ: không lan sang họ khác
 });
+
+test("Mecc Alte ECO38 / ECO43: đúng 12 cặp tên danh mục → dòng tờ hãng có số cực, một chiều; ECP / ECO46 / ECO40 không gộp", () => {
+  const sheet = (m) => new Map([[m.toUpperCase().replace(/[\s\-_.]/g, ""), [{ model: m }]]]);
+  const PAIRS = [["ECO38-1LC", "ECO38 1L4 C"], ["ECO38-1SC", "ECO38 1S4 C"], ["ECO38-2LC", "ECO38 2L4 C"], ["ECO38-2MC", "ECO38 2M4 C"], ["ECO38-2SC", "ECO38 2S4 C"],
+    ["ECO43-1M", "ECO43 1M4 A"], ["ECO43-1S", "ECO43 1S4 A"], ["ECO43-2M", "ECO43 2M4 A"], ["ECO43-2S", "ECO43 2S4 A"], ["ECO43-VL", "ECO43 VL4 A"],
+    ["ECO43-1SN/4", "ECO43 1S4 A"], ["ECO46-1S/4", "ECO46 1S4 A"]];
+  for (const [cat, row] of PAIRS) assert.equal(ratingsFor(sheet(row), cat).length, 1, cat);
+  // Một chiều: tên trên tờ không tự nhận tờ của tên danh mục.
+  assert.equal(ratingsFor(sheet("ECO38-1LC"), "ECO38 1L4 C").length, 0);
+  // Không gộp (không có bằng chứng): ECP (cả 2 và 4 cực), ECO46 không ghi cực (có bản 6 cực), ECO40 không chữ loại (có B và C), ECO43-2LN, Stamford.
+  const all = new Map(["ECP28M4C", "ECP28MC4C", "ECO462L4A", "ECO401S4C", "ECO402L4C", "ECO402L4A", "ECO432L4A", "ECO40VL4C", "S7L1DF4"].map((k) => [k, [{ model: k }]]));
+  for (const m of ["ECP28-MC", "ECP28-VLC", "ECP32-1LC", "ECO46-2L", "ECO46-1S", "ECO40-1S", "ECO40-2L", "ECO40-VL", "ECO43-2LN", "S7L1D-F41"]) assert.equal(ratingsFor(all, m).length, 0, m);
+  assert.equal(ratingsFor(sheet("ECO38 1L4 C"), "ECO38-1L").length, 0); // không bỏ chữ cuộn
+});
