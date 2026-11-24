@@ -202,8 +202,17 @@
    "| PWY3250 | 2400/3000 | 2600/3250 | YC16VC4000-D31 | VIEW PDF",
    "| PWY3500 | 2500/3125 | 2800/3500 | YC16VC4200-D30 | VIEW PDF",
    "| PWY3750 | 2700/3375 | 3000/3750 | YC16VC4500-D30 | VIEW PDF",
-   "| PWY4100 | 3000/3750 | 3300/4125 | YC16VC4900-D30 | VIEW PDF",
-   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载",
+   "| PWY4100 | 3000/3750 | 3300/4125 | YC16VC4900-D30 | VIEW PDF"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://pauway.cn/pwy-series/",
+  "title": "玉柴发电机组_PWY系列_玉柴发电机厂家-PAUWAY博威",
+  "header": [
+   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载"
+  ],
+  "rows": [
    "| PWY33-60 | 24/30 | 26/33 | YC4V45Z-D21 | VIEW PDF",
    "| PWY40-60 | 30/38 | 33/41 | YC4V55Z-D21 | VIEW PDF",
    "| PWY60-60 | 30/38 | 33/41 | YC4D65-D20 | VIEW PDF",
@@ -273,8 +282,17 @@
    "| PWS2500 | 1800/2250 | 2000/2500 | S16R2-PTAW-C | VIEW PDF",
    "| PWS2500A2 | 1800/2250 | 2000/2500 | S16R2-A2PTAW-C | VIEW PDF",
    "| PWS2500A | 1800/2250 | 2000/2500 | S16R2-PTA-C | VIEW PDF",
-   "| PWS2750 | 2000/2500 | 2200/2750 | S16R2-PTAW2-E-C | VIEW PDF",
-   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载",
+   "| PWS2750 | 2000/2500 | 2200/2750 | S16R2-PTAW2-E-C | VIEW PDF"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://pauway.cn/mitsubishi-series/",
+  "title": "三菱发电机组_三菱重工柴油发电机组-PAUWAY博威",
+  "header": [
+   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载"
+  ],
+  "rows": [
    "| PWS720-60 | 520/650 | 575/720 | S6R-PTA | VIEW PDF",
    "| PWS940-60 | 660/825 | 750/937 | S12A2-PTA | VIEW PDF",
    "| PWS1050-60 | 750/937 | 840/1050 | S12A2-PTA2 | VIEW PDF",
@@ -354,8 +372,17 @@
    "| PWP2200 | 1600/2000 | 1760/2200 | 4016-61TRG2 | VIEW PDF",
    "| PWP2250 | 1650/2062.5 | 1811/2263 | 4016-TAG2A | VIEW PDF",
    "| PWP2500 | 1818/2272 | 2000/2500 | 4016-61TRG3 | VIEW PDF",
-   "| PWP2500P | 2000/2500 | NA/NA | 4016-61TRG3X | VIEW PDF",
-   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载",
+   "| PWP2500P | 2000/2500 | NA/NA | 4016-61TRG3X | VIEW PDF"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://pauway.cn/pwp-series/",
+  "title": "珀金斯发电机组_PWP系列_Perkins柴油机组-PAUWAY",
+  "header": [
+   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载"
+  ],
+  "rows": [
    "| PWP825-60 | 600/750 | 660/825 | 4006-23TAG2A | VIEW PDF",
    "| PWP900-60 | 680/850 | 748/935 | 4006-23TAG3A | VIEW PDF",
    "| PWP1000-60 | 725/906 | 800/1000 | 4008TAG1 | VIEW PDF",
@@ -450,8 +477,17 @@
    "| PWC1650A | 1100/1375 | 1320/1650 | KTA50-G8 | VIEW PDF",
    "| PWC1650 | 1200/1500 | 1320/1650 | KTA50-GS8 | VIEW PDF",
    "| PWC1875 | 1340/1675 | 1500/1875 | KTA50-G15X | VIEW PDF",
-   "| PWC2060 | 1600/2000 | 1650/2063 | KTA50-G16B | VIEW PDF",
-   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载",
+   "| PWC2060 | 1600/2000 | 1650/2063 | KTA50-G16B | VIEW PDF"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://pauway.cn/pwc-series/",
+  "title": "康明斯发电机组_PWC系列_Cummins柴油机组-PAUWAY",
+  "header": [
+   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载"
+  ],
+  "rows": [
    "| PWC28-60 | 20/25 | 22/28 | 4B3.9-G11 | VIEW PDF",
    "| PWC33-60 | 24/30 | 27/34 | 4B3.9-G2 | VIEW PDF",
    "| PWC38-60 | 28/35 | 30/38 | 4B3.9-G12 | VIEW PDF",
@@ -551,8 +587,17 @@
    "| PWM3000 | 2200/2750 | 2400/3000 | 20V4000G63F | VIEW PDF",
    "| PWM3250 | 2400/3000 | 2600/3250 | 20V4000G63LF | VIEW PDF",
    "| PWM3500 | 2600/3250 | 2800/3500 | 20V4000G44F | VIEW PDF",
-   "| PWM3750 | 2700/3375 | 3000/3750 | 20V4000G44LF | VIEW PDF",
-   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载",
+   "| PWM3750 | 2700/3375 | 3000/3750 | 20V4000G44LF | VIEW PDF"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "https://pauway.cn/pwm-series/",
+  "title": "MTU发电机组_PWM系列_德国MTU柴油机组-PAUWAY",
+  "header": [
+   "| 发电机组型号 | 主用功率 (kW/kVA) | 备用功率 (kW/kVA) | 发动机型号 | 下载"
+  ],
+  "rows": [
    "| PWM1125-60 | 900/1125 | NA/NA | 16V2000B76 | VIEW PDF",
    "| PWM1250-60 | 1000/1250 | NA/NA | 18V2000B76 | VIEW PDF",
    "| PWM1875-60 | 1360/1700 | 1500/1875 | 12V4000G43S | VIEW PDF",

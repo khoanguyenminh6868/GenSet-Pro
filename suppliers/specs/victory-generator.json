@@ -504,7 +504,18 @@
    "| V1200C | 50 | 1100 | 1375 | 1200 | 1500 | KTA50-G8 | 297 | 50.3 | 16V | electronic | 5700*2140*2550 | 11000 | 40HQ Container | 15500",
    "| V1320C | 50 | N.A. | N.A. | 1320 | 1650 | KTA50-G8 | N.A. | 50.3 | 16V | electronic | 5700*2140*2550 | 11000 | 40HQ Container | 15500",
    "| V1320C | 50 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 324 | 50.3 | 16V | electronic | 5700*2140*2550 | 11000 | 40HQ Container | 15500",
-   "| V1500C | 50 | N.A. | N.A. | 1500 | 1875 | KTA50-G15 | N.A. | 50.3 | 16V | electronic | 5700*2140*2550 | 11000 | 40HQ Container | 15500",
+   "| V1500C | 50 | N.A. | N.A. | 1500 | 1875 | KTA50-G15 | N.A. | 50.3 | 16V | electronic | 5700*2140*2550 | 11000 | 40HQ Container | 15500"
+  ]
+ },
+ {
+  "n": 110,
+  "url": "https://www.victorygenerator.com/cummins/20kva-1718kva-cummins-diesel-generating-set.html",
+  "title": "20KVA~1718KVA Cummins Diesel Generator Set",
+  "header": [
+   "| Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consumption (L/H) | Displacement (L) | Cylinders & arrangement | Governor Type | Open Type | Silent Type",
+   "| HZ | kW | kVA | kW | kVA | Dimension L*W*H (mm) | Weight (KG) | Dimension L*W*H (mm) | Weight (KG)"
+  ],
+  "rows": [
    "| V20C | 60 | 18 | 22.5 | 20 | 25 | 4B3.9-G11 | 5 | 3.9 | 4L | mechanical | 1725*950*1500 | 930 | 2250*1080*1255 | 1150",
    "| V28C | 60 | 24.8 | 31 | 28 | 35 | 4B3.9-G12 | 6.8 | 3.9 | 4L | electronic | 1725*950*1500 | 930 | 2250*1080*1255 | 1150",
    "| V30C | 60 | 27.2 | 34 | 30 | 37.5 | 4B3.9-G12 | 7.3 | 3.9 | 4L | electronic | 1725*950*1500 | 930 | 2250*1080*1255 | 1150",
@@ -575,7 +586,18 @@
    "| V480PT | 440 | 550 | 480 | 600 | TWD1652GE | CN III | 144*165 | 6 | 16.12 | 48 | 199 | 3350*1350*1950 | 3550",
    "| V530PT | 480 | 600 | 530 | 662.5 | TWD1652GE | CN III | 144*165 | 6 | 16.12 | 48 | 199 | 3350*1350*1950 | 3600",
    "| V576PT | 520 | 650 | 576 | 720 | TWD1653GE | CN III | 144*165 | 6 | 16.12 | 48 | 199 | 3400*1350*2000 | 3700",
-   "| V616PT | 560 | 700 | 616 | 770 | TWD1645GE | CN III | 144*165 | 6 | 16.12 | 48 | 199 | 3400*1350*2000 | 3800",
+   "| V616PT | 560 | 700 | 616 | 770 | TWD1645GE | CN III | 144*165 | 6 | 16.12 | 48 | 199 | 3400*1350*2000 | 3800"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.victorygenerator.com/volvo-penta/250kva~770kva-volvo-penta-diesel-generator-set.html",
+  "title": "250KVA~770KVA Volvo Penta Diesel Generator Set Wholesaler",
+  "header": [
+   "| Genset Model | Prime Power | Standby Power | Engine model | Emission Standards | Bore*Stroke | CYL | Displacement | Lube | Fuel consumption | Dimension | Weight",
+   "| KW | KVA | KW | KVA | (mm) | (L) | (L) | g/kw.h | (mm) | (Kg)"
+  ],
+  "rows": [
    "| V220PT | 200 | 250 | 220 | 275 | TAD851GE | US TIER3 | 110*135 | 6 | 7.7 | / | 198 | 2600*1100*1550 | 1900",
    "| V256PT | 232 | 290 | 256 | 320 | TAD852GE | US TIER3 | 110*135 | 6 | 7.7 | / | 198 | 2600*1100*1550 | 1950",
    "| V280PT | 250 | 312.5 | 280 | 350 | TAD853GE | US TIER3 | 110*135 | 6 | 7.7 | / | 198 | 2600*1100*1550 | 2000",
@@ -635,7 +657,18 @@
    "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
    "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
    "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
-   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.victorygenerator.com/perkins/7kva-2500kva-perkins-diesel-generator.html",
+  "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+  "header": [
+   "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+   "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+  ],
+  "rows": [
    "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
    "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
    "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",

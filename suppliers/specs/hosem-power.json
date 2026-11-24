@@ -353,7 +353,18 @@
    "| A-P2000 | 2000 | 1600 | 1850 | 1480 | 4016TAG1A | 12192x2438x2896 | 16100 | Download",
    "| A-P2200-1 | 2200 | 1760 | 2000 | 1600 | 4016TAG2A | 12192x2438x2896 | 16100 | Download",
    "| A-P2200-2 | 2200 | 1760 | 2000 | 1600 | 4016-61TRG2 | 12192x2438x2896 | 16100 | Download",
-   "| A-P2500 | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 12192x2438x2896 | 16200 | Download",
+   "| A-P2500 | 2500 | 2000 | 2250 | 1800 | 4016-61TRG3 | 12192x2438x2896 | 16200 | Download"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.industrialgeneratorset.com/quality-13057546-stamford-alternator-500kva-perkins-diesel-power-generator",
+  "title": "Stamford Alternator 500kVA Perkins Diesel Power Generator",
+  "header": [
+   "| Model (60Hz) | Standby Power | Prime Power | Engine Model | Dimension | Weight | Datasheet",
+   "| kVA | kW | kVA | kW | LXWXH(MM) | KG"
+  ],
+  "rows": [
    "| A-P13H | 13 | 10 | 11 | 9 | 403D-11G | 1950×800×1115 | 560 | Download",
    "| A-P16H | 16 | 13 | 15 | 12 | 403D-15G | 1950×800×1215 | 700 | Download",
    "| A-P19H | 19 | 15 | 17 | 14 | 403A-15G2 | 1950×800×1215 | 760 | Download",

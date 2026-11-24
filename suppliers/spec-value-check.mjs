@@ -118,6 +118,7 @@ export function checkValue(part, id, it, ctx = {}) {
       if (!(f.values || []).includes(v)) out("ngoai-danh-sach", `"${v}" chưa về giá trị chuẩn`, "chua-chuan");
       break;
     }
+    case "bool": if (typeof v !== "boolean") out("ngoai-danh-sach", `"${v}" không là có / không`, "chua-chuan"); break;
     case "text": if (!new RegExp(rule.must, "iu").test(String(v))) out("sai-loai", `"${v}" không nêu đúng loại thông số`); break;
     case "number": checkNumber(rule, it, out); break;
     case "fuel": checkFuel(rule, it, ctx.kws || [], !!ctx.nonDiesel, out); break;

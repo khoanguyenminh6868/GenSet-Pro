@@ -257,8 +257,17 @@
         "| No. of Cylinders | 6 | 6 | 12 | 12",
         "| Bore × Stroke (mm) | 155 × 180 | 155 × 180 | 155 × 180 | 155 × 180",
         "| Rated Speed (min -1 ) | 1,500 | 1,800 | 1,500 | 1,800",
-        "| Total Weight (Gen. Set) (kg) | 5,350 | 5,350 | 8,800 | 8,800",
-        "| Model | AY40L-ST | AY40L-ST | AY40L-ET | AY40L-ET",
+        "| Total Weight (Gen. Set) (kg) | 5,350 | 5,350 | 8,800 | 8,800"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "AY Power Generation Series｜On-Site Power｜Power Generator｜Products & Services｜Energy Systems｜YANMAR USA",
+      "header": [
+        "| | Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series | Stationary Power Generation AY Series",
+        "| Model | AY40L-ST | AY40L-ST | AY40L-ET | AY40L-ET"
+      ],
+      "rows": [
         "| Frequency | 50 Hz | 60 Hz | 50 Hz | 60 Hz",
         "| Generator | Apparent Output (kVA) | 1,000 | 1,000 | 1,250 | 1,250",
         "| Rated Output (kWe) | 800 | 800 | 1,000 | 1,000",
