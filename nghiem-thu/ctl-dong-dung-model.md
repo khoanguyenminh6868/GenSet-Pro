@@ -40,7 +40,8 @@ Dòng nhận 3.435 → 3.421, mất đúng 14 = đúng 14 dòng báo cáo soát 
 
 ## Kiểm
 - `node --test suppliers/ctl-dong-dung-model.test.mjs`: 6 ca, lấy bảng THẬT của `cn/` (datakom 1002 DKG307 không nhận "applicable only to DKG-317"; smartgen 1001 HGM6110* ↔ HGM6120* đúng chỗ, họ "HGM6100N series" còn đủ; 1005 HGM9510N / 9530N không nhận "Only available for HGM9520N"; 1012 HGM9310 ↔ 9320) + một bảng dựng tay.
-- Toàn bộ `suppliers/*.test.mjs` (gồm `ctl-amf`, `ctl-twin`, `ctl-module`, `ctl-option`, `no-line-cap`, `regress-config`): xem kết quả ở phần cuối báo cáo này (cập nhật sau lần chạy).
+- PR #1170 (nháp), CI xanh: `suppliers` (toàn bộ `suppliers/*.test.mjs`) pass 3m54s, `server` pass. Chạy tay trước đó: ctl-amf, ctl-twin, ctl-module, ctl-option, no-line-cap, regress-config, cover-config, comap-keys, config-accuracy, ctl-dong-dung-model: 205 ca, 1 đỏ.
+- Fixture đổi duy nhất: `config-accuracy.test.mjs` ca "a controller datasheet gives each line…": tờ giả DSE8610 có dòng "| • | Compatible with DSE7320 MKII"; trước giữ ở DSE8610, nay bỏ (loại b: dòng chỉ nêu BĐK ngoài sheet). Đã hiểu và đổi kỳ vọng thành chỉ còn "| • | Load sharing". `regress-config` và các ca ctl-* không đổi.
 - Soát lại script `dong-khac-model\dung-lai.mjs`: không chạy lại (dùng bản chụp so TSV bằng `modelFacts` trước / sau trên cùng `cn/`). Còn a1 14 (trên) + a2 0; mọi dòng còn lại nêu mã BĐK lạ nằm ở họ hoặc nhánh họ.
 
 ## Giới hạn

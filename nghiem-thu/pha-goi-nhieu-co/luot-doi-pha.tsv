@@ -1,0 +1,45 @@
+goi	luot	co	truoc	sau	how
+IB2200052716	0	10 kVA	-	3	tied
+IB2300003199	0	8 kW	-	1	tied
+IB2300003199	1	13 kW	-	1	tied
+IB2300003199	2	80 kW	1	3	tied
+IB2300003199	3	91 kW	-	3	tied
+IB2300032777	1	11.5 kW	1	-	tied to another size
+IB2300044204	0	14 kVA	-	1	tied
+IB2300044204	1	37 kVA	-	3	tied
+IB2300123990	0	30 kVA	-	3	tied
+IB2300123990	1	34 kVA	-	3	tied
+IB2300134577	0	50 kVA	-	3	tied
+IB2300134577	1	100 kVA	-	3	tied
+IB2300158312	0	150 kVA	-	3	tied
+IB2300177056	1	58 kVA	-	1	tied
+IB2300212821	1	11.5 kVA	1	-	tied to another size
+IB2300232850	0	12.5 kVA	-	3	tied
+IB2300245556	2	12.5 kVA	1	-	tied to another size
+IB2300263757	0	20 kVA	-	1	tied
+IB2300263757	1	30 kVA	1	-	tied to another size
+IB2300363458	0	13.5 kW	-	3	tied
+IB2300363458	1	40 kW	-	3	tied
+IB2300363623	1	5.8 kW	-	1	tied
+IB2400145438	1	8 kVA	1	-	tied to another size
+IB2400145438	3	13.7 kVA	1	-	tied to another size
+IB2400152304	1	21.3 kVA	3	-	tied: disagree
+IB2400275648	0	30 kVA	-	3	tied
+IB2400431781	0	40 kVA	-	3	tied
+IB2400475145	0	8.5 kVA	-	1	tied
+IB2400475145	1	10 kVA	1	-	tied to another size
+IB2400514548	0	6 kVA	-	1	tied
+IB2400514548	1	7 kVA	-	1	tied
+IB2400514548	2	13 kVA	-	3	tied
+IB2400614433	1	250 kVA	-	3	tied
+IB2500067556	0	6 kVA	-	1	tied
+IB2500067556	1	12.5 kVA	-	3	tied
+IB2500152724	1	5.8 kW	-	1	tied
+IB2500386288	0	65 kW	-	3	tied
+IB2500386288	1	136 kW	-	3	tied
+IB2500460613	1	10 kVA	1	-	tied to another size
+IB2600075436	1	120 kVA	3	-	tied to another size
+IB2600075436	3	230 kVA	3	-	tied to another size
+IB2600219527	0	75 kW	-	3	tied
+IB2600457659	0	13.5 kW	-	1	tied
+IB2600457659	2	27 kW	-	3	tied
