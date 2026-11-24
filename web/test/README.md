@@ -16,6 +16,7 @@
     máy tính và điện thoại: Back về màn của link, rồi danh sách, rồi vẫn ở trang.
   - `back-forward.spec.mjs` — Forward của trình duyệt sau Back từ link thẳng (5 link × máy tính / điện thoại), cả khi Back hết về trang chủ; Forward khi không còn mục kế; bước mới xoá nhánh Forward.
   - `file-transfer.spec.mjs` — tệp báo giá NCC (Upload, mở / tải về, xoá) và tệp HSMT / dự án (tải về, xem PDF, tải tay lên, bỏ tệp); `genbidFetch`, kho tạm, `/api/quote`, kho `assets` đều giả dựng trong ca.
+  - `idle.spec.mjs` — `idle()` của trang: dựng danh mục sau cú nhấp thật, callback `requestIdleCallback` chạy trong thời gian rảnh thật (0 lần hết hạn, dưới 600 ms), không chờ 1000 / 50 ms.
   - `misc.spec.mjs` — bộ lọc cột / thứ tự tạm, xoá gói, tạo dự án, chi tiết Danh mục, giao diện sáng / tối, `_lite` + `db.full`.
 - `serve.mjs` — server thử: phục vụ `web/`, thay `/shim.js` (Supabase) bằng `fake-shim.js` (DB trong bộ nhớ, ghi lại mọi lần
   ghi ở `window.__gb.writes`, yêu cầu gửi bot ở `window.__gb.api`), nạp `fixtures/seed.json`, bỏ thẻ script supabase-js.

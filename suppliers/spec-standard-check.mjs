@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, FIELDS } from "./spec-standard.mjs";
+import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, stripBrushless, FIELDS, readOneSource, checkOneSourceValues } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const CAT = globalThis.GenbidCatalog;
@@ -49,6 +49,11 @@ const audit = (a) => {
   // Ghép ô: chữ nguồn kết thúc bằng nối từ, ô ghép là ô KẾ TIẾP của chính dòng nguồn (u.line), và chữ đã ghép ra đúng giá trị chuẩn.
   else if (!a.n && rules.includes("ghep-o") && a.joined && /(?:\band\b|&|,|\+|\/)$/i.test(tidyText(a.sp.value).text) && nextCellOf(a.u.line, a.sp.value) === tidyText(a.joined).text
     && enumOf(fieldDef(a.part, a.fid), a.sp.value, a.joined)?.value === a.value) bump(c.byRule, "enum");
+  // Ô kích từ ghi cả "brushless" (Khoa 24/11/2026): giá trị tách đôi. (1) excitation = ô bỏ chữ brushless, phần còn lại đúng là một giá trị chuẩn;
+  // (2) brushless = có, chỉ khi chữ nguồn ghi brushless / brush less / 无刷.
+  else if (!a.n && a.fid === "excitation" && rules.includes("tach-khong-choi-than") && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)
+    && enumOf(fieldDef(a.part, a.fid), stripBrushless(a.sp.value))?.value === a.value) bump(c.byRule, "enum");
+  else if (a.fid === "brushless" && a.part === "alternator" && rules.includes("co-chu-khong-choi-than") && a.value === true && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)) bump(c.byRule, "bool");
   else { c.unexplained++; if (bad.length < 40) bad.push({ model: a.key, fid: a.fid, raw: a.sp.value, norm: from, std: v }); }
   for (const r of rules) bump(c.byRule, `luat:${r}`);
   const raw = a.sp.fixed?.from ?? a.sp.value;
@@ -83,10 +88,15 @@ for (const d of docs) {
 }
 for (const s of seen) if (!have.has(stable(s))) { c.absent++; if (bad.length < 40) bad.push({ absent: s }); }
 c.docs = docs.length;
+// Giá trị một nguồn internet không đi qua `audit` (không phải dòng catalog): kiểm riêng, raw phải nằm trong tệp nguồn của bản ghi.
+const one = checkOneSourceValues(docs, readOneSource(), (file) => { const p = path.join(ROOT, file); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; });
+c.oneSourceChecked = one.checked;
+c.oneSourceBad = one.bad.length;
 console.log(JSON.stringify(c, null, 1));
 if (bad.length) console.log(JSON.stringify(bad.slice(0, 6)));
 if (rawBad.length) console.log(JSON.stringify(rawBad));
+if (one.bad.length) console.log(JSON.stringify(one.bad.slice(0, 8)));
 const i = process.argv.indexOf("--json");
-if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad }, null, 1));
+if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad, oneSourceBad: one.bad }, null, 1));
 void CAT;
-process.exit(c.unexplained || c.absent || c.rawNotInLine ? 1 : 0);
+process.exit(c.unexplained || c.absent || c.rawNotInLine || c.oneSourceBad ? 1 : 0);

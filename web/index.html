@@ -308,6 +308,8 @@ table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,tabl
 .doclist{display:flex;flex-direction:column;gap:6px}
 .docrow{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;flex-wrap:wrap}
 .docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
+/* Điện thoại (Khoa, 2026-11-24): tên tệp một dòng cắt bớt, khung hẹp để nút xoá nằm chung dòng. */
+@media (max-width:640px){.docrow{flex-wrap:nowrap;gap:6px;padding:5px 7px}.docrow>*{flex:none}.docrow>.fn{flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow-wrap:normal}.docrow [data-openpdf],.docrow a.btn{min-width:34px}}
 .docrow [data-openpdf],.docrow a.btn{min-width:46px;justify-content:center}
 /* PDF / Tải tệp: no frame, raised 3D badge that presses down on tap (Khoa, 2026-11-05) */
 .docrow [data-openpdf],.docrow a.btn,.docrow .btn.qpdf{border:0;background:none;padding:0;-webkit-tap-highlight-color:transparent}
@@ -1711,8 +1713,7 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="#" role="button" data-dlfile="${i}" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(!f.hasText && f.url && /\.pdf$/i.test(f.name) ? '<span class="chip mut">Bản scan / bản vẽ</span>' : "")}
-        ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
+        ${raw(!state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
     </div>
     ${raw(competeHtml(t))}${raw(rivalsHtml(t))}`;
@@ -2220,7 +2221,7 @@ function rivalsHtml(t) {
     <td class="small" data-l="Động cơ khi trúng">${x.makes.length ? x.makes.map((m) => `${m.make}${m.n > 1 ? ` ×${m.n}` : ""}`).join(", ") : "—"}</td></tr>`;
   return h`<div class="compete rivals"><div class="row"><h2 style="flex:1">Đối thủ</h2></div>
     <div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Nhà thầu</th><th>Dự / trúng</th><th>Bị loại kỹ thuật</th><th>Giá dự (% giá gói)</th><th>Động cơ khi trúng</th></tr></thead><tbody>${raw(r.list.map(row).join(""))}</tbody></table></div>
-    <div class="muted small">Nhà thầu đã dự gói mua sắm máy phát ${[r.basis.investor && "cùng chủ đầu tư", r.basis.province && "cùng tỉnh", r.basis.kva && "cùng cỡ (±15%)"].filter(Boolean).join(", ")} đóng thầu trước gói này. Giá dự là trung vị và khoảng, chỉ khi có từ 3 lượt có giá. Chỉ mô tả lịch sử, không biết ai sẽ dự gói này.</div></div>`;
+  </div>`;
 }
 // ---------- Chi phí vốn (web/bidprice.js financeCost, 2026-11-10) ----------
 // Tạm ẩn (Khoa, 2026-11-12): không hiện mục Chi phí vốn và không cộng vào giá vốn. Bật lại: SHOW_FINANCE = true.
@@ -2375,12 +2376,15 @@ function textByFile(all) {
   for (const m of String(all).matchAll(/--- Tệp: (.+?) ---\n([\s\S]*?)(?=\n\n--- Tệp: |$)/g)) out.set(m[1], m[2]);
   return out;
 }
+// Text parts that are no file of the list (the bot's "Chương V (webform)", "Danh mục hàng hóa (Thông tin chung)") are kept:
+// only the text of a file taken off the list goes (Khoa 24/11/2026: any file of a tender can be taken off, not only uploads).
 async function saveProjectFiles(key, files, texts) {
-  const all = files.filter((f) => texts.has(f.name)).map((f) => `--- Tệp: ${f.name} ---\n${texts.get(f.name).trim()}`).join("\n\n");
-  const parts = all ? chunkText(all, 60000) : [], old = state.hsmt[key]?.textChunks || 0;
+  const cur = state.hsmt[key] || {}, gone = new Set((cur.files || []).filter((f) => !files.includes(f)).map((f) => f.name));
+  const all = [...texts].filter(([n]) => files.some((f) => f.name === n) || !gone.has(n)).map(([n, t]) => `--- Tệp: ${n} ---\n${t.trim()}`).join("\n\n");
+  const parts = all ? chunkText(all, 60000) : [], old = cur.textChunks || 0;
   for (const [i, text] of parts.entries()) if (!(await dbSet(`hsmttext/${key}_${i}`, { text }))) throw new Error("không lưu được nội dung tệp");
   for (let i = parts.length; i < old; i++) await state.db.doc(`hsmttext/${key}_${i}`).delete().catch(() => {});
-  const rec = { notifyNo: key, updatedAt: new Date().toISOString(), source: "tải tay", files, textChunks: parts.length };
+  const rec = { ...cur, notifyNo: key, updatedAt: new Date().toISOString(), source: cur.source || "tải tay", files, textChunks: parts.length };
   if (!(await dbSet("hsmt/" + key, rec))) throw new Error("không lưu được danh sách tệp");
   state.hsmt = { ...state.hsmt, [key]: rec };
 }
@@ -2413,7 +2417,7 @@ function askRemoveProjectFile(key, i) {
   const f = state.hsmt[key]?.files?.[i];
   if (!f) return;
   modal(h`<div class="row"><h2 style="flex:1">Bỏ tệp này?</h2>${raw(CLOSE_BTN)}</div>
-    <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ ${isProject(findTender(key)) ? "của dự án" : "mời thầu"}, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.</p>
+    <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ ${isProject(findTender(key)) ? "của dự án" : "mời thầu"}, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.${isProject(findTender(key)) || f.manual ? "" : " Bấm \"Lấy lại tệp\" thì bot tải lại cả danh sách từ muasamcong, kể cả tệp này."}</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="pDelOk" style="color:var(--red)">Bỏ tệp</button></div>`, (m, close) => {
     $("#pDelOk", m).addEventListener("click", async () => {
       close();
@@ -3870,9 +3874,17 @@ let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog be
 // the browser gives idle time again the steps go back to it. Without requestIdleCallback (Safari): the same slice on a timer.
 const idleSlice = () => { const t = performance.now(); return { timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }; };
 let idleLate = false; // the last callback ran on its timeout, not in idle time
-const idle = (fn) => (window.requestIdleCallback
-  ? requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 })
-  : setTimeout(() => fn(idleSlice()), 30));
+// Cause (measured 2026-11-24, Chromium, also headless on Linux): after a real mouse click a page that is producing no frames
+// gets no idle period, so every callback waits for its timeout (1000, 50, 50, 50 ms; didTimeout, timeRemaining() = 0; 7 of 8
+// clicks, vs 0 of 9 for element.click()). While any frame is in flight (an rAF loop, a running animation) the same callbacks run
+// 0-7 ms after the call, in real idle time. So each call also asks for one empty animation frame: it costs nothing, and in a
+// hidden tab (no frames) the timeout above still applies.
+const idle = (fn) => {
+  if (!window.requestIdleCallback) return setTimeout(() => fn(idleSlice()), 30);
+  const id = requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 });
+  requestAnimationFrame(() => {});
+  return id;
+};
 function catWarm() {
   if (!window.GenbidCatalog?.builder || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
   const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();

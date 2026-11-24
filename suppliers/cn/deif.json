@@ -4468,5 +4468,26 @@
         "This document is based on AGC-4 Mk II software version 6.23."
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "DEIF",
+      "model": "AGC-150",
+      "text": "AGC 150",
+      "line": "open and close breakers. You can also use AGC 150 in power management systems with other DEIF controllers.",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "DEIF",
+      "model": "AGC-4",
+      "text": "AGC-4",
+      "line": "| • | AGC-4 Mk II Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4-mk-ii)",
+      "src": [
+        1001,
+        1004
+      ]
+    }
   ]
 }

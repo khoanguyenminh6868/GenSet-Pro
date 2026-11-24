@@ -75,6 +75,9 @@ test("cột xuất xứ động cơ: chỉ NCC + tiêu đề trong danh sách", 
   const origin = { supplierId: "yanan-power", header: ["| Genset Model | Standby power | Prime power | Engine Model | Engine origin | NO. of Cylinder | Detail Data"] };
   assert.equal(at(K, "| B1 | 66 | 60 | KTA50-GS8 | S7 | STAGE3 | CHINA", baifa), "column");
   assert.equal(at(K, "| B1 | 66 | 60 | KTA50-GS8 | S7 | STAGE3 | UK/ CCEC", baifa), null);
+  // Tiêu đề bảng con n101 của baifa vỡ chữ ở lớp PDF: vẫn là cột đó.
+  const baifaVo = { supplierId: "baifa-power", header: ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUF ACTURER / COUNTRY"] };
+  assert.equal(at({ model: "QSK19-G20", make: "Cummins" }, "| BF-C825Q-3 | 825 | 750 | QSK19-G20 | | CHINA STAGE3 | CHINA", baifaVo), "column");
   assert.equal(at(K, "| Y1 | 66 | 60 | KTA50-GS8 | CHINA | 6 | PDF", origin), "column");
   assert.equal(at(K, "| Y1 | 66 | 60 | KTA50-GS8 | 6 | CHINA | PDF", origin), null);
   assert.equal(at(K, "| Y1 | 66 | 60 | KTA50-GS8 | CHINA | 6 | PDF", { ...origin, supplierId: "khac" }), null);

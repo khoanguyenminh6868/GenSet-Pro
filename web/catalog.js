@@ -88,6 +88,8 @@
   // had rows whose only engine cell failed isCode, so the row gave no record).
   // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
+  // Doosan DP054CC / DP086CC / DP222CC (the trailing "CC" is part of the code, not a displacement in cc): the one exception to the "<digit>CC" rule of `isCode`.
+  const DOOSAN_DP = /^DP\d{3}CC$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -229,7 +231,9 @@
     // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
     // "Fuel System": they are COLUMNS of many tables with the maker's own codes ("EUI", "ECR", "m-FIP+e-gov."), and a new key there
     // stops the walk along the row (sdec, sr-genset, jichai lost cylinders, emission, speed). config-bot reads them from the sheet.
-    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
+    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|vertical|冲程/i],
+    // ^ A cell that only names the aspiration ("Turbocharged": jet-power n125, an "Engine type" title over "No. of Cylinder |
+    //   Aspirated") or only the cylinders ("6 cylinder in line", yihua n106) is no engine type (L1-B4 / B5, 24/11/2026).
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
@@ -245,11 +249,15 @@
     ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
   const SPEC = Object.fromEntries(SPECS.map(([key, scope, vi, , , ok]) => [key, { scope, vi, ok }]));
+  // A label the key's pattern takes that names another property of the same thing (L1-B4, 24/11/2026): "Coolant Ratio | 50%
+  // ethylene glycol" (aosif n1062 / 1078 / 1088) is the mix of the coolant, not its volume; "Type of lub-oil | KCN 7805 (sulfur
+  // content<=200mg/m3)" (repower-gas n1001) is the oil's grade, not its volume. Such a label has no key.
+  const NOT_OF = { coolant: /ratio|mix(ture)?\b|concentrat|配比|比例/i, oil: /\btype\b|grade|viscosit|牌号|标号|粘度/i };
   // Pure in the label and asked for every cell of every row: remembered per label (most of the time of build()).
   const specKeys = new Map();
   function specKey(label) {
     const L = String(label || "").trim();
-    if (!specKeys.has(L)) specKeys.set(L, specKeyOf(L));
+    if (!specKeys.has(L)) { const k = specKeyOf(L); specKeys.set(L, k && NOT_OF[k]?.test(L) ? null : k); }
     return specKeys.get(L);
   }
   function specKeyOf(L) {
@@ -262,7 +270,9 @@
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
-  const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
+  // "mm*mm" (kanpor "| 缸径*行程 | mm*mm | 114×135 | …"; L1-B9, 24/11/2026): the unit of a bore × stroke column. Read as a value it
+  // took the first model's place and every bore moved one model to the right (NTA855-GA got 114×135 for 140×152).
+  const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|mm\s*[*×x]\s*mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
   // A cell that is itself a label ("(瞬态电压偏差):", "Exciter Type") is not a value.
   // A cell that is only a fuel unit ("L/h", "L/hr", "L/H", "lph", "g/kWh", "gr/kWh", "g/kW.h", "升/小时"), read as written.
   const FUEL_UNIT_CELL = /^[(（]?\s*(gr?\s*\/\s*\(?\s*kw\s*[.·-]?\s*h\)?|l\s*\/\s*h(r|our)?|lph|lit(re|er)s?\s*\/\s*h(our)?|kg\s*\/\s*h|升\s*\/\s*小?时)\s*[)）]?$/i;
@@ -306,7 +316,7 @@
     if (/[\u3000-\u9fff\uff00-\uffef]/.test(s) || /^\d+(\.\d+)?\s*k(w|va)\s*\/\s*\d/i.test(s)) return false;
     if (/\d\s*[*×xX]\s*\d+\s*[*×xX]\s*\d/.test(s)) return false;
     if (/^\d+(\.\d+)?\s*[*×xX]\s*\d+/.test(s)) return false;
-    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || /\d\s?cc$/i.test(s)) return false;
+    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || (/\d\s?cc$/i.test(s) && !DOOSAN_DP.test(s))) return false;
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
@@ -314,7 +324,9 @@
     // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
     // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
     // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
-    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/. Also a container size (longkai, previa "20FT",
+    // "40HQ", "20GP") and shengfeng's frequency cell "60HZ?".
+    if (/^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i.test(s) || /^\d{2}\s*hz\?$/i.test(s)) return false;
     if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
@@ -332,7 +344,10 @@
   const freqIn = (raw, labelOnly = false) => {
     // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
     // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
-    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
+    // "Dual-band 50/60HZ" (awt-aiweite n102), "50/60 Hz" nêu cả hai tần số: cùng nguyên tắc, trước đây chỉ "60HZ" khớp nên thành 60 Hz.
+    // Chỉ bỏ cặp, nhãn "Frequency: 50" của chính tờ vẫn đọc được. Số sát chữ / số trước nó là một phần của mã ("GB-D60-50HZ": 60 kVA, 50 Hz).
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ")
+      .replace(/(?<![\p{L}\p{N}.])(?:50\s*[\/／&~–-]\s*60|60\s*[\/／&~–-]\s*50)\s*hz(?![\p{L}\p{N}])/giu, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
@@ -694,7 +709,7 @@
     };
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
-    let part = null;
+    let part = null, splitHead = false;
     // GFE datasheets head the sheet with "| Engine | Alternator", then "| Cummins | Stamford | GFE2200CSC" (makes and
     // the genset model) and "| QSK50-G17 | S7L1D-G41" (models): stack counts the lines read after that heading.
     let stack = 0;
@@ -726,6 +741,26 @@
     const labelOf = (x) => String(x || "").replace(/^\|\s*/, "").split(/[:：|]/)[0];
     const plainSheet = !details && lines.every((x) => !String(x).includes("|")) && lines.filter((x) => /^\s*model\s*[:：]/i.test(x)).length >= 2
       && !lines.some((x) => /(engine|alternator|generator|genset)\s*(model|ref)/i.test(labelOf(x)));
+    // A line of the genset's output (its label), and the output labels naming no rating that the sheet repeats with other figures
+    // while another line names prime or standby (L1-B7, 24/11/2026; endress n1017: "Prime power (PRP) [kVA/kW] | 45,5/36,4", then
+    // "Power [kVA/kW] | 21,8/17,5", "| 25/20", … for the other sets of the range): those lines list other products, none is read.
+    const OUT_LINE = (L) => /power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L);
+    const listedOut = new Set();
+    {
+      const seen = new Map();
+      let named = false;
+      for (const l of lines) {
+        const c = cellsOf(l), L = String(c[0] || "").toLowerCase();
+        if (c.length < 2 || !OUT_LINE(L)) continue;
+        if (PRIME_RATE.test(L) || STANDBY.test(L)) { named = true; continue; }
+        const k = L.trim(), v = c.slice(1).join("|");
+        if (!seen.has(k)) seen.set(k, new Set());
+        seen.get(k).add(v);
+      }
+      // Only a label that names the pair of units ("[kVA/kW]") written with two different figures or more (endress n1020: "Power
+      // [kVA/kW] | 35,1/28,1", then "| 43/34,4", its own): a range list.
+      if (named) for (const [k, vs] of seen) if (vs.size >= 2 && /kva\s*\/\s*kw|kw\s*\/\s*kva/i.test(k)) listedOut.add(k);
+    }
     for (const [li, l] of lines.entries()) {
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
@@ -740,9 +775,12 @@
       // longkai): the heading starts the part, the rest is read as a line. Without it the engine's "Model" below was
       // read under "Alternator" (rà soát 18/11/2026: 136 engines read as alternators).
       const lead = c.length >= 3 && c[0].match(/^(engine|alternator)\s*[-–]\s*[a-z][a-z ]*$/i);
-      if (lead) { part = lead[1].toLowerCase(); c = c.slice(1); }
-      const head = c.length === 1 ? headingOf(c[0]) : undefined;
-      if (head !== undefined) { if (head !== "keep") part = head; continue; }
+      if (lead) { part = lead[1].toLowerCase(); splitHead = false; c = c.slice(1); }
+      // "| 发动机 | 参" / "| 发动机 | 参 数 DIESEL ENGINE SPECIFICATION" (shanhua n1024 / n1028; L1-B8, 24/11/2026): the heading
+      // "发动机参数" split by the PDF into two cells, the second starting with "参" (of 参数, parameters). Read as the heading it is.
+      const split = c.length === 2 && /^参/.test(c[1]) && /^(发动机|柴油机|发电机|电球)$/.test(c[0]);
+      const head = c.length === 1 ? headingOf(c[0]) : split ? headingOf(c[0]) : undefined;
+      if (head !== undefined) { if (head !== "keep") { part = head; splitHead = split; } continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
       if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
       if (c.length < 2) continue;
@@ -838,8 +876,13 @@
       else if (ALT_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "altBrand", v));
       else if (ALT_LBL.test(L) && !/power|output|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|speed|frequency|cool/i.test(L)) vals.forEach((v, j) => /\d/.test(v) && put(j, "alternator", v)); // a model has a digit: "| Alternator | Control system" is two headings
       // "Starting power: 1,4 kW" is the starter motor's, a heater's or a charger's power is its own: not the genset's.
-      else if (/power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L)) {
+      else if (OUT_LINE(L)) {
         const kind = PRIME_RATE.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
+        if (kind === "rated" && listedOut.has(L.trim())) { note("dòng công suất không ghi mức lặp lại với số khác (danh sách máy khác)", l); continue; }
+        // An output in kW only, one figure, under the engine's heading recognised from a heading split in two cells ("常用功率 Base
+        // Output Power (kW) | 240" under "| 发动机 | 参", shanhua; L1-B8) is the engine's, not the set's. Only after such a heading:
+        // two-column PDFs set "Engine" before lines of the set ("| Stand by Power | 22KVA/18KW", aosif), so a plain heading is no sign.
+        if (part === "engine" && splitHead && /\bkw\b/i.test(L) && !/kva/i.test(L + " " + vals.join(" ")) && vals.length === 1 && /^\d+(\.\d+)?$/.test(vals[0])) { note("công suất kW ghi dưới mục động cơ, không là công suất tổ máy", l); continue; }
         vals.forEach((v, j) => {
           const both = String(v).match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\s*[/／]\s*(\d+(?:[.,]\d+)?)\s*(kva|kw)/i);
           if (both) {
@@ -851,7 +894,11 @@
           const one = String(v).match(/^(\d+(?:[.,]\d+)?)\s*(kva|kw)?$/i);
           const unit = one?.[2] || unitCell || (L.match(/\((kva|kw)\)|\b(kva|kw)\b\s*$/i) || [])[1] || (L.match(/\((kva|kw)\)/i) || [])[1];
           if (one && unit) { const f = fnum(one[1]); if (f > 0) merge(j, kind, { [unit.toLowerCase() === "kva" ? "kVA" : "kW"]: f }); else note("số có dấu phẩy nghìn / thập phân không rõ", v); return; }
-          const pair = String(v).replace(/\s+/g, "").match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
+          // "45,5/36,4" on a sheet that writes decimal commas (endress n1017 "Prime power (PRP) [kVA/kW]"; L1-B7, 24/11/2026): one or
+          // two digits after the comma are decimals there. Unread before, so a later "Power [kVA/kW] | 25/20" of another set won.
+          const pm = String(v).replace(/\s+/g, "").match(/^(\d+(?:[.,]\d+)?)\/(\d+(?:[.,]\d+)?)$/);
+          const pf = (s) => (/^\d+(\.\d+)?$/.test(s) ? +s : decComma && /^\d+,\d{1,2}$/.test(s) ? +s.replace(",", ".") : NaN);
+          const pair = pm && pf(pm[1]) > 0 && pf(pm[2]) > 0 ? [pm[0], pf(pm[1]), pf(pm[2])] : null;
           // "Rate Power(kva) (prime/standby) | 50/55": both figures in one unit, in the order the label names them.
           const order = L.match(/(prime|standby)\s*\/\s*(prime|standby)/);
           if (pair && unit && order && order[1] !== order[2]) {
@@ -1077,13 +1124,15 @@
       // "not diesel, kind unknown" value; `dual` (gasoline + gas) is the narrowest that `fuelOff` turns away from a diesel HSMT
       // and lets through a gas / gasoline one. Level K = "quyết định của Khoa" (no maker, no page); `why` says so.
       rest: { fuel: "dual", from: "K", why: "QUYẾT ĐỊNH của Khoa 21/11/2026 (không có nguồn hãng): cả bảng SIMPSON-GasGenerators không vào gói diesel; động cơ này không tìm được trang hãng nên loại nhiên liệu KHÔNG rõ, `dual` chỉ để loại khỏi HSMT diesel" } },
-    // man-engines n104 (marine auxiliary table, D2676 / D2862 / D3872 diesel + E3262 gas; the page names no fuel per row): only the E3262 row
-    // gets `gas`, from the maker's own E3262 page (opened 21/11/2026: "E3262 naturally aspired engine with natural gas"; "the E3262 LE232 for
-    // natural gas and the E3262 LE242 for biogas"). The 8 D-rows stay without fuel: the maker's PDF says "Fuel: DIN EN 590" (diesel), but the
-    // catalog has no explicit "diesel" value (`fuelOff` turns every row that has a fuel away from a diesel HSMT, so writing one would drop
-    // them from diesel packs): not invented here (điều phối 21/11/2026).
+    // man-engines n104 (marine auxiliary table of the maker's own page, "Compact MAN diesel and gas engines as auxiliary engines"): the table
+    // mixes D2676 / D2862 / D3872 (diesel) and E3262 (gas) without a fuel column. Khoa 21/11/2026 "ghi `fuel` theo hãng": each engine gets the
+    // fuel its OWN maker page states, level D (read 24/11/2026). The 8 D-rows are `diesel`: the catalog now has that value ONLY from an explicit
+    // page like this one (`fuelOff` of config-bot treats `diesel` as right for a diesel HSMT, wrong for a gas / gasoline one).
     { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
       engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
+    { supplierId: "man-engines", ns: [104], from: "D", fuel: "diesel", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
+      engines: { D2676: "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-in-line-six-cylinder-motor.html", D2862: "https://www.man.eu/engines/en/products/power-generation/diesel/power-generation-diesel.html", D3872: "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-d3872.html" },
+      why: 'trang hãng động cơ MAN của %M ("MAN diesel engines for commercial shipping" / "MAN diesel engines for … Power" cho D2862; PDF Marine-Commercial D2676: "4-stroke diesel engine") (%U, đọc 24/11/2026)' },
     // mwm n1007 / n1008 (datasheets "TCG 3016 V16", EN and CN, one engine record each; the supplier IS the engine maker): the saved table has no
     // gas word, but the sheet itself (sources/mwm/1007.md line 55 "Natural gas applications 50 | Hz", line 74 "a minimum methane number of MN 80
     // for natural gas"; 1008.md line 49 "天然气应用 50 Hz", line 68 "MN=80 的天然气"; `From:` …/gas-engine-tcg-3016/) says natural gas. Level D = the
@@ -1094,14 +1143,16 @@
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
   // `h0`: the first header line of the SAVED table (s.specTables, before tidyTable joins the spaces between Han characters).
   const fuelPage = (id, o, h0, part = "row") => {
-    const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part);
-    if (!p) return null;
-    if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
-    if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
-    const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
-    if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
-    // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
-    return p.rest ? { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why } : null;
+    // Several entries may name one table with different `engines` (man-engines n104: diesel D-rows, gas E3262): the first that gives a fuel wins.
+    for (const p of FUEL_PAGES.filter((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part)) {
+      if (p.header != null && String(h0 ?? "").trim() !== p.header) continue;
+      if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
+      const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
+      if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
+      // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
+      if (p.rest) return { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why };
+    }
+    return null;
   };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
@@ -1184,6 +1235,17 @@
         const right = Math.max(at.ei ?? -1, at.ai ?? -1);
         const again = right >= 0 && cells.some((c, i) => i > right && +String(c).trim().replace(",", ".").replace(/\s*(kg|db\(a\)|db)$/i, "") === w);
         if (w > 0 && outs.includes(w) && !again) { if (at.note) at.note("số bằng đúng công suất của dòng, không là khối lượng / độ ồn", `${x.key}=${x.value}`); return false; }
+        return true;
+      }
+      // A consumption whose every figure is one of the row's own outputs (L1-B6, 24/11/2026): legapower n101 "Cons 100%（L/h）" = 350
+      // is the PRP kVA under "KVA" over "ESP | PRP"; wintpower n105 "Cons 100% ( L/H )" = "180/225" is the prime kW / kVA of a
+      // header line that lacks the model's title. The cell is the output, left out. Not a g/kWh figure (205 g/kWh on a 205 kW
+      // set is possible), and not when the same figure stands again right of the engine / alternator (its own column).
+      if (/^fuel(75|50)?$/.test(x.key) && !/g\s*\/\s*\(?\s*k\s*w/i.test(`${x.value} ${x.label} ${x.unitCell || ""}`)) {
+        const fs = (String(x.value).match(/\d+(?:[.,]\d+)?/g) || []).map((s) => +s.replace(",", "."));
+        const right = Math.max(at.ei ?? -1, at.ai ?? -1);
+        const again = right >= 0 && cells.some((c, i) => i > right && fs.includes(+String(c).trim().replace(",", ".")));
+        if (fs.length && fs.every((f) => f > 0 && outs.includes(f)) && !again) { if (at.note) at.note("số bằng đúng công suất của dòng, không là tiêu hao", `${x.key}=${x.value}`); return false; }
         return true;
       }
       if (x.key !== "voltage") return true;
@@ -1601,13 +1663,26 @@
           note(t, ti, ri, "ô mã viết dấu － toàn chiều rộng, đọc như '-'", c);
           return c.replace("－", "-");
         });
+        // A set of two engines ("| 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | 2*S4L1D-F41", baifa n106 TWIN; "2 x TAD1641GE",
+        // tecnogen; "2X DC13 505A AE", green-power; catalog-a): the cell is "<2-4> x <code>". The code alone is read as the cell's model
+        // and the cell is remembered in `twin`: the engine record of such a row carries `units` (how many engines the set has) and NO
+        // power (the row's kVA / kW is the SET's: matched against one engine it would call TAD1355GE a 900 kVA engine), and no engine-scope
+        // figure (the table does not say whether a displacement / cylinder count / engine rating on the row is one engine's or the
+        // set's). A twin cell that is not the engine's (the alternator "2*S4L1D-F41") gives no record.
+        // A power cell written "388VA" (yanan-power n101 / n107 "| YN388C | 388VA | 310kW | 350kVA | 280kW | QSNT-G2", catalog-doc-4): the "k" of
+        // kVA is missing (the page writes "388kVA" in the sibling rows of the same genset). Read as kVA only when a kW cell of the SAME row
+        // is 0.8 x the figure (310 / 388 = 0.80; 286 / 358; 330 / 413): otherwise it stays as written. Without this "388VA" was taken as the
+        // engine model (letters + digits) and the real engine code of the row, QSNT-G2, was never read.
+        const kwOfRow = cells.map((c) => c.match(/^(\d+(?:\.\d+)?)\s*kW$/i)).filter(Boolean).map((m) => +m[1]);
+        cells.forEach((c, i) => { const m = c.match(/^(\d+(?:\.\d+)?)\s*VA$/i); if (m && kwOfRow.some((k) => Math.abs(k / +m[1] - 0.8) <= 0.01)) cells[i] = `${m[1]}kVA`; });
+        const twin = [], twinCell = (c) => { const m = c.match(/^([2-4])\s*[x×*]\s*(\S.*)$/i); return m && [m[2], m[2].replace(/\s+/g, ""), m[2].split(/\s+/)[0]].some(isCode) ? m : null; };
+        const twinRow = cells.some((c) => twinCell(c));
+        if (twinRow && TWIN_ENGINE_SUPPLIERS.includes(s.id)) cells.forEach((c, i) => { const m = twinCell(c); if (m) { twin.push({ i, units: +m[1], text: c }); cells[i] = m[2]; } });
         // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
         const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
-        // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
-        // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
-        // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
-        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×*]\s*(\S.*)$/i); /* "2*TWD1645GE" (baifa n106 TWIN, catalog-a) */ return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        // Other suppliers (tecnogen "2 x TAD1641GE", green-power "2X DC13 505A AE"): the row gives nothing, as before (tests s6-tecnogen-cyl, bang-r1).
+        if (twinRow && !twin.length) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         // A table of series ("| Power range | models | Engine | Alternator | Controller", eastern-lion: "Engine By Cummins | 22 –
         // 444 kW | 40 | 4BTA3.9-G2 | EL 274K"): the row is a family of 40 models over a range of outputs, the engine and the
         // alternator are one example of it, not the set's own parts (lech-cot-11).
@@ -1668,6 +1743,10 @@
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
         const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (bareEng) { ai = ei; ei = bareEng.engCell; }
+        // Twin cells: only the engine's is read; with the engine not on a twin cell the row stays unread as before (which code is which is not known).
+        const twinEng = twin.find((x) => x.i === ei);
+        if (twin.length && !twinEng) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        for (const x of twin) if (x.i === ai) { note(t, ti, ri, "đầu phát ghép đôi, không dựng bản ghi", x.text); ai = -1; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
@@ -1675,7 +1754,11 @@
         // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
         const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
         if (twoCodes) note(t, ti, ri, "một ô ghi hai mã", cells[ei]);
-        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        if (ei >= 0 && !twoCodes) {
+          const rec = { ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable };
+          if (twinEng) { rec.units = twinEng.units; rec.setPower = common.power; rec.power = null; rec.specs = common.specs.filter((x) => SPEC[x.key]?.scope !== "engine"); }
+          out.push(rec);
+        }
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
@@ -1936,6 +2019,9 @@
   // (supplier + n + the header titles of the two cells): the bare number of `engCell` is the engine model as written, the code
   // of `altCell` the alternator. Khoa's rule for "ZS195 / 195": no make (none looked up), no code made up ("195" stays "195").
   const BARE_ENGINE_CELLS = [{ supplierId: "zhengdian-zhengzhou", n: [107], engCell: 3, altCell: 4, code: /^\d{3,4}$/, header: "柴油机型号 | 发电机型号", why: "điều phối 21/11/2026 (S6-4)" }];
+  // Twin-engine sets read as ONE engine record carrying `units` (baifa n101–n106 TWIN, "2*TAD1355GE"; catalog-doc-4, điều phối 24/11/2026).
+  // An explicit list: tecnogen and green-power still give no record for "2 x …" cells (their own tests say so).
+  const TWIN_ENGINE_SUPPLIERS = ["baifa-power"];
   const OR_ENGINE_CELLS = [{ supplierId: "xingguang-jiangsu", n: [108], engCell: 2, altCell: 3, code: /^[A-Z\d]+或[A-Z\d]+$/, header: "柴油机型号Motor Type", why: "điều phối 21/11/2026" }];
   // "YD4KD(YD485D)" of comappower n113 / yanan-power n111 (S6-5, điều phối 21/11/2026; 4 rows, tables with no alternator column): the
   // pages do not say what the bracket means. Same rule as TWO_CODE_CELLS above (kept apart from its declaration on purpose).
@@ -1980,13 +2066,48 @@
     "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
     "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
     "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+    // ma-dong-co-trung PR 3: one code on two keys, the bracket form and the bare form. Listed only when no figure of the two keys
+    // disagrees and the row's genset power lies in the bare key's range. What "(3B)", "(3D)" mean is not read: the row keeps
+    // them in its own words. Not listed: zc-power "186FA(E)", "192F(E)" (compression), "1100F(E)" (power); a bare figure in brackets.
+    "12V4000G14F(3B)=12V4000G14F", "12V4000G14S(3B)=12V4000G14S", "12V4000G24F(3B)=12V4000G24F", "12V4000G24S(3B)=12V4000G24S",
+    "16V4000G14F(3B)=16V4000G14F", "16V4000G14S(3B)=16V4000G14S", "16V4000G24F(3B)=16V4000G24F", "16V4000G24S(3B)=16V4000G24S",
+    "20V4000G14F(3B)=20V4000G14F", "20V4000G14S(3B)=20V4000G14S", "20V4000G24F(3B)=20V4000G24F", "20V4000G24S(3B)=20V4000G24S",
+    "20V4000G34F(3B)=20V4000G34F", "20V4000G44S(3B)=20V4000G44S",
+    "12V4000G74F(3D)=12V4000G74F", "12V4000G74S(3D)=12V4000G74S", "12V4000G84F(3D)=12V4000G84F", "12V4000G84S(3D)=12V4000G84S",
+    "16V4000G74F(3D)=16V4000G74F", "16V4000G74S(3D)=16V4000G74S", "16V4000G84F(3D)=16V4000G84F",
+    "20V4000G64F(3D)=20V4000G64F", "20V4000G64S(3D)=20V4000G64S", "20V4000G74F(3D)=20V4000G74F", "20V4000G74S(3D)=20V4000G74S",
+    "20V4000G84F(3D)=20V4000G84F", "20V4000G94S(3D)=20V4000G94S",
+    // Khoa 24/11/2026: the six Cummins "(M)" codes (4BTA3.9-G2, 6BT5.9-G2, KTA19-G3, KTA19-G4, KTA38-G, NTA855-G2) stay on their own keys.
+    // Same code written two ways (gop-trung-ma, Khoa 24/11/2026: 6 nhóm có bằng chứng, trung-ma-28.md). Explicit cells, not a rule:
+    // the "-G…(M)" Cummins codes (4BTA3.9-G2(M), 6BT5.9-G2(M), KTA19-G3(M), KTA19-G4(M), KTA38-G(M), NTA855-G2(M)) stay apart.
+    // 4BTA3.9-GM4/7: kangwo n108 r1 (1 row), the row above in the same table and fengfa n101 r1 (same set CCFJ40JW) write "4BTA3.9-GM47".
+    // 4HTAA4.3*G34: frs-shenyang n106 r23 (1 row), 21 uses by 16 suppliers write "4HTAA4.3-G34"; the same table writes "-G34" on its 6HTAA6.5 row.
+    // KTA19-D(M), KTA38-D(M), NTA855-D(M): walter-yangzhou writes both in the same sets (n116 "(M)" ↔ n114 "-DM", same kW and consumption);
+    // mecca-power (KTA19, KTA38) goes with it by Khoa's choice. (YD485D): acepow-fuan n114 r19 (1 row), 6 uses by 4 suppliers write "YD485D".
+    "4BTA3.9-GM4/7=4BTA3.9-GM47", "4HTAA4.3*G34=4HTAA4.3-G34", "KTA19-D(M)=KTA19-DM", "KTA38-D(M)=KTA38-DM", "NTA855-D(M)=NTA855-DM", "(YD485D)=YD485D",
   ];
-  let engineCellCodes = null; // built on first use: `keyOf` is declared further down
+  // Alternator cells written two ways for the same code (gop-trung-ma, Khoa 24/11/2026): endress "ECP 28-M/4C" (n113, n114, n1013, n1024)
+  // and "ECP28 M4C" / "ECP28 M4 C" / "ECP28-M4 C" (n133, n140, n144, n148): one supplier, the same set (n114 ↔ n144 share 50 Hz, PRP 18,3/14,6 kVA/kW,
+  // 2190 cc), the maker's sheet writes "ECP28 M4 C". Only this one cell; ECP28-2S/4C, ECP32-2S/4C (no shared field) stay apart.
+  // UCI274C(80KW) (jinlongteng-fujian n101, 4 rows; the supplier adds "(nnKW)" to every alternator of its table) ↔ "UCI274C-80KW"
+  // (yihua-fujian n106, 2 rows "Rated Output 80KW", voltage series equal to Stamford's UCI274C-311 sheet): one code with its 80 kW level,
+  // written two ways (Khoa 24/11/2026, trung-ma-28.md nhóm 4). Joined with each other only, NOT to the bare "UCI274C" (150+ uses by 37
+  // suppliers; the maker's sheet gives no kW). The other "(nnKW)" cells of jinlongteng (UCI224E(48KW), UCI274D(96KW), ...) are not touched.
+  const ALT_CELL_LIST = ["ECP 28-M/4C=ECP28 M4C", "UCI274C(80KW)=UCI274C-80KW"];
+  // The genset code of a row written two ways inside one supplier (gop-trung-ma, Khoa 24/11/2026, trung-ma-28.md nhóm 21): kaihua-genset
+  // n111 r40 "KH*2000GF" (the only "*" of that table, between KH-1800GF and KH-2200GF; 2750/2500 kVA/kW as in the 5 tables that write "KH-2000GF").
+  // "supplierId:cell=code"; the field `genset` of the row's records only. KH-2000GF2 (n109) is another code and stays apart.
+  const GENSET_CELL_LIST = ["kaihua-genset:KH*2000GF=KH-2000GF"];
+  let engineCellCodes = null, altCellCodes = null, gensetCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
     engineCellCodes ||= new Map(ENGINE_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    altCellCodes ||= new Map(ALT_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    gensetCellCodes ||= new Map(GENSET_CELL_LIST.map((x) => { const [from, to] = x.split("="), [sid, cell] = from.split(":"); return [`${sid}:${keyOf(cell)}`, to]; }));
     const engineKeys = new Set(SPECS.filter((x) => x[1] === "engine").map((x) => x[0])), out = [];
-    for (const o of list) {
-      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : null;
+    for (let o of list) {
+      const gc = o.genset ? gensetCellCodes.get(`${s.id}:${keyOf(o.genset)}`) : null;
+      if (gc) o = { ...o, genset: gc };
+      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : o.kind === "alternator" ? altCellCodes.get(keyOf(o.model)) : null;
       if (!codes) { out.push(o); continue; }
       if (codes.length === 1) { out.push({ ...o, model: codes[0] }); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "một ô ghi hai mã", `tách thành ${codes.join(", ")}; bỏ thông số động cơ của dòng`);
@@ -2199,6 +2320,140 @@
       ["20V4000G63L", "ET-4000", 143, "| ET-4000 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |", "3311"],
       ["K19-DM", "EC-450M6", 145, "| EC-450M6 | 450 | 563 | K19-DM | 507/580 | 6.L | 19 | 3360x1100x2480 | 3520 |", "507/580"]].map(([, genset, n, line, from]) => (
       { supplierId: "ettes-power", n, genset, line, act: "unitspec", keys: ["engPower"], from, khoa: "Khoa 24/11/2026", why: "ô \"(kW/Hp)\" không ghi đơn vị của số này (không phải cặp kW / HP): đánh dấu thiếu đơn vị, cần xác nhận, không đọc là kW" })),
+    // gia-tri-sai (Khoa 24/11/2026): "Đưa từng ca vào danh sách để bỏ hoặc sửa" — vi phạm "sai" của spec-value-check mà NGUỒN ghi sai
+    // (biết ô nào): `dropspec` bỏ riêng thông số đó, `nopower` để trống công suất; googol "Weight (kg)" (không nói của động cơ
+    // hay tổ máy) là `unsurespec`: giữ hiện, cần xác nhận, không dùng để chấm / lọc. Danh sách sinh từ soát từng ca,
+    // báo cáo genbid-work\dieu-phoi\nghiem-thu\gia-tri-sai.md; test suppliers/gia-tri-sai.test.mjs.
+    { supplierId: "gfe-power", n: 1023, model: "2206C-E13TAG2 L", line: "| Compression ratio | 16 3:1", act: "dropspec", keys: ["compr"], khoa: "Khoa 24/11/2026", why: "[gfe-power n1023] nguồn ghi tỉ số nén \"16 3:1\" (mất dấu chấm, không biết 16,3 hay 16): bỏ riêng tỉ số nén" },
+    { supplierId: "huipu-power", n: 102, model: "PTAA1340G3", line: "| HP-K620 | 560 | 620 | PTAA1340G3 | 12 | 128*14 | 21.9 | 52.14 | 23 | 36 | 3700*1400*2080 | 4110", act: "dropspec", keys: ["bore"], khoa: "Khoa 24/11/2026", why: "[huipu-power n102] nguồn ghi đường kính × hành trình \"128*14\" (gõ sai, ngoài 50–400 mm): bỏ riêng bore" },
+    { supplierId: "huipu-power", n: 102, model: "QTA4320G7", line: "| HP-K2200 | 2000 | 2200 | QTA4320G7 | 16 | 170*19 | 70.8 | 503.02 | 40 | 240 | 7000*2620*3390 | 17402", act: "dropspec", keys: ["bore"], khoa: "Khoa 24/11/2026", why: "[huipu-power n102] nguồn ghi đường kính × hành trình \"170*19\" (gõ sai, ngoài 50–400 mm): bỏ riêng bore" },
+    { supplierId: "jlmech-wuhan", n: 104, model: "YC6C1320-D31", line: "| JL-880GF | 880 | 1100 | 1584 | YC6C1320-D31 | 6 | 200210 | 39.58 | 180 | 220 | 5200*2150*2600 | 8500", act: "dropspec", keys: ["bore"], khoa: "Khoa 24/11/2026", why: "[jlmech-wuhan n104] nguồn ghi đường kính × hành trình \"200210\" (gõ sai, ngoài 50–400 mm): bỏ riêng bore" },
+    { supplierId: "acepow-fuan", n: 149, genset: "APX-50", line: "| PACKING SIZE(mm/Open type) | 1650x700x1100 | 190x800x1170 | 1950x860x1330 | 1950x860x1330", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[acepow-fuan n149] nguồn ghi kích thước \"190x800x1170\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "acepow-fuan", n: 149, genset: "APX-85", line: "| Fuel consumption(L/h) | 4 | 11 | 7 | ≤7", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[acepow-fuan n149] nguồn ghi tiêu hao \"≤7\" L/h không hợp công suất của dòng: bỏ riêng tiêu hao" },
+    { supplierId: "aoke-yangzhou", n: 127, genset: "AOKE-V330", line: "| AOKE-V330 | 300KW | 330KW | 沃尔沃 | TAD1343GE | 6 | 12.78 | 36 | 198 | 3130*115*1850 | 3000 | | 详细参数", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[aoke-yangzhou n127] nguồn ghi kích thước \"3130*115*1850\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "aosif", n: 115, genset: "AD697", line: "| AD697 | 632/506 | 697/558 | DP158CCS | 734 | 8V | 15.1 |", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[aosif n115] nguồn ghi tiêu hao \"734\" L/h không hợp công suất của dòng: bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 117, genset: "BDA-C300", line: "| BDA-C300 | 300/375 | 东风康明斯 | 6ZTAA13-G3 | 6 | 13 | 40 | ≤205 | 3000*1150*170 | 3200", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n117] nguồn ghi kích thước \"3000*1150*170\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "bdadl-shanghai", n: 117, genset: "BDA-C310", line: "| BDA-C310 | 310/387.5 | 重庆康明斯 | NTA855-G4 | 6 | 14 | 39 | ≤206 | 3100*1050*185 | 2900", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n117] nguồn ghi kích thước \"3100*1050*185\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "bdadl-shanghai", n: 105, genset: "BDA-LZ1300", line: "| BDA-LZ1300 | 1200/1300 | 上海菱重 | S16R-PTA-C | 16 | 65.4 | 204 | ≤310 | 5382×2486×2931 | 11000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n105] cột \"燃油消耗 (g/kw.h)\" ghi \"≤310\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 129, genset: "BDA-LZ1300", line: "| BDA-LZ1300 | 1200/1300 | 上海菱重 | S16R-PTA-C | 16 | 65.4 | 204 | ≤310 | 5382×2486×2931 | 11000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n129, chép nguyên văn dòng của n105] cột \"燃油消耗 (g/kw.h)\" ghi \"≤310\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 104, genset: "BDA-LZ1600", line: "| BDA-LZ1600 | 1500/1600 | 上海菱重 | S16R-PTA2-C | 16 | 65.4 | 204 | ≤418 | 5382×2486×2931 | 12000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤418\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 129, genset: "BDA-LZ1600", line: "| BDA-LZ1600 | 1500/1600 | 上海菱重 | S16R-PTA2-C | 16 | 65.4 | 204 | ≤418 | 5382×2486×2931 | 12000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n129, chép nguyên văn dòng của n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤418\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 104, genset: "BDA-LZ1750", line: "| BDA-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤432\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 129, genset: "BDA-LZ1750", line: "| BDA-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 14400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n129, dòng khác cùng model, cùng ô sai như n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤432\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 112, genset: "BDA-LZ550", line: "| BDA-LZ550 | 500/550 | 上海菱重 | S6R2-PTA-C | 6 | 30 | 50 | ≤139 | 3576×1614×2226 | 5100", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n112] cột \"燃油消耗 (g/kw.h)\" ghi \"≤139\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 129, genset: "BDA-LZ550", line: "| BDA-LZ550 | 500/550 | 上海菱重 | S6R2-PTA-C | 6 | 30 | 50 | ≤139 | 3576×1614×2226 | 5100", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n129, chép nguyên văn dòng của n112] cột \"燃油消耗 (g/kw.h)\" ghi \"≤139\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 119, genset: "BDA-M240", line: "| BDA-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n119] cột \"燃油消耗 (g/kw.h)\" ghi \"≤120\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 135, genset: "BDA-M240", line: "| BDA-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n135, chép nguyên văn dòng của n119] cột \"燃油消耗 (g/kw.h)\" ghi \"≤120\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 118, genset: "BDA-M275", line: "| BDA-M275 | 250/275 | 奔驰MTU | 6R1600G80F | 6 | 8.2 | 39 | ≤125 | 2500*890*1350 | 2450", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n118] cột \"燃油消耗 (g/kw.h)\" ghi \"≤125\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 135, genset: "BDA-M275", line: "| BDA-M275 | 250/275 | 奔驰MTU | 6R1600G80F | 6 | 8.2 | 39 | ≤125 | 2500*890*1350 | 2450", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n135, chép nguyên văn dòng của n118] cột \"燃油消耗 (g/kw.h)\" ghi \"≤125\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 117, genset: "BDA-M320", line: "| BDA-M320 | 300/330 | 奔驰MTU | 8V1600G70F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n117] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 135, genset: "BDA-M320", line: "| BDA-M320 | 300/330 | 奔驰MTU | 8V1600G70F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n135, chép nguyên văn dòng của n117] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 116, genset: "BDA-M360", line: "| BDA-M360 | 320/360 | 奔驰MTU | 8V1600G80F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2550", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n116] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 135, genset: "BDA-M360", line: "| BDA-M360 | 320/360 | 奔驰MTU | 8V1600G80F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2550", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n135, chép nguyên văn dòng của n116] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "bdadl-shanghai", n: 128, genset: "BDA-W180", line: "| BDA-W180 | 180/200 | 潍柴动力 | WP7D240E310 | 6 | 7.47 | 20 | ≤195 | 2500*100*1500 | 1800", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[bdadl-shanghai n128] nguồn ghi kích thước \"2500*100*1500\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "changchai", n: 2001, genset: "CC15GS", line: "| 尺寸、重量 | 机组(长X宽X高mm带万向轮) | 1400X660X8401450X660X840 | 1450X660X840 | 1450X660X900 | 1450X660X900", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[changchai n2001] nguồn ghi ô kích thước không đủ / thừa số (\"1400X660X8401450X660X840\"): bỏ riêng kích thước" },
+    { supplierId: "depco-power", n: 2050, genset: "DPK-DTY-70", line: "DPK-DTY-70", act: "nopower", khoa: "Khoa 24/11/2026", why: "[depco-power n2050] nguồn ghi Standby 55kW/69kVA dưới Prime 50kW/70kVA: để trống công suất" },
+    { supplierId: "depco-power", n: 2013, genset: "DPK-DYM-44", line: "DPK-DYM-44", act: "nopower", khoa: "Khoa 24/11/2026", why: "[depco-power n2013] nguồn ghi Standby \"35kW/344kVA\" (kVA gõ sai): để trống công suất" },
+    { supplierId: "fukangsi-yangzhou", n: 2011, genset: "FKS-KP650M", line: "| FKS-KP650M | 580 | 650 | 凯普 | KPV660 | 1044 | 650 | 4.4*1.69*2.15 | 4500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2011] cột \"油耗（L/H）\" của nguồn ghi \"650\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2011, genset: "FKS-KP720M", line: "| FKS-KP720M | 648 | 720 | 凯普 | KPV780 | 1166 | 720 | 4.4*1.69*2.15 | 4500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2011] cột \"油耗（L/H）\" của nguồn ghi \"720\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2011, genset: "FKS-KP850M", line: "| FKS-KP850M | 750 | 850 | 凯普 | KPV970 | 1350 | 850 | 4.7*1.7*2.2 | 5200", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2011] cột \"油耗（L/H）\" của nguồn ghi \"850\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2009, genset: "FKS-LZ1300", line: "| FKS-LZ1300 | 1200/1300 | 上海菱重 | S16R-PTA-C | 16 | 65.4 | 204 | ≤310 | 5382×2486×2931 | 11000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2009] cột \"燃油消耗 (g/kw.h)\" ghi \"≤310\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2009, genset: "FKS-LZ1600", line: "| FKS-LZ1600 | 1500/1600 | 上海菱重 | S16R-PTA2-C | 16 | 65.4 | 204 | ≤418 | 5382×2486×2931 | 12000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2009] cột \"燃油消耗 (g/kw.h)\" ghi \"≤418\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2009, genset: "FKS-LZ1750", line: "| FKS-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2009] cột \"燃油消耗 (g/kw.h)\" ghi \"≤432\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2009, genset: "FKS-LZ550", line: "| FKS-LZ550 | 500/550 | 上海菱重 | S6R2-PTA-C | 6 | 30 | 50 | ≤139 | 3576×1614×2226 | 5100", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2009] cột \"燃油消耗 (g/kw.h)\" ghi \"≤139\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2007, genset: "FKS-M240", line: "| FKS-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2007] cột \"燃油消耗 (g/kw.h)\" ghi \"≤120\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2007, genset: "FKS-M275", line: "| FKS-M275 | 250/275 | 奔驰MTU | 6R1600G80F | 6 | 8.2 | 39 | ≤125 | 2500*890*1350 | 2450", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2007] cột \"燃油消耗 (g/kw.h)\" ghi \"≤125\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2007, genset: "FKS-M320", line: "| FKS-M320 | 300/330 | 奔驰MTU | 8V1600G70F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2007] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "fukangsi-yangzhou", n: 2007, genset: "FKS-M360", line: "| FKS-M360 | 320/360 | 奔驰MTU | 8V1600G80F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2550", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[fukangsi-yangzhou n2007] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "huipu-power", n: 102, genset: "HP-K1000", line: "| HP-K1000 | 900 | 1000 | QTA2160G5 | 8 | 170*195 | 35.4 | 22337 | 70 | 160 | 4900*1920*2350 | 8257", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[huipu-power n102] nguồn ghi tiêu hao \"22337\" ở cột tiêu hao (gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 110, genset: "J20C100M", line: "| J20C100M | 90 | 100 | 东风康明斯 | 6BT5.9-G2 | 162 | 100 | 202*0.86*1.46 | 1260 | 详细", act: "dropspec", keys: ["dims","fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n110] nguồn ghi kích thước \"202*0.86*1.46\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước; cột \"油耗（L/H）\" của nguồn ghi \"100\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 121, genset: "J20C100M", line: "| J20C100M | 90 | 100 | 东风康明斯 | 6BT5.9-G2 | 162 | 100 | 202*0.86*1.46 | 1260 | 详细", act: "dropspec", keys: ["dims","fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n121, chép nguyên văn dòng của n110] nguồn ghi kích thước \"202*0.86*1.46\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước; cột \"油耗（L/H）\" của nguồn ghi \"100\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 110, genset: "J20C420M", line: "| J20C420M | 380 | 420 | 东风康明斯 | QSZ13-G5 | 684 | 420 | 3.4*1.25*1.97 | 3850 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n110] cột \"油耗（L/H）\" của nguồn ghi \"420\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 110, genset: "J20C88M", line: "| J20C88M | 80 | 88 | 东风康明斯 | QSB5.9-G2 | 144 | 88 | 2.2*0.86*1.46 | 1260 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n110] cột \"油耗（L/H）\" của nguồn ghi \"88\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 121, genset: "J20C88M", line: "| J20C88M | 80 | 88 | 东风康明斯 | QSB5.9-G2 | 144 | 88 | 2.2*0.86*1.46 | 1260 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n121, chép nguyên văn dòng của n110] cột \"油耗（L/H）\" của nguồn ghi \"88\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 102, genset: "J20H455M", line: "| J20H455M | 415 | 455 | 华柴道依茨 | BF8M1015CP-LAG3 | 747 | 455 | 3.5*1.5*2.25 | 3600 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n102] cột \"油耗（L/H）\" của nguồn ghi \"455\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 103, genset: "J20KP650M", line: "| J20KP650M | 580 | 650 | 凯普 | KPV660 | 1044 | 650 | 4.4*1.69*2.15 | 4500 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n103] cột \"油耗（L/H）\" của nguồn ghi \"650\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 103, genset: "J20KP720M", line: "| J20KP720M | 648 | 720 | 凯普 | KPV780 | 1166 | 720 | 4.4*1.69*2.15 | 4500 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n103] cột \"油耗（L/H）\" của nguồn ghi \"720\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 103, genset: "J20KP850M", line: "| J20KP850M | 750 | 850 | 凯普 | KPV970 | 1350 | 850 | 4.7*1.7*2.2 | 5200 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n103] cột \"油耗（L/H）\" của nguồn ghi \"850\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 105, genset: "J20P160M", line: "| J20P160M | 145 | 160 | 帕金斯 | 1106A-70TAG3 | 261 | 31 | 2.5*1*12*1.47 | 1602 | 详细", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n105] nguồn ghi ô kích thước không đủ / thừa số (\"2.5*1*12*1.47\"): bỏ riêng kích thước" },
+    { supplierId: "jiangchai-xuzhou", n: 106, genset: "J20V175M", line: "| J20V175M | 160 | 175 | 沃尔沃 | TAD753GE | 288 | 175 | 2.6*1.046*1.5 | 1789 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n106] cột \"油耗（L/H）\" của nguồn ghi \"175\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 106, genset: "J20V440M", line: "| J20V440M | 400 | 440 | 沃尔沃 | TAD1651GE | 720 | 8 | 3.3*1.16*2 | 3330 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n106] cột \"油耗（L/H）\" của nguồn ghi \"8\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jiangchai-xuzhou", n: 109, genset: "J20Y90M", line: "| J20Y90M | 85 | 90 | 广西玉柴 | YCD4Y33H6-135 | 153 | 90 | 2.2*0.84*1.38 | 1150 | 详细", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[jiangchai-xuzhou n109] cột \"油耗（L/H）\" của nguồn ghi \"90\" (chép số kW dự phòng / gõ sai): bỏ riêng tiêu hao" },
+    { supplierId: "jlmech-wuhan", n: 104, genset: "JL-320GF", line: "| JL-320GF | 320 | 400 | 576 | YC6MJ48DL-D20 | 6 | 131*145 | 11.73 | 28 | 215 | 200*1200*1750 | 3100", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[jlmech-wuhan n104] nguồn ghi kích thước \"200*1200*1750\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "longkai-power", n: 1085, genset: "LG288C", line: "| 100% load(Prime power) | L/h | 18.3", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1085] nguồn ghi tiêu hao \"18.3\" L/h cho tổ máy LG288C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1085, genset: "LG288C", line: "| 50% load(Prime power) | L/h | 9.1", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1085] nguồn ghi tiêu hao \"9.1\" L/h cho tổ máy LG288C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1055, genset: "LG288C", line: "| 50% load(Prime power) | L/h | 9.1", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1055, chép nguyên văn dòng của n1085] nguồn ghi tiêu hao \"9.1\" L/h cho tổ máy LG288C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1056, genset: "LG288C", line: "| 50% load(Prime power) | L/h | 9.1", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1056, chép nguyên văn dòng của n1085] nguồn ghi tiêu hao \"9.1\" L/h cho tổ máy LG288C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1085, genset: "LG288C", line: "| 75% load(Prime power) | L/h | 13.8", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1085] nguồn ghi tiêu hao \"13.8\" L/h cho tổ máy LG288C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1104, genset: "LG520C", line: "| 100% load(Prime power) | L/h | 38.4", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1104] nguồn ghi tiêu hao \"38.4\" L/h cho tổ máy LG520C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1104, genset: "LG520C", line: "| 50% load(Prime power) | L/h | 20.8", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1104] nguồn ghi tiêu hao \"20.8\" L/h cho tổ máy LG520C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1104, genset: "LG520C", line: "| 75% load(Prime power) | L/h | 29.2", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1104] nguồn ghi tiêu hao \"29.2\" L/h cho tổ máy LG520C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1107, genset: "LG600C", line: "| Displacement | Liquid | 37.8", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1107] nguồn ghi tiêu hao \"37\" L/h cho tổ máy LG600C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1107, genset: "LG600C", line: "| 50% load(Prime power) | L/h | 19.3", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1107] nguồn ghi tiêu hao \"19.3\" L/h cho tổ máy LG600C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "longkai-power", n: 1107, genset: "LG600C", line: "| 75% load(Prime power) | L/h | 27.5", act: "dropspec", keys: ["fuel","fuel75","fuel50"], khoa: "Khoa 24/11/2026", why: "[longkai-power n1107] nguồn ghi tiêu hao \"27.5\" L/h cho tổ máy LG600C (≈ 0,06 L/kWh, không hợp công suất): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 116, genset: "PPDL-C300", line: "| PPDL-C300 | 300/375 | 东风康明斯 | 6ZTAA13-G3 | 6 | 13 | 40 | ≤205 | 3000*1150*170 | 3200", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n116] nguồn ghi kích thước \"3000*1150*170\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "pengpai-yangzhou", n: 116, genset: "PPDL-C310", line: "| PPDL-C310 | 310/387.5 | 重庆康明斯 | NTA855-G4 | 6 | 14 | 39 | ≤206 | 3100*1050*185 | 2900", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n116] nguồn ghi kích thước \"3100*1050*185\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "pengpai-yangzhou", n: 104, genset: "PPDL-LZ1300", line: "| PPDL-LZ1300 | 1200/1300 | 上海菱重 | S16R-PTA-C | 16 | 65.4 | 204 | ≤310 | 5382×2486×2931 | 11000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤310\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 131, genset: "PPDL-LZ1300", line: "| PPDL-LZ1300 | 1200/1300 | 上海菱重 | S16R-PTA-C | 16 | 65.4 | 204 | ≤310 | 5382×2486×2931 | 11000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n131, chép nguyên văn dòng của n104] cột \"燃油消耗 (g/kw.h)\" ghi \"≤310\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 103, genset: "PPDL-LZ1600", line: "| PPDL-LZ1600 | 1500/1600 | 上海菱重 | S16R-PTA2-C | 16 | 65.4 | 204 | ≤418 | 5382×2486×2931 | 12000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n103] cột \"燃油消耗 (g/kw.h)\" ghi \"≤418\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 131, genset: "PPDL-LZ1600", line: "| PPDL-LZ1600 | 1500/1600 | 上海菱重 | S16R-PTA2-C | 16 | 65.4 | 204 | ≤418 | 5382×2486×2931 | 12000", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n131, chép nguyên văn dòng của n103] cột \"燃油消耗 (g/kw.h)\" ghi \"≤418\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 103, genset: "PPDL-LZ1750", line: "| PPDL-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n103] cột \"燃油消耗 (g/kw.h)\" ghi \"≤432\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 131, genset: "PPDL-LZ1750", line: "| PPDL-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n131, chép nguyên văn dòng của n103] cột \"燃油消耗 (g/kw.h)\" ghi \"≤432\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 111, genset: "PPDL-LZ550", line: "| PPDL-LZ550 | 500/550 | 上海菱重 | S6R2-PTA-C | 6 | 30 | 50 | ≤139 | 3576×1614×2226 | 5100", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n111] cột \"燃油消耗 (g/kw.h)\" ghi \"≤139\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 131, genset: "PPDL-LZ550", line: "| PPDL-LZ550 | 500/550 | 上海菱重 | S6R2-PTA-C | 6 | 30 | 50 | ≤139 | 3576×1614×2226 | 5100", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n131, chép nguyên văn dòng của n111] cột \"燃油消耗 (g/kw.h)\" ghi \"≤139\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 118, genset: "PPDL-M240", line: "| PPDL-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n118] cột \"燃油消耗 (g/kw.h)\" ghi \"≤120\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 127, genset: "PPDL-M240", line: "| PPDL-M240 | 220/240 | 奔驰MTU | 6R1600G70F | 6 | 8.2 | 28 | ≤120 | 2500*890*1350 | 2400", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n127, chép nguyên văn dòng của n118] cột \"燃油消耗 (g/kw.h)\" ghi \"≤120\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 117, genset: "PPDL-M275", line: "| PPDL-M275 | 250/275 | 奔驰MTU | 6R1600G80F | 6 | 8.2 | 39 | ≤125 | 2500*890*1350 | 2450", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n117] cột \"燃油消耗 (g/kw.h)\" ghi \"≤125\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 127, genset: "PPDL-M275", line: "| PPDL-M275 | 250/275 | 奔驰MTU | 6R1600G80F | 6 | 8.2 | 39 | ≤125 | 2500*890*1350 | 2450", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n127, chép nguyên văn dòng của n117] cột \"燃油消耗 (g/kw.h)\" ghi \"≤125\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 116, genset: "PPDL-M320", line: "| PPDL-M320 | 300/330 | 奔驰MTU | 8V1600G70F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n116] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 127, genset: "PPDL-M320", line: "| PPDL-M320 | 300/330 | 奔驰MTU | 8V1600G70F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2500", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n127, chép nguyên văn dòng của n116] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 115, genset: "PPDL-M360", line: "| PPDL-M360 | 320/360 | 奔驰MTU | 8V1600G80F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2550", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n115] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "pengpai-yangzhou", n: 127, genset: "PPDL-M360", line: "| PPDL-M360 | 320/360 | 奔驰MTU | 8V1600G80F | 8 | 11.6 | 39 | ≤130 | 2600*900*1500 | 2550", act: "dropspec", keys: ["fuel"], khoa: "Khoa 24/11/2026", why: "[pengpai-yangzhou n127, chép nguyên văn dòng của n115] cột \"燃油消耗 (g/kw.h)\" ghi \"≤130\" (ngoài 150–300 g/kWh, bảng mẫu chép chung của bdadl / fukangsi / pengpai): bỏ riêng tiêu hao" },
+    { supplierId: "penlucky", n: 102, genset: "PLC700V-60", line: "| PLC700V-60 | 750 | 682 | VTA28-G5 | HCI544E1 | 4000*1750*250 | ISO 20′ ft GP | view", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[penlucky n102] nguồn ghi kích thước \"4000*1750*250\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "xinzhengfa", n: 109, genset: "CCFJ50-S", line: "| CCFJ50-S | X6110CF | 50 | 1989 × 650 × 100 | 1110", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[xinzhengfa n109] nguồn ghi kích thước \"1989 × 650 × 100\" (một chiều mất chữ số / gõ sai): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "104GF", line: "| 104GF | 104 | 130 | 113 | 141 | 187 | 203 | 1700 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "121GF", line: "| 121GF | 121 | 151 | 132 | 165 | 218 | 238 | 1800 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "123GF", line: "| 123GF | 123 | 154 | 134 | 168 | 221 | 241 | 1700 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "145GF", line: "| 145GF | 145 | 181 | 158 | 198 | 261 | 284 | 1860 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "146GF", line: "| 146GF | 146 | 183 | 159 | 199 | 263 | 286 | 1800 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "163GF", line: "| 163GF | 163 | 204 | 175 | 219 | 293 | 315 | 1900 | 2580×1100×1664", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1664\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "164GF", line: "| 164GF | 164 | 205 | 176 | 220 | 295 | 317 | 1860 | 2580×1100×1666", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1666\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "204GF", line: "| 204GF | 204 | 255 | 219 | 274 | 367 | 394 | 1950 | 2580×1100×1664", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"2580×1100×1664\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "255GF", line: "| 255GF | 255 | 319 | 272 | 340 | 459 | 490 | 2300 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "259GF", line: "| 259GF | 259 | 324 | 279 | 349 | 466 | 502 | 3200 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "282GF", line: "| 282GF | 282 | 353 | 303 | 379 | 508 | 545 | 3200 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "292GF", line: "| 292GF | 292 | 365 | 314 | 393 | 526 | 565 | 3400 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "302GF", line: "| 302GF | 302 | 378 | 325 | 406 | 544 | 585 | 3400 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "305GF", line: "| 305GF | 305 | 381 | 328 | 410 | 549 | 590 | 3500 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "328GF", line: "| 328GF | 328 | 410 | 334 | 418 | 590 | 601 | 3730 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "329GF", line: "| 329GF | 329 | 411 | 354 | 443 | 592 | 637 | 3500 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "350GF", line: "| 350GF | 350 | 437.5 | 380 | 475 | 630 | 684 | 3300 | 3.3*1.44*2*2.16 | BF8M1015C-LAG1A", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "360GF", line: "| 360GF | 360 | 450 | 420 | 525 | 648 | 756 | 3300 | 3.3*1.44*2*2.16 | BF8M1015C-LAG2", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "365GF", line: "| 365GF | 365 | 456 | 388 | 485 | 657 | 698 | 3730 | 3000×1200×1675", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3000×1200×1675\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "370GF", line: "| 370GF | 370 | 463 | 393 | 491 | 666 | 707 | 3850 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "380GF", line: "| 380GF | 380 | 475 | 420 | 525 | 684 | 756 | 3300 | 3.3*1.44*2*2.16 | BF8M1015CP-LAG1A", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "400GF", line: "| 400GF | 400 | 500 | 440 | 550 | 720 | 792 | 3300 | 3.3*1.44*2*2.16 | BF8M1015CP-LAG2", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "404GF", line: "| 404GF | 404 | 505 | 430 | 538 | 727 | 774 | 3850 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "404GF", line: "| 404GF | 404 | 505 | 430 | 538 | 727 | 774 | 4180 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107, dòng khác cùng model, cùng ô sai như n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "410GF", line: "| 410GF | 410 | 512.5 | 450 | 562.5 | 738 | 810 | 3300 | 3.3*1.44*2*2.16 | BF8M1015CP-LAG3", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "430GF", line: "| 430GF | 430 | 537.5 | 470 | 587.5 | 774 | 846 | 3630 | 3.3*1.44*2*2.16 | BF8M1015CP-LAG4", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 108, genset: "450GF", line: "| 450GF | 450 | 562.5 | 480 | 600 | 810 | 864 | 3630 | 3.3*1.44*2*2.16 | BF8M1015CP-LAG5", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n108] nguồn ghi ô kích thước không đủ / thừa số (\"3.3*1.44*2*2.16\"): bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "473GF", line: "| 473GF | 473 | 591 | 503 | 538 | 851 | 774 | 4180 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "480GF", line: "| 480GF | 480 | 600 | 505 | 631 | 864 | 909 | 4280 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "504GF", line: "| 504GF | 504 | 630 | 536 | 629 | 907 | 905 | 4280 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "520GF", line: "| 520GF | 520 | 650 | 547 | 684 | 936 | 985 | 4300 | 3325×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3325×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "yingtai-jiangsu", n: 107, genset: "560GF", line: "| 560GF | 560 | 700 | 595 | 744 | 1008 | 1071 | 4380 | 3425×1400×1940", act: "dropspec", keys: ["dims"], khoa: "Khoa 24/11/2026", why: "[yingtai-jiangsu n107] nguồn ghi đơn vị \"L*W*H(m)\" cho số mm (\"3425×1400×1940\"): đơn vị ở tiêu đề sai, số không có đơn vị đúng trong nguồn; bỏ riêng kích thước" },
+    { supplierId: "googol", n: 117, genset: "PTAA10V-EG620C", line: "| PTAA10V-EG620C | 625 | 568 | 550/688 | 500/625 | V10 | 20.3 | 1480 | 132", act: "unsurespec", keys: ["weight"], from: "1480", khoa: "Khoa 24/11/2026", why: "[googol n117] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 117, genset: "PTAA10V-EG690C", line: "| PTAA10V-EG690C | 690 | 625 | 620/775 | 560/700 | V10 | 20.3 | 1480 | 150", act: "unsurespec", keys: ["weight"], from: "1480", khoa: "Khoa 24/11/2026", why: "[googol n117] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 116, genset: "PTAA12V-EG750C", line: "| PTAA12V-EG750C | 750 | 680 | 660/825 | 600/750 | V12 | 24.4 | 1650 | 164", act: "unsurespec", keys: ["weight"], from: "1650", khoa: "Khoa 24/11/2026", why: "[googol n116] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 116, genset: "PTAA12V-EG815C", line: "| PTAA12V-EG815C | 815 | 720 | 704/880 | 640/800 | V12 | 24.4 | 1650 | 175", act: "unsurespec", keys: ["weight"], from: "1650", khoa: "Khoa 24/11/2026", why: "[googol n116] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 107, genset: "PTAA20V-EG1120C", line: "| PTAA20V-EG1120C | 1120 | 1020 | 1000/1250 | 900/1125 | V20 | 40.7 | 2450 | 238", act: "unsurespec", keys: ["weight"], from: "2450", khoa: "Khoa 24/11/2026", why: "[googol n107] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 107, genset: "PTAA20V-EG1225C", line: "| PTAA20V-EG1225C | 1225 | 1115 | 1100/1375 | 1000/1250 | V20 | 40.7 | 2450 | 264", act: "unsurespec", keys: ["weight"], from: "2450", khoa: "Khoa 24/11/2026", why: "[googol n107] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 111, genset: "QTA16V-EG2660C", line: "| QTA16V-EG2660C | 2660 | 2440 | 2420/3025 | 2200/2750 | V16 | 86.00 | 6400 | 540", act: "unsurespec", keys: ["weight"], from: "6400", khoa: "Khoa 24/11/2026", why: "[googol n111] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 109, genset: "QTA20V-EG3100D", line: "| QTA20V-EG3100D | 3100 | 2810 | 2750/3438 | 2500/3125 | V20 | 107.5 | 7800 | 630", act: "unsurespec", keys: ["weight"], from: "7800", khoa: "Khoa 24/11/2026", why: "[googol n109] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 109, genset: "QTA20V-EG3200D", line: "| QTA20V-EG3200D | 3200 | 2900 | 2860/3575 | 2600/3250 | V20 | 107.5 | 7800 | 655", act: "unsurespec", keys: ["weight"], from: "7800", khoa: "Khoa 24/11/2026", why: "[googol n109] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 109, genset: "QTA20V-EG3330D", line: "| QTA20V-EG3330D | 3330 | 3010 | 3000/3750 | 2700/3375 | V20 | 107.5 | 7800 | 678", act: "unsurespec", keys: ["weight"], from: "7800", khoa: "Khoa 24/11/2026", why: "[googol n109] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
+    { supplierId: "googol", n: 109, genset: "QTA20V-EG3600C", line: "| QTA20V-EG3600C | 3600 | 3300 | 3300/4125 | 3000/3750 | V20 | 107.5 | 7800 | 758", act: "unsurespec", keys: ["weight"], from: "7800", khoa: "Khoa 24/11/2026", why: "[googol n109] cột \"Weight (kg)\" của bảng không nói là khối lượng động cơ hay tổ máy (bảng có cả công suất động cơ lẫn tổ máy): giữ hiện, đánh dấu cần xác nhận, không dùng để chấm / lọc" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -2206,15 +2461,37 @@
     const out = [];
     for (const o of list) {
       const lines = [o.line, ...(o.lines?.header || []), ...(o.lines?.rows || [])].filter((x) => x != null).map((x) => String(x).trim());
-      const x = ex.find((x) => x.n === o.n && (x.genset ? o.genset && keyOf(o.genset) === keyOf(x.genset) : o.kind === "engine" && keyOf(o.model) === keyOf(x.model)) && lines.includes(x.line.trim()));
-      if (!x) { out.push(o); continue; }
-      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
-      if (x.act === "nopower") out.push({ ...o, power: null });
-      else if (x.act === "dropspec") out.push({ ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) });
+      // Every entry that matches is applied, in list order (gia-tri-sai 24/11/2026: a row may need a second figure dropped,
+      // e.g. the LZ1750 rows' weight (19/11) and fuel (24/11)); `drop` ends the row.
+      const gset = o.kind === "genset" ? o.model : o.genset;
+      const xs = ex.filter((x) => x.n === o.n && (x.genset ? gset && keyOf(gset) === keyOf(x.genset) : o.kind === "engine" && keyOf(o.model) === keyOf(x.model)) && lines.includes(x.line.trim()));
+      if (!xs.length) { out.push(o); continue; }
+      let cur = o;
+      for (const x of xs) {
+        note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
+        cur = applyRowException(cur, x);
+        if (!cur) break;
+      }
+      if (cur) out.push(cur);
+    }
+    return out;
+  }
+  // One ROW_EXCEPTIONS entry on one record; null = the row gives no record.
+  function applyRowException(o, x) {
+    {
+      if (x.act === "drop") return null;
+      if (x.act === "nopower") return { ...o, power: null };
+      else if (x.act === "dropspec") return { ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) };
       else if (x.act === "unitspec") {
         // Only a spec whose value is word for word `from` (the source changed → read as before).
         const specs = (o.specs || []).map((sp) => (x.keys.includes(sp.key) && String(sp.value).trim() === x.from ? { ...sp, unitMissing: { why: x.why, khoa: x.khoa } } : sp));
-        out.push({ ...o, specs });
+        return { ...o, specs };
+      } else if (x.act === "unsurespec") {
+        // gia-tri-sai (Khoa 24/11/2026, googol "Weight (kg)"): the source does not say whose figure this is (engine or set).
+        // The spec stays and is shown, flagged `unconfirmed`; spec-norm marks it missing "confirm", so no rule scores or
+        // filters with it (config-bot NORM_GAP, row-flags absurdOf). Only a value word for word `from`.
+        const specs = (o.specs || []).map((sp) => (x.keys.includes(sp.key) && String(sp.value).trim() === x.from ? { ...sp, unconfirmed: { why: x.why, khoa: x.khoa } } : sp));
+        return { ...o, specs };
       } else if (x.act === "fixspec") {
         // Replace only a spec whose value is word for word the source's `from`; any other value (the source changed) is left as read.
         const fixed = [];
@@ -2224,10 +2501,10 @@
           fixed.push({ key: f.key, from: f.from, to: f.to, why: f.why, src: f.src });
           return { ...sp, value: f.to, fixed: { from: f.from, why: f.why, src: f.src } };
         });
-        out.push(fixed.length ? { ...o, specs, fixed } : o);
+        return fixed.length ? { ...o, specs, fixed: [...(o.fixed || []), ...fixed] } : o;
       }
     }
-    return out;
+    return o;
   }
   // One row written word for word in several tables of the same supplier (a dealer's page per series that repeats the
   // same genset row, a PDF table and the page's own table; 5,250 of 64,788 records on 2026-11-16) is one record, not
@@ -2343,8 +2620,8 @@
     let i = last || run;
     if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
-    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC are no code there (the
-    // same cells in horizontal tables stay unread: a change to `isCode` itself moves other suppliers' rows, not done here). In a vertical
+    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC were no code there (since catalog-3-loi `isCode`
+    // has the narrow exception DOOSAN_DP, horizontal tables read them too). In a vertical
     // sheet the Model cell is a code: a cell of two letters, three digits and CC is read by its letters before the last C.
     return vIsCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }
@@ -2841,7 +3118,14 @@
 
   // The make shown: the names given by the strongest kind of evidence (a cell of the row, a column title or the
   // maker itself before a page title, which on dealer sites often lists several brands).
-  const RANK = { "dòng bảng": 3, "tiêu đề cột": 2, "hãng sản xuất": 2, "tên trang": 1 };
+  const RANK = { "dòng bảng": 3, "tiêu đề cột": 2, "hãng sản xuất": 2, "tên trang": 1, "tờ hãng": 1 };
+  // Alternator codes with no make in any supplier row, whose make is the maker's OWN datasheet (Khoa duyệt 24/11/2026,
+  // nghiem-thu/dau-phat-khong-hang-trung-ma.md). A closed list of one: not a rule over every maker sheet. The make is
+  // given ONLY when the entry has none (never overrides a supplier's), as via "tờ hãng" (not "dòng bảng"), with the sheet as
+  // source, so a page / the proposal never says the supplier wrote it.
+  //   LVSI804W: meao-jiangsu lists the code with no make; the Stamford sheet stamford-avk-china n1068 titles it "LVSI804W"
+  //   (its table: "LV 804 W | WDG 12 - Technical Data Sheet").
+  const SHEET_MAKE = { LVSI804W: { name: "Stamford", supplierId: "stamford-avk-china", n: 1068 } };
   function makeOf(makes) {
     if (!makes.length) return null;
     const top = Math.max(...makes.map((m) => RANK[m.via] || 0));
@@ -2983,20 +3267,30 @@
       [/\bdeep\s?-?sea\s?(?:DSE)?\s?-?([3-8]\d{3})(?![\d])/gi, (m) => `DSE${m[1]}`]] },
     { brand: "SmartGen", word: /\bsmart\s?gen\b|众智/i, models: [
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
+      // bdk-ten-tat: the only three-digit models SmartGen's own datasheet names (HGM410_HGM420_en.pdf, [smartgen 1010]). A closed list,
+      // not \d{3}: Honny writes its gensets HGM550E / HGM625E / HGM1000E, and "HGM400" is the name of the series.
+      [/\bHGM\s?-?(4(?:10|20))(?![\dA-Z])/gi, (m) => `HGM${m[1]}`],
       [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
     { brand: "ComAp", word: /\bcomap\b/i, models: [
       // "InteliSys Gas" is a model of its own (bdk-ds-4: its datasheet is ComAp's). InteliDrive DCU (Marine / Industrial) is an ENGINE
       // controller, not a genset one: no model of its own, so its datasheet is attached to no model (điều phối 22/11/2026).
-      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200|Gas\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2][0].toUpperCase() + m[2].slice(1).toLowerCase()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains|Nano)\s?(NTC|NT|4|500|1000|200|Gas\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2][0].toUpperCase() + m[2].slice(1).toLowerCase()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
       // ComAp order codes of InteliGen NT / NTC (IG-NT GC, IG-NTC-BB...).
       [/\bIG-?(NTC?)(?![\w])/gi, (m) => `InteliGen ${m[1].toUpperCase()}`],
       [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],
-      [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
+      [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19|5)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
     { brand: "DEIF", word: /\bdeif\b/i, models: [[/\b(AGC|SGC|GC|PPU|GPC|PPM)[\s-]?(\d{1,3}[A-Z]?|1F)(?![\w])/g, (m) => `${m[1]}-${m[2]}`, true]] },
     { brand: "Datakom", word: /\bdatakom\b/i, models: [
       [/\bDKG[\s-]?(\d{3})(?![\d])/gi, (m) => `DKG-${m[1]}`],
       [/\bD-?(\d{3,4})(?![\w])/g, (m) => `D-${m[1]}`, true]] },
     { brand: "Woodward", word: /\bwoodward\b/i, models: [[/\beasy\s?gen[\s-]?(\d{3,4})(?![\d])/gi, (m) => `easYgen-${m[1]}`]] },
+    // bdk-ten-tat: SICES controllers (since the controller business went to Mecc Alte the datasheets are meccalte.com's). Only the models a saved
+    // datasheet names ([sices 1001-1004]: GC315 / GC315Plus / GC315Link, GC400 / GC400Link / GC400Mains, GC600 / GC600Mains, DST4602 Evolution);
+    // GC310, GC350 and GC500Plus have no sheet and are not read. "GC600" alone is also a genset's name (agestar GC-600(S)), so the make
+    // comes first: "SICES" or "Mecc Alte" directly before the model, not "Mecc Alte, Stamford alternator ... controller" (no bare make here).
+    { brand: "SICES", word: /\bsices\b|\bmecc\s?-?alte\s+(?=(?:GC\s?-?\d{3}|DST\s?-?4602))/i, models: [
+      [/\bGC\s?-?(315|400|600)(Plus|Link|Mains)?(?![\w])/gi, (m) => `GC${m[1]}${m[2] ? m[2][0].toUpperCase() + m[2].slice(1).toLowerCase() : ""}`, true],
+      [/\bDST\s?-?4602\s?Evolution(?![\w])/gi, () => "DST4602Evolution", true]] },
     { brand: "Harsen", word: /\bharsen\b/i, models: [] },
     { brand: "Mebay", word: /\bmebay\b/i, models: [] },
     { brand: "Lixise", word: /\blixise\b/i, models: [] },
@@ -3188,7 +3482,9 @@
         out.push(o);
       });
     });
-    return out;
+    // ROW_EXCEPTIONS apply to these set rows too (gia-tri-sai 24/11/2026: googol "Weight (kg)" `unsurespec`); they match by the
+    // set model (`genset` of the entry) and the line word for word, like the rows of fromSupplier.
+    return rowExceptions(s, out, note);
   }
 
   // fromSupplier() of a supplier record and the controllers named in its engine rows, kept while that record object is
@@ -3307,6 +3603,8 @@
       });
       // `makes`: the makes kept (keptMakes), which make, origin and group are read from; every make a source gave stays in
       // `makesAll`; `makeConflict`: the names the sources disagree on when none is kept.
+      const sheet = e.kind === "alternator" && !e.makes.length ? SHEET_MAKE[e.key] : null;
+      if (sheet) e.makes.push({ name: sheet.name, via: "tờ hãng", supplierId: sheet.supplierId, n: sheet.n });
       const kept = e.kind === "controller" ? { makes: e.makes, conflict: null } : keptMakes(e);
       return { ...e, specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
         kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null,
