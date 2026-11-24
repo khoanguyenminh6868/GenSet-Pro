@@ -2573,8 +2573,10 @@
         "| Power pack model | SQC500-6/20 | SQC550-6/20 | SQC620-6/20 | SQC688-6/20 | SQC750-6/20",
         "| Rated output,kVa | 500 | 550 | 620 | 688 | 750",
         "| Receptacle quantity | 32 | 40 | 44 | 48 | 48",
+        "| Engine model | KTA19-G2 | KTA19-G3 | KTA19-G4 | KTAA19-G5 | KTA19-G6A",
         "| Rated output(kW) | 392 | 463 | 507 | 533 | 590",
-        "| Coolant capacity | 120L | 120L | 120L | 200L | 200L"
+        "| Coolant capacity | 120L | 120L | 120L | 200L | 200L",
+        "| Generator model | HCI444FS | HCI544C | HCI544C | HCI544D | HCI544E"
       ]
     },
     {
@@ -2773,8 +2775,10 @@
         "| 电源组型号 | SQC500-6/20 | SQC550-6/20 | SQC620-6/20 | SQC688-6/20 | SQC750-6/20",
         "| 额定功率（kva） | 500 | 550 | 620 | 688 | 750",
         "| 插座数量 | 32 | 40 | 44 | 48 | 48",
+        "| 发动机型号 | KTA19-G2 | KTA19-G3 | KTA19-G4 | KTAA19-G5 | KTA19-G6A",
         "| 额定功率(kW) | 392 | 463 | 507 | 533 | 590",
-        "| 冷却液容量 | 120L | 120L | 120L | 200L | 200L"
+        "| 冷却液容量 | 120L | 120L | 120L | 200L | 200L",
+        "| 发电机型号 | HCI444FS | HCI544C | HCI544C | HCI544D | HCI544E"
       ]
     },
     {

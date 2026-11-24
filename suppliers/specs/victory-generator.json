@@ -1875,7 +1875,18 @@
    "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
    "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
    "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
-   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281"
+  ]
+ },
+ {
+  "n": 134,
+  "url": "https://www.victorygenerator.com/250kva-650kva/7kva-2500kva-perkins-diesel-generator-set.html",
+  "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+  "header": [
+   "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+   "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+  ],
+  "rows": [
    "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
    "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
    "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",
@@ -2317,7 +2328,18 @@
    "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
    "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
    "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
-   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281"
+  ]
+ },
+ {
+  "n": 142,
+  "url": "https://www.victorygenerator.com/1500kva-4000kva/7kva-2500kva-perkins-diesel-generator.html",
+  "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+  "header": [
+   "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+   "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+  ],
+  "rows": [
    "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
    "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
    "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",
@@ -2467,7 +2489,18 @@
    "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
    "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
    "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
-   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281"
+  ]
+ },
+ {
+  "n": 144,
+  "url": "https://www.victorygenerator.com/650kva-1500kva/7kva-2500kva-perkins-diesel-generator-set.html",
+  "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+  "header": [
+   "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+   "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+  ],
+  "rows": [
    "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
    "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
    "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",
@@ -2758,7 +2791,18 @@
    "| V1500P | 50 | 1364 | 1705 | 1500 | 1875 | 4012-46TAG3A | 370 | 12 | 160 | 190 | 177 | 210 | 5030*2180*2600 | 10127",
    "| V1624P | 50 | 1480 | 1850 | 1624 | 2030 | 4016TAG1A | 470 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12229",
    "| V1800P | 50 | 1640 | 2050 | 1800 | 2250 | 4016TAG2A | 529 | 16 | 160 | 190 | 237.2 | 316 | 6350*2900*3230 | 12513",
-   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281",
+   "| V2000P | 50 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 470 | 16 | 160 | 190 | 237.2 | 270 | 6350*2900*3230 | 13281"
+  ]
+ },
+ {
+  "n": 149,
+  "url": "https://www.victorygenerator.com/10kva-250kva/7kva-2500kva-perkins-diesel-generator-set.html",
+  "title": "7KVA~2500KVA Perkins Diesel Generator Set",
+  "header": [
+   "| Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prime Power (L/H) | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set",
+   "| KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)"
+  ],
+  "rows": [
    "| V10P | 60 | 9 | 11 | 10 | 12.5 | 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390",
    "| V13P | 60 | 12 | 15 | 13 | 16 | 403D-15G | 3 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469",
    "| V20P | 60 | 18 | 22.5 | 20 | 25 | 404D-22G | 6.2 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553",

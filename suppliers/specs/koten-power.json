@@ -10,8 +10,10 @@
    "| Standby Power | 35kW | 44kVA | 40kW | 50kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 43A | 91.8A",
+   "| Engine Specification | Engine Brand | Cummins",
    "| Rated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 36kW | 40kW",
+   "| Governor Type | Electrical | Electrical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 32kW | 38kW"
@@ -244,15 +246,10 @@
    "| Voltage | 230/400V | 127/220V",
    "| Prime Power | 16kW/20kVA | 20kW/25kVA",
    "| Standby Power | 17.6kW/22kVA | 22kW/28kVA",
-   "| Fuel Tank Capacity | 8hrs | 8hrs"
-  ]
- },
- {
-  "n": 108,
-  "url": "https://www.kotenpower.com/product/20kva-weichai-silent-diesel-generator-set",
-  "title": "Supply 20kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
+   "| Fuel Tank Capacity | 8hrs | 8hrs",
+   "| Engine Model | WP2.3D25E200 | WP2.3D30E201",
+   "| Engine speed | 1500rpm | 1800rpm",
+   "| Rated power | 23kW | 27kW",
    "| 100% Prime power | 5.6 | 6.58",
    "| 75% Prime power | 4.2 | 4.9",
    "| 50% Prime power | 2.8 | 3.28"
@@ -264,33 +261,16 @@
   "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
   "header": [],
   "rows": [
-   "| Model | KW50D5 | KW50D6",
+   "| Model | KW45D5 | KW50D6",
    "| Frequency | 50Hz | 60Hz",
    "| Phase | 3Ph | 3Ph",
    "| Voltage | 230/400V | 127/220V",
-   "| Prime Power | 40kW/50kVA | 40kW/50kVA",
-   "| Standby Power | 44kW/55kVA | 44kW/55kVA",
-   "| Fuel Tank Capacity | 8hrs | 8hrs"
-  ]
- },
- {
-  "n": 109,
-  "url": "https://www.kotenpower.com/product/50kva-weichai-silent-diesel-generator-set",
-  "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [
-   "| Engine Model | WP2.3D48E200 | WP2.3D58E201"
-  ],
-  "rows": [
+   "| Prime Power | 36kW/45kVA | 40kW/50kVA",
+   "| Standby Power | 40kW/50kVA | 44kW/55kVA",
+   "| Fuel Tank Capacity | 8hrs | 8hrs",
+   "| Engine Model | WP2.3D48E200 | WP2.3D58E201",
    "| Engine speed | 1500rpm | 1800rpm",
-   "| Rated power | 44 kW | 53 kW"
-  ]
- },
- {
-  "n": 109,
-  "url": "https://www.kotenpower.com/product/50kva-weichai-silent-diesel-generator-set",
-  "title": "Supply 50kVA Weichai Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
+   "| Rated power | 44 kW | 53 kW",
    "| 100% Prime power | 10.8 | 13.1",
    "| 75% Prime power | 7.9 | 9.1",
    "| 50% Prime power | 5.3 | 6.7"
@@ -442,7 +422,9 @@
   "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
   "header": [],
   "rows": [
-   "| 100% Prime power | 161.5 | 167.8"
+   "| 100% Prime power | 161.5 | 167.8",
+   "| 75% Prime power | N/A | 130.8",
+   "| 50% Prime power | N/A | 87.8"
   ]
  },
  {
@@ -606,27 +588,13 @@
    "| Voltage | 230/400V | 127/220V",
    "| Prime Power | 600 kW/750 kVA | 600 kW/750 kVA",
    "| Standby Power | 660 kW/825 kVA | 660 kW/825 kVA",
-   "| Fuel Tank Capacity | 6hrs | 6hrs"
-  ]
- },
- {
-  "n": 118,
-  "url": "https://www.kotenpower.com/product/750kva-baudouin-silent-diesel-generator-set",
-  "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
+   "| Fuel Tank Capacity | 6hrs | 6hrs",
    "| Engine Model | 6M33G825/5 | 6M33G660/6",
    "| Engine speed | 1500rpm | 1800rpm",
-   "| Rated power | 659 kW | 670 kW"
-  ]
- },
- {
-  "n": 118,
-  "url": "https://www.kotenpower.com/product/750kva-baudouin-silent-diesel-generator-set",
-  "title": "Supply 750kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
-   "| 100% Prime power | 161.5 | 167.8"
+   "| Rated power | 659 kW | 670 kW",
+   "| 100% Prime power | 161.5 | 167.8",
+   "| 75% Prime power | N/A | 130.8",
+   "| 50% Prime power | N/A | 87.8"
   ]
  },
  {
@@ -847,7 +815,9 @@
   "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
   "header": [],
   "rows": [
-   "| 100% Prime power | 85 | 100.3"
+   "| 100% Prime power | 85 | 100.3",
+   "| 75% Prime power | N/A | 73.9",
+   "| 50% Prime power | N/A | 50"
   ]
  },
  {
@@ -862,27 +832,13 @@
    "| Voltage | 230/400V | 127/220V",
    "| Prime Power | 360 kW/450 kVA | 360 kW/450 kVA",
    "| Standby Power | 400 kW/500 kVA | 400 kW/500 kVA",
-   "| Fuel Tank Capacity | 8hrs | 8hrs"
-  ]
- },
- {
-  "n": 125,
-  "url": "https://www.kotenpower.com/product/450kva-baudouin-silent-diesel-generator-set",
-  "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
+   "| Fuel Tank Capacity | 8hrs | 8hrs",
    "| Engine Model | 6M21G500/5 | 6M21G400/6",
    "| Engine speed | 1500rpm | 1800rpm",
-   "| Rated power | 409 kW | 418 kW"
-  ]
- },
- {
-  "n": 125,
-  "url": "https://www.kotenpower.com/product/450kva-baudouin-silent-diesel-generator-set",
-  "title": "Supply 450kva Baudouin Silent Diesel Generator Set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
-   "| 100% Prime power | 85 | 100.3"
+   "| Rated power | 409 kW | 418 kW",
+   "| 100% Prime power | 85 | 100.3",
+   "| 75% Prime power | N/A | 73.9",
+   "| 50% Prime power | N/A | 50"
   ]
  },
  {
@@ -1569,15 +1525,11 @@
    "| Voltage | 230/400V | 127/220V",
    "| Prime Power | 16kW/20kVA | 16kW/20kVA",
    "| Standby Power | 17.6kW/22kVA | 17.6kW/22kVA",
-   "| Fuel Tank Capacity | 8hrs | 8hrs"
-  ]
- },
- {
-  "n": 145,
-  "url": "https://www.kotenpower.com/product/20kva-silent-diesel-generator-set",
-  "title": "Supply SDEC series 16kw 20kva silent diesel generator set Wholesale Factory - Fuzhou Koten Power Equipment Co.,Ltd.",
-  "header": [],
-  "rows": [
+   "| Fuel Tank Capacity | 8hrs | 8hrs",
+   "| Engine Model | 4Z2.7-G11 | 4Z2.3-G12",
+   "| Engine speed | 1500rpm | 1800rpm",
+   "| Rated power | 22kW | 21kW",
+   "| Displacement | 2.7L | 2.3L",
    "| 100% Prime power | 4.68 | 4.92",
    "| 75% Prime power | 3.6 | 3.79",
    "| 50% Prime power | 2.6 | 2.69"
@@ -1964,11 +1916,17 @@
    "| Standby Power | 132kW | 165kVA | 141kW | 176kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 238A | 462A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR6B3L-D | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 138kW | 145kW",
+   "| Governor Type | Electronic | Electronic",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 120kW | 140kW"
+   "| Prime Power | 120kW | 140kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -1984,11 +1942,17 @@
    "| Standby Power | 53kW | 66kVA | 59kW | 74kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 95A | 195A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT4B2Z-D | YT4B2Z-D",
+   "| Aspiration | Turbocharged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 60kW | 63kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 48kW | 56kW"
+   "| Prime Power | 48kW | 56kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2004,11 +1968,17 @@
    "| Standby Power | 57kW | 72kVA | 62kW | 77kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 103A | 195A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4B3Z-D | LR4B3Z-D",
+   "| Aspiration | Turbocharged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 62kW | 65kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 48kW | 56kW"
+   "| Prime Power | 48kW | 56kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2024,11 +1994,17 @@
    "| Standby Power | 44kW | 55kVA | 48kW | 60kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 79A | 159A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4B5-D | LR4B5-D",
+   "| Aspiration | Natural Aspiration | Natural Aspiration",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 50kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 40kW | 44kW"
+   "| Prime Power | 40kW | 44kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2044,11 +2020,17 @@
    "| Standby Power | 33kW | 41kVA | 35kW | 44kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 60A | 115A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT3A2Z-D | YT3A2Z-D",
+   "| Aspiration | Turbochcarged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 36kW | 38kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 30kW | 32kW"
+   "| Prime Power | 30kW | 32kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2064,11 +2046,17 @@
    "| Standby Power | 26kW | 33kVA | 33kW | 41kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 43A | 98A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT3B2-D | YT3B2-D",
+   "| Aspiration | Turbochcarged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 36kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 24kW | 32kW"
+   "| Prime Power | 24kW | 32kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2084,11 +2072,17 @@
    "| Standby Power | 26kW | 33kVA | 33kW | 41kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 43A | 98A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT3B2-D | YT3B2-D",
+   "| Aspiration | Turbochcarged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 36kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 24kW | 32kW"
+   "| Prime Power | 24kW | 32kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2104,11 +2098,17 @@
    "| Standby Power | 33kW | 41kVA | 35kW | 44kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 60A | 115A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT3A2Z-D | YT3A2Z-D",
+   "| Aspiration | Turbochcarged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 36kW | 38kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 30kW | 32kW"
+   "| Prime Power | 30kW | 32kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2124,11 +2124,17 @@
    "| Standby Power | 44kW | 55kVA | 48kW | 60kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 79A | 159A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4B5-D | LR4B5-D",
+   "| Aspiration | Natural Aspiration | Natural Aspiration",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 50kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 40kW | 44kW"
+   "| Prime Power | 40kW | 44kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2144,11 +2150,17 @@
    "| Standby Power | 57kW | 72kVA | 62kW | 77kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 103A | 195A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4B3Z-D | LR4B3Z-D",
+   "| Aspiration | Turbocharged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 62kW | 65kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 48kW | 56kW"
+   "| Prime Power | 48kW | 56kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2164,11 +2176,17 @@
    "| Standby Power | 53kW | 66kVA | 59kW | 74kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 95A | 195A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | YT4B2Z-D | YT4B2Z-D",
+   "| Aspiration | Turbocharged | Turbocharged",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 60kW | 63kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 48kW | 56kW"
+   "| Prime Power | 48kW | 56kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2184,11 +2202,17 @@
    "| Standby Power | 132kW | 165kVA | 141kW | 176kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 238A | 462A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR6B3L-D | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 138kW | 145kW",
+   "| Governor Type | Electronic | Electronic",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 120kW | 140kW"
+   "| Prime Power | 120kW | 140kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2204,11 +2228,17 @@
    "| Standby Power | 110kW | 138kVA | 120kW | 150kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 198A | 397A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4M3L-D88 | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 110kW | 125kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 100kW | 119kW"
+   "| Prime Power | 100kW | 119kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2224,11 +2254,17 @@
    "| Standby Power | 110kW | 138kVA | 120kW | 150kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 198A | 397A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4M3L-D88 | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 110kW | 125kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 100kW | 119kW"
+   "| Prime Power | 100kW | 119kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2244,11 +2280,17 @@
    "| Standby Power | 88kW | 110kVA | 88kW | 110kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 159A | 289A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4M3L-D | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 88kW | 90kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 80kW | 80kW"
+   "| Prime Power | 80kW | 80kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2264,11 +2306,17 @@
    "| Standby Power | 88kW | 110kVA | 88kW | 110kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 159A | 289A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4M3L-D | LR4M3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 88kW | 90kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 80kW | 80kW"
+   "| Prime Power | 80kW | 80kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2284,11 +2332,17 @@
    "| Standby Power | 70kW | 88kVA | 75kW | 94kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 127A | 240A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4A3L-D | LR4A3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 75kW | 80kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 68kW | 70kW"
+   "| Prime Power | 68kW | 70kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2304,11 +2358,17 @@
    "| Standby Power | 70kW | 88kVA | 75kW | 94kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 127A | 240A",
+   "| Engine Specification | Engine Brand | YTO",
+   "| Model | LR4A3L-D | LR4A3L-D",
+   "| Aspiration | Turbocharged With After Cooler | Turbocharged With After Cooler",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 75kW | 80kW",
+   "| Governor Type | Mechanical | Mechanical",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
-   "| Prime Power | 68kW | 70kW"
+   "| Prime Power | 68kW | 70kW",
+   "| Control Module | Standard | SmartGen",
+   "| Protective Functions | ★Low Oil Pressure | Image"
   ]
  },
  {
@@ -2325,6 +2385,7 @@
    "| Rated Current | 144A | 308A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 110kW | 121kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274C | Koten KA-274C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 80kW | 94kW"
@@ -2344,6 +2405,7 @@
    "| Rated Current | 57.6A | 131A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 42kW | 46kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 34kW | 40kW"
@@ -2363,6 +2425,7 @@
    "| Rated Current | 72A | 164A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 56kW | 62kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2382,6 +2445,7 @@
    "| Rated Current | 43A | 85A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184F",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 25kW | 27kW"
@@ -2401,6 +2465,7 @@
    "| Rated Current | 36A | 78.7A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 25kW"
@@ -2420,6 +2485,7 @@
    "| Rated Current | 28.8A | 59A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 20kW | 22kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -2439,6 +2505,7 @@
    "| Rated Current | 28.8A | 59A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 20kW | 22kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -2458,6 +2525,7 @@
    "| Rated Current | 36A | 78.7A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 25kW"
@@ -2477,6 +2545,7 @@
    "| Rated Current | 43A | 85A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 30kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184F",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 25kW | 27kW"
@@ -2496,6 +2565,7 @@
    "| Rated Current | 72A | 164A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 56kW | 62kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2515,6 +2585,7 @@
    "| Rated Current | 57.6A | 131A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 42kW | 46kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 34kW | 40kW"
@@ -2534,6 +2605,7 @@
    "| Rated Current | 144A | 308A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 110kW | 121kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274C | Koten KA-274C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 80kW | 94kW"
@@ -2553,6 +2625,7 @@
    "| Rated Current | 122A | 262A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 88kW | 97kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224G | Koten KA-224G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 68kW | 80kW"
@@ -2572,6 +2645,7 @@
    "| Rated Current | 122A | 262A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 88kW | 97kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224G | Koten KA-224G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 68kW | 80kW"
@@ -2591,6 +2665,7 @@
    "| Rated Current | 104A | 209.9A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 66kW | 73kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224F | Koten KA-224F",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 58kW | 70kW"
@@ -2610,6 +2685,7 @@
    "| Rated Current | 104A | 209.9A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 66kW | 73kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224F | Koten KA-224F",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 58kW | 70kW"
@@ -2629,6 +2705,7 @@
    "| Rated Current | 86A | 183.7A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 56kW | 62kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2648,6 +2725,7 @@
    "| Rated Current | 86A | 183.7A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 56kW | 62kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2667,6 +2745,7 @@
    "| Rated Current | 90A | 180A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 63kW | 70kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 50kW | 55kW"
@@ -2686,6 +2765,7 @@
    "| Rated Current | 36A | 72A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 27kW | 30kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 23kW"
@@ -2705,6 +2785,7 @@
    "| Rated Current | 43A | 98A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 33kW | 39.6kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 25kW | 30kW"
@@ -2724,6 +2805,7 @@
    "| Rated Current | 28.8A | 62A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 25kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -2743,6 +2825,7 @@
    "| Rated Current | 21.6A | 42.6A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 15kW | 17kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164D | Koten KA-164C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 12.8kW | 13.5kW"
@@ -2762,6 +2845,7 @@
    "| Rated Current | 14.4A | 32.8A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 11kW | 13kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164B | Koten KA-164B",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 8.8kW | 11kW"
@@ -2781,6 +2865,7 @@
    "| Rated Current | 14.4A | 32.8A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 11kW | 13kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164B | Koten KA-164B",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 8.8kW | 11kW"
@@ -2800,6 +2885,7 @@
    "| Rated Current | 21.6A | 42.6A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 15kW | 17kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164D | Koten KA-164C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 12.8kW | 13.5kW"
@@ -2819,6 +2905,7 @@
    "| Rated Current | 28.8A | 62A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 25kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -2838,6 +2925,7 @@
    "| Rated Current | 43A | 98A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 33kW | 39.6kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 25kW | 30kW"
@@ -2857,6 +2945,7 @@
    "| Rated Current | 36A | 72A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 27kW | 30kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 23kW"
@@ -2876,6 +2965,7 @@
    "| Rated Current | 90A | 180A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 63kW | 70kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 50kW | 55kW"
@@ -2895,6 +2985,7 @@
    "| Rated Current | 72A | 144A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 55kW | 60kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2914,6 +3005,7 @@
    "| Rated Current | 72A | 144A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 55kW | 60kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -2933,6 +3025,7 @@
    "| Rated Current | 64.8A | 131A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 53kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-184J",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 40kW"
@@ -2952,6 +3045,7 @@
    "| Rated Current | 64.8A | 131A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 53kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-184J",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 40kW"
@@ -2971,6 +3065,7 @@
    "| Rated Current | 54A | 118A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 40kW | 48kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184H | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 30kW | 37.5kW"
@@ -2990,6 +3085,7 @@
    "| Rated Current | 54A | 118A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 40kW | 48kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184H | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 30kW | 37.5kW"
@@ -3012,6 +3108,7 @@
    "| Compression Ratio | 17:1 | 17:1",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 125kW | 132kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274DM | Koten KA-274DM",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 100kW | 119kW"
@@ -3032,6 +3129,7 @@
    "| Model | 4DW92-39D | 4DW21-53D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 29kW | 39kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 24kW | 32kW"
@@ -3052,6 +3150,7 @@
    "| Model | 4DX21-53D | 4DX21-61D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 39kW | 44kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 32kW | 37.6kW"
@@ -3072,6 +3171,7 @@
    "| Model | 4DW92-35D | 4DW92-42D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 26kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 25kW"
@@ -3092,6 +3192,7 @@
    "| Model | 4DW91-29D | 4DW91-38D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 28kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 22kW"
@@ -3112,6 +3213,7 @@
    "| Model | 4DW81-23D | 4DW81-28D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 17kW | 20kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164D | Koten KA-164D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 12kW | 16kW"
@@ -3132,6 +3234,7 @@
    "| Model | 4DW81-23D | 4DW81-28D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 17kW | 20kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164D | Koten KA-164D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 12kW | 16kW"
@@ -3152,6 +3255,7 @@
    "| Model | 4DW91-29D | 4DW91-38D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 28kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184E",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 22kW"
@@ -3172,6 +3276,7 @@
    "| Model | 4DW92-35D | 4DW92-42D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 26kW | 33kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 25kW"
@@ -3192,6 +3297,7 @@
    "| Model | 4DX21-53D | 4DX21-61D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 39kW | 44kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 32kW | 37.6kW"
@@ -3212,6 +3318,7 @@
    "| Model | 4DW92-39D | 4DW21-53D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 29kW | 39kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 24kW | 32kW"
@@ -3234,6 +3341,7 @@
    "| Compression Ratio | 17:1 | 17:1",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 125kW | 132kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274DM | Koten KA-274DM",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 100kW | 119kW"
@@ -3256,6 +3364,7 @@
    "| Compression Ratio | 17.0:1 | 17.5:1",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 96kW | 101kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274C | Koten KA-274C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 80kW | 94kW"
@@ -3278,6 +3387,7 @@
    "| Compression Ratio | 17.0:1 | 17.5:1",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 96kW | 101kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-274C | Koten KA-274C",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 80kW | 94kW"
@@ -3298,6 +3408,7 @@
    "| Model | 4DX23-78D | 4DX23-82D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 57kW | 60kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -3318,6 +3429,7 @@
    "| Model | 4DX23-78D | 4DX23-82D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 57kW | 60kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224E | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -3338,6 +3450,7 @@
    "| Model | 4DX22-65D | 4DX22-75D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 55kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -3358,6 +3471,7 @@
    "| Model | 4DX22-65D | 4DX22-75D",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 48kW | 55kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-224D | Koten KA-224D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 40kW | 50kW"
@@ -3377,6 +3491,7 @@
    "| Rated Current | 57A | 118A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 38kW | 46kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 32kW | 37.6kW"
@@ -3397,6 +3512,7 @@
    "| Model | JE493ZDB-04 | JE493ZDB-03",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 28kW | 34kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 24kW | 28kW"
@@ -3417,6 +3533,7 @@
    "| Model | JE493DB-02 | JE493DB-01",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 24kW | 28kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 23.5kW"
@@ -3437,6 +3554,7 @@
    "| Model | JE493DB-04 | JE493DB-03",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 24kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -3457,6 +3575,7 @@
    "| Model | JE493DB-04 | JE493DB-03",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 21kW | 24kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184ES | Koten KA-184ES",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 16kW | 19kW"
@@ -3477,6 +3596,7 @@
    "| Model | JE493DB-02 | JE493DB-01",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 24kW | 28kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184FS | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 20kW | 23.5kW"
@@ -3497,6 +3617,7 @@
    "| Model | JE493ZDB-04 | JE493ZDB-03",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 28kW | 34kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184G",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 24kW | 28kW"
@@ -3516,6 +3637,7 @@
    "| Rated Current | 57A | 118A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 38kW | 46kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184J | Koten KA-184H",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 32kW | 37.6kW"
@@ -3535,6 +3657,7 @@
    "| Rated Current | 39.6A | 78.7A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 25.2kW | 30.3kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184F | Koten KA-184FS",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 22kW | 24kW"
@@ -3554,6 +3677,7 @@
    "| Rated Current | 43.2A | 92.4A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 28.2 kW | 33.3kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-184G | Koten KA-184F",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 24kW | 28.2kW"
@@ -3572,6 +3696,7 @@
    "| Standby Power | 18kW | 22kVA | 22kW | 28kVA",
    "| Rated Voltage | 400/230V | 220/127V",
    "| Rated Current | 28.8A | 65.6A",
+   "| Engine Specification | Engine Brand | Perkins",
    "| Model | 404D-22G1 | 404D-22G",
    "| Displacement | 2.21 L | 2.216 L",
    "| Raated Speed | 1500rpm | 1800rpm",
@@ -3595,6 +3720,7 @@
    "| Rated Current | 21.6A | 45.9A",
    "| Raated Speed | 1500rpm | 1800rpm",
    "| Rated Power (With Fan) | 13.7kW | 16kW",
+   "| Alternator Specification | Alternator Brand | Koten KA-164D | Koten KA-164D",
    "| Voltage | 400/230V | 220/127V",
    "| Frequency | 50Hz | 60Hz",
    "| Prime Power | 12 kW | 14.1 kW"
