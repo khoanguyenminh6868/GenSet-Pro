@@ -1,0 +1,19 @@
+{
+  "ngay": "2026-11-24",
+  "luot": 2,
+  "ghi_chu": "Chi tiet o nghiem-thu/hai-nguon-internet.md (muc Luot 2). Tep tai o genbid-work/repost-datasheets/<hang>/. danh-sach.json goc khong bi sua do khong doc duoc de ghi de an toan.",
+  "a_to_hang_dang_lai": [
+    {"model": "HGM9320", "url": "https://doc.diytrade.com/docdvr/1306637/43602887/1433217562.pdf", "tep": "smartgen/hgm9200-9300-9400-manual.pdf", "trang": 74, "bang_chung": "This manual is suitable for HGM9310MPU, HGM9320MPU, HGM9310CAN and HGM9320CAN series controller only. (Smartgen Technology)"},
+    {"model": "HGM9520", "url": "https://www.smartgen-america.com/upload/iblock/a67/ole4znst01skzw0v3w5x2avg32fdtjj7.pdf", "tep": "smartgen/hgm9520-manual.pdf", "trang": 70, "bang_chung": "HGM9520 Genset Parallel (With Mains) Unit USER MANUAL / Smartgen Technology"},
+    {"model": "HGM6100CAN", "url": "https://smartgen-america.com/upload/iblock/a4f/89jxwd5xgwq37f0e6esthm0ftdwzzbr8.pdf", "tep": "smartgen/hgm6100n-manual-b.pdf", "trang": 45, "bang_chung": "HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN) GENSET CONTROLLER USER MANUAL", "can_xac_nhan": "ghi 6110CAN/6120CAN"},
+    {"model": "HGM9510 (neu '9500' = 9510)", "url": "https://doc.diytrade.com/docdvr/1306637/43604110/1433228831.pdf", "tep": "smartgen/diytrade-1433228831.pdf", "trang": 64, "bang_chung": "HGM9510 Genset Parallel (With Genset) Unit", "can_xac_nhan": true},
+    {"model": "SICES GC310/GC350/GC500Plus", "url": "https://imgusr.tradekey.com/images/uploadedimages/brochures/1/9/3173688-201403310650195339102b7592a.pdf", "tep": "sices/sices-brochure-tradekey.pdf", "trang": 12, "bang_chung": "Models of genset controllers: GC315 / GC310 / GC350; GC500Plus / DST4602", "can_xac_nhan": "chua kiem co bang thong so"},
+    {"model": "UCI274E", "url": "https://www.raad-eng.com/techdata/stamford/uci274e.pdf", "tep": "stamford/r-uci274e.pdf", "trang": 8, "bang_chung": "UCI274E - Technical Data Sheet; Newage Stamford industrial generators meet the", "ghi_chu": "khong phai J/K"},
+    {"model": "UCI274H", "url": "https://www.raad-eng.com/techdata/stamford/uci274h.pdf", "tep": "stamford/r-uci274h.pdf", "trang": 8, "ghi_chu": "khong phai J/K"},
+    {"model": "UCDI274J", "url": "https://www.baifapower.com/static/upload/download/FDJ/UCDI274J-14.pdf", "tep": "stamford/baifa-UCDI274J-14.pdf", "trang": 8, "bang_chung": "UCDI274J - Winding 14 Technical Data Sheet; Stamford industrial generators meet the requirements of", "can_xac_nhan": "ten UCDI274J khac UCI274J"}
+  ],
+  "tren_trang_hang": [{"model": "PI734C", "url": "https://www.stamford-avk.com/sites/stamfordavk/files/PI7C-312-TD-EN_Rev_A.pdf"}],
+  "b_du_2_nguon": [],
+  "c_khong_co": ["HGM9210", "HGM9220", "HGM9410", "LVI634B-G", "LVSI804 (chi co manual P80 cua genpowerusa)", "P086TI", "164/184 (chua ro dong)", "UCI274G/K", "PI734 B/D-F", "P126TI (chi catalogue Doosan cua fdkenergy, khong tinh)"],
+  "chua_lam": ["kiem bang thong so SICES", "yumpu GC310/350/500 handbook", "manualslib Sices GC310", "tim them Stamford LVI634/LVSI804/P086TI/164/184/UCI274K", "HGM9210/9220/9410"]
+}
