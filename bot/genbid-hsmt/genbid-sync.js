@@ -317,6 +317,25 @@ async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b
 // Fetch a tender's HSMT files through the VNeGP Agent and publish them (GitHub Release + web), as files-fast.md did.
 let agentStarted = false;
 
+// "Tải TBMT" in tab Thông tin chung (Khoa, 2026-11-24): the notice itself, a PDF the page builds in the browser (pdfMake, not a
+// server file, so the VNeGP Agent cannot fetch it). The button is clicked and the download saved next to the other files, where
+// Publish-GenBidHsmt.ps1 picks it up. A page without the button (chào giá trực tuyến rút gọn) or a failure is not an error.
+async function saveTbmtPdf(page, dir) {
+  try {
+    const tab = page.locator('a[href="#info-general"]');
+    if (await tab.count()) { await tab.first().click().catch(() => {}); await page.waitForTimeout(500); }
+    const btn = page.locator('span.tags-fileAttach', { hasText: "Tải TBMT" }).first();
+    if (!(await btn.count())) return false;
+    const dl = page.waitForEvent("download", { timeout: 30000 });
+    await btn.click();
+    const d = await dl;
+    const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").trim() || "Thông báo mời thầu.pdf";
+    fs.mkdirSync(dir, { recursive: true });
+    await d.saveAs(path.join(dir, name));
+    return true;
+  } catch (e) { log(`    Không tải được TBMT: ${e.message.split("\n")[0]}`); return false; }
+}
+
 async function fetchFiles(page, req) {
   const tag = `${req.key}`;
   if (!okTenderUrl(req.sourceUrl)) {
@@ -355,6 +374,7 @@ async function fetchFiles(page, req) {
     fs.writeFileSync(list, [`# ${req.key}`, ...r.files.map((f) => `${f.id},${f.name}`)].join("\r\n"), "utf8");
     ps("GenBid-HSMT.ps1", ["-List", list, "-OutDir", DOWNLOADS], 120);
     fs.rmSync(list, { force: true });
+    await saveTbmtPdf(page, kdir);
     const code = ps("Publish-GenBidHsmt.ps1", ["-Key", req.key, "-RequestedAt", req.requestedAt], 120);
     const got = fs.existsSync(path.join(DOWNLOADS, req.key)) ? fs.readdirSync(path.join(DOWNLOADS, req.key)).filter((f) => !/^manifest\.csv$|\.part$/.test(f)).length : 0;
     return `${tag}: ${got}/${r.files.length} tệp${code ? " (đăng tệp bị lỗi)" : ""}`;
