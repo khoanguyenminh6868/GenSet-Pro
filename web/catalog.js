@@ -2711,7 +2711,8 @@
   // Figures (specs) by their label (specKey), the same label read twice with other values: left out; in the engine's part
   // only engine / genset figures, in the alternator's only alternator figures. Records carry `sheet: "bảng dọc"`.
   const V_MODEL = /^(genset\s*model|generator\s*set\s*model|model|models?\s*(no\.?|number|#)|model\s*型号|型号|机组型号|modelo)$/i;
-  const V_ENGINE = /^((diesel\s*)?engine(\s*(model|type|brand\s*(&|and|\/)\s*model))?|发动机型号|柴油机型号|发动机|柴油机)$/i;
+  // "动力型号" (power unit model, kanpor-fuan; fromLabelTable reads it as the engine too) and "Gas Engine Model" (pulita-energy) name the engine.
+  const V_ENGINE = /^(((diesel|gas)\s*)?engine(\s*(model|type|brand\s*(&|and|\/)\s*model))?|发动机型号|柴油机型号|动力型号|发动机|柴油机)$/i;
   const V_ALT = /^(alternator(\s*(model|type|brand\s*(&|and|\/)\s*model))?|generator\s*model|发电机型号)$/i;
   const V_BRAND = /^((engine|alternator)\s*)?(brand|make|manufacturer)$|^(发动机|柴油机|发电机)?(品牌|厂家)$/i;
   // Unit cells of a vertical sheet that UNIT_CELL (shared by every reader) does not know: "lt" / "lt/h" (Powerpack litres), "kWm", "VDC", "RPM / Hz.".
@@ -2841,11 +2842,35 @@
     tables.forEach((t, ti) => {
       if (!(t.rows || []).length || already.some((o) => o.table === ti)) return;
       if (GENSET_TABLES.some((x) => x.supplierId === s.id && x.n.includes(t.n))) return;
-      const lines = [...(t.header || []), ...t.rows], cs = lines.map(verticalCells);
+      const lines = [...(t.header || []), ...t.rows];
+      const cols = columnSheets(lines);
+      if (cols) {
+        let src = { header: t.header || [], rows: t.rows };
+        // The engine table right after it (koten), when the genset sheet has no engine line of its own.
+        const nx = tables[ti + 1], nl = nx && +nx.n === +t.n ? [...(nx.header || []), ...nx.rows] : [];
+        const nc = nl.length ? cellsOf(nl[0]) : [];
+        if (nc.length === cols.length + 1 && V_ENGINE.test(nc[0]) && /model/i.test(nc[0]) && !cols.some((col) => col.some((l) => V_ENGINE.test(cellsOf(l)[0] || "")))) {
+          const ec = columnSheets([`| Model | ${nc.slice(1).join(" | ")}`, ...nl.slice(1)]);
+          const agree = ec && cols.every((col, j) => { const a = colHz(col), b = colHz(ec[j]); return a != null && a === b; });
+          if (!agree) note(t, ti, null, "bảng cột: bảng động cơ liền sau không khớp tần số / tốc độ từng cột, không ghép", nl[0]);
+          // Only the engine's code: the engine table's own figures are its own records' (that table is read the common way), and a
+          // figure of the record must stand in the record's table (spec-standard points at `table`).
+          else { cols.forEach((col, j) => col.push("| Engine", `| Model | ${nc[j + 1]}`)); src = { header: t.header || [], rows: [...t.rows, ...nl] }; }
+        }
+        cols.forEach((col, j) => out.push(...(verticalSheet(s, t, ti, col, (reason, detail) => note(t, ti, null, `bảng cột (cột ${j + 1}): ${reason}`, detail), { column: j, src }) || [])));
+        return;
+      }
+      out.push(...(verticalSheet(s, t, ti, lines, (reason, detail) => note(t, ti, null, "bảng dọc: " + reason, detail)) || []));
+    });
+    return out;
+  }
+  function verticalSheet(s, t, ti, lines, say, col = null) {
+    const out = [];
+    {
+      const cs = lines.map(verticalCells);
       // One genset down the page: most lines a label and at most two values; not the dotted "Manufacturer……CUMMINS" kind.
-      if (cs.filter((c) => c.length <= 3).length < lines.length * 0.6 || lines.filter((l) => /[….]{5,}/.test(l)).length >= 3) return;
-      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => vIsCode(x)))) return;
-      const say = (reason, detail) => note(t, ti, null, "bảng dọc: " + reason, detail);
+      if (cs.filter((c) => c.length <= 3).length < lines.length * 0.6 || lines.filter((l) => /[….]{5,}/.test(l)).length >= 3) return out;
+      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => vIsCode(x)))) return out;
       const decComma = lines.some((l) => /\d,\d{1,2}(?![\d,])/.test(l));
       const models = new Map(), engines = new Map(), alts = new Map(), levels = { prime: [], standby: [] }, specs = [];
       let part = null, partSeen = false, engBrand = null, multi = null, ratingCols = null, pendBore = null;
@@ -2898,6 +2923,8 @@
         const mu = vals.filter((x) => V_UNIT_MORE.test(x) && !UNIT_CELL.test(x));
         const withUnit = val && mu.length === 1 && /^\d+(?:[.,]\d+)?$/.test(val) ? `${val} ${mu[0].replace(/^ltr?(?=\/|$)/i, "L")}` : null; // "lt" is the Turkish litre mark: "lt/h" is written L/h (same unit, no conversion)
         const value = withUnit && specFits(sk, withUnit) ? withUnit : val; // a key whose pattern does not take a unit (disp) keeps the bare figure
+        // A table across (buoc-3-l1): "| Fuel Tank Capacity | 8hrs | 8hrs" (koten) is a running time, not a capacity: left out.
+        if (col && sk === "tank" && /^\d+(?:\.\d+)?\s*(h|hrs?|hours?)$/i.test(String(value || ""))) { say("dung tích bồn ghi bằng giờ chạy, không đọc", lines[li]); return; }
         if (sv.length === 1 && value && specFits(sk, value)) specs.push({ key: sk, label, value });
       });
       const base = { supplierId: s.id, n: t.n, table: ti, title: String(t.title || "") };
@@ -2941,12 +2968,83 @@
         else if (ttl.length === 1) addMake(ms, ttl[0], "tên trang");
         return ms;
       };
-      const common = { ...base, genset: g.code, power, freq, specs: sp, lines: { header: t.header || [], rows: t.rows }, sheet: "bảng dọc" };
+      // A column of a table across (columnSheets) keeps the table's own lines (word for word) and says which column it is.
+      const common = { ...base, genset: g.code, power, freq, specs: sp, lines: col ? col.src : { header: t.header || [], rows: t.rows }, sheet: "bảng dọc", ...(col ? { column: col.column } : {}) };
       out.push({ ...common, kind: "engine", model: e.code, makes: makesOf(e, ENGINE_BRANDS, engBrand), other: a ? a.code : null, specs: sp.filter((x) => SPEC[x.key].scope !== "alternator") });
       if (a && !ALT_PREFIX.test(a.code)) out.push({ ...common, kind: "alternator", model: a.code, makes: makesOf(a, ALT_BRANDS, null), other: e.code, specs: sp.filter((x) => SPEC[x.key].scope !== "engine") });
-    });
+    }
     return out;
   }
+  // Models across, one per column (buoc-3-l1, họ L1 of buoc-3-bo-cuc-chua-doc.md: "| Model | KW38D5 | KW45D6", then "| Frequency |
+  // 50Hz | 60Hz", "| Prime Power | 30kW/38kVA | 36kW/45kVA"): verticalRecords splits the table into one "label | value" sheet per
+  // column, each read by the one-genset rules of verticalSheet (genset model, ONE engine code, prime / standby with the level in the
+  // label, specs by label). Recognised only when ALL of these hold, else the table is left as before:
+  //   - a "Model" line (V_MODEL label, a part heading like "Genset Specification" may stand before it) within the first 8 lines whose
+  //     value cells are k >= 2 codes, all different, nothing after them;
+  //   - each other line is read only when its value cells are exactly the last k cells (label cells before them: words, a unit
+  //     cell, a part heading; never a figure) or, for an output, 2k cells that pair up as one "kW" cell and one "kVA" cell per
+  //     column, each with its unit written in the cell ("| Prime Power | 32kW | 40kVA | 36kW | 45kVA"). A line with another count
+  //     of cells (a value written once for all columns, "| Phase | single/three |", "| Engine Specification | Engine Brand | YTO")
+  //     gives nothing but its part heading: which columns it is meant for is not written. A line whose value is in the first
+  //     column only (a merged cell) gives nothing either;
+  //   - a column whose cell is empty gets no line.
+  // A genset sheet with no engine line, followed in the SAME source by a table that starts "| Engine Model | c1 | … | ck" (koten:
+  // the page's engine table, cut off by the crawler) takes its engine code from that table, only when the engine table's speed line
+  // agrees with the genset table's frequency line column by column (1500 / 3000 rpm ↔ 50 Hz, 1800 / 3600 rpm ↔ 60 Hz).
+  // (Placed after verticalSheet, not before verticalRecords, so as not to touch the lines PR #1207 adds there.)
+  const C_KW = /^\d+(?:[.,]\d+)?\s*kw$/i, C_KVA = /^\d+(?:[.,]\d+)?\s*kva$/i;
+  const cLabelCell = (x) => !x || UNIT_CELL.test(x) || V_UNIT_MORE.test(x) || (/[a-z一-鿿]/i.test(x) && !/^[\d.,\s]/.test(x));
+  function columnSheets(lines) {
+    const cs = lines.map(cellsOf);
+    let k = 0, mi = -1;
+    for (let i = 0; i < Math.min(8, cs.length) && mi < 0; i++) {
+      const c = cs[i];
+      for (let p = 1; p <= Math.min(3, c.length - 2); p++) {
+        const vals = c.slice(p), lab = c.slice(0, p).filter(Boolean);
+        if (vals.length < 2 || !lab.length || !V_MODEL.test(lab[lab.length - 1].replace(/[:：\s]+$/, "")) || V_ENGINE.test(lab[lab.length - 1])) continue;
+        if (lab.slice(0, -1).some((x) => headingOf(x) === undefined)) continue;
+        const codes = vals.map(verticalCode);
+        if (codes.some((x) => !x || x.brand) || new Set(codes.map((x) => keyOf(x.code))).size !== vals.length) continue;
+        k = vals.length; mi = i; break;
+      }
+    }
+    if (mi < 0) return null;
+    const cols = Array.from({ length: k }, () => []);
+    const head = (h) => { for (const col of cols) col.push(`| ${h}`); };
+    cs.forEach((c0) => {
+      let c = c0;
+      if (c.length === 1) { if (headingOf(c[0]) !== undefined && headingOf(c[0]) !== "keep") head(c[0]); return; }
+      // A part heading in the first cell ("| Engine Specification | Model | …", "| Alternator Specification | Alternator Brand | …").
+      const h = headingOf(c[0]);
+      // Only when the next cell is a label too ("| Engine Specification | Engine Brand | YTO": heading, label, ONE value) or the cells
+      // after it are still a label and k values: "| Engine | KTA50-G16A | 4016TAG1A" is a label line.
+      const labelish = (x) => !!x && !/^\d/.test(x) && !verticalCode(x) && (V_BRAND.test(x) || V_MODEL.test(x) || V_ENGINE.test(x) || V_ALT.test(x) || PRIME_RATE.test(x) || STANDBY.test(x) || !!specKey(x));
+      // The next cell must be a label itself: "| 机组型号 | | KPFD40 | …" is a model line ("机组" reads as a heading word).
+      const nextLabel = !!c[1] && /[a-z一-鿿]/i.test(c[1]) && !/^\d/.test(c[1]) && !verticalCode(c[1]);
+      if (h !== undefined && h !== "keep" && nextLabel && (c.length > k + 1 || labelish(c[1]))) { head(c[0]); c = c.slice(1); if (c.length < k + 1) return; }
+      let vals = null, lab = null;
+      const n = c.length;
+      if (n >= 2 * k + 1) {
+        const tail = c.slice(n - 2 * k), pairs = [];
+        for (let j = 0; j < k; j++) { const a = tail[2 * j], b = tail[2 * j + 1]; if ((C_KW.test(a) && C_KVA.test(b)) || (C_KVA.test(a) && C_KW.test(b))) pairs.push(`${a} / ${b}`); }
+        if (pairs.length === k) { vals = pairs; lab = c.slice(0, n - 2 * k); }
+      }
+      if (!vals && n >= k + 1) { vals = c.slice(n - k); lab = c.slice(0, n - k); }
+      if (!vals || !lab.some(Boolean) || !lab.every(cLabelCell)) return;
+      if (vals.slice(1).every((x) => !x) && vals[0]) return; // one value written for all columns (a merged cell)
+      vals.forEach((v, j) => { if (v) cols[j].push(`| ${lab.filter(Boolean).join(" | ")} | ${v}`); });
+    });
+    return cols;
+  }
+  // Column j's frequency (50 / 60) from a "Frequency" line, or from a speed line in rpm; null when not written that way.
+  const colHz = (col) => {
+    for (const l of col) {
+      const c = cellsOf(l);
+      if (/frequen|频率/i.test(c[0] || "")) { const m = c.slice(1).join(" ").match(/^(50|60)\s*hz$/i); if (m) return +m[1]; }
+      if (/speed|转速/i.test(c[0] || "")) { const m = c.slice(1).join(" ").match(/^(1500|1800|3000|3600)\s*(rpm|r\/min)$/i); if (m) return /^(1500|3000)$/.test(m[1]) ? 50 : 60; }
+    }
+    return null;
+  };
   // Engine lines of label sheets, an explicit list (S9 cc-129, Khoa 22/11/2026: read the 129 displacement cells written in cc that
   // gave no figure; not a rule). Each entry names the table by supplier + n and its lines WORD FOR WORD (a re-crawl that changes
   // one lapses the entry, noted): `engine` = [line, code]: the line names the ENGINE role ("Engine Type", "ENGINE MODEL") and the
@@ -4157,7 +4255,7 @@
 
   // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
   const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
-  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
