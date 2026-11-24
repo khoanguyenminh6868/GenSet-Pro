@@ -151,12 +151,236 @@
       ],
       "file": "sources/firstall-power/2002.md",
       "official": true
+    },
+    {
+      "n": 1001,
+      "url": "https://www.firstallpower.com/upload/file/1564103364.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.firstallpower.com/upload/file/1564103617.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.firstallpower.com/upload/file/1564103797.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.firstallpower.com/upload/file/1564103954.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.firstallpower.com/upload/file/1564103984.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://www.firstallpower.com/upload/file/1564104126.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1006.md"
+    },
+    {
+      "n": 1007,
+      "url": "https://www.firstallpower.com/upload/file/1564104158.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷"
+      ],
+      "file": "sources/firstall-power/1007.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-14",
   "checkedBy": "discover-bot",
   "specTables": [
+    {
+      "n": 1001,
+      "title": "Datasheet: QYI454G",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96.4 | 96.4 | 96.5 | 96.5 | 96.3 | 96.3 | 96.3 | 96.4",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 97.3 | 97.3 | 97.3 | 97.4 | 97.1 | 97.1 | 97.2 | 97.2",
+        "| Total Weight - kgs 总重量-公斤 | 4054 | 4022",
+        "| Weight wound stator - kgs 定子重量-公斤 | 2015 | 2015",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1697 | 1654",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 220X101X159 | 230X101X159"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: QYI454B",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 95.7 | 95.8 | 95.9 | 96 | 95.5 | 95.6 | 95.7 | 95.8",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 96.7 | 96.8 | 96.8 | 96.9 | 96.4 | 96.5 | 96.6 | 96.7",
+        "| Total Weight - kgs 总重量-公斤 | 2760 | 2710",
+        "| Weight wound stator - kgs 定子重量-公斤 | 1306 | 1306",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1139 | 1077",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 186X105X149 | 205X101X159"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: QYI454C",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96 | 96.1 | 96.2 | 96.1 | 95.8 | 95.9 | 95.9 | 96",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 96.9 | 97 | 97 | 97 | 96.7 | 96.8 | 96.8 | 96.9",
+        "| Total Weight - kgs 总重量-公斤 | 3015 | 2965",
+        "| Weight wound stator - kgs 定子重量-公斤 | 1445 | 1445",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1257 | 1195",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 186X105X149 | 205X101X159"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: QYI454D",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96.5 | 96.6 | 96.7 | 96.7 | 96.3 | 96.4 | 96.4 | 96.4",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 97.3 | 97.3 | 97.4 | 97.4 | 97.1 | 97.2 | 97.2 | 97.3",
+        "| Total Weight - kgs 总重量-公斤 | 3275 | 3225",
+        "| Weight wound stator - kgs 定子重量-公斤 | 1600 | 1600",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1383 | 1321",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 215X101X159 | 225X101X159"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: QYI454E",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96.4 | 96.5 | 96.6 | 96.6 | 96.2 | 96.3 | 96.4 | 96.4",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 97.2 | 97.3 | 97.4 | 97.4 | 97 | 97.1 | 97.1 | 97.3",
+        "| Total Weight - kgs 总重量-公斤 | 3585 | 3510",
+        "| Weight wound stator - kgs 定子重量-公斤 | 1741 | 1741",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1487 | 1423",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 215X101X159 | 225X101X159"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: QYI454F",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96.6 | 96.6 | 96.7 | 96.8 | 96.4 | 96.4 | 96.5 | 96.6",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 97.3 | 97.4 | 97.4 | 97.4 | 97.2 | 97.2 | 97.3 | 97.3",
+        "| Total Weight - kgs 总重量-公斤 | 3830 | 3800",
+        "| Weight wound stator - kgs 定子重量-公斤 | 1905 | 1905",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1609 | 1565",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 220X101X159 | 230X101X159"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: QYI454H",
+      "header": [],
+      "rows": [
+        "| Method of Cooling 冷却方式 | Air cooling风冷",
+        "| Insulation Class 绝缘等级 | H",
+        "| Power Factor功率因数 | 0.8",
+        "| Degree of Protection / Enclosure 防护等级 | IP23",
+        "| Excitation 励磁方式 | Brushless无刷",
+        "| Voltage ( series star )电压 Y | V | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Voltage ( series delta )电压 Δ | V | 220 | 230 | 240",
+        "| Efficiency at Class H (P.F.=0.8)绝缘等级H (P.F.=0.8)效率 | 3/4% | 96.4 | 96.5 | 96.6",
+        "| Efficiency at Class H (P.F.=1.0)绝缘等级H (P.F.=1.0)效率 | 3/4% | 97.2 | 97.3 | 97.3",
+        "| Total Weight - kgs 总重量-公斤 | 4350 | 4300",
+        "| Weight wound stator - kgs 定子重量-公斤 | 2166 | 2166",
+        "| Weight wound rotor - kgs 转子重量-公斤 | 1825 | 1798",
+        "| Drive end bearing / Lubrication 驱动端轴承/润滑 | BALL.6228-2RS(ISO)",
+        "| Non-drive end bearing / Lubrication非驱动端轴承/润滑 | BALL.6319-2RS(ISO) | BALL.6319-2RS(ISO)",
+        "| Packing crate size 包装尺寸（cm） | 234X101X159 | 244X101X159"
+      ]
+    },
     {
       "n": 2001,
       "title": "QY I (50Hz) 系列产品选型表 SERIES PRODUCT SELECTION TABLE — 1500rpm / 50Hz / 380~415V",
