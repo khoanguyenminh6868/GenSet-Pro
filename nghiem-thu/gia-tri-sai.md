@@ -73,8 +73,8 @@ Ghi chú: tecgen n127 còn ghi "33kW / 34kVA" cho TG41 (nguồn gõ sai), nhưng
 
 - `spec-diff git:8832317f .`: bản ghi `fromSupplier` 62.160 → 62.160, **77 đổi, 0 mất, 0 thêm**, 40 bảng / 16 NCC; chỉ dạng: tiêu hao bỏ 60, kích thước bỏ 23, bore bỏ 3, tỉ số nén bỏ 1, công suất (nopower depco) 3; `gensetsOf` 1.700 → 1.700, 26 đổi (yingtai n107 kích thước bỏ), 0 mất, 0 thêm; đảo vai 0 → 0. 87 giá trị "tự kiểm cần soát tay" đều là số BỎ của chính các dòng trong danh sách.
 - Đối chiếu: mọi bảng có bản ghi đổi đều có trong danh sách (0 ngoài danh sách). Mục không làm đổi bản ghi: bảng chép lại (bản ghi đã gộp vào bản đầu qua `mergeRepeats`) và googol (chỉ thêm cờ, `gensetsOf` không đổi số).
-- `quality.mjs --check`: QUALITY.
-- `node --test suppliers/*.test.mjs`: TESTS. `catalog-hy.test.mjs` sửa: đếm ghi chú "ngoại lệ theo dòng" của yingtai chỉ ở n101 / n2003 (n107 / n108 của việc này thêm ghi chú). Test mới `suppliers/gia-tri-sai.test.mjs`.
+- `quality.mjs --check`: không chỉ số nào xấu đi quá ngưỡng.
+- `node --test suppliers/*.test.mjs`: 1.655 / 1.655 đạt. `catalog-hy.test.mjs` sửa: đếm ghi chú "ngoại lệ theo dòng" của yingtai chỉ ở n101 / n2003 (n107 / n108 của việc này thêm ghi chú). Test mới `suppliers/gia-tri-sai.test.mjs`.
 - `node --test web/test/*.test.mjs`: 171 / 171.
 - Fixture `regress-config`: 8 / 8 đạt, KHÔNG đổi. NCC bị đụng có trong dữ liệu đóng băng: longkai (cả 6 lượt), aosif (5 lượt), acepow (1 lượt). Model đụng: longkai LG288C / LG520C / LG600C (chỉ tiêu hao), aosif AD697 (tiêu hao), acepow APX-50 / APX-85; không thay đổi kết quả nào của fixture.
 - `spec-diff.mjs` sửa một dòng (`brief`: `r.dims` không phải mảng làm chết khi `spec-norm.js` đổi; lỗi có sẵn).
