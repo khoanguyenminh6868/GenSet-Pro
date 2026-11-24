@@ -36,6 +36,52 @@ test("phaseOf theo từng cỡ của gói nhiều cỡ", () => {
   assert.equal(minsForSize(t, sizes[1], sizes).mins.phase, 3);
 });
 
+// Gói nhiều cỡ (24/11/2026): số pha gắn theo hạng mục / dòng nêu cỡ, không theo khối công suất. Câu tự đặt theo bố cục "hạng mục: yêu cầu".
+const kw = (...v) => v.map((x) => ({ cap: { value: x, unit: "kW" }, kva: x / 0.8 }));
+const phOf = (t, sizes) => sizes.map((s) => minsForSize(t, s, sizes).mins.phase);
+
+test("số pha gói nhiều cỡ: dòng của hạng mục khác nằm giữa khối cỡ này không gắn cho cỡ này", () => {
+  // Dòng của tổ máy phụ ("… 12 kW; máy phát 06 kWe … 1 pha") không mở khối cỡ mới nên nằm trong khối 60 kW: trước đây 60 kW thành 1 pha.
+  const t = [
+    "Tổ máy chính: Số lượng: 02 bộ.",
+    "Tổ máy chính: Công suất, số pha: Động cơ lai công suất 70 kW; máy phát 60 kW, 400V, 50Hz, 3 pha.",
+    "Tổ máy chính: Động cơ - Công suất định mức: 70 kW.",
+    "Tổ máy chính: Máy phát - Công suất: 60 kW.",
+    "Tổ máy phụ: Số lượng: 01 bộ.",
+    "Tổ máy phụ: Công suất, số pha: Động cơ lai công suất 12 kW; máy phát 06 kWe, 50Hz, 1 pha.",
+    "Tổ máy phụ: Động cơ - Công suất lớn nhất: 12 kW.",
+    "Tổ máy phụ: Máy phát - Công suất: 06 kW.",
+    "Tổ máy chính: Máy phát - Số pha: 3 pha.",
+    "Tổ máy phụ: Máy phát - Số pha: 1 pha.",
+  ].join("\n");
+  assert.deepEqual(phOf(t, kw(6, 12, 60, 70)), [1, 1, 3, 3]);
+});
+
+test("số pha gói nhiều cỡ: không gắn chắc được thì không rõ (null), không lấy theo khối", () => {
+  // Dòng không nêu cỡ, hạng mục không nêu công suất, gói nêu cả hai loại: mọi cỡ không rõ.
+  const both = "Máy 10 kVA: Công suất liên tục ≥ 10 kVA\nMáy 40 kVA: Công suất liên tục ≥ 40 kVA\nĐầu phát: Số pha: 1 pha\nĐầu phát điện: Số pha: 3 pha";
+  const s2 = [{ cap: { value: 10, unit: "kVA" }, kva: 10 }, { cap: { value: 40, unit: "kVA" }, kva: 40 }];
+  assert.deepEqual(phOf(both, s2), [null, null]);
+  // Cỡ có dòng gắn với nó → loại đó; cỡ không có dòng gắn trong khi cỡ khác có → null.
+  const one = "Máy 10 kVA: Công suất liên tục ≥ 10 kVA\nMáy 10 kVA: Số pha: 1 pha\nMáy 40 kVA: Công suất liên tục ≥ 40 kVA";
+  assert.deepEqual(phOf(one, s2), [1, null]);
+  // Một dòng nêu hai cỡ với hai loại pha không gắn được; dòng của từng phần vẫn gắn.
+  const mix = "Chung - Số lượng: 03 máy 10 kVA 1 pha và 02 máy 40 kVA 3 pha\nPhần A - Máy 10 kVA: Số pha: 1 pha 2 dây\nPhần B - Máy 40 kVA: Số pha: 3 pha 4 dây";
+  assert.deepEqual(phOf(mix, s2), [1, 3]);
+  // Một cỡ tự ghi "3 pha hoặc 1 pha" → không rõ dù có dòng khác ghi 3 pha.
+  const either = "Máy 10 kVA: Điện áp, số pha: 400 V 3 pha hoặc 230 V 1 pha\nMáy 10 kVA: Đầu phát: 17,5 kVA, 3 pha\nMáy 40 kVA: Số pha: 3 pha";
+  assert.deepEqual(phOf(either, s2), [null, 3]);
+  // Hạng mục chung của mọi máy gắn cho mọi cỡ.
+  assert.deepEqual(phOf("Máy 10 kVA: Công suất ≥ 10 kVA\nMáy 40 kVA: Công suất ≥ 40 kVA\nChung - Loại máy: Máy phát điện xoay chiều, 3 pha 4 dây", s2), [3, 3]);
+});
+
+test("số pha gói nhiều cỡ: lượt 60 kW không loại dòng ba pha vì dòng 1 pha của tổ máy phụ", () => {
+  const t = "Tổ máy chính: Công suất, số pha: máy phát 60 kW, 400V, 3 pha.\nTổ máy chính: Máy phát - Công suất: 60 kW.\nTổ máy phụ: Công suất, số pha: máy phát 06 kWe, 1 pha.\nTổ máy phụ: Máy phát - Công suất: 06 kW.";
+  const sizes = kw(6, 60);
+  const h = hintsOf(`Chương V. Yêu cầu kỹ thuật\n${t}`, "", { size: sizes[1], sizes });
+  assert.equal(h.phase, 3);
+});
+
 test("onePhaseOf: dòng phân đoạn và cột pha của chính dòng", () => {
   assert.equal(onePhaseOf({ header: [H, "| Single phase"], line: ROW }).from, "segment");
   const heads = ["| Model | Hz | Phase | Engine"];

@@ -1504,6 +1504,52 @@ function minsRead(t) {
   const one = (list) => (new Set(list).size === 1 ? list[0] : null), m = { ...p.mins, minDisp: one(e.disp), maxDisp: one(e.dmax), minCyl: one(e.cyl), cylLayout: one([...layouts]), phase: one([...phases]) };
   return Object.fromEntries(MIN_KEYS.map((k) => [k, { has: has[k], v: m[k] }]));
 }
+// Số pha của một cỡ trong gói nhiều cỡ (24/11/2026, IB2300003199: tổ máy chính 80 kW 3 pha và tổ máy sinh hoạt 8 kW 1 pha; dòng "sinh
+// hoạt … 13 kW; máy phát 08 kWe … 1 pha" không mở khối cỡ mới nên nằm trong khối 80 kW, lượt 80 kW thành 1 pha và loại oan dòng ba pha).
+// Khối cỡ (`sizeBlocks` runs) không đủ chắc để gắn số pha. Mỗi dòng nêu pha được gắn với các cỡ nó nói tới:
+//  1. dòng mở bằng máy của nó ("Máy 15 kVA 1 pha: …", `tags` ≥ 0) → cỡ đó; dòng "Cả 3 loại máy: …" (`tags` = -2) → mọi cỡ;
+//  2. dòng tự nêu công suất đúng một hay vài cỡ ("Động cơ 91 kW; máy phát 80 kW, …, 3 pha") → các cỡ đó;
+//  3. dòng thuộc một hạng mục (chữ trước dấu ":" đầu dòng, "Tổ máy phát điện sinh hoạt: Máy phát - Số pha: 1 pha") mà các dòng của
+//     hạng mục đó nêu công suất của một hay vài cỡ → các cỡ đó;
+//  4. còn lại: không gắn được.
+// Cỡ có dòng gắn với nó: một loại pha → loại đó, cả hai → null. Cỡ không có dòng nào gắn: gói có dòng gắn với cỡ khác, hoặc gói nêu cả
+// một pha lẫn ba pha → null (không rõ, "cần xác nhận số pha"; không loại dòng). Gói không gắn dòng nào với cỡ nào và chỉ nêu một loại
+// pha → trả null để giữ kết quả theo khối như cũ. Không suy số pha từ cỡ máy.
+// → { phase, how } hoặc null (giữ kết quả theo khối).
+// Hạng mục chung của mọi máy ("Chung - Máy phát điện (yêu cầu chung): Máy phát 3 pha", IB2200087789): dòng của nó gắn với mọi cỡ.
+const COMMON_ITEM = /^chung(?![\p{L}])|y[êe]u\s*c[ầa]u\s*chung|chung\s*cho\s*(?:c[áa]c|m[ọo]i|t[ấa]t\s*c[ảa])|^(?:c[ảa]|t[ấa]t\s*c[ảa])\s+(?:\d+|hai|ba|b[ốo]n)?\s*(?:lo[ạa]i\s+)?m[áa]y/iu;
+function phaseForSize(L, tags, sizes, j) {
+  const kwSizes = sizes.some((s) => s.cap?.unit === "kW"), all = sizes.map((_, k) => k);
+  const namedIn = (l) => {
+    const out = new Set();
+    for (const m of l.matchAll(new RegExp(CAP_NUM, "gi"))) {
+      const unit = m[2].toLowerCase(), v = numOf(m[1]);
+      if (unit === "kw" && !kwSizes) continue;
+      sizes.forEach((s, k) => { const want = unit === "kw" ? s.kva * 0.8 : s.kva; if (v >= want * NEAR_LOW && v <= want / NEAR_LOW) out.add(k); });
+    }
+    return out;
+  };
+  const itemOf = (l) => { const m = l.match(/^\s*([^:\n]{2,120}?)\s*:\s/); return m ? norm(m[1]).replace(/\s+/g, " ") : null; };
+  const itemSizes = new Map();
+  L.forEach((l) => { const it = itemOf(l); if (!it) return; const s = itemSizes.get(it) || new Set(); for (const k of namedIn(l)) s.add(k); itemSizes.set(it, s); });
+  const stated = [];
+  L.forEach((l, i) => {
+    // Dòng tự nêu cả một lẫn ba pha: gắn với đúng một cỡ ("Máy 10,5 kVA: … 3 pha hoặc 230 V 1 pha", IB2500385135) thì cỡ đó có cả hai
+    // loại (không rõ); gắn với nhiều cỡ ("03 máy 8 kVA 1 pha và 02 máy 40 kVA 3 pha"; "Máy phát điện 3 pha loại 15 kW: Dải điện áp 230V
+    // 1 pha" của một máy bị đọc thành hai cỡ, IB2400152304) thì không biết loại nào của cỡ nào: bỏ dòng đó.
+    const kinds = phasesIn(l);
+    if (!kinds.size) return;
+    const own = namedIn(l), it = itemOf(l);
+    const scope = tags[i] === -2 ? all : tags[i] >= 0 ? [tags[i]] : own.size ? [...own] : it && COMMON_ITEM.test(it) ? all : it && itemSizes.get(it)?.size ? [...itemSizes.get(it)] : null;
+    if (kinds.size > 1 && scope && scope.length > 1) return;    stated.push({ kinds, scope });
+  });
+  if (!stated.length) return null;
+  const mine = new Set(stated.filter((x) => x.scope?.includes(j)).flatMap((x) => [...x.kinds]));
+  if (mine.size) return mine.size === 1 ? { phase: [...mine][0], how: "tied" } : { phase: null, how: "tied: disagree" };
+  if (stated.some((x) => x.scope)) return { phase: null, how: "tied to another size" };
+  if (new Set(stated.flatMap((x) => [...x.kinds])).size > 1) return { phase: null, how: "both, not tied" };
+  return null;
+}
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
 // is outside every block. `how` says per key where the figure came from: own, common, none (and why).
 export function minsForSize(t, size, sizes, extra = "") {
@@ -1559,6 +1605,9 @@ export function minsForSize(t, size, sizes, extra = "") {
     const tolerated = v != null && [...own.matchAll(TOL_AFTER)].some((x) => Math.abs(numOf(x[1]) / size.cap.value - 1) <= 0.006 && Math.abs(lowOf(x[1], x[3], !!x[4]) - v) < 0.001);
     if (!tolerated && (v == null || Math.abs(v / size.cap.value - 1) > 0.006)) { mins.minPrime = null; how.minPrime = "not the size"; }
   }
+  // Số pha: theo hạng mục / dòng nêu cỡ (`phaseForSize`), không theo khối.
+  const ph = phaseForSize(L, tags, sizes, j);
+  if (ph) { mins.phase = ph.phase; how.phase = ph.how; }
   // A short note (≤ 300 characters) for the agent: the minimums the HSMT gives that the code could not place in this size.
   const LABEL = { minDisp: "dung tích xi lanh tối thiểu", maxDisp: "dung tích xi lanh tối đa", minCyl: "số xi lanh", cylLayout: "bố trí xi lanh", minPrime: "công suất liên tục", maxFuel: "tiêu hao nhiên liệu", maxFuel75: "tiêu hao 75% tải", maxFuel50: "tiêu hao 50% tải" };
   const unsure = MIN_KEYS.filter((k) => k !== "phase" && (how[k] === "size unknown" || how[k] === "own: disagree")).map((k) => LABEL[k]);
