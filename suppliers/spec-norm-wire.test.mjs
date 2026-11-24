@@ -61,7 +61,7 @@ test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / s
   assert.deepEqual(normFig({ key: "disp", label: "Displacement", value: "11000" }, { header: [] }, { unit: "L" }).why, ["đơn vị cc"]);
 });
 
-test("candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, the old 300 points off)", () => {
+test("candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, no points off: Khoa 25/11/2026)", () => {
   const H100 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel consumption 100% load (L/h) |", HNL = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel Consumption (L/h) |";
   const list = [sup("nl", ["| n-1 | 420 | 336 | WP13D405E200 | XY1 | 99 |"], HNL), sup("fl", ["| f-1 | 420 | 336 | YC6K520-D30 | XY1 | 99 |"], H100)];
   const h = free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz");
