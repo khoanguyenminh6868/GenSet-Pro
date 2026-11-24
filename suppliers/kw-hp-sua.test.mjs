@@ -52,11 +52,12 @@ test("số của 5 ô không vào công suất động cơ: enginePowerOf, rated
   const docs = standardOf([ettes]);
   const items = [];
   for (const d of docs) if (d.part === "engine" && ["20V4000G63", "20V4000G63L", "K19DM", "K19-DM"].includes(d.key)) for (const it of d.fields.power_kwm || []) items.push({ key: d.key, ...it });
-  const bad = items.filter((it) => [3311, 2590, 507].includes(it.value.kwm) && it.unit === "kW");
-  assert.deepEqual(bad, []);
-  const flagged = items.filter((it) => [3311, 2590, 507].includes(it.value.kwm));
-  // 3311 (hai dòng) và 2590 (hai dòng) gộp theo giá trị; cặp 507/580 là `options` nên không có kwm số.
-  for (const v of [3311, 2590]) assert.ok(flagged.some((it) => it.value.kwm === v), `thiếu ${v} trong bản chuẩn`);
+  // Số không đơn vị không nằm dưới khoá kwm (spec-standard-sua): cột `figure`, vẫn hiện kèm missing "unit".
+  const fig = (it) => [].concat(it.value.figure ?? []);
+  assert.deepEqual(items.filter((it) => [3311, 2590, 507].some((v) => [].concat(it.value.kwm ?? []).includes(v))), []);
+  const flagged = items.filter((it) => [3311, 2590, 507].some((v) => fig(it).includes(v)));
+  // 3311 (hai dòng) và 2590 (hai dòng) gộp theo giá trị; cặp 507/580 là `options`.
+  for (const v of [3311, 2590, 507]) assert.ok(flagged.some((it) => fig(it).includes(v)), `thiếu ${v} trong bản chuẩn`);
   assert.ok(flagged.every((it) => it.unit == null && it.missing.includes("unit")));
 });
 

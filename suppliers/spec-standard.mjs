@@ -47,6 +47,14 @@ const plainNum = (s) => (/^\d+(\.\d+)?$/.test(NFKC(s)) ? Number(NFKC(s)) : null)
 const COND_SKIP = new Set(["headerUnit", "unitFrom", "layout", "unitCell"]);
 const condOf = (n) => { const c = Object.fromEntries(Object.entries(n?.cond || {}).filter(([k, v]) => !COND_SKIP.has(k) && v != null)); return Object.keys(c).length ? c : null; };
 
+// Emission levels as spec-norm reads them ([{ scale, level, text }]): kept as structure, never turned into text (String()
+// of an object gave "[object Object]" for every emission value). The scale stays null when the source names none (no
+// guess); `text` is the source's spelling, left to `raw`, so "Tier 2" and "T2" of one scale are one value. Sorted, no repeats.
+export function levelsOf(e) {
+  const list = (Array.isArray(e) ? e : [e]).filter((x) => x && typeof x === "object").map((x) => ({ scale: x.scale ?? null, level: x.level ?? null }));
+  const seen = new Map(list.map((x) => [stable(x), x]));
+  return [...seen.keys()].sort(cmp).map((k) => seen.get(k));
+}
 // The standard value of one normalized reading, or { drop } when no figure could be read.
 export function valueOf(f, n, sp) {
   const out = (value, rules = []) => ({ value, unit: n?.unit ?? null, cond: condOf(n), missing: [...(n?.missing || [])], rules });
@@ -55,7 +63,7 @@ export function valueOf(f, n, sp) {
     if (n.count != null) { const o = out(n.count, /v/i.test(n.raw.value) ? ["xi-lanh-v"] : []); o.missing = o.missing.filter((m) => m !== "layout"); o.layout = n.cond?.layout || null; return o; }
     if (n.bore) { const { bore, stroke } = n.bore; return out(stroke != null ? `${bore} × ${stroke}` : `${bore}`, ["dau-nhan"]); }
     if (n.dims) { const d = n.dims.asWritten || Object.values(n.dims); return out(d.join(" × "), ["dau-nhan"]); }
-    if (n.enum) return out(String(n.enum));
+    if (n.enum) return out(levelsOf(n.enum));
     // Engine power written in HP / PS: spec-norm turns it into kW; the standard keeps the source's figure (field power_hp).
     if (f.id === "power_kwm" && n.conv?.from) return { ...out(n.conv.from.num, ["hp-giu-nguyen"]), unit: n.conv.from.unit };
     if (n.num != null) return out(n.num, Number(n.raw.value) === n.num && String(n.num) === NFKC(n.raw.value) ? [] : ["so"]);
@@ -155,14 +163,19 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
   }
 }
 // Engine power is a table: kWm by rating and speed, HP / PS in its own field; never turned into kVA or kW electric.
-function moveEnginePower(fields) {
+// A figure the source gives no unit for (unit null, missing "unit": ettes-power "kW/Hp" cells marked by unitspec, cells
+// whose label names no unit) is neither kWm nor HP: it stays in power_kwm under the column `figure`, with missing "unit",
+// so it is shown with its note and never read as kW. spec-fields.json is unchanged (`figure` is a cell, not a field).
+export function moveEnginePower(fields) {
   const items = fields.power_kwm;
   if (!items) return;
   const kw = [], hp = [];
   for (const it of items) {
     const unit = String(it.unit || "");
     const isHp = /^(hp|bhp|ps)$/i.test(unit) || (!unit && /\b(hp|bhp|ps)\b/i.test(String(it.raw || "")));
-    const row = { rating: it.cond?.rating ?? null, rpm: it.cond?.speed ?? it.cond?.rpm ?? null, [isHp ? "hp" : "kwm"]: it.value };
+    const col = isHp ? "hp" : unit ? "kwm" : "figure";
+    const row = { rating: it.cond?.rating ?? null, rpm: it.cond?.speed ?? it.cond?.rpm ?? null, [col]: it.value };
+    if (col === "figure" && !(it.missing || []).includes("unit")) it.missing = [...(it.missing || []), "unit"].sort();
     (isHp ? hp : kw).push({ ...it, value: row });
   }
   if (kw.length) fields.power_kwm = kw; else delete fields.power_kwm;

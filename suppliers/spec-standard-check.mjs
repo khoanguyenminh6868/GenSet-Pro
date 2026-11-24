@@ -22,18 +22,24 @@ function normText(n) {
   if (n.dims) return (n.dims.asWritten || Object.values(n.dims)).join(" × ");
   if (n.range) return `${n.range[0]}-${n.range[1]}`;
   if (n.options) return stable(n.options);
-  if (n.enum) return String(n.enum);
+  // Emission levels: compared as the set of scale + level the normalizer read, so a value that lost them (the old
+  // String(n.enum) = "[object Object]", equal to itself) no longer passes.
+  if (n.enum) return levelText(Array.isArray(n.enum) ? n.enum : [n.enum]);
   return null;
 }
+const levelText = (list) => `levels:${[...new Set(list.map((x) => `${x?.scale ?? ""}|${x?.level ?? ""}`))].sort().join(";")}`;
+const isLevels = (v) => Array.isArray(v) && v.length > 0 && v.every((x) => x && typeof x === "object" && "level" in x);
 const audit = (a) => {
   c.readings++;
   if (a.drop) { bump(c.dropped, a.drop); return; }
   c.kept++;
   seen.push([a.part, a.key, a.fid, typeof a.value === "string" ? joinKey(a.value) : stable(a.value)]);
-  const v = typeof a.value === "string" ? a.value : stable(a.value);
+  const v = isLevels(a.value) ? levelText(a.value) : typeof a.value === "string" ? a.value : stable(a.value);
   const from = a.rules?.includes("hp-giu-nguyen") ? String(a.n.conv.from.num) : a.n ? normText(a.n) : tidyText(a.sp.value).text;
   const rules = a.rules || [];
-  if (v === from) { if (!a.n && from === String(a.sp.value)) c.identical++; else if (a.n) c.identical++; else bump(c.byRule, "gon-khoang-trang"); }
+  // An object written out as text anywhere in the value is never a reading of the source.
+  if (JSON.stringify(a.value).includes("[object ")) { c.unexplained++; c.objectText = (c.objectText || 0) + 1; if (bad.length < 40) bad.push({ model: a.key, fid: a.fid, raw: a.sp.value, std: v, why: "[object …]" }); }
+  else if (v === from) { if (!a.n && from === String(a.sp.value)) c.identical++; else if (a.n) c.identical++; else bump(c.byRule, "gon-khoang-trang"); }
   else if (!a.n && a.value === Number(tidyText(a.sp.value).text)) c.identical++;
   else if (!a.n && (rules.includes("same") || rules.includes("hoa-thuong"))) bump(c.byRule, "enum");
   else { c.unexplained++; if (bad.length < 40) bad.push({ model: a.key, fid: a.fid, raw: a.sp.value, norm: from, std: v }); }
@@ -63,7 +69,7 @@ const docs = standardOf(all, { audit });
 const have = new Set();
 for (const d of docs) {
   const add = (key, fields) => { for (const [id, items] of Object.entries(fields)) for (const it of items) {
-    const value = id === "power_kwm" ? it.value.kwm : id === "power_hp" ? it.value.hp : it.value;
+    const value = id === "power_kwm" ? (it.value.kwm ?? it.value.figure) : id === "power_hp" ? it.value.hp : it.value;
     have.add(stable([d.part, key, id === "power_hp" ? "power_kwm" : id, typeof value === "string" ? joinKey(value) : stable(value)]));
   } };
   if (d.part === "genset") for (const [k, m] of Object.entries(d.models)) add(`${d.supplierId}|${k}`, m.fields); else add(d.key, d.fields);

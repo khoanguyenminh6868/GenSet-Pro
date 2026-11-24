@@ -77,6 +77,10 @@ test("công suất động cơ lẫn tốc độ trong ô", () => {
 });
 test("giá trị hỏng và chữ sai loại", () => {
   bad("engine", "emission", { value: "[object Object]", raw: "T2" }, "gia-tri-hong");
+  ok("engine", "emission", { value: [{ scale: "EU Stage", level: "2" }], raw: "EU2007(EU97/68/EC Stage Ⅱ )" });
+  ok("engine", "emission", { value: [{ scale: null, level: "2" }], raw: "T2", missing: ["scale"] }); // hanyang n101
+  bad("engine", "emission", { value: "T2", raw: "T2" }, "sai-loai");
+  assert.equal(checkValue("engine", "power_kwm", { value: { rating: null, rpm: null, figure: 3311 }, raw: "3311", missing: ["unit"] })[0].level, "chua-chuan");
   bad("engine", "engine_type", { value: "Turbocharged", raw: "Turbocharged" }, "sai-loai"); // jet-power n125
   bad("engine", "coolant_capacity", { value: "50% ethylene", raw: "50% ethylene" }, "sai-loai"); // aosif n1088
 });
