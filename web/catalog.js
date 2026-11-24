@@ -326,7 +326,10 @@
   const freqIn = (raw, labelOnly = false) => {
     // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
     // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
-    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
+    // "Dual-band 50/60HZ" (awt-aiweite n102), "50/60 Hz" nêu cả hai tần số: cùng nguyên tắc, trước đây chỉ "60HZ" khớp nên thành 60 Hz.
+    // Chỉ bỏ cặp, nhãn "Frequency: 50" của chính tờ vẫn đọc được. Số sát chữ / số trước nó là một phần của mã ("GB-D60-50HZ": 60 kVA, 50 Hz).
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ")
+      .replace(/(?<![\p{L}\p{N}.])(?:50\s*[\/／&~–-]\s*60|60\s*[\/／&~–-]\s*50)\s*hz(?![\p{L}\p{N}])/giu, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
