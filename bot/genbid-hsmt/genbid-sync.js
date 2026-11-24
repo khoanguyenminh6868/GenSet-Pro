@@ -329,7 +329,7 @@ async function saveTbmtPdf(page, dir) {
     const dl = page.waitForEvent("download", { timeout: 30000 });
     await btn.click();
     const d = await dl;
-    const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").trim() || "Thông báo mời thầu.pdf";
+    const name = (d.suggestedFilename() || "").replace(/[\r\n\\/:*?"<>|]+/g, " ").replace(/^[\s_]+/, "").trim() || "Thông báo mời thầu.pdf";
     fs.mkdirSync(dir, { recursive: true });
     await d.saveAs(path.join(dir, name));
     return true;
