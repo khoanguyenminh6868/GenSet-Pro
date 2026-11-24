@@ -104,3 +104,19 @@ Nhánh `specs-dung-lai`, worktree `C:\Projects\GenSet Pro\wt-specs-dung-lai`, ba
 - verify 436 / 0 lỗi; quality --check không xấu đi; `node --test` toàn bộ suppliers 1787 / 1787.
 - `spec-diff git:c9f8a3b7 . --gate` (so với base `mecca-specs`): thoát 0; đảo vai 0 → 0; bản ghi 64.290 → 64.320 (+30 = sanq 20 + koten 10); "khác 368 / chỉ cũ 1.711 / chỉ mới 1.741" là do ghép theo vị trí bảng (nenjo / previa / yongcai đổi thứ tự bảng); "cần soát tay 93" CHƯA soát từng giá trị (các giá trị thêm của sanq / koten / yongcai). Đối chiếu nội dung dùng rec-diff từng NCC (bảng trên).
 - Số 64.334 / 113 ở phần trên là trước khi hoàn tác jet-power.
+
+## Giải thích đo lượt 7 (đợt 2, #1220 / #1214)
+Sửa báo cáo: "0 đổi" ở bảng trên là SỐ BẢN GHI `fromSupplier` (rec-diff), KHÔNG phải tệp `cn/`. `cn/` của 13 NCC đổi (git diff c9f8a3b7..16ca106c); đổi gì (đếm bảng / nguồn theo nội dung, `cndiff.mjs`):
+| NCC | nguồn thêm / bỏ | bảng thêm / bỏ (theo n + dòng) | ghi chú |
+|---|---|---|---|
+| camda-generator | +142 | +13 / −10 (n102…142) | chữ dòng mới +34; bản ghi 272 → 272, khoá ra / vào 0 |
+| everllence, mhi-china, yuchai, lees-power, pauway-tianjin, rise-power, world-power-fuzhou | +1…5 nguồn mới (trang trước đó chỉ có trong specs/) | +1…5 bảng mới (trang đó) | bản ghi 0 đổi, khoá 0 ra / vào: bảng mới trùng dòng với bảng đã có (fromSupplier bỏ dòng trùng) |
+| previa-ningde | −128 | +1 (n108) / −1 (n128) | cùng 36 model đổi số nguồn |
+| nenjo-generator | +106,120,125,143,147,155 −108 | +6 bảng | 105 bản ghi n154 thêm hãng SDEC (chữ trang) |
+| sanq-power | không | +2 / −2 (n116, n124 bảng "Power Pack") | bảng nay có thêm dòng "Engine model" + "Generator model": 20 bản ghi mới (engine KTA19-G2/G3/G4/KTAA19-G5/G6A + đầu phát HCI444FS…HCI544E, kW rated) |
+| koten-power | +108,109,118,125,145 | +52 / −47 | +10 bản ghi (Weichai WP2.3…) |
+| yongcai-elecmama | +116 | +15 / −14 | 12 bản ghi bảng dọc (QC380D…) thêm engType / asp |
+
+- (2) #1214 so #1208 (`cn/mecca-power.json` +40 / −47): chỉ THỨ TỰ + metadata nguồn: bảng thêm / bỏ = 0, chữ dòng mới = 0; đổi nguồn n144 và n159 (accessedAt 10-28 → 11-24, quote), thứ tự mảng (n159 đặt trước n144). Bản ghi 1726 → 1726, 0 / 0 / 0.
+- (3) kaihua KTA19G6A: kaihua-genset KHÔNG đổi; nguyên nhân là hai cặp bản ghi MỚI của sanq-power (n116, n124, bảng Power Pack): engine KTA19-G6A rated 590 kW + đầu phát HCI544E (n116 ghi hãng Cummins từ dòng "Manufacturer | Joint Venture Cummins (CCEC)"; n124 chưa có hãng). Số lấy từ chữ trang (cột 5: "Rated output(kW) … | 590", "Generator model … | HCI544E"), không suy ra; không mâu thuẫn kaihua KH-500GF (688 kVA / 550 kW trên KTA19-G6A: 590 kW là công suất động cơ). Trước đó bảng bị cắt nên không có hai dòng "Engine model / Generator model". CHƯA chạy lại `candidates` để chứng minh từng điểm +60 / +360 (nghi `enginePowerOf` của khoá KTA19G6A có thêm số 590 từ sanq); điều phối cần so `facts` của khoá này gốc ↔ tích hợp.
+- (4) yongcai 29 ra / 29 vào: khoá dòng `rowKey` của bản ghi bảng dọc = băm của TOÀN BỘ dòng bảng (`rowText`: `genset` + `lines.rows`); bảng n135… nay có thêm dòng "Diesel Engine Type | In-Line, Four-Stroke" và "Air Intake Type | Natural aspiration" nên băm đổi. Đo bằng khoá (loại, model, băm): 12 ra / 12 vào (QC380D, QC385D, QC480D, N485D …), chưa tái hiện con số 29 (khoá của `do-gop` có thể kèm trường khác).
