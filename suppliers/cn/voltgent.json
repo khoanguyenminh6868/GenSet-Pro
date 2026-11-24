@@ -850,8 +850,16 @@
         "| VSC1875-5-S3 | 1875 | 1500 | 1688 | 1350 | SDEC | 12KTA58-G34 | [EN] [RU] [ES] [PT]",
         "| VSC2000-5-S3 | 2000 | 1600 | 1875 | 1500 | SDEC | 12KTA58-G33 | [EN] [RU] [ES] [PT]",
         "| VSC2250-5-S3 | 2250 | 1800 | 2000 | 1600 | SDEC | 12KTA58-G32 | [EN] [RU] [ES] [PT]",
-        "| VSC2500-5-S3 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VSC2500-5-S3 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Low Emission Diesel Generator Sets | Stage V & Tier 4 | Voltgent",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VR9-5-S5 | 9 | 7 | 9 | 7 | RAYWIN | 3D11G3/A | [EN] [RU] [ES] [PT]",
         "| VR15-5-S5 | 15 | 12 | 15 | 12 | RAYWIN | 3M18G0/5 | [EN] [RU] [ES] [PT]",
         "| VR20-5-S5 | 20 | 16 | 20 | 16 | RAYWIN | 3M18TG7/5 | [EN] [RU] [ES] [PT]",
@@ -902,8 +910,16 @@
         "| VS440-5-S5 | 440 | 352 | 400 | 320 | SCANIA | DC13 320A 02-62 | [EN] [RU] [ES] [PT]",
         "| VS500-5-S5 | 500 | 400 | 450 | 360 | SCANIA | DC13 320A 02-63 | [EN] [RU] [ES] [PT]",
         "| VS550-5-S5 | 550 | 440 | 500 | 400 | SCANIA | DC13 505A | [EN]",
-        "| VS600-5-S5 | 600 | 480 | 550 | 440 | SCANIA | DC16 320A 02-63 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VS600-5-S5 | 600 | 480 | 550 | 440 | SCANIA | DC16 320A 02-63 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 102,
+      "title": "Low Emission Diesel Generator Sets | Stage V & Tier 4 | Voltgent",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VYM16-6 | 16 | 13 | 14 | 11 | Yanmar | 3TNV88-GGHWC |",
         "| VYM22-6 | 22 | 18 | 20 | 16 | Raywin | 4TNV88-GGECC |",
         "| VYM27.5-6 | 27.5 | 22 | 25 | 20 | Raywin | 4TNV84T-GGFC |",
@@ -952,8 +968,16 @@
         "| VC1675-5A | 1675 | 1340 | 1500 | 1200 | Cummins | KTA50GS8 | [EN] [RU] [ES] [PT]",
         "| VC1760-5 | 1760 | 1408 | 1625 | 1300 | Cummins | QSK38-G32 | [EN] [RU] [ES] [PT]",
         "| VC1875-5 | 1875 | 1500 | 1675 | 1340 | Cummins | KTA50-G15A | [EN] [RU] [ES] [PT]",
-        "| VC2000-5 | 2000 | 1600 | 1875 | 1500 | Cummins | KTA50-G16A | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VC2000-5 | 2000 | 1600 | 1875 | 1500 | Cummins | KTA50-G16A | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 103,
+      "title": "Diesel Backup Power Generators Powered by Cummins | Reliable, Efficient & Durable Solutions",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VC35-6 | 35 | 28 | 31 | 25 | Cummins | 4B3.9-G12 | [EN] [RU] [ES] [PT]",
         "| VC55-6 | 55 | 44 | 50 | 40 | Cummins | 4BT3.9-G2 | [EN] [RU] [ES] [PT]",
         "| VC66-6 | 66 | 53 | 60 | 48 | Cummins | 4BTA3.9-G2 | [EN] [RU] [ES] [PT]",
@@ -1034,8 +1058,16 @@
         "| VP1850-5 | 1850 | 1480 | 1650 | 1320 | Perkins | 4012-46TAG3A | [EN] [RU] [ES] [PT]",
         "| VP2030-5 | 2030 | 1624 | 1845 | 1476 | Perkins | 4016TAG1A | [EN] [RU] [ES] [PT]",
         "| VP2200-5 | 2200 | 1808 | 2000 | 1640 | Perkins | 4016TAG2A | [EN] [RU] [ES] [PT]",
-        "| VP2500-5 | 2500 | 2000 | 2250 | 1800 | Perkins | 4016-61TRG3 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VP2500-5 | 2500 | 2000 | 2250 | 1800 | Perkins | 4016-61TRG3 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Perkins Diesel Generator Sets 10–2500 kVA | Voltgent",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VP12-6 | 12 | 10 | 11 | 9 | Perkins | 403D-11G | [EN] [RU] [ES] [PT]",
         "| VP17-6 | 17 | 14 | 15 | 12 | Perkins | 403D-15G | [EN] [RU] [ES] [PT]",
         "| VP20-6 | 20 | 16 | 18 | 14 | Perkins | 403A-15G2 | [EN] [RU] [ES] [PT]",
@@ -1107,8 +1139,16 @@
         "| VM3000-5D | 3000 | 2400 | 2750 | 2200 | MTU | 20V4000G24F | [EN] [RU] [ES] [PT]",
         "| VM3250-5C | 3250 | 2600 | 3000 | 2400 | MTU | 20V4000G63L | [EN] [RU] [ES] [PT]",
         "| VM3250-5D | 3250 | 2600 | 3000 | 2400 | MTU | 20V4000G34F | [EN] [RU] [ES] [PT]",
-        "| VM3575-5D | 3575 | 2860 | 3250 | 2600 | MTU | 20V4000G44F | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VM3575-5D | 3575 | 2860 | 3250 | 2600 | MTU | 20V4000G44F | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Diesel Power Generation Systems Powered by MTU ：Complete Energy Solutions for Your Business",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VM988-6 | 987.5 | 790 | 900 | 720 | MTU | 12V2000G85 | [EN] [RU] [ES] [PT]",
         "| VM1125-6 | 1125 | 900 | 1031.25 | 825 | MTU | 16V2000G45 | [EN] [RU] [ES] [PT]",
         "| VM1250-6 | 1250 | 1000 | 1137.5 | 910 | MTU | 16V2000G85 | [EN] [RU] [ES] [PT]",
@@ -1155,8 +1195,16 @@
         "| VS500-5 | 500 | 400 | 450 | 360 | Scania | DC13 507A 450 | [EN] [RU] [ES] [PT]",
         "| VS550-5 | 550 | 440 | 500 | 400 | Scania | DC13 507A 500 | [EN] [RU] [ES] [PT]",
         "| VS600-5 | 600 | 480 | 550 | 440 | Scania | DC13 507A 550 | [EN] [RU] [ES] [PT]",
-        "| VS660-5 | 660 | 528 | 600 | 480 | Scania | DC13 507A 600 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VS660-5 | 660 | 528 | 600 | 480 | Scania | DC13 507A 600 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Scania Diesel Generator",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VS313-6 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]",
         "| VS344-6 | 344 | 275 | 313 | 250 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]",
         "| VS360-6 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]",
@@ -1194,8 +1242,16 @@
         "| VFP440-5 | 440 | 352 | 400 | 320 | FPT | CURSOR13TE3A.S551 | [EN] [RU] [ES] [PT]",
         "| VFP500-5 | 500 | 396 | 450 | 360 | FPT | CR13TE6W.S550 | [EN] [RU] [ES] [PT]",
         "| VFP550-5 | 550 | 440 | 500 | 400 | FPT | CR13TE7W.S550 | [EN] [RU] [ES] [PT]",
-        "| VFP660-5 | 660 | 528 | 600 | 480 | FPT | CR16TE1W.S550 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VFP660-5 | 660 | 528 | 600 | 480 | FPT | CR16TE1W.S550 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 108,
+      "title": "FPT Diesel Generator: Efficient and Reliable Power for Every Application",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VFP28-6 | 28 | 22 | 25 | 20 | FPT | R24MANS01.23A02 | [EN] [RU] [ES] [PT]",
         "| VFP36-6 | 36 | 28 | 33 | 26 | FPT | R24MSNS01.31A02 | [EN] [RU] [ES] [PT]",
         "| VFP42-6 | 42 | 33 | 38 | 30 | FPT | R24MSNS01.40A02 | [EN] [RU] [ES] [PT]",
@@ -1242,8 +1298,16 @@
         "| VDE350-5 | 350 | 280 | 318 | 255 | Deutz | TCD12.1 G1 | [EN] [RU] [ES] [PT]",
         "| VDE400-5 | 400 | 320 | 375 | 300 | Deutz | TCD12.1 G2 | [EN] [RU] [ES] [PT]",
         "| VDE500-5 | 500 | 400 | 450 | 360 | Deutz | TCD13.0 G1 | [EN] [RU] [ES] [PT]",
-        "| VDE550-5 | 550 | 440 | 500 | 400 | Deutz | TCD13.0 G2 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VDE550-5 | 550 | 440 | 500 | 400 | Deutz | TCD13.0 G2 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Deutz Diesel Generator",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VDE28-6 | 28 | 22.4 | 25 | 20 | Deutz | BFM3 G3 | [EN] [RU] [ES] [PT]",
         "| VDE32-6 | 32 | 25 | 30 | 24 | Deutz | BFM3 G4 | [EN] [RU] [ES] [PT]",
         "| VDE38-6 | 38 | 30.4 | 35 | 28 | Deutz | BFM3T G1 | [EN] [RU] [ES] [PT]",
@@ -1315,8 +1379,16 @@
         "| VB3125-5 | 3125 | 2500 | 2813 | 2250 | Baudouin | 16M55G3000/5 | [EN] [RU] [ES] [PT]",
         "| VB3313-5 | 3313 | 2650 | 3000 | 2400 | Baudouin | 16M55G3300/5 | [EN] [RU] [ES] [PT]",
         "| VB3750-5 | 3750 | 3000 | 3250 | 2600 | Baudouin | 16M55G3750/5 | [EN] [RU] [ES] [PT]",
-        "| VB4125-5 | 4125 | 3300 | 3750 | 3000 | Baudouin | 16M55G4000/5 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VB4125-5 | 4125 | 3300 | 3750 | 3000 | Baudouin | 16M55G4000/5 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 110,
+      "title": "Large Diesel Generator",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VB25-6 | 25 | 20 | 23 | 18 | Baudouin | 4M06G20/6 | [EN] [RU] [ES] [PT]",
         "| VB32-6 | 32 | 25 | 29 | 23 | Baudouin | 4M06G25/6 | [EN] [RU] [ES] [PT]",
         "| VB42-6 | 42 | 33 | 38 | 30 | Baudouin | 4M06G33/6 | [EN] [RU] [ES] [PT]",
@@ -1411,8 +1483,16 @@
         "| VSC1875-5 | 1875 | 1500 | 1688 | 1350 | SDEC | 12KTA58-G34 | [EN] [RU] [ES] [PT]",
         "| VSC2000-5 | 2000 | 1600 | 1875 | 1500 | SDEC | 12KTA58-G33 | [EN] [RU] [ES] [PT]",
         "| VSC2250-5 | 2250 | 1800 | 2000 | 1600 | SDEC | 12KTA58-G32 | [EN] [RU] [ES] [PT]",
-        "| VSC2500-5 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VSC2500-5 | 2500 | 2000 | 2250 | 1800 | SDEC | 12KTA58-G31 | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 111,
+      "title": "Reliable SDEC Diesel Generators for Industrial and Commercial Use",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VSC22-6 | 22 | 17.6 | 20 | 16 | SDEC | 4Z2.3-G12 | [EN] [RU] [ES] [PT]",
         "| VSC22-6E | 22 | 17.6 | 20 | 16 | SDEC | 4Z2.3-G21 | [EN] [RU] [ES] [PT]",
         "| VSC28-6 | 27.5 | 22 | 25 | 20 | SDEC | 4Z2.7-G12 | [EN] [RU] [ES] [PT]",
@@ -1465,8 +1545,16 @@
         "| VYM37-5 | 37 | 30 | 33 | 26 | Yanmar | 4TNV98-GGE | [EN] [RU] [ES] [PT]",
         "| VYM45-5 | 45 | 36 | 40 | 32 | Yanmar | 4TNV98T-GGE | [EN] [RU] [ES] [PT]",
         "| VYM55-5 | 55 | 44 | 50 | 40 | Yanmar | 4TNV106-GGE |",
-        "| VYM66-5 | 66 | 52 | 60 | 48 | Yanmar | 4TNV106T-GGE |",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VYM66-5 | 66 | 52 | 60 | 48 | Yanmar | 4TNV106T-GGE |"
+      ]
+    },
+    {
+      "n": 112,
+      "title": "Silent Genset 10 kVA - Yanmar Powered Diesel Generator",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VYM15.5-6 | 15.5 | 12.5 | 14 | 11.5 | Yanmar | 3TNV88-GGE | [EN] [RU] [ES] [PT]",
         "| VYM22-6 | 22 | 17.5 | 20 | 16 | Yanmar | 4TNV88-GGE | [EN] [RU] [ES] [PT]",
         "| VYM27.5-6 | 27.5 | 22 | 25 | 20 | Yanmar | 4TNV84T-GGE | [EN] [RU] [ES] [PT]",
@@ -1490,8 +1578,16 @@
         "| VF33-5 | 33 | 26.4 | 30 | 24 | FAWDE | 4DW92-39D | [EN] [RU] [ES] [PT]",
         "| VF44-5 | 44 | 35.2 | 40 | 32 | FAWDE | 4DX21-53D | [EN] [RU] [ES] [PT]",
         "| VF55-5 | 55 | 44 | 50 | 40 | FAWDE | 4DX22-65D | [EN] [RU] [ES] [PT]",
-        "| VF66-5 | 66 | 52.8 | 60 | 48 | FAWDE | 4DX23-78D | [EN] [RU] [ES] [PT]",
-        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet",
+        "| VF66-5 | 66 | 52.8 | 60 | 48 | FAWDE | 4DX23-78D | [EN] [RU] [ES] [PT]"
+      ]
+    },
+    {
+      "n": 113,
+      "title": "Fawde Diesel Generator",
+      "header": [
+        "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
+      ],
+      "rows": [
         "| VF22-6 | 22 | 18 | 20 | 16 | FAWDE | 4DW81-28D | [EN] [RU] [ES] [PT]",
         "| VF22-6E | 22 | 18 | 20 | 16 | FAWDE | 4DW81-28D | [EN] [RU] [ES] [PT]",
         "| VF33-6 | 33 | 26 | 30 | 24 | FAWDE | 4DW91-38D | [EN] [RU] [ES] [PT]",

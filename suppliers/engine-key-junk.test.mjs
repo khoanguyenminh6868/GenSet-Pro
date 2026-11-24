@@ -23,6 +23,8 @@ const JUNK = [
   /^(?:tire|tier)\s?\d$/i,
   /\bstandard$/i,
   /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i,
+  /^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i, // cỡ container (longkai, previa "20FT")
+  /^\d{2}\s*hz\?$/i, // shengfeng-fuan "60HZ?"
 ];
 
 test("mọi bản ghi động cơ / đầu phát của cn/: không có model là thời gian, áp suất, khối lượng, công suất, tiêu chuẩn", () => {

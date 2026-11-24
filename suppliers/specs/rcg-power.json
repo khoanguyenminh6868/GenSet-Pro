@@ -31,7 +31,17 @@
    "| R-DC438D5-S | 438 kVA / 350 kW | 481 kVA / 385 kW | 6ZTAA13-G2 | TAL-A473-B | PDF",
    "| R-DC438D5-S | 438 kVA / 350 kW | 481 kVA / 385 kW | QSZ13-G2 | TAL-A473-B | PDF",
    "| R-DC500D5-S | 500 kVA / 400 kW | 550 kVA / 440 kW | QSZ13-G3 | TAL-A473-C | PDF",
-   "| R-DC500D5-S | 500 kVA / 400 kW | 550 kVA / 440 kW | QSZ13-G10 | TAL-A473-C | PDF",
+   "| R-DC500D5-S | 500 kVA / 400 kW | 550 kVA / 440 kW | QSZ13-G10 | TAL-A473-C | PDF"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/DIESEL-GENERATOR-SETS--R-DC-Series--Powered-by-DCEC-Engines.html",
+  "title": "R-DC Series(DCEC Cummins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-DC20D5-S | 20 kVA / 16 kW | 22 kVA / 18 kW | 4B3.9-G1 | S0L2-G1 | PDF",
    "| R-DC25D5-S | 25 kVA / 20 kW | 28 kVA / 22 kW | 4B3.9-G1 | S0L2-M1 | PDF",
    "| R-DC30D5-S | 30 kVA / 24 kW | 33 kVA / 27 kW | 4BT3.9-G1 | S0L2-P1 | PDF",
@@ -88,7 +98,17 @@
    "| R-DC388D6-S | 388 kVA / 310 kW | 427 kVA / 341 kW | 6ZTAA13-G3 | TAL-A46-G | PDF",
    "| R-DC438D6-S | 438 kVA / 350 kW | 482 kVA / 385 kW | 6ZTAA13-G2 | TAL-A46-H | PDF",
    "| R-DC475D6-S | 475 kVA / 380 kW | 523 kVA / 418 kW | QSZ13-G5 | TAL-A473-A | PDF",
-   "| R-DC550D6-S | 550A / 440W | 605A / 484W | QSZ13-G11 | TAL-A473-B | PDF",
+   "| R-DC550D6-S | 550A / 440W | 605A / 484W | QSZ13-G11 | TAL-A473-B | PDF"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/DIESEL-GENERATOR-SETS--R-DC-Series--Powered-by-DCEC-Engines.html",
+  "title": "R-DC Series(DCEC Cummins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-DC25D6-S | 25 kVA / 20 kW | 28 kVA / 22 kW | 4B3.9-G11 | S0L2-M1 | PDF",
    "| R-DC35D6-S | 35 kVA / 28 kW | 39 kVA / 31 kW | 4B3.9-G12 | S0L2-P1 | PDF",
    "| R-DC45D6-S | 45 kVA / 36 kW | 50 kVA / 40 kW | 4BT3.9-G2 | S1L2-K1 | PDF",
@@ -147,7 +167,17 @@
    "| R-CC1375D5-S | 1375 kVA / 1100 kW | 1513 kVA / 1210 kW | KTA50-G8 | LSA 50.2 L7 | PDF",
    "| R-CC1500D5-S | 1500 kVA / 1200 kW | 1650 kVA / 1320 kW | KTA50-GS8 | LSA 50.2 L8 | PDF",
    "| R-CC1650D5-S | 1650 / 1320 | 1800 kVA / 1450 kW | KTA50-G15X | LSA 50.2 VL10 | PDF",
-   "| R-CC1875D5-S | 1875kVA / 1500kW | 2000 kVA / 1600 kW | KTA50-G16A | LSA 52.3 S5 | PDF",
+   "| R-CC1875D5-S | 1875kVA / 1500kW | 2000 kVA / 1600 kW | KTA50-G16A | LSA 52.3 S5 | PDF"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-DC-Series.html",
+  "title": "R-CC Series (CCEC Cummins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-CC250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | NT855-GA | N250G4 | PDF",
    "| R-CC275D5-S | 275 kVA / 220 kW | 303 kVA / 242 kW | NTA855-G1A | N300G4 | PDF",
    "| R-CC313D5-S | 313 kVA / 250 kW | 344 kVA / 275 kW | NTA855-G1B | S4L1D-D4 | PDF",
@@ -210,7 +240,17 @@
    "| R-CC1188D6-S | 1188 kVA / 950 kW | 1306 kVA / 1045 kW | KTA38-G4B | TAL-A49-E | PDF",
    "| R-CC1250D6-S | 1250 kVA / 1000 kW | 1375 kVA / 1100 kW | KTA38-G9 | TAL-A49-E | PDF",
    "| R-CC1375D6-S | 1375 kVA / 1100 kW | 1513 kVA / 1210 kW | KTA50-G3 | LSA50.2M6 | PDF",
-   "| R-CC1575D6-S | 1575 kVA / 1260 kW | 1733 kVA / 1386 kW | KTA50-G9 | LSA50.2M6 | PDF",
+   "| R-CC1575D6-S | 1575 kVA / 1260 kW | 1733 kVA / 1386 kW | KTA50-G9 | LSA50.2M6 | PDF"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-DC-Series.html",
+  "title": "R-CC Series (CCEC Cummins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-CC250D6-S | 250 kVA / 200 kW | 275 kVA / 220 kW | NT855-GA | UCI274H | PDF",
    "| R-CC313D6-S | 313 kVA / 250 kW | 344 kVA / 275 kW | NTA855-G1 | UCDI274K | PDF",
    "| R-CC344D6-S | 344 kVA / 275 kW | 375 kVA / 300 kW | M15-G3 | S4L1D-D41 | PDF",
@@ -261,7 +301,17 @@
    "| R-C2000D5A-S | 2000kVA / 1600kW | 2500kVA / 2000kW | QSK60-G4 | LSA52.3S6 | PDF",
    "| R-C2000D5-S | 2000kVA / 1600kW | 2500kVA / 2000kW | QSK50-G17 | LSA52.3S6 | PDF",
    "| R-C2250D5-S | 2250kVA / 1800kW | 2475kVA / 2000kW | QSK60-G8 | LSA52.3L9 | PDF",
-   "| R-C2500D5-S | 2500kVA / 2000kW | 2750kVA / 2200kW | QSK60-G23 | LSA52.3 L12 | PDF",
+   "| R-C2500D5-S | 2500kVA / 2000kW | 2750kVA / 2200kW | QSK60-G23 | LSA52.3 L12 | PDF"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-CC-Series_1542692.html",
+  "title": "R-CC Series (Cummins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-C625D5-S | 625 kVA / 500 kW | 688 kVA / 550 kW | VTA28-G5 | S5L1D-F4 | PDF",
    "| R-C750D5-S | 750 kVA / 600 kW | 825 kVA / 660 kW | VTA28-G6 | S5L1D-H4 | PDF",
    "| R-C800D5-S | 800 kVA / 640 kW | 880 kVA / 704 kW | QSK23-G3 | S6L1D-C4 | PDF",
@@ -320,7 +370,17 @@
    "| R-P1650D5-S | 1650kVA / 1320kW | 1875kVA / 1500kW | 4012-46TAG3A | LSA50.2VL10 | PDF",
    "| R-P1875D5-S | 1875kVA / 1500kW | 2063kVA / 1650kW | 4016TAG1A | LSA 52.3S5 | PDF",
    "| R-P2000D5-S | 2000kVA / 1600kW | 2200kVA / 1760kW | 4016TAG2A | LSA52.3S6 | PDF",
-   "| R-P2250D5-S | 2250kVA / 1800kW | 2500kVA / 1980kW | 4016-61TRG3 | LSA52.3S7 | PDF",
+   "| R-P2250D5-S | 2250kVA / 1800kW | 2500kVA / 1980kW | 4016-61TRG3 | LSA52.3S7 | PDF"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-C-Series.html",
+  "title": "R-P Series (Perkins)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-P9D5-S | 9 kVA / 7 kW | 10 kVA / 8 kW | 403D-11G | S0L1-H1 | PDF",
    "| R-P13D5-S | 13 kVA / 10 kW | 14 kVA / 11 kW | 403D-15G | S0L1-L1 | PDF",
    "| R-P15D5-S | 15 kVA / 12 kW | 17 kVA / 13 kW | 403A-15G2 | S0L1-P1 | PDF",
@@ -475,7 +535,17 @@
    "| R-XC30D5-S | 30 kVA / 24 kW | 33 kVA / 26 kW | 4DW92-39D | WR184G | PDF",
    "| R-XC25D5-S | 25 kVA / 20 kW | 28 kVA / 22 kW | 4DW92-35D | WR184FS | PDF",
    "| R-XC20D5-S | 20 kVA / 16 kW | 22 kVA / 18 kW | 4DW91-29D | WR184ES | PDF",
-   "| R-XC15D5-S | 15 kVA / 12 kW | 17 kVA / 13 kW | 4DW81-23D | WR164D | PDF",
+   "| R-XC15D5-S | 15 kVA / 12 kW | 17 kVA / 13 kW | 4DW81-23D | WR164D | PDF"
+  ]
+ },
+ {
+  "n": 107,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-SC-Series.html",
+  "title": "R-XC Series (FAWDE)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-XC625D5-S | 625 kVA / 500 kW | 688 kVA / 550 kW | CA6DX3-77DG31 | WR544FS | PDF",
    "| R-XC500D5-S | 500 kVA / 400 kW | 550 kVA / 440 kW | CA6DM3-46DG33 | WR544C | PDF",
    "| R-XC450D5-S | 450 kVA / 360 kW | 500 kVA /400 kW | CA6DM3-46DG32 | WR444FL | PDF",
@@ -588,7 +658,17 @@
    "| R-SC625D5-S | 625kVA / 500kW | 688kVA / 550kW | SC27G830D2 | WR544FS | PDF",
    "| R-SC688D5-S | 688kVA / 550kW | 756kVA / 605kW | SC27G900D2 | WR544FL | PDF",
    "| R-SC750D5-S | 750kVA / 600kW | 825kVA / 660kW | SC33W990D2 | WR544FL | PDF",
-   "| R-SC900D5-S | 900kVA / 720kW | 1000kVA / 800kW | SC33W1150D2 | WR634E | PDF",
+   "| R-SC900D5-S | 900kVA / 720kW | 1000kVA / 800kW | SC33W1150D2 | WR634E | PDF"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-YC-Series.html",
+  "title": "R-SC Series (SDEC)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-SC38D5-S | 38 kVA / 30 kW | 41 kVA / 33 kW | 4Z3.2-G41 | WR184H | PDF",
    "| R-SC50D5-S | 50 kVA / 40 kW | 55 kVA / 44 kW | 4HTAA4.3-G31 | WR224D | PDF",
    "| R-SC63D5-S | 63 kVA / 50 kW | 69 kVA / 55 kW | 4HTAA4.3-G32 | WR224E | PDF",
@@ -744,7 +824,17 @@
    "| R-M910D5-S | 910 kVA / 728 kW | 1000 kVA / 800 kW | 16V2000G25 | TAL-A49-D | PDF",
    "| R-M1000D5-S | 1000kVA / 800kW | 1100kVA / 880kW | 16V2000G65 | TAL-A49-E | PDF",
    "| R-M1125D5-S | 1125 kVA / 900 kW | 1250 kVA / 1000 kW | 18V2000G65 | LSA 50.2 M6 | PDF",
-   "| R-M1250D5-S | 1250 kVA / 1000 kW | 1375 kVA / 1100 kW | 18V2000G26F | LSA 50.2 M6 | PDF",
+   "| R-M1250D5-S | 1250 kVA / 1000 kW | 1375 kVA / 1100 kW | 18V2000G26F | LSA 50.2 M6 | PDF"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-WB-Series.html",
+  "title": "R-M Series (MTU)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-M650D5-S | 650 kVA / 520 kW | 715 kVA / 572 kW | 12V2000G25 | S5L1D-F4 | PDF",
    "| R-M800D5-S | 800 kVA / 640 kW | 80 kVA / 704 kW | 12V2000G65 | S6L1D-C4 | PDF",
    "| R-M910D5-S | 910 kVA / 728 kW | 1000 kVA / 800 kW | 16V2000G25 | S6L1D-D4 | PDF",
@@ -827,7 +917,17 @@
    "| R-WB40D5-S（Stage 2） | 40 kVA / 32 kW | 44 kVA / 35 kW | 4M06G44/5 | TAL-A42-F | PDF",
    "| R-WB33D5-S（Stage 2） | 33 kVA / 26 kW | 35 kVA / 28 kW | 4M06G35/5 | TAL-A42-E | PDF",
    "| R-WB23D5-S（Stage 2） | 23 kVA / 18 kW | 25 kVA / 20 kW | 4M06G25/5 | TAL-A40-F | PDF",
-   "| R-WB18D5-S（Stage 2） | 18 kVA / 14 kW | 20 kVA / 16 kW | 4M06G20/5 | TAL-A40-F | PDF",
+   "| R-WB18D5-S（Stage 2） | 18 kVA / 14 kW | 20 kVA / 16 kW | 4M06G20/5 | TAL-A40-F | PDF"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-H-Series.html",
+  "title": "R-WB Series (Baudouin)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-WB2000D5-S（Stage 3） | 2000kVA / 1600kW | 2200kVA / 1760kW | 16M33G8D3/5 | S7L1D-G4 | PDF",
    "| R-WB1875D5-S（Stage 3） | 1875kVA / 1500kW | 2063kVA / 1650kW | 16M33G6D3/5 | S7L1D-F4 | PDF",
    "| R-WB1750D5-S（Stage 3） | 1750 kVA / 1400 kW | 1925 kVA / 1540 kW | 16M33G4D3/5 | S7L1D-E4 | PDF",
@@ -894,7 +994,17 @@
    "| R-WB40D5-S（Stage 2） | 40 kVA / 32 kW | 44 kVA / 35 kW | 4M06G44/5 | S1L2-K1 | PDF",
    "| R-WB33D5-S（Stage 2） | 33 kVA / 26 kW | 35 kVA / 28 kW | 4M06G35/5 | S1L2-J1 | PDF",
    "| R-WB23D5-S（Stage 2） | 23 kVA / 18 kW | 25 kVA / 20 kW | 4M06G25/5 | S0L2-M1 | PDF",
-   "| R-WB18D5-S（Stage 3） | 18 kVA / 14 kW | 20 kVA / 16 kW | 4M06G20/5 | S0L2-G1 | PDF",
+   "| R-WB18D5-S（Stage 3） | 18 kVA / 14 kW | 20 kVA / 16 kW | 4M06G20/5 | S0L2-G1 | PDF"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-H-Series.html",
+  "title": "R-WB Series (Baudouin)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-WB2000D5-S（Stage 3） | 2000kVA / 1600kW | 2200kVA / 1760kW | 16M33G8D3/5 | S0L2-G1 | PDF",
    "| R-WB1875D5-S（Stage 3） | 1875kVA / 1500kW | 2063kVA / 1650kW | 16M33G6D3/5 | WR734E | PDF",
    "| R-WB1750D5-S（Stage 3） | 1750 kVA / 1400 kW | 1925 kVA / 1540 kW | 16M33G4D3/5 | WR734E | PDF",
@@ -944,7 +1054,17 @@
    "| R-WB600D5-S（Stage 2） | 600kVA / 480kW | 660kVA / 528kW | 6M33G660/5 | WR544FS | PDF",
    "| R-WB500D5-S（Stage 2） | 500kVA / 400kW | 550kVA / 440kW | 6M21G500/5 | WR544C | PDF",
    "| R-WB450D5-S（Stage 2） | 450 kVA / 360 kW | 500 kVA / 400 kW | 6M21G500/5 | WR444FL | PDF",
-   "| R-WB400D5-S（Stage 2） | 400 kVA / 320 kW | 440 kVA / 352 kW | 6M21G440/5 | WR444F | PDF",
+   "| R-WB400D5-S（Stage 2） | 400 kVA / 320 kW | 440 kVA / 352 kW | 6M21G440/5 | WR444F | PDF"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-H-Series.html",
+  "title": "R-WB Series (Baudouin)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-3000D5/S | 3000 kVA / 2400 kW | 3300 kVA / 2640 kW | R2640GE | R-2400-4 | PDF",
    "| R-2750D5/S | 2750 kVA / 2200 kW | 3000 kVA / 2400 kW | R2400GE | R-2200-4 | PDF",
    "| R-2500D5/S | 2500 kVA / 2000 kW | 2750 kVA / 2200 kW | R2240GE | R-2000-4 | PDF",
@@ -980,7 +1100,17 @@
    "| R-HD750D5-S | 750 kVA / 600 kW | 825 kVA / 660 kW | DP222CA | TAL-A49-B | PDF",
    "| R-HD750D5-S | 750 kVA / 600 kW | 825 kVA / 660 kW | DP222LC | TAL-A49-B | PDF",
    "| R-HD810D5-S | 810 kVA / 648 kW | 891 kVA / 713 kW | DP222CB | TAL-A49-C | PDF",
-   "| R-HD900D5-S | 900 kVA / 720 kW | 990 kVA / 792 kW | DP222CC | TAL-A49-D | PDF",
+   "| R-HD900D5-S | 900 kVA / 720 kW | 990 kVA / 792 kW | DP222CC | TAL-A49-D | PDF"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-SM-Series.html",
+  "title": "R-H Series (Hyundai)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R-HD160D5-S | 160 kVA / 128 kW | 185 kVA / 148 kW | P086TI-1 | UCI274F | PDF",
    "| R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | UCI274H | PDF",
    "| R-HD225D5-S | 225 kVA / 180 kW | 248 kVA / 198 kW | DP086LA | UCDI274J | PDF",
@@ -1493,7 +1623,15 @@
    "| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 利莱森玛 & TAL-A473-B | PDF",
    "| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 利莱森玛 & TAL-A473-C | PDF",
    "| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 利莱森玛 & TAL-A473-C | PDF",
-   "| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF",
+   "| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://www.rcgpower.com/cn/products/Diesel-Generator-Set/R-P-Series.html",
+  "title": "R-V 系列 (沃尔沃) -江苏瑞昌哥尔德发电设备股份有限公司",
+  "header": [
+   "| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载",
    "| | | | | | PDF",
    "| | | | | | PDF",
    "| | | | | | PDF",
@@ -1509,7 +1647,9 @@
    "| | | | | | PDF",
    "| | | | | | PDF",
    "| | | | | | PDF",
-   "| | | | | | PDF",
+   "| | | | | | PDF"
+  ],
+  "rows": [
    "| R-C625D5-S | 625 kVA / 500 kW | 688 kVA / 550 kW | VTA28-G5 | TAL-A473-F | PDF",
    "| R-C750D5-S | 750 kVA / 600 kW | 825 kVA / 660 kW | VTA28-G6 | TAL-A49-B | PDF",
    "| R-C800D5-S | 800 kVA / 640 kW | 880 kVA / 704 kW | QSK23-G3 | TAL-A49-D | PDF",
@@ -1571,7 +1711,17 @@
    "| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 斯坦福 & S4L1D-G4 | PDF",
    "| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 斯坦福 & S5L1D-C4 | PDF",
    "| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 斯坦福 & S5L1D-C4 | PDF",
-   "| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF",
+   "| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://www.rcgpower.com/cn/products/Diesel-Generator-Set/R-P-Series.html",
+  "title": "R-V 系列 (沃尔沃) -江苏瑞昌哥尔德发电设备股份有限公司",
+  "header": [
+   "| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载"
+  ],
+  "rows": [
    "| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD550GE | 斯坦福 & UCI224G | PDF",
    "| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD551GE | 斯坦福 & UCI274C | PDF",
    "| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD750GE | 斯坦福 & UCI274ES | PDF",
@@ -1797,7 +1947,17 @@
    "| R64N5 | 80kVA/64kW | 88kVA/70kW | RDC6-N1 | RC224G | PDF",
    "| R45N5 | 57kVA/45kW | 63kVA/50kW | RDC4-N3 | RC224E | PDF",
    "| R40N5 | 50kVA/40kW | 55kVA/44kW | RDC4-N2 | RC224D | PDF",
-   "| R30N5 | 38kVA/30kW | 42kVA/33kW | RDC4-N1 | RC184H | PDF",
+   "| R30N5 | 38kVA/30kW | 42kVA/33kW | RDC4-N1 | RC184H | PDF"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://www.rcgpower.com/products/Diesel-Generator-Set/R-MHI-Series.html",
+  "title": "R-MS Series (Shanghai MITSUBISHI)-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
+  "header": [
+   "| | Model | Prime Power | Standby Power | Engine | Alternator | Download"
+  ],
+  "rows": [
    "| R260N6 | 325kVA/260kW | 358kVA/286kW | RDC13-N1 | RC444D | PDF",
    "| R200N6 | 250kVA/200kW | 275kVA/220kW | RDC10-N2 | RC274J | PDF",
    "| R180N6 | 225kVA/180kW | 248kVA/198kW | RDC10-N1 | RC274H | PDF",

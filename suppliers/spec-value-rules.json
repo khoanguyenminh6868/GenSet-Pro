@@ -53,6 +53,7 @@
     "alternator.insulation": { "kind": "enum", "basis": "values của spec-fields.json" },
     "alternator.ip": { "kind": "text", "must": "^IP\\s?\\d{2}", "basis": "dạng IPnn" },
     "alternator.excitation": { "kind": "enum", "basis": "values của spec-fields.json" },
+    "alternator.brushless": { "kind": "bool", "basis": "có / không (true / false); chỉ true khi nguồn ghi brushless / 无刷" },
     "alternator.voltage_regulation": { "kind": "number", "range": [0, 10], "units": ["%"], "kinds": ["pct"], "basis": "dữ liệu cn/ 0,5-5 %; nới 10 %", "review": true },
     "alternator.thd_no_load": { "kind": "number", "range": [0, 15], "units": ["%"], "kinds": ["pct"], "basis": "dữ liệu cn/ < 2 %; dải lỏng", "review": true },
 

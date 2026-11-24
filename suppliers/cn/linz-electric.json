@@ -125,6 +125,336 @@
         "Power kVA 50Hz : 2,6"
       ],
       "file": "sources/linz-electric/102.md"
+    },
+    {
+      "n": 1001,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/09-PRO18L_F-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO18L F/4"
+      ],
+      "file": "sources/linz-electric/1001.md"
+    },
+    {
+      "n": 1002,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/08-PRO18L_G-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO18L G/4"
+      ],
+      "file": "sources/linz-electric/1002.md"
+    },
+    {
+      "n": 1003,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/05-PRO18M_D-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO18M D/4"
+      ],
+      "file": "sources/linz-electric/1003.md"
+    },
+    {
+      "n": 1004,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/06-PRO18M_E-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO18M E/4"
+      ],
+      "file": "sources/linz-electric/1004.md"
+    },
+    {
+      "n": 1005,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/PRO18S_A-4_NEW.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO18S A/4"
+      ],
+      "file": "sources/linz-electric/1005.md"
+    },
+    {
+      "n": 1006,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/06-PRO18S_B-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO18S B/4"
+      ],
+      "file": "sources/linz-electric/1006.md"
+    },
+    {
+      "n": 1007,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/07-PRO18S_C-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO18S C/4"
+      ],
+      "file": "sources/linz-electric/1007.md"
+    },
+    {
+      "n": 1008,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/PRO22M_E-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO22M E/4"
+      ],
+      "file": "sources/linz-electric/1008.md"
+    },
+    {
+      "n": 1009,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02_PRO22M_F-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO22M F/4"
+      ],
+      "file": "sources/linz-electric/1009.md"
+    },
+    {
+      "n": 1010,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/06-PRO22M_G-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO22M G/4"
+      ],
+      "file": "sources/linz-electric/1010.md"
+    },
+    {
+      "n": 1011,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO22S_A-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO22S A/4"
+      ],
+      "file": "sources/linz-electric/1011.md"
+    },
+    {
+      "n": 1012,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/06-PRO22S_B-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO22S B/4"
+      ],
+      "file": "sources/linz-electric/1012.md"
+    },
+    {
+      "n": 1013,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02_PRO22S_C-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO22S C/4"
+      ],
+      "file": "sources/linz-electric/1013.md"
+    },
+    {
+      "n": 1014,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/PRO22S_D-4.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PRO22S D/4"
+      ],
+      "file": "sources/linz-electric/1014.md"
+    },
+    {
+      "n": 1015,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO28L_G-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28L G/4"
+      ],
+      "file": "sources/linz-electric/1015.md"
+    },
+    {
+      "n": 1016,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO28M_E-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28M E/4"
+      ],
+      "file": "sources/linz-electric/1016.md"
+    },
+    {
+      "n": 1017,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO28M_F-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28M F/4"
+      ],
+      "file": "sources/linz-electric/1017.md"
+    },
+    {
+      "n": 1018,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO28S_A-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28S A/4"
+      ],
+      "file": "sources/linz-electric/1018.md"
+    },
+    {
+      "n": 1019,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/04-PRO28S_B-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28S B/4"
+      ],
+      "file": "sources/linz-electric/1019.md"
+    },
+    {
+      "n": 1020,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/04-PRO28S_C-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28S C/4"
+      ],
+      "file": "sources/linz-electric/1020.md"
+    },
+    {
+      "n": 1021,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/04-PRO28S_D-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO28S D/4"
+      ],
+      "file": "sources/linz-electric/1021.md"
+    },
+    {
+      "n": 1022,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/04-PRO35L_H-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35L H/4"
+      ],
+      "file": "sources/linz-electric/1022.md"
+    },
+    {
+      "n": 1023,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35M_E-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35M E/4"
+      ],
+      "file": "sources/linz-electric/1023.md"
+    },
+    {
+      "n": 1024,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35M_F-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35M F/4"
+      ],
+      "file": "sources/linz-electric/1024.md"
+    },
+    {
+      "n": 1025,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35M_G-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35M G/4"
+      ],
+      "file": "sources/linz-electric/1025.md"
+    },
+    {
+      "n": 1026,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35S_B-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35S B/4"
+      ],
+      "file": "sources/linz-electric/1026.md"
+    },
+    {
+      "n": 1027,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35S_C-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35S C/4"
+      ],
+      "file": "sources/linz-electric/1027.md"
+    },
+    {
+      "n": 1028,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO35S_D-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO35S D/4"
+      ],
+      "file": "sources/linz-electric/1028.md"
+    },
+    {
+      "n": 1029,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO40L_E-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO40L E/4"
+      ],
+      "file": "sources/linz-electric/1029.md"
+    },
+    {
+      "n": 1030,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/PRO40M_C-4_1250kVA.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO40M C/4"
+      ],
+      "file": "sources/linz-electric/1030.md"
+    },
+    {
+      "n": 1031,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/03-PRO40M_D-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO40M D/4"
+      ],
+      "file": "sources/linz-electric/1031.md"
+    },
+    {
+      "n": 1032,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO40S_A-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO40S A/4"
+      ],
+      "file": "sources/linz-electric/1032.md"
+    },
+    {
+      "n": 1033,
+      "url": "https://www.linzelectric.com/uploads/ProdottiArticoli/02-PRO40S_B-41.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ALTERNATOR PRO40S B/4"
+      ],
+      "file": "sources/linz-electric/1033.md"
     }
   ],
   "confidence": "medium",
@@ -305,6 +635,615 @@
         "Power kVA 50Hz : 12,5",
         "Power kVA 60Hz : 19,5",
         "Power kVA 60Hz : 26"
+      ]
+    },
+    {
+      "n": 1001,
+      "title": "Datasheet: PRO18L F/4",
+      "header": [],
+      "rows": [
+        "PRO18L F/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 218",
+        "| kg | 224",
+        "| Efficiency % | 90,0% | 89,4%",
+        "| Efficiency % | 92,0% | 91,2%"
+      ]
+    },
+    {
+      "n": 1002,
+      "title": "Datasheet: ALTERNATOR PRO18L G/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO18L G/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 267,5",
+        "| kg | 269,5",
+        "| Efficiency % | 90,0% | 89,6%",
+        "| Efficiency % | 92,0% | 91,4%"
+      ]
+    },
+    {
+      "n": 1003,
+      "title": "Datasheet: ALTERNATOR PRO18M D/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO18M D/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Weight of | 170",
+        "| kg | 170",
+        "| kg | 172",
+        "| Efficiency % | 89,0% | 91,1%",
+        "| Efficiency % | 90,0% | 90,9% | 90,4%"
+      ]
+    },
+    {
+      "n": 1004,
+      "title": "Datasheet: ALTERNATOR PRO18M E/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO18M E/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 200",
+        "| kg | 202",
+        "| Efficiency % | 90,0% | 89,3%",
+        "| Efficiency % | 92,0% | 90,4%"
+      ]
+    },
+    {
+      "n": 1005,
+      "title": "Datasheet: PRO18S A/4",
+      "header": [],
+      "rows": [
+        "PRO18S A/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | < 3.5%",
+        "| THD at no load | < 3%",
+        "| 3 Phase | 1",
+        "| kg | 121",
+        "| kg | 123",
+        "| Efficiency % | 86% | 84,9%",
+        "| Efficiency % | 88% | 86,5%"
+      ]
+    },
+    {
+      "n": 1006,
+      "title": "Datasheet: ALTERNATOR PRO18S B/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO18S B/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 134,5",
+        "| kg | 136,5",
+        "| Efficiency % | 88,0%",
+        "| Efficiency % | 88,0% | 88,6% | 88,2%"
+      ]
+    },
+    {
+      "n": 1007,
+      "title": "Datasheet: PRO18S C/4",
+      "header": [],
+      "rows": [
+        "PRO18S C/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 141",
+        "| kg | 148",
+        "| Efficiency % | 88.0% | 87.1%",
+        "| Efficiency % | 90.0%"
+      ]
+    },
+    {
+      "n": 1008,
+      "title": "Datasheet: PRO22M E/4",
+      "header": [],
+      "rows": [
+        "PRO22M E/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| 3 Phase | 1",
+        "| kg | 454",
+        "| kg | 456",
+        "| Efficiency % | 90% | 90,7% | 91,3%",
+        "| Efficiency % | 90% | 91,4% | 91,5%"
+      ]
+    },
+    {
+      "n": 1009,
+      "title": "Datasheet: PRO22M F/4",
+      "header": [],
+      "rows": [
+        "PRO22M F/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| 3 Phase | 1",
+        "| kg | 499",
+        "| kg | 501",
+        "| Efficiency % | 92,6%",
+        "| Efficiency % | 92% | 93,0% | 92,8%"
+      ]
+    },
+    {
+      "n": 1010,
+      "title": "Datasheet: ALTERNATOR PRO22M G/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO22M G/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 499",
+        "| kg | 501",
+        "| Efficiency % | 94,0%",
+        "| Efficiency % | 94,0% | 93,5%"
+      ]
+    },
+    {
+      "n": 1011,
+      "title": "Datasheet: ALTERNATOR PRO22S A/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO22S A/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 280",
+        "| kg | 291",
+        "| Efficiency % | 90,0% | 90,1%",
+        "| Efficiency % | 91,0%"
+      ]
+    },
+    {
+      "n": 1012,
+      "title": "Datasheet: ALTERNATOR PRO22S B/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO22S B/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| kg | 295",
+        "| kg | 315",
+        "| Efficiency % | 90,0% | 90,3%",
+        "| Efficiency % | 92,0%"
+      ]
+    },
+    {
+      "n": 1013,
+      "title": "Datasheet: PRO22S C/4",
+      "header": [],
+      "rows": [
+        "PRO22S C/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| 3 Phase | 1",
+        "| kg | 312",
+        "| kg | 337",
+        "| Efficiency % | 90% | 90,6%",
+        "| Efficiency % | 90% | 90,8% | 90,6%"
+      ]
+    },
+    {
+      "n": 1014,
+      "title": "Datasheet: PRO22S D/4",
+      "header": [],
+      "rows": [
+        "PRO22S D/4",
+        "| Rated Power Factor | 0.8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1% | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| 3 Phase | 1",
+        "| kg | 379",
+        "| kg | 381",
+        "| Efficiency % | 90% | 90,9% | 90,6%",
+        "| Efficiency % | 90% | 91,1% | 90,9%"
+      ]
+    },
+    {
+      "n": 1015,
+      "title": "Datasheet: ALTERNATOR PRO28L G/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28L G/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 1034",
+        "| kg | 1045",
+        "| Efficiency % | 94,0% | 93,8%",
+        "| Efficiency % | 94,0% | 94,2%"
+      ]
+    },
+    {
+      "n": 1016,
+      "title": "Datasheet: ALTERNATOR PRO28M E/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28M E/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 833,5",
+        "| kg | 844,5",
+        "| Efficiency % | 94,0%"
+      ]
+    },
+    {
+      "n": 1017,
+      "title": "Datasheet: ALTERNATOR PRO28M F/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28M F/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 949",
+        "| kg | 960",
+        "| Efficiency % | 94,0% | 93,7%",
+        "| Efficiency % | 94,0% | 94,0%"
+      ]
+    },
+    {
+      "n": 1018,
+      "title": "Datasheet: ALTERNATOR PRO28S A/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28S A/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| kg | 564",
+        "| kg | 575",
+        "| Efficiency % | 93,0%"
+      ]
+    },
+    {
+      "n": 1019,
+      "title": "Datasheet: ALTERNATOR PRO28S B/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28S B/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 591",
+        "| kg | 602",
+        "| Efficiency % | 93,0%"
+      ]
+    },
+    {
+      "n": 1020,
+      "title": "Datasheet: ALTERNATOR PRO28S C/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28S C/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 668",
+        "| kg | 679",
+        "| Efficiency % | 93,0%",
+        "| Efficiency % | 93,0% | 92,7%"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "Datasheet: ALTERNATOR PRO28S D/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO28S D/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| kg | 730,5",
+        "| kg | 741,5",
+        "| Efficiency % | 93,0% | 92,7%",
+        "| Efficiency % | 94,0%"
+      ]
+    },
+    {
+      "n": 1022,
+      "title": "Datasheet: ALTERNATOR PRO35L H/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35L H/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1867",
+        "| kg | 1891",
+        "| Efficiency % | 96,5%",
+        "| Efficiency % | 97,0% | 96,5%"
+      ]
+    },
+    {
+      "n": 1023,
+      "title": "Datasheet: ALTERNATOR PRO35M E/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35M E/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1494",
+        "| kg | 1518",
+        "| Efficiency % | 95,0% | 95,3% | 95,0%",
+        "| Efficiency % | 96,0% | 95,7%"
+      ]
+    },
+    {
+      "n": 1024,
+      "title": "Datasheet: ALTERNATOR PRO35M F/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35M F/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1500,5",
+        "| kg | 1524,5",
+        "| Efficiency % | 95,0% | 94,7%",
+        "| Efficiency % | 96,0%"
+      ]
+    },
+    {
+      "n": 1025,
+      "title": "Datasheet: ALTERNATOR PRO35M G/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35M G/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1658",
+        "| kg | 1682",
+        "| Efficiency % | 95,0% | 95,8% | 95,3%",
+        "| Efficiency % | 96,0% | 96,6% | 96,2%"
+      ]
+    },
+    {
+      "n": 1026,
+      "title": "Datasheet: ALTERNATOR PRO35S B/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35S B/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1184",
+        "| kg | 1198",
+        "| Efficiency % | 94,0% | 94,7% | 94,2%",
+        "| Efficiency % | 96,2% | 95,5%"
+      ]
+    },
+    {
+      "n": 1027,
+      "title": "Datasheet: ALTERNATOR PRO35S C/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35S C/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1262,5",
+        "| kg | 1276,5",
+        "| Efficiency % | 95,0% | 95,4% | 94,9%",
+        "| Efficiency % | 96,0% | 95,9%"
+      ]
+    },
+    {
+      "n": 1028,
+      "title": "Datasheet: ALTERNATOR PRO35S D/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO35S D/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <2,5%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 1342,5",
+        "| kg | 1356,5",
+        "| Efficiency % | 95,0% | 95,5% | 95,0%",
+        "| Efficiency % | 96,0% | 96,5% | 95,9%"
+      ]
+    },
+    {
+      "n": 1029,
+      "title": "Datasheet: ALTERNATOR PRO40L E/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO40L E/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 3275",
+        "| kg | 3330",
+        "| Efficiency % | 96,0% | 96,3%",
+        "| Efficiency % | 97,0% | 96,9%"
+      ]
+    },
+    {
+      "n": 1030,
+      "title": "Datasheet: ALTERNATOR PRO40M C/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO40M C/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | < 3%",
+        "| THD at no load | < 3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 2276",
+        "| kg | 2331",
+        "| Efficiency % | 96,0% | 95,8%",
+        "| Efficiency % | 96,0% | 96,3%"
+      ]
+    },
+    {
+      "n": 1031,
+      "title": "Datasheet: ALTERNATOR PRO40M D/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO40M D/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 2635",
+        "| kg | 2690",
+        "| Efficiency % | 96,0% | 95,8%",
+        "| Efficiency % | 96,5%"
+      ]
+    },
+    {
+      "n": 1032,
+      "title": "Datasheet: ALTERNATOR PRO40S A/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO40S A/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 2029",
+        "| kg | 2084",
+        "| Efficiency % | 95,0% | 95,7% | 95,3%",
+        "| Efficiency % | 96,0% | 96,4% | 96,1%"
+      ]
+    },
+    {
+      "n": 1033,
+      "title": "Datasheet: ALTERNATOR PRO40S B/4",
+      "header": [],
+      "rows": [
+        "ALTERNATOR PRO40S B/4",
+        "| Rated Power Factor | 0,8",
+        "| Insulation Class | H",
+        "| Protection | IP23",
+        "| Voltage Regulation | ±1%",
+        "| THD at full load | <3%",
+        "| THD at no load | <3%",
+        "| Voltage Series Star | V | 380/220 | 400/230 415/240 | 440/254 | 415/240 | 440/254 460/266 | 480/277",
+        "| kg | 2045",
+        "| kg | 2100",
+        "| Efficiency % | 96,6%",
+        "| Efficiency % | 96,0% | 96,3%"
       ]
     }
   ]

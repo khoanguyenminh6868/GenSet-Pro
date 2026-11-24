@@ -154,8 +154,17 @@
    "| HJ190C | 康明斯 Cummins | 190 | 209 | QSB6.7-G31 | T3",
    "| HJ216C | 康明斯 Cummins | 216 | 236 | QSL8.9-G34 | T3",
    "| HJ245C | 康明斯 Cummins | 245 | 265 | QSL8.9-G33 | T3",
-   "| HJ273C | 康明斯 Cummins | 273 | 300 | QSL8.9-G30 | T3",
-   "| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标准 Emission level",
+   "| HJ273C | 康明斯 Cummins | 273 | 300 | QSL8.9-G30 | T3"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://en.nenjo.cn/products_details/12.html",
+  "title": "20-480KVA Dongfeng Cummins Series-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标准 Emission level"
+  ],
+  "rows": [
    "| HJ20C | 康明斯 Cummins | 20 | 23 | 4B3.9-G11 | T2",
    "| HJ27C | 康明斯 Cummins | 27 | 30 | 4B3.9-G2 | T2",
    "| HJ36C | 康明斯 Cummins | 36 | 40 | 4BT3.9-G2 | T2",
@@ -275,7 +284,19 @@
    "| HJ806C | 康明斯 Cummins | QSK38-G1 | 792 | 876 | 970 | 806 | 887 | 国三 T3",
    "| HJ915C | 康明斯 Cummins | QSK38-G2 | 893 | 989 | 1096 | 915 | 1007 | 国三 T3",
    "| HJ1000C | 康明斯 Cummins | QSK38-G5 | 933 | 1107 | 1224 | 1000 | 1100 | 国三 T3",
-   "| HJ1080C | 康明斯 Cummins | QSK38-G19 | 932 | 1183 | 1333 | 1080 | 1200 | 国三 T3",
+   "| HJ1080C | 康明斯 Cummins | QSK38-G19 | 932 | 1183 | 1333 | 1080 | 1200 | 国三 T3"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://en.nenjo.cn/products_details/29.html",
+  "title": "200-1600KVA Chongqing Cummins Series-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 50Hz，1500rpm | 排放标准 Emission level",
+   "| 发动机功率 Engine Power | 机组功率 Gen-set Power",
+   "| 持续 Continuous (kW) | 常用 Prime (kW) | 备用 Standby (kW) | 常用 Prime (kW) | 备用 Standby (kW)"
+  ],
+  "rows": [
    "| HJ220C | 康明斯 Cummins | NT855-GA | ----- | ----- | 257 | ----- | 220 | 国二 T2",
    "| HJ250C | 康明斯 Cummins | NTA855-G1 | ----- | 287 | 317 | 250 | 275 | 国二 T2",
    "| HJ250C | 康明斯 Cummins | NTA855-G1 | ----- | 287 | 317 | 250 | 275 | 国二 T2",
@@ -398,8 +419,17 @@
    "| HJ190C | 康明斯 Cummins | 190 | 209 | QSB6.7-G31 | T3",
    "| HJ216C | 康明斯 Cummins | 216 | 236 | QSL8.9-G34 | T3",
    "| HJ245C | 康明斯 Cummins | 245 | 265 | QSL8.9-G33 | T3",
-   "| HJ273C | 康明斯 Cummins | 273 | 300 | QSL8.9-G30 | T3",
-   "| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标准 Emission level",
+   "| HJ273C | 康明斯 Cummins | 273 | 300 | QSL8.9-G30 | T3"
+  ]
+ },
+ {
+  "n": 105,
+  "url": "https://en.nenjo.cn/products_details/33.html",
+  "title": "20-480KVA Dongfeng Cummins Container Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标准 Emission level"
+  ],
+  "rows": [
    "| HJ20C | 康明斯 Cummins | 20 | 23 | 4B3.9-G11 | T2",
    "| HJ27C | 康明斯 Cummins | 27 | 30 | 4B3.9-G2 | T2",
    "| HJ36C | 康明斯 Cummins | 36 | 40 | 4BT3.9-G2 | T2",
@@ -707,7 +737,19 @@
    "| HJ806C | 康明斯 Cummins | QSK38-G1 | 792 | 876 | 970 | 806 | 887 | 国三 T3",
    "| HJ915C | 康明斯 Cummins | QSK38-G2 | 893 | 989 | 1096 | 915 | 1007 | 国三 T3",
    "| HJ1000C | 康明斯 Cummins | QSK38-G5 | 933 | 1107 | 1224 | 1000 | 1100 | 国三 T3",
-   "| HJ1080C | 康明斯 Cummins | QSK38-G19 | 932 | 1183 | 1333 | 1080 | 1200 | 国三 T3",
+   "| HJ1080C | 康明斯 Cummins | QSK38-G19 | 932 | 1183 | 1333 | 1080 | 1200 | 国三 T3"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://en.nenjo.cn/products_details/35.html",
+  "title": "200-1600KVA Chongqing Cummins Silent Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 50Hz，1500rpm | 排放标准 Emission level",
+   "| 发动机功率 Engine Power | 机组功率 Gen-set Power",
+   "| 持续 Continuous (kW) | 常用 Prime (kW) | 备用 Standby (kW) | 常用 Prime (kW) | 备用 Standby (kW)"
+  ],
+  "rows": [
    "| HJ200C | 康明斯 Cummins | MTA11-G2 | 168 | 224 | 246 | 200 | 220 | 国二 T2",
    "| HJ250C | 康明斯 Cummins | MTAA11-G3 | 210 | 282 | 310 | 250 | 280 | 国二 T2",
    "| HJ200C | 康明斯 Cummins | NT855-GA | ----- | 231 | 254 | 200 | 220 | 国二 T2",
@@ -1623,8 +1665,17 @@
    "| HJ1368P | 帕金斯 PERKINS | 4012-46TAG3A | 1368.0 | 1710.0 | 1500.0 | N | electric | N",
    "| HJ1480P | 帕金斯 PERKINS | 4016TAG1A | 1480.0 | 1850.0 | 1588.0 | N | electric | N",
    "| HJ1600P | 帕金斯 PERKINS | 4016TAG2A | 1600.0 | 2000.0 | 1766.0 | N | electric | N",
-   "| HJ1800P | 帕金斯 PERKINS | 4016-61TRG3 | 1800.0 | 2250.0 | 1975.0 | N | electric | N",
-   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 机组功率 Genset Prime KVA | 发动机功率 Engine Output KW | 转速可调 Switchable | 调速方式 Control | 排放标准 Emission",
+   "| HJ1800P | 帕金斯 PERKINS | 4016-61TRG3 | 1800.0 | 2250.0 | 1975.0 | N | electric | N"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://en.nenjo.cn/products_details/30.html",
+  "title": "10-2500KVA Perkins Series-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 机组功率 Genset Prime KVA | 发动机功率 Engine Output KW | 转速可调 Switchable | 调速方式 Control | 排放标准 Emission"
+  ],
+  "rows": [
    "| HJ9P | 帕金斯 PERKINS | 403F-11G | 9.0 | 11.0 | 13.7 | N | mech | Tier 4 Final",
    "| HJ9P | 帕金斯 PERKINS | 403D-11G | 9.0 | 11.2 | 11.8 | N | mech | Tier 3",
    "| HJ12.7P | 帕金斯 PERKINS | 403D-15G | 12.7 | 15.8 | 16.2 | N | mech | Tier 3",
@@ -3708,8 +3759,17 @@
    "| HJ370V | 沃尔沃 VOLVO | TAD1650GE | 370.0 | 433.0 | T3",
    "| HJ404V | 沃尔沃 VOLVO | TAD1651GE | 404.0 | 473.0 | T3",
    "| HJ480V | 沃尔沃 VOLVO | TWD1652GE | 480.0 | 557.0 | T3",
-   "| HJ520V | 沃尔沃 VOLVO | TWD1653GE | 520.0 | 604.0 | T3",
-   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine Output KW | 排放标准 Emission",
+   "| HJ520V | 沃尔沃 VOLVO | TWD1653GE | 520.0 | 604.0 | T3"
+  ]
+ },
+ {
+  "n": 142,
+  "url": "https://en.nenjo.cn/products_details/43.html",
+  "title": "60-650KVA Volvo Trailer Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine Output KW | 排放标准 Emission"
+  ],
+  "rows": [
    "| HJ75V | 沃尔沃 VOLVO | TAD550GE | 75.0 | 94.0 | T3",
    "| HJ88V | 沃尔沃 VOLVO | TAD551GE | 88.0 | 110.0 | T3",
    "| HJ112V | 沃尔沃 VOLVO | TAD750GE | 112.0 | 141.0 | T3",
@@ -3881,8 +3941,17 @@
    "| HJ730DS | 斗山 Doosan | DP222CCS | 730.0 | 790.0",
    "| HJ610DS | 斗山 Doosan | DP222CAK | 610.0 | 663.0",
    "| HJ660DS | 斗山 Doosan | DP222CBK | 660.0 | 716.0",
-   "| HJ730DS | 斗山 Doosan | DP222CCK | 730.0 | 802.0",
-   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine Output KW",
+   "| HJ730DS | 斗山 Doosan | DP222CCK | 730.0 | 802.0"
+  ]
+ },
+ {
+  "n": 146,
+  "url": "https://en.nenjo.cn/products_details/66.html",
+  "title": "50-650KVA Doosan Trailer Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 发动机功率 Engine Output KW"
+  ],
+  "rows": [
    "| HJ58DS | 斗山 Doosan | SP344CB | 58.0 | 67.0",
    "| HJ73DS | 斗山 Doosan | SP344CC | 73.0 | 83.0",
    "| HJ154DS | 斗山 Doosan | P086TI-1 | 154.0 | 174.0",
@@ -4235,8 +4304,18 @@
    "| HJ2400YC | T3 | YC16VC4000-D31 | 2673/1500 | 2940/1500 | 2400 | 2600",
    "| HJ2400YC | T3 | YC16VC4000-D31 | 2673/1500 | 2940/1500 | 2400 | 2600",
    "| HJ2400YC | T3 | YC16VC4000-D31 | 2673/1500 | 2940/1500 | 2400 | 2600",
-   "| HJ2400YC | T3 | YC16VC4000-D31 | 2673/1500 | 2940/1500 | 2400 | 2600",
+   "| HJ2400YC | T3 | YC16VC4000-D31 | 2673/1500 | 2940/1500 | 2400 | 2600"
+  ]
+ },
+ {
+  "n": 150,
+  "url": "https://en.nenjo.cn/products_details/71.html",
+  "title": "30-3000KVA Yuchai Trailer Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
    "| 型号 Model | 排放阶段 Emission Level | 柴油机型号 Engine model | 柴油机常用功率/转速 | 柴油机备用功率/转速 | 发电机组常用功率/转速 | 发电机组备用功率/转速",
+   "| Engine prime power（kW/r/min) | Engine standby power（kW/r/min) | Gen-set prime power（kW/r/min) | Gen-set standby power（kW/r/min)"
+  ],
+  "rows": [
    "| HJ20YC | T2 | YC4V35-D21 | 23/1800 | 25/1800 | 20 | 22",
    "| HJ24YC | T2 | YC4V45Z-D21 | 30/1800 | 33/1800 | 24 | 26",
    "| HJ30YC | T2 | YC4V55Z-D21 | 38/1800 | 42/1800 | 30 | 33",
@@ -5014,8 +5093,17 @@
    "| HJ743SC | 6WTAA35-G32 | 818/1500 | 900/1500 | 743 | 817 | 电控单体泵EUP | 国三 T3",
    "| HJ801SC | 6WTAA35-G31 | 882/1500 | 970/1500 | 801 | 881 | 电控单体泵EUP | 国三 T3",
    "| HJ925SC | 6WTAA35-G310 | 1018/1500 | 1120/1500 | 925 | 1017 | 电控单体泵EUP | 国三 T3",
-   "| HJ1016SC | 6WTAA35-G311 | 1118/1500 | 1230/1500 | 1016 | 1117 | 电控单体泵EUP | 国三 T3",
-   "| 型号 Model | 柴油机型号 Engine model | 柴油机额定功率/转速 Engine prime power （KW/rpm) | 柴油机最大功率/转速 Engine standby power （KW/rpm) | 发电机组常用功率 Gen-set prime power | 发电机组备用功率 Gen-set standby power | 调速方式 Governor | 排放 Emission level",
+   "| HJ1016SC | 6WTAA35-G311 | 1118/1500 | 1230/1500 | 1016 | 1117 | 电控单体泵EUP | 国三 T3"
+  ]
+ },
+ {
+  "n": 154,
+  "url": "https://en.nenjo.cn/products_details/73.html",
+  "title": "10-1200KVA Diesel Trailer Type-Jiangsu Nenjo Generator Technology Co., Ltd.",
+  "header": [
+   "| 型号 Model | 柴油机型号 Engine model | 柴油机额定功率/转速 Engine prime power （KW/rpm) | 柴油机最大功率/转速 Engine standby power （KW/rpm) | 发电机组常用功率 Gen-set prime power | 发电机组备用功率 Gen-set standby power | 调速方式 Governor | 排放 Emission level"
+  ],
+  "rows": [
    "| HJ19SC | 4Z2.3-G12 | 21/1800 | 23/1800 | 19 | 20 | 机械调速M | 国二 T2",
    "| HJ23SC | 4Z2.7-G12 | 26/1800 | 29/1800 | 23 | 25 | 机械调速M | 国二 T2",
    "| HJ27SC | 4Z3.0-G12 | 30/1800 | 33/1800 | 27 | 29 | 机械调速M | 国二 T2",

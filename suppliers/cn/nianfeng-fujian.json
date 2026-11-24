@@ -8,7 +8,7 @@
     "zh": null,
     "brands": []
   },
-  "website": null,
+  "website": "https://www.zgnfmotor.com/",
   "hq": {
     "province": "Fujian",
     "city": "Fuan"
@@ -62,7 +62,7 @@
   "certifications": [],
   "exportMarkets": [],
   "missing": [
-    "Nguồn là trang danh mục nhà triển lãm Heat & Electro 2025 (hạng B), chưa có website riêng"
+    "Nguồn 1 là trang danh mục nhà triển lãm Heat & Electro 2025 (hạng B); website zgnfmotor.com (nguồn 2) chưa quét thông số: PDF catalogue của hãng trả 403"
   ],
   "sources": [
     {
@@ -75,6 +75,17 @@
         "It is a professional manufacturer for the ac generator, brushless alternator and high-voltage generator. The power covers 8kVA to 6250kVA, the production capacity is over 60000 pieces per year."
       ],
       "file": "sources/nianfeng-fujian/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.zgnfmotor.com/about.html",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "年丰（福建）电机有限公司",
+        "年丰系福建省大型发电机制造企业，坐落于“中国中小电机之都”，专业研发制造陆用/船用发电机、高压发电机、永磁发电机等各类发电机。"
+      ],
+      "file": "sources/nianfeng-fujian/2.md"
     }
   ],
   "confidence": "medium",
