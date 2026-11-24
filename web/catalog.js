@@ -2184,6 +2184,15 @@
     { supplierId: "bdadl-shanghai", n: 134, genset: "BDA-V360", line: "| BDA-V360 | 360/400 | 沃尔沃奔达 | TAD1345GE-B | 6 | 16.1 | 35 | ≤210 | 3200*1100*1800 | 3300", act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,1 L (số của TAD1642GE) cho Volvo Penta TAD1345GE-B (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" },
     ...[[113, "瑞典沃尔沃"], [140, "沃尔沃遍达"], [141, "瑞典沃尔沃"]].map(([n, mk]) => (
       { supplierId: "liangzi-yangzhou", n, genset: "LZ- V360", line: `| LZ- V360 | 360/450 | ${mk} | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | 3200*1100*1200 | 3100 | 详细参数`, act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" })),
+    // `unitspec` (kw-hp-sua, Khoa 24/11/2026 "làm như em đề xuất"): the label says "(kW/Hp)" but the cell holds ONE figure (or "507/580",
+    // not an HP / kW pair), so the unit is not written by the source: the spec stays, flagged `unitMissing`; spec-norm reads it with
+    // no unit (`missing: unit`), never as kW. Explicit rows, NOT a rule "kW/Hp one figure = kW" (the other 44 one-figure cells stay kW).
+    ...[["20V4000G63", "ET-3750", 143, "| ET-3750 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |", "3311"],
+      ["20V4000G63L", "ET-3250", 143, "| ET-3250 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |", "2590"],
+      ["20V4000G63L", "ET-3438", 143, "| ET-3438 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |", "2590"],
+      ["20V4000G63L", "ET-4000", 143, "| ET-4000 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |", "3311"],
+      ["K19-DM", "EC-450M6", 145, "| EC-450M6 | 450 | 563 | K19-DM | 507/580 | 6.L | 19 | 3360x1100x2480 | 3520 |", "507/580"]].map(([, genset, n, line, from]) => (
+      { supplierId: "ettes-power", n, genset, line, act: "unitspec", keys: ["engPower"], from, khoa: "Khoa 24/11/2026", why: "ô \"(kW/Hp)\" không ghi đơn vị của số này (không phải cặp kW / HP): đánh dấu thiếu đơn vị, cần xác nhận, không đọc là kW" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -2196,7 +2205,11 @@
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
       else if (x.act === "dropspec") out.push({ ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) });
-      else if (x.act === "fixspec") {
+      else if (x.act === "unitspec") {
+        // Only a spec whose value is word for word `from` (the source changed → read as before).
+        const specs = (o.specs || []).map((sp) => (x.keys.includes(sp.key) && String(sp.value).trim() === x.from ? { ...sp, unitMissing: { why: x.why, khoa: x.khoa } } : sp));
+        out.push({ ...o, specs });
+      } else if (x.act === "fixspec") {
         // Replace only a spec whose value is word for word the source's `from`; any other value (the source changed) is left as read.
         const fixed = [];
         const specs = (o.specs || []).map((sp) => {
