@@ -1,0 +1,200 @@
+DSENet® Data Sheet
+
+DSE2548 DSENet® LED Output Expansion Module
+
+Part Number: 2548-01
+
+Overview
+DSE2548 LED expansion module is used in conjunction with compatible DSE controllers to provide additional LED indication functionality. The LEDs
+are configured in the ‘host controller’, the DSE2548 module is not itself configured aside from the ‘ID switch’
+
+The DSE2548 is an LED expansion module that can be used with all DSENet® compatible control modules. The module has been designed to display
+a maximum of eight individual LED indications up to a maximum distance of 1 KM (0.6miles). The DSE2548 is presented in a vertical enclosure. It
+includes an alarm sounder that is triggered when the host controller detects an alarm condition. The alarm can be muted directly from the DSE2548
+using the front push button. The DSE2548 includes individual LEDs for each channel and a ‘Power On’ LED that flashes when the link with the host
+controller is lost.
+
+Key Features
+• 8 configurable LEDs
+• Works up to 1 KM (0.6 miles) from the host controller
+• 10 modules can be linked together to one host controller
+
+                                                                                                                Product Approvals
+                                                                                                                + CE
+                                                                                                                + UL Listed: Standard - UL 6200:2019
+
+Product Documentation
+053-032 – DSE2548 Installation Instructions
+057-084 – DSE2548 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-062/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2548 DSENet® LED Output Expansion Module                                                              8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout and
+Part Number: 2548-01                                                                                     supply recovers to 5 V.
+                                                                                                         112 mA at 12 V, 53 mA at 24 V
+ Specifications                                                                                          74 mA at 12 V, 35 mA at 24 V
+ DC Supply
+ Continuous Voltage Rating                                                                               8
+ Cranking Dropouts                                                                                       Configurable LEDs
+
+ Maximum Operating Current                                                                               Fully isolated
+ Maximum Standby Current
+ Digital Outputs                                                                                         -30 °C to +70 °C / -22 °F to +158 °F
+ Number                                                                                                  -40 °C to +85 °C / -40 °F to +185 °F
+ Type
+ Communications                                                                                          116.0 mm x 180.0 mm x 42.7mm / 4.57 ” x 7.07 ” x 1.68 ”
+ DSENet®
+ Temperature                                                                                             98 mm x 154 mm / 3.86 ” x 6.06 ”
+ Operating Temperature
+ Storage Temperature
+ Dimensions
+ Overall (W x H x D)
+ Mounting
+ Panel
+
+Product Documentation
+053-032 – DSE2548 Installation Instructions
+057-084 – DSE2548 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-062/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2548 DSENet® LED Output Expansion Module
+
+Part Number: 2548-01
+
+Related Products                 7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Bus Tie Controller                                                                                                  G8680-01
+DSEG8900                         Mains (Utility) Controller                                                                                          G8660-01
+DSEG8680                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         Advanced Single Genset Controller                                                                                   G7400-01
+DSEG8600                         Advanced Single Genset Controller                                                                                   G7300-01
+DSEG7400                         Synchronising Generator Bus Tie Control Module                                                                      8680-01
+DSEG7300                         Auto Transfer Switch & Mains (Utility) Control Module                                                               8660-02
+DSE8680                          Synchronising Auto Mains (Utility) Failure Load Share Control Module                                                8620-02
+DSE8660 MKII                     Synchronising & Load Sharing Auto Start Control Module                                                              8610-02
+DSE8620 MKII                     Auto Start Control Module                                                                                           7410-03
+DSE8610 MKII                     Auto Start Control Module                                                                                           7310-03
+DSE7410 MKII                     Auto Mains (Utility) Failure Control Module                                                                         6120-05
+DSE7310 MKII                     Auto Start Control Module                                                                                           6110-05
+DSE6120 MKIII                    Auto Mains (Utility) Control Module                                                                                 6020-03
+DSE6110 MKIII
+DSE6020 MKII                     Engine Only Control Module                                                                                          E800-01
+DSEControl®
+DSEE800                          Auto Transfer Switch Control Module                                                                                 335-11
+DSEAts®
+DSE335 MKII                      DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® RTD/Thermocouple/Analogue Output Expansion Module                                                           2170-01
+DSE2548                          DSENet® Input / Output Expansion Module                                                                             2160-01
+DSE2170                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2160                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133
+DSE2131
+
+Product Documentation
+053-032 – DSE2548 Installation Instructions
+057-084 – DSE2548 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-062/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2548 DSENet® LED Output Expansion Module                                                              EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+Part Number: 2548-01
+                                                                                                         Safety of Information Technology Equipment, including Electrical Business Equipment
+ Environmental Testing Standards
+ Electro-Magnetic Compatibility                                                                          Ab/Ae Cold Test -30 ºC
+ BS EN 61000-6-2                                                                                         Bb/Be Dry Heat +70 ºC
+ BS EN 61000-6-4
+ Electrical Safety                                                                                       Ten sweeps in each of three major axes
+ BS EN 61010                                                                                             5 Hz to 8 Hz at ±7.5 mm,
+ Temperature                                                                                             8 Hz to 500 Hz at 2 Gn
+ BS EN 60068-2-1
+ BS EN 60068-2-2                                                                                         Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+ Vibration                                                                                               Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+ BS EN 60068-2-6
+                                                                                                         Three shocks in each of three major axes
+ Humidity                                                                                                15 Gn in 11 ms
+ BS EN 60068-2-30
+ BS EN 60068-2-78                                                                                        IP21
+ Shock
+ BS EN 60068-2-27
+
+ Degrees of Protection Provided by Enclosures
+ BS EN 60529
+
+Pin Out Description                                                                                      Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   DSENet®
+3 to 5
+
+Product Documentation
+053-032 – DSE2548 Installation Instructions
+057-084 – DSE2548 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-062/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+®DSENet98.0Dmmata S9h8.0emmet
+
+(3.86 ")                         (3.86 ")
+
+DSE2548 DSENet® LED Output Expansion Module
+
+Part Number: 2548-01
+
+Technical Drawing & Connection Label
+
+116.0 mm                         116.0 mm                                                                44.4 mm        44.4 mm
+ (4.57 ")                         (4.57 ")                                                               ( 1.75 ")      ( 1.75 ")
+
+                                                                                                             31.5 mm         31.5 mm
+                                                                                                              (1.24 ")        (1.24 ")
+
+180.0 mm
+   (7.09 ")
+
+                                                                                                                                                                             154.0 mm
+                                                                                                                                                                                (6.06 ")
+
+                                                                                                                                                                                                      154.0 mm
+                                                                                                                                                                                                         (6.06 ")
+
+Product Documentation
+053-032 – DSE2548 Installation Instructions
+057-084 – DSE2548 Operator Manual
+
+DEEP SEA ELECTRONICS UK                    DEEP SEA ELECTRONICS USA                                      DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                     T: +1 (815) 316 8706                                          T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com            E: usasales@deepseaelectronics.com                            E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com              W: www.deepseaelectronics.com                                 W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-062/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

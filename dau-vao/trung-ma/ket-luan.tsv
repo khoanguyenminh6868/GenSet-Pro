@@ -1,0 +1,29 @@
+nhom	loai	khoa_A	khoa_B	ket_luan	loai_bang_chung	so_ban_ghi_A+B
+1	đầu phát	ECP282S/4C ("ECP 28-2S/4C", endress)	ECP282S4C ("ECP28.2S4C" himoinsa-china, "ECP28-2S4C" welland-power)	chưa đủ bằng chứng		3+3
+2	đầu phát	ECP28M/4C ("ECP 28-M/4C", endress)	ECP28M4C ("ECP28 M4C", "ECP28 M4 C", "ECP28-M4 C", endress)	cùng một mã	cùng NCC viết hai cách + trùng ≥ 3 trường (endress n114 và n144)	4+4
+3	đầu phát	ECP322S/4C ("ECP32-2S/4C", endress)	ECP322S4C ("ECP32 2S4 C", endress)	chưa đủ bằng chứng		3+2
+4	đầu phát	UCI274C(80KW) (jinlongteng-fujian)	UCI274C80KW ("UCI274C-80KW", yihua-fujian)	cùng một mã (mức vừa)	trùng mã gốc + đúng một mức 80 kW ở cả hai NCC; chưa chứng minh gộp về UCI274C trơn	4+1
+5	động cơ	1100F(E) (zc-power)	1100FE (xinhengxin-fujian)	chưa đủ bằng chứng	hành trình xi lanh khác: 100x84 / 660 cc và 100*85 / 0,667 L	1+1
+6	động cơ	186FA(E) (zc-power)	186FAE (xinhengxin-fujian)	chưa đủ bằng chứng	hình học trùng nhưng tỉ số nén 19:1 và 19,5	1+1
+7	động cơ	192F(E) (zc-power)	192FE (xinhengxin-fujian)	chưa đủ bằng chứng	chỉ trùng hình học (không độc lập)	1+1
+8	động cơ	4BTA3.9-G2(M)	4BTA3.9-G2M	Khoa đã quyết để riêng (24/11/2026)		2+2
+9	động cơ	4BTA3.9-GM4/7 (kangwo-guangdong n108)	4BTA3.9-GM47 (22 lần, 10 NCC)	cùng một mã	cùng NCC, cùng bảng viết hai cách + trùng 3 trường (47/1500, 4 xi lanh, 3,9 L); dòng CCFJ40JW trùng kích thước, khối lượng với fengfa-taizhou	1+22
+10	động cơ	4HTAA4.3*G34 (frs-shenyang n106)	4HTAA4.3-G34 (21 lần, 16 NCC)	cùng một mã	cùng NCC, cùng bảng: G31 G32 G33 *G34 G35 G36 + 6HTAA6.5-G34 viết "-G34"; 4 xi lanh, 4,3 L, 80 kW khớp	1+21
+11	động cơ	6BT5.9-G2(M)	6BT5.9-G2M	Khoa đã quyết để riêng (24/11/2026)		2+1
+12	động cơ	KTA19-D(M) (mecca-power, walter-yangzhou)	KTA19-DM (7 NCC)	cùng một mã	walter-yangzhou viết cả hai, cùng công suất 350 kW: tiêu hao 84,82 = 84,82, 159*159, 6 xi lanh, 19 L	5+30
+13	động cơ	KTA19-G3(M)	KTA19-G3M	Khoa đã quyết để riêng (24/11/2026)		1+3
+14	động cơ	KTA19-G4(M)	KTA19-G4M	Khoa đã quyết để riêng (24/11/2026)		1+5
+15	động cơ	KTA38-D(M) (mecca-power, walter-yangzhou)	KTA38-DM (6 NCC)	cùng một mã	walter-yangzhou viết cả hai, cùng 600 kW: 146,11 và 146,12 (lệch 0,01), 159*159, 12 xi lanh, 38 L	7+41
+16	động cơ	KTA38-G(M)	KTA38GM	Khoa đã quyết để riêng (24/11/2026)		1+3
+17	động cơ	NT855-D(M) (mecca-power n190)	NT855-DM (kaihua, taihai, yanfa)	chưa đủ bằng chứng	không NCC nào viết cả hai; dung tích 14 L, 6 xi lanh là của mọi NT855	5+4
+18	động cơ	NTA855-D(M) (walter-yangzhou)	NTA855-DM (8 NCC)	cùng một mã	walter-yangzhou viết cả hai, cùng 250 kW: tiêu hao 61,18 = 61,18, 140*152, 6 xi lanh, 14 L	1+30
+19	động cơ	NTA855-G2(M)	NTA855-G2M	Khoa đã quyết để riêng (24/11/2026)		1+5
+20	động cơ	(YD485D) (acepow-fuan n114)	YD485D (6 lần, 4 NCC)	cùng một mã	cùng bảng chỉ một ô có ngoặc trong 33 dòng; 15/16,5 kW và 18,8/20,6 kVA trùng EP-YD15 (excel-power, YD485D); 18 kW trùng mamo TYD21	1+6
+21	tổ máy	KH*2000GF (kaihua-genset n111)	KH-2000GF (kaihua-genset)	cùng một mã (mức vừa)	cùng NCC: 2750/2500 kVA trùng 2 trường ở 5 bảng; "*" duy nhất trong 58 dòng, đúng vị trí giữa KH-1800GF và KH-2200GF	1+5
+22	tổ máy	R-C1375D5/S (rcg-power)	R-C1375D5-S (rcg-power)	cùng một mã (mức vừa)	cùng NCC, 3 bảng: 1375/1100 và 1500/1200 kVA/kW, động cơ KTA50-G8 trùng; chỉ khác đầu phát, mà tên R-C1875D5A-S dùng cho cả hai đầu phát	3+3
+23	tổ máy	R-C1500D5/S (rcg-power)	R-C1500D5-S (rcg-power)	cùng một mã (mức vừa)	như nhóm 22 (KTA50-GS8)	3+3
+24	tổ máy	R-C1875D5/S (rcg-power)	R-C1875D5-S (rcg-power)	cùng một mã (mức vừa)	như nhóm 22 (QSK50-G16)	3+3
+25	tổ máy	SC250E5 (stone-power)	SC250E5# (stone-power)	chưa đủ bằng chứng	công suất, đầu phát trùng nhưng động cơ khác (6LTAA8.9-G2 / NT855-GA); dấu "#" không có chú thích	1+1
+26	tổ máy	SC350E5 (stone-power)	SC350E5# (stone-power)	chưa đủ bằng chứng	như nhóm 25 (NTA855-G2A / NTA855-G4)	1+1
+27	tổ máy	SC500E5 (stone-power)	SC500E5# (stone-power)	chưa đủ bằng chứng	như nhóm 25 (QSZ13-G3, KTA19-G3A / KTA19-G4)	2+1
+28	tổ máy	TCG-1000N5 (ettes-power)	※TCG-1000N5 (ettes-power)	khác mã	động cơ (TCG3016V16S / TCG2020V12K), công suất động cơ 1042 / 1187 kW, dung tích 35 / 53,1 L, nhiệt 1100 / 1177 kWt, hiệu suất khác	1+1

@@ -1,0 +1,149 @@
+          DSEGenset®                                                                                                                                SPECIFICATIONS
+
+DSE402 MKII                                                                                                                                         DC SUPPLY
+                                                                                                                                                    CONTINUOUS VOLTAGE RATING
+WATERPROOF MANUAL/AUTO START                                                                                                                        8 V to 35 V continuous
+CONTROL MODULE
+                                                                                                                                                    CRANKING DROPOUTS
+                                                                                                                                                    Able to survive 0 V for 50 mS, providing
+                                                                                                                                                    supply was at least 10 V before dropout
+                                                                                                                                                    and supply recovers to 5 V. This is achieved
+                                                                                                                                                    without the need for internal batteries.
+
+                                                                                                                                                    MAXIMUM OPERATING CURRENT
+                                                                                                                                                    120 mA at 12 V, 170 mA at 24 V
+
+                                                                                                                                                    TYPICAL OPERATING CURRENT
+                                                                                                                                                    60 mA at 12 V, 75 mA at 24 V
+                                                                                                                                                    In stop position consumption is zero.
+
+                                                                                                                                                    CHARGE/FAIL EXCITATION RANGE
+                                                                                                                                                    0 V to 35 V
+
+                                                                                                                                                    OUTPUTS
+                                                                                                                                                    FUEL
+                                                                                                                                                    15 A DC at supply voltage
+
+                                                                                                                                                    START
+                                                                                                                                                    15 A DC at supply voltage
+
+                                                                                                                                                    PRE-HEAT
+                                                                                                                                                    2 A DC at supply voltage
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    157 mm x 111 mm x 60 mm
+                                                                                                                                                    6.2” x 4.4” x 2.4”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    132 mm x 84 mm
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40 °C to +85 °C
+                                                                                                                                                    -40 °F to +185 °F
+
+                                                                                                                                                    OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30 °C to +70 °C
+                                                                                                                                                    -22 °F to +158 °F
+
+KEY FEATURES                          KEY BENEFITS
+• Key start                           • IP66 rating makes this module ideal
+• Low oil pressure protection
+• High engine temperature protection     for outdoor use
+• Auxiliary shutdown                  • Potted electronics prevents
+• PC configurable via DSE813
+                                         vibration and water damage
+   interface and DSE Configuration    • Licence-free PC Software
+   Suite PC Software                  • User friendly set up and fascia
+• Automatic engine pre-heat
+• Overspeed protection                   layout
+• Configurable lamp test at power up  • Uses DSE Configuration Suite PC
+
+                                         Software for simple configuration
+
+RELATED MATERIALS                                                                                        PART NO.
+TITLE                                                                                                    053-087
+DSE402 MKII Installation Instructions                                                                    057-137
+DSE402 MKII Operator Manual                                                                              057-138
+DSE402 MKII Configuration Suite Lite Software Manual                                                     055-100
+DSE813 USB Communications Adaptor Data Sheet
+
+DEEP SEA ELECTRONICS LTD UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099                                                                            TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com                                    EMAIL ussales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-097/06/19 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+    DSEGenset®
+
+DSE402 MKII                                                                 ENVIRONMENTAL TESTING STANDARDS
+
+WATERPROOF MANUAL/AUTO START                                                ELECTRO MAGNETIC COMPATIBILITY
+CONTROL MODULE                                                              BS EN 61000-6-2
+                                                                            EMC Generic Immunity Standard for the
+The DSE402 MKII is a waterproof                                             Industrial Environment
+Manual/Automatic Start Control                                              BS EN 61000-6-4
+Module designed for genset and other                                        EMC Generic Emission Standard for the
+applications. The module is designed                                        Industrial Environment
+to start and stop the engine via a
+manual waterproof key switch on the                                         ELECTRICAL SAFETY
+front panel or via a user configurable                                      BS EN 60950
+remote start input. It will provide                                         Safety of Information Technology Equipment,
+a number of engine protections,                                             including Electrical Business Equipment
+automatically shutting down the
+engine on detection of a fault                                              TEMPERATURE
+condition. Provision is also made for                                       BS EN 60068-2-1
+an overspeed shutdown from either                                           Ab/Ae Cold Test -30 ºC
+the MPU or AC Hz (to be specified on                                        BS EN 60068-2-2
+ordering).                                                                  Bb/Be Dry Heat +70 ºC
+
+First-up shutdown alarm is indicated                                        VIBRATION
+by a steady red LED.                                                        BS EN 60068-2-6
+                                                                            Ten sweeps in each of three major axes
+                                                                            5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+
+                                                                            HUMIDITY
+                                                                            BS EN 60068-2-30
+                                                                            Db Damp Heat Cyclic 20/55 ºC @ 95%
+                                                                            RH
+                                                                            48 Hours
+                                                                            BS EN 60068-2-78
+                                                                            Cab Damp Heat Static 40 ºC @ 93% RH
+                                                                            48 Hours
+
+                                                                            SHOCK
+                                                                            BS EN 60068-2-27
+                                                                            Three shocks in each of three major axes
+                                                                            15gn in 11mS
+
+                                                                            DEGREES OF PROTECTION
+                                                                            PROVIDED BY ENCLOSURES
+                                                                            BS EN 60529
+                                                                            IP66
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+PC
+
+                               1  1             1              1                                   1
+
+DSE 813        LOP SWITCH         HIGH COOLANT  AUXILIARY      SET NOMINAL  PRE-HEAT                  DC POWER SUPPLY
+COMMUNICATION                     TEMP SWITCH   SHUTDOWN       SPEED        OUTPUT                    8 V to 35 V
+
+                                                                            +
+
+ DSE402 MKII                      FUEL AND START OUTPUTS                    GENERATOR SPEED SENSING
+                                                            +                                    FREQUENCY / MPU
+                    7
+                    OTHER
+
+CHARGE ALTERNATOR
+
+                   D +
+
+                          W/L
+
+                                                                                                                  ISSUE 2
+

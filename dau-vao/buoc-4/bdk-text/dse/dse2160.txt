@@ -1,0 +1,252 @@
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+
+Overview
+The DSE2160 DSENet® Input / Output Expansion Module has been developed for use with the DSEG8600 and DSEM-Series platforms. The DSE2160
+extends the host modules input and output capabilities for increased application flexibility. This is achieved by providing an additional 8 inputs,
+consisting of 2 analogue inputs (both can be configured as digital) and 6 digital inputs (digital input A can be configured as a frequency input, pulse
+counter or RPM input). The DSE2160 also provides 8 additional digital outputs. All 8 outputs can be individually configured as a digital input, positive
+switching DC output or a negative switch DC output.
+
+For enhanced communication with the host module, the DSE2160 features a DSENet® port for connection to the DSEG8600 platform and a CAN port
+for connection to the DSEM-Series platform. A red status LED is provided to easily identify when the DSE2160 is connected to a power source and
+communicating with the host controller.
+
+Key Features
+• 2 analogue inputs (configurable as digital inputs)
+• 6 digital inputs
+• 8 digital inputs / outputs (configurable as digital inputs, positive
+
+      switching DC output and negative switching DC output)
+• Status LED to indicate Power On and Link Lost
+• DSENet® Communication
+• CAN Communication
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout and
+Continuous Voltage Rating                                                                                supply recovers to 5 V. This is achieved without the need for internal batteries. LEDs
+Cranking Dropouts                                                                                        are not maintained during cranking.
+                                                                                                         190 mA at 12 V, 90 mA at 24 V
+Maximum Operating Current                                                                                34 mA at 12 V, 20 mA at 24 V
+Maximum Standby Current
+Analogue Inputs                                                                                          2
+Number                                                                                                   Negative Switching Digital Input or Resistive Analogue Input
+Configurable as                                                                                          Less than 2.1 V
+Digital Input Closed Voltage Threshold                                                                   Greater than 6.6 V
+Digital Input Open Voltage Threshold                                                                     0 Ω to 3 kΩ
+Analogue Measurement Range                                                                               1 %
+Analogue Resolution                                                                                      2 %
+Analogue Accuracy
+Digital Inputs                                                                                           6
+Number                                                                                                   Negative Switching Digital Input or Negative Switching High Frequency Input*
+Configurable as                                                                                          Less than 2.1 V
+Input Closed Voltage Threshold                                                                           Greater than 6.6 V
+Input Open Voltage Threshold                                                                             5 Hz to 10 kHz
+High Frequency Input Range
+Digital Inputs / Outputs                                                                                 8
+Number                                                                                                   Negative Switching Digital Input, Positive Switching DC Output or Negative Switching
+Configurable as                                                                                          DC Output
+                                                                                                         Less than 2.1 V
+Digital Input Closed Voltage Threshold                                                                   Greater than 6.6 V
+Digital Input Open Voltage Threshold                                                                     0.5 A at module supply voltage.
+Positive DC Output Rating                                                                                0.5 A at maximum of 35 V from external supply.
+Negative DC Output Rating
+
+*High Frequency Input is only available on Digital Input A (terminal 17)
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK                 DEEP SEA ELECTRONICS USA                                         DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                  T: +1 (815) 316 8706                                             T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com         E: usasales@deepseaelectronics.com                               E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com           W: www.deepseaelectronics.com                                    W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+
+Specifications                                                                                           Fully isolated
+Communications                                                                                           Fully isolated
+DSENet®
+CAN                                                                                                      -30 °C to +70 °C / -22 °F to +158 °F
+Temperature                                                                                              -40 °C to +85 °C / -40 °F to +185 °F
+Operating Temperature
+Storage Temperature                                                                                      120 mm x 75 mm x 31.5 mm / 4.72” x 2.95” x 1.24”
+Dimensions
+Overall (W x H x D)                                                                                      35 mm / 1.35”
+Mounting                                                                                                 2 M4 mounting holes with 108 mm x 63 mm / 4.25” x 2.48” centres
+DIN Rail
+Chassis
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+
+Related Products
+
+DSEGenset®
+
+DSEG8600                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+
+DSEControl® Programmable Displays / Controllers                                                                                                      M812-01, M812-02, M812-03, M812-04
+                                                                                                                                                     M810-01, M810-02, M810-03, M810-04
+DSEM812                          12” Programmable Display                                                                                            M870-01, M870-02, M870-03, M870-04
+                                                                                                                                                     M840-01, M840-02
+DSEM810                          10” Programmable Display                                                                                            M835-01
+                                                                                                                                                     M643-01
+DSEM870                          7” Programmable Display                                                                                             M640-01
+
+DSEM840                          4.3” Programmable Display                                                                                           2548-01
+                                                                                                                                                     2170-01
+DSEM835                          3.5” Programmable Display                                                                                           2157-01
+                                                                                                                                                     2152-01
+DSEM643                          Programmable Controller (34 I/O)                                                                                    2133-01
+                                                                                                                                                     2131-01
+DSEM640                          Programmable Controller (68 I/O)
+
+DSENet®
+
+DSE2548                          DSENet® LED Output Expansion Module
+
+DSE2170                          DSENet® RTD/Thermocouple/Analogue Output Expansion Module
+
+DSE2157                          DSENet® Output Expansion Module
+
+DSE2152                          DSENet® Analogue Output Expansion Module
+
+DSE2133                          DSENet® RTD/Thermocouple Input Expansion Module
+
+DSE2131                          DSENet® Ratiometric Input Expansion Module
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP21
+BS EN 60529
+
+Pin Out Description                                                                                      Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   DSENet®
+3 to 5                                                                                                   CAN
+6 to 8                                                                                                   Digital Input / Output
+9 to 16                                                                                                  Digital Input
+17 to 22                                                                                                 Analogue Input
+23 to 26
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2160 DSENet® Input / Output Expansion Module
+
+Part Number: 2160-01
+Technical Drawing
+
+Connection Label
+
+                                 12 345 6 78                                                                              DSE2160
+                                                                                                                          Made in UK
+                                              SCR A B SCR H L
+                                                                                                                          8 V to 35 V, 0.3 A max
+                                                               CAN                                                        35 V, 0.5 A
+                                                                                                                          70 V max
+                                                                                                         DC Supply :      10 V DC max
+                                                                                                         DC Outputs :     5 V DC max
+                                                                                                         DC Inputs :
+                                                                                                         Analog Inputs :
+                                                                                                         Comms Port :
+
+                                 A BC DE FG H  A BC D E F                                                                 A  B                       020-1134-01,8
+
+Product Documentation
+053-268 – DSE2160 Installation Instructions
+057-361 – DSE2160 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/07/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

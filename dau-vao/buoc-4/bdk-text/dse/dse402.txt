@@ -1,0 +1,143 @@
+DEEP SEA ELECTRONICS                                                                                         402
+
+                                                                                                        WATERPROOF
+                                                                                                      MANUAL START
+
+                                                                                                                            Issue 4
+                                                                                                                      MR 29/01/03
+
+DESCRIPTION                                   Multiple alarm channels are provided to        Ingress Protection Rating
+                                              monitor the following:
+The Model 402 is a Waterproof Manual                                                         Front IP66 D when installed in
+Engine Control Module. The module is           Charge Fail Warning
+used to start and stop the engine,             Low Oil Pressure                             panel.
+indicating any fault conditions,               High Engine Temperature
+automatically shutting down the engine         Auxiliary Shutdown                           Rear IP54 (suitable grease should
+and indicating the engine failure by a         Overspeed Trip from MPU or AC Hz.
+steady red LED on the front panel.                                                           be applied to terminals if exposed
+                                              First up shutdown alarm is indicated by a
+Operation of the module is via a 3            steady red LED.                                to a harsh environment)
+position ‘waterproof’ key-switch with
+STOP(O), RUN(I) and START(II)                 Fixed internal timers are provided for Pre-    The Key-switch barrel has a drain
+positions.                                    heat Time and Safety On.
+                                                                                             hole which exits on the underside of
+Turning the switch to the ‘I’ position will   The 402 series modules have been
+initiate a pre-heat relay for a period of 10  designed for front panel mounting. The         the switch behind the mounting
+Seconds. Pre-heat operation is indicated      module is fitted into the cut-out and then
+by LED. Once the timer has expired the        secured using nuts & bolts. Connection is      flange.  Ensure            suitable
+pre-heat relay will de-energise and the       made to the terminal strip at the rear or via
+LED will extinguish. The FUEL relay will      optional flying leads (see note)               arrangements are made if mounting
+then energise and the Safety On delay
+timer will commence.                          SPECIFICATION                                  the module within an enclosure.
+
+Pre-heat mode can be overridden at any        DC Supply                                      Mounting
+time by turning the switch from the ‘I’       8 to 35 V Continuous                           4 off M4 Countersunk Head Screws
+position to the ‘II’ position while the pre-                                                 Recommend stainless steel
+heat LED is illuminated.                      Cranking Dropouts                              Material
+                                              Able to survive 0V for 50 mS, providing
+Turning the key-switch to the ‘II’ position   supply was at least 10V before dropout         Max Tightening torque
+will initiate the following sequence:         and supply recovers to 5V. This is             1.6N.m (15lbf.in, 16.32kgf.cm)
+                                              achieved without the need for internal
+ Safety On delay alarm timer is              batteries.                                           Note
+      activated, if not already running
+                                              Max. Operating Current                         Connections to MPU speed
+ Pre-heat relay is re-activated              120 mA at 12V. 170 mA at 24V.                  sensing versions are via
+ Pre-heat timer is cancelled, if still                                                      rear terminal strip. If AC Hz
+                                              Typical Running Current                        speed sensing option is
+      running                                 60 mA at 12V. 75 mA at 24V                     used, connection to this
+ Fuel relay is activated, if not already     In stop position consumption is zero.          option is via flying leads
+                                                                                             approximately 1 metre long.
+      active                                  Start Output                                   Suitable termination of
+ Starter Relay is activated.                 Max 20A @ 12V, 8A @ 24V                        these leads should be made
+                                              Less Pre-heat output load                      by the customer in
+Engine will then commence cranking.                                                          accordance with
+                                              Fuel Relay Output                              environmental conditions
+Once the engine fires, the key-switch         Max 15A @ 12V - plus full 5A pre-heat          present on the installation.
+should be released and spring returns to      output available.
+the ‘I’ position. Once released the Starter   Max 8A @ 24V -less Pre-heat output load
+and Pre-heat relays will de-energise.
+                                              Pre-heat Relay Output
+Once the delayed alarm timer expires all      Max 5A shared with fuel and start output
+alarm circuits will be armed.                 ratings as shown above. I.e if 2A pre-heat
+                                              output load is present then the start output
+Inputs (Normally open, closing on fault)      would be 18A max and the fuel output
+are available for Low Oil Pressure, High      would be 15A @12V DC.
+Engine Temperature. An additional input
+is provided to give an Auxiliary Shutdown     Dimensions
+alarm (Shutdown/Immediate). A battery         157mm x 111mm x 60mm (approx) depth
+charge alternator failure alarm is also       (6.2” x 4.4” x 2.4”)
+provided. Provision is made for an
+Overspeed Shutdown (from either MPU           Charge Fail / Excitation Range
+or AC Hz - specified on ordering).            0V to 35V
+
+                                              Operating Temperature Range                    Deep Sea Electronics plc reserve the right to
+                                              -30° to +70°C                                  change specification without notice.
+CASE DIMENSIONS
+
+                                157                                                   98 app.
+
+                                147                                                   49.5              28
+
+                                137.5
+
+                          73.5                    73.5
+
+                 50.5
+
+111  101  91.75                 CUT OUT 92 X 138
+                                         +1/-0
+
+                 50.5
+
+                                                  All Dimensions in mm          Imperial/US dimensions
+                                                                                6.2” x 4.4” x 2.4”
+TYPICAL CONNECTIONS                                                             Cut-out
+                                                                                5.4” x 3.6”
+
+Batttery positive
+
+Charge alternator                         1                                     Magnetic pickup
+W/L terminal                                               10
+                                                                                 +
+                       9 Model 402m 11
+                                   (magnetic pickup sensing)                     -
+
+                       6 Manual start module 2
+
+                       7                                3
+
+                       8                                4
+
+                                     5                                          Pre-           Start
+                                                                                heat
+                                                                          Fuel
+
+Batttery negative
+
+Batttery positive                         1                                     L1
+                                                           10                          Alternator
+Charge alternator
+W/L terminal           9 Model 402f 11                                          N
+
+                                 (Alternator frequency sensing)
+
+                       6 Manual start module 2
+
+                       7                                3
+
+                       8                                4
+
+                                     5                                          Pre-           Start
+                                                                                heat
+                                                                          Fuel
+
+             Batttery negative                                      Deep Sea Electronics Inc
+
+       Deep Sea Electronics plc                                           5301 E. State Street – Suite 202
+                                                                             Rockford, Ilinois 61108 USA
+Highfield House, Hunmanby Industrial Estate, North
+              Yorkshire, YO14 0PH, England                       Tel +1 (815) 316-8706 Fax +1 (815) 316-8708
+                                                                        E-mail dsesales@deepseausa.com
+Tel: +44 (0) 1723 890099 Fax: +44 (0) 1723 893303
+              E-mail sales@deepseaplc.com
+

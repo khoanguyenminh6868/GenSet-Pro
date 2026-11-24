@@ -1,0 +1,256 @@
+DSENet® Data Sheet
+
+DSE2157 DSENet® Output Expansion Module
+
+Part Number : 2157-01
+
+Overview
+The DSE2157 Output Expansion Module has been developed for use with a wide range of DSE products. The DSE2157 extends the host modules
+output capabilities for increased application flexibility. This is achieved by providing an additional 4 normally open volt-free contacts and 4 changeover
+volt-free contacts.
+
+For enhanced communication with the host module, the DSE2157 features a DSENet® port for connection to a wide range of DSE products. A red
+status LED is provided to easily identify when the DSE2157 is connected to a power source and communicating with the host controller.
+
+Key Features
+• 4 Normally Open Volt-Free Contacts
+• 4 Changeover Volt-Free Contacts
+• Status LED to Indicate Power On and Link Lost
+• DSENet® Communication
+
+Product Range Compatability
+
+Product Documentation
+053-034 – DSE2157 Installation Instructions
+057-083 – DSE2157 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2157 DSENet® Output Expansion Module                                                                  8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout and
+Part Number: 2157-01                                                                                     supply recovers to 5 V. This is achieved without the need for internal batteries. LEDs
+                                                                                                         and backlight will not be maintained during cranking.
+ Specifications                                                                                          325 mA at 12 V, 152 mA at 24 V
+ DC Supply                                                                                               70 mA at 12 V, 32 mA at 24 V
+ Continuous Voltage Rating
+ Cranking Dropouts                                                                                       8
+                                                                                                         4 normally open volt-free contacts
+ Maximum Operating Current                                                                               4 changeover volt-free contacts
+ Maximum Standby Current                                                                                 2 A at maximum of 30 VDC
+ Digital Outputs
+ Number                                                                                                  Fully isolated
+ Type
+                                                                                                         -30 °C to +70 °C / -22 °F to +158 °F
+ Output Rating                                                                                           -40 °C to +85 °C / -40 °F to +185 °F
+ Communications
+ DSENet®                                                                                                 164.5 mm x 76.4 mm x 48.9 mm / 6.48” x 3.0” x 1.93”
+ Temperature
+ Operating Temperature                                                                                   35 mm / 1.35“
+ Storage Temperature                                                                                     2 M4 mounting holes with 152.5 mm x 64.5 mm / 6.0” x 2.54” centres
+ Dimensions
+ Overall (W x H x D)
+ Mounting
+ DIN Rail
+ Chassis
+
+Product Documentation
+053-034 – DSE2157 Installation Instructions
+057-083 – DSE2157 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2157 DSENet® Output Expansion Module
+
+Part Number: 2157-01
+
+Related Products - Standard      7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Bus-Tie Controller                                                                                                  G8680-01
+DSEG8900                         Mains (Utility) Controller                                                                                          G8660-01
+DSEG8680                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         Synchronising Generator Bus Tie Control Module                                                                      8680-01
+DSEG8600                         Auto Transfer Switch & Mains (Utility) Control Module                                                               8660-02
+DSE8680                          Synchronising Auto Mains (Utility) Failure Load Share Control Module                                                8620-02
+DSE8660 MKII                     Synchronising & Load Sharing Auto Start Control Module                                                              8610-02
+DSE8620 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7420-03
+DSE8610 MKII                     Auto Start Control Module                                                                                           7410-03
+DSE7420 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7320-03
+DSE7410 MKII                     Auto Start Control Module                                                                                           7310-03
+DSE7320 MKII                     Auto Mains (Utility) Failure Control Module                                                                         6120-05
+DSE7310 MKII                     Auto Start Control Module                                                                                           6110-05
+DSE6120 MKIII
+DSE6110 MKIII                    Engine Only Control Module                                                                                          E800-01
+DSEControl®
+DSEE800                          Auto Transfer Switch Control Module                                                                                 0335-11
+DSEAts®
+DSE335 MKII                      DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® RTD/Thermocouple/Analogue Output Expansion Module                                                           2170-01
+DSE2548                          DSENet® Input / Output Expansion Module                                                                             2160-01
+DSE2170                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2160                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130
+
+Product Documentation
+053-034 – DSE2157 Installation Instructions
+057-083 – DSE2157 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2157 DSENet® Output Expansion Module
+
+Part Number: 2157-01
+
+Related Products - Non-Standard & Obsolete
+
+DSEGenset®
+
+DSE8920                          7” Colour Load Share & Synchronising Control Module                                                                 8920-01
+                                                                                                                                                     8860-01
+DSE8860                          Auto Transfer Switch & Mains (Utility) Graphical Colour Display Control Module                                      8810-01
+                                                                                                                                                     8760-01
+DSE8810                          Load Share Control with Graphical Colour Display                                                                    8710-01
+                                                                                                                                                     8660-01
+DSE8760                          Rear Mounted Auto Transfer Switch & Mains (Utility) Control Module                                                  8620-01
+                                                                                                                                                     8610-01
+DSE8710                          Rear Mounted Synchronising & Load Sharing Control Module                                                            7450-02
+                                                                                                                                                     7420-01
+DSE8660                          Auto Transfer Switch & Mains (Utility) Control Module                                                               7410-01
+                                                                                                                                                     7320-01
+DSE8620                          Synchronising & Load Sharing Auto Mains (Utility) Failure Control Module                                            7310-01
+                                                                                                                                                     6120-01
+DSE8610                          Synchronising & Load Sharing Control Module                                                                         6110-01
+
+DSE7450                          DC/Hybrid Generator Control Module                                                                                  0335-01
+
+DSE7420                          Auto Mains (Utility) Failure Control Module
+
+DSE7410                          Auto Start Control Module
+
+DSE7320                          Auto Mains (Utility) Failure Control Module
+
+DSE7310                          Auto Start Control Module
+
+DSE6120 MKII                     Auto Mains (Utility) Failure Control Module
+
+DSE6110 MKII                     Auto Start Control Module
+
+DSEAts®
+
+DSE335                           Auto Transfer Switch Control Module
+
+Product Documentation
+053-034 – DSE2157 Installation Instructions
+057-083 – DSE2157 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2157 DSENet® Output Expansion Module                                                                  EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+Part Number: 2157-01
+                                                                                                         Safety of Information Technology Equipment, including Electrical Business Equipment
+  Environmental Testing Standards
+  Electro-Magnetic Compatibility                                                                         Ab/Ae Cold Test -30 ºC
+  BS EN 61000-6-2                                                                                        Bb/Be Dry Heat +70 ºC
+  BS EN 61000-6-4
+  Electrical Safety                                                                                      Ten sweeps in each of three major axes
+  BS EN 60950                                                                                            5 Hz to 8 Hz at ±7.5 mm,
+  Temperature                                                                                            8 Hz to 500 Hz at 2 gn
+  BS EN 60068-2-1
+  BS EN 60068-2-2                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% RH 48 Hours
+  Vibration                                                                                              Cab Damp Heat Static 40 ºC at 93% RH 48 Hours
+  BS EN 60068-2-6
+                                                                                                         Three shocks in each of three major axes
+  Humidity                                                                                               15 gn in 11 ms
+  BS EN 60068-2-30
+  BS EN 60068-2-78                                                                                       IP21
+  Shock
+  BS EN 60068-2-27                                                                                       Description
+                                                                                                         DC Supply
+  Degrees of Protection Provided by Enclosures                                                           DSENet®
+  BS EN 60529                                                                                            Normally Open Volt-Free Contacts
+                                                                                                         Changeover Volt-Free Contacts
+  Pin Out Description
+  Pin
+  1 to 2
+  3 to 5
+  6 to 13
+  14 to 25
+
+Product Documentation
+053-034 – DSE2157 Installation Instructions
+057-083 – DSE2157 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet                                                                                                                                                          48.9 mm
+                                                                                                                                                                            (1.93 " )
+DSE2157 DSENet® Output Expansion Module
+
+Part Number: 2157-01
+Technical Drawing
+
+                                                               164.5 mm
+                                                                ( 6.48 " )
+                                                               152.5 mm
+                                                                ( 6.00 " )
+
+64.5 mm                                                                                                                                                                                              76.4 mm
+   ( 2.54 " )                                                                                                                                                                                           (3.00 " )
+
+Connection Diagram
+
+                                                                                                                                                                 012-694,6
+
+Product Documentation                                                                                      ECN     DATE  ISSUE.       00-06            SHEET.    1 of 1
+053-034 – DSE2157 Installation Instructions                                                                              DRAWN BY.    ES               SCALE.    1:1 (see drawing)
+057-083 – DSE2157 Operator Manual                                                                        DRG. NO.        CHECKED BY.  DH               MATERIAL  F MAT 17.250MIC GLOSS VELVET LEXAN
+                                                                                                                         CREATED.     28/03/11         ADHESIVE  3M 467
+                                                                                                                         REVISED.     2023/11/02 (MS)
+
+                                                                                                                   012-694                             TITLE.
+
+                                                                                                                                                                 2157 Module Expansion Label
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                      DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                          T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com            E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com                 W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                         055-061/04/24 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

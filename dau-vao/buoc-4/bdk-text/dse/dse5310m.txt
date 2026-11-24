@@ -1,0 +1,204 @@
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                    ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+    YOUR LOCAL DISTRIBUTOR.                                                                                                           TYPE
+                                                                                                                                      APPROVED
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to                                       PRODUCT
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.                         Certificate no:
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre                                                A-10081
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+                                                                                                                                      055-056/01/16 (3)
+DSEMARINE®                                                                                                                                                                   ®
+ON-BOARD
+WITH                                                                                                                   SPECIFICATION
+CONFIDENCE.
+                                                                                                                       DC SUPPLY
+DSE5310M                                                                                                               8 V to 35 V continuous
+                                                                                                                       CRANKING DROPOUTS
+AUTO & MANUAL START CONTROL MODULE (ELECTRONIC ENGINE ENABLED)                                                         Able to survive 0V for 50mS, providing the
+                                                                                                                       supply was at least 10V before dropout and
+                                                                               TYPE                                    supply recovers to 5V
+                                                                               APPROVED                                AUXILIARY OUTPUTS 1-3
+                                                                               PRODUCT                                 5A DC at supply voltage
+                                                                                                                       MAXIMUM OPERATING CURRENT
+                                                                               Certificate no:                         400mA at 12V, 200mA at 24V
+                                                                               A-10081                                 STANDBY CURRENT
+                                                                                                                       (when in auto)
+The DSE5310M is an Automatic           FEATURES                                • In-built engine diagnostics           230mA at 12V, 120mA at 24V
+Start Control Module designed to       • Automatic start                          removes the requirement for          SLEEP MODE CURRENT
+automatically start and stop diesel    • Automatic load transfer                  service equipment                    70mA at 12V, 45mA at 24V
+and gas generating sets that           • Electronic engine connection                                                  MODULE DIMENSIONS (WxH)
+include non electronic and             • RS232 or RS485 remote                 • License free PC software              240mm x 172mm
+electronic engines. The module                                                 • Remote module control and             9.4” x 6.8”
+also provides advanced engine             communications                                                               PANEL CUT-OUT (WxH)
+monitoring and protection features.    • Modbus RTU                               monitoring using comprehensive       220mm x 160mm
+                                       • Analogue inputs                          DSE PC software                      8.7” x 6.3”
+The module has the ability to          • Audible alarm indication              • Module improves the life cycle of     MAXIMUM PANEL THICKNESS
+monitor under speed, over speed,       • Back-lit character & 4-line text         engine starter motors                8mm
+charge failure, emergency stop,                                                • On-site and remote module             0.3”
+low oil pressure, high engine             LCD display                             configuration using suitable
+temperature, fail to start, fail to    • Configurable alarms & timers             modem                                ELECTRONIC ENGINE CAPABILITY
+stop, under/over generator volts,      • Configurable auxiliary inputs         • Module sends SMS messages to
+over current, under/over generator     • Digital inputs                           engineers to notify specific engine
+frequency, low/high DC battery         • Emergency stop functions                 problems (GSM Modem and SIM
+volts, low fuel alarm and loss of the  • Engine history event log                 Card required)
+speed sensing signal. The module       • Engine exercise mode                  • User-friendly set-up and button
+displays fault conditions on the       • Engine protection                        layout
+LCD display and via the LED            • Front panel mounting
+indicators on the front.               • Front panel programming               OPERATION
+                                       • Full engine diagnostics               The module is operated using the
+The module includes RS232 or           • Generator operating status            front STOP, AUTO and MANUAL
+RS485 communication capabilities                                               push buttons. An additional push
+for linking to a PC, sending SMS          warning                              button allows the user to scroll
+messages and interfacing with new      • LCD alarm indication                  through the LCD display.
+and existing vessel management         • LED alarm indication
+systems.                               • Manual start                          CONFIGURATION
+                                       • Multiple language options             The module can be configured using
+                                       • PC configurable                       the front panel buttons or the
+                                       • PIN protected programming             DSE810 interface and PC software.
+                                       • Power save mode
+                                       • Remote monitoring
+                                       • SMS messaging
+
+                                       BENEFITS
+                                       • Full integration into new & existing
+
+                                          vessel management systems
+                                       • Full engine protection &
+
+                                          instrumentation without the need
+                                          for additional senders (Electronic
+                                          engines only)
+ENVIRONMENTAL TESTING                        COMMUNICATIONS                                                                   EXPANSION MODULE
+STANDARDS                                    The DSE5310M has a number of different communication capabilities.               COMPATIBILITY
+                                                                                                                              DSE157 Relay Input Expansion
+ELECTRO MAGNETIC CAPABILITY                  SMS Messaging                                                                    Module
+BS EN 61000-6-2                              When the module detects an alarm condition, it has the ability to send an        DSE545 & DSE 548 Remote
+EMC Generic Emission Standard for the        SMS message to a dedicated mobile number, notifying an engineer of the           Annunciation Expansion Module
+Industrial Environment                       problem. (GSM Modem and SIM Card required)                                       DSE130 Input Expansion Module
+BS EN 61000-6-4
+EMC Generic Emission Standard for the        Remote Communications                                                            ELECTRONIC ENGINE
+Industrial Environment                       When the module detects an alarm condition, it dials out using suitable          COMPATIBILITY
+                                             modem to a PC notifying the user of the exact alarm condition.                   • Cummins
+ELECTRICAL SAFETY                                                                                                             • Deutz
+BS EN 60950                                  Vessel Management                                                                • John Deere
+Safety of Information Technology Equipment,  The module has been designed to be integrated into new and existing vessel       • MTU
+including Electrical Business Equipment      management systems.                                                              • Perkins
+                                                                                                                              • Scania
+TEMPERATURE                                  PC Software                                                                      • Volvo
+BS EN 60068-2-2                              The module has the ability to be configured and monitored from a remote          • Generic
+Test Ab to +70oC 60067-2-2 Hot               PC, using the DSE810 interface.                                                  • Plus additional manufacturers
+Test Ab to -30oC 60068-2-1 Cold
+                                             EVENT LOG
+VIBRATION                                    The module includes a comprehensive event log that shows the 30 most
+BS EN 60068-2-6                              recent alarm conditions and the date and time that they occurred. This
+Ten sweeps in each of three major axes       function assists the user when fault finding and maintaining a generating set.
+5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+                                             INSTRUMENTATION
+HUMIDITY                                     The module provides advanced metering facilities, displaying the information on
+BS 2011 part 2.1 60068-2-30                  the LCD display. The information can be accessed using the display scroll push
+Test Cb Ob Cyclic                            buttons located next to the LCD display.
+93% RH @ 40oC for 48 hours
+
+SHOCK
+BS EN 60068-2-27
+Three shocks in each of three major axes
+15gn in 11mS
+
+                                              5310M
+
+                                             Generator Instruments
+                                             Volts, Hz, Amps, kW, kVA, Pf,Kwh, kVAr,
+                                             kVArh, KVAh
+
+                                             Engine Instruments
+                                             RPM, Oil Pressure, Coolant Temperature,
+                                             Hours Run, Charging Voltage, Battery Volts.
+
+                                             Electronic Engines
+                                             Enhanced Instrumentation and Engine ECU
+                                             diagnostics via electronic engine interface.
+
+                                             RELATED MATERIALS                             PART NO’S
+                                             TITLE                                         053-047
+                                             DSE5310M Installation Instructions            057-079
+                                             DSE5310M Manual                               055-045
+                                             DSE157 Data Sheet                             055-049
+                                             DSE545 & DSE548 Data Sheet                    055-047
+                                             DSE130 Data Sheet                             057-006
+                                             52/53xx Software Manual                       057-004
+                                             CAN & DSE wiring guide
+                                                                                                                                                                                                                                                                                                                         ®
+
+DSE5310M
+
+                   CTs MUST BE 5 AMP                             CONNECT TO BATTERY
+                        SECONDARY                                          NEGATIVE
+
+              P1                                       P2                                                2 AMP                                                                                                                                                                                      L1
+L1                                            S2                                                         FUSES
+                                                                                                                                                                                                                                                                                                    L2
+                       S1
+                                                                                                                                                                                                                                                                                                    L3 TO LOAD
+L2                                                                                                                                                                                                                                                                                                            SWITCHING
+                                                                                                                                                                                                                                                                                                                 DEVICE
+    FROM
+GENERATOR L3                                                                                                                                                                                                                                                                                        N
+
+N
+
+                                                                                                                                                                                                                                 MPU
+
+                                         39 40 41 42             35 36 37 38                                                                                                                                                     17 18 16                                                           CONNECT TO
+                                                                                                                                                                                                                                                                                                    BATTERY NEGATIVE
+                                          CT1 CT2 CT3 COM           L1 L2 L3 N
+                                                 GEN CURRENT             GEN VOLTS
+
+                                                                 4 5 9 44 45 46 47                                                              P810           MODULE 5310M
+                   BATTERY                                       FUEL                                                                            157         PLANT +VE                                                  OUTPUTS        CANBUS
+                                                                           CRANK
+                                                                                      CHG ALT                                                        IMPUTS                                                                      20 21 22
+                                                                                                 OIL                                                                                                                    USER CONFIGURABLE +VE INPUT
+              -VE                        +VE                                                                WATER                                                                                                                 USER CONFIGURABLE +VE INPUT
+                                                                                                                      FUEL                                                                                                                   USER CONFIGURABLE +VE INPUT
+                                                                                                                                 SENDER COMMON
+                                                                                                                                                                                                                                                                              COM
+              1                          2                    3                                                                                 10 11 12 13 14 15                                                       678                                                            H
+                                                                                                                                                                                                                                                                                                 L
+                                              EMERGENCY STOP                  LOW OIL PRESSURE
+                                                                                        HIGH COOLANT TEMP
+                   MIN 2 AMP MAX 20 AMP       UPTO 32 AMPS                        CONNECT TO
+                      ANIT-SURGE FUSE            FUSE                                              FUEL LEVEL SERVERBATTERY NEGATIVE
+                                                                                                                                   USER CONFIGURABLE -VE INPUT 1
+                                                                                                                                             USER CONFIGURABLE -VE INPUT 2NOTE 1
+                                                                                                                                                        USER CONFIGURABLE -VE INPUT 3
+                   BATTERY                                       FUEL         WL                                                                                   USER CONFIGURABLE -VE INPUT 4
+
+                                                                                        CHARGE                                                                               USER CONFIGURABLE -VE INPUT 5
+                                                                                           ALT                                                                                           USER CONFIGURABLE -VE INPUT 6
+
+                                                                       CRANK                                                                                                                                               NOTE 2. 120 R TERMINATING RESISTOR MAY
+                                                                                                                                                                                                                           BE REQUIRED EXTERNALLY
+                                         TERMINALS SUITABLE FOR 22-16 AWG (0.6mm - 1.3mm ) FIELD WIRING                                                                                                                    SEE ENGINE MANUFACTURERS LITERATURE
+
+                                         NOTE 1                                                                                                                                                                         TIGHTENING TORQUE = 0.8Nm (7lb-in)
+                                         THESE CONNECTIONS MUST BE ON THE ENGINE BLOCK, AND MUST
+                                         BE TO THE SENDER BODIES.
+                                         THE WIRE TO TERMINAL 47 MUST NOT BE USED TO PROVIDE A
+                                         BATTERY NEGATIVE CONNECTION TO ANY OTHER DEVICE
+

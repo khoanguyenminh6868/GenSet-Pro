@@ -1,0 +1,178 @@
+                                                                                                                                                                                                                                                            ®
+
+         DSEGenset
+
+DSE4310/20                                                                                                               ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START AND AUTO MAINS FAILURE                                                                                          ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULES                                                                                                            BS EN 61000-6-2
+                                                                                                                           EMC Generic Immunity Standard for
+FEATURES                                                                                                                   the Industrial Environment
+                                                                                                                           BS EN 61000-6-4
+                                                                                                                           EMC Generic Emission Standard for
+                                                                                                                           the Industrial Environment
+
+The DSE4310 Auto Start Control         Electronic J1939 (CAN) and non-     *AVAILABLE VARIANTS                           ELECTRICAL SAFETY
+Module and the DSE4320 Auto            electronic (alternator sensing)                                                   BS EN 60950
+Mains (Utility) Failure Control        engine support for diesel, gas and    4310-01 Auto Start                          Safety of Information Technology Equipment,
+Module are suitable for a wide         petrol engines all in one variant.                                                including Electrical Business Equipment
+variety of single gen-set              With a number of flexible inputs,    4310-02 Auto Start with current measurement
+applications.                          outputs and protections, the                                                      TEMPERATURE
+                                       modules can be easily adapted to     4320-01 Auto Mains Failure                   BS EN 60068-2-1
+Whilst maintaining functions           suit a wide range of applications                                                 Ab/Ae Cold Test -30 oC
+included within higher end             including lighting towers with the   4320-02  Auto Mains Failure with current     BS EN 60068-2-2
+controllers, such as generator or      added option for staged loading               measurement                         Bb/Be Dry Heat +70 oC
+load power monitoring, the             outputs.
+DSE43xx range of especially                                                                                              VIBRATION
+compact controllers provide the        Through USB Communication both                                                    BS EN 60068-2-6
+user with the ultimate size to         modules can be easily configured                                                  Ten sweeps in each of three
+feature ratio.                         using the DSE Configuration Suite                                                 major axes
+                                       PC Software or can be fully                                                       5 Hz to 8 Hz @ +/-7.5 mm,
+Monitoring engine speed, oil           configured through the module's                                                   8 Hz to 500 Hz @ 2 gn
+pressure, coolant temperature,         front panel editor.
+frequency, voltage, current, power                                                                                       HUMIDITY
+and fuel level, the modules will give  All DSE products are supported by                                                 BS EN 60068-2-30
+comprehensive engine and               the DSE global technical support                                                  Db Damp Heat Cyclic 20/55 oC
+alternator protection. This will be    team which gives our customers                                                    @ 95% RH 48 Hours
+indicated on the largest back-lit      and end users access to 24 hour                                                   BS EN 60068-2-78
+LCD icon display in its class via an   system help and advice.                                                           Cab Damp Heat Static 40 oC
+array of warning, electrical trip and                                                                                    @ 93% RH 48 Hours
+shutdown alarms.
+                                                                                                                         SHOCK
+                                                                                                                         BS EN 60068-2-27
+                                                                                                                         Three shocks in each of three major axes
+                                                                                                                         15 gn in 11 mS
+
+                                                                                                                         DEGREES OF PROTECTION
+                                                                                                                         PROVIDED BY ENCLOSURES
+                                                                                                                         BS EN 60529
+                                                                                                                         IP65 - Front of module when installed into the
+                                                                                                                         control panel with the optional sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+                           PC
+
+                                                   4                        4                                3
+
+USB                                  CONFIGURABLE          DC OUTPUT                           ANALOGUE SENDERS             DC POWER
+PORT                                 INPUTS                (2 for DSE4310)                                                  SUPPLY
+
+                                                                            +
+
+DSE4310/20                                                                                                                                    DEUTZ
+                                                                                                                                              ISUZU
+                  7                    *SEE AVAILABLE VARIANTS ABOVE                                                                          PERKINS
+                                                                                                                                              CATERPILLAR
+                 OTHER  DC OUTPUT      GENERATOR /         DC OUTPUT        GENERATOR            CHARGE                  FUEL AND START       MTU
+                        4320 1 OF 4    LOAD CURRENT        4310 1 OF 2      SENSING              ALTERNATOR              OUTPUTS              VOLVO
+MAINS (UTILITY)                                            4320 1 OF 4                                                                        CUMMINS
+SENSING                                                                            VOLTS              D +                (Flexible with CAN)  SCANIA
+(DSE4320)
+                                                                                          1ph           W/L                                   ELECTRONIC
+      VOLTS                                                                               N                                                   ENGINE CAN
+
+                        +                                  +                                                             +
+
+      1ph                  1                          1ph     1
+
+      N
+
+                                                                                                                                              ISSUE 1
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE4310/20                                                                                                                                          SPECIFICATION
+
+AUTO START AND AUTO MAINS FAILURE                                                                                                                   DC SUPPLY
+CONTROL MODULES                                                                                                                                     CONTINUOUS VOLTAGE RATING
+                                                                                                                                                    8 V to 35 V Continuous
+FEATURES
+                                                               DSE4320                                                                              CRANKING DROPOUTS
+                                                                                                                                                    Able to survive 0 V for 50 mS, providing
+  DSE4310                                                                                                                                           supply was at least 10 V before dropout and
+                                                                                                                                                    supply recovers to 5 V. This is achieved
+KEY BENEFITS                         • IP65 rating (with optional                                        • 4 configurable DC outputs (2 for         without the need for internal batteries.
+• Ultimate size to feature ratio        gasket) offers increased                                            DSE4310)                                LEDs and backlight will not be maintained
+• Automatically transfers between       resistance to water ingress                                                                                 during cranking.
+                                                                                                         • 3 configurable analogue/digital
+   mains (utility) and generator     KEY FEATURES                                                           inputs                                  MAXIMUM OPERATING CURRENT
+   (DSE4320 only)                    • Largest back-lit icon display in                                                                             85 mA at 12 V, 96 mA at 24 V
+• Hours counter provides accurate                                                                        • 4 configurable digital inputs
+   information for monitoring and       its class                                                        • Configurable staged loading              MAXIMUM STANDBY CURRENT
+   maintenance periods               • Current sensing options                                                                                      51 mA at 12 V, 47 mA at 24 V
+• User-friendly set-up and button                                                                           outputs
+   layout for ease of use               available                                                        • CAN and alternator speed                 MAXIMUM SLEEP CURRENT
+• Multiple parameters are            • Fully configurable via the fascia                                                                            35 mA at 12 V, 32 mA at 24 V
+   monitored simultaneously which                                                                           sensing in one variant
+   are clearly displayed on the         or PC using USB                                                  • 3 engine maintainance alarms             MAXIMUM DEEP SLEEP CURRENT
+   largest back-lit icon display in     communication                                                    • Engine speed protection                  <10 uA at 12 V, <10 uA at 24 V
+   its class                         • Extremely efficient power save                                    • Engine hours counter
+• The module can be configured          mode                                                             • Engine pre-heat                          MAINS (UTILITY) DSE4320 ONLY
+   to suit a wide range of           • Single phase generator sensing                                    • Engine run-time scheduler                VOLTAGE RANGE
+   applications                      • Single phase mains (utility)                                      • Engine idle control for starting &       15 V to 415 V AC (Ph to N)
+• Compatible with a wide range          sensing (DSE4320 only)                                                                                      26 V to 719 V AC (Ph to Ph)
+   of CAN engines, including tier 4  • Compatible with 600 V ph - ph                                        stopping
+   engine support                       nominal systems                                                  • Battery voltage monitoring               FREQUENCY RANGE
+• Uses DSE Configuration Suite       • Generator/load power                                              • Start on low battery voltage             3.5 Hz to 75 Hz
+   PC Software for simplified           monitoring (kW, kV A, kV Ar, pf)                                 • Configurable remote start input
+   configuration                     • Generator overload protection                                     • 1 alternative configuration              OUTPUTS
+• Licence-free PC software              (kW)                                                             • Comprehensive warning,                   OUTPUT A (FUEL)
+                                     • Generator/load current                                                                                       10 A short term, 5 A continuous,
+                                        monitoring and protection                                           electrical trip or shutdown             at supply voltage
+                                     • Fuel and start outputs                                               protection upon fault condition
+                                        (configurable when using CAN)                                    • LCD alarm indication                     OUTPUT B (START)
+                                                                                                         • Event log (15)                           10 A short term, 5 A continuous,
+                                                                                                                                                    at supply voltage
+                                                                                                         PART NO’S
+                                                                                                         053-158                                    AUXILIARY OUTPUTS C & D
+                                                                                                         057-177                                    2 A DC at supply voltage
+                                                                                                         057-178
+                                                                                                                                                    AUXILIARY OUTPUTS E & F DSE4320
+                                                                                                                                                    2 A DC at supply voltage
+
+                                                                                                                                                    GENERATOR
+                                                                                                                                                    VOLTAGE RANGE
+                                                                                                                                                    15 V to 415 V AC (Ph to N)
+                                                                                                                                                    26 V to 719 V AC (Ph to Ph)
+
+                                                                                                                                                    FREQUENCY RANGE
+                                                                                                                                                    3.5 Hz to 75 Hz
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    140 mm x 113 mm x 43 mm
+                                                                                                                                                    5.5’’ x 4.4” x 1.7”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    118 mm x 92 mm
+                                                                                                                                                    4.6’’ x 3.6”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40°C to +85°C
+
+                                                                                                                                                    OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30°C to +70°C
+                                                                                                                                                    -40°C to +70°C (for heated display variant)
+
+RELATED MATERIALS                                                                                                                                   OPTIONAL PARTS  PART NUMBER
+                                                                                                                                                                    020-282
+TITLE                                                                                                                                                 PART
+DSE4310/20 Installation Instructions                                                                                                                  IP65 Gasket
+DSE4310/20 Operator Manual
+DSE4310/20 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                  055-154/01/16 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

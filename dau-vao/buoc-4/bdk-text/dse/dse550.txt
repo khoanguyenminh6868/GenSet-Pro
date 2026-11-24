@@ -1,0 +1,315 @@
+                  DEEP SEA ELECTRONICS PLC                                                            550
+
+                                                                                                      AUTO START
+                                                                                            SYNC/LOAD SHARE
+
+                                                                                                               MODULE
+
+                                                                                                                               Issue 6
+                                                                                                                        VH 18/01/02
+
+FEATURES                                    DESCRIPTION
+
+Ø Auto sync versions provide                The Model 550 is an Automatic Engine
+                                            Control Module. The module is used to
+      automatic voltage and frequency
+      matching with check sync function     automatically start and stop the engine,
+      integrated into the control logic.    indicating the operational status and fault
+                                            conditions by means of an LCD display
+Ø Load share versions provide a             and a flashing LED on the front panel.
+      dedicated multi-set communications    Selected operational sequences, timers
+      port allowing up to 16 generators to  and alarms can be altered by the user.
+      load share, starting/stopping         Alterations to the system are made using
+                                            the 810 interface and a PC. This interface
+      independent sets in the system        also provides real time diagnostic facilities.
+      according to load demand.
+
+Ø Comprehensive   remote                    It is also possible to monitor the operation
+                                            of the system either locally or remotely.
+communication via optional RS232                                                            Optional, on Power Measurement
+                                            (Optional: Remote Communications output         version only:
+port. Provides RS232 Modem link to          versions only). Access to the module is         Generator kVA L1,L2,L3, Total
+                                            protected by PIN number to prevent              Generator kW L1,L2,L3, Total
+PC via either PSTN line or GSM              unauthorised access.                            Generator pf L1,L2,L3,Average
+                                                                                            Generator kVAr L1,L2,L3, Total
+network (with suitable modem).                                                              Generator KWh
+                                                                                            Generator KVAh
+Uniquely the module supplies DC                                                             Generator KVArh
+                                                                                            Generator Phase Sequence
+power to the modem to ensure                Operation of the module is via pushbutton       Synchroscope Display with check
+                                            controls (with security locking facility)       sync
+integrity of link during loss of mains
+                                            mounted on the front panel with                 The instrumentation displays are
+and engine starting. The module can         STOP/RESET, AUTO, MANUAL and                    supplemented further by LCD
+                                            START pushbuttons. The first three              display pages covering operating
+also signal Engineers via their cell        pushbuttons feature LED ‘selected’              status and alarms. The selected
+                                            indications. Further pushbuttons provide        page is displayed along with an
+phones using the GSM SMS                    MUTE/LAMP TEST, LCD PAGE and                    LED tell-tale:
+                                            DISPLAY SCROLL functions.                       Status Page, Alarm Page, Engine
+messaging system to advise of                                                               Instruments Page,
+                                                                                            Generator Instruments Page, Event
+system alarms.                                                                              Log Page
+
+Ø Optional RS485 ‘Modbus’ output -                                                          LED indication is provided for
+                                                                                            Alarm present.
+using  industry   standard                                                                  4 uncommitted LED’s allow the user
+                                                                                            to configure the module to provide
+communication protocol allows full          The  module  features  32-Bit                   other status indications from either
+                                                                                            internal states or from external
+system integration into new and             Microprocessor control and a                    digital inputs.
+
+existing building management and            comprehensive list of timers and pre-           The module accepts the following
+                                                                                            digital inputs:
+control schemes.                            configured sequences. This allows               Emergency Stop Input - A N/C DC
+                                                                                            positive input
+Ø ‘Basic’ module provides a number of       demanding specifications to be achieved.        Fully configurable warning or
+                                                                                            shutdown inputs
+      control and monitoring features with  Configurable expansion facilities are also
+      expansion capabilities to meet with                                                   Description continues overleaf…
+      more demanding specifications. The    provided .
+      ideal choice where a remote                                                           Deep Sea Electronics plc reserve the right to change
+                                            The 550 module provides metering and            specification without prior notice.
+      communications control system is      alarm facilities via the LCD display with
+      specified (when used with one of the
+      comms output options above).          the following instrumentation displays,
+                                            accessed via the LCD PAGE and
+                                            DISPLAY SCROLL push-buttons:
+
+Ø ‘Enhanced power measurement’              Generator Volts L1-N, L2-N, L3-N
+      module provides all the functions of  Generator Volts L1-L2, L2-L3, L3-L1
+
+      ‘Basic’ unit but also includes full   Generator Amps L1,L2,L3
+      power monitoring instrumentation      Generator Frequency Hz
+      (detailed right).                     Engine Speed RPM
+                                            Engine Oil Pressure
+The 500 series modules have
+been designed for front panel               Engine Temperature
+mounting. The module is fitted              Plant battery Volts
+                                            Engine Hours Run
+into the cut-out with the fixing            Number of Start Attempts
+
+clips removed. These are then               Remaining time until Maintenance due
+fitted from the rear. Connection
+is via locking plug and socket
+connectors.
+DESCRIPTION                                                                              TIMERS AND  INPUT
+Continued                                                                                FUNCTIONS
+
+With the exception of the Emergency          Ø Generator Short Circuit Protection        Ø Start delay timer
+Stop Input, these are configurable to be                                                 Ø Stop delay timer
+either N/C or N/O contacts connected to      Ø Reverse  Power                (‘Power     Ø Crank/Crank rest timers
+the -Ve DC. The nine fully configurable                                                  Ø Engage attempt and manual crank
+auxiliary inputs can be selected to be       Measurement’ Version only)
+indication, warning or shutdown inputs                                                         limit timers
+either immediate or held off during start    Ø Generator Phase rotation error (‘PM’      Ø Safety on delay timer
+up to allow for use as protection                  Version only)                         Ø Warm-up timer
+expansion inputs. Alternatively they may                                                 Ø Cooling timer
+be configured to control extra functions     Ø Earth Fault Protection(‘PM’ Version       Ø Energise to stop hold timer
+such as manual load switching, Lamp                only)                                 Ø Pre-heat timer / Pre-heat bypass
+Test or Remote Start input, Generator
+Start signal and many others - refer to      Ø Loss of speed sensing signal                    timer
+appropriate manuals for details.                                                         Ø Smoke limiting control timers
+                                             Ø Fail to Sync (PM Version only)            Ø Fail to come to rest timer
+Engine analogue inputs are provided for                                                  Ø Over-speed overshoot timer
+Oil Pressure and Engine Temperature.         Ø MPU Open circuit failure along with       Ø Breaker pulse control timers
+These connect to conventional engine               any configurable input alarms as      Ø DC Battery alarm delay timers
+mounted resistive sender units (such as            selected. Alarms are indicated by an  Ø Sync/Fail to Sync timer (PM
+VDO or Datcom Type) to provide
+accurate monitoring and protection                 LCD Message, LED illumination and           Versions Only)
+facilities. Alternatively they can be              Audible Alarm.
+configured to interface with digital switch
+type inputs for Low Oil Pressure and         SPECIFICATION
+High Engine Temperature shutdowns.
+                                             DC Supply:                                  INTERFACE OPTIONS
+Relay outputs are provided for Fuel          8 to 35 V Continuous.
+Solenoid Output, Start Output and four                                                   P120 Specification
+configurable outputs. The configurable       Cranking Dropouts:                          DC Supply:
+relay functions can be selected from a       Able to survive 0 V for 50 mS, providing    8-35V DC continuous. Reverse polarity
+range of 100+ different functions,           supply was at least 10 V before dropout     protected
+conditions or alarms. The relays supply      and supply recovers to 5V. This is          Max. Operating Current:
+positive plant supply out. Additional                                                    75mA at 12V, 45mA at 24V
+output relays can be added by means of       achieved without the need for internal      Minimum Load Impedance:
+up to two 157 Relay Expansion Modules.                                                   1000 Ω
+A total of 20 outputs are available with     batteries.
+full expansion of the 550 Module. This                                                   P121 Specification
+allows the module system to be               Max. Operating Current:                     AC Input Voltage range:
+incorporated into existing telemetry or      513mA at 12 V. 263 mA at 24 V.              152 V (ph-N) to 305V (ph-N) AC (+20%)
+Building Management Schemes via Volt-                                                    AC Input Frequency:
+free contacts. Refer to appropriate          Max. Standby Current:                       50 to 75 Hz at rated engine speed
+manuals for details.                         370 mA at 12 V. 210 mA at 24 V.             Minimum Load Impedance:
+                                                                                         1000 Ω
+Multiple alarm channels are provided to      Alternator Input Range:
+monitor the following:                       15V(ph-N) to 277V(ph-N) AC (+20%)           P122 Specification
+                                                                                         DC Supply:
+Ø Under/Over Generator Volts                 Alternator Input Frequency:                 8-35V DC continuous. Reverse polarity
+                                             50 - 60 Hz at rated engine speed            protected
+Ø Over-current                               (Minimum: 15V AC Ph-N)                      Max. Operating Current:
+                                                                                         250mA at 12V, 125mA at 24V
+Ø Under/Over Generator Frequency             Magnetic Pick-up Voltage Input              Output Rating:
+                                                                                         0.6W
+Ø Under/Overspeed                            Range:
+                                             +/- 0.5 V to 70 V Peak
+Ø Charge Fail                                Magnetic Input Frequency: 10,000 Hz
+                                             (max)
+Ø Emergency Stop
+                                             Start Relay Output:
+Ø Low oil pressure                           16 Amp DC at supply voltage.
+
+Ø High engine temperature                    Fuel Relay Output:
+                                             16 Amp DC at supply voltage.
+Ø Fail to Start
+                                             Auxiliary Relay Outputs:
+Ø Low/High DC Battery Volts                  5 Amp DC at supply voltage.
+
+Ø Fail to come to rest                       Dimensions:
+                                             192 X 144 X 138
+
+                                             Charge Fail / Excitation Range:
+                                             0 V to 35 V
+
+                                             Operating Temperature Range:
+                                             -30 to +70°C
+
+                                                  NOTE
+
+                                             An Automatic mains failure version of
+                                             the 550 is also available (Model
+                                             555). This combines all the features
+                                             of the 550 coupled with built-in mains
+                                             monitoring and change-over
+                                             contactor control. Please refer to
+                                             Deep Sea Electronics for details.
+TELEMETRY                                       BUILT-IN FUNCTIONS                      SYNCHRONISING
+                                                                                        AND LOAD SHARING
+The 550 module provides the user with           Ø Alternator Under/Over Volts           OPTIONS
+the option of full telemetry facilities via           Warning/Shutdown
+the optional communications software.                                                   Ø Sync check
+The module can be either connected to           Ø Alternator Under/Over Freq.           Ø Governor/engine speed control
+the PC using the 810 interface or via a               Warning/Shutdown                  Ø AVR/voltage control
+suitable modem (Optional: Remote                                                        Ø Dead bus sensing
+Communications output version only -            Ø Under/Over Speed                      Ø Synchroscope
+RS232 or RS485 available).                            Warning/Shutdown
+                                                                                        Ø kW Load share for multiple sets
+The PC software is MS-WindowsTM                 Ø Low Oil Pressure                      Ø Multi-set load demand operation
+based and allows the operator to control              Warning/Shutdown
+the module from a remote location.                                                      Optional:
+                                                Ø High Engine Temp                      Ø P120 analogue governor interface
+The remote operator can also view the                 Warning/Shutdown                  Ø P121 analogue AVR interface
+instrumentation, Alarm and Data log                                                     Ø P122 Digital resistance interface
+details, and the relay and input status.        Ø High/Low Battery Volts Warning
+                                                Ø Over-current Warning/Electrical       Hz +0.9  V +0.2
+All access is password controlled so
+unauthorised operators cannot log onto                Trip/Shutdown                     ENVIRONMENTAL
+the system.                                     Ø Reverse Power Electrical              TESTING STANDARDS
+
+Additionally, in the event of the module              Trip/Shutdown (Option)            Electromagnetic Compatibility
+detecting an alarm condition, it will initiate  Ø Phase sequence Electrical             BS EN 50081-2 EMC Emission Standard
+a modem dial out to the host PC to                                                      for the Industrial Environment
+inform the remote operator of the                     Trip/Shutdown (Option)
+problem, giving identification of the           Ø Earth Fault Shutdown (Option)         BS EN 50082-2 EMC Immunity Standard
+module followed by the alarm event and          Ø Short Circuit Fault Electrical        for the Industrial Environment
+the time and date of occurrence
+(Optional: Remote Communications                      Trip/Shutdown                     Vibration
+output version only).                           Ø Adjustable crank cycle/attempts       BS EN 60068-2-6 Ten sweeps (up and
+                                                Ø Maintenance due alarm function        back down) at 1 octave/minute in each of
+If using a GSM modem, the module is             Ø External remote start input (On       the three major axes.
+also able to send text messages to a                                                    5Hz to 8 Hz @ +/-7.5mm constant
+GSM cell phone to indicate genset, site               load/Off load/on load demand)     displacement.
+and alarm condition.                            Ø Built in Exercise Scheduler           8Hz to 500 Hz @ 2gn constant
+                                                Ø Magnetic Pick-up or Alternator        acceleration
+EVENT CAPTURE
+                                                      speed monitoring                  Temperature
+The standard module features event              Ø Synchroscope with auto sync           Cold:
+capture facilities, this records the last                                               BS EN 60068-2-1-to -300 C
+25 shutdown alarms allowing the                       output (Option)                   Hot:
+operator to view the recent operating           Ø Event Logging of Shutdown             BS EN 60068-2-2 to 700 C
+history of the module to assist in fault
+finding, etc.                                         Alarms                            Humidity
+                                                Ø Full Remote Control and               BS EN 2011 part 2.1 93% RH @ 400 C
+Event Log:-                                                                             for 48 hours
+                                                      Telemetry (Option)
+19 Apr2000                                      Ø Graphic LCD Display for true          Shock
+14:34:14                                                                                BS EN 60068-2-27 Three half sine
+                                                      Multi-lingual use                 shocks in each of the three major axes
+CONFIGURATION                                   Ø Multi-lingual capability - 4 default  15gn amplitude. 11mS duration.
+
+PC based configuration software allows                Languages.                        Electrical Safety
+for fast, simple and secure configuration       Ø 9 Digital inputs - Fully user         BS EN 60950 Low Voltage
+of module parameters. Utilising the P810                                                Directive/Safety of information
+interface to provide a safe isolated link to          configurable                      technology equipment, including
+the PC, changes can easily be made to           Ø 4 Configurable relay outputs          electrical business equipment.
+the system by authorised personnel.
+Access is PIN number protected.                       (100+ Control functions)
+                                                Ø LCD Back-lighting for low light
+Complex configurations can be saved
+and loaded from disk or output to a                   level operation
+printer for reference. Diagnostic facilities    Ø System lock input
+allow for fault finding and monitoring          Ø Load switching control push-
+during test and installation.
+                                                      button inputs
+                                                Ø Security via PIN Number
+
+                                                      restricted access
+                                                Ø SMS messaging capability with
+
+                                                      suitable GSM Modem
+                                                Ø Limited configuration from front
+
+                                                      panel - including user language
+                                                      selection
+CASE DIMENSIONS
+
+137mm                                           144.0mm                                                :
+
+                                                                                                       157 ü
+                                                                                                       808 û
+
+                                                                                                                                     CE
+
+                           110.0mm                                                                 185.0mm
+                                                                                                   192.0mm
+                                       7.5mm                       Panel Cut-out:138mmx185mm
+
+TYPICAL CONNECTIONS                                                      LOAD                          NOTE:-
+                                                                                                       When connected to a
+               Refer to Operators Manual for further Information   L1 L2 L3 N                          completed Panel / Gen-set
+                                                                                                       Real-time diagnostic display
+                                                                                                       is available
+
+                                                                                             810
+                                                                                        Configuration
+
+                           F  F     F  Optional 157 Relay                                                   Safety Earth Connection
+                                                                                                            Must be connected to
+                                       Expansion Board                                                      the Safety Earth
+                                        (Maximum 2 off)
+
+             252627     Generator Loading 29 34 33 32 31 36 35 40 39 38 FCC68 - 4 Way FCC68 - 8 Way 30
+       1 23
+                                                                               Request Relay
+
+                                                    Generator Loading
+                                                    Relay
+
+                        5           4  8 20 21                     22 24 23  9 10 11 12 1314 15 16 17 6 7 18 19
+
+                                                                                                                 4
+
+       F             F                                       Oil             Temp
+                                                           Sender            Sender
+
+                                       MPU
+
+                                       These Ground connections must be              5
+                                       on the engine block and must
+                                       be a sound electrical connection                 6              Configurable inputs
+                                       to the sender bodies.
+                                       The wire to Terminal 24 must not                    7
+                                       be used to provide a ground                              8
+                                       connection to any other device                               9
+
+                                                 Deep Sea Electronics plc
+
+                        Highfield House, Hunmanby Industrial Estate, North Yorkshire, YO14 0PH, England
+                        Tel: +44 (0) 1723 890099 Fax: +44 (0) 1723 893303 E-mail sales@deepseaplc.com
+

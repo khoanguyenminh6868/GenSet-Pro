@@ -1,0 +1,93 @@
+                                 DEEP SEA ELECTRONICS PLC                                       520
+
+                                                                                           Automatic
+                                                                                                   Start
+
+DESCRIPTION                                                                                                                        Issue 4
+                                                                                                                            VH 23/10/01
+The Model 520 is an Automatic Engine         Configurable inputs are available for:
+Control Module designed to                                                                 DC Supply:
+automatically start and stop the engine. It   Low Oil Pressure                            8 to 35 V Continuous.
+will indicate the operational status and      High Engine Temperature                     Cranking Dropouts:
+fault conditions, automatically shut down     Remote Start.                               Able to survive 0 V for 50 mS,
+the engine and indicate the engine failure                                                 providing supply was at least 10 V
+by a flashing LED on the front panel.        This allows the module to function with       before dropout and supply recovers
+Other simultaneous faults are indicated      normally open or normally closed switches.    to 5V. This is achieved without the
+by steady LED.                               Four fully configurable auxiliary inputs are  need for internal batteries.
+                                             provided to give protection expansion.        Max. Operating Current:
+Selected operational sequences, timers       These can be selected to be indication,       290 mA at 12 V. 210 mA at 24 V.
+                                             warning or shutdown inputs either             Max. Standby Current:
+and alarms can be altered by the             immediate or held off during start up.        50 mA at 12 V. 30 mA at 24 V.
+                                                                                           Alternator Input Range:
+customer by using either the 807 hand        Uncommitted LED’s allow additional            15 - 300 V ac RMS
+                                             annunciation.                                 Alternator Input Frequency:
+held calibration unit or a PC and the 808                                                  50 - 60 Hz at rated engine speed.
+                                             Multiple alarm channels are provided to       Magnetic Input Range:
+interface.  This also provides the           monitor the following                         0.5 V to +/- 70 V (Clamped by
+                                                                                           transient suppressors)
+operator with ‘real-time’ diagnostic          Under/Overspeed                             Magnetic Input Frequency:10Hz
+                                              Charge Fail                                 to 10,000 Hz
+facilities to monitor the operation of the    Emergency Stop                              Start Relay Output:
+                                              Low oil pressure                            16 Amp DC at supply voltage.
+system either locally or remotely.            High engine temperature                     Fuel Relay Output:
+                                              Fail to Start                               16 Amp DC at supply voltage.
+Remote PC-controlled engine starting          Fail to stop                                Auxiliary Relay Outputs:
+                                              Loss of speed sensing                       5 Amp DC at supply voltage.
+and stopping is also featured.                Programmable inputs as selected             Dimensions:
+                                                                                           72 X 144 X 118.5mm (Excluding
+Operation of the module is via a three       First up alarm is indicated by a flashing     switch)
+position rotary switch (key-switch option    LED. Subsequent simultaneous alarms           Charge Fail / Excitation Range:
+available) mounted on the front panel        are displayed by a steady LED.                0 V to 35 V
+with STOP, AUTO and MANUAL                                                                 Operating Temperature Range:
+positions.                                     The 500 series modules have been            -30 to +70°C
+                                               designed for front panel mounting.
+Microprocessor control allows for              The module is fitted into the cut-out
+enhanced operation. The module                 with the fixing clips removed.
+features a comprehensive list of timers        These are then fitted from the rear.
+and pre-configured sequences. This             Connection is via locking plug and
+allows complex specifications to be            socket connectors
+achieved
+
+Configurable expansion facilities are
+provided.
+
+Relay outputs are provided for:
+
+ Fuel Solenoid Output
+ Start Output
+ 3 configurable outputs.
+
+Normally the relays are configured as
+pre-heat, load transfer and alarm outputs.
+However the relay function is
+configurable to activate on a range of 32
+different functions, conditions or alarms.
+The relays supply positive plant supply
+out.
+CASE DIMENSIONS
+
+                                                                                               1      13
+
+65.5mm                                                          72.0mm
+
+                                                                                                  14                       23
+
+                                                       111.0mm                                                    144.0mm
+                                                                7.5mm Panel Cu t-o ut: 68mmx138.5mm
+TYPICAL CONNECTIONS
+
+                                                                                                                           NOTE:- When connected to
+
+                 F                                                                                                         a completed Panel/Gen-set
+
+                                                                                                                           Real time diagnostic
+
+                                                                                                                           status display is available
+
+F       F
+
+                                    Deep Sea Electronics plc
+
+           Highfield House, Hunmanby Industrial Estate, North Yorkshire, YO14 0PH, England
+           Tel: +44 (0) 1723 890099 Fax: +44 (0) 1723 893303 E-mail sales@deepseaplc.com
+

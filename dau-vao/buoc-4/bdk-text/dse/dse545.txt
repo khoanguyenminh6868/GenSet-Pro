@@ -1,0 +1,121 @@
+                                                            ®                                                                                                          ®
+
+DSEEXTRA                                                                                                          SPECIFICATION
+BATTERY
+CHARGERS                                                                                                          DC SUPPLY
+AND EXPANSION                                                                                                     Powered from the plant battery or from a low
+MODULES.                                                                                                          voltage supply between 8V and 35V continuous.
+                                                                                                                  It is able to survive 0V for 50ms during cranking,
+DSE545 & DSE548                                                                                                   providing supply was at least 10V before
+                                                                                                                  dropout and recovers to 5V. This is achieved
+LED EXPANSION CONTROL MODULES                                                                                     without the need for internal batteries.
+                                                                                                       DSE545
+                                                                                                                  MAXIMUM OPERATING CURRENT
+                                                                                                       DSE548     20mA @ 12V, 26mA @ 24V
+
+                                                                                                                  MAXIMUM STANDBY CURRENT
+                                                                                                                  107mA @ 12V, 113mA @ 24V
+
+                                                                                                                  A OR B MODE SELECTOR
+                                                                                                                  Recessed Jumper Selector on rear
+
+                                                                                                                  DSE545 DIMENSIONS
+                                                                                                                  72mm x 144mm x 59mm DIN rail mounted
+                                                                                                                  housing
+                                                                                                                  2.8” x 5.7” x 2.3”
+
+                                                                                                                  DSE548 DIMENSIONS
+                                                                                                                  144mm x 72mm x 59mm DIN rail mounted
+                                                                                                                  housing
+                                                                                                                  5.7” x 2.8” x 2.3”
+
+                                                                                                                  DSE545 CUT OUT
+                                                                                                                  68mm x 138.5mm
+                                                                                                                  2.7” x 5.5”
+
+                                                                                                                  DSE548 CUT OUT
+                                                                                                                  138.5mm x 68mm
+                                                                                                                  5.5” x 2.7”
+
+                                                                                                                  INDICATIONS
+                                                                                                                  Power On LED
+                                                                                                                  Link Lost (to controller) LED Flashing
+                                                                                                                  8 Configurable LED’s
+
+                                                                                                                  CONFIGURATION
+                                                                                                                  The module will automatically respond to signals
+                                                                                                                  from the host module. The module must be
+                                                                                                                  configured via the host module and a PC. The
+                                                                                                                  Expansion LED’s are numbered from 1 to 8 and
+                                                                                                                  appear on the output configuration menu.
+
+                                                                                                                  ENVIRONMENTAL TESTING
+                                                                                                                  STANDARDS
+
+The DSE545 and DSE548 are LED      FEATURES                            The LED’s can be configured to be          ELECTRO MAGNETIC CAPABILITY (EMC)
+expansion modules for the          • Eight configurable LEDs           either:                                    BS EN 61000-6-4
+DSE52xx, DSE53xx and the           • Works up to 50 meters from                                                   EMC Generic Emission Standard for the
+DSEPower® Series.                                                      • Extinguish on command                    Industrial Environment
+                                      the host module                  • Light on command                         BS EN 61000-6-2
+The modules have been designed     • Two modules can be linked                                                    EMC Generic Immunity Standard for the
+to display a maximum of eight                                          An additional LED indicates that a DC      Industrial Environment
+local or remote (max 50 metres)       together to provide 16 LED       power supply is being received. There
+individual LED indications.           indicators                       is also a flashing ‘Link Lost’ LED fitted  ELECTRICAL SAFETY
+                                   • Interconnecting FCC 68 cable      to indicate any communication              BS EN 60950
+The DSE545 is presented in a          for quick installation           problems with the host module.             Safety of Information Technology Equipment
+horizontal enclosure and the                                           When using two expansion modules           including Electrical Business Equipment
+DSE548 is presented in a vertical  OPERATION                           together each module should be
+enclosure.                         The LED’s are configured using the  identified as either ‘A’ or ‘B’. This is   TEMPERATURE
+                                   host module and the appropriate     done by positioning the selector           BS EN 60068-2-2
+                                   PC software interface.              switch on the rear of each module.         Test Ab to 70oC
+                                                                                                                  Test Ab to -30oC
+
+                                                                                                                  VIBRATION
+                                                                                                                  BS EN 60068-2-6
+                                                                                                                  Ten sweeps in each of the three major axes
+                                                                                                                  5Hz to 8Hz @ +/- 7.5mm
+
+                                                                                                                  HUMIDITY
+                                                                                                                  BS EN 60068-2-30
+                                                                                                                  Test Db 95% RH @ 55oC for 12 hours
+
+                                                                                                                  SHOCK
+                                                                                                                  BS EN 60068-2-27
+                                                                                                                  Three shocks in each of three major axes
+                                                                                                                  15gn in 11mS
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                               ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+RELATED MATERIALS                          PART NO’S                                                            TITLE                 PART NO’S
+TITLE                                      055-037                                                              DSE5510 data sheet    055-039
+DSE5210 & DSE 5220 data sheet              053-023                                                              DSE5510 manual        057-015
+DSE5210 manual                             057-016                                                              DSE5520 data sheet    055-040
+DSE5220 manual                             055-038                                                              DSE5520 manual        057-016
+DSE5310 & 5320 data sheet                  057-013                                                              DSE5560 data sheet    055-041
+DSE5310 manual                             057-014                                                              DSE5560 manual        057-017
+DSE5320 manual                             057-006                                                              55xx Software Manual  057-007
+52/53xx Software Manual
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                 055-049/01/16 (3)
+

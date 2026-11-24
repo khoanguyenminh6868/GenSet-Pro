@@ -1,0 +1,85 @@
+                                                                                                                                                                                                                                                   ®
+
+dseGenset
+
+dse125                                                                                                                                              ENVIRONMENTAL TESTING STANDARDS
+
+MSC CONVERTER                                                                                                                                         ELECTRO MAGNETIC COMPATIBILITY
+                                                                                                                                                      BS EN 61000-6-2
+The DSE125 MSC Converter           KEY FEATURE                                                                                                        EMC Generic Immunity Standard for the
+module is used to interface an     • Makes the DSE55XX/75XX MSC                                                                                       Industrial Environment
+MSC link containing DSE55XX                                                                                                                           BS EN 61000-6-4
+and DSE75XX modules with an           link compatible with the                                                                                        EMC Generic Emission Standard for the
+MSC link containing DSE8XXX           DSE8XXX                                                                                                         Industrial Environment
+series modules.
+                                   COMPATIBILITY TABLE                                                                                                ELECTRICAL SAFETY
+It achieves this by providing an                                                                                                                      BS EN 60950
+MSC link input for the DSE55XX     55/75 MSC               DSE125                                              8XXX MSC                               Safety of Information Technology
+and DSE75XX modules and                                 CONVERTER                                                  8X60                               Equipment, including Electrical Business
+another for the DSE8XXX series.    55/7510  55/7560                                                      8X10       NO       8X80                     Equipment
+This reduces the MSC link                                                                                 YES       YES       NO
+functionality of a system to that  YES      YES                                                           YES                 NO                      TEMPERATURE
+containing only DSE55XX and                                                                               YES                 NO                      BS EN 60068-2-1
+DSE75XX modules.                   YES        NO                                                                                                      Ab/Ae Cold Test -30 oC
+                                                                                                                                                      BS EN 60068-2-2
+3 red LEDs provide indication of   YES                                                                                                                Bb/Be Dry Heat +70 oC
+the module’s operational status.
+                                                                                                                                                      VIBRATION
+                                                                                                                                                      BS EN 60068-2-6
+                                                                                                                                                      Ten sweeps in each of three major axes
+                                                                                                                                                      5 Hz to 8 Hz @ +/-7.5 mm, 8 Hz to 500 Hz
+                                                                                                                                                      @ 2 gn
+
+                                                                                                                                                      HUMIDITY
+                                                                                                                                                      BS EN 60068-2-30
+                                                                                                                                                      Db Damp Heat Cyclic 20/55 oC @ 95% RH
+                                                                                                                                                      48 Hours
+                                                                                                                                                      BS EN 60068-2-78
+                                                                                                                                                      Cab Damp Heat Static 40 oC @ 93% RH
+                                                                                                                                                      48 Hours
+
+                                                                                                                                                      SHOCK
+                                                                                                                                                      BS EN 60068-2-27
+                                                                                                                                                      Three shocks in each of three major axes
+                                                                                                                                                      15 gn in 11 mS
+
+                                                                                                                                                      IP RATING
+                                                                                                                                                      BS EN 60529.
+                                                                                                                                                      Degrees of protection provided by
+                                                                                                                                                      enclosures IP21
+
+                                                                                                                                                    SPECIFICATION
+
+                                                                                                                                                     DC SUPPLY
+                                                                                                                                                     CONTINUOUS VOLTAGE RATING
+                                                                                                                                                     8 V to 35 V continuous
+
+                                                                                                                                                     CRANKING DROPOUTS
+                                                                                                                                                     Able to survive 0 V for 50 mS providing the
+                                                                                                                                                     supply was at least 10 V before the dropout
+                                                                                                                                                     and recovers to 5 V afterwards.
+
+                                                                                                                                                     MAXIMUM OPERATING CURRENT
+                                                                                                                                                     130 mA at 12 V, 70 mA at 24 V.
+
+                                                                                                                                                     MAXIMUM STANDBY CURRENT
+                                                                                                                                                     65 mA at 12 V, 35 mA at 24 V
+
+                                                                                                                                                     DIMENSIONS
+                                                                                                                                                     134 mm x 76 mm x 49 mm
+
+RELATED MATERIALS                           PART NO’S                                                    TITLE                                      PART NO’S
+TITLE                                       053-089                                                      DSE7560 Data Sheet                         055-067
+DSE125 Installation Instructions            055-039                                                      DSE8610 Data Sheet                         055-083
+DSE5510 Data Sheet                          055-041                                                      DSE8660 Data Sheet                         055-086
+DSE5560 Data Sheet                          055-065                                                      DSE8700 Data Sheet                         055-090
+DSE7510 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-101/7/11 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

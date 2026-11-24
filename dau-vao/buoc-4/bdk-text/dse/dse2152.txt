@@ -1,0 +1,198 @@
+DSENet® Data Sheet
+
+DSE2152 DSENet® Analogue Output Expansion Module
+
+Part Number: 2152-01
+
+Overview
+The DSE2152 Analogue Output Expansion Module is used in conjunction with supported DSENet® controllers to provide 6 additional outputs. The
+outputs can be individually configured as 0 to 10 V or 4 to 20 mA, via the ‘host controller’. LED indication is provided for ‘power on’ and ‘link lost’
+
+The DSE2152 is designed to be mounted within a control panel, either on the panel DIN rail utilising the integral mounts, or chassis mounted, utilising
+the mounting holes. Up to four DSE2152 modules can be linked together to provide up to 24 additional outputs. An ID switch is provided on the
+module for identification.
+
+Key Features
+• Analogue output expansion module for supported DSENet® controllers
+• 6 outputs configurable as 4 to 20 mA (0 to 20 mA) and 0 to 10 V DC
+• Power on / link lost LED
+• A maximum of 4 modules can be connected to 1 host control module to provide up to 24 additional configurable outputs
+• Works up to 1.2 km (0.75 miles) from the host controller
+• Terminal strip connection for quick and easy set up
+• Simplified configuration using DSE PC Configuration Suite Software through host controller
+
+                                                                                                         Product Approvals
+                                                                                                         + CE
+                                                                                                         + UL Listed: Standard - UL 6200:2019
+
+Product Documentation
+053-134 – DSE2152 Installation Instructions
+057-141 – DSE2152 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-112/08/26 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2152 DSENet® Analogue Output Expansion Module
+
+Part Number: 2152-01
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout and
+Continuous Voltage Rating                                                                                supply recovers to 5 V.
+Cranking Dropouts                                                                                        440 mA at 12 V, 360 mA at 24 V
+                                                                                                         200 mA at 12 V, 170 mA at 24 V
+Maximum Operating Current
+Maximum Standby Current                                                                                  6
+Analogue Outputs                                                                                         Configurable as:
+Number                                                                                                   0 - 10 V
+Type                                                                                                     4 - 20 mA
+                                                                                                         Minimum 1 kΩ when configured as 0 to 10 V
+Load Impedance                                                                                           Maximum 600 Ω when configured as 4 to 20 mA
+
+Communications                                                                                           1 Expansion Port
+DSENet®
+Temperature                                                                                              -30 °C to +70 °C / -22 °F to +158 °F
+Operating Temperature                                                                                    -40 °C to +85 °C / -40 °F to +185 °F
+Storage Temperature
+Dimensions                                                                                               164.6 mm x 76.4 mm x 48.9 mm / (6.48 ” x 3.01 ” x 1.93 ”)
+Overall (W x H x D)
+Mounting                                                                                                 35 mm / 1.35”
+DIN Rail                                                                                                 2 M4 mounting holes with 122.5 mm x 64.5 mm / 4.83 ” x 2.54 ” centres
+Chassis
+
+Product Documentation
+053-134 – DSE2152 Installation Instructions
+057-141 – DSE2152 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-112/08/26 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2152 DSENet® Analogue Output Expansion Module
+
+Part Number: 2152-01
+
+Related Products                 7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Bus Tie Controller                                                                                                  G8680-01
+DSEG8900                         Mains (Utility) Controller                                                                                          G8660-01
+DSEG8680                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         Advanced Single Genset Controller                                                                                   G7400-01
+DSEG8600                         Advanced Single Genset Controller                                                                                   G7300-01
+DSEG7400                         Synchronising Generator Bus Tie Control Module                                                                      8680-01
+DSEG7300                         Auto Transfer Switch & Mains (Utility) Control Module                                                               8660-02
+DSE8680                          Synchronising Auto Mains (Utility) Failure Load Share Control Module                                                8620-02
+DSE8660 MKII                     Synchronising & Load Sharing Auto Start Control Module                                                              8610-02
+DSE8620 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7420-03
+DSE8610 MKII                     Auto Start Control Module                                                                                           7410-03
+DSE7420 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7320-03
+DSE7410 MKII                     Auto Start Control Module                                                                                           7310-03
+DSE7320 MKII                     Auto Mains (Utility) Failure Control Module                                                                         6120-05
+DSE7310 MKII                     Auto Start Control Module                                                                                           6110-05
+DSE6120 MKIII
+DSE6110 MKIII                    Engine Only Control Module                                                                                          E800-01
+DSEControl®
+DSEE800
+
+Product Documentation
+053-134 – DSE2152 Installation Instructions
+057-141 – DSE2152 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-112/08/26 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2152 DSENet® Analogue Output Expansion Module
+
+Part Number: 2152-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Information Technology Equipment. Safety - General Requirements
+Electrical Safety
+BS EN 60950-1                                                                                            Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP21
+BS EN 60529
+
+Pin Out Description                                                                                      Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   DSENet®
+3 to 5                                                                                                   Analogue Output A
+6 to 8                                                                                                   Analogue Output B
+9 to 11                                                                                                  Analogue Output C
+12 to 14                                                                                                 Analogue Output D
+15 to 17                                                                                                 Analogue Output E
+18 to 21                                                                                                 Analogue Output F
+22 to 25
+
+Product Documentation
+053-134 – DSE2152 Installation Instructions
+057-141 – DSE2152 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-112/06/26 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet                                                                                                                                   48.9 mm
+                                                                                                                                                     (1.93 ")
+DSE2152 DSENet® Analogue Output Expansion Module
+
+Part Number: 2152-01
+Technical Drawing
+
+                                                                      164.5 mm
+                                                                        (6.48 ")
+
+                                                                      152.5 mm
+                                                                        (6.00 ")
+
+64.5 mm
+   (2.54 " )
+                                                                                                                                                                                                               76.4 mm
+                                                                                                                                                                                                                  (3.00 " )
+
+Connection Label
+
+Product Documentation
+053-134 – DSE2152 Installation Instructions
+057-141 – DSE2152 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-112/06/26 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

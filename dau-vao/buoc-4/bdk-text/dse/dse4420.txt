@@ -1,0 +1,167 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE4410/20                                                                                                      ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START & AUTO MAINS FAILURE                                                                                   ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULES                                                                                                   BS EN 61000-6-2
+                                                                                                                  EMC Generic Immunity Standard for
+FEATURES                                                                                                          the Industrial Environment
+                                                                                                                  BS EN 61000-6-4
+The DSE4410 is an Auto Start          Both modules offer electronic                                               EMC Generic Emission Standard for
+Control Module and the DSE4420        (CAN) and non-electronic (magnetic                                          the Industrial Environment
+is an Auto Mains (Utility) Failure    pick-up/alternator sensing) engine
+Control Module with 3 phase           versions and offer a number of                                              ELECTRICAL SAFETY
+sensing, suitable for a wide variety  flexible inputs, outputs and engine                                         BS EN 60950
+of single, diesel or gas, gen-set     protections so the system can be                                            Safety of Information Technology Equipment,
+applications.                         easily adapted to suit a wide range                                         including Electrical Business Equipment
+                                      of application demands.
+Monitoring, speed, frequency,                                                                                     TEMPERATURE
+voltage, oil pressure, coolant        The modules can be easily                                                   BS EN 60068-2-1
+temperature and fuel level, the       configured using the DSE                                                    Ab/Ae Cold Test -30 oC
+modules will display warnings,        Configuration Suite PC software.                                            BS EN 60068-2-2
+shutdown and engine status            Selected front panel editing is also                                        Bb/Be Dry Heat +70 oC
+information on the back-lit LCD       available.
+screen and illuminated LED.                                                                                       VIBRATION
+                                                                                                                  BS EN 60068-2-6
+COMPREHENSIVE FEATURE LIST TO SUIT A                                                                              Ten sweeps in each of three
+WIDE VARIETY OF GEN-SET APPLICATIONS                                                                              major axes
+                                                                                                                  5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                   PC                             8 Hz to 500 Hz @ 2 gn
+
+                                               4                                       2                     3    HUMIDITY
+                                                                                                                  BS EN 60068-2-30
+                                      USB      CONFIGURABLE                            DC OUTPUTS  ANALOGUE       Db Damp Heat Cyclic 20/55 oC
+                                      PORT     INPUTS                                              SENDERS        @ 95% RH 48 Hours
+                                                                                                                  BS EN 60068-2-78
+                                                                                                                  Cab Damp Heat Static 40 oC
+                                                                                                                  @ 93% RH 48 Hours
+
+                                                                                                                  SHOCK
+                                                                                                                  BS EN 60068-2-27
+                                                                                                                  Three shocks in each of three major axes
+                                                                                                                  15 gn in 11 mS
+
+                                                                                                                  DEGREES OF PROTECTION
+                                                                                                                  PROVIDED BY ENCLOSURES
+                                                                                                                  BS EN 60529
+                                                                                                                  IP65 - Front of module when installed into the
+                                                                                                                  control panel with the supplied sealing gasket.
+
+                                                                                                                                          DC POWER
+                                                                                                                                          SUPPLY 8-35V
+
+                                                                                       +
+
+DSE4410/20                                                                                                                           DEUTZ
+                                                                                                                                     ISUZU
+                    7                                                                                                                PERKINS
+                                                                                                                                     CATERPILLAR
+                   OTHER                                                                                                             MTU
+                                                                                                                                     VOLVO
+MAINS (UTILITY)                                                                                                                      CUMMINS
+SENSING                                                                                                                              SCANIA
+DSE4420 ONLY
+                          DC OUTPUTS                        GENERATOR                              CHARGE       FUEL & CRANK         ELECTRONIC
+      VOLTS                     +                           SENSING                                ALTERNATOR   OUTPUTS              ENGINES OR
+                                                                                                                (Flexible with CAN)  MAGNETIC PICK-UP
+                                                                    VOLTS                               D +
+                                      +                                                                         +
+                                                                                                          W/L
+
+1ph                       1                 1  1ph
+
+2ph                                            2ph
+
+3ph                                            3ph
+
+N                                              N
+
+                                                                                                                                     ISSUE 4
+                                                                                                                                                                                                                                                            ®
+
+         DSEGenset
+
+DSE4410/20                                                                                                                                          SPECIFICATION
+
+AUTO START & AUTO MAINS FAILURE                                                                                                                       DC SUPPLY
+CONTROL MODULES                                                                                                                                       CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+FEATURES
+                                                                                                                                                      CRANKING DROPOUTS
+                                     DSE4420                                                                                                          Able to survive 0 V for 50 mS, providing
+                                                                                                                                                      supply was at least 10V before dropout and
+DSE4410                                                                                                                                               supply recovers to 5 V. This is achieved
+                                                                                                                                                      without the need for internal batteries. LEDs
+KEY FEATURES                         • Engine pre-heat                                                   • Multiple engine parameters                 and backlight will not be maintained during
+• CAN and magnetic pick-up/Alt.      • Protected Solid State Outputs                                        are monitored simultaneously              cranking.
+
+   sensing versions (specify on         (PSS)                                                            • Module can be configured to                MAXIMUM OPERATING CURRENT
+   ordering)                         • Advanced metering capability                                         suit individual applications              150 mA at 12 V, 80 mA at 24 V
+• 3 phase generator monitoring       • Front panel/PC programming
+• Four digital inputs/three          • Hours counter                                                     • Compatible with a wide range               MAXIMUM STANDBY CURRENT
+   analogue inputs                   • LED indicators                                                       of CAN engines                            50 mA at 12 V, 30 mA at 24 V
+• Six outputs (all six configurable  • Back-lit character icon LCD
+   on CANbus version, four                                                                               • IP65 rating offers advanced                CHARGE FAIL/EXCITATION RANGE
+   configurable on magnetic pick-       display                                                             resistance to water ingress               0 V to 35 V
+   up version)                                                                                              when the gasket is fitted
+• Three phase sensing                KEY BENEFITS                                                                                                     MAGNETIC PICK UP
+• Event log (5)                      • Automatically transfers between                                   • License-free PC software.                  VOLTAGE RANGE
+• 50/60 Hz calibration setting                                                                                                                        +/- 0.5 V to 70 V
+• Configurable timers                   mains (utility) and generator
+• Automatic shutdown or warning         power (DSE4420 only)                                                                                          FREQUENCY RANGE
+   when fault conditions are         • Hours counter provides                                                                                         10,000 Hz (max)
+   detected                             accurate information for
+• Overspeed protection                  monitoring and maintenance                                                                                    OUTPUTS
+• Manual and remote start               periods                                                                                                       OUTPUT A (FUEL)
+                                     • User-friendly set-up and button                                                                                2 Amp DC at supply voltage
+                                        layout
+                                                                                                                                                      OUTPUT B (START)
+                                                                                                                                                      2 Amp DC at supply voltage
+
+                                                                                                                                                      AUXILIARY OUTPUTS C,D,E,F
+                                                                                                                                                      2 Amp DC at supply voltage
+
+                                                                                                                                                      MAINS (UTILITY) DSE74420 ONLY
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      15 V - 333 V AC (L-N)
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      3.5 Hz to 75 Hz
+
+                                                                                                                                                      GENERATOR
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      15 V - 333 V AC (L-N)
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      3.5 Hz to 75 Hz
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      180 mm x 116 mm x 42 mm
+                                                                                                                                                      7.1” x 4.6” x 1.7”
+
+                                                                                                                                                      PANEL CUT-OUT
+                                                                                                                                                      154 mm x 98 mm
+                                                                                                                                                      6” x 3.9”
+
+                                                                                                                                                      MAXIMUM PANEL THICKNESS
+                                                                                                                                                      8 mm (0.3”)
+
+RELATED MATERIALS                                                                                        PART NO’S
+TITLE                                                                                                    053-078
+DSE4410 Installation Instructions                                                                        053-079
+DSE4420 Installation Instructions                                                                        057-103
+DSE4400 Quick Start Guide                                                                                057-111
+DSE4400 Operator Manual                                                                                  057-093
+DSE4400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-068/01/16 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

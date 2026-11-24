@@ -1,0 +1,193 @@
+                                                                              ®                                                                                         ®
+
+DSECONTROL                                                                                                         SPECIFICATION
+MONITORING
+WITH                                                                                                               DC SUPPLY
+INTELLIGENCE.                                                                                                      8V to 35V continuous
+                                                                                                                   CRANKING DROPOUTS
+DSE5110 & DSE5120                                                                                                  Able to survive 0V for 50mS, providing the supply
+                                                                                                                   was at least 10V before dropout and supply
+AUTO START & AUTO MAINS FAILURE CONTROL MODULES                                                                    recovers to 5V
+                                                                                                                   START RELAY OUTPUT
+DSE5110                                 DSE5120                                                                    16A DC supply at supply voltage
+                                                                                                                   FUEL RELAY OUTPUT
+The DSE5110 is an Automatic             FEATURES                             OPERATION                             16A DC at supply voltage
+Start Control Module designed to        • Automatic start                    The modules are operated using        AUXILIARY RELAY OUTPUTS
+automatically start and stop diesel     • Automatic mains (utility) failure  the front STOP, AUTO and MANUAL       5A DC at supply voltage
+and gas generating sets that                                                 push buttons. The DSE5120 also        CHARGE FAIL/EXCITATION RANGE
+include non electronic engines.            detection (DSE5120 only)          includes a TEST button. An            0V to 35V
+The module also provides                • Automatic load transfer            additional push button on both        MAXIMUM OPERATING CURRENT
+excellent engine monitoring and         • Configurable inputs                modules allows the user to scroll     320mA at 12V, 215mA at 24V
+protection features.                    • Configurable outputs               through the LCD instrumentation       MAXIMUM STANDBY CURRENT
+                                        • Configurable alarms & timers       display.                              175mA at 12V, 95mA at 24V
+The module has the ability to           • Digital inputs                                                           ALTERNATOR INPUT RANGE
+monitor under speed, over speed,        • Analogue inputs                    CONFIGURATION                         15V (L-N) to 333V AC (L-N) absolute maximum
+charge failure, emergency stop,         • Back-lit character LCD display     The modules can be configured         ALTERNATOR INPUT FREQUENCY
+low oil pressure, high engine           • Engine protection                  using the front panel buttons or the  50-60 Hz at rated engine speed (Minimum:
+temperature, fail to start, fail to     • Front panel mounting               DSE810 interface and PC software.     15V AC L-N)
+stop and loss of the speed sensing      • Icon based fault diagnostics                                             MAGNETIC PICK-UP VOLTAGE INPUT
+signal. The module displays fault       • PC configurable                                                          RANGE
+conditions on the LCD display and       • Front panel programming                                                  +/- 0.5V to 70V Peak
+via the LED indicators on the front.    • Remote monitoring                                                        MAGNETIC INPUT FREQUENCY
+                                        • LCD alarm indication                                                     10,000 Hz (max) at rated engine speed
+The DSE5120 is an Automatic             • LED alarm indication                                                     GENERATOR & MAINS (UTILITY) LOADING
+Mains Failure Control Module and                                                                                   RELAY
+includes all the features of the        BENEFITS                                                                   (DSE5120 only)
+DSE5110 plus the ability to monitor     • In-built engine diagnostics                                              8A at 240V
+a mains (utility) supply. Upon                                                                                     MAINS (UTILITY) SUPPLY INPUT RANGE
+detection of a mains (utility) failure     removes the requirement for                                             (DSE5120 only)
+the module automatically starts            service equipment                                                       15V (L-N) to 333V AC (L-N) absolute maximum
+the generating set. Once the mains      • License free PC software                                                 MAINS (UTILITY) SUPPLY INPUT FREQUENCY
+power has been restored it instructs    • Modules help to improve the life                                         (DSE5120 only)
+the generating set to stop.                cycle of engine starter motors                                          10,000 Hz (max) at rated engine speed
+                                        • On-site module configuration                                             MODULE DIMENSIONS (WXH)
+                                        • User-friendly set-up and button                                          240mm x 172mm
+                                           layout                                                                  9.4” x 6.8”
+                                                                                                                   PANEL CUT-OUT (WXH)
+                                                                                                                   220mm x 160mm
+                                                                                                                   8.7” x 6.3”
+                                                                                                                   MAXIMUM PANEL THICKNESS
+                                                                                                                   8mm
+                                                                                                                   0.3”
+ENVIRONMENTAL TESTING                        INPUTS & OUTPUTS
+STANDARDS                                    Analogue inputs are provided for oil pressure and engine temperature.
+                                             These connect to conventional engine mounted resistive sender units to
+ELECTRO MAGNETIC CAPABILITY                  provide accurate monitoring and protection facilities. The modules can also
+BS EN 61000-6-2                              be configured to interface with digital switch type inputs for low oil pressure
+EMC Generic Emission Standard for the        and high engine temperature shutdowns.
+Industrial Environment
+BS EN 61000-6-4                              Relay outputs are provided for fuel solenoid output, start output and three
+EMC Generic Emission Standard for the        additional configurable outputs. A range of different functions, conditions or
+Industrial Environment                       alarms can be selected for the three configurable relay outputs. These outputs
+                                             are fed from the permanent plant supply.
+ELECTRICAL SAFETY
+BS EN 60950                                  DSE5120 only
+Safety of Information Technology Equipment,  Dedicated outputs are provided for the control of both the mains (utility) and
+including Electrical Business Equipment      generator switching devices. This feature combined with the inbuilt incoming
+                                             mains (utility) supply sensing, removes the requirement for expensive external
+TEMPERATURE                                  devices.
+BS EN 60068-2-2
+Test Ab to +70oC 60067-2-2 Hot               INSTRUMENTATION
+Test Ab to -30oC 60068-2-1 Cold              The modules provide advanced metering facilities, displaying the information
+                                             on the LCD display. The information can be accessed using the display scroll
+VIBRATION                                    push buttons located next to the LCD display.
+BS EN 60068-2-6
+Ten sweeps in each of three major axes       Generator Volts L1-N, L2-N, L3-N
+5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn    Generator Volts L1-L2, L2-L3, L3-L1
+                                             Generator Amps L1,L2, L3
+HUMIDITY                                     Engine Speed RPM
+BS 2011 part 2.1 60068-2-30                  Generator Frequency Hz
+Test Cb Ob Cyclic                            Engine Oil Pressure (PSI & Bar)
+93% RH @ 40oC for 48 hours                   Engine Temperature (oC & oF)
+                                             Plant Battery Volts
+SHOCK                                        Engine Run Hours
+BS EN 60068-2-27
+Three shocks in each of three major axes
+15gn in 11mS
+
+                                             RELATED MATERIALS                    PART NO’S
+                                             TITLE                                053-038
+                                             DSE5110 Installation Instructions    053-022
+                                             DSE5120 Installation Instructions    057-009
+                                             DSE5110 Manual                       057-010
+                                             DSE5120 Manual                       057-005
+                                             DSE51xx Software Manual
+                                                                                                                                                                                                                                                                                                                                                                                  ®
+
+DSE5110 & DSE5120
+
+                                                                                                                                                                                     MECHANICAL INTERLOCK
+                                                                                                                                                                                                    LOAD
+
+                                        CTs MUST BE 5 AMP                                                                                                                                                                                                                                                                   DSE5120 ONLY
+                                             SECONDARY
+                                                                                                                                                                                                                                                                                                                                                                          L1
+             P1                                                               P2                                                                                                                                                                                                                                                                                          L2
+L1                                                                   S2
+                                                                                                                                                                                                                                                                                                                                                                            FROM
+                       S1                                                                                                                                                                                                                                                                                                                                     L3 MAINS
+
+                                 L2                                                                                                                                                                                                                                                                                                                                       N
+
+    FROM                                                                                                                                                                                                                                                                                                                                                   MPU
+GENERATOR L3
+
+N
+
+                                                                                                                   2 AMP                                                             ELECTRICAL INTERLOCK                                                          2 AMP
+                                                                                                                   FUSES                                                                                                                                          FUSES
+
+                                                                                                                            G                                                                                                                    M
+
+                                                                39 40 41 42                           35 36 37 38                                                                      29 30           27 28                                                              31 32 33 34 16                                     17 18
+
+                                                                 CT1 CT2 CT3 COM                         L1 L2 L3 N                                                                    GENERATOR    MAINS LOADING                                                           L1 L2 L3 N                                      P810
+                                                                        GEN CURRENT                          GEN VOLTS                                                               LOADING RELAY         RELAY                                                                     MAINS
+
+                                                                                                      4 5 9 44 45                                                                                                                                MODULE 5110/5120
+                                                                                                      FUEL
+                                          BATTERY                                                               CRANK                                                                                                                                                     OUTPUTS
+                                                                                                                           CHG ALT
+                                                                                                                                      OIL                                                           INPUTS                                       PLANT +VE
+                                                                                                                                                 WATER
+                                     -VE                        +VE                                                                                                   SENDER COMMON
+
+                                     1                          2                                  3                                  47                                             10 11 12 13 14                                                                       678
+
+                                                                     EMERGENCY STOP                                LOW OIL PRESSURE                                                                                                                                       USER CONFIGURABLE +VE INPUT
+                                                                                                                             HIGH COOLANT TEMP                                                                                                                                      USER CONFIGURABLE +VE INPUT
+                                                                                                                                                                        USER CONFIGURABLE -VE INPUT 1                                                                                          USER CONFIGURABLE +VE INPUT
+                                                                                                                                                                                  USER CONFIGURABLE -VE INPUT 2
+                                          MIN 2 AMP MAX 20 AMP                       UPTO 32 AMPS                                                                                            USER CONFIGURABLE -VE INPUT 3
+                                             ANIT-SURGE FUSE                            FUSE                                                                                                            USER CONFIGURABLE -VE INPUT 4
+                                                                                                                                                                                                                  USER CONFIGURABLE -VE INPUT 5
+                                                                                                                   NOTE 1
+
+                                          BATTERY                                                     FUEL         WL
+
+                                                                                                                              CHARGE
+                                                                                                                                 ALT
+
+                                                                                                            CRANK
+
+                                                                BATTERY NEGATIVE MUST BE GROUNDED                                                                                                                                                           TIGHTENING TORQUE = 0.8Nm (7lb-in)
+
+                                                                TERMINALS SUITABLE FOR 22-16 AWG (0.6mm - 1.3mm )
+                                                                FIELD WIRING
+
+                                                                TIGHTENING TORQUE = 0.8Nm (7lb-in)
+
+                                                                NOTE 1
+
+                                                                THESE GROUND CONNECTIONS MUST BE ON THE
+                                                                ENGINE BLOCK, AND MUST BE TO THE SENDER BODIES.
+                                                                THE GROUND WIRE TO TERMINAL 47 MUST NOT BE
+                                                                USED TO PROVIDE A GROUND CONNECTION TO ANY
+                                                                OTHER DEVICE
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                    ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+    YOUR LOCAL DISTRIBUTOR.
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                      055-036/01/16 (3)
+

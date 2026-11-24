@@ -1,0 +1,273 @@
+                                                                 ®                                                                                                         ®
+                                                                                                                      SPECIFICATION
+DSEPOWER
+SHARING
+WITH
+SIMPLICITY.
+
+DSE5510
+
+AUTO START CONTROL MODULE (ELECTRONIC ENGINE ENABLED)
+
+                                                                               ELECTRONIC ENGINE CAPABILITY           DC SUPPLY
+                                                                                                                      8V to 35V continuous
+The DSE5510 is an Automatic           reverse power, generator phase           LOAD SHARE FEATURES
+Engine Control Module, designed       rotation error, earth fault protection,  • ROCOF & vector shift                 CRANKING DROPOUTS
+to provide advanced load share        loss of speed signal, fail to open,      • Automatic starting & stopping of     Able to survive 0V for 50mS, providing supply
+functionality for diesel and gas      fail to close, out of sync, MPU                                                 was at least 10V before dropout and supply
+generating sets that include non-     open circuit failure, negative phase        generator on load demand            recovers to 5V. This is achieved without the
+electronic and electronic engines.    sequence and loss of excitation.         • Automatic hours run balancing of     need for internal batteries
+The module also provides
+excellent engine monitoring and       FEATURES                                    generator sets                      MAXIMUM OPERATING CURRENT
+protection features.                  • Electronic engine capability           • Dead bus sensing                     460mA at 12V. 245mA at 24V
+                                      • RS232 or RS485 remote                  • Module has the ability to interface
+The module’s load share functions                                                                                     MAXIMUM STANDBY CURRENT
+include, automatic synchronising         communications                           with existing load share lines      375mA at 12V. 200mA at 24V
+with built in synchroscope and        • Modbus RTU                             • Direct communication from the
+closing onto dead bus. Direct and     • Pin number protected front panel                                              ALTERNATOR INPUT RANGE
+flexible outputs from the module                                                  module to the governor and AVR      15V(L-N) to 333V AC (L-N) absolute maximum
+are provided to allow connection         programming                           • Link up to 16 generators
+to the most commonly used speed       • Engine exercise timer                  • Volts & frequency matching           ALTERNATOR INPUT FREQUENCY
+governors and automatic voltage       • Back-lit LCD 4-line text display       • KW and Kvar load sharing with        50Hz - 60Hz at rated engine speed (Minimum:
+regulators (AVRs).                    • Multiple display languages                                                    15V AC L-N)
+                                      • Voltage measurement                       multiple generators
+The module has been designed to       • Configurable inputs (9)                                                       MAGNETIC PICK-UP VOLTAGE RANGE
+combine a maximum of 16               • Configurable outputs (5)               BENEFITS                               +/- 0.5V to 70V Peak
+generators and 16 mains (utility)     • Automatic start                        • Sends SMS messages to
+supplies up to a maximum of 20 in     • Manual start                                                                  MAGNETIC INPUT FREQUENCY
+one system, e.g. 16 generators and    • Audible alarm                             engineers to notify specific        10,000 Hz (max)
+4 mains (utility) supplies (DSE5560   • LED indicators                            engine problems (GSM Modem
+required to synchronise with the      • Built-in governor and AVR control         and SIM card required)              START RELAY OUTPUT
+mains).                               • Engine history event log               • On-site and remote (modem            16A DC at supply voltage
+                                      • Engine protection                         required) module configuration
+The module has the ability to         • Fault condition notification to a      • In-built engine diagnostics          FUEL RELAY OUTPUT
+monitor under/over generator                                                      removes the requirement for         16A DC at supply voltage
+volts, over current, under/over          designated PC                            service equipment
+generator frequency, under speed,     • Front panel mounting                   • Full engine protection &             AUXILIARY RELAY OUTPUTS
+over speed, charge fail, emergency    • PC configuration                          instrumentation without the need    Three outputs 5A DC at supply voltage
+stop, low oil pressure, high engine   • Bus failure detection                     for additional senders (Electronic  Two outputs volt free 8A at 250V AC
+temperature, fail to start, low/high  • Configurable alarm timers                 engines only)
+DC battery volts, fail to stop,       • Configurable start & stop timers       • Remote monitoring of the module      DIMENSIONS
+generator short circuit protection,   • Automatic load transfer                   using comprehensive DSE PC          240mm x 172mm x 57mm
+                                      • SMS alert messaging                       software                            9.4” x 6.8” x 2.2”
+                                      • Front panel mounting                   • License free PC software
+                                      • Remote monitoring                                                             PANEL CUTOUT
+                                      • Magnetic pick-up                                                              220mm x 160mm
+                                                                                                                      8.7” x 6.3”
+
+                                                                                                                      CHARGE FAIL/EXCITATION RANGE
+                                                                                                                      0V to 35V
+
+                                                                                                                      BUILT IN GOVERNOR CONTROL
+                                                                                                                      Fully Isolated
+                                                                                                                      Minimum Load Impedence:
+                                                                                                                      1000Ω
+                                                                                                                      Gain Volts 0V - 10V DC
+                                                                                                                      Offset Volts + / - 10V DC
+
+                                                                                                                      BUILT IN AVR CONTROL
+                                                                                                                      Fully Isolated
+                                                                                                                      Minimum Load Impedence:
+                                                                                                                      1000Ω
+                                                                                                                      Gain Volts 0V - 10V DC
+                                                                                                                      Offset Volts + / - 10V DC
+
+                                                                                                                      ENCLOSURE PROTECTION
+                                                                                                                      (front of module)
+                                                                                                                      IP55 (with optional gasket)
+                                                                                                                      IP42 (without gasket)
+ENVIRONMENTAL TESTING                        OPERATION                                                                          TELEMETRY
+STANDARDS                                    The module is operated using the front STOP/RESET, MANUAL, AUTO and                The module gives the user full
+                                             START push buttons. Three of these push buttons include an LED indicator.          telemetry facilities when using the
+ELECTRO MAGNETIC CAPABILITY                  Additional push buttons provide LCD display scroll, lamp test, mute                optional communications software.
+BS EN 61000-6-2                              functionality and breaker control.                                                 The module can be connected to a
+EMC Generic Emission Standard for the                                                                                           PC using the DSE810 PC interface
+Industrial Environment                       TIMERS & INPUT FUNCTIONS                                                           or by using a suitable modem.
+BS EN 61000-6-4                              The module has been designed to include the following timers and input functions:
+EMC Generic Emission Standard for the                                                                                           The PC software is Microsoft
+Industrial Environment                       • Start delay timer                                                                Windows™ based. All access into
+                                             • Stop delay timer                                                                 the module can be configured to
+ELECTRICAL SAFETY                            • Crank timer                                                                      become password protected to
+BS EN 60950                                  • Crank rest timer                                                                 prevent unauthorised entry. The PC
+Safety of Information Technology Equipment,  • Engage attempt & manual crank limit timers                                       software allows the module to be
+including Electrical Business Equipment      • Safety on delay timer                                                            controlled from a remote location.
+                                             • Warm up timer
+TEMPERATURE                                  • Cooling timer                                                                    COMMUNICATIONS
+BS EN 60068-2-2                              • Energise to stop hold timer                                                      The DSE5510 has a number of
+Test Ab to +70oC 60067-2-2 Hot               • Pre-heat timer                                                                   different communication capabilities.
+Test Ab to -30oC 60068-2-1 Cold              • Pre-heat bypass timer
+                                             • Smoke limiting control timer                                                     SMS Messaging
+VIBRATION                                    • Fail to stop timer                                                               When the module detects an alarm
+BS EN 60068-2-6                              • Over speed over shoot timer                                                      condition, it has the ability to send
+Ten sweeps in each of three major axes       • Breaker pulse control timers                                                     an SMS message to a dedicated
+5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn    • DC battery alarm delay timers                                                    mobile number, notifying an engineer
+                                             • Sync/fail to sync timer                                                          of the problem. (GSM Modem and
+HUMIDITY                                                                                                                        SIM Card required).
+BS 2011 part 2.1 60068-2-30                  BUILT-IN FUNCTIONS
+Test Cb Ob Cyclic                            • Alternator under/over volts                                                      Remote Communications
+93% RH @ 40oC for 48 hours                   • Alternator under/over frequency                                                  When the module detects an
+                                             • Warning or shutdown on engine temperature, over/under speed, oil                 alarm condition, it dials out to a PC
+SHOCK                                                                                                                           notifying the user of the exact alarm
+BS EN 60068-2-27                                pressure                                                                        condition (modem required).
+Three shocks in each of three major axes     • Warning, shutdown or electrical trip on battery volts or over current
+15gn in 11mS                                 • Shutdown or electrical trip on reverse power, phase rotation or short            Building Management
+                                                                                                                                The module has been designed to
+TYPICAL LOAD SHARE                              circuit fault                                                                   be integrated into new and existing
+APPLICATION                                  • Earth fault shutdown                                                             building management systems.
+                                             • Adjustable crank cycle/attempts
+G1                                           • Full remote control and telemetry                                                PC Software
+                                             • 9 configurable digital inputs                                                    The module has the ability to be
+G2                                           • 5 configurable and 2 fixed relay outputs                                         configured and monitored from a
+                                             • System lock input                                                                remote PC, using the DSE810
+G3                  LOAD                     • Load switching control push-button inputs                                        interface.
+                                             • ROCOF/vector shift (mains/utility decoupling)
+                                             • Negative phase sequence                                                          EVENT LOG
+                                             • Loss of excitation                                                               The module includes a
+                                                                                                                                comprehensive event log that
+                                             INSTRUMENTATION AND ALARMS                                                         shows the 25 most recent alarm
+                                             The DSE5510 module provides advanced metering and alarm functionality              conditions and the date and time
+                                             via the LCD display. The information can be accessed using the display scroll      that they occurred.
+                                             push buttons. The table below shows the instrumentation and alarm features         This function assists the user when
+                                             the module provides.                                                               fault finding and maintaining the
+                                                                                                                                generating set.
+                                             Generator Volts L1-N, L2-N, L3-N
+                                             Generator Volts L1-L2, L2-L3, L3-L1                                                EXPANSION MODULES
+                                             Generator Amps L1, L2, L3                                                          DSE123 Load Share Lines Interface
+                                             Generator Frequency Hz                                                             Module
+                                             Generator kVA L1, L2, L3, Total                                                    DSE157 Relay Input Expansion
+                                             Generator kW L1, L2, L3, Total                                                     Module
+                                             Generator pf L1, L2, L3, Average                                                   DSE545 & DSE548 Remote
+                                             Generator kVAr L1, L2, L3, Total                                                   Annunciation Expansion Module
+                                             Generator KWh                                                                      DSE130 Input Expansion Module
+                                             Generator KVAh
+                                             Generator KVArh                                                                    ELECTRONIC ENGINE
+                                             Generator Phase Sequence                                                           COMPATIBILITY
+                                             Synchroscope Display                                                               • Cummins
+                                             Engine Speed RPM                                                                   • Deutz
+                                             Engine Oil Pressure                                                                • John Deere
+                                             Engine Temperature                                                                 • MTU
+                                             Plant Battery Volts                                                                • Perkins
+                                             Engine Hours Run                                                                   • Scania
+                                             Number of Start Attempts                                                           • Volvo
+                                             Maintenance Display                                                                • Generic
+                                             Engine ECU diagnostics information via industry standard CAN interface             • Plus additional manufacturers
+                                             Enhanced metering via CAN when connected to an electronic engine
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                    ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+    YOUR LOCAL DISTRIBUTOR.
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                      055-039/01/16 (2)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ®
+
+DSE5510
+
+               CTs MUST BE 5 AMP                                                                                                                                                                                                         AUTOMATIC MCCB
+                    SECONDARY                                                                                                                                                                                                             AUTOMATIC ACB
+                                                                                                                                                                                                                                           or CONTACTOR
+
+                                                                                                                                                                                                                                              3 or 4 POLE
+
+               P1                                 P2
+
+           L1                                                                                                                                                                                                                                                                                                                                                                                                                                                                  L1
+
+                                S1            S2
+
+           L2                                                                                                                                                                                                                                                                                                                                                                                                                                                                  L2
+
+    FROM   L3                                                                                                                                                                                                                                                                                                                                                                                                                                                                  L3  TO LOAD
+GENERATOR
+
+           N                                                                                                                                                                                                                                                                                                                                                                                                                                                                   N
+
+                                                                                                                                                  2 AMP                   TO GEN SWITCHING                                                                                                                                                                                               TO ENGINE ECU                                                      2 AMP
+                                                                                                                                                  FUSES                      DEVICE CIRCUITRY                                                                                                                                                                                               SCREEN EARTHED AT                                               FUSES
+                                                                                                                                                                                                                                                                                                                                                                                                THIS END ONLY
+                                                                                                                                                                                                     TO MAG PICK UP IF                                                                                                                                                                             DO NOT CONNECT
+                                                                                                                                                                                                        USED                                                                                                                                                                                           SCREEN TO ENGINE
+                                                                                                                                                                                                            SCREEN EARTHED AT
+                                                                                                                                                                                                                THIS END ONLY
+                                                                                                                                                                                                                   DO NOT CONNECT
+                                                                                                                                                                                                                       SCREEN TO ENGINE
+
+                                           49 50 51 53                        52   45 46 47 48                                                                            39 40                     20 21     22                         37 38                   54 55                                                        56 29 30 31 23 24                                                          25                      41 42 43 44
+                                                                             COM                                                                                                                                    P810
+                                           CT1 CT2    CT3 CT4                      L1 L2  L3                                                   N                             CLOSE                  SCR                                   OUTPUT                 PLANT +VE                                                    SCR B      A                                               SCR B           L                       L1 L2         L3        N
+                                           L151 L251  L351 N52                                                                                                                 GEN                                                              5       16 17 18                                                                                                                                  J1939
+                                                                                                                                                                                                         MPU                                                                                                                  UNUSEDRS485                                                                                             BUS VOLTS
+                                                                                                                                                                            OUTPUT                                                                                                                                                                                                                                                     UNUSED
+                                                                                   GEN VOLTS                                                                                     4
+
+                                                  GEN CURRENT
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                               SCR 26                          TO OTHER 5510 AND 5560
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                               MSC CONNECTIONS
+                                           +VE                                                                                                                                                           MODULE 5510                                                                                                                                                                                                                  MSC           H 27                       MAX 250 METERS
+                                                      -VE                                                                                                                                                                                                                                                                                                                                                                                                                      120 OHM SCREEN CABLE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    L 28
+                                                        RS232                                                                                                                                                                                                                                                                                                                                                                                                                  THE FIRST AND LAST UNITS
+                                           BATTERY                                                                                                                                                                           157                                                                                              3 OUTPUTS                                                                                                                                        MSC MUST BE FITTED WITH A
+                                                                                          FUEL                                                                                                                                                9 INPUTS                                                                                                                                                                                                                         120 OHM RESISTOR ACROSS
+                                                                                                     CRANK                                                                                                                                                                                                                                                                                                                  GOVERNOR                AVR                        H(27) AND L(28)
+                                                                                                                             OIL PRESSURE                                                           10 11 12 13 14 15
+                                                                                                                                          WATER TEMP                                                                                                                                                                                                                                                                        O/P                O/P
+                                                                                                                                                     FUEL
+                                                                                                                                                                  COMMON GROUND                                                                                                                                                                                                                                             B    A             B         A
+                                                                                                                                                                                        CHARGE ALT
+
+                                           2      1                          34 5  57 58 59 60                                                                            9                                                                                                                                                   678                                                        19                                 32 33     34 35 36
+
+                                                      REMOVE LINK FOR        TO FUEL SOLENOID MAX 16AMP                                                                   CHARGE ALTERNATOR         USER CONFIGURATION INPUT 1                                                                                                USER CONFIGURATION INPUT +VE OUTPUT
+                                                         FOR REMOTE EM STOP              TO CRANK SOLENOID MAX 16AMP                                                                                           USER CONFIGURATION INPUT 2                                                                                                USER CONFIGURATION INPUT +VE OUTPUT
+                                                                                                                                                                                                                            USER CONFIGURATION INPUT 3                                                                                              USER CONFIGURATION INPUT +VE OUTPUT
+                                                                                                            LOW OIL PRESSURE                                                                                                            USER CONFIGURATION INPUT 4                                                                                                                                                                TO                TO
+                                                                                                                          HIGH COOLANT TEMP                                                                                                       USER CONFIGURATION INPUT 5                                                                                                                                                GOVERNOR                AVR
+                                                                                                                                                                                                                                                               USER CONFIGURATION INPUT 6
+                                                                                                                                    FUEL TEMP                                                                                                                               USER CONFIGURATION INPUT 7                                                                                                   CONECT SCREEN AT                                   CONECT SCREEN AT
+                                                                                                                                                                                                                                                                                       USER CONFIGURATION INPUT 8                                                                                           GENERATOR ONLY                                     GENERATOR ONLY
+                                                                                                                                                                                                                                                                                                  USER CONFIGURATION INPUT 9
+
+                   MIN 2 AMPS                                                                                                                            TO ENGINE EARTH                                                                                                                                                                                                                                                         SCREEN EARTHED
+                      MAX 20 AMP                                                                                                                                                                                                                                                                                                                                                                                                 AT THIS END ONLY
+                          ANTI-SURGE FUSE
+                                                      UPTO32 AMPS
+                                                         FUSE
+
+                BATTERY +VE                           BATTERY -VE
+               (12 OR 24 VDC )
+
+           ALL BATTERY NEGATIVES MUST BE CONNECTED TOGETHER
+
+RELATED MATERIALS                                                            PART NO’S
+TITLE                                                                        055-041
+DSE5560 Data Sheet                                                           057-015
+DSE5510 Manual                                                               057-017
+DSE5560 Manual                                                               055-044
+DSE123 Data Sheet                                                            057-047
+Load Share Design & Commissioning                                            057-045/6
+Guide to Synchronising and
+Load Sharing                                                                 057-007
+55xx Software manual                                                         057-004
+CAN & DSE wiring guide
+

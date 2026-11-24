@@ -1,0 +1,181 @@
+              DSEGenset®
+
+DSE4510/20 MKII                                                                                                                                     SPECIFICATIONS
+
+AUTO START AND AUTO MAINS FAILURE                                                                                                                   DC SUPPLY
+CONTROL MODULES                                                                                                                                     CONTINUOUS VOLTAGE RATING
+                                                                                                                                                    8 V to 35 V Continuous
+(ALTERNATOR FREQUENCY & CAN SPEED SENSING)
+                                                                                                                                                    CRANKING DROPOUTS
+DSE4510 MKII                             DSE4520 MKII                                                                                               Able to survive 0 V for 50 mS, providing
+                                                                                                                                                    supply was at least 10 V before dropout and
+KEY FEATURES                             • 4 configurable digital inputs                                 • Overload protection                      supply recovers to 5 V. This is achieved
+• Auto Start and AMF mode in one         • Configurable staged loading                                   • Mains/generator A/C system               without the need for internal batteries.
+                                                                                                                                                    LEDs and backlight will not be maintained
+   module (DSE4520 MKII only)               outputs                                                         selection                               during cranking.
+• J1939-75 support and CAN alarm         • 3 engine maintenance alarms                                   • Output timer for external audible
+                                         • Engine speed protection                                                                                  MAXIMUM OPERATING CURRENT
+   ignore function                       • Engine hours counter                                             alarm                                   85 mA at 12 V, 96 mA at 24 V
+• Alternator frequency & CAN speed       • Engine pre-heat                                               • Accommodates a wide range of
+                                         • Engine run-time scheduler                                                                                MAXIMUM STANDBY CURRENT
+   sensing in one variant                • Engine idle control for starting &                               senders and temperatures                51 mA at 12 V, 47 mA at 24 V
+• Largest back-lit icon display in its
+                                            stopping                                                     KEY BENEFITS                               MAXIMUM SLEEP CURRENT
+   class (configurable as text display)  • Tier 4 engine instrumentation                                 • Ultimate size to feature ratio           35 mA at 12 V, 32 mA at 24 V
+• Heated display option                                                                                  • Automatically transfers between
+• Real time clock provides accurate         screens                                                                                                 MAXIMUM DEEP SLEEP CURRENT
+                                         • Battery voltage monitoring                                       mains (utility) and generator           <10 uA at 12 V, <10 uA at 24 V
+   event logging                         • Start on low battery voltage                                     (DSE4520 MKII only)
+• Fully configurable via the fascia or   • Configurable remote start input                               • Hours counter provides accurate          MAINS (UTILITY) DSE4520 MKII ONLY
+                                         • 1 alternative configuration                                      information for monitoring and          VOLTAGE RANGE
+   PC using USB communication            • Comprehensive warning, electrical                                maintenance periods                     15 V to 415 V AC (Ph to N)
+• Extremely efficient power save                                                                         • User-friendly set-up and button          26 V to 719 V AC (Ph to Ph)
+                                            trip or shutdown protection upon                                layout for ease of use
+   mode                                     fault condition                                              • Multiple parameters are monitored        FREQUENCY RANGE
+• 3 phase generator sensing              • LCD alarm indication                                             simultaneously which are clearly        3.5 Hz to 75 Hz
+• 3 phase mains (utility) sensing        • Coolant temperature pre-alarm                                    displayed on the largest back-lit
+                                         • Event log (50)                                                   icon display in its class               OUTPUTS
+   (DSE4520 MKII only)                   • Fuel solenoid pulling circuit                                 • The module can be configured to          OUTPUT A (FUEL)
+• Compatible with 600 V ph to ph         • On-screen line diagram on/off                                    suit a wide range of applications       10 A short term, 5 A continuous,
+                                            functionality                                                • Uses DSE Configuration                   at supply voltage
+   nominal systems                       • Configurable CAN instrumentation                                 Suite PC Software for simplified
+• Generator/load power monitoring           (10)                                                            configuration                           OUTPUT B (START)
+                                         • Water in fuel digital input                                   • Compatible with a wide range of          10 A short term, 5 A continuous,
+   (kW, kV A, kV Ar, pf)                 • Tank bund alarm digital input                                    CAN engines including Tier 4            at supply voltage
+• Accumulated power monitoring           • Generator at rest output                                      • Licence-free PC software
+                                         • ECU periodic wake-up for                                      • IP65 rating (with optional gasket)       AUXILIARY OUTPUTS C, D, E & F
+   (kW h, kVA h, kVAr h)                    information retrieval                                           offers increased resistance to water    2 A DC at supply voltage ­­­­
+• Generator overload protection (kW)     • Back-light power-save mode                                       ingress                                 ­
+• Generator/load current monitoring      • Adjustable delay crank timer                                                                             GENERATOR
+                                         • Pre/post heat functionality                                                                              VOLTAGE RANGE
+   and protection                                                                                                                                   15 V to 415 V AC (Ph to N)
+• Fuel and start outputs (configurable                                                                                                              26 V to 719 V AC (Ph to Ph)
+
+   when using CAN)                                                                                                                                  FREQUENCY RANGE
+• 4 configurable DC outputs                                                                                                                         3.5 Hz to 75 Hz
+• 5 V output
+• Configurable fuel & crank outputs                                                                                                                 DIMENSIONS
+• 3 configurable analogue/digital                                                                                                                   OVERALL
+                                                                                                                                                    140 mm x 113 mm x 43 mm
+   inputs                                                                                                                                           5.5’’ x 4.4” x 1.7”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    118 mm x 92 mm
+                                                                                                                                                    4.6’’ x 3.6”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40 °C to +85 °C
+                                                                                                                                                    -40 °F to +185 °F
+
+                                                                                                                                                    OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30 °C to +70 °C
+                                                                                                                                                    -22 °F to +158 °F
+
+                                                                                                                                                    -40 °C to +70 °C (for heated display variant)
+                                                                                                                                                    -40 °F to +158 °F (for heated display variant)
+
+                                                                                                                                                    OPTIONAL PARTS
+
+                                                                                                                                                    PART            PART NUMBER
+                                                                                                                                                    IP65 Gasket     020-282
+
+RELATED MATERIALS                                                                                        PART NO.
+TITLE                                                                                                    053-190
+DSE4510/20 MKII Installation Instructions                                                                057-260
+DSE4510/20 MKII Operator Manual                                                                          057-258
+DSE4510/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS LTD                                                                                 DEEP SEA ELECTRONICS INC
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com                                    EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                  055-207/06/20 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+      DSEGenset®
+
+DSE4510/20 MKII                                                                                                                      ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START AND AUTO MAINS FAILURE                                                                                                    ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULES                                                                                                                      BS EN 61000-6-2
+                                                                                                                                     EMC Generic Immunity Standard for
+(ALTERNATOR FREQUENCY & CAN SPEED SENSING)                                                                                           the Industrial Environment
+                                                                                                                                     BS EN 61000-6-4
+The DSE4510 MKII Auto Start Control        Electronic J1939 (CAN) and non-         * AVAILABLE VARIANTS                              EMC Generic Emission Standard for
+Module and the DSE4520 MKII Auto           electronic (alternator frequency                                                          the Industrial Environment
+Mains (Utility) Failure Control Module     sensing) engine support for diesel,     4510-05 Auto Start with real time clock
+are suitable for a wide variety of single  gas and petrol engines all in one                                                         ELECTRICAL SAFETY
+gen-set applications.                      variant. With a number of flexible      4510-06  Auto Start with real time clock &        BS EN 60950
+                                           inputs, outputs and protections, the             heated display                           Safety of Information Technology Equipment,
+Whilst maintaining functions included      module can be easily adapted to suit                                                      including Electrical Business Equipment
+within higher end controllers, such as     a wide range of applications.           4520-05  Auto Mains Failure with real time
+generator or load power monitoring,                                                         clock                                    TEMPERATURE
+the DSE45xx MKII range of especially       Through USB Communication both                                                            BS EN 60068-2-1
+compact controllers provide the user       modules can be easily configured        4520-06  Auto Mains Failure with real time        Ab/Ae Cold Test -30 ºC
+with the ultimate size to feature ratio.   using the DSE Configuration Suite PC             clock & heated display                   BS EN 60068-2-2
+                                           Software or can be fully configured                                                       Bb/Be Dry Heat +70 ºC
+Monitoring engine speed, oil pressure,     through the module’s front panel        4520-05  Auto Mains Failure with real time
+coolant temperature, frequency,            editor.                                          clock                                    VIBRATION
+voltage, current, power and fuel level,                                                                                              BS EN 60068-2-6
+the modules will give comprehensive        All DSE products are supported by the   4520-07  Auto Mains Failure with real time        Ten sweeps in each of three major axes
+engine and alternator protection. This     DSE global techn­ ical support team              clock                                    5 Hz to 8 Hz at +/-7.5 mm,
+will be indicated on the largest back-lit  which gives our customers and end                                                         8 Hz to 500 Hz at 2 gn
+LCD icon display in its class via an       users access to 24 hour system help
+array of warning, electrical trip and      and advice.                                                                               HUMIDITY
+shutdown alarms.                                                                                                                     BS EN 60068-2-30
+                                                                                                                                     Db Damp Heat Cyclic 20/55 ºC
+                                                                                                                                     at 95% RH 48 Hours
+                                                                                                                                     BS EN 60068-2-78
+                                                                                                                                     Cab Damp Heat Static 40 ºC
+                                                                                                                                     at 93% RH 48 Hours
+
+                                                                                                                                     SHOCK
+                                                                                                                                     BS EN 60068-2-27
+                                                                                                                                     Three shocks in each of three major axes
+                                                                                                                                     15 gn in 11 mS
+
+                                                                                                                                     DEGREES OF PROTECTION
+                                                                                                                                     PROVIDED BY ENCLOSURES
+                                                                                                                                     BS EN 60529
+                                                                                                                                     IP65 - Front of module when installed into the
+                                                                                                                                     control panel with the optional sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+           PC
+
+                                           4                                       4                                              3
+                                                                                                    ANALOGUE
+USB                                        CONFIGURABLE       DC OUTPUTS                            SENDERS                             DC POWER
+PORT                                       INPUTS                                                                                       SUPPLY 8-35V
+
+                                                                                   +
+
+DSE4510/20 MKII                                                                                                                                           DEUTZ
+                                                                                                                                                          ISUZU
+                7                                                                                                                                         PERKINS
+               OTHER                                                                                                                                      CATERPILLAR
+                                                                                                                                                          MTU
+MAINS (UTILITY)  DC OUTPUT                 GENERATOR/         DC OUTPUT            GENERATOR        CHARGE                           FUEL & START         VOLVO
+SENSING          DSE4520 MKII 1 OF 4 LOAD CURRENT             DSE4510 MKII 1 OF 4  SENSING          ALTERNATOR                       OUTPUTS              CUMMINS
+(DSE4520 MKII)                                                DSE4520 MKII 1 OF 4                                                    (Flexible with CAN)  SCANIA
+                                                                                             VOLTS       D +                                              ELECTRONIC
+         VOLTS                                                      +                                                                                     ENGINE CAN
+                                                                                                           W/ L
+                 +                                                                                                                   +
+
+      1ph           1                                    1ph  1                             1ph
+
+      2ph                                                2ph                                2ph
+
+      3ph                                                3ph                                3ph
+
+      N                                                                                     N
+
+                                                                                                                                                          ISSUE 3
+

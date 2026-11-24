@@ -1,0 +1,187 @@
+                                                          ®                                                                                                               ®
+
+DSEULTRA                                                                                                             SPECIFICATION
+STARTING
+WITH                                                                                                                 DC SUPPLY
+QUALITY.                                                                                                             8V to 35V continuous
+
+DSE704 & DSE4120                                                                                                     CRANKING DROPOUTS
+                                                                                                                     Able to survive 0V for 50mS, providing supply
+AUTO MAINS FAILURE CONTROL MODULES                                                                                   was at least 10V before dropout and supply
+                                                                                                                     recovers to 5V. This is achieved without the
+DSE704                                 DSE4120                                                                       need for internal batteries.
+
+The DSE704 is an Auto Mains            FEATURES                             OPERATION                                MAXIMUM OPERATING CURRENT
+Failure Control Module that offers     • Automatic mains (utility) supply   The modules are operated using the       170mA(12V), 280mA(24V) (DSE4120 only)
+an excellent range of engine                                                three push buttons on the front:         50mA (DSE704 only)
+monitoring and protection features.       monitoring
+The module has been designed to        • Automatic shutdown when fault                MANUAL – This mode is          TYPICAL CURRENT
+monitor engine temperature, low                                                       used to manually start the     35mA(12V and 24V) (DSE 4120 only)
+oil pressure, fail to start, charge       conditions are detected                     engine.                        12mA (704 only)
+failure, over speed and under          • Manual start
+speed.                                 • Engine pre-heat                              AUTO – This mode is used       ALTERNATOR INPUT RANGE
+                                       • Engine monitoring and protection             to automatically start the     75V(L-N) to 333V AC (L-N) absolute maximum
+When the module detects a fault                                                       engine. The module will be
+condition it automatically shuts          features                                    started by the remote start    ALTERNATOR INPUT FREQUENCY
+down the engine. The module also       • Protected Solid State (PSS)                  signal.                        50Hz – 60Hz at rated engine speed
+includes two user configurable                                                                                       (minimum:75V AC L-N) (Crank disconnect from
+auxiliary inputs.                         outputs                                     STOP – This button is used     15V L-N @ 20Hz) Overspeed +14% (+24%
+                                       • Front panel mounting                         to stop the engine when it is  overshoot) Underspeed -20%
+The DSE4120 module includes all        • Front panel programming                      running in either manual or
+the features of the DSE704 plus a      • Tamper proof engine hours                    automatic mode.                START & FUEL OUTPUTS
+tamper proof engine hours counter,                                                                                   1.2 Amp DC at supply voltage. Switches to
+engine exercise mode function and         counter                                                                    battery negative when active
+the enclosure has a closed back.       • Remote start
+                                       • LED indicators                                                              AUXILIARY OUTPUTS
+Both modules have been designed        • Configurable timers                                                         1.2 Amp DC at supply voltage. Switches to
+to automatically start the generator   • Configurable outputs                                                        battery negative when active
+when the mains (utility) power fails.  • Single/three phase mains sensing
+As soon as mains (utility) power is                                                                                  DSE704 DIMENSIONS
+restored the modules have been         BENEFITS                                                                      165mm x 125mm x 29mm
+designed to transfer the load back     • Transfers between mains (utility)                                           6.5” x 4.9” x 1.2”
+to the mains (utility) supply. The
+modules then instruct the engine          and generator power                                                        DSE704 CUT OUT
+to begin the cool down procedure       • On-site module configuration to                                             149mm X 109mm
+and stopping sequence (user                                                                                          5.9” x 4.3”
+configured).                              match user requirements
+                                       • Hours counter provides accurate                                             DSE4120 DIMENSIONS
+                                                                                                                     171mm x 115mm x 49mm
+                                          information for monitoring                                                 6.7” x 4.5” x 1.9”
+                                          maintenance and warranty
+                                          periods                                                                    DSE4120 PANEL CUT OUT
+                                       • Multiple engine parameters are                                              154mm x 98mm
+                                          monitored simultaneously                                                   6.1” x 3.9”
+
+                                                                                                                     CHARGE FAIL
+                                                                                                                     8 Volt Charge Fail at 12 Volts, 16 Volt Charge
+                                                                                                                     Fail at 24 Volts
+
+                                                                                                                     ENVIRONMENTAL TESTING
+                                                                                                                     STANDARDS
+
+                                                                                                                     ELECTRO MAGNETIC CAPABILITY
+                                                                                                                     BS EN 61000-6-2
+                                                                                                                     EMC Generic Emission Standard for the
+                                                                                                                     Industrial Environment
+                                                                                                                     BS EN 61000-6-4
+                                                                                                                     EMC Generic Emission Standard for the
+                                                                                                                     Industrial Environment
+
+                                                                                                                     TEMPERATURE
+                                                                                                                     BS EN 60068-2-2
+                                                                                                                     Test Ab to +70oC 60067-2-2 Hot
+                                                                                                                     Test Ab to -30oC 60068-2-1 Cold
+
+                                                                                                                     VIBRATION
+                                                                                                                     BS EN 60068-2-6
+                                                                                                                     Ten sweeps in each of three major axes
+                                                                                                                     5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+
+                                                                                                                     HUMIDITY
+                                                                                                                     BS 2011 part 2.1 60068-2-30
+                                                                                                                     Test Cb Ob Cyclic
+                                                                                                                     93% RH @ 40oC for 48 hours
+
+                                                                                                                     SHOCK
+                                                                                                                     BS EN 60068-2-27
+                                                                                                                     Three shocks in each of three major axes
+                                                                                                                     15gn in 11mS
+DEEP SEA ELECTRONICS PLC                      TELEPHONE                                                                                            EMAIL                                                                                                                                                                         ®
+
+Highfield House                               +44 (0)1723 890099                                                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                     FACSIMILE                                                                                            WEBSITE
+
+YO14 0PH England                              +44 (0)1723 893303                                                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649     VAT No.316923457                                                                                     EMAIL
+                                                                                                                                                   sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                      TELEPHONE
+3230 Williams Avenue                          +1 (815) 316 8706                                                                                    WEBSITE
+Rockford                                                                                                                                           www.deepseausa.com
+IL 61101-2668 USA                             FACSIMILE
+                                              +1 (815) 316 8708
+
+DSE704 & DSE4120
+
+                                                                                                  MECHANICAL INTERLOCK
+                                                                                                                       LOAD
+
+                              L1                                                                                                                                                                                                                                                                   L1
+
+                              L2                                                                                                                                                                                                                                                                   L2
+
+    FROM L3                                                                                                                                                                                                                                                                                        L3  FROM
+GENERATOR
+                                                                                                                                                                                                                                                                                                       MAINS
+                              N
+                                                                                                                                                                                                                                                                                                   L4
+
+                                  2 AMP                                                           ELECTRICAL INTERLOCK                                                                              2 AMP
+                                  FUSES                                                                                                                                                             FUSES
+
+                                                                         G                                                                                                 M
+                                                                                   NORMALLY OPEN                                                NORMALLY CLOSED
+
+                                                                                    +             *                                          *                           +
+
+                                                     20 21                                           14                         13                                               16 17 18 19
+                                                       L1 N
+                                                                                                     CLOSE GEN                  CLOSE MAINS                                      L1 L2  L3       N
+                                                   GEN VOLTS
+                                                                                                                                                                                    MAINS VOLTS
+                                              BATTERY
+                                                                   MODULE 704/4120                                                                 OUTPUT 2
+                                                                                                                                                                        CHRG ALT
+                                           -VE                               FUEL         CRANK                    OUTPUT 1                                                                 OIL PRESSURE
+                                                              +VE                                                                                                                                                 COOLANT TEMP
+                                                                                                                                                                                                                                       INPUT 1
+                                                                                                                                                                                                                                                           INPUT 2
+                                                                                                                                                                                                                                                                                 REMOTE START
+
+                                           1           2                     3            4                        5                               6                     7    8  9      10          11     12                                                                                  15
+
+                                                                   *                   *                        *                               *
+
+                                                                                    +             +                          +                        +
+
+                                               2 AMP               FUSE
+                                               FUSE
+BATTERY NEGATIVE MUST BE                                               FUEL              CRANK                                                                       WL
+GROUNDED                                      BATTERY              SOLENOID            SOLENOID
+                                                                                                                                                   CHARGE
+TERMINALS SUITABLE FOR 22-16                                                                                                                          ALT
+AWG (0.6MM - 1.3MM) FIELD
+WIRING
+
+TIGHTENING TORQUE = 0.8Nm
+(7lb-in)
+
+*NOTE. ALL THE OUTPUTS ARE
+SOLID STATE AND ARE NEGATIVE
+SWITCHING
+
+CONFIGURATION                                                                             NORMAL                                                   RELATED MATERIALS                                                                                                                           PART NO’S
+The modules can be configured to                                                          CONFIGURATION                                            TITLE                                                                                                                                       053-036
+match user’s individual parameter                                                                                                                  DSE704 Installation Instructions                                                                                                            057-043
+settings. Configuration mode is                                                                                                                    DSE704 Operators Manual                                                                                                                     053-021
+accessed via the switch at the rear                                                                                                                DSE4120 Installation Instructions                                                                                                           057-023
+of the module. Once in configuration                                                                                                               DSE4120 Operators Manual
+
+mode the AUTO-LED
+
+flashes rapidly.
+
+Please refer to the installation instructions for the parameter settings and
+configuration details.
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                                                                                                                                                                              055-042/03/16 (3)
+

@@ -1,0 +1,95 @@
+                                 DEEP SEA ELECTRONICS                                          521
+
+                                                                                          Automatic
+                                                                                                  Start
+
+DESCRIPTION                                                                                                                        Issue 5
+                                                                                                                           AM 08/08/05
+The Model 521 is an Automatic Engine         Configurable inputs are available for:
+Control Module designed to                                                                SPECIFICATION
+automatically start and stop the engine.      Low Oil Pressure
+Indicating operational status and fault       High Engine Temperature                    DC Supply:
+conditions, it will automatically shut down   Remote Start.                              8V to 35V Continuous.
+the engine and indicate engine failure by                                                 Cranking Dropouts:
+flashing LED on the front panel. Other       This allows the module to function with N/O  Able to survive 0V for 50mS,
+simultaneous faults are indicated by         or N/C switches. Four fully configurable     providing supply was at least 10V
+steady LED.                                  auxiliary inputs are provided to give        before dropout and supply recovers
+                                             protection expansion. These can be           to 5V. This is achieved without the
+Selected operational sequences, timers       selected to be indication, warning or        need for internal batteries.
+                                             shutdown inputs either immediate or held     Max. Operating Current:
+and alarms can be altered by the             off during start up.                         290mA at 12V. 210mA at 24V.
+                                                                                          Max. Standby Current:
+customer by using a PC and the 808           Uncommitted LED’s allow additional           50mA at 12V. 30 mA at 24V.
+                                             annunciation.                                Alternator Input Range:
+interface.  This also provides the                                                        15V - 300V ac RMS
+                                             Multiple alarm channels are provided to      Alternator Input Frequency:
+operator with ‘real-time’ diagnostic         monitor the following:                       50Hz - 60Hz at rated engine speed.
+                                                                                          Magnetic Input Range:
+facilities to monitor the operation of the    Under/Overspeed                            0.5V to +/- 70V (Clamped by
+                                              Charge Fail                                transient suppressors)
+system either locally or remotely.            Emergency Stop                             Magnetic Input Frequency:
+                                              Low oil pressure                           10Hz to 10,000Hz
+Remote PC-controlled engine starting          High engine temperature                    Start Relay Output:
+                                              Fail to Start                              16 Amp DC at supply voltage.
+and stopping is also featured.                Fail to stop                               Fuel Relay Output:
+                                              Loss of speed sensing                      16A DC at supply voltage.
+Operation of the module is via a three        Programmable inputs as selected            Auxiliary Relay Outputs:
+position rotary switch (key-switch option                                                 5A DC at supply voltage.
+available) mounted on the front panel        First-up alarm is indicated by a flashing    Dimensions:
+with STOP, AUTO and MANUAL                   LED. Subsequent simultaneous alarms          96mm x 96mm x 140.5mm
+positions.                                   are displayed by a steady LED.               (3.8” x 3.8” x 5.5”)
+                                                                                          (Excluding switch)
+Microprocessor control allows for                The 500 series modules have been         Charge Fail / Excitation Range:
+enhanced operation. The module                   designed for front panel mounting.       0V to 35V
+features a comprehensive list of timers          The module is fitted into the cut-out    Operating Temperature Range:
+and pre-configured sequences. This               with the fixing clips removed.           -30°C to +70°C
+allows complex specifications to be              These are then fitted from the rear.
+achieved                                         Connection is via locking plug and
+                                                 socket connectors
+Configurable expansion facilities are
+provided.
+
+Relay outputs are provided for:
+
+ Fuel Solenoid Output
+ Start Output
+ 3 configurable outputs.
+
+Normally the relays are configured as
+pre-heat, load transfer and alarm outputs.
+However the relay function is
+configurable to activate on a range of 32
+different functions, conditions or alarms.
+The relays supply positive plant supply
+out.
+
+                                                                                          Deep Sea Electronics plc reserves the right to
+                                                                                          change specification without prior notice.
+                                                     Imperial Measurements
+
+CASE DIMENSIONS                                      Module dimensions   Panel Cutout
+                                                     3.8” x 3.8” x 5.5”  3.54” x 3.54”
+
+   89.0mm                                     96.0mm
+
+                     133.0mm                                           96.0mm
+                                                      Panel Cut-out: 90mmx90mm
+           521 Auto Start Unit Arrangement    7.5mm
+                                                                       NOTE:- When connected to
+TYPICAL CONNECTIONS                                                    a completed Panel/Gen-set
+                                                                       Real time diagnostic
+                 F                                                     status display is available
+
+F  F
+
+   Deep Sea Electronics Plc.                         Deep Sea Electronics inc.
+
+Highfield House, Hunmanby Industrial Estate,                   3230 Williams Avenue
+           North Yorkshire. YO14 0PH.                        Rockford, IL 61101-2668
+                       ENGLAND
+             Tel:+44 (0)1723 890099.                                       USA
+             Fax: +44 (0)1723 893303.                         Tel :+1 (815) 316-8706.
+                                                              Fax :+1 (815) 316-8708
+         Email: sales@deepseaplc.com                  Email: dsesales@deepseausa.com
+           Web: www.deepseaplc.com                         Web: www.deepseausa.com
+

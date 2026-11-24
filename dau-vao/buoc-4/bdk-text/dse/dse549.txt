@@ -1,0 +1,97 @@
+                                                            ®                                                                                                       ®
+
+DSEEXTRA                                                                                                       SPECIFICATION
+BATTERY
+CHARGERS                                                                                                       DC SUPPLY
+AND EXPANSION                                                                                                  8V to 35V continuous. Supplied from DSE130
+MODULES.                                                                                                       module via 4 core interconnecting cable.
+
+DSE549                                                                                                         CRANKING DROPOUTS
+                                                                                                               Able to survive 0V for 50mS, providing supply
+REMOTE ANNUNCIATOR CONTROL MODULE                                                                              was at least 10V before dropout and supply
+                                                                                                               recovers to 5V. This is achieved without the
+The DSE549 Remote Annunciator      FEATURES                              LED INDICATION                        need for internal batteries.
+has been designed to be connected  • The DSE549 meets the                The DSE549 has a pre-printed front
+to the DSE130 input expansion                                            label that displays the following:    MAXIMUM OPERATING CURRENT
+module.                               requirements of the United States  1. User configurable – blank insert   150mA at 12V. 81mA at 24V. This maximum
+                                      of America National Fire           2. Over crank                         current includes the DSE130 which provides
+It provides 16 LED indicators an      Protection Agency (NFPA) 110       3. Low water temperature              power to the DSE549.
+alarm sounder, mute button and        Level 1 specification              4. High engine temperature
+an LED test button.                • Configurable LED’s (Via the host                                          LED’s
+                                      controller)                            (pre-alarm)                       Power On
+                                   • Works up-to1000 meters from the     5. High engine temperature            Link Lost
+                                      host module using standard cable   6. Low lube oil pressure (pre-alarm)  15 fixed LED’s
+                                   • Power and link lost LED’s           7. Low lube oil pressure              1 configurable LED
+                                   • Mute button to turn off alarm       8. EPS supplying load
+                                      (Independent from host module)     9. Overspeed                          DIMENSIONS
+                                                                         10. Low fuel main tank                171mm x 115mm x 49mm
+                                                                         11. Control switch not in automatic   6.7” x 4.5” x 1.9”
+
+                                                                             position                          CUT OUT
+                                                                         12. High battery voltage              154mm x 98mm
+                                                                         13. Low voltage in battery            6.1” x 3.9”
+                                                                         14. Battery charger AC failure
+                                                                         15. Common alarm                      ENVIRONMENTAL TESTING
+                                                                         16. Remote emergency stop             STANDARDS
+
+                                                                         Two additional fixed LED’s are        ELECTRO MAGNETIC CAPABILITY (EMC)
+                                                                         provided to display that power is     BS EN 61000-6-4
+                                                                         connected and that the module is      EMC Generic Emission Standard for the
+                                                                         correctly connected to the DSE130     Industrial Environment
+                                                                         (Link lost).                          BS EN 61000-6-2
+                                                                                                               EMC Generic Immunity Standard for the
+                                                                                                               Industrial Environment
+
+                                                                                                               ELECTRICAL SAFETY
+                                                                                                               BS EN 60950
+                                                                                                               Safety of Information Technology Equipment
+                                                                                                               including Electrical Business Equipment
+
+                                                                                                               TEMPERATURE
+                                                                                                               BS EN 60068-2-2
+                                                                                                               Test Ab to 70oC
+                                                                                                               Test Ab to -30oC
+
+                                                                                                               VIBRATION
+                                                                                                               BS EN 60068-2-6
+                                                                                                               Ten sweeps in each of the three major axes
+                                                                                                               5Hz to 8Hz @ +/- 7.5mm
+
+                                                                                                               HUMIDITY
+                                                                                                               BS EN 60068-2-30
+                                                                                                               Test Db 95% RH @ 55oC for 12 hours
+
+                                                                                                               SHOCK
+                                                                                                               BS EN 60068-2-27
+                                                                                                               Three shocks in each of three major axes
+                                                                                                               15gn in 11mS
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                    ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+RELATED MATERIALS                          PART NO’S
+TITLE                                      055-047
+DSE130 Data sheet
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                      055-048/01/16 (3)
+

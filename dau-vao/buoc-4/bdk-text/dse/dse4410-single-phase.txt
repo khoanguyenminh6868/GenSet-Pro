@@ -1,0 +1,187 @@
+                                                          ®                                                                                                              ®
+
+DSEULTRA                                                                                                            SPECIFICATION
+STARTING
+WITH                                                                                                                DC SUPPLY
+QUALITY.                                                                                                            DC SUPPLY
+                                                                                                                    8V to 35V Continuous
+DSE4410 & DSE4420                                                                                                   CRANKING DROPOUTS
+                                                                                                                    Able to survive 0V for 50mS, providing supply
+AUTO START & AUTO MAINS (UTILITY) FAILURE CONTROL MODULES                                                           was at least 10V before dropout and supply
+                                                                                                                    recovers to 5V. This is achieved without the
+                                                                                                                    need for internal batteries. LEDs and backlight
+                                                                                                                    will not be maintained during cranking.
+                                                                                                                    MAXIMUM OPERATING CURRENT
+                                                                                                                    TBC
+                                                                                                                    MAXIMUM STANDBY CURRENT
+                                                                                                                    TBC
+                                                                                                                    GENERATOR INPUT RANGE
+                                                                                                                    15V to 333V AC (L-N) absolute maximum
+                                                                                                                    50Hz - 60Hz (min 15V AC)
+                                                                                                                    CHARGE FAIL/EXCITATION RANGE
+                                                                                                                    0V to 35V
+
+                                                                                                                    MAGNETIC PICKUP
+
+The DSE4410 is an Auto Start         FEATURES                                OPERATION                              VOLTAGE RANGE
+Control Module and the DSE4420 is    • PC and front panel configurable       The module is operated using the       0.5V RMS minimum
+an Auto Mains (Utility) Failure      CAN and magnetic pick-up versions       front STOP/RESET, MANUAL, AUTO
+Control Module for single gen-set    • Six digital inputs                    and START push buttons.                FREQUENCY RANGE
+applications. Both modules have      • Six outputs (all six configurable on                                         10,000 Hz (max)
+been designed to work with                                                   Two additional push buttons next to
+electronic and non electronic           CANbus version, four configurable    the LCD screen are provided to         OUTPUTS
+engines providing advanced engine       on magnetic pick-up version)         scroll through the modules’ metering
+monitoring and protection features.  • Automatic mains (utility) supply      displays and to access the event log.  OUTPUT A (FUEL)
+The modules are available in            monitoring (DSE4420 only)                                                   2 Amp DC at supply voltage
+magnetic pick-up and Canbus          • Event log                             OVERSPEED PROTECTION
+versions.                            • 50/60 Hz calibration setting          The engine over speed trip setting     OUTPUT B (START)
+                                     • Configurable timers                   can be calibrated for 50Hz or 60Hz     2 Amp DC at supply voltage
+The modules include a back-lit       • Automatic shutdown or warning         nominal operation During engine
+LCD display which clearly show the      when fault conditions are detected   cranking and for a user configurable   AUXILIARY OUTPUTS C,D
+status of the engine at all times.   • Manual and remote start               time after the engine starts running,  2 Amp DC at supply voltage
+They monitor frequency, voltage,     • Engine pre-heat                       all alarm conditions are suspended
+current, oil pressure, coolant       • Protected Solid State Outputs         to allow the engine to reach its       MAINS (UTILITY) SENSING INPUT RANGE
+temperature and fuel level. The         (PSS)                                optimum running speed.                 (DSE4420 ONLY)
+modules have also been designed      • Advanced metering capability
+to display the warning and           • Front panel mounting                  CONFIGURATION                          15V to 333V AC (L-N) absolute maximum
+shutdown status of the engine.       • Front panel programming               The modules can be configured          25V to 576V AC (L-L) absolute maximum
+                                     • Engine hours counter                  using the front panel or by remote     50Hz - 60Hz (min 15V AC)
+Both modules include six digital     • LED indicators                        PC using a USB connection lead
+inputs and six outputs. Four         • Back-lit LCD display                  and the DSE Configuration Suite PC     DIMENSIONS
+outputs are configurable on the                                              software.
+magnetic pick-up version and six     BENEFITS                                                                       OVERALL
+are configurable on the Canbus       • Transfers between mains (utility)     ELECTRONIC ENGINE                      180mm x 116mm x 42mm
+version. The modules can either                                              COMPATIBILITY                          7.1” x 4.6” x 1.7”
+be programmed using the front           and generator power                  • CAT
+panel or by using the DSE               (DSE4420 only)                       • Cummins                              PANEL CUT-OUT
+Configuration Suite PC software.     • Hours counter provides accurate       • Deutz                                154mm x 98mm
+                                        information for monitoring and       • John Deere                           6” x 3.9”
+                                        maintenance periods                  • MTU
+                                     • User-friendly set-up and button       • Perkins                              MAXIMUM PANEL THICKNESS
+                                        layout. Multiple engine parameters   • Scania                               8mm (0.3”)
+                                        are monitored simultaneously         • Volvo
+                                     • Module can be configured to suit      • Generic
+                                        individual applications. Wide range  • Plus additional manufacturers
+                                        of engines can be specified
+                                        IP65/NEMA 12 rating offers
+                                        advanced resistance to water
+                                        ingress
+                                     • License free PC software
+DEEP SEA ELECTRONICS PLC                                                                         TELEPHONE                                                                                                                        EMAIL                                                                                                                                                                ®
+
+Highfield House                                                                                  +44 (0)1723 890099                                                                                                               sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                                                                        FACSIMILE                                                                                                                        WEBSITE
+
+YO14 0PH England                                                                                 +44 (0)1723 893303                                                                                                               www.deepseaplc.com
+
+Registered in England & Wales No.01319649                                                        VAT No.316923457                                                                                                                 EMAIL
+                                                                                                                                                                                                                                  sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                                                                         TELEPHONE
+3230 Williams Avenue                                                                             +1 (815) 316 8706                                                                                                                WEBSITE
+Rockford                                                                                                                                                                                                                          www.deepseausa.com
+IL 61101-2668 USA                                                                                FACSIMILE
+                                                                                                 +1 (815) 316 8708
+
+DSE4410 & DSE4420                                                                                                                                                                                                                                                                                                                                       TESTING STANDARDS
+
+                                                                                                                                                                                                    TO LOAD                                                                                                                                             ELECTRICAL SAFETY/
+                                                                                                                                                                                                                                                                                                                                                        ELECTROMAGNETIC COMPATIBILITY
+                                                                                                                                                                                                                                                                                                                   DSE4420 ONLY
+                                                                                                                                                                                                                                                                                                                                                        ELECTRICAL SAFETY
+           L1                                                                                                                                                                                                                                                                                                                    L1                     BS EN 60950
+                                                                                                                                                                                                                                                                                                                                                        Safety of Information Technology Equipment,
+           L2                                                                                                                                                                                                                                                                                                                    L2                     including Electrical Business Equipment
+
+FROM       L3                                                                                                                                                                                                                                                                                                                    L3 FROM                TEMPERATURE (OPERATING)
+                                                                                                                                                                                                                                                                                                                                             MAINS      BS EN 60068-2-2
+GENERATOR                                                                                                                                                                                                                                                                                                                                    (UTILITY)  Test Ab to +70oC 60067-2-2 Hot
+                                                                                                                                                                                                                                                                                                                                                        Test Ab to -30oC 60068-2-1 Cold
+           N                                                                                                                                                                                                                                                                                                                     N
+                                                                                                                                                                                                                                                                                                                                                        VIBRATION
+               2 AMP FUSES                                                                                                                                                                                                                                                                                                                              BS EN 60068-2-6
+                                                                           APPROPRIATE                                                                                                                                                                                                                                                                  Ten sweeps in each of three major axes
+                                                                              FUSE                                                                                                                                                                                                                                                                      5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+                                                                                                                                                                                                                                                                                          APPROPRIATE
+                                                                                                                                                                                                                                                                                              FUSE                                                      HUMIDITY
+                                                                                                                                                                                                                                                                                                                                                        BS 2011 part 2.1 60068-2-30
+                                                                                                                                                                                                                                                                                                      2 AMP FUSES                                       Test Cb Ob Cyclic
+                                                                                                                        MAG PICK UP VERSION ONLY                                                                                                                                                                                                        93% RH @ 40oC for 48 hours
+
+                                                                                 GBCR                                                            MPU                                                                              CON 2                                MBCR                                                                             SHOCK
+                                                                                          CON 1                                                                                                                                                                                                                                                         BS EN 60068-2-27
+                                                                                                                            DO NOT                                                                                                                                      *                                                                               Three shocks in each of three major axes
+                           15             16                                                                             CONNECT                                                                                                                                                                                                                        15gn in 11mS
+                                                                                                                                                                                                                                                                                         17 18 19 20
+                           U              N                                                                                       THE                                                                                                                                                                                                                   TESTING STANDARDS
+                                                                                                                            SCREEN                                                                                                                                                                   USB
+                           L1                                                                                           TO ENGINE                                                                                                                                                       PROGRAMMING PORT                                                ENVIRONMENTAL
+
+                               GEN VOLTS                                                                                               12 13 14                                                                                                                                                             ENGINE ECU                                  BS EN 61000-6-2
+                                                                                                                                                                                                                                                                                                                                                        EMC Generic Emission Standard for the
+                                                                                                                                +-                                                                                                                                                                                                                      Industrial Environment
+                                                                                                                                                                                                                                                                                                                                                        BS EN 61000-6-4
+                                                                                                                                                        MPU                                                                                                                                                                                             EMC Generic Emission Standard for the
+                                                                                                                                                                                                                                                                                                                                                        Industrial Environment
+               -VE                                                                               SENDER COMMON                                                                                               MODULE 4410/4420
+                                 +VE                                                                       FUEL SENDER                                                                                                                                                                                                                                  INSTRUMENTATION AND ALARMS
+                                                                                                                                                                                                                                  4 FET OUTPUTS
+                                                                           FUEL
+                                                                               O/P A                                                                                                                                   PLANT +VE
+                                                                                     CRANK
+                                                                                         O/P B
+                  BATTERY         PLANT +VE                                                                                                                                                                  6 INPUTS
+
+                                                                                                                                                                                                                                                                                                                   H
+                                                                                                                                                                                                                                                                                                                            L
+
+               1               2                                                 345             10 11                  21 22 23 24 25 26                                                                                         67 8 9                                                                           14 12 13
+
+                                                                                                 FUEL                   INPUT A CONFIGURED FOR EMSTOP
+                                                                                                                                  USER CONFIGURABLE -VE INPUT B
+                  MIN 2 AMP MAX 20 AMP                                                                                                      USER CONFIGURABLE -VE INPUT C                                                                                              CONNECT THE
+                     ANTI-SURGE FUSE                                                                                                                   USER CONFIGURABLE -VE INPUT D                                                                                       SCREEN TO
+                                                  RECOMMENDED THAT
+                                                     EMERGENCY STOP BREAKS THE                                                                                    USER CONFIGURABLE -VE INPUT E                                                                         ENGINE ONLY
+                                                         FUEL AND CRANK OUTPUTS                                                                                              USER CONFIGURABLE -VE INPUT F
+                                                                                                                                                                                                                                                                                                                                 †                      The DSE4410 and DSE4420 both provide
+                                                                                                                                                                                                   USER CONFIGURABLE OUTPUT C GEN BREAKER CLOSE                                                                                                         comprehensive metering and alarm indications:
+                                                                                                 NOTE 1                                                                                                      USER CONFIGURABLE OUTPUT D MAINS BREAKER CLOSE
+                                                                                                                                                                                                                                                                                                                                                        Generator frequency
+                  BATTERY                                                        FUEL            WL                                                                                                                          USER CONFIGURABLE +VE OUTPUT E                     ELECTRONIC ENGINE VERSION ONLY                                          Under/over speed
+                                                                                                             CHARGE                                                                                                                    USER CONFIGURABLE +VE OUTPUT F                                                                                   Generator volts (L-L, L-N)
+                                                                                                                                                                                                                                                                       †NOTE 2. 120 R TERMINATING RESISTOR                                              Engine oil pressure
+                                                                                                                 ALT                                                                                                                                                   MAY BE REQUIRED EXTERNALLY                                                       Engine coolant temperature
+                                                                                                                                                                                                                                                                       SEE ENGINE MANUFACTURERS LITERATURE                                              Fuel level (warning or shutdown)
+                                                                                       CRANK                                                                                                                                              *                                                                                                             Hours run counter
+                                                                                                                                                                                                                                                                                                                                                        Battery volts
+                                                                                                                                                                                                                                            MBCR                                                                                                        Fail to start/stop
+                                                                                                                                                                                                                                                                                                                                                        Emergency stop
+                                                                                                                                                                                                                                  GBCR                                                                                                                  Failed to reach loading voltage/frequency
+                                                                                                                                                                                                                                                                                                                                                        Charge fail
+                               BATTERY NEGATIVE MUST BE GROUNDED                                                          NOTE 1. THESE GROUND CONNECTIONS MUST BE ON THE EN-                                                                                                                                                                           Low DC voltage
+                                                                                                                          GINE BLOCK, AND MUST BE TO THE SENDER BODIES.                                                                                                                                                                                 CAN diagnostics
+                               TERMINALS SUITABLE FOR 22-16 AWG (0.6mm - 1.3mm )                                                                                                                                                                                                                                                                        Mains volts 3 phase (DSE4420 only)
+                               FIELD WIRING                                                                             *NOTE 3. MAINS BREAKER CLOSED OUTPUT SHOULD BE                                                                                                                                                                                  AMF indications (DSE4420 only)
+
+                               TIGHTENING TORQUE = 0.8Nm (7lb-in)                                                         CONFIGURED FOR DE-ENERGISE CLOSE MAINS, AND USE THE
+                                                                                                                          NORMALLY CLOSED CONTACTS OF MBCR.
+
+RELATED MATERIALS                                                                                                       PART NO’S
+TITLE                                                                                                                   057-092
+DSE4410 Manual                                                                                                          057-093
+DSE4420 Manual                                                                                                          057-101
+DSE Configuration Suite PC Software Manual                                                                              053-056
+DSE4410 Installation Instructions                                                                                       053-057
+DSE4420 Installation Instructions
+
+DEEP SEA ELECTRONICS maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                                                                                                                                                                                                                        055-068/01/16 (2)
+

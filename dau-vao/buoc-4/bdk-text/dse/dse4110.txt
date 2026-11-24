@@ -1,0 +1,164 @@
+                                                          ®                                                                                                             ®
+
+DSEULTRA                                                                                                           SPECIFICATION
+STARTING
+WITH                                                                                                               DC SUPPLY
+QUALITY.                                                                                                           8V to 35V continuous
+                                                                                                                   CRANKING DROPOUTS
+DSE703 & DSE4110                                                                                                   Able to survive 0V for 50mS, providing supply
+                                                                                                                   was at least 10V before dropout and supply
+AUTO START CONTROL MODULES                                                                                         recovers to 5V. This is achieved without the
+                                                                                                                   need for internal batteries.
+DSE703                               DSE4110                                                                       MAXIMUM OPERATING CURRENT
+                                                                                                                   150mA(12V), 250mA(24V) (DSE4110 only)
+                                                                                                                   50mA (DSE703 only)
+                                                                                                                   TYPICAL CURRENT
+                                                                                                                   20mA(12V and 24V) (DSE4110 only)
+                                                                                                                   12mA (DSE703 only)
+                                                                                                                   ALTERNATOR INPUT RANGE
+                                                                                                                   75V(L-N) to 333V AC (L-N) absolute maximum
+                                                                                                                   ALTERNATOR INPUT FREQUENCY
+                                                                                                                   50Hz – 60Hz at rated engine speed
+                                                                                                                   (minimum:75V AC L-N) (Crank disconnect
+                                                                                                                   from 15V L-N @ 20Hz)
+                                                                                                                   Over speed +14% (+24% overshoot)
+                                                                                                                   Under speed -20%
+                                                                                                                   START & FUEL OUTPUTS
+                                                                                                                   1.2 Amp DC at supply voltage. Switches to
+                                                                                                                   battery negative when active
+                                                                                                                   AUXILIARY OUTPUTS
+                                                                                                                   1.2 Amp DC at supply voltage. Switches to
+                                                                                                                   battery negative when active
+                                                                                                                   DSE703 DIMENSIONS
+                                                                                                                   165mm x 125mm x 29mm
+                                                                                                                   6.5” x 4.9” x 1.2”
+                                                                                                                   DSE703 CUT OUT
+                                                                                                                   149mm X 109mm
+                                                                                                                   5.9” x 4.3”
+                                                                                                                   DSE4110 DIMENSIONS
+                                                                                                                   171mm x 115mm x 49mm
+                                                                                                                   6.7” x 4.5” x 1.9”
+                                                                                                                   DSE4110 CUT OUT
+                                                                                                                   154mm x 98mm
+                                                                                                                   6.1” x 3.9”
+                                                                                                                   CHARGE FAIL
+                                                                                                                   8 Volt Charge Fail at 12 Volts, 16 Volt Charge
+                                                                                                                   Fail at 24 Volts
+
+The DSE703 is an Automatic           FEATURES                             OPERATION                                ENVIRONMENTAL TESTING
+Start Control Module that offers     • Manual start                       The modules are operated using the       STANDARDS
+an excellent range of engine         • Automatic start                    three push buttons on the front:
+monitoring and protection features.  • Engine pre-heat                                                             ELECTRO MAGNETIC CAPABILITY
+The module has been designed to      • Engine monitoring and protection             MANUAL – This mode is          BS EN 61000-6-2
+monitor over speed, under speed,                                                    used to manually start the     EMC Generic Emission Standard for the
+high engine temperature, low oil        features                                    engine.                        Industrial Environment
+pressure, battery charge fail and    • Protected Solid State (PSS)                                                 BS EN 61000-6-4
+fail to start.                                                                      AUTO – This mode is used       EMC Generic Emission Standard for the
+                                        outputs                                     to automatically start the     Industrial Environment
+The module also has two              • Front panel mounting                         engine. The module will be
+configurable auxiliary inputs and    • Front panel programming                      started by the remote start    TEMPERATURE
+a configurable engine pre-heat       • Tamper proof engine hours counter            signal.                        BS EN 60068-2-2
+timer. When the module detects       • Remote start                                                                Test Ab to +70oC 60067-2-2 Hot
+a fault condition it automatically   • LED indicators                               STOP – This button is used     Test Ab to -30oC 60068-2-1 Cold
+shuts down the engine, indicating    • Configurable inputs                          to stop the engine when it is
+the exact fault via LED.             • Configurable timers                          running in either manual or    VIBRATION
+                                     • Configurable outputs                         automatic mode.                BS EN 60068-2-6
+The DSE4110 module includes all      • Engine exercise mode                                                        Ten sweeps in each of three major axes
+the features of the DSE703 plus a                                                                                  5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+tamper proof engine hours counter,   BENEFITS
+engine exercise mode function and    • On-site module configuration to                                             HUMIDITY
+the enclosure has a closed back.                                                                                   BS 2011 part 2.1 60068-2-30
+Both modules have been designed         match user requirements                                                    Test Cb Ob Cyclic
+to automatically start the engine    • Hours counter provides accurate                                             93% RH @ 40oC for 48 hours
+within three attempts and crank
+disconnect.                             information for monitoring                                                 SHOCK
+                                        warranty periods                                                           BS EN 60068-2-27
+                                     • Multiple engine parameters are                                              Three shocks in each of three major axes
+                                        monitored simultaneously                                                   15gn in 11mS
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                                                                                                                                      ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+DSE703 & DSE4110
+
+                               L1
+
+                               L2
+
+    FROM L3
+GENERATOR
+
+                               N
+
+                                           2 AMP
+                                           FUSES
+
+                                                     20 21
+
+                                                        L1 N
+                                                    GEN VOLTS
+
+                                                  BATTERY
+                                                  -VE
+                                                             +VE
+                                                                                          FUEL
+                                                                                                               CRANK
+                                                                                                                                    OUTPUT 1
+                                                                                                                                                        OUTPUT 2
+                                                                                                                                                                     CHRG ALT
+                                                                                                                                                                                   OIL PRESSURE
+                                                                                                                                                                                                 COOLANT TEMP
+                                                                                                                                                                                                              INPUT 1
+                                                                                                                                                                                                                             INPUT 2
+                                                                                                                                                                                                                                          REMOTE START
+                                                                       MODULE 703/4110
+
+                                                  1           2        3                    4                   5        6                 7  8  9  10 11 12 15
+
+                                                                 *                       *            *               *
+
+                                                                           +                       +               +        +
+
+BATTERY NEGATIVE MUST BE                             2 AMP       FUSE
+GROUNDED                                                FUSE
+TERMINALS SUITABLE FOR 22-16 AWG
+(0.6mm - 1.3mm ) FIELD WIRING                        BATTERY        FUEL                   CRANK                                       WL
+TIGHTENING TORQUE = 0.8Nm (7lb-in)                               SOLENOID                SOLENOID
+                                                                                                                         CHARGE
+* NOTE. ALL THE OUTPUTS ARE SOLID                                                                                           ALT
+STATE AND ARE NEGATIVE SWITCHING
+
+CONFIGURATION                                                          NORMAL                                   RELATED MATERIALS                   PART NO’S
+The modules can be configured to                                       CONFIGURATION                            TITLE                               053-035
+match user’s individual parameter                                                                               DSE703 Installation Instructions    057-044
+settings. Configuration mode is                                                                                 DSE703 Operators Manual             053-019
+accessed via the switch at the rear                                                                             DSE4110 Installation Instructions   057-022
+of the module. Once in configuration                                                                            DSE4110 Operators Manual
+mode the AUTO-LED
+flashes rapidly.
+
+Please refer to the installation instructions for the parameter
+settings and configuration details.
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                                                                                                                        055-033/01/16 (3)
+

@@ -1,0 +1,301 @@
+         DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module
+
+Part Number: 3110-01
+
+Overview
+The DSE3110 can be utilised as a manual or auto start module for single gen-set applications or engine only applications. The module has been
+designed to work with non-electronic engines, providing advanced engine monitoring and protection features.
+
+The DSE3110 includes a back-lit icon LCD display which clearly shows the status of the generator set at all times. The module monitors engine speed,
+frequency, voltage and engine run hours and also displays the warning and shutdown status.
+
+The module includes fixed and configurable outputs as well as configurable inputs making this product ideal for a wide variety of applications. The
+module can either be programmed using the front panel or by using the DSE Configuration Suite PC software.
+
+Key Features                                                                                             • Generator frequency display
+• Back-lit icon LCD display                                                                              • Battery voltage display
+• Front panel editing                                                                                    • Engine speed display
+• LED and LCD alarm indication                                                                           • Hours counter
+• Power save mode                                                                                        • Engine pre-heat
+• PC configurable                                                                                        • Comprehensive shutdown or warning on fault condition
+• 6 digital inputs
+• 4 outputs (2 configurable and 2 fixed function)
+• Configurable timers and alarms
+• Alternative configuration
+• Remote start input
+• Generator voltage display
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module                                                               Typical Applications
+                                                                                                                                          Manual / Automatic Start
+Part Number: 3110-01
+
+Manual / Auto Start Controller Key Features
+• Single phase generator sensing with protection
+• Manual starting / control by fascia button and automatic
+
+       starting / control by inputs and other functions
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module                                                               8 V to 35 V continuous
+                                                                                                         Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout
+Part Number: 3110-01                                                                                     and supply recovers to 5 V. This is achieved without the need for internal batteries.
+                                                                                                         Backlight will not be maintained during cranking.
+  Specifications                                                                                         76 mA at 12 V, 61 mA at 24 V
+  DC Supply                                                                                              45 mA at 12 V, 43 mA at 24 V
+  Continuous Voltage Rating                                                                              8 V to 35 V fixed power source 2.5 W
+  Cranking Dropouts
+                                                                                                         1
+  Maximum Operating Current                                                                              15 VAC to 333 VAC Phase to Neutral
+  Maximum Standby Current                                                                                3.5 Hz to 75 Hz
+  Charge Alternator Excitation / Fail Range                                                              ±1 VAC Phase to Neutral 0.1 Hz
+  Voltage Measurement                                                                                    ±1% Full Scale Phase to Neutral ±0.2 Hz
+  Measurement Inputs
+  Voltage Range                                                                                          6
+  Frequency Range                                                                                        Negative Switching
+  Resolution                                                                                             40% with Respect to Positive Supply
+  Accuracy                                                                                               60% with Respect to Positive Supply
+  Digital Inputs
+  Number                                                                                                 1
+  Type                                                                                                   Negative Switching
+  Closed Voltage Threshold                                                                               40% with Respect to Positive Supply
+  Open Voltage Threshold                                                                                 60% with Respect to Positive Supply
+  Emergency Stop Input
+  Number                                                                                                 0.5 VPeak to 70 VPeak
+  Type                                                                                                   5 Hz to 10 kHz
+  Closed Voltage Threshold                                                                               6.25 RPM
+  Open Voltage Threshold                                                                                 ±25 RPM
+  Magnetic Pick-up Input                                                                                 10 to 500
+  Voltage Input Range
+  Frequency Input Range
+  Resolution
+  Accuracy
+  Flywheel Teeth
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module                                                               4
+                                                                                                         Positive Switching
+Part Number: 3110-01                                                                                     2 A Resistive Continuous at 35 V
+
+  Specifications                                                                                         1 Programmable Port
+  Digital Outputs
+  Number                                                                                                 -30 °C to +70 °C / -22 °F to +158 °F
+  Type                                                                                                   -40 °C to +85 °C / -40 °F to +185 °F
+  Positive DC Output Rating
+  Communications                                                                                         99 mm x 79 mm x 41.5 mm / 3.9” x 3.11” x 1.63”
+  USB B
+  Temperature                                                                                            Panel Fascia Mounting
+  Operating Temperature                                                                                  80 mm x 68 mm / 3.15” x 2.86”
+  Storage Temperature                                                                                    8 mm / 0.3”
+  Dimensions
+  Overall (W x H x D)
+  Mounting
+  Type
+  Panel Cut-Out (W x H)
+  Maximum Panel Thickness
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module                                                               EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+Part Number: 3110-01
+                                                                                                         Safety Requirements for Electrical Equipment for Measurement, Control and Laboratory
+  Environmental Testing Standards                                                                        use.
+  Electro-Magnetic Compatibility
+  BS EN 61000-6-2                                                                                        Ab/Ae Cold Test -30 ºC
+  BS EN 61000-6-4                                                                                        Bb/Be Dry Heat +70 ºC
+  Electrical Safety
+  BS EN 61010                                                                                            Ten sweeps in each of three major axes
+                                                                                                         5 Hz to 8 Hz at ±7.5 mm,
+  Temperature                                                                                            8 Hz to 500 Hz at 2 Gn
+  BS EN 60068-2-1
+  BS EN 60068-2-2                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+  Vibration                                                                                              Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+  BS EN 60068-2-6
+                                                                                                         Three shocks in each of three major axes
+  Humidity                                                                                               15 Gn in 11 ms
+  BS EN 60068-2-30
+  BS EN 60068-2-78                                                                                       IP65 - From the front of the module when installed into a control panel (with optional
+  Shock                                                                                                  gasket)
+  BS EN 60068-2-27
+
+  Degrees of Protection Provided by Enclosures
+  BS EN 60529
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE3110 Manual & Auto Start Control Module                                                               Description
+                                                                                                         DC Supply
+Part Number: 3110-01                                                                                     Fuel
+                                                                                                         Start
+ DSE3110                                                                                                 Output C
+ Pin                                                                                                     Output D
+ 1 to 2                                                                                                  Charge Fail / Excite
+ 3                                                                                                       Neutral
+ 4                                                                                                       L1
+ 5                                                                                                       Magnetic Pick-Up
+ 6                                                                                                       Digital Input A
+ 7                                                                                                       Digital Input B
+ 8                                                                                                       Digital Input C
+ 9                                                                                                       Digital Input D
+ 10 to 11                                                                                                Digital Input E
+ 12                                                                                                      Digital Input F
+ 13
+ 14
+ 15
+ 16
+ 17
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         DSEGenset® Data Sheet                                                                                                80 mm
+                                                                                                                             ( 3.15 " )
+DSE3110 Manual & Auto Start Control Module                                                                                  78.4 mm
+                                                                                                                             ( 3.09 " )
+Part Number: 3110-01
+Technical Drawing                                                                                                           103.8 mm
+                                                                                                                             ( 4.09 " )
+                                          41.5 mm
+                                          ( 1.63 " )
+
+                                               33 mm
+                                              ( 1.30 " )
+
+                                                                                                                                                     41.5 mm
+                                                                                                                                                     ( 1.63 " )
+
+                                                                                                                                                         33 mm
+                                                                                                                                                        ( 1.30 " )
+
+                                 66.4 mm
+                                    ( 2.62 " )
+                                         68 mm
+                                            ( 2.68 " )
+                                                                   83.8 mm
+                                                                       ( 3.30 " )
+                                                                                                                                                                                                                     66.4 mm
+
+Connection Label
+
+                                 9                                                                                      10
+
+                                                                                                                        11
+
+                                 8 12
+
+                                 Made In UK                                                                             13
+
+                                 7                                                                                      14
+
+                                 6                                                                                      15
+
+                                 5                                                                                      16
+
+                                 4 020-396,8                                                                            17
+
+                                 3 DC Supply : DC Outputs :                                              8-35 V, 0.5 A
+                                                                                                         30 V, 2 A
+
+                                 2 AC Volts Inputs : 277 Vac 50/60 Hz DC Inputs : 30 V Max
+                                    CH/ Alternator : 30 V, 2.5 W Max
+                                 1 CAN Port :
+                                                                                                         5 V Max
+                                    Mag Pickup : 70 V, 10 kHz Max
+
+                             Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-050 – DSE3110 Installation Instructions
+057-086 – DSE3110 Operator Manual
+057-087 – DSE3110 Configuration Suite PC Manual
+057-104 – DSE3110 Quick Start Guide
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-064/01/26 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

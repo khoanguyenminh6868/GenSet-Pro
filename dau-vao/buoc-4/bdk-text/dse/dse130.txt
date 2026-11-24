@@ -1,0 +1,120 @@
+                                                            ®                                                                                                           ®
+
+DSEEXTRA                                                                                                           SPECIFICATION
+BATTERY
+CHARGERS                                                                                                           DC SUPPLY
+AND EXPANSION                                                                                                      8 V to 35 V continuous
+MODULES.
+                                                                                                                   CRANKING DROPOUTS
+DSE130                                                                                                             Able to survive 0 V for 50 mS, providing supply
+                                                                                                                   was at least 10 V before dropout and supply
+INPUT EXPANSION CONTROL MODULE                                                                                     recovers to 5 V. This is achieved without the
+                                                                                                                   need for internal batteries.
+
+                                                                                                                   MAXIMUM OPERATING CURRENT
+                                                                                                                   150mA at 12V. 81mA at 24V. This maximum
+                                                                                                                   current includes connection of the P549
+                                                                                                                   remote annunciator which is powered by the
+                                                                                                                   P130.
+
+                                                                                                                   EXPANSION DIGITAL INPUTS 1-8
+                                                                                                                   Switch to battery negative. Can be normally
+                                                                                                                   open / normally closed.
+
+                                                                                                                   EXPANSION ANALOGUE INPUTS 1-2
+                                                                                                                   Suitable for resistive type senders operating
+                                                                                                                   from 0Ω - 480Ω
+                                                                                                                   DIMENSIONS
+                                                                                                                   171mm x 115mm x 49mm
+                                                                                                                   6.7” x 4.5” x 1.9”
+
+                                                                                                                   ENVIRONMENTAL TESTING
+                                                                                                                   STANDARDS
+
+                                                                                                                   ELECTRO MAGNETIC CAPABILITY (EMC)
+                                                                                                                   BS EN 61000-6-4
+                                                                                                                   EMC Generic Emission Standard for the
+                                                                                                                   Industrial Environment
+                                                                                                                   BS EN 61000-6-2
+                                                                                                                   EMC Generic Immunity Standard for the
+                                                                                                                   Industrial Environment
+
+                                                                                                                   ELECTRICAL SAFETY
+                                                                                                                   BS EN 60950
+                                                                                                                   Safety of Information Technology Equipment
+                                                                                                                   including Electrical Business Equipment
+
+                                                                                                                   TEMPERATURE
+                                                                                                                   BS EN 60068-2-2
+                                                                                                                   Test Ab to 70oC
+                                                                                                                   Test Ab to -30oC
+
+                                                                                                                   VIBRATION
+                                                                                                                   BS EN 60068-2-6
+                                                                                                                   Ten sweeps in each of the three major axes
+                                                                                                                   5Hz to 8Hz @ +/- 7.5mm
+
+                                                                                                                   HUMIDITY
+                                                                                                                   BS EN 60068-2-30
+                                                                                                                   Test Db 95% RH @ 55oC for 12 hours
+
+                                                                                                                   SHOCK
+                                                                                                                   BS EN 60068-2-27
+                                                                                                                   Three shocks in each of three major axes
+                                                                                                                   15gn In 11mS
+
+The DSE130 is an input expansion    FEATURES                              OPERATION
+system used to provide the DSE53xx  • Eight digital inputs                All inputs are fully configurable via
+modules and the DSEPower®           • Two analogue inputs                 the host controller, which then
+Series with additional input        • Four way connection socket          monitors the DSE130 to ensure the
+capabilities.                                                             data connection remains intact.
+                                       for integrating DSE549
+                                    • Remote signaling                    If the connection is removed or
+                                    • Suitable for NFPA 110 regulations   broken, an alarm is initiated on the
+                                                                          host module. If DC power remains,
+                                    BENEFITS                              the ‘link lost’ LED will flash.
+                                    • Designed for mounting inside a
+                                                                          The module also provides a 4-way
+                                       control panel                      socket for connection to the DSE549.
+                                    • Two part connector with screw       Protection is provided for the data
+                                                                          connection via LED, which will
+                                       terminals for easy connection      illuminate or flash on fault condition.
+                                    • Provides option of further
+
+                                       expansion by offering support for
+                                       the DSE549 remote annunciator
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                                  ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+RELATED MATERIALS                          PART NO’S                                                            TITLE                    PART NO’S
+TITLE                                      055-038                                                              DSE5520 Manual           057-016
+DSE5310 & DSE5320 Data sheet               057-013                                                              DSE5560 Data sheet       055-041
+DSE5310 Manual                             057-014                                                              DSE5560 Manual           057-017
+DSE5320 Manual                             055-039                                                              DSE549 Data sheet        055-048
+DSE5510 Data sheet                         057-015                                                              52/53xx Software Manual  057-006
+DSE5510 Manual                             055-040                                                              55xx Software Manual     057-007
+DSE5520 Data sheet
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                    055-047/01/16 (3)
+

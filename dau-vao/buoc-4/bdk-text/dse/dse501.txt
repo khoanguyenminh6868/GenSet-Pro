@@ -1,0 +1,94 @@
+PRODUCT:DSE501K                        DEEP SEA ELECTRONICS
+
+Manual Start
+
+Issue 2
+VH 25/05/01
+
+DESCRIPTION
+
+The Model 501K-1 is a Manual           Each alarm channel has it’s own
+Engine Control Module, which           LED indicator and once activated
+has been designed to manually          no further alarm conditions will be
+control the engine via a key           accepted. The alarm output and
+switch on t front panel. The           relevant LED will remain active
+module is used to start and stop       until the unit is reset by turning the
+the engine, indicating fault           switch to the ‘O’ position.
+conditions; automatically shutting
+down the engine and indicating         Overspeed Protection (Optional)
+the engine failure by LED giving       is achieved by the fitment of an
+true first up fault annunciation.      additional PCB in the module. This
+                                       provides integral overspeed
+Operation of the module is via a       protection derived from either the      SPECIFICATION
+three position key switch              generator HZ output or the engine
+mounted on the front panel with        magnetic pick-up (specified on          DC Supply:
+STOP(O), RUN(I) and START(II)          ordering). The overspeed circuit        9 to 33 V Continuous.
+positions. In the ‘O’ position the     continuously monitors the engine        Cranking Dropouts:
+DC supply is removed from the          speed and will shut down the            Able to survive voltage dips during
+module and the run relay and           engine immediately if a pre-set         cranking. This is achieved without
+alarm output are de-energised. If      speed level is exceeded. This trip      the need for internal batteries.
+the switch is turned to the ‘I’        level is adjustable from 90% to         Alternator Input Range:
+position the module is powered         130% of full rated speed and is         15 - 305 V AC RMS
+up and the run relay is energised,     suitable of both 50Hz or 60Hz           Alternator Input Frequency:
+activating the engine fuel/ignition    systems.                                50 - 60 Hz at rated engine speed.
+system and the protection hold-                                                Magnetic Input Range:
+off timer is initiated. If the switch  During engine cranking and for a        0.5 V to +/- 80 V
+is moved to the ‘II’ position and      short time afterwards the               Magnetic Input
+held against the spring return, a      protection hold-off timer is active     Frequency:2300Hz to 6000 Hz at
+positive supply is applied to the      and the relevant alarms inputs are      rated engine speed.
+relevant output terminal and on to     inhibited. This enables the engine      Start Relay Output:
+the starter motor. Once the            to start and achieve normal running     16 Amp DC at supply voltage.
+engine has started the switch          conditions. Once the timer has          Run Relay Output:
+should be released and allowed         expired the inputs are enabled          16 Amp DC at supply voltage.
+to return to the ‘I’ position.         providing normal protection from        Alarm Output:
+                                       the module.                             1 Amp DC at supply voltage.
+Operation of any of the following                                              Dimensions:
+                                       Charge Failure warning is also          72 X 72 X 118.5 (Excluding Key-
+alarms; Low Oil Pressure, High         provided by monitoring the WL           switch)
+                                       terminal on the charge alternator.      Operating Temperature Range:
+Engine Temperature, Auxiliary          This operates on a similar principal    -30 to +70°C
+                                       to the warning lamp fitted in a         Installation:
+Shutdown,    Overspeed                 motor vehicle, should the output        Front panel mounting via suitable
+                                       fail the charge fail LED will           cut-out. Retaining clips supplied.
+(Optional), will cause the run         illuminate. The module will also        Cable connections via locking plug
+                                       provide the alternator excitation       and socket type connectors.
+relay to de-energise. This will        current via this connection.            Calibration:
+                                                                               Speed trip setting and meter
+remove the fuel/ignition supply                                                calibration adjustment
+                                                                               potentiometer are accessible from
+from the engine and bring it to                                                the rear of the module.
+
+rest. The alarm output will be
+
+activated giving a positive DC
+
+output.
+
+Deep Sea Electronics plc maintains a policy of continuous development and reserves the right to change the details shown in this data sheet without prior
+                                                                   notice. The contents are intended for guidance only.
+CASE DIMENSIONS                                                              Meter   1
+
+                        65.5mm                                               Trip
+
+                                                            111.0mm  72.0mm
+
+TYPICAL CONNECTIONS                                                          11
+
+                                                                             14     10
+
+                                                                             72.0mm
+
+                                                                            Panel Cut-out: 68mmx68mm
+
+                                                                     7.5mm
+
+    Deep Sea Electronics Plc.          Deep Sea Electronics inc.               Deep Sea Electronics Plc.
+      Tel:+44 (0)1723 890099           Phone: +1 (815) 316-8706                            (Far East)
+     Fax: +44 (0)1723 893303             Fax: +1 (815) 316- 8708
+                                    TOLL FREE (USA only) : Tel: 1                    Tel:+66 2 670 6228
+LO CALL (from UK BT landlines) :                                                    Fax: +66 2 678 3028
+     Telephone 0845 260 8933                    866 636 9703                Email: support@deepseaplc.com
+                                  Email: dsesales@deepseausa.com               Web: www.deepseaplc.com
+Email: support@deepseaplc.com
+    Web: www.deepseaplc.com           Web: www.deepseausa.com
+

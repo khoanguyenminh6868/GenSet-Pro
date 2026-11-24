@@ -1,0 +1,134 @@
+                                                            ®                                                                                                         ®
+
+DSEEXTRA                                                                                                         SPECIFICATION
+BATTERY
+CHARGERS                                                                                                         DC SUPPLY
+AND EXPANSION                                                                                                    The DSE157 is powered from the plant battery
+MODULES.                                                                                                         or from a low voltage supply between 8V and
+                                                                                                                 35V continuous. It is able to survive 0V for 50ms
+DSE157                                                                                                           during cranking, providing supply was at least
+                                                                                                                 10V before dropout and supply recovers to 5V.
+OUTPUT RELAY EXPANSION MODULE                                                                                    This is achieved without the need for internal
+                                                                                                                 batteries.
+                                                                                                                 MAXIMUM OPERATING CURRENT
+                                                                                                                 120mA @ 12V, 70mA @ 24V
+                                                                                                                 MAXIMUM STANDBY CURRENT
+                                                                                                                 25mA @ 12V, 18mA @ 24V
+                                                                                                                 AUXILIARY RELAY CONTACTS
+                                                                                                                 5Amp DC rated voltage free
+                                                                                                                 DIMENSIONS
+                                                                                                                 DIN Rail mounted housing
+                                                                                                                 72mm x 160mm x 77mm
+                                                                                                                 2.8” x 6.3” x 3”
+                                                                                                                 SELECTOR SWITCHES
+                                                                                                                 Test - Operates all relays to test operation
+                                                                                                                 Unused - No function
+                                                                                                                 Enable Lamp Test - Relays will energise on
+                                                                                                                 receipt of a lamp test signal from host module
+                                                                                                                 A/B Select - Determines whether the 157
+                                                                                                                 responds to signals for expansion A or B relays
+                                                                                                                 INDICATIONS
+                                                                                                                 Lit LED - Power On
+                                                                                                                 Flashing LED - Link lost (to controller)
+                                                                                                                 8 Relay active LED’s
+
+                                                                                                                 ENVIRONMENTAL TESTING
+                                                                                                                 STANDARDS
+
+The DSE157 is an output relay        FEATURES                            CONFIGURATION                           ELECTRO MAGNETIC CAPABILITY (EMC)
+expansion module for use with        • 8 configurable relay contacts     The DSE157 is configured via the host   BS EN 61000-6-4
+DSEControl® and DSEPower®            • Plug and socket host connection   control module and PC software.         EMC Generic Emission Standard for the
+Series Modules (excluding                                                                                        Industrial Environment
+DSE51xx).                               for quick and easy set-up        Relay contacts can be configured to     BS EN 61000-6-2
+                                     • Two DSE157 modules can be         be either:                              EMC Generic Immunity Standard for the
+The DSE157 has been designed                                             • de-energised - open on command        Industrial Environment
+to extend a host modules output         linked together to provide 16    • energised - close on command
+capabilities. The additional            additional outputs (DSE53xx and                                          ELECTRICAL SAFETY
+capabilities allow OEM’s to meet        DSE55xx modules only).           When using two DSE157’s together,       BS EN 60950
+increasingly complex industry                                            each module needs to be identified      Safety of Information Technology Equipment
+specifications.                                                          as either ‘A’ or ‘B’. This can be done  including Electrical Business Equipment
+                                                                         via the small selector switch on the
+                                                                         circuit board.                          TEMPERATURE
+                                                                                                                 BS EN 60068-2-2
+                                                                                                                 Test Ab to 70oC
+                                                                                                                 Test Ab to -30oC
+
+                                                                                                                 VIBRATION
+                                                                                                                 BS EN 60068-2-6
+                                                                                                                 Ten sweeps in each of the three major axes
+                                                                                                                 5Hz to 8Hz @ +/- 7.5mm
+
+                                                                                                                 HUMIDITY
+                                                                                                                 BS EN 60068-2-30
+                                                                                                                 Test Db 95% RH @ 55oC for 12 hours
+
+                                                                                                                 SHOCK
+                                                                                                                 BS EN 60068-2-27
+                                                                                                                 Three shocks in each of three major axes
+                                                                                                                 15gn in 11mS
+
+The module incorporates ‘DIN’ rail
+mountings and an interconnecting
+FCC 68 cable, allowing quick fixing
+into a panel. The module will work
+up to 50 meters from the host
+control module.
+DEEP SEA ELECTRONICS PLC                                TELEPHONE                                               EMAIL                                                  ®
+
+Highfield House                                         +44 (0)1723 890099                                      sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                               FACSIMILE                                               WEBSITE
+
+YO14 0PH England                                        +44 (0)1723 893303                                      www.deepseaplc.com
+
+Registered in England & Wales No.01319649               VAT No.316923457                                        EMAIL
+                                                                                                                sales@dseplc.com
+DEEP SEA ELECTRONICS PLC                                TELEPHONE
+THAILAND                                                +66 (0) 2678 3028                                       WEBSITE
+TPI Tower, Lobby 3                                                                                              www.deepseaplc.com
+Floor 27, 26-56 Chan New Road                           FACSIMILE
+Tungmahamek, Sathom                                     +66 (0) 2670 6228                                       EMAIL
+Bangkok 10120, Thailand                                                                                         sales@deepseausa.com
+                                                        TELEPHONE
+DEEP SEA ELECTRONICS INC                                +1 (815) 316 8706                                       WEBSITE
+USA                                                                                                             www.deepseausa.com
+3230 Williams Avenue                                    FACSIMILE
+Rockford                                                +1 (815) 316 8708
+IL 61101-2668 USA
+
+DSE157
+
+                                                        TO FURTHER          TO CONTROLLER
+                                                        EXPANSION
+
+                                                                   RELAY EXPANSION
+
+             BATTERY- VE                                RL8B RL8A RL7B RL7A RL6B RL6A RL5B RL5A RL4B RL4A RL3B RL3A RL2B RL2A RL1B RL1A
+                            + VE
+             -+                    2 AMPS
+                                       ANTI-SURGE FUSE
+
+BATTERY -VE           BATTERY +VE
+                      (12 OR 24 VDC)
+
+RELATED MATERIALS                                       PART NO’S                                               TITLE                    PART NO’S
+TITLE                                                   055-037                                                 DSE5510 data sheet       055-039
+DSE5210 & 5220 data sheet                               053-023                                                 DSE5510 manual           057-015
+DSE5210 manual                                          057-016                                                 DSE5520 data sheet       055-040
+DSE5220 manual                                          055-038                                                 DSE5520 manual           057-016
+DSE5310 & 5320 data sheet                               057-014                                                 DSE5560 data sheet       055-041
+DSE5320 manual                                          057-013                                                 DSE5560 manual           057-017
+DSE5310 manual                                          057-006
+52/53xx Software Manual                                 057-007
+55xx Software Manual
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                                    055-045/01/16 (2)
+

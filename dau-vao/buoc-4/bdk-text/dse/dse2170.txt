@@ -1,0 +1,220 @@
+DSENet® Data Sheet
+
+DSE2170 DSENet® RTD / Thermocouple Input & Analogue Output Expansion Module
+
+Part Number: 2170-01
+
+Overview
+The DSE2170 RTD/Thermocouple Input and Analogue Output Expansion Module has been developed for use with the DSEG8600 platform and
+DSEM-Series platform. The DSE2170 extends the host modules input and output capabilities for increased application flexibility. This is achieved by
+providing an additional 4 RTD/thermocouple inputs (configurable as J Type, K Type, L Type, Pt100 or Pt1000) and 4 analogue outputs (configurable as
+0 V to 10 V or 0 mA to 20 mA).
+
+For enhanced communication with the host module, the DSE2170 features a DSENet® port for connection to the DSEG8600 platform and a CAN port
+for connection to the DSEM-Series platform. A red status LED is provided to easily identify when the DSE2170 is connected to a power source and
+communicating with the host controller.
+
+Key Features
+• 4 RTD/Thermocouple Inputs (configurable as J Type, K Type, L Type,
+
+      Pt100 or Pt1000)
+• 4 Analogue Outputs (configurable as 0 V to 10 V or 0 mA to 20 mA)
+• Status LED to Indicate Power On and Link Lost
+• DSENet® Communication
+• CAN Communication
+
+Product Documentation
+053-269 – DSE2170 Installation Instructions
+057-362 – DSE2170 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/01/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2170 DSENet® RTD / Thermocouple Input & Analogue Output Expansion Module
+
+Part Number: 2170-01
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout and
+Continuous Voltage Rating                                                                                supply recovers to 5 V. This is achieved without the need for internal batteries. LEDs
+Cranking Dropouts                                                                                        are not maintained during cranking.
+                                                                                                         200 mA at 12 V, 95 mA at 24 V
+Maximum Operating Current                                                                                50 mA (no communication active)
+Maximum Standby Current
+RTD / Thermocouple Inputs                                                                                4
+Number                                                                                                   J Type Thermocouple, K Type Thermocouple, L Type Thermocouple, Pt100 or Pt1000
+Type                                                                                                     Insulated
+Probe Type                                                                                               0.0015 % when configured as RTD
+Input Resolution                                                                                         0.18 % when configured as Thermocouple
+                                                                                                         ±1 % or ±2 °C - whichever is greater
+Input Accuracy
+Analogue Outputs                                                                                         4
+Number                                                                                                   0 V to 10 V or 0 mA to 20mA
+Type                                                                                                     Minimum 1 kΩ when configured as 0 V to 10 V
+Load Impedance                                                                                           Maximum 500 Ω when configured as 0 mA to 20 mA
+                                                                                                         2.5 mV when configured as 0 V to 10 V
+Output Resolution                                                                                        5 µA when configured as 0 mA to 20 mA
+                                                                                                         ±0.5 %
+Output Accuracy
+Communications                                                                                           Fully isolated
+DSENet®                                                                                                  Fully isolated
+CAN
+Temperature                                                                                              -30 °C to +70 °C / -22 °F to +158 °F
+Operating Temperature                                                                                    -40 °C to +85 °C / -40 °F to +185 °F
+Storage Temperature
+Dimensions                                                                                               120 mm x 75 mm x 31.5 mm / 4.72” x 2.95” x 1.24”
+Overall (W x H x D)
+Mounting                                                                                                 35 mm / 1.35”
+DIN Rail                                                                                                 2 M4 mounting holes with 108 mm x 63 mm / 4.25” x 2.48” centres
+Chassis
+
+Product Documentation
+053-269 – DSE2170 Installation Instructions
+057-362 – DSE2170 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/01/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2170 DSENet® RTD / Thermocouple Input & Analogue Output Expansion Module
+
+Part Number: 2170-01
+
+Related Products
+
+DSEGenset®
+
+DSEG8600                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+
+DSEControl® Programmable Controllers                                                                                                                 M870-01, M870-02, M870-03, M870-04
+                                                                                                                                                     M840-01, M840-02
+DSEM870                          7” Programmable Display                                                                                             M835-01
+                                                                                                                                                     M812-01, M812-02, M812-03, M812-04
+DSEM840                          4.3” Programmable Display                                                                                           M810-01, M810-02, M810-03, M810-04
+                                                                                                                                                     M643-01
+DSEM835                          3.5” Programmable Display                                                                                           M640-01
+
+DSEM812                          12” Programmable Display                                                                                            2548-01
+                                                                                                                                                     2160-01
+DSEM810                          10” Programmable Display                                                                                            2157-01
+                                                                                                                                                     2152-01
+DSEM643                          Programmable Controller (34 I/O)                                                                                    2133-01
+                                                                                                                                                     2131-01
+DSEM640                          Programmable Controller (68 I/O)                                                                                    2130-01
+
+DSENet®
+
+DSE2548                          DSENet® LED Output Expansion Module
+
+DSE2160                          DSENet® Input / Output Expansion Module
+
+DSE2157                          DSENet® Output Expansion Module
+
+DSE2152                          DSENet® Analogue Output Expansion Module
+
+DSE2133                          DSENet® RTD/Thermocouple Input Expansion Module
+
+DSE2131                          DSENet® Ratiometric Input Expansion Module
+
+DSE2130                          DSENet® Input Expansion Module
+
+Product Documentation
+053-269 – DSE2170 Installation Instructions
+057-362 – DSE2170 Operator Manual
+
+DEEP SEA ELECTRONICS UK               DEEP SEA ELECTRONICS USA                                           DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                T: +1 (815) 316 8706                                               T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com       E: usasales@deepseaelectronics.com                                 E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com         W: www.deepseaelectronics.com                                      W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/01/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2170 DSENet® RTD / Thermocouple Input & Analogue Output Expansion Module
+
+Part Numbers: 2170-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP21
+BS EN 60529
+
+Pin Out Description                                                                                      Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   DSENet®
+3 to 5                                                                                                   CAN
+6 to 8                                                                                                   Analogue Outputs
+9 to 16                                                                                                  RTD / Thermocouple Inputs
+17 to 26
+
+Product Documentation
+053-269 – DSE2170 Installation Instructions
+057-362 – DSE2170 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/01/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSENet® Data Sheet
+
+DSE2170 DSENet® RTD / Thermocouple Input & Analogue Output Expansion Module                                                                          31.5 mm
+                                                                                                                                                     ( 1.24 " )
+Part Numbers: 2170-01
+
+Technical Drawing
+
+                                                           120 mm
+                                                           ( 4.72 " )
+                                                           108 mm
+                                                           ( 4.25 " )
+
+75 mm
+   ( 2.95 " )
+        63 mm
+           ( 2.48 " )
+
+Connection Label
+
+Product Documentation
+053-269 – DSE2170 Installation Instructions
+057-362 – DSE2170 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-294/01/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+
