@@ -2850,7 +2850,14 @@
 
   // The make shown: the names given by the strongest kind of evidence (a cell of the row, a column title or the
   // maker itself before a page title, which on dealer sites often lists several brands).
-  const RANK = { "dòng bảng": 3, "tiêu đề cột": 2, "hãng sản xuất": 2, "tên trang": 1 };
+  const RANK = { "dòng bảng": 3, "tiêu đề cột": 2, "hãng sản xuất": 2, "tên trang": 1, "tờ hãng": 1 };
+  // Alternator codes with no make in any supplier row, whose make is the maker's OWN datasheet (Khoa duyệt 24/11/2026,
+  // nghiem-thu/dau-phat-khong-hang-trung-ma.md). A closed list of one: not a rule over every maker sheet. The make is
+  // given ONLY when the entry has none (never overrides a supplier's), as via "tờ hãng" (not "dòng bảng"), with the sheet as
+  // source, so a page / the proposal never says the supplier wrote it.
+  //   LVSI804W: meao-jiangsu lists the code with no make; the Stamford sheet stamford-avk-china n1068 titles it "LVSI804W"
+  //   (its table: "LV 804 W | WDG 12 - Technical Data Sheet").
+  const SHEET_MAKE = { LVSI804W: { name: "Stamford", supplierId: "stamford-avk-china", n: 1068 } };
   function makeOf(makes) {
     if (!makes.length) return null;
     const top = Math.max(...makes.map((m) => RANK[m.via] || 0));
@@ -3316,6 +3323,8 @@
       });
       // `makes`: the makes kept (keptMakes), which make, origin and group are read from; every make a source gave stays in
       // `makesAll`; `makeConflict`: the names the sources disagree on when none is kept.
+      const sheet = e.kind === "alternator" && !e.makes.length ? SHEET_MAKE[e.key] : null;
+      if (sheet) e.makes.push({ name: sheet.name, via: "tờ hãng", supplierId: sheet.supplierId, n: sheet.n });
       const kept = e.kind === "controller" ? { makes: e.makes, conflict: null } : keptMakes(e);
       return { ...e, specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
         kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null,
