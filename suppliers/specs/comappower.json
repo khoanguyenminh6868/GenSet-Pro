@@ -1405,7 +1405,17 @@
    "| COM688 | 688kVA | 550kW | 625kVA | 500kW | YC6TD840-D32 | 6 | COM688",
    "| COM750 | 750kVA | 600kW | 688kVA | 550kW | YC6TD940-D32 | 6 | COM750",
    "| COM825 | 825kVA | 660kW | 750kVA | 600kW | YC6TD1020-D32 | 6 | COM825",
-   "| COM1730 | 1730kVA | 1384kW | 1575kVA | 1260kW | YC12VC2170-D33 | 12 | COM1730",
+   "| COM1730 | 1730kVA | 1384kW | 1575kVA | 1260kW | YC12VC2170-D33 | 12 | COM1730"
+  ]
+ },
+ {
+  "n": 112,
+  "url": "https://comappower.com/product/yuchai-generator-set/",
+  "title": "YUCHAI GENERATOR SET - Comappower",
+  "header": [
+   "| | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data"
+  ],
+  "rows": [
    "| COM41 | 41kVA | 33kW | 38kVA | 30kW | YC4D65-D20 | 4 | COM41",
    "| COM62 | 62kVA | 50kW | 56kVA | 45kW | YC4D80Z-D20 | 4 | COM62",
    "| COM75 | 75kVA | 60kW | 69kVA | 55kW | YC4D100Z-D20 | 4 | COM75",

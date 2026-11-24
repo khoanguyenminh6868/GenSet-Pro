@@ -38,6 +38,9 @@ for (const f of [...new Set([...listed("specs"), ...listed("datasheets")])]) {
   const kept = (rec.specTables || []).filter((t) => t.n >= 2000);
   // Quotes written by hand for a crawled page (a power range a product line cites) stay when its URL is the same
   // (2026-11-04: a merge of every record dropped them and verify failed).
+  // Trang được dùng mà không có tệp nguồn (specs/ giữ bảng cũ của trang đã bị xoá tệp): báo rõ thay vì ENOENT giữa chừng.
+  const noFile = used.filter((n) => !fs.existsSync(path.join(ROOT, "sources", id, `${n}.md`)));
+  if (noFile.length) throw new Error(`${id}: trang ${noFile.join(", ")} có bảng trong specs/ mà thiếu sources/${id}/<n>.md; chạy: node suppliers/rebuild-specs.mjs ${id} rồi merge-specs lại`);
   const before = new Map(rec.sources.map((s) => [s.n, s]));
   rec.sources = rec.sources.filter((s) => s.n < 101 || s.n >= 2000);
   for (const n of used) {

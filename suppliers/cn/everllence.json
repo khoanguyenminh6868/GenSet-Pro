@@ -75,10 +75,34 @@
         "Gensets and related plant auxiliaries, 11 × 18V51/60DF LNG dual fuel engines"
       ],
       "file": "sources/everllence/1.md"
+    },
+    {
+      "n": 109,
+      "url": "https://www.everllence.com/marine/applications/commercial/tanker",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "Engine speed: rpm to 56 – 167"
+      ],
+      "file": "sources/everllence/109.md"
     }
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-01",
   "checkedBy": "discover-bot (Claude)",
-  "specTables": []
+  "specTables": [
+    {
+      "n": 109,
+      "title": "Oil tanker ship engines | Two- and four-stroke | Everllence",
+      "header": [],
+      "rows": [
+        "Engine speed: rpm to 56 – 167",
+        "Output: 4,350 – 82,440 kW at L1",
+        "Engine speed: 56 – 125 rpm",
+        "Output: 6,950 – 82,440 kW at L1",
+        "Engine speed : rpm to 56 – 167",
+        "Output : 4,350 – 82,440 kW at L1"
+      ]
+    }
+  ]
 }

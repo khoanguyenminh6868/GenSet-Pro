@@ -16,7 +16,12 @@
   "header": [],
   "rows": [
    "| No. of Cylinders | 6 | Engine power(KW) | 145",
-   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778"
+   "| Cycle | 4 Stroke | Cylinder Type | Wet",
+   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778",
+   "| Induction | Aftercooled | Displacement (L) | 14",
+   "| Cooling Method | Water cooled | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 66.8",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Oil pan capacity (L) | 36"
   ]
  },
  {
@@ -26,7 +31,12 @@
   "header": [],
   "rows": [
    "| No. of Cylinders | 6 | Engine power(KW) | 176",
-   "| Bore * Stroke (mm) | 114 * 135 | Compression Ratio | 10.5:1"
+   "| Cycle | 4 Stroke | Cylinder Type | Wet",
+   "| Bore * Stroke (mm) | 114 * 135 | Compression Ratio | 10.5:1",
+   "| Induction | Turbocharged and Aftercooled | Displacement (L) | 8.9",
+   "| Cooling Method | Water cooled | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 11.1",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Oil pan capacity (L) | 27.6"
   ]
  },
  {
@@ -255,7 +265,11 @@
    "| Cycle | 4 Stroke | Standby | 203"
   ],
   "rows": [
-   "| Bore / Stroke | 114mm / 135 mm | Compression Ratio | 16.0:1"
+   "| Bore / Stroke | 114mm / 135 mm | Compression Ratio | 16.0:1",
+   "| Induction | After-cooled, turbo-charged cooled | Displacement (L) | 8.3",
+   "| Cooling Method | Radiator fan cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 12.3",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 23.8"
   ]
  },
  {
@@ -355,7 +369,8 @@
    "| Start Time | 8–10 seconds | 10–20 seconds"
   ],
   "rows": [
-   "| Voltage Stability | ±1% | ±2–5%"
+   "| Voltage Stability | ±1% | ±2–5%",
+   "| Fuel Efficiency | High (Cummins optimized system) | Medium"
   ]
  },
  {
@@ -366,7 +381,10 @@
    "| Performance Item | Camda 400 KVA Generator | Reference Source"
   ],
   "rows": [
-   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5"
+   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5",
+   "| Load Response Time | <3 seconds | Factory Testing Data",
+   "| Noise Level | 68–75 dB(A) | ISO 3744 Standard",
+   "| Efficiency Rate | Up to 94% | Cummins Engine Specification"
   ]
  },
  {
@@ -378,7 +396,11 @@
    "| Cycle | 4 Stroke | Standby | 407"
   ],
   "rows": [
-   "| Bore / Stroke | 140mm / 152 mm | Compression Ratio | 14.0:1"
+   "| Bore / Stroke | 140mm / 152 mm | Compression Ratio | 14.0:1",
+   "| Induction | turbo-charged aftercooled | Displacement (L) | 14",
+   "| Cooling Method | Radiator fan cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 20.8",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 38.6"
   ]
  },
  {
@@ -391,7 +413,8 @@
    "| Start-up Time | <10 seconds | 10–20 seconds"
   ],
   "rows": [
-   "| Voltage Stability | ±1% | ±2–5%"
+   "| Voltage Stability | ±1% | ±2–5%",
+   "| Fuel Efficiency | High (optimized Cummins engine) | Medium"
   ]
  },
  {
@@ -402,7 +425,10 @@
    "| Performance Parameter | Camda 450 kva generator | Test Standard Source"
   ],
   "rows": [
-   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5"
+   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5",
+   "| Load Response | <3 seconds recovery | Internal Factory Test",
+   "| Noise Level | 68–75 dB(A) | ISO 3744 Acoustic Standard",
+   "| Operating Efficiency | Up to 94% | Engine Manufacturer Data (Cummins)"
   ]
  },
  {
@@ -450,7 +476,11 @@
    "| Cycle | 4 Stroke | Standby | 575"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm /159mm | Compression Ratio | 13.9:1"
+   "| Bore / Stroke | 159mm /159mm | Compression Ratio | 13.9:1",
+   "| Induction | turbo-charged aftercooled | Displacement (L) | 18.9",
+   "| Cooling Method | Radiator fan cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 30",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 50"
   ]
  },
  {
@@ -474,7 +504,11 @@
    "| Cycle | 4 Stroke | Standby | 610"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.5:1"
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.5:1",
+   "| Induction | Turbocharged and Air-air cooled | Displacement (L) | 18.9",
+   "| Cooling Method | Charge Air Cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity (L) | 26.5",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 50"
   ]
  },
  {
@@ -498,7 +532,11 @@
    "| Cycle | 4 Stroke | Standby | 711"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1"
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1",
+   "| Induction | Turbocharged and Air-air cooled | Displacement (L) | 37.8",
+   "| Cooling Method | Charge Air Cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity (L) | 106",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 135.1"
   ]
  },
  {
@@ -895,6 +933,7 @@
    "| Gas FLow(Nm3/h) | 30-60 | 60-100 | 100-150 | 150-200",
    "| Working Pressure(kPa) | 4-40 | 4-40 | 4-40 | 4-40",
    "| Desulfurizer | 2 pcs | 2 pcs | 2 pcs | 4 pcs",
+   "| Model & Size | KDTL-250-G | KDTL-400-G | KDTL-800-G | KDTL-800-G",
    "| SS304 | SS304 | SS304 | SS304",
    "| Φ500×1880×3.0mm | Φ600×2080×3.0mm | Φ800×2130×3.0mm | Φ800×2130×3.0mm"
   ]
@@ -932,6 +971,7 @@
    "| Alternator Brand & Model | Leroy Somer LSA46.3S2",
    "| Frequency & Phase | 50Hz, 3Phases + 4Wires",
    "| Engine Speed (RPM) | 1500",
+   "| Fuel Consumption (L/hr)（100％load） 100% Load | 36",
    "| Dimensions: (mm) | L | 2400 | 3500",
    "| Weights (kg) | 1685 | 2466",
    "| Standby Power Rating | 200 KVA",
@@ -945,7 +985,12 @@
   "header": [],
   "rows": [
    "| No. of Cylinders | 6 | Engine power(KW) | 176",
-   "| Bore * Stroke (mm) | 114 * 135 | Compression Ratio | 10.5:1"
+   "| Cycle | 4 Stroke | Cylinder Type | Wet",
+   "| Bore * Stroke (mm) | 114 * 135 | Compression Ratio | 10.5:1",
+   "| Induction | Turbocharged and Aftercooled | Displacement (L) | 8.9",
+   "| Cooling Method | Water cooled | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 11.1",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Oil pan capacity (L) | 27.6"
   ]
  },
  {
@@ -1442,7 +1487,12 @@
   "header": [],
   "rows": [
    "| No. of Cylinders | 6 | Engine power(KW) | 145",
-   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778"
+   "| Cycle | 4 Stroke | Cylinder Type | Wet",
+   "| Bore * Stroke (mm) | 140 * 152 | Compression Ratio | 0.459027778",
+   "| Induction | Aftercooled | Displacement (L) | 14",
+   "| Cooling Method | Water cooled | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 66.8",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Oil pan capacity (L) | 36"
   ]
  },
  {
@@ -1583,7 +1633,11 @@
    "| Cycle | 4 Stroke | Standby | 711"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1"
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.9:1",
+   "| Induction | Turbocharged and Air-air cooled | Displacement (L) | 37.8",
+   "| Cooling Method | Charge Air Cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity (L) | 106",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 135.1"
   ]
  },
  {
@@ -1607,7 +1661,11 @@
    "| Cycle | 4 Stroke | Standby | 610"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.5:1"
+   "| Bore / Stroke | 159mm / 159 mm | Compression Ratio | 13.5:1",
+   "| Induction | Turbocharged and Air-air cooled | Displacement (L) | 18.9",
+   "| Cooling Method | Charge Air Cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity (L) | 26.5",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 50"
   ]
  },
  {
@@ -1631,7 +1689,11 @@
    "| Cycle | 4 Stroke | Standby | 575"
   ],
   "rows": [
-   "| Bore / Stroke | 159mm /159mm | Compression Ratio | 13.9:1"
+   "| Bore / Stroke | 159mm /159mm | Compression Ratio | 13.9:1",
+   "| Induction | turbo-charged aftercooled | Displacement (L) | 18.9",
+   "| Cooling Method | Radiator fan cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 30",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 50"
   ]
  },
  {
@@ -1691,7 +1753,11 @@
    "| Cycle | 4 Stroke | Standby | 407"
   ],
   "rows": [
-   "| Bore / Stroke | 140mm / 152 mm | Compression Ratio | 14.0:1"
+   "| Bore / Stroke | 140mm / 152 mm | Compression Ratio | 14.0:1",
+   "| Induction | turbo-charged aftercooled | Displacement (L) | 14",
+   "| Cooling Method | Radiator fan cooling | Governing Type | Electronic",
+   "| Starting method | 24V DC motor | Coolant capacity, including radiator (L) | 20.8",
+   "| Lubricant Oil | 15W40-CF4 or above grade | Lube System Capacity(L) | 38.6"
   ]
  },
  {
@@ -1704,7 +1770,8 @@
    "| Start-up Time | <10 seconds | 10–20 seconds"
   ],
   "rows": [
-   "| Voltage Stability | ±1% | ±2–5%"
+   "| Voltage Stability | ±1% | ±2–5%",
+   "| Fuel Efficiency | High (optimized Cummins engine) | Medium"
   ]
  },
  {
@@ -1715,7 +1782,10 @@
    "| Performance Parameter | Camda 450 kva generator | Test Standard Source"
   ],
   "rows": [
-   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5"
+   "| Frequency Stability | 50/60 Hz ±0.25% | ISO 8528-5",
+   "| Load Response | <3 seconds recovery | Internal Factory Test",
+   "| Noise Level | 68–75 dB(A) | ISO 3744 Acoustic Standard",
+   "| Operating Efficiency | Up to 94% | Engine Manufacturer Data (Cummins)"
   ]
  }
 ]
