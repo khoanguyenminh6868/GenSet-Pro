@@ -6,7 +6,7 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { records, diff, fullText, swaps, verify, checkSpec, markdown, loadSide, run } from "./spec-diff.mjs";
+import { records, diff, fullText, swaps, verify, checkSpec, markdown, loadSide, run, briefOf } from "./spec-diff.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url)), REPO = path.join(HERE, "..");
 // Bên giả: fromSupplier trả đúng danh sách bản ghi đã cho của NCC.
@@ -109,6 +109,29 @@ test("run: hai bản spec-norm.js trong cùng tiến trình, đổi kết quả 
   assert.equal(r.norm.skipped, false);
   assert.ok(r.norm.changes.length > 0);
   assert.ok(Object.keys(r.norm.kinds).every((k) => k === "weight đổi số / đơn vị"), JSON.stringify(r.norm.kinds));
+});
+
+test("briefOf: giá trị chuẩn hoá khác dạng giữa hai phía thì không sập, vẫn in ra", () => {
+  assert.equal(briefOf(null), "∅");
+  assert.equal(briefOf({ dims: [2, 3, 4], unit: "mm" }), "2×3×4 mm");
+  assert.equal(briefOf({ dims: "2x3x4" }), "2x3x4");
+  assert.equal(briefOf({ dims: { l: 2, w: 3 } }), '{"l":2,"w":3}');
+  assert.equal(briefOf({ range: "1–2" }), "1–2");
+  assert.equal(briefOf({ bore: 102 }), "102");
+  assert.equal(briefOf({ bore: [102, 120] }), "102×120");
+  assert.equal(briefOf({ bore: { bore: 102, stroke: 120 } }), "102×120");
+  assert.equal(briefOf({ num: 5, missing: "unit" }), "5 missing unit");
+  assert.equal(briefOf({ enum: ["a", "b"], missing: ["unit", "cond"] }), "a,b missing unit,cond");
+});
+
+test("run: spec-norm.js của hai phía trả dims / bore / missing khác dạng, không sập và vẫn báo khác", () => {
+  const a = tmpSide(), b = tmpSide((t) => t.replace("root.GenbidSpecNorm = {", "const _nr = normalizeRecord; normalizeRecord = (o, rows) => _nr(o, rows).map((r) => r.key === \"weight\" ? { key: r.key, raw: r.raw, dims: \"1x2x3\", bore: 5, missing: \"unit\", unit: r.unit } : r);\n  root.GenbidSpecNorm = {"));
+  for (const [x, y] of [[a, b], [b, a]]) {
+    const r = run(loadSide(x), loadSide(y));
+    assert.ok(r.norm.changes.length > 0);
+    assert.ok(r.norm.changes.every((c) => typeof c.txt === "string"));
+    assert.doesNotMatch(markdown({ d: r.d, swA: r.swA, swB: r.swB, ver: r.ver, norm: r.norm, un: r.un, gd: r.gd }), /undefined/);
+  }
 });
 
 test("CLI: --gate thoát 1 khi đảo vai tăng", () => {
