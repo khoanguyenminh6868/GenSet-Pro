@@ -97,10 +97,30 @@ function histNeedsConfig(d) {
 // 1,250 past tenders were cut before their origin / scope lines.
 const CONFIG_TEXT_MAX = 6000;
 const CONFIG_KEY = /h[ãa]ng|xu[ấa]t\s*x[ứu]|origin|\bATS\b|c[áa]ch\s*[âa]m|b[ồo]n|đ[ồo]ng\s*b[ộo]|s[ốo]\s*l[ưu][ợo]ng|li[êe]n\s*t[ụu]c|d[ựu]\s*ph[òo]ng|prime|standby|c[ôo]ng\s*su[ấa]t|bi[ếe]n\s*[áa]p|l[ắa]p\s*đ[ặa]t|\bc[áa]p\b|trung\s*qu[ốo]c|\bG7\b|nh[ậa]p\s*kh[ẩa]u|model|nh[ãa]n\s*hi[ệe]u/i;
-function configText(lines, max = CONFIG_TEXT_MAX) {
-  const uniq = lines.filter((l, i, a) => l && a.indexOf(l) === i), key = uniq.filter((l) => CONFIG_KEY.test(l)), rest = uniq.filter((l) => !CONFIG_KEY.test(l));
+// Dòng nêu số pha (pha-soat 24/11/2026): `want` không có "pha" nên dòng "Số pha: 3 pha 4 dây" bị bỏ. Chọn tối đa CONFIG_PHA_LINES dòng
+// nêu rõ số pha của tổ máy (dòng ATS / tủ / aptomat / bảo vệ… xếp sau, dòng dài chỉ giữ mệnh đề có pha), xếp SAU nhóm CONFIG_KEY, trước phần còn lại.
+const CONFIG_PHA = /s[ốo]\s*pha\b|\b(?:0?[13]|m[ộo]t|ba)\s*-?\s*pha\b|\b[13]\s*-?\s*phase\b|\b[13]P\s*[-/]\s*\d\s*W\b/i;
+const CONFIG_PHA_LINES = 2;
+const CONFIG_PHA_AUX = /\bATS\b|\bt[ủu]\b|aptomat|c[ầa]u\s*dao|b[ảa]o\s*v[ệe]|s[ạa]c|[ắa]c\s*quy|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|\bMCCB\b|\bACB\b|ch[ốo]ng\s*s[ée]t|c[áa]p\b|đo\s|m[ấa]t\s*pha|l[ệe]ch\s*pha/i;
+function phaLinesOf(all) {
+  const cand = [];
+  for (const raw of all) {
+    if (!raw || raw.length <= 4 || raw.length >= 400 || !CONFIG_PHA.test(raw)) continue;
+    let l = raw;
+    if (l.length > 160) l = l.split(/;|\.\s+/).find((p) => CONFIG_PHA.test(p))?.trim() || l;
+    const score = (CONFIG_PHA_AUX.test(l) ? 100 : 0) - (/s[ốo]\s*pha/i.test(l) ? 10 : 0) - (/m[áa]y|đ[ầa]u\s*ph[áa]t/i.test(l) ? 5 : 0) + l.length / 1000;
+    cand.push({ raw, l, score });
+  }
+  return cand.sort((a, b) => a.score - b.score).slice(0, CONFIG_PHA_LINES);
+}
+function configText(lines, max = CONFIG_TEXT_MAX, phaseSource = []) {
+  const uniq = lines.filter((l, i, a) => l && a.indexOf(l) === i), key = uniq.filter((l) => CONFIG_KEY.test(l));
+  const phase = phaLinesOf(phaseSource.filter((l, i, a) => l && a.indexOf(l) === i));
+  const extra = phase.filter((p) => !key.includes(p.raw)).map((p) => p.l).filter((l, i, a) => !key.includes(l) && a.indexOf(l) === i);
+  const used = new Set(phase.map((p) => p.raw));
+  const rest = uniq.filter((l) => !CONFIG_KEY.test(l) && !used.has(l));
   const out = []; let size = 0;
-  for (const l of [...key, ...rest]) { if (size + l.length + 1 > max) continue; out.push(l); size += l.length + 1; }
+  for (const l of [...key, ...extra, ...rest]) { if (size + l.length + 1 > max) continue; out.push(l); size += l.length + 1; }
   return out.join("\n");
 }
 // The sets of an analysis as figures (specs / Phân tích "generatorSets"), kept as they are when each is an object.
@@ -110,8 +130,9 @@ function histConfigOf(text, src) {
   text = String(text || "").normalize("NFC");
   const kvas = histPower(text).filter((p, i, a) => a.findIndex((q) => q.v === p.v && q.u === p.u) === i).slice(0, 20);
   const want = /kva|kw\b|công suất|động cơ|engine|đầu phát|alternator|bộ điều khiển|controller|ats|xuất xứ|hãng sản xuất|model|tần số|điện áp|vòng tua|nhiên liệu|số lượng/i;
-  const lines = text.split(/\r?\n/).map((l) => l.replace(/\s+/g, " ").trim()).filter((l) => l.length > 4 && l.length < 400 && want.test(l));
-  return { kvas, text: configText(lines), src, at: now() };
+  const all = text.split(/\r?\n/).map((l) => l.replace(/\s+/g, " ").trim());
+  const lines = all.filter((l) => l.length > 4 && l.length < 400 && want.test(l));
+  return { kvas, text: configText(lines, CONFIG_TEXT_MAX, all), src, at: now() };
 }
 const histTbmtUrl = (u) => { const x = new URL(u); for (const [k, v] of Object.entries({ stepCode: "notify-contractor-step-1-tbmt", step: "tbmt", inputResultId: "undefined", bidOpenId: "undefined" })) x.searchParams.set(k, v); return x.toString(); };
 const CFG_FILE_RE = /ch(ư|u)(ơ|o)ng[\s_.]*(v|5)(?![ivx\d])|y(ê|e)u\s*c(ầ|a)u\s*(v(ề|e)\s*)?k(ỹ|y)\s*thu(ậ|a)t|yeucau.*kythuat|ph(ạ|a)m\s*vi\s*cung\s*c(ấ|a)p|e-?hsmt|\bhsmt\b|\brfq\b|th(ô|o)ng\s*s(ố|o)\s*k(ỹ|y)\s*thu(ậ|a)t/i;
