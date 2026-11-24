@@ -862,7 +862,20 @@ export function controllerSheetFacts(s, t) {
 }
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
-const titleModelKeys = (title, partKeys) => [...new Set(String(title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+// A Linz Electric alternator is written "PRO18S C/4": frame (PRO + size + length) and, after a space, winding letter / poles. The
+// two words are ONE model code as the sheet writes it (Khoa/điều phối 24/11/2026, linz-noi-model): without this the "/" split
+// leaves only the frame, so three sheets (A/4, B/4, C/4) all read "PRO18S". Only this exact shape is joined; any other title
+// is split as before.
+const LINZ_FRAME = /^PRO\d{2}[SML]$/i, LINZ_WINDING = /^[A-H]\/[24]$/i;
+export const titleModelKeys = (title, partKeys) => {
+  const words = String(title || "").split(/[\s:–—|,()]+/), out = [];
+  for (let i = 0; i < words.length; i++) {
+    const w = words[i];
+    if (LINZ_FRAME.test(w) && LINZ_WINDING.test(words[i + 1] || "")) { out.push(`${w} ${words[++i]}`); continue; }
+    out.push(...(partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/")));
+  }
+  return [...new Set(out.filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+};
 // Nhóm B (Khoa 23/11/2026): hằng số động cơ trên tờ của CHÍNH hãng, tiêu đề ghi đúng một model. Ô nhãn | giá trị, mỗi nhãn một
 // giá trị trong bảng. Trang Perkins ghi một ô hai lần ("6 inline 6 inline") và hai đơn vị ("3.3 in 84 mm"): lấy đúng phần mm hãng
 // ghi, không quy đổi. Đường kính cần cả dòng hành trình (khoá `bore` là cặp). Ô dung tích hai đơn vị ("69 in³ 1.1 l") KHÔNG lấy:
