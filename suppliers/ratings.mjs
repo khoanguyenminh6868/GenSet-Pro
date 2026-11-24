@@ -17,7 +17,10 @@ const cells = (l) => String(l).split("|").map((c) => c.trim()).filter(Boolean);
 const ST_LABEL = { "kVA": "kVA", "kW": "kW", "Efficiency (%)": "eff" };
 // The star voltages of a frequency block: "Series Star (V)" (older sheets, anywhere in the line), or "| Star (V)" as the
 // line's first cell (S6L1D / S7L1D sheets 2017–2025; "Parallel Star (V)" is another line and is not this one).
-const ST_VOLTS = /Series Star \(V\)|^\|\s*Star \(V\)/;
+// PI7 / LVSI804 sheets (2010–2022, Winding 13 / 312 / 07 / 12): the frequency is the line's first cell ("| 50Hz | Star (V) | 380 …",
+// "| 60Hz | Star (V) | 600 …"); ST_HZ_OWN reads that Hz, only on this layout (the older layouts keep their own Hz reading).
+const ST_HZ_OWN = /^\|\s*(50|60)\s*Hz\s*\|\s*Star \(V\)/;
+const ST_VOLTS = /Series Star \(V\)|^\|\s*Star \(V\)|^\|\s*(?:50|60)\s*Hz\s*\|\s*Star \(V\)/;
 export function stamfordRatings(text) {
   const L = String(text).split("\n"), out = [];
   const first = (L.find((l, i) => i > 1 && l.trim()) || "").trim().split(/\s+/)[0];
@@ -26,7 +29,11 @@ export function stamfordRatings(text) {
   const modelAt = (i) => {
     for (let j = i - 1; j >= 0 && j >= i - 4; j--) { const m = L[j].replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Winding|Wdg\.)\s*\d+/i); if (m) return m[1].replace(/\s+/g, ""); }
     const t = L.find((l, k) => k > 1 && /(?:-\s*Winding|Wdg\.)\s*\d+/i.test(l));
-    return t ? t.replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Winding|Wdg\.)/i)[1].replace(/\s+/g, "") : first;
+    if (t) return t.replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Winding|Wdg\.)/i)[1].replace(/\s+/g, "");
+    // "| PI734F - Technical Data Sheet | Winding 07", "| LV 804 S | WDG 12 - Technical Data Sheet": the model is the cells before.
+    const h = L.find((l, k) => k > 1 && /Technical Data Sheet/i.test(l));
+    const hm = h && h.replace(/^\|\s*/, "").match(/^(.+?)\s*(?:-\s*Technical Data Sheet|\|\s*WDG\s*\d+)/i);
+    return hm ? hm[1].replace(/\s+/g, "") : first;
   };
   L.forEach((l, i) => {
     // "RATINGS" alone, "| 60Hz | RATINGS" (Winding 14 sheets: the frequency of the whole block on that line), or
@@ -55,7 +62,7 @@ export function stamfordRatings(text) {
       let vtoks = cells(L[k].slice(m.index + m[0].length)), vEnd = k;
       for (let q = k + 1; q < L.length && /^\|?\s*N\/A\b/.test(L[q].trim()); q++) { vtoks = vtoks.concat(cells(L[q]).flatMap((x) => x.split(/\s+/))); vEnd = q; }
       const volts = vtoks.map((t) => (t === "N/A" ? null : num(t)));
-      const hz = Number((`${L[k]} ${L[vEnd + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]) || hzHead;
+      const hz = Number((`${L[k]} ${L[vEnd + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]) || Number((L[k].match(ST_HZ_OWN) || [])[1]) || hzHead;
       if (!hz || !volts.length || volts.length % groups.length || volts.some((v) => v !== null && !(v > 0))) continue;
       const per = volts.length / groups.length, rows = {}, used = { volts: L.slice(k, vEnd + 1) };
       for (let r = vEnd + 1; r < L.length && r < k + 40; r++) {

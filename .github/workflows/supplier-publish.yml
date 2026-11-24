@@ -49,3 +49,27 @@ jobs:
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
           node suppliers/row-flags.mjs --post
+      # Bản chuẩn thông số (bảng riêng spec_std, spec-fields.json; Khoa 24/11/2026: không realtime, không activity_log,
+      # không ghi vào docs). Chưa nơi nào đọc. Ghi thật CHỈ khi biến repo SPEC_STD_PUBLISH = 1 VÀ bảng đã được tạo tay
+      # (web/supabase/schema.sql); chưa bật thì chỉ in số doc sẽ ghi và tổng byte.
+      - name: Spec standard
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SPEC_STD_PUBLISH: ${{ vars.SPEC_STD_PUBLISH }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          if [ "$SPEC_STD_PUBLISH" = "1" ]; then node suppliers/spec-standard.mjs --post; else node suppliers/spec-standard.mjs --post --dry; fi
+      # Giá trị sai MỚI của bản chuẩn (Khoa 24/11/2026: "cảnh báo cho anh biết để quyết định"). Chạy bộ kiểm giá trị, so với
+      # doc specvalue/current của lần trước, in vi phạm mới vào tóm tắt của lượt chạy (+ ::warning::). KHÔNG chặn đăng, không
+      # sửa dữ liệu: lỗi hay có ca mới đều không làm workflow đỏ. Lần đầu chỉ lưu mốc. Tắt: biến repo SPEC_VALUE_GATE = 0.
+      - name: Spec value gate
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SPEC_VALUE_GATE: ${{ vars.SPEC_VALUE_GATE }}
+        run: |
+          if [ "$SPEC_VALUE_GATE" = "0" ]; then echo "Tắt bằng SPEC_VALUE_GATE=0."; exit 0; fi
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          node suppliers/spec-value-gate.mjs

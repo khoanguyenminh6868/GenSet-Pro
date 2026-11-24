@@ -106,7 +106,7 @@ const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
 // want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
 export function normFig(s, ctx, want = {}) {
-  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
   // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
   const at100 = want.load === 100 && r.cond?.load == null;
@@ -885,7 +885,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
