@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T08:08:40.225Z
+  modified: 2026-11-24T08:29:36.983Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -42,6 +42,8 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Khoa 24/11/2026 chốt thêm: `UCI274C(80KW)` gộp với `UCI274C-80KW` (KHÔNG gộp về `UCI274C` trơn); `KH*2000GF` gộp về `KH-2000GF` (dấu * giữa mã coi là lỗi gõ). Thử 2 nguồn trên 5 model động cơ trước khi code: đồng ý. Đầu phát: Khoa muốn biết hãng nào chưa có datasheet + số lượng; model không có datasheet thì "cần tìm thêm thông tin trên internet" (theo thứ tự nguồn đã chốt: trang hãng → bản hãng đăng lại → 2 nguồn).
 - Khoa 24/11/2026 (sau kết quả thử 0 / 10): luật nguồn internet HẠ XUỐNG CÒN 1 NGUỒN, nguyên văn "hạ xuống còn 1 nguồn cũng được, áp dụng cho cả đầu phát và bộ điều khiển" (thay luật 2 nguồn độc lập trước đó). Em giữ phần còn lại: chỉ khi tài liệu hãng không ghi, thứ tự trang hãng → bản hãng đăng lại → 1 nguồn internet, có URL + câu trích nguyên văn, đánh dấu riêng (đây là phần em giữ, Khoa chưa nói bỏ).
 - Đầu phát thiếu datasheet, Khoa 24/11/2026: tìm phần thiếu của Stamford, Leroy-Somer và các hãng Trung Quốc TRƯỚC. Model không ghi hãng: "tra mã model nếu giống chính xác với mã đã có hãng thì gộp vào hoặc xóa" (em hiểu: mã trùng CHÍNH XÁC với mã đã có hãng thì nhập vào mục có hãng, không để mục trùng không hãng; không gộp theo mã gần giống). Kiểm kê: `nghiem-thu\dau-phat-chua-co-datasheet.md`; kết quả 24/11: 0 mã trùng (catalog đã chung mục). Phiên CLOUD không tải được tài liệu (proxy 403), việc tìm tờ phải chạy trên máy.
+- Khoa 24/11/2026 "1,2: ok": `LVSI804W` gắn hãng Stamford theo tờ hãng (ghi rõ nguồn gốc là tờ hãng, không phải NCC ghi); Longkai (longkai-power, "copy Stamford") KHÔNG coi là hãng đầu phát độc lập, không tìm datasheet.
+- Khoa 24/11/2026: tờ hãng ghi "HCI634K", NCC ghi "HCI6K" → ĐỂ RIÊNG, không gộp.
 - Giá trị nghi sai, Khoa 24/11/2026 (sau khi em nêu bất cập của tab): "trước mắt em lọc và gom nhóm cho anh quyết định trước đi. ca nào không quyết định được thì cho vào tab để xử lý sau" → lỗi bộ đọc thì sửa code không trình; trình Khoa theo NHÓM trong chat; tab chỉ chứa ca còn lại, làm sau.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
