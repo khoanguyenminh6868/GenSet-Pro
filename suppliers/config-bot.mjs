@@ -761,7 +761,10 @@ export function controllerSheetFacts(s, t) {
   // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
   // ("compatible with DSE7320") does not give that controller's facts.
   const sheet = new Set(ctlKeys(t.title).map(gen).filter((k) => !isSeries(k)));
-  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? [...sheet] : [k])))].filter((k) => sheet.has(k));
+  // "HGM6100CAN" (Khoa 24/11/2026) is the CAN branch of the series, not the whole series: a line naming it is of the CAN models
+  // of the sheet only (HGM6110CAN / HGM6120CAN). "HGM6100N" / "HGM6100" series names stay of every model of the sheet.
+  const seriesOf = (k) => (k === "HGM6100CAN" ? [...sheet].filter((m) => /CAN$/.test(m)) : [...sheet]);
+  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? seriesOf(k) : [k])))].filter((k) => sheet.has(k));
   // A line that names controller codes of NONE of the sheet's models ("HGM6120: When mains is abnormal" in the HGM6110N
   // sheet, "Applicable only to the DKG-317 model" in DKG307's, "(Only available for HGM9520N)" in HGM9510N's) is not of
   // the models of the section before it (dong-dung-model 24/11/2026). A code that is the start of a sheet model's code
@@ -770,8 +773,11 @@ export function controllerSheetFacts(s, t) {
   // before; carrying the drop through "goes on" lines swallowed 961 ordinary lines of HGM9310 / 9320). A family name (HGM6100N SERIES,
   // easYgen-1000 Series) says nothing foreign.
   const family = (k) => isSeries(k) || /^EASYGEN\d000$/.test(k);
+  // Narrow exception (Khoa 24/11/2026): the DSE7570 sheet's two RS232 rows "| RS232 | DSE8610 MKII Com Port" / "... Communications"
+  // name DSE8610 MKII only as the unit on the other end of the cable: the RS232 port is the DSE7570's own, so they stay.
+  const ownPort = (line) => sheet.size === 1 && sheet.has("DSE7570") && /^\|\s*RS232\s*\|\s*DSE8610 MKII (Com Port|Communications)\s*$/.test(line.trim());
   const foreignOf = (line) => {
-    if (keysOf(line).length) return null;
+    if (keysOf(line).length || ownPort(line)) return null;
     const ks = [...new Set(ctlKeys(line).map(gen))].filter((k) => !family(k));
     if (!ks.length) return null;
     return [...sheet].filter((m) => ks.some((k) => m.startsWith(k) || k.startsWith(m)));

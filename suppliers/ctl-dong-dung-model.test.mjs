@@ -64,3 +64,32 @@ test("dòng nêu mã tiền tố đúng gắn đúng model, không mở phạm v
   assert.ok(of("HGM6110N").includes("HGM6110 without.") && !of("HGM6120N").includes("HGM6110 without."));
   assert.ok(!f.some((x) => /HGM9999N/.test(x.f.line)), "mã lạ không vào model nào");
 });
+
+// Khoa chốt 24/11/2026 — bảng THẬT của cn/.
+test("DSE7570: giữ đúng hai dòng RS232 của chính nó, các dòng nêu mã DSE ngoài tờ khác vẫn bỏ", () => {
+  const f = facts("deep-sea-electronics", 1027);
+  assert.ok(has(f, "DSE7570", /^\| RS232 \| DSE8610 MKII Com Port$/));
+  assert.ok(has(f, "DSE7570", /^\| RS232 \| DSE8610 MKII Communications$/));
+  assert.ok(!has(f, "DSE7570", /^\| DSE810 \| DSE5510 \/ DSE7510 Com Port$/));
+  assert.ok(!has(f, "DSE7570", /^\| DSE810 \(RJ45\) \| DSE5510 \/ DSE7510 Communications$/));
+  assert.ok(!has(f, "DSE7570", /^\| DSE8610 MKII \| Synchronising & Load Sharing$/));
+});
+
+test("ngoại lệ RS232 hẹp: tờ khác, dòng RS232 nêu mã lạ vẫn bị bỏ (bảng dựng tay)", () => {
+  const rs = "| RS232 | DSE8610 MKII Com Port";
+  const own = C.controllerSheetFacts({ id: "x" }, { n: 1, title: "Datasheet DSE7570", rows: ["Common", rs] });
+  assert.ok(own.some((x) => x.model === "DSE7570" && x.f.line === rs));
+  const other = C.controllerSheetFacts({ id: "x" }, { n: 1, title: "Datasheet DSE7320 MKII", rows: ["Common", rs] });
+  assert.ok(!other.some((x) => x.f.line === rs));
+});
+
+test("HGM6100CAN: dòng nêu mã này chỉ của HGM6110CAN / HGM6120CAN; họ N / series vẫn của cả tờ", () => {
+  const f = facts("smartgen", 1001);
+  const canOnly = [/for HGM6100CAN, press start key/, /Custom Theme.*HGM6100CAN\.$/, /only suits for HGM6100CAN/];
+  for (const re of canOnly) {
+    for (const m of ["HGM6110CAN", "HGM6120CAN"]) assert.ok(has(f, m, re), `${m} ${re}`);
+    for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC"]) assert.ok(!has(f, m, re), `${m} không được nhận ${re}`);
+  }
+  for (const m of ["HGM6110CAN", "HGM6120CAN"]) assert.ok(has(f, m, /Only HGM6100N has these/), `${m} giữ nguyên dòng "Only HGM6100N has these"`);
+  for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC", "HGM6110CAN", "HGM6120CAN"]) assert.ok(has(f, m, /HGM6100N series genset controller/i), `${m} mất họ`);
+});
