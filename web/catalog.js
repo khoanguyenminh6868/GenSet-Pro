@@ -1787,6 +1787,7 @@
     out.push(...listedEngineRows(s, out, note));
     out.push(...verticalRecords(s, out, note));
     out.push(...engineLines(s, out, note));
+    out.push(...labelAltLines(s, out, note));
     // Fuel of each record (may-khi-2): from its table's signs and its own row; kept on the record, so it reaches `uses` of build().
     const fuelSg = new Map();
     for (const o of out) {
@@ -2781,6 +2782,59 @@
     const units = new Set([...unitCells, ...(label.match(/\b(kva|kw)\b/gi) || [])].map(U));
     if (one && units.size === 1) { const f = fnum(one[1]); return f > 0 ? { [[...units][0]]: f } : null; }
     return null;
+  }
+  // The alternator line of a sheet that only its product line read (o-alternator-doc, Khoa 24/11/2026: "sửa bộ đọc cho dạng ô
+  // này"). A one-model datasheet whose header is one title cell and whose lines are "LABEL:" then the value on the next line
+  // ("ALTERNATOR:" / "Linz PRO18S C/4", energy-gruppi n2001–2012) or "Label: value" on one line ("Alternator Model: Stamford
+  // S6L1D-H41", fudiankang-hunan n2001–2009) is no label table (isLabelTable / sectionSheet) and its rows give no record; the
+  // engine came only from the product line (fromLine), with no alternator. Conditions, all of them:
+  //   - the table's records so far are exactly one: the fromLine engine (any other reading of the table is left as it is);
+  //   - lines with no "|" only; the label is an alternator's (V_ALT: "Alternator", "Alternator Model", "发电机型号"…);
+  //   - the value STARTS with a make of ALT_CELL_BRANDS, then a space, then one code (isCode; its first word has a digit);
+  //     no choice ("or", "equivalent", ","), no second make, no engine make. The make is the one the cell writes ("dòng
+  //     bảng"), never guessed from the code;
+  //   - exactly one such line in the table (two: nothing, noted). A make with no code ("Mecc Alte", n2013): nothing, noted.
+  // The alternator record takes the engine record's genset, power and frequency (the sheet is one set), its own value line as
+  // `line` / `row`; the engine record's `other` becomes the code (as a table row gives both).
+  const LA_CHOICE = /\bor\b|equiv|oder|optional|[,，、;；]/i;
+  function labelAltCell(v) {
+    const s = String(v || "").trim(), hit = ALT_CELL_BRANDS.map(([re, name]) => [s.match(re), name]).find(([m]) => m && m.index === 0);
+    if (!hit) return null;
+    const after = s.slice(hit[0][0].length);
+    if (!/^\s/.test(after)) return null; // "Stamford/SURIRELLA 274K" (plus-power): no make-then-code cell
+    let rest = after.trim();
+    const tail = rest.match(/^(\S+)\s+/);
+    if (tail && V_MAKE_TAIL.test(tail[1])) rest = rest.slice(tail[0].length);
+    if (!rest) return { make: hit[1], code: null };
+    const ok = /^\S*\d/.test(rest) && isCode(rest) && !LA_CHOICE.test(rest) && !brandIn(rest, ALT_CELL_BRANDS).length && !brandIn(rest, ENGINE_BRANDS).length;
+    return { make: hit[1], code: ok ? rest : null };
+  }
+  function labelAltLines(s, already, note) {
+    const add = [];
+    (s.specTables || []).forEach((t, ti) => {
+      const mine = already.filter((o) => o.table === ti);
+      if (mine.length !== 1 || mine[0].kind !== "engine" || !mine[0].fromLine) return;
+      const rows = t.rows || [], found = [];
+      rows.forEach((l, ri) => {
+        const x = String(l);
+        if (x.includes("|")) return;
+        const m = x.match(/^\s*([^:：]{2,40})[:：]\s*(.*)$/);
+        if (!m || !V_ALT.test(m[1].trim())) return;
+        if (m[2].trim()) { found.push({ ri, value: m[2].trim() }); return; }
+        const nx = rows[ri + 1];
+        if (nx != null && !String(nx).includes("|") && !/[:：]\s*$/.test(String(nx))) found.push({ ri: ri + 1, value: String(nx).trim() });
+      });
+      const got = found.map((f) => ({ ...f, cell: labelAltCell(f.value) })).filter((f) => f.cell);
+      if (!got.length) return;
+      if (got.length > 1) { note(t, ti, null, "bảng dọc: hai dòng đầu phát", got.map((f) => f.value).join(" ¦ ")); return; }
+      const [{ ri, cell }] = got, e = mine[0];
+      if (!cell.code) { note(t, ti, ri, "ô đầu phát ghi hãng nhưng không ghi được một mã", rows[ri]); return; }
+      const makes = [];
+      addMake(makes, cell.make, "dòng bảng");
+      if (!e.other) e.other = cell.code;
+      add.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row: ri, line: rows[ri], genset: e.genset, power: e.power, freq: e.freq, header: t.header || [], specs: [], kind: "alternator", model: cell.code, makes, other: e.model });
+    });
+    return add;
   }
   function verticalRecords(s, already, note) {
     const out = [], tables = s.specTables || [];
