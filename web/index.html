@@ -3870,9 +3870,17 @@ let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog be
 // the browser gives idle time again the steps go back to it. Without requestIdleCallback (Safari): the same slice on a timer.
 const idleSlice = () => { const t = performance.now(); return { timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }; };
 let idleLate = false; // the last callback ran on its timeout, not in idle time
-const idle = (fn) => (window.requestIdleCallback
-  ? requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 })
-  : setTimeout(() => fn(idleSlice()), 30));
+// Cause (measured 2026-11-24, Chromium, also headless on Linux): after a real mouse click a page that is producing no frames
+// gets no idle period, so every callback waits for its timeout (1000, 50, 50, 50 ms; didTimeout, timeRemaining() = 0; 7 of 8
+// clicks, vs 0 of 9 for element.click()). While any frame is in flight (an rAF loop, a running animation) the same callbacks run
+// 0-7 ms after the call, in real idle time. So each call also asks for one empty animation frame: it costs nothing, and in a
+// hidden tab (no frames) the timeout above still applies.
+const idle = (fn) => {
+  if (!window.requestIdleCallback) return setTimeout(() => fn(idleSlice()), 30);
+  const id = requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 });
+  requestAnimationFrame(() => {});
+  return id;
+};
 function catWarm() {
   if (!window.GenbidCatalog?.builder || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
   const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();

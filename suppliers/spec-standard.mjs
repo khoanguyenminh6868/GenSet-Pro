@@ -48,8 +48,22 @@ function enumMatches(f, text) {
 //   chu-class  "H class" / "Class H" (chỉ insulation): chữ cái cấp là giá trị chuẩn.
 //   ghep-o     chữ bị cắt ở "and" / "&" / "," / "+" / "/" ghép với ô KẾ TIẾP của cùng dòng nguồn (`next`), chỉ khi ghép ra ĐÚNG MỘT giá trị chuẩn.
 // `joined` = ô kế tiếp đã ghép; `raw` vẫn là chữ nguồn của ô đầu.
+// "Không chổi than" (Khoa 24/11/2026: tách khỏi hệ kích từ): chữ nguồn ghi brushless / brush less / 无刷. Chỉ nhận chữ ghi thẳng.
+const BRUSHLESS = /brush\s*-?\s*less|无刷/i;
+export const brushlessOf = (text) => BRUSHLESS.test(NFKC(text));
+// The text without the brushless words and the separators they leave: "Brushless, self-excited" → "self-excited"; "Brushless," → "".
+export const stripBrushless = (text) => NFKC(text).replace(new RegExp(BRUSHLESS.source, "gi"), " ").replace(/^[\s,;，、/&+]+|[\s,;，、/&+]+$/g, "").replace(/\s+/g, " ").trim();
 export function enumOf(f, text, next = null) {
   let t = text, pre = null;
+  if (f.id === "excitation" && brushlessOf(text)) {
+    t = stripBrushless(text); pre = "tach-khong-choi-than";
+    // "Brushless," + next cell of the same line ("self-exciting"): the join rule below.
+    if (!t) {
+      const nx = NFKC(next);
+      const j = nx && /(?:\band\b|&|,|\+|\/)$/i.test(NFKC(text)) ? enumMatches(f, nx) : [];
+      return j.length === 1 ? { value: j[0].value, rule: "ghep-o", joined: nx } : null;
+    }
+  }
   if (f.id === "insulation") {
     const m = /^\|\s*insulation\s+(?:class|system)\s*\|\s*([^|]+?)\s*(?:\||$)/i.exec(NFKC(text));
     if (m) { t = m[1]; pre = "tien-to-o"; }
@@ -110,6 +124,8 @@ export function valueOf(f, n, sp, next = null) {
   if (f.type === "enum") {
     const e = enumOf(f, raw, next);
     if (e) return { value: e.value, unit: null, cond: null, missing: [], rules: e.rule ? [e.rule] : [], ...(e.joined ? { joined: e.joined } : {}) };
+    // The cell says only "brushless": no excitation system is written, so no value (the brushless field takes it).
+    if (f.id === "excitation" && brushlessOf(raw) && !stripBrushless(raw)) return { drop: "chi-khong-choi-than" };
     return { value: tidyText(raw).text, unit: null, cond: null, missing: ["enum"], rules: [] };
   }
   if (f.type === "number") {
@@ -183,6 +199,13 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     const f = fieldFor(part, sp, n);
     if (!f) { if (byKey[part][sp.key]) audit?.({ part, ...ctx, u, sp, n, drop: "load-khac" }); continue; }
     const r = valueOf(f, n, sp, f.type === "enum" && !n ? nextCellOf(u.line, sp.value) : null);
+    // A cell of the excitation system that also says brushless: a second value, in its own field; raw is the source text of both.
+    if (part === "alternator" && f.id === "excitation" && !n && brushlessOf(sp.value)) {
+      const raw = sp.fixed?.from ?? sp.value;
+      const rawJoined = !u.line && !sp.fixed && !flatText([...(u.lines?.rows || []), ...(u.lines?.header || []), ...(rows || [])].join("\n")).includes(flatText(raw));
+      bag.add("brushless", { value: true, unit: null, cond: null, missing: [], raw, rawJoined }, srcOf(u));
+      audit?.({ part, ...ctx, u, sp, n, fid: "brushless", value: true, rules: ["co-chu-khong-choi-than"] });
+    }
     if (r.drop) { audit?.({ part, ...ctx, u, sp, n, fid: f.id, drop: r.drop }); continue; }
     // A value corrected by a listed exception (fixspec): raw is the text of the source, not the corrected figure.
     r.raw = sp.fixed?.from ?? sp.value;

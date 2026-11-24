@@ -333,7 +333,8 @@ test("a controller datasheet gives each line to the models of its section", () =
   // A controller only mentioned in another model's datasheet gets none of its lines.
   const other = { id: "dse2", role: "controller_maker", specTables: [{ n: 1002, title: "Datasheet: DSE8610 MKII Synchronising", header: [], rows: ["| • | Compatible with DSE7320 MKII", "| • | Load sharing"] }] };
   const f2 = modelFacts(C.build([other]), [other]);
-  assert.deepEqual([ctlLines(f2, "DSE7320 MKII"), ctlLines(f2, "DSE8610 MKII")], [[], ["| • | Compatible with DSE7320 MKII", "| • | Load sharing"]]);
+  assert.deepEqual([ctlLines(f2, "DSE7320 MKII"), ctlLines(f2, "DSE8610 MKII")], [[], ["| • | Load sharing"]]);
+  // ctl-dong-dung-model (24/11/2026): a line naming only a controller outside the sheet is of no model of it either (class b of dong-khac-model.md).
 });
 
 const ctlConfig = (model, checks) => ({ requirements: [{ item: "AMF", requirement: "tự động khi mất điện lưới", quote: "Bộ điều khiển Deep Sea", part: "controller", level: "core" }],

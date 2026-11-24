@@ -10,11 +10,11 @@
  },
  "keys": {
   "fuel": {
-   "n": 12078,
+   "n": 12291,
    "valuePct": 100,
    "missingPct": {
-    "load": 77.2,
-    "unit": 10.3,
+    "load": 77.3,
+    "unit": 7.2,
     "number": 0,
     "ambiguous": 0.2
    }
@@ -23,15 +23,15 @@
    "n": 1209,
    "valuePct": 99.8,
    "missingPct": {
-    "unit": 29,
+    "unit": 7,
     "value": 0.2
    }
   },
   "fuel50": {
-   "n": 816,
+   "n": 814,
    "valuePct": 99.8,
    "missingPct": {
-    "unit": 42.5,
+    "unit": 9.7,
     "value": 0.2
    }
   },
@@ -45,47 +45,47 @@
    }
   },
   "dims": {
-   "n": 22695,
+   "n": 23550,
    "valuePct": 100,
    "missingPct": {
-    "order": 55.6,
-    "enclosure": 87.5,
-    "unit": 32,
+    "order": 56.2,
+    "enclosure": 85.6,
+    "unit": 31.2,
     "ambiguous": 0.4
    }
   },
   "weight": {
-   "n": 20004,
+   "n": 20857,
    "valuePct": 100,
    "missingPct": {
-    "enclosure": 92.7,
-    "basis": 85.6,
-    "unit": 5.6,
+    "enclosure": 90.4,
+    "basis": 86.2,
+    "unit": 5.8,
     "ambiguous": 0.3
    }
   },
   "disp": {
-   "n": 11615,
-   "valuePct": 98.9,
+   "n": 11895,
+   "valuePct": 99,
    "missingPct": {
-    "number": 1.1,
+    "number": 1,
     "unit": 2.1
    }
   },
   "bore": {
-   "n": 8232,
+   "n": 8474,
    "valuePct": 100,
    "missingPct": {
-    "stroke": 5.3,
-    "unit": 21.5,
+    "stroke": 5.1,
+    "unit": 20.8,
     "ambiguous": 0.1
    }
   },
   "cyl": {
-   "n": 15128,
+   "n": 15888,
    "valuePct": 100,
    "missingPct": {
-    "layout": 69.8,
+    "layout": 69,
     "value": 0
    }
   },
@@ -132,46 +132,46 @@
    }
   },
   "engPower": {
-   "n": 6332,
+   "n": 6719,
    "valuePct": 100,
    "missingPct": {
-    "speed": 62.4,
-    "ambiguous": 2.9,
-    "unit": 1.2
+    "speed": 58.8,
+    "ambiguous": 2.7,
+    "unit": 1.1
    }
   },
   "emission": {
-   "n": 2367,
+   "n": 2493,
    "valuePct": 99.9,
    "missingPct": {
-    "scale": 43.7,
+    "scale": 46.4,
     "value": 0.1
    }
   }
  },
  "power": {
-  "n": 47823,
+  "n": 49253,
   "missingPct": {
    "rating": 13.1,
-   "freq": 71.2,
-   "value": 11.1
+   "freq": 70.8,
+   "value": 10.8
   }
  },
  "conflicts": {
   "cyl": {
-   "before": 134,
-   "strict": 26,
-   "loose": 26
+   "before": 135,
+   "strict": 25,
+   "loose": 25
   },
   "disp": {
-   "before": 393,
-   "strict": 189,
-   "loose": 189
+   "before": 402,
+   "strict": 190,
+   "loose": 191
   },
   "bore": {
-   "before": 188,
-   "strict": 33,
-   "loose": 48
+   "before": 204,
+   "strict": 36,
+   "loose": 53
   },
   "compr": {
    "before": 75,
