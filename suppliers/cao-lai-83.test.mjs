@@ -12,7 +12,7 @@ import { tablesOf } from "./crawl-specs.mjs";
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const read = (...p) => fs.readFileSync(path.join(ROOT, ...p), "utf8");
 const PAGES = [["jet-power", 129], ["sanq-power", 102], ["sanq-power", 107], ["sanq-power", 123], ["camda-generator", 155],
-  ["camda-generator", 138], ["camda-generator", 139], ["mecca-power", 144], ["mecca-power", 159], ["sanq-power", 103], ["sanq-power", 108]];
+  ["camda-generator", 138], ["camda-generator", 139], ["mecca-power", 144], ["sanq-power", 103], ["sanq-power", 108]];
 // mecca-power: cn/ bỏ bảng trùng nguyên dòng với bảng khác (merge-specs), nên chỉ so specs/.
 const CN_SAME = (id) => id !== "mecca-power";
 // sanq-power n102 / n103 / n107 / n108: dòng phân đoạn tần số một ô ("| 60HZ (DCEC)") đứng ngay trên tiêu đề được gắn vào đầu header
