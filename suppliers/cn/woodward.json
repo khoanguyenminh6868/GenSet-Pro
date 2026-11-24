@@ -665,5 +665,97 @@
         "| All Rights Reserved | 5 (5)"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Woodward",
+      "model": "easYgen-100",
+      "text": "easYgen-100",
+      "line": "| ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1000",
+      "text": "easYgen-1000",
+      "line": "The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1400",
+      "text": "easYgen-1400",
+      "line": "| easYgen-1400 / easYgen-1600 / easYgen-1700 | easYgen-1800 | easYgen-1800 Unique Features",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1600",
+      "text": "easYgen-1600",
+      "line": "| easYgen-1400 / easYgen-1600 / easYgen-1700 | easYgen-1800 | easYgen-1800 Unique Features",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1700",
+      "text": "easYgen-1700",
+      "line": "| easYgen-1400 / easYgen-1600 / easYgen-1700 | easYgen-1800 | easYgen-1800 Unique Features",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-1800",
+      "text": "easYgen-1800",
+      "line": "| easYgen-1400 / easYgen-1600 / easYgen-1700 | easYgen-1800 | easYgen-1800 Unique Features",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-3100",
+      "text": "easYgen-3100",
+      "line": "easYgen-3100XT/3200XT-P1(-LT)",
+      "src": [
+        1003
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-3200",
+      "text": "easYgen-3200",
+      "line": "|  | Graphical overview of generators and mains on easYgen-3200XT and RP-3000XT Remote Panel.",
+      "src": [
+        1003
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-3400",
+      "text": "easYgen-3400",
+      "line": "| with Woodward’s easYgen-3400XT/3500XT equipped genset controllers. These controllers come with stand- | ",
+      "src": [
+        1002
+      ]
+    },
+    {
+      "brand": "Woodward",
+      "model": "easYgen-3500",
+      "text": "easYgen-3500",
+      "line": "| load share capabilities. The easYgen-3500XT is available in two packages, P1 and P2, both are compatible to | fleet",
+      "src": [
+        1002
+      ]
+    }
   ]
 }

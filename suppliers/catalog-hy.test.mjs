@@ -60,7 +60,8 @@ test("yingtai: số Cummins ghi khác bị bỏ riêng (dropspec theo model), ph
   // Khoa 20/11/2026: tỉ số nén QSL9G2 / G3 / G4 (17.8:1) và QSK60G7 (16.2:1) bỏ, dung tích giữ
   for (const k of ["QSL9G2", "QSL9G3", "QSL9G4"]) assert.deepEqual([spec(m(k), "compr"), spec(m(k), "disp")], [[], ["8.8"]], k);
   assert.deepEqual([spec(m("QSK60G7"), "compr"), spec(m("QSK60G7"), "disp")], [[], ["60.2"]]);
-  assert.equal(notes.filter((n) => n.supplierId === "yingtai-jiangsu" && n.reason === "ngoại lệ theo dòng").length, 14);
+  // Chỉ đếm n101 / n2003: gia-tri-sai (24/11/2026) thêm ngoại lệ ở n107 / n108 của cùng NCC.
+  assert.equal(notes.filter((n) => n.supplierId === "yingtai-jiangsu" && n.reason === "ngoại lệ theo dòng" && (n.n === 101 || n.n === 2003)).length, 14);
 });
 
 test("hồ sơ thật: huatai n111 17 bản ghi có công suất theo tên; yingtai 56 bản ghi động cơ (n2003 gộp vào n101 qua also)", () => {

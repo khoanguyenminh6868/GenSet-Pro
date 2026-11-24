@@ -3884,6 +3884,160 @@
       "src": [
         1003
       ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliDrive",
+      "text": "InteliDrive",
+      "line": "InteliDrive",
+      "src": [
+        1020
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen",
+      "text": "InteliGen",
+      "line": "| ② | InteliGen-NT-BaseBox",
+      "src": [
+        1006
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen 1000",
+      "text": "InteliGen 1000",
+      "line": "InteliGen 1000",
+      "src": [
+        1013
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen 4",
+      "text": "InteliGen4",
+      "line": "InteliGen4 200",
+      "src": [
+        1009
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen 500",
+      "text": "InteliGen 500",
+      "line": "InteliGen 500 G2",
+      "src": [
+        1008
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen NT",
+      "text": "InteliGen NT",
+      "line": "InteliGen NT",
+      "src": [
+        1004,
+        1006
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliGen NTC",
+      "text": "InteliGenNTC",
+      "line": "InteliGenNTC",
+      "src": [
+        1005
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLite",
+      "text": "InteliLite",
+      "line": "Optional plug-in card to enable InteliLite the RS232",
+      "src": [
+        1016
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLite 4 AMF8",
+      "text": "InteliLite 4 AMF 8",
+      "line": "InteliLite 4 AMF 8",
+      "src": [
+        1011
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliLite 4 AMF9",
+      "text": "InteliLite 4 AMF 9",
+      "line": "InteliLite 4 AMF 9",
+      "src": [
+        1012
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliMains",
+      "text": "InteliMains",
+      "line": "InteliMains",
+      "src": [
+        1019
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliMains NTC",
+      "text": "InteliMains NTC",
+      "line": "| | InteliMains NTC BaseBox Datasheet | Related HW ver: 2.0 | | Related SW ver: 3.4.0 | | Date of issue: 5/4/2022",
+      "src": [
+        1019
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliNano",
+      "text": "InteliNano",
+      "line": "| Gasket IN2 | Additional gasket for InteliNano AMF controllers, protection degree IP65 (front",
+      "src": [
+        1021
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliNano AMF5",
+      "text": "InteliNano AMF 5",
+      "line": "InteliNano AMF 5",
+      "src": [
+        1021
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliSys Gas",
+      "text": "InteliSys Gas",
+      "line": "InteliSys Gas",
+      "src": [
+        1018
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliSys NT",
+      "text": "InteliSys NT",
+      "line": "| InteliVision | 8 | Marine Approved 8\" Colour Display Unit for InteliGen NT/InteliSys NT and | InteliVision 8 Marine",
+      "src": [
+        1020
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "InteliSys NTC",
+      "text": "InteliSysNTC",
+      "line": "InteliSysNTC",
+      "src": [
+        1017
+      ]
     }
   ],
   "manufacturing": [
