@@ -3401,7 +3401,17 @@
         "| LSMU1013NGE3 | MTU 8V4000 GS/L64FNER | 1013 | 43.5 | 44.0 | 87.5 | 500 | 4500×2000×2300 | 10000 | PDF",
         "| LSMU1515NGE3 | MTU 12V4000 GS/L64FNER | 1515 | 44.2 | 45.7 | 89.9 | 500 | 5100×2000×2300 | 14000 | PDF",
         "| LSMU2024NGE3 | MTU 16V4000 GS/L64FNER | 2024 | 43.3 | 45.0 | 88.3 | 500 | 5300×2000×2300 | 17000 | PDF",
-        "| LSMU2535NGE3 | MTU 20V4000 GS/L64FNER | 2535 | 43.9 | 46.4 | 90.3 | 500 | 6300×2000×2400 | 20000 | PDF",
+        "| LSMU2535NGE3 | MTU 20V4000 GS/L64FNER | 2535 | 43.9 | 46.4 | 90.3 | 500 | 6300×2000×2400 | 20000 | PDF"
+      ]
+    },
+    {
+      "n": 133,
+      "title": "- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!",
+      "header": [
+        "| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications",
+        "| LEES | MTU | Electrical Efficiency | Thermal Efficiency | Total Efficiency"
+      ],
+      "rows": [
         "| LSMU800NGE3-6 | MTU 8V4000 GS/L32 | 764 | 41.2 | 47.2 | 88.4 | 500 | 4000×2000×2300 | 10000 | PDF",
         "| LSMU1169NGE3-6 | MTU 12V4000 GS/L32 | 1152 | 41.9 | 46.6 | 88.5 | 500 | 5000×2000×2300 | 14000 | PDF",
         "| LSMU1560NGE3-6 | MTU 16V4000 GS/L32 | 1549 | 42.4 | 46.7 | 89.2 | 500 | 5500×2000×2300 | 16000 | PDF",
@@ -3432,7 +3442,17 @@
         "| LSC600NGE3 | K38N-G6 | 600 | 40% | 158.5 | 4850*2150*2500 | 7500 | 20HQ | 8530 | PDF",
         "| LSC800NGE3 | K38N-G8 | 800 | 41% | 206.8 | 4850*2150*2500 | 7850 | 20HQ | 9380 | PDF",
         "| LSC1000NGE3 | K50N-G10H | 1000 | 42% | 252.9 | 5400*2200*2580 | 8890 | 40HQ | 13500 | PDF",
-        "| LSC1200NGE3 | K50N-G12H | 1200 | 42% | 279.3 | 5400*2200*2580 | 10300 | 40HQ | 14180 | PDF",
+        "| LSC1200NGE3 | K50N-G12H | 1200 | 42% | 279.3 | 5400*2200*2580 | 10300 | 40HQ | 14180 | PDF"
+      ]
+    },
+    {
+      "n": 134,
+      "title": "- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!",
+      "header": [
+        "| Model | Electrical Power KW | Electrical Efficiency | Gas Consumption | Open Type | Soundproof Type | Specifications",
+        "| LEES | CUMMINS | n % | Nm3/h | Dimensions L×W×H (mm) | Weight (kg) | Dimensions L×W×H (mm) | Weight (kg)"
+      ],
+      "rows": [
         "| LSC400NGE3-6 | S5L1D-E41 | 400 | 38% | 107.9 | 3900*1900*2100 | 3700 | 5060*21320*2550 | 7030 | PDF",
         "| LSC600NGE3-6 | S6L1D-C41 | 600 | 42% | 168.6 | 4850*2150*2500 | 7500 | 20HQ | 8530 | PDF",
         "| LSC800NGE3-6 | S6L1D-F42 | 800 | 42% | 213.5 | 4850*2150*2500 | 7850 | 20HQ | 9380 | PDF",

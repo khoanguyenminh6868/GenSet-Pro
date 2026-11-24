@@ -39,8 +39,17 @@
    "| HY 364P | 396 | 434 | 2506A-E15TAG1 | 3050 * 1150 * 1800 | 3150",
    "| HY 400P | 435 | 478 | 2506A-E15TAG2 | 3480 * 1200 * 2000 | 3910",
    "| HY 480P | 522 | 574 | 2806A-E18TAG1A | 3550 * 1580 * 2100 | 4430",
-   "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430",
-   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）",
+   "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "http://en.wf-hy.com/product/Generator/Perkins/0830/156.html",
+  "title": "Standby generator set - Perkins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）"
+  ],
+  "rows": [
    "| HY 20C | 20 | 22 | 4B3.9-G2 | 1680 * 730 * 1100 | 715",
    "| HY 30C | 30 | 33 | 4BT3.9-G2 | 1800 * 730 * 1100 | 880",
    "| HY 50C | 50 | 55 | 4BTA3.9-G2 | 1900 * 740 * 1200 | 900",

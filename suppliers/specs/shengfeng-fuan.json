@@ -164,8 +164,17 @@
    "| TFW2-150 | 150 | 187.5 | 50/60 | 400V",
    "| TFW2-160 | 160 | 200 | 50/60 | 400V",
    "| TFW2-180 | 180 | 225 | 50/60 | 400V",
-   "| TFW2-200 | 200 | 250 | 50/60 | 400V",
-   "| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)",
+   "| TFW2-200 | 200 | 250 | 50/60 | 400V"
+  ]
+ },
+ {
+  "n": 106,
+  "url": "http://sf-motor.com/product_view.asp?id=99",
+  "title": "TFW2系列无刷三相交流同步发电机-福安市晟丰电机有限公司",
+  "header": [
+   "| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)"
+  ],
+  "rows": [
    "| TFW2-220 | 220 | 275 | 50/60 | 400V",
    "| TFW2-250 | 250 | 312.5 | 50/60 | 400V",
    "| TFW2-280 | 280 | 350 | 50/60 | 400V",
@@ -384,8 +393,17 @@
    "| TFW2-150 | 150 | 187.5 | 50/60 | 400V",
    "| TFW2-160 | 160 | 200 | 50/60 | 400V",
    "| TFW2-180 | 180 | 225 | 50/60 | 400V",
-   "| TFW2-200 | 200 | 250 | 50/60 | 400V",
-   "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)",
+   "| TFW2-200 | 200 | 250 | 50/60 | 400V"
+  ]
+ },
+ {
+  "n": 111,
+  "url": "http://sf-motor.com/product_view_en.asp?id=99",
+  "title": "TFW2 Series Brushless Three-phase A.C.Sychronous Generators-Fuan shengfeng electric machinery Co,Ltd.",
+  "header": [
+   "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)"
+  ],
+  "rows": [
    "| TFW2-220 | 220 | 275 | 50/60 | 400V",
    "| TFW2-250 | 250 | 312.5 | 50/60 | 400V",
    "| TFW2-280 | 280 | 350 | 50/60 | 400V",
