@@ -21,7 +21,7 @@ test("comappower n113 / yanan-power n111: 4 dòng 'YD4KD(YD485D)' không cho b�
   }
 });
 
-test("không đổi: acepow-fuan n114 '(YD485D)' vẫn đọc như cũ (chỉ báo hiện trạng)", () => {
+test("acepow-fuan n114 '(YD485D)' gộp về YD485D (gop-trung-ma, Khoa 24/11/2026, nhóm 20)", () => {
   const r = C.fromSupplier(load("acepow-fuan"), []).filter((x) => x.n === 114 && /\(YD485D\)/.test(x.line));
-  assert.deepEqual(r.map((x) => [x.kind, x.model]), [["engine", "(YD485D)"], ["alternator", "APS164D"]]);
+  assert.deepEqual(r.map((x) => [x.kind, x.model]), [["engine", "YD485D"], ["alternator", "APS164D"]]);
 });
