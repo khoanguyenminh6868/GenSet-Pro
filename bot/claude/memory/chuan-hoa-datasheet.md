@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T02:17:17.042Z
+  modified: 2026-11-24T02:22:31.232Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -30,6 +30,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Khoa 24/11/2026: trần 700 → điều phối chọn phương án A (giữ đủ trong `specTables`, kể cả SICES gấp 7,4 lần, +1,70 MB) theo câu "bỏ cho toàn bộ"; đã báo Khoa, Khoa chưa phản đối. #1131 (bỏ trần 250 / 60 trong code) đã merge; sinh lại dữ liệu = PR 2.
 - Khoa 24/11/2026 nhắc: phiên điều phối quá 30 % context mà không tự lưu + compact. Luật ở [[orchestrator-delegate-by-model]]: xong một task mà quá 30 % thì ghi sổ + bộ nhớ rồi NHỜ KHOA gõ /compact (phiên không tự compact được). Em đã ghi nhưng quên nhờ; từ nay cuối mỗi task phải nói rõ câu nhờ đó.
 - Bước 2 đã merge (#1147, `suppliers/spec-standard.mjs`, collection `specstd`, workflow chỉ `--dry`). Khoa 24/11/2026 (nguyên văn "làm HGM9510 trước xong rồi làm cả 3 như đề xuất") chốt ba điểm: (1) bản chuẩn đăng vào BẢNG RIÊNG `spec_std` của Supabase, không realtime, không trigger nhật ký (không ghi vào `docs`); bước 5 đọc qua API riêng; (2) động cơ nguồn ghi HP thì CHỈ giữ số nguồn ghi (`power_hp`), không thêm kWm quy đổi; (3) soát 275 số dưới nhãn "kW/Hp" (ettes-power…) trước khi web đọc bản chuẩn. #1148 đã bỏ trần 700 và sinh lại dữ liệu (+31.991 dòng).
+- Khoa 24/11/2026 CHỐT plan bước 5 (nguyên văn "ok, chốt plan đó. khi làm bước 5 nhớ thêm bước kiểm tra trùng và sai data"): thứ tự bước 3 → 4 → 5; bước 5 = web + Gợi ý cấu hình chỉ đọc `spec_std`, chuyển TỪNG NHÓM số (công suất, xi lanh, dung tích, tỉ số nén, tiêu hao, tần số, định mức đầu phát), mỗi nhóm đo lại top 30 trên gói lịch sử, khớp mới bỏ đường đọc cũ; xong hết thì cắt bảng thô khỏi dữ liệu đăng Supabase (bảng thô chỉ còn ở git); chấm chức năng BĐK vẫn theo dòng datasheet tới khi bước 4 đọc đủ trường BĐK. BẮT BUỘC thêm ở bước 5 một bước KIỂM TRA TRÙNG VÀ SAI DỮ LIỆU của bản chuẩn. Diễn giải của em (Khoa chưa nói chi tiết, hỏi lại khi thiết kế): trùng = cùng một model / tổ máy nằm ở nhiều doc do tên viết khác, hoặc cùng giá trị lặp nhiều lần; sai = giá trị mâu thuẫn giữa các NCC, tự mâu thuẫn trong dòng, ngoài dải hợp lý, gắn nhầm model.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
