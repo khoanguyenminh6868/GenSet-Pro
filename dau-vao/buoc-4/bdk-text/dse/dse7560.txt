@@ -1,0 +1,162 @@
+                                                                                                                                                                                                                                                              ®
+
+           DSEGenset
+
+DSE7560                                                                                                               ENVIRONMENTAL TESTING STANDARDS
+
+AUTO TRANSFER SWITCH & MAINS                                                                                            ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULE                                                                                                          BS EN 61000-6-2
+                                                                                                                        EMC Generic Immunity Standard for
+FEATURES                                                                                                                the Industrial Environment
+                                                                                                                        BS EN 61000-6-4
+The DSE7560 is an Automatic          The module will monitor multiple           includes RS232 and RS485 ports          EMC Generic Emission Standard for
+Transfer Switch and Mains (Utility)  mains (utility) supplies, and upon         as well as dedicated terminals for      the Industrial Environment
+Control Module, designed to          removal or failure detection of the        system expansion.
+automatically synchronise multiple   mains (utility) supply will                                                        ELECTRICAL SAFETY
+DSE7510s with single or multiple     automatically start or stop the            The module’s load share functions       BS EN 60950
+mains (utility) supplies.            gen-sets being controlled by               include automatic synchronising         Safety of Information Technology Equipment,
+                                     DSE7510s. The modules                      with built-in synchroscope and          including Electrical Business Equipment
+The module instructs the             operational status is indicated on         closing onto dead bus.
+DSE7510s to make precise             the LCD display and the front                                                      TEMPERATURE
+changes to the gen-set outputs,      panel LEDs.                                MODULE CAPABILITIES                     BS EN 60068-2-1
+and provides sophisticated                                                      • Fixed export with mains (utility)     Ab/Ae Cold Test -30 oC
+monitoring and protection            A sophisticated module                                                             BS EN 60068-2-2
+functionality making the system      monitoring an extensive number                supply                               Bb/Be Dry Heat +70 oC
+ideal for a wide range of load       of parameters, the DSE7560 will            • Will synchronise any
+sharing applications including       annunciate engine shutdowns,                                                       VIBRATION
+peak lopping, peak shaving and       warnings, and engine status                   combination of up to 16 gen-         BS EN 60068-2-6
+no-break return.                     information on the back-lit LCD               sets with up to 16 mains             Ten sweeps in each of three
+                                     screen, by illuminated LED, on a              (utilities) up to a maximum of 20    major axes
+                                     remote PC, by audible alarm and               in one system e.g. 16 gen-sets       5 Hz to 8 Hz @ +/-7.5 mm,
+                                     via SMS text alerts. The module               + 4 mains, 4 gensets + 16            8 Hz to 500 Hz @ 2 gn
+                                                                                   mains etc.
+                                                                                                                        HUMIDITY
+                                                                                                                        BS EN 60068-2-30
+                                                                                                                        Db Damp Heat Cyclic 20/55 oC
+                                                                                                                        @ 95% RH 48 Hours
+                                                                                                                        BS EN 60068-2-78
+                                                                                                                        Cab Damp Heat Static 40 oC
+                                                                                                                        @ 93% RH 48 Hours
+
+                                                                                                                        SHOCK
+                                                                                                                        BS EN 60068-2-27
+                                                                                                                        Three shocks in each of three major axes
+                                                                                                                        15 gn in 11 mS
+
+                                                                                                                        DEGREES OF PROTECTION
+                                                                                                                        PROVIDED BY ENCLOSURES
+                                                                                                                        BS EN 60529
+                                                                                                                        IP65 - Front of module when installed into the
+                                                                                                                        control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+DSE130       MODBUS                        PC
+
+DSE157
+
+                                                           9                                   3
+                                                                          DC OUTPUTS
+             485
+
+DSE          RS485                   P810         CONFIGURABLE                                                        DC POWER
+EXPANSION                                         INPUTS                                                              SUPPLY 8-35V
+
+                                                                                         +
+
+DSE7560                                           7510                    MSC   7560
+                                                                          7510
+                    7
+                   OTHER             N/C VOLT     LOAD                    N/O VOLT                BUS
+                                     FREE OUTPUT  CURRENT                 FREE OUTPUT             SENSING
+MAINS (UTILITY) SENSING
+
+VOLTS        CURRENT
+
+        1ph               1ph              1      1ph                                 1                    1ph
+
+        2ph               2ph                                                                              2ph
+
+        3ph               3ph                                                                              3ph
+
+        N                 N                                                                                N
+
+                                                                                                                      ISSUE 5
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE7560                                                                                                                                             SPECIFICATION
+
+AUTO TRANSFER SWITCH & MAINS                                                                                                                        DC SUPPLY
+CONTROL MODULE                                                                                                                                      CONTINUOUS VOLTAGE RATING
+                                                                                                                                                    8 V to 35 V Continuous
+FEATURES
+                                                                                                                                                    CRANKING DROPOUTS
+KEY LOAD SHARE FEATURES                • Multiple display languages                                      KEY BENEFITS                               Able to survive 0 V for 50 mS, providing
+• Fixed export with mains (utility)    • LED and LCD alarm indication                                    • 132 x 64 Pixel ratio display for         supply was at least 10 V before dropout and
+• Volts and frequency matching         • Customisable status screens                                                                                supply recovers to 5 V. This is achieved
+• kW and kV Ar sharing                 • 9 configurable inputs                                              clarity                                 without the need for internal batteries.
+• Dead bus sensing                     • 5 configurable outputs                                          • Real-time clock provides                 LEDs and backlight will not be maintained
+• Peak lopping                         • Configurable timers and alarms                                                                             during cranking.
+• Peak shaving                         • Multiple date and time scheduler                                   accurate event logging
+• No break return                      • Event log (25)                                                  • Remote monitoring of module              MAXIMUM OPERATING CURRENT
+• Load demand scheme                   • Mains (utility) fail monitoring                                                                            340 mA at 12 V, 160 mA at 24 V
+• R.O.C.O.F & Vector Shift             • Automatic load transfer between                                    using comprehensive DSE7500
+• Mains (utility) de-coupling test                                                                          PC software                             MAXIMUM STANDBY CURRENT
+                                          mains (utility) and generator                                  • Ethernet communications (via             160 mA at 12 V, 80 mA at 24 V
+   facility                            • Manual load transfer between                                       DSE860/865 modules), provides
+• Multiple mains (utility) monitoring                                                                       advanced remote monitoring at           CHARGE FAIL/EXCITATION RANGE
+• Synchronising up to 16 generators       mains (utility) and generator                                     low cost                                0 V to 35 V
+• Sequential start                     • Audible alarm                                                   • Modules can be integrated into
+• Auto ID negotiation                  • Backed-up real-time clock                                          building management systems             MAINS (UTILITY)
+                                       • Fully configurable via by DSE                                      (BMS)                                   VOLTAGE RANGE
+KEY FEATURES                                                                                             • Surplus energy/power can be              15 V - 333 V AC (L-N)
+• 4-Line back-lit LCD text display        7500 PC software                                                  sold back to the grid (subject to
+• Five key menu navigation             • Multiple display languages                                         local mains/utility supplier)           FREQUENCY RANGE
+• Front panel editing with PIN         • Remote SCADA monitoring and                                     • Licence-free PC software                 3.5 Hz to 75 Hz
+                                                                                                         • IP65 rating (with supplied
+   protection                             control via DSE7500 PC                                            gasket) offers advanced                 OUTPUTS
+                                          software                                                          protection from water ingress           OUTPUT A (FUEL)
+                                       • RS485 communications                                                                                       15 A DC at supply voltage
+
+                                                                                                                                                    OUTPUT B (START)
+                                                                                                                                                    15 A DC at supply voltage
+
+                                                                                                                                                    OUTPUTS C & D
+                                                                                                                                                    8 A 250 V (Volt free)
+
+                                                                                                                                                    AUXILIARY OUTPUTS E,F,G,H
+                                                                                                                                                    2 A DC at supply voltage
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    240 mm x 181 mm x 42 mm
+                                                                                                                                                    9.4” x 7.1” x 1.6”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    220 mm x 160 mm
+                                                                                                                                                    8.7” x 6.3”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+RELATED MATERIALS                        PART NO’S                                                       OTHER RELATED MATERIALS                    PART NO’S
+TITLE                                    053-054                                                         TITLE                                      055-065
+DSE7560 Installation Instructions        057-100                                                         DSE7510 Data Sheet                         055-066
+DSE7500 Quick Start Guide                057-090                                                         DSE7520 Data Sheet                         055-072
+DSE7560 Operator Manual                  057-078                                                         DSE850 Comms Software Data Sheet
+DSE7500 PC Software Manual               057-047
+Load Share Design and Commissioning      057-045/6
+Guide to Synchronising and Load Sharing
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                 055-067/01/16 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

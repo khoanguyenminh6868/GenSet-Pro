@@ -1,0 +1,139 @@
+DEEP SEA ELECTRONICS                                                                             557
+
+FEATURES                                 DESCRIPTION                                        AMF AND MAINS
+                                                                                                       PARALLEL
+ Single set parallel with mains         The Model 557 is an Automatic Mains
+     facilitywith‘soft’no-breakreturn.   Failure Control Module, with                            CONTROLLER
+                                         comprehensive instrumentation and load
+ Peak lopping functionality to          control features. The module is used to                                           Issue 2
+     allow cost savings during high      monitor a mains supply and automatically                                   AM 22/10/03
+     tariff periods.                     start and stop the engine. It indicates the
+                                         operational status and fault conditions,     SPECIFICATION
+ Test on load facility allows           automatically shutting down the engine and
+     synchronisation to mains (utility)  indicating engine failure by means of an     DC Supply:
+     supply to provide ‘no break         LCD display, and flashing LED on the front   8V to 35V Continuous.
+     transfer’and hence no break in      panel.                                       Cranking Dropouts:
+     power supply to the load.                                                        Able to survive 0V for 50 mS,
+                                         Selected operational sequences, timers       providing supply was at least 10V
+ Can be used to provide additional      and alarms can be altered by the             before dropout and supply recovers
+     supply during times of high load.   customer. Alterations to the system are      to 5V. This is achieved without the
+                                         made using the 810 interface and a PC.       need for internal batteries.
+ Nohiddenextras–Suppliedasa             This interface also provides real time       Max. Operating Current:
+     complete package with governor      diagnostic facilities.                       513mA at 12V. 263mA at 24V.
+     and AVR interface modules                                                        Max. Standby Current:
+                                         Operation of the module is via pushbutton    370mA at 12V. 210mA at 24V.
+ Automatically senses mains             controls (with security locking facility)    Alternator Input Range:
+     (utility) failure and starts the    mounted on the front panel with              15V(ph-N) to 277V(ph-N) AC
+     backup generator.                   STOP/RESET, AUTO, TEST, MANUAL               (+20%)
+                                         and START functions. The first four          Alternator Input Frequency:
+ Multiple alarm channels for            pushbuttons feature LED ‘selected’           50Hz - 60Hz at rated engine speed
+     generator protection (ie oil        indications. Further pushbuttons provide     (Minimum: 15V AC Ph-N)
+     pressure, engine temperature,       MUTE/LAMP TEST, LCD PAGE and                 Magnetic Pick-up Voltage Input
+     overspeed and more)                 DISPLAY SCROLL functions.                    Range:
+                                                                                      +/- 0.5V to 70V Peak
+ Clear, backlit LCD display to show     The module features 32-Bit Microprocessor    Magnetic Input Frequency:
+     the status of engine, generator     control and a comprehensive list of timers   10,000Hz (max)
+     and mains (utility) as well as to   and pre-configured sequences. User           Mains Sensing Input Range:
+     annunciate alarm conditions         configurable expansion facilities are also   15V(ph-N) to 277V(ph-N) AC
+     should they occur.                  provided.                                    (+20%)
+                                                                                      Mains Sensing Input Frequency:
+ Compatible with many popular           The 557 module provides metering and         50Hz - 60 Hz (Minimum: 15V AC
+     governor and AVR types (ie          alarm facilities via the LCD display with    Ph-N)
+     Wooward, GAC, Cummins,              the following instrumentation displays,      Start Relay Output:
+     Newage, Mecc Alte, Leroy Somer      accessed via the LCD PAGE and                16 Amp DC at supply voltage.
+     and many more!)                     DISPLAY SCROLL push-buttons:                 Fuel Relay Output:
+                                          Generator Volts L1-N, L2-N, L3-N           16 Amp DC at supply voltage.
+ P120 and P121 also provide              Generator Volts L1-L2, L2-L3, L3-L1        Auxiliary Relay Outputs:
+     isolation between the engine /       Generator Amps L1,L2,L3                    5 Amp DC at supply voltage.
+     alternator and the control panel.    Generator Frequency Hz                     Generator loading Relay Output:
+                                          Generator kVA L1,L2,L3, Total              8 Amp AC 250V.
+ 25 event shutdown alarm log.            Generator kW L1,L2,L3, Total               Mains loading Relay Output:
+                                          Generator pf L1,L2,L3,Average              8 Amp AC 250V
+ Integral, configurable starting         Generator kVAr L1,L2,L3, Total             Charge Fail / Excitation Range:
+     and stopping timers.                 Generator KWh                              0V to 35V
+                                          Generator KVAh                             Operating Temperature Range:
+ Configurable inputs and outputs         Generator KVArh                            -30°C to +70°C
+     to help meet complex                 Generator Phase Sequence                   Dimensions:
+     specifications.                      Synchroscope Display                       192mm x 144mm x 138mm
+                                          Mains Volts L1-N, L2-N, L3-N               7.6’’x5.7’’x5.5’’
+  The 500 series modules have been        Mains Volts L1-L2, L2-L3, L3-L1
+  designed for front panel mounting.      Mains Frequency Hz                         Deep Sea Electronics reserve the right to change
+  The module is fitted into the cut-out   Engine Speed RPM                           specification without prior notice.
+  with the fixing clips removed. These    Engine Oil Pressure
+  are then fitted from the rear.          Engine Temperature
+  Connection is via locking plug and      Plant battery Volts
+  socket connectors.                      Engine Hours Run
+                                          Number of Start Attempts
+                                          Remaining Time until Maintenance
+
+                                              Due
+CASE DIMENSIONS
+
+137mm                                                                           144.0mm
+(5.4”)                                                                          (5.7”)
+
+                            111505m.0mmm                                                                                                      185.0mm (7.3“)
+                            (4.3”)                                                                                                            192.0mm (7.6“)
+                                                                                                              Panel Cut-out:138mmx185mm (5.5”x7.3”)
+                                                                            7.5mm (0.3”)
+
+TYPICAL CONNECTIONS                                                                   LOAD
+
+      Refer to Operators Manuals for further information                        L1 L2 L3 N
+
+                                Current
+                           Transformers
+
+ALTERNATOR                                                                                                                                                                         MAINS
+
+                            F  F                  F  G Contactor Generator                                    Contactor Mains M                   F  F  F
+
+                                                                                Electrical Interlock
+
+            25 26 27     29 34 33 32 31              36 35                                                                      40 39 38 42 43 44 45             Optional 157 Relay
+                                                             Generator Loading                                Mains Loading                                      Expansion Board
+                                                                    Relay                                                                                         (Maximum 2 off)
+                                                                                                                  Relay                                    FCC68 - 4 Way
+
+                         Internal Emergency Stop
+
+        1 23             5        4                  8 20 21                    22 24 23                      9 10 11 12 13 14 15 16 17 6         7 18 19      FCC68 - 8 Way            810
+                                                                                                                                                           30                      Configuration
+
+                                                                                                                                                           4 Safety Earth Connection
+                                                                                                                                                                             Must be connected to
+                                                                                                                                                                             the Safety Earth
+
+            F         F                                              Oil                  Temp
+                                                                   Sender                 Sender
+
+                                                     MPU                                                                                             NOT E:-
+                                                                                                                                                     When connected to a
+                                                                            These Ground connections must be                   5                     completed Panel / Gen-set
+                                                                            on the engine block and must                                             Real-time diagnostic display
+                                                                            be a sound electrical connection                       6                 is available
+                                                                            to the sender bodies.
+                                                                            The wire to Terminal 24 must not                           7
+                                                                            be used to provide a ground                                    8
+                                                                            connection to any other device                                     9
+
+                                                                                                              Configurable inputs
+
+                                                                                                                                                           To governor             To AVR
+
+                                                                                                                                                  For connection details of governor/AVR interfacing
+                                                                                                                                                  (P120/P121 analogue interface modules), refer to DSE Guide
+                                                                                                                                                  to Synchronising and Load Sharing (Part2)
+
+                        Deep Sea Electronics Plc.                                                                                                       Deep Sea Electronics inc.
+
+            Highfield House, Hunmanby Industrial Estate,                                                                                               5301E.StateSt.–Suite202
+               North Yorkshire. YO14 0PH. ENGLAND                                                                                                     Rockford, Illinois 61108 U.S.A.
+                          Tel +44 (0)1723 890099.
+                                                                                                                                                         Phone +1 (815) 316-8706
+                         Fax +44 (0)1723 893303.
+                     Email - sales@deepseaplc.com                                                                                                          Fax +1 (815) 316-8708
+                                                                                                                                                  Email–dsesales@deepseausa.com
+                       Web - www.deepseaplc.com
+                                                                                                                                                      Web–www.deepseausa.com
+

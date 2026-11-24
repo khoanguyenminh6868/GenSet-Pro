@@ -1,0 +1,145 @@
+dseGenset                                                                                                                                                 ®
+
+dse702                                                                                       ENVIRONMENTAL TESTING STANDARDS
+
+MANUAL AND AUTO START CONTROL MODULES                                                          ELECTRO-MAGNETIC COMPATIBILITY
+                                                                                               BS EN 61000-6-2
+FEATURES                                                                                       EMC Generic Immunity Standard for
+                                                                                               the Industrial Environment
+The DSE702 is available in Manual       When the module detects any of                         BS EN 61000-6-4
+and Auto Start versions, offering an    the above faults it will automatically                 EMC Generic Emission Standard for
+excellent range of engine               shut down the engine.                                  the Industrial Environment
+monitoring and protection features
+plus a tamper-proof engine hours        The module also has the capability                     ELECTRICAL SAFETY
+counter. . The module offers inputs     to monitor battery charging by                         BS EN 60950
+to monitor low oil pressure, high       utilising the WL terminal on the                       Safety of Information Technology Equipment,
+engine temperature and overspeed        charge alternator. On detecting a                      including Electrical Business Equipment
+and the manual start version also       battery charging fault, it will light
+has a user-defined auxiliary input.     the warning LED on the front panel.                    TEMPERATURE
+Auto Start versions also include an                                                            BS EN 60068-2-1
+input option for a start signal from a                                                         Ab/Ae Cold Test -30 oC
+remote location.                                                                               BS EN 60068-2-2
+                                                                                               Bb/Be Dry Heat +70 oC
+
+                                                                                               VIBRATION
+                                                                                               BS EN 60068-2-6
+                                                                                               Ten sweeps in each of three
+                                                                                               major axes
+                                                                                               5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                               8 Hz to 500 Hz @ 2 gn
+
+                                                                                               HUMIDITY
+                                                                                               BS EN 60068-2-30
+                                                                                               Db Damp Heat Cyclic 20/55 oC
+                                                                                               @ 95% RH 48 Hours
+                                                                                               BS EN 60068-2-78
+                                                                                               Cab Damp Heat Static 40 oC
+                                                                                               @ 93% RH 48 Hours
+
+                                                                                               SHOCK
+                                                                                               BS EN 60068-2-27
+                                                                                               Three shocks in each of three major axes
+                                                                                               15 gn in 11 mS
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+REMOTE START ON           PRE-HEAT          LOP SWITCH                          TEMP SWITCH  DC POWER
+AUTO START/AUX INPUT      OUTPUT                                                             SUPPLY 8-35V
+ON MANUAL START
+
+                                         -
+
+DSE702                    CHARGE FAIL       FUEL & CRANK
+                                            OUTPUTS
+                    7            D +
+                   OTHER                             -
+                                    W/L
+GENERATOR VOLTS
+
+                  1ph
+
+                                                                                                           ISSUE 4
+         dseGenset                                                                                                                                                                                               ®
+
+dse702                                                                                                                                              SPECIFICATION
+
+MANUAL AND AUTO START CONTROL MODULES                                                                                                                 DC SUPPLY
+                                                                                                                                                      CONTINUOUS VOLTAGE RATING
+FEATURES                                                                                                                                              8 V to 35 V continuous
+
+                                                                                                                                                      CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 50 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout
+                                                                                                                                                      and supply recovers to 5 V. This is achieved
+                                                                                                                                                      without the need for internal batteries.
+
+                                                                                                                                                      OUTPUTS
+                                                                                                                                                      CRANK
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      FUEL
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      PRE-HEAT
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      GENERATOR
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      15 V - 333 V AC (L-N)
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      3.5 Hz to 75 Hz
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      84 mm x 72 mm x 34.9 mm
+                                                                                                                                                      3.3” x 2.8” x 1.4”
+                                                                                                                                                      Excludes key switch
+
+                                                                                                                                                      PANEL CUT-OUT
+                                                                                                                                                      80 mm x 68 mm
+                                                                                                                                                      3.1” x 2.7”
+
+                                                                                                                                                      MAXIMUM PANEL THICKNESS
+                                                                                                                                                      8 mm
+                                                                                                                                                      0.3”
+
+                                                                                                                                                      OPERATING TEMPERATURE RANGE
+                                                                                                                                                      -30°C to +70°C
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                      -40°C to +80°C
+
+KEY FEATURES                        KEY BENEFITS
+• Manual start and Auto Start       • Hours counter provides
+
+   versions                            accurate information for
+• Remote start input (auto start       monitoring maintenance and
+                                       warranty periods
+   version only)                    • Multiple engine parameters are
+• Auxiliary shutdown input             monitored simultaneously
+
+   (Manual start version only)
+• Engine monitoring and
+
+   protection
+• LED indication
+• Engine pre-heat
+• Tamper proof engine hours
+• Front panel mounting
+
+RELATED MATERIALS                                                                                        PART NO’S
+                                                                                                         053-003
+TITLE                                                                                                    057-041
+DSE701/2 Installation Instructions
+DSE701/2 Operator Manual
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-033/08/10 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

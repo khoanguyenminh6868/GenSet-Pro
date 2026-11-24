@@ -1,0 +1,133 @@
+         dseGenset                                                                                                                                                                                               ®
+
+dse857                                                                                                                                              SPECIFICATION
+
+USB TO RS485 COMMUNICATIONS DEVICE                                                                                                                    DC SUPPLY
+                                                                                                                                                      CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+
+                                                                                                                                                      CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 100 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout
+                                                                                                                                                      and supply recovers to 5 V. This is
+                                                                                                                                                      achieved without the need for internal
+                                                                                                                                                      batteries. LEDs and backlight will not be
+                                                                                                                                                      maintained during cranking.
+
+                                                                                                                                                      MAXIMUM OPERATING CURRENT
+                                                                                                                                                      123 mA at 12 V
+                                                                                                                                                      71 mA at 24 V
+
+                                                                                                                                                      MAXIMUM STANDBY CURRENT
+                                                                                                                                                      104 mA at 12 V
+                                                                                                                                                      63 mA at 24 V
+
+                                                                                                                                                      COMMUNICATIONS
+                                                                                                                                                      USB (Single DSE Controller)
+                                                                                                                                                      RS485
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      35 mm x 97 mm x 102 mm
+                                                                                                                                                      1.4” x 3.8” x 4.0”
+
+                                                                                                                                                      MOUNTING
+                                                                                                                                                      DIN Rail
+
+                                                                                                                                                      OPERATING TEMPERATURE RANGE
+                                                                                                                                                      -30 °C to +70 °C
+                                                                                                                                                      -22 °F to +158 °F
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                      -40 °C to +80 °C
+                                                                                                                                                      -40 °F to +176 °F
+
+KEY FEATURES                                   KEY BENEFITS
+• Supports a wide range of DSE controllers.    • Allows remote connections of up to 1.2 km
+• Converts supported DSE controller’s USB
+                                                  to monitor a DSE controller’s status.
+   port to an RS485 port.                      • Allows integration of DSE controllers into an
+• Simple configuration of DSE857 via the DSE
+                                                  external building management systems
+   Configuration Suite PC Software                (BMS) or PLC.
+• Remote control and monitoring of the         • DIN rail mounting allows the device to be
+                                                  installed securely into a panel.
+   connected supported DSE controller via the  • Generic connectors for simple plug-in
+   DSE Configuration Suite PC Software.           operation.
+• Supports MODBUS RTU via RS485 port.          • Firmware upgradeable via a USB memory
+• LED status indication on the device to aid      device.
+   fault finding.                              • Compatible with DSE Configuration Suite PC
+                                                  Software for ease of configuration and remote
+                                                  control & monitoring.
+
+RELATED MATERIALS                                    PART NO’S                                           TITLE                                      PART NO’S
+TITLE                                                053-169                                             dse6010/20 data sheet                      055-079
+dse857 Installation Instructions                     057-219                                             dse6110/20 data sheet                      055-069
+dse857 Configuration suite PC and Operations Manual  055-162                                             dse6610/20 data sheet                      055-159
+dseL400/L401 data sheet                              055-154                                             dse7110/20 data sheet                      055-081
+dse4310/20 data sheet                                055-068                                             dse7110/20 MKII data sheet                 055-138
+dse4410/20 data sheet                                055-132                                             dse7210/20 data sheet                      055-050
+dse4510/20 data sheet                                055-165
+dse4610/20 data sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-175/04/14 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+       dseGenset                                                                                                                                       ®
+
+dse857                                                                                    ENVIRONMENTAL TESTING STANDARDS
+
+USB TO RS485 COMMUNICATIONS DEVICE                                                          ELECTRO MAGNETIC COMPATIBILITY
+                                                                                            BS EN 61000-6-2
+The DSE857 is a USB to RS485          COMPATIBLE DSE CONTROLLERS                            EMC Generic Emission Standard for the
+converter that allows you to convert  INCLUDE:                                              Industrial Environment
+a module’s USB port to an RS485                                                             BS EN 61000-6-4
+port. This RS485 port allows you to   AUTO START MODULES                                    EMC Generic Emission Standard for the
+connect the module to an RS485                                                              Industrial Environment
+MODBUS RTU master over 1.2 km         DSEL400  DSE6010
+away. The MODBUS RTU master           DSEL401  DSE6110                                      ELECTRICAL SAFETY
+could be an external PLC, Building    DSE4310  DSE6610                                      BS EN 60950
+Management System (BMS) or a PC       DSE4410  DSE7110                                      Safety of Information Technology
+running the DSE Configuration Suite   DSE4510  DSE7110MKII                                  Equipment, including Electrical Business
+PC Software.                          DSE4610  DSE7210                                      Equipment
+
+The device also includes an LED       AUTO MAINS FAILURE MODULES                            TEMPERATURE
+indicator that shows the operation                                                          BS EN 60068-2-2
+and connection status at all times.   DSE4320  DSE6120                                      Test Ab to +70 °C 60067-2-2 Hot
+                                      DSE4420  DSE6620                                      Test Ab to -30 °C 60068-2-1 Cold
+                                      DSE4520  DSE7120
+                                      DSE4620  DSE7120MKII                                  VIBRATION
+                                      DSE6020  DSE7220                                      BS EN 60068-2-6
+                                                                                            Ten sweeps in each of three major axes
+                                                                                            5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz
+                                                                                            at 2 GN
+
+                                                                                            HUMIDITY
+                                                                                            BS 2011 part 2.1 60068-2-30
+                                                                                            Test Cb Ob Cyclic
+                                                                                            93% RH at 40 °C for 48 hours
+
+                                                                                            SHOCK
+                                                                                            BS EN 60068-2-27
+                                                                                            Three shocks in each of three major axes
+                                                                                            15 GN in 11 mS
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF APPLICATIONS
+
+       MODBUS RTU                              USB
+
+RS485                                 CONNECTION TO DSE MODULE              DC POWER
+                                      See above for compatible controllers  SUPPLY 8-35V
+
+DSE857
+
+                  7
+                 OTHER
+
+                                                                                          ISSUE 1
+

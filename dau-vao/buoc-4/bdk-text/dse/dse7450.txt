@@ -1,0 +1,190 @@
+                                                                                                                                                                                                                                                                 ®
+
+              dseGenset
+
+dse7450                                                                                                                          ENVIRONMENTAL TESTING STANDARDS
+
+DC GENERATOR CONTROLLER                                                                                                            ELECTRO-MAGNETIC COMPATIBILITY
+                                                                                                                                   BS EN 61000-6-2
+The DSE 7450 is a control module       Application specific needs can also   The DSE7450 module is                                 EMC Generic Immunity Standard for
+designed to control DC generators      be achieved by combining the          compatible with both electronic                       the Industrial Environment
+in supplying both a load and/or the    standard and embedded safety          (CAN) and non-electronic engines                      BS EN 61000-6-4
+charging of batteries.                 features for generator control and    and offers a comprehensive                            EMC Generic Emission Standard for
+                                       the configurable discrete I/O.        number of flexible inputs, outputs                    the Industrial Environment
+Specific attention has been given to                                         and extensive engine protections.
+ensure this module has the             The DSE7450 will annunciate           This means the system can be                          ELECTRICAL SAFETY
+necessary features to be               warnings, shutdown and engine         easily adapted to meet the most                       BS EN 60950
+configured for many different and      status information on the back-lit    demanding industry requirements.                      Safety of Information Technology Equipment,
+challenging applications. Owing to     LCD screen, illuminated LEDs,         The modules can be easily                             including Electrical Business Equipment
+the large number of monitoring         remote PC, audible alarm and via      configured using the DSE
+points and the built in                SMS text alerts. Parameters can be    Configuration Suite Software via an                   TEMPERATURE
+programmable logic controller, a       adjusted using the LCD and tactile    A to B USB cable.                                     BS EN 60068-2-1
+wide number of operating modes         rubber silicon 5 key menu                                                                   Ab/Ae Cold Test -30 oC
+can be realised. This provides the     navigation. PIN code protection       This data sheet refers to V2+                         BS EN 60068-2-2
+user with the ultimate flexibility in  ensures that only authorised          controllers. For V1 controllers                       Bb/Be Dry Heat +70 oC
+the engine control of the generator    persons can access these features.    please refer to the Operator
+to ensure battery life optimisation,                                         Manual.                                               VIBRATION
+reduce engine maintenance/             The module includes USB, RS232,                                                             BS EN 60068-2-6
+replacement and fuel usage.            RS485 & Ethernet ports as well as                                                           Ten sweeps in each of three
+                                       dedicated terminals for system                                                              major axes
+                                       expansion.                                                                                  5 Hz to 8 Hz at +/-7.5 mm,
+                                                                                                                                   8 Hz to 500 Hz at 2 gn
+
+                                                                                                                                   HUMIDITY
+                                                                                                                                   BS EN 60068-2-30
+                                                                                                                                   Db Damp Heat Cyclic 20/55 oC
+                                                                                                                                   at 95% RH 48 Hours
+                                                                                                                                   BS EN 60068-2-78
+                                                                                                                                   Cab Damp Heat Static 40 oC
+                                                                                                                                   at 93% RH 48 Hours
+
+                                                                                                                                   SHOCK
+                                                                                                                                   BS EN 60068-2-27
+                                                                                                                                   Three shocks in each of three major axes
+                                                                                                                                   15 gn in 11 mS
+
+                                                                                                                                   DEGREES OF PROTECTION
+                                                                                                                                   PROVIDED BY ENCLOSURES
+                                                                                                                                   BS EN 60529
+                                                                                                                                   IP65 - Front of module when installed into the
+                                                                                                                                   control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE VARIETY OF
+GEN-SET APPLICATIONS
+
+DSE2130          MODEM MODBUS PC
+DSE2131
+DSE2133          232          485                                        10                       6                      4
+DSE2152                                                                      DC OUTPUTS
+DSE2157          RS232 AND             USB    USB       CONFIGURABLE                                 ANALOGUE               EMERGENCY  DC POWER
+DSE2548          RS485                 PORT   HOST      INPUTS                                       SENDERS                STOP       SUPPLY 8-35V
+
+   DSENET
+   EXPANSION
+
+                                              ETHERNET
+
+                                                                                +
+
+DSE7450                                                                                                                                DEUTZ
+                                                                                                                                       ISUZU
+          7                                                                                                                            PERKINS
+       OTHER                                                                                                                           CATERPILLAR
+                                                                                                                                       MTU
+                                                                                                                                       VOLVO
+                                                                                                                                       CUMMINS
+                                                                                                                                       SCANIA
+
+MAINS (UTILITY)  N/C VOLT              VOLTS  CURRENT SENSING                N/O VOLT                GENERATOR   CHARGE          FUEL & CRANK       ELECTRONIC
+SENSING          FREE OUTPUT                                                 FREE OUTPUT             SENSING     ALTERNATOR      OUTPUTS            ENGINES &
+                                                                                                                                                    MAGNETIC
+                                                                                                                                 FLEXIBLE WITH CAN  PICK-UP
+
+VOLTS                                         CHARGE SHUNT LOAD SHUNT                                VOLTS                  D +
+
+                                                                                                                            W/L  +
+
+1ph                   1                                                      1                              1ph
+
+2ph                                                                                                         2ph
+
+3ph                                                                                                         3ph
+
+N                                                                                                           N
+
+                                                                                                                                                    ISSUE 1
+                                                                                                                                                                                                                                                   ®
+
+dseGenset
+
+dse7450                                                                                                                                             SPECIFICATION
+
+DC GENERATOR CONTROLLER                                                                                                                             DC SUPPLY
+                                                                                                                                                    CONTINUOUS VOLTAGE RATING
+KEY FEATURES                           • Fault condition notification to                                 KEY BENEFITS                               8 V to 35 V Continuous
+• Configurable inputs (10)                designated PC                                                  • Programmable characteristics to
+• Configurable outputs (8)                                                                                                                          CRANKING DROPOUTS
+• Configurable maintenance alarms      • Engine Protection                                                  influence charging operation and        Able to survive 0 V for 50 mS, providing
+                                       • Five key menu navigation for LCD                                   extend battery life                     supply was at least 10 V before dropout
+   (3)                                                                                                   • Optimise generator running time          and supply recovers to 5 V. This is achieved
+• Configurable battery                    display (PIN protected)                                           to reduce fuel usage, reduce            without the need for internal batteries
+                                       • Engine speed detection via CAN,                                    maintenance and extend engine
+   maintenance alarms (3)                                                                                   and battery lifetime                    MAXIMUM OPERATING CURRENT
+• Configurable alarms and timers          magnetic pick-up or alternator                                 • Automatic start/stop according to        260 mA at 12 V, 130 mA at 24 V
+• Automatic or Manual start with          sensing                                                           configured settings and battery
+                                       • Fuel usage monitor and low level                                   condition.                              MAXIMUM STANDBY CURRENT
+   configurable start and stop timers     alarms                                                         • Engine start/stop can be adjusted        120 mA at 12 V, 65 mA at 24 V
+• 2 DC shunt inputs (Configurable      • Charge alternator failure alarm                                    to maintain desired battery charge
+                                       • Manual fuel pump control                                           level                                   CHARGE FAIL/EXCITATION RANGE
+   0-250mV and 0-5000 A)               • ‘Protections disabled’ function                                 • DSENet® connection for system            0 V to 35 V
+• AC & DC voltage measurement          • Manual/Automatic load transfer                                     expansion modules
+• Mains (utility) failure detection    • Fully configurable & remote                                     • Ability to implement application         OUTPUTS
+• Dedicated load test button              SCADA monitoring via DSE                                          specific logic and customise            OUTPUT A (FUEL)
+• kW overload alarms                      Configuration Suite PC Software                                   operation.                              15 A DC at supply voltage
+• Comprehensive electrical             • Start & stop capability &                                       • Allows measurement of Battery
+                                          advanced SMS messaging                                            current, Load current and Total         OUTPUT B (START)
+   protection                             (additional modem required)                                       current.                                15 A DC at supply voltage
+• USB, RS232, RS485, Ethernet          • Additional display screens to help
+                                          with modem diagnostics                                         This data sheet refers to V2+              OUTPUTS C & D
+   and Modbus RTU/TCP                  • DSENet® expansion                                               controllers. For V1 controllers            8 A AC at 250 V AC (Volt free)
+   communication                       • Battery & Load monitoring                                       please refer to the Operator Manual.
+• PLC functionality using program      • DC alarms for overcurrent &                                                                                AUXILIARY OUTPUTS E,F,G,H,I & J
+   editor within PC configuration         short circuit                                                  PART NO’S                                  2 A DC at supply voltage
+   suite                               • Battery temperature monitor                                     053-143
+• Multi event exercise timer           • Battery charge remaining display                                057-170                                    GENERATOR
+• Back-lit LCD 4-line text display     • Battery depth of discharge                                      057-169                                    VOLTAGE RANGE
+   with multiple languages possible       display                                                                                                   15 V to 150 V AC (L-N)
+• Audible alarm                        • AVR bias control
+• Fixed and user defined LED                                                                                                                        FREQUENCY RANGE
+   indicators                                                                                                                                       3.5 Hz to 75 Hz
+• Real time clock and event log
+   (250 events).                                                                                                                                    MAINS (UTILITY)
+                                                                                                                                                    VOLTAGE RANGE
+RELATED MATERIALS                                                                                                                                   15 V to 333 V AC (L-N)
+TITLE
+DSE7450 Installation Instructions                                                                                                                   FREQUENCY RANGE
+DSE7450 Operator Manual                                                                                                                             3.5 Hz to 75 Hz
+DSE7450 PC Configuration Suite Manual
+                                                                                                                                                    MAGNETIC PICK UP
+                                                                                                                                                    VOLTAGE RANGE
+                                                                                                                                                    +/- 0.5 V to 70 V
+
+                                                                                                                                                    FREQUENCY RANGE
+                                                                                                                                                    10,000 Hz (max)
+
+                                                                                                                                                    BUILT-IN AVR BIAS
+                                                                                                                                                    MINIMUM LOAD IMPEDANCE
+                                                                                                                                                    1000 Ω
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    BIAS VOLTAGE
+                                                                                                                                                    0 V to 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    240 mm x 172 mm x 57 mm
+                                                                                                                                                    9.4” x 6.8” x 2.2”
+
+                                                                                                                                                    PANEL CUTOUT
+                                                                                                                                                    220 mm x 160 mm
+                                                                                                                                                    8.7” x 6.3”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+                                                                                                                                                    OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30 oC to +70 oC
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40 oC to +85 oC
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                 055-142/02/16 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

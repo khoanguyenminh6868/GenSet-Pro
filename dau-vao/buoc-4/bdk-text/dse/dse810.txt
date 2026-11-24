@@ -1,0 +1,112 @@
+PRODUCT:DSE810                             DEEP SEA ELECTRONICS
+
+PC Software Configuration
+Interface
+
+Issue 2
+VH 06/06 /01
+
+DESCRIPTION
+
+The 810 PC Software Configuration          The main use of the software is to EDIT the
+Interface is designed for use with the     modules’ configuration to allow for use
+DSE5xx, DSE5xxx, DSE4200 and               with a particular application. Values such
+DSE710/720 range of modules. It is         as analogue trip and alarm levels, timers,
+intended to be used in conjunction with    input function selection, relay output
+the DSE P810 For MS- Windows™              functions etc. can all be adjusted on the PC
+configuration software. The interface      screen and then ‘WRITTEN’ to the module.
+enables the user to access the
+configuration stored within the module to  For further details on using the software,
+allow changes to be made to the various    please refer to the P810 for Windows
+settings.                                  Software manual.
+
+The interface kit comprises of:                  NOTE: The 810 module                    SPECIF I C A T I O N
+► Interface module                         incorporates opto- isolation devices
+► 25 way to 9 way RS232 adapter cable      within its construction. This ensures         DC SUPPLY :
+► Interconnecting FCC 68- 8way cable       trouble free connection to earthed            The 810 interface is powered from
+                                           desk- top type PC’s and laptops alike in      the module to which it is connected
+      which connects to the appropriate    module configuration and generator            so no external power supply is
+      connector on the module.             testing environments. This allows it to       required to the interface. The
+► Software diskettes (or a CD)             be used at distances up to 100 metres         module however will need to be
+      containing the P810 for Windows PC   away from the controller.                     connected to a suitable DC supply.
+      software and various module
+      configuration files to aid rapid                                                   DIMENSIONS :
+      module configuration.                                                              57mmx100mmx22mm
+
+Also included on the disk is a MS Word™          NOTE: For full details of the           OPERATING TEMPERATURE RANGE
+template, this can be used to make         configuration options available please        :
+labels for the configurable LED’s on the   refer to the P810 for Windows Software        - 15 to +55 oC
+module to identify their function. A slot  manual.
+is provided behind the clear window in                                                   INDICATIONS :
+the label for this, accessed by removing   = Telemetry and Control Available
+the front bezel.
+                                           only to users of the optional
+                                           Communications Software.
+
+The software will offer the user the                                                     ’Heart- beat’ on SCADA pages
+following options:                                                                       indicating Comms- link healthy.
+                                                                                         PC REQUIREMENTS :
+► LOAD previous configurations from                                                      486 or better Processor
+      disk.                                                                              Running MS- Windows 95™ or Later
+                                                                                         (NT4.0 or Later)
+► SAVE new configurations to disk.                                                       Minimum 16Mb memory
+► READ the existing configuration from                                                   Minimum 10Mb free hard disk space
+                                                                                         640x480 Resolution VGA screen
+      the module.                                                                        CONNECTION :
+► WRITE a new configuration to the
+                                                                                         The interface should be connected
+      module.
+► EDIT the configuration currently                                                       to the appropriate PC COM port on
+
+      loaded in the PC.                                                                  your computer system and the
+► PRINT the configuration currently
+                                                                                         FCC68- 8way cable inserted into the
+      loaded in the PC.
+► View the ‘SCADA’ display from the                                                      socket on the rear of the module to
+
+      module.                                                                            be configured. The module being
+► SET- UP the software such as COM
+                                                                                         configured will require a suitable DC
+      port selection.
+► QUIT back to Ms- Windows™.                                                             power supply connected to it.
+► Set- up the Optional Remote
+
+    Telemetry & Control functions 
+
+Deep Sea Electronics plc maintains a policy of continuous development and reserves the right to change the details shown in this data sheet
+                                                    without prior notice. The contents are intended for guidance only.
+CASE DIMENSIONS                                                    FCC68           RS2 3 2
+
+         57.0m m FCC68                            RS232 42.0m m
+
+                            100.0mm                                        22.0mm
+
+TYPICAL CONNECTIONS                               N O TE:­W hen connected to
+                                                  a com pleted Panel/G en­set
+                 DC Supply                        Realtim e diagnostic
+                                                  status display is available
+           Te_r m i n al s
+               +                                             810
+
+F                           Up to 100 Metres              Con f i g ur at ion
+                                                             I n t er f ace
+
+                                              To  Socket on rear of module
+
+                   157 
+                   808 
+   550 or 555 Module
+
+                                                         CE
+
+       Deep Sea Electronics Plc.      Deep Sea Electronics inc.        Deep Sea Electronics Plc.
+        Tel:+44 (0)1723 890099        Phone: +1 (815) 316- 8706                   (Far East)
+       Fax: +44 (0)1723 893303         Fax: +1 (815) 316- 8708
+   LO CALL (from UK BT landlines) :  TOLL FREE(USA only) : Tel: 1          Tel:+66 2 670 6228
+       Telephone 0845 260 8933                                            Fax: +66 2 678 3028
+   Email: support@deepseaplc.com              866 636 9703         Email: support@deepseaplc.com
+       Web: www.deepseaplc.com                       Email:           Web: www.deepseaplc.com
+
+                                      dsesales@deepseausa.com
+                                     Web: www.deepseausa.com
+

@@ -1,0 +1,188 @@
+                                                                                                                                                                                                                                                              ®
+
+           DSEGenset
+
+DSE7510                                                                                                                   ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START & LOAD SHARE CONTROL MODULE                                                                                      ELECTRO-MAGNETIC COMPATIBILITY
+                                                                                                                            BS EN 61000-6-2
+FEATURES                                                                                                                    EMC Generic Immunity Standard for
+                                                                                                                            the Industrial Environment
+The DSE7510 is an Automatic             A sophisticated module monitoring  MODULE CAPABILITIES                              BS EN 61000-6-4
+Engine Control Module, designed         an extensive number of engine      • Fixed export with mains (utility)              EMC Generic Emission Standard for
+to provide advanced load share          parameters, the DSE7510 will                                                        the Industrial Environment
+functionality for diesel and gas        annunciate engine shutdowns,          supply
+generating sets that include            warnings, and engine status        • Synchronising up to 16 gen-sets                ELECTRICAL SAFETY
+electronic and non-electronic           information on the back-lit LCD                                                     BS EN 60950
+engines.                                screen, by illuminated LED, on a   The module has sophisticated                     Safety of Information Technology Equipment,
+                                        remote PC, by audible alarm and    engine and power monitoring, high                including Electrical Business Equipment
+The module’s load share functions       via SMS text alerts (GSM modem     level instrumentation and flexible
+include automatic synchronising         required). The module includes     timers and alarms, making the                    TEMPERATURE
+with built-in synchroscope and          RS232 and RS485 ports as well as   system suitable for a wide range of              BS EN 60068-2-1
+closing onto dead bus. Direct and       dedicated terminals for system     synchronising applications.                      Ab/Ae Cold Test -30 oC
+flexible outputs from the module        expansion.                                                                          BS EN 60068-2-2
+are provided to allow connection to                                        DSE7560 is required to synchronise               Bb/Be Dry Heat +70 oC
+the most commonly used speed                                               with the mains (utility).
+governors and automatic voltage                                                                                             VIBRATION
+regulators (AVRs).                                                                                                          BS EN 60068-2-6
+                                                                                                                            Ten sweeps in each of three
+                                                                                                                            major axes
+                                                                                                                            5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                                                            8 Hz to 500 Hz @ 2 gn
+
+                                                                                                                            HUMIDITY
+                                                                                                                            BS EN 60068-2-30
+                                                                                                                            Db Damp Heat Cyclic 20/55 oC
+                                                                                                                            @ 95% RH 48 Hours
+                                                                                                                            BS EN 60068-2-78
+                                                                                                                            Cab Damp Heat Static 40 oC
+                                                                                                                            @ 93% RH 48 Hours
+
+                                                                                                                            SHOCK
+                                                                                                                            BS EN 60068-2-27
+                                                                                                                            Three shocks in each of three major axes
+                                                                                                                            15 gn in 11 mS
+
+                                                                                                                            DEGREES OF PROTECTION
+                                                                                                                            PROVIDED BY ENCLOSURES
+                                                                                                                            BS EN 60529
+                                                                                                                            IP65 - Front of module when installed into the
+                                                                                                                            control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+DSE130                    MODEM MODBUS        PC
+
+DSE157
+
+                                                           9                                    3                      3
+                                                                           DC OUTPUTS
+                          232  485                                                                 ANALOGUE
+                                                                                                   SENDERS
+DSE                       RS232 AND     P810           CONFIGURABLE                                                       EMERGENCY    DC POWER
+EXPANSION                 RS485                        INPUTS                                                             STOP         SUPPLY 8-35V
+
+                                                                                       +
+
+DSE7510                                                                    MSC                                            DEUTZ
+                                                                           7510                                           ISUZU
+                    7                                      7510                  7560                                     PERKINS
+                   OTHER                                                                                                  CATERPILLAR
+                          VOLT FREE     GENERATOR SENSING                  FUEL & CRANK            CHARGE                 MTU          MAGNETIC
+BUS                       OUTPUTS                                          OUTPUTS                 ALTERNATOR             VOLVO        PICK-UP
+SENSING                                                                                                                   CUMMINS
+                                                                                                         D +              SCANIA
+
+                                                                                                           W/L            ELECTRONIC
+                                                                                                                          ENGINES
+
+                                        CURRENT            VOLTS
+
+                                                                                 +
+
+           1ph                       2            1ph             1ph
+
+           2ph                                    2ph             2ph
+
+           3ph                                    3ph             3ph
+
+           N                                      E               N
+
+                                                  N
+
+                                                                                                                                                 ISSUE 6
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE7510                                                                                                                                             SPECIFICATION
+
+AUTO START & LOAD SHARE CONTROL MODULE                                                                                                                DC SUPPLY
+                                                                                                                                                      8 V to 35 V continuous
+FEATURES
+                                                                                                                                                      CRANKING DROPOUTS
+KEY LOAD SHARE FEATURES              • Configurable timers and alarms                                    KEY BENEFITS                                 Able to survive 0 V for 50 mS, providing
+• Fixed export with mains (utility)  • Multiple date and time scheduler                                  • 132 x 64 pixel ratio display for           supply was at least 10 V before dropout and
+• Synchronising up to 16 generators  • Event log (25)                                                                                                 supply recovers to 5 V. This is achieved
+• Sequential start                   • CAN and Magnetic Pick-up/Alt.                                        clarity                                   without the need for internal batteries
+• Auto ID negotiation                                                                                    • Real-time clock provides
+• Direct governor and AVR               sensing                                                                                                       MAXIMUM OPERATING CURRENT
+                                     • Engine protection alarms                                             accurate event logging                    460 mA at 12 V, 245 mA at 24 V
+   communication and control         • Low fuel alarms                                                   • Remote monitoring of module
+• Manual voltage, frequency and      • Charge Alternator failure warning                                                                              MAXIMUM STANDBY CURRENT
+                                     • Manual speed control (on                                             using comprehensive DSE7500               375 mA at 12 V, 200 mA at 24 V
+   speed adjustment                                                                                         PC software
+• Volts and frequency matching          compatible CAN engines)                                          • Sends SMS messages to notify               CHARGE FAIL/EXCITATION RANGE
+• Dead bus sensing                   • Engine exercise scheduler                                            engineers of specific generator           0 V to 35 V
+• Generator load demand              • Automatic load transfer                                              problems (GSM modem and
+• kW and kV Ar load sharing          • kW overload protection                                               SIM card required)                        OUTPUTS
+• kW on mains (utility) level        • Unbalanced load protection                                        • Ethernet communications (via               OUTPUT A (FUEL)
+• Automatic hours run balancing      • Independent Earth Fault trip                                         DSE860/865 modules), provides             15 A DC at supply voltage
+• R.O.C.O.F & Vector Shift           • Audible alarm                                                        advanced remote monitoring at
+• Mains (utility) decoupling test    • Backed-up real-time clock                                            low cost                                  OUTPUT B (START)
+                                     • Fully configurable via by                                         • Modules can be integrated into             15 A DC at supply voltage
+   facility                                                                                                 building management systems
+                                        DSE7500 PC software                                                 (BMS)                                     OUTPUTS C & D
+KEY FEATURES                         • Configurable display languages                                    • Surplus energy / power can be              8 A 250 V (Volt free)
+• 4-Line back-lit LCD text display   • Remote SCADA monitoring via                                          sold back to the grid (subject to
+• Five key menu navigation                                                                                  local mains/utility supplier)             AUXILIARY OUTPUTS E,F,G
+• Front panel editing with PIN          DSE7500 PC software                                              • Licence-free PC software                   2 A DC at supply voltage
+                                     • User selectable RS232 and                                         • IP65 rating (with supplied
+   protection                                                                                               gasket) offers advanced                   GENERATOR
+• Multiple display languages            RS485 communications                                                resistance to water ingress               VOLTAGE RANGE
+• LED and LCD alarm indication       • SMS Messaging (additional                                                                                      15 V - 333 V AC (L-N)
+• Customisable status screens
+• 9 configurable inputs                 external modem required)                                                                                      FREQUENCY RANGE
+• 5 configurable outputs             • Built-in governor and AVR control                                                                              3.5 Hz to 75 Hz
+
+                                                                                                                                                      MAGNETIC PICK UP
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      +/- 0.5 V to 70 V
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      10,000 Hz (max)
+
+                                                                                                                                                      BUILT-IN GOVERNOR CONTROL
+                                                                                                                                                      Fully Isolated
+                                                                                                                                                      Minimum Load Impedance:
+                                                                                                                                                      1000Ω
+                                                                                                                                                      Gain Volts 0 V - 10 V DC
+                                                                                                                                                      Offset Volts + / - 10 V DC
+
+                                                                                                                                                      BUILT-IN AVR CONTROL
+                                                                                                                                                      Fully Isolated
+                                                                                                                                                      Minimum Load Impedance: 1000Ω
+                                                                                                                                                      Gain Volts 0 V - 10 V DC
+                                                                                                                                                      Offset Volts + / - 10 V DC
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      240 mm x 172 mm x 57 mm
+                                                                                                                                                      9.4” x 6.8” x 2.2”
+
+                                                                                                                                                      PANEL CUTOUT
+                                                                                                                                                      220 mm x 160 mm
+                                                                                                                                                      8.7” x 6.3”
+
+                                                                                                                                                      MAXIMUM PANEL THICKNESS
+                                                                                                                                                      8 mm
+                                                                                                                                                      0.3”
+
+RELATED MATERIALS                        PART NO’S                                                       OTHER RELATED MATERIALS                    PART NO’S
+TITLE                                    053-052                                                         TITLE                                      055-067
+DSE7510 Installation Instructions        057-100                                                         DSE7560 Data Sheet                         055-082
+DSE7500 Quick Start Guide                057-088                                                         DSE124 Data Sheet                          057-004
+DSE7510 Operator Manual                  057-078                                                         CAN and DSE Wiring Guide
+DSE7500 PC Software Manual               057-047
+Load Share Design and Commissioning      057-045/6
+Guide to Synchronising and Load Sharing
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-065/01/16 (7)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

@@ -1,0 +1,190 @@
+                                                                                                                                                                                                                                                         ®
+
+      DSEGenset
+
+DSE7110/20 MKll                                                                                                     ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START & AUTO MAINS FAILURE                                                                                       ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULES                                                                                                       BS EN 61000-6-2
+                                                                                                                      EMC Generic Immunity Standard for
+FEATURES                                                                                                              the Industrial Environment
+                                                                                                                      BS EN 61000-6-4
+The DSE7110 MKll Auto Start                Electronic J1939 (CAN) and non-       Through USB Communication both       EMC Generic Emission Standard for
+Control Module and the DSE7120             electronic MPU and alternator         modules can be easily configured     the Industrial Environment
+MKll Auto Mains (Utility) Failure          sensing engine support for diesel,    using the DSE Configuration Suite
+Control Module are suitable for a          gas and petrol engines all in one     PC Software or can be fully          ELECTRICAL SAFETY
+wide variety of single gen-set             variant. With a number of flexible    configured through the module's      BS EN 60950
+applications.                              inputs, outputs and protections, the  front panel editor.                  Safety of Information Technology Equipment,
+                                           modules can be easily adapted to                                           including Electrical Business Equipment
+Monitoring engine speed, oil               suit a wide range of applications.    All DSE products are supported by
+pressure, coolant temperature,                                                   the DSE global technical support     OPERATING TEMPERATURE
+frequency, voltage, current, power         Compehensive power metering for       team which gives our customers       BS EN 60068-2-1
+and fuel level, the modules will give      both generator and load is available  and end users access to 24 hour      Ab/Ae Cold Test -30 oC
+comprehensive engine and                   (kW, kV A, kV Ar, pf). A real time    system help and advice.              BS EN 60068-2-2
+alternator protection. This will be        clock allows scheduling while a 50                                         Bb/Be Dry Heat +70 oC
+indicated on a large back-lit LCD          event log provides extensive event
+icon display via an array of warning,      interrogation.                                                             VIBRATION
+electrical trip and shutdown alarms.                                                                                  BS EN 60068-2-6
+                                                                                                                      Ten sweeps in each of three
+                                                                                                                      major axes
+                                                                                                                      5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                                                      8 Hz to 500 Hz @ 2 gn
+
+                                                                                                                      HUMIDITY
+                                                                                                                      BS EN 60068-2-30
+                                                                                                                      Db Damp Heat Cyclic 20/55 oC
+                                                                                                                      @ 95% RH 48 Hours
+                                                                                                                      BS EN 60068-2-78
+                                                                                                                      Cab Damp Heat Static 40 oC
+                                                                                                                      @ 93% RH 48 Hours
+
+                                                                                                                      SHOCK
+                                                                                                                      BS EN 60068-2-27
+                                                                                                                      Three shocks in each of three major axes
+                                                                                                                      15 gn in 11 mS
+
+                                                                                                                      DEGREES OF PROTECTION
+                                                                                                                      PROVIDED BY ENCLOSURES
+                                                                                                                      BS EN 60529
+                                                                                                                      IP65 - Front of module when installed into the
+                                                                                                                      control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+                   PC
+
+                                           6              4                                   4
+
+USB                         CONFIGURABLE      DC OUTPUTS                         ANALOGUE SENDERS /  EMERGENCY         DC POWER
+PORT                        INPUTS                                               DIGITAL INPUT       STOP              SUPPLY 8-35V
+
+                                                          +
+
+DSE7110/20 MKll                                                                                                                          DEUTZ
+                                                                                                                                         ISUZU
+                     7                                                                                                                   PERKINS
+                     OTHER                                                                                                               CATERPILLAR
+                                                                                                                                         MTU
+MAINS (UTILITY)                                                                                                                          VOLVO
+SENSING                                                                                                                                  CUMMINS
+(DSE7120 MKlI)                                                                                                                           SCANIA
+
+       VOLTS                N/C VOLT FREE  GENERATOR /   N/O VOLT FREE           GENERATOR       CHARGE             FUEL & START         ELECTRONIC
+                            OUTPUT         LOAD CURRENT  OUTPUT                  SENSING         ALTERNATOR         OUTPUTS              ENGINES &
+                                                                                                                    (Flexible with CAN)  MAGNETIC PICK-UP
+                                                                                       VOLTS          D +
+
+                                                                                                        W/L         +
+
+      1ph                   1                 1ph            1                   1ph
+
+      2ph                                     2ph                                2ph
+
+      3ph                                     3ph                                3ph
+
+      N                                                                          N
+
+                                                                                                                                         ISSUE 1
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE7110/20 MKll                                                                                                                                     SPECIFICATION
+
+AUTO START & AUTO MAINS FAILURE                                                                                                                       DC SUPPLY
+CONTROL MODULES                                                                                                                                       CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+FEATURES
+                                                                                                                                                      CRANKING DROPOUTS
+                                                            DSE7120 MKll                                                                              Able to survive 0 V for 50 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout and
+                                                                                                                                                      supply recovers to 5 V. This is achieved
+                                                                                                                                                      without the need for internal batteries.
+                                                                                                                                                      LEDs and backlight will not be maintained
+                                                                                                                                                      during cranking.
+
+                                                                                                                                                      MAXIMUM OPERATING CURRENT
+                                                                                                                                                      290 mA at 12 V, 140 mA at 24 V
+
+DSE7110 MKll                                                                                                                                        MAXIMUM STANDBY CURRENT
+                                                                                                                                                    75 mA at 12 V, 40 mA at 24 V
+
+                                                                                                                                                    CHARGE FAIL/EXCITATION RANGE
+                                                                                                                                                    0 V to 35 V
+
+                                                                                                                                                    GENERATOR & MAINS (UTILITY)
+                                                                                                                                                    VOLTAGE RANGE
+                                                                                                                                                    15 V to 415 V AC (Ph to N)
+                                                                                                                                                    26 V to 719 V AC (Ph to Ph)
+
+                                                                                                                                                    FREQUENCY RANGE
+                                                                                                                                                    3.5 Hz to 75 Hz
+
+                                                                                                                                                    MAGNETIC PICKUP
+                                                                                                                                                    VOLTAGE RANGE
+                                                                                                                                                    +/- 0.5 V to 70 V
+
+                                                                                                                                                    FREQUENCY RANGE
+                                                                                                                                                    10,000 Hz (max)
+
+                                                                                                                                                    INPUTS
+                                                                                                                                                    DIGITAL INPUTS A TO F
+                                                                                                                                                    Negative switching
+
+KEY BENEFITS                         KEY FEATURES                                                        • Configurable staged loading              ANALOGUE INPUTS A TO C
+• Automatically transfers between    • Large back-lit icon display                                          outputs                                 Configurable as:
+                                     • Heated display option available                                                                              Negative switching digital input
+   mains (utility) and generator     • Fully configurable via the fascia                                 • CAN, MPU and alternator                  0 Ω to 480 Ω
+   (DSE7120 MKll only)                                                                                      speed sensing in one variant
+• Hours counter provides accurate       or PC using USB                                                                                             ANALOGUE INPUT D
+   information for monitoring and       communication                                                    • 3 engine maintainance alarms             Configurable as:
+   maintenance periods               • Extremely efficient power save                                    • Engine speed protection                  Negative switching digital input
+• User-friendly set-up and button       mode                                                             • Engine hours counter                     0 V to 10 V
+   layout for ease of use            • 3 phase generator sensing                                         • Engine pre-heat                          4 mA to 20 mA
+• Multiple parameters are            • 3 phase mains (utility) sensing                                   • Engine run-time scheduler                0 Ω to 480 Ω
+   monitored & displayed                (DSE7120 MKll only)                                              • Engine idle control for starting &
+   simultaneously                    • Generator/load power                                                                                         OUTPUTS
+• The module can be configured          monitoring (kW, kV A, kV Ar, pf)                                    stopping                                OUTPUT A & B (FUEL & START)
+   to suit a wide range of           • Generator overload protection                                     • Battery voltage monitoring               10 A short term, 5 A continuous,
+   applications                         (kW)                                                             • Start on low battery voltage             at supply voltage
+• Compatible with a wide range       • Generator/load current                                            • Real time clock
+   of CAN engines, including tier 4     monitoring and protection                                        • Fuel pump control                        OUTPUTS C & D
+   engine support                    • Fuel and start outputs                                            • Configurable remote start input          8 A AC at 250 V AC (Volt-free)
+• Uses DSE Configuration Suite          (configurable when using CAN)                                    • 1 alternative configuration
+   PC Software for simplified        • 4 configurable DC outputs                                         • Comprehensive warning,                   AUXILIARY OUTPUTS E, F, G & H
+   configuration                     • 2 configurable volt-free outputs                                                                             2 A DC at supply voltage
+• Licence-free PC software           • 4 configurable analogue/digital                                      electrical trip or shutdown
+• IP65 rating (with supplied            inputs                                                              protection upon fault condition         DIMENSIONS
+   gasket) offers increased          • 6 configurable digital inputs                                     • LCD and LED alarm indication             OVERALL
+   resistance to water ingress       • Support for 0-10 V & 4-20 mA                                      • Event log (50)                           240 mm x 181 mm x 42 mm
+                                        oil pressure sensors                                                                                        9.4” x 7.1” x 1.6”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    220 mm x 160 mm
+                                                                                                                                                    8.7” x 6.3”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+RELATED MATERIALS                                                                                        PART NO’S                                  STORAGE TEMPERATURE RANGE
+TITLE                                                                                                    053-151                                    -40°C to +85°C
+DSE7110/20 MKll Installation Instructions                                                                057-182                                    -40 °F to +185 °F
+DSE7110/20 MKll Operator Manual                                                                          057-185
+DSE7110/20 MKll Configuration Suite PC Manual                                                                                                       OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30°C to +70°C
+                                                                                                                                                    -22 °F to +158 °F
+
+DEEP SEA ELECTRONICS PLC UK                                                                                                                                                     HEATED DISPLAY VARIANT
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                                                                                                  -40 °C to +70 °C
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                                                                                                     -40 °F to +158 °F
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com
+                                                                                                         DEEP SEA ELECTRONICS INC USA
+                                                                                                         3230 Williams Avenue, Rockford, IL 61101-2668 USA
+                                                                                                         TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+                                                                                                         EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                     055-138/01/13 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

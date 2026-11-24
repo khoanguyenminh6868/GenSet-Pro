@@ -1,0 +1,291 @@
+         DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller
+
+Part Number: 7570-02 / 7570-03
+
+Overview
+The DSE7570 is a Remote Sync Lock Controller designed to work with the DSE8610 MKII to provide seamless power transfer between mains (utility)
+and a temporary generator, to enable transformer maintenance without loss in the supply. The DSE7570 achieves this by locking the generator into
+synchronism with the mains (utility) supply, enabling the operator to open and close the transformer’s manually operated switchgear / fuses, which may
+be remote from the temporary generator.
+
+The DSE7570 is a two part solution consisting of the DSE7570-02 which is mounted in a robust travel case, and the DSE7570-03 communication
+interface to connect the DSE7570 to the DSE8610 MKII. The robust travel case is ideal, making it easy to transport the device between job sites and
+offers a high level of protection whilst doing so. The communication interface can be DIN rail mounted, enabling one to be fitted to each generator
+in the fleet for ease of operation. Where access is restricted, the DSE7570-03 communication interface can support a maximum distance of 200 m
+between the DSE7570-02 and DSE8610 MKII.
+
+Key Features                                                                                             Product Approvals
+• User friendly sync locking solution providing seamless power                                           + CE
+
+      between mains (utility) and a temporary generator, ideal for
+      transformer maintenance.
+• A loud siren allowing the operator to be easily notified when the
+      temporary generator is held in sync with the mains (utility).
+• Supports up to 200 m between generator and DSE7570
+      providing application flexibility where access is limited.
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller
+
+Part Number: 7570-02 / 7570-03
+Typical Applications
+
+                                                                                                         DSE7570  Interface  DSE8610 MKII
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller                                                                      8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout
+Part Number: 7570-02 / 7570-03                                                                           and supply recovers to 5 V. This is achieved without the need for internal batteries.
+                                                                                                         Backlight will not be maintained during cranking.
+  Specifications                                                                                         480 mA at 12 V, 250 mA at 24 V
+  DC Supply
+  Continuous Voltage Rating                                                                              2
+  Cranking Dropouts                                                                                      3 Phase + Neutral
+                                                                                                         Generator and Mains (Utility)
+  Maximum Operating Current                                                                              15 V to 333 V Phase to Neutral
+  Voltage Measurement                                                                                    25 V to 577 V Phase to Phase
+  Number                                                                                                 3.5 Hz to 75 Hz
+  Measurement Inputs
+                                                                                                         DSE8610 MKII Com Port
+  Voltage Range                                                                                          DSE5510 / DSE7510 Com Port
+                                                                                                         Fully Isolated MSC Port
+  Frequency Range
+  Communications                                                                                         -30 °C to +70 °C / -22 °F to +158 °F
+  RS232                                                                                                  -40 °C to +85 °C / -40 °F to +185 °F
+  DSE810
+  MSC                                                                                                    331 mm x 409 mm x 175 mm / 13.03 “ x 16.10 “ x 6.89 “
+  Temperature                                                                                            180 mm x 130 mm x 65 mm / 7.09 “ x 5.12 “ x 2.56 “
+  Operating Temperature
+  Storage Temperature                                                                                    DIN Rail
+  Dimensions                                                                                             35 mm
+  Overall (W x H x D) (7570-02)
+  Overall (W x H x D) (7570-03)
+  Mounting
+  Type
+  DIN Rail
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+              DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller
+
+Part Number: 7570-02 / 7570-03
+
+Related Products
+
+DSEGenset®
+
+DSE8610 MKII                       Synchronising & Load Sharing Auto Start Control Module                                                            8610-02
+                                                                                                                                                     Obsolete
+DSE7510                            Synchronising & Load Sharing Auto Mains (Utility) Failure Control Module                                          Obsolete
+
+DSE5510                            Synchronising & Load Sharing Control Module                                                                       Manufacturer Part Number
+                                                                                                                                                     1-1102101-7
+Third Party Accessories                                                                                                                              1-1106004-9
+                                                                                                                                                     2-1103003-3
+Generator & Mains (Utility) Sensing Connectors                                                                                                       1-1105051-2
+
+Manufacturer                       Description                                                                                                       Manufacturer Part Number
+                                                                                                                                                     10426500
+TE Connectivity                    HA3 Receptacle Hood                                                                                               10432000
+
+TE Connectivity                    Hood Gland
+
+TE Connectivity                    HA3 Receptacle Insert
+
+TE Connectivity                    Contacts
+
+Communication Interface Connector
+
+Manufacturer                       Description
+
+EPIC                               HA 4 Receptacle Hood
+
+EPIC                               HA 4 Receptacle Insert
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK            DEEP SEA ELECTRONICS USA                                              DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099             T: +1 (815) 316 8706                                                  T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com    E: usasales@deepseaelectronics.com                                    E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com      W: www.deepseaelectronics.com                                         W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller                                                                      EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+Part Number: 7570-02 / 7570-03
+                                                                                                         Safety of Information Technology Equipment, including Electrical Business Equipment
+  Environmental Testing Standards
+  Electro-Magnetic Compatibility                                                                         Ab/Ae Cold Test -30 ºC
+  BS EN 61000-6-2                                                                                        Bb/Be Dry Heat +70 ºC
+  BS EN 61000-6-4
+  Electrical Safety                                                                                      Ten sweeps in each of three major axes
+  BS EN 60950                                                                                            5 Hz to 8 Hz at ±7.5 mm,
+  Temperature                                                                                            8 Hz to 500 Hz at 2 Gn
+  BS EN 60068-2-1
+  BS EN 60068-2-2                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+  Vibration                                                                                              Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+  BS EN 60068-2-6
+                                                                                                         Three shocks in each of three major axes
+  Humidity                                                                                               15 Gn in 11 ms
+  BS EN 60068-2-30
+  BS EN 60068-2-78                                                                                       IP67 - When case is closed
+  Shock
+  BS EN 60068-2-27
+
+  Degrees of Protection Provided by Enclosures
+  BS EN 60529
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller
+
+Part Number: 7570-02 / 7570-03
+
+DSE7570-02 Connections           Description
+                                 L1 Voltage Sensing
+ Mains (Utility) Connector       L2 Voltage Sensing
+ Pin                             L3 Voltage Sensing
+ 1                               Neutral Sensing
+ 2
+ 3
+ 4
+
+Generator Connector              Description
+Pin                              L1 Voltage Sensing
+1                                L2 Voltage Sensing
+2                                L3 Voltage Sensing
+3                                Neutral Sensing
+4
+
+Control Cable Connector          Description
+Pin                              MSC Port H
+1                                MSC Port L
+2                                Communications A
+3                                Communications B
+4                                DC Plant Supply Negative
+5                                DC Plant Supply Positive
+6                                Shield
+7
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller                                                                      Description
+                                                                                                         DC Negative
+Part Number: 7570-02 / 7570-03                                                                           DC Positive
+                                                                                                         MSC H
+DSE7570-03 Connections                                                                                   MSC L
+                                                                                                         MSC Screen
+ Interface Connections                                                                                   DSE5510 / DSE7510 Communications
+ Wire / Connector                                                                                        DSE8610 MKII Communications
+ J2
+ K1
+ H
+ L
+ SCR
+ DSE810 (RJ45)
+ RS232
+
+Control Cable Connector          Description
+Pin                              MSC Port H
+1                                MSC Port L
+2                                Communications A
+3                                Communications B
+4                                DC Plant Supply Negative
+5                                DC Plant Supply Positive
+6                                Shield
+7
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         DSEGenset® Data Sheet
+
+DSE7570 Remote Sync Lock Controller
+
+Part Number: 7570-02 / 7570-03
+Technical Drawing
+
+Product Documentation                                                                                                                                IP67
+053-083 – DSE7570 Installation Instructions
+057-132 – DSE7570 Operator Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-085/05/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

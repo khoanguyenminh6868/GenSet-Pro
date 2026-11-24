@@ -1,0 +1,142 @@
+DSEGenset®
+
+DSE8004                                                                                                            SPECIFICATIONS
+
+10” COLOUR MULTI-SET REMOTE OVERVIEW DISPLAY                                                                       DC SUPPLY
+                                                                                                                   CONTINUOUS VOLTAGE RATING
+KEY FEATURES WHEN                          KEY BENEFITS                                                            8 V to 35 V continuous
+CONNECTED TO THE 	                         • Compatible with DSE86xx,
+COMPATIBLE MODULES                                                                                                 CRANKING DROPOUTS
+• Multiple modules (up to a maximum           DSE87xx & DSE88xx Load Share                                         Able to survive 0 V for 50 mS, providing
+                                              Modules                                                              supply was at least 10 V before dropout
+   of 20) within the same load sharing     • Data communication link allows                                        and supply recovers to 5 V. This is achieved
+   system can be viewed                       remote system management                                             without the need for internal batteries
+• Touch-screen enabled                     • 800 x 480 pixel screen for high
+• RS232, RS485 and Ethernet                   clarity                                                              MAXIMUM STANDBY CURRENT
+   communications                                                                                                  824 mA at 12V, 412 mA at 24V
+• Audible alarm
+• Front panel mounting                                                                                             MAXIMUM OPERATING CURRENT
+• Protected front panel configuration                                                                              883 mA at 12V, 436 mA at 24V
+• Configurable display options
+• Remote system monitoring                                                                                         INPUTS/OUTPUTS A TO C
+• Trend Analysis                                                                                                   INPUTS
+• Configurable graphical user                                                                                      Negative switching
+   interface with software ‘widgets’
+                                                                                                                   OUTPUTS
+                                                                                                                   2 A DC at supply voltage
+
+                                                                                                                   OUTPUT D
+                                                                                                                   Changeover volt-free output
+                                                                                                                   8 A AC at 250 V AC
+
+                                                                                                                   DIMENSIONS
+                                                                                                                   OVERALL
+                                                                                                                   397 mm x 232 mm x 42 mm
+                                                                                                                   15.7” x 9.2” x 1.7”
+
+                                                                                                                   PANEL CUTOUT
+                                                                                                                   359 mm x 204 mm
+                                                                                                                   14.1” x 8.0”
+
+                                                                                                                   DISPLAY SIZE
+                                                                                                                   210 mm x 160 mm
+                                                                                                                   8.3” x 6.3”
+                                                                                                                   Diagonal - 265 mm (10.5”)
+
+                                                                                                                   STORAGE TEMPERATURE RANGE
+                                                                                                                   -40 °C to +85°C
+                                                                                                                   -40 °F to +185 °F
+
+                                                                                                                   OPERATING TEMPERATURE RANGE
+                                                                                                                   -30 °C to +70 °C
+                                                                                                                   -22 °F to +158 °F
+
+RELATED MATERIALS                  Manual                                                                PART NO.
+TITLE                                                                                                    053-171
+DSE8004 Installation Instructions                                                                        057-134
+DSE8004 Colour Remote Display                                                                            057-128
+DSE8005 SCADA  Suite Manual                                                                              055-083
+DSE8610 Data Sheet                                                                                       055-099
+DSE8620 Data Sheet                                                                                       055-086
+DSE8660 Data Sheet                                                                                       055-184
+DSE8710 Data Sheet                                                                                       055-090
+DSE8760 Data Sheet                                                                                       055-116
+DSE8810 Data Sheet                                                                                       055-139
+DSE8860 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA                             055-182/04/14 (3)
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+              DSEGenset®
+
+DSE8004                                                                                                    ENVIRONMENTAL TESTING STANDARDS
+
+10” COLOUR MULTI-SET REMOTE OVERVIEW DISPLAY                                                               ELECTRO MAGNETIC COMPATIBILITY
+                                                                                                           BS EN 61000-6-2
+The Remote Overview Display         This display module offers           * Compatible Modules              EMC Generic Immunity Standard for the
+module is designed for use with     comprehensive large screen           • DSE8610 Synchronising Auto      Industrial Environment
+modules from the DSE86xx,           graphs, charts, metering, trend      Start Load Share Control Module   BS EN 61000-6-4
+DSE87xx and DSE88xx range of        analysis, power display and engine   • DSE8620 Auto Mains Failure &    EMC Generic Emission Standard for the
+Load Share Control modules*,        status information in a clear image  Instrumentation Control Module    Industrial Environment
+giving a choice of display options  and text format.                     • DSE8660 Auto Transfer Switch &
+suitable for a wide variety of                                           Mains Control Module              ELECTRICAL SAFETY
+applications. One (1) display       User selectable display ‘widgets’    • DSE8710 Rear Mounted            BS EN 60950
+overview module is connected to     allow customisation of the lower     Synchronising Auto Start Load     Safety of Information Technology Equipment,
+multiple compatible modules via a   part of the 10” screen.              Share Control Module              including Electrical Business Equipment
+data communication link up to a                                          • DSE8760 Rear Mounted Auto
+maximum distance of 1.2 km on                                            Transfer Switch & Mains Control   TEMPERATURE
+RS485.                                                                   Module                            BS EN 60068-2-1
+                                                                         • DSE8810 Auto Start Colour Load  Ab/Ae Cold Test -30ºC
+                                                                         Share Control Module              BS EN 60068-2-2
+                                                                         • DSE8860 Auto Transfer Switch &  Bb/Be Dry Heat +70ºC
+                                                                         Mains Colour Control Module
+                                                                                                           VIBRATION
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE                                                                  BS EN 60068-2-6
+VARIETY OF LOAD SHARE APPLICATIONS                                                                         Ten sweeps in each of three major axes
+                                                                                                           5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz at
+DC POWER                            ETHERNET             RS232           RS485                             2 GN
+SUPPLY 8-35V
+                                                                                                           HUMIDITY
+                                                                                                           BS EN 60068-2-30
+                                                                                                           Db Damp Heat Cyclic 20/55 ºC at 95% RH
+                                                                                                           48 Hours
+                                                                                                           BS EN 60068-2-78
+                                                                                                           Cab Damp Heat Static 40 ºC at 93% RH
+                                                                                                           48 Hours
+
+                                                                                                           SHOCK
+                                                                                                           BS EN 60068-2-27
+                                                                                                           Three shocks in each of three major axes 15
+                                                                                                           GN in 11 mS
+
+                                                                                                           DEGREES OF PROTECTION
+                                                                                                           PROVIDED BY ENCLOSURES
+                                                                                                           BS EN 60529 IP65 - Front of module when
+                                                                                                           installed into the control panel with the
+                                                                                                           supplied sealing gasket.
+
+                                                                                                                                     TO COMPATIBLE
+                                                                                                                                     MODULES *
+                                                                                                                                     For further
+                                                                                                                                     information please
+                                                                                                                                     see operators
+                                                                                                                                     manual.
+
+   DSE8004 MULTI-SET REMOTE OVERVIEW DISPLAY
+
+                     7              VOLT FREE            USB HOST        USB SLAVE
+                    OTHER           CHANGE OVER OUTPUTS
+
+CONFIGURABLE
+INPUTS / OUTPUTS
+
++
+
+              3                               1
+
+                                                                                                           ISSUE 1
+

@@ -1,0 +1,153 @@
+                                                                                                                                                                                                                                                   ®
+
+dseGenset
+
+dse8003                                                                                  ENVIRONMENTAL TESTING STANDARDS
+
+7” COLOUR MULTI-SET REMOTE OVERVIEW DISPLAY                                                ELECTRO MAGNETIC COMPATIBILITY
+                                                                                           BS EN 61000-6-2
+FEATURES                                                                                   EMC Generic Immunity Standard for the
+                                                                                           Industrial Environment
+The Remote Overview Display          This display module offers                            BS EN 61000-6-4
+module is designed for use with      comprehensive large screen                            EMC Generic Emission Standard for the
+the DSE86xx, 86xx MKII,              graphs, charts, metering,                             Industrial Environment
+DSE87xx and DSE88xx Load             power display and engine status
+Share Control modules, giving a      information in a clear image and                      ELECTRICAL SAFETY
+choice of display options suitable   text format.                                          BS EN 60950
+for a wide variety of applications.                                                        Safety of Information Technology Equipment,
+One (1) display overview module                                                            including Electrical Business Equipment
+can be connected to multiple
+compatible modules via a data                                                              TEMPERATURE
+communication link up to a                                                                 BS EN 60068-2-1
+maximum distance of 1.2 km on                                                              Ab/Ae Cold Test -30oC
+RS485.                                                                                     BS EN 60068-2-2
+                                                                                           Bb/Be Dry Heat +70oC
+
+                                                                                           VIBRATION
+                                                                                           BS EN 60068-2-6
+                                                                                           Ten sweeps in each of three major axes
+                                                                                           5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+
+                                                                                           HUMIDITY
+                                                                                           BS EN 60068-2-30
+                                                                                           Db Damp Heat Cyclic 20/55oC @ 95% RH
+                                                                                           48 Hours
+                                                                                           BS EN 60068-2-78
+                                                                                           Cab Damp Heat Static 40oC @ 93% RH
+                                                                                           48 Hours
+
+                                                                                           SHOCK
+                                                                                           BS EN 60068-2-27
+                                                                                           Three shocks in each of three major axes
+                                                                                           15gn in 11mS
+
+                                                                                           DEGREES OF PROTECTION
+                                                                                           PROVIDED BY ENCLOSURES
+                                                                                           BS EN 60529 IP65 - Front of module when
+                                                                                           installed into the control panel with the
+                                                                                           supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE
+VARIETY OF LOAD SHARE APPLICATIONS
+
+                                                                                         TO MODULES
+
+DC POWER                             ETHERNET  OR                      OR
+SUPPLY 8-35V                                       RS232                   RS485
+
+DSE8003 MULTI-SET REMOTE OVERVIEW DISPLAY
+
+                    7                          USB HOST*                      USB SLAVE
+                   OTHER
+
+DC ALARM OUTPUTS
+
+              +
+
+              2           * USB HOST SOCKET IS FITTED BUT NOT USED. FIRMWARE
+
+                          WILL BE MADE AVAILABLE IN THE FUTURE TO ACTIVATE
+
+                          THIS PORT.
+
+                                                                                         ISSUE 1
+                                                                                                                                                                                                                                                   ®
+
+dseGenset
+
+dse8003                                                                                                                                             SPECIFICATION
+
+7” COLOUR MULTI-SET REMOTE OVERVIEW DISPLAY                                                                                                          DC SUPPLY
+                                                                                                                                                     CONTINUOUS VOLTAGE RATING
+FEATURES                                                                                                                                             8 V to 35 V continuous
+
+                                                                                                                                                     CRANKING DROPOUTS
+                                                                                                                                                     Able to survive 0 V for 50 mS, providing
+                                                                                                                                                     supply was at least 10 V before dropout
+                                                                                                                                                     and supply recovers to 5 V. This is achieved
+                                                                                                                                                     without the need for internal batteries
+
+                                                                                                                                                     MAXIMUM OPERATING CURRENT
+                                                                                                                                                     300 mA at 12V, 150 mA at 24V
+
+                                                                                                                                                     OUTPUTS
+                                                                                                                                                     ALARM OUTPUTS C & D
+                                                                                                                                                     2 A DC at supply voltage
+
+                                                                                                                                                     DIMENSIONS
+                                                                                                                                                     OVERALL
+                                                                                                                                                     310 mm x 160 mm x 40 mm
+                                                                                                                                                     12.2” x 6.3” x 1.5”
+
+                                                                                                                                                     PANEL CUTOUT
+                                                                                                                                                     282 mm x 136 mm
+                                                                                                                                                     11.1” x 5.3”
+
+                                                                                                                                                     OPERATING TEMPERATURE RANGE
+                                                                                                                                                     -30 oC to +70 oC
+                                                                                                                                                     -22 oF to +158 oF
+
+                                                                                                                                                     STORAGE TEMPERATURE RANGE
+                                                                                                                                                     -40 oC to +85 oC
+                                                                                                                                                     -40 oF to +185 oF
+
+KEY FEATURES WHEN                KEY BENEFITS
+CONNECTED TO THE                 • Compatible with DSE86xx, 86xx
+COMPATIBLE MODULES
+• Multiple modules (up to a         MKII, DSE87xx & DSE88xx
+                                    Load Share Modules
+   maximum of 20) within the     • Data communication link allows
+   same load sharing system can     remote system management
+   be viewed                     • 800 x 480 pixel screen for high
+• Touch-screen enabled              clarity
+• RS232, RS485 and Ethernet      • Detailed diagnostic screens for
+   communications                   efficient fault-finding
+• Audible alarm
+• Front panel mounting
+• Protected front panel
+   configuration
+• Remote monitoring
+• System monitoring
+
+RELATED MATERIALS                                                                                        PART NO’S
+
+TITLE                                                                                                    053-075
+DSE8003 Installation Instructions                                                                        057-134
+DSE8003 Colour Remote Display Manual                                                                     057-128
+DSE8005 SCADA Suite Manual                                                                               055-083
+DSE8610 Data Sheet                                                                                       055-099
+DSE8620 Data Sheet                                                                                       055-086
+DSE8660 Data Sheet                                                                                       055-091
+DSE8680 Data Sheet                                                                                       055-090
+DSE8700 Rear Mounted Load Share Control Module Data Sheet                                                055-116
+DSE8810 Data Sheet                                                                                       055-139
+DSE8860 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-092/01/12 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

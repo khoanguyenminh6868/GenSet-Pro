@@ -1,0 +1,186 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE7210/20                                                                                                                   ENVIRONMENTAL TESTING STANDARDS
+
+AUTO START & AUTO MAINS FAILURE                                                                                                ELECTRO-MAGNETIC COMPATIBILITY
+CONTROL MODULES                                                                                                                BS EN 61000-6-2
+                                                                                                                               EMC Generic Immunity Standard for
+FEATURES                                                                                                                       the Industrial Environment
+                                                                                                                               BS EN 61000-6-4
+The DSE7210 is an Auto Start             Both modules are compatible with              The modules can be easily               EMC Generic Emission Standard for
+Control Module and the DSE7220           electronic (CAN) and non-electronic           configured using the DSE                the Industrial Environment
+is an Auto Mains (Utility) Failure       (magnetic pick-up/alternator                  Configuration Suite PC software.
+Control Module suitable for a wide       sensing) engines and offer an                 Selected front panel editing is also    ELECTRICAL SAFETY
+variety of single, diesel or gas,        extensive number of flexible inputs,          available.                              BS EN 60950
+gen-set applications.                    outputs and engine protections so                                                     Safety of Information Technology Equipment,
+                                         the system can be easily adapted                                                      including Electrical Business Equipment
+Monitoring an extensive number of        to suit a wide range of application
+engine parameters, the modules           demands.                                                                              TEMPERATURE
+will display warnings, shutdown                                                                                                BS EN 60068-2-1
+and engine status information on         Enhanced features include a real-                                                     Ab/Ae Cold Test -30 oC
+the back-lit LCD screen and              time clock for improved event                                                         BS EN 60068-2-2
+illuminated LEDs. The DSE7220 will       monitoring, the ability to display                                                    Bb/Be Dry Heat +70 oC
+also monitor the mains (utility)         information in any language and a
+supply.                                  clear 4-line text display.                                                            VIBRATION
+                                                                                                                               BS EN 60068-2-6
+                                                                                                                               Ten sweeps in each of three
+                                                                                                                               major axes
+                                                                                                                               5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                                                               8 Hz to 500 Hz @ 2 gn
+
+                                                                                                                               HUMIDITY
+                                                                                                                               BS EN 60068-2-30
+                                                                                                                               Db Damp Heat Cyclic 20/55 oC
+                                                                                                                               @ 95% RH 48 Hours
+                                                                                                                               BS EN 60068-2-78
+                                                                                                                               Cab Damp Heat Static 40 oC
+                                                                                                                               @ 93% RH 48 Hours
+
+                                                                                                                               SHOCK
+                                                                                                                               BS EN 60068-2-27
+                                                                                                                               Three shocks in each of three major axes
+                                                                                                                               15 gn in 11 mS
+
+                                                                                                                               DEGREES OF PROTECTION
+                                                                                                                               PROVIDED BY ENCLOSURES
+                                                                                                                               BS EN 60529
+                                                                                                                               IP65 - Front of module when installed into the
+                                                                                                                               control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+                                                                                   PC
+
+                                                      6                                       4              3
+
+                                         USB          CONFIGURABLE                     DC OUTPUTS  ANALOGUE                  EMERGENCY            DC POWER
+                                         PORT         INPUTS                                       SENDERS                   STOP                 SUPPLY 8-35V
+
+                                                                                              +
+
+DSE7210/20                                                                                                                                        DEUTZ
+                                                                                                                                                  ISUZU
+                    7                                                                                                                             PERKINS
+                   OTHER                                                                                                                          CATERPILLAR
+                                                                                                                                                  MTU
+MAINS (UTILITY)                                                                                                                                   VOLVO
+SENSING                                                                                                                                           CUMMINS
+DSE7220 ONLY                                                                                                                                      SCANIA
+
+      VOLTS               N/C VOLT FREE  N/O VOLT     GENERATOR SENSING                            CHARGE                    FUEL & START         ELECTRONIC
+                          OUTPUT         FREE OUTPUT                                               ALTERNATOR                OUTPUTS              ENGINES &
+                                                                                                                             (Flexible with CAN)  MAGNETIC PICK-UP
+                                                                                                        D +
+                                                      CURRENT                          VOLTS
+                                                                                                          W/L
+                                                                                                                             +
+
+1ph                       1                    1      1ph                              1ph
+
+2ph                                                   2ph                              2ph
+
+3ph                                                   3ph                              3ph
+
+N                                                                                      N
+
+                                                                                                                                                  ISSUE 7
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE7210/20                                                                                                                                          SPECIFICATION
+
+AUTO START & AUTO MAINS FAILURE                                                                                                                       DC SUPPLY
+CONTROL MODULES                                                                                                                                       CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+FEATURES
+                                                    DSE7220                                                                                           CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 50 mS, providing
+DSE7210                                                                                                                                               supply was at least 10 V before dropout and
+                                                                                                                                                      supply recovers to 5 V. This is achieved
+KEY FEATURES                        • Manual fuel pump control                                           KEY BENEFITS                                 without the need for internal batteries.
+• 4-Line back-lit LCD text display  • Engine exerciser                                                   • 132 x 64 pixel ratio display for           LEDs and backlight will not be maintained
+• Five key menu navigation          • “Protections disabled” feature                                                                                  during cranking.
+• Front panel editing with PIN      • kW & kV Ar overload protection                                        clarity
+                                    • Reverse power (kW & kV Ar)                                         • Real-time clock provides                   MAXIMUM OPERATING CURRENT
+   protection                                                                                                                                         340 mA at 12 V, 160 mA at 24 V
+• Customisable status screens          protection                                                           accurate event logging
+• Power save mode                   • LED and LCD alarm indication                                       • Multiple date and time scheduler           MAXIMUM STANDBY CURRENT
+• 6 configurable inputs             • Power monitoring (kW h, kV Ar,                                     • Set maintenance periods can                160 mA at 12 V, 80 mA at 24 V
+• 8 configurable outputs
+• Configurable timers and alarms       kV A h, kV Ar h)                                                     be configured to maintain                 CHARGE FAIL/EXCITATION RANGE
+• 3 configurable maintenance        • Load switching (load shedding                                         optimum engine performance                0 V to 35 V
+                                                                                                         • Licence-free PC software
+   alarms                              and dummy load outputs)                                           • IP65 rating (with supplied                 MAINS (UTILITY) DSE7220 ONLY
+• Multiple date and time scheduler  • Automatic load transfer (DSE7220)                                     gasket) offers increased                  VOLTAGE RANGE
+• Configurable event log (100)      • Unbalanced load protection                                            resistance to water ingress               15 V - 333 V AC (L-N)
+• Tier 4 CAN engine support         • True dual mutual standby with load                                 • PLC editor allows user
+• Integral PLC editor                                                                                       configurable functions to meet            FREQUENCY RANGE
+• Easy access diagnostic page          balancing timer (DSE7210 only)                                       specific application                      3.5 Hz to 75 Hz
+• CAN and Magnetic Pick-up/Alt.     • USB connectivity                                                      requirements
+                                    • Backed up real time clock                                                                                       OUTPUTS
+   sensing                          • Fully configurable via DSE                                                                                      OUTPUT A (FUEL)
+• Fuel usage monitor and low fuel                                                                                                                     15 A DC at supply voltage
+                                       Configuration Suite PC software
+   alarms                           • Configurable display languages                                                                                  OUTPUT B (START)
+• Charge alternator failure alarm   • Remote SCADA monitoring via                                                                                     15 A DC at supply voltage
+• Manual speed control (on
+                                       DSE Configuration Suite PC                                                                                     OUTPUTS C & D
+   compatible CAN engines)             software                                                                                                       8 A 250 V (Volt free)
+
+                                                                                                                                                      AUXILIARY OUTPUTS E,F,G,H
+                                                                                                                                                      2 A DC at supply voltage
+
+                                                                                                                                                      GENERATOR
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      15 V - 333 V AC (L-N)
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      3.5 Hz to 75 Hz
+
+                                                                                                                                                      MAGNETIC PICK UP
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      +/- 0.5 V to 70 V
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      10,000 Hz (max)
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      240 mm x 181 mm x 42 mm
+                                                                                                                                                      9.4” x 7.1” x 1.6”
+
+                                                                                                                                                      PANEL CUT-OUT
+                                                                                                                                                      220 mm x 160 mm
+                                                                                                                                                      8.7” x 6.3”
+
+                                                                                                                                                      MAXIMUM PANEL THICKNESS
+                                                                                                                                                      8 mm
+                                                                                                                                                      0.3”
+
+                                                                                                                                                      OPERATING TEMPERATURE RANGE
+                                                                                                                                                      -30°C to +70°C
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                      -40°C to +80°C
+
+RELATED MATERIALS                                                                                        PART NO’S
+                                                                                                         053-026
+TITLE                                                                                                    053-027
+DSE7210 Installation Instructions                                                                        057-101
+DSE7220 Installation Instructions                                                                        057-074
+DSE7200/7300 Quick Start Guide                                                                           057-077
+DSE7200/7300 Operator Manual
+DSE7200/7300 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-050/09/12 (12)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

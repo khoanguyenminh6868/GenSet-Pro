@@ -1,0 +1,161 @@
+dseGenset                                                                                                                                                                                                          ®
+
+dse701 MKII                                                                                                                                           ENVIRONMENTAL TESTING STANDARDS
+
+MANUAL AND AUTO START CONTROL MODULE                                                                                                                    ELECTRO-MAGNETIC COMPATIBILITY
+                                                                                                                                                        BS EN 61000-6-2
+FEATURES                                                                                                                                                EMC Generic Immunity Standard for
+                                                                                                                                                        the Industrial Environment
+The DSE701 MKII controller can be      When the module detects any of                                                                                   BS EN 61000-6-4
+user-configured for Auto or Manual     the above faults it will automatically                                                                           EMC Generic Emission Standard for
+Start operation using the DSE          shut down the engine.                                                                                            the Industrial Environment
+Configuration Suite Lite PC Software.
+Alternatively the controller can be    The module also has the capability                                                                               ELECTRICAL SAFETY
+ordered pre-configured. The            to monitor battery charging by                                                                                   BS EN 60950
+DSE701 MKII offers an excellent        utilising the WL terminal on the                                                                                 Safety of Information Technology Equipment,
+range of engine monitoring and         charge alternator. On detecting a                                                                                including Electrical Business Equipment
+protection features.                   battery charging fault, it will light
+                                       the warning LED on the front panel.                                                                              TEMPERATURE
+The module offers inputs to monitor                                                                                                                     BS EN 60068-2-1
+low oil pressure, high engine          The Auto Start version can be                                                                                    Ab/Ae Cold Test -30 oC
+temperature and overspeed and          user-configured for Manual Start                                                                                 BS EN 60068-2-2
+the manual start version also has a    operation and the Manual Start                                                                                   Bb/Be Dry Heat +70 oC
+user-defined auxiliary input. Auto     version can be user-configured for
+Start versions also include an input   Auto Start operation.                                                                                            VIBRATION
+option for a start signal from a                                                                                                                        BS EN 60068-2-6
+remote location.                                                                                                                                        Ten sweeps in each of three
+                                                                                                                                                        major axes
+                                                                                                                                                        5 Hz to 8 Hz @ +/-7.5 mm,
+                                                                                                                                                        8 Hz to 500 Hz @ 2 gn
+
+                                                                                                                                                        HUMIDITY
+                                                                                                                                                        BS EN 60068-2-30
+                                                                                                                                                        Db Damp Heat Cyclic 20/55 oC
+                                                                                                                                                        @ 95% RH 48 Hours
+                                                                                                                                                        BS EN 60068-2-78
+                                                                                                                                                        Cab Damp Heat Static 40 oC
+                                                                                                                                                        @ 93% RH 48 Hours
+
+                                                                                                                                                        SHOCK
+                                                                                                                                                        BS EN 60068-2-27
+                                                                                                                                                        Three shocks in each of three major axes
+                                                                                                                                                        15 gn in 11 mS
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF GEN-SET APPLICATIONS
+
+                    PC
+
+                                                                                                                          1
+
+DSE 813                   REMOTE START ON       PRE-HEAT                                                                     LOP SWITCH  TEMP SWITCH  DC POWER
+COMMUNICATION             AUTO START/AUX INPUT  OUTPUT                                                                                                SUPPLY 8-35V
+                          ON MANUAL START
+
+                                                              -
+
+DSE701 MKII
+
+                    7     CHARGE FAIL           FUEL & CRANK                                                                                          MAGNETIC PICK-UP
+                   OTHER                        OUTPUTS
+
+GENERATOR SPEED                                          -
+SENSING
+
+FREQUENCY                              D +
+
+                                       W/L
+
+1ph
+
+                                                                                                                                                                    ISSUE 1
+                                                                                                                                                                                                                                                   ®
+
+dseGenset
+
+dse701 MKII                                                                                                                                         SPECIFICATION
+
+MANUAL AND AUTO START CONTROL MODULE                                                                                                                  DC SUPPLY
+                                                                                                                                                      CONTINUOUS VOLTAGE RATING
+FEATURES                                                                                                                                              8 V to 35 V continuous
+
+                                                                                                                                                      CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 50 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout
+                                                                                                                                                      and supply recovers to 5 V. This is achieved
+                                                                                                                                                      without the need for internal batteries.
+
+                                                                                                                                                      MAXIMUM OPERATING CURRENT
+                                                                                                                                                      26 mA at 12 V, 27 mA at 24 V
+
+                                                                                                                                                      MAXIMUM STANDBY CURRENT
+                                                                                                                                                      20 mA at 12 V, 21 mA at 24 V
+
+                                                                                                                                                      CHARGE/FAIL EXCITATION RANGE
+                                                                                                                                                      0 V to 35 V
+
+                                                                                                                                                      OUTPUTS
+                                                                                                                                                      START
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      RUN
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      PRE-HEAT
+                                                                                                                                                      Solid state 1.2 A negative grounding terminal
+
+                                                                                                                                                      GENERATOR
+                                                                                                                                                      VOLTAGE RANGE
+                                                                                                                                                      15 V - 333 V AC (L-N)
+
+                                                                                                                                                      FREQUENCY RANGE
+                                                                                                                                                      3.5 Hz to 75 Hz
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      72 mm x 72 mm x 38 mm
+                                                                                                                                                      2.8” x 2.8” x 1.5”
+                                                                                                                                                      Excludes key switch
+
+                                                                                                                                                      PANEL CUT-OUT
+                                                                                                                                                      68 mm x 68 mm
+                                                                                                                                                      2.7” x 2.7”
+
+                                                                                                                                                      MAXIMUM PANEL THICKNESS
+                                                                                                                                                      8 mm
+                                                                                                                                                      0.3”
+
+KEY FEATURES                          KEY BENEFITS
+• Configurable Auto and Manual        • The DSE701 MKII comes
+
+   Start versions                        pre-configured for frequency
+• Remote start input available           (speed fensing) but can be user-
+                                         configured for magnetic pick-up
+   (when in Auto Start mode)          • Uses DSE 813 USB
+• Auxiliary shutdown input available     Communications Adaptor and
+                                         DSE Configuration Suite Lite PC
+   (when in Manual Start mode)           Software for simple
+• Engine monitoring and                  configuration
+                                      • Licence-free PC Software
+   protection                         • User-friendly setup and fascia
+• LED status indication                  layout
+• Automatic engine pre-heat
+• Overspeed protection
+• Front panel mounting
+
+RELATED MATERIALS                                                                                        PART NO’S
+                                                                                                         053-132
+TITLE                                                                                                    057-144
+DSE701 MKII Installation Instructions                                                                    057-145
+DSE701 MKII Operator Manual                                                                              055-100
+DSE701 MKII Software Manual
+DSE813 USB Communications Adaptor Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-104/07/11 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

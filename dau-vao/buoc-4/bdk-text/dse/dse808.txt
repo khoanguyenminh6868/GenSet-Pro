@@ -1,0 +1,78 @@
+             DEEP SEA ELECTRONICS PLC                                                               808
+
+DESCRIPTION                                                                                        PC SOFTWARE
+                                                                                               CONFIGURATION
+The 808 PC Software Configuration           The software offers the following options:
+Interface is designed for use with the                                                                   INTERFACE
+following DSE systems:                            LOAD previous configurations from
+                                                  disk.                                                                          Issue 2
+      511/512 manual start.                                                                                               VH 27/6/01
+      520/521/560 auto-start.                     SAVE new configurations to disk.
+      530 automatic transfer switch.                                                    SPECIFICATON
+      540 range of protection                     READ the existing configuration from
+      expansion/annunciator modules.              the module.                           DC SUPPLY :
+      The 808 interface will also be used                                               The 808 interface is powered from
+      to configure a number of future DSE         WRITE a new configuration to the      the module to which it is connected
+      modules.                                    module.                               so no external power supply is
+                                                                                        required. The module however will
+      The 808 interface allows the user to        EDIT the configuration currently      need to be connected to a suitable
+      access the configuration stored             loaded in the PC.                     DC supply.
+      within the module, enabling changes                                               DIMENSIONS:
+      to be made to the settings e.g.             PRINT the configuration currently     57mm x 55mm x 16mm
+                                                  loaded in the PC.                     OPERATING TEMPERATURE
+      Edit MISCELLANEOUS items                                                          RANGE:
+                                                  View the DIAGNOSTIC display from      -15 to +55oC
+      Edit CONFIGURABLE INPUTS                    the module.                           INDICATIONS:
+                                                                                        'Link OK' in corner of diagnostic
+      Edit RELAY OUTPUTS                          CALIBRATE the module meter drive      screen plus link status indication.
+                                                  output.                               PC REQUIREMENTS:
+      Edit FRONT PANEL LED’S                                                            Processor:
+                                                  SET-UP the software, such as COM      486 66Mhz
+      Edit SYSTEM TIMERS                          port selection.                       Operating System:
+                                                                                        Windows 95/98/2000, Windows NT.
+      Edit ANALOGUE LEVELS                        QUIT                                  Ram:
+                                                                                        16Mb
+      The interface kit comprises:                NOTE                                  Monitor:
+                                            For further details on using the            14 inch SVGA (640x480 resolution)
+      Interface module.                     software and configuration options,         Fixed disk:
+                                            please refer to the 808 Operating           10Mb free (80Mb minimum)
+      25 way to 9 way RS232 adapter         Manual.                                     Disk drive:
+      cable and interconnecting FCC 68                                                  CD-ROM drive for software
+      cable to allow connection to the                                                  installation.
+      module.                                                                           Communications:
+                                                                                        An RS232 comms port is needed to
+      CD containing the MS-WindowsTM                                                    communicate with the 808.
+      based PC software and various                                                     CONNECTION:
+      module configuration files to aid                                                 The interface should be connected
+      rapid module configuration.                                                       to the appropriate PC COM port on
+                                                                                        your computer system, and the
+Also included on the CD is a                                                            FCC68 cable inserted into the
+program which can be used to make                                                       socket on the rear of the module to
+labels for the configurable LEDs on a                                                   be configured.
+module to identify functions.
+CASE DIMENSIONS                                                                               FCC68   RS232
+
+                   55.0mm                         RS232                               55.0mm
+
+                                   FCC68
+
+                                          57.0mm
+
+                                                                                              16.0mm
+
+TYPICAL CONNECTIONS
+
+DC Supply                                 51x,52x, 53x or 54x Module
+Terminals
+                                              'Prog' Socket on rear of module
+
+                                                                                 808                  NOTE:- When connected to
+                                                                                                      a completed Panel/Gen-set
+F                                                                                                     Real time diagnostic
+                                                                                                      status display is available
+
+                                    Deep Sea Electronics plc
+
+           Highfield House, Hunmanby Industrial Estate, North Yorkshire, YO14 0PH, England
+           Tel: +44 (0) 1723 890099 Fax: +44 (0) 1723 893303 E-mail sales@deepseaplc.com
+

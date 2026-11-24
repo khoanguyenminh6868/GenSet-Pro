@@ -1,0 +1,216 @@
+                                                                 ®                                                                                                    ®
+                                                                                                                 SPECIFICATION
+DSEPOWER
+SHARING
+WITH
+SIMPLICITY.
+
+DSE5560
+
+AUTO TRANSFER SWITCH & MAINS CONTROL MODULE
+
+The DSE5560 is an Automatic         FEATURES                               BENEFITS                              DC SUPPLY
+Transfer Switch and Mains Control   • Multiple language options            • On-site module configuration        8V to 35V continuous
+Module, designed to automatically   • Back-lit 4-line text LCD display     • Remote module configuration via
+synchronise multiple DSE5510s       • Configurable timers                                                        CRANKING DROPOUTS
+with single or multiple mains       • Configurable inputs (9)                 PC software                        Able to survive 0V for 50mS, providing supply
+(utility) supplies.                 • Configurable outputs (5)             • In-built diagnostics removes the    was at least 10V before dropout and supply
+                                    • Automatic hours run balancing                                              recovers to 5V. This is achieved without the
+The module instructs the            • Peak lopping control for DSE5510        requirement for service equipment  need for internal batteries
+DSE5510s to make precise                                                   • Transfers between mains and
+changes to the generating set          controlled generator bus                                                  MAXIMUM OPERATING CURRENT
+outputs. This makes the module      • Peak shaving                            generator                          460mA at 12V. 245mA at 24V
+suitable for many applications      • No break return                      • Remote control and monitoring of
+including peak lopping, peak        • PIN protected programming                                                  MAXIMUM STANDBY CURRENT
+shaving and no break return.        • Full remote control and telemetry       the module using comprehensive     375mA at 12V. 200mA at 24V
+                                    • Mains (utility) fail monitoring         DSE PC software
+The module has the ability to       • Load demand scheme                   • License free PC software            GENERATOR BUS INPUT RANGE
+monitor the mains (utility) supply  • Multiple mains (utility) monitoring                                        15V(L-N) to 333V AC (L-N) absolute maximum
+and start and stop the generating   • System lock input                    OPERATION
+sets (being controlled by a         • Load switching control push-         The module is operated using the      MAINS (UTILITY) CT BURDEN
+DSE5510) upon removal or                                                   front STOP/RESET, MANUAL,             0.5VA
+detection of the mains (utility)       button inputs                       AUTO, TEST and START push
+supply. The modules operational     • Engine history event log             buttons.                              GENERATOR BUS INPUT FREQUENCY
+status is indicated on the LCD      • LED indicators                                                             50Hz - 60Hz at rated engine speed
+display and the front panel LEDs.   • PC configurable                      The first four of these push buttons  (Minimum: 15V AC L-N)
+                                                                           include LED indicators. Additional
+                                                                           push buttons provide LCD page         MAINS SENSING INPUT RANGE
+                                                                           display scroll, lamp test, mute and   15V(L-N) to 333V AC (L-N) absolute maximum
+                                                                           load switching functionality.
+                                                                                                                 MAINS SENSING INPUT FREQUENCY
+                                                                                                                 50Hz - 60Hz (Minimum: 15V AC L-N)
+
+                                                                                                                 AUXILIARY RELAY OUTPUTS
+                                                                                                                 5A DC at supply voltage
+
+                                                                                                                 GENERATOR BUS LOADING RELAY
+                                                                                                                 OUTPUT
+                                                                                                                 8A AC 250V – normally open
+
+                                                                                                                 MAINS LOADING RELAY OUTPUT
+                                                                                                                 8A AC 250V – normally closed
+
+                                                                                                                 DIMENSONS
+                                                                                                                 240mm x 172mm x 57mm
+                                                                                                                 9.4” x 6.8” x 2.2”
+
+                                                                                                                 PANEL CUTOUT
+                                                                                                                 220mm x 160mm
+                                                                                                                 8.7” x 6.3”
+ ENVIRONMENTAL TESTING                        INSTRUMENTATION                                                                 COMMUNICATIONS
+ STANDARDS                                    The DSE5560 module provides advanced metering functionality, displaying         The DSE5560 includes a number of
+                                              the information on the LCD display. The information can be accessed using       different communication capabilities.
+ ELECTRO MAGNETIC CAPABILITY                  the scroll push button located next to the LCD display.
+ BS EN 61000-6-2                                                                                                              Remote Communications
+ EMC Generic Emission Standard for the        Bus Volts (L1-N, L2-N, L3-N)                                                    When the module detects an alarm
+ Industrial Environment                       Bus Volts (L1-L2, L2 –L3, L3-L1)                                                condition, it dials out to a PC
+ BS EN 61000-6-4                              Bus Hz                                                                          notifying the user of the exact alarm
+ EMC Generic Emission Standard for the        Bus kW % of full capacity                                                       condition (modem required).
+ Industrial Environment                       Bus Phase Sequence
+                                              Load Amps, pf                                                                   Building Management
+ ELECTRICAL SAFETY                            Load kW, kVA, kVAr                                                              The module has been designed to
+ BS EN 60950                                  Mains (utility) Volts (L1-N, L2-N, L3-N)                                        be integrated into new and existing
+ Safety of Information Technology Equipment,  Mains (utility) Volts (L1-L2, L2-L3, L3-L1)                                     building management systems.
+ including Electrical Business Equipment      Mains (utility) Hz
+                                              Mains (utility) Amps                                                            PC Software
+ TEMPERATURE                                  Mains (utility) kW                                                              The module has the ability to be
+ BS EN 60068-2-2                              Mains (utility) Kw % of full capacity                                           controlled, configured and monitored
+ Test Ab to +70oC 60067-2-2 Hot               Mains (utility) kVA                                                             from a remote PC, using the
+ Test Ab to -30oC 60068-2-1 Cold              Mains (utility) pf                                                              DSE810 interface.
+                                              Mains (utility) kVAr
+ VIBRATION                                    Mains (utility) kVAr % of full capacity
+ BS EN 60068-2-6                              Mains (utility) kWh
+ Ten sweeps in each of three major axes       Mains (utility) kVAh
+ 5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn    Mains (utility) kVArh
+                                              Mains (utility) Phase Sequence
+ HUMIDITY                                     Sycnchroscope
+ BS 2011 part 2.1 60068-2-30                  System Battery Voltage
+ Test Cb Ob Cyclic
+ 93% RH @ 40oC for 48 hours                   EVENT LOG
+                                              The module includes a comprehensive event log that shows the 25 most
+ SHOCK                                        recent alarm conditions and the date and time that they occurred. This
+ BS EN 60068-2-27                             function assists the user when fault finding and maintaining a generating set.
+ Three shocks in each of three major axes
+ 15gn in 11mS                                 EXPANSION MODULES
+                                              DSE157 Relay Input Expansion Module
+TYPICAL LOAD SHARE                            DSE545 & DSE548 Remote Annunciation Expansion Module
+APPLICATION                                   DSE130 Input Expansion Module
+
+M1  LOAD 1
+
+G1
+
+G2
+
+G3
+
+M2  LOAD 2
+                                                                                                                                                                                                                                                                                                                                          ®
+
+DSE5560
+
+                                                                                                                                                                           TO LOAD
+
+                                                                                                                                                     P2
+                                                                                                                                                            S2
+
+                                                                                                                                                     P1
+                                                                                                                                                            S1
+
+                                        CTs MUST BE 5 AMP                                                               AUTOMATIC MCCB                                                                                          AUTOMATIC MCCB
+                                        SECONDARY                                                                         AUTOMATIC ACB                                                                                          AUTOMATIC ACB
+                                                                                                                           or CONTACTOR                                                                                           or CONTACTOR
+                                        P1                              P2
+                                                                                                                              3 or 4 POLE                                                                                            3 or 4 POLE
+                                    L1                                                                                                                                                                                                                                                                 L1
+                                                                                                                   2 AMP                                                                                                                                                                        2 AMP
+                                    L2      S1  S2                                                                 FUSES                                                                                                                                                                        FUSES
+
+                                    L3                                                                                                                                                                                                                                                                 L2
+FROM
+MAINS                                                                                                                                                                                                                                                                                                  L3                         COMMON
+
+                                    N                                                                                                                                                                                                                                                                                             BUS
+
+                                                                                                                                                                                                                                                                                                       N
+
+                                                                                                                                 TO GEN SWITCHING
+                                                                                                                                    DEVICE CIRCUITRY
+                                                                                                                                                                                    TO MAIN SWITCHING
+                                                                                                                                                                                        DEVICE CIRCUITRY
+
+                                                                             49 50 51        53                    45 46 47 48   39 40               37 38                                                           54 55                                             29 30 31   41 42 43 44
+                                                                                            COM                    L1 L2 L3 N                                                                                        L1S2 L1S1                                         SCR B A     L1 L2 L3 N
+                                                                            CT1 CT2 CT3                                          CLOSE               CLOSE                                                           LOAD CT
+                                                                            L151 L251 L351                                MAINS    BUS         P810  MAINS                                                                                                                 RS485
+                                                                                                                                        MODULE 5560
+                                                                                   MAINS CURRENT
+
+                                                                                   +VE                                                                                                                                                                                                 SCR 26
+                                                                                          -VE
+                                                                                                                                                                                                                                                                                  MSC  H 27
+                                                                                                            RS232
+                                                                                                                                        157
+
+                                                                            BATTERY                                                                                                                                  3 OUTPUTS                                                         L 28
+                                                                             21
+                                                                                                                                                                                                          PLANT +VE
+
+                                                                                                                                                     9 INPUTS
+
+                                                                                                                                        10 11 12 13 14 15 16 17 18                                                   67 8                                              19
+
+                                                MIN 2 AMPS                                                                              REMOTE START ON LOAD (PEAK LOP)                                                                                                                                         TO OTHER 5510
+                                                   MAX 20 AMP                                                                                  BUS CLOSED AUXILIARY                                                                                                                                          MSC CONNECTIONS
+                                                       ANTI-SURGE FUSE                                                                                 MAINS CLOSED AUXILIARY
+                                                                                                                                                              AUXILIARY MAINS FAIL                                                                                                                             MAX 250 METERS
+                                                                                                                                                                      USER CONFIGURATION INPUT 5                                                                                                       120 OHM SCREENED CABLE
+                                                                                                                                                                              USER CONFIGURATION INPUT 6
+                                                                                                                                                                                     USER CONFIGURATION INPUT 7                                                                                             THE FIRST AND LAST
+                                                                                                                                                                                             USER CONFIGURATION INPUT 8                                                                                UNITS MSC MUST BE FITTED
+                                                                                                                                                                                                     USER CONFIGURATION INPUT 9                                                                        WITH A 120 OHM RESISTOR
+                                                                                                                                                                                                                  USER CONFIGURATION INPUT +VE OUTPUT
+                                                                                                                                                                                                                           USER CONFIGURATION INPUT +VE OUTPUT                                          ACROSS H 9270 AND L (28)
+                                                                                                                                                                                                                                  USER CONFIGURATION INPUT +VE OUTPUT
+
+                                                        BATTERY +VE                         BATTERY +VE
+                                                           (12 OR 24 )
+                                                                                            PART NO’S
+RELATED MATERIALS                                                                           057-017
+TITLE                                                                                       055-039
+DSE5560 Manual                                                                              057-015
+DSE5510 Data Sheet                                                                          057-045/6
+DSE5510 Manual                                                                              057-007
+Guide to Synchronising and                                                                  057-004
+Load Sharing                                                                                057-047
+55xx Software Manual
+CAN & DSE Wiring Guide
+Load Share Design and
+Commissioning
+DEEP SEA ELECTRONICS PLC                   TELEPHONE                                                            EMAIL                                    ®
+
+Highfield House                            +44 (0)1723 890099                                                   sales@deepseaplc.com
+
+Hunmanby Industrial Estate
+
+Hunmanby, North Yorkshire                  FACSIMILE                                                            WEBSITE
+
+YO14 0PH England                           +44 (0)1723 893303                                                   www.deepseaplc.com
+
+Registered in England & Wales No.01319649  VAT No.316923457                                                     EMAIL
+                                                                                                                sales@deepseausa.com
+DEEP SEA ELECTRONICS INC                   TELEPHONE
+3230 Williams Avenue                       +1 (815) 316 8706                                                    WEBSITE
+Rockford                                                                                                        www.deepseausa.com
+IL 61101-2668 USA                          FACSIMILE
+                                           +1 (815) 316 8708
+
+    YOUR LOCAL DISTRIBUTOR.
+
+DEEP SEA ELECTRONICS PLC maintains a policy of continuous development and reserves the right to
+change the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+This data sheet is printed on 9lives 55 Silk, which is produced with 55% recycled fibre
+from both pre and post-consumer sources, together with 45% virgin ECF fibre.
+
+                                                                                                                                      055-041/02/08 (2)
+
