@@ -202,15 +202,60 @@ export const roundCompat = (x, y) => {
 };
 // majorityOf trên nhóm giá trị tương thích làm tròn (bắc cầu; đại diện: số nhỏ nhất của nhóm); trả thêm `group` = mọi số của
 // nhóm thắng, `raw` = số người bỏ phiếu (sau gộp NCC) cho từng số của nhóm.
-export function majorityRound(figs) {
-  const vals = [...new Set(figs.map(([, x]) => x).filter((x) => typeof x === "number" && Number.isFinite(x)))].sort((a, b) => a - b);
+// Nhóm tương thích làm tròn của các số (bắc cầu): → { vals (tăng dần), find (đại diện = số nhỏ nhất của nhóm) }.
+function roundGroups(xs) {
+  const vals = [...new Set(xs.filter((x) => typeof x === "number" && Number.isFinite(x)))].sort((a, b) => a - b);
   const root = new Map(vals.map((v) => [v, v])), find = (v) => (root.get(v) === v ? v : find(root.get(v)));
   for (let i = 0; i < vals.length; i++) for (let j = i + 1; j < vals.length; j++) if (roundCompat(vals[i], vals[j])) { const a = find(vals[i]), b = find(vals[j]); if (a !== b) root.set(Math.max(a, b), Math.min(a, b)); }
+  return { vals, root, find };
+}
+export function majorityRound(figs) {
+  const { vals, root, find } = roundGroups(figs.map(([, x]) => x));
   const mj = majorityOf(figs.map(([s, x]) => [s, typeof x === "number" && root.has(x) ? find(x) : x]));
   if (!mj) return null;
   const group = vals.filter((v) => find(v) === mj.win), raw = {};
   for (const v of group) raw[v] = new Set(figs.filter(([, x]) => x === v).map(([s]) => s)).size;
   return { ...mj, group, raw };
+}
+// Luật hình học trong lá phiếu số đông (Khoa 24/11/2026, thay cho danh sách ngoại lệ 198 ca `hinh-hoc` của
+// spec-value-check): một dòng nguồn mà xi lanh × π/4 × bore² × hành trình lệch dung tích của CHÍNH dòng > 5 % (SN.selfCheck,
+// cùng hàm của quality.mjs và luật hinh-hoc; `useGeo` là MỘT nơi gọi cho config-bot và spec-value-check) không biết ô nào sai,
+// nên khi các nguồn của động cơ ghi số KHÁC nhau, mọi số của dòng đó rời lá phiếu số xi lanh / dung tích, miễn là còn ít
+// nhất một dòng tự khớp có số của khoá đó trong lá phiếu. Không còn dòng tự khớp: như cũ (không suy ra, không tính số thay).
+// Dòng thiếu một trong bốn số (selfCheck null) bỏ phiếu như cũ. Số từ tờ hãng không thuộc dòng nào: như cũ.
+// `GENBID_GEO_VOTE=0` tắt (chỉ để đo).
+export const useGeo = (u, rowsMap = NORM_ROWS.map) => SN.selfCheck(SN.normalizeRecord(u, rowsMap.get(`${u?.supplierId}|${u?.table}`)));
+export const geoVoteOn = () => String(process.env.GENBID_GEO_VOTE ?? "1").trim() !== "0";
+// Các dòng `uses` của một động cơ, chia theo selfCheck. `of(f, own)`: "bad" / "good" / null = dòng của số f (own = dòng khi
+// f là spec của chính dòng đó, không phải fact). Fact gắn dòng qua NCC + n + chữ dòng (modelFacts: `line` = dòng bảng, hoặc
+// dòng nhãn của bảng nhãn); khớp cả dòng tốt lẫn dòng xấu thì không tính là xấu.
+export function geoRows(uses, rowsMap) {
+  const geo = new Map();
+  for (const u of uses || []) { const c = useGeo(u, rowsMap); if (c) geo.set(u, c.bad ? "bad" : "good"); }
+  const has = (u, f) => f.supplierId === u.supplierId && f.n === u.n && (u.line ? f.line === u.line : [...(u.lines?.header || []), ...(u.lines?.rows || [])].includes(f.line));
+  const of = (f, own) => {
+    if (own) return geo.get(own) ?? null;
+    let bad = false;
+    for (const [u, g] of geo) if (has(u, f)) { if (g === "good") return "good"; bad = true; }
+    return bad ? "bad" : null;
+  };
+  return { of, bad: [...geo.values()].filter((g) => g === "bad").length, good: [...geo.values()].filter((g) => g === "good").length };
+}
+// `all`: [fact, số | BLOCK | null] của một khoá (cyl / disp). Khi các số mâu thuẫn (xi lanh: hai số khác nhau; dung tích: hai
+// nhóm không tương thích làm tròn) và có số của dòng tốt: bỏ số (kể cả BLOCK) của dòng xấu mà không dòng tốt nào ghi cùng số.
+// `ownOf(f)` → dòng nếu f là spec của chính dòng.
+export function geoKeep(all, key, geo, ownOf = () => null) {
+  if (!geo || !geo.bad || !geo.good) return all;
+  const nums = all.map(([, x]) => x).filter((x) => typeof x === "number" && Number.isFinite(x));
+  const rg = key === "disp" ? roundGroups(nums) : null;
+  const split = rg ? new Set(rg.vals.map(rg.find)).size > 1 : new Set(nums).size > 1;
+  if (!split) return all;
+  const tag = all.map(([f]) => geo.of(f, ownOf(f))), grp = (x) => (typeof x !== "number" ? null : rg ? rg.find(x) : x);
+  const goodVals = new Set(all.filter(([, x], i) => tag[i] === "good" && typeof x === "number").map(([, x]) => grp(x)));
+  if (!goodVals.size) return all;
+  // Số của dòng xấu mà một dòng tự khớp cũng ghi (cùng số; dung tích: cùng nhóm làm tròn) ở lại: bỏ nó chỉ làm mất phiếu của
+  // số dòng tự khớp ghi (đo 24/11/2026: bỏ hẳn làm 4 mã mất giá trị thắng, WP6D180E201 6.75, YC6C1070L-D20 39.58...).
+  return all.filter(([, x], i) => tag[i] !== "bad" || goodVals.has(grp(x)));
 }
 const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
@@ -2041,6 +2086,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       return voters.get(s) ?? s;
     };
+    // Dòng tự mâu thuẫn hình học của động cơ (và của khoá X ↔ X^ mượn số), tính một lần khi lá phiếu cần (geoKeep).
+    let geo;
+    const geoOf = () => (geo === undefined ? (geo = geoVoteOn() ? geoRows([...e.uses, ...twinUses], rowsMap) : null) : geo);
     for (const u of e.uses) {
       // The genset model the HSMT names (Khoa 2026-11-12, IB2600601812 "Mã hiệu DHY110K SE"): its row stays whatever its
       // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
@@ -2124,7 +2172,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
       // lanh"). No such value: as before. The displacement too (MAJ_KEYS, Khoa 19/11/2026), its voters merged by dispVoters:
       // Chinese suppliers copy one template table, so counting each made a copied error win (MTU 1600 ×6, TAD1341GE).
-      const majOf = (all, key) => {
+      const majOf = (all0, key) => {
+        // Luật hình học (geoKeep): số của dòng tự mâu thuẫn rời lá phiếu khi nguồn mâu thuẫn và còn dòng tự khớp.
+        const all = geoKeep(all0, key, geoOf(), (f) => ((u.specs || []).includes(f) ? u : null));
         const figs = all.map(([f, x]) => { const s = f.supplierId ?? u.supplierId; return [key === "disp" ? dispVoter(s) : s, x]; });
         // Dung tích: các số chỉ khác độ làm tròn là một phiếu (majorityRound), so ngưỡng bằng số chính xác nhất (dispExact).
         return key === "disp" ? majorityRound(figs) : majorityOf(figs);
