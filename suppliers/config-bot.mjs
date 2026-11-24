@@ -761,7 +761,27 @@ export function controllerSheetFacts(s, t) {
   // The sheet's own models are those of its title: a line of another model's datasheet that only mentions a controller
   // ("compatible with DSE7320") does not give that controller's facts.
   const sheet = new Set(ctlKeys(t.title).map(gen).filter((k) => !isSeries(k)));
-  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? [...sheet] : [k])))].filter((k) => sheet.has(k));
+  // "HGM6100CAN" (Khoa 24/11/2026) is the CAN branch of the series, not the whole series: a line naming it is of the CAN models
+  // of the sheet only (HGM6110CAN / HGM6120CAN). "HGM6100N" / "HGM6100" series names stay of every model of the sheet.
+  const seriesOf = (k) => (k === "HGM6100CAN" ? [...sheet].filter((m) => /CAN$/.test(m)) : [...sheet]);
+  const keysOf = (line) => [...new Set(ctlKeys(line).map(gen).flatMap((k) => (isSeries(k) ? seriesOf(k) : [k])))].filter((k) => sheet.has(k));
+  // A line that names controller codes of NONE of the sheet's models ("HGM6120: When mains is abnormal" in the HGM6110N
+  // sheet, "Applicable only to the DKG-317 model" in DKG307's, "(Only available for HGM9520N)" in HGM9510N's) is not of
+  // the models of the section before it (dong-dung-model 24/11/2026). A code that is the start of a sheet model's code
+  // ("HGM6120" → HGM6120N / NC / CAN) or the other way ("HGM9320MPU" → HGM9320) is of those models; any other is of
+  // no model of the sheet and the line is dropped (only that line: a short line after it goes on with the section as
+  // before; carrying the drop through "goes on" lines swallowed 961 ordinary lines of HGM9310 / 9320). A family name (HGM6100N SERIES,
+  // easYgen-1000 Series) says nothing foreign.
+  const family = (k) => isSeries(k) || /^EASYGEN\d000$/.test(k);
+  // Narrow exception (Khoa 24/11/2026): the DSE7570 sheet's two RS232 rows "| RS232 | DSE8610 MKII Com Port" / "... Communications"
+  // name DSE8610 MKII only as the unit on the other end of the cable: the RS232 port is the DSE7570's own, so they stay.
+  const ownPort = (line) => sheet.size === 1 && sheet.has("DSE7570") && /^\|\s*RS232\s*\|\s*DSE8610 MKII (Com Port|Communications)\s*$/.test(line.trim());
+  const foreignOf = (line) => {
+    if (keysOf(line).length || ownPort(line)) return null;
+    const ks = [...new Set(ctlKeys(line).map(gen))].filter((k) => !family(k));
+    if (!ks.length) return null;
+    return [...sheet].filter((m) => ks.some((k) => m.startsWith(k) || k.startsWith(m)));
+  };
   if (!sheet.size) return out;
   let scope = [...sheet], prev = scope, last = "";
   for (const line of t.rows) {
@@ -770,6 +790,16 @@ export function controllerSheetFacts(s, t) {
     // "HGM6120N/6120NC/6120CAN: Based on HGM6110N/..., it adds ..." and "DSE7320 MKII: 2" are of the models before the colon.
     const head = bare.match(/^([^:]{2,60}):/);
     if (head && keysOf(head[1]).length) names = keysOf(head[1]);
+    else if (!names.length) {
+      const f = foreignOf(head ? head[1] : line) ?? (head ? foreignOf(line) : null);
+      if (f) {
+        if (!f.length) continue;
+        // Of those models only: the line neither opens a section nor goes back to all.
+        for (const k of f) out.push({ model: k, f: { key: "ctl", label: "", value: line, supplierId: s.id, n: t.n, line, text: line, sheetModel: nameOf.get(k) || k } });
+        prev = f; last = bare;
+        continue;
+      }
+    }
     if (names.length === sheet.size || /^(common\b|specifications$)/i.test(bare)) scope = [...sheet];
     else {
       // A heading begins with the model ("DSE7320 MKII Automatic ... Key Features"), not with a value ("DSE7320 MKII: 2").
