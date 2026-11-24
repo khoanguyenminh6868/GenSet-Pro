@@ -96,7 +96,7 @@ function histNeedsConfig(d) {
 // (make, origin, quantity, power, scope), then the rest in order. 2026-11-06 audit: at 3,000 characters in order, 803 of
 // 1,250 past tenders were cut before their origin / scope lines.
 const CONFIG_TEXT_MAX = 6000;
-const CONFIG_KEY = /h[ãa]ng|xu[ấa]t\s*x[ứu]|origin|\bATS\b|c[áa]ch\s*[âa]m|b[ồo]n|đ[ồo]ng\s*b[ộo]|s[ốo]\s*l[ưu][ợo]ng|li[êe]n\s*t[ụu]c|d[ựu]\s*ph[òo]ng|prime|standby|c[ôo]ng\s*su[ấa]t|bi[ếe]n\s*[áa]p|l[ắa]p\s*đ[ặa]t|\bc[áa]p\b|trung\s*qu[ốo]c|\bG7\b|nh[ậa]p\s*kh[ẩa]u|model|nh[ãa]n\s*hi[ệe]u/i;
+const CONFIG_KEY = /h[ãa]ng|xu[ấa]t\s*x[ứu]|origin|\bATS\b|c[áa]ch\s*[âa]m|b[ồo]n|đ[ồo]ng\s*b[ộo]|s[ốo]\s*l[ưu][ợo]ng|li[êe]n\s*t[ụu]c|d[ựu]\s*ph[òo]ng|prime|standby|c[ôo]ng\s*su[ấa]t|bi[ếe]n\s*[áa]p|l[ắa]p\s*đ[ặa]t|\bc[áa]p\b|trung\s*qu[ốo]c|\bG7\b|nh[ậa]p\s*kh[ẩa]u|model|nh[ãa]n\s*hi[ệe]u|s[ốo]\s*pha\b|\b(?:0?[13]|m[ộo]t|ba)\s*-?\s*pha\b|\b[13]\s*-?\s*phase\b|\b[13]P\s*[-/]\s*\d\s*W\b/i;
 function configText(lines, max = CONFIG_TEXT_MAX) {
   const uniq = lines.filter((l, i, a) => l && a.indexOf(l) === i), key = uniq.filter((l) => CONFIG_KEY.test(l)), rest = uniq.filter((l) => !CONFIG_KEY.test(l));
   const out = []; let size = 0;
@@ -109,7 +109,7 @@ const setsOf = (v) => (Array.isArray(v) ? v.filter((s) => s && typeof s === "obj
 function histConfigOf(text, src) {
   text = String(text || "").normalize("NFC");
   const kvas = histPower(text).filter((p, i, a) => a.findIndex((q) => q.v === p.v && q.u === p.u) === i).slice(0, 20);
-  const want = /kva|kw\b|công suất|động cơ|engine|đầu phát|alternator|bộ điều khiển|controller|ats|xuất xứ|hãng sản xuất|model|tần số|điện áp|vòng tua|nhiên liệu|số lượng/i;
+  const want = /kva|kw\b|công suất|động cơ|engine|đầu phát|alternator|bộ điều khiển|controller|ats|xuất xứ|hãng sản xuất|model|tần số|điện áp|vòng tua|nhiên liệu|số lượng|s[ốo]\s*pha\b|\b(?:0?[13]|m[ộo]t|ba)\s*-?\s*pha\b|\b[13]\s*-?\s*phase\b|\b[13]P\s*[-/]\s*\d\s*W\b/i;
   const lines = text.split(/\r?\n/).map((l) => l.replace(/\s+/g, " ").trim()).filter((l) => l.length > 4 && l.length < 400 && want.test(l));
   return { kvas, text: configText(lines), src, at: now() };
 }
