@@ -54,3 +54,48 @@ Chưa chạy `merge-specs` thật cho các NCC trên (chỉ mô phỏng); chưa 
 ## Còn lại
 - Chưa đo top 30 (PR đụng `cn/` → candidates, điều phối đo sau).
 - `merge-specs` vẫn xoá tệp trang không dùng nên lần sau cào lại chỉ cần chạy `tablesOf` lại; tránh lệch lại: nên dựng lại `specs/` từ tệp nguồn và tải lại trang mất tệp mỗi khi đổi `tablesOf` (đề xuất, chưa làm).
+
+---
+
+# Đợt 2 (PR nháp `specs-dung-lai`, chồng lên `mecca-specs`): sửa gốc + 20 NCC
+
+Nhánh `specs-dung-lai`, worktree `C:\Projects\GenSet Pro\wt-specs-dung-lai`, base `mecca-specs` (c9f8a3b7). PR NHÁP, chưa merge.
+
+## Cách sửa gốc (chọn ít rủi ro, lý do)
+- KHÔNG đổi luật xoá tệp nguồn của `merge-specs` (giữ tệp mọi trang `specs/` = hàng trăm MB nguồn vào git, đổi hành vi mọi NCC). Thêm `suppliers/rebuild-specs.mjs <id...> [--cache dir]`: mỗi trang `specs/` (n < 1000) thiếu tệp thì tải lại URL của trang (`get` + `htmlToText`, nghỉ 700 ms, không Firecrawl), dựng lại bảng bằng `tablesOf`, thay tại chỗ bảng khác `tablesOf`; lỗi tải một trang thì KHÔNG ghi gì cho NCC đó. Sau đó `merge-specs <id>` (tệp trang không dùng bị xoá như cũ).
+- `merge-specs.mjs` nay báo rõ "trang N … chạy rebuild-specs.mjs <id>" thay vì ENOENT giữa chừng. Test mới `specs-drift.test.mjs` (mọi trang `merge-specs` dùng có tệp; `KNOWN` = zichai).
+- Mỗi NCC: chụp `cn/` trước, chạy rebuild + merge-specs, so từng bản ghi `fromSupplier` bằng `rec-diff.mjs` (crawl-dropped). 
+
+## Kết quả từng NCC (rec-diff cn trước → sau)
+| NCC | trang tải lại | bản ghi | ghi chú |
+|---|--:|---|---|
+| comappower | 1 | 651 → 651, 0 / 0 / 0 | |
+| everllence, mhi-china, yuchai | 1 / 1 / 3 | 0 → 0 | không bản ghi |
+| linz-electric | 3 | 0 → 0 | |
+| rise-power | 6 | 634 → 634, 0 đổi | 20 chỉ đổi chỉ số bảng |
+| victory-generator | 27 | 675 → 675, 0 đổi | |
+| wudong-wuxi | 2 | 136 → 136, 0 đổi | |
+| world-power-fuzhou | 3 | 199 → 199, 0 đổi | 129 chỉ đổi chỉ số bảng |
+| frs-shenyang | 6 (retry: 1 trang timeout lần đầu) | 225 → 225, 0 đổi | |
+| gtl-power | 23 | 193 → 193, 0 đổi | |
+| pauway-tianjin | 8 | 500 → 500, 0 đổi | |
+| rcg-power | 8 | 1638 → 1638, 0 đổi | |
+| camda-generator | 29 | 272 → 272, 0 đổi | 272 chỉ đổi chỉ số bảng / dòng |
+| lees-power | 15 | 539 → 539, 0 đổi | |
+| **nenjo-generator** | 44 | 696 → 696, **đổi 105** | 105 bản ghi n154 (engine, vd. 4Z2.3-G11 / HJ14SC) thêm `makes: SDEC (tên trang)`; chữ trang n154 có "上柴SDEC"; tệp n154 trước đó không có trong git |
+| **previa-ningde** | 13 | 972 → 972, thêm 36 / mất 36 | cùng 36 model chuyển nguồn n128 → n108 (bảng trùng, giữ bản đứng trước) |
+| **sanq-power** | 1 | 1366 → 1386, **thêm 20** | bảng dọc b21: KTA19-G2 / HCI444FS … (engine + alternator, kW rated), không có trong cn/ trước đó |
+| **koten-power** | 67 | 500 → 510, **thêm 10** | b18 / b19: WP2.3D25E200 … WP2.3D58E201 (Weichai, KW20D5 …) |
+| **yongcai-elecmama** | 14 | 212 → 212, **đổi 12** | n135 (QC380D, QC385D, QC480D, N485D …): mỗi bản ghi thêm 2 thông số engType, asp |
+
+Đổi cn cần điều phối đo top 30: nenjo (105 bản ghi hãng SDEC), sanq (+20), koten (+10), yongcai (12 bản ghi thêm thông số), previa (36 bản ghi đổi số nguồn). 14 NCC còn lại 0 đổi nội dung.
+
+## KHÔNG sửa (đã thử rồi hoàn tác, cần quyết định)
+- **zichai**: merge thêm 11 bản ghi từ n120 (tuabin khí M32), n123–n125 (động cơ tàu tốc độ trung bình Z210 / N280 / N260): bảng còn sót trong `specs/` sau #851 (đã xoá bảng không phải máy phát khỏi cn/ + specs/ nhưng sót 4 trang). Đề xuất: xoá tay 4 bảng khỏi `specs/zichai.json` như #851 (nếu Khoa xác nhận không phải máy phát), rồi mới `rebuild-specs` + merge. `KNOWN` của `specs-drift.test.mjs` giữ zichai.
+- **baudouin**: rebuild đổi 205 bản ghi (thêm 21, mất 2, đổi 74): n116, n120–n124 đã tách tay ở #971 (bẫy ghi trong suppliers/CLAUDE.md), rebuild chèn chồng. Không chạy.
+- **jet-power**: rebuild thêm 14 bản ghi bảng dọc (KM178FG … JDE3500SE) và làm hỏng `s9-cc-129.test.mjs` (test khẳng định bảng n110 "không ghi mã / vai động cơ" không ra bản ghi). Hoàn tác.
+- **powerpack**: rebuild bằng `tablesOf` làm 126 bản ghi → 0 (hồ sơ dựng bằng cách khác, chưa rõ). Hoàn tác, chưa tìm cách dựng.
+
+## Kiểm (cả nhánh)
+- verify 436 / 0 lỗi; quality --check không xấu đi; `spec-diff git:HEAD . --gate` thoát 0, đảo vai 0 → 0, bản ghi 64.290 → 64.334 (+44 = sanq 20 + koten 10 + jet 14 trước khi hoàn tác jet; số "khác 372 / cần soát tay 113" đo trước khi hoàn tác jet, gồm nenjo 105 + yongcai 12 + previa 36: chưa soát tay từng giá trị, chỉ so bản ghi bằng rec-diff).
+- `node --test` (danh sách tệp): trước hoàn tác jet 1786 / 1787, ca hỏng s9-cc-129 (jet); sau hoàn tác jet các test liên quan qua (s9-cc-129, specs-drift, cao-lai-83, mecca-specs: 13 / 13). Chưa chạy lại toàn bộ sau hoàn tác jet.
