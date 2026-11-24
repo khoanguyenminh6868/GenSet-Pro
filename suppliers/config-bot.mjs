@@ -1043,33 +1043,52 @@ export function phaseOf(text) {
   const seen = phasesIn(text);
   return seen.size === 1 ? [...seen][0] : null;
 }
-// Căn cứ MỘT PHA của chính dòng bảng (Khoa 24/11/2026; không suy từ điện áp hay công suất): dòng phân đoạn trong tiêu đề của bảng
-// ("| Single phase", lees-power) hoặc ô cột pha của chính dòng. Tên trang KHÔNG tính: nhiều trang ghi "Single Phase" mà bảng liệt kê cả
-// máy ba pha. Đuôi model "-1P" KHÔNG tính: voltgent "P2500-1P" là máy 2.500 kVA / 2.000 kW. Có cả căn cứ ba pha thì không kết luận.
-const ROW_PH1 = /single[\s_-]*phase|(?<![\d.])1[\s-]*ph(?:ase)?\b|one[\s-]*phase|单相/i, ROW_PH3 = /three[\s_-]*phase|(?<![\d.])3[\s-]*ph(?:ase)?\b|三相/i;
-export function onePhaseOf(u) {
+// Số pha của chính dòng bảng (Khoa 24/11/2026; không suy từ điện áp hay công suất) → { phase: 1 | 3, from, text, basis? } hoặc null.
+// Căn cứ chính: chữ pha ở tiêu đề bảng / dòng phân đoạn ("| Single phase", "50HZ PF=0.8 400/230V 3Phase 4Wire") và ô cột pha của chính
+// dòng. Có cả một pha lẫn ba pha ("三相0.8或单相1.0") thì không kết luận.
+// Căn cứ dự phòng, CHỈ khi tiêu đề, dòng phân đoạn, cột pha đều không nói gì về pha: đuôi model "-1P", rồi tên trang ghi "Single Phase"
+// (tên trang cũng ghi ba pha thì không kết luận). voltgent "P2500-1P" (máy 2.500 kVA) vẫn theo luật này: điều phối hỏi lại Khoa.
+const ROW_PH1 = /single[\s_-]*phase|(?<![\d.])1[\s-]*ph(?:ases?)?(?![a-z])|one[\s-]*phase|单相/i, ROW_PH3 = /three[\s_-]*phase|(?<![\d.])3[\s-]*ph(?:ases?)?(?![a-z])|三相/i;
+const PH_COL = /^(?:(?:no\.?|number)\s*of\s*)?phases?$|^相数?$|^ph$/i, PH_WORD = /phase|单相|三相|相数/i;
+export function rowPhaseOf(u) {
   if (!u) return null;
-  const cellsOf = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), hits = [];
-  let three = false;
+  const cellsOf = (l) => CAT.cellsOf(l).map((c) => String(c).trim()), one = [], three = [];
+  let info = false;
+  const read = (from, t) => { if (ROW_PH1.test(t)) one.push({ phase: 1, from, text: t }); if (ROW_PH3.test(t)) three.push({ phase: 3, from, text: t }); };
   for (const h of u.header || []) {
     const c = cellsOf(h).filter(Boolean);
-    if (c.length !== 1) continue;
-    if (ROW_PH3.test(c[0])) three = true;
-    else if (ROW_PH1.test(c[0])) hits.push({ from: "segment", text: c[0] });
+    for (const x of c) {
+      if (!PH_WORD.test(x) && !PH_COL.test(x)) continue;
+      info = true;
+      if (!PH_COL.test(x)) read(c.length === 1 ? "segment" : "header", x);
+    }
   }
   if (u.line) {
     const cells = cellsOf(u.line);
     for (const h of u.header || []) {
-      const heads = cellsOf(h);
-      if (heads.length !== cells.length) continue;
+      // Tiêu đề mở bằng ô trống ("| | Genset Model | … | Phase", elitech, aj-power, welland) lệch dòng một ô; dòng có thể thừa ô cuối
+      // ("View", acepow). Giá trị chỉ nhận khi đúng dạng số pha, nên ô lệch khác (50, tên động cơ) không thành căn cứ.
+      const all = cellsOf(h), lead = all[0] === "" && cells[0] !== "" ? 1 : 0, heads = all.slice(lead);
+      if (heads.length > cells.length) continue;
       heads.forEach((x, i) => {
-        if (!/^(?:no\.?\s*of\s*)?phases?$|^相数$|^ph$/i.test(x)) return;
-        if (/^1$|^1\s*-?\s*ph|single|单相/i.test(cells[i])) hits.push({ from: "column", text: cells[i] });
-        else if (/^3$|^3\s*-?\s*ph|three|三相/i.test(cells[i])) three = true;
+        if (!PH_COL.test(x)) return;
+        if (/^1$|^1\s*-?\s*(?:ph|p$|φ|ø)|^single|^单相/i.test(cells[i])) one.push({ phase: 1, from: "column", text: cells[i] });
+        else if (/^3$|^3\s*-?\s*(?:ph|p$|φ|ø)|^three|^三相/i.test(cells[i])) three.push({ phase: 3, from: "column", text: cells[i] });
       });
     }
   }
-  return hits.length && !three ? hits[0] : null;
+  if (one.length && three.length) return null;
+  if (one.length || three.length) return (one[0] || three[0]);
+  if (info) return null;
+  const title = String(u.title || "");
+  if (ROW_PH3.test(title)) return null;
+  if (/-1P$/i.test(String(u.genset || "").trim())) return { phase: 1, from: "model", text: String(u.genset).trim(), basis: "tên model đuôi -1P" };
+  if (/single[\s_-]*phase/i.test(title)) return { phase: 1, from: "page", text: "Single Phase", basis: "tên trang ghi Single Phase" };
+  return null;
+}
+export function onePhaseOf(u) {
+  const r = rowPhaseOf(u);
+  return r && r.phase === 1 ? r : null;
 }
 // Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
 // null when it gives the count only.
@@ -2093,11 +2112,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const lay = outvoted ? [] : own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
-      // Dòng có căn cứ MỘT PHA (Khoa 24/11/2026, `onePhaseOf`): gói đòi ba pha thì loại; gói không nêu rõ số pha thì giữ, cần xác nhận.
-      // Gói đòi một pha chưa loại dòng ba pha (chờ Khoa quyết).
-      const onePh = hints.phase === 1 ? null : onePhaseOf(u);
-      if (onePh && hints.phase === 3) { score -= 600; ruled.push("phase"); why.push(`bảng NCC ghi một pha («${onePh.text}»), HSMT yêu cầu 3 pha`); }
-      else if (onePh) why.push(`cần xác nhận số pha: bảng NCC ghi một pha («${onePh.text}»), HSMT không nêu rõ số pha`);
+      // Số pha của dòng (Khoa 24/11/2026, `rowPhaseOf`), hai chiều: dòng có căn cứ khác số pha HSMT đòi thì loại. Gói đòi một pha mà dòng
+      // không có căn cứ pha nào thì giữ, cần xác nhận; gói không nêu rõ số pha mà dòng ghi một pha cũng giữ, cần xác nhận.
+      const rowPh = rowPhaseOf(u), phWhy = rowPh && (rowPh.basis || `bảng NCC ghi ${rowPh.phase === 1 ? "một" : "ba"} pha («${rowPh.text}»)`);
+      if (rowPh && hints.phase && rowPh.phase !== hints.phase) { score -= 600; ruled.push("phase"); why.push(`${phWhy}, HSMT yêu cầu ${hints.phase} pha`); }
+      else if (hints.phase === 1 && !rowPh) why.push("cần xác nhận số pha: dòng không ghi số pha, HSMT yêu cầu 1 pha");
+      else if (!hints.phase && rowPh?.phase === 1) why.push(`cần xác nhận số pha: ${phWhy}, HSMT không nêu rõ số pha`);
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
       // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
       // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
@@ -2135,7 +2155,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // Nhà máy Trung Quốc NCC tự ghi ở chính dòng, gói G7 / G7EU kể cả chỉ đòi thương hiệu (Khoa 22/11/2026).
       const cnPlant = !placed && !madeOut && (origin === "g7" || origin === "g7eu") ? chinaPlantInRow(e, u) : null;
       if (cnPlant) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại Trung Quốc («${cnPlant.cell}»), HSMT đòi ${GROUP_NAME[origin]}`); }
-      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
+      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, why, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(altAsk ? { altAsk } : {}), ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }

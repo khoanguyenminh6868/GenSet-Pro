@@ -1,7 +1,7 @@
 // node --test suppliers/*.test.mjs — dòng bảng ghi một pha và tiêu đề ghi hai tần số (Khoa 24/11/2026). Câu HSMT trong test là câu tự đặt.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { candidates, hintsOf, minsForSize, onePhaseOf, phaseOf } from "./config-bot.mjs";
+import { candidates, hintsOf, minsForSize, onePhaseOf, phaseOf, rowPhaseOf } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const H = "| Model | Prime kVA | Prime kW | Engine | Alternator";
@@ -43,11 +43,37 @@ test("onePhaseOf: dòng phân đoạn và cột pha của chính dòng", () => {
   assert.equal(onePhaseOf({ header: heads, line: "| a-1 | 50Hz | 3-phase | 404A-22G1" }), null);
 });
 
-test("onePhaseOf: không suy từ tên model, tên trang, điện áp; có căn cứ ba pha thì không kết luận", () => {
-  assert.equal(onePhaseOf({ header: [H], line: "| P2500-1P | 2500 | 2000 | 4016-61TRG3X | LL9324R" }), null);
-  assert.equal(onePhaseOf({ title: "Single Phase Diesel Generator", header: [H], line: ROW }), null);
+test("onePhaseOf: không suy từ điện áp; có căn cứ ba pha thì không kết luận", () => {
   assert.equal(onePhaseOf({ header: ["| Model | Voltage | Engine"], line: "| a-1 | 230V | 404A-22G1" }), null);
   assert.equal(onePhaseOf({ header: [H, "| Single phase", "| Three phase"], line: ROW }), null);
+});
+
+test("rowPhaseOf: căn cứ ba pha ở tiêu đề, dòng phân đoạn, cột pha", () => {
+  assert.equal(rowPhaseOf({ header: [H, "| Three phase"], line: ROW }).phase, 3);
+  assert.equal(rowPhaseOf({ header: ["| Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine"], line: "| a-1 | 20 | 404A-22G1" }).phase, 3);
+  assert.equal(rowPhaseOf({ header: ["| Model | 3Phases/50Hz/400V/PF=0.8 | Engine"], line: "| a-1 | 20 | 404A-22G1" }).phase, 3);
+  assert.equal(rowPhaseOf({ header: ["| Model | Phase | Engine"], line: "| a-1 | 3 | 404A-22G1" }).from, "column");
+  assert.equal(rowPhaseOf({ header: ["| Model | 三相0.8或单相1.0 | Engine"], line: "| a-1 | 20 | 404A-22G1" }), null);
+});
+
+test("rowPhaseOf: tiêu đề mở bằng ô trống lệch dòng một ô, dòng có thể thừa ô cuối", () => {
+  const welland = "| | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model |";
+  assert.equal(rowPhaseOf({ header: [welland], line: "| 53WC1400A01 | 1375 | 3 | 50 | Cummins | KTA50G3 | View" }).phase, 3);
+  const aj = "| | Model | Frequency | Phase | R.P.M | Prime-kVA | Engine Model";
+  assert.equal(rowPhaseOf({ header: [aj], line: "| AJ33 | 50hz | Single Phase | 1500 | 22.5 | 1103A-33G" }).phase, 1);
+  assert.equal(rowPhaseOf({ header: ["| Frequ ency | Phase | Model"], line: "| 50 | 3 | LR4M3L-D | 86" }).phase, 3);
+  assert.equal(rowPhaseOf({ header: ["| Model | Phase | Engine"], line: "| a-1 | 50 | 404A-22G1" }), null);
+});
+
+test("rowPhaseOf: căn cứ dự phòng chỉ khi không có thông tin pha nào khác", () => {
+  const m = rowPhaseOf({ genset: "P2500-1P", header: [H], line: "| P2500-1P | 2500 | 2000 | 4016-61TRG3X | LL9324R" });
+  assert.deepEqual([m.phase, m.basis], [1, "tên model đuôi -1P"]);
+  const p = rowPhaseOf({ genset: "a-1", title: "Single Phase Diesel Generator", header: [H], line: ROW });
+  assert.deepEqual([p.phase, p.basis], [1, "tên trang ghi Single Phase"]);
+  assert.equal(rowPhaseOf({ genset: "a-1P", title: "Single Phase", header: [H, "| Three phase"], line: ROW }).phase, 3);
+  assert.equal(rowPhaseOf({ genset: "a-1P", header: ["| Model | Phase | Engine"], line: "| a-1P | 3 | 404A-22G1" }).phase, 3);
+  assert.equal(rowPhaseOf({ genset: "a-1P", header: ["| Model | Phases Voltage"], line: "| a-1P | x" }), null);
+  assert.equal(rowPhaseOf({ genset: "a-1", title: "Single Phase and Three Phase Generators", header: [H], line: ROW }), null);
 });
 
 const one = () => sup("mot-pha", [ROW], [H, "| Single phase"]);
@@ -67,10 +93,23 @@ test("candidates: gói không nêu rõ số pha giữ dòng, ghi cần xác nh�
   assert.ok(!r.top.find((x) => x.u.supplierId === "ba-pha").why.some((w) => /số pha/.test(w)));
 });
 
-test("candidates: gói đòi một pha chưa loại dòng nào theo pha", () => {
-  const r = run([one(), three()], free("Số pha: 1 pha 2 dây"));
+test("candidates: gói đòi một pha loại dòng có căn cứ ba pha, giữ dòng không có căn cứ và ghi cần xác nhận", () => {
+  const baCo = sup("ba-pha-ghi", ["| c-1 | 20 | 16 | 404A-22G1 | UCI224F"], [H, "| Three phase"]);
+  const r = run([one(), three(), baCo], free("Số pha: 1 pha 2 dây"));
   assert.deepEqual(r.top.map((x) => x.u.supplierId).sort(), ["ba-pha", "mot-pha"]);
-  assert.ok(!r.dropped.some((x) => x.ruled.includes("phase")));
+  const off = r.dropped.find((x) => x.u.supplierId === "ba-pha-ghi");
+  assert.ok(off.ruled.includes("phase"));
+  assert.ok(off.why.some((w) => /Three phase/.test(w)));
+  assert.ok(r.top.find((x) => x.u.supplierId === "ba-pha").why.some((w) => /cần xác nhận số pha/.test(w)));
+  assert.ok(!r.top.find((x) => x.u.supplierId === "mot-pha").why.some((w) => /số pha/.test(w)));
+});
+
+test("candidates: đuôi -1P là một pha khi dòng không có thông tin pha khác, why ghi căn cứ", () => {
+  const p = sup("duoi-1p", ["| a-1P | 20 | 16 | 404A-22G1 | UCI224D"]);
+  const r = run([p, three()], free("Số pha: 3 pha 4 dây"));
+  const off = r.dropped.find((x) => x.u.supplierId === "duoi-1p");
+  assert.ok(off.ruled.includes("phase"));
+  assert.ok(off.why.some((w) => /tên model đuôi -1P/.test(w)));
 });
 
 const freqOf = (last) => C.fromSupplier(sup("x", [`${ROW} | ●`], [`${H} | ${last}`])).find((r) => r.kind === "engine").freq;
