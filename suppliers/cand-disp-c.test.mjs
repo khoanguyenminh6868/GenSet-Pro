@@ -97,7 +97,8 @@ test("TAD531GE: mất giá trị thắng (4,76 × 6 : 1,5 × 1 → bộ năm m�
   const t = engine("TAD531GE");
   assert.equal(t.before?.win, 4.76);
   // buoc-4 PR A: các NCC khác ghi 4,76 ở cột "排气量" (ngoài bộ năm chép chung) → còn 3 phiếu 4,76 : 1 phiếu 1,5, vẫn thắng 4,76 (bộ năm vẫn một phiếu).
-  assert.deepEqual(t.after, { win: 4.76, votes: { 1.5: 1, 4.76: 3 }, blocked: 0 });
+  // bo-o-lech-126 (Khoa 24/11/2026): số 1,5 của mingbang n125 MB-V80 (77*81, 4 xi lanh) đã bỏ ở nguồn → chỉ còn 3 phiếu 4,76.
+  assert.deepEqual(t.after, { win: 4.76, votes: { 4.76: 3 }, blocked: 0 });
 });
 
 test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 9 phiếu từ S8-2); dòng liangzi hết số 9,36 nên trần ≤ 11 lít không còn loại nó", () => {

@@ -32,9 +32,10 @@ test("useGeo: dòng aosif n1024 QSB5.9-G31 tự mâu thuẫn (ghi 3,9 L), dòng 
   const e = eng("QSB5.9-G31");
   const bad = e.uses.find((u) => u.supplierId === "aosif" && u.n === 1024), good = e.uses.filter((u) => ["voltgent", "yunding-jiangsu"].includes(u.supplierId));
   assert.ok(bad && good.length >= 2);
-  const c = useGeo(bad, ROWS);
-  assert.equal(c.disp, 3.9);
-  assert.ok(c.bad, `${c.calc} L tính ↔ ${c.disp} L ghi`);
+  // bo-o-lech-126 (Khoa 24/11/2026): ô "3.9 L" của dòng này đã bị bỏ ở nguồn (`dropspec` disp), nên dòng không còn tự mâu thuẫn
+  // (thiếu dung tích: selfCheck null); luật hình học ở lá phiếu không còn việc với dòng này, các dòng khác không đổi.
+  assert.equal(useGeo(bad, ROWS), null);
+  assert.equal(bad.specs.some((s) => s.key === "disp"), false);
   // Dòng thiếu một trong bốn số (selfCheck null, voltgent n102) không tốt không xấu: bỏ phiếu như cũ.
   const checked = good.map((u) => useGeo(u, ROWS)).filter(Boolean);
   assert.ok(checked.length >= 2 && checked.every((x) => !x.bad));
@@ -43,10 +44,10 @@ test("useGeo: dòng aosif n1024 QSB5.9-G31 tự mâu thuẫn (ghi 3,9 L), dòng 
 
 test("QSB5.9-G31: số 3,9 của dòng tự mâu thuẫn rời lá phiếu → 5,9 L thắng (aosif n101, voltgent, yunding); trước: không thắng", () => {
   const before = dispVote("QSB5.9-G31", false), after = dispVote("QSB5.9-G31");
-  assert.equal(before.mj, null, "aosif ghi hai số (5,9 / 3,9): không phiếu, 5,9 chỉ còn 2 NCC");
+  // bo-o-lech-126: số 3,9 đã bị bỏ ở nguồn nên không còn gì để luật rời khỏi lá phiếu: cả hai cách đếm đều ra 5,9 × 3.
+  assert.deepEqual(before.mj?.votes, { 5.9: 3 });
   assert.deepEqual(after.mj?.votes, { 5.9: 3 });
-  assert.equal(after.all.length - after.kept.length, 1);
-  assert.deepEqual(after.all.filter((x) => !after.kept.includes(x)).map(([f, x]) => [f.supplierId, f.n, x]), [["aosif", 1024, 3.9]]);
+  assert.equal(after.all.length - after.kept.length, 0);
 });
 
 test("QSB5-G3: 4,5 L (dòng yingtai tự khớp, cùng số aosif / tecnogen) thắng khi số của dòng tự mâu thuẫn rời lá phiếu", () => {
@@ -59,7 +60,8 @@ test("QSB5-G3: 4,5 L (dòng yingtai tự khớp, cùng số aosif / tecnogen) th
 test("WP6D180E201: dòng depco tự mâu thuẫn nhưng ghi 6,75 như dòng jianghao tự khớp → số ở lại, 6,75 vẫn thắng (bỏ hẳn thì mất thắng)", () => {
   const before = dispVote("WP6D180E201", false), after = dispVote("WP6D180E201");
   const depco = after.all.find(([f]) => f.supplierId === "depco-power");
-  assert.equal(after.g.of(depco[0]), "bad");
+  // bo-o-lech-126: ô xi lanh sai của dòng depco (n2025) đã bỏ ở nguồn nên dòng không còn "bad" (thiếu xi lanh); dung tích 6,75 ở lại.
+  assert.equal(after.g.of(depco[0]), null);
   assert.equal(depco[1], 6.75);
   assert.equal(after.kept.length, after.all.length, "không bỏ số nào");
   assert.equal(before.mj?.win, 6.75);
@@ -87,5 +89,6 @@ test("candidates: HSMT ≤ 5 lít → dòng QSB5.9-G31 bị loại theo giá tr�
   assert.ok(d, "bật luật: dòng voltgent bị loại");
   assert.ok(d.ruled.includes("maxDisp"));
   assert.equal(d.src.maxDisp.win, 5.9);
-  assert.ok(!off.dropped.some((x) => x.e.key === e.key && x.u.supplierId === "voltgent" && x.ruled.includes("maxDisp")), "tắt luật: không loại theo dung tích");
+  // bo-o-lech-126: số 3,9 sai đã bỏ ở nguồn, nên 5,9 thắng kể cả khi tắt luật hình học: cả hai cách đều loại dòng.
+  assert.ok(off.dropped.some((x) => x.e.key === e.key && x.u.supplierId === "voltgent" && x.ruled.includes("maxDisp")), "tắt luật: vẫn loại vì nguồn đã bỏ số 3,9");
 });
