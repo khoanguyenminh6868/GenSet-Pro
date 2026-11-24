@@ -17,6 +17,11 @@ fi
 
 cd "$AGENT_DIR" || exit 1
 
+# Khoá cũ của trình chạy Java (24/11/2026): mỗi lần Agent chạy, vỏ java.exe ghi Temp\vlxjre\<PID>.lck. Sandbox dừng đột ngột nên
+# khoá còn trong snapshot, mà PID trong Wine lặp lại giữa các phiên (32, 300...): trùng PID là java.exe thoát mã 1 ngay, không
+# in gì ("exit status 1", "0/2 tệp" ở mọi gói). Tới đây cổng 1234 chưa mở = không Agent nào chạy, xoá hết khoá là an toàn.
+rm -f "$WINEPREFIX"/drive_c/users/*/AppData/Local/Temp/vlxjre/*.lck
+
 # Chờ cổng 1234 tối đa $1 giây; in kết quả và thoát 0 khi Agent đã nghe.
 wait_port() {
   for i in $(seq 1 "$1"); do
