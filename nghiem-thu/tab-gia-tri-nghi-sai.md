@@ -17,7 +17,7 @@ Bản này CHỈ là khảo sát và thiết kế, chưa viết code. Số dòng
 
 - Nút "Thông số" ở thanh trên (`web/index.html:539`, `data-catopen="engine"`) mở hộp thoại "Thông số cấu hình" (`openCatalog`, `web/index.html:3931-3938`).
 - Hộp thoại có 3 tab Động cơ / Bộ điều khiển / Đầu phát, định nghĩa ở `CAT_KIND` (`web/index.html:3856-3860`). Thanh tab vẽ ở `web/index.html:3979-3980` (`.seg.cattabs`, nút `data-catkind`). Đổi tab ở `web/index.html:4001`. Mỗi tab có đường dẫn riêng trong `SCREEN_HASH` (`web/index.html:3340`).
-- Dữ liệu **không** đến từ Supabase theo từng tab. Trình duyệt tự dựng danh mục từ toàn bộ hồ sơ NCC đã tải (`state.supplier`): `catalog()` gọi `GenbidCatalog.build(supAll())` (`web/index.html:3899-3905`), dựng ngầm bằng `catWarm` (`web/index.html:3873-3898`). Bản dựng mất 4–7 giây, chỉ dựng lại khi `state.supplier` hoặc `state.supdeleted` đổi (`catReady`, `web/index.html:3863`).
+- Dữ liệu **không** đến từ Supabase theo từng tab. Trình duyệt tự dựng danh mục từ toàn bộ hồ sơ NCC đã tải (`state.supplier`): `catalog()` gọi `GenbidCatalog.build(supAll())` (`web/index.html:3899-3905`), dựng ngầm bằng `catWarm` (`web/index.html:3876-3898`). Bản dựng mất 4–7 giây, chỉ dựng lại khi `state.supplier` hoặc `state.supdeleted` đổi (`catReady`, `web/index.html:3863`).
 - Không có tab tổ máy, nhưng phần lớn giá trị nghi sai lại là của tổ máy (tiêu hao, kích thước, khối lượng). Vì vậy tab mới không thể là một `CAT_KIND` nữa, phải là một nhánh vẽ riêng (mục 2).
 - Hiện không có chỗ nào đọc `spec_std` (`suppliers/spec-standard.mjs:6`, chú thích ở `web/supabase/schema.sql:128`). Đọc bản chuẩn là việc của bước 5.
 
