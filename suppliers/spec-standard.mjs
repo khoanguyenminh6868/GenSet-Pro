@@ -1,7 +1,7 @@
 // Bản chuẩn thông số theo suppliers/spec-fields.json (bước 2 của chuẩn hoá datasheet, Khoa chốt 24/11/2026).
 //   node suppliers/spec-standard.mjs --stats             độ phủ theo trường, trường chưa có code đọc
 //   node suppliers/spec-standard.mjs --out <thư mục>     ghi từng doc ra JSON để soát
-//   node suppliers/spec-standard.mjs --post [--dry]      đăng collection specstd (chỉ doc đổi nội dung); xem post()
+//   node suppliers/spec-standard.mjs --post [--dry]      đăng vào bảng spec_std (chỉ doc đổi nội dung); xem post()
 // KHÔNG có bộ đọc bảng mới: mọi giá trị đi từ CAT.build / gensetsOf + SN.normalizeRecord + sourceRatings. Không ngày giờ
 // trong nội dung, khoá sắp xếp: cùng đầu vào ra cùng byte. Chưa nơi nào đọc collection này (web, config-bot là bước 5).
 import crypto from "node:crypto";
@@ -282,9 +282,12 @@ export function statsOf(docs) {
 }
 
 // ---------- Đăng ----------
-// Ghi đúng cách upload.mjs: thẳng bảng docs bằng service key, mỗi lô ≤ 200 dòng / 2 MB, đổi updated_at, CHỈ doc khác hash
-// trên web. Đọc `id + hash` (không đọc data) để so, nên so sánh gần như không tốn egress. Doc không còn sinh ra được ghi
-// { gone: true } thay vì xoá. Chỉ ghi thật khi SPEC_STD_PUBLISH=1: xem tệp nghiệm thu (realtime + activity_log).
+// Ghi thẳng bảng RIÊNG spec_std (web/supabase/schema.sql; Khoa 24/11/2026, phương án A: không realtime, không activity_log,
+// không ghi vào docs) bằng service key, mỗi lô ≤ 200 dòng / 2 MB, đổi updated_at, CHỈ doc khác hash trên web. Đọc `id + hash`
+// (không đọc data) để so, nên so sánh gần như không tốn egress. Doc không còn sinh ra được ghi { gone: true } thay vì xoá.
+// Chỉ ghi thật khi SPEC_STD_PUBLISH=1 (và bảng đã được tạo tay trên Supabase).
+export const TABLE = "spec_std";
+export const rowOf = (d) => ({ id: d.id, part: d.part, hash: d.hash, data: d });
 export function batchesOf(rows) {
   const out = [];
   for (const row of rows) {
@@ -303,10 +306,10 @@ export function planOf(docs, remote) {
 async function remoteHashes(SB, H) {
   const m = new Map();
   for (let from = 0; ; from += 1000) {
-    const r = await fetch(`${SB}/rest/v1/docs?coll=eq.${COLL}&select=id,h:data->>hash&order=id&offset=${from}&limit=1000`, { headers: H });
+    const r = await fetch(`${SB}/rest/v1/${TABLE}?select=id,hash&order=id&offset=${from}&limit=1000`, { headers: H });
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 200)}`);
     const rows = await r.json();
-    for (const x of rows) m.set(x.id, x.h);
+    for (const x of rows) m.set(x.id, x.hash);
     if (rows.length < 1000) return m;
   }
 }
@@ -315,15 +318,15 @@ export async function post(docs, { dry }) {
   const H = SB && SERVICE ? { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } : null;
   const remote = H ? await remoteHashes(SB, H) : new Map();
   const { write, gone, same } = planOf(docs, remote);
-  const rows = [...write, ...gone].map((d) => ({ coll: COLL, id: d.id, data: d }));
+  const rows = [...write, ...gone].map(rowOf);
   const batches = batchesOf(rows), bytes = batches.reduce((a, b) => a + b.bytes, 0);
-  console.log(`${COLL}: ${docs.length} doc, ${write.length} sẽ ghi, ${gone.length} đánh dấu gone, ${same} giữ nguyên; ${batches.length} lô, ${(bytes / 1e6).toFixed(2)} MB${H ? "" : " (không có Supabase: tính như web chưa có doc nào)"}.`);
+  console.log(`${TABLE}: ${docs.length} doc, ${write.length} sẽ ghi, ${gone.length} đánh dấu gone, ${same} giữ nguyên; ${batches.length} lô, ${(bytes / 1e6).toFixed(2)} MB${H ? "" : " (không có Supabase: tính như web chưa có doc nào)"}.`);
   if (dry || !rows.length) return { rows: rows.length, bytes };
   if (!H) throw new Error("thiếu SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY");
   if (process.env.SPEC_STD_PUBLISH !== "1") { console.log("SPEC_STD_PUBLISH chưa bật: không ghi."); return { rows: 0, bytes: 0 }; }
   for (const b of batches) {
     const now = new Date().toISOString();
-    const r = await fetch(`${SB}/rest/v1/docs`, { method: "POST", headers: { ...H, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+    const r = await fetch(`${SB}/rest/v1/${TABLE}?on_conflict=id`, { method: "POST", headers: { ...H, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
       body: JSON.stringify(b.rows.map((x) => ({ ...x, updated_at: now }))) });
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
   }
