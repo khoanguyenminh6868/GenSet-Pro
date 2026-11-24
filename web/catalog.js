@@ -88,6 +88,8 @@
   // had rows whose only engine cell failed isCode, so the row gave no record).
   // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
+  // Doosan DP054CC / DP086CC / DP222CC (the trailing "CC" is part of the code, not a displacement in cc): the one exception to the "<digit>CC" rule of `isCode`.
+  const DOOSAN_DP = /^DP\d{3}CC$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -298,7 +300,7 @@
     if (/[\u3000-\u9fff\uff00-\uffef]/.test(s) || /^\d+(\.\d+)?\s*k(w|va)\s*\/\s*\d/i.test(s)) return false;
     if (/\d\s*[*×xX]\s*\d+\s*[*×xX]\s*\d/.test(s)) return false;
     if (/^\d+(\.\d+)?\s*[*×xX]\s*\d+/.test(s)) return false;
-    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || /\d\s?cc$/i.test(s)) return false;
+    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || (/\d\s?cc$/i.test(s) && !DOOSAN_DP.test(s))) return false;
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
@@ -1074,13 +1076,15 @@
       // "not diesel, kind unknown" value; `dual` (gasoline + gas) is the narrowest that `fuelOff` turns away from a diesel HSMT
       // and lets through a gas / gasoline one. Level K = "quyết định của Khoa" (no maker, no page); `why` says so.
       rest: { fuel: "dual", from: "K", why: "QUYẾT ĐỊNH của Khoa 21/11/2026 (không có nguồn hãng): cả bảng SIMPSON-GasGenerators không vào gói diesel; động cơ này không tìm được trang hãng nên loại nhiên liệu KHÔNG rõ, `dual` chỉ để loại khỏi HSMT diesel" } },
-    // man-engines n104 (marine auxiliary table, D2676 / D2862 / D3872 diesel + E3262 gas; the page names no fuel per row): only the E3262 row
-    // gets `gas`, from the maker's own E3262 page (opened 21/11/2026: "E3262 naturally aspired engine with natural gas"; "the E3262 LE232 for
-    // natural gas and the E3262 LE242 for biogas"). The 8 D-rows stay without fuel: the maker's PDF says "Fuel: DIN EN 590" (diesel), but the
-    // catalog has no explicit "diesel" value (`fuelOff` turns every row that has a fuel away from a diesel HSMT, so writing one would drop
-    // them from diesel packs): not invented here (điều phối 21/11/2026).
+    // man-engines n104 (marine auxiliary table of the maker's own page, "Compact MAN diesel and gas engines as auxiliary engines"): the table
+    // mixes D2676 / D2862 / D3872 (diesel) and E3262 (gas) without a fuel column. Khoa 21/11/2026 "ghi `fuel` theo hãng": each engine gets the
+    // fuel its OWN maker page states, level D (read 24/11/2026). The 8 D-rows are `diesel`: the catalog now has that value ONLY from an explicit
+    // page like this one (`fuelOff` of config-bot treats `diesel` as right for a diesel HSMT, wrong for a gas / gasoline one).
     { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
       engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
+    { supplierId: "man-engines", ns: [104], from: "D", fuel: "diesel", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
+      engines: { D2676: "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-in-line-six-cylinder-motor.html", D2862: "https://www.man.eu/engines/en/products/power-generation/diesel/power-generation-diesel.html", D3872: "https://www.man.eu/engines/en/products/marine/engines-for-commercial-shipping/man-d3872.html" },
+      why: 'trang hãng động cơ MAN của %M ("MAN diesel engines for commercial shipping" / "MAN diesel engines for … Power" cho D2862; PDF Marine-Commercial D2676: "4-stroke diesel engine") (%U, đọc 24/11/2026)' },
     // mwm n1007 / n1008 (datasheets "TCG 3016 V16", EN and CN, one engine record each; the supplier IS the engine maker): the saved table has no
     // gas word, but the sheet itself (sources/mwm/1007.md line 55 "Natural gas applications 50 | Hz", line 74 "a minimum methane number of MN 80
     // for natural gas"; 1008.md line 49 "天然气应用 50 Hz", line 68 "MN=80 的天然气"; `From:` …/gas-engine-tcg-3016/) says natural gas. Level D = the
@@ -1091,14 +1095,16 @@
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
   // `h0`: the first header line of the SAVED table (s.specTables, before tidyTable joins the spaces between Han characters).
   const fuelPage = (id, o, h0, part = "row") => {
-    const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part);
-    if (!p) return null;
-    if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
-    if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
-    const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
-    if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
-    // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
-    return p.rest ? { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why } : null;
+    // Several entries may name one table with different `engines` (man-engines n104: diesel D-rows, gas E3262): the first that gives a fuel wins.
+    for (const p of FUEL_PAGES.filter((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part)) {
+      if (p.header != null && String(h0 ?? "").trim() !== p.header) continue;
+      if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
+      const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
+      if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
+      // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
+      if (p.rest) return { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why };
+    }
+    return null;
   };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
@@ -2531,8 +2537,8 @@
     let i = last || run;
     if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
-    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC are no code there (the
-    // same cells in horizontal tables stay unread: a change to `isCode` itself moves other suppliers' rows, not done here). In a vertical
+    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC were no code there (since catalog-3-loi `isCode`
+    // has the narrow exception DOOSAN_DP, horizontal tables read them too). In a vertical
     // sheet the Model cell is a code: a cell of two letters, three digits and CC is read by its letters before the last C.
     return vIsCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }
