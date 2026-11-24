@@ -147,8 +147,8 @@ PR nháp https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1161, chưa merge
 
 - **Khí thải.** Giá trị là danh sách `{ scale, level }` lấy từ lớp chuẩn hoá (`levelsOf`), thay cho `String(n.enum)`. Nguồn không ghi thang thì `scale: null` kèm `missing: scale`, không đoán. Chữ nguồn giữ ở `raw`, nên "Tier 2" và "T2" cùng thang là một giá trị. Đã soát mọi `String(` trong tệp: chỉ dòng này ép object thành chữ.
 - **Công suất động cơ không đơn vị.** Số không đơn vị nằm ở cột `figure` của `power_kwm`, kèm `missing: unit`. Số vẫn hiện, nhưng không mang nghĩa kWm hay HP. Bộ trường không đổi: `figure` là một ô của bảng, không phải trường mới.
-  - Có **71 mục** thuộc loại này, không chỉ 5 ô của ettes-power. 66 mục còn lại (xinhengxin 46, beidou 16, hosem 9, hanyang 1, tính cả trùng doc) cũng được lớp chuẩn hoá ghi `missing: unit`.
-  - Em áp cùng một luật cho cả 71 mục. Nếu chỉ sửa 5 ô thì 66 số không đơn vị vẫn nằm dưới khoá `kwm`, trái nguyên tắc điều phối nêu.
+  - Có **71 mục** thuộc loại này. 5 ô `unitspec` của ettes-power cho 4 mục, vì hai ô 3311 gộp theo giá trị. 67 mục còn lại là xinhengxin 40, beidou 17, hosem 9, hanyang 1; lớp chuẩn hoá cũng ghi chúng `missing: unit`.
+  - Em áp cùng một luật cho cả 71 mục. Nếu chỉ sửa 5 ô thì 67 số không đơn vị vẫn nằm dưới khoá `kwm`, trái nguyên tắc điều phối nêu.
 - **Kiểm chéo** (`spec-standard-check.mjs`). Nay so tập thang + mức với lớp chuẩn hoá, và tính giá trị chứa chữ "[object" là không giải thích được. Chạy bản kiểm mới trên mã cũ (`origin/main`) thì ra `unexplained` 1.977, thoát 1. Trên nhánh này thì ra 0, thoát 0.
 
 **So băm từng doc, toàn `cn/`:**
