@@ -88,6 +88,8 @@
   // had rows whose only engine cell failed isCode, so the row gave no record).
   // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
+  // Doosan DP054CC / DP086CC / DP222CC (the trailing "CC" is part of the code, not a displacement in cc): the one exception to the "<digit>CC" rule of `isCode`.
+  const DOOSAN_DP = /^DP\d{3}CC$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
@@ -298,7 +300,7 @@
     if (/[\u3000-\u9fff\uff00-\uffef]/.test(s) || /^\d+(\.\d+)?\s*k(w|va)\s*\/\s*\d/i.test(s)) return false;
     if (/\d\s*[*×xX]\s*\d+\s*[*×xX]\s*\d/.test(s)) return false;
     if (/^\d+(\.\d+)?\s*[*×xX]\s*\d+/.test(s)) return false;
-    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || /\d\s?cc$/i.test(s)) return false;
+    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || (/\d\s?cc$/i.test(s) && !DOOSAN_DP.test(s))) return false;
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
@@ -2352,8 +2354,8 @@
     let i = last || run;
     if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
-    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC are no code there (the
-    // same cells in horizontal tables stay unread: a change to `isCode` itself moves other suppliers' rows, not done here). In a vertical
+    // `isCode` reads a trailing "<digit>CC" as a displacement in cc ("2500cc"), so Doosan's DP222CC / DP054CC / DP086CC were no code there (since catalog-3-loi `isCode`
+    // has the narrow exception DOOSAN_DP, horizontal tables read them too). In a vertical
     // sheet the Model cell is a code: a cell of two letters, three digits and CC is read by its letters before the last C.
     return vIsCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }
