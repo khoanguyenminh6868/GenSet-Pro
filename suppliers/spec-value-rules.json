@@ -44,7 +44,7 @@
     "engine.coolant_capacity": { "kind": "number", "range": [0.5, 5000], "units": ["L"], "kinds": ["volume"], "basis": "dữ liệu cn/ 18-510 L; dải lỏng", "review": true },
     "engine.oil_capacity": { "kind": "number", "range": [0.3, 3000], "units": ["L"], "kinds": ["volume"], "basis": "dữ liệu cn/ 0,75-520 L, 1 số 2.419 cần soát; dải lỏng", "review": true },
     "engine.speed": { "kind": "number", "range": [600, 6000], "units": ["rpm"], "kinds": ["speed", "freq"], "basis": "dữ liệu cn/ 1.000-3.600; không dùng tập RPM của absurdOf vì chặn nhầm số thật (ZS195 2000, ZS1100 2200 v/p của zhengdian n103)" },
-    "engine.emission": { "kind": "emission", "basis": "phải là thang và mức đọc được, không phải chữ hỏng" },
+    "engine.emission": { "kind": "emission", "scales": ["EPA Tier", "EU Stage", "CN", "Euro", "IMO"], "basis": "danh sách { thang, mức } của spec-norm; thang thuộc QUAL của spec-norm.js hoặc trống (nguồn không ghi thang)" },
 
     "alternator.brand": { "kind": "code", "basis": "tên hãng không rỗng" },
     "alternator.model": { "kind": "code", "basis": "mã không rỗng" },

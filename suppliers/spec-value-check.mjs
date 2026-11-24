@@ -99,7 +99,8 @@ export function checkValue(part, id, it, ctx = {}) {
   // One value breaking one rule on several figures is one violation.
   const out = (code, detail, level = "sai") => { const h = found.find((f) => f.rule === code); if (h) h.detail += `; ${detail}`; else found.push({ rule: code, detail, level }); };
   const v = it.value;
-  if (typeof v === "string" && BROKEN.test(v)) { out("gia-tri-hong", "giá trị là chữ [object Object]"); return found; }
+  if (BROKEN.test(JSON.stringify(v) ?? "")) { out("gia-tri-hong", "giá trị chứa chữ [object Object]"); return found; }
+  if (v && typeof v === "object" && !Array.isArray(v) && "figure" in v) out("thieu-don-vi", "số nguồn không ghi đơn vị (cột figure)", "chua-chuan");
   if (rule.kinds && it.raw != null && !it.rawJoined) {
     const bad = ownUnitKinds(it.raw, v).filter((k) => !rule.kinds.includes(k));
     if (bad.length) out("sai-loai", `chữ gốc mang đơn vị loại ${bad.join(", ")}`);
@@ -127,7 +128,13 @@ export function checkValue(part, id, it, ctx = {}) {
       for (const x of xs) if (!inRange(x, rule.range)) out("ngoai-dai", `${x} ngoài ${rule.range.join("-")} mm`);
       break;
     }
-    case "emission": if (!String(v ?? "").trim()) out("rong", "giá trị rỗng"); break;
+    // Levels as spec-norm reads them: [{ scale, level }]; scale null = the source names none (allowed, missing "scale").
+    case "emission": {
+      const list = Array.isArray(v) ? v : [];
+      if (!list.length || list.some((x) => !x || typeof x !== "object" || !String(x.level ?? "").trim())) out("sai-loai", "không phải danh sách mức khí thải");
+      else for (const x of list) if (x.scale != null && !rule.scales.includes(x.scale)) out("ngoai-danh-sach", `thang "${x.scale}"`);
+      break;
+    }
     case "genset_power": {
       if (v.kva != null && !inRange(v.kva, rule.kva)) out("ngoai-dai", `${v.kva} kVA ngoài ${rule.kva.join("-")}`);
       if (v.kw != null && !inRange(v.kw, rule.kw)) out("ngoai-dai", `${v.kw} kW ngoài ${rule.kw.join("-")}`);
