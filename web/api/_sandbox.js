@@ -5,7 +5,7 @@
 // - tick(): mỗi nhịp tim của bot sandbox (api/requests.js ?host=sandbox, ~1 phút) → dừng khi máy Windows bật lại hoặc
 //   rảnh 5 phút, gia hạn phiên khi còn việc. Bot treo không có tim thì phiên tự hết sau SESSION_MS.
 // Bật bằng biến Vercel SANDBOX_WAKE=1. Bí mật cho bot lấy từ biến của project: INGEST_TOKEN, ANTHROPIC_API_KEY,
-// CLAUDE_CODE_OAUTH_TOKEN (nếu có), GH_BOT_TOKEN hoặc GITHUB_TOKEN, FIRECRAWL_KEY (nếu có).
+// CLAUDE_CODE_OAUTH_TOKEN (nếu có), GH_BOT_TOKEN hoặc GITHUB_TOKEN, FIRECRAWL_KEY, FIRECRAWL_KEY_2 (nếu có).
 const MIN = 60e3;
 export const NAME = "genbid-bot";
 export const IMAGE = "vercel/sandbox/ubuntu";
@@ -58,7 +58,9 @@ export function decide(st, box, now = Date.now()) {
 export function botEnv(env = process.env) {
   const out = {
     GENBID_INGEST_TOKEN: env.INGEST_TOKEN, ANTHROPIC_API_KEY: env.ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN: env.CLAUDE_CODE_OAUTH_TOKEN,
-    GH_TOKEN: env.GH_BOT_TOKEN || env.GITHUB_TOKEN, FIRECRAWL_KEY: env.FIRECRAWL_KEY,  };
+    GH_TOKEN: env.GH_BOT_TOKEN || env.GITHUB_TOKEN, FIRECRAWL_KEY: env.FIRECRAWL_KEY,
+    FIRECRAWL_KEY_2: env.FIRECRAWL_KEY_2, // khoá dự phòng khi khoá chính hết credit (Khoa 24/11/2026)
+  };
   return Object.fromEntries(Object.entries(out).filter(([, v]) => v));
 }
 

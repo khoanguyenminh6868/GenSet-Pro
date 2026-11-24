@@ -147,3 +147,34 @@ test("ratings of a catalog model written with its make before the code (PR 7)", 
   assert.equal(ratingsFor(m, "Stamford").length, 0);
   assert.equal(ratingsFor(m, "").length, 0);
 });
+
+test("S4L1D C / D / E / F: tờ hãng gọi hai tên (…-D4-D-W311.pdf ↔ tiêu đề D41), đúng bốn cặp, hai chiều", () => {
+  for (const L of ["C", "D", "E", "F"]) {
+    const a = new Map([[`S4L1D${L}41`, [{ model: `S4L1D-${L}41` }]]]), b = new Map([[`S4L1D${L}4`, [{ model: `S4L1D-${L}4` }]]]);
+    assert.equal(ratingsFor(a, `S4L1D-${L}4`).length, 1);
+    assert.equal(ratingsFor(a, `Stamford S4L1D-${L}4`).length, 1);
+    assert.equal(ratingsFor(b, `S4L1D-${L}41`).length, 1);
+  }
+  // Không gộp: không có bằng chứng hãng.
+  const all = new Map(["S4L1DG4", "S4L1DG41", "S7L1DF4", "S7L1DF41", "S1L2Y", "HCI544F", "UCI224D", "S4L1DC41", "S4L1DD41"].map((k) => [k, [{ model: k }]]));
+  const only = (k) => new Map([[k, [{ model: k }]]]);
+  assert.equal(ratingsFor(only("S4L1DG4"), "S4L1D-G41").length, 0);
+  assert.equal(ratingsFor(only("S4L1DG41"), "S4L1D-G4").length, 0);
+  assert.equal(ratingsFor(only("S7L1DF4"), "S7L1D-F41").length, 0);
+  assert.equal(ratingsFor(only("S1L2Y"), "S1L2-Y1").length, 0);
+  assert.equal(ratingsFor(only("HCI544F"), "HCI544FS").length, 0);
+  assert.equal(ratingsFor(only("UCI224D"), "224D").length, 0);
+  assert.equal(ratingsFor(all, "S4L1D-E4").length, 0); // E41 vắng trong bản đồ: không lan sang họ khác
+});
+
+test("Mecc Alte ECO38: đúng 5 cặp tên danh mục → dòng tờ hãng có số cực, một chiều; ECP / ECO46 / ECO40 không gộp", () => {
+  const sheet = (m) => new Map([[m.toUpperCase().replace(/[\s\-_.]/g, ""), [{ model: m }]]]);
+  const PAIRS = [["ECO38-1LC", "ECO38 1L4 C"], ["ECO38-1SC", "ECO38 1S4 C"], ["ECO38-2LC", "ECO38 2L4 C"], ["ECO38-2MC", "ECO38 2M4 C"], ["ECO38-2SC", "ECO38 2S4 C"]];
+  for (const [cat, row] of PAIRS) assert.equal(ratingsFor(sheet(row), cat).length, 1, cat);
+  // Một chiều: tên trên tờ không tự nhận tờ của tên danh mục.
+  assert.equal(ratingsFor(sheet("ECO38-1LC"), "ECO38 1L4 C").length, 0);
+  // Không gộp (không có bằng chứng): ECP (cả 2 và 4 cực), ECO46 không ghi cực (có bản 6 cực), ECO40 không chữ loại (có B và C), ECO43 (NCC không ghi loại "A": không có câu hãng nói chỉ có loại A), Stamford.
+  const all = new Map(["ECP28M4C", "ECP28MC4C", "ECO462L4A", "ECO401S4C", "ECO402L4C", "ECO402L4A", "ECO432L4A", "ECO431M4A", "ECO431S4A", "ECO43VL4A", "ECO46 1S4 A", "ECO40VL4C", "S7L1DF4"].map((k) => [k, [{ model: k }]]));
+  for (const m of ["ECP28-MC", "ECP28-VLC", "ECP32-1LC", "ECO46-2L", "ECO46-1S", "ECO40-1S", "ECO40-2L", "ECO40-VL", "ECO43-2LN", "ECO43-1M", "ECO43-1S", "ECO43-2M", "ECO43-2S", "ECO43-VL", "ECO43-1SN/4", "ECO46-1S/4", "S7L1D-F41"]) assert.equal(ratingsFor(all, m).length, 0, m);
+  assert.equal(ratingsFor(sheet("ECO38 1L4 C"), "ECO38-1L").length, 0); // không bỏ chữ cuộn
+});
