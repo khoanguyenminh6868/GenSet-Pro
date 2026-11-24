@@ -175,8 +175,8 @@
   },
   "compr": {
    "before": 75,
-   "strict": 48,
-   "loose": 48
+   "strict": 76,
+   "loose": 76
   }
  }
 }

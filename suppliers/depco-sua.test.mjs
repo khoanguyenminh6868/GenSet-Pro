@@ -14,13 +14,15 @@ const sup = (id) => JSON.parse(fs.readFileSync(path.join(ROOT, "cn", `${id}.json
 const rowOf = (s, model) => C.fromSupplier(s).find((o) => o.kind === "engine" && C.keyOf(o.model) === model);
 
 test("selfCheck: dòng depco WP10D264E201 ghi 4 xi lanh, 126×130 mm, 9,726 L → tự mâu thuẫn", () => {
-  const d = sup("depco-power"), o = rowOf(d, "WP10D264E201");
-  const r = SN.selfCheck(SN.normalizeRecord(o, d.specTables[o.table].rows));
+  // bo-o-lech-126 (Khoa 24/11/2026): dòng thật của depco n2022 đã bị bỏ ô xi lanh (`dropspec`), nên dùng bộ số của chính dòng đó dựng tay.
+  const r = SN.selfCheck([{ key: "cyl", count: 4, missing: [] }, { key: "bore", bore: { bore: 126, stroke: 130 }, missing: [] }, { key: "disp", num: 9.726, unit: "L", missing: [] }]);
   assert.equal(r.cyl, 4); assert.equal(r.disp, 9.726); assert.ok(r.bad); assert.equal(r.calc, 6.484);
+  const d = sup("depco-power"), o = rowOf(d, "WP10D264E201");
+  assert.equal(o.specs.some((s) => s.key === "cyl"), false, "ô xi lanh sai của dòng đã bỏ");
 });
 test("selfCheck: depco 6M33G660/6 ghi 12 xi lanh, 150×185, 19,6 L → tự mâu thuẫn; dòng thiếu bore → null", () => {
-  const d = sup("depco-power"), o = rowOf(d, "6M33G660/6");
-  assert.ok(SN.selfCheck(SN.normalizeRecord(o, d.specTables[o.table].rows)).bad);
+  // bo-o-lech-126: dòng thật (depco n2385) đã bị bỏ ô xi lanh; dựng tay bộ số của dòng.
+  assert.ok(SN.selfCheck([{ key: "cyl", count: 12, missing: [] }, { key: "bore", bore: { bore: 150, stroke: 185 }, missing: [] }, { key: "disp", num: 19.6, unit: "L", missing: [] }]).bad);
   assert.equal(SN.selfCheck([{ key: "cyl", count: 6, missing: [] }]), null);
 });
 test("selfCheck: dòng nhất quán (6 xi lanh, 126×130, 9,726 L) không bị đánh dấu", () => {

@@ -3,7 +3,7 @@
 // makerSheetChecks), và các luật phải giữ: nguồn mâu thuẫn / không ghi → chưa rõ; có ≥ / ≤ như cũ; khác độ làm tròn không tính.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { comprLines, comprOf, comprFig, sameCompr, comprExactOf, comprChecks, makerSheetChecks, hintsOf } from "./config-bot.mjs";
+import { comprOff, comprLines, comprOf, comprFig, sameCompr, comprExactOf, comprChecks, makerSheetChecks, hintsOf } from "./config-bot.mjs";
 
 const kinds = (t) => comprLines(t).map((c) => `${c.kind}:${c.x}`);
 
@@ -48,6 +48,21 @@ test("comprOf / hintsOf: exact only when every line gives one figure bare", () =
   assert.deepEqual(comprOf("Không nói gì"), { compr: null, comprExact: false });
   const h = hintsOf("II. Yêu cầu đối với động cơ\n14 Tỉ số nén   14 : 01\n15 Số xi lanh   6 xy lanh, bố trí thẳng hàng");
   assert.deepEqual([h.compr, h.comprExact], [14, true]);
+});
+
+test("comprFig: the full-width colon U+FF1A reads as \":\" (cells of #1174's 压缩比 label; do-gop-luot-5 4.1)", () => {
+  const cells = ["17.3：1", "17.3 ： 1", "16.1：1", "16.5：1", "17.1：1", "15：1", "16.8 ： 1", "14.2：1", "14.5：1", "13.5：1", "18.0：1", "13 ： 1", "14.7 ： 1", "18：1", "17：1", "17.5：1"];
+  assert.deepEqual(cells.map(comprFig), [17.3, 17.3, 16.1, 16.5, 17.1, 15, 16.8, 14.2, 14.5, 13.5, 18, 13, 14.7, 18, 17, 17.5]);
+  // the same cells as the ASCII ones: no change for cells already read
+  assert.deepEqual(cells.map((c) => comprFig(c.replace(/\s*：\s*/, ":"))), cells.map(comprFig));
+  assert.equal(comprFig("18.2–18.3：1"), null);
+});
+
+test("comprOff: a full-width-colon cell is read, so the rule still drops a row whose every source differs from the HSMT figure", () => {
+  const f = (...vs) => vs.map((value) => ({ key: "compr", value, supplierId: "s", n: 1, line: `| ${value} |` }));
+  assert.equal(comprOff(f("18：1", "18.0 ： 1"), 17.3)?.length, 2);
+  assert.equal(comprOff(f("17.3：1", "17.3 ： 1"), 17.3), null);
+  assert.equal(comprOff(f("17.5：1"), 17.3)?.length, 1);
 });
 
 test("comprFig / sameCompr: the ratio x; only rounding counts as the same (roundCompat)", () => {

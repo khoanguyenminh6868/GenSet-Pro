@@ -41,8 +41,10 @@ test("TAD1341GE (nhóm sai đã biết): 9,36 L (số của TAD941GE) bị bỏ 
   // → không có giá trị thắng (cần ≥ 3 NCC). Hai khẳng định cũ (groups, before.win = 9,36) không còn đúng và được đổi theo hành vi mới.
   const t = engine("TAD1341GE");
   assert.deepEqual(t.groups, []);
-  assert.equal(t.before, null, "hết 9,36: không giá trị thắng");
-  assert.equal(t.after, null);
+  // buoc-4 PR A (24/11/2026): cột "排气量" (taihai-taizhou n111, yingtai-jiangsu n107, ...) nay đọc được → thêm phiếu 12,78 (= 131×158×6):
+  // trước đó chỉ còn một nguồn (lees-power) nên không có số thắng; nay 3 phiếu 12,78, không còn số 9,36 nào.
+  assert.deepEqual(t.before, { win: 12.78, votes: { 12.78: 3 }, blocked: 0 }, "hết 9,36: thắng 12,78 (3 phiếu)");
+  assert.deepEqual(t.after, { win: 12.78, votes: { 12.78: 3 }, blocked: 0 });
   assert.equal(t.e.uses.find((u) => u.supplierId === "bdadl-shanghai")?.specs.find((s) => s.key === "disp"), undefined, "bdadl: dung tích bỏ");
   // HSMT ≥ 12 lít: không còn giá trị thắng → "mọi nguồn" như trước, dòng bdadl ở lại (lees / huipu ghi 12,78 / 1278).
   const r = runOn(SUPS, 312.5, "Dung tích xi lanh: ≥ 12 lít\n50 Hz");
@@ -64,20 +66,21 @@ test("MTU 6R1600G70F (nhóm sai đã biết): bộ ba bdadl / fukangsi / pengpai
 test("12V2000G25: frs-shenyang + tellhow-power chung ô container 6058*2438*2591 KHÔNG gộp; bộ ba ghi 21 L (số của 12V1600) một phiếu → 23,88 thắng", () => {
   const t = engine("12V2000G25");
   // Từ #941 (catalog R1 đọc bảng jinjia-power): jinjia + yunding cùng ô 4000*1650*2280 và cùng 23,88 → một phiếu (đúng C6).
-  assert.deepEqual(t.groups, [["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"], ["jinjia-power", "yunding-jiangsu"]]);
+  // buoc-4 PR A: cột "排气量" nay đọc được nên có thêm NCC ghi dung tích (haifeng-taizhou + taihai-taizhou thành một nhóm; kangwo-guangdong vào nhóm jinjia / yunding): nhóm theo luật ô kích thước + cùng tập giá trị sẵn có của `dispVoters`.
+  assert.deepEqual(t.groups, [["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"], ["haifeng-taizhou", "taihai-taizhou"], ["jinjia-power", "kangwo-guangdong", "yunding-jiangsu"]]);
   assert.notEqual(t.v.get("frs-shenyang"), t.v.get("tellhow-power"));
   const lines = (id) => SUPS.find((s) => s.id === id).specTables.flatMap((x) => x.rows).filter((l) => l.includes("12V2000G25")).join(" ");
   const box = /6058[*×xX]2438[*×xX]2591/;
   assert.ok(box.test(lines("frs-shenyang")) && box.test(lines("tellhow-power")), "fixture có ô container chung");
-  assert.equal(t.before, null, "đếm mỗi NCC: 21 × 3 : 23,88 × 3, không thắng");
-  assert.deepEqual(t.after?.votes, { 21: 1, 23.88: 3 });
+  assert.equal(t.before, null, "đếm mỗi NCC: 21 × 3 : 23,88 × 3+, không thắng");
+  assert.deepEqual(t.after?.votes, { 21: 1, 23.88: 4 });
   // Trần dung tích ≤ 22 lít: dòng rise-power RMM515 (không tự ghi dung tích; facts của động cơ có cả 21 của bộ ba lẫn 23,88)
   // bị loại theo giá trị thắng 23,88, lý do ghi số phiếu. Trước: "mọi nguồn" không thoả (có nguồn 21 ≤ 22) → ở lại.
   const r = runOn(SUPS, 570, "Dung tích xi lanh: ≤ 22 lít\n50 Hz");
   const d = dropOf(r, "rise-power", "12V2000G25");
   assert.ok(d, "dòng RMM515 bị loại");
   assert.deepEqual(d.ruled, ["maxDisp"]);
-  assert.deepEqual(d.src.maxDisp, { win: 23.88, votes: { 21: 1, 23.88: 3 }, group: [23.88], exact: 23.88 });
+  assert.deepEqual(d.src.maxDisp, { win: 23.88, votes: { 21: 1, 23.88: 4 }, group: [23.88], exact: 23.88 });
 });
 
 test("KD186FAE: koop-changzhou là hãng động cơ (engine_maker) → không gộp với gordon-power dù cùng ô kích thước và cùng dung tích", () => {
@@ -93,7 +96,9 @@ test("KD186FAE: koop-changzhou là hãng động cơ (engine_maker) → không g
 test("TAD531GE: mất giá trị thắng (4,76 × 6 : 1,5 × 1 → bộ năm một phiếu) → về luật mọi nguồn như main", () => {
   const t = engine("TAD531GE");
   assert.equal(t.before?.win, 4.76);
-  assert.equal(t.after, null);
+  // buoc-4 PR A: các NCC khác ghi 4,76 ở cột "排气量" (ngoài bộ năm chép chung) → còn 3 phiếu 4,76 : 1 phiếu 1,5, vẫn thắng 4,76 (bộ năm vẫn một phiếu).
+  // bo-o-lech-126 (Khoa 24/11/2026): số 1,5 của mingbang n125 MB-V80 (77*81, 4 xi lanh) đã bỏ ở nguồn → chỉ còn 3 phiếu 4,76.
+  assert.deepEqual(t.after, { win: 4.76, votes: { 4.76: 3 }, blocked: 0 });
 });
 
 test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 9 phiếu từ S8-2); dòng liangzi hết số 9,36 nên trần ≤ 11 lít không còn loại nó", () => {
@@ -103,8 +108,9 @@ test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 
   assert.equal(t.before?.win, 12.78);
   // Đổi so với trước tad1341-9-36: phiếu lẻ 9,36 × 1 của liangzi (số của TAD941GE) đã bị bỏ ở nguồn (ROW_EXCEPTIONS `dropspec`), nên chỉ còn 12,78.
   // S8-2 (Khoa 22/11/2026): tecnogen n2003 VO353TSX** ghi "cm3 | 12780" = 12,78 L (l_from_cc) → thêm một phiếu 12,78.
-  assert.deepEqual(t.after?.votes, { 12.78: 9 });
-  assert.deepEqual(t.before?.votes, { 12.78: 11 }, "từ #941 thêm phiếu jinjia-power; S8-2 thêm phiếu tecnogen");
+  // buoc-4 PR A: cột "排气量" của một NCC nữa ghi 12,78 → thêm một phiếu (9 → 10; 11 → 12 mỗi NCC một phiếu).
+  assert.deepEqual(t.after?.votes, { 12.78: 10 });
+  assert.deepEqual(t.before?.votes, { 12.78: 12 }, "từ #941 thêm phiếu jinjia-power; S8-2 thêm phiếu tecnogen; buoc-4 thêm cột 排气量");
   const r = runOn(SUPS, 312.5, "Dung tích xi lanh: ≤ 11 lít\n50 Hz");
   // Trước: dòng LZ- V250 (9,36 L) bị loại `maxDisp` vì số đông 12,78 trội hơn số tự ghi của dòng. Nay dòng không ghi dung tích, nên bị loại theo
   // chính giá trị thắng 12,78 của động cơ (cùng lý do `maxDisp`, cùng kết quả, nhưng không còn dựa vào số sai 9,36).

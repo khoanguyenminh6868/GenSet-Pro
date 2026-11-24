@@ -22,7 +22,8 @@ test("powerpack: 126 trang → 126 bản ghi động cơ, mỗi bản có công 
   for (const r of recs) {
     assert.equal(r.sheet, "bảng dọc");
     assert.ok(r.power.prime && r.power.standby, r.model);
-    for (const k of ["compr", "cyl", "disp", "bore"]) assert.ok(spec(r, k), `${r.model} thiếu ${k}`);
+    // bo-o-lech-126 (Khoa 24/11/2026): Y4105D ghi "Displacement | lt | 4,33" cho 4 xi lanh 80 × 90 (1,81 L) → `dropspec` disp.
+    for (const k of ["compr", "cyl", "disp", "bore"]) assert.ok(spec(r, k) || (r.model === "Y4105D" && k === "disp"), `${r.model} thiếu ${k}`);
   }
 });
 

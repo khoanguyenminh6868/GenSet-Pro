@@ -49,11 +49,12 @@ test("DP222CB: 21,9 × 4 và 21,927 là MỘT nhóm; HSMT ≥ 21,927 → số ch
 
 test("SC8D280D2: nhóm {8,27; 8,3}, số chính xác 8,27 < 8,3 → loại (Khoa 19/11: chỉ số làm tròn đạt thì loại)", () => {
   const { mj } = votes("SC8D280D2");
-  assert.deepEqual(mj.group, [8.27, 8.3]);
+  // buoc-4 PR A: cột "排气量" của haifeng-taizhou / zhengchi-power ghi 8,28 (kangwo-guangdong ghi 8,27, cldj-fujian 8,82 không vào nhóm) → nhóm thêm 8,28; số chính xác vẫn 8,27.
+  assert.deepEqual(mj.group, [8.27, 8.28, 8.3]);
   const r = run(188, "Dung tích xi lanh: ≥ 8,3 lít\n50 Hz"), x = rows(r, "SC8D280D2");
   assert.ok(x.drop.length > 0);
   const d = x.drop.find((y) => y.ruled.includes("disp"));
-  assert.deepEqual(d.src.disp.group, [8.27, 8.3]);
+  assert.deepEqual(d.src.disp.group, [8.27, 8.28, 8.3]);
   assert.equal(d.src.disp.exact, 8.27);
 });
 
@@ -67,7 +68,8 @@ test("Y490D: mọi nguồn chỉ ghi 2,67 (90×105×4 = 2,672), HSMT ≥ 2,672 �
 test("403D15G: 1,496 và 1,5 trước chia phiếu (không số đông); nay một nhóm thắng → HSMT ≥ 1,6 loại", () => {
   const { old, mj } = votes("403D15G");
   assert.equal(old, null);
-  assert.deepEqual(mj.group, [1.496, 1.5]);
+  // buoc-4 PR A: kangwo-guangdong ghi "1.49" (cột 排气量, cắt cụt của 1,496) nên nhóm thêm 1,49; số chính xác vẫn 1,496.
+  assert.deepEqual(mj.group, [1.49, 1.496, 1.5]);
   assert.equal(dispExact(mj, "min"), 1.496);
   const x = rows(run(15, "Dung tích xi lanh: ≥ 1,6 lít\n50 Hz"), "403D15G");
   assert.equal(x.kept.length, 0);
