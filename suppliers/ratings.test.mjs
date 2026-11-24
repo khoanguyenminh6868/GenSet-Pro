@@ -147,3 +147,22 @@ test("ratings of a catalog model written with its make before the code (PR 7)", 
   assert.equal(ratingsFor(m, "Stamford").length, 0);
   assert.equal(ratingsFor(m, "").length, 0);
 });
+
+test("S4L1D C / D / E / F: tờ hãng gọi hai tên (…-D4-D-W311.pdf ↔ tiêu đề D41), đúng bốn cặp, hai chiều", () => {
+  for (const L of ["C", "D", "E", "F"]) {
+    const a = new Map([[`S4L1D${L}41`, [{ model: `S4L1D-${L}41` }]]]), b = new Map([[`S4L1D${L}4`, [{ model: `S4L1D-${L}4` }]]]);
+    assert.equal(ratingsFor(a, `S4L1D-${L}4`).length, 1);
+    assert.equal(ratingsFor(a, `Stamford S4L1D-${L}4`).length, 1);
+    assert.equal(ratingsFor(b, `S4L1D-${L}41`).length, 1);
+  }
+  // Không gộp: không có bằng chứng hãng.
+  const all = new Map(["S4L1DG4", "S4L1DG41", "S7L1DF4", "S7L1DF41", "S1L2Y", "HCI544F", "UCI224D", "S4L1DC41", "S4L1DD41"].map((k) => [k, [{ model: k }]]));
+  const only = (k) => new Map([[k, [{ model: k }]]]);
+  assert.equal(ratingsFor(only("S4L1DG4"), "S4L1D-G41").length, 0);
+  assert.equal(ratingsFor(only("S4L1DG41"), "S4L1D-G4").length, 0);
+  assert.equal(ratingsFor(only("S7L1DF4"), "S7L1D-F41").length, 0);
+  assert.equal(ratingsFor(only("S1L2Y"), "S1L2-Y1").length, 0);
+  assert.equal(ratingsFor(only("HCI544F"), "HCI544FS").length, 0);
+  assert.equal(ratingsFor(only("UCI224D"), "224D").length, 0);
+  assert.equal(ratingsFor(all, "S4L1D-E4").length, 0); // E41 vắng trong bản đồ: không lan sang họ khác
+});

@@ -4447,12 +4447,20 @@ let RT_CACHE = null;
 const keysOfModel = (m) => { const parts = String(m).split("/"), pre = (parts[0].match(/^[A-Za-z]+/) || [""])[0]; return parts.map((p, i) => CAT.keyOf(i && /^\d/.test(p) ? pre + p : p)); };
 // The ratings of a catalog model by key: the model as written, else the same code with the make written before it
 // dropped ("Stamford S4L1D-C41" → S4L1D-C41). Only leading words that are not model codes go; no near-name match.
+// Names the maker itself gives ONE sheet in two ways (Stamford S4L1D, Wdg.311; stamford-avk-china n1016 D, n1017 E, n1019 C,
+// n1059 F): the file name on stamford-avk.com says "…S4L1D-D4-D-W311.pdf", the title inside says "S4L1D-D41 Wdg.311 - Technical
+// Data Sheet". EXACTLY these four pairs, spelled out (nghiem-thu/stamford-ten-lech.md, điều phối 24/11/2026). NOT a rule "drop
+// the last digit": S4L1D-G4 (n1020: "G4" in both name and title), S5 / S6 / S7, S0 / S1, UC / UCD, HC have no such evidence;
+// and "last digit = bearing count" has no maker source at all. Keys as CAT.keyOf writes them.
+const SAME_SHEET = [["S4L1D-C4", "S4L1D-C41"], ["S4L1D-D4", "S4L1D-D41"], ["S4L1D-E4", "S4L1D-E41"], ["S4L1D-F4", "S4L1D-F41"]];
+const SAME_SHEET_KEY = new Map(SAME_SHEET.flatMap(([a, b]) => [[CAT.keyOf(a), CAT.keyOf(b)], [CAT.keyOf(b), CAT.keyOf(a)]]));
 export const ratingsFor = (map, model) => {
   if (!model || !map) return [];
-  const hit = map.get(CAT.keyOf(model));
+  const at = (k) => map.get(k) || (SAME_SHEET_KEY.has(k) ? map.get(SAME_SHEET_KEY.get(k)) : undefined);
+  const hit = at(CAT.keyOf(model));
   if (hit) return hit;
   const w = String(model).trim().split(/\s+/), i = w.findIndex((x) => CAT.isCode(x));
-  return i > 0 ? map.get(CAT.keyOf(w.slice(i).join(" "))) || [] : [];
+  return i > 0 ? at(CAT.keyOf(w.slice(i).join(" "))) || [] : [];
 };
 export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
   const ids = (suppliers || []).map((s) => s?.id).join(",");
