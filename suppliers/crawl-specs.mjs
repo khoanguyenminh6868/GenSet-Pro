@@ -193,7 +193,7 @@ export function tablesOf(text) {
   if (!out.length) {
     const LABEL = /^(\|\s*)?(model|genset model|prime|standby|rated|continuous|output|power|engine|engine model|engine brand|alternator|alternator model|generator|voltage|frequency|speed|rpm|phase|current|fuel|consumption|cylinder|displacement|bore|governor|cooling|controller|dimension|size|weight|noise|tank|emission|starting|insulation|protection|机组型号|常用功率|备用功率|额定功率|柴油机|发动机|发电机|电压|频率|转速|油耗|尺寸|重量|噪音)[^|:：]{0,40}(\||:|：)/i;
     const spec = lines.filter((l) => LABEL.test(l) && /\d/.test(l) && l.length < 200);
-    if (spec.length >= 4 && spec.filter((l) => POWER.test(l)).length >= 2) out.push({ header: [], rows: [...new Set(spec)].slice(0, 60), sheet: true });
+    if (spec.length >= 4 && spec.filter((l) => POWER.test(l)).length >= 2) out.push({ header: [], rows: [...new Set(spec)], sheet: true });
   }
   return [...out, ...cut];
 }
