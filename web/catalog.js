@@ -1972,13 +1972,25 @@
     "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
     "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
     "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+    // Same code written two ways (gop-trung-ma, Khoa 24/11/2026: 6 nhóm có bằng chứng, trung-ma-28.md). Explicit cells, not a rule:
+    // the "-G…(M)" Cummins codes (4BTA3.9-G2(M), 6BT5.9-G2(M), KTA19-G3(M), KTA19-G4(M), KTA38-G(M), NTA855-G2(M)) stay apart.
+    // 4BTA3.9-GM4/7: kangwo n108 r1 (1 row), the row above in the same table and fengfa n101 r1 (same set CCFJ40JW) write "4BTA3.9-GM47".
+    // 4HTAA4.3*G34: frs-shenyang n106 r23 (1 row), 21 uses by 16 suppliers write "4HTAA4.3-G34"; the same table writes "-G34" on its 6HTAA6.5 row.
+    // KTA19-D(M), KTA38-D(M), NTA855-D(M): walter-yangzhou writes both in the same sets (n116 "(M)" ↔ n114 "-DM", same kW and consumption);
+    // mecca-power (KTA19, KTA38) goes with it by Khoa's choice. (YD485D): acepow-fuan n114 r19 (1 row), 6 uses by 4 suppliers write "YD485D".
+    "4BTA3.9-GM4/7=4BTA3.9-GM47", "4HTAA4.3*G34=4HTAA4.3-G34", "KTA19-D(M)=KTA19-DM", "KTA38-D(M)=KTA38-DM", "NTA855-D(M)=NTA855-DM", "(YD485D)=YD485D",
   ];
-  let engineCellCodes = null; // built on first use: `keyOf` is declared further down
+  // Alternator cells written two ways for the same code (gop-trung-ma, Khoa 24/11/2026): endress "ECP 28-M/4C" (n113, n114, n1013, n1024)
+  // and "ECP28 M4C" / "ECP28 M4 C" / "ECP28-M4 C" (n133, n140, n144, n148): one supplier, the same set (n114 ↔ n144 share 50 Hz, PRP 18,3/14,6 kVA/kW,
+  // 2190 cc), the maker's sheet writes "ECP28 M4 C". Only this one cell; ECP28-2S/4C, ECP32-2S/4C (no shared field) stay apart.
+  const ALT_CELL_LIST = ["ECP 28-M/4C=ECP28 M4C"];
+  let engineCellCodes = null, altCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
     engineCellCodes ||= new Map(ENGINE_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    altCellCodes ||= new Map(ALT_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
     const engineKeys = new Set(SPECS.filter((x) => x[1] === "engine").map((x) => x[0])), out = [];
     for (const o of list) {
-      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : null;
+      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : o.kind === "alternator" ? altCellCodes.get(keyOf(o.model)) : null;
       if (!codes) { out.push(o); continue; }
       if (codes.length === 1) { out.push({ ...o, model: codes[0] }); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "một ô ghi hai mã", `tách thành ${codes.join(", ")}; bỏ thông số động cơ của dòng`);
