@@ -73,5 +73,8 @@ tay; bot lưu vào `.genbid-api-others.json` và cộng vào ngưỡng chuyển 
 - Yêu cầu gửi lúc máy vừa tắt (< 1 phút) thấy "bot còn chạy" nên không bật sandbox → trang tự nhắc (`coll: wake`) mỗi 30 giây (Khoa 17/11, trước là 2 phút) khi
   cảnh báo máy tắt đang hiện; server chỉ bật khi có yêu cầu chờ.
 - Đừng dừng sandbox (`stop_session`) khi bot đang làm (`running` ở `/api/requests?kind=bots`): việc dở bị cắt.
+- Agent không mở cổng 1234, `egp-agent.out` chỉ có "exit status 1", Lấy tệp ra "0/2 tệp" (23–24/11/2026): khoá cũ
+  `drive_c/users/*/AppData/Local/Temp/vlxjre/<PID>.lck` còn trong snapshot trùng PID mới của Wine. `start-egp-agent.sh` xoá
+  khoá trước khi bật. `vlxapp.jar` bị mã hoá, chỉ chạy qua vỏ `vlxjre\bin\java.exe` (Go, gọi `decoder.exe`): Java Linux không thay được.
 - `agy` không đọc `~/.gemini/oauth_creds.json` (của Gemini CLI cũ); trên Windows nó giữ đăng nhập trong Credential Manager. Trên
   Linux lưu tệp ở `~/.config/antigravity` → đăng nhập một lần trong sandbox (mục Bật).

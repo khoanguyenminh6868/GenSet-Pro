@@ -908,7 +908,20 @@ export function controllerSheetFacts(s, t) {
 }
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
-const titleModelKeys = (title, partKeys) => [...new Set(String(title || "").split(/[\s:–—|,()]+/).flatMap((w) => (partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/"))).filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+// A Linz Electric alternator is written "PRO18S C/4": frame (PRO + size + length) and, after a space, winding letter / poles. The
+// two words are ONE model code as the sheet writes it (Khoa/điều phối 24/11/2026, linz-noi-model): without this the "/" split
+// leaves only the frame, so three sheets (A/4, B/4, C/4) all read "PRO18S". Only this exact shape is joined; any other title
+// is split as before.
+const LINZ_FRAME = /^PRO\d{2}[SML]$/i, LINZ_WINDING = /^[A-H]\/[24]$/i;
+export const titleModelKeys = (title, partKeys) => {
+  const words = String(title || "").split(/[\s:–—|,()]+/), out = [];
+  for (let i = 0; i < words.length; i++) {
+    const w = words[i];
+    if (LINZ_FRAME.test(w) && LINZ_WINDING.test(words[i + 1] || "")) { out.push(`${w} ${words[++i]}`); continue; }
+    out.push(...(partKeys.has(CAT.keyOf(w)) ? [w] : w.split("/")));
+  }
+  return [...new Set(out.filter((w) => CAT.isCode(w)).map((w) => CAT.keyOf(w)))];
+};
 // Nhóm B (Khoa 23/11/2026): hằng số động cơ trên tờ của CHÍNH hãng, tiêu đề ghi đúng một model. Ô nhãn | giá trị, mỗi nhãn một
 // giá trị trong bảng. Trang Perkins ghi một ô hai lần ("6 inline 6 inline") và hai đơn vị ("3.3 in 84 mm"): lấy đúng phần mm hãng
 // ghi, không quy đổi. Đường kính cần cả dòng hành trình (khoá `bore` là cặp). Ô dung tích hai đơn vị ("69 in³ 1.1 l") KHÔNG lấy:
@@ -1149,19 +1162,34 @@ function cylLayoutsIn(text) {
 }
 // Số pha của tổ máy trong chữ HSMT (Khoa 24/11/2026): 3 hoặc 1 khi các dòng nêu pha chỉ nêu một loại; hai loại / không nêu = null.
 // Dòng về thiết bị khác (bộ sạc, đồng hồ đo, tủ, aptomat…) không tính, trừ dòng có nhãn "Số pha". Gói nhiều cỡ đọc theo từng cỡ (`minsForSize`).
-const PH3 = /(?<![\d.,])0?3\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])ba\s+pha(?![\p{L}])|three\s*-?\s*phase/iu;
-const PH1 = /(?<![\d.,])0?1\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])m[ộo]t\s+pha(?![\p{L}])|single\s*-?\s*phase/iu;
-const PH_AUX = /s[ạa]c|[ắa]c\s*quy|đ[ồo]ng\s*h[ồo]|hi[ểe]n\s*th[ịi]|c[ảa]m\s*bi[ếe]n|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|aptomat|c[ầa]u\s*dao|m[áa]y\s*c[ắa]t|\bMCCB\b|\bMCB\b|\bACB\b|\bATS\b|r[ơo]\s*-?\s*le|[ổo]\s*c[ắa]m|\bt[ủu]\b|c[áa]p\b|qu[ạa]t|b[ơo]m|đ[èe]n|s[ấa]y|\bUPS\b|b[ảa]o\s*v[ệe]|m[ấa]t\s*pha|l[ệe]ch\s*pha|ng[ắa]n\s*m[ạa]ch|đo\s/iu;
+const PH3 = /(?<![\d.,])0?3\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])ba\s+pha(?![\p{L}])|three\s*-?\s*phase|(?<![\p{L}\d.,])0?3\s*P(?![\p{L}\d])|s[ốo]\s*pha\s*:?\s*0?3(?![\d.,\p{L}])/iu;
+const PH1 = /(?<![\d.,])0?1\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])m[ộo]t\s+pha(?![\p{L}])|single\s*-?\s*phase|(?<![\p{L}\d.,])0?1\s*P(?![\p{L}\d])|s[ốo]\s*pha\s*:?\s*0?1(?![\d.,\p{L}])/iu;
+const PH_AUX = /s[ạa]c|[ắa]c\s*quy|đ[ồo]ng\s*h[ồo]|hi[ểe]n\s*th[ịi]|c[ảa]m\s*bi[ếe]n|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|aptomat|c[ầa]u\s*dao|m[áa]y\s*c[ắa]t|\bMCCB\b|\bMCB\b|\bACB\b|\bATS\b|r[ơo]\s*-?\s*le|[ổo]\s*c[ắa]m|\bt[ủu]\b|c[áa]p\b|qu[ạa]t|b[ơo]m|đ[èe]n|s[ấa]y|\bUPS\b|ch[ốo]ng\s*s[ée]t|v[ăa]n\s*b[ảa]n\s*ghi|b[ảa]o\s*v[ệe]|m[ấa]t\s*pha|l[ệe]ch\s*pha|ng[ắa]n\s*m[ạa]ch|đo\s/iu;
 // Cụm mô tả cuộn dây / đại lượng theo pha ("cuộn dây … 2 nhánh song song trên 1 pha", "mỗi pha", "từng pha", "giữa các pha", "per phase")
 // không phải số pha của tổ máy (24/11/2026, IB2300059621: máy 47.000 kVA đọc thành 1 pha): bỏ cụm đó rồi mới đọc.
 const PH_PER = /(?<![\p{L}])(?:tr[êe]n|m[ỗo]i|t[ừu]ng|gi[ữu]a(?:\s+c[áa]c)?|cho\s+m[ỗo]i)\s+(?:(?:0?[13]|m[ộo]t|ba)\s*)?pha(?![\p{L}])|\b(?:per|each|between)\s+(?:(?:1|3|one|three)\s*)?phases?\b/giu;
+// "tủ điều khiển" (của chính tổ máy: "gồm động cơ, đầu phát, tủ điều khiển, khung bệ") không phải thiết bị khác khi xét một mệnh đề.
+const PH_PANEL = /t[ủu]\s*đi[ềe]u\s*khi[ểe]n(?!\s*ATS)/giu;
 function phasesIn(text) {
   const seen = new Set();
   for (const raw of String(text || "").split("\n")) {
     const l = raw.replace(PH_PER, " ");
-    if (!/pha(?![\p{L}])|phase/iu.test(l) || (PH_AUX.test(l) && !/s[ốo]\s*pha/iu.test(l))) continue;
-    if (PH3.test(l)) seen.add(3);
-    if (PH1.test(l)) seen.add(1);
+    if (!/pha(?![\p{L}])|phase|(?<![\p{L}\d.,])[13]P\s*[-/]\s*\d\s*W(?![\p{L}])/iu.test(l)) continue;
+    // Dòng nêu thiết bị khác (ATS, bảo vệ…) ở MỘT mệnh đề thì chỉ bỏ mệnh đề đó: "Tổ máy … 3 pha, 4 dây; động cơ, …, ATS do cùng nhà sản xuất"
+    // và "điện áp 400V/50Hz/3 pha; cấp bảo vệ IP23" vẫn nêu số pha của tổ máy (24/11/2026, pha-soat). Nhãn (chữ trước dấu ":" đầu tiên) là thiết bị khác → bỏ cả dòng.
+    let parts = [l], split = false;
+    if (PH_AUX.test(l) && !/s[ốo]\s*pha/iu.test(l)) {
+      const c = l.lastIndexOf(":");
+      if (c >= 0 && PH_AUX.test(l.slice(0, c))) continue;
+      // Mệnh đề đầu (cắt ở ";" và ". "); mệnh đề còn thiết bị khác thì cắt tiếp ở ", " (… 3 pha, nhiên liệu diesel, kèm tủ ATS). Câu "Văn bản ghi …" bỏ cả câu.
+      parts = l.split(/;|\.\s+/).flatMap((p) => (/v[ăa]n\s*b[ảa]n\s*ghi/iu.test(p) ? [] : PH_AUX.test(p.replace(PH_PANEL, " ")) ? p.split(/,\s/) : [p]));
+      split = true;
+    }
+    for (const p of parts) {
+      if (split && PH_AUX.test(p.replace(PH_PANEL, " "))) continue;
+      if (PH3.test(p)) seen.add(3);
+      if (PH1.test(p)) seen.add(1);
+    }
   }
   return seen;
 }

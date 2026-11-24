@@ -179,6 +179,36 @@ test.describe("tệp báo giá NCC", () => {
   });
 });
 
+// ---------- Bỏ tệp do bot tải (Khoa 24/11/2026: bỏ được từng tệp, không chỉ tệp tải tay) ----------
+
+const BOT_TEXT = ["--- Tệp: Chương V (webform) ---\nCCC " + "chữ webform bịa ".repeat(5),
+  "--- Tệp: A (BỊA).pdf ---\nAAA " + "chữ tệp A bịa ".repeat(5),
+  "--- Tệp: B (BỊA).pdf ---\nBBB " + "chữ tệp B bịa ".repeat(5)].join("\n\n");
+test.describe("bỏ tệp do bot tải", () => {
+  test.use({ patch: { colls: {
+    hsmt: { [KEY]: { notifyNo: KEY, source: "muasamcong (VNeGP Agent)", files: [{ name: "A (BỊA).pdf", size: 1000, hasText: true, url: "/_gh/a" }, { name: "B (BỊA).pdf", size: 1000, hasText: true, url: "/_gh/b" }], textChunks: 1, updatedAt: AT } },
+    hsmttext: { [KEY + "_0"]: { text: BOT_TEXT } },
+  } } });
+
+  test("tệp bot tải có nút Bỏ; bỏ thì giữ nguồn, giữ chữ webform và tệp còn lại, chỉ mất chữ của tệp bỏ", async ({ page }) => {
+    await openApp(page, "#goi/" + KEY);
+    await expect(page.locator("#dbody .docrow")).toHaveCount(2);
+    await expect(page.locator("#dbody [data-pdel]")).toHaveCount(2);
+    await page.locator('[data-pdel="0"]').click();
+    await expect(page.locator("#ov")).toContainText("Lấy lại tệp");
+    await page.locator("#pDelOk").click();
+    await expect(toast(page)).toContainText("Đã bỏ tệp");
+    await expect(page.locator("#dbody .docrow .fn")).toHaveText("B (BỊA).pdf");
+    const h = (await writesOf(page, "hsmt/" + KEY)).at(-1).data;
+    expect(h.files.map((f) => f.name)).toEqual(["B (BỊA).pdf"]);
+    expect(h.source).toBe("muasamcong (VNeGP Agent)");
+    const t = (await writesOf(page, `hsmttext/${KEY}_0`)).at(-1).data.text;
+    expect(t).toContain("--- Tệp: Chương V (webform) ---\nCCC");
+    expect(t).toContain("--- Tệp: B (BỊA).pdf ---\nBBB");
+    expect(t).not.toContain("AAA");
+  });
+});
+
 // ---------- Tệp HSMT: tải về và xem ----------
 
 const HFILES = [
@@ -197,12 +227,13 @@ test.describe("tệp HSMT: tải về, xem PDF", () => {
     await stubNet(page, files);
   }
 
-  test("tệp không phải PDF: nút Tải tệp tải về đúng tên và nội dung; tệp PDF có nút Xem, tệp chưa có url không có nút nào", async ({ page }) => {
+  test("tệp không phải PDF: nút Tải tệp tải về đúng tên và nội dung; tệp PDF có nút Xem, tệp chưa có url chỉ có nút Bỏ", async ({ page }) => {
     await openInfo(page, { "/_gh/h-docx": { type: "application/octet-stream", text: "NOI DUNG BIA" } });
     const rows = page.locator("#dbody .docrow");
     await expect(rows.nth(0).locator("[data-dlfile]")).toHaveCount(1);
     await expect(rows.nth(1).locator("[data-openpdf]")).toHaveCount(1);
-    await expect(rows.nth(3).locator("button, a")).toHaveCount(0);
+    await expect(rows.nth(3).locator("button, a")).toHaveCount(1);
+    await expect(rows.nth(3).locator("[data-pdel]")).toHaveCount(1);
     const [dl] = await Promise.all([page.waitForEvent("download"), rows.nth(0).locator("[data-dlfile]").click()]);
     expect(dl.suggestedFilename()).toBe("Chuong V (BỊA).docx");
     const chunks = []; for await (const c of await dl.createReadStream()) chunks.push(c);

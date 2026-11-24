@@ -124,7 +124,7 @@ test("(b) 燃油 消耗 (honny n101), 电 流 / 排 气 量 (yunding n2001), 缸
   assert.equal(spec(z, "weight"), "12000");
 });
 
-test("soát của điều phối: 'CONTACT' (chữ liên kết của fdk) không thuộc model tổ máy; '2*' (TWIN, baifa n106) không cho bản ghi; 'CHINA STAGE16' không là khí thải", () => {
+test("soát của điều phối: 'CONTACT' (chữ liên kết của fdk) không thuộc model tổ máy; '2*' (TWIN, baifa n106) ra bản ghi động cơ units 2 không công suất (catalog-doc-4); 'CHINA STAGE16' không là khí thải", () => {
   const f = recs(sup("fdk-energy", [{ n: 103, title: "Diesel Generator Set (9-3250KVA) - FDK Energy", header: [
     "| | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF"],
   rows: ["| CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |"] }]), "engine");
@@ -135,8 +135,10 @@ test("soát của điều phối: 'CONTACT' (chữ liên kết của fdk) không
     "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD",
     "| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC"],
   rows: ["| BF-C625-3 | 625 | 569 | QSK19-G17 | | CHINA STAGE3 | CHINA"] }]), null, notes);
-  assert.deepEqual(b.map((r) => r.genset), ["BF-C625-3"]);
-  assert.equal(notes.filter((x) => x.reason === "tổ máy nhiều động cơ").length, 1);
+  assert.deepEqual(b.map((r) => r.genset), ["BF-C625-3", "BF-V900TWIN-T2"]);
+  const tw = b.find((r) => r.genset === "BF-V900TWIN-T2");
+  assert.equal(tw.model, "TAD1344GE"); assert.equal(tw.units, 2); assert.equal(tw.power, null);
+  assert.equal(notes.filter((x) => x.reason === "tổ máy nhiều động cơ").length, 0);
   const head = ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY", "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"];
   const e = recs(sup("baifa-power", [{ n: 101, title: "", header: head, rows: [
     "| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA",
