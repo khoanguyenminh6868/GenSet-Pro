@@ -1,0 +1,420 @@
+         Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller
+
+Part Number: G8900-01
+
+Overview
+The DSEG8900 is a 7” colour parallel genset controller designed for complex paralleling applications. The DSEG8900 can be configured to provide
+single-set and multi-set paralleling on a single site and provides a wide range of high-end features for multiple application environments.
+
+Key Features
+• 2 module applications in one product (single-set and multi-set)
+• Flexible bus segments
+• Slip sync and sync (phase) lock synchronising control
+• Advanced multi-set communication (AMSC) link with optional
+
+       redundancy
+• Shared virtual inputs, outputs and data via AMSC
+• Advanced PLC functionality including multi-purpose PIDs
+• Flexible inputs and outputs
+• DSENet® expansion support
+• PC configuration using DSE Configuration Suite
+• Multiple language support
+• Enhanced 7” high resolution colour display with on screen
+
+       application diagrams
+• Integrated gasket (IP65 protection)
+• 2 integrated RS485 ports providing Modbus RTU support
+• Integrated Ethernet port providing Modbus TCP and SNMP v2c
+
+       support
+• Data logging of up to 20 parameters
+• Manual front panel and automatic control modes
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller                                                            Typical Applications
+
+Part Number: G8900-01                                                                                                                              Single-Set
+
+Single-Set Controller Key Features
+• Single generator, single mains (utility), synchronising ATS with
+
+       short / long-term parallel control
+• 3 phase generator and mains (utility) sensing with protection
+• Mains (utility) failure detection including mains (utility) decoupling
+
+       detection
+• Based load and peak lopping / shaving control
+• Latest ECU / ECM support for a wide range of engine
+
+       manufacturers
+• Integrated governor and AVR control
+• Mains (utility) and generator positive, negative and zero voltage
+
+       sequence alarms
+
+Multi-Set Controller Key Features                                                                        Multi-Set
+• Multiple generator synchronising and droop / isochronous                                               Multi-Set
+
+      loadsharing control
+• 3 phase generator and bus sensing with protection
+• Latest ECU / ECM support for a wide range of engine
+
+      manufacturers
+• Advanced load demand schemes including spinning reserve /
+
+      capacity and balance engine hours
+• Integrated governor and AVR control
+• Dead bus synchronising
+• Generator and bus positive, negative and zero voltage sequence
+
+      alarms
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                              DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                                  T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com                    E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com                         W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                                055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller                                                            8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+Part Number: G8900-01                                                                                    and supply recovers to 5 V. This is achieved without the need for internal batteries.
+  Specifications                                                                                         Backlight will not be maintained during cranking.
+  DC Supply                                                                                              985 mA at 12 V, 500 mA at 24 V
+  Continuous Voltage Rating                                                                              725 mA at 12 V, 370 mA at 24 V
+  Cranking Dropouts                                                                                      0 V to 35 V
+
+  Maximum Operating Current                                                                              2
+  Maximum Standby Current                                                                                3 Phase + Neutral
+  Charge Alternator Excitation / Fail Range                                                              Single-Set Controller: Generator and Mains (Utility)
+  Voltage Measurement                                                                                    Multi-Set Controller: Generator and Bus
+  Number                                                                                                 15 V to 415 V Phase to Neutral
+  Measurement Inputs                                                                                     25 V to 719 V Phase to Phase
+                                                                                                         3.5 Hz to 75 Hz
+  Voltage Range
+                                                                                                         5
+  Frequency Range                                                                                        3 Phase with Earth Fault, and Single Phase
+  Current Transformer Measurement                                                                        Single-Set Controller: 3 Phase Generator Current with Earth Fault Current + Single
+  Number                                                                                                 Phase Mains (Utility) Current
+  Measurement Inputs                                                                                     Multi-Set Controller: 3 Phase Generator Current with Earth Fault Current
+                                                                                                         0 A to 1 A
+  Current Range                                                                                          0 A to 5 A
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller                                                            7
+                                                                                                         Negative Switching Digital Input, Resistive Analogue Input, Current Analogue Input or
+Part Number: G8900-01                                                                                    Voltage Analogue Input
+                                                                                                         Less than 2.1 V
+  Specifications                                                                                         Greater than 6.6 V
+  Analogue Inputs                                                                                        Input A: 0 Ω to 3 kΩ
+  Number                                                                                                 Input B to G: 0 Ω to 5 kΩ
+  Type                                                                                                   0 mA to 20 mA
+                                                                                                         Input A to G: 0 V to 10 V
+  Digital Input Closed Voltage Threshold                                                                 Input E to G: 0 V to 32 V
+  Digital Input Open Voltage Threshold                                                                   1 %
+  Resistive Analogue Measurement Range                                                                   2 %
+
+  Current Analogue Measurement Range                                                                     9
+  Voltage Analogue Measurement Range                                                                     Negative Switching Digital Input
+                                                                                                         Less than 2.1 V
+  Analogue Resolution                                                                                    Greater than 6.6 V
+  Analogue Accuracy
+  Digital Inputs                                                                                         1
+  Number                                                                                                 Positive Switching Digital Input
+  Type                                                                                                   Greater than 5.0 V
+  Closed Voltage Threshold                                                                               Less than 3.0 V
+  Open Voltage Threshold
+  Emergency Stop Input                                                                                   0.5 VPeak to 70 VPeak
+  Number                                                                                                 1 Hz to 10 kHz
+  Type                                                                                                   6.25 RPM
+  Closed Voltage Threshold                                                                               ±25 RPM
+  Open Voltage Threshold
+  Magnetic Pick-up Input
+  Voltage Input Range
+  Frequency Input Range
+  Resolution
+  Accuracy
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller                                                            2
+                                                                                                         Current Analogue Output or Voltage Analogue Output
+Part Number: G8900-01                                                                                    Governor and AVR control
+  Specifications                                                                                         0 mA to 20 mA
+  Analogue Outputs                                                                                       -10 V to 10 V
+  Number                                                                                                 1 %
+  Type                                                                                                   Current Analogue Output: Maximum 500 Ω
+  Function                                                                                               Voltage Analogue Output: Minimum 500 Ω
+  Current Analogue Range                                                                                 Governor: ±1 kV
+  Voltage Analogue Range                                                                                 AVR: ±3 kV
+  Analogue Resolution
+  Load Impedance                                                                                         12
+                                                                                                         1 Normally Open Volt-Free Contacts
+  Isolation                                                                                              1 Normally Closed Volt-Free Contacts
+                                                                                                         10 Positive Switching DC Output
+  Digital Outputs                                                                                        5 ADC resistive at 30 VDC
+  Number                                                                                                 8 AAC resistive at 250 VAC
+  Type                                                                                                   Output A to B (Fuel and Start): 15 ADC at Emergency Stop input supply voltage
+                                                                                                         Output E to L: 2 ADC at module supply voltage
+  Volt-Free Contact Output Rating
+
+  Positive DC Output Rating
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller                                                            1 Data Storage Port
+                                                                                                         1 Programming Port
+Part Number: G8900-01                                                                                    1 Expansion Port
+  Specifications                                                                                         2 Fully Isolated RS485 Ports
+  Communications                                                                                         1 10/100 Ethernet Port
+  USB A                                                                                                  4 Fully Isolated CAN Ports
+  USB B                                                                                                  Single-Set Controller:
+  DSENet®                                                                                                CAN 1 – Engine ECU/ECM
+  RS485                                                                                                  CAN 2 – Not Used
+  Ethernet                                                                                               CAN 3 – Not Used
+  CAN                                                                                                    CAN 4 - Not Used
+
+  Temperature                                                                                            Multi-Set Controller:
+  Operating Temperature                                                                                  CAN 1 – Engine ECU/ECM
+  Storage Temperature                                                                                    CAN 2 – AMSC
+  Dimensions                                                                                             CAN 3 or CAN 4 – Redundant AMSC
+  Overall (W x H x D)
+  Mounting                                                                                               -30 °C to +70 °C / -22 °F to +158 °F
+  Type                                                                                                   -40 °C to +85 °C / -40 °F to +185 °F
+  Panel Cut-Out (W x H)
+  Maximum Panel Thickness                                                                                305 mm x 161 mm x 45.2 mm / 12” x 6.34” x 1.77”
+
+                                                                                                         Panel Fascia Mounting
+                                                                                                         282 mm x 136 mm / 11.1” x 5.35”
+                                                                                                         8 mm / 0.31”
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller
+
+Part Number: G8900-01
+
+Related Products                 Bus Tie Controller                                                                                                  G8680-01
+DSEGenset®                       Mains (Utility) Controller                                                                                          G8660-01
+DSEG8680                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         15” Panel PC with DSE SCADA                                                                                         G8015-01
+DSEG8600                         Analogue Load Share Lines Interface                                                                                 G0123-01
+DSEG8015
+DSEG0123                         DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2548                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®
+DSE890 MKII                      G8 Series SCADA                                                                                                     037-060
+Remote Monitoring Control
+DSE SCADA
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller
+
+Part Number: G8900-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+BS EN 60529
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller
+
+Part Number: G8900-01
+
+Single-Set Controller            Description                                                             Multi-Set Controller                        Description
+Pin                              DC Supply                                                               Pin                                         DC Supply
+1 to 2                           Emergency Stop                                                          1 to 2                                      Emergency Stop
+3                                Fuel                                                                    3                                           Fuel
+4                                Start                                                                   4                                           Start
+5                                Charge Alternator                                                       5                                           Charge Alternator
+6                                Digital Outputs                                                         6                                           Digital Outputs
+7 to 14                          Analogue Inputs                                                         7 to 14                                     Analogue Inputs
+15 to 19                         Not Applicable                                                          15 to 19                                    Redundant AMSC Link
+20 to 22                         Magnetic Pick-Up                                                        20 to 22                                    Magnetic Pick-Up
+23 to 25                         Engine ECU/ECM                                                          23 to 25                                    Engine ECU/ECM
+26 to 28                         DSENet®                                                                 26 to 28                                    DSENet®
+29 to 31                         Not Applicable                                                          29 to 31                                    AMSC Link
+32 to 34                         Governor Control                                                        32 to 34                                    Governor Control
+35 to 36                         Not Applicable                                                          35 to 36                                    Not Applicable
+37                               AVR Control                                                             37                                          AVR Control
+38 to 39                         Normally Closed Volt Free Output                                        38 to 39                                    Normally Closed Volt Free Output
+40 to 41                         Normally Open Volt Free Output                                          40 to 41                                    Normally Open Volt Free Output
+42 to 43                         Generator Voltage Sensing                                               42 to 43                                    Generator Voltage Sensing
+44 to 47                         Mains (Utility) Voltage Sensing                                         44 to 47                                    Bus Voltage Sensing
+48 to 51                         Generator Current Sensing                                               48 to 51                                    Generator Current Sensing
+52 to 56                         Mains (Utility) Current Sensing                                         52 to 56                                    Not Applicable
+57 to 58                         Digital Inputs                                                          57 to 58                                    Digital Inputs
+59 to 67                         Analogue Inputs                                                         59 to 67                                    Analogue Inputs
+68 to 70 & 77                    2 x RS485                                                               68 to 70 & 77                               2 x RS485
+71 to 76                         Not Used                                                                71 to 76                                    Redundant AMSC Link
+78 to 80                                                                                                 78 to 80
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8900 7” Colour Parallel Genset Controller
+
+Part Number: G8900-01
+
+Technical Drawing                282.0 mm
+                                 28( 211.0.1m” m)
+
+                                 305 mm                                                                                                              45.2 mm
+                                 ( 12.0 " )                                                                                                          ( 1.78 " )
+
+                                                                                                                                                     32.3 mm
+                                                                                                                                                     ( 32.3 " )
+
+161 mm
+   ( 6.34 " )
+                                                                                                                                                                                                                 136 mm
+                                                                                                                                                                                                                     ( 5.35 " )
+
+Connection Label
+
+                             Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-258 – DSEG8900 Installation Instructions
+057-343 – DSEG8900 Operator Manual
+057-340 – DSEG8900 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-285/08/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

@@ -1,0 +1,163 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8660                                                                                                              ENVIRONMENTAL TESTING STANDARDS
+
+AUTO TRANSFER SWITCH & MAINS                                                                                           ELECTRO MAGNETIC COMPATIBILITY
+CONTROL MODULE                                                                                                         BS EN 61000-6-2
+                                                                                                                       EMC Generic Immunity Standard for the
+FEATURES                                                                                                               Industrial Environment
+                                                                                                                       BS EN 61000-6-4
+The DSE8660 is an easy-to-use            Comprehensive communications           With all communication ports           EMC Generic Emission Standard for the
+single or multi-mains controller with    are also available via RS232,          capable of being active at the same    Industrial Environment
+automatic transfer switch capability.    RS485 & Ethernet for remote PC         time, the DSE8xxx Series is ideal
+Designed to synchronise single or        control and monitoring, and            for a wide variety of demanding        ELECTRICAL SAFETY
+multiple DSE8610s and DSE8680s           integration into building              load share applications.               BS EN 60950
+with single or multiple mains (utility)  management systems.                                                           Safety of Information Technology Equipment,
+supplies, the DSE8660 will               The comprehensive event log will       KEY LOAD SHARE FEATURES                including Electrical Business Equipment
+automatically control the change         record up to 250 events to facilitate  (WITH DSE8x10) :
+over from mains (utility) to generator   maintenance.                           • Peak lopping/shaving                 TEMPERATURE
+supply or run generators in                                                     • Sequential set start                 BS EN 60068-2-1
+synchronisation with the mains           An extensive number of fixed and       • Manual voltage/frequency             Ab/Ae Cold Test -30oC
+(utility) to provide no-break, peak      flexible monitoring and protection                                            BS EN 60068-2-2
+lopping and peak shaving power           features are included. Easy               adjustment                          Bb/Be Dry Heat +70oC
+solutions.                               alteration of the sequences, timers    • R.O.C.O.F. and vector shift
+                                         and alarms can be made using the                                              VIBRATION
+The module can indicate                  DSE PC Configuration Suite                protection                          BS EN 60068-2-6
+operational status and fault             Software. Selected configuration is    • Generator load demand                Ten sweeps in each of three major axes
+conditions on the LCD screen             also available via the module’s front  • Automatic hours run balancing        5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+(multiple languages available), by       panel.                                 • Mains (Utility) de-coupling
+illuminated LED, audible sounder                                                • Mains (Utility) de-coupling          HUMIDITY
+and SMS messaging.                                                                                                     BS EN 60068-2-30
+                                                                                   test mode                           Db Damp Heat Cyclic 20/55oC @ 95% RH 48
+                                                                                • Bus failure detection                Hours
+                                                                                • Volts and frequency matching.        BS EN 60068-2-78
+                                                                                • kW & kV Ar load sharing              Cab Damp Heat Static 40oC @ 93% RH 48
+                                                                                                                       Hours
+
+                                                                                                                       SHOCK
+                                                                                                                       BS EN 60068-2-27
+                                                                                                                       Three shocks in each of three major axes
+                                                                                                                       15gn in 11mS
+
+                                                                                                                       DEGREES OF PROTECTION
+                                                                                                                       PROVIDED BY ENCLOSURES
+                                                                                                                       BS EN 60529
+                                                                                                                       IP65 - Front of module when installed into the
+                                                                                                                       control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE
+VARIETY OF LOAD SHARE APPLICATIONS
+
+DSE2130      MODEM MODBUS                PC
+DSE2131
+DSE2133                                                 11                                    6
+DSE2152
+DSE2157      232        485
+DSE2548
+                        RS232 AND        USB USB        CONFIGURABLE DC OUTPUTS                                      DC POWER
+  DSENET®               RS485            PORT HOST      INPUTS                                                       SUPPLY 8-35V
+  EXPANSION
+
+                                             ETHERNET                                         +
+
+DSE8660                                                 5510                    MSC    ­8xxx
+                                                                                ­7510
+                  7
+                 OTHER
+
+MAINS (UTILITY) SENSING                  N/C VOLT FREE                          N/O VOLT         BUS
+                                         OUTPUTS                                FREE OUTPUT      SENSING
+
+CURRENT                 VOLTS
+
+1ph                                1ph       1                                                1  1ph
+2ph                                2ph                                                           2ph
+3ph                                3ph                                                           3ph
+N                                  N                                                             N
+
+                                                                                                                     ISSUE 2
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8660                                                                                                                                             SPECIFICATION
+
+AUTO TRANSFER SWITCH & MAINS                                                                                                                         DC SUPPLY
+CONTROL MODULE                                                                                                                                       CONTINUOUS VOLTAGE RATING
+                                                                                                                                                     8 V to 35 V Continuous
+FEATURES
+                                                                                                                                                     CRANKING DROPOUTS
+KEY FEATURES                           • Five key menu navigation                                        • Can be integrated into building           Able to survive 0 V for 50 mS, providing
+• Mains (utility) failure detection    • Front panel editing with PIN                                       management systems (BMS) and             supply was at least 10 V before dropout
+• Mains (utility) power monitoring                                                                          programmable logic control               and supply recovers to 5 V. This is achieved
+                                          protection                                                        (PLC)                                    without the need for internal batteries.
+   (kW, kV Ar, kV A and pf)            • Customisable status screens                                                                                 LEDs and backlight will not be maintained
+• Comprehensive synchronising          • Configurable inputs (11)                                        • Increased input and output                during cranking.
+                                       • Configurable outputs (8)                                           expansion capability via DSENet®
+   and loadsharing capabilities        • Configurable timers and alarms                                                                              MAXIMUM OPERATING CURRENT
+• Base load (kW export)                • Multiple entry scheduler                                        • Licence-free PC software                  340 mA at 12 V, 160 mA at 24 V
+                                       • Configurable event log (250)                                    • IP65 rating (with supplied gasket)
+   functionality                       • Easy access diagnostic pages                                                                                MAXIMUM STANDBY CURRENT
+• Positive & negative kVAr export      • LED and LCD alarm indication                                       offers increased resistance to water     160 mA at 12 V, 80 mA at 24 V
+                                       • USB connectivity                                                   ingress
+   control                             • Backed up real time clock                                       • Advanced Internal PLC editor              MAINS (UTILITY)
+• Peak lopping & shaving               • Fully configurable via DSE                                         allows user configurable functions       VOLTAGE RANGE
+                                                                                                            to meet specific application             15 V to 333 V AC (L-N)
+   functionality                          Configuration Suite PC                                            requirements.
+• Mains (utility) kW export               Software                                                                                                   FREQUENCY RANGE
+                                                                                                         EXPANSION DEVICES                           3.5 Hz to 75 Hz
+  protection                           KEY BENEFITS                                                      • DSE124 CAN/MSC Extender
+• Mains (utility) de-coupling          • A single flexible solution for                                  • DSE2130 Input Expansion Module            BUS
+                                                                                                         • DSE2131 Ratiometric Input                 VOLTAGE RANGE
+   protection                             multiple applications                                                                                      15 V to 333 V AC (L-N)
+• Advanced integral PLC editor         • Compatible with DSE5510,                                           Expansion Module
+• User configurable RS232,                                                                               • DSE2133 RTD & Thermocouple                FREQUENCY RANGE
+                                          DSE7510 & DSE8x10 series of                                                                                3.5 Hz to 75 Hz
+   RS485 & Ethernet                       modules                                                           Expansion Module
+   communications                      • 132 x 64 pixel ratio display for                                • DSE2152 Analogue Output                   OUTPUTS
+• MODBUS RTU & TCP support                clarity                                                                                                    OUTPUTS C & D
+• User configurable MODBUS             • Real-time clock provides                                           Expansion Module                         8 A at 250 V AC (Volt free)
+   pages                                  accurate event logging                                         • DSE2157 Output Expansion
+• Advanced SMS control and             • Ethernet communication                                                                                      AUXILIARY OUTPUTS E,F,G,H, I & J
+   fault messaging (additional            provides built in advanced                                        Module                                   2 A DC at supply voltage
+   GSM modem required)                    remote monitoring.                                             • DSE2548 LED Expansion Module
+• DSENet expansion compatible                                                                                                                        DIMENSIONS
+• Data logging and trending                                                                                                                          OVERALL
+• 4-Line back-lit LCD text display                                                                                                                   240 mm x 181 mm x 42 mm
+• Multiple display languages                                                                                                                         9.4” x 7.1” x 1.6”
+
+                                                                                                                                                     PANEL CUT-OUT
+                                                                                                                                                     220 mm x 160 mm
+                                                                                                                                                     8.7” x 6.3”
+
+                                                                                                                                                     MAXIMUM PANEL THICKNESS
+                                                                                                                                                     8 mm
+                                                                                                                                                     0.3”
+
+                                                                                                                                                     OPERATING TEMPERATURE RANGE
+                                                                                                                                                     -30°C to +70°C
+
+                                                                                                                                                     STORAGE TEMPERATURE RANGE
+                                                                                                                                                     -40°C to +85°C
+
+RELATED MATERIALS                                                                                        PART NO’S
+TITLE                                                                                                    053-070
+DSE8660 Installation Instructions                                                                        057-120
+DSE8660 Operator Manual                                                                                  057-119
+DSE8600 PC Configuration Suite Manual                                                                    055-083
+DSE8610 Data Sheet                                                                                       055-091
+DSE8680 Data Sheet                                                                                       055-090
+DSE8700 Data Sheet                                                                                       055-116
+DSE8810 Data Sheet                                                                                       055-139
+DSE8860 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-086/04/11 (5)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

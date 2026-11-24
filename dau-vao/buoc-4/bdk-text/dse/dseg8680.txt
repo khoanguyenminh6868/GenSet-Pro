@@ -1,0 +1,365 @@
+         Series Data Sheet
+
+DSEG8680 Bus-Tie Controller
+
+Part Number: G8680-01
+
+Overview
+The DSEG8680 Bus-Tie controller is designed to work with the DSEG8660 and DSEG8600 (configured for use as a multi-set controller, mains (utility)
+controller or group controller) to provide control solutions for complicated system design. The DSEG8680 is configurable for use as a bus-tie controller
+or load switch controller. This enables the controller to use the AMSC (Advanced Multi-Set Communications) link to synchronise two bus segments
+together within a DSEG8xxx system and allow them to operate in parallel.
+
+Key Features
+• 2 module applications in one product (bus-tie and load switch)
+• Flexible bus segments
+• Advanced multi-set communication (AMSC) link with optional
+
+      redundancy
+• Shared virtual inputs, outputs and data via AMSC
+• Advanced PLC functionality including multi-purpose PIDs
+• Flexible inputs and outputs
+• DSENet® expansion support
+• PC configuration using DSE Configuration Suite
+• Multiple language support
+• 4-line back-lit LCD
+• IP65 with supplied sealing gasket
+• RS485 port providing Modbus RTU support
+• Integrated Ethernet port providing Modbus TCP and SNMP v2C
+
+      support
+• Data logging for up to 20 parameters
+• Manual front panel and automatic control modes
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+                   Series Data Sheet
+
+DSEG8680 Bus-Tie Controller
+
+Part Number: G8680-01
+
+Bus-Tie Controller Key Features*
+• 3 phase sensing either side of the bus-tie with protection
+• Ability to connect and disconnect two different bus segments
+
+       within a DSEG8xxx system
+• Synchronising control over either side of the bus
+• Power ramping control after bus-tie closure and before bus-tie
+
+       opening
+• Configurable conditions to allow bus-tie closure based on if the
+
+       buses are live or dead
+
+Typical Application
+
+Mains (Utility)                                   Bus                                                         Bus                                         Mains (Utility)
+            Bus                                   Tie                                                                                                     Bus
+              Tie                                                                                             Tie                                         Tie
+
+                   Bus           Bus                   Bus                                               Bus       Bus                               Bus
+                   Tie           Tie                   Tie                                               Tie       Tie                               Tie
+
+                   Multi-Set                           Multi-Set                                              Multi-Set
+
+*When used with additional DSEG8xxx controllers
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet
+
+DSEG8680 Bus-Tie Controller
+
+Part Number: G8680-01
+Load Switch Controller Key Features*
+• Checks to ensure minimum system power capacity has been
+
+       attained using the AMSC link before closing load switch
+
+Typical Application                    Load Switch
+                                       Load Switch
+                            Multi-Set  Load Switch
+                            Multi-Set
+                            Multi-Set
+                            Multi-Set
+
+*When used with additional DSEG8xxx controllers
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK                DEEP SEA ELECTRONICS USA                                          DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                 T: +1 (815) 316 8706                                              T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com        E: usasales@deepseaelectronics.com                                E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com          W: www.deepseaelectronics.com                                     W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+DSEG8680 Bus-Tie Controller                                                                              and supply recovers to 5 V. This is achieved without the need for internal batteries.
+                                                                                                         Backlight will not be maintained during cranking.
+Part Number: G8680-01                                                                                    530 mA at 12 V, 280 mA at 24 V
+  Specifications                                                                                         320 mA at 12 V, 120 mA at 24 V
+  DC Supply
+  Continuous Voltage Rating                                                                              2
+  Cranking Dropouts                                                                                      3 Phase + Neutral
+                                                                                                         15 V to 415 V Phase to Neutral
+  Maximum Operating Current                                                                              25 V to 719 V Phase to Phase
+  Maximum Standby Current                                                                                3.5 Hz to 75 Hz
+  Voltage Measurement
+  Number                                                                                                 4
+  Measurement Inputs                                                                                     3 Phase with Earth Fault
+  Voltage Range                                                                                          0 A to 1 A
+                                                                                                         0 A to 5 A
+  Frequency Range
+  Current Transformer Measurement                                                                        12
+  Number                                                                                                 Negative Switching Digital Input
+  Measurement Inputs                                                                                     Less than 2.1 V
+  Current Range                                                                                          Greater than 6.6 V
+
+  Digital Inputs                                                                                         10
+  Number                                                                                                 1 Normally Open Volt-Free Contact
+  Type                                                                                                   1 Normally Closed Volt-Free Contact
+  Closed Voltage Threshold                                                                               8 Positive Switching DC Output
+  Open Voltage Threshold                                                                                 5 ADC resistive at 30 VDC
+  Digital Outputs                                                                                        8 AAC resistive at 250 VAC
+  Number                                                                                                 2 ADC at module supply voltage
+  Type
+
+  Volt-Free Contact Output Rating
+
+  Positive DC Output Rating
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               1 Data Storage Port
+                                                                                                         1 Programming Port
+DSEG8680 Bus-Tie Controller                                                                              1 Expansion Port
+                                                                                                         1 Fully Isolated RS485 Port
+Part Number: G8680-01                                                                                    1 10/100 Ethernet Port
+  Specifications                                                                                         2 Fully Isolated Ports
+  Communications                                                                                         AMSC 1 - AMSC Link
+  USB A                                                                                                  AMSC 2 - Redundant AMSC Link
+  USB B
+  DSENet®                                                                                                -30 °C to +70 °C / -22 °F to +158 °F
+  RS485                                                                                                  -40 °C to +85 °C / -40 °F to +185 °F
+  Ethernet
+  AMSC                                                                                                   250 mm x 189 mm x 50.5 mm / 9.85 ” x 7.43 ” x 1.99 ”
+
+  Temperature                                                                                            Panel Fascia Mounting
+  Operating Temperature                                                                                  220 mm x 160 mm / 8.66 ” x 6.30 ”
+  Storage Temperature                                                                                    8 mm / 0.31”
+  Dimensions
+  Overall (W x H x D)
+  Mounting
+  Type
+  Panel Cut-Out (W x H)
+  Maximum Panel Thickness
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8680 Bus-Tie Controller
+
+Part Number: G8680-01
+
+Related Products                 7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Mains (Utility) Controller                                                                                          G8660-01
+DSEG8900                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         15” Panel PC with DSE SCADA                                                                                         G8015-01
+DSEG8600
+DSEG8015                         DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2548                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®
+DSE890 MKII                      G8 Series SCADA                                                                                                     037-060
+Remote Monitoring Control
+DSE SCADA
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+DSEG8680 Bus-Tie Controller
+                                                                                                         Safety of Information Technology Equipment, including Electrical Business Equipment
+Part Number: G8680-01
+  Environmental Testing Standards                                                                        Ab/Ae Cold Test -30 ºC
+  Electro-Magnetic Compatibility                                                                         Bb/Be Dry Heat +70 ºC
+  BS EN 61000-6-2
+  BS EN 61000-6-4                                                                                        Ten sweeps in each of three major axes
+  Electrical Safety                                                                                      5 Hz to 8 Hz at ±7.5 mm,
+  BS EN 61010                                                                                            8 Hz to 500 Hz at 2 Gn
+  Temperature
+  BS EN 60068-2-1                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+  BS EN 60068-2-2                                                                                        Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+  Vibration
+  BS EN 60068-2-6                                                                                        Three shocks in each of three major axes
+                                                                                                         15 Gn in 11 ms
+  Humidity
+  BS EN 60068-2-30                                                                                       IP65 - From the front of the module when installed into a control panel with supplied
+  BS EN 60068-2-78                                                                                       gasket
+  Shock
+  BS EN 60068-2-27
+
+  Degrees of Protection Provided by Enclosures
+  BS EN 60529
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               Description
+                                                                                                         DC Supply
+DSEG8680 Bus-Tie Controller                                                                              Not Applicable
+                                                                                                         Positive Switching DC Output
+Part Number: G8680-01                                                                                    Not Applicable
+ Mains (Utility) Controller                                                                              Redundant AMSC Link
+ Pin                                                                                                     DSENet®
+ 1 to 2                                                                                                  AMSC Link
+ 3 to 6                                                                                                  Not Applicable
+ 6 to 14                                                                                                 Normally Closed Volt-Free Output Contact
+ 15 to 25                                                                                                Normally Open Volt-Free Output Contact
+ 26 to 28                                                                                                Left Bus Voltage Sensing
+ 29 to 31                                                                                                Right Bus Voltage Sensing
+ 32 to 34                                                                                                Bus Current Sensing
+ 35 to 39                                                                                                Not Applicable
+ 40 to 41                                                                                                Digital Inputs
+ 42 to 43                                                                                                RS485
+ 44 to 47                                                                                                Not Applicable
+ 48 to 51
+ 52 to 56
+ 57 to 58
+ 59 to 70
+ 71 to 73
+ 74 to 76
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8680 Bus-Tie Controller         220 mm
+                                    ( 8.66 " )
+Part Number: G8680-01
+
+Technical Drawing
+
+                                    250 mm                                                                                                           50.5 mm
+                                    ( 9.85 " )                                                                                                       ( 1.99 " )
+
+                                                                                                                                                     35.5 mm
+                                                                                                                                                     ( 1.40 " )
+
+                  189 mm
+                     ( 7.43 " )
+                                                                                                                                                                                                  160 mm
+                                                                                                                                                                                                     ( 6.30 " )
+
+Connection Label
+
+                                 L  R
+
+                                    DC Supply :          8 V to 35 V, 1 A max
+                                    DC Outputs :         24 V, 2 A (T7 to T14)
+                                    DC Inputs :          30 V max
+                                    Volt-free Outputs :  250 V AC, 8 A
+                                    AC Voltage inputs :  600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                    AC Current inputs :  5 A, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                    Comms Port :         5 V DC max
+
+                                                         020-1097-01,2 Made In UK
+
+                                                                                                         AMSC 2  AMSC 1
+
+                             Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-254 – DSEG8680 Installation Instructions
+057-327 – DSEG8680 Operator Manual
+057-326 – DSEG8680 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-284/09/24 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

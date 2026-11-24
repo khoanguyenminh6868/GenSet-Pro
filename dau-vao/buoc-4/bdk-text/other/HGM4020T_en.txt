@@ -1,0 +1,2123 @@
+                   HGM4020T
+            GENSET CONTROLLER
+(Communication base station dedicated)
+
+              USER MANUAL
+                                    Registered trademark
+No.28 Xuemei Street, Zhengzhou, Henan, China
+Tel: +86-371-67988888/67981888/67992951
+
+      +86-371-67981000(overseas)
+Fax: +86-371-67992952
+Email: sales@smartgen.cn
+Web: www.smartgen.com.cn
+
+          www.smartgen.cn
+
+All rights reserved. No part of this publication may be reproduced in any material form (including
+photocopying or storing in any medium by electronic means or other) without the written permission of
+the copyright holder.
+SmartGen reserves the right to change the contents of this document without prior notice.
+
+       Date     Version         Table 1 Software Version
+2018-04-18   1.0                                                    Note
+
+2018-09-15   1.1         Original Release
+                         Adding input port functions: “Emergency Stop”, “Low Oil Level Warn”;
+2018-11-30   1.2         Adding output port function: “Tele. Open Door”;
+2022-10-12   1.3         Adding frequency of generator configuration items and mains
+2023-05-22   1.4         abnormal trip configuration items;
+                         Adding “Stop Conditions Selection” after mains abnormal and pile low
+                         volt start, and also adding stop description;
+                         Adding “Load Current Protection” delay.
+                         Adding relay outputs to 50 pieces;
+                         Adding “Advance Oil Output” and “Pre-Oil” relay output functions;
+                         Adding “Louver Hold Open” time and changing the logic of “Louver
+                         Control” relay output;
+                         Adding decimal place setting in power configuration;
+                         Adding “Reset Maintenance Time” input port function.
+                         Updating company logo and manual format.
+                         Modifying the mains abnormal description of Aux. output port.
+
+HGM4020T Genset Controller User Manual  Page 2 of 40
+                                      CONTENT
+
+1 OVERVIEW....................................................................................................................................................4
+2 PERFORMANCE AND CHARACTERISTICS.................................................................................................4
+3 SPECIFICATION ...........................................................................................................................................6
+4 OPERATION..................................................................................................................................................7
+
+      4.1 KEY FUNCTION.................................................................................................................................7
+      4.2 CONTROLLER PANEL ......................................................................................................................8
+      4.3 AUTO START/STOP OPERATION....................................................................................................8
+
+           4.3.1 ILLUSTRATION.......................................................................................................................8
+           4.3.2 AUTO START SEQUENCE......................................................................................................8
+           4.3.3 AUTO STOP SEQUENCE........................................................................................................9
+      4.4 MANUAL START/STOP OPERATION ..............................................................................................9
+      4.5 EMERGENCY START ........................................................................................................................9
+      4.6 GENERATOR AUTO START CONDITIONS.................................................................................... 10
+      4.7 STOP CONDITIONS SELECTION .................................................................................................. 10
+      4.8 MAINS HAVE RULES ..................................................................................................................... 10
+      4.9 ATS CONTROL............................................................................................................................... 10
+           4.9.1 MANUAL CONTROL.............................................................................................................10
+           4.9.2 AUTO CONTROL ..................................................................................................................11
+           4.9.3 SWITCH CONTROL DESCRIPTION .....................................................................................11
+5 PROTECTION ............................................................................................................................................ 13
+      5.1 WARNINGS .................................................................................................................................... 13
+      5.2 SHUTDOWN ALARMS ................................................................................................................... 16
+      5.3 TRIP AND STOP ALARMS............................................................................................................. 18
+6 WIREING CONNECTION ........................................................................................................................... 19
+7 SCOPES AND DEFINITIONS OF PROGRAMMABLE PARAMETERS ....................................................... 21
+      7.1 CONTENTS AND SCOPES OF PARAMETERS .............................................................................. 21
+      7.2 ENABLE DEFINITION OF PROGRAMMABLE OUTPUT PORTS.................................................... 29
+      7.3 ENABLE DEFINITION OF PROGRAMMABLE INPUT PORTS ....................................................... 31
+      7.4 SELECTION OF SENSORS ............................................................................................................. 33
+      7.5 CONDITIONS OF CRANK DISCONNECT SELECTION .................................................................. 34
+8 PARAMETERS SETTING ........................................................................................................................... 35
+      8.1 CONTROLLER PARAMETER SETTING ......................................................................................... 35
+      8.2 CONTROLLER INFORMATION ...................................................................................................... 35
+      8.3 LANGUAGE SELECTION................................................................................................................ 35
+      8.4 EVENT LOG .................................................................................................................................... 35
+      8.5 MAINTENANCE ............................................................................................................................. 35
+9 SENSOR SETTING..................................................................................................................................... 36
+10 COMMISSIONING ..................................................................................................................................... 37
+11 TYPICAL APPLICATION ........................................................................................................................... 38
+12 INSTALLATION ......................................................................................................................................... 39
+      12.1 FIXING CLIPS ................................................................................................................................. 39
+      12.2 OVERALL DIMENSION .................................................................................................................. 39
+
+HGM4020T Genset Controller User Manual  Page 3 of 40
+1 OVERVIEW
+
+      HGM4020T genset controller is specially designed for mobile communication base station, and its
+functions are completely followed by the actual situation of the mobile station. It not only fits with auto
+start/stop genset function in multiple boot conditions, data measurement function, alarm protection
+function and etc, but also can monitor machine room temperature and voltage of battery packs to
+realize dual power ATS function between mains and load or mains and air conditioner.
+
+      HGM4020T genset controller adopts micro-processor technology with precision parameters
+measuring, fixed value adjustment, time setting and set value adjusting and etc functions. All
+parameters can be configured from front panel or through programmable interface (USB or RS485
+interface) via PC. It can be widely used in all types of automatic genset control system with compact
+structure, advanced circuits, simple connections and high reliability.
+2 PERFORMANCE AND CHARACTERISTICS
+
+— 132x64 LCD with backlight, selectable language interface (Chinese and English), push-button
+
+operation;
+
+— Hard-screen acrylic material been used to protect screen with great wear-resisting and
+
+scratch-resisting functions;
+
+— Silicone panel and pushbuttons can be used in extreme temperature environment;
+
+— RS485 communication interface enable “Three remote functions” (remote control, remote
+
+measuring and remote communication) according to MODBUS protocol;
+
+— Suitable for 3-phase 4-wire, 3-phase 3-wire, single phase 2-wire, and 2-phase 3-wire systems with
+
+voltage 120/240V and frequency 50/60Hz;
+
+— Collects and shows mains 3-phase voltage/frequency, generator 3-phase voltage/frequency,
+
+generator 3-phase current, and generator 3-phase power parameters;
+
+Mains                                    Generator
+
+Line voltage (Uab, Ubc, and Uca)         Line voltage (Uab, Ubc, and Uca)
+
+Phase voltage (Ua, Ub, and Uc)           Phase voltage (Ua, Ub, and Uc)
+
+Frequency Hz                             Frequency Hz
+
+Phase sequence                           Phase sequence
+
+Gen
+
+Current Ia, Ib, Ic                                 A (unit)
+
+Each phase and total active power P                kW (unit)
+
+Reactive power Q                                   kvar (unit)
+
+Apparent power S                                   kVA (unit)
+
+Power factor PF
+
+Accumulate total generator power W                 kWh (unit)
+
+Output percentage with load                        %
+
+— For Mains, controller has over and under voltage and loss of phase detection functions, and mains
+
+have rules can be selected; for generator, controller has over/ under voltage, over/under frequency,
+
+over current and over power protection functions;
+
+HGM4020T Genset Controller User Manual                                            Page 4 of 40
+— Precision measure and display parameters about engine;
+
+Oil Pressure (OP)           kPa/psi/bar all be displayed
+
+Fuel Level (FL)             % (unit)         Fuel Quantity Left L (unit)
+
+Speed (RPM)                 r/min (RPM)
+
+Voltage of Battery          V (unit)
+
+Voltage of Charger V (unit)
+
+Hour count accumulation
+
+Start times accumulation
+
+— Machine room temperature can be collected, if temperature is too high, air conditioner in the
+
+machine will be started;
+
+— Battery pack voltage(48V) can be collected, if battery pack is under voltage, generator will be started
+
+to charge the battery;
+
+— 6 start conditions can be grouped at random: mains abnormal signal, remote start signal, mains
+
+abnormal and temperature of machine room is high, mains abnormal and battery pack voltage is
+
+low, scheduled start, and cycle start/stop;
+
+— 6 relay output ports, including 1 start output, 1 fuel output (programmable), 4 programmable outputs,
+
+in which programmable output port 4 shares the same port with input port 5 (can be set);
+
+— 7 digital input ports, in which input port 6 and input port 7 can be multiplexed as flexible sensor 1
+
+and flexible sensor 2;
+
+— 2 flexible sensors, which can be selected as temperature sensor, pressure sensor or fuel level
+
+sensor; flexible sensor 1 also can be configured as machine room temperature sensor;
+
+— Multiple temperature, pressure and fuel level sensors can be used directly and its parameter can be
+
+user-defined;
+
+— Able to control 2 ATS;
+
+— Multiple crank disconnect conditions (speed sensor, gen frequency and oil pressure) can be
+
+selected;
+
+— Access monitoring function, which can provide security for the machine room;
+
+— With emergency start function;
+
+— With scheduled not run function (monthly, weekly, daily, duration time can be set);
+
+— With flywheel tooth number automatic recognition function;
+
+— With event log and real-time clock. Maximum 99 event logs can be memorized (loop save);
+
+— Parameter setting function: users can configure parameters and user-defined parameters will be
+
+stored in the internal FLASH to avoid lose parameters in case of power dropout. All parameters can
+
+be configured from front panel or through programmable interface (USB or RS485 interface) via PC;
+
+— Widely power supply range DC(8~35)V, suitable for different starting battery voltage environment;
+
+— Waterproof security level IP65 due to rubber seal installed between the controller enclosure and
+
+panel fascia;
+
+— With metal fixing clips;
+
+— Modular design, anti-flaming ABS plastic enclosure, pluggable connection terminals and embedded
+
+installation way; compact structure with easy mounting.
+
+HGM4020T Genset Controller User Manual                                                 Page 5 of 40
+3 SPECIFICATION                  Table 2 Technical Parameters
+
+                 Items                                                Content
+Operating Voltage            DC8.0V to DC35.0V, continuous power supply.
+Power Consumption            <3W (standby ≤2W)
+Alternator Volt Input Range
+3Phase 4Wire                 15V AC - 360V AC (ph-N)
+3Phase 3Wire                 30V AC - 620V AC (ph-ph)
+Single Phase 2Wire           15V AC - 360V AC (ph-N)
+2Phase 3Wire                 15V AC - 360V AC (ph-N)
+Alternator Frequency
+Speed sensor voltage         50Hz/60Hz
+Speed sensor Frequency       1.0V to 24.0V (RMS)
+Start Relay Output           10,000 Hz (max.)
+Fuel Relay Output            5A DC28V B+ power supply output
+Programmable Relay Output 1  5A DC28V B+ power supply output
+Programmable Relay Output 2  1A DC28V B+ power supply output
+Programmable Relay Output 3  1A DC28V B+ power supply output
+Programmable Relay Output 4  1A DC28V B+ power supply output
+Battery Pack Volt Input      1A DC28V B+ power supply output
+                             0V DC - 100V DC
+RS485 Interface              Baud rate 9600bps; 1 stop bit; no parity check
+                             Communication protocol MODBUS
+Case Dimension               135mm x 110mm x 44mm
+Panel Cutout                 116mm x 90mm
+CT Secondary Current         Rated 5A
+Working Temperature          (-25~+70)°C
+Working Humidity             (20~93)%RH
+Storage Temperature          (-25~+70)°C
+Protection Level             Front panel: IP65
+                             Apply AC2.2kV voltage between high voltage terminal and low voltage
+Insulation Intensity         terminal; The leakage current is not more than 3mA within 1min.
+                             0.32kg
+Weight
+4 OPERATION
+4.1 KEY FUNCTION
+
+Icon  Function       Table 3 Key Function Description
+
+      Stop/Reset                                            Description
+                        Stop running generator in Auto/Manual mode;
+      Start             In case of alarm condition, pressing the button will reset alarms;
+      Manual            In stop mode, pressing and holding the button for 3 seconds will test
+                        indicator lights (lamp test);
+                        During stopping process, press this button again to stop generator
+                        immediately.
+                        Under manual mode, press this button will start genset; press this
+                        button during genset start up, genset will jump to next status and
+                        genset can fast-boot.
+
+                        Pressing this key will set the module into manual mode.
+
+      Auto           Pressing this key will set the module into auto mode.
+      Close/Open
+                     Pressing this key causes the controller to switch the display
+      Set/Confirm    between C/O page and the main page. Press Up or Down key to
+      Up/Increase    control switch close or open in C/O page under manual mode and
+      Down/Decrease
+                     confirm the action by pressing .
+                     Pressing this key will enter into Main Menu;
+                     In setting parameter status, press this key will shift cursor or confirm
+                     setting value.
+                     Scrolls the screen up; Shift the cursor up or increase the set value
+                     in parameter setting menu.
+
+                     Scrolls the screen down; Shift the cursor down or decrease the set
+                     value in parameter setting menu.
+
+HGM4020T Genset Controller User Manual  Page 7 of 40
+4.2 CONTROLLER PANEL
+
+                                          Fig.1 HGM4020T Front Panel Indication
+
+     NOTE: Part of indicator lights illustration:
+Alarm Indicators: Slowly flash when warn alarms; fast flash when shutdown alarms; light is off when no alarms.
+Status Indicators: Light is off when genset is standby; flash once per second during start up or shut down; always on
+when normal operation.
+
+4.3 AUTO START/STOP OPERATION
+
+4.3.1 ILLUSTRATION
+
+Press , its indicator lights up, and controller enters Auto Start mode.
+
+4.3.2 AUTO START SEQUENCE
+
+a) When meet with pre-set start conditions, auto mode indicator flashes and meanwhile “start delay”
+      displayed on LCD starts countdown;
+
+b) When start delay is over, preheat relay outputs (if this be configured), “preheat start
+      delay XX s” is shown on LCD.
+
+c) When preheat delay is over, fuel relay outputs 1s and then start relay output; if engine crank fails
+      during “cranking time”, the fuel relay and start relay deactivated and enter into “crank rest time” to wait
+      for next crank.
+
+d) If engine crank fails within setting times, the fifth line of LCD turn black and “Failed to Start” message
+      appears on fifth line of LCD display at the same time.
+
+e) In case of successful crank attempt, “safety on timer” starts. During this period, low oil pressure, under
+      speed, charge failure alarms and auxiliary inputs (if configured) are disabled. As soon as this delay is
+      over, “start idle delay” is initiated (if configured).
+
+HGM4020T Genset Controller User Manual  Page 8 of 40
+f) During “start idle delay”, under speed, under frequency, under voltage alarms are inhibited. When this
+      delay is over, “warming up delay” starts (if configured).
+
+g) When “warming up delay” is over, if generator state is normal, its indicator will be illuminated. If
+      voltage and frequency has reached on-load requirements, the closing relay will be energized, generator
+      will take on load, generator power indicator will turn on, and generator will enter “Normal Running”
+      state; if voltage and frequency are abnormal, the controller will initiate shutdown alarm (shutdown
+      alarm will be displayed on LCD alarm page).
+
+4.3.3 AUTO STOP SEQUENCE
+
+a) If pre-set start conditions cannot be satisfied, “stop delay” will be started.
+b) When stop delay is over, close generator relay is un-energized; generator enters into “cooling down
+
+     time”. After “transfer rest time”, close mains relay is energized. Mains on load and generator indicator
+     extinguished while mains indicator lights.
+c) Idle relay is energized as soon as entering “stop idle delay” (if configured).
+d) If enter “ETS hold delay”, ETS relay is energized. Fuel relay is deactivated.
+e) Then enter gen-set “Fail to stop time”, auto decides whether generator is stopped or not automatically.
+f) Enter “generator at rest” as soon as “after stop time” is over. If genset fail to stop, controller will initiate
+     alarms (fail to stop warning shown on LCD).
+
+4.4 MANUAL START/STOP OPERATION
+
+a) Manual Start: Manual mode is selected by pressing the              button; a LED besides the button will
+
+illuminate to confirm the operation; press  button to start the genset, it can automatically judge
+
+crank success and accelerate to high speed running. If low oil pressure, over speed and abnormal
+
+voltage occur during genset running, controller can effectively protect genset to stop (detail procedures
+
+please refer to No.b~g of Auto start sequence). Under Manual Mode, load breaker won’t transfer
+
+automatically and         C/O key should be pushed to enter into the C/O interface. Through  key
+
+and key to select 1#ATS close/open mains and 2#ATS close/open generator, and then press
+       to execute corresponding actions.
+
+b) Manual stop: pressing  key can stop the running genset. (Detailed procedures please refer to
+
+No.b~f of Auto stop sequence).
+
+4.5 EMERGENCY START
+
+Simultaneously press      and           in manual mode will force generator to crank. Successful
+
+start will not be judged according to crank disconnect conditions, operator will have to crank the starter
+
+motor manually; when operator decides that the engine has fired, he/she should release the button and
+
+start output will be deactivated, safety on delay will be initiated.
+
+HGM4020T Genset Controller User Manual                                Page 9 of 40
+4.6 GENERATOR AUTO START CONDITIONS
+
+      There are 6 generator auto start conditions. Genset will startup in case any one condition is
+satisfied; after genset is started automatically, if corresponding stop condition is reached, genset will
+stop.
+
+                               Table 4 Start Conditions
+
+No.  Conditions                   Description                     Corresponding Stop Conditions
+
+1 Mains Abnormal Start  Genset will start when mains is Genset will stop when mains is
+
+                        abnormal                              normal
+
+2 Remote Start          Genset will start when remote Genset will stop when remote start
+
+                        start signal is active                signal is deactivated
+
+3 Cycle Run Start       Genset will start when cycle          Genset will stop when cycle running
+                        running start timer is due            stop timer is due (single cycle)
+                        (single cycle)
+
+4 Scheduled Run         Genset will start when Genset will stop when scheduling
+                        scheduling start timer is due running timer is due
+
+                        Genset will start when mains is If mains is normal, battery pack
+5 Mains Abnormal and Pile abnormal and battery voltage charging time reaches to charge complete time or complied with
+     Low Volt Start     is lower than the pre-set limit selected stop conditions, genset will
+
+                        of battery pack stop
+
+                        Genset will start when mains is Genset will stop when mains is
+
+6 Mains Abnormal and abnormal and machine room normal and machine room Room Temp High Start temperature is higher than the temperature is under the setting
+
+                        setting temperature upper limit temperature lower limit
+
+4.7 STOP CONDITIONS SELECTION
+
+    After mains is abnormal and pile low voltage start the genset, If mains is back to normal and battery
+pack charging time reaches to charge complete time or complied with selected stop conditions, genset
+will stop.
+
+    Stop contions can be selected are as below,
+      0: Pile Volt Normal and Current Low
+      1: Pile volt Normal
+      2: Current Low
+      3: Pile Volt Normal or Current Low
+
+    NOTE: Load current lower limit detection is active only while genset is normal running and meanwhile ATS1 gen
+closed and ATS2 gen opened. And genset will stop when load current detection time is reached.
+
+4.8 MAINS HAVE RULES
+
+Mains have rules suit for 3P4W/3P3W AC system.
+
+                               Table 5 Mains Have Rules
+
+No.                                  Rules Description
+
+1 phase A must be phase B/C phase cannot be missing
+2 electrified           phase B/C can be missing one phase
+
+3                       phase B/C can be missing two phases
+
+4 phase A cannot Three phases can be missing one phase
+
+5 be electrified        Three phases can be missing two phases
+
+4.9 ATS CONTROL
+
+4.9.1 MANUAL CONTROL
+
+     When controller is in manual mode, both switches execute manual control process.
+
+     Press           to enter into C/O page, and then select  or      to control its breaker to open
+
+or close. When “[ ]” selects the related object, press        to execute corresponding actions. For
+
+example, transfer 1#ATS transfer from open to close, operation process is as below,
+     Table 6 ATS Manual Control Operation
+
+No.  Display Contents                                      Operation
+
+1                                       Press  to enter into C/O page, as showing in
+
+                                        the left picture.
+
+2 Press twice and select 1#ATS GCB open icon;
+                                        Press  to execute 1#ATS GCB close action.
+
+3                                       1#ATS close GCB completely;
+
+                                        Press  again to exit C/O page.
+
+4.9.2 AUTO CONTROL
+
+      In auto mode, ATS will execute auto control process.
+      a) Allowing 1#ATS and 2#ATS close GCB simultaneously.
+
+            It suits for gensets with big power, allowing two ATSs to be loaded at the same time.
+             When two ATSs need to transferred from mains on-load to gen on-load, firstly, 1#ATS will
+
+                  execute close GCB action after opening MCB and transfer delay expired; secondly, 2s later
+                  after 1#ATS close GCB completely delay, 2#ATS will execute close GCB action.
+             When two ATSs need to transferred from gen on-load to mains on-load, firstly, 2#ATS will
+                  execute close MCB action after opening GCB and transfer delay expired; secondly, 2s later
+                  after 2#ATS close MCB completely delay, 1#ATS will execute close MCB action.
+      b) Not allowing 1#ATS and 2#ATS close GCB simultaneously.
+            It suits for gensets with small power, only one ATS is allowed to be loaded at the same time.
+             If genset start up because mains is abnormal and voltage of battery pack is low, 1#ATS
+                  will execute close GCB action after opening MCB and transfer delay expired, but 2#ATS
+                  will not close GCB;
+             If genset start up because mains is abnormal and temeprature of machine room is high,
+                  when battery pack charging time reaches mininum charge time or current of switch power
+                  is below load current lower limit, 1#ATS will execute close GCB action(or close MCB
+                  action), and 2s after delay 2#ATS close GCB.
+             For other situations, it should be followed by the ATS close GCB configuration in current
+                  power-on condition, act on the principle of 1#ATS priority close GCB.
+
+4.9.3 SWITCH CONTROL DESCRIPTION
+
+      a) If input port is configured as Close Status Auxiliary
+             If “Open breaker detect” is select “Enable”
+                  Load is transferred from mains to generator, when detecting time out, if open failed, it will
+                  wait for breaker opened. Otherwise, breaker open is completed. While close signal is
+
+HGM4020T Genset Controller User Manual                                  Page 11 of 40
+                  outputting, when detecting time out (NOTE1), if close failed, it will wait for breaker closed.
+                  Otherwise, breaker close is completed. If transfer failed and warning select “Enable”, there is
+                  alarming signal whatever breaker open or close failure.
+             If “Open breaker detect” is select “Disable”
+                  While open signal is outputting, when detecting time out, breaker open is completed. While
+                  close signal is outputting, when detecting time out (NOTE1), if close failed, it will wait for
+                  breaker closed. Otherwise, breaker close is completed. If transfer failed and warning select
+                  “Enable”, there is alarming signal whatever breaker open or close failure.
+      b) If input port is not configured as Close Mains Auxiliary
+            Load transferred from mains to gen, after open MCB delay and transfer delay, GCB is closed.
+            Load transferred from gen to mains, after open GCB delay and transfer delay, MCB is closed.
+
+    NOTE1: For the impulse type signals, close breaker detecting time is “Close Breaker Time”; for the constant close
+signals, breaker close detecting time is “Close Check Time”.
+
+    NOTE2: In manual mode, failed to transfer warning is deactivated.
+
+    NOTE3: When using ATS of no interposition, “Open breaker detect” should “Disable”.
+
+    NOTE4: When using AC contactor, “Open breaker detect” should select “Enable”.
+
+HGM4020T Genset Controller User Manual  Page 12 of 40
+5 PROTECTION
+
+5.1 WARNINGS
+
+      When controller detects the warning signals, alarm only and not stop the genset, besides, the LCD
+displays the warning information.
+
+                           Table 7 Warning Alarms Types
+
+ No.            Type                                                Description
+1     Low Oil Pressure     When the controller detects that the oil pressure has fallen below the
+2     Warn                 pre-set value, it will initiate a warning alarm and the corresponding alarm
+3                          information will be displayed on LCD.
+      Failed to Stop Warn  After “Wait for Stop” delay/ ETS delay has expired, if gen-set does not stop
+4                          completely, it will initiate a warning alarm and the corresponding alarm
+5     Low Fuel Level Warn  information will be displayed on LCD.
+6                          When the controller detects that the fuel level has fallen below the pre-set
+7     Failed to Charge     value, or detects that the low fuel level warning input is active, it will
+8     Warn                 initiate a warning alarm and the corresponding alarm information will be
+9                          displayed on LCD.
+10    Battery Under Volt   When the controller detects that charger voltage has fallen below the
+11    Warn                 battery voltage and the difference value exceed pre-set charging voltage
+12                         difference value, it will initiate a warning alarm and the corresponding
+13    Battery Over Volt    alarm information will be displayed on LCD.
+14    Warn                 When the controller detects that battery voltage has fallen below the
+15                         pre-set value, it will initiate a warning alarm and the corresponding alarm
+      Input Warn           information will be displayed on LCD.
+                           When the controller detects that battery voltage has exceeded the pre-set
+      Loss Of Speed        value, it will initiate a warning alarm and the corresponding alarm
+      Signal Warn          information will be displayed on LCD.
+                           When the controller detects that the auxiliary input warning signals, it will
+      Room Temp. High      initiate a warning alarm and the corresponding alarm information will be
+      Warn                 displayed on LCD.
+                           When the controller detects that the engine speed is 0 and the delay is 0, it
+      Oil Pressure Sensor  will initiate a warning alarm and the corresponding alarm information will
+      Open Warn            be displayed on LCD.
+                           When the controller detects that the temperature of machine room has
+      Fuel Level Sensor    exceeded pre-set temp. value (including sensor open circuit), it will initiate
+      Open Warn            a warning alarm and the corresponding alarm information will be
+                           displayed on LCD.
+      Gen Over Voltage     When the controller detects that the oil pressure sensor is open circuit
+      Warn                 and the action select “Warn”, it will initiate a warning alarm and the
+                           corresponding alarm information will be displayed on LCD.
+      Gen Under Voltage    When the controller detects that the fuel level sensor is open circuit and
+      Warn                 the action select “Warn”, it will initiate a warning alarm and the
+                           corresponding alarm information will be displayed on LCD.
+      Gen Over Frequency   When controller detects the genset voltage is higher than the set value, it
+      Warn                 will send warning signals and the corresponding alarm information will be
+                           displayed on LCD.
+      Gen Under            When controller detects the voltage is lower than the set value, it will send
+      Frequency Warn       warning signals and the corresponding alarm information will be
+                           displayed on LCD.
+                           When controller detects the frequency is higher than the set value, it will
+                           send warning signals and the corresponding alarm information will be
+                           displayed on LCD.
+                           When controller detects the frequency is lower than the set value, it will
+                           send warning signals and the corresponding alarm information will be
+                           displayed on LCD.
+
+HGM4020T Genset Controller User Manual                   Page 13 of 40
+ No.            Type                                                Description
+16    Gen Over Current     When controller detects the genset current is higher than the set value, it
+17    Warn                 will send warning signals and the corresponding alarm information will be
+18                         displayed on LCD.
+19    Over Power Warn      When controller detects the genset power (positive) is higher than the set
+20                         value, and action select “Warn”, it will send warning signals and the
+21    Maintenance Time     corresponding alarm information will be displayed on LCD.
+22    Warn                 When genset running time has exceeded the user setting maintenance
+23                         time and the action select “Warn”, it will initiate a warning alarm and the
+24    Failed to Charge IN  corresponding alarm information will be displayed on LCD. The
+25                         maintenance alarm will reset if the action selects “Inactive”.
+26    Pile Under Voltage   When the controller detects that external battery failed to charge input is
+27    Warn                 active, it will initiate a warning alarm and the corresponding alarm
+28                         information will be displayed on LCD.
+29    Door Inhibit Warn    When the controller detects that battery pack voltage has fallen below the
+30                         pre-set lower limit value, it will initiate a warning alarm and the
+      1#ATS Fail Warn      corresponding alarm information will be displayed on LCD.
+                           When the controller detects that door inhibit input is active, it will initiate a
+      2#ATS Fail Warn      warning alarm and the corresponding alarm information will be displayed
+                           on LCD.
+      Temp. Sensor 1       When the controller detects that 1#ATS failed to close and ATS transfer
+      Open Warn            fail warning is enabled, it will initiate a warning alarm and the
+                           corresponding alarm information will be displayed on LCD.
+      Oil Pressure Sensor  When the controller detects that 2#ATS failed to close and ATS transfer
+      2 Open Warn          fail warning is enabled, it will initiate a warning alarm and the
+                           corresponding alarm information will be displayed on LCD.
+      Fuel Level Sensor 2  If the config. sensor 1 set as temperature sensor, when the controller
+      Open Warn            detects that the temperature sensor 1 is open circuit and the action select
+                           “Warn”, it will initiate a warning alarm and the corresponding alarm
+      Temp. Sensor 2       information will be displayed on LCD.
+      Open Warn            If the config. Sensor 1 set as oil pressure sensor, when the controller
+                           detects that the oil pressure sensor is open circuit and the action select
+      Oil Pressure Sensor  “Warn”, it will initiate a warning alarm and the corresponding alarm
+      3 Open Warn          information will be displayed on LCD.
+                           If the config. sensor 1 set as level sensor, when the controller detects that
+      Fuel Level Sensor 3  the level sensor is open circuit and the action select “Warn”, it will initiate
+      Open Warn            a warning alarm and the corresponding alarm information will be
+                           displayed on LCD.
+      High Temp.1 Warn     If the config. sensor 2 set as temperature sensor, when the controller
+                           detects that the temperature sensor is open circuit and the action select
+                           “Warn”, it will initiate a warning alarm and the corresponding alarm
+                           information will be displayed on LCD.
+                           If the config. sensor 2 set as oil pressure sensor, when the controller
+                           detects that the oil pressure sensor is open circuit and the action select
+                           “Warn”, it will initiate a warning alarm and the corresponding alarm
+                           information will be displayed on LCD.
+                           If the config. sensor 2 set as level sensor, when the controller detects that
+                           the level sensor is open circuit and the action select “Warn”, it will initiate
+                           a warning alarm and the corresponding alarm information will be
+                           displayed on LCD.
+                           When the controller detects that config. Sensor 1 temperature (sensor
+                           type: temperature sensor) has exceeded the pre-set value, it will initiate a
+                           warning alarm and the corresponding alarm information will be displayed
+                           on LCD.
+
+HGM4020T Genset Controller User Manual  Page 14 of 40
+ No.            Type                                               Description
+31    Low Oil Pressure 2  When the controller detects that config. sensor 1 oil pressure (sensor
+32    Warn                type: oil pressure sensor) has fallen below the pre-set value, it will initiate
+33                        a warning alarm and the corresponding alarm information will be
+      Low Fuel Level 2    displayed on LCD.
+34    Warn                When the controller detects that config. Sensor 1 fuel level (sensor type:
+35                        level sensor) has fallen below the pre-set value, it will initiate a warning
+36    High                alarm and the corresponding alarm information will be displayed on LCD.
+      Temp.2 Warn         When the controller detects that config. Sensor 2 temperature (sensor
+                          type: temperature sensor) has exceeded the pre-set value, it will initiate a
+      Low Oil Pressure 3  warning alarm and the corresponding alarm information will be displayed
+      Warn                on LCD.
+                          When the controller detects that config. sensor 2 oil pressure (sensor
+      Low Fuel Level 3    type: oil pressure sensor) has fallen below the pre-set value, it will initiate
+      Warn                a warning alarm and the corresponding alarm information will be
+                          displayed on LCD.
+      Low Oil Level Warn  When the controller detects that config. Sensor 2 fuel level (sensor type:
+                          level sensor) has fallen below the pre-set value, it will initiate a warning
+                          alarm and the corresponding alarm information will be displayed on LCD.
+                          When any one input configured as “Low Oil Level Warn”, and input port is
+                          active, controller will initiate a warning alarm and the corresponding alarm
+                          information will be displayed on LCD.
+
+HGM4020T Genset Controller User Manual  Page 15 of 40
+5.2 SHUTDOWN ALARMS
+
+     When controller detects shutdown alarm, it will send signals to stop the generator and the
+corresponding alarm information will be displayed on LCD.
+
+                                      Table 8 Shutdown Alarms
+
+No.  Type                                                                     Description
+                                      When controller detects emergency stop input is active, it will send stop
+1 Emergency Stop                      signals and the corresponding alarm information will be displayed on
+        Shutdown                      LCD.
+                                      When controller detects the engine speed value is higher than the set
+2 Over Speed Shutdown                 value, it will send stop signals and the corresponding alarm information
+                                      will be displayed on LCD.
+3 Under Speed                         When controller detects the speed value is lower than the set value, it
+        Shutdown                      will send stop signals and the corresponding alarm information will be
+                                      displayed on LCD.
+4 Loss of Speed Signal Shutdown       When controller detects speed value equals to 0, and delay value isn’t 0,
+5 Gen Over Frequency Shutdown         it will send stop signals and the corresponding alarm information will be
+6 Gen Under Frequency                 displayed on LCD.
+                                      When controller detects the generator frequency value is higher than the
+        Shutdown                      set value, it will send stop signals and the corresponding alarm
+7 Gen Over Voltage                    information will be displayed on LCD.
+                                      When controller detects the generator frequency value is lower than the
+        Shutdown                      set value, it will send stop signals and the corresponding alarm
+8 Gen Under Voltage Shutdown          information will be displayed on LCD.
+                                      When controller detects the generator voltage value is higher than the
+9 Gen Over Current                    set value, it will send stop signals and the corresponding alarm
+        Shutdown                      information will be displayed on LCD.
+                                      When controller detects the voltage value is lower than the set value, it
+10 Failed to Start                    will send stop signals and the corresponding alarm information will be
+                                      displayed on LCD.
+11 High Temp. Shutdown                When controller detects the current value is higher than the set value
+12 Low Oil Pressure                   and duration time is over than over current delay, it will send stop
+                                      signals and the corresponding alarm information will be displayed on
+        Shutdown                      LCD.
+13 No Gen Frequency Shutdown          If genset started failure within setting of start times, controller will send
+14 Input Shutdown                     stop signals and the corresponding alarm information will be displayed
+                                      on LCD.
+15 Low Fuel Level Shutdown            When controller detects temperature of water/cylinder is higher than the
+16 Oil Pressure Sensor Open Shutdown  set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects oil pressure is lower than the set value, it will
+                                      send stop signals and the corresponding alarm information will
+                                      be displayed on LCD.
+                                      When controller detects frequency of genset is 0, it will send stop
+                                      signals and the corresponding alarm information will be displayed on
+                                      LCD.
+                                      When controller detects external active shutdown alarm signals, it will
+                                      send stop signals and the corresponding alarm information will be
+                                      displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable fuel level sensor, is lower than the pre-set value, it will
+                                      send stop signals and the corresponding alarm information will be
+                                      displayed on LCD.
+                                      When controller detects sensor，which connected to oil pressure sensor,
+                                      is open circuit, and the action select “shutdown”, it will send stop signals
+
+HGM4020T Genset Controller User Manual                         Page 16 of 40
+No.  Type                                                                     Description
+                                      and the corresponding alarm information will be displayed on LCD.
+17 Fuel Level Sensor                  When controller detects sensor，which connected to fuel level sensor, is
+        Open Shutdown                 open circuit, and the action select “shutdown”, it will send stop signals
+                                      and the corresponding alarm information will be displayed on LCD.
+18 Over Power Shutdown                When controller detects the power value (power is positive) is higher
+                                      than the max. set value and the action select “shutdown”, it will send
+19 Maintenance Time Shutdown          stop signals and the corresponding alarm information will be displayed
+20 Temp. Sensor 1 Open Shutdown       on LCD.
+                                      When genset operation time exceeds maintenance time that user
+21 Pressure Sensor 2                  pre-set and the action select “shutdown”, it will send stop signals and
+        Open Shutdown                 the corresponding alarm information will be displayed on LCD.
+                                      When controller detects temp. sensor, which connected to
+22 Fuel Level Sensor 2                programmable sensor 1, is open circuit, and the action select
+        Open Shutdown                 “shutdown”, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+23 Temp. Sensor 2 Open Shutdown       When controller detects pressure sensor, which connected to
+                                      programmable sensor 1, is open circuit, and the action select
+24 Pressure Sensor 3 Open Shutdown    “shutdown”, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+25 Fuel Level Sensor 3 Open Shutdown  When controller detects fuel level sensor, which connected to
+                                      programmable sensor 1, is open circuit, and the action select
+26 High Temp. 1 Shutdown              “shutdown”, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+27 Low Pressure 2                     When controller detects temp. sensor, which connected to
+        Shutdown                      programmable sensor 2, is open circuit, and the action select
+                                      “shutdown”, it will send stop signals and the corresponding alarm
+28 Low Fuel Level 2 Shutdown          information will be displayed on LCD.
+                                      When controller detects pressure sensor, which connected to
+29 High Temp. 2 Shutdown              programmable sensor 2, is open circuit, and the action select
+                                      “shutdown”, it will send stop signals and the corresponding alarm
+30 Low Pressure 3                     information will be displayed on LCD.
+        Shutdown                      When controller detects fuel level sensor, which connected to
+                                      programmable sensor 2, is open circuit, and the action select
+                                      “shutdown”, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable sensor 1(sensor type is temp. sensor), is higher than the
+                                      pre-set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable sensor 1 (sensor type is pressure sensor), is lower than
+                                      the pre-set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable sensor 1 (sensor type is level sensor), is lower than the
+                                      pre-set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable sensor 2 (sensor type is temp. sensor), is higher than the
+                                      pre-set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+                                      When controller detects the sample value, which adopted by the
+                                      programmable sensor 2 (sensor type is pressure sensor), is lower than
+                                      the pre-set value, it will send stop signals and the corresponding alarm
+                                      information will be displayed on LCD.
+
+HGM4020T Genset Controller User Manual  Page 17 of 40
+No.  Type                                                             Description
+                              When controller detects the sample value, which adopted by the
+31 Low Fuel Level 3 Shutdown  programmable sensor 2 (sensor type is level sensor), is lower than the
+                              pre-set value, it will send stop signals and the corresponding alarm
+                              information will be displayed on LCD.
+
+5.3 TRIP AND STOP ALARMS
+
+     When controller detects trip and stop alarms, it will send signals to stop the generator after hi-speed
+cooling, and then the corresponding alarm information will be displayed on LCD.
+
+                              Table 9 Trip and Stop Alarms
+
+No.  Type                                                             Description
+                              When controller detects the power value (power is positive) is higher
+1    Over Power               than the set value and the action select “trip and stop”, it will send alarm
+                              signals and the corresponding alarm information will be displayed on
+2    Gen Over Current         LCD.
+                              When controller detects the genset current is over than the pre-set value
+                              (delay time is expired) and the action select “trip and stop”, it will send
+                              alarm signals and the corresponding alarm information will be displayed
+                              on LCD.
+
+HGM4020T Genset Controller User Manual                      Page 18 of 40
+6 WIREING CONNECTION
+
+                            Fig.2 Rear Panel Drawing
+
+                            Table 10 Terminal Wire Connection
+
+No.   Function              Cable Size                         Remark
+
+1 B-                        2.5mm2 Connected with negative of starter battery.
+
+                                        Connected with positive of starter battery. If wire
+
+2 B+                        2.5mm2 length is over 30m, better to double wires in parallel.
+
+                                        Max. 20A fuse is recommended.
+
+3 Fuel relay output         1.5mm2      B+ is supplied by 2 terminal, rated 5A
+                                        Parameter set as “programmable relay output 5”.
+
+4 Start relay output        1.5mm2 B+ is supplied by No.2 terminal, rated 5A.
+
+5 Charger(D+) input         1.0mm2      Connected with charger starter’s D+ (WL) terminals.
+                                        Being hang up If there is no this terminal.
+
+6 Aux. output 1             1.0mm2      B+ is supplied by No.2 terminal,
+                                        rated 1A.
+
+7 Aux. output 2             1.0mm2      B+ is supplied by No.2 terminal,
+                                        rated 1A.
+
+8 Aux. output 3             1.0mm2      B+ is supplied by No.2 terminal,
+
+                                        rated 1A.                            Setting     items
+
+                                        Output: B+ is supplied by No.2 please to see
+
+                                        terminal, rated 1A.                  Table 12.
+
+                                        Input: active when grounded (B-).
+
+9 Aux. output 4/Aux. input 5 1.0mm2 According to “T9 Output/Input
+
+                                        Select”, users can be defined this
+
+                                        port as input port or output port
+
+                                        (default as Aux. output 4).
+
+10 Fuel level sensor input  1.0mm2      Connected with fuel level resistor   Setting items
+11 Aux. sensor 1 input      1.0mm2      type sensor.                         please to see
+                                        It is can be configured as           Table 14.
+                                        configurable sensor 1 or Aux. input
+                                        6.
+
+12 Aux. sensor 2 input      1.0mm2 It is can be configured as
+
+HGM4020T Genset Controller User Manual                                       Page 19 of 40
+No.  Function                               Cable Size                                 Remark
+                                                        configurable sensor 2 or Aux. input
+13 Oil pressure sensor input                1.0mm2      7.
+                                            0.5mm2      Connected with oil pressure resistor
+14 MP1                                      0.5mm2      type sensor.
+15 MP2                                      1.0mm2      Connected with speed sensor; shielding wire is
+16 Battery voltage input                                recommended. MP2 internal has connected with B-.
+
+         (VIN+)                                         Connected with positive of 48V battery pack.
+17 Battery voltage input
+                                            1.0mm2      Connected with negative of 48V battery pack.
+         (VIN-)                             0.5mm2
+18 RS485+                                   0.5mm2      120Ω shielding wire is recommended with single end
+19 RS485-                                   1.0mm2      earthed.
+20 PE                                       1.0mm2      Lightning ground terminal.
+21 Aux. input 1                             1.0mm2      Ground connected is active (B-).
+22 Aux. input 2                             1.0mm2      Ground connected is active (B-). Setting items please
+23 Aux. input 3                             1.0mm2      Ground connected is active (B-). to see Table 13.
+24 Aux. input 4                             1.0mm2      Ground connected is active (B-).
+25 Genset U-phase voltage monitoring input              Connected to U-phase output of genset (2A fuse
+26 Genset V-phase voltage monitoring input  1.0mm2      recommended).
+27 Genset W-phase voltage monitoring input              Connected to V-phase output of genset (2A fuse
+28 Genset line N2 input                     1.0mm2      recommended).
+29 Mains R-phase voltage monitoring input   1.0mm2      Connected to W-phase output of genset (2A fuse
+30 Mains S-phase voltage monitoring input   1.0mm2      recommended).
+31 Mains T-phase voltage                                Connected to N-line output of genset.
+                                            1.0mm2      Connected to R-phase of mains (2A fuse
+         monitoring input                               recommended).
+32 Mains line N1 Input                      1.0mm2      Connected to S-phase of mains (2A fuse
+33 CT A-phase monitoring input              1.0mm2      recommended).
+34 CT B-phase monitoring input              1.5mm2      Connected to T-phase of mains (2A fuse
+35 CT C-phase monitoring input                          recommended).
+36 CT COM                                               Connected to line N of mains.
+
+                                                        Outside connected to secondary coil of CT (5A rated).
+
+                                            1.5mm2 Outside connected to secondary coil of CT (5A rated).
+
+                                            1.5mm2      Outside connected to secondary coil of CT (5A rated).
+                                            1.5mm2
+
+HGM4020T Genset Controller User Manual                  Page 20 of 40
+7 SCOPES AND DEFINITIONS OF PROGRAMMABLE PARAMETERS
+
+7.1 CONTENTS AND SCOPES OF PARAMETERS
+
+                          Table 11 Parameters Setting Contents and Scopes
+
+ No.    Items              Range        Default                 Description
+Mains
+
+                                                 0: 3 Phase, 4 Wire(3P4W);
+
+1       Mains AC System    (0-3)        0 1: 2 Phase, 3 Wire (2P3W); 2: 1 Phase, 2 Wire (1P2W);
+
+                                                 3: 3 Phase, 3 Wire (3P3W).
+
+2       Mains Normal Delay (0-3600)s    10       The time from mains abnormal to normal or
+
+3 Mains Abnormal (0-3600)s              5 from normal to abnormal; suitable for ATS (automatic transfer switch).
+           Delay
+
+                                                 When mains voltage has exceeded the set
+
+                                                 value, Mains Over Voltage is active. When
+
+4       Mains Over Voltage (30-620)V    276      set the value as 620V, the controller does
+
+                                                 not detect over voltage signal. Back lash:
+
+                                                 10V.
+
+                                                 When mains voltage has fallen below the
+
+                                                 set value, Mains Under Voltage is active.
+
+5       Mains Under Voltage (30-620)V   184      When set the value as 30V, the controller
+
+                                                 does not detect under voltage signal. Back
+
+                                                 lash: 10V.
+
+                                                 0: phase A must be electrified, phase B/C
+
+                                                 cannot be missing;
+
+                                                 1: phase A must be electrified, phase B/C
+
+                                                 can be missing one phase;
+
+6       Mains Have Rules   (0-4)        0 2: phase A must be electrified, phase B/C can be missing two phases;
+
+                                                 3: phase A cannot be electrified, phase
+
+                                                 A/B/C can be missing one phase;
+
+                                                 4: phase A cannot be electrified, phase
+
+                                                 A/B/C can be missing two phases;
+
+Timers
+
+1       Start Delay        (0-3600)s    1 Time from auto start signal active to genset
+                           (0-3600)s                  started.
+                           (0-300)s
+2       Stop Delay         (3-60)s      1 Time from auto start signal deactivated to genset stopped.
+                           (3-60)s
+3       Pre-heat Delay                  0 Power-on time of heater plug before starter is powered up.
+                           (1-60)s
+4       Cranking Time      (0-3600)s    8        Power-on time of starter for each time.
+                           (0-3600)s
+5       Crank Rest Time    (3-3600)s    10 The waiting time before second power up
+                           (0-3600)s                  when engine starts fail.
+                           (0-120)s
+                           (0-120)s              Alarms for low oil pressure, under speed,
+
+6       Safety On Time                  10       under frequency/voltage, charge alt failure
+
+                                                 are inactive.
+
+7       Start Idle Time                 0        Idle running time of genset when starting.
+
+8       Warming Up Time                 10 Warming time before genset switch on, after high speed running.
+
+9       Cooling Time                    10 Radiating time before genset stop, after it unloads.
+
+10      Stop Idle Time                  0        Idle running time while genset stopping.
+
+11      ETS Solenoid Hold               20 Stop electromagnet’s power on time while genset stopping.
+
+12      Stop Duration                   0 When “ETS time” is set as 0, it is time needed between ending of genset idle delay
+
+HGM4020T Genset Controller User Manual                                                           Page 21 of 40
+   No.  Items             Range                 Default                        Description
+                                               30        and genset stopped completely;
+13      Louver Hold Open  (0-3600)s                      When “ETS time” is not 0, it is time between
+                          (10.0-300.0)                   ending of ETS hold delay and genset
+                                                         stopped completely.
+                                                         After genset stopped completely, it is louver
+                                                         keeps opening time.
+
+Engine
+
+1       Flywheel Teeth                         118.0     Tooth number of the engine, it is for judging
+                                               1200      of starter crank disconnect conditions and
+2 Under Speed             (0-6000)RPM          1710      inspecting of engine speed.
+           Shutdown                            5.0       When engine speed has fallen below the set
+                                               33.0      value and delay time expired, “Under Speed
+3 Over Speed Shutdown     (0-6000)RPM          8.0       Shutdown” is active. It will initiate a
+                                                         shutdown alarm signal.
+4 Loss of Speed Signal Delay (0-20.0)s         6.0       When engine speed has exceeded the set
+                                               3         value and delay time expired, “Over Speed
+5       Battery Over Voltage (12.0-40.0)V      2         Shutdown” is active. It will initiate a
+                                               360       shutdown alarm signal.
+6 Battery Under Voltage   (4.0-30.0)V          14.0      It is delay time after speed signal lost, if the
+                                               200       delay time set as 0s, only warning without
+7 Charge Alternator (0.0-30.0)V                0.0       shutdown.
+           Fail                                          When battery voltage has exceeded the set
+                                                         value and remains for 20s, It will initiate a
+8       Start Attempts    (1-10)times                    warning alarm signal. Only warning and not
+                                                         to shutdown the generator.
+9 Crank Disconnect Conditions (0-6)                      When battery voltage has fallen below the
+                                                         set value and remains for 20s, It will initiate
+10 Disconnected Engine Speed (0-3000)RPM                 a warning alarm signal. Only warning and
+11 Disconnected Gen Frequency (0-600.0)Hz                not to shutdown the generator.
+12 Disconnected Oil (0-400)kPa                           During generator is normal running, when
+                                                         voltage difference between alternator
+            Pressure                                     D+(WL) and B+ exceeds the set value and
+13 Disconnected Oil Pressure Time (0.0-20.0)s            remains for 5s, It will initiate a charge alt
+                                                         failure warning alarm signal.
+                                                         Maximum times of crank attempts. When
+                                                         reach this number, controller will send start
+                                                         failure signal.
+                                                         There are 3 conditions of disconnecting
+                                                         starter with engine: Generate frequency,
+                                                         engine speed and oil Pressure. Aiming at to
+                                                         separating the start motor and genset as
+                                                         soon as possible.
+                                                         During starting process, when engine speed
+                                                         is higher than the set value, starter will be
+                                                         disconnected.
+                                                         During starting process, when generator
+                                                         frequency is higher than the set value,
+                                                         starter will be disconnected.
+                                                         During starting process, when generator oil
+                                                         pressure is higher than the set value, starter
+                                                         will be disconnected.
+                                                         When crank disconnect condition contains
+                                                         oil pressure, if engine oil pressure is higher
+                                                         than pre-set value and delay time is expired,
+                                                         starter will be disconnected.
+
+HGM4020T Genset Controller User Manual                   Page 22 of 40
+ No.       Items                Range   Default                        Description
+Generator
+                                                 0: 3 Phase, 4 Wire(3P4W);
+1     Gen AC System        (0-4)        0        1: 2 Phase, 3 Wire (2P3W);
+                                                 2: 1 Phase, 2 Wire (1P2W);
+2     Gen Rated Frequency  (10.0-600.0)Hz 50.0   3: 3 Phase, 3 Wire (3P3W);
+                                                 4: 3 Phase, 3 Wire single phase (3P3W1C).
+3     Gen Poles            (2-64)       4        Rated frequency of generator
+                                                 Numbers of generator poles, which can be
+4                          (30-620)V    276      used to calculate generator speed
+                                                 (generator with no speed sensor).
+      Gen Over Volt                              They are generator over voltage shutdown
+                                                 setting value and delay value (No detection
+5     Shutdown             (0-60.0)s    10.0     for over volt shutdown signals if the value
+                                                 set as 620V).
+6                          (30-620)V    184      They are generator under voltage shutdown
+                                                 setting value and delay value (No detection
+      Gen Under Volt                             for under volt shutdown signals if the value
+                                                 set as 30V).
+7     Shutdown             (0-60.0)s    10.0     They are generator over frequency
+                                                 shutdown setting value and delay value (No
+8                          (0-75.0)Hz   57.0     detection for over frequency shutdown
+                                                 signals if the value set as 0).
+      Gen Over Freq                              They are generator under frequency
+                                                 shutdown setting value and delay value (No
+9     Shutdown             (0-60.0)s    2.0      detection for under frequency shutdown
+                                                 signals if the value set as 0).
+10                         (0-75.0)Hz   40.0     When generator voltage exceeds pre-set
+                                                 value, gen over voltage warning alarm will
+      Gen Under Freq                             be sent. (No detection for over volt signals if
+                                                 the value set as 620V)
+11    Shutdown             (0-60.0)s    10.0     When generator voltage below pre-set value,
+                                                 gen under voltage warning alarm will be
+12    Gen Over Volt Warn   (30-620)V    253      sent. (No detection for under volt signals if
+                                                 the value set as 30V)
+13    Gen Under Volt Warn  (30-620)V    193      When generator frequency exceeds the
+                                                 pre-set value, gen over frequency warning
+14    Gen Over Freq Warn   (0-75.0)Hz   55.0     signals will be sent. (No detection for over
+                                                 frequency warning signals if the value set as
+15    Gen Under Freq Warn  (0-75.0)Hz   42.0     0).
+                                                 When generator frequency falls below the
+Load  CT Ratio             (5-6000)/5   500      pre-set value, gen under frequency warning
+1     Full Load Current                          signals will be sent. (No detection for under
+2                          (5-6000)A    500      frequency warning signals if the value set as
+      Over Current                               0).
+3     Protection           (0-3)        2
+                                                 The ratio of external current transformer.
+                           (50-130)%    120      It used for load over current calculating.
+                                                 0: Not used; 1: Warn; 2: Shutdown; 3: Trip.
+                           (0-1)        0        Over current delay starts when load current
+                                                 exceeded the setting percentage value.
+4     Over Current Delay   (0-3600)s    30       0: Definite Time; 1: IDMT (Inverse Definite
+                                                 Minimum Time).
+                           (1-36)       36       Definite Time: over current delay value
+                                                 IDMT: delay multiply value.
+5     Over Power           0-3          0        0: Not used; 1: Warn; 2: Shutdown; 3: ELE
+
+HGM4020T Genset Controller User Manual           Page 23 of 40
+  No.             Items            Range    Default                        Description
+        Protection                                   Trip.
+6                            (0-6000.0)kW  304.0     Over power setting.
+7                            (0-6000.0)kW  290.0     Over power warning return value.
+8                            (0-3600)s     5         Over power delay value.
+Switch
+                             (0-99.9)s
+1       Transfer Time                      1.0 Time interval from open MCB to close GCB
+                             (0-10.0)s                   or from open GCB to close MCB.
+
+2       Close Time                         5.0 Pulse width of mains/generator switch on. When it is 0, means output constantly.
+
+                                                     Pulse width of mains/generator switch off,
+
+3       Open Time            (0-10.0)s     5.0       which can be used as breaker open check
+
+                                                     time at the same time.
+
+4       Close Check Time     (0-20.0)s     5.0 While outputting consistently, it is time used for checking switch auxiliary contacts.
+                             (0-1)
+5       Transfer Fail Warn   (0-1)         0         0 : Disable; 1: Enable
+                             (0-1)
+6       Open Check Enable                  0         0 : Disable; 1: Enable
+                             (0-12)
+7       Mains Abnormal Trip                0         0 : Disable; 1: Enable
+
+Analog Sensors
+
+Oil Pressure Sensor
+
+1       Curve Type                         8 Default as SGX. Details please to see Table 14
+
+2       Open Circuit Action (0-2)          1 0: Indication (oil pressure sensor will show “+++”); 1: Warn; 2: Shutdown
+
+                                                     When the oil pressure of the external sensor
+
+                                                     falls below the set value(only detect after
+
+3 Low Oil Pressure (0-400)kPa                        “Safety On delay”), “Low Oil Pressure”
+           Shutdown
+                                           103       shutdown alarm is initiated. If setting
+
+                                                     configured as 0, “Low Oil Pressure” alarm
+
+                                                     signal will not be initiated (only suit for oil
+
+                                                     pressure sensor).
+
+                                                     When the oil pressure of the external sensor
+
+                                                     falls below the set value (only detect after
+
+4 Low Oil Pressure (0-400)kPa                        “Safety On delay”), “Low Oil Pressure”
+           Warn
+                                           124       warning alarm is initiated. If setting
+
+                                                     configured as 0, “Low Oil Pressure” alarm
+
+                                                     signal will not be initiated (only suit for oil
+
+                                                     pressure sensor).
+
+Fuel level Sensor
+
+1       Curve Type           (0-7)         3 Default as SGD. Details please to see Table
+                             (0-2)                       14
+
+2       Open Circuit Action                1 0: Indication (fuel level sensor will show
+                                                         “+++”); 1: Warn; 2: Shutdown
+
+                                                     When the fuel level of the external sensor
+
+                                                     falls below the set value (always detect),
+
+3       Low Level Shutdown (0-100)%        0         “Low Fuel Level” shutdown alarm is
+
+                                                     initiated. If setting configured as 0, “Low
+
+                                                     Fuel Level” alarm signal will not be initiated.
+
+                                                     When the fuel level of the external sensor
+
+                                                     falls below the set value (always detect),
+
+4       Low Level Warning (0-100)%         20        “Low Fuel Level” warning alarm is initiated.
+
+                                                     If setting configured as 0, “Low Fuel Level”
+
+                                                     alarm signal will not be initiated.
+
+                                                     If fuel level falls below the pre-set value and
+
+5       Fuel Pump On         (0-100)%      25        lasts for over 10s, “Fuel Pump On” signal
+
+                                                     will be initiated.
+
+HGM4020T Genset Controller User Manual                                       Page 24 of 40
+   No.  Items                      Range   Default                        Description
+                             (0-100)%     80        If fuel level exceeds the pre-set value and
+6       Fuel Pump Off        (0-1)        0         lasts for over 10s, “Fuel Pump Off” signal
+                             (0-10000)L   1000      will be initiated.
+7 Fuel Tank Capacity Enable
+                                                    0: Disable; 1: Enable
+8       Fuel Tank Capacity
+                                                    Convert the fuel level percentage display to
+                                                    volume display.
+
+Auxiliary Sensor 1
+
+                                                    0: Digital input 6;
+
+                                                    1: Temperature sensor;
+
+1       Sensor Type          (0-4)        4         2: Pressure sensor;
+
+                                                    3: Level sensor;
+
+                                                    4: Room temperature sensor.
+
+2       Curve Type           (0-10)       9 Select according to the sensor types, details please to see Table 14.
+                             (0-10)
+                             (0-5)
+                             (0-10)
+
+3       Open Circuit Action (0-2)         1 0: Indication (related sensor will show “+++”); 1: Warn; 2: Shutdown.
+
+                                                    Setting this value need to according the
+
+                                                    sensor types.
+
+                                                    For temp. sensor, if sampling value exceeds
+
+                                                    the pre-set value, controller will initiate
+
+                                                    shutdown alarms. If set as 140, shutdown
+
+4       Shutdown Value       (0-400)      98        alarms will not be sent.
+
+                                                    For oil pressure sensor and fuel level
+
+                                                    sensor, if sampling value falls below the
+
+                                                    pre-set value, controller will initiate
+
+                                                    shutdown alarms. If set as 0, shutdown
+
+                                                    alarms will not be sent.
+
+                                                    Setting this value need to according the
+
+                                                    sensor types.
+
+                                                    For temp. sensor, if sampling value exceeds
+
+                                                    the pre-set value, controller will initiate
+
+                                                    warning alarms. If set as 140, warning
+
+5       Warn Value           (0-400)      95        alarms will not be sent.
+
+                                                    For oil pressure sensor and fuel level
+
+                                                    sensor, if sampling value falls below the
+
+                                                    pre-set value, controller will initiate warning
+
+                                                    alarms. If set as 0, warning alarms will not
+
+                                                    be sent.
+
+6 Room Temp. High                                   If temperature of machine room exceeds
+           Warning
+                             (0-60)°C     40        the pre-set value, controller will initiate
+Aux. Sensor 2
+                                                    warning alarms.
+
+1       Sensor Type          (0-3)                      0: Digital input 7;
+                                          0 1: Temperature sensor;
+
+                                                        2: Oil pressure sensor;
+                                                        3: Fuel level sensor;
+
+2       Curve Type           (0-10)       3 Select according to the sensor types, details please to see Table 14.
+                             (0-10)
+                             (0-5)
+
+3       Open Circuit Action (0-2)         1 0: Indication (related sensor will show “+++”); 1: Warn; 2: Shutdown.
+
+4       Shutdown Value       (0-400)      98        Setting this value need to according the
+
+HGM4020T Genset Controller User Manual                                           Page 25 of 40
+   No.  Items            Range           Default                        Description
+                                        95        sensor types.
+5       Warn Value       (0-400)                  For temp. sensor, if sampling value exceeds
+                                                  the pre-set value, controller will initiate
+                                                  shutdown alarms. If set as 140, shutdown
+                                                  alarms will not be sent.
+                                                  For oil pressure sensor and fuel level
+                                                  sensor, if sampling value falls below the
+                                                  pre-set value, controller will initiate
+                                                  shutdown alarms. If set as 0, shutdown
+                                                  alarms will not be sent.
+                                                  Setting this value need to according the
+                                                  sensor types.
+                                                  For temp. sensor, if sampling value exceeds
+                                                  the pre-set value, controller will initiate
+                                                  warning alarms. If set as 140, warning
+                                                  alarms will not be sent.
+                                                  For oil pressure sensor and fuel level
+                                                  sensor, if sampling value falls below the
+                                                  pre-set value, controller will initiate warning
+                                                  alarms. If set as 0,warning alarms will not
+                                                  be sent.
+
+Digital Input Ports
+
+                         (0-31)         9 Factory default: Remote Start (on-load), details please to see Table 13
+                         (0-1)
+1       Input 1 Setting  (0-20.0)s      0         0: close to activate; 1: open to activate.
+
+                         (0-31)         2.0 It is time from detection of the input port is active to action confirm.
+                         (0-1)
+                         (0-20.0)s      22 Factory default: Access Control, details please to see Table 13
+
+2       Input 2 Setting  (0-31)         0         0: close to activate; 1: open to activate.
+                         (0-1)
+                         (0-20.0)s      2.0 It is time from detection of the input port is
+                                                      active to action confirm.
+                         (0-31)
+                         (0-1)          0 Factory default: Not Used, details please to see Table 13
+                         (0-20.0)s
+3       Input 3 Setting                 0         0: close to activate; 1: open to activate.
+                         (0-31)
+                         (0-1)          2.0 It is time from detection of the input port is active to action confirm.
+                         (0-20.0)s
+                                        0 Factory default: Not Used, details please to
+                         (0-31)                       see Table 13
+                         (0-1)
+4       Input 4 Setting  (0-20.0)s      0         0: close to activate; 1: open to activate.
+
+                         (0-31)         2.0 It is time from detection of the input port is
+                         (0-1)                        active to action confirm.
+
+                                        0 Factory default: Not Used, details please to see Table 13
+
+5       Input 5 Setting                 0         0: close to activate; 1: open to activate.
+
+                                        2.0 It is time from detection of the input port is
+                                                      active to action confirm.
+
+                                        0 Factory default: Not Used, details please to
+                                                      see Table 13
+
+6       Input 6 Setting                 0         0: close to activate; 1: open to activate.
+
+                                        2.0 It is time from detection of the input port is active to action confirm.
+
+7       Input 7 Setting                 0 Factory default: Not Used, details please to see Table 13
+
+                                        0         0: close to activate; 1: open to activate.
+
+HGM4020T Genset Controller User Manual            Page 26 of 40
+   No.           Items                Range    Default                        Description
+                                (0-20.0)s     2.0       It is time from detection of the input port is
+                                                        active to action confirm.
+                                (0-36)
+Relay Output Ports              (0-36)
+                                (0-36)
+1       Output 1                (0-36)        12 Factory default: 1#ATS Close Mains. Details please to see Table 12.
+                                (0-36)        13 Factory default: 1#ATS Close Gen. Details
+2       Output 2
+                                (0-2)                       please to see Table 12.
+3       Output 3                (1-254)       14 Factory default: 2#ATS Close Mains. Details
+                                (0-9999)
+4       Output 4                                            please to see Table 12.
+                                              15 Factory default: 2#ATS Close Gen. Details
+5       Output 5
+                                                            please to see Table 12.
+                                              20 Factory default: Fuel Relay Output. Details please to see Table 12.
+
+Module Settings
+
+1       Power On Mode                         0         0: Stop Mode; 1: Manual Mode; 2: Auto
+                                              1         Mode.
+2       Module Address                        0318      It is communication address of the
+                                                        controller.
+3       Password                              0         Details please to see Note 2.
+                                              3         It is used to set date of controller.
+4       Date and Time                                   0: Relay output 4
+                                                        1: Digital Input 5
+5       T9 Function Set         (0-1)                   Select the hardware function of No.9
+                                                        terminal of the controller.
+6       Door Opening Time       (1-20)s                 Pulse output time of opening door remotely
+
+Inhibit Auto Start              (0-1)
+                                (0-2)
+1       Inhibit Auto Start Set  (1-31)        0         0: Disable; 1: Enable
+                                (0-6)
+2       Schedule Period                       0 Cycle selection: 0: Monthly; 1: Weekly; 2: Daily.
+                                 (0-23)h      1 Day (cycle selection: 0: monthly)
+                                (0-59)min     0 Week (cycle selection: 1: weekly)
+                                (0-30000)min  0 Time (Hour)
+                                              0 Time (Minute)
+                                (0-1)         30 Duration time
+                                (0-1)
+Auto Start                      (0-1)
+
+Mains Abnormal Start            (0-1)
+                                (0-1)
+1       Start Selection         (0-1)         0         0: Not Start; 1: Start
+
+2       1#ATS to Gen Set        (0-1)         1         0: Disable; 1: Enable。
+                                (0-1)
+3       2#ATS to Gen Set        (0-1)         0         0: Disable; 1: Enable
+                                (0-6000)min
+Remote Start
+
+1       Start Selection                       1         0: Not Start; 1: Start
+
+2       1#ATS to Gen Set                      1         0: Disable; 1: Enable
+
+3       2#ATS to Gen Set                      0         0: Disable; 1: Enable
+
+Cycle Run Start
+
+1       Start Selection                       0         0: Not Start; 1: Start
+
+2       1#ATS to Gen Set                      1         0: Disable; 1: Enable
+
+3       2#ATS to Gen Set                      0         0: Disable; 1: Enable
+
+4       Cycle Run Time                        0 It is genset running time, if the setting time is arrived, genset will stop.
+
+5       Cycle Stop Time         (0-6000)min   0 It is genset standby time, if the setting time is arrived, genset will start.
+
+Scheduled Run
+
+1       Start Selection         (0-1)         1         0: Not Start; 1: Start
+                                (0-1)
+2       1#ATS to Gen Set        (0-1)         1         0: Disable; 1: Enable
+
+3       2#ATS to Gen Set                      0         0: Disable; 1: Enable
+
+HGM4020T Genset Controller User Manual                                          Page 27 of 40
+  No.            Items         Range                      Default                        Description
+4      Scheduled Run     (0-1)                           0         0: Disable; 1: Enable
+                         (0-1)                           0         0: Off-load; 1: On-load
+                                                                   Cycle selection: 0: Monthly; 1: Weekly; 2:
+                                           (0-2)         0         Daily.
+                                           (1-31)        1         Day (cycle selection: 0: monthly)
+5 Scheduled Period (0-6)                                 0         Week (cycle selection: 1: weekly)
+                                           (0-23)h       0         Time (Hour)
+                                           (0-59)min     0         Time (Minute)
+                                           (0-30000)min  30        Duration time
+
+Mains Abnormal and Pile Low Volt Start
+
+1      Start Selection   (0-1)                           1         0: Not Start; 1: Start
+
+                                                                   0: Pile Volt Normal and Current Low
+
+2      Stop Condition    (0-3)                           0 1: Pile volt Normal
+                                                                       2: Current Low
+
+                                                                   3: Pile Volt Normal or Current Low
+
+3      1#ATS to Gen Set  (0-1)                           1         0: Disable; 1: Enable
+
+4      Pile Volt Upper Limit (0-100.0)V                  58.0 It is battery voltage when battery completely charged.
+
+                                                                   It is battery pack under voltage limit. If
+
+5      Pile Volt Lower Limit (0-100.0)V                  45.0      voltage of battery falls below the setting
+
+                                                                   value, genset will be started.
+
+6      Charge Finish Time (1-6000)min                    720 It is the maximum time that battery allowed to charge.
+
+                                                                   When load current of switch power is lower
+
+7      Under Current     (1-100)%                        15 than the setting value, and battery voltage is higher than the upper limit value as well,
+
+                                                                   genset will be allowed to stop.
+
+                                                                   When genset is normal running, ATS1 gen
+
+8      Under Current Delay (10-3600)s                    30 closed and ATS2 gen opened, if load current is below pre-set lower limit value, this delay
+
+                                                                   will be started.
+
+9 Minimum Charge (0-360)min                                        When battery charging time exceeds the
+           Time
+                                                         30        setting value, and if temperature of machine
+
+                                                                   room is high, air conditioner will be started.
+
+Mains Abnormal and Room Temp. High Start
+
+1      Start Selection   (0-1)                           1         0: Not Start; 1: Start。
+
+2      2#ATS to Gen Set  (0-1)                           1         0: Disable; 1: Enable
+
+3 Room Temp. Upper (15-55)°C                             28 Genset will start up if machine room is
+           Limit                                                       higher than this value.
+
+                                                                   After genset started up because of the high
+
+4 Room Temp. Lower (15-55)°C                             22 temp. of the machine room, if room temp.
+           Limit                                                       falls below the setting value, genset will
+
+                                                                   stop.
+
+ATSs Both to Gen
+
+1      ATSs Both to Gen  (0-1)                           0         0: Not Allowed; 1: Allowed
+
+    NOTES:
+1) Both 1#ATS and 2#ATS have the same configuration;
+2) When doing parameter configuration via PC software, there is no need to input password if default password (0318)
+
+       isn’t change; otherwise, if default password been changed or first time to set parameters via PC, password need to
+       be wrote into the password interface.
+3) After the correct password is entered, Parameter setting interface can be entered directly by inputting parameter
+       serial when secondary entering the password interface before LCD backlight darken.
+4) Engine teeth configuration: press start button when generator frequency exceeds 20Hz. Engine teeth number will be
+       calculated automatically and press conform button can change the number of engine teeth.
+
+HGM4020T Genset Controller User Manual                                                         Page 28 of 40
+7.2 ENABLE DEFINITION OF PROGRAMMABLE OUTPUT PORTS
+
+                    Table 12 Defined Content of Programmable Outputs 1~5
+
+No.  Items                                   Function Description
+
+0    Not Used           Output port is deactivated when “Not Used” is selected.
+
+                        Include all shutdown alarms, trip and stop alarms and warning alarms.
+
+1    Common Alarm       When there is warning alarm only, it is not self-lock; when a shutdown
+
+                        alarm occurs, it is self-lock until the alarm is reset.
+
+2    Common ELE Trip    Action when there is a common trip shutdown alarm occurs.
+
+3    Common Shutdown Output when there is a shutdown alarm occurs.
+
+4    Common Warn Alarm Action when there is a common warning alarm occurs.
+
+                        When warning, trip shutdown and shutdown alarms appear, audible
+
+5    Audible Alarm      alarm output is fixed as 300s. When “alarm mute” or any keys on the
+
+                        panel is active, it can remove the alarms.
+
+6 Energized to Stop Suitable for genset with electromagnet and will active after “stop idle delay”. It is deactivated when the “ETS Solenoid delay” expires.
+
+                        Used for engine which has idles. Close before starting and open in
+
+7    Idle Control       warming up delay; Close during stop idle delay and open when genset
+
+                        stopped completely.
+
+8    Preheat Control    Close before starting and open before power up;
+
+9    Raise Speed        Action while in hi-speed warming up.
+
+10 Drop Speed           Action while in the period time from stop idling to wait for stop.
+
+11 1#ATS Open           Controlling switch to take off load.
+
+12 1#ATS Close Mains Controlling mains switch to take on load. When close time set as 0, it is continuously close.
+
+13 1#ATS Close Gen      Controlling generator switch to take on load. When close time set as 0,
+                        it is continuously close.
+
+14 2#ATS Close Mains Controlling mains switch to take on load. When close time set as 0, it is
+                                          continuously close.
+
+15 2#ATS Close Gen      Controlling generator switch to take on load. When close time set as 0,
+                        it is continuously close.
+
+16 2#ATS Open           Controlling switch to take off load.
+
+                        Close when fuel level is lower than the “Fuel Pump On” value or when
+
+17 Fuel Pump Control    low fuel level warning input is active; Open when fuel level is higher
+                        than the “Fuel Pump Off” and low fuel level warning input is
+
+                        deactivated.
+
+18 High Speed Control Close when the generator enters into Warming Up delay while open
+                                          after cooling delay.
+
+19 Crank Output         Output while engine in cranking period.
+
+20 Fuel Output          Action when generator start; disconnect when wait for stop.
+
+21 Generator Excite     Output in start period. If there is no generator frequency during safety
+                        running, output for 2 seconds again.
+
+22 Advance Oil Output Output while genset is in periods from pre-heat to stop idling.
+
+23 Fan Control          Output according to the upper/lower limit of the engine room
+                        temperature.
+
+24 Gen Running Output Output while genset is in periods from normal running to hi-speed
+                                          cooling.
+
+25 Timing Start         Output while genset is in timing start period.
+
+26 Charge Alt Fail      Output when charger failed to charge the batteries.
+
+27 In Auto Mode         Action while system is in auto mode.
+
+28 In Manual Mode       Action while system is in manual mode.
+
+29 In Stop Mode         Action while system is in stop mode.
+
+30 High Room Temp Warn  When temperature of machine room reaches the “Room High Temp
+                        Warn” limit, alarms will be initiated.
+No.  Items                              Function Description
+
+31 Mains Abnormal      Action when mains over/under frequency, over/under voltage input is
+                       active.
+
+32 Louver Control      Action when genset starts up and disconnect after genset stopped and
+                       “Louver Hold Open” time expired.
+
+33 Battery Over Voltage Output when battery voltage is high warning.
+
+34 Battery Under Voltage Output when battery voltage is low warning.
+
+35 Tele. Open Door     This output is remote controlled by Modbus-RTU protocol, output time
+                       is “Telecontrol Open Door Output Time”.
+
+36 Failed to Start     Output when engine failed to start.
+
+37 Oil Pre-supply      Output while genset is in periods from pre-heat to safety running.
+
+38 Start Delay Output  Output during start delay period.
+
+39 Reserved
+
+40 Reserved
+
+41 Reserved
+
+42 Reserved
+
+43 Reserved
+
+44 Reserved
+
+45 Reserved
+
+46 Reserved
+
+47 Reserved
+
+48 Reserved
+
+49 Reserved
+
+50 Reserved
+
+HGM4020T Genset Controller User Manual                                Page 30 of 40
+7.3 ENABLE DEFINITION OF PROGRAMMABLE INPUT PORTS
+
+                      Table 13 Definition Content of Programmable Inputs 1~5
+
+No.            Items                                Function Description
+
+0    Not Used              Input port is inactive.
+
+1    Alarm Mute            If input port is active, “Audible Alarm” output will be inhibited.
+
+2    Reset Alarm           If input port is active, shutdown alarms and ELE trip alarms can be
+                           reset.
+
+3    Emergency Stop        If input port is active, genset will alarm shutdown immediately.
+
+4 High Temp Shutdown After safety on delay is expired, if this input is active, genset will
+                                              alarm shutdown immediately.
+
+5 Low Oil Pressure         After safety on delay is expired, if this input is active, genset will
+         Shutdown          alarm shutdown immediately.
+
+6    Low Fuel Level Warn   If this input is active, controller will send low fuel level warn alarm
+                           signal.
+
+7    Warn Input            If this input is active, controller will send external warn alarm signal.
+
+8    Shutdown Input        If this input is active, genset will alarm shutdown immediately.
+
+                           When this input is active in auto mode, genset starts automatically
+
+9    Remote Start On-load  and takes on load after normal running. Otherwise, genset will stop
+
+                           automatically if this input is deactivated.
+
+                           When this input is active in auto mode, genset starts automatically
+
+10 Remote Start Off-load   and without taking load after normal running. Otherwise, genset will
+
+                           stop automatically if this input is deactivated.
+
+11 Reset Maintenance Time When this input port is valid, reset the maintenance time counts down, it is invalid for the maintenance date.
+
+                           When input is active, all keys expect the          buttons are
+
+12 Panel Lock              inactive. will be displayed on the right side of fifth line of LCD
+
+13 Inhibit Timing Start    main screen.
+14 Inhibit Auto Start
+                           When input port is active in auto mode, genset scheduled run is
+
+                           inhibited.
+
+                           When input port is active in auto mode, genset auto start is inhibited.
+
+                           When the input is active, keys on the panel are locked except for
+
+15 Remote Control                         keys and remote mode will be displayed on the LCD.
+                           Remote module pattern and start/stop operation can be switched by
+16 Charge Alt Fail IN      the keys on the panel.
+                           When the input is active, controller will send failed to charge
+17 Low Oil Level Warn      warning.
+                           When input port is active, controller will initiate low oil level warning
+18 Manual/Auto Switch      alarm.
+                           When input is active, enter into auto mode automatically, panel
+19 Reserved                buttons and local operation are inactive; When input is inactive, enter
+20 Idle Input              into manual mode automatically, remote operation is inhibited.
+21 Reserved
+22 Access Control          When the input is active, idle speed control starts output.
+23 Aux. Mains Fail
+24 Aux. Mains OK           When the input is active, controller will send access control input
+                           warning.
+25 Pile Under Voltage      Simulate mains is abnormal.
+                           Simulate mains is normal.
+26 Reserved                When the input is active, it considers battery pack is under voltage. If
+27 1#ATS Gen Closed        crank disconnect conditions are configured, genset will be started in
+28 1#ATS Mains Closed      auto mode.
+
+                           Connecting with auxiliary contact of 1#ATS gen on-load switch.
+                           Connecting with auxiliary contact of 1#ATS mains on-load switch.
+
+HGM4020T Genset Controller User Manual                                        Page 31 of 40
+No.          Items                                     Function Description
+                       Connecting with auxiliary contact of 2#ATS gen on-load switch.
+29 2#ATS Gen Closed    Connecting with auxiliary contact of 2#ATS mains on-load switch.
+
+30 2#ATS Mains Closed
+
+31 Reserved
+
+HGM4020T Genset Controller User Manual  Page 32 of 40
+7.4 SELECTION OF SENSORS
+
+                                  Table 14 Sensors Selection
+
+No.  Items                                 Content                                   Remark
+
+                                  0 Not used
+
+                                  1 User-configured (Resistor
+
+                                  type)
+
+                                  2 VDO
+
+                                  3 SGH
+
+1 Temperature Sensor 4 SGD 5 CURTIS                             Defined resistance’s range is
+                                                                0Ω~999.9Ω.
+
+                                  6 DATCON
+
+                                  7 VOLVO-EC
+
+                                  8 SGX
+
+                                  9 PT100
+
+                                  10 Reserved
+
+                                  0 Not used
+
+                                  1 User-configured (Resistor
+
+                                  type)
+
+                                  2 VDO 10Bar
+
+                                  3 SGH
+
+                                  4 SGD
+
+2 Oil Pressure (Pressure) Sensor  5 CURTIS                      Defined resistance’s range is
+                                  6 DATCON 10Bar                0Ω~999.9Ω.
+
+                                  7 VOLVO-EC
+
+                                  8 SGX
+
+                                  9 Reserved
+
+                                  10 Reserved
+
+                                  11 Digital low input active
+
+                                  12 Digital high input active
+
+                                  0 Not used
+
+                                  1 User-configured (Resistor
+
+                                  type)
+
+3    Fuel Level Sensor            2 SGH                         Defined resistance’s range is
+                                  3 SGD                         0Ω~999.9Ω.
+                                  4 Reserved
+
+                                  5 Reserved
+
+                                  6 Digital low input active
+
+                                  7 Digital high input active
+
+NOTE: The room temperature sensor’s curve type is the same as temperature sensor’s.
+
+HGM4020T Genset Controller User Manual                                               Page 33 of 40
+7.5 CONDITIONS OF CRANK DISCONNECT SELECTION
+
+                          Table 15 Crank Disconnect Conditions
+
+No.                                        Setting Content
+
+0    Speed
+
+1    Gen frequency
+
+2    Speed + Gen frequency
+
+3    Speed +Oil pressure
+
+4    Gen frequency + Oil pressure
+
+5    Speed + Gen frequency + Oil pressure
+
+6    Oil pressure
+
+   a) There are 3 conditions to make starter separate with engine; speed, generator frequency and
+
+     oil pressure can be used separately while oil pressure suggest be used together with speed
+
+     and generator frequency. The aim is to disconnect the starter motor as soon as possible.
+
+   b) Speed stands for the real rotation speed detected by the speed sensor. Speed sensor is the
+
+     magnetic equipment which be installed in starter for detecting flywheel teeth.
+
+   c) When set as speed, must ensure that the number of flywheel teeth is as same as setting,
+
+     otherwise, “over speed shutdown” or “under speed shutdown” may be caused.
+
+   d) If genset without speed sensor please don’t select corresponding items, otherwise, “start fail”
+
+     or “loss speed signal” maybe caused.
+
+   e) If genset without oil pressure sensor, please don’t select corresponding items.
+
+   f) If not select generator frequency in crank disconnect setting, controller will not collect and
+
+     display the relative power quantity (can be used in water pump set); if not select speed in
+
+     crank disconnect setting, the engine speed displayed in controller is calculated by generator
+
+     signal.
+
+HGM4020T Genset Controller User Manual                                               Page 34 of 40
+8 PARAMETERS SETTING
+8.1 CONTROLLER PARAMETER SETTING
+
+      Start the controller, then press to enter into the parameters setting menu, menu items are as
+follows:
+
+        1 Set Parameters
+        2 Information
+        3 Language
+        4 Event Log
+        5 Maintenance
+      When entered password interface, inputting “0318” can set all parameter items in Table 11. If the
+password is changed, only input the password same as controllers’, can the parameter be set via PC
+software. If there is need to set more parameters (e.g. voltage calibration; current calibration), please
+contact the factory.
+
+    NOTES:
+
+a) Please change the controller parameters when generator is in standby mode only (e. g. Crank disconnect conditions
+    selection, auxiliary input, auxiliary output, various delay), otherwise, shutdown and other abnormal conditions may
+    occur.
+
+b) Over voltage set value must be higher than under voltage set value, otherwise over voltage and under voltage
+    condition may occur simultaneously.
+
+c) Over speed set value must be higher than under speed set value, otherwise over speed and under speed condition
+    may occur simultaneously.
+
+d) Please set the generator frequency value as low as possible when cranking, in order to make the starter be separated
+    quickly as soon as possible.
+
+e) Auxiliary input 1~7 could not be set as same items; otherwise, there are abnormal functions. However, the auxiliary
+    output 1~5 can be set as same items.
+
+f) Programmable sensor 1 and sensor 2 both can be set as discrete input or analog input port. Choose either discrete
+    or analog input function, if discrete input port be selected, corresponding discrete input settings be functional;
+    otherwise, if analog value be selected, corresponding sensor parameters settings be functional.
+
+g) Controller No.9 terminal hardware function can be configured via “T9 Input/Output Selection” settings. It is default as
+    programmable output port 4.
+
+8.2 CONTROLLER INFORMATION
+
+a) LCD will display develop information of controller, such as software version, hardware and
+      issue date of the controller.
+
+b)  NOTE: In this interface, press  will display the auxiliary inputs and outputs status.
+
+c) LCD contrast control
+
+d) Press       and       or         and simultaneously to adjust LCD contrast ratio and make
+
+    LCD character display more clearly. Contrast ratio adjustment range: 0-7.
+
+8.3 LANGUAGE SELECTION
+
+Chinese and English can be optional.
+
+8.4 EVENT LOG
+
+      View event log from this interface, including start/stop information and shutdown alarm
+information log. It can record and display up to 99 pieces.
+
+8.5 MAINTENANCE
+
+      Password need to be input when enter into the maintenance interface, default as 0 (if change this
+password, please contact with SmartGen service personnel or sales personnel). Setting maintenance
+parameters will refresh maintenance time.
+
+    NOTE: Refresh maintenance time and enter into the next maintenance period in maintenance interface when
+“Maintenance Due Alarm” occurs.
+
+HGM4020T Genset Controller User Manual                                                     Page 35 of 40
+9 SENSOR SETTING
+
+─ When reselect sensors, the sensor curve will be transferred into the standard value. For example, if
+     temperature sensor is SGH (120°C resistor type), its sensor curve is SGH (120°C resistor type); if
+     select the SGD (120°C resistor type), the temperature sensor curve is SGD curve.
+
+─ When there is difference between standard sensor curves and using sensor, user can adjust it in
+     “curve type”.
+
+─ When input the sensor curve, X value (resistor) must be input from small to large, otherwise,
+     mistake occurs.
+
+─ If there is no oil pressure sensor, but there is low oil pressure alarm switch, user must set the oil
+     pressure sensor as “None”, otherwise, maybe low oil pressure shutdown occurs.
+
+─ The headmost or backmost values in the vertical coordinates can be set as same as below,
+
+                                        Fig.3 Sensor Curve
+
+          Table 16 Common Unit Conversion
+
+   1Pa    N/m2 (pa)                      kgf/cm2                bar    (p/in2.psi)
+1kgf/cm2       1                        1.02x10－5             1x10－5   1.45x10－4
+
+   1bar    9.8x104                           1                 0.98       14.2
+   1psi     1x105                                                         14.5
+          6.89x103                         1.02                  1
+                                        7.03x10－2           6.89x10－2       1
+
+HGM4020T Genset Controller User Manual                                 Page 36 of 40
+10 COMMISSIONING
+
+Please make sure the following checks are made before commissioning,
+— Ensure all the connections are correct and wires diameter is suitable.
+— Ensure that the controller DC power has fuse, controller’s positive and negative connected to start
+
+      battery are correct.
+— Take proper action to prevent engine to crank success (e. g. Remove the connection wire of fuel valve).
+
+      If checking is OK, make the start battery power on; choose manual mode and controller will executive
+      routine.
+— Set controller under manual mode, press “start” button, genset will start. After the cranking times as
+      setting, controller will send signal of Start Failure; then press “stop” to reset controller.
+— Recover the action to prevent engine to crank success (e. g. Connect wire of fuel valve), press start
+      button again, genset will start. If everything goes well, genset will enter normal running after idle
+      running (if idle run be set). During this time, please watch for engine’s running situations and AC
+      generator’s voltage and frequency. If abnormal, stop genset and check all wires connection according
+      to this manual.
+— Select the AUTO mode from controller’s panel, connect mains signal. After the mains normal delay,
+      controller will transfer ATS (if fitted) into mains load. After cooling time, controller will stop genset and
+      make it into “at rest” mode until there is mains abnormal situation.
+— When mains is abnormal again, genset will be started automatically and enter into normal running,
+      then controller send signal to making generator switch on, and control the ATS transfer into generator
+      load. If not like this, please check ATS’ wires connection according to this manual.
+— If there is any other question, please contact SmartGen’s service.
+
+HGM4020T Genset Controller User Manual  Page 37 of 40
+11 TYPICAL APPLICATION
+
+                        Fig.4 Typical Application Drawing 1
+
+                                             Fig.5 Typical Application Drawing 2  Page 38 of 40
+HGM4020T Genset Controller User Manual
+                                     Fig.6 Single Phase 2-Wire Connection Diagram
+
+                                        Fig.7 2-Phase 3-Wire Connection Diagram
+
+    NOTE: Expand relay with high capacity in start and fuel output is recommended.
+    NOTE: No.9 terminal is can be configured as input/output port, factory default is output port.
+
+12 INSTALLATION
+12.1 FIXING CLIPS
+─ Controller is panel built-in design; it is fixed by clips when installed.
+─ Withdraw the fixing clip screw (turn anticlockwise) until it reaches proper position.
+─ Pull the fixing clip backwards (towards the back of the module) ensuring two clips are inside their
+
+      allotted slots.
+─ Turn the fixing clip screws clockwise until they are fixed on the panel.
+
+    NOTE: Care should be taken not to over tighten the screws of fixing clips.
+
+12.2 OVERALL DIMENSION
+
+                                                    Fig.8 Overall Dimensions
+
+     HGM4020T controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery
+must be connected with the engine shell. Diameter of wire that connects from power supply to battery
+must be over 2.5mm2. If floating charge configured, please firstly connect output wires of charger to
+battery’s positive and negative directly, then, connect wires from battery’s positive and negative to
+controller’s positive and negative input ports in order to prevent charge disturbing the controller’s normal
+working.
+
+─ SPEED SENSOR INPUT
+
+     Speed sensor is the magnetic equipment which be installed in starter and for detecting flywheel teeth.
+Its connection wires to controller should apply for 2 cores shielding line. The shielding layer should connect
+to No. 15 terminal in controller while another side is hanging in air. The else two signal wires are connected
+
+HGM4020T Genset Controller User Manual  Page 39 of 40
+to No.14 and No.15 terminals in controller. The output voltage of speed sensor should be within
+AC(1~24)V (effective value) during the full speed. AC12V is recommended (in rated speed). When install
+the speed sensor, let the sensor is spun to contacting flywheel first, then, port out 1/3 lap, and lock the nuts
+of sensor at last.
+
+─ OUTPUT AND EXPAND RELAYS
+
+     All outputs of controller are relay contact output type. If need to expand the relays, please add
+freewheel diode to both ends of expand relay’s coils (when coils of relay have DC current) or, increase
+resistance-capacitance return circuit (when coils of relay have AC current), in order to prevent disturbance
+to controller or others equipment.
+
+─ AC INPUT
+
+Current input of controller must be connected to outside current transformer. And the current transformer’s
+secondary side current must be 5A. At the same time, the phases of current transformer and input voltage
+must correct. Otherwise, the current of collecting and active power maybe not correct.
+
+    NOTE:
+
+1) ICOM port must be connected to negative pole of battery.
+
+2) When there is load current, transformer’s secondary side prohibit open circuit.
+
+─ WITHSTAND VOLTAGE TEST
+
+When controller had been installed in control panel, if need the high voltage test, please disconnect
+controller’s all terminal connections, in order to prevent high voltage into controller and damage it.
+
+                                              _________________________________
+
+HGM4020T Genset Controller User Manual  Page 40 of 40
+

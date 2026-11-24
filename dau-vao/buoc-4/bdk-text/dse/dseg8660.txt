@@ -1,0 +1,325 @@
+         Series Data Sheet
+
+DSEG8660 Mains (Utility) Controller
+
+Part Number: G8660-01
+
+Overview
+The DSEG8660 is a ATS / Mains (Utility) controller with integral heater designed to work with the DSEG8600 that is configured for use as a multi-set
+controller. The DSEG8660 allows multiple generators to synchronise with a mains (utility) supply and controls switching power between generator and
+mains (utility) sources, without loss of supply to the load.
+
+Key Features
+• Flexible bus segments
+• Slip sync and sync (phase) lock synchronising control
+• Advanced multi-set communication (AMSC) link with optional
+
+      redundancy
+• Shared virtual inputs, outputs and data via AMSC
+• Advanced PLC functionality including multi-purpose PIDs
+• Flexible inputs and outputs
+• DSENet® expansion support
+• PC configuration using DSE Configuration Suite
+• Multiple language support
+• Enhanced 6-line high-resolution heated display (240 px x 128 px)
+
+      with on screen application diagrams
+• Integrated gasket (IP65 protection)
+• 2 integrated RS485 ports providing Modbus RTU support
+• Integrated Ethernet port providing Modbus TCP and SNMP v2C
+
+      support
+• Data logging of up to 20 parameters
+• Multi-level PIN protected front panel editor
+• Manual front panel and automatic control modes
+
+                                                                                                         Product Approvals
+                                                                                                         + CE
+                                                                                                         + UL Listed: Standard - UL 6200:2019
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8660 Mains (Utility) Controller                                                                      Typical Applications                                     Multi-Set
+                                                                                                                                                                  Multi-Set
+Part Number: G8660-01                                                                                                                            Mains (Utility)  Multi-Set
+                                                                                                                                                   Controller
+Mains (Utility) Controller Key Features
+• Multiple mains (utility) and bus synchronising ATS with short /
+
+       long-term parallel control*
+• 3 phase mains (utility) and bus sensing with protection
+• Mains (utility) failure detection including mains (utility) decoupling
+
+       detection
+• Base Load and peak lopping / shaving control*
+• Mains (utility) and bus positive, negative and zero voltage
+
+       sequence alarms
+
+*When used with multi-set controllers
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                                 DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                                     T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com                       E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com                            W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                                    055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8660 Mains (Utility) Controller                                                                      8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+Part Number: G8660-01                                                                                    and supply recovers to 5 V. This is achieved without the need for internal batteries.
+  Specifications                                                                                         Backlight will not be maintained during cranking.
+  DC Supply                                                                                              700 mA at 12 V, 350 mA at 24 V
+  Continuous Voltage Rating                                                                              350 mA at 12 V, 190 mA at 24 V
+  Cranking Dropouts
+                                                                                                         2
+  Maximum Operating Current                                                                              3 Phase + Neutral
+  Maximum Standby Current                                                                                Mains (Utility) and Bus
+  Voltage Measurement                                                                                    15 V to 415 V Phase to Neutral
+  Number                                                                                                 25 V to 719 V Phase to Phase
+  Measurement Inputs                                                                                     ±0.3 % Phase to Neutral
+                                                                                                         ±0.6 % Phase to Phase
+  Voltage Range                                                                                          3.5 Hz to 75 Hz
+                                                                                                         ±0.01 Hz
+  Voltage Accuracy
+                                                                                                         4
+  Frequency Range                                                                                        3 Phase Mains (Utility) Current + Single Phase Bus/Load Current
+  Frequency Accuracy                                                                                     0 A to 1 A
+  Current Transformer Measurement                                                                        0 A to 5 A
+  Number
+  Measurement Inputs                                                                                     9
+  Current Range                                                                                          Negative Switching Digital Input
+                                                                                                         Less than 2.1 V
+  Digital Inputs                                                                                         Greater than 6.6 V
+  Number
+  Type                                                                                                   8
+  Closed Voltage Threshold                                                                               1 Normally Open Volt-Free Contact
+  Open Voltage Threshold                                                                                 1 Normally Closed Volt-Free Contact
+  Digital Outputs                                                                                        6 Positive Switching DC Output
+  Number                                                                                                 5 ADC resistive at 30 VDC
+  Type                                                                                                   8 AAC resistive at 250 VAC
+                                                                                                         Output E to L: 2 ADC at module supply voltage
+  Volt-Free Contact Output Rating
+
+  Positive DC Output Rating
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               1 Data Storage Port
+                                                                                                         1 Programming Port
+DSEG8660 Mains (Utility) Controller                                                                      1 Expansion Port
+                                                                                                         2 Fully Isolated RS485 Ports
+Part Number: G8660-01                                                                                    1 10/100 Ethernet Port
+  Specifications                                                                                         3 Fully Isolated CAN Ports
+  Communications                                                                                         CAN 1 – Not Used
+  USB A                                                                                                  CAN 2 – AMSC
+  USB B                                                                                                  CAN 3 – Redundant AMSC
+  DSENet®
+  RS485                                                                                                  -40 °C to +70 °C / -40 °F to +158 °F
+  Ethernet                                                                                               -40 °C to +85 °C / -40 °F to +185 °F
+  CAN
+                                                                                                         248.0 mm x 182.6 mm x 45.2 mm / 9.77 ” x 7.19 ” x 1.78 ”
+  Temperature
+  Operating Temperature                                                                                  Panel Fascia Mounting
+  Storage Temperature                                                                                    220 mm x 160 mm / 8.66 ” x 6.3 ”
+  Dimensions                                                                                             8 mm / 0.31”
+  Overall (W x H x D)
+  Mounting
+  Type
+  Panel Cut-Out (W x H)
+  Maximum Panel Thickness
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8660 Mains (Utility) Controller
+
+Part Number: G8660-01
+
+Related Products                 7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Bus Tie Controller                                                                                                  G8680-01
+DSEG8900                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8680                         15” Panel PC with DSE SCADA                                                                                         G8015-01
+DSEG8600
+DSEG8015                         DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2548                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-00
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®
+DSE890 MKII                      DSE Paralleling SCADA                                                                                               037-060
+Remote Monitoring Control
+DSESCADA
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+DSEG8660 Mains (Utility) Controller
+                                                                                                         Safety of Information Technology Equipment, including Electrical Business Equipment
+Part Number: G8660-01
+  Environmental Testing Standards                                                                        Ab/Ae Cold Test -30 ºC
+  Electro-Magnetic Compatibility                                                                         Bb/Be Dry Heat +70 ºC
+  BS EN 61000-6-2
+  BS EN 61000-6-4                                                                                        Ten sweeps in each of three major axes
+  Electrical Safety                                                                                      5 Hz to 8 Hz at ±7.5 mm,
+  BS EN 61010                                                                                            8 Hz to 500 Hz at 2 Gn
+  Temperature
+  BS EN 60068-2-1                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+  BS EN 60068-2-2                                                                                        Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+  Vibration
+  BS EN 60068-2-6                                                                                        Three shocks in each of three major axes
+                                                                                                         15 Gn in 11 ms
+  Humidity
+  BS EN 60068-2-30                                                                                       IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+  BS EN 60068-2-78
+  Shock
+  BS EN 60068-2-27
+
+  Degrees of Protection Provided by Enclosures
+  BS EN 60529
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               Description
+                                                                                                         DC Supply
+DSEG8660 Mains (Utility) Controller                                                                      Not Applicable
+                                                                                                         Not Applicable
+Part Number: G8660-01                                                                                    Not Applicable
+ Mains (Utility) Controller                                                                              Digital Outputs
+ Pin                                                                                                     Not Applicable
+ 1 to 2                                                                                                  Not Applicable
+ 3                                                                                                       Redundant AMSC Link
+ 4 to 5                                                                                                  Not Applicable
+ 6                                                                                                       Not Applicable
+ 7 to 12                                                                                                 DSENet®
+ 13 to 14                                                                                                AMSC Link
+ 15 to 19                                                                                                Not Applicable
+ 20 to 22                                                                                                Not Applicable
+ 23 to 25                                                                                                Not Applicable
+ 26 to 28                                                                                                Normally Closed Volt Free Output
+ 29 to 31                                                                                                Normally Open Volt Free Output
+ 32 to 34                                                                                                Mains (Utility) Voltage Sensing
+ 35 to 36                                                                                                Bus Voltage Sensing
+ 37                                                                                                      Mains (Utility) Current Sensing
+ 38 to 39                                                                                                Bus / Load Current Sensing
+ 40 to 41                                                                                                Digital Inputs
+ 42 to 43                                                                                                Not Applicable
+ 44 to 47                                                                                                2 x RS485
+ 48 to 51
+ 52 to 56
+ 57 to 58
+ 59 to 67
+ 68 to 70 & 77
+ 71 to 76
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet                                                                               45.2 mm
+                                                                                                         ( 1.78 " )
+DSEG8660 Mains (Utility) Controller
+                                                                                                         32.3 mm
+Part Number: G8660-01                                                                                    ( 1.27 " )
+Technical Drawing
+
+                                                               220 mm
+                                                               ( 8.66 " )
+
+                                                               248 mm
+                                                               ( 9.77 " )
+
+182.6 mm
+   ( 7.19 " )
+                                                                                                                                                                                         160 mm
+                                                                                                                                                                                            ( 6.30 " )
+
+Connection Label
+
+                             Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-253 – DSEG8660 Installation Instructions
+057-324 – DSEG8660 Operator Manual
+057-325 – DSEG8660 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                                                                       DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                                                                           T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com                                                             E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com                                                                  W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                                                                          055-283/10/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

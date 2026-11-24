@@ -1,0 +1,608 @@
+        DST4602Evolution
+
+         Advanced synchro parallel genset controller
+with internal load sharing, synchronizer and PLC functions
+
+                                                                                                     DST4602Evolution
+                                                                                              Datasheet_EN_REV_1.8
+     DESCRIPTION
+
+       DST4602Evolution is the top-level device among SICES controllers.
+
+       It is an highly configurable genset controller for advanced and complex parallel applications, where a huge
+       number of settings are required (functions and parameters) for the genset management, and its auxiliary
+       circuits.
+       DST4602Evolution allows to connect up to 24 gensets on the same bus, working in island mode and in parallel
+       with the mains.
+
+       Thanks to the controller’s high configurable level and built-in PLC functions (with PID blocks), DST4602Evolution
+       can be used for CHP power plants equipped with Gas, Diesel, Biofuel and Dual fuel Engine.
+       The controller also features fully integrated Air-Fuel Ratio (AFR) control, furthering its ability for such
+       applications.
+
+       DST4602Evolution is fully equipped with internal Load Sharing, Synchronizer and W and VAR regulation. This
+       controller includes a CAN J1939 interface, supporting a wide range of engines (Volvo Penta, Scania, Perkins,
+       MTU, Deutz, Cummins, John Deere, Caterpillar and others). It can be also used with traditional engines, where
+       measurements and control are performed by the embedded analogue interfaces.
+
+       DST4602Evolution can be used together with all Sices genset controllers (GC600, GC400). In case of multiple
+       gensets in parallel with the mains where the reverse synchronization is required, DST4602Evolution can be
+       interfaced with the Sices mains controllers (MC200, MC400), to avoid in this way any further blackouts on the
+       loads.
+
+       The controller’s configurable parameters make standard and customized tasks easy to manage.
+       All the parameters can be set directly by the controller’s keyboard or, alternatively using the free software tool
+       (BoardPRG3), available from SICES’ website.
+       It is also available a free PLC software editor, (SicesPlcEditor) to set the PLC logics.
+
+       The enhanced and large 7” graphic colour display with TFT technology, is a user-friendly interface, conceived
+       for a quick and easy visualization of measures and alarms coming from the genset.
+
+       This controller stores events and periodical data in the internal memory, this information can be read from the
+       front panel display.
+
+       DST4602Evolution provides several communications interfaces for local or remote control.
+
+       In case of complex applications, like Oil&Gas stations, the inbuilt protections can be expanded by using the
+       external protection relay D-PRO.
+
+DST4602evo
+Datasheet_EN
+                        INPUTS - OUTPUTS AND AUXILIARY FUNCTIONS
+
+20 Digital inputs       16 Digital output  5 Analogue inputs      2 Analogue outputs
+
+  AND/OR                Event history log  16 Calendars           USB port
+Logic control
+
+            RS232       RS485              PLC Logic control      Ethernet connection
+
+        Air fuel ratio  • N. 20 opto-insulated digital Inputs.
+                        • N. 5 analogue inputs including oil pressure, oil temperature, coolant temperature,
+         TIER4 final
+          STAGE V            fuel level (2 voltage inputs, 3 resistive inputs, all can be used as digital).
+
+DST4602evo              • N. 2 insulated analogue outputs for the regulation of frequency and voltage.
+Datasheet_EN            • N. 16 digital outputs.
+
+                        Communication:
+                              N.2 MODBUS RTU Serial Ports: RS232 and insulated RS485.
+                              N.1 Ethernet Port 10/100Mbps.
+                              N.1 USB FUNCTION for the configuration.
+
+                        • Internal clock with history log.
+                        • Front protection degree: IP65 with gasket always included for free.
+     OPERATION MODE
+
+       OFF/RESET
+       Engine start not allowed; load is forced to be supplied from the Mains.
+       When the engine is running and the operating mode is turned to ‘OFF/RESET’, the engine shutdown sequence is activated.
+       Reset of all alarms.
+       Parameters change allowed (programming).
+
+       PROGRAM
+       Access to all programmable parameters.
+       Programming access can be controlled by means of three level passwords.
+       Some parameters can be changed even if the engine is running.
+
+       MANUAL
+       Engine manual START and STOP controls are enabled.
+       The genset protections are activated.
+       The starting command is automatically disabled when the engine is running.
+       MCB and GCB pushbuttons are enabled when generator is in operating range.
+       Their function depends on the selected application.
+       Manual synchronization can be easily accomplished by built-in function.
+
+       AUTOMATIC
+       The operating sequence depends on the selected application:
+       Single Prime Mover, Stand-by, Stand-by and Short Time Parallel, Single Parallel to Mains, Multiple Prime Mover, Multiple
+       Parallel to Mains.
+
+       TEST
+       Automatic start for testing operations with safety protections enabled.
+       Test can be made unloaded, loaded or in parallel to mains.
+       Upon mains failure, the load is immediately supplied by the genset.
+
+     PARALLEL APPLICATIONS
+
+       Parallel to mains application is allowed by the internal power regulator. Soft loading and unloading is automatically
+       performed. The most common Loss Of Mains protection are embedded.
+       Multiple prime mover application is allowed by means of CAN interface that allows load sharing.
+       Synchronization is done through an internal digital synchronizer, avoiding expensive external synchronizers.
+
+DST4602evo
+Datasheet_EN
+CONTROLS       >> Operating mode selection (available in two versions):
+                  • with selector key,
+                  • with two dedicated push buttons.
+
+               >> Engine START and STOP pushbutton.
+               >> GCB and MCB command using push buttons.
+               >> ACK/MODE (acoustic alarm silencing and other aux. functions).
+               >> Four ARROW keys for LCD display selection mode, window selection, parameter change and
+
+                   other.
+
+               >> EXIT, ENTER and SHIFT keys.
+               >> LCD CONTRAST DECREASE/INCREASE.
+
+MAIN FEATURES  >> Digital UP/DOWN commands for speed governor and AVR.
+               >> Mains and Genset circuit breaker management.
+               >> True RMS readings on generator and mains voltages and on generator currents,
+
+                   with an additional current measurement for neutral or differential protection.
+
+               >> Active, reactive and apparent power measurements.
+               >> Frequency and power measurements on mains input.
+               >> 20 fully programmable digital inputs with possibility of additional several inputs.
+               >> 16 fully programmable digital outputs with possibility of additional several
+
+                   outputs.
+
+               >> Several communication tools (RS232, Insulated RS485, RJ45 Ethernet, USB port).
+               >> Large TFT graphic coloured display 7’’ 800x480 pixel.
+               >> Real Time Clock, events and data recording.
+               >> Remote control systems.
+               >> KEMA Certification - Guideline BDEW (DE).
+
+DYNAMIC SUPPORT OF THE GRID
+
+The dynamic support to the grid is available: automatic adjustment of the active power output based on the mains
+frequency value. This feature allows the genset to support the grid in case of over/under production.
+
+DST4602evo
+Datasheet_EN
+MEASURES
+
+              Generator voltages:   L1-N, L2-N, L3-N, L1-L2, L2-L3, L3-L1.
+                                    True RMS measurement.
+                                    Lx-N max. voltage < 300Vac cat. IV.
+                                    Max. measurable voltage = 50.000V (by external VT).
+
+              Generator currents:   L1, L2, L3, N (*).
+                                    True RMS measurement.
+                                    Nominal max. current: 5Aac, 1Aac.
+                                    Overload measurable current: 4 x 5Aac (sinusoidal).
+                                    Internal current transformers.
+                                    Max. nominal current = 6000A (by external CT).
+                                    (*) Neutral generator current measure or, in alternative used for the measure of
+                                    the power on the mains.
+
+              Mains voltages:       L1-N, L2-N, L3-N, L1-L2, L2-L3, L3-L1.
+                                    True RMS measurement.
+                                    Lx-N max. voltage < 300Vac cat. IV.
+                                    Max. measurable voltage = 50.000V (by external VT).
+
+              Generator and mains   Resolution = 0.1 Hz. Accuracy = ±50ppm, ±35ppm/°C (typical).
+                  frequency meter:
+
+              Battery voltmeter: Resolution = 0.1V.
+
+              Oil pressure gauge: Configurable curve based on sensors available.
+
+Coolant or Oil Thermometer: Configurable curve based on sensors available.
+
+              Fuel level: Configurable curve based on sensors available.
+
+Engine revolution counter:          By pick-up.
+                                    Programmable teeth number.
+                                    Same input can be used by W signal.
+
+              Derived values:       Active power: total and phase by phase.
+                                    Reactive power: total and phase by phase.
+                                    Apparent power: total and phase by phase.
+                                    Power factor: total and phase by phase.
+                                    Active and reactive energy counter.
+                                    Hours counter for maintenance/rental.
+                                    Start Counter.
+
+              Power and currents peak values are stored with date and time.
+              Additional engine analogue measures are available in case of engines with CANBUS J1939
+              interface.
+
+DST4602evo
+Datasheet_EN
+      PROTECTIONS
+
+                      AMF Mains protections • Undervoltage (27).
+                                                   • Overvoltage (59).
+                                                   • Underfrequency (81U).
+                                                   • Overfrequency (81O) .
+                                                   • Voltage unbalance (47).
+                                                   • Phase sequence (47).
+
+            Loss Of Mains (LOM) protections • Rate of Change of Frequency (81R ROCOF).
+                                                   • Vector shift.
+                                                   • Undervoltage (27).
+                                                   • Overvoltage (59).
+                                                   • Underfrequency (81U).
+                                                   • Overfrequency (81O).
+
+                       Generator protections • Max power. Underfrequency (81U).
+                                                   • Overfrequency (81O).
+                                                   • Undervoltage (27).
+                                                   • Overvoltage (59).
+                                                   • Power direction (32).
+                                                   • Loss of excitation (Reverse reactive 40).
+                                                   • Time dependent overcurrent (51) IDMT.
+                                                   • Instantaneous overcurrent (50).
+                                                   • Phase overcurrent with voltage restraint/control (50V/51V).
+                                                   • Synchro-check (25).
+                                                   • Phase sequence (47).
+                                                   • Current and Voltage unbalance (46/47).
+                                                   • Ground Fault Protection (64) as alternative to neutral protection (50N).
+                                                   • Negative sequence (I2).
+
+                                                             Possibility to extend the protections of the controller using SICES Protection
+                                                             Relay D-PRO.
+
+                           Engine protections • Overspeed (12).
+                                                   • Incomplete sequence (48).
+                                                   • Belt-break.
+                                                   • Coolant and lube oil temperature warning and alarm.
+                                                   • Lube oil pressure warning and alarm.
+                                                   • Max. power.
+                                                   • Fuel level.
+                                                   • Emergency stop.
+
+DST4602evo
+Datasheet_EN
+GENERAL FUNCTIONS
+
+         Real time clock calendar          >> Hour, minute, second, day, month, year (leap year), day of week.
+                                           >> Rechargeable Lithium battery available as standard.
+        Periodical data recording          >> Genset operation can be enabled based on days of the week and time.
+          On event data recording          >> Test operation can be enabled based on days of the week.
+                           Fuel pump       >> Date and time can be remotely adjusted by software.
+
+             Maintenance warning           >> Up to 860 record based on the configuration.
+Controller temperature warning
+                                           >> Up to 860 record based on the configuration.
+               Internal alarm horn
+                                           >> The controller manages a fuel pump by means an external power relays and
+
+                                                by 5 input level signals, or by the analogue measurement.
+
+                                           >> Auto or manual operating modes.
+
+                                           >> The controller can issue a warning when the running hours for maintenance
+
+                                                are elapsed. Three timers are available for this task.
+
+                                           >> The controller can issue a warning when controller temperature is
+
+                                                approaching a specified temperature.
+
+                                           >> Internal alarm horn make easier panel assembling.
+
+COMMUNICATIONS
+
+              DST4602Evolution •           N..1 Serial port RS232 with MODBUS RTU protocol.
+                                        •  N..1 Serial port RS232 or insulated RS485 with MODBUS RTU protocol.
+                                        •  N..1 USB port for firmware upgrade.
+                                        •  N..1 USB port with MODBUS RTU protocol.
+                                        •  N..1 Ethernet port with Modbus TCP protocol
+
+                   • Direct GSM and PSTN modem management.
+                   • Automatic call or SMS in case of event.
+
+              As option •                  Modem GSM.
+                             •             REWIND - Module interface for SIMONE using GPRS/GSM and GPS technology.
+                             •             DANCE - Module interface for SIMONE using Ethernet technology.
+                             •             Supervision software SicesSupervisor3 and SIMONE.
+
+DST4602evo
+Datasheet_EN
+LOAD MANAGEMENT                In case of plants with several gensets connected in parallel on the same bus, it is
+                               possible to set different automatic logics for start/stop gensets, based on the load
+                               request.
+
+              In detail        >> Manual setting of the master genset by means of selector switch on the control
+
+                                    panel.
+
+                               >> Automatic rotation of the Master genset after a fixed time per day.
+                               >> Automatic rotation of the Master genset after an elapsed time.
+                               >> Automatic selection of working gensets having a matching power with the
+
+                                    request on load (*).
+
+                               >> Running hours equalizations.
+
+                                     (*) Functions available for a max of 5 gensets.
+
+Active power modulation        Power regulation is allowed through internal power regulator.
+                               For electronic engines, a CAN line is available for speed regulation.
+                               For traditional engines is available a proper analogue interface.
+
+Reactive power regulation DST4602Evolution controls AVR directly in order to manage the reactive power.
+
+                                     DST4602Evolution is a multilanguage device.
+                                     The display languages available are: English, Italian, French, German, Spanish,
+                                     Russian, Albanian, Greek, Polish and Brazilian Portuguese.
+
+      TECHNICAL DATA           >> Supply voltage: 8…33 Vdc.
+                               >> Power consumption: less than 7W (+5W for display lamp) typically.
+DST4602Evolution               >> Rated Genset frequency: 50 or 60 Hz.
+Is equipped with a dual        >> Digital Input: opto-insulated.
+processor for improved         >> Static outputs: 500mA @ 25°C, 360mA @ 50 °C, 20 Apk.
+response.                      >> Relay outputs: 10A nominal.
+One processor is aimed for     >> Auxiliary relays outputs: 1/2,5/4A 30V.
+the measures and operation     >> Weight: 1,6kg.
+sequences.                     >> Overall dimension: 260 (W) x 202 (H) x 86 (D) mm.
+The other one is aimed for     >> Panel cut-out: 240 (W) x 172 (H) mm.
+the human interface(display).  >> Panel mounting: by means of stud-bolt.
+                               >> Protection Grade: IP54 (front panel, by means of additional keylock protective
+
+                                    cap and gasket).
+
+                               >> EMC: compliant with EN61326-1.
+                               >> Safety: built in compliance with EN61010-1.
+
+                               Display Features
+
+                               >> DST4602Evolution 800x480 Pixel TFT, 7’’ Colour display.
+                               >> Overall dimension: 155(L) x 93(H) mm.
+                               >> Operating temperature: -20 °C to 60 °C.
+                               >> Stock temperature: -30 °C to 80 °C.
+
+DST4602evo
+Datasheet_EN
+     FAST PARALLELING SYSTEM
+     (Dead bus paralleling)
+
+       DST4602Evolution has a built-in innovative and automatic start sequence, that allows to achieve a fast paralleling of
+       several gensets in a maximum time of 9 - 15 sec. (it depends on the alternators and engines features).
+       The advanced system so called “Fast Paralleling” or “Dead Bus Paralleling”, is an effective solution for those sensitive
+       stations where any mains failure, even for a few seconds, could cause huge problems to people and data security, by
+       creating damages during the production processes (banks, hospitals, data centres, etc…).
+       Using the Fast Paralleling feature, gensets are switched on, synchronized and ready to supply the loads in a few seconds
+       from the mains failure signal.
+
+       HOW IT WORKS
+       In case of a mains failure, Sices genset control panel gets a signal from the existing ATS (it may be ATS115, MC200 or
+       MC400) to start the gensets.
+       The implemented logic in DST4602Evolution controls the gensets status, checking which of them are ready and available
+       to start taking the load.
+       The gensets start working together with the relevant circuit breakers (GCB) already closed.
+       By means of a safety and proper control of speed ramp and excitation range, gensets are simultaneously brought to the
+       rated conditions.
+       All gensets are, therefore, ready and in parallel in 9-15 seconds max. (it depends on the engines and alternator types).
+       The load is supplied by all gensets running in parallel.
+       If some gensets won’t start at first attempt, the control logic opens the relevant circuit breaker.
+       The other gensets carry on with the fast-starting operations.
+       The genset that has reached the rated conditions with delay, can be inserted afterwards, making the usual synchronization
+       operations.
+
+DST4602evo
+Datasheet_EN
+FURTHER PRODUCT CONFIGURATIONS
+Split version
+
+This controller can be provided in two separate devices (Display + Control unit), for particular use and assembly purposes.
+
+In addition, it’s possible to choose between the version with Key selector switch or with Push buttons for the operating
+mode selection.
+
+Below, the user interface with display unit, to be mounted on the control panel’s door, and the control unit to be mounted
+inside the panel.
+
+APPLICATION TYPE               Depending on the application, two different single line diagrams on the front panel are
+                               available.
+
+1. Including the GCB (not the MCB)                      2. Including MCB + GCB
+For those plants where the genset controller            For those plants where is necessary to directly control the
+do not manage directly the MCB (Mains Circuit Breaker)  MCB (Mains Circuit Breaker): single genset working as
+                                                        emergency or in parallel to the mains.
+
+MAINS                    BUS                GENERATOR    DISABLED         BUS                GENERATOR
+ LIVE                    LIVE                    LIVE   MAINS LIVE        LIVE                    LIVE
+
+              MCB      LOAD    GCB          G                       LOAD  LOAD  GCB          G
+                       BUS                                          BUS   BUS
+              ON               ON       ENGINE                                  ON       ENGINE
+                                       RUNNUNG                                          RUNNUNG
+                  OFF             OFF                                              OFF
+
+DST4602evo
+Datasheet_EN
+ADDITIONAL REMOTE DISPLAY
+
+For each local DST4602Evolution it is possible to add one or more remote displays, called DST4602Remote.
+This solution is usually recommended in case of remote-control room where the genset monitoring is required.
+It is possible to connect up to 4 remote displays to a single DST4602Evolution controller.
+
+Connection between          • Via RS485 Modbus RTU (max 800mt).
+DST4602Remote and           • Via ethernet TCP/IP (max. distance 100mt without any hub).
+
+   DST4602Evolution              If via ethernet, it is possible to connect several DST4602Remote to one local
+                                 controller.
+
+       Graphic display      DST4602Remote is equipped with a powerful 7’’ colour graphic display
+Key selector controls       TFT - 800x480 pixel.
+
+                            • Command disabled: no operation is allowed.
+                            • Command enabled: all operations are allowed.
+                            • Remote reset: reset of alarms/warnings.
+
+              Push buttons  REMOTE START: starting is enabled if the operating mode of the local controller is
+                            in AUTO.
+                            REMOTE STOP: used to remotely stop the genset.
+
+                            • If the genset has been started by the DST4602Remote, the “REMOTE STOP”
+
+                                 stops the genset with the cooling operations.
+
+                            • If the genset has been started by the local DST4602, the “REMOTE STOP” stops
+
+                                 the genset immediately without any cooling operations.
+                            GCB: for manual opening/closure of the Genset Circuit Breaker.
+
+              Security      System safety can be increased with a dedicated password, on both local and
+                            remote controller.
+
+DST4602evo
+Datasheet_EN
+REDUNDANT CONTROLLER FUNCTION                                                                  DST4602 Compact
+                                                                                                   (BACK-UP)
+                            DST4602 Compact
+
+                                                                                   MONITORING
+                                                                                      SYSTEM
+
+                                                                                              Power generator
+
+In sensitive contests, it is necessary to ensure a safe control of the genset.
+Basically, a reliable control is achieved using a “Master unit” which is able to control the genset, combined to a “Back-up
+unit”.
+The “Master unit” is equipped with a self-diagnostic system (watch dog), able to detect any failure of the controller.
+After an elapsed and settable time, the “Back-up unit” automatically switches on, taking responsibility of controlling the
+genset.
+
+When the “Master unit” is ON, the “Back-up unit” is OFF and vice-versa.
+In this way, there is no command failures risks between the controllers.
+The redundancy available is defined “warm type”, taking consideration that 6-7 seconds are required before the “Back-up
+unit” is activated.
+It is possible to configure the redundancy of the controllers as follows.
+For each genset:
+A) 2 x DST4602 compact,
+B) 2 x DST4602 SCM + N.1 DST4602 HMI (display).
+
+With the case b) there is one common display (DST4602 HMI) and the backup is done on DST4602 SCM (the internal box).
+
+              DST4602 SCMT      DST4602 Compact                                                DST4602 SCMT
+                 (MASTER)   DST4602Evolution - HMI                                                (BACK-UP)
+
+                                     (BACK-UP)
+
+                            MONITORING
+                              SYSTEM
+
+                            Power generator
+
+DST4602evo
+Datasheet_EN
+                                                                                                                                                                  1 GND                      2 +BATT.                                                                                                                                                                   5 1 AVR VOLTAGE     2      1 INPUT 16..20 DIGITAL INPUTS 10..15 DIGITAL INPUTS 1..9 DIGITAL 34    5      46                                                                1 C.T.4                                                                    3 L3                                                                                                                                                                                                                                                  90mm [3.54”]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    5                                                                    COM                                                                            4N                                                                                                                                                                                                                                          76,6mm [3.09”]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    1 L1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        2 C.T.4                                                                                                2 L2                                                                                                                                                                                                                 78,6mm [3.09”]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1 L1                                                                                              3 L3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   2 L2                                                                                              4N
+
+                                                                                                                                                 SUPPLY J20                                                                                                                                                                                                                            CURRENT INPUTS                                                                            J21         CURRENT INPUT                                                        J22                     J23                                                                                                            J24
+                                                                                                                                                          J16 RS 232 INTERFACE                                                                                                                                                                                                             C.T.1 ÷ C.T.3                                                                                                                                C.T.4                                  GENERATOR VOLTAGE                                                                                            BUS/MAINS VOLTAGE
+                                                                             P1 J28A/B SW5 OPERATION 1 2 NORMAL OFF OFF2 1 ON USB (J28) FW ON OFF
+                                                                 SW5- DISPLAY                                                                           OFF ON
+
+                                                                                                                                                 UPGR.  RESERVED
+
+                  USB A Female                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     1                                                                         L3 3                                                                                                                                                                                            SW4                               AN.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2                                                                             N4                                                                                                                                                                                                                        INPUT 4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            J17                                                                                         L1 1                                                                                                                                                                  ANALOG                           AN.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         L1 1                                                                                   L2 2                                                                                                                                                    2 1 INPUTS                             INPUT 3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  L2 2                                                                                  L3 3                                                                                                                                         ON ON STANDARD
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             TOROID INPUT                                                                                                                      N4                                                                                                                                OFF OFF SPECIAL
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  100V INPUT J19
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            100V INPUT             J18
+
+                                                                                                                                                                                                                                                                                                                                                                                                       J10                                                                                                                                     DST4602 Evolution
+
+                                                                                                                                                                                   US          B                           3 2.                 4 RESERVED ON ON 0                                                                  +V-                                                HMI SERIAL (RS 422)                                                                                                                                                                                                                                                                                                                                                                                                                   2 1 ON
+                                                                                                                                                                                             +V-                                                                                                                                    +I -                                               INTERFACE                                                                                                                                                                                                                                                                                                                                                                                                               SW4
+                  RJ45                                                                                                       TR1                                  +C.L.                      +I -                                                                 4 -C.L.                                    TR3+C.L.                                -C.L.                             SCM VERSION
+                                                                                                                                                                                                                                                                                                                  1                                                                    ONLY
+                      10/100Mb/s                                                                                            -+                                                     1         2                                                                                                              -+          1 12 2n.c. 2    2 4 4 3n.c. 3                                                                                                                                                                                   3 ECU                                                               J13 CAN_2                             J14                                                             RS232/485                                                            J15
+                                                                                                                       0..1k                                                                                                                                                                           0..1k                                                                                                                                                                                                                                 INTERFACE                                                                                            COM2                                                            ISOLATED
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     1                                                            EXBUS                                                                                           INTERFACE                                                            (ANALOG
+                                                                                                                           J7                                                                                                                                                                              J8                                                                                                                                                                                                                                              2                                                                                                                                                                                                                           INPUTS 1..2)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              1
+202mm [7.95”]                                                                                                                                                                                                                                                                                                                                                                                                                                                                          CAN_0                                                                   J12 CAN_1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       J11
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  PMCBUS
+
+                                  J25A/B                         ETHERNET                                                                                         1 +C.L.                    2 n.c.                                3 n.c.                         4 -C.L.                                       1+C.L.                               -C.L.                                                                                                                                                                                                                                                                                                        5 CT1..CT3 J21 J20 J19 1                     2  7 BUS/MAINS GENERATOR 3  VOLTAGE (400V) VOLTAGE (400V) 4             31        4 MAX OUTPUT 25 350mA/40V@50°C DIGITAL STATIC 34              5
+
+                                                                                                                                                                                                                                                                                                                                                                                             J9                                                                                        (MCB)                                                                                                                      2           3
+
+                                                                                                                                                                                                                                                                                                                                                                                            USB 2.0                                                                                     DIGITAL OUTPUTS 1..6 DIGITAL OUTPUTS 15..16 1                                                                                                                                                                                                                                                                                                                                                               184mm [7.24”]
+                                                                                                                                                                                                                                                                                                                                                                                            Slave                                                                                            2
+
+                                                                                                                       TR1                                                                                                                                                 AN. OUTPUT 1SPEED GOVERNOR     TR3                                               AN. OUTPUT 2
+
+               1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 1
+
+               2                                                                                                                                                                                                                                                                                                                                                                                                                                                                       120R                                                                    120R                                         120R                                                                                                                                                                                                                                                                 2
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ON                                         OFF                          ON   OFF                                     ON         OFF
+
+               3                  DIGITAL OUTPUTS 7..14                                                                SET CURRENT                                                                                                                                                                        SET CURRENT                                                                                                                                                                  120R                                                  S1                120R            S2                           120R              S3 S4                                                                               120R                                                         S5                                                                                                3
+                                      MAX OUTPUT 350mA/40V@50°C
+                                                                                                                       LOOP                                                        12                                                                                                                     LOOP         12                                                                                                                                                                    ON OFF                                                                  ON OFF                                       ON OFF                 RS232 RS485                                                                                       ON OFF                                                                                                                 ANALOG INPUTS  4
+
+               4 ± 20mA ON OFF ± 20mA ON OFF ± 10mA ON ON ± 10mA ON ON J1 + 20mA OFF OFF TR2 + 20mA OFF OFF TR4 1 COM OUT. 15 J4 ANALOG OUTPUT 1 J7 J10 1 A/RX J14 1 L1 J23 1 OUT. 7 GND 5
+               5                                                                                                                                 N.A. OFF ON + -                                                                                                                                               N.A. OFF ON + -                                                           1 IN 1                                                                        2 NO OUT. 15                                                     I                                                                   2 B/TX COM2            2 L23 BUS/MAINSVOLTAGE                                                                                                                   2 OUT. 8                           J26                                                               6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               HMI SERIAL                                                                                                   1 L1
+                                                                                                                                                                                                                                                                                                                                                                                         2                                                                             3 NC OUT. 15                                                                                                INTERFACE-+              3 GND (RS232/485       3 L3                  (100V)                                                                                                             3 OUT. 9
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  (RS 422)
+               IN 2 6 SW1 SW1 TR2 SW2 SW2 TR4 3 IN 3 4 COM OUT. 16 1 +C.L. 1 +C.L. 4 ISOLATED DTR INTERFACE) 4 N 2 L2 4 OUT. 10 7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               OUTPUTS 7..14
+                                                                                                                       ON ON 4 IN 4 5 NO OUT. 16 (OPTIONAL) 1 AN. INPUT 1(0..10V) SUPPLY 3 L3 5 OUT. 11 8                                                           OFFSET                                                                                  OFFSET
+               7                                                                                                                                                                                                                                                                                                                                                                         5 IN 5                                                                        6 NC OUT. 16                                                  2                       +-2             CAN_0 2 REF. IN 1(GND)                                                                                         4N
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             +-                V     J11                                                                                                                                                                                                    6 OUT. 12                                                                          J27               9
+                                                                                                                                                                                                                                                                                                                                                                                         6 IN 6                                                                                                                                      3         3
+                                                                                                                       FW UPGRADE SW3 1            SW3 2          1 OPERATION 2 1 1          2 USB (J9) FW UPGR. OFF ON 2                                                                                       9 21                                                                     7 IN 7                                                                                                                                                                                                             3 AN. INPUT 2(0..5V) 1 GND                                                                                                                                      7 OUT. 13
+               8                                                                                                                                                                                                                                                                                                                                                                                                                                                       1 COMMON                                                                                      1 CAN_H                                                  J15  2+BATTERY J24
+                                                                                                                                                                                                                                                                                                                                                                                         8 IN 8                                                                                                                                      4         4                                                            4 REF. IN 2(GND)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2 OUTPUT 1                                                       -C.L.      -C.L.             2 N.C.                                 5 REF. OUT 5V                                                                                                                                                   8 OUT. 14
+                                                                                                                                                                                                                                                                                                                                                                                         9 IN 9
+                                                                 2 1 ON                                                                                                                                                                                                                                                                                                                                                                                                3 OUTPUT 2            (SPEED GOVERNOR) 3 CAN_L                                                                                       AN. INPUTS 1..2                                                                 1 L1                                                                            1 RESERVED
+                                  J26                                                                                                                                                                                                                                                                                                                                                  J2 4 OUTPUT 3 OUTPUT 2 ANALOG (ECU INTERF.) COMPUTER 1 2 L2 C.T.1 2 AN. INPUT 3 J27
+                                                                                                                                                                                      OFF OFF                              ON OFF 3                                                                                                                                                      1 IN 10                                                                       5 OUTPUT 4                                                                  -+                                                       INTERFACE J16          2 C.T.1          CURRENT INPUTS                                                                                                                 (OIL PRESSURE)
+                                                                                                                                                                                                                                                                                                                                                                                         2 IN 11                                                                                                                                                                     J12 CAN_1 RS 232                                                                                                       3 L3                                                                            3 AN. INPUT 4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        +C.L. +C.L.                                                                                3 C.T.2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     1         1                                                                                                                                                                                                                               (COOLANT TEMP.)
+                                                                                                                                                                                                                                                                                                                                                                                         3 IN 12                                                                       6 COMMON                                                                                                                                                                                                             4N                                                                              4 AN. INPUT 5
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         PLUS                                                                                        1 CAN_H                                                       4 C.T.2                                                                                                                                         (FUEL LEVEL)                                                 ANALOG INPUTS
+                                                                                                                                                                                                                                                                                                                                                                                         4 IN 13                                                                       7 OUTPUT 5                                                    2                        +-2                                                                                                                                                                                                           5 ANALOG. REF.
+                                                                                                                                                                                                                                   RS232(J16)                                                                                                                                            5 IN 14                                                                                                                                             +-                V     2 N.C.
+                                                                                                                                                                                                                                      FW UPGRADE                                                                                                                                         6 IN 15                                                                                                                                             I                                                                                     5 C.T.3
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       8 OUTPUT 6                                                    3               1 USB 2.03      3 CAN_L                                1 IN                                                                                               10/100Mb/s                                                   6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     J5 4 4                                                              2 Function                                         2 IN RTN J17 6 C.T.3                                                          ETHERNET (OPTIONAL)
+                                                                                                                                                                                      NORMAL                                                                                                                                                                                           J3                                                                                                                                                                      3     (PMCBUS)                                                                                                                                                                                               7 PICK-UP IN/W
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       1 EXC. D+ 12V                                                    -C.L.                             5-C.L.                            TOROID INPUT               J22                                                                                                                                  8 PICK-UP IN RTN
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2 EXC D+ 24V                             J13                                                             6CAN_2
+                                                                                                                                                                                                                                                                                                                                                                                         1 IN 16                                                                       3 AN. INPUT 6         (AVR VOLTAGE) J8 1 CAN_H                                                                                                              1 C.T.4                                                                                                                                  9 GUARD EARTH
+                                                                                                                                                                                                                                                                                                                                                                                         2 IN 17                                                                                                                                                                                                            1 L1 J18
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       4 (D+ IN)                 J9                                                                  2 N.C.                                 2 L2 GENERATOR 2 COM C.T.4 J25A                                                                                                                                              J28A
+                                                                                                                                                                                                                                                                                                                                                                                         3 IN 18                                                                       5 RESERVED J6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     3 CAN_L                                3 L3 VOLTAGE                                                                                                                                                                 J28B
+                                                                                                                                                                                                                                                                                                                                                                                         4 IN 19                                                                                                                                                                                                                     (100V)        CURRENT J25B
+                                                                                                                                                                                                                                                                                                                                                                                         5 IN 20                                                                                                                                                                                                            4N
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     D+ BATT.CHARG.ALTERN.                                                                           (EX_BUS)                                                          C.T.4                                                                                                                                USB 2.0 Host (OPTIONAL)
+
+                                                                                                                                                                                                DIGITAL                                                                                                                             J2 DIGITAL                                                     J3 DIGITAL                                                                                                                                  J4         DIGITAL OUTPUTS 15..16                                             J5    DIGITAL OUTPUTS 1..6                                                                                                                                ANALOG
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   MAX OUTPUT 4A/250VAC                                                       MAX OUTPUT
+                                                                                                                                                                                   J1 INPUTS 1..9                                                                                                                                          INPUTS 10..15                                                 INPUTS 16..20                                                                                                                                                                                                                                                                                                                                                         J6 INPUTS 6
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   1A/30V 4A/30V                                                                  4A/30V
+
+                                                                                                                                                                                                                                                                    5                  6               7  8                                          3      4                          6                                                                                                                                                                                                                                      1    2              4                                         6                                            8                                     1  2
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2  3
+
+                                                                                                                                                                                                                                                                                                                                                                                                 160mm [6.29”]
+                                                                                                                                                                                                                                                                                                                                                                          260mm [10.24”]
+
+                                                          sices.eu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                S.I.C.E.S. SRL
+                  100% PROUDLY ITALIAN                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Società Italiana Costruzione
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Elettriche Sumirago
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Via Molinello 8B, 21040
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Jerago con Orago (VA) Italy
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Tel. +39 0331 212941
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Fax +39 0331 216102
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   sales@sices.eu
+

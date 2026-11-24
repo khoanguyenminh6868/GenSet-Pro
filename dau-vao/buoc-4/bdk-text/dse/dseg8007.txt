@@ -1,0 +1,231 @@
+         Series Data Sheet
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+
+Overview
+The DSEG8007 is a 7” touch screen, full colour, graphical display providing the user with remote control and monitoring of an entire system. It has
+been designed to seamlessly integrate with the single-set and multi-set DSEG8600 modules, with configuration options suitable for a wide variety
+of applications. The DSEG8007 display screen design provides comprehensive large screen graphs, meters and numeric values to indicate engine,
+generator and mains (utility) status information in a clear and concise format.
+
+Key Features
+• Enhanced 7” high resolution, touch screen, colour display with an
+
+      enhanced graphical user interface to display system application
+      diagrams.
+• Powerful processor for fast monitoring and control response times
+      across multiple single-set and multi-set DSEG8600 modules within
+      the same system.
+• Front panel control and monitoring for a maximum of 20 DSEG8600
+      modules within the same system.
+• Simultaneous RS485 and Ethernet communications to multiple
+      single-set and multi-set DSEG8600 modules.
+• Internal audible alarm provides alerts when a fault occurs within the
+      monitored system.
+• Digital outputs to activate an external high intensity siren/beacon to
+      provide alerts when a fault occurs within the monitored system.
+• Multiple language support.
+• PC Configuration using DSESCADA Suite.
+• IP65 rating when mounted to panel fascia with supplied sealing
+      gasket.
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+Typical Application
+
+                                                                                                         DSEG8007
+
+                                                      DSEG8600
+
+                                                      DSEG8600
+                                                      DSEG8600
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+Continuous Voltage Rating                                                                                and supply recovers to 5 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        Backlight will not be maintained during cranking.
+                                                                                                         300 mA at 12 V, 150 mA at 24 V
+Maximum Operating Current
+Digital Alarm Outputs                                                                                    2
+Number                                                                                                   Positive Switching DC Output
+Type                                                                                                     Output C to D: 2 ADC at module supply voltage.
+Positive DC Output Rating
+Communications                                                                                           1 Programming Port
+USB A                                                                                                    1 File Update Port
+USB B                                                                                                    1 Non-Isolated Port
+RS232*                                                                                                   1 Fully Isolated Port
+RS485                                                                                                    1 10/100 Ethernet Port
+Ethernet
+Temperature                                                                                              -30 °C to +70 °C / -22 °F to +158 °F
+Operating Temperature                                                                                    -40 °C to +85 °C / -40 °F to +185 °F
+Storage Temperature
+Dimensions                                                                                               316.8 mm x 168.8 mm x 42.8 mm / 12.47 ” x 6.65 ” x 1.69 ”
+Overall (W x H x D)
+Mounting                                                                                                 Panel Fascia Mounting
+Type                                                                                                     282 mm x 136 mm / 11.10 ” x 5.35 ”
+Panel Cut-Out (W x H)                                                                                    8 mm / 0.31 “
+Maximum Panel Thickness
+
+Related Products                 Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEGenset®
+DSEG8600
+
+*Available in future software updates
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - Front of module when installed into the control panel with the supplied sealing
+BS EN 60529                                                                                              gasket.
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+            Series Data Sheet
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+
+Terminals                                                                                                Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   Digital Alarm Outputs
+3 to 4                                                                                                   RS485
+A, B & SCR
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+                                             Series Data Sheet
+
+                                                                                     282 mm
+                                                                                    ( 11.10 " )
+
+DSEG8007 7” Graphical Colour Remote Overview Display
+
+Part Number: G8007-01
+
+Technical Drawing
+
+                                                           282 mm
+                                                          ( 11.10 " )
+
+                                             316.8 mm                                                                                                                      42.8 mm
+                                             ( 12.47 " )                                                                                                                   ( 1.69 " )
+                                                                                                                                                                           27.8 mm
+                                                          316.8 mm                                                                                                         ( 1.09 " )
+                                                          ( 12.47 " )
+                                                                                                                                                                    42.8 mm
+                                                                                                                                                                    ( 1.69 " )
+                                                                                                                                                                    27.8 mm
+                                                                                                                                                                    ( 1.09 " )
+
+( 6.65 " )                                                                                                                                                                         136 mm
+                                                                                                                                                                                      ( 5.35 " )
+                              168.8 mm
+                                 ( 6.65 " )                                                                                                                         136 mm
+                                                                                                                                                                       ( 5.35 " )
+
+Connection Label
+
+                                                                                                 020-348,3  Made In UK
+
+Product Documentation
+053-279 – DSEG8007 Installation Instructions
+057-377 – DSEG8007 Operator Manual
+057-128 – DSE8005 DSE SCADA Suite PC Software Manual
+
+DEEP SEA ELECTRONICS UK                      DEEP SEA ELECTRONICS USA                                                   DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                       T: +1 (815) 316 8706                                                       T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com              E: usasales@deepseaelectronics.com                                         E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com                W: www.deepseaelectronics.com                                              W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change                   Registered in England & Wales No.01319649                                       055-300/05/25 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.                  VAT No.316923457
+

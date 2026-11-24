@@ -1,0 +1,137 @@
+         dseGenset                                                                                                                                                                                               ®
+
+dse855                                                                                                                                              SPECIFICATION
+
+                                                                                                                                                      DC SUPPLY
+                                                                                                                                                      CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+
+                                                                                                                                                      CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 100 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout
+                                                                                                                                                      and supply recovers to 5 V. This is
+                                                                                                                                                      achieved without the need for internal
+                                                                                                                                                      batteries. LEDs and backlight will not be
+                                                                                                                                                      maintained during cranking.
+
+                                                                                                                                                      MAXIMUM OPERATING CURRENT
+                                                                                                                                                      123 mA at 12 V
+                                                                                                                                                      71 mA at 24 V
+
+                                                                                                                                                      MAXIMUM STANDBY CURRENT
+                                                                                                                                                      104 mA at 12 V
+                                                                                                                                                      63 mA at 24 V
+
+                                                                                                                                                      COMMUNICATIONS
+                                                                                                                                                      USB (Single DSE Controller)
+                                                                                                                                                      Ethernet
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      35 mm x 97 mm x 102 mm
+                                                                                                                                                      1.4” x 3.8” x 4.0”
+
+                                                                                                                                                      MOUNTING
+                                                                                                                                                      DIN Rail
+
+                                                                                                                                                      OPERATING TEMPERATURE RANGE
+                                                                                                                                                      -30 °C to + 70 °C
+                                                                                                                                                      -22 °F to + 158 °F
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                      -40 °C to + 80 °C
+                                                                                                                                                      -40 °F to + 176 °F
+
+KEY FEATURES                                    KEY BENEFITS
+• Supports a wide range of DSE controllers.     • Allows up to four users from different
+• Converts supported DSE controller’s USB
+                                                   locations to monitor a DSE controller’s
+   port to an Ethernet port.                       status.
+• In-built web server for use over an internal  • Allows integration of DSE controllers into
+                                                   building management systems (BMS).
+   network and the internet.                    • DIN rail mounting allows the device to be
+• Simple configuration of DSE855 via an            installed securely into a panel.
+                                                • Generic connectors for simple plug-in
+   internet browser.                               operation.
+• Remote control and monitoring of the          • Firmware upgradeable via a USB memory
+                                                   device or OTA (Over The Air) using the
+   connected supported DSE controller.             internet.
+• Option for multiple users to restrict access  • No additional PC software required as
+                                                   DSE855 configuration is achieved using the
+   permissions.                                    in-built web server.
+• Supports MODBUS TCP via Ethernet port.
+• LED status indication on the device to aid
+
+   fault finding.
+
+RELATED MATERIALS                               PART NO’S                                                TITLE                                      PART NO’S
+TITLE                                           053-159                                                  dse6010/20 data sheet                      055-079
+dse855 Installation Instructions                057-205                                                  dse6110/20 data sheet                      055-069
+dse855 Operations Manual                        055-162                                                  dse6610/20 data sheet                      055-159
+dseL400/L401 data sheet                         055-154                                                  dse7110/20 data sheet                      055-081
+dse4310/20 data sheet                           055-068                                                  dse7110/20 MKII data sheet                 055-138
+dse4410/20 data sheet                           055-132                                                  dse7210/20 data sheet                      055-050
+dse4510/20 data sheet                           055-165                                                  dse7310/20 data sheet                      055-051
+dse4610/20 data sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-174/12/13 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+         dseGenset                      COMPATIBLE DSE CONTROLLERS                                                                                       ®
+                                        INCLUDE:
+dse855                                                                                      ENVIRONMENTAL TESTING STANDARDS
+                                        AUTO START MODULES
+The DSE855 is a communications                                                                ELECTRO MAGNETIC COMPATIBILITY
+device that allows you to monitor a     DSEL400  DSE6110                                      BS EN 61000-6-2
+single DSE controller with USB          DSEL401  DSE6610                                      EMC Generic Emission Standard for the
+connectivity over a LAN (network) or    DSE4310  DSE7110                                      Industrial Environment
+WAN (internet) connection. This is      DSE4410  DSE7110MKII                                  BS EN 61000-6-4
+achieved using the in-built web         DSE4510  DSE7210                                      EMC Generic Emission Standard for the
+server or MODBUS TCP.                   DSE4610  DSE7310                                      Industrial Environment
+                                        DSE6010
+If the device needs to be seen over                                                           ELECTRICAL SAFETY
+the internet, the internet router’s IP  AUTO MAINS FAILURE MODULES                            BS EN 60950
+address has to be configured to be                                                            Safety of Information Technology
+visible to the outside world. Once      DSE4320  DSE6620                                      Equipment, including Electrical Business
+this has been done the DSE855 can       DSE4420  DSE7120                                      Equipment
+be communicated with from any           DSE4520  DSE7120MKII
+remote location that has internet       DSE4620  DSE7220                                      TEMPERATURE
+connectivity. The device has been       DSE6020  DSE7320                                      BS EN 60068-2-2
+designed to work with a wide range      DSE6120                                               Test Ab to +70 °C 60067-2-2 Hot
+of DSE controllers.                                                                           Test Ab to -30 °C 60068-2-1 Cold
+
+The device also includes an LED                                                               VIBRATION
+indicator that shows the operation                                                            BS EN 60068-2-6
+and connection status at all times.                                                           Ten sweeps in each of three major axes
+                                                                                              5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz
+                                                                                              at 2 GN
+
+                                                                                              HUMIDITY
+                                                                                              BS 2011 part 2.1 60068-2-30
+                                                                                              Test Cb Ob Cyclic
+                                                                                              93% RH at 40 °C for 48 hours
+
+                                                                                              SHOCK
+                                                                                              BS EN 60068-2-27
+                                                                                              Three shocks in each of three major axes
+                                                                                              15 GN in 11 mS
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF APPLICATIONS
+
+WEB SERVER              MODBUS TCP               USB
+
+ETHERNET                                CONNECTION TO DSE MODULE              DC POWER
+                                        See above for compatible controllers  SUPPLY 8-35V
+
+DSE855
+
+                  7
+                 OTHER
+
+                                                                                            ISSUE 1
+

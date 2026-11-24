@@ -1,0 +1,153 @@
+DSEGenset®
+
+DSE8920                                                                                                                                             SPECIFICATIONS
+
+7” Colour Load Share & Synchronising                                                                                                                DC SUPPLY
+Control Module                                                                                                                                      CONTINUOUS VOLTAGE RATING
+                                                                                                                                                    5 V to 35 V Continuous
+                                                                                                              Module can be
+                                                                                                               configured to                        CRANKING DROPOUTS
+                                                                                                         function as a DSE8910                      Able to survive 0 V for 100 ms, providing
+                                                                                                                                                    supply was at least 10 V before dropout
+                                                                                                                 Auto Start                         and supply recovers to 5 V. This is
+                                                                                                            Synchronising and                       achieved without the need for internal
+                                                                                                          Load Sharing Control                      batteries.LEDs and backlight will not be
+                                                                                                                                                    maintained during cranking.
+                                                                                                                  Module.
+                                                                                                                                                    MAXIMUM OPERATING CURRENT
+KEY FEATURES                             • Independent earth fault protection                            KEY BENEFITS                               1.2 A at 12 V, 0.6 A at 24 V
+• 7” optically bonded, sunlight          • Breaker control via fascia buttons                            • Can be configured for use as a
+                                         • Fuel and start outputs configurable                                                                      MAXIMUM STANDBY CURRENT
+   readable colour TFT display                                                                              DSE8910 Auto Start Module               0.7 A at 12 V, 0.35 A at 24 V
+  (800 x 480)                               when using CAN                                               • Real-time clock provides accurate
+• Comprehensive synchronising &          • 8 configurable DC outputs                                                                                CHARGE FAIL/EXCITATION RANGE
+   load sharing capabilities             • 2 configurable volt-free relay                                   event logging                           0 V to 35 V
+• Built in governor, AVR & CAN                                                                           • Ethernet communication, provides
+   control                                  outputs                                                                                                 GENERATOR & MAINS (UTILITY)
+• Base load (kW export) control          • 4 configurable analogue/digital                                  built in advanced remote                VOLTAGE RANGE
+• Positive & negative kVAr export                                                                           monitoring.                             15 V to 415 V AC (Ph to N)
+   control                                  inputs                                                       • Increased input and output               26 V to 719 V AC (Ph to Ph)
+• Mains (Utility) decoupling protection  • Built in sensors to support 0 V to 10                            expansion capability via DSENet®
+• Mains (Utility) failure detection                                                                      • Licence-free PC software                 FREQUENCY RANGE
+• Mains (Utility) power (kW, kV Ar,         V & 4 mA to 20 mA                                            • IP65 rating (with supplied gasket)       3.5 Hz to 75 Hz
+   kV A & pf) monitoring                 • 12 configurable digital inputs                                   offers increased resistance to water
+• RoCoF and vector shift protection      • Configurable 5 stage dummy load                                  ingress                                 MAGNETIC PICKUP
+• Mains (utility) kW export protection                                                                   • Advanced internal PLC editor             VOLTAGE RANGE
+• Peak lopping & shaving functionality      and load shedding outputs                                       allows user configurable functions      +/- 0.5 V to 70 V
+• Multiple display languages             • CAN, MPU and alternator frequency                                to meet complex application
+• Five key menu navigation                                                                                  requirements.                           FREQUENCY RANGE
+• LCD alarm indication                      speed sensing in one variant                                                                            10,000 Hz (max)
+• DSENet® expansion compatibility        • Real time clock                                               EXPANSION DEVICES
+• Data logging & trending facility       • Manual and automatic fuel pump                                • DSE124 CAN/MSC Extender                  INPUTS
+• Drag & drop advanced PLC editor                                                                        • DSE2130 Input Expansion Module           DIGITAL INPUTS A TO L
+• Protections disable feature               control                                                      • DSE2131 Ratio-metric Input               Negative switching
+• Fully configurable via PC using        • Engine run-time scheduler
+   USB, RS485 & Ethernet                 • Fuel usage monitor and low fuel                                  Expansion Module                        ANALOGUE INPUTS A TO D
+   communication                                                                                         • DSE2133 RTD & Thermo-couple              Configurable as:
+• Front panel configuration with            level alarms                                                                                            Negative switching digital input
+   PIN protection                        • Simultaneous use of all                                          Expansion Module                        0 V to 10 V sensor
+• Power save mode                                                                                        • DSE2152 Ratio-metric Output              4 mA to 20 mA sensor
+• 3 phase mains (utility) & generator       communication ports                                                                                     0 Ω to 480 Ω sensor
+   sensing and protection                • Remote SCADA monitoring via                                      Expansion Module
+• Generator current and power                                                                            • DSE2157 Output Expansion Module          OUTPUTS
+   monitoring (kW, kvar, kVA, pf)           various DSE software applications                            • DSE2548 LED Expansion                    OUTPUT A & B (FUEL & START)
+• kW and kvar overload alarms            • MODBUS RTU & TCP IP support                                                                              15 A DC at supply voltage
+• Reverse power alarms
+• Over current protection                   with configurable MODBUS                                                                                OUTPUTS C & D
+• Unbalanced load protection                pages                                                                                                   8 A AC at ­2­­ 50 V AC (Volt-free)
+                                         • 3 configurable maintenance alarms
+                                         • Compatible with a wide range of                                                                          AUXILIARY OUTPUTS E to L
+                                            CAN engines, including tier 4F,                                                                         2 A DC at supply voltage
+                                            stage 5 engine support
+                                         • Uses DSE Configuration Suite PC                                                                          BUILT IN AVR GOVERNOR CONTROL
+                                            Software for simplified configuration                                                                   MINIMUM LOAD IMPEDANCE
+                                                                                                                                                    500 Ω
+RELATED MATERIALS                                                                                        PART NO.                                   Fully isolated
+TITLE                                                                                                    053-248
+DSE8920 Installation Instructions                                                                        057-311                                    GAIN VOLTAGE
+DSE8920 Operator Manual                                                                                  057-303                                    0 V to 10 V DC
+DSE8920 PC Configuration Suite Manual                                                                    055-264                                    Fully isolated
+DSE8910 Data Sheet
+                                                                                                                                                    OFFSET VOLTAGE
+                                                                                                                                                    0 V to 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    310 mm x 162 mm x 51 mm
+                                                                                                                                                    12.2” x 6.4” x 2.0”
+
+                                                                                                                                                    PANEL CUT-OUT
+                                                                                                                                                    282 mm x 136 mm
+                                                                                                                                                    11.1” x 5.4”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40 °C to +85 °C
+                                                                                                                                                    -40 °F to +185 °F
+
+                                                                                                                                                    OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30 °C to +70 °C
+                                                                                                                                                    -40 °F to +185 °F
+
+DEEP SEA ELECTRONICS LTD                                                                                 DEEP SEA ELECTRONICS INC
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099                                                                            TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com                                    EMAIL usasales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-264/11/19 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+DSEGenset®
+
+DSE8920                                                                                                               ENVIRONMENTAL TESTING STANDARDS
+
+7” Colour Load Share & Synchronising                                                                                  ELECTRO MAGNETIC COMPATIBILITY
+Control Module                                                                                                        BS EN 61000-6-2
+                                                                                                                      EMC Generic Immunity Standard for the
+The DSE8920 is a 7” full colour,          Comprehensive communications are        KEY LOAD SHARE FEATURES:            Industrial Environment
+optically bonded synchronising            also available via RS485 and Ethernet   • Peak lopping/sharing (with        BS EN 61000-6-4
+Auto Mains (Utility) Failure Control      for remote PC control and monitoring                                        EMC Generic Emission Standard for the
+Module suitable for paralleling single    and integration into building              appropriate DSE mains (utility)  Industrial Environment
+gensets (diesel or gas) with a mains      management systems                         controller
+(utility) supply. The controller can be                                           • Manual voltage/frequency          ELECTRICAL SAFETY
+configured for use as a DSE8910           The event log will record 250 events       adjustment                       BS EN 60950
+Auto Start Control Module. When           to facilitate easy maintenance, and an  • RoCoF and vector shift            Safety of Information Technology Equipment,
+converted for use as a DSE8910 the        extensive number of fixed and flexible     protection                       including Electrical Business Equipment
+unit provides generator to generator      monitoring, metering and protection     • Mains (Utility) decoupling
+load share functionality.                 features are included.                  • Mains (Utility) decoupling        TEMPERATURE
+                                                                                     test mode                        BS EN 60068-2-1
+Designed to synchronise a single          Designed to offer increased built       • Direct governor and AVR control   Ab/Ae Cold Test -30 ºC
+genset with a single mains (utility)      in support for active sensors for       • Volts and frequency matching      BS EN 60068-2-2
+supply the DSE8920 will automatically     0 V to 10 V & 4 mA to 20 mA.            • kW and kvar load sharing          Bb/Be Dry Heat +70 ºC
+control the change over from mains        Comprehensive communication
+(utility) to generator supply or run the  and system expansion options are                                            VIBRATION
+generator in synchronisation with the     available.                                                                  BS EN 60068-2-6
+mains (utility), to provide no break,                                                                                 Ten sweeps in each of three major axes
+peak lopping and peak shaving power       Using the DSE PC Configuration                                              5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz
+solutions.                                Suite software allows easy alteration                                       at 2 gn
+                                          of the operational sequences, timers
+System alarms are annunciated on          and alarms. With all communication                                          HUMIDITY
+the LCD screen (multiple language         ports capable of being active at the                                        BS EN 60068-2-30
+options available), illuminated LED       same time, the DSE8920 is ideal for a                                       Db Damp Heat Cyclic 20/55 ºC at 95% RH
+and audible sounder.­­                    wide variety of demanding load share                                        48 Hours
+                                          applications.                                                               BS EN 60068-2-78
+                                                                                                                      Cab Damp Heat Static 40 ºC at 93% RH
+                                                                                                                      48 Hours
+
+                                                                                                                      SHOCK
+                                                                                                                      BS EN 60068-2-27
+                                                                                                                      Three shocks in each of three major axes
+                                                                                                                      15 gn in 11 mS
+
+                                                                                                                      DEGREES OF PROTECTION
+                                                                                                                      PROVIDED BY ENCLOSURES
+                                                                                                                      BS EN 60529
+                                                                                                                      IP65 - Front of module when installed into the
+                                                                                                                      control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE
+VARIETY OF LOAD SHARE APPLICATIONS
+

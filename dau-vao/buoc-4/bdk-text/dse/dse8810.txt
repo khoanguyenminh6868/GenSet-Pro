@@ -1,0 +1,153 @@
+DSEGenset®
+
+DSE8810                                                                                                                                             SPECIFICATION
+
+COLOUR AUTO START LOAD SHARE MODULE                                                                                                                 DC SUPPLY
+                                                                                                                                                    CONTINUOUS VOLTAGE RATING
+KEY FEATURES                           • Fuel usage monitor and low fuel                                 KEY BENEFITS                               8 V to 35 V continuous
+• Configurable inputs (11)                alarms                                                         • Dual processor for improved
+• Configurable outputs (8)                                                                                                                          CRANKING DROPOUTS
+• Built-in governor and AVR control    • Manual fuel pump control                                           response                                Able to survive 0 V for 50 mS, providing
+• Comprehensive electrical protection  • “Protections disabled” feature                                  • RS232, RS485 & Ethernet can be           supply was at least 10 V before dropout and
+• Comprehensive loadshare              • kW overload protection                                                                                     supply recovers to 5 V. This is achieved
+                                       • Reverse power protection                                           used at the same time                   without the need for internal batteries
+   capabilities                        • Power monitoring (kW h, kV Ar, kV                               • High number of inputs and outputs
+• RS232, RS485 & Ethernet remote                                                                         • Worldwide language support               MAXIMUM OPERATING CURRENT
+                                          A h, kV Ar h)                                                  • Data logging & trending                  600 mA at 12 V, 300 mA at 24 V
+   communications                      • Load switching (load shedding and                               • Harmonics display for clear
+• Modbus RTU/TCP support                                                                                                                            MAXIMUM STANDBY CURRENT
+• Back-lit LCD graphical display          dummy load outputs)                                               monitoring*                             330 mA at 12 V, 160 mA at 24 V
+• Configurable display languages       • Unbalanced load protection                                      • Modules can be integrated into
+• Audible alarm                        • Independent Earth Fault trip                                                                               CHARGE FAIL/EXCITATION RANGE
+• Reduced file transfer time           • USB connectivity                                                   building management systems             0 V to 35 V
+• Engine protection                    • Backed up real time clock                                          (BMS)
+• Fault condition notification to a    • Fully configurable via DSE                                      • Licence-free PC software                 OUTPUTS
+                                                                                                         • IP65 rating (with supplied gasket)       OUTPUT A (FUEL)
+   designated PC                          Configuration Suite PC software                                   offers increased resistance to water    15 A DC at supply voltage
+• Front panel editing with PIN         • Advanced SMS messaging                                             ingress
+                                                                                                         • PLC editor allows user configurable      OUTPUT B (CRANK)
+   protection                             (additional external modem                                        functions to meet specific              15 A DC at supply voltage
+• Flexible sender inputs                  required)                                                         application requirements
+• Configurable timers and alarms       • Start & stop capability via SMS                                                                            OUTPUTS C & D
+• 3 configurable maintenance alarms       messaging                                                                                                 8 A AC at 250 V AC (Volt free)
+• Multiple date and time scheduler     • Additional display screens to help
+• Configurable event log (250)            with modem diagnostics                                                                                    AUXILIARY OUTPUTS E to J
+• Easy access diagnostic page          • DSENet® expansion compatible                                                                               2 A DC at supply voltage
+• CAN and Magnetic Pick-up/Alt.        • Integral PLC editor
+                                                                                                                                                    GENERATOR & BUS
+   sensing                                                                                                                                          VOLTAGE RANGE
+                                                                                                                                                    15 V to 333 V AC (L-N)
+RELATED MATERIALS                      PART NO.
+TITLE                                  053-137                                                                                                      FREQUENCY RANGE
+DSE8810 Installation Instructions      057-163                                                                                                      3.5 Hz to 75 Hz
+DSE88xx Operator Manual                057-164
+DSE88xx PC Configuration Suite Manual                                                                                                               MAGNETIC PICK-UP
+                                                                                                                                                    VOLTAGE RANGE
+                                                                                                                                                    +/- 0.5 V to 70 V
+
+                                                                                                                                                    FREQUENCY RANGE
+                                                                                                                                                    10,000 Hz (max)
+
+                                                                                                                                                    BUILT-IN GOVERNOR CONTROL
+                                                                                                                                                    MINIMUM LOAD IMPEDANCE
+                                                                                                                                                    1000Ω
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    GAIN VOLTAGE
+                                                                                                                                                    0 V to 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    OFFSET VOLTAGE
+                                                                                                                                                    +/- 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    BUILT-IN AVR CONTROL
+                                                                                                                                                    MINIMUM LOAD IMPEDANCE
+                                                                                                                                                    1000Ω
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    GAIN VOLTAGE
+                                                                                                                                                    0 V to 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    OFFSET VOLTAGE
+                                                                                                                                                    +/- 10 V DC
+                                                                                                                                                    Fully isolated
+
+                                                                                                                                                    DIMENSIONS
+                                                                                                                                                    OVERALL
+                                                                                                                                                    245 mm x 184 mm x 50 mm
+                                                                                                                                                    9.6” x 7.2” x 2”
+
+                                                                                                                                                    PANEL CUTOUT
+                                                                                                                                                    220 mm x 160 mm
+                                                                                                                                                    8.7” x 6.3”
+
+                                                                                                                                                    MAXIMUM PANEL THICKNESS
+                                                                                                                                                    8 mm
+                                                                                                                                                    0.3”
+
+                                                                                                                                                    STORAGE TEMPERATURE RANGE
+                                                                                                                                                    -40 ºC to +85 ºC
+
+DEEP SEA ELECTRONICS LTD UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099                                                                            TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com                                    EMAIL ussales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-116/07/19 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+DSEGenset®
+
+DSE8810                                                                          ENVIRONMENTAL TESTING STANDARDS
+
+COLOUR AUTO START LOAD SHARE MODULE                                              ELECTRO MAGNETIC COMPATIBILITY
+                                                                                 BS EN 61000-6-2
+The DSE8810 is an easy-to-use,            Using the DSE PC Configuration         EMC Generic Immunity Standard for the
+loadshare module, designed to             Suite Software allows easy alteration  Industrial Environment
+synchronise and work within a             of the operational sequences, timers   BS EN 61000-6-4
+loadshare system of up to 32              and alarms. With all communication     EMC Generic Emission Standard for the
+generators including electronic and       ports capable of being active at the   Industrial Environment
+non-electronic engines.                   same time, the DSE8810 is ideal for a
+                                          wide variety of demanding load share   ELECTRICAL SAFETY
+The DSE8810 monitors the generator        applications.                          BS EN 60950
+and indicates operational status and                                             Safety of Information Technology Equipment,
+fault conditions, automatically starting  KEY LOAD SHARE FEATURES:               including Electrical Business Equipment
+or stopping the engine on load            • Sequential set start
+demand or fault condition.                • R.O.C.O.F. and vector shift          TEMPERATURE
+                                          • Generator load demand                BS EN 60068
+System alarms are annunciated on          • Automatic hours run balancing        Ab/Ae Cold Test -30 ºC
+the LCD screen (multiple language         • Dead bus sensing                     BS EN 60068-2-2
+options available), illuminated LED       • Bus failure detection                Bb/Be Dry Heat +70 ºC
+and audible sounder.­­                    • Direct governor and AVR control
+The event log will record 250 events      • Volts and frequency matching         VIBRATION
+to facilitate easy maintenance. An        • kW and kV Ar load sharing            BS EN 60068-2-6
+extensive number of fixed and flexible                                           Ten sweeps in each of three major axes
+monitoring, metering and protection                                              5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @ 2gn
+features are included as well as
+comprehensive communication and                                                  HUMIDITY
+system expansion options.                                                        BS EN 60068-2-30
+                                                                                 Db Damp Heat Cyclic 20/55oC @ 95% RH
+                                                                                 48 Hours
+                                                                                 BS EN 60068-2-78
+                                                                                 Cab Damp Heat Static 40oC @ 93% RH
+                                                                                 48 Hours
+
+                                                                                 SHOCK
+                                                                                 BS EN 60068-2-27
+                                                                                 Three shocks in each of three major axes 15gn
+                                                                                 in 11mS
+
+                                                                                 DEGREES OF PROTECTION
+                                                                                 PROVIDED BY ENCLOSURES
+                                                                                 BS EN 60529
+                                                                                 IP65 - Front of module when installed into the
+                                                                                 control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF LOAD SHARE APPLICATIONS
+
+                                          8860 8810 8880 8810 8860
+
+                                                                                 ISSUE 2
+

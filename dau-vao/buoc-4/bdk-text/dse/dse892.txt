@@ -1,0 +1,146 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE892                                                                                                                                              SPECIFICATION
+
+SNMP GATEWAY                                                                                                                                          DC SUPPLY
+                                                                                                                                                      CONTINUOUS VOLTAGE RATING
+                                                                                                                                                      8 V to 35 V Continuous
+
+                                                                                                                                                      CRANKING DROPOUTS
+                                                                                                                                                      Able to survive 0 V for 50 mS, providing
+                                                                                                                                                      supply was at least 10 V before dropout
+                                                                                                                                                      and supply recovers to 8 V. This is
+                                                                                                                                                      achieved without the need for internal
+                                                                                                                                                      batteries. LEDs and backlight will not be
+                                                                                                                                                      maintained during cranking.
+
+                                                                                                                                                      MAXIMUM OPERATING CURRENT
+                                                                                                                                                      200 mA at 12 V
+                                                                                                                                                      110 mA at 24 V
+
+                                                                                                                                                      MAXIMUM STANDBY CURRENT
+                                                                                                                                                      150 mA at 12 V
+                                                                                                                                                      90 mA at 24 V
+
+                                                                                                                                                      COMMUNICATIONS
+                                                                                                                                                      USB (Single DSE Controller)
+                                                                                                                                                      RS232 (Single DSE Controller)
+                                                                                                                                                      RS485 (Multiple DSE Controllers)
+                                                                                                                                                      Ethernet (Multiple DSE Controllers)
+                                                                                                                                                      Ethernet SNMP & SMTP
+
+                                                                                                                                                      DIMENSIONS
+                                                                                                                                                      OVERALL
+                                                                                                                                                      85 mm x 149 mm x 51 mm
+                                                                                                                                                      3.3” x 5.8” x 2.0”
+
+                                                                                                                                                      MOUNTING
+                                                                                                                                                      DIN Rail
+                                                                                                                                                      Chassis Mounting
+
+                                                                                                                                                      OPERATING TEMPERATURE RANGE
+                                                                                                                                                      -30°C to +70°C
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                      -40°C to +80°C
+
+KEY FEATURES                                          KEY BENEFITS
+                                                      • Compatible with SNMP V2c specification to suit a
+• Supports a wide range of DSE controllers
+• Status LEDs for each communications port              wide range of third party SNMP management
+• Plug and socket connections and DIN rail mounting     systems
+                                                      • A single DSE892 SNMP Gateway can be connected
+  for quick and easy set up                             to multiple controllers
+• Email / SNMP TRAP messages upon controller events   • Allows integration of the DSE controller into SNMP
+                                                        management systems. In addition to the state of the
+  and operating status change                           Generator and/or Mains Supply, this can include for
+• Fully customisable Email / SNMP TRAPs based upon      example third party UPS, Fire Alarms and Security
+                                                        Systems
+  module instrumentation values                       • Monitoring of controller state, operating mode and
+• SNMP SET to change controller mode                    alarms
+• SNMP GET for instrumentation                        • Connection diagnostics and basic instrumentation via
+• Simple configuration via internet browser – No        web browser
+                                                      • Configuration file upload and download for easy set
+  additional PC software required                       up
+• Automatically generated MIB file to ease system     • Firmware upgradeable direct via USB memory stick
+                                                        or OTA (Over the Air) from DSE server
+  integration, downloadable directly from the DSE892
+• Email by SMTP client
+
+RELATED MATERIALS                                                                                        PART NO’S
+TITLE                                                                                                    053-148
+DSE892 Installation Instructions                                                                         057-179
+DSE892 Operations Manual
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055/157/02/13 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+         DSEGenset                    COMPATIBLE DSE CONTROLLERS                                                                                       ®
+                                      INCLUDE:
+DSE892                                                                                    ENVIRONMENTAL TESTING STANDARDS
+                                      AUTO START
+SNMP GATEWAY                          CONTROL MODULES                                       ELECTRO MAGNETIC COMPATIBILITY
+                                                                                            BS EN 61000-6-2
+DSE892 SNMP Gateway is used to        DSE4310       DSE6610                                 EMC Generic Emission Standard for the
+connect a DSE module with an          DSE4410       DSE7110                                 Industrial Environment
+SNMP system to give monitoring        DSE4510       DSE7210                                 BS EN 61000-6-4
+and control functionality.            DSE4610       DSE7310                                 EMC Generic Emission Standard for the
+                                      DSE6010       DSE7410                                 Industrial Environment
+DSE892 SNMP Gateway                   DSE6010 MKII  DSE8610
+communicates to the connected         DSE6110                                               ELECTRICAL SAFETY
+controller(s), monitoring the                                                               BS EN 60950
+instrumentation and operating         AUTO MAINS FAILURE                                    Safety of Information Technology
+state. If this data changes, SNMP     CONTROL MODULES                                       Equipment, including Electrical Business
+TRAP information is generated and                                                           Equipment
+sent to the SNMP Manager.             DSE4320       DSE6120
+Additionally emails can be            DSE4420       DSE6620                                 TEMPERATURE
+configured to be set to one or two    DSE4520       DSE7120                                 BS EN 60068-2-2
+email addresses.                      DSE4620       DSE7220                                 Test Ab to +70oC 60067-2-2 Hot
+                                      DSE6020       DSE7320                                 Test Ab to -30oC 60068-2-1 Cold
+DSE892 SNMP Gateway also              DSE6020 MKII
+contains a protocol conversion                                                              VIBRATION
+function. This cannot be utilised at                                                        BS EN 60068-2-6
+the same time as the SNMP                                                                   Ten sweeps in each of three major axes
+function.                                                                                   5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @
+                                                                                            2gn
+
+                                                                                            HUMIDITY
+                                                                                            BS 2011 part 2.1 60068-2-30
+                                                                                            Test Cb Ob Cyclic
+                                                                                            93% RH @ 40oC for 48 hours
+
+                                                                                            SHOCK
+                                                                                            BS EN 60068-2-27
+                                                                                            Three shocks in each of three major axes
+                                                                                            15gn in 11mS
+
+                                      LIGHTING TOWER
+                                      CONTROL MODULES
+
+                                      DSEL400
+                                      DSEL401
+
+COMPREHENSIVE FEATURE LIST TO SUIT A
+WIDE VARIETY OF APPLICATIONS
+
+SNMP MANAGER            SMTP SERVER                 USB
+                                                    RS232
+                                                    RS485
+                                                    ETHERNET
+
+ETHERNET                              CONNECTION TO DSE MODULE              DC POWER
+                                      See above for compatible controllers  SUPPLY 8-35V
+
+DSE892
+
+                  7
+                 OTHER
+
+                                                                                          ISSUE 1
+

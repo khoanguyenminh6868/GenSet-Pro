@@ -1,0 +1,159 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8721                                                                             ENVIRONMENTAL TESTING STANDARDS
+
+7” COLOUR REMOTE DISPLAY                                                              ELECTRO MAGNETIC COMPATIBILITY
+                                                                                      BS EN 61000-6-2
+FEATURES                                                                              EMC Generic Immunity Standard for the
+                                                                                      Industrial Environment
+The DSE8721 7” colour remote       The colour display on the                          BS EN 61000-6-4
+display module has been            DSE8721 module offers large-                       EMC Generic Emission Standard for the
+designed to provide superior       scale graphics, charts, metering,                  Industrial Environment
+functionality across a wide range  power display and engine status,
+of operations, when used with the  providing the information in a clear               ELECTRICAL SAFETY
+DSE86xx, DSE86xx MKII and          image and text format in a                         BS EN 60950
+DSE87xx synchronising & load       multitude of different languages.                  Safety of Information Technology Equipment,
+sharing control modules.                                                              including Electrical Business Equipment
+
+The DSE8721 display                                                                   TEMPERATURE
+demonstrates exceptional data                                                         BS EN 60068-2-1
+communication capabilities up to                                                      Ab/Ae Cold Test -30 oC
+a maximum distance of 1.2 km                                                          BS EN 60068-2-2
+from the host DSEGenset®                                                              Bb/Be Dry Heat +70 oC
+controller.
+                                                                                      VIBRATION
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE                                             BS EN 60068-2-6
+VARIETY OF LOAD SHARE APPLICATIONS                                                    Ten sweeps in each of three major axes
+                                                                                      5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz at
+                                                                                      2 gn
+
+                                                                                      HUMIDITY
+                                                                                      BS EN 60068-2-30
+                                                                                      Db Damp Heat Cyclic 20/55 oC at 95% RH
+                                                                                      48 Hours
+                                                                                      BS EN 60068-2-78
+                                                                                      Cab Damp Heat Static 40 oC at 93% RH
+                                                                                      48 Hours
+
+                                                                                      SHOCK
+                                                                                      BS EN 60068-2-27
+                                                                                      Three shocks in each of three major axes
+                                                                                      15 gn in 11 mS
+
+                                                                                      DEGREES OF PROTECTION
+                                                                                      PROVIDED BY ENCLOSURES
+                                                                                      BS EN 60529 IP65 - Front of module when
+                                                                                      installed into the control panel with the
+                                                                                      optional sealing gasket.
+
+                                                                                                             TO HOST
+                                                                                                             MODULE
+
+DC POWER                           ETHERNET  OR                          OR
+SUPPLY 8-35V                                     RS232                       RS485
+
+DSE REMOTE DISPLAY                           USB HOST*                   USB SLAVE
+
+                    7
+                   OTHER
+
+DC OUTPUTS
+
+              +
+
+              2  * USB HOST SOCKET IS FITTED BUT NOT USED. FIRMWARE
+
+                 WILL BE MADE AVAILABLE IN THE FUTURE TO ACTIVATE
+
+                 THESE PORTS.
+
+                                                                                    ISSUE 4
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8721                                                                                                                                             SPECIFICATION
+
+7” COLOUR REMOTE DISPLAY                                                                                                                             DC SUPPLY
+                                                                                                                                                     CONTINUOUS VOLTAGE RATING
+FEATURES                                                                                                                                             8 V to 35 V continuous
+
+                                                                                                                                                     CRANKING DROPOUTS
+                                                                                                                                                     Able to survive 0 V for 50 mS, providing
+                                                                                                                                                     supply was at least 10 V before dropout
+                                                                                                                                                     and supply recovers to 5 V. This is
+                                                                                                                                                     achieved without the need for internal
+                                                                                                                                                     batteries
+
+                                                                                                                                                     MAXIMUM OPERATING CURRENT
+                                                                                                                                                     300 mA at 12 V, 150 mA at 24 V
+
+                                                                                                                                                     OUTPUTS
+                                                                                                                                                     ALARM OUTPUTS C & D
+                                                                                                                                                     2 A DC at supply voltage
+
+                                                                                                                                                     DIMENSIONS
+                                                                                                                                                     SCREEN SIZE
+                                                                                                                                                     7” (176 mm) diagonal
+
+                                                                                                                                                     OVERALL
+                                                                                                                                                     310 mm x 160 mm x 40 mm
+                                                                                                                                                     12.2” x 6.3” x 1.5”
+
+                                                                                                                                                     PANEL CUTOUT
+                                                                                                                                                     282 mm x 136 mm
+                                                                                                                                                     11.1” x 5.3”
+
+                                                                                                                                                      STORAGE TEMPERATURE RANGE
+                                                                                                                                                     -40 °C to +85 °C
+                                                                                                                                                     -40 °F to +185 °F
+
+                                                                                                                                                     OPERATING TEMPERATURE RANGE
+                                                                                                                                                     -30 °C to +70 °C
+                                                                                                                                                     -22 °F to +158 °F
+
+KEY FEATURES                        KEY BENEFITS                                                         SUPPORTED MODULES
+• 7” colour display                 • 800 x 480 pixel screen for high                                    • DSE8610
+• Five key menu navigation                                                                               • DSE8620
+• Multiple display languages           clarity                                                           • DSE8660
+• RS232, RS485 and ethernet         • Range of display options makes                                     • DSE8610 MKII
+                                                                                                         • DSE8660 MKII
+   communications                      the system highly versatile to                                    • DSE8710
+• Audible alarm                        suit different load share                                         • DSE8760
+• Front panel mounting                 application demands
+• Protected front panel             • Data communication link allows
+                                       remote system management
+   configuration for connected      • IP65 rating (with supplied
+   host controller                     gasket) offers increased
+• Remote monitoring of                 resistance to water ingress
+   connected host controller
+• Maximum distance of 1.2 km
+   from host controller when using
+   RS485
+• Easy access diagnostic page
+• LCD alarm indication
+• Power monitoring (kW h, kV Ar,
+   kV A h, kV Ar h)
+• Additional display screens to
+   help with modem diagnostics
+
+RELATED MATERIALS                                                                                        PART NO’S
+TITLE                                                                                                    053-072
+DSE8721 Installation Instructions                                                                        057-126
+DSE8721 Colour Remote Display Manual                                                                     055-083
+DSE8610 Data Sheet                                                                                       055-099
+DSE8620 Data Sheet                                                                                       055-086
+DSE8660 Data Sheet                                                                                       055-184
+DSE8710 Data Sheet                                                                                       055-185
+DSE8760 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-084/07/12 (6)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

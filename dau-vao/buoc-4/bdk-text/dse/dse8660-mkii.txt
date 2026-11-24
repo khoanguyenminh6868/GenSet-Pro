@@ -1,0 +1,361 @@
+         DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Overview
+The DSE8660 MKII is an easy-to-use single or multi-mains (utility) controller with automatic transfer switch capability. Designed to synchronise a
+single or multiple DSE8610 MKIIs with single or multiple mains (utility) supplies, the DSE8660 MKII will automatically control the change over from
+mains (utility) to generator supply or run generators in sync with the mains (utility) supply to provide no-break, peak lopping and peak shaving power
+solutions.
+
+The module can indicate operational status and fault conditions on the LCD screen (multiple languages available), by illuminated LED, audible sounder
+and SMS messaging. Comprehensive communications are also available via RS232, RS485 & Ethernet for remote PC control and monitoring to allow
+integration into building management systems. The comprehensive event log will record up to 250 events to facilitate maintenance.
+An extensive number of fixed and flexible monitoring and protection features are included. Easy alteration of the sequences, timers and alarms can be
+made using the DSE PC Configuration Suite Software. Selected configuration is also available via the module’s front panel. With all communication
+ports capable of being active at the same time, the DSE86XX MKII series is ideal for a wide variety of demanding load share applications.
+
+Key Features                                                                                             Product Approvals
+• Slip sync and dead bus synchronising control                                                           + CE
+• Multi-set communication (MSC) link with optional redundancy                                            + UL Listed: Standard - UL 6200:2019
+• 3-phase mains (utility) and bus sensing with protection
+• Latest ECU / ECM support for a wide range of engine
+
+      manufacturers
+• Customisable shared data via MSC link
+• Advanced PLC functionality including multi-purpose PIDs
+• Flexible inputs and outputs
+• DSENet® expansion support
+• PC configuration using DSE Configuration Suite
+• Multiple language support
+• 4-line high-resolution display
+• Manual front panel and automatic control modes
+• Rubber sealing gasket (IP65 protection)
+• Integrated RS232 and RS485 ports providing Modbus RTU
+
+      support
+• Integrated Ethernet port providing Modbus TCP and SNMP v2.0
+
+      support
+• Data logging of up to 20 parameters
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Multi-Set Controller Key Features                                                                        Typical Applications                                                   DSE8610 MKII
+• Multiple generator synchronising and droop / isochronous load                                                                                                                 DSE8610 MKII
+                                                                                                                                                     DSE8660 MKII               DSE8610 MKII
+      sharing control
+• Advanced load demand schemes including automatic start / stop on
+• Load change, genset optimisation and balancing of engine hours
+• Multiple mains (utility) and generator synchronising ATS with
+
+      short / long-term parallel control
+• Mains (utility) failure detection including mains (utility) decoupling
+
+      detection*
+• Based load and peak lopping / shaving control*
+
+Multi-Mains (Utility) Key Features
+• Multiple generator synchronising and droop / isochronous load
+
+      sharing control
+• Advanced load demand schemes including automatic start / stop on
+• Load change, genset optimisation and balancing of engine hours
+• Multiple mains (utility) and generator synchronising ATS with
+
+      short / long-term parallel control*
+
+Typical Applications
+
+                                 DSE8610 MKII  DSE8610 MKII                                              DSE8610 MKII  DSE8610 MKII
+
+DSE8660 MKII                                                                                                                                                       DSE8660 MKII
+
+*When used with DSE8610 MKII Controllers                                                                                                                           WITH GASKET
+
+Product Documentation
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                                  DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                                      T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com                        E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com                             W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                                     055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Specifications                                                                                           5 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout
+Continuous Voltage Rating                                                                                and supply recovers to 5 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        Backlight will not be maintained during cranking.
+                                                                                                         530 mA at 12 V, 280 mA at 24 V
+Maximum Operating Current                                                                                320 mA at 12 V, 160 mA at 24 V
+Maximum Standby Current
+Voltage Measurement                                                                                      1: Mains (Utility)
+Number                                                                                                   2: Bus
+                                                                                                         3 Phase + Neutral
+Measurement Inputs                                                                                       Mains (Utility) and Bus
+                                                                                                         15 V to 415 VAC Phase to Neutral
+Voltage Range                                                                                            25 V to 719 VAC Phase to Phase
+                                                                                                         3.5 Hz to 75 Hz
+Frequency Range
+Current Transformer Measurement                                                                          2 (Mains (Utility) Current), (Bus Load)
+Number                                                                                                   3 Phase + Neutral Mains (Utility) and Bus
+Measurement Inputs                                                                                       0 A to 1 A
+Current Range                                                                                            0 A to 5 A
+
+Digital Inputs                                                                                           12
+Number                                                                                                   Negative Switching Digital Input
+Type                                                                                                     Less than 2.1 V
+Closed Voltage Threshold                                                                                 Greater than 6.6 V
+Open Voltage Threshold
+Digital Outputs                                                                                          8
+Number                                                                                                   1 Normally Open Volt-Free Contacts
+Type                                                                                                     1 Normally Closed Volt-Free Contacts
+                                                                                                         6 Positive Switching DC Output
+Volt-Free Contact Output Rating                                                                          5 ADC resistive at 30 VDC
+                                                                                                         8 AAC resistive at 250 VAC
+Positive DC Output Rating                                                                                Output A to B (Fuel and Start): 15 ADC at emergency stop input supply voltage
+                                                                                                         Output E to J: 2 ADC resistive at module supply voltage
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Specifications                                                                                           1 Data Storage Port
+Communications                                                                                           1 Programming Port
+USB A                                                                                                    1 Expansion Port
+USB B                                                                                                    2 Fully Isolated RS485 Ports*
+DSENet®                                                                                                  1 Modbus RTU Port
+RS485                                                                                                    1 10/100 Ethernet Port
+RS232                                                                                                    3 Fully Isolated CAN Ports
+Ethernet                                                                                                 ECU – Engine ECU/ECM
+CAN                                                                                                      MSC – MSC Link
+                                                                                                         CAN – Redundant MSC Link
+Temperature
+Operating Temperature                                                                                    -30 °C to +70 °C / -22 °F to +158 °F
+Storage Temperature                                                                                      -40 °C to +85 °C / -40 °F to +185 °F
+Dimensions
+Overall (W x H x D)                                                                                      245 mm x 184 mm x 51 mm / 9.65 ” x 7.24 ” x 2.00 ”
+Mounting
+Type                                                                                                     Panel Fascia Mounting
+Panel Cut-Out (W x H)                                                                                    220 mm x 160 mm / 8.66 ” x 6.30 ”
+Maximum Panel Thickness                                                                                  8 mm / 0.31 ”
+
+*Second RS485 port available in future update                                                                                                        WITH GASKET
+
+Product Documentation
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Related Products                 Synchronising & Load Sharing Auto Start Control Module                                                              8610-02
+DSEGenset®                       7” Graphical Colour Multi-Set Remote Overview Display                                                               8003-02
+DSE8610 MKII
+DSE8003 MKII                     DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2548                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®                       DSEWebNet® / IoT Gateway - Ethernet Only                                                                            0891-04
+DSE890 MKII
+DSE891 MKII                      CANbus Extender                                                                                                     0124-01
+DSEComms
+DSE124
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety requirements for electrical equipment for measurement, control and laboratory use
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - From the front of the module when installed into a control panel with supplied
+BS EN 60529                                                                                              gasket
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02
+
+Mains (Utility) Controller                                                                               Description
+Pin                                                                                                      DC Power Supply
+1 to 2                                                                                                   Not Applicable
+3 to 6                                                                                                   Digital Outputs
+7 to 12                                                                                                  Not Applicable
+13 to 19                                                                                                 CAN
+20 to 22                                                                                                 Not Applicable
+23 to 28                                                                                                 DSENet®
+29 to 31                                                                                                 MSC
+32 to 34                                                                                                 Not Applicable
+35 to 39                                                                                                 Normally Closed Volt Free Output
+40 to 41                                                                                                 Normally Open Volt Free Output
+42 to 43                                                                                                 Mains (Utility) Voltage Sensing
+44 to 47                                                                                                 Bus Voltage Sensing
+48 to 51                                                                                                 Mains (Utility) Current Sensing
+52 to 56                                                                                                 Bus / Load Current
+57 to 58                                                                                                 Digital inputs
+59 to 70                                                                                                 RS485 port 1
+71 to 73                                                                                                 RS485 port 2
+74 to 76
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8660 MKII Auto Transfer Switch & Mains (Utility) Control Module
+
+Part Number: 8660-02                                  220 mm
+
+Technical Drawing                                     [8.66 "]
+
+                                                      245 mm                                                                                         51 mm
+                                                      [9.64 "]                                                                                       [2.00 "]
+
+                                                                                                                                                      37 mm
+                                                                                                                                                     [1.46 "]
+
+                      184 mm
+                         [7.24 "]
+                                                                                                                                                                                                      160 mm
+                                                                                                                                                                                                         [6.30"]
+
+Connection Label
+
+                                 DC Supply :                    8 V to 35 V, 1 A max
+                                 DC Outputs :                   24 V, 15 A (T4 to T5); 2 A (T7 to T14)
+                                 DC Inputs :                    30 V max
+                                 Volt-free Outputs :            250 V AC, 8 A
+                                 AC Voltage inputs :            600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                 AC Current inputs :            5 A, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                 Charge Alternator :            30 V DC, 2.5 W max
+                                 Magnetic Pickup :              70 V RMS, 10 kHz max
+                                 Analog Inputs :                10 V DC max
+                                 Comms Port :                   5 V DC max
+                                 Governor / AVR :               +/- 10 V DC
+
+                                                                                                         Made in UK
+                                                                                                            020-080,9
+
+                   Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation                                                                                                                                WITH GASKET
+053-184 – DSE8660 MKII Installation Instructions
+057-259 – DSE8660 MKII Operator Manual
+057-257 – DSE8660 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-169/08/26 (4)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

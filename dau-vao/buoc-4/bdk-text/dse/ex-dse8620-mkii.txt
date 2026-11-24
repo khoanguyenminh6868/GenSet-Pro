@@ -1,0 +1,448 @@
+         DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Overview
+The DSE8620 MKII is a synchronising auto mains (utility) failure control module suitable for paralleling single gensets (diesel or gas) with the mains
+(utility) supply. The controller can be configured for use as a DSE8610 MKII auto start control module (multi-set). Designed to synchronise a single
+genset with a single mains (utility) supply, the DSE8620 MKII will automatically control the changeover from mains (utility) to generator supply or run
+the generator in synchronisation with the mains (utility) to provide no-break, peak lopping, and peak shaving power solutions.
+
+System alarms are annunciated on the LCD screen (multiple language options available), illuminated LED, and audible sounder. Comprehensive
+communications are also available via RS232, RS485, and Ethernet for remote PC control, monitoring, and integration into building management
+systems. The event log will record 250 events to facilitate easy maintenance, and an extensive number of fixed and flexible monitoring, metering, and
+protection features are included.
+
+Using the DSE PC Configuration Suite Software allows easy alteration of the operational sequences, timers and alarms.
+
+Key Features
+• 2 module applications in one product (single-set, multi-set)
+• Comprehensive synchronising & loadsharing capabilities
+• 3-phase generator and bus sensing with protection
+• Latest ECU / ECM support for a wide range of engine manufacturers
+• Integrated governor & AVR control
+• PC configuration using DSE Configuration Suite
+• PLC functionality
+• Flexible inputs and outputs
+• DSENet® expansion support
+• Multiple language support
+• 4-line high-resolution display
+• Manual front panel and automatic control modes
+• Rubber sealing gasket (IP65 protection)
+• Integrated RS232 and RS485 ports providing Modbus RTU support
+• Integrated Ethernet port providing Modbus TCP and SNMP v2c support
+• Data logging of up to 20 parameters
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+Single-Set Controller Key Features
+• Single generator, single mains (utility), synchronising ATS with short / long-term
+
+       parallel control
+• 3 phase generator and mains (utility) sensing with protection
+• Mains (utility) failure detection including mains (utility) decoupling detection
+• Base load and peak lopping / shaving control
+• Latest ECU / ECM support for a wide range of engine manufacturers
+• Integrated Governor and AVR control
+• Mains (utility) and generator positive, negative and zero voltage sequence
+
+       alarms
+Typical Applications
+
+                                          Single-Set
+
+ Multi-Set Controller Key Features
+ • Multiple generator synchronising and droop / isochronous load sharing control
+ • Advanced load demand schemes including automatic start / stop on load change,
+
+        genset optimisation and balancing of engine hours
+ • Multiple mains (utility) and generator synchronising ATS with short / long-term parallel
+
+        control*
+ • Mains (utility) failure detection including mains (utility) decoupling detection*
+ • Base load and peak lopping / shaving control*
+Typical Applications
+
+                                 Multi-Set
+
+                                 Multi-Set
+
+*When used with DSE8660 MKII controllers
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Specifications                                                                                           8 V to 35 V continuous
+DC Supply                                                                                                Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+Continuous Voltage Rating                                                                                and supply recovers to 5 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        Backlight will not be maintained during cranking.
+                                                                                                         530 mA at 12 V, 280 mA at 24 V
+Maximum Operating Current                                                                                320 mA at 12 V, 160 mA at 24 V
+Maximum Standby Current                                                                                  0 V to 35 V
+Charge Alternator Excitation / Fail Range
+Voltage Measurement                                                                                      2
+Number                                                                                                   3 Phase + Neutral
+Measurement Inputs                                                                                       Generator and Bus
+                                                                                                         15 V to 415 V Phase to Neutral
+Voltage Range                                                                                            25 V to 720 V Phase to Phase
+                                                                                                         3.5 Hz to 75 Hz
+Frequency Range
+Current Transformer Measurement                                                                          5
+Number                                                                                                   3 Phase Generator Current with Earth Fault Current
+Measurement Inputs                                                                                       3 Phase Generator Current with Earth Fault current and Single-Phase Mains Current
+                                                                                                         0 A to 1 A
+Current Range                                                                                            0 A to 5 A
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Specifications                                                                                           4
+Analogue Inputs                                                                                          Negative Switching Digital Input, Resistive Analogue Input, Current Analogue Input or
+Number                                                                                                   Voltage Analogue Input
+Type                                                                                                     Less than 2.1 V
+                                                                                                         Greater than 6.6 V
+Digital Input Closed Voltage Threshold                                                                   Input A: 0 Ω to 240 Ω
+Digital Input Open Voltage Threshold                                                                     Input B to D: 0 Ω to 480 Ω
+Resistive Analogue Measurement Range                                                                     0 mA to 20 mA
+                                                                                                         0 V to 10 V
+Current Analogue Measurement Range                                                                       1 %
+Voltage Analogue Measurement Range                                                                       2 %
+Analogue Resolution
+Analogue Accuracy                                                                                        12
+Digital Inputs                                                                                           Negative Switching Digital Input
+Number                                                                                                   Less than 2.1 V
+Type                                                                                                     Greater than 6.6 V
+Closed Voltage Threshold
+Open Voltage Threshold                                                                                   1
+Emergency Stop Input                                                                                     Positive Switching Digital Input
+Number                                                                                                   Greater than 5.0 V
+Type                                                                                                     Less than 3.0 V
+Closed Voltage Threshold
+Open Voltage Threshold                                                                                   0.5 VPeak to 70 VPeak
+Magnetic Pick-up Input                                                                                   1 Hz to 10 kHz
+Voltage Input Range                                                                                      6.25 RPM
+Frequency Input Range                                                                                    ±25 RPM
+Resolution
+Accuracy
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Specifications                                                                                           2
+Analogue Outputs                                                                                         Voltage Analogue Output
+Number                                                                                                   Governor and AVR control
+Type                                                                                                     -5 V to 10 V
+Function                                                                                                 1 %
+Voltage Analogue Range                                                                                   Minimum 500 Ω
+Analogue Resolution                                                                                      Governor: ±1 kV
+Load Impedance                                                                                           AVR: ±3 kV
+Isolation
+                                                                                                         12
+Digital Outputs                                                                                          1 Normally Open Volt-Free Contacts
+Number                                                                                                   1 Normally Closed Volt-Free Contacts
+Type                                                                                                     10 Positive Switching DC Output
+                                                                                                         5 ADC resistive at 30 VDC
+Volt-Free Contact Output Rating                                                                          8 AAC resistive at 250 VAC
+                                                                                                         Output A to B (Fuel and Start): 15 ADC at Emergency Stop input supply voltage
+Positive DC Output Rating                                                                                Output E to L: 2 ADC at module supply voltage
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Specifications                                                                                           1 Data Storage Port
+Communications
+USB A                                                                                                    1 Programming Port
+USB B
+DSENet®                                                                                                  1 Expansion Port
+RS485
+RS232                                                                                                    2 Fully Isolated RS485 Ports*
+Ethernet
+CAN                                                                                                      1 Modbus RTU Port
+
+                                                                                                         1 10/100 Ethernet Port
+
+                                                                                                         3 Fully Isolated CAN Ports
+                                                                                                         ECU – Engine ECU/ECM
+                                                                                                         MSC – MSC Link**
+                                                                                                         CAN – Redundant MSC Link
+
+Temperature                                                                                              -30 °C to +70 °C / -22 °F to +158 °F
+Operating Temperature                                                                                    -40 °C to +85 °C / -40 °F to +185 °F
+Storage Temperature
+Dimensions                                                                                               245 mm x 184 mm x 51 mm / 9.6 ” x 7.2 ” x 2.0 ”
+Overall (W x H x D)
+Mounting                                                                                                 Panel Fascia Mounting
+Type                                                                                                     220 mm x 160 mm / 8.66 ” x 6.3 ”
+Panel Cut-Out (W x H)                                                                                    8 mm / 0.31”
+Maximum Panel Thickness
+
+*Second RS485 port available in future update
+** When converted to a DSE8610 MKII
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Related Products                 Synchronising Generator Bus Tie Control Module                                                                      8680-01
+DSEGenset®                       Auto Transfer Switch & Mains (Utility) Control Module                                                               8660-02
+DSE8680                          7” Graphical Colour Multi-Set Remote Overview Display                                                               8003-02
+DSE8660 MKII                     Analogue Load Share Lines Interface                                                                                 G0123-01
+DSE8003 MKII
+DSEG0123                         DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2548                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®
+DSE890 MKII                      SCADA Suite Software                                                                                                8005-00
+Remote Monitoring Control
+DSE8005                          MSC and CANbus Extender                                                                                             0124-01
+Accessories
+DSE124
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, Including Electrical Business Equipment
+Electrical Safety
+BS EN 60950                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - From the front of the module when installed into a control panel with supplied
+BS EN 60529                                                                                              gasket
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Single-Set Controller                                                                                    Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   Emergency Stop
+3                                                                                                        Fuel
+4                                                                                                        Start
+5                                                                                                        Charge Alternator
+6                                                                                                        Digital Outputs
+7 to 14                                                                                                  Analogue Inputs
+15 to 19                                                                                                 CAN Port
+20 to 22                                                                                                 Magnetic Pick-Up
+23 to 25                                                                                                 Engine ECU/ECM
+26 to 28                                                                                                 DSENet®
+29 to 31                                                                                                 MSC Link
+32 to 34                                                                                                 Governor Control
+35 to 36                                                                                                 Not Applicable
+37                                                                                                       AVR Control
+38 to 39                                                                                                 Normally Closed Volt Free Output
+40 to 41                                                                                                 Normally Open Volt Free Output
+42 to 43                                                                                                 Generator Voltage Sensing
+44 to 47                                                                                                 Mains (Utility) Voltage Sensing
+48 to 51                                                                                                 Generator Current Sensing
+52 to 56                                                                                                 Mains (Utility) Current Sensing
+57 to 58                                                                                                 Digital Inputs
+59 to 70                                                                                                 2 x RS485*
+71 to 76
+
+*Second RS485 port available in future update
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE8620 MKII Synchronising Auto Mains (Utility) Failure Load Share Control Module
+
+Part Number: 8620-02
+
+Technical Drawing                                     220.0 mm
+                                                       [8.66 "]
+
+                                                      250 mm                                                                                         50.5 mm
+                                                      [9.85 "]                                                                                       [1.99 "]
+
+                                                                                                                                                     35.5 mm
+                                                                                                                                                      [1.40 "]
+
+                   189 mm
+                      [7.43 "]
+                                                                                                                                                                                                   160.0 mm
+                                                                                                                                                                                                      [6.30"]
+
+Connection Label
+
+                                 DC Supply :                     8 V to 35 V, 1 A max
+                                 DC Outputs :                    24 V, 15 A (T4 to T5); 2 A (T7 to T14)
+                                 DC Inputs :                     30 V max
+                                 Volt-free Outputs :             250 V AC, 8 A
+                                 AC Voltage inputs :             600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                 AC Current inputs :             5 A, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                 Charge Alternator :             30 V DC, 2.5 W max
+                                 Magnetic Pickup :               70 V RMS, 10 kHz max
+                                 Analog Inputs :                 10 V DC max
+                                 Comms Port :                    5 V DC max
+                                 Governor / AVR :                +/- 10 V DC
+
+                                                                                                         Made in UK
+                                                                                                            020-080,9
+
+                                                                                                                                                     O/P REF  O/P REF
+                                                                                                                                                      BA
+
+                   Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-183 – DSE8620 MKII Installation Instructions
+057-301 – DSE8620 MKII Operator Manual
+057-239 – DSE8620 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-255/10/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

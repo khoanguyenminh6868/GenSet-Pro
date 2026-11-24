@@ -1,0 +1,2403 @@
+  HGM7100N SERIES
+ (HGM7110N/7120N)
+GENSET CONTROLLER
+
+  USER MANUAL
+                                      Registered trademark
+No. 28 Xuemei Street, Zhengzhou, Henan, China
+Tel: +86-371-67988888/67981888/67992951
+
+      +86-371-67981000(overseas)
+Fax: +86-371-67992952
+Web: www.smartgen.com.cn/
+
+       www.smartgen.cn/
+Email: sales@smartgen.cn
+
+All rights reserved. No part of this publication may be reproduced in any material form (including
+photocopying or storing in any medium by electronic means or other) without the written permission of
+the copyright holder.
+SmartGen reserves the right to change the contents of this document without prior notice.
+
+                                  Table 1 Software Version
+
+            Date         Version                                      Note
+2017-08-26        1.0             Original release.
+2020-05-06        1.1             Add communication port selection for cycle start.
+                                  Modify server URL as www.monitoryun.com;
+2020-09-10        1.2             Modify incorrect server port as 91.
+                                  Update company logo and manual format.
+2022-10-20        1.3
+
+HGM7100N Series Genset Controller User Manual               Page 2 of 47
+                                     CONTENTS
+
+1 OVERVIEW....................................................................................................................................................4
+2 PERFORMANCE AND CHARACTERISTICS ................................................................................................4
+3 SPECIFICATION ...........................................................................................................................................6
+4 OPERATION .................................................................................................................................................7
+
+     4.1 KEY FUNCTION DESCRIPTION..........................................................................................................7
+     4.2 CONTROLLER PANEL ........................................................................................................................8
+     4.3 AUTO START/STOP OPERATION .....................................................................................................9
+
+        4.3.1 ILLUSTRATION............................................................................................................................9
+        4.3.2 AUTO START SEQUENCE...........................................................................................................9
+        4.3.3 AUTO STOP SEQUENCE .............................................................................................................9
+     4.4 MANUAL START/STOP OPERATION............................................................................................. 10
+     4.5 EMERGENCY START....................................................................................................................... 10
+5 BREAKER CONTROL PROCESS OF GENSET CONTROLLER .................................................................. 11
+     5.1 HGM7120N BREAKER CONTROL PROCESS ................................................................................. 11
+        5.1.1 MANUAL SWITCHING PROCESS............................................................................................ 11
+        5.1.2 AUTO SWITCHING PROCESS ................................................................................................. 11
+     5.2 HGM7110N BREAKER CONTROL PROCESS ................................................................................. 11
+        5.2.1 MANUAL SWITCHING PROCESS............................................................................................ 11
+        5.2.2 AUTO SWITCHING PROCESS ................................................................................................. 12
+6 PROTECTION ............................................................................................................................................ 13
+7 WIRINGS CONNECTION ........................................................................................................................... 18
+8 SCOPES AND DEFINITIONS OF PROGRAMMABLE PARAMETERS....................................................... 21
+     8.1 CONTENTS AND SCOPES OF PARAMETERS ............................................................................... 21
+     8.2 DEFINED CONTENT OF PROGRAMMABLE OUTPUT PORTS 1~6 ............................................... 30
+        8.2.1 DEFINED CONTENT OF PROGRAMMABLE OUTPUT PORTS 1~6........................................ 30
+        8.2.2 CUSTOM PERIOD OUTPUT ..................................................................................................... 34
+        8.2.3 CUSTOM COMBINED OUTPUT ............................................................................................... 34
+     8.3 DEFINED CONTENTS OF CONFIGURABLE INPUT PORTS 1~7.................................................... 35
+     8.4 SELECTION OF SENSORS............................................................................................................... 37
+     8.5 CONDITIONS OF CRANK DISCONNECT SELECTION ................................................................... 38
+9 PARAMETERS SETTING........................................................................................................................... 39
+10 GENSETS CYCLE START .......................................................................................................................... 40
+11 SENSOR SETTING ..................................................................................................................................... 41
+12 COMMISSIONING...................................................................................................................................... 42
+13 TYPICAL APPLICATION ............................................................................................................................ 43
+14 INSTALLATION.......................................................................................................................................... 45
+15 TROUBLESHOOTING................................................................................................................................. 47
+
+HGM7100N Series Genset Controller User Manual  Page 3 of 47
+1 OVERVIEW
+
+      HGM7110N/HGM7120N genset controller integrating digital, intelligent and network technology,
+are used for genset automation and monitoring control system of single diesel unit to achieve
+automatic start/stop of genset, data measurement, alarm protection functions etc. It fits with LCD
+graphic display, which can display Chinese, English and other languages. It is easy to operate and
+reliable to use.
+
+      HGM7110N/HGM7120N genset controller adopts 32-bit micro-processor technology, achieving
+precise measuring of many parameters, fixed value adjustment, time setting and limits adjusting and
+etc. A majority of parameters can be configured from front panel of controller, and all parameters can
+be adjusted through PC via USB port and monitored through PC software via RS485. It can be widely
+used in all types of genset automation system with compact structure, simple connections and high
+reliability.
+
+2 PERFORMANCE AND CHARACTERISTICS
+
+HGM7110N: used for stand-alone automation, and it controls generator to start/stop by remote start
+
+signal;
+
+HGM7120N: added Mains monitoring and Mains/Gens Automatic Transfer (AMF) function based on
+
+HGM7110N, especially suitable for single unit automation system composed by one way generator and
+
+one way Mains.
+
+Main features are as below:
+
+ 32-bit ARM SCM, high integration hardware, performance getting higher improved.
+ 132x64 LCD with backlight, interface operation of optional languages (Chinese, English and other
+
+languages), and languages can be selected in the field, which provides convenience for debugging
+
+personnel commissioning.
+
+ Screen protection applies hard-screen acrylic material, with better wear-resisting and
+
+scratch-resisting features.
+
+ Silicone panel and pushbuttons, strong adaptability in extreme high/low temperature environments.
+ RS485 communication port, can realize “three remote functions” (remote control, remote measuring
+
+and remote communication) by MODBUS protocol.
+
+ Suitable for 3-phase 4-wire, 3-phase 3-wire, single phase 2-wire, and 2-phase 3-wire systems with
+
+voltage 120/240V and frequency 50/60Hz;
+
+ Collects and shows 3-phase voltage and current, power parameter and frequency of generator or
+
+mains.
+
+Mains                                          Generator
+
+Line voltage (Uab, Ubc, and Uca)               Line voltage (Uab, Ubc, and Uca)
+
+Phase voltage (Ua, Ub, and Uc)                 Phase voltage (Ua, Ub, and Uc)
+
+Frequency Hz                                   Frequency Hz
+
+Phase sequence                                 Phase sequence
+
+Load
+
+Current Ia, Ib, Ic                             A (unit)
+
+Each phase and total active power P            kW (unit)
+
+Reactive power Q                               kvar (unit)
+
+Apparent power S                               kVA (unit)
+
+HGM7100N Series Genset Controller User Manual                                    Page 4 of 47
+Power factor PF
+
+Accumulate total generator power W             kWh, kvarh, kVAh (unit)
+
+Output percentage with load %
+
+ For Mains, controller has over and under voltage, over and under frequency, loss of phase, and phase
+
+sequence wrong functions; for generator, controller has over and under voltage, over and under
+
+frequency, over current and over power, reverse power, loss of phase, phase sequence wrong
+
+functions.
+
+ Precisely collect parameters about Engine.
+
+Temp. (WT)          °C/°F
+
+Oil Pressure (OP)   kPa/psi/Bar
+
+Fuel Level (FL)     % (unit)
+
+Speed               r/min (RPM)
+
+Voltage of Battery  V (unit)
+
+Voltage of Charger V (unit)
+
+Total running accumulation maximum 65535 hours can be recorded
+
+Start times accumulation maximum 65535 times can be recorded
+
+ Control protection function: realize automatic start/stop of the diesel gen-set, breaker close/open
+
+(Auto Transfer Switch) control and perfect fault indication and protection functions etc.
+
+ With ETS (energize to stop), idle control, pre-heat control and rise/drop speed control functions,
+
+which are all relay outputs.
+
+ Parameter setting function: allow users to modify and set parameters and at the same time
+
+parameters can be stored in internal FLASH memory and won't get lost even in case of power
+
+outage; most of them can be adjusted from front panel of the controller and all parameters ca be
+
+adjusted via USB by PC, or via RS485 or ETHERNET port;
+
+ Multiple temperature, pressure, fuel level sensor curves can be used and custom sensor curves are
+
+available.
+
+ Multiple crank disconnect conditions (speed, oil pressure, generator frequency) are optional.
+ Wide power supply range DC(8~35)V, suitabel for different starting battery voltage environments.
+ Event log, real-time clock, scheduled start & stop generator (can be set as start genset once a
+
+day/week/month whether with load or not). Two gensets cycle start function.
+
+ Controller can record data up to 5 pieces include mains voltage, mains frequency, generator voltage,
+
+generator frequency, current, temperature, oil pressure, fuel level, speed and etc. one minute before
+
+shutdown fault.
+
+ It can be used for pumping unit, moreover, can be indicating instrument as well (only indicate and no
+
+action for alarm and relay).
+
+ Maintenance function, maintenance time or maintenance time due can be user-defined (only
+
+warning/trip shutdown/alarm shutdown).
+
+ Cycle start two gensets via RS485 or Internet access (running time of both main unit and standby
+
+unit can be user defined).
+
+ Waterproof security level IP65 due to rubber seal installed between the controller enclosure and
+
+panel foil.
+
+ Controller uses metal fixing clips.
+ Modular design, pluggable connection terminals and embedded installation way, and compact
+
+structure with easy mounting.
+
+HGM7100N Series Genset Controller User Manual                                Page 5 of 47
+3 SPECIFICATION              Table 2 Technical Parameters
+
+                   Items                                            Contents
+Operating Voltage            DC8.0V to DC35.0V, Continuous Power Supply.
+Power Consumption            <4W (standby ≤2W)
+Alternator Volt Input Range
+3Phase 4Wire                 15V AC - 360V AC (ph-N)
+3Phase 3Wire                 30V AC - 620V AC (ph-ph)
+Single Phase 2Wire           15V AC - 360V AC (ph-N)
+2Phase 3Wire                 15V AC - 360V AC (ph-N)
+Alternator Frequency         50 Hz/60Hz
+Speed sensor voltage         1.0V to 24.0V (RMS)
+Speed sensor Frequency       10,000 Hz (max.)
+Starter Relay Output         16A 28V DC at supply output
+Fuel Relay Output            16A 28V DC at supply output
+Programmable Relay Output 1  7A 28V DC power supply output
+Programmable Relay Output 2  8A 250V AC volt free output
+Programmable Relay Output 3  16A 250V AC volt free output
+Programmable Relay Output 4  16A 250V AC volt free output
+Programmable Relay Output 5  7A 28V DC power supply output
+Programmable Relay Output 6  7A 28V DC power supply output
+Case Dimension               209mm x 166mm x 45mm
+Panel Cutout                 186mm x 141mm
+CT Secondary Current         5A rated
+Working Temperature          (-25~+70)°C
+Working Humidity             (20~93)%RH
+Storage Temperature          (-25~+70)°C
+Protection Level             IP65 Front panel
+                             Apply AC2.2kV voltage between high voltage terminal and low
+Insulating Intensity         voltage terminal and the leakage current is not more than 3mA
+                             within 1min.
+Weight                       0.6kg
+
+HGM7100N Series Genset Controller User Manual  Page 6 of 47
+4 OPERATION
+
+4.1 KEY FUNCTION DESCRIPTION
+
+                              Table 3 Key Function Description
+
+Icon                Function                               Description
+
+                              Stop running generator in Auto/Manual mode;
+
+                              In stop mode, reset alarms;
+
+             Stop/Reset       Pressing and holding the button for 3 seconds will test indicator
+                              lights (lamp test);
+
+                              During stopping process, press this button again to stop generator
+
+                              immediately.
+
+             Start            Under manual mode, press this button and genset can be started;
+
+             Manual           Pressing this key will set the module into manual mode.
+
+             Auto             Pressing this key will set the module into auto mode.
+
+             C/O Press this key to control breaker close or open under manual mode.
+                                       (only suit for HGM7120N)
+
+             Close            Press this key to control breaker close under manual mode.
+                              (only suit for HGM7110N)
+
+             Open             Press this key to control breaker open under manual mode.
+             Set/Confirm      (only suit for HGM7110N)
+             Up/Increase
+                              Pressing this key will enter Main Menu;
+                              In setting parameter status, press this key to shift cursor or confirm
+                              setting value.
+
+                              Scrolls the screen up; Shift the cursor up or increase the set value
+                              in parameter setting menu.
+
+             Down/Decrease    Scrolls the screen down; Shift the cursor down or decrease the set
+                              value in parameter setting menu.
+
+                   Homepage/Return Return to homepage in main interface; return to previous interface
+                                              in parameter setting screen; press for over 3s to reset trip alarms.
+
+NOTE: press any key to mute alarms in main screen.
+
+HGM7100N Series Genset Controller User Manual                              Page 7 of 47
+4.2 CONTROLLER PANEL
+
+                         Fig.1 HGM7110N Front Panel Indication
+
+                         Fig.2 HGM7120N Front Panel Indication
+
+NOTE: Part of indicator lights illustration:
+
+                         Table 4 Alarm Indicator Description
+
+             Alarm Type                                     Alarm Indicators
+Warning alarm            slowly flash (once per second)
+Trip alarm               slowly flash (once per second)
+
+Shutdown alarm           fast flash (5 times per second)
+Trip and stop alarm      fast flash (5 times per second)
+
+    NOTE:
+
+a) Status Indicators: after crank disconnect, light is always on before ETS; light is off for other periods.
+b) Gen Normal Indicator: always on when generator is normal; flash when generating is abnormal; light is off when
+
+       there is no generating.
+c) Mains Normal Indicator: always on when mains is normal; flash when mains is abnormal; light is off when there is
+
+       no Mains.
+
+HGM7100N Series Genset Controller User Manual                                 Page 8 of 47
+4.3 AUTO START/STOP OPERATION
+4.3.1 ILLUSTRATION
+
+Press , and its indicator is illuminated, which means genset enters Auto Start mode.
+
+4.3.2 AUTO START SEQUENCE
+
+a) HGM7120N: When Mains is abnormal (over and under voltage, over and under frequency, loss of
+      phase and phase sequence wrong), it enters "mains abnormal delay” and status page of LCD displays
+      countdown time. When mains abnormal delay is over, it enters “start delay”. Or when remote start
+      (onload) input is active, it enters “start delay”;
+
+b) HGM7110N: It enters “start delay” as soon as “Remote Start on Load” input is active.
+c) Start Delay countdown is shown on status page of LCD.
+d) When start delay is over, preheat relay outputs (if configured), “preheat start
+
+      delay XX s” is shown on status page of LCD.
+e) When preheat delay is over, fuel relay outputs for1s and then start relay outputs; if engine crank fails
+
+      during “cranking time”, the fuel relay and start relay are deactivated and enter into “crank rest time” to
+      wait for next crank.
+f) If engine crank fails within setting times, controller will initiate fail to start shutdown signals and fail to
+      start message appears on LCD display at the same time.
+g) In case of successful crank attempt, “safety on timer” starts. During this period, low oil pressure, high
+      water temperature, under speed, and charge failure alarms are disabled. As soon as this delay is over,
+      “start idle delay” is initiated (if configured).
+h) During “start idle delay”, under speed, under frequency, under voltage alarms are inhibited. When this
+      delay is over, “warming up delay” starts (if configured).
+i) When “warming up delay” is over, if generating state is normal, its indicator will be illuminated. If
+      voltage and frequency has reached on-load requirements, then the closing relay will be energized,
+      generator will accept load, generator power indicator will turn on, and generator will enter Normal
+      Running state; if voltage and frequency are abnormal, the controller will initiate shutdown alarm
+      (shutdown alarm will be displayed on LCD alarm page).
+
+    NOTE: when remote start (off-load) signal input is active, the auto start sequence is the same as above. Only in item i),
+generator closing relay will not output, and genset is off-load.
+
+4.3.3 AUTO STOP SEQUENCE
+
+a) HGM7120N: when Mains return to normal during gen-set running, controller enters Mains voltage
+      “Normal delay”. After Mains normal status confirmed, Mains status indicator is illuminated and “stop
+      delay” initiated. Or when remote start input is inactive, "stop delay" starts;
+
+b) HGM7110N: generator enters “stop delay” as soon as “Remote Start” input is inactive.
+c) When stop delay is over, close generator relay is un-energized; generator enters “cooling down time”.
+
+      After “switch transfer delay”, Mains close relay is energized. Mains is on load and generator indicator
+      extinguished while mains indicator lights on.
+d) Idle relay is energized as soon as entering “stop idle delay” (if configured).
+e) If enters “ETS hold delay”, ETS relay is energized. Fuel relay is deactivated and whether stop or not is
+      auto judged.
+f) Then enters gen-set “wait for stop time”, and whether stop or not is auto judged.
+g) Enters “after stop time” after gen-set stopped completely. If genset failed to stop, controller will
+
+HGM7100N Series Genset Controller User Manual  Page 9 of 47
+      initiate fail to stop warning (if gen-set stopped after the alarms, it will enter “after stop time” and fail to
+      stop alarms will be eliminated automatically).
+h) Enters standby status as soon as “after stop time” is over.
+
+4.4 MANUAL START/STOP OPERATION
+
+a) HGM7120N: Manual mode is selected by pressing the  button, and manual mode indicator is
+
+illuminated; In this mode, press          button to start the genset, it can automatically judge crank
+
+disconnect and accelerate to high speed running automatically. If high temperature, low oil pressure,
+over speed and abnormal voltage occur during diesel genset running, controller can effectively protect
+genset to stop (for detailed procedures please refer to No. d~i of 4.3.2 Auto start sequence). Under
+
+Manual Mode, load breaker won’t transfer automatically and  C/O key should be pushed
+manually to enter the C/O interface.
+
+b) HGM7110N: Manual mode is selected by pressing the  button and manual mode indicator is
+
+illuminated; Then press           button to start the generator, it can automatically judge crank
+
+disconnect and accelerate to high speed running. If high temperature, low oil pressure, over speed and
+abnormal voltage occur during genset running, controller can effectively protect genset to stop (for
+detailed procedures please refer to No. d~i of 4.3.2 Auto start sequence). After genset high speed
+
+normal running, press the key       manually to close generator and generator is on-load.
+
+c) Manual stop: pressing       key can stop the running genset. (For detailed procedures please refer
+
+to No. c~h of 4.3.3 Auto stop sequence.)
+
+4.5 EMERGENCY START
+
+Simultaneously pressing        and        in manual mode will force generator to crank. Successful
+
+start will not be judged according to crank disconnect conditions, operator will have to crank the starter
+motor manually; when operator decides that the engine has started, he/she should release the button
+and start output will be deactivated, safety on delay will be initiated.
+
+HGM7100N Series Genset Controller User Manual               Page 10 of 47
+5 BREAKER CONTROL PROCESS OF GENSET CONTROLLER
+
+5.1 HGM7120N BREAKER CONTROL PROCESS
+
+5.1.1 MANUAL SWITCHING PROCESS
+
+      When controller is in manual mode, switch control process executes manual transfer process.
+      Operators control ATS load transfer by close/open key.
+
+     If open detection is disabled, press Gen close/open key  ; if Gen takes the load, breaker open
+
+outputs; if load is disconnected, then Gen closes; If Mains takes the load, then Mains breaker opens;
+
+when open delay is over, Gen closes; Press Mains close/open   , if Mains takes the load, then
+
+breaker open outputs; if load is disconnected, then Mains closes; If Gen takes, when open delay is over,
+Mains closes.
+
+      If open detection is enabled, for Mains onload transferring to Gen onload, first press Mains open
+
+key  , after open delay, press Gen close key   , Gen close (press Gen close key directly, no
+
+action). For Gen onload transferring to Mains onload, same procedure as above.
+
+5.1.2 AUTO SWITCHING PROCESS
+
+When controller is in auto or stop mode, switch control procedure executes auto transfer process.
+a) If input port configured as close status auxiliary input
+
+      • If breaker open detection is enabled, for Mains onload transferring to Gen onload, after
+            open delay, and transfer interval delay, at the time when breaker open outputs, transfer
+            failure starts to detect; when detection time is due, if open fails, then Gen doesn't close,
+            otherwise Gen closes, at the time of Gen closes, transfer fail starts to detect; when
+            detection time is due, if close fails, then it waits for Gen close. If transfer failure warning is
+            enabled, close/open failure will issue warning signal. For Gen onload transferring Mains
+            onload, the same procedure as above.
+
+      • If breaker open detection is disabled, for Mains onload transferring to Gen onload, after
+            open delay and transfer interval delay, Gen breaker closes, at the time of Gen closes,
+            transfer failure starts to detect; when detection time is due, if close fails, then wait for Gen
+            closes. If transfer failure warning is enabled, warning signal is issued.
+
+b) If input port not configured as close status auxiliary input
+      For Mains onload transferring to Gen onload, after open delay and transfer interval delay, Gen
+      closes; For Gen onload transferring to Mains onload, the same procedure is as above.
+
+5.2 HGM7110N BREAKER CONTROL PROCESS
+
+5.2.1 MANUAL SWITCHING PROCESS
+
+When controller is in manual mode, switch control process executes manual control process.
+Operators control switch's close/open by close/open key.
+
+Press Gen close key  , if Gen is not onload, then Gen close outputs; Press Gen open key            , if
+
+Gen is onload, then Gen open outputs.
+
+HGM7100N Series Genset Controller User Manual                                   Page 11 of 47
+5.2.2 AUTO SWITCHING PROCESS
+
+When controller is in auto mode, switch control process executes auto control process.
+a) If input port configured as close status auxiliary input
+
+      • If breaker open detection is enabled, for Gen onload transferring to Gen offload, after open
+            delay, at the time of open output, transfer failure starts to detect; when detection time is due, if
+            open fails, then it waits for open, otherwise, open is completed. For Gen offload transferring to
+            Gen onload, after close delay, at the time of close output, transfer failure starts to detect; when
+            detection time is due, if close fails, then it waits for close, otherwise, close is completed.
+
+      • If transfer failure warning is enabled, then it will issue warning signals both for close/open.
+      • If open detection is not enabled, for Gen onload transferring to Gen offload, after open delay,
+
+            open is completed. For Gen offload transferring to Gen onload, after close delay, at the time of
+            close output, transfer failure starts to detect; when detection time is up, if close fails, then it
+            waits for close, otherwise, close is completed. If transfer failure warning is enabled, it will
+            issue warning signal for close failure.
+b) If input port not configured as close status auxiliary input
+      For Gen offload transferring to Gen onload, Gen close outputs. For Gen onload transferring to Gen
+      offload, Gen open outputs.
+
+    NOTES:
+1) If ATS without neutral position is used, breakers open detection should be disabled.
+2) If ATS with neutral position is used, breakers open detection can be enabled or disabled (please configured the
+
+       breaker open output if enabled).
+3) If AC contactors are used, breakers open detection enable will be recommended.
+
+HGM7100N Series Genset Controller User Manual  Page 12 of 47
+6 PROTECTION
+
+6.1 WARNINGS
+
+When controllers detect the warning signals, it only issues warnings, not stops the genset.
+
+                         Table 5 Warning Alarms
+
+No.           Type                                              Description
+
+1 Gen. Over Speed        When the controller detects that the speed of genset exceeds the
+                         pre-set value, it will initiate a warning alarm.
+2 Gen. Under Speed       When the controller detects that the speed of genset falls below the
+                         pre-set value, it will initiate a warning alarm.
+3 Loss of Speed Signal   When the controller detects that the speed of genset is zero and
+                         action select “Warning”, it will initiate a warning alarm.
+4 Gen. Over Frequency    When the controller detects that the frequency of genset exceeds the
+                         pre-set value, it will initiate a warning alarm.
+5 Gen. Under Frequency   When the controller detects that the frequency of genset falls below
+                         the pre-set value, it will initiate a warning alarm.
+6 Gen. Over Voltage      When the controller detects that the voltage of genset exceeds the
+                         pre-set value, it will initiate a warning alarm.
+7 Gen. Under Voltage     When the controller detects that the voltage of genset falls below the
+                         pre-set value, it will initiate a warning alarm.
+8 Gen. Over Current      When the controller detects that the current of genset exceeds the
+                         pre-set value, it will initiate a warning alarm.
+9 Failed to Stop         If engine does not stop completely when fail to stop delay expired, it
+                         will initiate a warning alarm.
+10 Charge Alt Fail       When the controller detects that the voltage of charger falls below the
+                         pre-set value, it will initiate a warning alarm.
+11 Battery High Voltage  When the controller detects that the battery voltage of genset exceeds
+                         the pre-set value, it will initiate a warning alarm.
+12 Battery Low Voltage   When the controller detects that the battery voltage of genset falls
+                         below the pre-set value, it will initiate a warning alarm.
+13 Maintenance Time Due  When maintenance countdown is zero and action select “Warning”, it
+                         will initiate a warning alarm.
+14 Reverse Power         When controller detects that the reverse power value (power is
+                         negative) of genset exceeds the pre-set value, and action type select
+15 Over Power            “Warning”, it will initiate a warning alarm.
+16 Gen. Loss of Phase    When controller detects that the power value (power is positive) of
+17 Gen. Reverse Phase    genset exceeds the pre-set value, and action type select “Warning”, it
+                         will initiate a warning alarm.
+                         When controller detects that the phase of generator is loss, it will
+                         initiate a warning alarm.
+                         When controller detects that the phase sequence of generator is
+                         wrong, it will initiate a warning alarm.
+
+HGM7100N Series Genset Controller User Manual    Page 13 of 47
+No.           Type                             Description
+
+18 Breaker Switch Fail    When controller detects that the breaker is fail to close/open (when
+                          the warning is enabled), it will initiate a warning alarm.
+
+19 Temp. Sensor Open When controller detects that the temperature sensor is open circuit
+     Circuit              and action select “Warning”, it will initiate a warning alarm.
+
+20 High Temp. Warning     When controller detects that the temperature is higher than the
+                          pre-set value, it will initiate a warning alarm.
+
+21 Low Temp. Warning      When controller detects that the temperature is lower than the pre-set
+                          value, it will initiate a warning alarm.
+
+22 Oil Pressure Sensor When controller detects that sensor is open circuit, and action type
+     Open Circuit         select “Warning”, it will initiate a warning alarm.
+
+23 Low Oil          Pressure When controller detects that the oil pressure value falls below the
+        Warning                    pre-set value, it will initiate a warning alarm.
+
+24 Level Sensor Open When controller detects that sensor is open circuit, and action type
+     Circuit              select “Warning”, it will initiate a warning alarm.
+
+25 Low Level Warning      When controller detects that the liquid level value falls below the
+                          pre-set value, it will initiate a warning alarm.
+
+26 Config. Sensor 1 Open When controller detects that sensor is open circuit, and action type is
+     Circuit              select “Warning”, it will initiate a warning alarm.
+
+27 Config. Sensor 1 High  When controller detects that the sensor value exceeds the pre-set
+                          upper limit warning value, it will initiate a warning alarm.
+
+28 Config. Sensor 1 Low   When controller detects that the sensor value falls below the pre-set
+                          lower limit warning value, it will initiate a warning alarm.
+
+29 Config. Sensor 2 Open When controller detects that sensor is open circuit, and action type is
+     Circuit              select “Warning”, it will initiate a warning alarm.
+
+30 Config. Sensor 2 High  When controller detects that the sensor value exceeds the pre-set
+                          upper limit warning value, it will initiate a warning alarm.
+
+31 Config. Sensor 2 Low   When controller detects that the sensor value falls below the pre-set
+                          lower limit warning value, it will initiate a warning alarm.
+
+32 Input Warning          When digital input port configured as “Warning”, and it is active,
+                          controller will initiate a warning alarm.
+
+33 Cycle Start Comm. Fail When two gensets, which during in cycle start status, fail to
+     Warning              communicate, controller will initiate a warning alarm.
+
+HGM7100N Series Genset Controller User Manual                                     Page 14 of 47
+6.2 SHUTDOWN ALARM
+
+     When controller detects shutdown alarms, it immediately opens the breaker and stop the genset, at
+the same time it displays alarm type.
+
+                         Table 6 Shutdown Alarms
+
+No.  Type                                      Description
+
+1 Emergency Stop         When controller detects emergency stop signals, it will send stop
+                         signals.
+
+2 Over Speed             When controller detects the speed value is higher than the set value,
+                         it will send stop signals.
+
+3 Under Speed            When controller detects the speed value is lower than the set value,
+                         it will send stop signals.
+
+4 Loss of Speed Signal   When controller detects speed value equals to 0, and action select
+                         “Shutdown”, it will send stop signals.
+
+5 Gen Over Frequency     When controller detects the frequency value is higher than the set
+                         value, it will send stop signals.
+
+6 Gen Under Frequency    When controller detects the frequency value is lower than the set
+                         value, it will send stop signals.
+
+7 Gen. Over Voltage      When controller detects the voltage value of genset is higher than
+                         the set value, it will send stop signals.
+
+8 Gen. Under Voltage     When controller detects the voltage value of genset is lower than the
+                         set value, it will send stop signals.
+
+9 Failed to Start        If genset start failure within setting of start times, controller will send
+                         stop signals.
+
+10 Gen. Over Current     When controller detects the current value is higher than the set value
+                         and action select “Shutdown”, it will send stop signals.
+
+11 Maintenance Time Due  When maintenance time countdown equals to 0, and action select
+                         “Shutdown”, it will send stop signals.
+
+                         When controller detects that the reverse power value (power is
+
+12 Reverse Power Shutdown negative) of genset exceeds the pre-set value, and action type select
+
+                         “Shutdown”, it will send stop signals.
+
+                         When controller detects that the power value (power is positive) of
+
+13 Over Power Shutdown generator-set exceeds the pre-set value, and action type select
+
+                         “Shutdown”, it will send stop signals.
+
+14 Temp. Sensor Open     When controller detects sensor is open circuit, and the action select
+        Circuit          “shutdown”, it will send stop signals.
+
+15 High Temp. Shutdown   When controller detects temperature of water/cylinder is higher than
+                         the set value, it will send stop signals.
+
+16 Oil Pressure Sensor   When controller detects sensor is open circuit, and the action select
+        Open Circuit     “shutdown”, it will send stop signals.
+
+17 Low Oil Pressure      When controller detects oil pressure is lower than the set value, it will
+        Shutdown         send stop signals.
+
+18 Level Sensor Open     When controller detects sensor is open circuit, and the action select
+        Circuit          “shutdown”, it will send stop signals.
+
+19 Low Level Shutdown    When controller detects liquid level is lower than the set value, it will
+
+HGM7100N Series Genset Controller User Manual                    Page 15 of 47
+No.           Type                             Description
+
+                          send stop signals.
+
+20 Config. Sensor 1 Open When controller detects that sensor is open circuit, and action type
+     Circuit              is select “Shutdown”, it will send stop signals.
+
+21 Config. Sensor 1 High  When controller detects that the sensor value exceeds the pre-set
+                          upper limit shutdown value, it will send stop signals.
+
+22 Config. Sensor 1 Low   When controller detects that the sensor value falls below the pre-set
+                          lower limit shutdown value, it will send stop signals.
+
+23 Config. Sensor 2 Open When controller detects that sensor is open circuit, and action type
+     Circuit              is select “Shutdown”, it will send stop signals.
+
+24 Config. Sensor 2 High  When controller detects that the sensor value exceeds the pre-set
+                          upper limit shutdown value, it will send stop signals.
+
+25 Config. Sensor 2 Low   When controller detects that the sensor value falls below the pre-set
+                          lower limit shutdown value, it will send stop signals.
+
+26 Input Alarm Shutdown   When digital input port configured as “Shutdown”, and it is active,
+                          controller will send stop signals.
+
+6.3 TRIP AND STOP ALARM
+
+     When controller detects trip and stop alarms, it will immediately disconnect the generator closing
+signals and engine will shut down after high-speed cooling.
+
+                          Table 7 Trip and Stop Alarms
+
+No.           Type                                              Description
+                          When controller detects the current value of genset is higher than the
+1 Over Current            set value and action select “Trip and Stop”, it will send trip and stop
+                          signals.
+2 Maintenance Time Due    When maintenance time countdown equals to 0, and action select
+                          “Trip and Stop”, it will send trip stop signals.
+3 Reverse Power           When controller detects that the reverse power value (power is
+                          negative) of genset exceeds the pre-set value, and action type select
+4 Over Power              “Trip and Stop”, it will send trip and stop signals.
+5 Input Trip and Stop     When controller detects that the power value (power is positive) of
+                          genset exceeds the pre-set value, and action type select “Trip and
+                          Stop”, it will send trip and stop signals.
+                          When input port configured as “Trip and Stop”, and it is active,
+                          controller will send trip and stop signals.
+
+HGM7100N Series Genset Controller User Manual                               Page 16 of 47
+6.4 TRIP ALARM
+
+     When controller detects trip alarms, it will immediately disconnect the generator closing signals and
+genset does not shut down.
+
+                 Table 8 Trip Alarms
+
+No.  Type                                                 Description
+                 When controller detects the current value of genset is higher than the set
+1 Over Current   value and action select “Trip”, it will send trip signals.
+                 When controller detects that the reverse power value (power is negative)
+2 Reverse Power  of genset exceeds the pre-set value, and action type select “Trip”, it will
+                 send trip signals.
+3 Over Power     When controller detects that the power value (power is positive) of
+4 Input Trip     genset exceeds the pre-set value, and action type select “Trip”, it will send
+                 trip signals.
+                 When input port configured as “Trip”, and it is active, controller will send
+                 trip signals.
+
+HGM7100N Series Genset Controller User Manual  Page 17 of 47
+7 WIRINGS CONNECTION
+
+     Compared with HGM7120N, HGM7110N is missing one mains voltage three-phase input terminal.
+HGM7120N controller back panel is as follows:
+
+                             Fig.3 Back Panel
+
+                     Table 9 Terminal Wiring Connection
+
+No.   Function       Cable Size                          Remarks
+
+1 B-                 2.5mm2 Connected with negative of starter battery
+
+                                 Connected with positive of starter battery. If wire length
+
+2 B+                 2.5mm2 is over 30m, better to double wires in parallel. Max. 20A
+
+                                 fuse is recommended.
+
+3 Emergency Stop     2.5mm2 Connect emergency stop button with B+.
+
+4 Fuel (16A)         1.5mm2 B+ is supplied by No.3 terminal, rated 16A.
+
+5 Crank (16A)        1.5mm2      B+ is supplied by No.3 terminal, rated 16A.
+                                 Connect with starting coil of starter.
+
+6 Aux. Output 1(7A)  1.5mm2 B+ is supplied by No.2 terminal, rated 7A.
+
+7 Normally close output, rated
+                                                            8A.
+
+8 Aux. Output 2(8A 250VAC) 1.5 mm2 Relay common port             Details see Table 11
+
+9 Normally open output, rated
+                                                            8A.
+
+HGM7100N Series Genset Controller User Manual                     Page 18 of 47
+No.  Function               Cable Size                         Remarks
+
+10 Aux. Output              3(16A 2.5 mm2  Relay normally open volt
+11 250VAC)                  4(16A 2.5 mm2  free contact, rated 16A, volt
+12 Aux. Output                             free contact output.
+13 250VAC)
+
+14 Charger(D+)              1.0mm2         Connected with charger starter’s D+ (WL) terminals.
+                                           Being hang up If there is no this terminal.
+
+15 Aux. Output 5(7A)        1.5 mm2        B+ is supplied by No.2 Details see Table 11
+16 Aux. Output 6(7A)        1.5 mm2        terminal, rated 7A
+
+17 Speed Sensor Input
+
+     Speed sensor input,
+
+18 battery negative electrode Connect with speed sensor, shielded wire is recommended.
+      has been connected to the
+
+     inside of controller.
+
+19 Engine Temp.             Connected with temperature sensor               Details to see table
+20 Oil Pressure             Connected with pressure sensor                  13
+21 Fuel Level               Connected with fuel level sensor
+
+22 Aux. Input 1             1.0mm2 Ground connected is active (B-)
+
+23 Aux. Input 2             1.0mm2         Ground connected is active (B-)  Details to see table
+24 Aux. Input 3             1.0mm2         Ground connected is active (B-)  12
+25 Aux. Input 4             1.0mm2         Ground connected is active (B-)
+
+26 Aux. Input 5             1.0mm2 Ground connected is active (B-)
+
+27 Sensor Common Port       Sensor common port, battery negative electrode has been
+                            connected to the inside of controller.
+
+28 Aux. Input 6             1.0mm2 Ground connected is active (B-)          Details to see table
+
+29 Aux. Input 7             1.0mm2 Ground connected is active (B-)          12
+
+30 Configurable Sensor 1    Connected with temp/pressure/fuel level sensor. Details to see table
+31 Configurable Sensor 2                                                                     13
+
+32 CT A-phase Monitoring 1.5mm2            Outside connected to secondary coil of CT (5A rated).
+      Input
+
+33 CT B-phase Monitoring 1.5mm2            Outside connected to secondary coil of CT (5A rated).
+      Input
+
+34 CT C-phase Monitoring 1.5mm2            Outside connected to secondary coil of CT (5A rated).
+      Input
+
+35 CT Common Port           1.5mm2 Details to see the following installation description.
+
+36 Gen U-phase Voltage 1.5mm2              Connected to U-phase output of genset (2A fuse
+      Monitoring Input                     recommended).
+
+37 Gen V-phase Voltage 1.0mm2              Connected to V-phase output of genset (2A fuse
+      Monitoring Input                     recommended).
+
+38 Gen W-phase Voltage 1.0mm2              Connected to W-phase output of genset (2A fuse
+      Monitoring Input                     recommended).
+
+39 Gen N2-line Input        1.0mm2 Connected to N-line output of genset.
+
+40 Mains R-phase Voltage 1.0mm2            Connected to R-phase of mains (2A fuse recommended).
+      Monitoring Input                     (HGM7110N without)
+
+41 Mains S-phase voltage 1.0mm2 Connected to S-phase of mains (2A fuse recommended).
+
+HGM7100N Series Genset Controller User Manual                                   Page 19 of 47
+No.  Function           Cable Size                      Remarks
+
+     monitoring input               (HGM7110N without)
+
+42 Mains T-phase voltage 1.0mm2     Connected to T-phase of mains (2A fuse recommended).
+      monitoring input              (HGM7110N without)
+
+43 Mains line N1 Input  1.0mm2 Connected to N-line of mains. (HGM7110N without)
+
+44 RS485 Common Ground  0.5mm2      120Ω shielded wire is recommended with single end
+45 RS485-               0.5mm2      ground.
+46 RS485+               0.5mm2
+
+47 VOUT(+5V)            0.5mm2 Output DC +5V.
+
+    NOTE: USB ports in controller rear panel are programmable parameter ports, user can directly configure the controller
+via PC.
+
+    NOTE: ETHERNET port in controller rear panel is network monitoring port, user can directly monitor the controller via
+PC.
+
+HGM7100N Series Genset Controller User Manual                    Page 20 of 47
+8 SCOPES AND DEFINITIONS OF PROGRAMMABLE PARAMETERS
+
+8.1 CONTENTS AND SCOPES OF PARAMETERS
+
+                           Table 10 Parameters Settings and Scope
+
+No.          Items               Range       Default               Description
+Mains                      (0-3)
+
+                                                      0: 3P4W;
+
+1 AC System                               0 1: 3P3W
+                                                        2: 2P3W
+
+                                                      3: 1P2W
+
+2 Mains             Rated (30-30000)V                 Provide standards for judging Mains
+     Voltage
+                                          230         over/under voltages; if PT is used, the value
+
+                                                      is primary voltage of PT.
+
+3 Mains             Rated  (10.0-75.0)Hz  50.0 Provide standards for Mains over/under
+     Frequency             (0-3600)s                    frequency.
+                           (0-3600)s
+4 Mains          Normal    (0-1)          10 The check time from mains abnormal to
+     Delay                 (0-200)%                     normal.
+                           (0-200)%
+5 Mains       Abnormal     (0-200)%       5 The check time from mains normal to
+     Time                  (0-200)%                     abnormal.
+                           (0-1)
+6 Mains          Voltage   (0-1)          0           0: Disabled; 1: Enabled
+
+Transformer (PT)
+
+7 Mains Over Voltage                      120         The set value is Mains rated voltage
+
+8 Mains             Under                               percentage; return value and delay value also
+     Voltage                              80 can be set.
+
+9 Mains             Over                  Disabled    The set value is Mains rated frequency
+     Frequency                            Disabled    percentage; return value and delay value also
+                                                      can be set.
+10 Mains            Under
+      Frequency
+
+11 Mains Loss of                          1
+      Phase Check                                       0: Disabled; 1: Enabled
+
+12 Mains         Reverse                  1
+      Phase
+
+Timers
+
+1 Start Delay              (0-3600)s      1 Time from mains abnormal or remote start
+                                                        signal is active to start gen-set.
+
+2 Stop Delay               (0-3600)s      1 Time from mains normal or remote start
+                                                        signal is deactivated to genset stop.
+
+3 Preheat Delay            (0-3600)s      0 Time of glow plug pre-power on before
+4 Cranking Time            (3-60)s                      starter power on.
+5 Crank Rest Time          (3-60)s
+                                          8           Time for starter power on for each time
+
+                                          10 The waiting time before second power up
+                                                         when engine starts fail.
+
+HGM7100N Series Genset Controller User Manual                                    Page 21 of 47
+No.         Items          Range       Default                        Description
+                                      10        Alarms for low oil pressure, high temp, under
+6 Safety On Time      (0-3600)s       0         speed, under frequency/voltage, charge alt
+                                      10        failure are deactivated.
+7 Start Idle Time     (0-3600)s       10        Idle speed running time when gen-set start up.
+8 Warming Up Time     (0-3600)s       0         Warming time before close after genset
+                                      20        entering high speed running.
+9 Cooling Time        (0-3600)s                 Radiating time before gen-set stop, after it
+10 Stop Idle Time     (0-3600)s       0         unloads.
+11 ETS Solenoid Hold  (0-3600)s                 Idle running time while gen-set stops.
+                                      0         Stop electromagnet’s power on time when
+12 Wait for Stop Time (0-3600)s                 gen-set is stopping.
+                                                When “ETS Solenoid Hold” is set as 0, it is the
+ 13 After Stop Time   (0-3600)s                 time between gen-set idle delay expired and
+Engine                (0-39)                    stopped completely;
+                                                When “ETS Solenoid Hold” is not 0, it is time
+  1 Engine Type                                 between ETS hold delay expired and
+                                                stopped.
+                                                Time from gen-set stopped to standby.
+
+2 Flywheel Teeth      (1.0-300.0)     0         Default: conventional engine.
+                                      118       It is tooth number of the engine, which is
+3 Engine           Rated (0-6000)RPM  1500      used for judging starter crank disconnect
+     Speed                            90        conditions and inspecting engine speed. For
+                                      5         details, please see the following installation
+4 Speed On-load       (0-100)%        0         description.
+                                                Provide standards for judging over/under
+5 Speed Signal Loss (0-3600)s                   speed and on-load speed.
+     Delay                                      The set value is rated speed percentage. The
+                                                controller detects it while gen-set preparing
+6 Speed Signal Loss (0-1)                       to take the load, if the speed is less than the
+     Action                                     on-load speed, gen-set will not enter the
+                                                normal operation period.
+                                                Time from the speed is detected as 0 to the
+                                                action confirmed.
+
+                                                0: Warning; 1: Shutdown
+
+7 Over             Speed (0-200)%     114
+     Shutdown                                       The setting value is the percentage of rated
+                                                    speed, and delay value can be set.
+8 Under            Speed (0-200)%
+     Shutdown                         80
+
+9 Over             Speed (0-200)%     110       The set value is the percentage of rated
+     Warning
+                                                speed, return value and delay value can be
+10 Under           Speed (0-200)%
+      Warning                         86        set.
+
+HGM7100N Series Genset Controller User Manual         Page 22 of 47
+No.         Items                Range   Default                        Description
+                                        24.0      Provide standard for judging
+11 Battery         Rated (0-60.0)V                over/under voltage.                      battery
+      Voltage
+
+12 Battery          High (0-200)%       120       The set value is the percentage of rated
+     Voltage Warning
+                                                  voltage, return value and delay value can be
+13 Battery          Low (0-200)%
+     Voltage Warning                    85        set.
+
+                                                  If the voltage of charger D+(WL) is lower than
+
+14 Charge Alt Fail        (0-60.0)V     8.0 the set value during gen-set normal running,
+                                                      controller will initiate fail to charge warning
+
+                                                  alarms.
+
+                                                  Maximum crank times when engine starts
+
+15 Start Attempts         (1-10)times   3         fail. If reach this number, controller will send
+
+                                                  start failure signals.
+
+                                                  For details please see table 14
+
+16 Crank Disconnect (0-6)                         There are 3 cranking disconnect conditions,
+      Condition
+                                        2         which can be used separately or together,
+
+                                                  aiming to disconnect starter motor with
+
+                                                  engine as soon as possible.
+
+                                                  The set value is the percentage of Gen rated
+
+17 Frequency of Crank (0-200)%                    frequency, when generator frequency is
+      Disconnect
+                                        24        higher than the set value, starter will be
+
+                                                  disconnected. For Details please see the
+
+                                                  following installation description.
+
+                                                  The set value is the percentage of the rated
+
+18 Speed of Crank (0-200)%              24 speed, when speed is higher than the set
+      Disconnect                                      value, starter will disconnect. For details see
+
+                                                  the following installation description.
+
+19 Oil Pressure of (0-1000)kPa                    When engine oil pressure is higher than the
+      Crank Disconnect
+                                        200       set value, starter will disconnect. For details
+
+                                                  see the following installation description.
+
+     Battery        Low
+
+20 Voltage          Start (0-1)         0         0: Disabled; 1: Enabled
+
+     Enabled
+
+21 Battery          Low (1.0-60.0)V     10.0 It is the low-battery-start value. Active at auto
+     Voltage Start Value                              mode.
+
+22 Battery          Low (1.0-60.0)V     24.0 The shutdown value after low-battery-start
+     Voltage Stop Value                               and charged. Active at auto mode.
+
+                                                  When battery voltage reached to engine start
+
+     Battery        Low                           threshold, engine will start up after delay
+
+23 Voltage Start/Stop (0-3600)s         60        expired; when battery voltage reached to
+
+     Delay                                        engine stop threshold, engine will stop after
+
+                                                  delay expired.
+
+Generator
+
+HGM7100N Series Genset Controller User Manual                                  Page 23 of 47
+No.        Items                Range   Default                        Description
+                                       0         0: 3P4W;
+1 Power           Supply (0-3)         4         1: 3P3W
+     System                            230       2: 2P3W
+                                       85        3: 1P2W
+2 Engine Poles           (2-64)        50.0      It is the number of engine poles, which can
+                                                 be used for engine speed calculation when
+3 Rated Voltage          (30-30000)V   85        speed sensor is not installed.
+                                                 Provide standards for judging Gen
+4 Voltage On-load        (0-200)%                over/under voltage and loading voltage; if PT
+                                                 is used, this value is primary voltage of PT.
+5 Rated Frequency (10.0-600.0)Hz                 The set value is rated voltage percentage.
+                                                 Controller detects at preparing to take load,
+6 Frequency On-load (0-200)%                     when Gen voltage is less than load voltage, it
+                                                 won't enter normal running period.
+                                                 Provide standards for judging over/under
+                                                 frequency and on-load frequency.
+                                                 The set value is Gen rated frequency
+                                                 percentage. The controller detects it while
+                                                 gen-set prepares to take the load, if
+                                                 frequency is less than the on-load frequency,
+                                                 gen-set will not enter normal operation
+                                                 period.
+
+7 Voltage                (0-1)         0         0: Disabled; 1: Enabled
+     Transformer (PT)
+
+8 Gen. Over Voltage (0-200)%           120
+     Shutdown                                        The set values are rated voltage percentage
+                                                     of generator, and delay value can be set.
+9 Gen. Under Voltage (0-200)%
+     Shutdown                          80
+
+     Gen.         Over
+
+10 Frequency             (0-200)%      114
+                                                     The set values are rated frequency
+     Shutdown                                        percentage of generator, and delay value can
+                                                     be set.
+     Gen.         Under
+                                       80
+11 Frequency             (0-200)%
+
+     Shutdown
+
+12 Gen. Over Voltage (0-200)%          110       The set values are rated voltage percentage
+      Warning
+                                                 of generator, and return value and delay value
+13 Gen. Under Voltage (0-200)%
+      Warning                          84        can be set.
+
+14 Gen.           Over (0-200)%        110       The set values are rated frequency
+     Frequency Warning
+                                                 percentage of generator, and return value
+15 Gen.           Under (0-200)%
+     Frequency Warning                 84        and delay value can be set.
+
+16 Gen. Loss of Phase (0-1)            1         0: Disabled; 1: Enabled
+      Check
+
+HGM7100N Series Genset Controller User Manual                                 Page 24 of 47
+No.       Items                 Range   Default                   Description
+                          (0-1)        1
+17 Gen. Reverse Phase
+      Check               (5-6000)/5
+
+Load
+
+1 Current                              500 It is the ratio of externally connected current
+     Transformer Ratio                               transformer.
+
+2 Rated Current           (5-6000)A    500 It is the rated current of generator, which is
+                                                     used as the standard for load current.
+
+3 Rated Power             (0-6000)kW   276 It is the rated power of generator, which is
+                                                     used as the standard for load current.
+
+                                                 The set value is the percentage of rated
+
+4 Over Current Enable (0-200)%         120       full-load current, and delay value can be set
+
+                                                 as DMT or IDMT.
+
+5 Over Power Setting      (0-1)        0         0: Disabled; 1: Enabled
+                          (0-1)
+6 Reverse        Power                 0         0: Disabled; 1: Enabled
+     Setting
+
+Switch
+
+1 Switching Time          (0-7200)s    5 Time from open mains to close generator or
+                                                     from open generator to close mains.
+2 Close Delay             (0-20.0)s
+                                       5.0 Pulse width of mains closed and generator
+3 Open Delay              (0-20.0)s                  closed; 0s stands for constant output.
+
+4 Switching Detection     (0-20.0)s    3.0 Pulse width of open mains and open
+     Time                 (0-1)                      generator.
+                          (0-1)
+5 Switch         Failure               5.0 It is the time to detect auxiliary contactor
+                          (0-1)                      after ATS switching.
+      Warning Enabled
+                          (0-2)        0
+6 Open Detection          (1-254)                    0: Disabled; 1: Enabled
+     Enabled              (0-1)
+                          (0-2)        0
+
+      Immediately Trip
+
+7 when           Mains                 1         0: Disabled; 1: Enabled
+
+      Dropout
+
+Module
+
+1 Power On Mode                        0         0: Stop Mode; 1: Manual Mode; 2: Auto Mode
+                                       1         Controller address while in remote
+2 Communication                                  monitoring status.
+     Address                           1
+                                       0         0: 2-bit stop bit; 1: 1-bit stop bit
+3 Communication                        00318
+     Stop-bit Setting                  300       0: Simplified Chinese; 1: English; 2: Other
+                                                 This password used to enter advanced
+4 Language Selection                             parameter setting.
+                                                 When it is 0s, LCD always light.
+5 Password Setting (0-65535)
+
+6 Backlight Time          (0-3600)s
+                          (0-1)
+Schedule & Maintenance
+
+1 Scheduled       Start                0         0: Disabled; 1: Enabled
+     Setting
+
+HGM7100N Series Genset Controller User Manual                                  Page 25 of 47
+No.     Items                  Range     Default                     Description
+                         (0-1)
+2 Scheduled Not Run      (0-1)        0           0: Disabled; 1: Enabled
+     Setting
+                         (0-15)
+3 Maintenance            (0-2)        0           0: Disabled; 1: Enabled
+     Setting
+
+Analog Sensors
+
+Temperature Sensor
+
+1 Curve Type                          7           SGX. For details see Table 13
+
+2 Open Circuit Action                 0           0: Warning; 1: Shutdown; 2: None
+
+                                                  When temperature value of externally
+
+                                                  connected temperature sensor is higher than
+
+3 High          Temp (0-300)ºC        98 the set point, controller will initiate high
+     Shutdown Setting                               temperature shutdown alarm (judgment only
+
+                                                  starts after safety on delay expired). Delay
+
+                                                  value can be set.
+
+                                                  When temperature value of externally
+
+                                                  connected temperature sensor is higher than
+
+4 High Temp Warning (0-300)ºC         95 the setting point, controller will initiate high
+     Setting                                        temperature warning alarm (judgment only
+
+                                                  starts after safety on delay expired). Return
+
+                                                  value and delay value can be set.
+
+  5 Low Temp Warning     (0-1)        0           0: Disabled; 1: Enabled
+       Setting
+                         (0-15)       7           SGX. For details see table 13.
+Oil Pressure Sensor      (0-2)
+  1 Curve Type                        0           0: Warning; 1: Shutdown; 2: None
+  2 Open Circuit Action
+
+                                                  When pressure value of externally connected
+
+                                                  oil pressure sensor is lower than the setting
+
+3 Low Oil Pressure (0-1000)kPa        103 point, controller will initiate low oil pressure
+     Shutdown Setting                               shutdown alarm (judgment only starts after
+
+                                                  safety on delay expired). Delay value can be
+
+                                                  set.
+
+                                                  When pressure value of externally connected
+
+                                                  oil pressure sensor is lower than the setting
+
+4 Low Oil Pressure (0-1000)kPa        124 point, controller will initiate low oil pressure
+     Warning Setting                                warning alarm (judgment only starts after
+
+                                                  safety on delay expired). Return value and
+
+                                                  delay value can be set.
+
+  5 Sensor Type          (0-2)        0 0: Resistor type; 1: Current type; 2: Voltage
+                                                    type.
+Level Sensor             (0-15)
+  1 Curve Type           (0-2)        4           SGH. For details see table 13.
+  2 Open Circuit Action
+                                      0           0: Warning; 1: Shutdown; 2: None
+
+HGM7100N Series Genset Controller User Manual                                     Page 26 of 47
+No.  Items                   Range   Default                         Description
+                                    10         When the value of external connected fuel
+3 Low Level Warning (0-300)%                   level sensor is lower than the setting point,
+                                    8          controller will initiate low liquid level warning
+4 Low            Level (0-300)%                alarm (always judge). Return value and delay
+     Shutdown                                  value can be set.
+                                               When the value of external connected level
+                                               sensor is lower than the setting point,
+                                               controller will initiate low liquid level
+                                               shutdown alarm (always judge). Delay value
+                                               can be set.
+
+Flexible Sensor 1                   0 0: Not Used; 1:Temperature Sensor;
+  1 Flexible Sensor 1 (0-3)                       2:Pressure Sensor; 3:Fuel Level Sensor
+       Setting
+                                    0 0: Resistor type; 1: Current type; 2: Voltage
+2 Sensor Type        (0-2)                        type.
+
+Flexible Sensor 2                   0 0: Not Used; 1: Temperature Sensor; 2:
+  1 Flexible Sensor 2 (0-3)                       Pressure Sensor; 3: Fuel Level Sensor
+       Setting
+
+Digital Inputs
+Digital Input 1
+
+1 Content Setting    (0-50)         28 Remote start (on-load). Details to see table
+                                                  12
+
+  2 Active Type      (0-1)          0          0: Close; 1: Open
+Digital Input 2
+
+1 Content Setting    (0-50)         26 High temperature shutdown input. Details
+                                                  to see table 12
+
+  2 Active Type      (0-1)          0          0: Close; 1: Open
+Digital Input 3
+
+1 Content Setting    (0-50)         27 Low oil pressure shutdown input. Details to
+                                                  see table 12
+
+  2 Active Type      (0-1)          0          0: Close; 1: Open
+Digital Input 4
+                     (0-50)         0          User defined. Details to see table 12
+  1 Content Setting  (0-1)
+  2 Active Type                     0          0: Close; 1: Open
+
+3 Active Range       (0-3)          2 0: From safety on delay; 1: From crank; 2:
+                                                  Always; 3: Never
+
+4 Active Action      (0-4)          0 0: Warning; 1: Shutdown; 2: Trip and Stop; 3:
+                                                  Trip; 4: Indication.
+
+5 Active Delay       (0-20.0)s      2.0 Time from detecting input port is active to
+                                                  confirmation.
+
+  6 Description                                LCD displays corresponding content when
+
+Digital Input 5                                input port is active.
+  1 Content Setting
+                     (0-50)         0          User defined. Details to see table 12.
+
+HGM7100N Series Genset Controller User Manual                         Page 27 of 47
+No.  Items                 Range   Default                           Description
+                     (0-1)        0            0: Close; 1: Open
+2 Active Type        (0-3)        2            0: From safety on delay; 1: From crank; 2:
+                     (0-4)                     Always; 3: Never
+3 Active Range       (0-20.0)s    1            0: Warning; 1: Shutdown; 2: Trip and Stop; 3:
+                                               Trip; 4: Indication.
+4 Active Action      (0-50)       2.0          Time from detecting input port is active to
+                     (0-1)                     confirmation.
+5 Active Delay       (0-3)                     LCD displays corresponding content when
+                     (0-4)                     input port is active.
+  6 Description      (0-20.0)s
+                                  0            User defined. Details to see table 12.
+Digital Input 6      (0-50)
+  1 Content Setting  (0-1)        0            0: Close; 1: Open
+  2 Active Type      (0-3)
+                     (0-4)        2 0: From safety on delay; 1: From crank; 2:
+  3 Active Range     (0-20.0)s                  Always; 3: Never
+
+4 Active Action      (0-239)      2 0: Warning; 1: Shutdown; 2: Trip and Stop; 3:
+                     (0-1)                      Trip; 4: Indication.
+                     (0-239)
+5 Active Delay       (0-1)        2.0 Time from detecting input port is active to
+                     (0-239)                    confirmation.
+
+  6 Description                                LCD displays corresponding content when
+
+Digital Input 7                                input port is active.
+  1 Content Setting
+  2 Active Type                   0            User defined. Details to see table 12.
+
+  3 Active Range                  0            0: Close; 1: Open
+
+                                  2 0: From safety on delay; 1: From crank; 2:
+                                                Always; 3: Never
+
+4 Active Action                   3 0: Warning; 1: Shutdown; 2: Trip and Stop; 3:
+                                                Trip; 4: Indication.
+
+5 Active Delay                    2.0 Time from detecting input port is active to
+                                                confirmation.
+
+  6 Description                                LCD displays corresponding content when
+
+Relay Outputs                                  input port is active.
+Relay Output 1
+
+                                               User defined time period output 1(default:
+
+1 Content Setting                 1            output in preheat period). Details to see table
+
+                                               11.
+
+  2 Output Type                   0            0: Normally open; 1: Normally close.
+Relay Output 2
+                                  35 Idle speed control.
+  1 Content Setting                             Details to see table 11.
+
+  2 Output Type                   0            0: Normally open; 1: Normally close.
+Relay Output 3
+                                  29 Close generator output.
+  1 Content Setting                             Details to see table 11.
+
+HGM7100N Series Genset Controller User Manual                             Page 28 of 47
+No.  Items                        Range          Default            Description
+                            (0-1)
+2 Output Type                                 0           0: Normally open; 1: Normally close.
+
+Relay Output 4
+
+1 Content Setting           (0-239)           31 Close mains output.
+                                                            Details to see table 11.
+
+  2 Output Type             (0-1)             0           0: Normally open; 1: Normally close.
+Relay Output 5
+
+1 Content Setting           (0-239)           38 ETS control.
+                                                            Details to see table 11.
+
+  2 Output Type             (0-1)             0           0: Normally open; 1: Normally close.
+Relay Output 6
+
+1 Content Setting           (0-239)           48 Common alarm.
+                                                            Details to see table 11.
+
+2 Output Type               (0-1)             0           0: Normally open; 1: Normally close.
+
+Cycle Start Settings        (0-1)
+                            (0-1)
+1 Cycle Start Enabled       (0,1440)          0           0: Disabled; 1: Enabled
+
+2 Priority Selection        (0,1440)          0           0: standby unit (slave unit); 1: Main unit
+
+3 Main Unit Running         (0, 1)            720
+     Time (minute)          (0-255)
+
+     Standby          Unit  (0-1)
+
+4 Running             Time                    720
+
+     (minute)
+
+5 Com Select                                  0           0: RS485 1: TCP/IP
+
+6 IP Address                                  192.168.0.100
+
+IP
+
+1 Ethernet Enabled                            0           0: Disabled; 1: Enabled
+
+2 DHPC Enabled              (0-1)             1 0: Disabled; 1: Enabled
+                                                            Automatically obtain IP address.
+
+3 IP Address                (0-255)           192.168.0.100         All changes of Ethernet (like
+
+4 Subnet Mask               (0-255)           255.255.255.0         IP address, subnet mask and
+
+5 Gateway IP                (0-255)           192.168.0.2           etc.) are active after
+
+6 DNS Address               (0-255)           211.138.24.66         controller repower-up.
+
+7 MAC Address               (0-255)           00-08-DC-99-C0-96
+
+8 TCPMODBUS                 (0-1)             0                     0: Disabled; 1: Enabled
+     Comm. Enabled
+
+9 Cloud Monitoring (0-1)                      0                     0: Disabled; 1: Enabled
+     Comm. Enabled
+
+Gateway & Cloud Server Settings
+
+1 Site Name                 (0-65535)                     20 characters/letters/numbers
+
+2 URL Server                (0-65535)         www.monitoryun.com
+
+3 Server Port               (0-65535)         91
+
+4 Module Password (0-65535)                   123456 16 characters
+
+5 Longitude Setting (-180-180)°               113.33      Location of gen-set controller and    altitude
+                                              34.48       information need to manually input.
+6 Latitude Setting          (-90-90)°         100.0
+
+7 Altitude Setting          (-9999.9-9999.9)
+
+HGM7100N Series Genset Controller User Manual                                         Page 29 of 47
+No.  Items                     Range   Default          Description
+                         (1-20)s      5
+   8 Real-data Interval
+
+8.2 DEFINED CONTENT OF PROGRAMMABLE OUTPUT PORTS 1~6
+
+8.2.1 DEFINED CONTENT OF PROGRAMMABLE OUTPUT PORTS 1~6
+
+               Table 11 Defined Content of Programmable Output Ports 1~6
+
+No.            Type                                                    Description
+
+0    Not Used                         For details of function description please see the following
+                                      contents.
+1    Custom Period 1
+                                      Act at over speed shutdown and emergency stop; Engine air
+2    Custom Period 2                  inletting can be closed.
+                                      Act at warning, shutdown, electric trip; Annunciator can be
+3    Custom Period 3                  connected externally; When flexible input "Alarm Mute" is
+                                      active, it can be prohibited to output.
+4    Custom Period 4                  Act at generator start, disconnect after genset complete
+                                      stop.
+5    Custom Period 5                  It is controlled by level sensor fuel pump controlling the
+                                      upper and lower limits.
+6    Custom Period 6                  It is controlled by temp sensor heating and controlling the
+                                      upper and lower limits.
+7    Custom Combined 1                It is controlled by temp sensor cooling and controlling the
+                                      upper and lower limits.
+8    Custom Combined 2                Act in the period from crank to safety on time.
+                                      Output in the crank process; output for 2s again if Gen
+9    Custom Combined 3                frequency is lost in high speed period.
+                                      Act in the period from pre-heating to safety on time.
+10 Custom Combined 4                  This port is controlled by communication (PC).
+
+11 Custom Combined 5
+
+12 Custom Combined 6
+
+13 Reserved
+
+14 Reserved
+
+15 Reserved
+
+16 Reserved
+
+17 Air Flap Control
+
+18 Audible Alarm
+
+19 Louver Control
+
+20 Fuel Pump Control
+
+21 Heater Control
+
+22 Cooler Control
+23 Pre- fuel
+24 Excite Generator
+25 Pre-lubricate Output
+26 Remote PC Output
+27 Reserved
+28 Reserved
+
+HGM7100N Series Genset Controller User Manual                             Page 30 of 47
+No.              Type                          Description
+
+29 Close Generator       Control generator breaker to take load.
+
+30 Open Breaker          Control generator breaker to take off load.
+
+31 Close Mains           Control Mains breaker to take on load.
+
+32 Reserved
+
+33 Starter Relay Output
+
+34 Fuel Relay Output     Act at generator start, disconnect at waiting to stop.
+
+                         Used for gensets with idle speed control; Pull in before crank,
+
+35 Idle Control          disconnect at entering warming up period; Pull in at stop idle
+
+                         process, and disconnect at genset complete stop.
+
+36 Raise Speed           Act in the period of warming up.
+
+37 Drop Speed            Act in the period of stop idle and wait to stop running time.
+
+38 ETS Control           Used for engines with ETS electromagnet. Close when stop idle
+                         is over and open when pre-set “ETS delay” is over.
+
+39 Pulse Drop Speed
+
+40 Reserved
+
+41 Reserved
+
+42 Pulse Raise Speed
+
+43 Crank Success         Close when a successful start signal is detected.
+
+44 Generator OK          Act when generating is normal.
+
+45 Generator Available   Act in period of generator ok to hi-speed cooling.
+
+46 Mains OK              Act when Mains is normal.
+
+47 Loading Speed Output
+
+48 Common Alarm          Act at genset common warning, common shutdown,
+                         common trips alarm.
+
+49 Common Electrical Trip and Act when common trip and stop alarm occurs.
+         Stop
+
+50 Common Shutdown       Act when common shutdown alarm occurs.
+
+51 Common Trip Alarm     Act when common trips alarm occurs.
+
+52 Common Warning Alarm  Act when common warning alarm occurs.
+
+53 Reserved
+
+54 Battery High Voltage  Act when battery’s over voltage warning alarm occurs.
+
+55 Battery Low Voltage   Act when battery’s low voltage warning alarm occurs.
+
+56 Charge Alt Fail       Act when charge failure warning alarm occurs.
+
+57 Reserved
+
+58 Reserved
+
+59 Reserved
+
+60 ECU Warning Alarm     Indicate ECU sends a warning signal.
+
+61 ECU Shutdown Alarm    Indicate ECU sends a shutdown signal.
+
+62 Reserved
+
+63 Reserved
+
+64 Reserved
+
+65 Reserved
+
+66 Reserved
+
+67 Reserved
+
+HGM7100N Series Genset Controller User Manual                         Page 31 of 47
+No.            Type                            Description
+
+68 Reserved
+
+69 Digital Input 1 Active       Act when input port 1 is active
+
+70 Digital Input 2 Active       Act when input port 2 is active
+
+71 Digital Input 3 Active       Act when input port 3 is active
+
+72 Digital Input 4 Active       Act when input port 4 is active
+
+73 Digital Input 5 Active       Act when input port 5 is active
+
+74 Digital Input 6 Active       Act when input port 6 is active
+
+75 Digital Input 7 Active       Act when input port 7 is active
+
+76- Reserved
+98
+
+99 Emergency Stop Alarm         Act when emergency stop alarm occurs.
+
+100 Failed to Start Alarm       Act when failed start alarm occurs.
+
+101 Failed to Stop Alarm        Act when failed stop alarm occurs.
+
+102 Under Speed Warning         Act when under speed alarm occurs.
+
+103 Under Speed Shutdown        Act when under speed shuts down.
+
+104 Over Speed Warning          Act when over speed warns.
+
+105 Over Speed Shutdown         Act when over speed shutdown alarm occurs.
+
+106 Reserved
+
+107 Reserved
+
+108 Reserved
+
+109 Gen. Over Freq Warning      Act when generator over frequency warning occurs.
+
+110 Gen. Over Freq Shutdown     Act when generator over frequency shutdown alarm occurs.
+
+111 Gen. Over Voltage Warning   Act when generator over voltage warning occurs.
+
+112 Gen. Over Volt Shutdown     Act when generator over voltage shutdown occurs.
+
+113 Gen. Under Frequency Warning Act when generator low frequency warning occurs.
+
+114 Gen.       Under       Frequency Act when generator low frequency shutdown occurs.
+
+     Shutdown
+
+115 Gen. Under Voltage Warning  Act when generator low voltage warning occurs.
+
+116 Gen. Under Voltage Shutdown Act when generator low voltage shutdown occurs.
+
+117 Gen. Loss of Phase          Act when generator loss phase.
+
+118 Gen. Reverse Phase          Act when generator reverse phase.
+
+119 Reserved
+
+120 Over Power Alarm
+
+121 Reserved
+
+122 Reverse Power               Act when controller detects generator has reverse power.
+
+123 Over Current Alarm          Act when controller detects generator over current.
+
+124 Reserved
+
+125 Mains Inactive
+
+126 Mains Over Frequency
+
+127 Mains Over Voltage
+
+128 Mains Under Frequency
+
+129 Mains Under Voltage
+
+130 Mains Reverse Phase
+
+131 Mains Loss of Phase
+
+HGM7100N Series Genset Controller User Manual                          Page 32 of 47
+No.            Type                            Description
+
+132- Reserved
+138
+
+139 High Temp Warning               Act when hi-temperature warning occurs.
+
+140 Low Temp Warning                Act when low temperature warning occurs.
+
+141 High Temp Shutdown Alarm        Act when hi-temperature shutdown alarm occurs.
+
+142 Reserved
+
+143 Low Oil Pressure Warning        Act when low oil pressure warning occurs.
+
+144 Low Oil Pressure Shutdown       Act when low oil pressure shutdown occurs.
+
+145 Oil Pressure Sensor Open Circuit Act when oil pressure sensor is open circuit.
+
+146 Reserved
+
+147 Low Level Warning               Act when controller has low oil level alarm.
+
+148 Reserved
+
+149 Reserved
+
+150 Config. Sensor 1 High Warning
+
+151 Config. Sensor 1 Low Warning
+
+152 Config. Sensor 1 High Shutdown
+
+153 Config. Sensor 1 Low Shutdown
+
+154 Config. Sensor 2 High Warning
+
+155 Config. Sensor 2 Low Warning
+
+156 Config. Sensor 2 High Shutdown
+
+157 Config. Sensor 2 Low Shutdown
+
+158- Reserved
+229
+
+230 System In Stop Mode             Act when system is in stop mode.
+
+231 System In Manual Mode           Act when system is in Manual mode.
+
+232 Reserved
+
+233 System In Auto Mode             Act when system is in Auto mode.
+
+234 Generator On Load Indication
+
+235 Mains On Load Indication
+
+236 Reserved
+
+237 Reserved
+
+238 Reserved
+
+239 Reserved
+
+HGM7100N Series Genset Controller User Manual                                       Page 33 of 47
+8.2.2 CUSTOM PERIOD OUTPUT
+
+Defined Period output is composed by 2 parts, period output S1 and condition output S2.
+
+While S1 and S2 are TRUE synchronously, OUTPUT;
+While S1 or S2 is FALSE, NOT OUTPUT.
+Period output S1 can set generator’s one or more period output freely, can set the delayed time and output
+time after entering period.
+Condition output S2 can set as any conditions in output ports.
+
+    NOTE: when delay time and output time both are 0 in period output S1, it is TRUE in this period.
+    NOTE: when select period is standby, it is cycle output and other periods are single output.
+Example,
+Output period: start
+Delay output time: 2s
+Output time: 3s
+Condition output contents: input port 1 is active
+Close when condition output active/inactive: close when active (disconnect when inactive);
+Output port 1 active, after enter “starts time” and delay 2s, this defined period output is outputting, after 3s, stop outputting;
+Output port 1 inactive, defined output period is not outputting.
+
+8.2.3 CUSTOM COMBINED OUTPUT
+
+Defined combination output is composed by 3 parts, OR condition output S1 or S2, AND condition output
+S3.
+
+S1 or S2 is TRUE, while S3 is TRUE, defined combination output is outputting;
+S1 and S2 are FALSE, or S3 is FALSE, defined combination output is not outputting.
+
+    NOTE: S1, S2, S3 can be set as any contents except for “defined combination output” in the output setting.
+    NOTE: 3 parts of defined combination output (S1, S2, and S3) couldn’t include or recursively include themselves.
+Example,
+Contents of probably condition output S1: input port 1 is active;
+Close when probably condition output S1 is active /inactive: close when active (disconnect when inactive);
+Contents of probably condition output S2: input port 2 is active;
+Close when probably condition output S2 is active /inactive: close when active (disconnect when inactive);
+Contents of probably condition output S3: input port 3 is active;
+Close when probably condition output S3 is active /inactive: close when active (disconnect when inactive);
+When input port 1 active or input port 2 active, if input port 3 is active, Defined combination output is outputting; If input port 3
+inactive, Defined combination output is not outputting;
+When input port 1 inactive and input port 2 inactive, whatever input port 3 is active or not, Defined combination output is not
+outputting.
+
+HGM7100N Series Genset Controller User Manual  Page 34 of 47
+8.3 DEFINED CONTENTS OF CONFIGURABLE INPUT PORTS 1~7
+
+     Table 12 Contents of Programmable Inputs 1~7 (Ground connected is active (B-))
+
+No.  Items                                                       Description
+                            Users can define the following functions:
+0 User Configured           Indication: only display without warning and shutdown.
+                            Warning: only warning without shutdown.
+1 Reserved                  Shutdown: alarm and shutdown immediately.
+2 Alarm Mute                Trip and stop: alarm, generator ramp-off load and stop after
+3 Reset Alarm               high-speed cooling.
+4 Reserved                  Trip: alarm, generator ramp-off load but not stop.
+5 Lamp Test                 Inactive: input doesn’t work.
+                            Always active: input detects all the time.
+                            From crank: start detecting at the beginning of startup.
+                            From safety on: start detecting after safety on delay is expired.
+
+                            When input is active, “Audible Alarm” output is inhibited.
+                            When input is active, shutdown alarms and trip alarms can be reset.
+
+                            When input is active, all LED indicators are light.
+                            When input is active, all buttons on the panel are inactive except
+
+6 Panel Lock                for                , and  displays on the right side of the first
+
+7 Reserved                  line of LCD status page.
+8 Idle Control Mode
+                            Under speed, under frequency and under voltage are not protected
+9 Inhibit Auto Stop         in this mode.
+                            After generator is normal running in auto mode, when input is
+10 Inhibit Auto Start       active, generator-set auto stop function is inhibited.
+                            After input is active in auto mode, generator-set auto start is
+11 Inhibit Scheduled Start  inhibited.
+12 Master Select            After input is active in auto mode, generator-set auto timing start
+13 Aux. Gen. Closed         gen-set is inhibited.
+14 Inhibit Gen. Load        Duty unit selection in cycle running.
+15 Aux Mains Closed         Connecting the auxiliary contact of generator loading switch.
+16 Inhibit Mains Load       When input is active, gen-set will inhibit to close.
+                            Connecting the auxiliary contact of mains loading switch.
+                            When input is active, mains will inhibit to close.
+                            When input is active, controller will enter auto mode, and all buttons
+
+17 Auto Mode Input          on the panel are inactive except for                     , and
+
+                            displays on the right side of the first line of LCD status page.
+
+18 Auto Mode Invalid        When input is active, controller will not work in auto mode,
+                            key and “Simulate Auto Mode” key are unavailable.
+
+HGM7100N Series Genset Controller User Manual                     Page 35 of 47
+No.          Items                             Description
+
+                              When input is active, all buttons on the panel except for
+
+19 Remote Control Mode Input                   are inactive; LCD status page displays Remote
+
+                              Mode.
+
+20 Reserved
+
+21 Inhibit Alarm Shutdown     All shutdown alarms are inhibited except for emergency stop
+                              (sometimes called War Mode or Override Mode)
+
+22 Instrument Mode            All outputs are inhibited in this mode.
+
+23 Box Temp High Warning
+
+24 Reset Maintenance Time     When input is active, controller will reset maintenance time and
+                              date as pre-set values.
+
+25 Low Level Shutdown         Connecting with sensor digital input.
+
+26 High Temp Shutdown         Connecting with sensor digital input.
+
+27 Low Oil Pressure Shutdown Connecting with sensor digital input.
+
+                              When input is active in auto mode, gen-set will be started
+
+28 Remote Start (On-load)     automatically, and then gen-set takes on load after normal running.
+
+                              When input is inactive, gen-set will be stopped automatically.
+
+                              When input is active in auto mode, gen-set will be started
+
+29 Remote Start (Off-load)    automatically without taking load after normal running. When input
+
+                              is inactive, gen-set will be stopped automatically.
+
+                              When input is active in manual mode, gen-set will be started
+
+30 Aux Manual Start           automatically. When input is inactive, gen-set will be stopped
+
+                              automatically.
+
+31 Simulate Up Key
+
+32 Simulate Down Key
+
+33 Simulate Stop Key
+
+34 Simulate Manual Key
+
+35 Reserved
+
+36 Simulate Auto Key          External Connecting a button to simulate key function on the panel.
+
+37 Simulate Start Key
+
+38 Simulate Gen C/O Key
+
+39 Simulate Mains C/O Key
+
+40 Reserved
+
+41 Reserved
+
+42 Reserved
+
+43 Simulate Set Key
+
+44 Reserved
+
+45 Simulate Mains OK          In auto mode, when input is active, it means Mains is Ok.
+
+46 Simulate Mains Fail        In auto mode, when input is active, it means Mans is abnormal.
+
+47 Alternative Config 1 Active When input port is active, alternative configuration is available.
+
+48 Alternative Config 2 Active Alternative configuration can be set as different parameters, which
+
+49 Alternative Config 3 Active is convenient to select current configuration via input ports.
+
+50 Reserved
+
+HGM7100N Series Genset Controller User Manual                                      Page 36 of 47
+8.4 SELECTION OF SENSORS
+
+                              Table 13 Sensors Selection
+
+No.                                            Description             Remark
+
+                              0 Not used
+
+                              1 Custom resistor type curve
+
+                              2 Custom current/voltage curve
+
+                              3 VDO
+
+                              4 CURTIS
+
+                              5 VOLVO-EC                      Defined  resistance’s
+
+1    Temperature Sensor 6 DATCON                              range is 0~6KΩ, default
+
+                              7 SGX                           is SGX sensor.
+
+                              8 SGD
+
+                              9 SGH
+
+                              10 PT100
+
+                              11 SUZUKI
+
+                              12-15 Reserved
+
+                              0 Not used
+
+                              1 Custom resistor type curve
+
+                              2 Custom current/voltage curve
+
+                              3 VDO 10Bar
+
+                              4 CURTIS
+
+                              5 VDO 5Bar                      Factory default is resistor
+
+     Oil Pressure (Pressure) 6 DATCON 10Bar                   type pressure sensor and
+
+2 Sensor                      7 SGX                           defined  resistance’s
+
+                              8 SGD                           range is 0~6KΩ, default
+
+                              9 SGH                           is SGX sensor.
+
+                              10 VOLVO-EC
+
+                              11 SUZUKI
+
+                              12 4-20mA 10Bar
+
+                              13 0-5V 10Bar
+
+                              14-15 Reserved
+
+                              0 Not used
+
+                              1 Custom resistor type curve
+
+     Liquid (Fuel) Level 2 Custom current/voltage curve       Defined resistance’s
+3 Sensor                      3 SGD                           range is 0~6KΩ, default
+                                                              is SGH sensor.
+                              4 SGH
+
+                              5 SUZUKI
+
+                              6-15 Reserved
+
+    NOTE: Pressure sensor and flexible sensor 1 connecting input signals are resistor, current and voltage signals. When
+configuring “custom current/voltage curve” via controller penal, X coordinate data need to expand tenfold, for example,
+
+for 4mA, input data is “40”.
+
+HGM7100N Series Genset Controller User Manual                          Page 37 of 47
+8.5 CONDITIONS OF CRANK DISCONNECT SELECTION
+
+                   Table 14 Crank Disconnect Conditions Selection
+
+No.                                Setting Description
+
+0    Gen frequency
+
+1    Speed
+
+2    Speed + Gen frequency
+
+3    Oil pressure
+
+4    Oil pressure + Gen frequency
+
+5    Speed + Oil pressure
+
+6    Speed + Gen frequency + Oil pressure
+
+    NOTE:
+a) There are 3 conditions to make starter separate with engine; speed, generator frequency and oil pressure can be used
+
+      separately while oil pressure suggest be used together with speed and generator frequency. The aim is to disconnect the
+      starter motor as soon as possible.
+b) Speed sensor is the magnetic equipment which be installed in starter for detecting flywheel teeth.
+c) When set as speed, must ensure that the number of flywheel teeth is as same as setting, otherwise, “over speed
+      shutdown” or “under speed shutdown” may be caused.
+d) If genset without speed sensor please don’t select corresponding items, otherwise, “start fail” or “loss speed signal”
+      maybe caused.
+e) If genset without oil pressure sensor, please don’t select corresponding items.
+f) If not select generator frequency in crank disconnect setting, controller will not collect and display the relative power
+      quantity (can be used in water pump set); if not select speed in crank disconnect setting, the engine speed displayed in
+      controller is calculated by generator signal.
+
+HGM7100N Series Genset Controller User Manual                      Page 38 of 47
+9 PARAMETERS SETTING
+9.1 MENU ITEMS
+
+      Start the controller, then press  to enter the parameters setting menu, menu items are as
+
+below:
+          Parameters Set
+          Language
+          Event Log
+          Controller Information
+          Date and Time
+          Cycle Start
+          Bat Low Volt start
+
+9.2 CONTROLLER PARAMETER SETTINGS
+
+      When entered password interface, inputting “0318” can set all parameter items. If the password is
+changed, only input the password same as controllers’, can the parameter be set via PC software. If
+there is need to set more parameters or password is forgotten, please contact the factory.
+NOTES:
+
+a) Please change the controller parameters when generator is in standby mode (e. g. Crank disconnect conditions
+    selection, digital inputs, relay outputs, various delays), otherwise, shutdown and other abnormal conditions may
+    occur.
+
+b) Over voltage set value must be higher than under voltage set value, otherwise over voltage and under voltage
+    condition may occur simultaneously.
+
+c) Over speed set value must be higher than under speed set value, otherwise over speed and under speed condition
+    may occur simultaneously.
+
+d) Please set return values correctly while setting warning alarms, otherwise, alarms fault may occur. Return value
+    need to less than pre-set value while setting high warnings; Return value need to greater than pre-set value while
+    setting low warnings;
+
+e) Please set the generator frequency value as low as possible when cranking, in order to make the starter be
+    separated quickly as soon as possible.
+
+f) Auxiliary input 1~7 cannot set as same items; otherwise, there are abnormal functions. However, the auxiliary
+    output 1~6 can be set as same items.
+
+9.3 LANGUAGE SELECTION
+      Chinese, English, and other languages can be optional, other languages default is Spanish.
+
+9.4 EVENT LOG
+      Max 99 pieces of historical records can be checked via this item.
+
+9.5 CONTROLLER INFORMATION
+a) LCD will display development information of controller like software version, issue date of the
+
+      controller.
+
+b) In this screen, press  will display the digital inputs and outputs status.
+
+HGM7100N Series Genset Controller User Manual                                  Page 39 of 47
+c) In this screen, press  will display boot screen.
+
+9.6 TIME SETTING
+
+      In this page, time & data information of controller can be calibrated.
+
+9.7 CYCLE START SETTING
+
+      By this item cycle start enable, Master or Backup unit in cycle, master running time, and backup
+unit running time, cycle communication selection can be set.
+
+9.8 BATTERY UNDER VOLTAGE START SETTING
+
+      In this page, enable battery under voltage start can be set. Users can configure the start/stop and
+delay values.
+
+10 GENSETS CYCLE START
+
+      Cycle start means controlling two generator-sets circulatory start/stop. Two sets are connected via
+RS485 port or Internet Access. Main set sends commands to control the backup set to start/stop and
+check fault status of backup set. The priority unit can be configured through parameter settings or input
+port settings (only active in auto mode).
+Operational Process:
+a) When remote start input is active, the main set, which in standby status, will start automatically,
+
+      and the running time is pre-configured “Main Set Running Time”;
+b) If “Main Set Running Time” is expired or alarm shutdown, main set will send command to start
+
+      backup set. When backup set remote start input is active, it will start up and main set will stop as
+      soon as the standby unit is normal running. Backup running time is pre-configured “Backup Set
+      Running Time”;
+c) In the whole process, main set communicates with backup set via RS485, if backup unit running
+      time is expired or alarm shutdown, main set will cyclic start up again.
+d) If communication error, controller will initiate “Cycle Start Comm. Fail” alarm, then main/backup set
+      will start if remote start input of main/backup set is active.
+
+HGM7100N Series Genset Controller User Manual        Page 40 of 47
+11 SENSOR SETTING
+
+ When reselect sensors, the sensor curve will be transferred into the standard value. For example, if
+
+     temperature sensor is SGH (120°C resistor type), its sensor curve is SGH (120°C resistor type); if
+     select the SGD (120°C resistor type), the temperature sensor curve is SGD curve.
+
+ When there is difference between standard sensor curves and using sensor, user can adjust it in
+
+     “curve type”.
+
+ When input the sensor curve, X value (resistor) must be input from small to large, otherwise,
+
+     mistake occurs.
+
+ If sensor is select as “Not Used”, sensor curve will not work.
+ The corresponding sensor must be configured as “Not Used”, if sensor only has alarm switch,
+
+     otherwise, alarm shutdown or warning may occur.
+
+ The headmost or backmost values in the vertical coordinates can be set as same as below,
+
+                     Fig.4 Curve Setting
+
+          Table 15 Common Unit Conversion
+
+  Items   N/m2 (pa)   kgf/cm2                      bar    (p/in2.psi)
+   1Pa         1     1.02x10－5                   1x10－5   1.45x10－4
+1kgf/cm2
+   1bar    9.8x104        1                       0.98       14.2
+   1psi     1x105                                            14.5
+          6.89x103      1.02                        1
+                     7.03x10－2                 6.89x10－2       1
+
+HGM7100N Series Genset Controller User Manual             Page 41 of 47
+12 COMMISSIONING
+
+Please make sure the following checks are made before commissioning,
+
+ Ensure all the connections are correct and wires diameter is suitable.
+ Ensure that the controller DC power has fuse, controller’s positive and negative connected to start
+
+      battery are correct.
+
+ Emergency stop input is connected to the positive pole of starter battery via emergency stop button’s
+
+      normally closed point and fuse.
+
+ Take proper action to prevent engine to crank success (e. g. Remove the connection wire of fuel valve).
+
+      If checking is OK, make the start battery power on; choose manual mode and controller will executive
+      routine.
+
+ Set controller under manual mode, press “start” button, genset will start. After the cranking times as
+
+      setting, controller will send signal of Start Failure; then press “stop” to reset controller.
+
+ Recover the action to prevent engine to crank success (e. g. Connect wire of fuel valve), press start
+
+      button again, genset will start. If everything goes well, genset will enter normal running after idle
+      running (if idle run be set). During this time, please watch for engine’s running situations and AC
+      generator’s voltage and frequency. If abnormal, stop genset and check all wires connection according
+      to this manual.
+
+ Select the AUTO mode from controller’s panel, connect mains signal. After the mains normal delay,
+
+      controller will transfer ATS (if fitted) into mains load. After cooling time, controller will stop genset and
+      make it into “at rest” mode until there is mains abnormal situation.
+
+ When mains is abnormal again, genset will be started automatically and enter into normal running,
+
+      then controller send signal to making generator switch on, and control the ATS transfer into generator
+      load. If not like this, please check ATS’ wires connection according to this manual.
+
+ If there is any other question, please contact SmartGen’s service.
+
+HGM7100N Series Genset Controller User Manual  Page 42 of 47
+13 TYPICAL APPLICATION
+                                          Fig.5 HGM7110N Typical Application
+
+                                          Fig.6 HGM7120N Typical Application  Page 43 of 47
+HGM7100N Series Genset Controller User Manual
+                                Fig.7 Single Phase 2-Wire Connection Diagram
+
+                                   Fig.8 2 Phase 3 Wire Connection Diagram
+
+NOTE: Expand relay with high capacity in start and fuel output is recommended.
+
+HGM7100N Series Genset Controller User Manual                                   Page 44 of 47
+14 INSTALLATION
+
+14.1 FIXING CLIPS
+
+ Controller is panel built-in design; it is fixed by clips when installed.
+ Withdraw the fixing clip screw (turn anticlockwise) until it reaches proper position.
+ Pull the fixing clip backwards (towards the back of the module) ensuring four clips are inside their
+
+      allotted slots.
+
+ Turn the fixing clip screws clockwise until they are fixed on the panel.
+ Care should be taken not to over tighten the screws of fixing clips.
+
+14.2 OVERALL DIMENSION
+
+Fig.9 Overall Dimensions (Unit: mm)
+
+     HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of
+battery must be connected to the engine shell. Diameter of wire that connects from power supply to battery
+must be over 2.5mm2. If floating charge configured, please firstly connect output wires of charger to
+battery’s positive and negative directly, then, connect wires from battery’s positive and negative to
+controller’s positive and negative input ports in order to prevent charge disturbing the controller’s normal
+working.
+— SPEED SENSOR INPUT
+
+     Speed sensor is the magnetic equipment which be installed in starter and for detecting flywheel teeth.
+Its connection wires to controller should apply for 2 cores shielding line. The shielding layer should connect
+to No. 18 terminal in controller while another side is hanging in air. The else two signal wires are connected
+to No.17 and No.18 terminals in controller. The output voltage of speed sensor should be within (1~24)
+VAC (effective value) during the full speed. 12VAC is recommended (in rated speed). When install the
+speed sensor, let the sensor is spun to contacting flywheel first, then, port out 1/3 lap, and lock the nuts of
+sensor at last.
+— OUTPUT AND EXPAND RELAYS
+
+     All outputs of controller are relay contact output type. If need to expand the relays, please add
+freewheel diode to both ends of expand relay’s coils (when coils of relay have DC current) or, increase
+resistance-capacitance return circuit (when coils of relay have AC current), in order to prevent disturbance
+to controller or others equipment.
+— AC INPUT
+
+    Current input of HGM7100N series controller must be connected to outside current transformer. And
+the current transformer’s secondary side current must be 5A. At the same time, the phases of current
+
+HGM7100N Series Genset Controller User Manual  Page 45 of 47
+transformer and input voltage must correct. Otherwise, the current of collecting and active power maybe
+not correct.
+— WITHSTAND VOLTAGE TEST
+
+    When controller had been installed in control panel, if need the high voltage test, please disconnect
+controller’s all terminal connections, in order to prevent high voltage into controller and damage it.
+
+    NOTE:
+    a) ICOM port must be connected to negative pole of battery.
+    b) When there is load current, transformer’s secondary side prohibit open circuit.
+
+HGM7100N Series Genset Controller User Manual  Page 46 of 47
+15 TROUBLESHOOTING
+
+                                  Table 16 Fault and Solutions
+
+              Symptoms                                             Possible Solutions
+Controller no response with       Check starting batteries;
+power.                            Check controller connection wirings;
+                                  Check DC fuse.
+Gen-set shutdown                  Check the water/cylinder temperature is too high or not;
+                                  Check the gen-set AC voltage;
+Controller emergency stop         Check DC fuse.
+                                  Check the function of emergency stop is correct or not;
+Low oil pressure  alarm    after  Check whether the positive electrode of battery is connected to
+crank disconnect  alarm    after  emergency stop input correctly or not;
+High water temp.                  Check whether wire connection open circuit or not.
+crank disconnect
+                                  Check the oil pressure sensor and its connections.
+Shutdown alarm in running
+                                  Check the temperature sensor and its connections.
+Crank not disconnect
+                                  Check related switch and its connections according to the
+Starter no response               information on LCD;
+Gen-set running while ATS not     Check programmable inputs.
+transfer                          Check fuel oil circuit and its connections;
+                                  Check starting batteries;
+RS485 communication is            Check speed sensor and its connections;
+abnormal                          Refer to engine manual.
+                                  Check starter connections;
+                                  Check starting batteries.
+                                  Check ATS;
+                                  Check the connections between ATS and controllers.
+                                  Check connections;
+                                  Check setting of COM port is correct or not;
+                                  Check RS485’s connections of A and B is reversely connected or not;
+                                  Check communication port of PC is damaged or not.
+                                  Add 120Ω resistor between A and B of RS485 is recommended.
+
+                                  _________________________________
+
+HGM7100N Series Genset Controller User Manual                        Page 47 of 47
+

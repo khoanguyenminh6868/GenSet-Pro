@@ -1,0 +1,408 @@
+         DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+DSE7410 MKII                                             DSE7420 MKII
+
+Overview
+The DSE7410 MKII is an Auto Start Control Module and the DSE7420 MKII is an Auto Mains (Utility) Failure Control Module suitable for a wide variety
+of single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+engine status information on the back-lit LCD screen, illuminated LEDs and remote PC.The DSE7420 MKII will also monitor the mains (utility) supply.
+The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+
+Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offer an extensive number of
+flexible inputs, outputs and engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+The comprehensive list of features includes enhanced event and performance monitoring, remote communications & PLC functionality. Dual mutual
+standby is now available on both the DSE7410 MKII & DSE7420 MKII using RS232 or RS485 communications.
+
+The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+Suite PC software. Selected front panel editing is also available.
+
+Common Key Features                                                                                      • Latest ECU / ECM support for a wide range of engine
+• Advanced PLC functionality including multi-purpose PIDs                                                      manufacturers
+• Flexible inputs and outputs
+• DSENet® expansion support                                                                              • IP65 rating (with supplied gasket) offers increased resistance to
+• PC configuration using DSE Configuration Suite                                                               water ingress
+• Multiple language support
+• Enhanced 4-line text display                                                                           • Dual mutual standby between two generators for redundancy and
+• Integrated RS232 and RS485 ports providing Modbus RTU support                                                balancing of engine hours
+• Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+                                                                                                         • Multiple selectable configurations in one unit to suit changing
+      built web SCADA support.                                                                                 requirements
+• Data logging of up to 20 parameters
+• Multi-level PIN protected front panel editor                                                           • Customisable module power-up & screen saver screens
+• Manual front panel and automatic control modes
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+DSE7410 MKII Manual / Automatic Start Controller Key Features                                            Typical Applications
+• 3 phase generator sensing with protection                                                                                               Manual / Automatic Start
+• Manual starting / control by fascia button and automatic
+
+      starting / control by inputs and other functions
+
+DSE7420 MKII Automatic Mains (Utility) Failure (AMF) Controller Key
+Features
+• 3 phase generator and mains (utility) sensing with protection
+• Manual starting / control by fascia button and automatic
+
+      starting / control by inputs and other functions.
+• Automatic start and stopping of generator and transfer of load
+
+      based on mains (utility) availability
+• Open and closed transition available with option for synchronisation
+
+      when used with a CAN engine and DSE CAN AVR
+
+                                                                                                         Automatic Mains (Utility) Failure
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+Continuous Voltage Rating                                                                                and supply recovers to 5 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        Backlight will not be maintained during cranking.
+                                                                                                         340 mA at 12 V, 160 mA at 24 V
+Maximum Operating Current                                                                                160 mA at 12 V, 80 mA at 24 V
+Maximum Standby Current                                                                                  0 V to 35 V
+Charge Alternator Excitation / Fail Range
+Voltage Measurement                                                                                      DSE7410 MKII: 1
+Number                                                                                                   DSE7420 MKII: 2
+                                                                                                         3 Phase + Neutral
+Measurement Inputs                                                                                       DSE7410 MKII: Generator
+                                                                                                         DSE7420 MKII: Generator and Mains
+Voltage Range                                                                                            15 V to 415 V Phase to Neutral
+                                                                                                         25 V to 719 V Phase to Phase
+Frequency Range                                                                                          3.5 Hz to 75 Hz
+Resolution                                                                                               1 V
+Accuracy                                                                                                 ±1 %
+Current Measurement
+Number                                                                                                   4
+Measurement Inputs                                                                                       3 Phase with Earth Fault
+                                                                                                         DSE7410 MKII: Generator
+Current Range                                                                                            DSE7420 MKII: Generator or Load
+                                                                                                         0 A to 1 A
+Resolution                                                                                               0 A to 5 A
+Accuracy                                                                                                 25 mA
+                                                                                                         ±1 %
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+Specifications                                                                                           6
+Analogue Inputs                                                                                          Negative Switching Digital Input (6), Resistive Analogue Input (6), Current Analogue
+Number                                                                                                   Input (4) and Voltage Analogue Input (4)
+Type                                                                                                     Less than 2.1 V
+                                                                                                         Greater than 6.6 V
+Digital Input Closed Voltage Threshold                                                                   Input A: 0 Ω to 240 Ω
+Digital Input Open Voltage Threshold                                                                     Input B & F: 0 Ω to 3 kΩ
+Resistive Analogue Measurement Range                                                                     Input C, D & E: 0 Ω to 480 Ω
+                                                                                                         Input A, B, E & F: 0 mA to 20 mA
+Current Analogue Measurement Range                                                                       Input A, B, E & F: 0 V to 10 V
+Voltage Analogue Measurement Range                                                                       1 %
+Analogue Resolution                                                                                      ±2 %
+Analogue Accuracy
+Digital Inputs                                                                                           8
+Number                                                                                                   Negative Switching Digital Input
+Type                                                                                                     Less than 2.1 V
+Closed Voltage Threshold                                                                                 Greater than 6.6 V
+Open Voltage Threshold
+Emergency Stop Input                                                                                     1
+Number                                                                                                   Positive Switching Digital Input
+Type                                                                                                     Greater than 5.0 V
+Closed Voltage Threshold                                                                                 Less than 3.0 V
+Open Voltage Threshold
+Magnetic Pick-up Input                                                                                   0.5 VPeak to 70 VPeak
+Voltage Input Range                                                                                      5 Hz to 10 kHz
+Frequency Input Range                                                                                    1 Hz
+Resolution                                                                                               ±1 %
+Accuracy                                                                                                 10 to 500
+Flywheel Teeth
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+Specifications                                                                                           10
+Digital Outputs                                                                                          1 Normally Open Volt-Free Contacts
+Number                                                                                                   1 Normally Closed Volt-Free Contacts
+Type                                                                                                     8 Positive Switching DC Output
+                                                                                                         5 ADC resistive at 30 VDC
+Volt-Free Contact Output Rating                                                                          8 AAC resistive at 250 VAC
+                                                                                                         Output A to B (Fuel and Start): 15 ADC at Emergency Stop input supply voltage
+Positive DC Output Rating                                                                                Output E to J: 2 ADC at module supply voltage
+
+Communications                                                                                           1 Data Storage Port
+USB A                                                                                                    1 Programming Port
+USB B                                                                                                    1 Expansion Port
+DSENet®                                                                                                  1 Modbus RTU Port
+RS232                                                                                                    1 Modbus RTU Port
+RS485                                                                                                    1 10/100 Ethernet Port
+Ethernet                                                                                                 2 Fully Isolated Ports
+CAN                                                                                                      ECU - Engine ECU / ECM
+                                                                                                         CAN - Configurable CAN Communication
+Temperature
+Operating Temperature                                                                                    -30 °C to +70 °C / -22 °F to +158 °F
+Storage Temperature                                                                                      -40 °C to +85 °C / -40 °F to +185 °F
+Dimensions
+Overall (W x H x D)                                                                                      250.0 mm x 189.0 mm x 50.5 mm / 9.85” x 7.43” x 1.99”
+Mounting
+Type                                                                                                     Panel Fascia Mounting
+Panel Cut-Out (W x H)                                                                                    220.0 mm x 160.0 mm / 8.66” x 6.30”
+Maximum Panel Thickness                                                                                  8 mm / 0.3”
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+Related Products                 DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Remote Display Module for DSE7420 MKII                                                                      7320-03
+DSE2548                          DSENet® Remote Display Module for DSE7410 MKII                                                                      7310-03
+DSE2520 MKII                     DSENet® Output Expansion Module                                                                                     2157-01
+DSE2510 MKII                     DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-01
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®
+DSE890 MKII
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+BS EN 60529
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03
+
+DSE7410 MKII                     Description                                                             DSE7420 MKII                                Description
+Pin                              DC Supply                                                               Pin                                         DC Supply
+1 to 2                           Emergency Stop                                                          1 to 2                                      Emergency Stop
+3                                Fuel                                                                    3                                           Fuel
+4                                Start                                                                   4                                           Start
+5                                Charge Alternator                                                       5                                           Charger Alternator
+6                                Not Applicable                                                          6                                           Not Applicable
+7                                Digital Outputs                                                         7                                           Digital Outputs
+8 to 13                          Analogue Inputs                                                         8 to 13                                     Analogue Inputs
+14 to 20                         Magnetic Pick-Up                                                        14 to 20                                    Magnetic Pick-Up
+21 to 23                         Engine ECU/ECM                                                          21 to 23                                    Engine ECU/ECM
+24 to 26                         DSENet®                                                                 24 to 26                                    DSENet®
+27 to 29                         Configurable CAN                                                        27 to 29                                    Configurable CAN
+30 to 32                         Normally Closed Volt Free Output                                        30 to 32                                    Normally Closed Volt Free Output
+33 to 34                         Normally Open Volt Free Output                                          33 to 34                                    Normally Open Volt Free Output
+35 to 36                         Generator Voltage Sensing                                               35 to 36                                    Generator Voltage Sensing
+37 to 40                         Not Applicable                                                          37 to 40                                    Mains (Utility) Voltage Sensing
+41 to 44                         Generator Current Sensing                                               41 to 44                                    Generator/Load Current Sensing
+45 to 50                         Digital Inputs                                                          45 to 50                                    Digital Inputs
+51 to 58                         RS485                                                                   51 to 58                                    RS485
+59 to 61                                                                                                 59 to 61
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEGenset® Data Sheet
+
+DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure Control Modules
+
+Part Number: 7410-03 / 7420-03                                                                           220.0 MM
+
+Technical Drawing                                                                                        [8.66 "]
+
+                                    50.5 MM                                                                                                                                                                 50.5 MM
+                                     [1.99 "]                                                                                                                                                                [1.99 "]
+
+                                    35.5 MM                                                                                                                                                                 35.5 MM
+                                     [1.40 "]                                                                                                                                                                [1.40 "]
+
+                                                                                                         250 MM
+                                                                                                         [9.85 "]
+
+                                     160.0 MM                                                                                                                                                               160.0 MM
+                                        [6.30"]                                                                                                                                                                [6.30"]
+
+                                                                                   189 MM
+                                                                                      [7.43 "]
+
+Connection Label
+
+                   33 34 35 36 37 38 39 40                    41 42 43 44                                45 46 47 48 49 50       51 52 53 54 55 56 57 58
+                   C             D   L1 L2 L3 N               L1 L2 L3 N                                                         ABCDE FGH
+                                                                                                          I1 I2 I3
+                                               V1                    V2                                   s1 s1 s1
+
+                   RS232                                      DC Supply :                                8-35V, 0.5A max
+                                                              DC Outputs :                               24V, 15A(4-5) 2A(8-13)
+                                                              DC Inputs :                                30V max
+                                                              Volt-free Outputs :                        250Vac, 8A
+                                                              AC Voltage Inputs :                        600Vac 50/60Hz 1-3PH
+                                                              AC Current Inputs :                        5A, 50/60Hz 1-3PH
+                                                              Charge Alternator :                        30V, 2.5W max
+                                                              Magnetic Pickup :                          70V,10kHz max
+                                                              Analog Inputs :                            10V max
+                                                              Comms Port :                               5V max
+
+                                               61 A    RS485
+                                               60 B
+                                               59 SCR
+
+                                                                                                         Made in UK
+                                                                                                            020-102,5
+
+                                     D +                                                                                         ECU                      CAN
+                                     W/L
+
+                                 AB            EFGHI J             ABCDE F                                                                   SCR H L SCR B A SCR H L SCR
+                                                              14 15 16 17 18 19 20
+                   1 2 3 4 5 6 7 8 9 10 11 12 13                                                                                 21 22 23 24 25 26 27 28 29 30 31 32
+
+                   Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-191 – DSE7410/20 MKII Installation Instructions
+057-263 – DSE7410/20 MKII Operator Manual
+057-262 – DSE7410/20 MKII Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK                   DEEP SEA ELECTRONICS USA                                       DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                    T: +1 (815) 316 8706                                           T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com           E: usasales@deepseaelectronics.com                             E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com             W: www.deepseaelectronics.com                                  W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                      055-108/07/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

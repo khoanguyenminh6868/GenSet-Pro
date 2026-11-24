@@ -1,0 +1,151 @@
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8711/16                                                                         ENVIRONMENTAL TESTING STANDARDS
+
+STANDARD REMOTE DISPLAYS                                                             ELECTRO MAGNETIC COMPATIBILITY
+                                                                                     BS EN 61000-6-2
+FEATURES                                                                             EMC Generic Immunity Standard for the
+                                                                                     Industrial Environment
+The DSE8711/16 standard remote    This particular display has a 4-line               BS EN 61000-6-4
+display modules are designed to   text display, to provide the user                  EMC Generic Emission Standard for the
+provide superior remote display   with a clear and practical                         Industrial Environment
+capabilities when used with the   functional and operational
+high-performance DSE86xx and      understanding of all genset                        ELECTRICAL SAFETY
+DSE87xx synchronising &           parameters in a multitude of                       BS EN 60950
+loadsharing control modules.      different languages.                               Safety of Information Technology Equipment,
+                                                                                     including Electrical Business Equipment
+The display demonstrates
+exceptional data communication                                                       TEMPERATURE
+capabilities up to a maximum                                                         BS EN 60068-2-1
+distance of 1.2 km from the Host                                                     Ab/Ae Cold Test -30 oC
+DSEGenset controller.                                                                BS EN 60068-2-2
+                                                                                     Bb/Be Dry Heat +70 oC
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE
+VARIETY OF LOAD SHARE APPLICATIONS                                                   VIBRATION
+                                                                                     BS EN 60068-2-6
+                                                                                     Ten sweeps in each of three major axes
+                                                                                     5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz at
+                                                                                     2 gn
+
+                                                                                     HUMIDITY
+                                                                                     BS EN 60068-2-30
+                                                                                     Db Damp Heat Cyclic 20/55 oC at 95% RH
+                                                                                     48 Hours
+                                                                                     BS EN 60068-2-78
+                                                                                     Cab Damp Heat Static 40 oC at 93% RH
+                                                                                     48 Hours
+
+                                                                                     SHOCK
+                                                                                     BS EN 60068-2-27
+                                                                                     Three shocks in each of three major axes
+                                                                                     15 gn in 11 mS
+
+                                                                                     DEGREES OF PROTECTION
+                                                                                     PROVIDED BY ENCLOSURES
+                                                                                     BS EN 60529 IP65 - Front of module when
+                                                                                     installed into the control panel with the
+                                                                                     optional sealing gasket.
+
+                                                                                                            TO HOST
+                                                                                                            MODULE
+
+DC POWER                          ETHERNET*  RS232                      OR
+SUPPLY 8-35V                                                                RS485
+
+DSE REMOTE DISPLAY                           USB HOST*                  USB SLAVE
+
+                    7
+                   OTHER
+
+DC OUTPUTS
+
+              +
+
+              2  * USB HOST AND ETHERNET SOCKETS ARE FITTED BUT
+
+                 NOT USED. FIRMWARE WILL BE MADE AVAILABLE IN THE
+
+                 FUTURE TO ACTIVATE THESE PORTS.
+
+                                                                                   ISSUE 4
+         DSEGenset                                                                                                                                                                                               ®
+
+DSE8711/16                                                                                                                                          SPECIFICATION
+
+STANDARD REMOTE DISPLAYS                                                                                                                             DC SUPPLY
+                                                                                                                                                     CONTINUOUS VOLTAGE RATING
+FEATURES                                                                                                                                             8 V to 35 V continuous
+                                                               DSE8716
+                                                                                                                                                     CRANKING DROPOUTS
+    DSE8711                                                                                                                                          Able to survive 0 V for 50 mS, providing
+                                                                                                                                                     supply was at least 10 V before dropout
+                                                                                                                                                     and supply recovers to 5 V. This is
+                                                                                                                                                     achieved without the need for internal
+                                                                                                                                                     batteries
+
+                                                                                                                                                     MAXIMUM OPERATING CURRENT
+                                                                                                                                                     140 mA at 12 V, 70 mA at 24 V
+
+                                                                                                                                                     OUTPUTS
+                                                                                                                                                     ALARM OUTPUTS C & D
+                                                                                                                                                     2 A DC at supply voltage
+
+                                                                                                                                                     DIMENSIONS
+                                                                                                                                                     OVERALL
+                                                                                                                                                     240 mm x 181 mm x 42 mm
+                                                                                                                                                     9.4” x 7.1” x 1.6”
+
+                                                                                                                                                     PANEL CUTOUT
+                                                                                                                                                     220 mm x 160 mm
+                                                                                                                                                     8.7” x 6.3”
+
+                                                                                                                                                     STORAGE TEMPERATURE RANGE
+                                                                                                                                                     -40 °C to +85 °C
+                                                                                                                                                     -40 °F to +185 °F
+
+                                                                                                                                                     OPERATING TEMPERATURE RANGE
+                                                                                                                                                     -30 °C to +70 °C
+                                                                                                                                                     -22 °F to +158 °F
+
+KEY FEATURES                         KEY BENEFITS                                                        SUPPORTED MODULES
+• 4-Line back-lit LCD text display   • 132 x 64 pixel ratio display for                                  WITH DSE8711
+• Five key menu navigation                                                                               • DSE8610
+• Multiple display languages            clarity                                                          • DSE8710
+• RS232 & RS485 communications       • Range of display options makes
+• Audible alarm                                                                                          SUPPORTED MODULES
+• Front panel mounting                  the system highly versatile to suit                              WITH DSE8716
+• Protected front panel                 different load share application                                 • DSE8660
+                                        demands                                                          • DSE8760
+   configuration for connected host  • Data communication link allows
+   controller                           remote system management
+• Remote monitoring of connected     • IP65 rating (with supplied gasket)
+   host controller                      offers increased resistance to
+• Maximum distance of 1.2 km            water ingress
+   from host controller when using
+   RS485
+• Easy access diagnostic page
+• LED and LCD alarm indication
+• Power monitoring (kW h, kV Ar,
+   kV A h, kV Ar h)
+• Additional display screens to
+   help with modem diagnostics
+
+RELATED MATERIALS                                                                                        PART NO’S
+TITLE                                                                                                    057-129
+DSE871x Standard Remote Display Manual                                                                   053-071
+DSE871x Installation Instructions                                                                        055-083
+DSE8610 Data Sheet                                                                                       055-086
+DSE8660 Data Sheet                                                                                       055-184
+DSE8710 Data Sheet                                                                                       055-185
+DSE8760 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649  055-194/09/14 (1)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

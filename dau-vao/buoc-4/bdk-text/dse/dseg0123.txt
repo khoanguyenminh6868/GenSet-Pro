@@ -1,0 +1,143 @@
+DSEG0123
+Analogue Load Share Lines Interface
+
+Part Number: G0123-01
+
+Description
+The DSEG0123 Analogue Load Share Lines Interface converts DSE AMSC / MSC digital load share communications to universal analogue load share
+lines, allowing DSE paralleling controllers to seamlessly deliver kW and kvar load sharing with third party manufactured products.
+
+The DSEG0123 also allows the DSEG8600, DSEG8900, DSE8610 MKII, DSE8610, DSE7510 and DSE5510 controllers to be added to an existing DSE
+load sharing application and deliver kW and kvar load sharing across all DSE controllers within the system.
+
+The flexibility of the DSEG0123 makes expanding existing systems extremely simple.
+
+Features
+• Converts a G8 Series AMSC* link to analogue load share lines.
+• Converts a DSE MSC link to analogue load share lines.
+• Compatible with multiple manufacturers paralleling controllers,
+
+       including Cummins, Selco, Barber Colman, DEIF and Woodward.
+• Configuration Suite PC software configuration.
+• PC SCADA instrumentation for system diagnostics.
+• Power on / status LEDs.
+• USB programming port.
+
+Notes:
+• G8 Series controllers communicate across an AMSC link.*
+• Non G8 Series DSE controllers communicate across an MSC link.
+• AMSC or MSC compatibility configured within PC software.
+• When configured for AMSC, CAN 1 & CAN 2 are available.*
+• When configured for MSC, only CAN 1 is available.
+
+* = Feature available at G8600 product launch.
+
+Product Documentation                                                                                    Part No.
+
+Title                                                                                                    053-262
+                                                                                                         053-263
+G0123 Installation Instructions (MSC)                                                                    057-348
+G0123 Installation Instructions (AMSC)                                                                   057-350
+G0123 Operator Manual (MSC)                                                                              057-349
+G0123 Operator Manual (AMSC)                                                                             057-351
+G0123 Configuration Suite PC Manual (MSC)
+G0123 Configuration Suite PC Manual (AMSC)
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+                                                                                                         T: +971 (0) 45910819                        T: +91 20 68195900
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com
+                                                                                                          Registered in England & Wales No.01319649                                       055-288/03/22 (1)
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    VAT No.316923457
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+DSEG0123                                                                                                 8 V to 35 V DC continuous
+Analogue Load Share Lines Interface                                                                      Able to survive 0 V for 50 mS, providing supply was at least 10 V before dropout and
+                                                                                                         supply recovers to 5 V. This is achieved without the need for internal batteries. LEDs
+  Specifications                                                                                         and backlight will not be maintained during cranking.
+  DC Supply                                                                                              150 mA at 12 V, 80 mA at 24 V
+  Continuous Voltage Rating                                                                              150 mA at 12 V, 80 mA at 24 V
+  Cranking Dropouts
+                                                                                                         -30° C to +70 ° C / -22° F to +158 ° F
+  Maximum Operating Current                                                                              -40° C to +85 ° C / -40° F to +185 ° F
+  Maximum Standby Current
+  Temperature                                                                                            164.5 mm x 76.4 mm x 48.9mm / 6.48” x 3.0” x 1.93”
+  Operating Temperature
+  Storage Temperature                                                                                    Yes
+  Dimensions
+  Overall (W x H x D)
+  Mounting
+  DIN Rail
+
+Related Products
+
+Controllers
+
+G8600                            Parallel Genset Controller with Integral Heater                                                                     G8660-01
+                                                                                                                                                     G8900-01
+G8900                            7” Colour Parallel Genset Controller                                                                                8610-02
+                                                                                                                                                     8610-01
+8610 MKII                        Auto Start Load Sharing & Synchronising Control Module                                                              7510-01
+                                                                                                                                                     5510-01
+8610**                           Auto Start Load Sharing & Synchronising Control Module
+
+7510**                           Auto Start Load Sharing & Synchronising Control Module
+
+5510**                           Auto Start Load Sharing & Synchronising Control Module
+
+** = Obsolete Product - Not available to purchase.
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at +/-7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% RH 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% RH 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 gn in 11 mS
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+                                                                                                         T: +971 (0) 45910819                        T: +91 20 68195900
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com
+                                                                                                          Registered in England & Wales No.01319649                                       055-288/03/22 (1)
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    VAT No.316923457
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+DSEG0123
+Analogue Load Share Lines Interface
+
+Technical Drawing
+
+Connection Diagram
+
+                                                                                                         AMSC only. Not active for MSC.
+
+G123                             DESCRIPTION
+PIN                              DC Supply
+1 to 2                           CAN 1 (MSC / AMSC)
+3 to 5                           kW Share
+6 to 8                           kvar Share
+9 to 11                          CAN 2 (Redundant AMSC)
+12 to 14                         Digital Inputs
+15 to 16                         Digital Outputs
+17 to 18
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+                                                                                                         T: +971 (0) 45910819                        T: +91 20 68195900
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com
+                                                                                                          Registered in England & Wales No.01319649                                       055-288/03/22 (1)
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    VAT No.316923457
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.
+

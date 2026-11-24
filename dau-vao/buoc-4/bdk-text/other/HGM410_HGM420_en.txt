@@ -1,0 +1,1910 @@
+   HGM400 Series Genset Controller
+              (HGM410/HGM420)
+
+           USER MANUAL
+
+ZHENGZHOU SMARTGEN TECHNOLOGY CO.,LTD
+                    Chinese trademark
+
+                                     English trademark
+
+SmartGen — make your generator smart
+
+Smartgen Technology Co., Ltd.
+No. 28 Jinsuo Road
+Zhengzhou
+Henan Province
+P. R. China
+Tel: +86-371-67988888/67981888
+
+      +86-371-67991553/67992951
+      +86-371-67981000(overseas)
+Fax: 0086-371-67992952
+Web: http://www.smartgen.com.cn
+       http://www.smartgen.cn
+Email: sales@smartgen.cn
+All rights reserved. No part of this publication may be reproduced in any material form
+(including photocopying or storing in any medium by electronic means or other) without
+the written permission of the copyright holder.
+Smartgen Technology reserves the right to change the contents of this document
+without prior notice.
+Version         Version  Note
+         Date   1.0      Original release.
+                1.1      Modify typical application.
+    2011-07-06  1.2      Modify some details.
+    2012-03-15           Change input port 3 and 4 to multiplex input port, that is
+    2012-10-30  1.3      to say, the input port 3 and input port 4 can be used as
+                         auxiliary input port or analog input port.
+    2013-08-08  1.4      Change “External Shutdown” input to “Emergency
+                1.5      Shutdown” input.
+    2013-08-28  1.6      Some functions are added.
+    2014-08-28           Modify the description of output raise/drop speed.
+    2015-05-27
+
+This manual is suitable for HGM400 series controller only.
+
+Clarification of notation used within this publication.
+
+SYMBOL                          INSTRUCTION
+  NOTE          Highlights an essential element of a procedure to ensure
+  CAUTION!      correctness.
+                Indicates a procedure or practice, which, if not strictly observed,
+                could result in damage or destruction of equipment.
+
+                 Indicates a procedure or practice, which could result in injury to
+WARNING! personnel or loss of life if not followed correctly.
+                              CONTENTS
+
+1 OVERVIEW........................................................................................ 5
+2 PERFORMANCE AND CHARACTERISTICS .................................... 6
+3 SPECIFICATION................................................................................ 8
+4 OPERATION ...................................................................................... 9
+
+    4.1 PUSHBUTTONS............................................................................................... 9
+
+    4.2 INDICATOR LIGHT......................................................................................... 10
+
+    4.3 AUTOMATIC START/STOP OPERATION ...................................................... 11
+
+    4.4 MANUAL START/STOP OPERATION ............................................................ 12
+
+5 PROTECTION ................................................................................. 13
+
+    5.1 WARNINGS .................................................................................................... 13
+
+    5.2 SHUTDOWN ALARM ..................................................................................... 16
+
+6 CONNECTIONS .............................................................................. 19
+7 DEFINITION AND RANGE OF PARAMETERS................................ 22
+
+    7.1 PARAMETER CONTENTS AND RANGE (TABLE 1)...................................... 23
+
+    7.2 PROGRAMMABLE OUTPUT 1-5 (TABLE 2) .................................................. 31
+
+    7.3 PROGRAMMABLE INPUT 1-4 TABLE (ACTIVE WHEN CONNECT GND (B-)
+
+    (TABLE 3)............................................................................................................... 32
+
+    7.4 SENSOR SELECT (TABLE 4) ........................................................................ 34
+
+    7.5 CONDITIONS OF CRANK DISCONNECT (TABLE 5).................................... 35
+
+8 PARAMETERS SETTING ................................................................ 36
+9 SENSOR SETTING ......................................................................... 37
+10 COMMISSIONING ........................................................................... 38
+11 TYPICAL APPLICATION .................................................................. 39
+12 INSTALLATION ................................................................................ 41
+
+    12.1 FIXING CLIPS ................................................................................................ 41
+
+    12.2 OVERALL DIMENSION AND PANEL CUTOUT.............................................. 42
+
+13 FAULT FINDING .............................................................................. 44
+            HGM400 Series Genset Controller User Manual
+
+1 OVERVIEW
+
+HGM400 series genset controllers integrate digitization, intelligentization and network
+technology which are used for genset automation and monitor control system of single
+unit to achieve automatic start/stop, data measurement, alarm protection and “three
+remote” (remote control, remote measuring and remote communication; SG485
+module must be fitted). It fit with LCD display, optional languages interface (Chinese,
+English, Spanish, Turkish and Russian), and it is reliable and easy to use.
+HGM400 series genset controllers adopt micro-processor technology with precision
+parameters measuring, fixed value adjustment, time setting and set value adjusting
+and etc. All parameters can be configured from front panel or through programmable
+interface (USB to LINK, SG72 adaptor produced by Smartgen is recommended) via
+PC. It can be widely used in all types of automatic genset control system with compact
+structure, advanced circuits, simple connections and high reliability.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 5 of 44
+                              HGM400 Series Genset Controller User Manual
+
+2 PERFORMANCE AND CHARACTERISTICS
+
+ HGM400 series controller has two types:
+   HGM410: ASM (Automatic Start Module)，it controls generator to start/stop by
+   remote signal;
+   HGM420: AMF (Auto Mains Failure), updates based on HGM410, moreover, has
+   mains electric quantity monitoring and mains/generator automatic transfer control
+   function, especially for automatic system composed by generator and mains.
+
+ 132x64 LCD with backlight, selectable language interface (Chinese, English,
+   Spanish, Turkish and Russian), push-button operation;
+
+ Suitable for 3-phase 4-wire, 3-phase 3-wire, single phase 2-wire, and 2-phase
+    3-wire systems with voltage 120/240V and frequency 50/60Hz;
+
+ Collects and shows 3-phase voltage, current, power parameter and frequency of
+    generator or mains.
+
+Mains                          Generator
+Line Voltage (Uab, Ubc, Uca)  Line Voltage (Uab, Ubc, Uca)
+Phase Voltage (Ua, Ub, Uc)    Phase Voltage (Ua, Ub, Uc)
+Frequency (HZ)                Frequency (HZ)
+
+Load
+
+Current (IA, IB, IC)
+
+Active Power (KW)
+
+Reactive Power (KVar)
+
+Apparent Power (KVA)
+
+Power Factor (PF)
+
+Accumulated Energy (kWh)
+
+ For Mains, controller has over voltage, under voltage and loss of phase detection
+
+functions; For generator, controller has over voltage, under voltage, over frequency,
+
+under frequency and over current detection functions;
+
+ Precision collect and display parameters about Engine,
+
+Temp. (WT)             °C/°F both be displayed
+
+Oil pressure (OP)      kPa/Psi/Bar all be displayed
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 6 of 44
+                                       HGM400 Series Genset Controller User Manual
+
+Fuel Level (FL)     % (Unit)
+
+Engine Speed (RP) RPM (Unit)
+
+Battery Voltage (VB) V (unit)
+
+Charger Voltage (VD) V (unit)
+
+Hours Counter (HC): Max. 999999 hours
+
+Start times: Max.999999 times
+
+ Control & Protection: automatic start/stop of the genset, ATS(Auto Transfer Switch)
+
+control with perfect fault indication and protection function;
+
+ With ETS(Energize To Stop), idle control, pre-heat control, speed raise control and
+
+speed drop control function, All output ports are relay-out;
+
+ Parameter setting: parameters can be modified and cannot be lost even in case of
+
+power outage; all the controller parameters can be adjusted using front panel of the
+
+controller or via PC using an SG72 adaptor.
+
+ Multiplex input port 3 and 4 can be used in various fields: input 3 can be used as
+
+auxiliary input port or fuel level sensor while input 4 can be used as auxiliary input
+
+port or configurable sensor.
+
+ More kinds of curves of temperature, oil pressure, fuel level can be used directly
+
+and users can define the sensor curves by themselves;
+
+ Configurable sensor: can be set as temperature sensor, oil pressure sensor or fuel
+
+level sensor, enable the detection of double temperature, double oil-pressure and
+
+double fuel level.
+
+ Multiple crank disconnect conditions (magnetic pickup, oil pressure, generator
+
+frequency) are optional;
+
+ Widely Power supply range: DC(8~35)V, suitable to different start battery voltage
+
+environment.
+
+ All parameters used digital adjustment, instead of conventional analog modulation
+
+with normal potentiometer, more reliability and stability;
+
+ Modular design, self-extinguished ABS plastic enclosure, pluggable connection
+
+terminals and embedded installation way; compact structure with easy mounting.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 7 of 44
+                           HGM400 Series Genset Controller User Manual
+
+3 SPECIFICATION                                      Contents
+                           DC8. 0V to 35. 0V, Continuous Power Supply.
+                    Items  <3W(Standby mode: ≤2W)
+Working Voltage
+Overall Consumption        AC15V - AC360V (ph-N)
+AC voltage Input:          AC15V - AC360V (ph-N)
+3 Phase 4 Wire             AC15V - AC360V (ph-N)
+2 Phase 3 Wire             AC30V - AC620V (ph-ph)
+Single phase 2 Wire        50Hz/60 Hz
+3 Phase 3 Wire             1.0V to 24V (RMS)
+Alternator Frequency       10,000 Hz (max)
+Speed Sensor Voltage       5A DC28V power supply
+Speed Sensor Frequency     5A DC28V power supply
+Start Relay Output         5A DC28V power supply
+Auxiliary Relay Output 1   5A DC28V power supply
+Auxiliary Relay Output 2   5A AC250V voltage-free output
+Auxiliary Relay Output 3   5A AC250V voltage-free output
+Auxiliary Relay Output 4   130mm x 112mm x 39mm
+Auxiliary Relay Output 5   110mm x 90mm
+Overall Dimensions         5A (rated)
+Panel Cutout               Temperature: (-25~70)ºC;
+CT Secondary Current       Humidity: (20~93)%RH
+Working Condition          Temperature: (-25~70)ºC
+                           IP55 Gasket
+Storage Condition
+Protection Level           Apply AC2.2kV voltage between high voltage
+                           terminal and low voltage terminal;
+Insulation Intensity       The leakage current is not more than 3mA within
+                           1min.
+Weight                     0.26kg
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 8 of 44
+                           HGM400 Series Genset Controller User Manual
+
+4 OPERATION
+
+4.1 PUSHBUTTONS
+
+Stop/ Reset      Stop running generator in Auto/Manual mode;
+                 In case of alarm condition, pressing the button will reset
+                 alarm;
+                 In stop mode, pressing and holding the button for 3
+                 seconds will test indicator lights (lamp test);
+                 During stopping process, press this button again to stop
+                 generator immediately.
+
+Start            Start genset in Manual/Test mode.
+
+                 Pressing this key will set the module into manual mode.
+
+Manual           Pressing  and         (or          ) simultaneously can
+
+                 adjust LCD contrast.
+
+Auto             Pressing this key will set the module into auto mode.
+
+Set/Confirm      Pressing this key will enter into Main Menu;
+Up/Increase      In setting parameter status, press this key will shift cursor
+Down/Decrease    or confirm setting value.
+                 Scrolls the screen up;
+                 Shift the cursor up or increase the set value in
+                 parameter setting menu.
+                 Scrolls the screen down;
+                 Shift the cursor down or decrease the set value in
+                 parameter setting menu.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 9 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+   4.2 INDICATOR LIGHT
+
+                                        HGM410 Panel Indicators
+
+                                        HGM420 Panel Indicators
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 10 of 44
+                                        HGM400 Series Genset Controller User Manual
+
+4.3 AUTOMATIC START/STOP OPERATION
+
+Auto mode is selected by pressing the   button; a LED besides the button will
+
+illuminate to confirm the operation.
+
+Auto Start Sequence,
+
+1) HGM420: when mains is abnormal (over/under voltage, loss of phase), enter into
+
+“Mains Abnormal Delay” and LCD displays count down time. “Start Delay” timer is
+
+initiated after the delay has expired.
+
+2) HGM410: When “Remote Start” is active, “Start Delay” timer is initiated;
+
+3) “Start Delay” countdown will be displayed on LCD;
+
+4) When start delay is over, preheat relay energizes (if configured), “preheat delay XXs”
+
+information will be displayed on LCD;
+
+5) After the above delay, the Fuel Relay is energized, and then one second later, the
+
+Start Relay is engaged. The engine is cranked for a pre-set time. If the engine fails to
+
+fire during this cranking attempt then the fuel relay and start relay are disengaged for
+
+the pre-set rest period; “crank rest time” begins and wait for the next crank attempt.
+
+6) Should this start sequence continue beyond the set number of attempts, the start
+
+sequence will be terminated, the fourth line of LCD display will be highlighted with
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 11 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+     black and Fail to Start fault will be displayed.
+7) In case of successful crank attempt, the “Safety On” timer is activated, allowing Low
+
+     Oil Pressure, High Temperature, Under speed, Charge Alternator Failure and
+     Auxiliary inputs (configured) to stabilise without triggering the fault. As soon as this
+     delay is over, “start idle” delay is initiated (if configured).
+8) During “start idle” delay, under speed, under frequency, under voltage alarms are
+     inhibited. When this delay is over, “warming up” delay is initiated (if configured).
+9) After the “warming up” delay, if generator status is normal, its indicator will be
+     illuminated. If generator voltage and frequency have reached on-load requirements,
+     then the generator close relay will be energized; genset will take load; generator
+     power indicator will illuminate and generator will enter into Normal Running status. If
+     voltage or frequency is abnormal, the controller will initiate shutdown alarm (alarm
+     information will be displayed on LCD).
+ Auto Stop Sequence,
+1) HGM420: During normal running process, if mains normal, enters into “Mains
+     Normal Delay”. When mains indicator illuminates, “Stop Delay” is initiated.
+2) HGM410: When the “Remote Start” signal is removed, the Stop Delay is initiated.
+3) Once this “stop delay” has expired, the Generator Breaker will open and the “Cooling
+     Delay” is then initiated. After “Transfer Delay”, the mains close relay will be
+     energized; mains will take load; generator power indicator will extinguish while mains
+     power indicator will illuminate.
+4) During “Stop Idle” Delay (if configured), idle relay is energized.
+5) “ETS Solenoid Hold” begins, ETS relay is energized while fuel relay is de-energized.
+6) "Fail to Stop Delay" begins, complete stop is detected automatically.
+7) Generator is placed into its standby mode after its complete stop. Otherwise, fail to
+     stop alarm is initiated and the corresponding alarm information is displayed on LCD.
+
+   4.4 MANUAL START/STOP OPERATION
+
+1) HGM420: Manual mode is selected by pressing the  button; a LED besides the
+
+button will illuminate to confirm the operation; Press key, select “Mode Select”,
+
+then choose “Test Mode”. Under the two modes, press button to start the genset,
+
+it can automatically judge crank success and accelerate to high speed running. If high
+
+temperature, low oil pressure, over speed and abnormal voltage occur during genset
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 12 of 44
+                                        HGM400 Series Genset Controller User Manual
+
+running, controller can effectively protect genset to stop (detail procedures please
+
+refer to No.4~9 of Auto start sequence). Under Manual Mode , if mains normal,
+
+load breaker won’t transfer; if mains abnormal, load breaker will transfer to generator.
+
+Under Test Mode, after genset high speed normal running, no matter mains normal
+
+or not, load will be transferred to generator.
+
+2) HGM410: Manual mode is selected by pressing the       button; a LED besides the
+
+button will illuminate to confirm the operation; Then press button to start the
+
+generator, it can automatically judge crank success and accelerate to high speed
+
+running. If high temperature, low oil pressure, over speed and abnormal voltage
+
+occur during genset running, controller can effectively protect genset to stop (detail
+
+procedures please refer to No.4~9 of Auto start sequence). After genset high speed
+
+normal running, controller will send Gen Closed signal.
+
+3) Manual stop: pressing key can stop the running genset. (detail procedures please
+
+refer to No.3~7 of Auto stop sequence)
+
+5 PROTECTION
+
+5.1 WARNINGS
+
+Warnings are not shutdown alarms and do not affect the operation of the gen-set.
+
+Warning alarms does not lead to shutdown. The alarm information will be displayed on
+
+LCD.
+
+Warning alarms types are as follows:
+
+No.         Items                               Description
+
+                   When the controller detects that engine temperature has
+
+      High         exceeded the pre-set value while shutdown is prohibited, or
+
+1 Temperature detects that the Aux. input high temperature while shutdown
+                   is prohibited, it will initiate a warning alarm and the
+
+                   corresponding alarm information will be displayed on LCD.
+
+                   When the controller detects that the oil pressure has fallen
+
+      Low Oil below the pre-set value while shutdown is prohibited, or
+2 Pressure         detects that the Aux. input low oil pressure while shutdown is
+
+                   prohibited, it will initiate a warning alarm and the
+
+                   corresponding alarm information will be displayed on LCD.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 13 of 44
+                      HGM400 Series Genset Controller User Manual
+
+                When the controller detects that the genset current has
+
+3 Gen           Over exceeded the pre-set value and the over current delay has
+
+Current         expired, it will initiate a warning alarm and the corresponding
+
+                alarm information will be displayed on LCD.
+
+                After “fail to stop” delay/ ETS delay has expired, if gen-set
+
+4 Fail To Stop  does not stop completely, it will initiate a warning alarm and
+                the corresponding alarm information will be displayed on
+
+                LCD.
+
+                When the controller detects that the fuel level has fallen
+
+                below the pre-set value while shutdown is prohibited, or
+
+5 Low Fuel Level detects that the Aux. input low fuel level while shutdown is
+
+                prohibited, it will initiate a warning alarm and the
+
+                corresponding alarm information will be displayed on LCD.
+
+                When the controller detects that charger voltage has fallen
+
+6 Charge        Alt below the pre-set value, it will initiate a warning alarm and
+       Failure        the corresponding alarm information will be displayed on
+
+                LCD.
+
+                When the controller detects that battery voltage has fallen
+
+7 Battery Under below the pre-set value, it will initiate a warning alarm and
+Volt            the corresponding alarm information will be displayed on
+
+                LCD.
+
+                When the controller detects that battery voltage has
+
+8 Battery Over exceeded the pre-set value, it will initiate a warning alarm
+Volt            and the corresponding alarm information will be displayed on
+
+                LCD.
+
+                When the controller detects that the auxiliary input warning
+
+9 Auxiliary Input signals, it will initiate a warning alarm and the corresponding
+
+                alarm information will be displayed on LCD.
+
+Loss Of Speed When the controller detects that the engine speed is 0 and
+10 Signal       the delay is 0, it will initiate a warning alarm and the
+
+                corresponding alarm information will be displayed on LCD.
+
+Low Coolant When the controller detects the low coolant level input is
+11 Level        active, it will initiate a warning alarm and the corresponding
+
+                alarm information will be displayed on LCD.
+
+                When the controller detects that the temperature sensor is
+
+12 Temp. Sensor open circuit and the action select “Warn”, it will initiate a
+Open            warning alarm and the corresponding alarm information will
+
+                be displayed on LCD.
+
+                When the controller detects that the oil pressure sensor is
+
+13 Oil Pressure open circuit and the action select “Warn”, it will initiate a
+        Sensor Open warning alarm and the corresponding alarm information will
+
+                be displayed on LCD.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 14 of 44
+                                  HGM400 Series Genset Controller User Manual
+
+               When the controller detects that the level sensor is open
+
+14 Level Sensor circuit and the action select “Warn”, it will initiate a warning
+Open           alarm and the corresponding alarm information will be
+
+               displayed on LCD.
+
+               If the config. sensor set as temperature sensor, When the
+
+Temp. Sensor controller detects that the temperature sensor is open circuit
+15 2 Open      and the action select “Warn”, it will initiate a warning alarm
+
+               and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               If the config. sensor set as oil pressure sensor, When the
+
+Oil Pressure controller detects that the oil pressure sensor is open circuit
+
+16 Sensor      2 and the action select “Warn”, it will initiate a warning alarm
+
+Open           and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               If the config. sensor set as level sensor, When the controller
+
+17 Level Sensor 2 detects that the level sensor is open circuit and the action
+Open           select “Warn”, it will initiate a warning alarm and the
+
+               corresponding alarm information will be displayed on LCD.
+
+               When the controller detects that config. sensor temperature
+
+High           (sensor type: temperature sensor) has exceeded the pre-set
+
+18 Temperature 2 value while shutdown is prohibited, it will initiate a warning
+               alarm and the corresponding alarm information will be
+
+               displayed on LCD.
+
+               When the controller detects that config. sensor oil pressure
+
+Low Oil (sensor type: oil pressure sensor) has fallen below the
+19 Pressure 2  pre-set value while shutdown is prohibited, it will initiate a
+
+               warning alarm and the corresponding alarm information will
+
+               be displayed on LCD.
+
+               When the controller detects that config. sensor fuel level
+
+                               (sensor type: level sensor) has fallen below the pre-set value
+20 Low Fuel Level while shutdown is prohibited, it will initiate a warning alarm
+
+        2 and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               When genset running time has exceeded the user setting
+
+Maintenance maintenance time and the action select “Warn”, it will initiate
+21 Due         a warning alarm and the corresponding alarm information will
+
+               be displayed on LCD. The maintenance alarm will reset if the
+
+               action select “Inactive”.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 15 of 44
+                                      HGM400 Series Genset Controller User Manual
+
+5.2 SHUTDOWN ALARM
+
+When controller detects shutdown alarm, it will send signal to open breaker and shuts
+
+down generator. The alarm information will be displayed on LCD.
+
+Shutdown alarms as following:
+
+No     Items                          Description
+
+1 Emergency        When the controller detects that the emergency shutdown
+      Shutdown     signal, it will initiate a shutdown alarm and the corresponding
+                   alarm information will be displayed on LCD.
+
+                   When controller detects that the water/cylinder temperature
+
+2 High             has exceeded the pre-set value, it will initiate a shutdown
+      Temperature  alarm and the corresponding alarm information will be
+
+                   displayed on LCD.
+
+                   When the controller detects that the oil pressure has fallen
+
+3 Low           Oil below the pre-set value, it will initiate a shutdown alarm and
+
+    Pressure       the corresponding alarm information will be displayed on
+
+                   LCD.
+
+                   When the controller detects that the generator speed has
+
+4 Over Speed exceeded the pre-set value, it will initiate a shutdown alarm
+
+                   and the corresponding alarm information will be displayed on
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 16 of 44
+                     HGM400 Series Genset Controller User Manual
+
+No      Items                        Description
+
+               LCD.
+
+               When the controller detects that the generator speed has
+
+5 Under Speed fallen below the pre-set value, it will initiate a shutdown alarm
+                              and the corresponding alarm information will be displayed on
+
+               LCD.
+
+    Loss Of Speed When the controller detects that the engine speed is 0 and
+6 Signal       the delay is NOT 0, it will initiate a shutdown alarm and the
+
+               corresponding alarm information will be displayed on LCD.
+
+               When the controller detects that the genset voltage has
+
+7 Gen        Over exceeded the pre-set value, it will initiate a shutdown alarm
+
+    Voltage    and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               When the controller detects that the genset voltage has
+
+8 Gen Under fallen below the pre-set value, it will initiate a shutdown alarm
+    Voltage    and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               When the controller detects that the genset current has
+
+9 Gen        Over exceeded the pre-set value and delay is not 0, it will initiate a
+
+    Current    shutdown alarm and the corresponding alarm information will
+
+               be displayed on LCD.
+
+               If the engine does not fire after the pre-set number of
+
+10 Fail To Start attempts, it will initiate a shutdown alarm and the
+
+               corresponding alarm information will be displayed on LCD.
+
+               When the controller detects that the genset frequency has
+
+11 Gen       Over exceeded the pre-set value, it will initiate a shutdown alarm
+
+    Frequency  and the corresponding alarm information will be displayed on
+
+               LCD.
+
+               When the controller detects that the genset frequency has
+
+12 Gen Under fallen below the pre-set value, it will initiate a shutdown alarm
+    Frequency  and the corresponding alarm information will be displayed on
+
+               LCD.
+
+    No Gens When the controller detects that the genset frequency is 0, it
+13 Frequency   will initiate a shutdown alarm and the corresponding alarm
+
+               information will be displayed on LCD.
+
+               When the controller detects that the fuel level has fallen
+
+14 Low Fuel Level below the pre-set value or detects that the low fuel level input
+                              is active, it will initiate a shutdown alarm and the
+
+               corresponding alarm information will be displayed on LCD.
+
+    Low Coolant When the controller detects the low coolant level input is
+15 Level       active, it will initiate a shutdown alarm and the corresponding
+
+               alarm information will be displayed on LCD.
+
+16 Temp. Sensor When the controller detects that the temperature sensor is
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 17 of 44
+                                   HGM400 Series Genset Controller User Manual
+
+No       Items                        Description
+
+    Open        open circuit and the action select “Shutdown”, it will initiate a
+
+                shutdown alarm and the corresponding alarm information will
+
+                be displayed on LCD.
+
+                When the controller detects that the oil pressure sensor is
+
+17 Oil Pressure open circuit and the action select “Shutdown”, it will initiate a
+       Sensor Open shutdown alarm and the corresponding alarm information will
+
+                be displayed on LCD.
+
+                When the controller detects that the level sensor is open
+
+18 Level Sensor circuit and the action select “Shutdown”, it will initiate a
+    Open        shutdown alarm and the corresponding alarm information will
+
+                be displayed on LCD.
+
+                If the config. sensor set as temperature sensor, When the
+
+    Temp. Sensor controller detects that the temperature sensor is open circuit
+19 2 Open       and the action select “Shutdown”, it will initiate a shutdown
+
+                alarm and the corresponding alarm information will be
+
+                displayed on LCD.
+
+                If the config. sensor set as oil pressure sensor, When the
+
+       Oil Pressure controller detects that the oil pressure sensor is open circuit
+20 Sensor 2 Open and the action select “Shutdown”, it will initiate a shutdown
+
+                              alarm and the corresponding alarm information will be
+
+                displayed on LCD.
+
+                If the config. sensor set as level sensor, When the controller
+
+21 Level Sensor 2 detects that the level sensor is open circuit and the action
+    Open        select “Shutdown”, it will initiate a shutdown alarm and the
+
+                corresponding alarm information will be displayed on LCD.
+
+                When the controller detects that config. sensor temperature
+
+22 High         (sensor type: temperature sensor) has exceeded the pre-set
+
+    Temperature 2 value, it will initiate a shutdown alarm and the corresponding
+
+                alarm information will be displayed on LCD.
+
+                When the controller detects that config. sensor oil pressure
+
+23 Low          Oil (sensor type: oil pressure sensor) has fallen below the
+
+    Pressure 2  pre-set value, it will initiate a shutdown alarm and the
+
+                corresponding alarm information will be displayed on LCD.
+
+                When the controller detects that config. sensor fuel level
+
+24 Low Fuel Level (sensor type: level sensor) has fallen below the pre-set
+    2           value, it will initiate a shutdown alarm and the corresponding
+
+                alarm information will be displayed on LCD.
+
+                When genset running time has exceeded the user setting
+
+25 Maintenance  maintenance time and the action select “Shutdown”, it will
+       Due      initiate a shutdown alarm and the corresponding alarm
+                information will be displayed on LCD. The maintenance
+
+                alarm will reset if the action select “Inactive”.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 18 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+6 CONNECTIONS
+
+Compared with HGM420, HGM410 has no Mains AC Voltage input terminals. The rear
+panel of HGM410 and HGM420 is as below.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 19 of 44
+                                      HGM400 Series Genset Controller User Manual
+
+Description of terminal connections:
+
+Pin   Function   Cable                             Description
+                 Size
+
+1 B-             1.5mm2               Connected with negative of starter
+                                      battery.
+2 B+             1.5mm2               DC power supply. Connected with
+                                      positive of starter battery. If wire length is
+3 Aux. Output 1  1.0mm2               over 30m, better to double wires in
+4 Crank          1.0mm2               parallel. Max. 20A fuse is recommended.
+5 Aux. Output 2  1.0mm2               B+ is supplied by 2 point, rated 5A.
+6 Aux. Output 3  1.0mm2
+7 Aux. Input 1   1.0mm2               Crank Relay Output; B+ is supplied by 2
+8 Aux. Input 2   1.0mm2
+                                      point, rated 5A. Connect to starter coil.
+9 Aux. Input 3   1.0mm2
+10 Aux. Input 4  1.0mm2               B+ is supplied by 2 point, rated 5A.
+
+                                      B+ is supplied by 2 point, rated 5A.
+
+                                      Ground connected is
+
+                                      active (B-)
+
+                                      Ground connected is
+
+                                      active (B-)               See Table 3
+
+                                      Ground connected is
+
+                                      active (B-); Can be used
+
+                                      as Level Sensor.
+
+                                      Ground connected is
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 20 of 44
+                                    HGM400 Series Genset Controller User Manual
+
+Pin            Function     Cable   Description
+                            Size
+
+                                    active (B-); Can be used
+                                    as Config. Sensor.
+
+11 Engine      Temperature  1.0mm2  Connect               to
+       Sensor                       temperature/cylinder       See Table 4
+                                    resistance sensor.
+
+12 Oil Press Sensor         1.0mm2 Connect to oil pressure
+                                         resistance sensor.
+
+13 Current IA               1.5mm2 Outside connected to secondary coil of
+                                         current transformer(rated 5A)
+
+14 Current IB               1.5mm2 Outside connected to secondary coil of
+                                         current transformer(rated 5A)
+
+15 Current IC               1.5mm2  Outside connected to secondary coil of
+16 Current COM              1.5mm2  current transformer(rated 5A)
+                                    See INSTALLATION in this manual.
+
+17 Magnetic Pickup          0.5mm2  Connect to speed sensor;
+                                    Shielded wire is recommended.
+                                    The other end of speed sensor connects
+                                    to B-.
+
+18 Charger D+               1.0mm2  Connect to charging starter’s D+
+                                    terminal. If there is no this terminal, then
+                                    be hang up.
+
+19 Aux. Output 4            1.0mm2  The combination of terminal 19 and 21 is
+                                    relay normally open contact; rated 5A;
+                                    Voltage free.
+
+20 Aux. Output 5            1.0mm2  The combination of terminal 20 and 21 is
+                                    relay normally open contact; rated 5A;
+                                    Voltage free.
+
+21 Aux. Output COM          1.5mm2 Common terminal of auxiliary output 4
+                                         and 5.
+
+22 Gen AC Voltage U         1.0mm2 Connected to U-phase of generator (2A
+                                         fuse is recommended)
+
+23 Gen AC Voltage V         1.0mm2 Connected to V-phase of generator (2A
+                                         fuse is recommended)
+
+24 Gen AC Voltage W         1.0mm2  Connected to W-phase of generator (2A
+25 Gen AC Voltage N2        1.0mm2  fuse is recommended)
+                                    Connected to N-wire of generator.
+
+26 Mains AC Voltage R       1.0mm2 Connected to R-phase of mains (2A fuse
+                                         is recommended) (HGM410 without)
+
+27 Mains AC Voltage S       1.0mm2  Connected to S-phase of mains (2A fuse
+28 Mains AC Voltage T       1.0mm2  is recommended) (HGM410 without)
+                                    Connected to T-phase of mains (2A fuse
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 21 of 44
+Pin  Function            Cable  HGM400 Series Genset Controller User Manual
+                          Size
+29 Mains AC Voltage N1                              Description
+                        1.0mm2
+                                is recommended) (HGM410 without)
+                                Connected to N-wire of mains (HGM410
+                                without)
+
+      NOTE: LINK interface is parameters programmable interface that can be
+programmed by PC using an SG72 adapter. If there is need to remote control the
+genset, please use the SG485 module produced by our company.
+
+7 DEFINITION AND RANGE OF PARAMETERS
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 22 of 44
+                                                                HGM400 Series Genset Controller User Manual
+
+7.1 PARAMETER CONTENTS AND RANGE (TABLE 1)
+
+No       Items    Range      Default  Description
+
+1 Mains Normal (0-3600)s 10           The time from mains abnormal to
+     Delay                            normal or from normal to
+                                      abnormal; suitable for ATS
+2 Mains Abnormal (0-3600)s 5          (automatic transfer switch).
+     Delay
+
+3 Mains Under (30-620)V 184           When mains voltage has fallen
+     Voltage                          below the set value, Mains Under
+                                      Voltage is active. When set the
+4 Mains         Over (30-620)V 276    value as 30V, the controller does
+    Voltage                           not detect under voltage signal.
+                                      Back lash: 10V
+5 Transfer Rest (0-99.9)s 1.0         When mains voltage has
+     Delay                            exceeded the set value, Mains
+                                      Over Voltage is active. When set
+6 Start Delay     (0-3600)s  1        the value as 620V, the controller
+                                      does not detect over voltage
+7 Stop Delay      (0-3600)s  1        signal. Back lash: 10V
+                                      Interval time from mains switch
+8 Start Attempts  (1-10)times 3       off to generator switch on; or
+                                      from generator switch off to
+9 Preheat Time    (0-300)s   0        mains switch on.
+                                      Time from mains abnormal or
+10 Cranking Time  (3-60)s    8        remote start signal is active to
+                                      start genset.
+11 Crank Rest Time (3-60)s   10       Time from mains normal or
+                                      remote start signal is deactivated
+                                      to genset stop.
+                                      Maximum crank times of crank
+                                      attempts. When reach this
+                                      number, controller will send start
+                                      failure signal.
+                                      Power-on time of heater plug
+                                      before starter is powered up.
+                                      Power-on time of starter
+                                      The waiting time before second
+                                      power up when engine start fail.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 23 of 44
+                                  HGM400 Series Genset Controller User Manual
+
+No          Items   Range         Default            Description
+
+                                           Alarms for low oil pressure, high
+
+12 Safety On Delay (1-60)s        10 temperature, under speed, under
+                                              frequency/voltage, charge alt
+
+                                           failure are inactive.
+
+13 Start Idle Time  (0-3600)s     0 Idle running time of genset when
+                                              starting.
+
+                                           Warming time between genset
+
+14 Warming Up Time (0-3600)s      10       switch on and high speed
+
+                                           running.
+
+15 Cooling Time     (3-3600)s     10 Radiating time before genset
+                                              stop, after it unloads.
+
+16 Stop Idle        (0-3600)s     0 Idle running time when genset
+                                              stop.
+
+17 ETS        Solenoid (0-120)s   20 Stop electromagnet’s power on
+      Hold                                    time when genset is stopping.
+
+                                           Time between ending of genset
+
+                                           idle delay and stopped when
+
+18 Fail to Stop Delay (0-120)s    0 “ETS time” is set as 0;
+                                              Time between ending of ETS
+
+                                           hold delay and stopped when
+
+                                           “ETS time” is not 0.
+
+19 Breaker         Close (0-10)s           Pulse width of mains/generator
+      Time
+                                  5.0      switch on. When it is 0, means
+
+                                           output constantly.
+
+                                           Tooth number of the engine, for
+
+                                           judging of starter crank
+
+20 Flywheel Teeth (10-300)        118      disconnect conditions and
+21 Gen Abnormal (0-20.0)s
+                                           inspecting of engine speed. See
+      Delay
+                                           the installation instructions.
+
+                                  10.0 The alarm delay of generator
+                                              over voltage and under voltage.
+
+                                           When generator voltage has
+
+                                           exceeded the set value and the
+
+                                           “Gen abnormal delay” has
+
+22 Gen Over Voltage (30-620)V     264      expired, Gen Over Voltage is
+
+                                           active. When set the value as
+
+                                           620V, the controller does not
+
+                                           detect over voltage signal.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 24 of 44
+                       HGM400 Series Genset Controller User Manual
+
+No  Items       Range  Default      Description
+
+23 Generator Under (30-620)V 196    When generator voltage has
+      Voltage                       fallen below the set value and the
+                                    “Gen abnormal delay” has
+24 Under Speed  (0-6000)RPM 1200    expired, Gen Under Voltage is
+                                    active. When set the value as
+25 Over Speed   (0-6000)RPM 1710    30V, the controller does not
+                                    detect under voltage signal.
+26 Under Frequency (0-75.0)Hz 45.0  When engine speed has fallen
+                                    below the set value for 10s,
+27 Over Frequency (0-75.0)Hz 57.0   Under Speed is active. It will
+                                    initiate a shutdown alarm signal.
+28 High Temperature (80-140)ºC 98   When engine speed has
+                                    exceeded the set value for 2s,
+                                    Over Speed is active. It will
+                                    initiate a shutdown alarm signal.
+                                    When generator frequency has
+                                    fallen below the set value but Not
+                                    equal to 0 for 10s, Under
+                                    Frequency is active. It will initiate
+                                    a shutdown alarm signal.
+                                    When generator frequency has
+                                    exceeded the set value for 2s,
+                                    Over Frequency is active. It will
+                                    initiate a shutdown alarm signal.
+                                    When the temperature value of
+                                    the external temperature sensor
+                                    exceeds the set value, “High
+                                    Temperature” timer is initiated.
+                                    Detecting only after safety on
+                                    delay has expired. If the set value
+                                    is 140, high temperature signal
+                                    will not be sent (this only
+                                    concerns external temperature
+                                    sensor, not high temperature
+                                    signal via config. input port).
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 25 of 44
+                                HGM400 Series Genset Controller User Manual
+
+No  Items          Range        Default              Description
+
+                                         When the external pressure
+
+                                         sensor value falls below this set
+
+                                         value, “Low Oil Pressure” timer is
+
+                                         initiated. Detecting only after
+
+                                         safety on delay has expired. If
+
+29 Low Oil Pressure (0-400)kPa  103      the set value is 0, low oil
+
+                                         pressure signal will not be sent
+
+                                         (this only concerns pressure
+
+                                         sensor and does not concern low
+
+                                         oil pressure warning signal via
+
+                                         configurable input port)
+
+                                         When the liquid level of the
+
+                                         external sensor falls below the
+
+                                         set value, “Low Fuel Level” timer
+
+30 Low Fuel Level (0-100)%      10       is initiated. (this only concerns
+
+                                         fuel level sensor and does not
+
+                                         concern low fuel level warning
+
+                                         signal via configurable input port)
+
+31 Config. Sensor  (80-140)ºC   98 Each value correspond to above
+                   (0-400)kPa   103 28 (Temperature sensor), 29 (Oil
+                   (0-100)%     10 pressure sensor) and 30 (Level
+
+                                            sensor), respectively.
+
+32 Loss of Speed (0-20.0)s               If the set value is 0, only warning
+      Signal
+                                5.0      and not to shutdown the
+
+                                         generator.
+
+                                         During generator is normal
+
+                                         running, when alternator D+(WL)
+
+33 Charge Alt Failure (0-30)V   6.0      voltage has fallen below the set
+
+                                         value and remains for 5s, It will
+
+                                         initiate a shutdown alarm signal.
+
+                                         When battery voltage has
+
+                                         exceeds the set value and
+
+34 Battery     Over (12-40)V    33.0 remains for 20s, It will initiate a
+      Voltage                               warning alarm signal. Only
+
+                                         warning and not to shutdown the
+
+                                         generator.
+
+                                         When battery voltage has fallen
+
+35 Battery     Under (4-30)V             below the set value and remains
+      Voltage
+                                8.0      for 20s, It will initiate a warning
+
+                                         alarm signal. Only warning and
+
+                                         not to shutdown the generator.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 26 of 44
+                                    HGM400 Series Genset Controller User Manual
+
+No           Items  Range        Default              Description
+
+36 Current Trans.   (5-6000)/5   500      The ratio of external CT
+                                 500
+37 Full Load Current (5-6000)A   120      Generator’s rated current, used
+      Rating
+                                 1296     for load over current calculating.
+
+38 Over      Current (50-130)%   25       When the load current has
+
+    Percentage                   80       exceeded the set value, “over
+                                 14
+                                 2        current” delay is initiated.
+                                 3
+                                 5        When load current has exceeded
+                                 6
+                                 1        the set value and the “over
+
+39 Over      Current (0-3600)s            current” delay has expired, over
+      Delay
+                                          current alarm is initiated. When
+
+                                          the set value is 0, only warning
+
+                                          and not to shutdown the
+
+                                          generator.
+
+                                          When fuel level has fallen below
+
+40 Fuel Pump On     (0-100)%              the set value for 10s, “Fuel Pump
+
+                                          On” alarm is initiated.
+
+                                          When fuel level has exceeded
+
+41 Fuel Pump Off    (0-100)%              the set value for 10s, “Fuel Pump
+
+                                          Off” alarm is initiated.
+
+42 Aux. Output 1    (0-17)                Factory default: Fuel Relay
+
+                                          Output
+
+43 Aux. Output 2        (0-17)            Factory default: Energized To
+                        (0-17)
+44 Aux. Output 3        (0-17)            Stop
+45 Aux. Output 4        (0-17)
+46 Aux. Output 5        (0-15)            Factory default: Idle Control
+                    1 (0-1)
+47 Aux. Input 1     1 (0-20.0)s           Factory default: Close Generator
+
+48 Aux. Input           (0-15)            Factory default: Mains Closed
+      Active        2 (0-1)
+                    2 (0-20.0)s           Factory     default:           High
+49 Aux. Input
+      Delay             (0-15)            Temperature Input
+                    3 (0-1)
+50 Aux. Input 2                  0        Factory default: Close to active
+
+51 Aux. Input                    2.0
+      Active
+                                 2 Factory default: Low Oil Pressure
+52 Aux. Input                                Warning Input
+      Delay
+                                 0        Factory default: Close to active
+53 Aux. Input 3
+54 Aux. Input                    2.0
+
+      Active                     10       Factory default: Remote Start
+
+                                 0        Factory default: Close to active
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 27 of 44
+                                       HGM400 Series Genset Controller User Manual
+
+No  Items              Range        Default  Description
+
+55 Aux. Input          3 (0-20.0)s  2.0      Factory default: Fuel Level Warn
+      Delay                (0-15)   11
+                                    0        Factory default: Close to active
+56 Aux. Input 4        4 (0-1)      2.0
+57 Aux. Input          4 (0-20.0)s           0: Stop Mode
+                                    0        1: Manual Mode
+      Active                                 2: Auto Mode
+58 Aux. Input                       1        Communication address of
+                                    1234     controller.
+      Delay
+                                             There are 3 conditions of
+59 Power On Mode (0-2)                       disconnecting starter with engine:
+                                             Generator Frequency, Magnetic
+60 Module Address      (1-254)               Pickup, Oil Pressure. Each
+61 Passwords           (0-9999)              condition can be used alone and
+                                             simultaneously to separating the
+62 Crank Disconnect (0-5)           2        start motor and genset as soon
+                                             as possible.
+63 Disconnect          (0-3000)RPM 360       See Table 5
+      Magnetic Pickup                        When engine speed higher than
+                                             the set value, starter will be
+64 Disconnect          (10.0-30.0)Hz 14.0    disconnected.
+      Generator Freq                         When generator frequency
+                                             higher than the set value, starter
+65 Disconnect Oil (0-400)kPa 200             will be disconnected.
+      Pressure                               When generator oil pressure
+                                             higher than the set value, starter
+66 High Temperature (0-1) 0                  will be disconnected.
+      Inhibit                                Factory default: when high
+                                             temperature occurs, shutdown
+67 Low Oil Pressure (0-1) 0                  alarm is initiated. Note 1
+      Inhibit                                Factory default: when low oil
+                                             pressure occurs, shutdown alarm
+68 Low Fuel Level (0-1) 1                    is initiated. Note 2
+      Inhibit                                Factory default: when low fuel
+                                             level occurs, shutdown alarm is
+                                             initiated. Note 2
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 28 of 44
+                                   HGM400 Series Genset Controller User Manual
+
+No           Items     Range    Default       Description
+
+69 Config.     Sensor (0-1)                 Factory default: when config.
+      Inhibit                               sensor value higher/lower than
+                                1 the set value (particular case
+70 AC System           (0-3)                depends on the sensor type),
+                                            shutdown alarm is initiated.
+                                            Note 2
+                                0 0: 3P4W; 1: 2P3W
+                                            2: 1P2W; 3: 3P3W Note 3
+
+71 Temp.       Sensor (0-9)     08       SGX
+      Curve
+
+72 Pressure Sensor (0-9)        08       SGX
+      Curve
+
+73 Multiplex Input 1 (0-1)      0 0: Aux. Input 3
+                                            1: Level Sensor Note 4
+
+74 Level       Sensor (0-5)     3        SGD
+      Curve
+
+                                         0: Aux. Input 4
+
+75 Multiplex Input 2 (0-3)      0 1: Temperature Sensor
+                                            2: Oil Pressure Sensor
+
+                                         3: Level Sensor Note 4
+
+76 Config.     Sensor  (0-9)    8        SGX
+      Curve            (0-9)
+                       (0-5)    8        SGX
+77 Poles               (2-32)
+                                3        SGD
+
+                                4
+
+78 Temperature                           0: Indication (temperature sensor
+      Sensor Open
+                       (0-2)    1        will show “+++”);
+
+                                         1:Warn; 2:Shutdown
+
+79 Oil         Pressure (0-2)            0: Indication (oil pressure sensor
+
+    Sensor Open                 1        will show “+++”);
+
+                                         1:Warn; 2:Shutdown
+
+80 Fuel Level Sensor (0-2)               0: Indication (fuel level sensor will
+      Open
+                                1        show “+++”);
+
+                                         1:Warn; 2:Shutdown
+
+81 Config.     Sensor (0-2)              0: Indication (LCD display will
+      Open     Blower (0-140)℃
+               Blower (0-140)℃  1        show “+++”);
+82 Cooling
+      On                                 1:Warn; 2:Shutdown
+
+83 Cooling                      60       It controls the cooling blower to
+      Off
+                                         open or close if the output port is
+
+                                40       configured as Cooling Blower.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 29 of 44
+                                 HGM400 Series Genset Controller User Manual
+
+No  Items       Range         Default                Description
+
+                                       When the liquid level of the
+
+                                       external sensor falls below the
+
+84 Low Fuel Level (0-100)%             set value, “Low Fuel Level” timer
+      Warn
+                              20       is initiated. (this only concerns
+
+                                       fuel level sensor and does not
+
+                                       concern low fuel level warning
+
+                                       signal via configurable input port)
+
+85 Maintenance  (0-1)         0 0: Disable
+      Enable                              1: Enable
+
+86 Maintenance Due (0-5000)h  30 Use for setting the maintenance
+                                          interval.
+
+87 Maintenance Due (0-1)      0        0: Warn 1: Shutdown
+      Action
+
+88 Custom    Sensor (0-3)              It can be customized as Temp.
+      Curve
+                              0        sensor, OP sensor, Fuel level
+
+                                       sensor and Config. sensor curve.
+
+     Note 1, if “high temperature inhibit” is configured, or set auxiliary input as “inhibit
+high temperature stop” and this input is active, when temperature is higher than the
+preset value, or high temperature alarm input is active, controller will send warning
+signal only and not stop the unit.
+
+     Note 2, if “low oil pressure inhibit” is configured, or set auxiliary input as “inhibit
+low oil pressure stop” and this input is active, when oil pressure is lower than the
+preset value, or low oil pressure alarm input is active, controller will send warning
+signal only and not stop the unit.
+
+     Note 3, if “3P3W” is selected, maximum shutdown threshold of “Mains Over
+Voltage” and “Gens Over Voltage” can be set as 620V; when select others, maximum
+shutdown threshold can be set as 360V.
+
+     Note 4, Multiplex Input can be set as “auxiliary input” or “level sensor”; if one of
+them is set successfully, then the corresponding items are active. For instance, if set
+“Multiplex Input 3” as “Auxiliary Input”, the related configuration items of auxiliary input
+3 are active; if set “Multiplex Input 3” as “Level Sensor”, the related configuration items
+of level sensor are active;
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 30 of 44
+                                                                HGM400 Series Genset Controller User Manual
+
+7.2 PROGRAMMABLE OUTPUT 1-5 (TABLE 2)
+
+No  Items                                           Description
+
+0 Not Used             Output port is deactivated when “Not Used” is selected.
+                       Include all shutdown alarms and warning alarms. When
+1 Common Alarm         there is warning alarm only, it is not self-lock; when a
+                       shutdown alarm occurs, it is self-lock until the alarm is
+2 Energized to Stop    reset.
+                       Suitable for genset with electromagnet and will active
+3 Idle Control         after “stop idle delay”. It is deactivated when the “ETS
+4 Preheat Control      Solenoid delay” expires.
+5 Close Generator      Used for engine which has idles. Close before starting
+6 Mains Closed         and open in warming up delay; Close during stop idle
+7 Open ATS             delay and open when stop is completed.
+8 Raise Speed          Close before starting and open before power up;
+                       When close time is 0, it’s continuous output.
+9 Drop Speed           When close time is 0, it’s continuous output.
+                       (HGM410 without)
+10 Generator Run       When close time is 0, it’s disabled.
+                       Close when the generator enters into Warming Up
+11 Fuel Pump Control   delay (close time: warming up delay) while open when
+                       Aux.
+12 High Speed Control  Close when the generator enters into Stop Idle delay/
+13 In Auto Mode        Energized to Stop delay (close time: Stop Idle delay)
+14 Fuel Relay Output   while open when Aux.
+15 Generator Excite    Action when genset is normal running while
+16 Air Cooler Output   deactivated when engine speed is lower than the
+17 Reserved            “crank disconnect speed”.
+                       Close when fuel level is lower than the “Fuel Pump On”
+                       value or when low fuel level warning input is active;
+                       Open when fuel level is higher than the “Fuel Pump
+                       Off” and low fuel level warning input is deactivated;
+                       Close when the generator enters into Warming Up
+                       delay while open after cooling delay.
+                       The controller is in automatic mode.
+                       To control fuel relay output.
+                       Output in start period. If there is no generator
+                       frequency during safety running, output for 2 seconds.
+                       Control air cooler to start\stop according to cooler
+                       temperature.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 31 of 44
+                                                                HGM400 Series Genset Controller User Manual
+
+7.3 PROGRAMMABLE INPUT 1-4 TABLE (ACTIVE WHEN
+      CONNECT GND (B-) (TABLE 3)
+
+No         Items                          Description
+
+0 Not Used
+
+1 High Temperature If these signals are active after safety on delay,
+    Input                 shutdown alarm will be immediately initiated.
+
+2 Low Oil Pressure
+      Warning Input
+
+3 Auxiliary Warning Only warning and not stops if this input is active.
+
+4 Emergency            Stop Shutdown alarm will be immediately initiated if this
+      Input                    input is active.
+
+                          When the gen-set is running normally and this signal is
+
+                          activated, if there is a high temperature situation, the
+
+5 High Temperature controller will first cool down the generator and then
+    Stop Input            stop it; if the signal is deactivated and a high
+
+                          temperature situation occurs, the controller will shut
+
+                          down the gen-set without cooling down.
+
+6 Generator Closed
+      Input
+
+7 Mains Closed Input HGM410 without
+
+8 Inhibit              High When it is active, prohibit stopping when high
+
+    Temperature Stop temperature occurs. Note 1
+
+9 Inhibit Low Oil When it is active, prohibit stopping when low oil
+    Pressure Stop         pressure occurs. Note 2
+
+10 Remote Start           HGM420 without
+
+11 Fuel Level Warn
+
+12 Coolant Level Warn
+
+13 Fuel            Level
+       Shutdown
+
+14 Coolant         Level
+       Shutdown
+
+                          In Auto mode, if this input is active, whether mains is
+
+                          normal or not (HGM420) or a remote start signal occurs
+
+                          (HGM410), the controller will not give a start command
+
+15 Auto Start Inhibit     to the generator. If generator is normal running, stop
+
+                          command won’t be executed. When this input is
+
+                          deactivated, genset will automatically start or stop
+
+                          according to the mains status (normal or abnormal).
+
+16 Reversed
+
+17 Reversed
+
+18 Panel Lock             When input is active, all keys expect the “Up\Down”
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 32 of 44
+No  Items                                   HGM400 Series Genset Controller User Manual
+
+19 Manual/Auto Switch                               Description
+                       buttons are inactive.
+20 Reversed            When input is active, enter into auto mode
+21 Reversed            automatically, panel buttons and local operation are
+22 Reversed            inactive; When input is inactive, enter into manual
+23 Reversed            mode automatically, remote operation is inhibited.
+24 Reversed
+25 Reversed
+26 Reversed
+27 Reversed
+28 Reversed
+29 Reversed
+30 Reversed
+31 Reversed
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 33 of 44
+                                                                HGM400 Series Genset Controller User Manual
+
+7.4 SENSOR SELECT (TABLE 4)
+
+No                      Content                  Description
+
+              0 Not used
+
+              1 User Defined Resistive
+
+              Type
+
+              2 VDO
+
+    Temperature 3 SGH(Huanghe sensor)   Defined resistive range is
+
+1 Sensor      4 SGD(Dongkang sensor) (0~6000)Ω, default is SGX
+
+              5 CURTIS                  sensor.
+
+              6 DATCON
+
+              7 VOLVO-EC
+
+              8 SGX
+
+              9 Reserved
+
+              0 Not used
+
+              1 User Defined Resistive
+
+              Type
+
+              2 VDO 10Bar
+
+    Pressure  3 SGH(Huanghe sensor)     Defined resistive range is
+
+2 Sensor      4 SGD(Dongkang sensor) (0~6000)Ω, default is SGX
+
+              5 CURTIS                  sensor.
+
+              6 DATCON
+
+              7 VOLVO-EC
+
+              8 SGX
+
+              9 Reserved
+
+              0 Not used
+
+              1 User Defined Resistive
+
+    Fuel Level Type                     Defined resistive range is
+3 Sensor      2 SGH                     (0~6000)Ω, default is SGD
+                                        sensor.
+              3 SGD
+
+              4 Reserved 1
+
+              5 Reserved 2
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 34 of 44
+                                                                HGM400 Series Genset Controller User Manual
+
+7.5 CONDITIONS OF CRANK DISCONNECT (TABLE 5)
+
+No                                  Content
+
+0   Magnetic pickup
+
+1   Generator Frequency
+
+2   Magnetic pickup + Generator Frequency
+
+3   Magnetic pickup + Oil pressure
+
+4   Generator Frequency + Oil pressure
+
+5   Generator Frequency + Magnetic pickup + Oil pressure
+
+1. There are 3 conditions to make starter separate with engine; magnetic pickup,
+     generator frequency can be used separately while oil pressure must be used
+     together with magnetic pickup and generator frequency. The aim is to disconnect the
+     starter motor as soon as possible.
+
+2. Magnetic pickup is the magnetic equipment which be installed in starter for detecting
+     flywheel teeth.
+
+3. When set as magnetic pickup, must ensure that the number of flywheel teeth is as
+     same as setting, otherwise, “over speed shutdown” or “under speed shutdown” may
+     be caused.
+
+4. If genset without magnetic pickup, please don’t select corresponding items, otherwise,
+     “start fail” or “loss speed signal” maybe caused.
+
+5. If genset without oil pressure sensor, please don’t select corresponding items.
+6. If not select generator frequency in crank disconnect setting, controller will not collect
+
+     and display the relative power quantity (can be used in water pump set); if not select
+     magnetic pickup in crank disconnect setting, the engine speed displayed in controller
+     is calculated by generator signal.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 35 of 44
+                                  HGM400 Series Genset Controller User Manual
+
+8 PARAMETERS SETTING
+
+Start the controller, then press  to enter into the parameters setting menu, see fig 1
+below:
+
+            1 Set Parameters
+Fig1 2 Information
+
+            3 Language
+            4 Mode Select
+
+     Parameters Setting
+When entering password interface, inputting “1234” can set part of the parameter
+items in Table 1 while “0318” can set all the items. If there is need to set more
+parameters (e.g. voltage calibration; current calibration), please contact the factory.
+NOTES:
+1. For HGM410, there are no items from 1 to 5 in Table 1; there are no mains items in
+
+   auxiliary output 1-5.
+2. Please change the controller parameters when generator is in standby mode only
+
+   (e. g. Crank disconnect conditions selection, auxiliary input, auxiliary output,
+   various delay), otherwise, shutdown and other abnormal conditions may occurs.
+3. Over voltage set value must be higher than under voltage set value, otherwise over
+   voltage and under voltage condition may occur simultaneously.
+4. Over speed set value must be higher than under speed set value, otherwise over
+   speed and under speed condition may occur simultaneously.
+5. Please set the generator frequency value as low as possible when cranking, in
+   order to make the starter be separated quickly as soon as possible.
+6. Auxiliary input 1~4 could not be set as same items; otherwise, there are abnormal
+   functions. However, the auxiliary output 1~5 can be set as same items.
+7. If need to shut down after cooling, please set any auxiliary input as “High
+    Temperature Stop Input”, then connect this input port to GND.
+ Information
+
+LCD will display software version, issue date of the controller.
+
+Note: In this interface, press    will display the auxiliary inputs and outputs
+
+        status.
+ Language
+
+Chinese, English, Spanish, Turkish and Russian interface can be selected.
+ Mode Select
+The controller can be set as Test Mode, Manual Mode, Auto Mode or Stop Mode.
+
+Note: Pressing   key at any time will quit the setting and return to the
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 36 of 44
+                                       HGM400 Series Genset Controller User Manual
+
+               previous setting menu.
+
+9 SENSOR SETTING
+
+1) When reselect sensors, the sensor curve will be transferred into the standard value.
+    For example, if temperature sensor is SGH (120°C resistor type), its sensor curve
+    is SGH (120°C resistor type); if select the SGD (120°C resistor type), the
+    temperature sensor curve is SGD curve.
+
+2) When there is difference between standard sensor curves and using sensor, user
+    can adjust it in “curve type”.
+
+3) When input the sensor curve, X value (resistor) must be input from small to large,
+    otherwise, mistake occurs.
+
+4) If select sensor type as “None”, sensor curve is not working and LCD does not
+    display the sensor information.
+
+5) If there is no oil pressure sensor, but there is low oil pressure alarm switch, user
+    must set the oil pressure sensor as “None”, otherwise, maybe low oil pressure
+    shutdown occurs.
+
+6) The headmost or backmost values in the vertical coordinates can be set as same
+    as below,
+
+          Common unit conversion table
+
+   1Pa    N/m2 (pa)                     kgf/cm2       bar    (p/in2.psi)
+1kgf/cm2
+               1                       1.02x10－5    1x10－5   1.45x10－4
+  1bar     9.8x104                          1        0.98       14.2
+   1psi     1x105                                      1        14.5
+          6.89x103                        1.02                    1
+                                       7.03x10－2  6.89x10－2
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 37 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+10 COMMISSIONING
+
+Please make sure the following checks are made before commissioning,
+1. Ensure all the connections are correct and wires diameter is suitable.
+2. Ensure that the controller DC power has fuse, controller’s positive and negative
+
+     connected to start battery are correct.
+3. Take proper action to prevent engine to crank success (e. g. Remove the connection
+
+     wire of fuel valve). If checking is OK, make the start battery power on; choose
+     manual mode and controller will executive routine.
+4. Set controller under manual mode, press “start” button, genset will start. After the
+     cranking times as setting, controller will send signal of Start Failure; then press “stop”
+     to reset controller.
+5. Recover the action to prevent engine to crank success (e. g. Connect wire of fuel
+     valve), press start button again, genset will start. If everything goes well, genset will
+     normal running after idle running (if idle run be set). During this time, please watch
+     for engine’s running situations and AC generator’s voltage and frequency. If
+     abnormal, stop genset and check all wires connection according to this manual.
+6. Select the AUTO mode from controller’s panel, connect mains signal. After the
+     mains normal delay, controller will transfer ATS (if fitted) into mains load. After
+     cooling time, controller will stop genset and make it into “at rest” mode until there is
+     mains abnormal situation.
+7. When mains is abnormal again, genset will be started automatically and enter into
+     normal running, then controller send signal to making generator switch on, and
+     control the ATS transfer into generator load. If not like this, please check ATS’ wires
+     connection according to this manual.
+8. If there is any other question, please contact Smartgen’s service.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 38 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+11 TYPICAL APPLICATION
+
+                                    HGM410 Typical wiring diagram
+
+     Note: Aux. Input 3 can be set as level sensor; Aux. Input 4 can be set as
+temperature sensor, oil pressure sensor or level sensor.
+
+                                    HGM420 Typical wiring diagram
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 39 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+                                    Single Phase 2 Wire (HGM420)
+
+                                       2 Phase 3 Wire (HGM420)
+
+        CAUTION! Expand relay with high capacity in start and fuel output is
+recommend.
+
+       CAUTION! Expand relay must be used in mains/gen closed outputs.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 40 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+       CAUTION! Let its normally closed contact series connect between fuel relay
+output port and electromagnetic valve when you connect emergency stop button on
+the controller. Emergency stop alarm can be displayed if you configure one input port
+as “Emergency Shutdown” (one end connect to normally open contact, the other end
+connect to ground).
+
+12 INSTALLATION
+   12.1FIXING CLIPS
+
+Controller is panel built-in design; it is fixed by clips when installed.
+1) Withdraw the fixing clip screw (turn anticlockwise) until it reaches proper position.
+2) Pull the fixing clip backwards (towards the back of the module) ensuring two clips
+
+     are inside their allotted slots.
+3) Turn the fixing clip screws clockwise until they are fixed on the panel.
+
+       Note: Care should be taken not to over tighten the screws of fixing clips.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 41 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+   12.2 OVERALL DIMENSION AND PANEL CUTOUT
+
+1) Battery Voltage Input
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 42 of 44
+                                                                    HGM400 Series Genset Controller User Manual
+
+     HGM400 series controller can suit for widely range of battery voltage DC(8~35)V.
+     Negative of battery must be connected with the engine shell. The diameter of wire
+     which from power supply to battery must be over 1.5mm2. If floating charge
+     configured, please firstly connect output wires of charger to battery’s positive and
+     negative directly, then, connect wires from battery’s positive and negative to
+     controller’s positive and negative input ports in order to prevent charge disturbing
+     the controller’s normal working.
+2) Speed Sensor Input
+     Speed sensor is the magnetic equipment which be installed in starter and for
+     detecting flywheel teeth. Its connection wires to controller should apply for 2 cores
+     shielding line. The shielding layer should connect to No. 1 terminal in controller
+     while another side is hanging in air. The else two signal wires are connected to
+     No.1 and No.17 terminals in controller. The output voltage of speed sensor should
+     be within AC(1~24)V (effective value) during the full speed. AC12V is
+     recommended (in rated speed). When install the speed sensor, let the sensor is
+     spun to contacting flywheel first, then, port out 1/3 lap, and lock the nuts of sensor
+     at last.
+3) Output And Expansion Relay
+     All outputs of controller are relay contact output type. If need to expand the relays,
+     please add freewheel diode to both ends of expand relay’s coils (when coils of
+     relay has DC current) or, add resistance-capacitance return circuit (when coils of
+     relay has AC current), in order to prevent disturbance to controller or others
+     equipment.
+4) AC Input
+     HGM400 series controller must be connected to outside current transformer. And
+     the current transformer’s secondary side current must be 5A. At the same time,
+     the phases of current transformer and input voltage must correct. Otherwise, the
+     collected current and active power maybe not correct.
+
+       CAUTION！ICOM port must be connected to negative pole of battery.
+
+     WARNING! When there is load current, transformer’s secondary side prohibit
+open circuit.
+5) Withdraw Voltage Test
+
+     When controller had been installed in control panel, if need the high voltage test,
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 43 of 44
+                                                              HGM400 Series Genset Controller User Manual
+
+please disconnect controller’s all terminal connections, in order to prevent high
+voltage into controller and damage it.
+
+13 FAULT FINDING
+
+           Symptom        Possible Remedy
+Controller no response    Check starting batteries;
+with power.               Check controller connection wirings;
+                          Check DC fuse.
+Genset shutdown           Check the water/cylinder temperature is too high or not;
+                          Check the genset AC voltage;
+Low oil pressure alarm    Check DC fuse.
+after crank disconnect
+High water temp. alarm    Check the oil pressure sensor and its connections.
+after crank disconnect
+Shutdown Alarm During     Check the temperature sensor and its connections.
+Running
+                          Check related switch and its connections according to
+Fail to Start             the information on LCD;
+                          Check auxiliary inputs.
+Starter no response       Check fuel circuit and its connections;
+Genset running while ATS  Check starting batteries;
+not transfer              Check speed sensor and its connections;
+                          Refer to engine manual.
+                          Check starter connections;
+                          Check starting batteries.
+                          Check ATS;
+                          Check the connections between ATS and controllers.
+
+HGM400 Series Genset Controller ISSUE 2015-05-27 Version 1.6 Page 44 of 44
+

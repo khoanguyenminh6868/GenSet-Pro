@@ -1,0 +1,189 @@
+                                                                                                                                                                                                                                                            ®
+
+         DSEGenset
+
+DSE8710                                                                                                            ENVIRONMENTAL TESTING STANDARDS
+
+REAR MOUNTED SYNCHRONISING AUTO START                                                                                ELECTRO MAGNETIC COMPATIBILITY
+LOAD SHARE CONTROL MODULE                                                                                            BS EN 61000-6-2
+                                                                                                                     EMC Generic Immunity Standard for the
+Used in conjunction with DSE remote displays                                                                         Industrial Environment
+                                                                                                                     BS EN 61000-6-4
+FEATURES                                                                                                             EMC Generic Emission Standard for the
+                                                                                                                     Industrial Environment
+The DSE8710 is an easy to use         System alarms are annunciated on      KEY LOAD SHARE FEATURES:
+Synchronising Auto Start Control      the LCD screen (multiple language     • Peak lopping/sharing (with             ELECTRICAL SAFETY
+Module suitable for use in a          options available), illuminated LED                                            BS EN 60950
+multi-generator loadshare system,     and audible sounder.                     DSE8x60)                              Safety of Information Technology Equipment,
+designed to synchronise up to 32                                            • Sequential set start                   including Electrical Business Equipment
+generators including electronic and   The event log will record 250 events  • Manual voltage/frequency
+non-electronic engines.               to facilitate easy maintenance. An                                             TEMPERATURE
+                                      extensive number of fixed and            adjustment                            BS EN 60068
+The DSE8710 monitors the              flexible monitoring, metering and     • R.O.C.O.F. and vector shift            Ab/Ae Cold Test -30 oC
+generator and indicates operational   protection features are included                                               BS EN 60068-2-2
+status and fault conditions,          as well as comprehensive                 protection                            Bb/Be Dry Heat +70 oC
+automatically starting or stopping    communication and system              • Generator load demand
+the engine on load demand or fault    expansion options.                    • Automatic hours run balancing          VIBRATION
+condition.                                                                  • Mains (Utility) de-coupling            BS EN 60068-2-6
+                                      Using the DSE PC Configuration        • Mains (Utility) de-coupling            Ten sweeps in each of three major axes
+The modules are designed to work      Suite Software allows easy                                                     5 Hz to 8 Hz at +/-7.5 mm, 8 Hz to 500 Hz at
+with independent front display        adjustment of the operational            test mode                             2 GN
+screens which are connected via a     sequences, timers and alarms. With    • Dead bus sensing
+data link up to a maximum             all communication ports capable of    • Bus failure detection                  HUMIDITY
+distance of 1 km. These must be       being active at the same time, the    • Direct governor and AVR control        BS EN 60068-2-30
+ordered as a separate item.           DSE8710 is ideal for a wide variety   • Volts and frequency matching           Db Damp Heat Cyclic 20/55 oC at 95% RH
+                                      of demanding load share               • kW and kV Ar load sharing              48 Hours
+                                      applications.                         • Dead bus synchronising                 BS EN 60068-2-78
+                                                                                                                     Cab Damp Heat Static 40 oC at 93% RH
+                                                                                                                     48 Hours
+
+                                                                                                                     SHOCK
+                                                                                                                     BS EN 60068-2-27
+                                                                                                                     Three shocks in each of three major axes
+                                                                                                                     15 GN in 11mS
+
+                                                                                                                     DEGREES OF PROTECTION
+                                                                                                                     PROVIDED BY ENCLOSURES
+                                                                                                                     BS EN 60529
+                                                                                                                     IP65 - Front of module when installed into the
+                                                                                                                     control panel with the supplied sealing gasket.
+
+COMPREHENSIVE FEATURE LIST TO SUIT A WIDE VARIETY
+OF LOAD SHARE APPLICATIONS
+
+DSE2130        MODEM MODBUS PC                                                                                                   DSE8721
+DSE2131                                                                                                                          DSE871x
+DSE2133                                                    11                      6                      4
+DSE2152
+DSE2157     232         485                                                           ANALOGUE
+DSE2548                                                                               SENDERS
+               RS232 AND              USB   USB CONFIGURABLE DC OUTPUTS                                      EMERGENCY DC POWER  DISPLAY
+ DSENET®       RS485                  PORT  HOST INPUTS
+ EXPANSION                                                                                                   STOP  SUPPLY 8-35V SCREENS
+
+                                            ETHERNET                               +
+
+DSE8710                                                        55xx         MSC       ­8xxx                        DEUTZ
+                                                                            ­75xx                                  ISUZU
+                  7                                                                                                PERKINS
+                 OTHER                                                                                             CATERPILLAR
+                                                                                                                   MTU
+BUS                     VOLT FREE     GENERATOR SENSING                     FUEL & START     CHARGE                VOLVO         MAGNETIC
+SENSING                 OUTPUTS                                             OUTPUTS          ALTERNATOR            CUMMINS       PICK-UP
+                                                                                                                   SCANIA
+                                                                                  +                D­+
+                                                                                                                   ELECTRONIC
+                                                                                                     W/L           ENGINES
+
+                                            CURRENT            VOLTS
+
+            1ph                    2                  1ph             1ph
+            2ph                                       2ph             2ph
+            3ph                                       3ph             3ph
+            N                                         E               N
+
+                                                                                                                                 ISSUE 3
+                                                                                                                                                                                                                                                   ®
+
+DSEGenset
+
+DSE8710                                                                                                                                             SPECIFICATION
+
+REAR MOUNTED SYNCHRONISING AUTO START                                                                                                                DC SUPPLY
+LOAD SHARE CONTROL MODULE                                                                                                                            CONTINUOUS VOLTAGE RATING
+                                                                                                                                                     8 V to 35 V continuous
+Used in conjunction with DSE remote displays
+                                                                                                                                                     CRANKING DROPOUTS
+FEATURES                                                                                                                                             Able to survive 0 V for 50 mS, providing
+                                                                                                                                                     supply was at least 10 V before dropout
+                                                                                                                                                     and supply recovers to 5 V. This is achieved
+                                                                                                                                                     without the need for internal batteries
+
+                                                                                                                                                    MAXIMUM OPERATING CURRENT
+                                                                                                                                                    460 mA at 12 V, 245 mA at 24 V
+
+                                                                                                                                                    MAXIMUM STANDBY CURRENT
+                                                                                                                                                    375 mA at 12 V, 200 mA at 24 V
+
+                                                 DSE8721                                                                                            CHARGE FAIL/EXCITATION RANGE
+                                                                                                                                                    0 V to 35 V
+                                                 Colour Remote Display Module
+                                                                                                                                                    OUTPUTS
+                                                                                                                                                    OUTPUT A (FUEL)
+                                                                                                                                                    15 A DC at supply voltage
+
+                                                                                                                                                    OUTPUT B (START)
+                                                                                                                                                    15 A DC at supply voltage
+
+                                                                                                                                                    OUTPUTS C & D
+                                                                                                                                                    8 A AC at 250 V AC (Volt free)
+
+                                                 DSE8711                                                                                            AUXILIARY OUTPUTS E,F,G,H,I & J
+                                                                                                                                                    2 A DC at supply voltage
+                                                 Standard Remote Display Module
+                                                                                                                                                    GENERATOR & BUS
+KEY FEATURES                           • Easy access diagnostic pages                                    KEY BENEFITS                               VOLTAGE RANGE
+• Can be set as a DSE8710 or              including modem diagnostic pages                               • Compatible in load share systems         15 V to 333 V AC (L-N)
+
+   DSE8760                             • Data logging and trending                                         containing DSE55xx, DSE75xx and          FREQUENCY RANGE
+• Independent display screen           • CAN, MPU and Frequency speed                                      DSE8xxx series. Contact DSE for          3.5 Hz to 75 Hz
+                                                                                                           further details
+   options                                sensing                                                        • Real-time clock provides accurate        MAGNETIC PICK-UP
+• Comprehensive synchronising &        • Tier 4 CAN engine support                                         event logging                            VOLTAGE RANGE
+                                       • “Protections disabled” feature                                  • Ethernet communication, provides         +/- 0.5 V to 70 V
+   loadsharing capabilities            • Front panel editing with PIN                                      builit in advanced remote
+• Built-in governor and AVR control                                                                        monitoring.                              FREQUENCY RANGE
+• Base load (kW export)                   protection                                                     • Can be integrated into building          10,000 Hz (max)
+                                       • Fully configurable using DSE                                      management systems (BMS) and
+   functionality                                                                                           programmable logic control (PLC)         BUILT-IN GOVERNOR CONTROL
+• Mains (utility) de-coupling             Configuration Suite PC software                                • Increased input and output               MINIMUM LOAD IMPEDANCE
+                                          via USB                                                          expansion capability via DSENet®         1000Ω
+   protection                          • LED and LCD alarm indication                                    • Licence-free PC software                 Fully isolated
+• Generator power (kW, kV Ar, kV A     • Configurable display languages                                  • IP65 rating (with supplied gasket)
+                                       • USB connectivity                                                  offers increased resistance to water     GAIN VOLTAGE
+   & pf) monitoring                    • Customisable status screens                                       ingress                                  0 V to 10 V DC
+• Overload (kW & kV Ar) protection     • Five key menu navigation                                        • Advanced Internal PLC editor allows      Fully isolated
+• Reverse power (kW & kV Ar)           • 3 Configurable maintenance                                        user configurable functions to meet
+                                          alarms                                                           specific application requirements.       OFFSET VOLTAGE
+   protection                          • Multiple date and time run                                                                                 +/- 10 V DC
+• Unbalanced load protection              scheduler                                                      EXPANSION DEVICES                          Fully isolated
+• Independent earth fault protection   • Manual fuel pump control                                        • DSE124 CAN/MSC Extender
+• Advanced integral PLC editor         • Fuel usage monitor and low fuel                                 • DSE2130 Input Expansion Module           BUILT-IN AVR CONTROL
+• 11 Configurable inputs                  level protection                                               • DSE2131 Ratiometric Input Expansion      MINIMUM LOAD IMPEDANCE
+• 8 Configurable outputs               • Charge alternator failure                                                                                  1000Ω
+• Configurable flexible sensor inputs     protection                                                        Module                                  Fully isolated
+• DSENet® expansion compatibility      • Load switching (load shedding                                   • DSE2133 RTD & Thermocouple
+• User configurable RS232, RS485          and dummy load control)                                                                                   GAIN VOLTAGE
+                                       • Configurable event log (250)                                       Expansion Module                        0 V to 10 V DC
+   and Ethernet communications         • Backed up real time clock                                       • DSE2152 Analogue Output Expansion        Fully isolated
+• Remote SCADA monitoring via
+                                                                                                            Module                                  OFFSET VOLTAGE
+   various DSE software applications                                                                     • DSE2157 Output Expansion Module          +/- 10 V DC
+• MODBUS RTU & TCP support                                                                               • DSE2548 LED Expansion Module             Fully isolated
+• User configurable MODBUS
+                                                                                                                                                    DIMENSIONS
+   pages                                                                                                                                            OVERALL
+• Advanced SMS control and fault                                                                                                                    240 mm x 172 mm x 57 mm
+                                                                                                                                                    9.4” x 6.8” x 2.2”
+   messaging (additional GSM
+   modem required)                                                                                                                                  OPERATING TEMPERATURE RANGE
+                                                                                                                                                    -30 oC to +70 oC
+                                                                                                                                                    -22 oF to +158 oF
+
+RELATED MATERIALS                                                                                        PART NO’S                                  STORAGE TEMPERATURE RANGE
+TITLE                                                                                                    055-073                                    -40 oC to +85 oC
+DSE8721 Colour Remote Display Module Data Sheet                                                          055-084                                    -40 oF to +185 oF
+DSE871x Mono Remote Display Module Data Sheet                                                            053-073
+DSE8700 Installation Instructions                                                                        057-124
+DSE8710 Operator Manual                                                                                  057-127
+DSE8700 PC Configuration Suite Manual                                                                    055-185
+DSE8760 Data Sheet
+
+DEEP SEA ELECTRONICS PLC UK                                                                              DEEP SEA ELECTRONICS INC USA
+Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH                                           3230 Williams Avenue, Rockford, IL 61101-2668 USA
+TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303                                              TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com                                                    EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+Deep Sea Electronics Plc maintains a policy of continuous development and reserves the right to change   Registered in England & Wales No.01319649                             055-184/03/14 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.  VAT No.316923457
+

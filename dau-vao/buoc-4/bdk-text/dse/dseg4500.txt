@@ -1,0 +1,336 @@
+         Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Overview
+The DSEG4500 Compact Single Genset Controller and DSEG4501 Compact Single Genset Controller with RS485 are part of the next-generation
+DSEG-Series platform, designed for versatility and performance. User-configurable for Remote Start (RS) or Automatic Mains (Utility) Failure (AMF)
+applications, they offer a robust feature set tailored to single genset operations.
+
+Selected features include real-time monitoring of generator and load power, engine speed, oil pressure, coolant temperature, frequency, voltage,
+current, power, and fuel level. All critical data is displayed on a dedicated multi-line, text and icon high-resolution screen.
+
+The DSEG4500 and DSEG4501 support both electronic J1939 (CAN) and non-electronic (alternator frequency sensing) engines. This makes them
+compatible with a wide range of fuel types including diesel, gas, and petrol. A generous number of flexible inputs, outputs, and protection features
+ensures adaptability for diverse applications. Electric engines allow for an enhanced monitoring of the DEF tank and configurable alarms determined by
+the SCR Inducement Severity level. Non-electric engines allow for input recognition of EGR fault inducement severities.
+
+Fully programmable via the DSE Configuration Suite software, the DSEG4500 and DSEG4501 deliver the renowned DSE easy setup experience,
+providing seamless integration and control.
+
+Key Features                                                                                             Product Variants
+• Designed to protect and control a genset, genset breakers and                                          G4500-01 - Compact Single Genset Controller
+                                                                                                         G4501-01 - Compact Single Genset Controller with RS485
+      mains (utility) breaker.
+• Remote Start / AMF functionality in one controller.
+• Wide range of control and protection features.
+• Flexible connection and communication options.
+• Multiple configuration possibilities.
+• Simple user interface control.
+• Integrated gasket (IP65 protection)
+• Separate FPE PIN and maintenance reset PIN
+• Manual front panel and automatic control modes
+• RS485 communications (G4501-01 only)
+• Module status pages for both current (DM1) and previous (DM2)
+
+      Diagnostic Trouble Codes
+• Event logging for current (DM1) Diagnostic Trouble Codes
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Remote Start Controller Key Features                                                                     Typical Applications
+• 3 phase generator sensing
+• Digital input, Modbus control key, inbuilt scheduler or manual                                                                     Remote Start
+
+      generator start up
+
+Automatic Mains (Utility) Failure Controller Key Features
+• 3 phase generator sensing
+• 3 phase mains (utility) sensing
+• Mains (utility) failure detection
+• Digital input, Modbus control key, inbuilt scheduler or manual
+
+      generator start up
+
+                                                                                                         Automatic Mains (Utility) Failure
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Specifications                                                                                           8 V to 35 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 50 ms, providing supply was at least 10 V before dropout
+Continuous Voltage Rating                                                                                and supply recovers to 10 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        Backlight will not be maintained during cranking.
+                                                                                                         200 mA at 12 V, 120 mA at 24 V
+Maximum Operating Current                                                                                65 mA at 12 V, 35 mA at 24 V
+Maximum Standby Current                                                                                  0 V to 35 V
+Charge Alternator Excitation / Fail Range
+Voltage Measurement                                                                                      2
+Number                                                                                                   3 Phase + Neutral
+Measurement Inputs                                                                                       Remote Start Controller: Generator Only
+                                                                                                         Automatic Mains (Utility) Failure Controller: Generator and Mains (Utility)
+Voltage Range                                                                                            15 V to 415 V Phase to Neutral
+                                                                                                         25 V to 720 V Phase to Phase
+Frequency Range                                                                                          3.5 Hz to 75 Hz
+Resolution                                                                                               1 V Phase to Neutral
+                                                                                                         2 V Phase to Phase
+Accuracy                                                                                                 0.1 Hz
+                                                                                                         ±1 % Phase to Neutral
+Current Transformer Measurement                                                                          ±2 % Phase to Phase
+Number                                                                                                   ±0.05 Hz
+Measurement Inputs
+                                                                                                         3
+Current Range                                                                                            Remote Start Controller: Generator Only
+Resolution                                                                                               Automatic Mains (Utility) Failure Controller: Generator or Load
+Accuracy                                                                                                 0 A to 5 A
+                                                                                                         0.5 %
+                                                                                                         ±1 %
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Specifications                                                                                           3
+Analogue Inputs                                                                                          Negative Switching Digital Input, Resistive Analogue Input, Current Analogue Input or
+Number                                                                                                   Voltage Analogue Input
+Type                                                                                                     Less than 3 V
+                                                                                                         Greater than 8 V
+Digital Input Closed Voltage Threshold                                                                   Input A, B & C: 0 Ω to 3 kΩ
+Digital Input Open Voltage Threshold                                                                     Input A: 0 mA to 20 mA
+Resistive Analogue Measurement Range                                                                     Input A: 0 V to 10 V
+Current Analogue Measurement Range                                                                       1 %
+Voltage Analogue Measurement Range                                                                       ±1 %
+Analogue Resolution
+Analogue Accuracy                                                                                        4
+Digital Inputs                                                                                           Negative Switching Digital Input
+Number                                                                                                   Less than 3 V
+Type                                                                                                     Greater than 8 V
+Closed Voltage Threshold
+Open Voltage Threshold                                                                                   0.5 VPeak to 70 VPeak
+Magnetic Pick-up Input                                                                                   1 Hz to 10 kHz
+Voltage Input Range                                                                                      1 Hz
+Frequency Input Range                                                                                    ±1 %
+Resolution                                                                                               10 to 500
+Accuracy
+Flywheel Teeth
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Specifications                                                                                           6
+Digital Outputs                                                                                          Positive Switching DC Outputs
+Number                                                                                                   Output A to F: 0.5 A at supply voltage
+Type
+Positive DC Output Rating                                                                                1
+Auxiliary Supply Output                                                                                  20 mA at 5 V
+Number
+Rating                                                                                                   1 Programming Port
+Communications                                                                                           1 CAN Port
+USB B                                                                                                    1 Fully Isolated RS485 Port (G4501-01 Only)
+CAN
+RS485                                                                                                    -30 °C to +70 °C / -22 °F to +158 °F
+Temperature                                                                                              -40 °C to +80 °C / -40 °F to +176 °F
+Operating Temperature
+Storage Temperature                                                                                      142.6 mm x 118.6 mm x 48.5 mm / 5.61 ” x 4.66 ” x 1.91 ”
+Dimensions
+Overall (W x H x D)                                                                                      Panel Fascia Mounting
+Mounting                                                                                                 118 mm x 92.0 mm / 4.65 ” x 3.62 ”
+Type                                                                                                     5 mm / 0.19”
+Panel Cut-Out (W x H)
+Maximum Panel Thickness
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Safety of Information Technology Equipment, including Electrical Business Equipment
+Electrical Safety
+BS EN 61010                                                                                              Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 Gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 Gn in 11 ms
+
+Degrees of Protection Provided by Enclosures                                                             IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+BS EN 60529
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+
+Remote Start Controller                                                                                  Automatic Mains (Utility) Failure Controller
+Pin
+1 to 2                           Description                                                             Pin                                         Description
+3                                DC Supply
+4                                Fuel                                                                    1 to 2                                      DC Supply
+5                                Start
+6 to 9                           Charge Alternator                                                       3                                           Fuel
+10 to 13                         Digital Outputs
+14 to 17                         Analogue Inputs                                                         4                                           Start
+18 to 20                         Digital Inputs
+21 to 24                         Engine ECU/ECM                                                          5                                           Charge Alternator
+25 to 28                         Generator Voltage Sensing
+29 to 32                         Not Applicable                                                          6 to 9                                      Digital Outputs
+33 to 35                         Generator Current Sensing
+36 to 38                         Magnetic Pickup                                                         10 to 13                                    Analogue Inputs
+Aux                              RS485 (G4501-01 Only)
+                                 Auxiliary Supply Output                                                 14 to 17                                    Digital Inputs
+
+                                                                                                         18 to 20                                    Engine ECU/ECM
+
+                                                                                                         21 to 24                                    Generator Voltage Sensing
+
+                                                                                                         25 to 28                                    Mains (Utility) Voltage Sensing
+
+                                                                                                         29 to 32                                    Generator / Load Current Sensing
+
+                                                                                                         33 to 35                                    Magnetic Pickup
+
+                                                                                                         36 to 38                                    RS485 (G4501-01 Only)
+
+                                                                                                         Aux                                         Auxiliary Supply Output
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+         Series Data Sheet
+
+DSEG4500 Compact Single Genset Controller
+DSEG4501 Compact Single Genset Controller with RS485
+
+Part Number: G4500-01, G4501-01
+Technical Drawing
+
+Connection Label
+
+                             Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-280 – DSEG4500 & DSEG4501 Installation Instructions
+057-379 – DSEG4500 & DSEG4501 Operator Manual
+057-378 – DSEG4500 & DSEG4501 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-299/10/25 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

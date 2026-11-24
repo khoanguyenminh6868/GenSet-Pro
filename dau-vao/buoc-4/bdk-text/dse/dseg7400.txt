@@ -1,0 +1,410 @@
+         Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller
+
+Part Number: G7400-01
+
+Overview
+The DSEG7400 is a remote start controller and an auto mains (utility) failure controller suitable for a wide variety of single, diesel or gas, genset
+applications. Monitoring an extensive number of engine parameters, the controller displays warnings, shutdown and engine status information on the
+back-lit LCD screen, illuminated LEDs and remote PC. The DSEG7400 can also monitor the mains (utility) supply.
+
+The controller includes USB, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.The controller is compatible
+with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offers an extensive number of flexible inputs, outputs and
+engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+
+The list of features includes enhanced event and performance monitoring, remote communications and PLC functionality. Dual mutual standby is
+available using RS485 communications. This provides for a simpler and more convenient installation with more advanced features such as true hours
+balancing.
+
+The controller also features SNMP functionality for connection to SNMP systems and can be easily configured using the DSE Configuration Suite PC
+software. Selected front panel editing is also available.
+
+Key Features                                                                                             • Multi-level PIN protected front panel editor
+• Cyber security ready architecture for today’s connected power                                          • Manual front panel and automatic control modes
+                                                                                                         • Latest ECU / ECM support for a wide range of engine manufacturers
+      systems                                                                                            • Dual mutual standby between two generators for redundancy and
+      FuSa ready architecture for safety critical power applications
+• Two controller applications in one (remote start control mode and                                            balance of engine hours
+      auto mains (utility) failure control mode)
+• Advanced PLC functionality including multi-purpose PIDs                                                      Product Approvals
+• Flexible inputs and outputs                                                                                  + CE
+• DSENet® expansion support                                                                                    + UL Listed: Standard - UL 6200:2019
+• PC configuration using DSE Configuration Suite
+• Multiple language support
+• Enhanced 6-line high-resolution display with on screen
+      application diagrams
+• Integrated RS485 ports providing Modbus RTU support
+• Integrated Ethernet port providing Modbus TCP, secure Modbus
+      TCP and SNMP v2c
+• Data logging of up to 60 parameters
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+          Series Data Sheet
+
+ DSEG7400 Advanced Single Genset Controller
+
+  Part Number: G7400-01
+  Manual / Remote Start Controller Key Features
+  • 3 phase generator sensing with protection.
+  • Manual starting/control by fascia button and remote starting/control by inputs and other functions.
+  Typical Application
+
+                          Manual / Remote Start
+
+Automatic Mains (Utility) Failure (AMF) Controller Key Features
+• 3 phase generator and mains (utility) sensing with protection.
+• Manual starting/control by fascia button and remote starting/control by inputs and other functions.
+• Automatic start and stopping of generator and transfer of load based on mains (utility) availability.
+Typical Application
+
+                                 Automatic Mains (Utility) Failure
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller                                                               8 V to 35 V DC continuous
+                                                                                                         Able to survive 0 V for 50 ms, providing supply was at least 5 V before dropout
+Part Number: G7400-01                                                                                    and supply recovers to 5 V. This is achieved without the need for internal batteries.
+  Specifications                                                                                         Backlight will not be maintained during cranking.
+  DC Supply                                                                                              640 mA at 12 V, 320 mA at 24 V
+  Continuous Voltage Rating                                                                              240 mA at 12 V, 120 mA at 24 V
+  Cranking Dropouts                                                                                      0 V to 35 V
+
+  Maximum Operating Current                                                                              2
+  Maximum Standby Current                                                                                3 Phase + Neutral
+  Charge Alternator Excitation / Fail range                                                              Remote Start Controller: Generator Only
+  Voltage Measurement                                                                                    Automatic Mains (Utility) Failure Controller: Generator and Mains (Utility)
+  Number                                                                                                 15 V to 415 VAC Phase to Neutral
+  Measurement Inputs                                                                                     25 V to 720 VAC Phase to Phase
+                                                                                                         3.5 Hz to 75 Hz
+  Voltage Range
+                                                                                                         4
+  Frequency Range                                                                                        3 Phase with Earth Fault
+  Current Measurement                                                                                    Remote Start Controller: Generator Only
+  Number                                                                                                 Automatic Mains (Utility) Failure Controller: Generator or Load
+  Measurement Inputs                                                                                     0 A to 1 A
+                                                                                                         0 A to 5 A
+  Current Range
+                                                                                                         6
+  Analogue Inputs                                                                                        Configurable as Negative Switching Digital Input, Resistive Analogue Input, Current
+  Number                                                                                                 Analogue Input and Voltage Analogue Input.
+  Type                                                                                                   Less than 2.1 V
+                                                                                                         Greater than 6.6 V
+  Digital Input Closed Voltage Threshold                                                                 Input A, F: 0 to 3 kΩ
+  Digital Input Open Voltage Threshold                                                                   Input B, C, D, E: 0Ω to 5 kΩ
+  Resistive Analogue Measurement Range                                                                   0 mA to 20 mA
+                                                                                                         0 V to 10 V
+  Current Analogue Measurement Range                                                                     1 %
+  Voltage Analogue Measurement Range                                                                     2 %
+  Analogue Resolution
+  Analogue Accuracy
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller                                                               8
+                                                                                                         Negative Switching Digital Input
+Part Number: G7400-01                                                                                    Less than 3.2 V
+                                                                                                         Greater than 8.1 V
+  Specifications
+  Digital Inputs                                                                                         1
+  Number                                                                                                 Positive Switching Digital Input
+  Type                                                                                                   Greater than 8.1 V
+  Closed Voltage Threshold                                                                               Less than 3.2 V
+  Open Voltage Threshold
+  Emergency Stop Input                                                                                   0.5 VPeak to 70 VPeak
+  Number                                                                                                 5 Hz to 10 kHz
+  Type                                                                                                   1 Hz
+  Closed Voltage Threshold                                                                               1%
+  Low Voltage Threshold                                                                                  10 to 500
+  Magnetic Pick-up Input
+  Voltage Input Range                                                                                    10
+  Frequency Input Range                                                                                  1 Normally Open Volt-Free Contact
+  Resolution                                                                                             1 Normally Closed Volt-Free Contact
+  Accuracy                                                                                               8 Positive Switching DC Outputs
+  Flywheel Teeth                                                                                         8 AAC resistive at 250 VAC
+  Digital Outputs                                                                                        5 ADC resistive at 30 VDC
+  Number                                                                                                 50 mA at 5 VDC
+  Type                                                                                                   Output A to B (Fuel and Start): 15 ADC at Emergency Stop input supply voltage
+                                                                                                         Output E to J: 2 ADC at module supply voltage.
+  Volt-Free Contact Output Rating
+
+  Reference Output
+  Positive DC Output Rating
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller                                                               1 Data Storage Port
+                                                                                                         1 Programming Port
+Part Number: G7400-01                                                                                    1 Expansion Port
+                                                                                                         1 Modbus RTU Port
+  Specifications                                                                                         1 10/100 Ethernet Port
+  Communications                                                                                         2 Fully Isolated Ports
+  USB A                                                                                                  CAN 1 – Engine ECU/ECM
+  USB B                                                                                                  CAN 2 – Configurable CAN Communication
+  DSENet®
+  RS485                                                                                                  -30 °C to +70 °C / -22 °F to +158 °F
+  Ethernet                                                                                              -40 °C to +85 °C / -40 °F to +185 °F
+  CAN
+                                                                                                         248.1 mm x 182.6 mm x 45.2 mm / 9.77” x 7.19” x 1.78”
+  Temperature
+  Operating Temperature                                                                                  Panel Fascia Mounting
+  Storage Temperature                                                                                    220 mm x 160 mm / 8.66 ” x 6.30 ”
+  Dimensions                                                                                             8 mm / 0.31 ”
+  Overall (W x H x D)
+  Mounting
+  Type
+  Panel Cut-Out (W x H)
+  Maximum Panel Thickness
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller
+
+Part Number: G7400-01
+
+Related Products                 24 Volt, 15 Amp Intelligent Battery Charger                                                                         BC2415i-01
+DSEPower®                        12/24 Volt 10 Amp Enclosed Intelligent Battery Charger                                                              BC2410Ei-02
+DSEBC2415i                       24 Volt 20 Amp Intelligent Battery Charger                                                                          9476-01
+DSE2410Ei                        24 Volt 30 Amp Intelligent Battery Charger                                                                          9474-01
+DSE9476                          24 Volt, 10 Amp Intelligent Battery Charger                                                                         9470-01
+DSE9474
+DSE9470 MKII                     DSENet® LED Output Expansion Module                                                                                 2548-01
+DSENet®                          DSENet® Input / Output Expansion Module                                                                             2160-01
+DSE2548                          DSENet® Output Expansion Module                                                                                     2157-01
+DSE2160                          DSENet® Analogue Output Expansion Module                                                                            2152-01
+DSE2157                          DSENet® RTD/Thermocouple Input Expansion Module                                                                     2133-01
+DSE2152                          DSENet® Ratiometric Input Expansion Module                                                                          2131-01
+DSE2133                          DSENet® Input Expansion Module                                                                                      2130-00
+DSE2131
+DSE2130                          DSEWebNet® Gateway                                                                                                  0890-04
+DSEWebNet®                       DSEWebNet® / IoT Gateway - Ethernet Only                                                                            0891-04
+DSE890 MKII
+DSE891 MKII
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller                                                               EMC Generic Immunity Standard for the Industrial Environment
+                                                                                                         EMC Generic Emission Standard for the Industrial Environment
+Part Number: G7400-01
+                                                                                                         Safety Requirements for Electrical Equipment for Measurement, Control and Laboratory
+  Environmental Testing Standards                                                                        use
+  Electro-Magnetic Compatibility
+  BS EN 61000-6-2                                                                                        Ab/Ae Cold Test -30 ºC
+  BS EN 61000-6-4                                                                                        Bb/Be Dry Heat +70 ºC
+  Electrical Safety
+  BS EN 61010                                                                                            Ten sweeps in each of three major axes
+                                                                                                         5 Hz to 8 Hz at ±7.5 mm,
+  Temperature                                                                                            8 Hz to 500 Hz at 2 Gn
+  BS EN 60068-2-1
+  BS EN 60068-2-2                                                                                        Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+  Vibration                                                                                              Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+  BS EN 60068-2-6
+                                                                                                         Three shocks in each of three major axes
+  Humidity                                                                                               15 Gn in 11 ms
+  BS EN 60068-2-30
+  BS EN 60068-2-78                                                                                       IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+  Shock
+  BS EN 60068-2-27
+
+  Degrees of Protection Provided by Enclosures
+  BS EN 60529
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller                                                               Description
+                                                                                                         DC Supply
+Part Number: G7400-01                                                                                    Emergency Stop
+                                                                                                         Fuel
+ Advanced Single Genset Controller                                                                       Start
+ Pin                                                                                                     Charger Alternator
+ 1 to 2                                                                                                  Not Applicable
+ 3                                                                                                       Digital Outputs
+ 4                                                                                                       Analogue Inputs
+ 5                                                                                                       Magnetic Pick-Up
+ 6                                                                                                       Engine ECU/ECM
+ 7                                                                                                       DSENet®
+ 8 to 13                                                                                                 Configurable CAN
+ 14 to 20                                                                                                Normally Closed Volt Free Output
+ 21 to 23                                                                                                Normally Open Volt Free Output
+ 24 to 26                                                                                                Generator Voltage Sensing
+ 27 to 29                                                                                                Mains (Utility) Voltage sensing
+ 30 to 32                                                                                                Generator Current Sensing
+ 33 to 34                                                                                                Digital Inputs
+ 35 to 36                                                                                                RS485
+ 37 to 40                                                                                                V Ref (5V, 50mA)
+ 41 to 44
+ 45 to 50
+ 51 to 58
+ 59 to 61
+ 62
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+Series Data Sheet
+
+DSEG7400 Advanced Single Genset Controller
+
+Part Number: G7400-01
+
+Technical Drawing
+
+                                             mm
+                                    (8.66”)
+
+                                    248.1 mm                                                                    mm
+                                     (9.77”)                                                             (1.78”)
+
+                                                                                                                mm
+                                                                                                         (1.28”)
+
+mm
+   (7.19”)
+
+                                                                                                                                                   mm
+                                                                                                                                                      (6.30”)
+
+Connection Label
+
+                   33 34 35 36 37 38 39 40           41 42 43 44                                         45 46 47 48 49 50                                     51 52 53 54 55 56 57 58
+                   C             D       L1 L2 L3 N  L1 L2 L3 N                                                                                                ABCDE FGH
+                                                                                                          I1 I2 I3
+                                                            V2                                            s1 s1 s1
+
+                                                 V1
+
+                                                     DC Supply :             8 V to 35 V, 0.5 A max
+                                                     DC Outputs :            24 V, 15 A (T4 to T5); 35 V, 2 A (T8 to T13)
+                                                     DC Inputs :             35 V max
+                                                     Volt-free Outputs :     250 V AC, 8 A
+                                                     AC Voltage inputs :     600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                                     AC Current inputs :     5 A, 50 Hz / 60 Hz, 1 phase to 3 phase
+                                                     Charge Alternator :     35 V DC, 2.5 W max
+                                                     Magnetic Pickup :       70 V peak, 10 kHz max
+                                                     Analog Inputs :         10 V DC max
+                                                     Comms Port :            5 V DC max
+                                                     Auxiliary Supply Out :  5 V DC, 50 mA max
+
+                                        RS485
+
+                                      A B SCR
+
+                                 61 60 59
+
+                                                                                                         Made in UK
+                                                                                                         020-1188-01,5
+
+                                    D +                                                                                                                        CAN 1                    CAN 2
+                                    W/L
+
+                      AB                       EFGHI J       ABCDE F                                                                                                       SCR H L SCR B A SCR H L SCR
+                                                        14 15 16 17 18 19 20 62
+                   1 2 3 4 5 6 7 8 9 10 11 12 13                                                                                                               21 22 23 24 25 26 27 28 29 30 31 32
+
+                   Refer to PIN out description charts for connection information on the operating mode controller is configured for.
+
+Product Documentation
+053-287 – DSEG7400 Installation Instructions
+057-394 – DSEG7400 Operator Manual
+057-393 – DSEG7400 Configuration Suite PC Manual
+
+DEEP SEA ELECTRONICS UK                        DEEP SEA ELECTRONICS USA                                  DEEP SEA ELECTRONICS UAE                                     DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                         T: +1 (815) 316 8706                                      T: +971 (0) 45910819                                         T: +91 20 68195900
+E: sales@deepseaelectronics.com                E: usasales@deepseaelectronics.com                        E: uaesales@deepseaelectronics.com                           E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com                  W: www.deepseaelectronics.com                             W: www.deepseaelectronics.com                                W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                                        055-305/07/26 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

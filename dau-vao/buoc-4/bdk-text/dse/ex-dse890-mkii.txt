@@ -1,0 +1,303 @@
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Overview
+The DSE890 MKII gateway is used in conjunction with supported DSE controllers and programmable displays to provide remote monitoring and
+communications data via DSEWebNet® or third party MQTT brokers. The DSE890 MKII communicates with up to five connected DSE controllers,
+monitoring instrumentation and operating states. Data is logged internally and transmitted from the gateway device to the DSEWebNet® or MQTT
+broker (Amazon Web Services, Google, IBM etc..).
+
+DSEWebNet® software is accessed using an Internet browser or the dedicated app. Users are able to perform multiple tasks including: monitoring
+equipment, clearing alarm conditions, starting/stopping equipment and monitoring fuel levels.
+
+The IoT feature of the DSE890 MKII supports MQTT V 3.1.1 (ISO/IEC 20922:2016). This enables connection to a third party server that is running an
+MQTT broker, whilst simultaneously supporting connection to the DSEWebNet® server.
+
+Key Features
+• 4G Connectivity
+• Supports 2G & 3G connections (where available)
+• Configured device can be monitored using DSEWebNet® software
+• Configured deivice can be monitored using third-party MQTT
+
+       brokers
+• DIN rail & chassis mount
+• Multiple users can access each DSE890 MKII simultaneously
+• Main & diversity aerial connection inputs
+
+IMPORTANT INFORMATION: The DSE890 MKII IoT Gateway Device does not meet the cybersecurity requirements defined by the Radio Equipment Directive (RED), Article 3.3 (d) and the
+EN18031-1 standard.
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+DSEWebNet® System Overview
+
+                                                                            DSEWebNet® Server
+
+             Smartphone
+
+Laptop / PC
+
+                                                                            DSEWebNet® Gateway
+
+                                                                            DSE Module
+
+MQTT System Overview             MQTT Broker                                                    DSEWebNet® Gateway
+
+Backend System
+
+                                                                Smartphone  DSE Module                              CAN Device
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Specifications                                                                                           8 V to 36 V DC continuous
+DC Supply                                                                                                Able to survive 0 V for 100 ms, providing supply was at least 8 V before dropout and
+Continuous Voltage Rating                                                                                supply recovers to 8 V. This is achieved without the need for internal batteries.
+Cranking Dropouts                                                                                        755 mA at 12 V
+                                                                                                         376 mA at 24 V
+Maximum Operating Current                                                                                207 mA at 12 V
+                                                                                                         113 mA at 24 V
+Maximum Standby Current
+                                                                                                         2G
+Frequency Bands & Max Radio-Frequency Power Transmitted                                                  GSM 850/900 33dBm
+Type                                                                                                     GSM 1800/1900 30dBm
+                                                                                                         3G
+Digital Outputs                                                                                          B1/B2/B2/B4/B5/B6/B8/B19 24dBm
+Number                                                                                                   LTE
+Type                                                                                                     FDD: B1/B2/B3/B4/B5/B7/B8/B12/B18/B19/B20/B26/B28/B66 23dBm
+Output Rating                                                                                            TDD: B38/B40/B41 23dBm
+Digital Inputs
+Number                                                                                                   2
+Type                                                                                                     Positive Switching DC outputs
+Closed Voltage Threshold                                                                                 2 A at Supply voltage
+Open Voltage Threshold
+Communications                                                                                           2
+USB A                                                                                                    Negative Switching Digital Input
+CAN (Only active for third-party MQTT brokers)                                                           Less than 2.1 V
+RS485                                                                                                    Greater than 6.6 V
+Ethernet
+                                                                                                         Single DSE Controller
+                                                                                                         Multiple DSE Controllers & Programmable Displays
+                                                                                                         Multiple DSE Controllers
+                                                                                                         Multiple DSE Controllers
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Specifications                                                                                           SMA FEMALE
+GPS & GSM                                                                                                Outside thread, female central receptacle
+GSM Main                                                                                                 SMA FEMALE
+                                                                                                         Outside thread, female central receptacle
+GSM Diversity                                                                                            SMA MALE
+                                                                                                         Inside thread, male central pin
+GPS
+                                                                                                         -30 °C to 60 °C / -22 °F to 140 °F
+Temperature                                                                                              -40 °C to +80 °C / -40 °F to +185 °F
+Operating Temperature
+Storage Temperature                                                                                      85.5 mm x 136.8 mm x 51 mm / 3.36 ” x 5.39 ” x 2.00 ”
+Dimensions
+Overall (W x H x D)                                                                                      35 mm / 1.4“
+Mounting                                                                                                 2 M4 mounting holes
+DIN Rail
+Chassis
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Related Products                 7” Colour Parallel Genset Controller                                                                                G8900-01
+DSEGenset®                       Bus-Tie Controller                                                                                                  G8680-01
+DSEG8900                         Mains (Utility) Controller                                                                                          G8660-01
+DSEG8680                         Parallel Genset Controller with Integral Heater                                                                     G8600-01
+DSEG8660                         Compact Single Genset Controller                                                                                    G4500-01
+DSEG8600                         Compact Single Genset Controller                                                                                    G4501-01
+DSEG4500                         Intelligent Lighting Tower Control Module                                                                           L401-01
+DSEG4501                         Mains Decoupling Relay                                                                                              P100-02
+DSEL401 MKII                     Synchronising Generator Bus Tie Control Module                                                                      8680-01
+DSEP100                          Auto Transfer Switch & Mains (Utility) Control Module                                                               8660-02
+DSE8680                          Synchronising Auto Mains (Utility) Failure Load Share Control Module                                                8620-02
+DSE8660 MKII                     Synchronising & Load Sharing Auto Start Control Module                                                              8610-02
+DSE8620 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7420-03
+DSE8610 MKII                     Auto Start Control Module                                                                                           7410-03
+DSE7420 MKII                     Auto Mains (Utility) Failure Control Module                                                                         7320-03
+DSE7410 MKII                     Auto Start Control Module                                                                                           7310-03
+DSE7320 MKII                     Auto Mains (Utility) Failure Control Module                                                                         6120-05
+DSE7310 MKII                     Auto Start Control Module                                                                                           6110-05
+DSE6120 MKIII                    Auto Mains (Utility) Control Module                                                                                 6020-03
+DSE6110 MKIII                    Auto Mains (Utility) Failure Control Modules                                                                        4620-03
+DSE6020 MKII                     Auto Start Control Module                                                                                           4610-03
+DSE4620                          Auto Mains (Utility) Failure Control Module                                                                         4520-05
+DSE4610
+DSE4520 MKII                     Engine Only Control Module                                                                                          E800-01
+DSEControl®                      Engine Only Control Module                                                                                          E400-01
+DSEE800                          Engine Only Control Module                                                                                          E100-01
+DSEE400
+DSEE100                          Auto Transfer Switch Control Module                                                                                 0335-11
+DSEAts®                          Auto Transfer Switch Control Module                                                                                 0334-01
+DSE335 MKII                      Auto Transfer Switch Control Module                                                                                 0331-01
+DSE334
+DSE331
+
+Please note: the related product list is not exclusive, please email support@deepseaelectronics.com to check compatability.
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Environmental Testing Standards                                                                          EMC Generic Immunity Standard for the Industrial Environment
+Electro-Magnetic Compatibility                                                                           EMC Generic Emission Standard for the Industrial Environment
+BS EN 61000-6-2
+BS EN 61000-6-4                                                                                          Audio / video, information and communication technology equipment
+Electrical Safety
+BS EN 62368-1                                                                                            Ab/Ae Cold Test -30 ºC
+Temperature                                                                                              Bb/Be Dry Heat +70 ºC
+BS EN 60068-2-1
+BS EN 60068-2-2                                                                                          Ten sweeps in each of three major axes
+Vibration                                                                                                5 Hz to 8 Hz at ±7.5 mm,
+BS EN 60068-2-6                                                                                          8 Hz to 500 Hz at 2 gn
+
+Humidity                                                                                                 Db Damp Heat Cyclic 20/55 ºC at 95% RH 48 Hours
+BS EN 60068-2-30                                                                                         Cab Damp Heat Static 40 ºC at 93% RH 48 Hours
+BS EN 60068-2-78
+Shock                                                                                                    Three shocks in each of three major axes
+BS EN 60068-2-27                                                                                         15 gn in 11 ms
+
+Pin Out Description                                                                                      Description
+Pin                                                                                                      DC Supply
+1 to 2                                                                                                   Digital Outputs
+3 to 4                                                                                                   Digital Inputs
+5 to 7                                                                                                   RS485
+8 to 10                                                                                                  CAN
+11 to 13
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEComms Data Sheet                                                                                      89X 4G
+
+DSE890 MKII DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet)
+
+Part Number : 0890-04
+
+Technical Drawing                    85.5 mm
+                                     ( 3.36 " )
+                                                                                                          51 mm
+                                                                                                         ( 2.00 " )
+
+                                     73.3 mm
+                                     ( 2.89 " )
+
+136.8 mm
+   ( 5.39 " )
+                                                                                                    149 mm
+                                                                                                       ( 5.87 " )
+
+Connection Label
+
+                                 1234567             8 9 10 11 12 13                                     GPS  Main                                   Diversity
+
+                                 AB              AB  A B SCR H L SCR                                          GSM Antenna
+
+                                                     RS485 CAN
+
+                                                                                      020-1061-01,3
+
+Product Documentation
+053-247 – DSE890 MKII Installation Instructions
+057-304 – DSE890 MKII Operator Manual
+055-301 - DSE891 MKII Data Sheet
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-262/10/25 (3)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+

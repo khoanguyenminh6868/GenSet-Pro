@@ -1,0 +1,167 @@
+DSEG8015
+15.6” Panel PC with DSE SCADA
+
+Part Number: G8015-01
+
+                                                                                G8015
+
+Hardware
+The G8015 is a Windows based panel PC running DSE SCADA software and is designed for use with the G8 Series paralleling controller platform.
+The panel PC offers a 1920 x 1080 LED backlit capacitive touchscreen display. When mounted, the unit offers IP66 protection, and the powerful Intel
+processor ensures smooth operation. The unit is connected to DSE G8 Series controllers via Ethernet.
+
+Software
+DSE SCADA is a secure software platform that provides advanced multi-set monitoring & commissioning functionality for G8 Series Controllers. The
+stand-alone software is pre-loaded onto each device, which includes a full software license. The software can be configured to connect with
+individual / multiple generators on the same site. Users can gain a full system overview from any remote location with an Internet connection. The
+software provides multi-set commissioning functionality, which allows users to commission multiple generators.
+
+Key Features                                                                                                                                         Key Applications
+• Powerful Intel® Atom® processor
+• 4 GB SDRAM                                                                                                                                         Hospitals         Industrial
+• Multi-touch capacitive display
+• 1 x Ethernet, 2 x USB 3.0, 1 x USB 2.0                                                                                                             Data Centers      Rental
+• IP66 front panel protection
+• Line out - Audio system connection
+• Panel mount
+• Windows 10 IoT Enterprise
+• 2.5” SATA Solid State Drive
+• System status LED indicators
+• Wi-Fi hotspot capability
+• Option to design as server/client configuration
+
+      (See diagram on page 3)
+
+                                                                                                                                                     Telecoms          Hybrid
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-286/11/24 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEG8015                                                                                                 24 V DC ± 20 %
+15.6” Panel PC with DSE SCADA
+                                                                                                         1 x Ethernet, 2 x USB 3.0, 1 x USB 2.0,
+Part Number: G8015-01
+                                                                                                         Intel Atom E3940 1.6 GHz
+  Specifications                                                                                         4 GB DDR3L SDRAM
+  DC Supply                                                                                              1 x 2.5” SATA Solid State Drive
+  Continuous Voltage Rating                                                                              N/A
+  Interfaces
+  Rear I/O                                                                                               FHD TFT LED LCD
+  System                                                                                                 1920 x 1080
+  CPU                                                                                                    450 cd/m2
+  Memory                                                                                                 800:1
+  Storage Device                                                                                         170°/170°
+  Expansion                                                                                              LED
+  LCD Display Specification                                                                              50,000 hours
+  LCD Panel
+  Resolution                                                                                             PCAP
+  Luminance                                                                                              90% ± 3%
+  Contrast Ratio                                                                                         Yes
+  Viewing Angle
+  Backlight                                                                                              IP66 (front)
+  Backlight Life                                                                                         Panel mount
+  Touchscreen                                                                                            8.12 Kg
+  Type                                                                                                   419.7 mm x 269 mm x 60 mm
+  Light Transmission                                                                                     412.4 mm x 261.7 mm
+  Anti-Glare Treatment
+  Mechanical                                                                                             Windows 10 IoT Enterprise LTSB / LTSC
+  Housing
+  Mounting                                                                                               -20° C - 60° C
+                                                                                                         -20° C - 60° C
+  Weight
+  Dimensions
+  Panel Cutout
+  Operating System
+  OS
+  Operating Conditions
+  Operating Temperature
+  Storage Temperature
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-286/11/24 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEG8015
+15.6” Panel PC with DSE SCADA
+
+Part Number: G8015-01
+
+Related Products
+
+Controllers Compatible with DSE SCADA
+
+G8600                                     Parallel Genset Controller with Integral Heater                                                            G8600-01
+                                                                                                                                                     G8660-01
+G8660                                     ATS / Mains (Utility) Controller                                                                           G8680-01
+
+G8680                                     Bus Tie Controller                                                                                         2130-01
+                                                                                                                                                     2131-01
+Expansion Devices Compatible with DSE SCADA                                                                                                          2133-01
+                                                                                                                                                     2152-01
+DSE2130                                   DSENet® Input Expansion Module                                                                             2157-01
+                                                                                                                                                     2548-01
+DSE2131                                   DSENet® Ratiometric Input Expansion Module
+                                                                                                                                                     9470-01
+DSE2133                                   DSENet® RTD/Thermocouple Input Expansion Module
+
+DSE2152                                   DSENet® Analogue Output Expansion Module
+
+DSE2157                                   DSENet® Output Expansion Module
+
+DSE2548                                   DSENet® LED Output Expansion Module
+
+Battery Chargers
+
+DSE9470 MKII                              24 Volt 10 Amp Intelligent Battery Charger
+
+Typical Application Examples
+
+Single Panel PC Configuration
+
+                  G8015
+                  Ethernet Switch
+
+       G8600                       G8600     G8600                          G8600
+
+Server / Client Panel PC Configuration
+
+         G8015 Server                        G8015 Client 1                                              G8015 Client 2
+                 Ethernet Switch
+
+       G8600                       G8600     G8600                          G8600                                                                                                   = Ethernet Cable
+
+DEEP SEA ELECTRONICS UK                   DEEP SEA ELECTRONICS USA                                       DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099                    T: +1 (815) 316 8706                                           T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com           E: usasales@deepseaelectronics.com                             E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com             W: www.deepseaelectronics.com                                  W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-286/11/24 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+DSEG8015                                                                                                 60 mm
+15.6” Panel PC with DSE SCADA
+
+Part Number: G8015-01
+Technical Drawings
+G8015
+
+                                              419.7 mm
+
+                                                        269 mm
+
+                                 Front                                                                   Side                                        Rear
+
+DEEP SEA ELECTRONICS UK          DEEP SEA ELECTRONICS USA                                                DEEP SEA ELECTRONICS UAE                    DEEP SEA ELECTRONICS INDIA
+T: +44 (0) 1723 890099           T: +1 (815) 316 8706                                                    T: +971 (0) 45910819                        T: +91 20 68195900
+E: sales@deepseaelectronics.com  E: usasales@deepseaelectronics.com                                      E: uaesales@deepseaelectronics.com          E: sales@deepseaelectronics.com
+W: www.deepseaelectronics.com    W: www.deepseaelectronics.com                                           W: www.deepseaelectronics.com               W: www.deepseaelectronics.com
+
+Deep Sea Electronics Ltd maintains a policy of continuous development and reserves the right to change    Registered in England & Wales No.01319649                                       055-286/11/24 (2)
+the details shown on this data sheet without prior notice. The contents are intended for guidance only.   VAT No.316923457
+
