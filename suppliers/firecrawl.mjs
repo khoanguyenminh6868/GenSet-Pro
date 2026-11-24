@@ -12,8 +12,18 @@ export function keyFile(env = process.env) {
   if (env.GENBID_ROOT) return path.join(env.GENBID_ROOT, "genbid-hsmt", ".firecrawl-key");
   return "C:/Projects/GenSet Pro/genbid-hsmt/.firecrawl-key";
 }
+// The backup key (Khoa 24/11/2026: the first account's monthly credits run out; the old key stays): the same file name
+// + "-2", used only when the first key answers 402. GENBID_FIRECRAWL_KEY_FILE_2 overrides. A missing file = no backup.
+export function backupKeyFile(env = process.env) {
+  return env.GENBID_FIRECRAWL_KEY_FILE_2 || keyFile(env) + "-2";
+}
+// The keys to try, in order; never printed.
+function keysOf(env) {
+  const read = (f) => { try { return fs.readFileSync(f, "utf8").trim(); } catch { return ""; } };
+  return [...new Set([read(keyFile(env)), read(backupKeyFile(env))].filter(Boolean))];
+}
 export function hasKey(env = process.env) {
-  try { return fs.readFileSync(keyFile(env), "utf8").trim().length > 0; } catch { return false; }
+  return keysOf(env).length > 0;
 }
 
 // When the direct download's outcome calls for Firecrawl: status (number, or null for a network error) and, for a page
@@ -28,14 +38,18 @@ export function shouldRetry({ status = null, error = "", textLength = null } = {
 // Scrape one URL; resolves { url, markdown } or throws an Error whose message says why (credits out: HTTP 402).
 // fetchImpl: tests pass a fake.
 export async function scrape(url, { env = process.env, fetchImpl = fetch, timeout = 120000 } = {}) {
-  const key = fs.readFileSync(keyFile(env), "utf8").trim();
-  const r = await fetchImpl("https://api.firecrawl.dev/v2/scrape", {
-    method: "POST", signal: AbortSignal.timeout(timeout),
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ url, formats: ["markdown"], onlyMainContent: true }),
-  });
-  const j = await r.json().catch(() => ({}));
-  if (r.status === 402) throw new Error("firecrawl HTTP 402 (hết credit tháng này)");
-  if (!r.ok || !j.data?.markdown) throw new Error(`firecrawl HTTP ${r.status} ${String(j.error || "").slice(0, 160)}`.trim());
-  return { url: j.data.metadata?.sourceURL || url, markdown: j.data.markdown };
+  const keys = keysOf(env);
+  if (!keys.length) throw new Error(`firecrawl: không có khoá (${keyFile(env)})`);
+  for (const [i, key] of keys.entries()) {
+    const r = await fetchImpl("https://api.firecrawl.dev/v2/scrape", {
+      method: "POST", signal: AbortSignal.timeout(timeout),
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ url, formats: ["markdown"], onlyMainContent: true }),
+    });
+    const j = await r.json().catch(() => ({}));
+    // Out of credits: the next key (the backup), if any. Any other answer is this page's answer, not the key's.
+    if (r.status === 402) { if (i < keys.length - 1) continue; throw new Error(`firecrawl HTTP 402 (hết credit tháng này${keys.length > 1 ? ", cả khoá dự phòng" : ""})`); }
+    if (!r.ok || !j.data?.markdown) throw new Error(`firecrawl HTTP ${r.status} ${String(j.error || "").slice(0, 160)}`.trim());
+    return { url: j.data.metadata?.sourceURL || url, markdown: j.data.markdown };
+  }
 }
