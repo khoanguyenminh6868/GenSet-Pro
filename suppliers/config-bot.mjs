@@ -1522,7 +1522,9 @@ const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[�
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
 const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
-const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
+// "Hạng mục 2", "Phần 1", "Mục 3" opening a line (not "Hạng mục 1-3": a range). "Hàng mục" is how some HSMT write it.
+const ITEM_HEAD = /^\s*((?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4})(?![\d\-–])\s*[-–:.]\s/i;
+const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:ch[ạa]y\s+)?(?:b[ằa]ng\s+)?(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -1582,6 +1584,14 @@ export function sizeBlocks(t, sizes) {
     const p = hit("prime"), list = p.length ? p : hit("standby");
     return list.length === 1 ? list[0] : -1;
   });
+  // The other lines of the same item ("Hàng mục 1 - Máy 3 pha: Động cơ - dung tích xy lanh: > 1.758 lít" after "Hàng mục 1 - Máy phát
+  // điện chạy dầu 3 pha 12 kW: Công suất liên tục: 15 kVA/12 kW") go with the size its named lines give, when they give one size
+  // (sizes-co-ao, 24/11/2026, IB2300363623: bidhist text is sorted by topic, so the 3-phase set's engine lines stood after the 1-phase
+  // set's lines and, once the fake 5,8 kW size no longer closed that block, were read for 5 kW).
+  const itemOf = (l) => l.match(ITEM_HEAD)?.[1].toLowerCase().normalize("NFC").replace(/\s+/g, " ").replace(/^h[ạàa]ng/, "hang");
+  const itemSize = new Map();
+  L.forEach((l, i) => { const it = tags[i] >= 0 && itemOf(l); if (it) itemSize.set(it, itemSize.has(it) && itemSize.get(it) !== tags[i] ? -1 : tags[i]); });
+  L.forEach((l, i) => { const it = tags[i] === -1 && itemOf(l); if (it && itemSize.get(it) >= 0) tags[i] = itemSize.get(it); });
   return { L, runs, tags };
 }
 const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "phase", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];

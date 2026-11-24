@@ -40,6 +40,29 @@ test("nhãn đứng sau số và 'liên tục tối đa' (IB2200068912, IB250009
     "Máy phát điện 400 kVA: Công suất định mức (prime): 400,0 kVA / 160,0 kW\nMáy phát điện 400 kVA: Công suất dự phòng (stanby): 220,0 kVA / 176,0 kW"), ["400 kVA"]);
 });
 
+test("dòng cùng hạng mục theo cỡ của dòng hạng mục nêu cỡ, kể cả khi chữ bị xếp xen (IB2300363623)", async () => {
+  const { hintsOf } = await import("./config-bot.mjs");
+  const text = [
+    "Hàng mục 1 - Máy phát điện chạy dầu 3 pha 12 kW: Công suất liên tục: 15 kVA/12 kW",
+    "Hàng mục 1 - Máy 3 pha: Công suất dự phòng: 16.5 kVA/13.2 kW",
+    "Hàng mục 2 - Máy phát điện chạy dầu 1 pha 5kW: Công suất liên tục: 5 kW",
+    "Hàng mục 2 - Máy 1 pha: Công suất dự phòng: 5.8 kW",
+    "Hàng mục 1 - Máy 3 pha: Tiêu hao nhiên liệu ở 100% tải: Tương đương 3.8 lít/giờ khi hoạt động ở mức 100% tải",
+    "Hàng mục 1 - Máy 3 pha: Động cơ - kiểu: Diesel, 4 thì (4 xy lanh), phun nhiên liệu trực tiếp",
+    "Hàng mục 1 - Máy 3 pha: Động cơ - dung tích xy lanh: > 1.758 lít",
+    "Hàng mục 2 - Máy 1 pha: Tiêu hao nhiên liệu: < 2 lít/giờ tại 100% tải",
+  ].join("\n");
+  const sizes = sizesOf(["15 kVA, 12 kW, 16.5 kVA, 13.2 kW, 5 kW, 5.8 kW", ""], "", text);
+  assert.deepEqual(sizes.map(sizeText), ["5 kW", "15 kVA"]);
+  const h5 = hintsOf(text, "", { size: sizes[0], sizes }), h15 = hintsOf(text, "", { size: sizes[1], sizes });
+  assert.equal(h5.minDisp, null);
+  assert.equal(h5.minCyl, null);
+  assert.equal(h5.maxFuel, 2);
+  assert.equal(h15.minDisp, 1.758);
+  assert.equal(h15.minCyl, 4);
+  assert.equal(h15.maxFuel, 3.8);
+});
+
 test("cỡ thật giữ nguyên; không ngữ cảnh thì như cũ", () => {
   const kvas = "100 kVA, 80 kW, 110 kVA, 88 kW, 150 kVA, 120 kW, 165 kVA, 132 kW";
   const ctx = "Phần 1 - Máy 100 kVA: Công suất: Công suất dài hạn 80 kW / 100 kVA.\nPhần 1 - Máy 100 kVA: Công suất dự phòng: Công suất dự phòng 88 kW / 110 kVA.\nPhần 2 - Máy 150 kVA: Công suất: Công suất dài hạn 120 kW / 150 kVA.\nPhần 2 - Máy 150 kVA: Công suất dự phòng: Công suất dự phòng 132 kW / 165 kVA.";
