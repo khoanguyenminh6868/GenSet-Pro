@@ -6,6 +6,19 @@ import assert from "node:assert/strict";
 import { sheetOf } from "./crawl-datasheets.mjs";
 import { tablesOf } from "./crawl-specs.mjs";
 import { controllerSheet } from "./maker-datasheets.mjs";
+import { ctlKinds } from "./ctl-module.mjs";
+import { ctlModelsIn } from "./config-bot.mjs";
+
+test("ctlKinds: lines of a full manual do not change a controller's kind", () => {
+  const sheet = (title, rows) => ({ id: "x", role: "controller_maker", specTables: [{ n: 1001, title, header: [], rows }] });
+  const k = ctlKinds([
+    sheet("Datasheet: HGM9510", ["Genset parallel controller", "Please refer to HGM9500 Synchronization Plan List for GOV and AVR settings."]),
+    sheet("Datasheet: DEIF AGC-4 Mk II", ["Reactive load sharing (island paralleling with other generators)"]),
+  ], { modelsIn: ctlModelsIn });
+  assert.equal(k.get("HGM9510"), "sync");
+  assert.equal(k.get("HGM9500"), undefined);
+  assert.equal(k.get("AGC4"), undefined);
+});
 
 test("controllerSheet keeps every line of a manual longer than 700 lines, in order", () => {
   const body = Array.from({ length: 900 }, (_, i) => `Protection item ${i}: delay ${i + 1} s`);
