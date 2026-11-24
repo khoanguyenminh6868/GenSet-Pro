@@ -131,7 +131,19 @@
    "| LG600SD | 825 | 660 | 750 | 600 | 6KTAA25-G32 | OP3600*1500*2060 | AT5680*2100*2500 | Download",
    "| LG650SD | 895 | 715 | 815 | 650 | 6KTAA25-G31 | OP3600*1500*2060 | AT5680*2100*2500 | Download",
    "| LG728SD | 1000 | 800 | 910 | 728 | 6WTAA35-G32 | OP4400*2140*2280 | 20FT | Download",
-   "| LG800SD | 1100 | 880 | 1000 | 800 | 6WTAA35-G31 | OP4400*2140*2280 | 20FT | Download",
+   "| LG800SD | 1100 | 880 | 1000 | 800 | 6WTAA35-G31 | OP4400*2140*2280 | 20FT | Download"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.longkaipower.com/LG-SD-Serial-Powered-by-SDEC-pd47840333.html",
+  "title": "from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)",
+   "| NEW TYPE"
+  ],
+  "rows": [
    "| LG50SD | 70 | 55 | 63 | 50 | 4HT4.3-G21 | OP1850*800*1180 | AT2538*1000*1450 |",
    "| LG55SD | 76 | 61 | 70 | 55 | 4HT4.3-G22 | OP1850*800*1180 | AT2538*1000*1450 |",
    "| LG68SD | 94 | 75 | 85 | 68 | 4HT4.3-G23 | OP1900*800*1200 | AT2538*1000*1450 |",
@@ -342,7 +354,18 @@
    "| LG2200WP | 2420 | 3025 | 2200 | 2750 | 16M55G3000/5 | LK734HM | LSA52.3 UL16 C6S/4 | OP6500*2850*3290 | 40HQ* |",
    "| LG2400WP | 2640 | 3300 | 2400 | 3000 | 16M55G3300/5 | LK734HG | LSA53.2M9 | OP6500*2850*3290 | 40HQ* |",
    "| LG2600WP | 2860 | 3575 | 2600 | 3250 | 16M55G3750/5 | 无 | LSA54.2M10 2736KW | OP6500*2850*3290 | 40HQ* |",
-   "| LG3000WP | 3300 | 4125 | 3000 | 3750 | 16M55G4000/5 | 无 | LSA54.2UL14 3456KW | OP6500*2850*3290 | 40HQ* |",
+   "| LG3000WP | 3300 | 4125 | 3000 | 3750 | 16M55G4000/5 | 无 | LSA54.2UL14 3456KW | OP6500*2850*3290 | 40HQ* |"
+  ]
+ },
+ {
+  "n": 108,
+  "url": "https://www.longkaipower.com/LG-BD-Serial-powered-by-Baudouin-pd43009599.html",
+  "title": "Baudouin diesel generator set from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | ENGINE TYPE | ALTERNATOR | DIMENSION | DATASHEET",
+   "| KW | KVA | KW | KVA | Longkai | Leroy Sommer | OPEN TYPE | SILENT TYPE"
+  ],
+  "rows": [
    "| LG15BD | 16.5 | 20.625 | 15 | 18.75 | 4M06G20/6 | LK184E | LSA 40 M7 | OP1500*750*1050 | AT2188*900*1280 |",
    "| LG18BD | 19.8 | 24.75 | 18 | 22.5 | 4M06G25/6 | LK184E | LSA 40 M7 | OP1500*750*1050 | AT2188*900*1280 |",
    "| LG25BD | 28.6 | 35.75 | 26 | 32.5 | 4M06G33/6 | LK184G | LSA 42.3 VS3 | OP1500*750*1050 | AT2188*900*1280 |",
@@ -580,7 +603,17 @@
    "| LK734E | 1476 | 1520 | 1520 | / | 215*101*159 | 3585 |",
    "| LK734F | 1616 | 1664 | 1664 | / | 220*101*159 | 3850 |",
    "| LK734G | 1708 | 1760 | 1760 | / | 220*101*159 | 4090 |",
-   "| LK734H | 2000 | 2060 | 2060 | / | 220*101*159 | 4580 |",
+   "| LK734H | 2000 | 2060 | 2060 | / | 220*101*159 | 4580 |"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "https://www.longkaipower.com/Longkai-Brushless-Alternator-pd43392633.html",
+  "title": "Longkai Brushless Alternator from China manufacturer - Longkai",
+  "header": [
+   "| Model | KW/3PH/60Hz | Dimension(cm) | Weight(kg) | PDF"
+  ],
+  "rows": [
    "| 208/416V | 220/440V | 230/460V | 240/480V",
    "| LK164A | 7.7 | 8.2 | 8.2 | 8.2 | 49*45*58 | 86 |",
    "| LK164B | 10.4 | 11 | 11 | 11 | 49*45*58 | 93 |",
@@ -834,7 +867,18 @@
    "| LG200X | 275 | 220 | 250 | 200 | CA6DL2-30D | OP2850*1000*1750 | AT3588*1180*2150 |",
    "| LG250X | 344 | 275 | 313 | 250 | CA6DM2J-39D | OP3200*1150*1850 | AT3988*1400*2250 |",
    "| LG270X | 371 | 297 | 338 | 270 | CA6DM2J-41D | OP3200*1150*1850 | AT3988*1400*2250 |",
-   "| LG300X | 413 | 330 | 375 | 300 | CA6DM3J-48D | OP3350*1150*1900 | AT4218*1400*2250 |",
+   "| LG300X | 413 | 330 | 375 | 300 | CA6DM3J-48D | OP3350*1150*1900 | AT4218*1400*2250 |"
+  ]
+ },
+ {
+  "n": 119,
+  "url": "https://www.longkaipower.com/LG-X-Serial-Powered-by-FAWDE-pd41708243.html",
+  "title": "LG-X Serial Powered by FAWDE from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG16X | 22 | 18 | 20 | 16 | 4DW81-28D-YFD10W | OP1500*750*1050 | AT2008*900*1130 |",
    "| LG23X | 32 | 25 | 29 | 23 | 4DW91-38D-YFD10W | OP1500*750*1050 | AT2008*900*1130 |",
    "| LG25X | 34 | 27 | 31 | 25 | 4DW92-42D-YFD10W | OP1500*750*1050 | AT2008*900*1130 |",
@@ -913,7 +957,18 @@
    "| LG1350P | 1856 | 1485 | 1688 | 1350 | 4012-46TAG3A | OP5000*2200*2750 | 40HQ |",
    "| LG1480P | 2035 | 1628 | 1850 | 1480 | 4016TAG1A | OP5800*2800*3400 | 40HQX |",
    "| LG1600P | 2200 | 1760 | 2000 | 1600 | 4016TAG2A | OP5800*2800*3400 | 40HQX |",
-   "| LG1800P | 2475 | 1980 | 2250 | 1800 | 4016-61TRG3 | OP5800*2800*3400 | 40HQX |",
+   "| LG1800P | 2475 | 1980 | 2250 | 1800 | 4016-61TRG3 | OP5800*2800*3400 | 40HQX |"
+  ]
+ },
+ {
+  "n": 120,
+  "url": "https://www.longkaipower.com/LG-P-Serial-Powered-by-PERKINS-pd44438243.html",
+  "title": "LG-P Serial Powered by PERKINS from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG9P | 12 | 10 | 11 | 9 | 403D-11G | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG9P | 12 | 10 | 11 | 9 | 403A-11G1 | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG12P | 17 | 13 | 15 | 12 | 403D-15G | OP1500*750*1050 | AT1808*850*1130 |",
@@ -1032,7 +1087,18 @@
    "| LG1100C | 1513 | 1210 | 1375 | 1100 | QSK38-G19 | OP5800*2200*2500 | 40HQ | Download",
    "| LG1100C | 1513 | 1210 | 1375 | 1100 | KTA50-G8 | OP5000*2000*2500 | 40HQ | Download",
    "| LG1180C | 1623 | 1298 | 1475 | 1180 | KTA50-GS8 | OP5800*2200*2500 | 40HQ | Download",
-   "| LG1350C | 1856 | 1485 | 1688 | 1350 | KTA50-G15 | OP5800*2200*2500 | 40HQ | Download",
+   "| LG1350C | 1856 | 1485 | 1688 | 1350 | KTA50-G15 | OP5800*2200*2500 | 40HQ | Download"
+  ]
+ },
+ {
+  "n": 121,
+  "url": "https://www.longkaipower.com/LG-C-Serial-Powered-by-CUMMINS-pd49594443.html",
+  "title": "LG-C Serial Powered by CUMMINS from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG20C | 28 | 22 | 25 | 20 | 4B3.9-G11 | OP1850*800*1160 | AT2388*1000*1450 |",
    "| LG24C | 33 | 26 | 30 | 24 | 4B3.9-G2 | OP1850*800*1160 | AT2388*1000*1450 |",
    "| LG28C | 39 | 31 | 35 | 28 | 4B3.9-G12 | OP1850*800*1160 | AT2388*1000*1450 |",
@@ -1178,7 +1244,19 @@
    "| LG96DA | 132 | 106 | 120 | 96 | BF6L913CADG | OP2250*880*1500 | AT2938*1080*1690 |",
    "| LG100DA | 138 | 110 | 125 | 100 | F8L413F | OP2500*980*1520 | AT3288*1130*1850 |",
    "| LG120DA | 165 | 132 | 150 | 120 | BF8L513 | OP2500*980*1520 | AT3288*1130*1850 |",
-   "| LG150DA | 206 | 165 | 188 | 150 | BF8L513C | OP2650*1050*1650 | AT3588*1180*2150 |",
+   "| LG150DA | 206 | 165 | 188 | 150 | BF8L513C | OP2650*1050*1650 | AT3588*1180*2150 |"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://www.longkaipower.com/LG-D-Serial-Powered-by-DEUTZ-pd48138243.html",
+  "title": "LG-D Serial Powered by DEUTZ from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)",
+   "| Air cooled"
+  ],
+  "rows": [
    "| LG21D | 29 | 23 | 26 | 21 | BFM3 G1 | OP1700*750*1050 | AT2188*900*1280 |",
    "| LG29D | 40 | 32 | 36 | 29 | BFM3 G2 | OP1700*750*1050 | AT2188*900*1280 |",
    "| LG40D | 55 | 44 | 50 | 40 | BFM3T | OP1700*750*1050 | AT2288*950*1280 |",
@@ -1260,7 +1338,18 @@
    "| LG650DS | 895 | 715 | 813 | 650 | DP222CB-2 | OP3700*1700*2200 | 20FT |",
    "| LG650DS | 895 | 715 | 813 | 650 | DP222CB | OP3700*1700*2200 | 20FT |",
    "| LG730DS | 1004 | 803 | 913 | 730 | DP222CC | OP3700*1700*2200 | 20FT |",
-   "| LG730DS | 1004 | 803 | 913 | 730 | DP222CC-2 | OP3700*1700*2200 | 20FT |",
+   "| LG730DS | 1004 | 803 | 913 | 730 | DP222CC-2 | OP3700*1700*2200 | 20FT |"
+  ]
+ },
+ {
+  "n": 123,
+  "url": "https://www.longkaipower.com/LG-DS-Serial-Powered-by-DOOSAN-ENGINE-pd46178043.html",
+  "title": "LG-DS Serial Powered by DOOSAN ENGINE from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG7DS/I | 10 | 8 | 9 | 7 | SP103NE | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG7DS/I | 10 | 8 | 9 | 7 | SP103NH | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG13DS/I | 18 | 14 | 16 | 13 | SP173NC | OP1500*750*1050 | AT2008*900*1130 |",
@@ -1325,7 +1414,18 @@
    "| LG40I | 55 | 44 | 50 | 40 | 4BD1-Z | OP1850*800*1150 | AT2388*1000*1450 |",
    "| LG50I | 69 | 55 | 63 | 50 | 4BG1-Z | OP1900*800*1150 | AT2538*1000*1450 |",
    "| LG50I | 110 | 88 | 100 | 80 | 6BG1-Z1 | OP2250*880*1300 | AT3288*1130*1850 |",
-   "| LG90I | 125 | 100 | 113 | 90 | 6BG1-ZL1 | OP2250*880*1300 | AT3288*1130*1850 |",
+   "| LG90I | 125 | 100 | 113 | 90 | 6BG1-ZL1 | OP2250*880*1300 | AT3288*1130*1850 |"
+  ]
+ },
+ {
+  "n": 124,
+  "url": "https://www.longkaipower.com/LG-I-Serial-Powered-by-ISUZU-pd43028243.html",
+  "title": "LG-I Serial Powered by ISUZU from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG16I | 22 | 18 | 20 | 16 | 4JA1-D1 | OP1500*750*1050 | AT2008*900*1130 |",
    "| LG20I | 28 | 22 | 25 | 20 | 4JA1-F1 | OP1500*750*1050 | AT2008*900*1130 |",
    "| LG20I | 28 | 22 | 25 | 20 | JE493DB-03 | OP1700*750*1050 | AT2188*900*1280 |",
@@ -1392,7 +1492,18 @@
    "| LG300KF | 385 | 308 | 350 | 280 | WT12D-330DE | OP3000*1070*1700 | AT4218*1400*2250 |",
    "| LG300KF | 385 | 308 | 350 | 280 | WT13D-330DE | OP3000*1070*1700 | AT4588*1600*2500 |",
    "| LG320KF | 440 | 352 | 400 | 320 | WT13-360DE | OP3300*1350*1850 | AT4588*1600*2500 |",
-   "| LG360KF | 500 | 400 | 450 | 360 | WT13A-390DE | OP3300*1350*1850 | AT4588*1600*2500 |",
+   "| LG360KF | 500 | 400 | 450 | 360 | WT13A-390DE | OP3300*1350*1850 | AT4588*1600*2500 |"
+  ]
+ },
+ {
+  "n": 125,
+  "url": "https://www.longkaipower.com/LG-KF-Serial-Powered-by-RICARDO-pd43618243.html",
+  "title": "LG-KF Serial Powered by RICARDO from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG20KF | 28 | 22 | 25 | 20 | 4YT23-20D | OP1500*750*1050 | AT2008*900*1130 |",
    "| LG24KF | 33 | 26 | 30 | 24 | 4YT23-30D | OP1500*750*1050 | AT2188*900*1280 |",
    "| LG24KF | 33 | 26 | 30 | 24 | K4100DS | OP1700*750*1150 | AT2188*900*1280 |",
@@ -1487,7 +1598,19 @@
    "| LG2200WP | 3025 | 2420 | 2750 | 2200 | 12M55D2700E310 | OP6500*2850*3290 | 40HQ* | Download",
    "| LG2400WP | 3300 | 2640 | 3000 | 2400 | 16M55D2900E310 | OP6500*2850*3290 | 40HQ* | Download",
    "| LG2600WP | 3575 | 2860 | 3250 | 2600 | 16M55D3300E310 | OP6500*2850*3290 | 40HQ* | Download",
-   "| LG3000WP | 4125 | 3300 | 3750 | 3000 | 16M55D3600E310 | OP6500*2850*3290 | 40HQ* | Download",
+   "| LG3000WP | 4125 | 3300 | 3750 | 3000 | 16M55D3600E310 | OP6500*2850*3290 | 40HQ* | Download"
+  ]
+ },
+ {
+  "n": 126,
+  "url": "https://www.longkaipower.com/LG-WP-Serial-Powered-by-WEICHAI-ENGINE-pd42178043.html",
+  "title": "LG-WP Serial Powered by WEICHAI ENGINE from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)",
+   "| Weichai Series--Baudouin Engine"
+  ],
+  "rows": [
    "| LG20WP | 28 | 22 | 25 | 20 | WP2.3D30E201 | OP1500*750*1050 | AT2188*900*1280 |",
    "| LG25WP | 34 | 28 | 31 | 25 | WP2.3D41E201 | OP1500*750*1050 | AT2188*900*1280 |",
    "| LG30WP | 41 | 33 | 38 | 30 | WP2.3D47E201 | OP1500*750*1050 | AT2188*900*1280 |",
@@ -1569,7 +1692,18 @@
    "| LG38YD | 52 | 42 | 48 | 38 | Y4102ZLD | OP1700*750*1100 | AT2288*950*1280 |",
    "| LG40YD | 55 | 44 | 50 | 40 | Y4105ZLD | OP1850*800*1180 | AT2288*950*1280 |",
    "| LG50YD | 69 | 55 | 63 | 50 | YD4EZLD | OP1850*800*1180 | AT2388*1000*1450 |",
-   "| LG60YD | 83 | 66 | 75 | 60 | Y4110ZLD | OP1900*800*1200 | AT2538*1000*1450 |",
+   "| LG60YD | 83 | 66 | 75 | 60 | Y4110ZLD | OP1900*800*1200 | AT2538*1000*1450 |"
+  ]
+ },
+ {
+  "n": 127,
+  "url": "https://www.longkaipower.com/LG-YD-Serial-Powered-by-YANGDONG-pd45228243.html",
+  "title": "LG-YD Serial Powered by YANGDONG from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG9YD | 12 | 10 | 11 | 9 | YD380D | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG10YD | 14 | 11 | 13 | 10 | YD385D | OP1500*750*1050 | AT1808*850*1130 |",
    "| LG13YD | 18 | 14 | 16 | 13 | YD480D | OP1500*750*1050 | AT2008*900*1130 |",
@@ -1618,7 +1752,18 @@
    "| LG260YTO | 360 | 286 | 325 | 260 | YM6S9L-D | OP3200*1350*1880 | AT4588*1600*2500 |",
    "| LG280YTO | 385 | 308 | 350 | 280 | YM6S9L-DB | OP3200*1350*1880 | AT4588*1600*2500 |",
    "| LG300YTO | 415 | 330 | 375 | 300 | YM6S9L-D | OP3200*1350*1880 | AT4588*1600*2500 |",
-   "| LG320YTO | 440 | 352 | 400 | 320 | YM6S9L-DA | OP3200*1350*1880 | AT4588*1600*2500 |",
+   "| LG320YTO | 440 | 352 | 400 | 320 | YM6S9L-DA | OP3200*1350*1880 | AT4588*1600*2500 |"
+  ]
+ },
+ {
+  "n": 128,
+  "url": "https://www.longkaipower.com/LG-YTO-Serial-Powered-by-YTO-Engine-pd48178043.html",
+  "title": "LG-YTO Serial Powered by YTO Engine from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG30YTO | 41 | 33 | 38 | 30 | YT3B2-D | OP1700*750*1100 | AT2188*900*1280 |",
    "| LG35YTO | 48 | 39 | 44 | 35 | YT3A2Z-D | OP1850*800*1290 | AT2288*950*1280 |",
    "| LG42YTO | 58 | 46 | 53 | 42 | LR4B5-D | OP1900*870*1200 | AT2688*1080*1450 |",
@@ -1711,7 +1856,18 @@
    "| LG1600YC | 2200 | 1760 | 2000 | 1600 | YC12VC2700-D31 | OP5800*2800*3400 | 40HQX |",
    "| LG1800YC | 2475 | 1980 | 2250 | 1800 | YC16VC3000-D31 | OP6200*2850*3290 | 40HQX |",
    "| LG2000YC | 2750 | 2200 | 2500 | 2000 | YC16VC3300-D31 | OP6200*2850*3290 | 40HQX |",
-   "| LG2200YC | 3025 | 2420 | 2750 | 2200 | YC16VC3600-D31 | OP6500*2850*3290 | 40HQX |",
+   "| LG2200YC | 3025 | 2420 | 2750 | 2200 | YC16VC3600-D31 | OP6500*2850*3290 | 40HQX |"
+  ]
+ },
+ {
+  "n": 129,
+  "url": "https://www.longkaipower.com/LG-YC-Serial-Powered-by-YUCHAI-pd46718243.html",
+  "title": "LG-YC Serial Powered by YUCHAI from China manufacturer - Longkai",
+  "header": [
+   "| GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet",
+   "| KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)"
+  ],
+  "rows": [
    "| LG40YC | 55 | 44 | 50 | 40 | YC4D65-D20 | OP1850*800*1180 | AT2388*1000*1450 |",
    "| LG50YC | 70 | 55 | 63 | 50 | YC4D80Z-D20 | OP1900*800*1250 | AT2538*1000*1450 |",
    "| LG60YC | 83 | 66 | 75 | 60 | YC4D100Z-D20 | OP1900*800*1300 | AT2688*1080*1450 |",

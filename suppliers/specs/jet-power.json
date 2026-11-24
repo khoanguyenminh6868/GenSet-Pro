@@ -759,7 +759,20 @@
    "| V-650T2 | 650 | 520 | 591 | 473 | TAD1642GE-B | L6 | EMS | 16.12 | 144*165 | 119 | Stage II | ECO40 2L4C",
    "| V-715T2 | 715 | 572 | 650 | 520 | TWD1644GE | L6 | EMS | 16.12 | 144*165 | 125 | Stage II | ECO40 3L4C",
    "| V-750T2 | 750 | 600 | 680 | 544 | TWD1645GE | L6 | EMS | 16.12 | 144*165 | 133 | Stage II | ECO40 3L4C",
-   "| V-825T2 | 825 | 660 | 750 | 600 | TWD1744GE | L6 | EMS | 17.26 | 149*165 | 147 | Stage II | ECO40 VL4C",
+   "| V-825T2 | 825 | 660 | 750 | 600 | TWD1744GE | L6 | EMS | 17.26 | 149*165 | 147 | Stage II | ECO40 VL4C"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://www.jetgenset.com/powered-by-volvo-diesel-generator-set.html",
+  "title": "Powered by VOLVO Diesel Generator Set | Jet Power Generator",
+  "header": [
+   "| Model | 400V / 50Hz / 1500rpm | VOLVO PENTA Diesel Engine |",
+   "| Emission level | Alternator",
+   "| Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Fuel Cons. | Mecc Alte",
+   "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | L | Mecc Alte"
+  ],
+  "rows": [
    "| V-275T3 | 275 | 220 | 250 | 200 | TAD851GE | L6 | EMS | 7.7 | 110*135 | 49 | Stage IIIA / Tier 3 | ECO38 2M4C",
    "| V-316T3 | 316 | 253 | 288 | 230 | TAD852GE | L6 | EMS | 7.7 | 110*135 | 56.3 | Stage IIIA / Tier 3 | ECO38 1L4C",
    "| V-358T3 | 358 | 286 | 325 | 260 | TAD1351GE | L6 | EMS | 12.78 | 131*158 | 65 | Stage IIIA / Tier 3 | ECO38 2L4C",
