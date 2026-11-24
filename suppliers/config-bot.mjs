@@ -899,7 +899,8 @@ export function modelFacts(cat, suppliers = []) {
 const comapCore = (k) => k.match(/^(?:INTELILITE)?((?:AMF|MRS)\d+)$/)?.[1];
 const GENERATION = [
   (key, k) => !/MK(II|III|2|3)$/.test(key) && new RegExp(`^${key}MK(II|III)$`).test(k),
-  (key, k) => !!comapCore(key) && k.match(/^INTELILITE(?:4|NT)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
+  // bdk-ten-tat: "AMF5" written by a supplier ("ComAp AMF5") takes the datasheet of InteliNano AMF 5 ([comap 1021]).
+  (key, k) => !!comapCore(key) && k.match(/^INTELI(?:LITE(?:4|NT)|NANO)((?:AMF|MRS)\d+)$/)?.[1] === comapCore(key),
   // SmartGen "HGM6110" written without its letter (2026-11-03: 13 suppliers write it so): the current "HGM6110N".
   (key, k) => /^HGM\d{4}$/.test(key) && k === `${key}N`,
   // "InteliGen" written alone: every InteliGen generation with a datasheet (NT, NTC, 500, 1000...), to be confirmed.

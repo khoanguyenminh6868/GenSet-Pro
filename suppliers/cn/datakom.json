@@ -4514,5 +4514,43 @@
         "EN 61326 (EMC requirements)"
       ]
     }
+  ],
+  "controllers": [
+    {
+      "brand": "Datakom",
+      "model": "DKG-116",
+      "text": "DKG-116",
+      "line": "DKG-116",
+      "src": [
+        1003
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": "DKG-307",
+      "text": "DKG-307",
+      "line": "| DKG-307 User Manual | V-42 (24.05.2013)",
+      "src": [
+        1002
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": "DKG-309",
+      "text": "DKG-309",
+      "line": "| DKG-309 User Manual | V-29 (23.08.2013)",
+      "src": [
+        1001
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": "DKG-317",
+      "text": "DKG-317",
+      "line": "6.27. Password Operation (applicable only to DKG-317CAN/MPU)",
+      "src": [
+        1002
+      ]
+    }
   ]
 }

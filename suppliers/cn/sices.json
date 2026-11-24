@@ -138,7 +138,7 @@
   "specTables": [
     {
       "n": 1001,
-      "title": "Datasheet: GC600",
+      "title": "Datasheet: Mecc Alte GC600",
       "header": [],
       "rows": [
         "Controller for genset working in parallel",
@@ -439,7 +439,7 @@
     },
     {
       "n": 1002,
-      "title": "Datasheet: GC315 (GC315Plus, GC315Link)",
+      "title": "Datasheet: Mecc Alte GC315 (GC315Plus, GC315Link)",
       "header": [],
       "rows": [
         "DATASHEET",
@@ -647,7 +647,7 @@
     },
     {
       "n": 1003,
-      "title": "Datasheet: GC315-GC400",
+      "title": "Datasheet: Mecc Alte GC315-GC400",
       "header": [],
       "rows": [
         "GC315-GC400",
@@ -9680,7 +9680,7 @@
     },
     {
       "n": 1004,
-      "title": "Datasheet: DST4602Evolution",
+      "title": "Datasheet: Mecc Alte DST4602Evolution",
       "header": [],
       "rows": [
         "DST4602Evolution",
@@ -10298,6 +10298,15 @@
       "line": "GC400 - Centralina di controllo a microprocessore compatta ed affidabile la quale",
       "src": [
         2003
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC315",
+      "text": "GC315",
+      "line": "Mecc Alte GC315 advanced genset controller for",
+      "src": [
+        1002
       ]
     }
   ],
