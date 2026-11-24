@@ -1,0 +1,25 @@
+{
+ "write": true,
+ "sum": {
+  "60": {
+   "docs": 14,
+   "lines": 329
+  },
+  "700": {
+   "docs": 19,
+   "lines": 31662
+  }
+ },
+ "ids": [
+  "datakom",
+  "deif",
+  "endress-stromerzeuger",
+  "linz-electric",
+  "sices",
+  "smartgen",
+  "supermaly",
+  "westinpower",
+  "yongcai-elecmama"
+ ],
+ "odd": []
+}
