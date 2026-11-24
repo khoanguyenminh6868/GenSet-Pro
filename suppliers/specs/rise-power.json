@@ -1035,7 +1035,18 @@
    "| RCS200-N | 200/250 | 220/275 | NTAA855-GA | HCI4C | 3155×1050×1541 | 3550",
    "| RCS280-N | 280/350 | 308/385 | KTAA19-GA | HCI4E | 3443×1300×1916 | 4630",
    "| RCS400-N | 400/500 | 440/550 | KTA38-GA | HCI5C | 4525×1900×2310 | 8478",
-   "| RCS550-N | 550/688 | 605/757 | KTAA38-GA | LVI6B | 4525×1900×2310 | 8760",
+   "| RCS550-N | 550/688 | 605/757 | KTAA38-GA | LVI6B | 4525×1900×2310 | 8760"
+  ]
+ },
+ {
+  "n": 122,
+  "url": "https://dieselpower-en.com/1-12-gas-powered-generator-set/",
+  "title": "Gas Powered Generator Set | Gas Generator | RISE Power",
+  "header": [
+   "| Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight",
+   "| Prime | Standby | Open Type | Open Type"
+  ],
+  "rows": [
    "| RCL24-N | 24/30 | 26.4/33 | 4B3.9-GB | LSA42.2L9 | 1650×740×1400 | 780",
    "| RCL36-N | 36/45 | 39.6/49.5 | 4BT3.9-GB | LSA43.2S25 | 1700×740×1400 | 820",
    "| RCL50-N | 50/63 | 55/69 | 4BTA3.9-GB | LSA43.2L65 | 1750×740×1400 | 900",

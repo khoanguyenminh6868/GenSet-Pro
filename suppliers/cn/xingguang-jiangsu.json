@@ -511,7 +511,16 @@
         "| XG-550GF-1 | 500/625 | 550/688 | BF8M1015CP-G4 | 8 | 28 | 197 | 国 II | 3400×1690×2130 | 4020",
         "| XG-550GF-2 | 500/625 | 550/688 | BF8M1015CP-G5 | 8 | 28 | 197 | 国 II | 3400×1690×2130 | 4050",
         "| XG-660GF | 600/725 | 660/825 | HC12V132ZL-LAG1A | 12 | 40 | 197 | 国 II | 3600×1750×2200 | 4500",
-        "| XG-660GF-1 | 600/725 | 660/825 | HC12V132ZL-LAG2A | 12 | 40 | 197 | 国 II | 3600×1750×2200 | 4500",
+        "| XG-660GF-1 | 600/725 | 660/825 | HC12V132ZL-LAG2A | 12 | 40 | 197 | 国 II | 3600×1750×2200 | 4500"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "道依茨柴油发电机组系列 - 江苏星光动力集团",
+      "header": [
+        "| 大连 道依茨 机组型号 | 机组输出 功率 (KW/KVA) | 柴油机 型号 | 柴油机功率（ KW ） 主 / 备用 | 缸径 | 缸数 | 机油 容量 （ L ） | 燃油 消耗 g/kw.h | 排放"
+      ],
+      "rows": [
         "| XG-55GF | 50/55 | BF4M2012 | 54/60 | 101X126 | 4 | 8.5 | 227 | 国 II",
         "| XG-70GF | 64/70 | BF4M2012C | 71/75 | 101X126 | 4 | 8.5 | 227 | 国 II",
         "| XG-99GF | 90/99 | BF4M1013EC | 97/ 102 | 101X126 | 4 | 11 | 215 | 国 II",
@@ -997,7 +1006,17 @@
         "| XG2750S3 | 2750 | 2500 | MTU | 20V4000G14F | PDF",
         "| XG3080S3 | 3080 | 2800 | MTU | 20V4000G24F | PDF",
         "| XG3300S3 | 3300 | 3000 | MTU | 20V4000G34F | PDF",
-        "| XG3575S3 | 3575 | 3250 | MTU | 20V4000G44F | PDF",
+        "| XG3575S3 | 3575 | 3250 | MTU | 20V4000G44F | PDF"
+      ]
+    },
+    {
+      "n": 120,
+      "title": "1000-4000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+      "header": [
+        "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+        "| Standby | Prime"
+      ],
+      "rows": [
         "| XG1130S3-6 | 1130 | 1030 | Cummins | KTA38-G2A | PDF",
         "| XG1265S3-6 | 1250 | 1125 | Cummins | KTA38-G4 | PDF",
         "| XG1375S3-6 | 1375 | - | Cummins | KTA38-G9 | PDF",
@@ -1107,7 +1126,17 @@
         "| XG825S3 | 825 | 750 | Mitsubishi | S6R2-PTAA-C | PDF",
         "| XG300S3 | 300 | 275 | Starlight | YM6S4LF-D | PDF",
         "| XG360S3 | 360 | 325 | Starlight | YM6S9L-D | PDF",
-        "| XG412S3 | 400 | 360 | Starlight | YM6S9LF-D | PDF",
+        "| XG412S3 | 400 | 360 | Starlight | YM6S9LF-D | PDF"
+      ]
+    },
+    {
+      "n": 121,
+      "title": "300-1000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+      "header": [
+        "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+        "| Standby | Prime"
+      ],
+      "rows": [
         "| XG315S3-6 | 315 | 283 | Cummins | 6LTAA8.9-G3 | PDF",
         "| XG330S3-6 | 330 | 300 | Cummins | 6LTAA9.5-G3 | PDF",
         "| XG350S3-6 | 350 | 315 | Cummins | 6LTAA9.5-G1 | PDF",
@@ -1213,7 +1242,17 @@
         "| XG110S3 | 110 | 100 | Starlight | LR4M3L-D | PDF",
         "| XG165S3 | 165 | 150 | Starlight | LR6M3L-D | PDF",
         "| XG220S3 | 220 | 200 | Starlight | YM6H4L-D | PDF",
-        "| XG275S3 | 275 | 250 | Starlight | YM6S4L-D | PDF",
+        "| XG275S3 | 275 | 250 | Starlight | YM6S4L-D | PDF"
+      ]
+    },
+    {
+      "n": 122,
+      "title": "100-300kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+      "header": [
+        "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+        "| Standby | Prime"
+      ],
+      "rows": [
         "| XG100S3-6 | 100 | 90 | Cummins | 4BTA3.9-G11 | PDF",
         "| XG125S3-6 | 125 | 113 | Cummins | 6BT5.9-G2 | PDF",
         "| XG138S3-6 | 138 | 125 | Cummins | 6BT5.9-G2 (M) | PDF",
@@ -1295,7 +1334,17 @@
         "| XG55S3 | 55 | 50 | Starlight | Y4102ZLD | PDF",
         "| XG60S3 | 60 | 55 | Starlight | Y4105ZLD | PDF",
         "| XG70S3 | 70 | 63 | Starlight | YD4EZLD | PDF",
-        "| XG88S3 | 88 | 80 | Starlight | Y4110ZLD | PDF",
+        "| XG88S3 | 88 | 80 | Starlight | Y4110ZLD | PDF"
+      ]
+    },
+    {
+      "n": 123,
+      "title": "8-100kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+      "header": [
+        "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+        "| Standby | Prime"
+      ],
+      "rows": [
         "| XG28S3-6 | 28 | 25 | Cummins | 4B3.9-G11 | PDF",
         "| XG35S3-6 | 35 | 32 | Cummins | 4B3.9-G2 | PDF",
         "| XG38S3-6 | 38 | 35 | Cummins | 4B3.9-G12 | PDF",
