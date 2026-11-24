@@ -712,6 +712,16 @@
         "S4L1D-F41 Wdg.311 - Technical Data Sheet"
       ],
       "file": "sources/stamford-avk-china/1059.md"
+    },
+    {
+      "n": 1060,
+      "url": "https://www.stamford-avk.com/sites/stamfordavk/files/PI7C-312-TD-EN_Rev_A.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "PI734C - Winding 312"
+      ],
+      "file": "sources/stamford-avk-china/1060.md"
     }
   ],
   "confidence": "high",
@@ -1967,6 +1977,26 @@
         "| Packing Crate Size | 155 | x 87 x 107 (cm)",
         "| Efficiency (%) | 92.8 | 92.6 | 92.9 | 93.4 | 92.9 | 92.9 | 93.1 | 93.5 | 93.1 | 93.2 | 93.4 | 93.8 | 93.5 | 93.6 | 93.8 | 94.0",
         "| Efficiency (%) | 92.9 | 92.7 | 93.0 | 93.0 | 93.0 | 92.9 | 93.2 | 93.2 | 93.4 | 93.2 | 93.5 | 93.5 | 93.7 | 93.6 | 93.8 | 93.8"
+      ]
+    },
+    {
+      "n": 1060,
+      "title": "Datasheet: PI734C - Winding 312",
+      "header": [],
+      "rows": [
+        "PI734C - Winding 312",
+        "| VOLTAGE REGULATION | ± 1 % | ± 0.5 % | With 4% ENGINE GOVERNING",
+        "| INSULATION SYSTEM | CLASS H",
+        "| PROTECTION | IP23",
+        "| RATED POWER FACTOR | 0.8",
+        "| WEIGHT COMP. GENERATOR | 3018 kg | 2967 kg",
+        "| WEIGHT WOUND STATOR | 1445 kg | 1445 kg",
+        "| WEIGHT WOUND ROTOR | 1257 kg | 1195 kg",
+        "| SHIPPING WEIGHTS in a crate | 3091kg | 3036kg",
+        "| PACKING CRATE SIZE | 194 x 105 x 154(cm) | 194 x 105 x 154(cm)",
+        "| VOLTAGE STAR | 380/220 | 400/231 | 415/240 | 440/254 | 416/240 | 440/254 | 460/266 | 480/277",
+        "| Efficiency (%) | 95.4 | 95.5 | 95.6 | 95.8 | 95.2 | 95.4 | 95.5 | 95.7 | 95.1 | 95.2 | 95.4 | 95.6 | 95.0 | 95.1 | 95.3 | 95.5",
+        "| Efficiency (%) | 95.3 | 95.4 | 95.5 | 95.6 | 95.2 | 95.2 | 95.3 | 95.4 | 95.1 | 95.1 | 95.2 | 95.3 | 95.0 | 95.0 | 95.2 | 95.3"
       ]
     }
   ],
