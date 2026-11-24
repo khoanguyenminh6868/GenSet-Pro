@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T09:04:40.867Z
+  modified: 2026-11-24T12:58:45.112Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -47,6 +47,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Tờ đầu phát hãng khác, Khoa 24/11/2026: Engga / Nianfeng / Faraday không tải tự động được (403, PDF.js) → "tạm thời chưa" (không nhờ Khoa tải tay lúc này); Sincro (Ý) CÓ lưu; CÓ tạo hồ sơ hãng LongHong / Hengtong / 欣同辰 / Kaichen để tìm tờ; điền website zgnfmotor.com cho nianfeng-fujian.
 - Giá trị nghi sai đã gom nhóm (`nghiem-thu\gia-tri-nghi-sai-gom-nhom.md` + `.tsv`), Khoa 24/11/2026 "ok, làm cả 2 như đề xuất": (1) 105 ca loại 2 (ô lệch đã rõ nhờ tờ hãng hoặc ≥ 3 NCC khác) → BỎ ô lệch ở đúng dòng đó, không sửa thành số khác; (2) 25 ca chỉ có 2 NCC khác xác nhận các ô còn lại → nhận căn cứ 2 NCC, xử lý như (1), TRỪ 4 ca 6LTAA9.5-G1 (đường kính 116 / 116,5 / 117) để vào tab.
 - Giá trị nghi sai, Khoa 24/11/2026 (sau khi em nêu bất cập của tab): "trước mắt em lọc và gom nhóm cho anh quyết định trước đi. ca nào không quyết định được thì cho vào tab để xử lý sau" → lỗi bộ đọc thì sửa code không trình; trình Khoa theo NHÓM trong chat; tab chỉ chứa ca còn lại, làm sau.
+- Khoa 24/11/2026 (chiều): (a) #1174 nhãn bước 4: "ok" merge theo thứ tự bỏ ô lệch → đo lại → merge cả hai; chấp nhận việc đọc thêm loại thông số làm đổi hạng top 30. (b) Bỏ ô dung tích của 4 ca loại 4 kangwo S175M / S180M, zhengchi 12M33D1450E310, taihai 6135AD-3: "ok" (các ca loại 4 khác vẫn để tab). (c) Tab "Giá trị nghi sai": "để chờ xem còn thêm ca nào không rồi chốt 1 lần". (d) Giải thích dòng top 30 chưa giải thích: chờ merge hết rồi đo + giải thích MỘT lần. (e) Sửa bộ đọc ô "ALTERNATOR: hãng mã" (energy-gruppi, 7 tờ Linz): "ok". (f) Giá trị một nguồn: duyệt hết đề xuất của `nghiem-thu\gia-tri-mot-nguon-thiet-ke.md`: tệp riêng `suppliers/one-source.json`; Gợi ý cấu hình CHỈ HIỂN THỊ có nhãn, không cộng điểm, không loại; kiểm đáp ứng luôn "cần xác nhận", không bao giờ "đạt"; tờ hãng ghi cùng trường thì CI chặn tới khi xoá bản ghi một nguồn; hai nguồn đơn mâu thuẫn thì không hiện; bản đại lý rõ danh tính đăng lại (Depco, woodstockpower) vẫn là tờ hãng, bên không rõ (abyaran.com) là một nguồn. (g) Dọn nhánh remote đã merge + worktree cũ: "ok, dọn dẹp đi" (tiêu chí em dùng: đầu nhánh trùng đúng đầu PR đã merge, không còn PR mở).
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
