@@ -4,11 +4,16 @@
 //   node suppliers/spec-standard.mjs --post [--dry]      đăng vào bảng spec_std (chỉ doc đổi nội dung); xem post()
 // KHÔNG có bộ đọc bảng mới: mọi giá trị đi từ CAT.build / gensetsOf + SN.normalizeRecord + sourceRatings. Không ngày giờ
 // trong nội dung, khoá sắp xếp: cùng đầu vào ra cùng byte. Chưa nơi nào đọc collection này (web, config-bot là bước 5).
+// Giá trị một nguồn internet (one-source.json, PR 3 của thiết kế gia-tri-mot-nguon): thêm SAU khi gộp số NCC + tờ hãng, mỗi
+// bản ghi một dòng riêng có dấu `origin: "one-source"` (xem oneSourcePick / oneSourceItem). Đọc thẳng JSON; KHÔNG import
+// one-source-check.mjs (nó nạp config-bot), luật chung lấy từ one-source-rules.mjs.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { sourceRatings } from "./config-bot.mjs";
+import { sourceRatings, modelFacts } from "./config-bot.mjs";
+import { sigOf, makerHits } from "./one-source-rules.mjs";
+import { norm } from "./verify.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 for (const f of ["conversions.js", "catalog.js", "spec-norm.js"]) await import(pathToFileURL(path.join(ROOT, "..", "web", f)).href);
@@ -270,8 +275,103 @@ function addRatings(bag, list, attrs) {
 }
 const size = (d) => Buffer.byteLength(stable(d));
 
+// ---------- Giá trị một nguồn internet ----------
+export const ONE_SOURCE_FILE = path.join(ROOT, "one-source.json");
+export const readOneSource = (file = ONE_SOURCE_FILE) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : []);
+const ONE_PARTS = new Set(["engine", "alternator", "controller"]);
+const IDENTITY = new Set(["brand", "model", "brand_country"]);
+// The bản ghi that reach the standard, and why the others do not (luật thắng, mục 3 của thiết kế; the checker blocks every
+// case below as an error, this is the safety net if one is left in the file):
+//   truong-la  part / field not in spec-fields.json, or a field of the model's identity;
+//   khong-doc  no doc of that part + key (no supplier offers the model: thiết kế "doc chỉ có cho model có trong danh mục");
+//   to-hang    the maker's sheet in the repo writes this field (same conditions) for this model: only the sheet is shown;
+//   mau-thuan  two bản ghi of one part + key + field + conditions with different values: neither is shown;
+//   trung      same conditions, same value: one is kept (lower level, then newer accessedAt, then id).
+// `has(part, key)` tells whether a doc exists; `makerCtx()` gives makerHits' ctx (built only when a bản ghi needs it).
+export function oneSourcePick(records, { has, makerCtx }) {
+  const skipped = {}, skip = (why, rec) => (skipped[why] ||= []).push(rec?.id ?? null);
+  const groups = new Map();
+  let ctx = null;
+  for (const rec of Array.isArray(records) ? records : []) {
+    const f = rec && ONE_PARTS.has(rec.part) ? fieldOf[rec.part][rec.field] : null;
+    if (!f || IDENTITY.has(f.id) || rec.value == null) { skip("truong-la", rec); continue; }
+    if (!has(rec.part, rec.key)) { skip("khong-doc", rec); continue; }
+    if (makerHits(rec, f, (ctx ||= makerCtx())).hits.length) { skip("to-hang", rec); continue; }
+    const s = sigOf(rec, f), g = stable([rec.part, rec.key, f.id, s.cond]);
+    groups.set(g, [...(groups.get(g) || []), { rec, f, sig: s }]);
+  }
+  const keep = [];
+  for (const g of groups.values()) {
+    if (new Set(g.map((x) => x.sig.value)).size > 1) { for (const x of g) skip("mau-thuan", x.rec); continue; }
+    const [best, ...rest] = g.slice().sort((a, b) => a.rec.level - b.rec.level || cmp(b.rec.accessedAt, a.rec.accessedAt) || cmp(a.rec.id, b.rec.id));
+    keep.push(best);
+    for (const x of rest) skip("trung", x.rec);
+  }
+  for (const k of Object.keys(skipped)) skipped[k].sort();
+  return { keep, skipped };
+}
+// One bản ghi as a value of the standard: its own line (never joined with a supplier's value, even the same figure), with the
+// mark `origin: "one-source"`, `src` = the bản ghi id + url + level, `raw` = its first quote, `suppliers: 0` (no supplier wrote
+// it, so it sorts after every supplier's value). `missing` as for a supplier value read without the normalizer: the unit the
+// field has and the conditions it asks for, when the bản ghi does not give them.
+export function oneSourceItem(rec, f) {
+  const missing = [];
+  if (f.unit && !rec.unit) missing.push("unit");
+  for (const c of f.cond || []) if (rec.cond?.[c] == null) missing.push(c);
+  const o = { value: rec.value };
+  if (rec.unit) o.unit = rec.unit;
+  if (rec.cond && Object.keys(rec.cond).length) o.cond = rec.cond;
+  if (missing.length) o.missing = missing.sort();
+  o.raw = (rec.quote || [])[0] ?? null;
+  o.src = { oneSource: rec.id, url: rec.url, level: rec.level };
+  o.origin = "one-source";
+  o.suppliers = 0;
+  return o;
+}
+// Kiểm chéo giá trị một nguồn của bản chuẩn (spec-standard-check.mjs, test): chúng không đi qua `audit` (không phải dòng
+// catalog), nên kiểm riêng: bản ghi `src.oneSource` có trong one-source.json, cùng part / key / field / value / unit / cond /
+// url / level, `raw` = câu trích đầu và nằm NGUYÊN VĂN (norm của verify.mjs) trong tệp nguồn của bản ghi; doc không có hai
+// giá trị cùng một bản ghi. readSource(file) → chữ | null, file tính từ suppliers/. Trả về { checked, bad: [{ id, why }] }.
+export function checkOneSourceValues(docs, records, readSource) {
+  const byId = new Map((records || []).map((r) => [r.id, r]));
+  const out = { checked: 0, bad: [] }, seen = new Set();
+  const flat = norm;
+  for (const d of docs) {
+    if (d.part === "genset") { for (const m of Object.values(d.models)) for (const items of Object.values(m.fields)) if (items.some((x) => x.origin === "one-source")) out.bad.push({ id: d.id, why: "giá trị một nguồn ở doc tổ máy" }); continue; }
+    for (const [fid, items] of Object.entries(d.fields)) for (const it of items) {
+      if (it.origin !== "one-source" && it.src?.oneSource == null) continue;
+      out.checked++;
+      const bad = (why) => out.bad.push({ id: `${d.id} ${fid} ${it.src?.oneSource ?? "?"}`, why });
+      const rec = byId.get(it.src?.oneSource);
+      if (it.origin !== "one-source" || !rec) { bad(rec ? "thiếu origin one-source" : "không có bản ghi này trong one-source.json"); continue; }
+      if (seen.has(rec.id)) bad("bản ghi hiện hai lần");
+      seen.add(rec.id);
+      if (rec.part !== d.part || rec.key !== d.key || rec.field !== fid) bad(`bản ghi là ${rec.part}:${rec.key} ${rec.field}`);
+      if (stable(it.value) !== stable(rec.value) || (it.unit ?? null) !== (rec.unit ?? null) || stable(it.cond ?? null) !== stable(rec.cond && Object.keys(rec.cond).length ? rec.cond : null)) bad("value / unit / cond khác bản ghi");
+      if (it.src.url !== rec.url || it.src.level !== rec.level) bad("url / level khác bản ghi");
+      if (it.suppliers !== 0) bad(`suppliers ${it.suppliers}, phải là 0`);
+      if (it.raw !== (rec.quote || [])[0]) bad("raw khác câu trích đầu của bản ghi");
+      const text = readSource(rec.file);
+      if (text == null) bad(`thiếu tệp nguồn ${rec.file}`);
+      else if (!it.raw || !flat(text).includes(flat(it.raw))) bad(`raw không nằm nguyên văn trong ${rec.file}`);
+    }
+  }
+  return out;
+}
+function addOneSource(fields, picked) {
+  const items = picked.map((x) => ({ fid: x.f.id, it: oneSourceItem(x.rec, x.f) }))
+    .sort((a, b) => cmp(a.fid, b.fid) || cmp(stable(a.it.value), stable(b.it.value)) || cmp(stable(a.it.cond), stable(b.it.cond)) || cmp(a.it.src.oneSource, b.it.src.oneSource));
+  for (const { fid, it } of items) (fields[fid] ||= []).push(it);
+  // Keys stay sorted, as Bag.fields() gives them.
+  const out = {};
+  for (const k of Object.keys(fields).sort()) out[k] = fields[k];
+  return out;
+}
+
 // standardOf(suppliers): every doc, sorted by id. engine / alternator / controller: one doc per model. genset: one doc per
 // supplier (its models inside), so a supplier's change never rewrites another supplier's genset rows.
+// opts.oneSource: the bản ghi of one-source.json (default: read the file); opts.oneSourceReport: an object filled with
+// { records, used, skipped } (see oneSourcePick); opts.facts: modelFacts for the maker-sheet rule (default: computed).
 export function standardOf(suppliers, opts = {}) {
   const list = (suppliers || []).filter((s) => s && s.status !== "incomplete").slice().sort((a, b) => cmp(a.id, b.id));
   const byId = new Map(list.map((s) => [s.id, s]));
@@ -280,14 +380,25 @@ export function standardOf(suppliers, opts = {}) {
   const rowsOf = (u) => byId.get(u.supplierId)?.specTables?.[u.table]?.rows;
   const audit = opts.audit;
   const docs = [];
+  const oneRecords = opts.oneSource ?? readOneSource();
+  const partList = { engine: built.engines, alternator: built.alternators, controller: built.controllers };
+  const keysOf = Object.fromEntries(Object.entries(partList).map(([p, l]) => [p, new Set(l.map((e) => e.key))]));
+  const one = oneSourcePick(oneRecords, {
+    has: (part, key) => !!keysOf[part]?.has(key),
+    makerCtx: () => ({ facts: opts.facts || modelFacts(built, list), altRatings: rt.alt, altAttrs: rt.attr, engRatings: rt.eng, suppliers: new Map((suppliers || []).filter(Boolean).map((s) => [s.id, { role: s.role }])) }),
+  });
+  const oneByDoc = new Map();
+  for (const x of one.keep) { const id = `${x.rec.part}:${x.rec.key}`; oneByDoc.set(id, [...(oneByDoc.get(id) || []), x]); }
+  if (opts.oneSourceReport) Object.assign(opts.oneSourceReport, { records: Array.isArray(oneRecords) ? oneRecords.length : 0, used: one.keep.length, docs: oneByDoc.size, skipped: one.skipped });
   for (const [part, entries] of [["engine", built.engines], ["alternator", built.alternators], ["controller", built.controllers]]) {
     for (const e of entries) {
       const bag = new Bag();
       brandFields(bag, e);
       for (const u of e.uses) if (u.specs?.length) addSpecs(bag, part, u, rowsOf(u), audit, { key: e.key });
       if (part === "alternator") addRatings(bag, rt.alt.get(e.key), rt.attr.get(e.key));
-      const fields = bag.fields();
+      let fields = bag.fields();
       if (part === "engine") moveEnginePower(fields);
+      if (oneByDoc.has(`${part}:${e.key}`)) fields = addOneSource(fields, oneByDoc.get(`${part}:${e.key}`));
       const doc = { id: `${part}:${e.key}`, part, key: e.key, model: e.model, make: e.make || null, suppliers: [...e.suppliers].sort(), fields };
       doc.hash = hashOf(doc);
       docs.push(doc);
@@ -337,12 +448,18 @@ export function standardOf(suppliers, opts = {}) {
 // ---------- Độ phủ ----------
 export function statsOf(docs) {
   const out = {};
-  for (const p of PARTS) out[p] = Object.fromEntries(FIELDS.parts[p].map((f) => [f.id, { models: 0, values: 0, missing: 0 }]));
+  // oneSource: values marked origin "one-source" (counted inside `values` too); oneSourceOnly: models whose ONLY values of the
+  // field are one-source ones (counted inside `models`), so the coverage of supplier + maker sheets alone is models − oneSourceOnly.
+  for (const p of PARTS) out[p] = Object.fromEntries(FIELDS.parts[p].map((f) => [f.id, { models: 0, values: 0, missing: 0, oneSource: 0, oneSourceOnly: 0 }]));
+  let oneSource = 0;
   const count = (part, fields) => {
     for (const [id, items] of Object.entries(fields)) {
       const c = out[part][id];
       if (!c) throw new Error(`trường lạ ${part}.${id}`);
+      const k = items.filter((x) => x.origin === "one-source").length;
       c.models++; c.values += items.length; c.missing += items.filter((x) => x.missing?.length).length;
+      c.oneSource += k; oneSource += k;
+      if (k && k === items.length) c.oneSourceOnly++;
     }
   };
   const n = { genset: 0, engine: 0, alternator: 0, controller: 0 };
@@ -350,7 +467,7 @@ export function statsOf(docs) {
     if (d.part === "genset") for (const m of Object.values(d.models)) { n.genset++; count("genset", m.fields); }
     else { n[d.part]++; count(d.part, d.fields); }
   }
-  return { models: n, fields: out };
+  return { models: n, fields: out, oneSource };
 }
 
 // ---------- Đăng ----------
@@ -409,9 +526,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const argv = process.argv.slice(2), opt = (k) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null; };
   const dir = path.join(ROOT, "cn");
   const all = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
-  const docs = standardOf(all);
+  const report = {};
+  const docs = standardOf(all, { oneSourceReport: report });
   const total = docs.reduce((a, d) => a + size(d), 0);
   console.log(`${docs.length} doc, ${(total / 1e6).toFixed(2)} MB, doc lớn nhất ${(Math.max(...docs.map(size)) / 1e3).toFixed(0)} KB`);
+  const skippedText = Object.entries(report.skipped || {}).map(([k, ids]) => `${k} ${ids.length}`).join(", ");
+  console.log(`one-source.json: ${report.records} bản ghi, ${report.used} giá trị vào ${report.docs} doc${skippedText ? `; không vào: ${skippedText}` : ""}`);
   if (opt("--out")) {
     fs.mkdirSync(opt("--out"), { recursive: true });
     // Model keys hold characters Windows refuses ("*") and differ only by case: the name carries a hash of the id.
@@ -420,9 +540,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (argv.includes("--stats")) {
     const s = statsOf(docs);
     console.log("model theo vai", JSON.stringify(s.models));
+    console.log(`giá trị một nguồn internet (origin one-source): ${s.oneSource}`);
     for (const p of PARTS) {
-      console.log(`\n[${p}] trường | model có giá trị | số giá trị | giá trị có missing`);
-      for (const [id, c] of Object.entries(s.fields[p])) if (c.models) console.log(`${id} | ${c.models} | ${c.values} | ${c.missing}`);
+      console.log(`\n[${p}] trường | model có giá trị | số giá trị | giá trị có missing | giá trị một nguồn | model chỉ có giá trị một nguồn`);
+      for (const [id, c] of Object.entries(s.fields[p])) if (c.models) console.log(`${id} | ${c.models} | ${c.values} | ${c.missing} | ${c.oneSource} | ${c.oneSourceOnly}`);
       console.log(`chưa sinh: ${Object.entries(s.fields[p]).filter(([, c]) => !c.models).map(([id]) => id).join(", ") || "(không)"}`);
     }
   }
