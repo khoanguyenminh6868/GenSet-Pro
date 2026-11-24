@@ -27,6 +27,9 @@ export function authorized(req) {
   return timingSafeEqual(Buffer.from(got), Buffer.from(want));
 }
 
+// Postgres jsonb refuses \u0000 in a string (22P05, 24/11/2026: a Sync scraped one and every write failed with 502), so drop it.
+const noNul = (_k, v) => (typeof v === "string" ? v.replace(/\u0000/g, "") : v);
+
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
   if (!authorized(req)) return res.status(401).json({ error: "unauthorized" });
@@ -82,7 +85,7 @@ export default async function handler(req, res) {
     const w = await fetch(`${SB_URL}/rest/v1/docs`, {
       method: "POST",
       headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify(keep.map((r) => ({ coll: r.coll, id: r.id, data: r.data, updated_at: now }))),
+      body: JSON.stringify(keep.map((r) => ({ coll: r.coll, id: r.id, data: r.data, updated_at: now })), noNul),
     });
     if (!w.ok) return res.status(502).json({ error: `write ${w.status}: ${(await w.text()).slice(0, 200)}` });
   }

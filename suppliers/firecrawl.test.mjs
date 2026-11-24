@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { shouldRetry, keyFile } from "./firecrawl.mjs";
+import { shouldRetry, keyFile, backupKeyFile, hasKey, scrape } from "./firecrawl.mjs";
 
 const { save } = await import("./config-bot.mjs");
 
@@ -27,6 +27,33 @@ test("keyFile: biến môi trường, rồi GENBID_ROOT (sandbox), rồi máy Wi
   assert.equal(keyFile({ GENBID_FIRECRAWL_KEY_FILE: "/k" }), "/k");
   assert.equal(keyFile({ GENBID_ROOT: "/r" }), path.join("/r", "genbid-hsmt", ".firecrawl-key"));
   assert.match(keyFile({}), /genbid-hsmt\/\.firecrawl-key$/);
+});
+
+test("khoá dự phòng (Khoa 24/11/2026): khoá chính 402 thì thử khoá thứ hai; lỗi khác không đổi khoá", async () => {
+  const dir = tmp(), k1 = path.join(dir, ".firecrawl-key"), env = { GENBID_FIRECRAWL_KEY_FILE: k1 };
+  assert.equal(backupKeyFile(env), k1 + "-2");
+  assert.equal(backupKeyFile({ ...env, GENBID_FIRECRAWL_KEY_FILE_2: "/b" }), "/b");
+  assert.equal(hasKey(env), false);
+  fs.writeFileSync(k1, "khoa-chinh\n");
+  const used = [];
+  const api = (answers) => async (_u, o) => { const key = o.headers.Authorization.slice(7); used.push(key); const a = answers[key]; return { ok: a === 200, status: a, json: async () => (a === 200 ? { data: { markdown: "# trang", metadata: {} } } : { error: "x" }) }; };
+  await assert.rejects(scrape("https://a.example/", { env, fetchImpl: api({ "khoa-chinh": 402 }) }), /402 \(hết credit tháng này\)$/);
+  fs.writeFileSync(k1 + "-2", "khoa-du-phong\n");
+  assert.equal(hasKey(env), true);
+  used.length = 0;
+  assert.deepEqual(await scrape("https://a.example/", { env, fetchImpl: api({ "khoa-chinh": 402, "khoa-du-phong": 200 }) }), { url: "https://a.example/", markdown: "# trang" });
+  assert.deepEqual(used, ["khoa-chinh", "khoa-du-phong"]);
+  used.length = 0;
+  await scrape("https://a.example/", { env, fetchImpl: api({ "khoa-chinh": 200, "khoa-du-phong": 200 }) });
+  assert.deepEqual(used, ["khoa-chinh"], "khoá chính còn credit thì không đụng khoá dự phòng");
+  used.length = 0;
+  await assert.rejects(scrape("https://a.example/", { env, fetchImpl: api({ "khoa-chinh": 500, "khoa-du-phong": 200 }) }), /HTTP 500/);
+  assert.deepEqual(used, ["khoa-chinh"], "lỗi của trang không đổi khoá");
+  await assert.rejects(scrape("https://a.example/", { env, fetchImpl: api({ "khoa-chinh": 402, "khoa-du-phong": 402 }) }), /cả khoá dự phòng/);
+  fs.rmSync(k1);
+  used.length = 0;
+  await scrape("https://a.example/", { env, fetchImpl: api({ "khoa-du-phong": 200 }) });
+  assert.deepEqual(used, ["khoa-du-phong"], "chỉ có khoá dự phòng vẫn chạy");
 });
 
 test("save: 403 thì đọc lại qua Firecrawl, ghi Via: firecrawl", async () => {

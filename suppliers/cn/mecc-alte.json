@@ -273,6 +273,26 @@
         "ECO46 4 A"
       ],
       "file": "sources/mecc-alte/1016.md"
+    },
+    {
+      "n": 1017,
+      "url": "https://www.meccalte.com/downloads/Serie_ECO_C_EN.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ECO Series alternators are self-regulated, 4-pole brushless alternators."
+      ],
+      "file": "sources/mecc-alte/1017.md"
+    },
+    {
+      "n": 1018,
+      "url": "https://www.meccalte.com/downloads/Serie_ECO_EN.pdf",
+      "accessedAt": "2026-11-24",
+      "tier": "A",
+      "quote": [
+        "ECO Series alternators are self-regulated, 4-pole brushless alternators."
+      ],
+      "file": "sources/mecc-alte/1018.md"
     }
   ],
   "confidence": "medium",
