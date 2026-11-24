@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, stripBrushless, FIELDS } from "./spec-standard.mjs";
+import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, stripBrushless, FIELDS, readOneSource, checkOneSourceValues } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const CAT = globalThis.GenbidCatalog;
@@ -88,10 +88,15 @@ for (const d of docs) {
 }
 for (const s of seen) if (!have.has(stable(s))) { c.absent++; if (bad.length < 40) bad.push({ absent: s }); }
 c.docs = docs.length;
+// Giá trị một nguồn internet không đi qua `audit` (không phải dòng catalog): kiểm riêng, raw phải nằm trong tệp nguồn của bản ghi.
+const one = checkOneSourceValues(docs, readOneSource(), (file) => { const p = path.join(ROOT, file); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; });
+c.oneSourceChecked = one.checked;
+c.oneSourceBad = one.bad.length;
 console.log(JSON.stringify(c, null, 1));
 if (bad.length) console.log(JSON.stringify(bad.slice(0, 6)));
 if (rawBad.length) console.log(JSON.stringify(rawBad));
+if (one.bad.length) console.log(JSON.stringify(one.bad.slice(0, 8)));
 const i = process.argv.indexOf("--json");
-if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad }, null, 1));
+if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad, oneSourceBad: one.bad }, null, 1));
 void CAT;
-process.exit(c.unexplained || c.absent || c.rawNotInLine ? 1 : 0);
+process.exit(c.unexplained || c.absent || c.rawNotInLine || c.oneSourceBad ? 1 : 0);
