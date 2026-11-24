@@ -586,11 +586,49 @@ const SIZE_QTY_X = /(?:^|[^\d.,])(\d{1,3})\s*(?:x|×|\*)\s*$/i, SIZE_QTY_N = /(?
 // wrote ("tên gói ghi 2000 kVA", "mục giới thiệu ghi 12KVA") are not a size.
 const SIZE_ENGINE = /đ[ộo]ng c[ơo]|engine|\bhp\b|tr[ụu]c khu[ỷy]u/i, SIZE_ELSEWHERE = /tên gói|tiêu đề|giới thiệu/i;
 export const MAX_SIZES = 4;
-export function sizesOf(texts, name = "") {
+const sizePrep = (raw) => noTolerance(String(raw || "").normalize("NFC")).replace(/m[áa]y ph[áa]t(?: đi[ệe]n)?(?: di[eê]s[eê]l)? d[ựu] ph[òo]ng|ngu[ồo]n(?: đi[ệe]n)? d[ựu] ph[òo]ng/gi, "máy phát")
+  // "≥275/220 kVA/kW" and "10.0/11 kW (liên tục/tối đa)": the first figure with its own unit.
+  .replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\s*\/\s*(kVA|kW)\b/gi, "$1 $3 / $2 $4").replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\b(?!\s*\/)/gi, "$1 $3 / $2 $3");
+// What the HSMT text says each figure of a bare list is (sizes-co-ao, 24/11/2026). bidhist `config.kvas` ("1000 kVA, 1132 kVA,
+// 906 kW, 1029 kVA, 823 kW") lost the words around each figure, so a standby / maximum figure ("Công suất dự phòng: 1132 kVA/906KW",
+// "Công suất tối đa: ≥ 12 kVA", "≥ 13.2 kVA (MRQ); ≥ 13.7 kVA (RQ)" after "Công suất dự phòng:") and an engine's shaft power
+// ("Động cơ diesel lai công suất 91 kW", "24hp, công suất >=15.2kw", "kWm") each became a size of its own. For every place the
+// text writes the figure (same value, kVA or kW; MVA / MW as kVA / kW), its rating is (1) the rating word right after it
+// ("275 kVA Standby (dự phòng) / 250 kVA Prime (liên tục)"), else (2) the rating words between the figure before it on the line
+// and it, standby before prime before maximum ("Công suất liên tục tối đa: 2405 kVA" is prime, "dự phòng tối đa" standby), else
+// (3) the nearest rating word before it on its line, else unlabelled. It is an engine's when the nearest of the engine words and
+// the words naming the set ("máy phát", "đầu phát", "tổ máy") before it is an engine word, or the unit is kWm. A kW figure
+// written next to a kVA one ("400,0 kVA / 160,0 kW", "26.4 kW / 34 kVA") is that set's other unit, not a size. A figure is a
+// size like before when one place writes it unlabelled or prime; otherwise it takes the lowest rank of its places, and a kW
+// figure with no place but an engine's or a pair's goes. A figure the text does not write stays as it was.
+const CTX_FIG = /(\d{1,3}(?:\.\d{3})+(?!\d)|\d+(?:[.,]\d+)?)\s*(kVA|kWm|kW|MVA|MW|hp)\b/gi;
+const CTX_RATING = new RegExp(`(${SIZE_PRIME.source}|d[àa]i h[ạa]n)|(${SIZE_STANDBY.source})|(${SIZE_MAX.source})`, "gi");
+const CTX_RATING_AFTER = new RegExp(`^\\s*\\(?\\s*(?:(${SIZE_PRIME.source})|(${SIZE_STANDBY.source})|(${SIZE_MAX.source}))`, "i");
+const CTX_ENGINE = /(đ[ộo]ng c[ơo]|\bengine\b|tr[ụu]c khu[ỷy]u|hp\b)|(m[áa]y ph[áa]t|đ[ầa]u ph[áa]t|t[ổo] m[áa]y|\bgenerator\b|\balternator\b|\bgen-?set\b)/gi;
+const CTX_PAIR_BEFORE = /\d\s*kVA\s*[/(\-–]\s*[≥>]?\s*$/i, CTX_PAIR_AFTER = /^\s*[/(\-–]\s*[≥>]?\s*\d[\d.,]*\s*kVA\b/i;
+const lastMatch = (re, s) => { let m = null; for (const x of s.matchAll(re)) m = x; return m; };
+const rankOf = (m) => (m[2] ? 1 : m[1] ? 0 : 2);
+function figureContext(text) {
+  const out = [];
+  for (const line of sizePrep(text).split("\n")) {
+    let prev = 0;
+    for (const m of line.matchAll(CTX_FIG)) {
+      const u = m[2].toLowerCase(), v = numOf(m[1]), before = line.slice(0, m.index), after = line.slice(m.index + m[0].length);
+      const since = line.slice(prev, m.index);
+      prev = m.index + m[0].length;
+      if (u === "hp") continue;
+      const a = after.match(CTX_RATING_AFTER), seg = [...since.matchAll(CTX_RATING)], r = lastMatch(CTX_RATING, before), e = lastMatch(CTX_ENGINE, before);
+      const rank = a ? rankOf(a) : seg.length ? (seg.some((x) => x[2]) ? 1 : seg.some((x) => x[1]) ? 0 : 2) : r ? rankOf(r) : 0;
+      const kw = u !== "kva" && u !== "mva";
+      out.push({ kw, v: u.startsWith("m") ? v * 1000 : v, rank, engine: u === "kwm" || !!(e && e[1]), pair: kw && (CTX_PAIR_BEFORE.test(before) || CTX_PAIR_AFTER.test(after)) });
+    }
+  }
+  return out;
+}
+export function sizesOf(texts, name = "", context = "") {
+  const ctx = context ? figureContext(context) : null;
   for (const raw of texts) {
-    const t = noTolerance(String(raw || "").normalize("NFC")).replace(/m[áa]y ph[áa]t(?: đi[ệe]n)?(?: di[eê]s[eê]l)? d[ựu] ph[òo]ng|ngu[ồo]n(?: đi[ệe]n)? d[ựu] ph[òo]ng/gi, "máy phát")
-      // "≥275/220 kVA/kW" and "10.0/11 kW (liên tục/tối đa)": the first figure with its own unit.
-      .replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\s*\/\s*(kVA|kW)\b/gi, "$1 $3 / $2 $4").replace(/(\d[\d.,]*)\s*\/\s*(\d[\d.,]*)\s*(kVA|kW)\b(?!\s*\/)/gi, "$1 $3 / $2 $3");
+    const t = sizePrep(raw);
     const figs = [];
     let other = false, rank = 0, closed = true;
     for (const clause of t.split(SIZE_SPLIT)) {
@@ -602,10 +640,17 @@ export function sizesOf(texts, name = "") {
       if (!m || other || (m[2].toLowerCase() === "kw" && SIZE_ENGINE.test(clause)) || SIZE_ELSEWHERE.test(clause)) continue;
       const u = m[2].toLowerCase(), v = numOf(m[1]), kva = u === "kw" ? v / 0.8 : u === "mva" ? v * 1000 : u === "mw" ? v * 1250 : v;
       if (!(kva >= 1)) continue;
+      let figRank = rank;
+      if (ctx && !words) {
+        const kw = u === "kw" || u === "mw", val = u.startsWith("m") ? v * 1000 : v, at = ctx.filter((p) => p.kw === kw && Math.abs(p.v - val) < 1e-9);
+        const plain = at.filter((p) => !p.engine && !p.pair);
+        if (at.length && !plain.length && kw) continue;
+        if (plain.length) figRank = Math.min(...plain.map((p) => p.rank));
+      }
       // "Tổng 97 máy: 27 x 15 kVA": 27, not the total.
       const before = clause.slice(0, m.index), q = before.match(SIZE_QTY_X) || before.match(SIZE_QTY_N) || clause.slice(m.index + m[0].length).match(/^\D{0,6}(\d{1,3})\s*(?:máy|tổ máy|bộ|chiếc|cái)\b/i);
       const qty = q && !/tổng\W*$/i.test(before.slice(0, q.index + q[0].indexOf(q[1]))) ? Number(q[1]) : null;
-      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank, quote: clause.trim() });
+      figs.push({ kva, v, cap: { value: v, unit: u === "kva" ? "kVA" : u === "kw" ? "kW" : u === "mva" ? "MVA" : "MW", ...(standbySize(clause, m.index, m[0].length) ? { rating: "standby" } : {}) }, qty, rank: figRank, quote: clause.trim() });
     }
     const best = Math.min(...figs.map((f) => f.rank));
     let use = figs.filter((f) => f.rank === best);
@@ -1554,7 +1599,9 @@ const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[�
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
 const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
-const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
+// "Hạng mục 2", "Phần 1", "Mục 3" opening a line (not "Hạng mục 1-3": a range). "Hàng mục" is how some HSMT write it.
+const ITEM_HEAD = /^\s*((?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4})(?![\d\-–])\s*[-–:.]\s/i;
+const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạàa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+(?:ch[ạa]y\s+)?(?:b[ằa]ng\s+)?(?:diesel|x[ăa]ng|d[ầa]u))?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -1614,6 +1661,14 @@ export function sizeBlocks(t, sizes) {
     const p = hit("prime"), list = p.length ? p : hit("standby");
     return list.length === 1 ? list[0] : -1;
   });
+  // The other lines of the same item ("Hàng mục 1 - Máy 3 pha: Động cơ - dung tích xy lanh: > 1.758 lít" after "Hàng mục 1 - Máy phát
+  // điện chạy dầu 3 pha 12 kW: Công suất liên tục: 15 kVA/12 kW") go with the size its named lines give, when they give one size
+  // (sizes-co-ao, 24/11/2026, IB2300363623: bidhist text is sorted by topic, so the 3-phase set's engine lines stood after the 1-phase
+  // set's lines and, once the fake 5,8 kW size no longer closed that block, were read for 5 kW).
+  const itemOf = (l) => l.match(ITEM_HEAD)?.[1].toLowerCase().normalize("NFC").replace(/\s+/g, " ").replace(/^h[ạàa]ng/, "hang");
+  const itemSize = new Map();
+  L.forEach((l, i) => { const it = tags[i] >= 0 && itemOf(l); if (it) itemSize.set(it, itemSize.has(it) && itemSize.get(it) !== tags[i] ? -1 : tags[i]); });
+  L.forEach((l, i) => { const it = tags[i] === -1 && itemOf(l); if (it && itemSize.get(it) >= 0) tags[i] = itemSize.get(it); });
   return { L, runs, tags };
 }
 const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "cylLayout", "phase", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];

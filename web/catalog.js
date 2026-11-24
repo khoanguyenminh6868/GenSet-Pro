@@ -1995,13 +1995,36 @@
     "20V4000G64F(3D)=20V4000G64F", "20V4000G64S(3D)=20V4000G64S", "20V4000G74F(3D)=20V4000G74F", "20V4000G74S(3D)=20V4000G74S",
     "20V4000G84F(3D)=20V4000G84F", "20V4000G94S(3D)=20V4000G94S",
     // Khoa 24/11/2026: the six Cummins "(M)" codes (4BTA3.9-G2, 6BT5.9-G2, KTA19-G3, KTA19-G4, KTA38-G, NTA855-G2) stay on their own keys.
+    // Same code written two ways (gop-trung-ma, Khoa 24/11/2026: 6 nhóm có bằng chứng, trung-ma-28.md). Explicit cells, not a rule:
+    // the "-G…(M)" Cummins codes (4BTA3.9-G2(M), 6BT5.9-G2(M), KTA19-G3(M), KTA19-G4(M), KTA38-G(M), NTA855-G2(M)) stay apart.
+    // 4BTA3.9-GM4/7: kangwo n108 r1 (1 row), the row above in the same table and fengfa n101 r1 (same set CCFJ40JW) write "4BTA3.9-GM47".
+    // 4HTAA4.3*G34: frs-shenyang n106 r23 (1 row), 21 uses by 16 suppliers write "4HTAA4.3-G34"; the same table writes "-G34" on its 6HTAA6.5 row.
+    // KTA19-D(M), KTA38-D(M), NTA855-D(M): walter-yangzhou writes both in the same sets (n116 "(M)" ↔ n114 "-DM", same kW and consumption);
+    // mecca-power (KTA19, KTA38) goes with it by Khoa's choice. (YD485D): acepow-fuan n114 r19 (1 row), 6 uses by 4 suppliers write "YD485D".
+    "4BTA3.9-GM4/7=4BTA3.9-GM47", "4HTAA4.3*G34=4HTAA4.3-G34", "KTA19-D(M)=KTA19-DM", "KTA38-D(M)=KTA38-DM", "NTA855-D(M)=NTA855-DM", "(YD485D)=YD485D",
   ];
-  let engineCellCodes = null; // built on first use: `keyOf` is declared further down
+  // Alternator cells written two ways for the same code (gop-trung-ma, Khoa 24/11/2026): endress "ECP 28-M/4C" (n113, n114, n1013, n1024)
+  // and "ECP28 M4C" / "ECP28 M4 C" / "ECP28-M4 C" (n133, n140, n144, n148): one supplier, the same set (n114 ↔ n144 share 50 Hz, PRP 18,3/14,6 kVA/kW,
+  // 2190 cc), the maker's sheet writes "ECP28 M4 C". Only this one cell; ECP28-2S/4C, ECP32-2S/4C (no shared field) stay apart.
+  // UCI274C(80KW) (jinlongteng-fujian n101, 4 rows; the supplier adds "(nnKW)" to every alternator of its table) ↔ "UCI274C-80KW"
+  // (yihua-fujian n106, 2 rows "Rated Output 80KW", voltage series equal to Stamford's UCI274C-311 sheet): one code with its 80 kW level,
+  // written two ways (Khoa 24/11/2026, trung-ma-28.md nhóm 4). Joined with each other only, NOT to the bare "UCI274C" (150+ uses by 37
+  // suppliers; the maker's sheet gives no kW). The other "(nnKW)" cells of jinlongteng (UCI224E(48KW), UCI274D(96KW), ...) are not touched.
+  const ALT_CELL_LIST = ["ECP 28-M/4C=ECP28 M4C", "UCI274C(80KW)=UCI274C-80KW"];
+  // The genset code of a row written two ways inside one supplier (gop-trung-ma, Khoa 24/11/2026, trung-ma-28.md nhóm 21): kaihua-genset
+  // n111 r40 "KH*2000GF" (the only "*" of that table, between KH-1800GF and KH-2200GF; 2750/2500 kVA/kW as in the 5 tables that write "KH-2000GF").
+  // "supplierId:cell=code"; the field `genset` of the row's records only. KH-2000GF2 (n109) is another code and stays apart.
+  const GENSET_CELL_LIST = ["kaihua-genset:KH*2000GF=KH-2000GF"];
+  let engineCellCodes = null, altCellCodes = null, gensetCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
     engineCellCodes ||= new Map(ENGINE_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    altCellCodes ||= new Map(ALT_CELL_LIST.map((x) => { const [cell, codes] = x.split("="); return [keyOf(cell), codes.split("+")]; }));
+    gensetCellCodes ||= new Map(GENSET_CELL_LIST.map((x) => { const [from, to] = x.split("="), [sid, cell] = from.split(":"); return [`${sid}:${keyOf(cell)}`, to]; }));
     const engineKeys = new Set(SPECS.filter((x) => x[1] === "engine").map((x) => x[0])), out = [];
-    for (const o of list) {
-      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : null;
+    for (let o of list) {
+      const gc = o.genset ? gensetCellCodes.get(`${s.id}:${keyOf(o.genset)}`) : null;
+      if (gc) o = { ...o, genset: gc };
+      const codes = o.kind === "engine" ? engineCellCodes.get(keyOf(o.model)) : o.kind === "alternator" ? altCellCodes.get(keyOf(o.model)) : null;
       if (!codes) { out.push(o); continue; }
       if (codes.length === 1) { out.push({ ...o, model: codes[0] }); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "một ô ghi hai mã", `tách thành ${codes.join(", ")}; bỏ thông số động cơ của dòng`);
