@@ -12,7 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { sourceRatings, modelFacts } from "./config-bot.mjs";
-import { sigOf, makerHits } from "./one-source-rules.mjs";
+import { ONE_SOURCE_FILE, readOneSource, oneSourcePick } from "./one-source-rules.mjs";
 import { norm } from "./verify.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -279,40 +279,8 @@ function addRatings(bag, list, attrs) {
 const size = (d) => Buffer.byteLength(stable(d));
 
 // ---------- Giá trị một nguồn internet ----------
-export const ONE_SOURCE_FILE = path.join(ROOT, "one-source.json");
-export const readOneSource = (file = ONE_SOURCE_FILE) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : []);
-const ONE_PARTS = new Set(["engine", "alternator", "controller"]);
-const IDENTITY = new Set(["brand", "model", "brand_country"]);
-// The bản ghi that reach the standard, and why the others do not (luật thắng, mục 3 của thiết kế; the checker blocks every
-// case below as an error, this is the safety net if one is left in the file):
-//   truong-la  part / field not in spec-fields.json, or a field of the model's identity;
-//   khong-doc  no doc of that part + key (no supplier offers the model: thiết kế "doc chỉ có cho model có trong danh mục");
-//   to-hang    the maker's sheet in the repo writes this field (same conditions) for this model: only the sheet is shown;
-//   mau-thuan  two bản ghi of one part + key + field + conditions with different values: neither is shown;
-//   trung      same conditions, same value: one is kept (lower level, then newer accessedAt, then id).
-// `has(part, key)` tells whether a doc exists; `makerCtx()` gives makerHits' ctx (built only when a bản ghi needs it).
-export function oneSourcePick(records, { has, makerCtx }) {
-  const skipped = {}, skip = (why, rec) => (skipped[why] ||= []).push(rec?.id ?? null);
-  const groups = new Map();
-  let ctx = null;
-  for (const rec of Array.isArray(records) ? records : []) {
-    const f = rec && ONE_PARTS.has(rec.part) ? fieldOf[rec.part][rec.field] : null;
-    if (!f || IDENTITY.has(f.id) || rec.value == null) { skip("truong-la", rec); continue; }
-    if (!has(rec.part, rec.key)) { skip("khong-doc", rec); continue; }
-    if (makerHits(rec, f, (ctx ||= makerCtx())).hits.length) { skip("to-hang", rec); continue; }
-    const s = sigOf(rec, f), g = stable([rec.part, rec.key, f.id, s.cond]);
-    groups.set(g, [...(groups.get(g) || []), { rec, f, sig: s }]);
-  }
-  const keep = [];
-  for (const g of groups.values()) {
-    if (new Set(g.map((x) => x.sig.value)).size > 1) { for (const x of g) skip("mau-thuan", x.rec); continue; }
-    const [best, ...rest] = g.slice().sort((a, b) => a.rec.level - b.rec.level || cmp(b.rec.accessedAt, a.rec.accessedAt) || cmp(a.rec.id, b.rec.id));
-    keep.push(best);
-    for (const x of rest) skip("trung", x.rec);
-  }
-  for (const k of Object.keys(skipped)) skipped[k].sort();
-  return { keep, skipped };
-}
+// ONE_SOURCE_FILE, readOneSource, oneSourcePick: in one-source-rules.mjs since one-source-4 (config-bot uses the same pick).
+export { ONE_SOURCE_FILE, readOneSource, oneSourcePick };
 // One bản ghi as a value of the standard: its own line (never joined with a supplier's value, even the same figure), with the
 // mark `origin: "one-source"`, `src` = the bản ghi id + url + level, `raw` = its first quote, `suppliers: 0` (no supplier wrote
 // it, so it sorts after every supplier's value). `missing` as for a supplier value read without the normalizer: the unit the

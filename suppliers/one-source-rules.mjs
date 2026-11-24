@@ -3,7 +3,18 @@
 // (spec-standard.mjs, luật thắng mục 3 của thiết kế) dùng CÙNG một luật, nên nằm ở đây.
 // Chỉ import verify.mjs (không import config-bot, không import one-source-check.mjs): spec-standard nạp tệp này tĩnh mà
 // không tạo vòng import (one-source-check nạp config-bot; config-bot nạp verify).
+// `oneSourcePick` (bản ghi nào được hiện) cũng ở đây: bản chuẩn và config-bot (catalogMd / check, one-source-4) dùng chung.
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { numbersIn } from "./verify.mjs";
+
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
+export const ONE_SOURCE_FILE = path.join(ROOT, "one-source.json");
+export const readOneSource = (file = ONE_SOURCE_FILE) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : []);
+const FIELD_PARTS = JSON.parse(fs.readFileSync(path.join(ROOT, "spec-fields.json"), "utf8")).parts;
+export const fieldOf = Object.fromEntries(Object.entries(FIELD_PARTS).map(([p, l]) => [p, Object.fromEntries(l.map((f) => [f.id, f]))]));
+const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 
 // Ô của trường bảng là điều kiện (điện áp, tần số, mức, cấp, tốc độ…), không phải giá trị.
 export const COND_COLS = new Set(["voltage", "connection", "phases", "hz", "duty", "ambient_c", "insulation_rise", "rating", "rpm", "kind"]);
@@ -54,4 +65,38 @@ export function makerHits(rec, f, ctx) {
   }
   const auto = !!f.key || (rec.part === "alternator" && f.id === "ratings");
   return { auto, hits: [...new Set(hits)], why: auto ? null : "trường chưa có code đọc (không có key trong spec-fields.json)" };
+}
+
+const ONE_PARTS = new Set(["engine", "alternator", "controller"]);
+const IDENTITY = new Set(["brand", "model", "brand_country"]);
+// The bản ghi that reach the standard, and why the others do not (luật thắng, mục 3 của thiết kế; the checker blocks every
+// case below as an error, this is the safety net if one is left in the file):
+//   truong-la  part / field not in spec-fields.json, or a field of the model's identity;
+//   khong-doc  no doc of that part + key (no supplier offers the model: thiết kế "doc chỉ có cho model có trong danh mục");
+//   to-hang    the maker's sheet in the repo writes this field (same conditions) for this model: only the sheet is shown;
+//   mau-thuan  two bản ghi of one part + key + field + conditions with different values: neither is shown;
+//   trung      same conditions, same value: one is kept (lower level, then newer accessedAt, then id).
+// `has(part, key)` tells whether a doc exists; `makerCtx()` gives makerHits' ctx (built only when a bản ghi needs it).
+// Moved from spec-standard.mjs (one-source-4): config-bot shows the same bản ghi in catalog.md (has = the model is shown).
+export function oneSourcePick(records, { has, makerCtx }) {
+  const skipped = {}, skip = (why, rec) => (skipped[why] ||= []).push(rec?.id ?? null);
+  const groups = new Map();
+  let ctx = null;
+  for (const rec of Array.isArray(records) ? records : []) {
+    const f = rec && ONE_PARTS.has(rec.part) ? fieldOf[rec.part]?.[rec.field] : null;
+    if (!f || IDENTITY.has(f.id) || rec.value == null) { skip("truong-la", rec); continue; }
+    if (!has(rec.part, rec.key)) { skip("khong-doc", rec); continue; }
+    if (makerHits(rec, f, (ctx ||= makerCtx())).hits.length) { skip("to-hang", rec); continue; }
+    const s = sigOf(rec, f), g = stable([rec.part, rec.key, f.id, s.cond]);
+    groups.set(g, [...(groups.get(g) || []), { rec, f, sig: s }]);
+  }
+  const keep = [];
+  for (const g of groups.values()) {
+    if (new Set(g.map((x) => x.sig.value)).size > 1) { for (const x of g) skip("mau-thuan", x.rec); continue; }
+    const [best, ...rest] = g.slice().sort((a, b) => a.rec.level - b.rec.level || cmp(b.rec.accessedAt, a.rec.accessedAt) || cmp(a.rec.id, b.rec.id));
+    keep.push(best);
+    for (const x of rest) skip("trung", x.rec);
+  }
+  for (const k of Object.keys(skipped)) skipped[k].sort();
+  return { keep, skipped };
 }
