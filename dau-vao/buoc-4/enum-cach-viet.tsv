@@ -1,0 +1,214 @@
+truong	cach_viet_nguon	lan	model	ncc	gia_tri_ban_chuan_hien_tai	enumOf(values/same)	ghi_chu
+genset.fuel	gas	621	621	28	gas	gas	
+genset.fuel	gasoline	23	23	6	gasoline	gasoline	
+genset.fuel	dual	16	16	2	dual	dual	
+engine.cyl_layout	6L	443	443	184	inline	(ngoai danh sach)	
+engine.cyl_layout	4L	150	150	169	inline	(ngoai danh sach)	
+engine.cyl_layout	12V	137	137	157	V	(ngoai danh sach)	
+engine.cyl_layout	4 L	101	101	99	inline	(ngoai danh sach)	
+engine.cyl_layout	6 L	96	96	106	inline	(ngoai danh sach)	
+engine.cyl_layout	16V	95	95	139	V	(ngoai danh sach)	
+engine.cyl_layout	8V	43	43	109	V	(ngoai danh sach)	
+engine.cyl_layout	12L	34	34	96	inline	(ngoai danh sach)	
+engine.cyl_layout	L4	32	32	38	inline	(ngoai danh sach)	
+engine.cyl_layout	L6	30	30	43	inline	(ngoai danh sach)	
+engine.cyl_layout	8L	24	24	119	inline	(ngoai danh sach)	
+engine.cyl_layout	12 V	22	22	57	V	(ngoai danh sach)	
+engine.cyl_layout	16 V	22	22	58	V	(ngoai danh sach)	
+engine.cyl_layout	3L	19	19	119	inline	(ngoai danh sach)	
+engine.cyl_layout	20V	16	16	52	V	(ngoai danh sach)	
+engine.cyl_layout	6V	15	15	36	V	(ngoai danh sach)	
+engine.cyl_layout	6 in line	13	13	70	inline	(ngoai danh sach)	
+engine.cyl_layout	8 L	12	12	40	inline	(ngoai danh sach)	
+engine.cyl_layout	V16	12	12	22	V	(ngoai danh sach)	
+engine.cyl_layout	12缸V型	12	12	13	V	(ngoai danh sach)	
+engine.cyl_layout	V20	11	11	2	V	(ngoai danh sach)	
+engine.cyl_layout	10V	10	10	47	V	(ngoai danh sach)	
+engine.cyl_layout	18V	10	10	51	V	(ngoai danh sach)	
+engine.cyl_layout	4-L	10	10	10	inline	(ngoai danh sach)	
+engine.cyl_layout	6-L	10	10	26	inline	(ngoai danh sach)	
+engine.cyl_layout	V12	9	9	2	V	(ngoai danh sach)	
+engine.cyl_layout	V10	8	8	3	V	(ngoai danh sach)	
+engine.cyl_layout	V8	8	8	1	V	(ngoai danh sach)	
+engine.cyl_layout	6 Inline	7	7	94	inline	(ngoai danh sach)	
+engine.cyl_layout	12 L	6	6	113	inline	(ngoai danh sach)	
+engine.cyl_layout	6in line	5	5	32	inline	(ngoai danh sach)	
+engine.cyl_layout	4 In-line	5	5	4	inline	(ngoai danh sach)	
+engine.cyl_layout	6 cylinder Diesel L	5	5	32	inline	(ngoai danh sach)	
+engine.cyl_layout	6缸直列	5	5	11	inline	(ngoai danh sach)	
+engine.cyl_layout	V 12	4	4	57	V	(ngoai danh sach)	
+engine.cyl_layout	6 cylinder Diesel L type	4	4	76	inline	(ngoai danh sach)	
+engine.cyl_layout	4 in line	4	4	13	inline	(ngoai danh sach)	
+engine.cyl_layout	6 cyl / vertical in-line	4	4	23	inline	(ngoai danh sach)	
+engine.cyl_layout	2L	4	4	20	inline	(ngoai danh sach)	
+engine.cyl_layout	6 cylinders, in-line	3	3	45	inline	(ngoai danh sach)	
+engine.cyl_layout	12 cylinders V type	3	3	2	V	(ngoai danh sach)	
+engine.cyl_layout	10L	3	3	43	inline	(ngoai danh sach)	
+engine.cyl_layout	16 L	3	3	106	inline	(ngoai danh sach)	
+engine.cyl_layout	16L	3	3	44	inline	(ngoai danh sach)	
+engine.cyl_layout	4 cyl / in-line	2	2	16	inline	(ngoai danh sach)	
+engine.cyl_layout	8 cyl / At Vee	2	2	16	V	(ngoai danh sach)	
+engine.cyl_layout	6 cylinders / in-line	1	1	11	inline	(ngoai danh sach)	
+engine.cyl_layout	12 cyl / At Vee	1	1	15	V	(ngoai danh sach)	
+engine.cyl_layout	12缸V型水冷	1	1	30	V	(ngoai danh sach)	
+engine.cyl_layout	16 cyl / At Vee	1	1	9	V	(ngoai danh sach)	
+engine.cyl_layout	16缸V型水冷	1	1	29	V	(ngoai danh sach)	
+engine.cyl_layout	18 cylinder Diesel.VEE type	1	1	17	V	(ngoai danh sach)	
+engine.cyl_layout	20缸V型水冷	1	1	26	V	(ngoai danh sach)	
+engine.cyl_layout	6-cylinder, vertical in-line	1	1	69	inline	(ngoai danh sach)	
+engine.cyl_layout	12 cyl / 60°V	1	1	1	V	(ngoai danh sach)	
+engine.cyl_layout	12 cylinder Diesel.VEE type	1	1	3	V	(ngoai danh sach)	
+engine.cyl_layout	4 cyl / vertical in-line	1	1	1	inline	(ngoai danh sach)	
+engine.cyl_layout	16 cylinders V type	1	1	1	V	(ngoai danh sach)	
+engine.cyl_layout	8 cylinders , in-line	1	1	1	inline	(ngoai danh sach)	
+engine.cyl_layout	4-cylinder in-line	1	1	16	inline	(ngoai danh sach)	
+engine.cyl_layout	20 cylinders V type	1	1	1	V	(ngoai danh sach)	
+engine.cyl_layout	8 cylinders, in-line	1	1	1	inline	(ngoai danh sach)	
+engine.cyl_layout	4 in-line	1	1	1	inline	(ngoai danh sach)	
+engine.cyl_layout	6缸直列水冷	1	1	30	inline	(ngoai danh sach)	
+engine.cyl_layout	4 Inline	1	1	13	inline	(ngoai danh sach)	
+engine.cyl_layout	L3	1	1	33	inline	(ngoai danh sach)	
+engine.aspiration	Turbo-charged	135	135	149	Turbo-charged	(ngoai danh sach)	enum
+engine.aspiration	涡轮增压	67	67	158	涡轮增压	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged & Aftercooled	55	55	110	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	Natural	48	48	134	natural	natural	
+engine.aspiration	Turbocharged	42	42	142	Turbocharged	(ngoai danh sach)	enum
+engine.aspiration	Turbo charged	38	38	133	Turbo charged	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged & Intercooled	35	35	133	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	增压中冷	32	32	61	增压中冷	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged and	25	25	46	Turbocharged and	(ngoai danh sach)	enum
+engine.aspiration	Turbocharging and intercooling	22	22	48	Turbocharging and intercooling	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged and aftercooled	15	15	110	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	Turbo /Inter cooling	14	14	11	Turbo /Inter cooling	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged & Air-to-air	11	11	45	Turbocharged & Air-to-air	(ngoai danh sach)	enum
+engine.aspiration	Turbo	11	11	103	turbo	turbo	
+engine.aspiration	Naturally Aspirated	11	11	101	Naturally Aspirated	(ngoai danh sach)	enum
+engine.aspiration	自然吸气	11	11	101	自然吸气	(ngoai danh sach)	enum
+engine.aspiration	Turbo Charger & Inter Cooler	11	11	54	Turbo Charger & Inter Cooler	(ngoai danh sach)	enum
+engine.aspiration	涡轮增压 Turbo	9	9	128	涡轮增压 Turbo	(ngoai danh sach)	enum
+engine.aspiration	Turbo,	9	9	105	Turbo,	(ngoai danh sach)	enum
+engine.aspiration	Naturally	6	6	123	Naturally	(ngoai danh sach)	enum
+engine.aspiration	涡轮增压Turbocharged	5	5	108	涡轮增压Turbocharged	(ngoai danh sach)	enum
+engine.aspiration	Turbo, Water/Air cooling	4	4	79	Turbo, Water/Air cooling	(ngoai danh sach)	enum
+engine.aspiration	Naturally aspirated	4	4	3	Naturally aspirated	(ngoai danh sach)	enum
+engine.aspiration	Aftercooled	4	4	21	Aftercooled	(ngoai danh sach)	enum
+engine.aspiration	增压	4	4	22	增压	(ngoai danh sach)	enum
+engine.aspiration	Turbo charged, air to air cooled	4	4	32	Turbo charged, air to air cooled	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged and air-to-air charge cooled	3	3	94	Turbocharged and air-to-air charge cooled	(ngoai danh sach)	enum
+engine.aspiration	turbo	3	3	98	turbo	turbo	
+engine.aspiration	Turbo, Air/Air Cooling	3	3	94	Turbo, Air/Air Cooling	(ngoai danh sach)	enum
+engine.aspiration	TURBOCHARGED	3	3	1	TURBOCHARGED	(ngoai danh sach)	enum
+engine.aspiration	Turbo, Air/Air cooling	3	3	85	Turbo, Air/Air cooling	(ngoai danh sach)	enum
+engine.aspiration	Turbo-charged , After cooler	3	3	45	Turbo-charged , After cooler	(ngoai danh sach)	enum
+engine.aspiration	water-cooled,4 valves, Turbo charged	3	3	57	water-cooled,4 valves, Turbo charged	(ngoai danh sach)	enum
+engine.aspiration	Air natural aspirated	2	2	63	Air natural aspirated	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged and Aftercooled	2	2	19	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	Turbocharged and Air	2	2	44	Turbocharged and Air	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged &	2	2	64	Turbocharged &	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged & Charge Air Cooled	2	2	7	Turbocharged & Charge Air Cooled	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged ,	2	2	18	Turbocharged ,	(ngoai danh sach)	enum
+engine.aspiration	LTA	2	2	23	LTA	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged and Intercooled	2	2	11	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	Natural intake	2	2	7	Natural intake	(ngoai danh sach)	enum
+engine.aspiration	Turbo charging & turbocharged air cooling	2	2	40	Turbo charging & turbocharged air cooling	(ngoai danh sach)	enum
+engine.aspiration	Turbo-charged , Air to Air	2	2	43	Turbo-charged , Air to Air	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged&No-Intercooling	2	2	43	Turbocharged&No-Intercooling	(ngoai danh sach)	enum
+engine.aspiration	turbo charger	1	1	2	turbo charger	(ngoai danh sach)	enum
+engine.aspiration	Turbo, charge air cooled	1	1	81	Turbo, charge air cooled	(ngoai danh sach)	enum
+engine.aspiration	Turbocharging	1	1	48	Turbocharging	(ngoai danh sach)	enum
+engine.aspiration	In-line,4strokes,4valves,water-cooled,Turbo charged with aftercooler	1	1	16	In-line,4strokes,4valves,water-cooled,Turbo charged with aftercooler	(ngoai danh sach)	enum
+engine.aspiration	Natural Turbocharged & Aftercooled	1	1	8	Natural Turbocharged & Aftercooled	(ngoai danh sach)	enum
+engine.aspiration	Turbo, intercooling	1	1	20	Turbo, intercooling	(ngoai danh sach)	enum
+engine.aspiration	Turbocharging intercooled	1	1	1	Turbocharging intercooled	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged, aftercooled	1	1	98	turbo_aftercooled	turbo_aftercooled	
+engine.aspiration	Turbocharged , LTA	1	1	19	Turbocharged , LTA	(ngoai danh sach)	enum
+engine.aspiration	Turbo,Air/Water cooling	1	1	102	Turbo,Air/Water cooling	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged, low-temperature aftercooled	1	1	102	Turbocharged, low-temperature aftercooled	(ngoai danh sach)	enum
+engine.aspiration	NATURAL	1	1	1	natural	natural	
+engine.aspiration	Turbo, Water/Air Cooling	1	1	28	Turbo, Water/Air Cooling	(ngoai danh sach)	enum
+engine.aspiration	Turbo - charging & air - to - air cooling	1	1	30	Turbo - charging & air - to - air cooling	(ngoai danh sach)	enum
+engine.aspiration	Supercharged non-intercooled	1	1	36	Supercharged non-intercooled	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged&Intercooling	1	1	30	Turbocharged&Intercooling	(ngoai danh sach)	enum
+engine.aspiration	自然吸气 Natural	1	1	15	自然吸气 Natural	(ngoai danh sach)	enum
+engine.aspiration	Turbocharged & air-air intercooled	1	1	26	Turbocharged & air-air intercooled	(ngoai danh sach)	enum
+engine.governor	Electrical	395	395	188	electronic	electronic	
+engine.governor	Electronic	296	296	185	electronic	electronic	
+engine.governor	Mechanical	234	234	169	mechanical	mechanical	
+engine.governor	ECU	211	211	159	ecu	ecu	
+engine.governor	Electronic control	102	102	53	Electronic control	(ngoai danh sach)	enum
+engine.governor	Electric	68	68	149	Electric	(ngoai danh sach)	enum
+engine.governor	Mechanic	45	45	128	Mechanic	(ngoai danh sach)	enum
+engine.governor	EFC Electrical	45	45	132	EFC Electrical	(ngoai danh sach)	enum
+engine.governor	电子调速E	36	36	73	电子调速E	(ngoai danh sach)	enum
+engine.governor	Electronic speed	30	30	129	Electronic speed	(ngoai danh sach)	enum
+engine.governor	Electronic/M	26	26	33	Electronic/M	(ngoai danh sach)	enum
+engine.governor	Electronic speed controller	26	26	89	Electronic speed controller	(ngoai danh sach)	enum
+engine.governor	FORTRUST Electronic	25	25	22	FORTRUST Electronic	(ngoai danh sach)	enum
+engine.governor	Mechanically	21	21	66	Mechanically	(ngoai danh sach)	enum
+engine.governor	Electronically Controlled Common Rail System	16	16	38	Electronically Controlled Common Rail System	(ngoai danh sach)	enum
+engine.governor	EMS2 / ECU	13	13	42	EMS2 / ECU	(ngoai danh sach)	enum
+engine.governor	mechanical	12	12	71	mechanical	mechanical	
+engine.governor	机械调速M	10	10	22	机械调速M	(ngoai danh sach)	enum
+engine.governor	electronic	8	8	66	electronic	electronic	
+engine.governor	Electric Unit Pump System	8	8	40	Electric Unit Pump System	(ngoai danh sach)	enum
+engine.governor	Mechanical/ Electrical	7	7	3	Mechanical/ Electrical	(ngoai danh sach)	enum
+engine.governor	机械调	6	6	81	机械调	(ngoai danh sach)	enum
+engine.governor	电子	6	6	110	电子	(ngoai danh sach)	enum
+engine.governor	Electronic Governor	5	5	43	electronic	electronic	
+engine.governor	Mechanical/Electrical	4	4	103	Mechanical/Electrical	(ngoai danh sach)	enum
+engine.governor	GAC Electrical	4	4	101	GAC Electrical	(ngoai danh sach)	enum
+engine.governor	ELECTRONIC	4	4	1	electronic	electronic	
+engine.governor	Mmechanical speed governors	3	3	95	Mmechanical speed governors	(ngoai danh sach)	enum
+engine.governor	mechanical speed governors	3	3	59	mechanical speed governors	(ngoai danh sach)	enum
+engine.governor	Electronically-control high pressure common	3	3	35	Electronically-control high pressure common	(ngoai danh sach)	enum
+engine.governor	electric	2	2	58	electric	(ngoai danh sach)	enum
+engine.governor	Mechanical speed controller,	2	2	39	Mechanical speed controller,	(ngoai danh sach)	enum
+engine.governor	Electroni speed	2	2	37	Electroni speed	(ngoai danh sach)	enum
+engine.governor	Electronic/mechanical	1	1	88	Electronic/mechanical	(ngoai danh sach)	enum
+engine.governor	LCS Electric	1	1	87	LCS Electric	(ngoai danh sach)	enum
+engine.governor	Electronic / Mechanical	1	1	79	Electronic / Mechanical	(ngoai danh sach)	enum
+engine.governor	Electronic ECM	1	1	40	Electronic ECM	(ngoai danh sach)	enum
+engine.governor	Electronic, ±0.5% frequency deviation	1	1	40	Electronic, ±0.5% frequency deviation	(ngoai danh sach)	enum
+engine.governor	Electrical controller (WOODWARD 2301A)	1	1	1	Electrical controller (WOODWARD 2301A)	(ngoai danh sach)	enum
+engine.governor	electronics	1	1	64	electronics	(ngoai danh sach)	enum
+engine.governor	Electric/Mechanical	1	1	55	Electric/Mechanical	(ngoai danh sach)	enum
+engine.governor	BYC P7100/Electronic	1	1	24	BYC P7100/Electronic	(ngoai danh sach)	enum
+engine.governor	EGS-02 electric governor (WOODWARD)	1	1	2	EGS-02 electric governor (WOODWARD)	(ngoai danh sach)	enum
+engine.governor	EFC electrical	1	1	67	EFC electrical	(ngoai danh sach)	enum
+engine.governor	G-Drive Governor	1	1	28	G-Drive Governor	(ngoai danh sach)	enum
+engine.governor	ECM Electronic	1	1	26	ECM Electronic	(ngoai danh sach)	enum
+engine.governor	Quantum Electronic	1	1	14	Quantum Electronic	(ngoai danh sach)	enum
+engine.governor	Electronic governing	1	1	19	Electronic governing	(ngoai danh sach)	enum
+engine.governor	Electrical speed	1	1	30	Electrical speed	(ngoai danh sach)	enum
+engine.governor	Electronic unit pump	1	1	29	Electronic unit pump	(ngoai danh sach)	enum
+engine.governor	Electronically controlled unit pump	1	1	26	Electronically controlled unit pump	(ngoai danh sach)	enum
+alternator.insulation	H	271	271	47	H	H	
+alternator.insulation	| Insulation class | H	61	61	20	H	(ngoai danh sach)	
+alternator.insulation	H/H	47	47	2	H/H	(ngoai danh sach)	enum
+alternator.insulation	| Insulation class | H | Excitation system 6 wire	30	30	11	H	(ngoai danh sach)	
+alternator.insulation	| Insulation class | H | Excitation system 6-wire	22	22	2	H	(ngoai danh sach)	
+alternator.insulation	H /IP22 or F/IP21	20	20	1	H /IP22 or F/IP21	(ngoai danh sach)	enum
+alternator.insulation	| INSULATION SYSTEM | CLASS H	18	18	20	H	(ngoai danh sach)	
+alternator.insulation	| Insulation class | H | Excitation system 6 wires	12	12	10	H	(ngoai danh sach)	
+alternator.insulation	H class	7	7	1	H class	(ngoai danh sach)	enum
+alternator.insulation	| Insulation System | H	7	7	8	H	(ngoai danh sach)	
+alternator.insulation	Class H	3	3	5	Class H	(ngoai danh sach)	enum
+alternator.insulation	| Insulation System | Class H	3	3	6	H	(ngoai danh sach)	
+alternator.insulation	Class F	1	1	1	Class F	(ngoai danh sach)	enum
+alternator.insulation	H / H	1	1	1	H / H	(ngoai danh sach)	enum
+alternator.excitation	Shunt	126	126	30	shunt	shunt	
+alternator.excitation	Single bearing, Brushless,	90	90	34	Single bearing, Brushless,	(ngoai danh sach)	enum
+alternator.excitation	Brushless, self-excitation	46	46	1	Brushless, self-excitation	(ngoai danh sach)	enum
+alternator.excitation	brushless self-exciting	20	20	27	brushless self-exciting	(ngoai danh sach)	enum
+alternator.excitation	Brush less,self-exciting	15	15	24	Brush less,self-exciting	(ngoai danh sach)	enum
+alternator.excitation	无刷自励磁	13	13	26	无刷自励磁	(ngoai danh sach)	enum
+alternator.excitation	SHUNT	10	10	2	shunt	shunt	
+alternator.excitation	Self-excited	8	8	4	Self-excited	(ngoai danh sach)	enum
+alternator.excitation	Brushless, shunt-excited	4	4	2	Brushless, shunt-excited	(ngoai danh sach)	enum
+alternator.excitation	Brushless, self-excited	2	2	2	Brushless, self-excited	(ngoai danh sach)	enum
+alternator.excitation	Brushless,	2	2	2	Brushless,	(ngoai danh sach)	enum
+alternator.excitation	Self-excitation	1	1	4	Self-excitation	(ngoai danh sach)	enum
+alternator.excitation	Brushless,self-excitation	1	1	2	Brushless,self-excitation	(ngoai danh sach)	enum
+alternator.excitation	Brushless, Self-Excited	1	1	2	Brushless, Self-Excited	(ngoai danh sach)	enum
+alternator.excitation	Brushless, self-exciting	1	1	2	Brushless, self-exciting	(ngoai danh sach)	enum
+alternator.excitation	Brushless	1	1	5	Brushless	(ngoai danh sach)	enum

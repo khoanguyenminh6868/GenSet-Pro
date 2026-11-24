@@ -1,0 +1,692 @@
+khoa	nhan	dong	ncc	model_o
+gov	governor	920	24	3034
+gov	governor type	468	17	1116
+gov	engine governor	312	1	312
+gov	speed governor	174	7	236
+gov	governing type	143	5	189
+gov	7governor	133	1	133
+gov	gov	80	7	1942
+gov	电子调速	77	1	77
+gov	engine governor....................................electronic	70	1	70
+gov	调速方式	56	8	395
+gov	电子调速e	44	1	44
+gov	gov.	43	3	1209
+gov	governing system	35	3	205
+gov	governing class	28	2	33
+gov	机械调速m	20	1	20
+gov	engine governor.................................mechanical	16	1	16
+gov	engine governor.......................................electronic	14	1	14
+gov	governor (gov.)	13	1	13
+gov	engine governor................................. electronic	10	1	10
+gov	---governed speed	9	1	10
+gov	--- governed speed	9	1	23
+gov	m/e engine governor	9	1	605
+gov	engine governor................................. ecu	9	1	9
+gov	调速器类型	8	1	8
+gov	engine governor.......................................ecm	8	1	8
+gov	electronic governor	7	3	22
+gov	type of governor	6	1	27
+gov	调速方式 type of governor	6	1	178
+gov	oil pressure @ governed speed	5	1	5
+gov	speed governors	5	1	5
+gov	governor / avr	4	1	4
+gov	调速系统	4	1	12
+gov	机械调速	4	1	4
+gov	调速率(%)	4	1	11
+gov	engine governor.................................electronic	3	1	3
+gov	调速方式 type of gover nor	3	1	112
+gov	governing	2	1	76
+gov	---governed speed(maximum )	2	1	2
+gov	(speed governor)	2	2	3
+gov	engine governor....................................mechanical	2	1	2
+fuel	fuel consumption	1017	33	2850
+fuel	fuel cons 100%(l/h)	914	2	914
+fuel	100%prime	257	1	991
+fuel	consumption	182	12	350
+fuel	100% load(prime power)	162	2	309
+fuel	fuel consumption100% (of the prime power)	146	1	146
+fuel	fuel consumption 100 % 50 hz	124	1	248
+fuel	燃油消耗 (g/kw.h)	116	4	1699
+fuel	fuel consumption 100% prp	70	3	70
+fuel	fuel consumption 100% load	68	2	94
+fuel	fuel consumption esp	67	2	67
+fuel	fuel consumption at 100% load	66	5	68
+fuel	燃油率	59	1	559
+fuel	fuel consumption (g/kw·h)	50	1	50
+fuel	fuel consumption (g/kwh)	40	4	315
+fuel	燃油消耗率 g/(kw·h)	38	2	256
+fuel	100% prime power	38	3	66
+fuel	fuel consumption (g/kw.h)	36	7	122
+fuel	fuel consumption @100% load, m3/h	34	1	34
+fuel	fuel cons.	33	2	977
+fuel	consumption 100%	31	1	694
+fuel	fuel consumption optimized	31	1	31
+fuel	ng consumption	31	1	62
+fuel	燃油消耗量	30	4	122
+fuel	fuel consumption (l/h)	26	8	478
+fuel	fuel consumption standby	26	2	50
+fuel	额定燃油耗	26	2	26
+fuel	cons 100%(l/h)	26	2	690
+fuel	power consumption	24	4	28
+fuel	fuel consumption at 100% load (l/hour)	24	1	24
+fuel	fuel consumption prime	24	1	48
+fuel	fuel consumption at	24	1	67
+fuel	100 % load	24	1	36
+fuel	fuel efficiency (g/kw·h)	23	1	37
+fuel	engine noise @1m 100% load	22	1	22
+fuel	fuel efficiency	21	4	27
+fuel	燃油消耗 fuel consumption g/kw·h	20	3	485
+fuel	燃油消耗率	19	4	140
+fuel	rated fuel consumption(l/h)	19	1	384
+fuel	燃油消耗率 g/kw.h	18	5	426
+voltage	voltage	1862	57	6141
+voltage	rated voltage	1438	29	1725
+voltage	rated voltage line to line	293	2	1502
+voltage	(3) rated voltage	199	1	199
+voltage	standard voltage	145	2	145
+voltage	voltage, frequency	138	2	4674
+voltage	cranking motor voltage	133	1	138
+voltage	6voltage and	133	1	133
+voltage	电压	111	9	153
+voltage	额定电压	92	7	129
+voltage	输出电压	77	4	225
+voltage	rated voltage (v)	76	14	148
+voltage	电压(v)	69	2	704
+voltage	voltage series delta	52	3	380
+voltage	voltage parallel star	50	3	364
+voltage	standard voltage (v)	50	1	50
+voltage	available voltages (v)	50	1	100
+voltage	auxiliary voltage	50	1	50
+voltage	voltage series star	47	3	335
+voltage	电压波动率(%)	46	2	194
+voltage	alternator under / over voltage	46	1	46
+voltage	voltage (v)	44	15	359
+voltage	nominal voltage [v]	39	1	39
+voltage	line voltage	38	1	38
+voltage	稳态电压调整率(%)	37	1	185
+voltage	瞬态电压调整率(%)	37	1	185
+voltage	电压稳定时间(s)	37	1	185
+voltage	电压 voltage	35	1	35
+voltage	voltage v	33	3	200
+voltage	voltage - single phase	29	1	60
+voltage	continuous voltage	27	1	54
+voltage	voltage range	26	4	26
+voltage	closed voltage threshold	26	1	26
+voltage	charging voltage	25	1	25
+voltage	额定电压 prime voltage (v)	24	1	24
+voltage	open voltage threshold	23	1	23
+voltage	voltage [v]	19	3	19
+voltage	rated voltage(v)	18	4	171
+voltage	额定电压 (v)	18	3	443
+voltage	voltage/ph	18	1	18
+phase	phase	2092	39	6474
+phase	wires	675	3	1967
+phase	3-phase	492	4	1475
+phase	amps per phase	312	1	312
+phase	number of phase	184	5	184
+phase	number of phases	150	4	294
+phase	phases	144	4	769
+phase	no of phases	133	2	134
+phase	three phase	121	2	134
+phase	phase / connection	94	3	94
+phase	phase number	50	3	50
+phase	phase sequence electrical (option)	45	1	45
+phase	phase / wires	40	1	40
+phase	相数 number of phase	36	1	36
+phase	phase / wire	28	1	28
+phase	phase & wire	26	2	26
+phase	single phase	22	2	24
+phase	50hz pf=0.8 400/230v 3phase 4wire	22	2	503
+phase	相数	20	6	127
+phase	phase wires	20	3	20
+phase	no of pole and phase	20	1	20
+phase	frequency & phase	19	1	19
+phase	phase & wires	18	1	18
+phase	phase / poles	16	1	16
+phase	50hz,400/230v,3-phase	15	1	529
+phase	maximum unbalanced load across phases	15	1	17
+phase	60hz pf=0.8 440/220v 3phase 4wire	15	1	318
+phase	number of wires	12	1	24
+phase	measurement, plus 3-phase generator	12	1	12
+phase	相数number of phase	11	1	11
+phase	of the three-phase short-circuit curves as a function of the	10	1	10
+phase	amperage 1 phase 120v	9	1	9
+phase	amperage 1 phase 240v	9	1	9
+phase	amperage 3 phase 208v	9	1	9
+phase	amperage 3 phase 240v	9	1	9
+phase	phase change rate	9	1	9
+phase	amerpage 3 phase 480v	8	1	8
+phase	curves are based on a three-phase short-circuit.	8	1	32
+phase	curves are based on a three-phase	7	1	28
+phase	current (a) (1phase / 3phase)	7	1	8
+speed	rated speed	1053	27	1629
+speed	speed ( rpm )	647	1	647
+speed	engine speed	539	16	654
+speed	speed	242	41	964
+speed	转速	220	10	258
+speed	rated speed (rpm)	183	12	445
+speed	frequency/speed	156	5	156
+speed	engine speed rated	149	2	149
+speed	rated rotation speed	148	1	296
+speed	piston speed	128	3	212
+speed	speed / frequency	126	1	252
+speed	---idle speed	92	1	222
+speed	---rated speed	87	1	217
+speed	rpm	84	11	567
+speed	rated speed(rpm)	77	5	226
+speed	rated rpm................................................1500	66	1	66
+speed	rated rpm................................................1800	52	1	52
+speed	speed (rpm)	47	10	165
+speed	rpm [u/min]	46	1	46
+speed	raated speed	44	1	88
+speed	额定转速	43	6	118
+speed	降速显示 loss of speed signal	43	1	43
+speed	frequency / speed	41	1	41
+speed	发动机转速 engine speed (rpm)	35	1	35
+speed	额定转速 rated speed	32	2	34
+speed	额定转速 rated speed (rpm)	27	1	27
+speed	engine speed rpm	24	1	66
+speed	speed control system	23	1	23
+speed	engine speed (rpm)	22	3	31
+speed	rated rpm..........................................1500	19	1	20
+speed	minimum cranking speed.	17	1	17
+speed	engine rated speed	17	4	45
+speed	怠速 low idle (rpm)	17	1	17
+speed	活塞速度 piston speed (m/s)	17	1	17
+speed	r/min	16	1	16
+speed	发动机转速	16	3	26
+speed	speed ​​(rpm)	16	1	16
+speed	mean piston speed	16	1	70
+speed	额定转速 ratedspeed	15	1	15
+speed	rated speed ( r/min )	14	1	14
+pf	power factor	1004	52	1418
+pf	power factor(cosφ)	157	3	205
+pf	factor (cos phi)	148	1	148
+pf	rated power factor(cosφ)	134	1	134
+pf	power factor (cos phi)	98	3	98
+pf	功率因数	61	5	544
+pf	rated power factor	60	6	64
+pf	功率因数 power factor	47	1	47
+pf	(cos¢)	36	1	36
+pf	cos&phi;=0.8(滞后)	35	1	245
+pf	cos&phi;=0.8	35	1	245
+pf	power factor φ	18	2	18
+pf	功率因素 power factor	15	1	15
+pf	power factor (cos φ)	14	2	29
+pf	power factor (lagging)	9	1	13
+pf	cos>0l	9	1	9
+pf	cos>0c	9	1	9
+pf	cos<0l	9	1	9
+pf	cos<0c	9	1	9
+pf	power factor cos¢	8	1	27
+pf	power factor (cos&cent;)	8	1	8
+pf	额定功率因数	7	1	227
+pf	power factor ()	7	1	7
+pf	power factor (φ)	7	1	7
+pf	power factor cos φ	6	2	52
+pf	power factor (cos?)	5	1	5
+pf	leistungsfaktor 3~ (cosφ)	5	1	5
+pf	power factor (medium)	4	1	4
+pf	power factor cos ¢	3	1	3
+pf	(cosφ)	3	1	10
+pf	power factor(cos)	2	2	6
+pf	功率因数(cosφ)	2	1	2
+pf	kva rotor bloqué à cos φ 0.6	2	1	2
+pf	power factor (pf)	2	1	2
+pf	额定功率因数( cos&phi;)	2	1	2
+pf	power factor (%)	2	1	8
+pf	power factor cos &phi;	1	1	1
+pf	power factor (cosφ)	1	1	1
+pf	power factor (cos)	1	1	1
+pf	功率因数cos	1	1	7
+excit	excitation system	1045	11	2335
+excit	exciter type	566	8	566
+excit	self-excited	201	2	417
+excit	• exciter type	147	1	147
+excit	励磁方式	50	6	276
+excit	pilot exciter	31	1	62
+excit	avr	30	9	75
+excit	励磁方式 exciter type	27	1	27
+excit	exciting way	21	1	21
+excit	avr type	20	4	24
+excit	excitation	20	5	23
+excit	avr regulation	16	1	16
+excit	励磁方式 excitation mode	15	1	15
+excit	exciting method	14	1	14
+excit	excitation loss	9	1	9
+excit	无刷自励磁	7	1	225
+excit	excitation type	5	2	5
+excit	exciter	4	2	8
+excit	close before excitation failure	3	1	4
+excit	charge alternator excitation	2	1	2
+excit	digital avr control voltage biasing and remote configuration,	2	1	2
+excit	excitation current	2	2	2
+excit	under-excitation or var import	2	1	5
+excit	over-excitation or var export	2	1	5
+excit	alternatore avr / avr alternator / avr alternateur	2	1	27
+excit	mx341 avr	2	1	10
+excit	发电机励磁方式 excitation	2	1	16
+excit	无刷avr brushless , avr	2	1	16
+excit	via the automatic voltage regulator (avr) to the main	2	1	2
+excit	exciter stator	2	1	2
+excit	δ bruxhless,self exciting	2	1	4
+excit	excitation current range	1	1	1
+excit	max. excitation current	1	1	1
+excit	built-in analogue avr control	1	1	3
+excit	external analogue avr control via iom 230	1	1	3
+excit	digital avr control remote configuration, dvc - deif	1	1	3
+excit	digital avr control voltage biasing, nidec d550	1	1	3
+excit	close before excitation (fast synchronisation)	1	1	1
+excit	no load excitation voltage (v)	1	1	1
+excit	no load excitation current (a)	1	1	1
+eff	efficiency (%)	252	6	3283
+eff	效率 %	65	2	399
+eff	efficiency(%)	48	2	641
+eff	efficiency	25	4	30
+eff	alternator efficiencies	19	1	19
+eff	telephone harmonic coefficient thf	16	1	16
+eff	效率	15	2	39
+eff	efficiency (cont. 100%)	15	1	15
+eff	efficiency ( % )	14	1	14
+eff	typical alternator efficiency	11	1	11
+eff	efficiency 4/4 p.f. 0,8 50 hz	11	1	137
+eff	总效率	10	3	76
+eff	发电效率	10	1	71
+eff	generator efficiency	9	2	18
+eff	电效率 3)	8	1	36
+eff	总效率 3)	8	1	36
+eff	电效率 7)	6	1	44
+eff	总效率 7)	6	1	44
+eff	效率 (%)	6	1	93
+eff	efficiency peak	6	1	6
+eff	efficiency 4/4 p.f.1 50 hz	5	1	39
+eff	efficiency 4/4 p.f. 0,8 60 hz	5	1	52
+eff	发电机效率	4	1	12
+eff	发电效率 4}	4	1	34
+eff	efficient	3	2	3
+eff	efficiency 4/4 p.f.1 60 hz	3	1	37
+eff	电效率	2	1	16
+eff	tcg 3020 v20 p = 良好发电效率 50 hz	2	1	10
+eff	tcg 3020 v20 p = 良好发电效率 60 hz	2	1	10
+eff	efficiency 4/4 50 hz	2	1	9
+eff	mechanical efficiency (%)	2	1	24
+eff	alternator efficiency	2	1	2
+eff	efficiency curves	1	1	1
+eff	is not always the most efficient solution. does the	1	1	1
+eff	efficiency at p.f.0.8	1	1	1
+eff	发电效率4}	1	1	9
+eff	and efficiency.	1	1	1
+eff	maximum efficiency	1	1	2
+eff	through improved efficiency	1	1	1
+eff	state-of-the-art system economical, efficient	1	1	1
+insul	insulation class	1026	17	1059
+insul	insulation grade	363	4	363
+insul	insulation	274	9	278
+insul	• insulation class	147	1	147
+insul	insulation system	112	4	112
+insul	绝缘等级	70	7	352
+insul	protection level / insulation class	59	1	59
+insul	绝缘等级 insulation class	47	1	47
+insul	insulation type	31	3	31
+insul	insulation class/protection grade	30	1	30
+insul	绝缘/防护等级	27	2	27
+insul	insulation class/temperature rise class	24	1	54
+insul	protection/ insulation	20	1	20
+insul	class of insulation	16	1	19
+insul	绝缘等级 insulation grade	15	1	15
+insul	insulation monitoring	12	1	12
+insul	绝缘等级temperature rise	11	1	11
+insul	insulation intensity	11	1	13
+insul	insulation / protection	4	1	4
+insul	绝缘/温升等级	4	1	4
+insul	alternator insulation class	3	2	9
+insul	insulation voltage	3	1	3
+insul	insulating intensity	3	1	4
+insul	space insulated with rock wool and inspection door	2	1	2
+insul	insulation level	2	1	2
+insul	insulation class / temperature rise	2	1	2
+insul	δ class “h” insulation	2	1	4
+insul	δ stator grease insulation covered	2	1	4
+insul	insulation class/temperature rise	2	1	2
+insul	insulation class, temperature rise	1	1	1
+insul	degree of protection / insulation class	1	1	8
+insul	flexible exhaust pipe insulated with fibreglass and	1	1	1
+insul	flexible exhaust pipe insulated in fibreglass and	1	1	1
+insul	insulated space of the canopy.	1	1	1
+insul	flexible pipe insulated	1	1	1
+insul	insulated space of the canopy	1	1	1
+insul	insulated, 1.0 s.f. motor, if we add the nema	1	1	1
+insul	• class h insulation material	1	1	1
+insul	protection / insulation	1	1	1
+insul	insulation class / protection	1	1	1
+ip	protection grade	670	18	697
+ip	ingress protection	664	3	675
+ip	protection	299	21	301
+ip	protection class	207	15	225
+ip	generator protection	173	2	173
+ip	degree of protection	150	2	150
+ip	• protection	147	1	147
+ip	防护等级	80	7	325
+ip	protection level	53	4	53
+ip	protection level / installation class	34	1	34
+ip	防护等级 protection grade	30	1	30
+ip	degrees of protection	24	1	24
+ip	environmental protection agency (eu or mep) to conform to	18	1	18
+ip	short circuit protection	16	1	16
+ip	enclosure protection	15	2	15
+ip	防护等级 protection level	15	1	15
+ip	● degree of protection	13	1	13
+ip	机组保护 generator protection	12	1	12
+ip	environmental protection agency (epa tier) to conform to	10	1	10
+ip	protection degree (front	8	1	10
+ip	and protection range	7	1	8
+ip	user defined protections and setpoints, integrated plc logic	5	1	5
+ip	engine display/protection	5	1	5
+ip	genset display/protection	5	1	5
+ip	protection degree	4	3	5
+ip	protections	4	2	4
+ip	fire extinguisher 5kg co2 incl. protection box	4	1	4
+ip	low oil protection	4	1	4
+ip	ip	3	3	27
+ip	ip protection	3	1	3
+ip	panneau de protection tableau	3	1	3
+ip	alternator protection class	3	2	9
+ip	magnetothermal protection switch.	2	1	2
+ip	support of functions and protections as defined by ansi	2	1	2
+ip	protection and instrumentation without extra senders.	2	1	2
+ip	unbalanced load protection	2	1	2
+ip	modbus tcp/ip	2	1	4
+ip	tcp/ip	2	1	2
+ip	rain protection on the panel with rubber gasket.	2	1	2
+ip	this protection is enabled only if the board is connected to the	2	1	2
+asp	aspiration	635	26	1017
+asp	air intake system	141	2	141
+asp	aspiration type	125	3	125
+asp	maximum allowable intake	84	1	84
+asp	aspiration and cooling	67	2	67
+asp	intake air alarm temperature	60	1	60
+asp	进气方式	51	8	125
+asp	intake air flow	50	1	50
+asp	吸气方式	49	2	300
+asp	进气方式 air intake way	39	1	39
+asp	aspiration system	34	2	34
+asp	max. combustion air intake restriction	24	1	48
+asp	intake system	22	1	22
+asp	allow intake resistance	21	1	29
+asp	intake type	19	2	19
+asp	进气阻力	17	2	17
+asp	进气流量 air intake flow (l/sec)	17	1	17
+asp	吸气方式 aspiration	15	1	15
+asp	aspiration (asp.)	13	1	13
+asp	air intake and exhaust	11	1	12
+asp	自然吸气	11	4	22
+asp	maximum intake air restriction	10	1	10
+asp	进气方式 aspiration	8	1	8
+asp	air intake way	6	2	39
+asp	max intake restriction (dirty filter)	5	1	5
+asp	naturally aspirated	5	1	5
+asp	max intake manifold temp	4	1	4
+asp	max intake restriction (clean filter)	4	1	4
+asp	进气系统	4	1	12
+asp	intake air consumption	4	1	4
+asp	intake	3	1	114
+asp	max intake restriction	3	1	5
+asp	intake form	2	1	2
+asp	air intake	2	2	2
+asp	aspirated	2	2	9
+asp	intake alarm temperature	1	1	1
+asp	intake air alarm temperatur	1	1	1
+asp	intake valves	1	1	1
+asp	max intake	1	1	1
+asp	air intake and exhaust system	1	1	1
+start	starting system	209	21	296
+start	start motor	180	3	342
+start	starting voltage	166	6	179
+start	deepsea 6120 auto start & auto mains	128	1	128
+start	starter motor	111	2	111
+start	starting method	78	11	82
+start	starter voltage	75	1	150
+start	starter(heave,anode)	70	1	70
+start	max. allowable resistance of starting circuit	60	1	60
+start	starting	41	7	48
+start	motor starting capability	37	2	126
+start	start	35	6	45
+start	start mode	22	2	23
+start	启动方式 starter mode	22	1	22
+start	起动机电压 start motor voltage (v)	18	1	20
+start	starter motor / charge alternator (v	15	1	30
+start	启动方式 startup mode	15	1	15
+start	max starting circuit resistance	13	1	13
+start	remote start/stop	13	2	13
+start	start delay	13	1	14
+start	starter motor voltage	11	1	11
+start	starter	11	5	20
+start	starter no response	10	1	10
+start	unit sequence starting	9	1	9
+start	remote start	9	2	9
+start	starting-to-running transition	8	1	16
+start	engine starter	8	1	10
+start	motor starting (code g)	8	1	10
+start	start system	6	1	18
+start	deepsea 7320 auto start & auto mains	5	1	5
+start	remote start controller	5	1	5
+start	e-start	5	1	5
+start	engine start method	5	1	5
+start	starting system /启动系统	4	1	4
+start	start type	4	3	14
+start	auto start and auto mains failure	4	1	4
+start	start failure	4	2	7
+start	external start nato socket	4	1	4
+start	avviamento starting	4	1	24
+start	soft start	4	1	4
+noise	maximun sound level	293	2	584
+noise	canopy noise level	236	1	236
+noise	noise level	214	11	340
+noise	beautiful and anti-rust, and can further reduce the noise	133	1	133
+noise	noise db(a) @ 7m	52	1	0
+noise	db(a)	21	2	958
+noise	db(a)@7m	21	2	124
+noise	db(a) at 7 mt	19	1	945
+noise	noise (db)	19	3	19
+noise	sound pressure level lpa (7 m) [db(a)]	18	1	18
+noise	noice level at 7 m (dba)	18	1	64
+noise	sound pressure level	17	1	17
+noise	noise db ( a )	14	1	14
+noise	noise	10	4	14
+noise	noise level at 1m/7m	10	1	140
+noise	standard type-db(a)@7m	10	1	10
+noise	noise level at 7m	9	1	22
+noise	noise level(at 7m) db	8	1	8
+noise	noise level (7m, db)	7	1	7
+noise	sound level @ 7m (db a)	7	1	7
+noise	db(a) (•) 7 m	7	1	167
+noise	noise(7m)/噪音	6	1	12
+noise	noise (no load)	6	1	130
+noise	noise level (at 7m)	5	2	7
+noise	noise level (at 7m)(db)	5	1	5
+noise	db(a)@1m	5	1	108
+noise	noise - upper side (db(a))	4	2	4
+noise	noise(7m)	4	2	23
+noise	noise / ambient	4	1	4
+noise	noise level at 7 meters (db)	4	1	4
+noise	noise level at 7m db(a)	4	1	18
+noise	noise level at 7m (dba)	4	1	6
+noise	schallleistungspegel db(a)	3	1	3
+noise	schalldruckpegel db(a)	3	1	3
+noise	noise(db)	3	2	23
+noise	sound level @ 7m	3	1	24
+noise	noise at 7 meters	3	1	3
+noise	height (db(a)@7m)	3	1	30
+noise	噪声限值 noise db(a)	3	1	3
+noise	ym6s9l-db	2	1	14
+cooling	cooling system	1853	25	1933
+cooling	cooling method	203	11	225
+cooling	冷却方式	42	4	52
+cooling	cooling type	35	4	44
+cooling	冷却方式 coolingmode	15	1	15
+cooling	冷却方式 cooling system	8	1	8
+cooling	cooling	4	4	11
+cooling	water-cooling	4	1	28
+cooling	maximum resistance to external cooling	3	1	3
+cooling	δ with fan cooling	2	1	4
+cooling	minimum pressure cap (for cooling	1	1	1
+cooling	raffreddamento cooling	1	1	8
+cooling	fan air cooling	1	1	1
+cooling	- cooling system	1	1	1
+cooling	alternator cooling system	1	1	1
+vreg	voltage regulation	624	27	1221
+vreg	voltage regulator	263	8	304
+vreg	voltage regulation nl-fl	193	3	193
+vreg	voltage regulation (steady state)	138	2	150
+vreg	voltage regulator type	134	1	134
+vreg	voltage regulation, stead state	106	2	193
+vreg	voltage regulation,	36	1	36
+vreg	电压调节 voltage regulation	34	1	34
+vreg	voltage regulation, no-load to	31	1	31
+vreg	voltage regulation, steady state	30	3	30
+vreg	voltage regulation factor	30	1	30
+vreg	voltage regulation ( )	23	1	40
+vreg	voltage regulation, no-load	20	1	20
+vreg	调压方式	17	2	25
+vreg	电压调整范围 voltage regulation range	15	1	15
+vreg	stable voltage regulation rate	14	1	14
+vreg	instantaneous voltage regulation rate	14	1	14
+vreg	电压调整voltage regulation	11	1	11
+vreg	调压器	9	1	9
+vreg	调压,空载至满载(由于温升,会有0.5%的差别)	9	1	9
+vreg	voltage regulate change	9	1	9
+vreg	voltage stability	5	3	9
+vreg	voltage regulation ± 1%	5	1	20
+vreg	voltage stabilized regulation	2	1	2
+vreg	调压率%	2	1	64
+vreg	voltage regulate	1	1	7
+vreg	● voltage regulation (from no load to 100% load) ≤ ±1,5%	1	1	1
+vreg	stable voltage regulating rate	1	1	1
+vreg	instantaneous voltage regulating rate	1	1	1
+vreg	with automatic voltage regulation	1	1	1
+vreg	transient voltage regulation %	1	1	3
+engType	engine type	710	33	3511
+engType	thermodynamic cycle	1	1	1
+current	rated current	745	17	2147
+current	输出电流	100	3	248
+current	rated current a	30	2	195
+current	额定电流(a)	17	4	394
+current	rated current (a)	16	7	127
+current	rated current(a)	16	5	137
+current	电流(a)	16	4	477
+current	机组额定电流 rated current	15	1	15
+current	额定电流 rated current	15	1	15
+current	rated current ( a )	14	1	14
+current	过电流	13	1	13
+current	短路电流	13	1	13
+current	额定电流	12	2	44
+current	电流a current	11	1	281
+current	电流 a	9	2	234
+current	电流a	9	2	200
+current	电流	8	4	220
+current	额定电流 (a)	7	2	138
+current	rated current (prp)	5	1	58
+current	额定 电流 (a)	4	2	103
+current	最大输出电流	4	1	12
+current	额定 电流a	4	1	69
+current	额定电流(a) current (a)	3	1	16
+current	额定电流a	2	2	19
+current	额定电流a)	2	1	10
+current	备用电流	2	1	8
+current	电流( a )	2	1	25
+current	输出电流(a)	1	1	24
+current	备用电流 (v)	1	1	4
+current	额定电流rated current (a)	1	1	17
+current	rated current,a	1	1	1
+current	rated current(kva)	1	1	1
+current	额定电流 a	1	1	15
+current	发电机电流(a)	1	1	3
+current	短时电流	1	1	1
+current	rated current lpg (a)	1	1	6
+current	rated current ng (a)	1	1	6
+current	电流 (a)	1	1	25
+current	rated current (based on 400v)	1	1	24
+current	电流(主用)	1	1	77
+coolant	coolant	7	3	17
+coolant	max static head of coolant above	6	1	6
+coolant	set coolant	6	1	149
+coolant	coolant ratio	5	1	5
+coolant	coolant level switch	5	1	5
+coolant	low coolant	5	1	5
+coolant	maximum static head of coolant above	4	1	4
+coolant	max coolant friction head external to	3	1	3
+coolant	low coolant level	3	2	3
+coolant	maximum coolant friction head external	2	1	2
+coolant	max static head of coolant	2	1	2
+coolant	heat carry off by coolant	2	1	6
+coolant	coolant volume (l)	2	1	2
+coolant	coolant or oil thermometer	2	1	2
+coolant	low coolant module	2	1	2
+coolant	coolant heater	1	1	1
+coolant	max. coolant temerature	1	1	3
+coolant	max coolant friction	1	1	1
+coolant	max coolant friction head external	1	1	2
+coolant	radiator coolant level switch	1	1	1
+coolant	charge air coolant	1	1	5
+coolant	冷却液总容量 total coolant	1	1	2
+coolant	aif.1210 coolant level (vdo)	1	1	3
+coolant	aif.1211 coolant level (generic)	1	1	5
+coolant	activated when the engine signals the low coolant level state over	1	1	1
+coolant	top coolant pipe	1	1	1
+coolant	bottom coolant pipe	1	1	1
+coolant	low coolant sensor	1	1	1
+coolant	heat rejection of coolant(kw)	1	1	4
+oil	lubrication system	179	4	188
+oil	lub-oil system	134	1	134
+oil	lub oil heater	134	1	134
+oil	润滑油 容量(l)	126	4	1964
+oil	total lubrication system	70	1	90
+oil	机油容量(l)	56	3	236
+oil	lube oil	54	3	134
+oil	heat rejected to water & lube oil prime	24	1	48
+oil	heat rejected to water & lube oil standby	24	1	48
+oil	lube oil change period (hrs.)	16	1	21
+oil	lubrication method	14	2	14
+oil	lube oil specification	13	2	15
+oil	机油容量l lube oil	11	1	281
+oil	total oil system.................................10.9l	10	1	10
+oil	机油 容量 ( l )	10	1	305
+oil	maximum flow rate of lubrication	9	1	9
+oil	机油容量 (l)	9	3	268
+oil	机油容量 l	9	2	50
+oil	机油容量	9	1	18
+oil	total oil system.......................................10.9l	7	1	7
+oil	engine oil tank (l)	7	1	7
+oil	润滑油总容量total lubrication (l)	7	1	7
+oil	lube oil filter type	6	1	6
+oil	total oil system..........................................n/a	6	1	6
+oil	total oil system.......................................135.1l	6	1	6
+oil	total oil system..........................................13 l	6	1	6
+oil	lubracation system	6	1	26
+oil	机油 容量 l	6	1	111
+oil	lubrication	5	2	6
+oil	total oil system.................................16.4l	5	1	5
+oil	total oil system.......................................16.4l	5	1	5
+oil	total oil system.................................135.1l	5	1	5
+oil	润滑油容量(l)	4	3	47
+oil	total oil system.................................50l	4	1	4
+oil	total oil system.......................................78.0l	4	1	4
+oil	total oil system.......................................50.0l	4	1	4
+oil	润滑油规格、等级	4	1	4
+oil	润滑油总容量	4	1	4
+oil	机油容量 lubri cating cap acity (l)	4	1	186
+oil	lube oil filter	3	2	3
+thd	total harmonic content (no load)	126	1	126
+thd	电话谐波系数 thf	47	1	47
+thd	total harmonic content ll/ln	12	1	24
+thd	total harmonic distortion	10	2	13
+thd	thd (total harmonic	10	1	60
+thd	telephone harmonic factor (thf)	8	1	8
+thd	total harmonic distortion thd ( ) in no-load	4	1	4
+thd	total harmonic distortion thd ( ) in linear load	4	1	4
+thd	thd	2	2	9
+thd	harmonics	1	1	1
+thd	• ground current (with 3rd harmonic	1	1	1
+thd	total harmonic distortion thd ( ) in no-load ........	1	1	1
+thd	total harmonic distortion thd ( ) on linear load ..	1	1	1
+thd	harmonic wave	1	1	1

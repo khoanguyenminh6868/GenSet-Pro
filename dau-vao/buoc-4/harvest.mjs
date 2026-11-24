@@ -15,7 +15,8 @@ const labelOk = (s) => s && s.length >= 2 && s.length <= 70 && !isNum(s) && /[a-
 
 // map: key = kind|norm  → {norm, raw, kind, lines, nccs:Set, models, nonempty, ex:[], specKey}
 const M = new Map();
-function add(kind, rawLabel, ncc, srcRef, line, nModels) {
+function add(kind0, rawLabel, ncc, srcRef, line, nModels, part = "-") {
+  const kind = kind0 + ":" + part;
   const label = String(rawLabel).trim();
   if (!labelOk(label)) return;
   const n = norm(label);
@@ -34,6 +35,8 @@ for (const f of fs.readdirSync(cn).filter((x) => x.endsWith(".json"))) {
   const ncc = o.id || f.replace(/\.json$/, "");
   for (const t of o.specTables || []) {
     nTables++;
+    const ttl = String(t.title || "");
+    const part = /alternator|generator end|gen-?head|generator head|发电机端|发电端|电机参数|stamford|leroy|meccalte|marathon|mecc alte|线圈|alternator/i.test(ttl) && !/engine|发动机|柴油机/i.test(ttl) ? "alt" : /engine|发动机|柴油机|motor|diesel engine|moteur/i.test(ttl) ? "eng" : "gen";
     const rows = (t.rows || []).filter((r) => String(r).trim());
     nRows += rows.length;
     const rc = rows.map((r) => CAT.cellsOf(r));
@@ -43,7 +46,7 @@ for (const f of fs.readdirSync(cn).filter((x) => x.endsWith(".json"))) {
       hc.forEach((c, i) => {
         if (!c) return;
         const cnt = rc.filter((r) => r[i] && String(r[i]).trim() && !/^[-–—/]+$/.test(r[i])).length;
-        add("col", c, ncc, `n${t.n}`, h, cnt);
+        add("col", c, ncc, `n${t.n}`, h, cnt, part);
       });
     }
     // dong nhan | gia tri: o dau la nhan, cac o sau la gia tri (moi o = mot model)
@@ -52,7 +55,9 @@ for (const f of fs.readdirSync(cn).filter((x) => x.endsWith(".json"))) {
       if (c.length < 2) continue;
       const vals = c.slice(1).filter((x) => x && !/^[-–—/]+$/.test(x));
       if (!vals.length) continue;
-      add("row", c[0], ncc, `n${t.n}`, r, vals.length);
+      add("row", c[0], ncc, `n${t.n}`, r, vals.length, part);
+      // cap nhan | gia tri | nhan | gia tri tren cung dong (acepow: "Cooling method | ... | Winding/ Pitch | ...")
+      for (let i = 2; i + 1 < c.length; i += 2) if (labelOk(c[i]) && c[i + 1] && c[i + 1] !== c[i] && !CAT.isCode(c[i])) add("pair", c[i], ncc, `n${t.n}`, r, 1, part);
     }
   }
 }

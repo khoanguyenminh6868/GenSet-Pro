@@ -1,62 +1,62 @@
 truong	key	nhan_khop	da_nhan_dong	da_nhan_model_o	da_nhan_ncc	CHUA_nhan_nhan	CHUA_nhan_dong_bang	CHUA_nhan_model_o	CHUA_nhan_dong_nguon	CHUA_nhan_ncc	nhan_sang_khoa_khac_nhan	khac_dong	khac_model_o
-genset.series		201	0	0	0	167	572	2201	1282	53	34	254	1142
+genset.series		159	0	0	0	130	539	2156	1157	51	29	250	1138
 genset.brand		5	0	0	0	5	1308	2689	941	39	0	0	0
 genset.made_in		9	0	0	0	9	28	757	36	7	0	0	0
-genset.genset_type		92	0	0	0	64	780	11253	3237	88	28	425	2294
-genset.overload		29	0	0	0	27	174	193	501	16	2	2	2
-genset.load_step		7	0	0	0	6	1	5	87	6	1	0	0
-genset.iso8528_class		17	0	0	0	16	28	209	242	10	1	1	1
-genset.ambient		68	0	0	0	61	296	715	946	38	7	36	36
-genset.breaker		49	0	0	0	47	413	646	643	24	2	17	17
-genset.battery		151	0	0	0	121	282	788	1168	31	30	69	88
-genset.standards		126	0	0	0	109	549	2438	2731	45	17	271	296
+genset.genset_type		86	0	0	0	59	780	11253	3077	87	27	424	2293
+genset.overload		14	0	0	0	12	54	66	50	10	2	2	2
+genset.load_step		4	0	0	0	4	1	5	75	4	0	0	0
+genset.iso8528_class		9	0	0	0	9	22	203	166	8	0	0	0
+genset.ambient		52	0	0	0	49	292	711	864	35	3	6	6
+genset.breaker		41	0	0	0	39	405	637	635	24	2	17	17
+genset.battery		134	0	0	0	106	245	385	1124	30	28	67	86
+genset.standards		92	0	0	0	81	466	2208	2304	43	11	234	253
 engine.power_hp		44	0	0	0	34	96	835	31	21	10	46	571
-engine.genset_power		136	0	0	0	135	4884	31466	854	97	1	1	1
-engine.fuel_system		17	0	0	0	16	243	648	1145	32	1	9	15
-engine.electrical_vdc		67	0	0	0	41	50	137	488	19	26	325	429
-engine.engine_type	engType	119	711	3512	35	85	1540	16265	1665	114	32	97	216
-engine.charge_cooling	aircool	20	14	53	8	2	14	90	0	2	2	3	11
-engine.cooling	cooling	61	841	962	42	37	342	577	473	32	15	100	105
-engine.starting	start	99	1048	1528	58	12	316	363	251	16	0	0	0
-engine.coolant_capacity	coolant	160	68	237	12	128	393	1782	891	30	2	3	7
-engine.oil_capacity	oil	114	368	1457	16	46	383	2217	880	48	1	3	3
-engine.compression	compr	35	1325	2139	51	3	52	647	9	12	0	0	0
-engine.aspiration	asp	78	1462	2374	54	23	49	266	79	13	8	8	43
-engine.governor	gov	42	2374	9702	68	3	4	10	4	2	0	0	0
-engine.emission	emission	136	905	5663	61	86	223	1146	175	14	1	10	10
-engine.speed	speed	279	4317	9579	144	34	436	526	401	28	37	867	1069
-alternator.winding_pitch		7	0	0	0	7	3	5	468	11	0	0	0
-alternator.wires		20	0	0	0	5	147	228	300	13	15	771	2077
-alternator.altitude		20	0	0	0	19	183	561	586	23	1	1	1
+engine.genset_power		129	0	0	0	129	4884	31466	827	95	0	0	0
+engine.fuel_system		15	0	0	0	14	242	647	1141	31	1	9	15
+engine.electrical_vdc		50	0	0	0	25	48	135	201	19	25	324	428
+engine.engine_type	engType	91	711	3512	35	74	1535	16260	1611	114	15	67	160
+engine.charge_cooling	aircool	16	14	53	7	2	14	90	0	2	2	3	11
+engine.cooling	cooling	49	841	962	42	33	338	566	306	29	7	11	16
+engine.starting	start	90	1044	1524	57	11	314	359	251	15	0	0	0
+engine.coolant_capacity	coolant	86	61	230	12	58	301	1577	724	30	1	2	6
+engine.oil_capacity	oil	59	242	1331	16	44	383	2217	871	48	1	3	3
+engine.compression	compr	10	1188	2002	51	3	52	647	9	12	0	0	0
+engine.aspiration	asp	71	1462	2374	54	21	49	266	73	12	4	8	43
+engine.governor	gov	30	2194	8356	65	3	4	10	4	2	0	0	0
+engine.emission	emission	128	863	5621	59	82	219	1126	153	14	0	0	0
+engine.speed	speed	224	4104	9295	141	31	287	377	246	25	21	709	911
+alternator.winding_pitch		1	0	0	0	1	3	5	440	11	0	0	0
+alternator.wires		19	0	0	0	4	147	228	297	13	15	771	2077
+alternator.altitude		18	0	0	0	17	182	560	583	22	1	1	1
 alternator.overspeed		14	0	0	0	13	106	130	229	16	1	0	0
-alternator.air_flow		35	0	0	0	32	414	521	587	25	3	55	55
-alternator.short_circuit		60	0	0	0	42	38	99	686	12	18	47	71
-alternator.avr		77	0	0	0	14	127	227	214	11	63	534	692
-alternator.thd_linear_load		17	0	0	0	4	5	7	5	2	13	138	139
+alternator.air_flow		34	0	0	0	31	414	521	582	24	3	55	55
+alternator.short_circuit		33	0	0	0	27	38	99	589	12	6	29	29
+alternator.avr		34	0	0	0	6	127	227	164	10	28	522	649
+alternator.thd_linear_load		10	0	0	0	3	4	6	4	2	7	128	129
 alternator.tif		9	0	0	0	9	13	13	197	9	0	0	0
 alternator.thf		5	0	0	0	3	0	0	20	5	2	47	47
 alternator.poles		12	0	0	0	9	148	387	611	20	3	37	37
-alternator.bearing		27	0	0	0	26	811	2677	1061	20	1	1	1
-alternator.type		40	0	0	0	31	181	1488	290	37	9	213	663
-alternator.cooling		33	0	0	0	21	273	1233	201	18	12	849	985
-alternator.standards		153	0	0	0	133	665	2725	3098	40	20	273	299
-alternator.insulation	insul	41	1602	1974	52	2	23	161	0	1	0	0	0
-alternator.ip	ip	148	2037	2456	66	19	108	465	117	16	9	121	128
-alternator.excitation	excit	169	2229	4352	45	30	164	267	358	11	14	7	13
-alternator.voltage_regulation	vreg	45	1778	2621	49	3	2	3	11	3	8	15	17
-alternator.thd_no_load	thd	27	173	245	13	3	2	7	105	7	2	14	14
-genset.frequency		74	0	0	0	61	3528	12683	1353	122	13	343	470
-genset.freq_regulation	freg	43	461	464	13	20	256	346	239	12	4	12	23
-genset.power_factor	pf	116	1934	3625	78	49	65	86	454	18	23	68	1248
-genset.current	current	110	1031	5169	57	35	168	1967	573	34	48	517	2831
-genset.voltage	voltage	148	4667	19694	128	14	199	269	25	13	1	1	1
-genset.phases	phase	253	4476	13824	74	8	305	314	332	7	32	133	265
-genset.fuel		238	0	0	0	217	1272	6239	2114	83	21	51	58
-genset.tank	tank	62	1957	2863	63	0	0	0	0	0	0	0	0
-genset.runtime	runtime	32	755	2133	21	4	0	0	14	1	0	0	0
-genset.weight	weight	153	4912	29367	161	10	57	166	36	8	14	178	1078
-genset.dimensions	dims	299	4330	31445	160	4	1	1	7	3	0	0	0
-genset.noise	noise	90	1250	4329	57	7	64	64	171	5	7	36	37
-genset.fuel_75	fuel75	42	888	3288	30	2	0	0	4	2	3	25	25
-genset.fuel_50	fuel50	22	745	1690	19	0	0	0	0	0	1	3	9
-genset.fuel_100	fuel	250	4424	20731	142	32	1128	8655	442	46	15	57	1081
+alternator.bearing		23	0	0	0	23	788	2516	1059	19	0	0	0
+alternator.type		24	0	0	0	20	174	1481	125	32	4	212	662
+alternator.cooling		31	0	0	0	19	269	1115	201	17	12	849	985
+alternator.standards		109	0	0	0	97	448	2373	2416	38	12	234	254
+alternator.insulation	insul	34	1596	1968	52	0	0	0	0	0	0	0	0
+alternator.ip	ip	113	1971	2388	64	15	83	302	115	15	7	121	128
+alternator.excitation	excit	90	2217	4309	44	7	164	267	193	10	3	6	12
+alternator.voltage_regulation	vreg	37	1741	2584	48	1	2	3	2	1	4	12	14
+alternator.thd_no_load	thd	17	163	235	12	2	2	7	102	7	1	14	14
+genset.frequency		66	0	0	0	55	3454	12192	1290	122	11	339	461
+genset.freq_regulation	freg	35	424	427	13	14	85	175	63	11	4	12	23
+genset.power_factor	pf	78	1931	3622	78	28	56	68	352	12	9	65	1176
+genset.current	current	95	1031	5169	57	32	163	1962	571	32	36	493	2804
+genset.voltage	voltage	140	4646	19673	127	13	198	268	24	12	1	1	1
+genset.phases	phase	194	4444	13694	74	5	301	310	328	7	23	109	236
+genset.fuel		177	0	0	0	172	1239	5860	2020	82	5	23	30
+genset.tank	tank	57	1950	2850	63	0	0	0	0	0	0	0	0
+genset.runtime	runtime	27	746	2124	18	2	0	0	6	1	0	0	0
+genset.weight	weight	142	4751	29205	159	9	56	165	35	7	14	178	1078
+genset.dimensions	dims	248	3594	29556	155	3	0	0	6	2	0	0	0
+genset.noise	noise	78	1095	4172	54	7	64	64	171	5	4	36	37
+genset.fuel_75	fuel75	29	829	2003	26	1	0	0	2	1	2	18	18
+genset.fuel_50	fuel50	17	722	1667	17	0	0	0	0	0	1	3	9
+genset.fuel_100	fuel	227	4346	19533	140	32	1128	8655	442	46	7	24	406

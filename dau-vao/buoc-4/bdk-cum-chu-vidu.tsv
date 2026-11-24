@@ -1,0 +1,626 @@
+truong	hang	tai_lieu	dong_nguyen_van
+order_code	DSE	dse123	RELATED MATERIALS PART NO’S
+order_code	DSE	dse125	RELATED MATERIALS PART NO’S TITLE PART NO’S
+order_code	ComAp	InteliNano_AMF5_Datasheet	Order code: IN2AMF5XBAANP, IN2AMF5XBAA
+order_code	ComAp	comap/1001.md	Order code: IL4AMF25BAA, IL4AMF25BLA
+order_code	SmartGen	smartgen/1001.md	| instructions for ordering when the genset | uses 4-20mA or 0-5V sensors.
+order_code	DEIF	deif/1002.md	| 7. | Ordering information
+order_code	DEIF	deif/1004.md	| 5. | Ordering information
+order_code	Woodward	woodward/1001.md	Part Numbers
+order_code	Woodward	woodward/1002.md	| Description | Order Code
+order_code	SICES	sices/1003.md	| Part number | Model Name
+order_code	DSE-web	deep-sea-electronics/1001.md	Part Number: 7310-03 / 7320-03
+order_code	DSE-web	deep-sea-electronics/1002.md	Part Number: 6110-05 / 6120-05
+kind	DSE	dse123	allows synchronising of control synchronising and loadsharing DSE7510 or DSE8610, the LED will Industrial Environment
+kind	DSE	dse130	remote annunciator which is powered by the
+kind	SICES	DST4602Evolution_Datasheet_EN_REV1.8	with internal load sharing, synchronizer and PLC functions
+kind	SICES	sices/1001.md	Engine manual START and STOP controls are enabled.
+kind	SmartGen	HGM4020T_en	4.3 AUTO START/STOP OPERATION....................................................................................................8
+kind	SmartGen	HGM410_HGM420_en	4.4 MANUAL START/STOP OPERATION ............................................................ 12
+kind	ComAp	InteliNano_AMF5_Datasheet	InteliNano AMF 5
+kind	ComAp	comap/1001.md	AMF 25
+kind	DEIF	deif/1001.md	5.8 Remote display: AGC 150...............................................................................................................................................
+kind	DEIF	deif/1002.md	3.1.1 Automatic mains failure/mains power export/peak shaving/load takeover............................................................................................. 1
+kind	Datakom	datakom/1001.md	| The controller is a comprehensive AMF unit for | True RMS measurements
+kind	Datakom	datakom/1002.md	| The controller is a comprehensive AMF unit for | True RMS measurements
+kind	Woodward	woodward/1001.md	| Automatic Mains Failure Control | • Stand-by operation
+kind	Woodward	woodward/1002.md	synchronization, dead bus prioritization, load share, and load dependent start/stop capabilities, in combination
+kind	DSE-web	deep-sea-electronics/1001.md	| DSE7310 MKII Auto Start & DSE7320 MKII | Auto
+kind	DSE-web	deep-sea-electronics/1002.md	| DSE6110 MKIII Auto Start | & DSE6120 MKIII
+auto_start_stop	DSE	dse2131	DSE8660 MKII Synchronising & Load Sharing Auto Start Control Module 8610-02
+auto_start_stop	DSE	dse2133	DSE8660 MKII Synchronising & Load Sharing Auto Start Control Module 8610-02
+auto_start_stop	SICES	DST4602Evolution_Datasheet_EN_REV1.8	Automatic start for testing operations with safety protections enabled.
+auto_start_stop	SICES	sices/1001.md	Automatic start for testing operations with safety protections enabled.
+auto_start_stop	SmartGen	HGM4020T_en	4.3 AUTO START/STOP OPERATION....................................................................................................8
+auto_start_stop	SmartGen	HGM410_HGM420_en	4.3 AUTOMATIC START/STOP OPERATION ...................................................... 11
+auto_start_stop	DEIF	deif/1001.md	| 6 | AUTO mode
+auto_start_stop	DEIF	deif/1003.md	| AUTO mode/ | operator actions are needed. The controller also automatically opens and closes the mains
+auto_start_stop	Datakom	datakom/1001.md	emergency backup mode. The operation of the generator is similar to the AUTO mode, but the mains
+auto_start_stop	Datakom	datakom/1002.md	emergency backup mode. The operation of the generator is similar to the AUTO mode, but the mains
+auto_start_stop	DSE-web	deep-sea-electronics/1001.md	| DSE7310 MKII Auto Start & DSE7320 MKII | Auto
+auto_start_stop	DSE-web	deep-sea-electronics/1002.md	| DSE6110 MKIII Auto Start | & DSE6120 MKIII
+mains_failure	DSE	dse2131	DSEG7300 Synchronising Auto Mains (Utility) Failure Load Share Control Module 8620-02
+mains_failure	DSE	dse2133	DSEG7300 Synchronising Auto Mains (Utility) Failure Load Share Control Module 8620-02
+mains_failure	SICES	DST4602Evolution_Datasheet_EN_REV1.8	Upon mains failure, the load is immediately supplied by the genset.
+mains_failure	SICES	sices/1001.md	Upon mains failure, the load is immediately supplied by the genset.
+mains_failure	SmartGen	HGM4020T_en	23 Aux. Mains Fail
+mains_failure	SmartGen	HGM410_HGM420_en	HGM420: AMF (Auto Mains Failure), updates based on HGM410, moreover, has
+mains_failure	ComAp	InteliNano_AMF5_Datasheet	InteliNano AMF 5
+mains_failure	ComAp	comap/1001.md	AMF 25
+mains_failure	DEIF	deif/1001.md	Automatic mains failure (AMF) and fixed power
+mains_failure	DEIF	deif/1002.md	3.1.1 Automatic mains failure/mains power export/peak shaving/load takeover............................................................................................. 1
+mains_failure	Datakom	datakom/1001.md	MAINS FAILURE UNIT
+mains_failure	Datakom	datakom/1002.md	MAINS FAILURE UNIT
+mains_failure	Woodward	woodward/1001.md	| Automatic Mains Failure Control | • Stand-by operation
+mains_failure	DSE-web	deep-sea-electronics/1001.md	The DSE7310 MKII is an auto start control module and the DSE7320 MKII is an auto mains (utility) failure control module suitable for a wide variety of
+mains_failure	DSE-web	deep-sea-electronics/1002.md	The DSE6110 MKIII is a auto start control module and the DSE6120 MKIII is a auto mains (utility) failure control module suitable for a wide variety of
+remote_start	DSE	dse3110	• Remote start input
+remote_start	DSE	dse3210	• Remote start input suit individual applications NOMINAL STANDBY CURRENT
+remote_start	SICES	DST4602Evolution_Datasheet_EN_REV1.8	Push buttons REMOTE START: starting is enabled if the operating mode of the local controller is
+remote_start	SICES	sices/1001.md	| >> | Remote start and stop.
+remote_start	SmartGen	HGM4020T_en	— 6 start conditions can be grouped at random: mains abnormal signal, remote start signal, mains
+remote_start	SmartGen	HGM410_HGM420_en	2) HGM410: When “Remote Start” is active, “Start Delay” timer is initiated;
+remote_start	ComAp	InteliNano_AMF5_Datasheet	Manual (or) Remote Start/Stop application functionality
+remote_start	ComAp	comap/1021.md	| Manual (or) Remote Start/Stop application functionality | Maintenance timer
+remote_start	DEIF	deif/1003.md	Remote start/stop
+remote_start	Datakom	datakom/1001.md	6.1. Remote start operation
+remote_start	Datakom	datakom/1002.md	6.1. Remote start operation
+remote_start	DSE-web	deep-sea-electronics/1006.md	| • | Remote start input
+remote_start	DSE-web	deep-sea-electronics/1007.md	| • | Configurable remote start input | 184 mm x 137 mm
+scheduler	DSE	dse4210	mains (utility) and generator • Fully configurable via the fascia • Engine run-time scheduler 85 mA at 12 V, 80 mA at 24 V
+scheduler	DSE	dse4220	mains (utility) and generator • Fully configurable via the fascia • Engine run-time scheduler 85 mA at 12 V, 80 mA at 24 V
+scheduler	SICES	DST4602Evolution_Datasheet_EN_REV1.8	AND/OR Event history log 16 Calendars USB port
+scheduler	SICES	sices/1001.md	| AND/OR | 537 Event | 16 Calendars
+scheduler	SmartGen	HGM4020T_en	low, scheduled start, and cycle start/stop;
+scheduler	SmartGen	HGM7110N_HGM7120N_en	 Event log, real-time clock, scheduled start & stop generator (can be set as start genset once a
+scheduler	ComAp	InteliNano_AMF5_Datasheet	Multi-purpose schedulers and timer
+scheduler	ComAp	comap/1001.md	| applications | RTC with battery back-up, full calendar and enhanced scheduler
+scheduler	Datakom	datakom/1001.md	| SMS messages in fault conditions through external | Built in daily / weekly / monthly exerciser
+scheduler	Datakom	datakom/1002.md	| The unit is able to initiate modem calls and send | Built in daily / weekly / monthly exerciser
+scheduler	Woodward	woodward/1001.md	• Maintenance scheduler with multipurpose flexible timers
+scheduler	DSE-web	deep-sea-electronics/1007.md	| • | Engine run-time scheduler
+scheduler	DSE-web	deep-sea-electronics/1008.md	| Engine run-time scheduler | information for monitoring and
+prot_earth_fault	DSE	dse550	be configured to control extra functions Ø Earth Fault Protection(‘PM’ Version Ø Energise to stop hold timer
+prot_earth_fault	DSE	dse5510	Engine Control Module, designed rotation error, earth fault protection, • ROCOF & vector shift CRANKING DROPOUTS
+prot_earth_fault	SICES	DST4602Evolution_Datasheet_EN_REV1.8	• Ground Fault Protection (64) as alternative to neutral protection (50N).
+prot_earth_fault	SICES	sices/1001.md	| • | Earth fault protection (64).
+prot_earth_fault	SmartGen	HGM9420N_HGM9420LT_en	waveform distortion high, earth fault, unbalanced current high, power factor low, loss of excitation
+prot_earth_fault	SmartGen	HGM9510N_HGM9530N_en	high total harmonic distortion, over current, earth fault, high unbalanced current, low power factor,
+prot_earth_fault	ComAp	comap/1001.md	| Earth fault** | 50G
+prot_earth_fault	ComAp	comap/1003.md	| Earth fault** | 50G
+prot_earth_fault	DEIF	deif/1001.md	| Earth fault inverse time over-current (4th | 1 | 51G
+prot_earth_fault	DEIF	deif/1003.md	| Earth leakage/Fan current | 1
+prot_earth_fault	Woodward	woodward/1001.md	| Tel.: +86 512 8818 5515 | Earth fault (measured)
+prot_earth_fault	DSE-web	deep-sea-electronics/1001.md	| Measurement Inputs | 3 Phase with Earth Fault
+prot_earth_fault	DSE-web	deep-sea-electronics/1003.md	| Measurement Inputs | 3 Phase with Earth Fault
+prot_reverse_power	DSE	dse550	the system. Ø Reverse Power Electrical TESTING STANDARDS
+prot_reverse_power	DSE	dse5510	The DSE5510 is an Automatic reverse power, generator phase LOAD SHARE FEATURES
+prot_reverse_power	SmartGen	HGM7110N_HGM7120N_en	frequency, over current and over power, reverse power, loss of phase, phase sequence wrong
+prot_reverse_power	SmartGen	HGM7200_en	under frequency, loss of phase, reverse phase sequence, over and reverse power, over current
+prot_reverse_power	ComAp	InteliNano_AMF5_Datasheet	Reverse Power 32R Underfrequency
+prot_reverse_power	ComAp	comap/1001.md	| Reverse power | 32R
+prot_reverse_power	DEIF	deif/1001.md	| Reverse power | 3 | 32R | <200 ms
+prot_reverse_power	DEIF	deif/1002.md	| Reverse power | x2 | 32R
+prot_reverse_power	Datakom	datakom/1001.md	| (2) Reverse power warning | If the genset power is negative and goes above this
+prot_reverse_power	Datakom	datakom/1002.md	| Reverse power | If the genset power is negative and goes above
+prot_reverse_power	Woodward	woodward/1001.md	| China | Reverse Power
+prot_reverse_power	SICES	sices/1002.md	| • | 4 alternative configurations | • Reverse power (32R)
+prot_reverse_power	DSE-web	deep-sea-electronics/1010.md	| • Reverse power alarms | Software for simplified configuration | 8 mm
+prot_reverse_power	DSE-web	deep-sea-electronics/1011.md	| Reverse power (kW & kV Ar) | accurate event logging | 15 V - 333 V AC (L-N)
+prot_overcurrent	DSE	dse5210	over current, under/over generator • Configurable alarms & timers • Modules send SMS messages to +/- 0.5V to 70V Peak
+prot_overcurrent	DSE	dse5220	over current, under/over generator • Configurable alarms & timers • Modules send SMS messages to +/- 0.5V to 70V Peak
+prot_overcurrent	SICES	DST4602Evolution_Datasheet_EN_REV1.8	• Time dependent overcurrent (51) IDMT.
+prot_overcurrent	SICES	sices/1001.md	| • | Time dependent overcurrent (51) IDMT.
+prot_overcurrent	SmartGen	HGM4020T_en	over current and over power protection functions;
+prot_overcurrent	SmartGen	HGM410_HGM420_en	under frequency and over current detection functions;
+prot_overcurrent	ComAp	InteliNano_AMF5_Datasheet	Underspeed 14 Overcurrent
+prot_overcurrent	ComAp	comap/1001.md	| Overcurrent | 50/50TD
+prot_overcurrent	DEIF	deif/1001.md	| Fast over-current | 2 | 50P | <40 ms
+prot_overcurrent	DEIF	deif/1002.md	| Over-current | x4 | 51
+prot_overcurrent	Datakom	datakom/1001.md	OVERLOAD (load_dump): Set if at least one of the genset phase currents goes over the Overcurrent
+prot_overcurrent	Datakom	datakom/1002.md	OVERLOAD (load_dump): Set if at least one of the genset phase currents goes over the Overcurrent
+prot_overcurrent	Woodward	woodward/1003.md	|  | Phase over current instantaneous (ANSI | 50) and time
+prot_overcurrent	DSE-web	deep-sea-electronics/1010.md	| Over current protection | KEY BENEFITS
+prot_overcurrent	DSE-web	deep-sea-electronics/1016.md	Gen Over Current | NOTE: For more details, see section 7.7 entitled Over
+prot_mains_decoupling	DSE	dse550	integrity of link during loss of mains
+prot_mains_decoupling	DSE	dse5510	Engine Control Module, designed rotation error, earth fault protection, • ROCOF & vector shift CRANKING DROPOUTS
+prot_mains_decoupling	SICES	DST4602Evolution_Datasheet_EN_REV1.8	performed. The most common Loss Of Mains protection are embedded.
+prot_mains_decoupling	SICES	sices/1001.md	| • | Rate of Change of Frequency (81R ROCOF).
+prot_mains_decoupling	SmartGen	HGM9510N_HGM9530N_en	42 Mains ROCOF pre-set value, it will initiate a warning alarm.
+prot_mains_decoupling	SmartGen	HGM9530_en	13 Mains ROCOF When the controller detects that the genset negative reactive power has
+prot_mains_decoupling	ComAp	comap/1004.md	| ROCOF | 81R
+prot_mains_decoupling	ComAp	comap/1005.md	| ROCOF | 81R
+prot_mains_decoupling	DEIF	deif/1001.md	| Vector shift | 1 | 78 | <40 ms
+prot_mains_decoupling	DEIF	deif/1002.md	| A | Loss of mains protection package
+prot_mains_decoupling	Woodward	woodward/1002.md	| Ethernet B or Ethernet C or Ethernet B & C. Through the decoupling of the overall data flow, the bus bandwidth | 
+prot_mains_decoupling	Woodward	woodward/1003.md	Mains Protection (Generator Decoupling).............................................................................................................4
+prot_mains_decoupling	DSE-web	deep-sea-electronics/1004.md	| • | Mains (utility) failure detection including mains (utility) decoupling
+prot_mains_decoupling	DSE-web	deep-sea-electronics/1005.md	| • | Mains (utility) failure detection including mains (utility) decoupling | DSE8610 MKII
+emergency_stop	DSE	dse3110	Emergency Stop Input
+emergency_stop	DSE	dse4410-single-phase	EMERGENCY STOP BREAKS THE USER CONFIGURABLE -VE INPUT E ENGINE ONLY
+emergency_stop	SICES	DST4602Evolution_Datasheet_EN_REV1.8	• Emergency stop.
+emergency_stop	SICES	sices/1002.md	| emergency stop terminal – for fuel and crank | GSM/GPRS/EDGE
+emergency_stop	SmartGen	HGM4020T_en	Adding input port functions: “Emergency Stop”, “Low Oil Level Warn”;
+emergency_stop	SmartGen	HGM410_HGM420_en	output port and electromagnetic valve when you connect emergency stop button on
+emergency_stop	ComAp	InteliNano_AMF5_Datasheet	Emergency Stop functionality (E-Stop)
+emergency_stop	ComAp	comap/1001.md	2 high-current E-Stop binary outputs
+emergency_stop	DEIF	deif/1001.md	| Emergency stop | 1 | <200 ms
+emergency_stop	DEIF	deif/1002.md	| Emergency stop | x1 | 1
+emergency_stop	Datakom	datakom/1001.md	| 21 | EMERGENCY STOP
+emergency_stop	Datakom	datakom/1002.md	| 21 | EMERGENCY STOP
+emergency_stop	Woodward	woodward/1001.md	| genset control technology, Woodward's easYgen family offers a one-stop-shop solution for all of your genset | Failure) operation
+emergency_stop	DSE-web	deep-sea-electronics/1001.md	Emergency Stop Input
+emergency_stop	DSE-web	deep-sea-electronics/1002.md	Emergency Stop Input
+ecu_support	DSE	dse3110	designed to work with non-electronic engines, providing advanced engine monitoring and protection features.
+ecu_support	DSE	dse4310	The DSE4310 Auto Start Control Electronic J1939 (CAN) and non- *AVAILABLE VARIANTS ELECTRICAL SAFETY
+ecu_support	SICES	DST4602Evolution_Datasheet_EN_REV1.8	controller includes a CAN J1939 interface, supporting a wide range of engines (Volvo Penta, Scania, Perkins,
+ecu_support	SICES	sices/1001.md	Available in two versions, It can be interfaced with both CANBUS J1939 electronic engines and traditional engines, with
+ecu_support	SmartGen	HGM7110N_HGM7120N_en	60 ECU Warning Alarm Indicate ECU sends a warning signal.
+ecu_support	SmartGen	HGM7200_en	15 CONNECTIONS OF CONTROLLER WITH J1939 ENGINE....................................................................... 43
+ecu_support	ComAp	InteliNano_AMF5_Datasheet	ECU support (Tier 4 Final, Stage V)
+ecu_support	ComAp	comap/1001.md	J1939 protocols.
+ecu_support	DEIF	deif/1001.md	| CAN A ECU | CAN B PMS | RS485 | RS485
+ecu_support	DEIF	deif/1002.md	| J1939 regulation governor/ | Χ | Χ | Χ | Χ | Χ | Χ | Χ
+ecu_support	Datakom	datakom/1001.md	| single genset standby or dual genset mutual standby | ECU connection through J1939 CAN option
+ecu_support	Datakom	datakom/1002.md	| single genset standby or dual genset mutual standby | ECU connection through J1939 CAN option
+ecu_support	Woodward	woodward/1001.md	Engine ECU interface to
+ecu_support	Woodward	woodward/1003.md	|  | CAN SAE J1939 network communication/control to engine ECU.
+ecu_support	DSE-web	deep-sea-electronics/1001.md	| • | Latest ECU / ECM support for a wide range of engine manufacturers
+ecu_support	DSE-web	deep-sea-electronics/1002.md	| • | Latest ECU / ECM support for a wide range of engine manufacturers
+protections	DSE	dse125	Degrees of protection provided by
+protections	DSE	dse130	• Suitable for NFPA 110 regulations broken, an alarm is initiated on the
+protections	SICES	DST4602Evolution_Datasheet_EN_REV1.8	for a quick and easy visualization of measures and alarms coming from the genset.
+protections	SICES	sices/1001.md	| the | engine shutdown sequence is
+protections	SmartGen	HGM4020T_en	2023-05-22 1.4 abnormal trip configuration items;
+protections	SmartGen	HGM410_HGM420_en	2013-08-08 1.4 Change “External Shutdown” input to “Emergency
+protections	ComAp	InteliNano_AMF5_Datasheet	User setpoints and protections
+protections	ComAp	comap/1001.md	| User defined protections and setpoints, integrated PLC logic | Load shedding and dummy load management
+protections	DEIF	deif/1001.md	1.5 Protections overview..................................................................................................................................................
+protections	DEIF	deif/1002.md	2.1.2 Protections.........................................................................................................................................................
+protections	Datakom	datakom/1001.md	| operations. | J1939 ECU warnings displayed as text
+protections	Datakom	datakom/1002.md	| protection and instrumentation without extra senders. | Battery backed-up real time clock
+protections	Woodward	woodward/1001.md	| Ethernet and SD card connectivity and a 240x128 pixels Monochrome LCD in same size. | protection
+protections	Woodward	woodward/1002.md	| generator control and protection, genset breaker synchronization, dead bus arbitration and isochronous/droop | stop (LDSS) for the entire
+protections	DSE-web	deep-sea-electronics/1001.md	single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+protections	DSE-web	deep-sea-electronics/1002.md	single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+display	DSE	dse2152	outputs can be individually configured as 0 to 10 V or 4 to 20 mA, via the ‘host controller’. LED indication is provided for ‘power on’ and ‘link lost’
+display	DSE	dse2157	DSE8860 Auto Transfer Switch & Mains (Utility) Graphical Colour Display Control Module 8810-01
+display	SICES	DST4602Evolution_Datasheet_EN_REV1.8	The enhanced and large 7” graphic colour display with TFT technology, is a user-friendly interface, conceived
+display	SICES	sices/1001.md	A large full colour display makes these controllers suitable for a wide range of applications while presenting operating
+display	SmartGen	HGM4020T_en	— 132x64 LCD with backlight, selectable language interface (Chinese and English), push-button
+display	SmartGen	HGM410_HGM420_en	module must be fitted). It fit with LCD display, optional languages interface (Chinese,
+display	ComAp	InteliNano_AMF5_Datasheet	Large graphic monochromatic backlighted LCD display with
+display	ComAp	comap/1001.md	| Great flexibility and wide range of application support | Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+display	DEIF	deif/1001.md	2.1 Display, buttons, and LEDs............................................................................................................................................
+display	DEIF	deif/1002.md	| 4. | Displays
+display	Datakom	datakom/1001.md	| operations. | J1939 ECU warnings displayed as text
+display	Datakom	datakom/1002.md	| Last 100 faults are stored in the event log file. The | Customer logo display capability
+display	Woodward	woodward/1001.md	✓ Large LCD display for
+display	Woodward	woodward/1002.md	work with GC-3400XT. Both the packages are available without a display in a rugged metal housing suitable for
+display	DSE-web	deep-sea-electronics/1001.md	single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+display	DSE-web	deep-sea-electronics/1002.md	single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+measure_voltage	DSE	dse2131	Voltage Measurement Range 0 mA to 20 mA
+measure_voltage	DSE	dse3110	Voltage Measurement ±1% Full Scale Phase to Neutral ±0.2 Hz
+measure_voltage	SICES	DST4602Evolution_Datasheet_EN_REV1.8	STAGE V fuel level (2 voltage inputs, 3 resistive inputs, all can be used as digital).
+measure_voltage	SICES	sices/1001.md	| >> | Measurements: Mains/bus and genset voltages, frequency; genset currents
+measure_voltage	SmartGen	HGM4020T_en	16 Battery voltage input recommended. MP2 internal has connected with B-.
+measure_voltage	SmartGen	HGM410_HGM420_en	AC voltage Input: AC15V - AC360V (ph-N)
+measure_voltage	ComAp	InteliNano_AMF5_Datasheet	Full 3-phase current and voltage measurement
+measure_voltage	ComAp	comap/1001.md	| Voltage measurement | I: 1 % from value ±0.2 mA
+measure_voltage	DEIF	deif/1001.md	| CT-side | AC voltage
+measure_voltage	DEIF	deif/1002.md	Battery voltage measurement accuracy:
+measure_voltage	Datakom	datakom/1001.md	excitation current and measure the voltage of
+measure_voltage	Datakom	datakom/1002.md	excitation current and measure the voltage of
+measure_voltage	Woodward	woodward/1003.md	|  | RMS measurement of voltage and current for reduced susceptibility to harmonics.
+measure_voltage	DSE-web	deep-sea-electronics/1001.md	Voltage Measurement
+measure_voltage	DSE-web	deep-sea-electronics/1002.md	Voltage Measurement
+measure_frequency	DSE	dse123	5Hz to 8Hz @ +/-7.5mm, 8Hz to 500Hz @
+measure_frequency	DSE	dse125	5 Hz to 8 Hz @ +/-7.5 mm, 8 Hz to 500 Hz
+measure_frequency	SmartGen	HGM9420N_HGM9420LT_en	Range: 5Hz - 75Hz
+measure_frequency	SmartGen	HGM9510N_HGM9530N_en	Range: 5Hz -75Hz
+measure_frequency	ComAp	InteliNano_AMF5_Datasheet	Frequency range
+measure_frequency	ComAp	comap/1001.md	| Frequency range | 30-520 Hz with SW key
+measure_frequency	DEIF	deif/1001.md	| Frequency range | 3.5 to 75 Hz
+measure_frequency	DEIF	deif/1003.md	| Frequency range | 5 to 75 Hz
+measure_frequency	Datakom	datakom/1001.md	frequency measurements may occur.
+measure_frequency	Woodward	woodward/1001.md	| Frequency accuracy | ±0.1 Hz | easYgen-1600: 0.56 kg
+measure_frequency	SICES	sices/1003.md	Frequency measurements
+measure_frequency	DSE-web	deep-sea-electronics/1001.md	| Frequency Range | 3.5 Hz to 75 Hz
+measure_frequency	DSE-web	deep-sea-electronics/1002.md	| Frequency Range | 3.5 Hz to 75 Hz
+measure_current	DSE	dse2131	Number Negative Switching Digital Input, Resistive, Voltage or Current Input
+measure_current	DSE	dse4310	variety of single gen-set With a number of flexible inputs, 4310-02 Auto Start with current measurement
+measure_current	SICES	DST4602Evolution_Datasheet_EN_REV1.8	with an additional current measurement for neutral or differential protection.
+measure_current	SICES	sices/1001.md	| CURRENT INPUTS | GENERATOR
+measure_current	SmartGen	HGM4020T_en	CT Secondary Current Rated 5A
+measure_current	SmartGen	HGM410_HGM420_en	CT Secondary Current Humidity: (20~93)%RH
+measure_current	ComAp	InteliNano_AMF5_Datasheet	Technical data Current measurement
+measure_current	ComAp	comap/1001.md	| Power supply | Current measurement
+measure_current	DEIF	deif/1001.md	4th current measurement (select one)
+measure_current	DEIF	deif/1002.md	| Current input: 0(4) to 20 | mA
+measure_current	Datakom	datakom/1001.md	| inputs, 5A-AC | terminals to these inputs. Do not connect the
+measure_current	Datakom	datakom/1002.md	| inputs, 5A-AC | terminals to these inputs. Do not connect the
+measure_current	Woodward	woodward/1001.md	| Nominal CT secondary rating | 5 A | easYgen-1700/-1800: 0.85 kg
+measure_current	DSE-web	deep-sea-electronics/1001.md	Current Measurement
+measure_current	DSE-web	deep-sea-electronics/1002.md	Current Measurement
+accuracy	DSE	dse2131	Analogue Input Resolution ±2%
+accuracy	DSE	dse2133	±1 % or ±2 °C, whichever is greater
+accuracy	SICES	DST4602Evolution_Datasheet_EN_REV1.8	Generator and mains Resolution = 0.1 Hz. Accuracy = ±50ppm, ±35ppm/°C (typical).
+accuracy	SICES	sices/1001.md	| mains frequency meter: | Resolution = 0.1 Hz. Accuracy = ±50ppm, ±35ppm/°C (typical).
+accuracy	SmartGen	HGM9420N_HGM9420LT_en	Accuracy: 1%
+accuracy	SmartGen	HGM9510N_HGM9530N_en	AC Current Accuracy: 1%
+accuracy	ComAp	InteliNano_AMF5_Datasheet	RTC battery Accuracy
+accuracy	ComAp	comap/1001.md	| Accuracy | ±20
+accuracy	DEIF	deif/1001.md	| Accuracy | ±0.35 V
+accuracy	DEIF	deif/1002.md	Accuracy
+accuracy	Datakom	datakom/1001.md	| Please note also that a fine adjustment of the engine speed in the ± 8 % range | may
+accuracy	Datakom	datakom/1002.md	Please note also that a fine adjustment of the engine speed in the ± 8 % range may be done
+accuracy	Woodward	woodward/1001.md	| Voltage Accuracy | Humidity: max. 93%, noncondensing
+accuracy	Woodward	woodward/1002.md	| Accuracy .....................................................................................Class 0.5 | Maximum permissible voltage between genset Ground & PE .......
+accuracy	DSE-web	deep-sea-electronics/1001.md	| Accuracy | ±1 %
+accuracy	DSE-web	deep-sea-electronics/1002.md	| Accuracy | ±1 %
+usb	DSE	dse3110	USB B
+usb	DSE	dse3210	USB CONFIGURABLE DC OUTPUTS DC POWER
+usb	SICES	DST4602Evolution_Datasheet_EN_REV1.8	AND/OR Event history log 16 Calendars USB port
+usb	SICES	sices/1001.md	Comprehensive communications are also available as standard, like USB, RS232, RS485 (insulated) and Ethernet for the
+usb	SmartGen	HGM4020T_en	parameters can be configured from front panel or through programmable interface (USB or RS485
+usb	SmartGen	HGM410_HGM420_en	interface (USB to LINK, SG72 adaptor produced by Smartgen is recommended) via
+usb	ComAp	InteliNano_AMF5_Datasheet	Power over USB-C for controller configuration and firmware update
+usb	ComAp	comap/1001.md	| Advanced single Gen-set controller for stand-by and prime-power | Power over USB for configuration without standard power supply
+usb	DEIF	deif/1001.md	| AC voltage | USB
+usb	DEIF	deif/1002.md	| USB interface to PC | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ
+usb	Datakom	datakom/1001.md	For PCs without a serial port, below USB to serial adapters are tested and approved :
+usb	Datakom	datakom/1002.md	For PCs without a serial port, below USB to serial adapters are tested and approved :
+usb	Woodward	woodward/1001.md	| • Operation modes: AUTO, STOP, and MANUAL modes accessible through front panel, discrete inputs or | RS232, USB,
+usb	Woodward	woodward/1002.md	accessed either via USB, or via Ethernet, or via CAN ports.
+usb	DSE-web	deep-sea-electronics/1001.md	The DSE7320 MKII will also monitor the mains (utility) supply. The modules include USB, RS232 and RS485 ports as well as dedicated DSENet®
+usb	DSE-web	deep-sea-electronics/1002.md	engine status information on the back-lit LCD screen.The DSE6120 MKIII will also monitor the mains (utility) supply. The modules include a USB port
+rs232	DSE	dse5210	The DSE5210 is an Automatic Both modules include RS232 BENEFITS 16A DC at supply voltage
+rs232	DSE	dse5220	The DSE5210 is an Automatic Both modules include RS232 BENEFITS 16A DC at supply voltage
+rs232	SICES	DST4602Evolution_Datasheet_EN_REV1.8	RS232 RS485 PLC Logic control Ethernet connection
+rs232	SICES	sices/1001.md	Comprehensive communications are also available as standard, like USB, RS232, RS485 (insulated) and Ethernet for the
+rs232	SmartGen	HGM7200_en	50 RS232 GND 0.5mm2
+rs232	SmartGen	HGM9600_en	62 RS232
+rs232	ComAp	InteliNano_AMF5_Datasheet	Modbus RTU using RS232-485 plug-in module
+rs232	ComAp	comap/1001.md	| Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Available in low temperature version (order code: IL4AMF25BLA)
+rs232	DEIF	deif/1004.md	| H9 | Modbus RS-232 for modem
+rs232	Datakom	datakom/1001.md	| adjustable timers, threshold levels, input and output | RS-232 serial port
+rs232	Datakom	datakom/1002.md	| The unit provides a comprehensive set of digitally | RS-232 serial port
+rs232	Woodward	woodward/1001.md	| • Operation modes: AUTO, STOP, and MANUAL modes accessible through front panel, discrete inputs or | RS232, USB,
+rs232	DSE-web	deep-sea-electronics/1001.md	The DSE7320 MKII will also monitor the mains (utility) supply. The modules include USB, RS232 and RS485 ports as well as dedicated DSENet®
+rs232	DSE-web	deep-sea-electronics/1003.md	The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+rs485	DSE	dse5210	Start Control Module designed to or RS485 communications • Full integration into new and AUXILIARY RELAY OUTPUTS
+rs485	DSE	dse5220	Start Control Module designed to or RS485 communications • Full integration into new and AUXILIARY RELAY OUTPUTS
+rs485	SICES	DST4602Evolution_Datasheet_EN_REV1.8	RS232 RS485 PLC Logic control Ethernet connection
+rs485	SICES	sices/1001.md	Comprehensive communications are also available as standard, like USB, RS232, RS485 (insulated) and Ethernet for the
+rs485	SmartGen	HGM4020T_en	parameters can be configured from front panel or through programmable interface (USB or RS485
+rs485	SmartGen	HGM7110N_HGM7120N_en	be adjusted through PC via USB port and monitored through PC software via RS485. It can be widely
+rs485	ComAp	InteliNano_AMF5_Datasheet	CM-RS232-485 Dual port (RS232 & RS485) plug-in communication module
+rs485	ComAp	comap/1001.md	| Great flexibility and wide range of application support | Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+rs485	DEIF	deif/1001.md	| Modbus RS-485 | ● | ● | ●
+rs485	DEIF	deif/1002.md	| RS-485/Modbus RTU slave | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+rs485	Datakom	datakom/1001.md	| (2) RS-485 Enable | - | 0 | 0: RS-232 communication
+rs485	Woodward	woodward/1001.md	| • Three-phase true RMS power sensing | CAN J1939, RS-485,
+rs485	DSE-web	deep-sea-electronics/1001.md	The DSE7320 MKII will also monitor the mains (utility) supply. The modules include USB, RS232 and RS485 ports as well as dedicated DSENet®
+rs485	DSE-web	deep-sea-electronics/1003.md	The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+ethernet	DSE	dse6110-mkiii	DSE2130 DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) 0890-04
+ethernet	DSE	dse6120-mkiii	DSE2130 DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) 0890-04
+ethernet	SICES	DST4602Evolution_Datasheet_EN_REV1.8	RS232 RS485 PLC Logic control Ethernet connection
+ethernet	SICES	sices/1001.md	Comprehensive communications are also available as standard, like USB, RS232, RS485 (insulated) and Ethernet for the
+ethernet	SmartGen	HGM7110N_HGM7120N_en	adjusted via USB by PC, or via RS485 or ETHERNET port;
+ethernet	SmartGen	HGM9420N_HGM9420LT_en	17 ETHERNET PORT .................................................................................................................................. 100
+ethernet	ComAp	InteliNano_AMF5_Datasheet	Internet access using Ethernet/4G-GPS plug-in module
+ethernet	ComAp	comap/1001.md	| Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Available in low temperature version (order code: IL4AMF25BLA)
+ethernet	DEIF	deif/1001.md	| Using | Ethernet
+ethernet	DEIF	deif/1002.md	| In a power management system, the entire plant can be controlled using the PC Utility Software tool, if there | is a TCP/IP connection
+ethernet	Woodward	woodward/1001.md	| ✓ | Built-in Ethernet for remote
+ethernet	Woodward	woodward/1002.md	|  | Redundant CAN-Ethernet
+ethernet	DSE-web	deep-sea-electronics/1002.md	| DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04
+ethernet	DSE-web	deep-sea-electronics/1003.md	The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+can	DSE	dse2160	For enhanced communication with the host module, the DSE2160 features a DSENet® port for connection to the DSEG8600 platform and a CAN port
+can	DSE	dse2170	For enhanced communication with the host module, the DSE2170 features a DSENet® port for connection to the DSEG8600 platform and a CAN port
+can	SICES	DST4602Evolution_Datasheet_EN_REV1.8	controller includes a CAN J1939 interface, supporting a wide range of engines (Volvo Penta, Scania, Perkins,
+can	SICES	sices/1001.md	Available in two versions, It can be interfaced with both CANBUS J1939 electronic engines and traditional engines, with
+can	SmartGen	HGM7200_en	15 CONNECTIONS OF CONTROLLER WITH J1939 ENGINE....................................................................... 43
+can	SmartGen	HGM9420N_HGM9420LT_en	21 CONNECTIONS OF CONTROLLER AND J1939 ENGINE..................................................................... 107
+can	ComAp	InteliNano_AMF5_Datasheet	Protocols J1939
+can	ComAp	comap/1001.md	J1939 protocols.
+can	DEIF	deif/1001.md	| CAN bus | CAN
+can	DEIF	deif/1002.md	supply and CAN bus between the controllers.
+can	Datakom	datakom/1001.md	CANBUS AND MPU VERSIONS
+can	Datakom	datakom/1002.md	CANBUS AND MPU VERSIONS
+can	Woodward	woodward/1001.md	| • Three-phase true RMS power sensing | CAN J1939, RS-485,
+can	Woodward	woodward/1002.md	accessed either via USB, or via Ethernet, or via CAN ports.
+can	DSE-web	deep-sea-electronics/1003.md	CAN - Configurable CAN Communication
+can	DSE-web	deep-sea-electronics/1004.md	| CAN | 3 Fully Isolated CAN Ports
+modbus_rtu	DSE	dse5210	• Modbus RTU user to scroll through the LCD 240mm x 172mm
+modbus_rtu	DSE	dse5220	• Modbus RTU user to scroll through the LCD 240mm x 172mm
+modbus_rtu	SICES	DST4602Evolution_Datasheet_EN_REV1.8	N.2 MODBUS RTU Serial Ports: RS232 and insulated RS485.
+modbus_rtu	SICES	sices/1001.md	| STAGE V | • | N. 2 MODBUS RTU Serial Ports: RS232 and insulated RS485.
+modbus_rtu	SmartGen	HGM4020T_en	35 Tele. Open Door This output is remote controlled by Modbus-RTU protocol, output time
+modbus_rtu	SmartGen	smartgen/1009.md	This output is remote controlled by Modbus-RTU protocol, output time
+modbus_rtu	ComAp	InteliNano_AMF5_Datasheet	Modbus RTU using RS232-485 plug-in module
+modbus_rtu	ComAp	comap/1001.md	| Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+modbus_rtu	DEIF	deif/1001.md	| Used for: Modbus RTU, PLC, SCADA, Remote monitoring | (Insight)
+modbus_rtu	DEIF	deif/1002.md	| RS-485/Modbus RTU slave | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
+modbus_rtu	Woodward	woodward/1003.md	|  | Externally adjustable load or process references using analog inputs, Ethernet or Serial Modbus RTU (slave), CAN
+modbus_rtu	DSE-web	deep-sea-electronics/1001.md	| • | Integrated RS232 and RS485 ports providing Modbus RTU support
+modbus_rtu	DSE-web	deep-sea-electronics/1003.md	| • | Integrated RS232 and RS485 ports providing Modbus RTU support
+modbus_tcp	DSE	dse7410-mkii	• Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+modbus_tcp	DSE	dse7420-mkii	• Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+modbus_tcp	SICES	DST4602Evolution_Datasheet_EN_REV1.8	• N..1 Ethernet port with Modbus TCP protocol
+modbus_tcp	SICES	sices/1002.md	| Modbus TCP, as well as GPRS communication over Ethernet or 2G, | with Modbus RTU and Ethernet port with Modbus TCP
+modbus_tcp	ComAp	comap/1007.md	| Ethernet port | LAN/Internet, Modbus TCP,
+modbus_tcp	ComAp	comap/1017.md	LAN/Internet, Modbus TCP, AirGate
+modbus_tcp	DEIF	deif/1001.md	| Modbus TCP/IP | ● | ● | ●
+modbus_tcp	DEIF	deif/1004.md	| Modbus TCP/IP | ●
+modbus_tcp	Woodward	woodward/1002.md	|  | Dedicated Ethernet Modbus TCP communication line to external Modbus master (PLC, SCADA etc.)
+modbus_tcp	DSE-web	deep-sea-electronics/1003.md	| • | Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+modbus_tcp	DSE-web	deep-sea-electronics/1004.md	| • | Integrated Ethernet port providing Modbus TCP and SNMP v2c
+snmp	DSE	dse7410-mkii	The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+snmp	DSE	dse7420-mkii	The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+snmp	ComAp	comap/1001.md	| Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+snmp	ComAp	comap/1002.md	| Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+snmp	SICES	sices/1001.md	| >> | SNMP, NTP (for the automatic clock update), DNS and DHCP support.
+snmp	SICES	sices/1002.md	Protocols: Modbus/TCP, DHCP, DNS, SNMP, NTP
+snmp	DSE-web	deep-sea-electronics/1003.md	The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+snmp	DSE-web	deep-sea-electronics/1004.md	| • | Integrated Ethernet port providing Modbus TCP and SNMP v2c
+remote_monitoring	DSE	dse2510	by offering remote control and MANUAL soft touch membrane
+remote_monitoring	DSE	dse2520	by offering remote control and MANUAL soft touch membrane
+remote_monitoring	SICES	DST4602Evolution_Datasheet_EN_REV1.8	DST4602Evolution provides several communications interfaces for local or remote control.
+remote_monitoring	SICES	sices/1001.md	remote monitoring. The adjustable parameters of the controller allow its use for standard and customized tasks.
+remote_monitoring	SmartGen	HGM4020T_en	— RS485 communication interface enable “Three remote functions” (remote control, remote
+remote_monitoring	SmartGen	HGM410_HGM420_en	remote” (remote control, remote measuring and remote communication; SG485
+remote_monitoring	ComAp	InteliNano_AMF5_Datasheet	Remote monitoring support (AirGate 2.0, WSV, InteliScada)
+remote_monitoring	ComAp	comap/1001.md	| Full control with fast and reliable remote communication support | Alternative configurations for genset with variable voltage and frequency
+remote_monitoring	DEIF	deif/1001.md	5.4 Remote monitoring service: Insight....................................................................................................................................
+remote_monitoring	DEIF	deif/1002.md	The plant/genset is easily controlled from the display, or an HMI/scada system can be implemented using one of the communication
+remote_monitoring	Datakom	datakom/1001.md	| configurations, operating sequences and engine | Free MS-Windows Remote monitoring SW
+remote_monitoring	Datakom	datakom/1002.md	| adjustable timers, threshold levels, input and output | Free MS-Windows Remote monitoring SW
+remote_monitoring	Woodward	woodward/1001.md	• Remote control via multiple interfaces and discrete inputs
+remote_monitoring	Woodward	woodward/1002.md	|  | Dedicated Ethernet Modbus TCP communication line to external Modbus master (PLC, SCADA etc.)
+remote_monitoring	DSE-web	deep-sea-electronics/1001.md	demanding industry requirements. The extensive list of features includes enhanced event and performance monitoring, remote communications & PLC
+remote_monitoring	DSE-web	deep-sea-electronics/1002.md	DSEWebNet®
+cellular_sms	DSE	dse5210	and gas generating sets that sending SMS messages and existing building management CHARGE FAIL/EXCITATION RANGE
+cellular_sms	DSE	dse5220	and gas generating sets that sending SMS messages and existing building management CHARGE FAIL/EXCITATION RANGE
+cellular_sms	SICES	DST4602Evolution_Datasheet_EN_REV1.8	• Direct GSM and PSTN modem management.
+cellular_sms	SICES	sices/1001.md	| >> | SMS communication.
+cellular_sms	SmartGen	HGM7200_en	14 GSM SHORT MESSAGE ALARM AND REMOTE CONTROL.................................................................... 42
+cellular_sms	SmartGen	HGM9420N_HGM9420LT_en	19.1.1 4G ANTENNA PORT ............................................................................................................... 102
+cellular_sms	ComAp	InteliNano_AMF5_Datasheet	Internet access using Ethernet/4G-GPS plug-in module
+cellular_sms	ComAp	comap/1001.md	| Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Available in low temperature version (order code: IL4AMF25BLA)
+cellular_sms	DEIF	deif/1001.md	| YANMAR | - | Gas 4G
+cellular_sms	DEIF	deif/1003.md	| Vibration | 3G in X, Y and Z axes for 8 to 500 Hz. To IEC 60068-2-6
+cellular_sms	Datakom	datakom/1001.md	| The CANBUS version connects to ECU controlled | Internal GSM modem option
+cellular_sms	Datakom	datakom/1002.md	| The unit is able to initiate modem calls and send | Built in daily / weekly / monthly exerciser
+cellular_sms	Woodward	woodward/1001.md	| Relay | GSM Support
+cellular_sms	DSE-web	deep-sea-electronics/1002.md	| DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04
+cellular_sms	DSE-web	deep-sea-electronics/1005.md	and SMS messaging. Comprehensive communications are also available via RS232, RS485 & Ethernet for remote PC control and monitoring to allow
+event_log	DSE	dse4210	PC Software for simplified • Compatible with 600 V AC • Event log (15) <10 uA at 12 V, <10 uA at 24 V
+event_log	DSE	dse4220	PC Software for simplified • Compatible with 600 V AC • Event log (15) <10 uA at 12 V, <10 uA at 24 V
+event_log	SICES	DST4602Evolution_Datasheet_EN_REV1.8	AND/OR Event history log 16 Calendars USB port
+event_log	SICES	sices/1001.md	| AND/OR | 537 Event | 16 Calendars
+event_log	SmartGen	HGM4020T_en	8.4 EVENT LOG .................................................................................................................................... 35
+event_log	SmartGen	HGM7110N_HGM7120N_en	 Event log, real-time clock, scheduled start & stop generator (can be set as start genset once a
+event_log	ComAp	InteliNano_AMF5_Datasheet	Product description Detailed history log with up to 100 records
+event_log	ComAp	comap/1001.md	| Key benefits | Detailed history log with up to 350 records, including user logins and configuration
+event_log	DEIF	deif/1001.md	| Event logs with password, up to 500 entries | ● | ● | ●
+event_log	DEIF	deif/1002.md	| 212 | 213 | 222 | 232 | 233 | 242 | 243 | 244 | 245 | 246
+event_log	Datakom	datakom/1001.md	| protection and instrumentation without extra senders. | Event logging with time stamp and
+event_log	Datakom	datakom/1002.md	| The CANBUS version connects to ECU controlled | Event logging with time stamp and
+event_log	Woodward	woodward/1001.md	Event log and event-
+event_log	Woodward	woodward/1003.md	|  | Sequence of events recorder—300 events FIFO with real time clock.
+event_log	DSE-web	deep-sea-electronics/1004.md	System alarms are annunciated on the LCD screen (multiple language options available), illuminated LED and audible sounder. The event log records
+event_log	DSE-web	deep-sea-electronics/1005.md	integration into building management systems. The comprehensive event log will record up to 250 events to facilitate maintenance.
+data_logging	DSE	dse4510-mkii	event logging • Start on low battery voltage (DSE4520 MKII only)
+data_logging	DSE	dse4510	layout for ease of use accurate event logging • Configurable staged loading MAXIMUM DEEP SLEEP CURRENT
+data_logging	ComAp	comap/1004.md	| InteliVision 8 | Color 8" display for advanced monitoring, control & trending, USB capable | INTELIVISION 8
+data_logging	ComAp	comap/1005.md	| InteliVision 8 | Color 8" display for advanced monitoring, control & trending, USB capable | INTELIVISION 8
+data_logging	DEIF	deif/1001.md	| Trending with the USW | ● | ● | ●
+data_logging	DEIF	deif/1003.md	| Use the Smart Connect Mk II software to configure parameters, log data, add custom sensor | curves, and
+data_logging	Datakom	datakom/1001.md	| protection and instrumentation without extra senders. | Event logging with time stamp and
+data_logging	Datakom	datakom/1002.md	| The CANBUS version connects to ECU controlled | Event logging with time stamp and
+data_logging	Woodward	woodward/1001.md	| • Event and data logging capabilities with real time clock | interface
+data_logging	SICES	sices/1002.md	controller and data logs.
+data_logging	SICES	sices/1003.md	J1939 standard). For example, if you use the files related to MAN DATALOGGER, the controller displays all the measurements
+data_logging	DSE-web	deep-sea-electronics/1001.md	| • | Data logging of up to 10 parameters
+data_logging	DSE-web	deep-sea-electronics/1003.md	| • | Data logging of up to 20 parameters
+plc	DSE	dse7450	programmable logic controller, a adjusted using the LCD and tactile A to B USB cable. BS EN 60068-2-1
+plc	DSE	dse8610	• USB connectivity programmable logic control (PLC) MINIMUM LOAD IMPEDANCE
+plc	SmartGen	smartgen/1012.md	| ♦ | PLC (programmable logic control) function allows for specific function can be
+plc	ComAp	comap/6001.md	One of the most important and useful software products in ComAp’s suite is InteliConfig . Unlike industrial Programmable Logic Controllers (PLCs) where customers can spen
+plc	Datakom	datakom/1001.md	This output has programmable function,
+plc	Datakom	datakom/1002.md	2 have programmable functions, selected from a list.
+plc	DSE-web	deep-sea-electronics/1010.md	| programmable logic control (PLC) | OUTPUT A & B (FUEL & START)
+synchronising	DSE	dse123	allows synchronising of control synchronising and loadsharing DSE7510 or DSE8610, the LED will Industrial Environment
+synchronising	DSE	dse2131	DSEG7300 Synchronising Auto Mains (Utility) Failure Load Share Control Module 8620-02
+synchronising	SICES	DST4602Evolution_Datasheet_EN_REV1.8	with internal load sharing, synchronizer and PLC functions
+synchronising	SICES	sices/1001.md	Manual synchronization can easily accomplished by built in function.
+synchronising	SmartGen	HGM9420N_HGM9420LT_en	5.1 ATS CONTROL PROCEDURE FOR SYNC TRANSFER DISABLED ..................................................... 20
+synchronising	SmartGen	HGM9510N_HGM9530N_en	10.2 STEP 2: MANUAL PARALLEL OPERATION OFF-LOAD ............................................................. 102
+synchronising	ComAp	comap/1004.md	| Comprehensive paralleling gen-set controller | Extendable with ComAp's extension modules
+synchronising	ComAp	comap/1005.md	| Comprehensive paralleling gen-set controller | Extendable with ComAp's extension modules
+synchronising	DEIF	deif/1001.md	synchronisation, island operation, and running parallel to mains. The PMS can automatically start and stop gensets, and
+synchronising	DEIF	deif/1002.md	synchronising projects, islanded or paralleled to the mains. The AGC contains all necessary 3-phase measuring circuits, and all
+synchronising	Datakom	datakom/6001.md	Synchronization Units
+synchronising	Datakom	datakom/6002.md	Synchronization Units
+synchronising	Woodward	woodward/1001.md	| from simple functions, such as start/stop of a genset to complex ones, like synchronizing and power manage- | • ATS (Automatic Transfer
+synchronising	Woodward	woodward/1002.md	synchronization, dead bus prioritization, load share, and load dependent start/stop capabilities, in combination
+synchronising	DSE-web	deep-sea-electronics/1003.md	| • | Open and closed transition available with option for synchronisation
+synchronising	DSE-web	deep-sea-electronics/1004.md	URL: https://www.deepseaelectronics.com/genset/load-sharing-synchronising-control-modules/dse8610-mkii/downloads/datasheet
+load_sharing	DSE	dse123	ANALOGUE LOAD SHARE LINES INTERFACE DC SUPPLY
+load_sharing	DSE	dse2131	DSEG7300 Synchronising Auto Mains (Utility) Failure Load Share Control Module 8620-02
+load_sharing	SICES	DST4602Evolution_Datasheet_EN_REV1.8	with internal load sharing, synchronizer and PLC functions
+load_sharing	SICES	sices/1001.md	Insulated CANBUS (PMCBUS) for the load sharing.
+load_sharing	SmartGen	HGM9510N_HGM9530N_en	GOV Droop (0-200.0)%
+load_sharing	SmartGen	HGM9530_en	droop via CANBUS port. The genset also can connect to expansion modules: digital input module
+load_sharing	ComAp	comap/1004.md	Load sharing and VAr sharing via CAN
+load_sharing	ComAp	comap/1005.md	Load sharing and VAr sharing via CAN
+load_sharing	DEIF	deif/1001.md	Generator controllers for CANshare load sharing by multiple gensets (without power management).
+load_sharing	DEIF	deif/1002.md	3.1.2 Single generator/load sharing/power management......................................................................................................................
+load_sharing	Datakom	datakom/6002.md	The same controller provides synchronization, load share, A...
+load_sharing	Woodward	woodward/1002.md	| o | Load share line redundancy at each
+load_sharing	Woodward	woodward/1003.md	|  | Proportional load sharing (isochronous or droop) of up to 32 generators, regardless of KW rating.
+load_sharing	DSE-web	deep-sea-electronics/1004.md	| DSE8610 MKII Synchronising & Load Sharing | Auto
+load_sharing	DSE-web	deep-sea-electronics/1005.md	ports capable of being active at the same time, the DSE86XX MKII series is ideal for a wide variety of demanding load share applications.
+load_demand	DSE	dse550	according to load demand.
+load_demand	DSE	dse5510	generating sets that include non- open circuit failure, negative phase generator on load demand recovers to 5V. This is achieved without the
+load_demand	SmartGen	HGM9420N_HGM9420LT_en	15 DUMMY LOAD CONNECTION ................................................................................................................ 98
+load_demand	SmartGen	HGM9510N_HGM9530N_en	14 DUMMY LOAD CONNECTION ...............................................................................................................108
+load_demand	ComAp	comap/1001.md	| User defined protections and setpoints, integrated PLC logic | Load shedding and dummy load management
+load_demand	ComAp	comap/1002.md	| Great flexibility and wide range of application support | Load shedding and dummy load management
+load_demand	DEIF	deif/1001.md	the peak load demand and runs parallel to mains.
+load_demand	DEIF	deif/1002.md	| Peak shaving | Power plant where generator supplies peak load demand paralleled to the mains.
+load_demand	Datakom	datakom/1001.md	6.21. Load Shedding / Dummy Load
+load_demand	Datakom	datakom/1002.md	6.20. Load Shedding / Dummy Load
+load_demand	Woodward	woodward/1002.md	synchronization, dead bus prioritization, load share, and load dependent start/stop capabilities, in combination
+load_demand	Woodward	woodward/1003.md	|  | Automatic load dependent start/stop for improved generator system efficiency with configurable generator priority
+load_demand	SICES	sices/1001.md	Based on the load demand, the controller is able to automatically start/stop the genset.
+load_demand	SICES	sices/1002.md	| • | Load shedding | • Maximum engine power (32)
+load_demand	DSE-web	deep-sea-electronics/1004.md	status and fault conditions, automatically starting or stopping the engine on load demand or fault conditions.
+load_demand	DSE-web	deep-sea-electronics/1005.md	| • | Advanced load demand schemes including automatic start / stop
+dead_bus	DSE	dse550	suitable modem (Optional: Remote Ø Dead bus sensing
+dead_bus	DSE	dse5510	protection features. • Electronic engine capability • Dead bus sensing 460mA at 12V. 245mA at 24V
+dead_bus	SICES	DST4602Evolution_Datasheet_EN_REV1.8	(Dead bus paralleling)
+dead_bus	SICES	sices/1004.md	(Dead bus paralleling)
+dead_bus	SmartGen	HGM9510N_HGM9530N_en	1 Dead Bus Volt voltage is lower than dead Bus voltage.
+dead_bus	SmartGen	HGM9530_en	1 Dead Bus Volt 30 It is considered Bus no power when Bus
+dead_bus	Woodward	woodward/1002.md	synchronization, dead bus prioritization, load share, and load dependent start/stop capabilities, in combination
+dead_bus	Woodward	woodward/1003.md	|  | Dead bus closing logic internal to the controller to ensure multiple units close safely within the synchronization
+dead_bus	DSE-web	deep-sea-electronics/1004.md	| • | Slip sync and dead bus synchronising control
+dead_bus	DSE-web	deep-sea-electronics/1005.md	| • | Slip sync and dead bus synchronising control
+max_sets	DSE	dse550	port allowing up to 16 generators to and alarms can be altered by the user.
+max_sets	DSE	dse5510	are provided to allow connection programming • Link up to 16 generators
+max_sets	SICES	DST4602Evolution_Datasheet_EN_REV1.8	DST4602Evolution allows to connect up to 24 gensets on the same bus, working in island mode and in parallel
+max_sets	SICES	sices/1001.md	| >> | Up to 16 gensets connected together.
+max_sets	ComAp	comap/1004.md	| Parallel operation up to 32 gen-sets | True RMS (TRMS) is used with Voltage, Current
+max_sets	ComAp	comap/1005.md	| Parallel operation up to 32 gen-sets | True RMS (TRMS) is used with Voltage, Current
+max_sets	DEIF	deif/1001.md	AGC 150 PMS lite: For simple load sharing and power management over CANshare, for up to 256 generators and/or BTBs.
+max_sets	DEIF	deif/1004.md	With extended power management, a system can manage up to 992 gensets (each controlled by AGC-4 Mk II and/or
+max_sets	Woodward	woodward/1002.md	|  Command up to 248 gensets sorted into | 8 groups of
+max_sets	Woodward	woodward/1003.md	|  | Applications with up to 32 generator sets and one utility tie in the system.
+max_sets	DSE-web	deep-sea-electronics/1004.md	synchronise up to 32 generators including electronic and non-electronic engines. The DSE8610 MKII monitors the generator and indicates operational
+max_sets	DSE-web	deep-sea-electronics/1025.md	provide paralleling for up to 64 generators on a single site and provides a wide range of high-end features for multiple application environments. The
+governor_avr_control	DSE	dse2131	DSENet® DSENet® RTD/Thermocouple/Analogue Output Expansion Module 2170-01
+governor_avr_control	DSE	dse2133	DSENet® DSENet® RTD/Thermocouple/Analogue Output Expansion Module 2170-01
+governor_avr_control	SICES	DST4602Evolution_Datasheet_EN_REV1.8	20 Digital inputs 16 Digital output 5 Analogue inputs 2 Analogue outputs
+governor_avr_control	SICES	sices/1001.md	| 18 Digital inputs | 18 Digital output | 6 Analogue inputs | 2 Analogue outputs
+governor_avr_control	SmartGen	HGM4020T_en	18 High Speed Control Close when the generator enters into Warming Up delay while open
+governor_avr_control	SmartGen	HGM410_HGM420_en	12 High Speed Control Close when the generator enters into Stop Idle delay/
+governor_avr_control	ComAp	comap/1004.md	| Speed governor | output
+governor_avr_control	ComAp	comap/1005.md	| 40-70 Hz (accuracy 0.1 Hz) | Speed governor
+governor_avr_control	DEIF	deif/1001.md	(2 x built-in analogue outputs)
+governor_avr_control	DEIF	deif/1002.md	| J1939 regulation governor/ | Χ | Χ | Χ | Χ | Χ | Χ | Χ
+governor_avr_control	Datakom	datakom/1001.md	will be set by the governor control unit of the engine.
+governor_avr_control	Datakom	datakom/1002.md	will be set by the governor control unit of the engine.
+governor_avr_control	Woodward	woodward/1003.md	|  | Speed bias signal to prime mover speed control freely configurable in the range of +/- 20 ma, +/- 10 volts, or 0-10 VDC,
+governor_avr_control	DSE-web	deep-sea-electronics/1001.md	| DSE2152 | DSENet® Analogue Output Expansion Module | 2152-01
+governor_avr_control	DSE-web	deep-sea-electronics/1002.md	| Analogue Output Expansion Module | 2152-01
+languages	DSE	dse5310	generating set. Once the mains • Multiple language options includes a TEST button. An additional
+languages	DSE	dse5310m	• Multiple language options The module can be configured using
+languages	SICES	DST4602Evolution_Datasheet_EN_REV1.8	DST4602Evolution is a multilanguage device.
+languages	SICES	sices/1003.md	| 8.7 | Selection of the language .................................................................................160
+languages	SmartGen	HGM4020T_en	8.3 LANGUAGE SELECTION................................................................................................................ 35
+languages	SmartGen	HGM410_HGM420_en	module must be fitted). It fit with LCD display, optional languages interface (Chinese,
+languages	ComAp	InteliNano_AMF5_Datasheet	Single Gen-set controller for stand-by and prime-power applications Two languages in the controller
+languages	ComAp	comap/1001.md	| Variable predefined configurations tailored for specific applications | Up to 5 languages in one configuration, over 20 default languages available
+languages	DEIF	deif/1001.md	| Display and language functions | Core
+languages	DEIF	deif/1003.md	Display and language functions
+languages	Datakom	datakom/1001.md	| event log includes not only the date-time information, | Multiple language support
+languages	Datakom	datakom/1002.md	This is the language used in SMS messages.
+languages	Woodward	woodward/1001.md	| • Multilingual customizable user interface | triggered data log
+languages	Woodward	woodward/1003.md	graphical display and text that can configured in 14 languages.
+languages	DSE-web	deep-sea-electronics/1001.md	| • | Multiple language support
+languages	DSE-web	deep-sea-electronics/1002.md	| • | Multiple language support
+dc_supply	DSE	dse123	ANALOGUE LOAD SHARE LINES INTERFACE DC SUPPLY
+dc_supply	DSE	dse125	DC SUPPLY
+dc_supply	SICES	DST4602Evolution_Datasheet_EN_REV1.8	TECHNICAL DATA >> Supply voltage: 8…33 Vdc.
+dc_supply	SICES	sices/1001.md	| TECHNICAL DATA | >> | Supply voltage: 7…32 Vdc.
+dc_supply	SmartGen	HGM4020T_en	— Widely power supply range DC(8~35)V, suitable for different starting battery voltage environment;
+dc_supply	SmartGen	HGM410_HGM420_en	 Widely Power supply range: DC(8~35)V, suitable to different start battery voltage
+dc_supply	ComAp	InteliNano_AMF5_Datasheet	Power supply
+dc_supply	ComAp	comap/1001.md	| Advanced single Gen-set controller for stand-by and prime-power | Power over USB for configuration without standard power supply
+dc_supply	DEIF	deif/1001.md	Green: The supply voltage and frequency are OK.
+dc_supply	DEIF	deif/1003.md	Power supply
+dc_supply	Datakom	datakom/1001.md	| O VDC | Power supply negative connection.
+dc_supply	Datakom	datakom/1002.md	| O VDC | Power supply negative connection.
+dc_supply	Woodward	woodward/1001.md	| Power Supply | Excitation current D+ | 110 mA (12 V); 230 mA (24 V)
+dc_supply	Woodward	woodward/1002.md	| Power supply..........................................................12/24 VDC (8 to 40 VDC) | Discrete inputs.........................................................
+dc_supply	DSE-web	deep-sea-electronics/1001.md	DC Supply
+dc_supply	DSE-web	deep-sea-electronics/1002.md	DC Supply
+front_ip	DSE	dse125	IP RATING
+front_ip	DSE	dse2510	IP65 - Front of module when installed into the
+front_ip	SICES	DST4602Evolution_Datasheet_EN_REV1.8	front panel display.
+front_ip	SICES	sices/1001.md	Stored info can be accessed and viewed from the front panel display.
+front_ip	SmartGen	HGM4020T_en	parameters can be configured from front panel or through programmable interface (USB or RS485
+front_ip	SmartGen	HGM410_HGM420_en	and etc. All parameters can be configured from front panel or through programmable
+front_ip	ComAp	InteliNano_AMF5_Datasheet	Protection degree (front IP50 , IP65 with optional gasket seal Binary inputs
+front_ip	ComAp	comap/1001.md	| Protection degree (front | IP 65
+front_ip	DEIF	deif/1001.md	| Protection degree | • | IP65 (front of module
+front_ip	DEIF	deif/1002.md	| Display gasket | Display gasket IP66 | 2912420030 | Standard is IP52
+front_ip	Datakom	datakom/1001.md	| types. All programs may be modified via front panel | GSM and PSTN modem support
+front_ip	Datakom	datakom/1002.md	| types. All programs may be modified via front panel | GSM SMS message sending on fault
+front_ip	Woodward	woodward/1001.md	password-protected integral front panel lets you adjust various parameters on-site.
+front_ip	Woodward	woodward/1002.md	| Measuring frequency ............................................ 50/60 Hz (30 to 85 Hz) | Protection system ............................................................
+front_ip	DSE-web	deep-sea-electronics/1001.md	The modules can be easily configured using the DSE Configuration Suite PC software. Selected front panel editing is also available.
+front_ip	DSE-web	deep-sea-electronics/1002.md	The modules can be easily configured using the DSE Configuration Suite PC software. Selected front panel editing is also available.
+operating_temp	DSE	dse123	OPERATING TEMPERATURE RANGE
+operating_temp	DSE	dse2131	Temperature -30 °C to +70 °C / -22 °F to +158 °F
+operating_temp	SICES	DST4602Evolution_Datasheet_EN_REV1.8	>> Operating temperature: -20 °C to 60 °C.
+operating_temp	SICES	sices/1001.md	| >> | Operating temperature: -25 °C to +65 °C.
+operating_temp	SmartGen	HGM4020T_en	Working Temperature (-25~+70)°C
+operating_temp	SmartGen	HGM7110N_HGM7120N_en	Working Temperature (-25~+70)°C
+operating_temp	ComAp	InteliNano_AMF5_Datasheet	Operating temperature -20˚C to +70˚C Number 4
+operating_temp	ComAp	comap/1001.md	| Operating temperature | -20˚C to +70˚C
+operating_temp	DEIF	deif/1001.md	| Operating temperature (incl. display | -40 to +70 °C (-40 to +158 °F)
+operating_temp	DEIF	deif/1002.md	±0.8 V within 8 to 30 V DC at -25 °C to 70 °C
+operating_temp	Datakom	datakom/1001.md	Operating temperature range: -20C to +70C (-4 ºF to +158 ºF)
+operating_temp	Datakom	datakom/1002.md	Operating temperature range: -40°C to +70°C (-40 ºF to +158 ºF)
+operating_temp	DSE-web	deep-sea-electronics/1001.md	| Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+operating_temp	DSE-web	deep-sea-electronics/1002.md	| Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+dimensions	DSE	dse123	DIMENSIONS
+dimensions	DSE	dse125	DIMENSIONS
+dimensions	SICES	DST4602Evolution_Datasheet_EN_REV1.8	sequences. >> Overall dimension: 260 (W) x 202 (H) x 86 (D) mm.
+dimensions	SICES	sices/1001.md	| >> | Overall dimension: 244 (W) x 178 (H) x 83 (D) mm.
+dimensions	SmartGen	HGM4020T_en	12.2 OVERALL DIMENSION .................................................................................................................. 39
+dimensions	SmartGen	HGM410_HGM420_en	12.2 OVERALL DIMENSION AND PANEL CUTOUT.............................................. 42
+dimensions	ComAp	InteliNano_AMF5_Datasheet	Stand-by and prime-power application in one unit Cut-out: 118 × 92 mm
+dimensions	ComAp	comap/1001.md	Dimensions, terminals and mounting
+dimensions	DEIF	deif/1001.md	6.6 Dimensions and weight.................................................................................................................................................
+dimensions	DEIF	deif/1002.md	| 6. | Unit dimensions
+dimensions	Datakom	datakom/1001.md	Dimensions: 172x134x46mm (WxHxD)
+dimensions	Datakom	datakom/1002.md	Dimensions: 172x134x46mm (WxHxD)
+dimensions	Woodward	woodward/1001.md	| Case Dimensions | easYgen-1700/1800: 237 x 172 x 45 mm
+dimensions	Woodward	woodward/1002.md	| Setting range...................primary.................................50 to 650,000 VAC | Dimensions | WxHxD P1:...................................250 × 228 × 50 mm
+dimensions	DSE-web	deep-sea-electronics/1001.md	Dimensions
+dimensions	DSE-web	deep-sea-electronics/1002.md	Dimensions
+io	DSE	dse130	EXPANSION DIGITAL INPUTS 1-8
+io	DSE	dse2131	Number Negative Switching Digital Input, Resistive, Voltage or Current Input
+io	SICES	DST4602Evolution_Datasheet_EN_REV1.8	20 Digital inputs 16 Digital output 5 Analogue inputs 2 Analogue outputs
+io	SICES	sices/1001.md	| 18 Digital inputs | 18 Digital output | 6 Analogue inputs | 2 Analogue outputs
+io	SmartGen	HGM4020T_en	Adding relay outputs to 50 pieces;
+io	SmartGen	HGM410_HGM420_en	Start Relay Output 5A DC28V power supply
+io	ComAp	InteliNano_AMF5_Datasheet	6 binary outputs, 4 + 1 binary inputs, 3 analog inputs (2x R + 1x
+io	ComAp	comap/1001.md	Switchable analogue inputs (R/U/I)
+io	DEIF	deif/1001.md	• Digital inputs
+io	DEIF	deif/1002.md	| Relay outputs for governor | Χ | Χ | Χ | Χ | Χ | Χ | Χ
+io	Datakom	datakom/1001.md	| The WINDOWS based RAINBOW program allows | Configurable analogue inputs: 4
+io	Datakom	datakom/1002.md	| event log includes not only the date-time information, | 10ADC relay outputs
+io	Woodward	woodward/1001.md	| • Dedicated relay outputs for cranking and fuel solenoid | engine and breaker
+io	Woodward	woodward/1002.md	| Ambient temperature (storage)......................-30 to 80 °C / -22 to 176 °F | Relay outputs ........................................................................
+io	DSE-web	deep-sea-electronics/1001.md	Analogue Inputs
+io	DSE-web	deep-sea-electronics/1002.md	Analogue Inputs
+ul	DSE	dse2131	+ UL Listed: Standard - UL 6200:2019
+ul	DSE	dse2133	+ UL Listed: Standard - UL 6200:2019
+ul	SmartGen	HGM9510N_HGM9530N_en	Speed Sensor Range: DC12V-DC30V continuous (UL certified product)
+ul	SmartGen	smartgen/1005.md	Range: DC12V-DC30V continuous (UL certified product)
+ul	ComAp	comap/1008.md	| EN | 60068-2-2 (70 °C/16 h) | UL 6200
+ul	ComAp	comap/1014.md	| UL 6200 | Note: Giteki certification valid with
+ul	DEIF	deif/1001.md	6.3 UL/cUL Listed.........................................................................................................................................................
+ul	DEIF	deif/1002.md	| Operating | UL/cUL Listed: Max. ambient temp. 50 °C/122
+ul	Datakom	datakom/1001.md	UL 508, Edition 17
+ul	Datakom	datakom/1002.md	UL 508, Edition 17
+ul	Woodward	woodward/1001.md	| (easYgen-1800) | 420 mA (12 V); 200 mA (24 V) | 2Adc at 24Vdc (acc. to UL 6200)
+ul	Woodward	woodward/1002.md	|  | Comprehensive monitoring of all interfaces, loss of redundancy and breaker feedback plausibility check |  UL 61010, UL 6200, CSA,
+ul	SICES	sices/1003.md	Please note that the UL 6200 certification applies exclusively to the following products:
+ul	DSE-web	deep-sea-electronics/1002.md	| • | Customisable module power-up & screen saver screens | + UL Listed: Standard - UL 6200:2nd Edition
+ul	DSE-web	deep-sea-electronics/1005.md	| • | Integrated RS232 and RS485 ports providing Modbus RTU | + UL Listed: Standard - UL 6200:2019

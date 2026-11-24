@@ -23,7 +23,7 @@ const D = {
   "genset.brand": { re: /^(genset |generator |generating set |set |unit |product )?(brand|make|manufacturer|trademark|marque)$|^品牌$|^商标$|发电机组品牌|机组品牌|thương hiệu|nhãn hiệu/ },
   "genset.made_in": { re: /made in|country of (origin|manufact)|place of origin|origin|manufactured in|assembled in|产地|原产|制造地|生产地|nơi sản xuất|xuất xứ|herkunft|made-in/, not: /engine origin|origin of engine/ },
   "genset.genset_type": { re: /^(genset |generator( set)? |machine |product |unit )?(type|style|form|model type|structure|construction)$|canopy|enclosure|^housing|silent type|open type|机组类型|机组型式|机组形式|型式|结构型式|结构形式|外形结构|configuration$|trailer|^mobile|portable|container|cabinet type|ausführung|bauform/, not: /engine|alternator|fuel|cool|excit|start|governor|battery|phase|connection|aspirat|cylinder|insulation|protection/ },
-  "genset.overload": { re: /overload|over-load|过载|überlast|sobrecarga|quá tải|10\s*%.*(1\s*h|hour)|110\s*%/ },
+  "genset.overload": { not: /consum|fuel|alarm|shed|timeout|via|setting|tripping|breaker|110s*%s*load|tiêu hao/, re: /overload|over-load|过载|überlast|sobrecarga|quá tải|10\s*%.*(1\s*h|hour)|110\s*%/ },
   "genset.load_step": { re: /(load|block)\s*(acceptance|step|pick-?\s*up|application|accept|impact)|sudden load|step load|one-?step|instantaneous.*load|加载|突加|一次加载|瞬态负载|aufschalt|nhận tải|cấp tải/ },
   "genset.iso8528_class": { re: /8528|performance class|class\s*g[1-4]|\bg[1-4]\b.*class|operating class|性能等级|性能类别|iso.*(class|level|grade)|leistungsklasse|cấp vận hành/ },
   "genset.ambient": { re: /ambient|altitude|elevation|环境温度|海拔|环境条件|operating (temp|environment|condition)|working (temp|condition|environment)|environmental|height above|nhiệt độ môi trường|độ cao|derat|umgebung|temperature range|适用环境|使用环境/ },
@@ -98,7 +98,8 @@ for (const [fid, d] of Object.entries(D)) {
   for (const g of L.values()) {
     if (!d.re.test(g.n) || (d.not && d.not.test(g.n))) continue;
     const total = g.tbl.lines + g.src.lines;
-    if (total < 2) continue; // nhan chi gap mot lan: bo (nhieu tieng on)
+    if (total < 2) continue;
+    if (g.n.length > 48 || g.n.split(" ").length > 6 || /[.,;]s*$/.test(g.n) || /.s+w/.test(g.n)) continue; // cau van, khong phai nhan
     const status = g.sk === "" ? "chua-nhan" : g.sk === fi.key ? "da-nhan-dung" : "nhan-sang-khoa-khac";
     rows.push({ fid, status, sk: g.sk, g });
     T.nLabels++;

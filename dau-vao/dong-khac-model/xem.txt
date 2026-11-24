@@ -1,0 +1,197 @@
+dòng khác nhau: 196
+comap#1020 [cu] gắn:INTELIDRIVE | nêu:INTELIGENNT,INTELISYSNT | | InteliVision | 8 | Marine Approved 8" Colour Display Unit for InteliGen NT/InteliSys NT and | InteliVision 8 Marine
+datakom#1002 [cu] gắn:DKG307 | nêu:DKG317 | 6.27. Password Operation (applicable only to DKG-317CAN/MPU)
+datakom#1002 [moi] gắn:DKG307 | nêu:DKG317 | Applicable only to the DKG-317 model:
+deep-sea-electronics#1001 [cu] gắn:DSE7310MKII,DSE7320MKII | nêu:DSE7420MKII | | DSE2520 MKII | DSENet® Remote Display Module for DSE7420 MKII | 7320-03
+deep-sea-electronics#1001 [cu] gắn:DSE7310MKII,DSE7320MKII | nêu:DSE7410MKII | | DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03
+deep-sea-electronics#1004 [cu] gắn:DSE8610MKII | nêu:DSE8660MKII | *When used with DSE8660 MKII controllers
+deep-sea-electronics#1004 [cu] gắn:DSE8610MKII | nêu:DSE8680 | | DSE8680 | Synchronising Generator Bus Tie Control Module | 8680-01
+deep-sea-electronics#1004 [cu] gắn:DSE8610MKII | nêu:DSE8660MKII | | DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Control Module | 8660-02
+deep-sea-electronics#1004 [cu] gắn:DSE8610MKII | nêu:DSE8003MKII | | DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8610MKII | | sharing control | DSE8610 MKII
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8610MKII | | • | Mains (utility) failure detection including mains (utility) decoupling | DSE8610 MKII
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8610MKII | | DSE8610 MKII | DSE8610 MKII | DSE8610 MKII | DSE8610 MKII
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8610MKII | *When used with DSE8610 MKII Controllers
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8610MKII | | DSE8610 MKII | Synchronising & Load Sharing Auto Start Control Module | 8610-02
+deep-sea-electronics#1005 [cu] gắn:DSE8660MKII | nêu:DSE8003MKII | | DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | as a DSE8610 MKII | 320 mA at 12 V, 160 mA at 24 V
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | Refer to DSE8610 MKII Data | VOLTAGE RANGE
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | Independent earth fault protection | DSE8610 MKII | 10,000 Hz (max)
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | DSE8610 MKII Data Sheet | 055-204 | -40 °C to +70 °C
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | as a DSE8610 MKII Auto Start Control | The event log will record 250 events
+deep-sea-electronics#1010 [cu] gắn:DSE8620MKII | nêu:DSE8610MKII | | a DSE8610 MKII the unit provides | extensive number of fixed and flexible
+deep-sea-electronics#1011 [cu] gắn:DSE7220 | nêu:DSE7200 | | DSE7200/7300 Quick Start Guide | 057-101
+deep-sea-electronics#1011 [cu] gắn:DSE7220 | nêu:DSE7200 | | DSE7200/7300 Operator Manual | 057-074
+deep-sea-electronics#1011 [cu] gắn:DSE7220 | nêu:DSE7200 | | DSE7200/7300 Configuration Suite | PC
+deep-sea-electronics#1020 [cu] gắn:DSE8680 | nêu:DSE8660MKII | | DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Control Module | 8660-02
+deep-sea-electronics#1020 [cu] gắn:DSE8680 | nêu:DSE8610MKII | | DSE8610 MKII | Synchronising & Load Sharing Auto Start Control Module | 8610-02
+deep-sea-electronics#1026 [cu] gắn:DSE8680 | nêu:DSE8610MKII | | DSE8610 MKII | DSE8610 MKII | DSE8610
+deep-sea-electronics#1026 [cu] gắn:DSE8680 | nêu:DSE8610MKII | | MKII | DSE8610 MKII
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE8610MKII | | RS232 | DSE8610 MKII Com Port
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE5510,DSE7510 | | DSE810 | DSE5510 / DSE7510 Com Port
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE8610MKII | | DSE8610 MKII | Synchronising & Load Sharing
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE7510 | | DSE7510 | Synchronising & Load Sharing
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE5510 | | DSE5510 | Synchronising & Load Sharing
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE5510,DSE7510 | | DSE810 (RJ45) | DSE5510 / DSE7510 Communications
+deep-sea-electronics#1027 [cu] gắn:DSE7570 | nêu:DSE8610MKII | | RS232 | DSE8610 MKII Communications
+deep-sea-electronics#1031 [cu] gắn:DSE8003MKII | nêu:DSE8005 | | DSE8005 SCADA | Suite Manual | 057-128
+deep-sea-electronics#1031 [cu] gắn:DSE8003MKII | nêu:DSE8610MKII | | DSE8610 MKII Data Sheet | 055-204
+deep-sea-electronics#1031 [cu] gắn:DSE8003MKII | nêu:DSE8660MKII | | DSE8660 MKII Data Sheet | 055-169
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE8620MKII | | DSE8620 MKII | Synchronising Auto Mains (Utility) Failure Load Share Control
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE7410MKII | | DSE7410 MKII | Auto Start Control Module | 7410-03
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE7310MKII | | DSE7310 MKII | Auto Start Control Module | 7310-03
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE6120MKIII | | DSE6120 MKIII | Auto Mains (Utility) Failure Control Module | 6120-05
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE6110MKIII | | DSE6110 MKIII | Auto Start Control Module | 6110-05
+deep-sea-electronics#1035 [cu] gắn:DSE8680 | nêu:DSE6020MKII | | DSE6020 MKII | Auto Mains (Utility) Control Module | 6020-03
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7420MKII | | DSE7420 MKII | Auto Mains (Utility) Failure Control Module | 7420-03
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7320MKII | | DSE7320 MKII | Auto Mains (Utility) Failure Control Module | 7320-03
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8920 | | DSE8920 | 7” Colour Load Share & Synchronising Control Module | 8920-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8860 | | DSE8860 | Auto Transfer Switch & Mains (Utility) Graphical Colour Display Control Module | 8860-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8810 | | DSE8810 | Load Share Control with Graphical Colour Display | 8810-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8760 | | DSE8760 | Rear Mounted Auto Transfer Switch & Mains (Utility) Control Module | 8760-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8710 | | DSE8710 | Rear Mounted Synchronising & Load Sharing Control Module | 8710-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8660 | | DSE8660 | Auto Transfer Switch & Mains (Utility) Control Module | 8660-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8620 | | DSE8620 | Synchronising & Load Sharing Auto Mains (Utility) Failure Control Module | 8620-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE8610 | | DSE8610 | Synchronising & Load Sharing Control Module | 8610-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7450 | | DSE7450 | DC/Hybrid Generator Control Module | 7450-02
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7420 | | DSE7420 | Auto Mains (Utility) Failure Control Module | 7420-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7410 | | DSE7410 | Auto Start Control Module | 7410-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7320 | | DSE7320 | Auto Mains (Utility) Failure Control Module | 7320-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE7310 | | DSE7310 | Auto Start Control Module | 7310-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE6120MKII | | DSE6120 MKII | Auto Mains (Utility) Failure Control Module | 6120-01
+deep-sea-electronics#1036 [cu] gắn:DSE8680 | nêu:DSE6110MKII | | DSE6110 MKII | Auto Start Control Module | 6110-01
+deep-sea-electronics#1038 [cu] gắn:DSE8660MKII | nêu:DSE8620MKII | | DSE8620 MKII | Synchronising Auto Mains (Utility) Failure Load Share Control
+deep-sea-electronics#1038 [cu] gắn:DSE8660MKII | nêu:DSE7410MKII | | DSE7410 MKII | Auto Start Control Module | 7410-03
+deep-sea-electronics#1038 [cu] gắn:DSE8660MKII | nêu:DSE7310MKII | | DSE7310 MKII | Auto Start Control Module | 7310-03
+deep-sea-electronics#1038 [cu] gắn:DSE8660MKII | nêu:DSE6120MKIII | | DSE6120 MKIII | Auto Mains (Utility) Failure Control Module | 6120-05
+deep-sea-electronics#1038 [cu] gắn:DSE8660MKII | nêu:DSE6110MKIII | | DSE6110 MKIII | Auto Start Control Module | 6110-05
+deif#1001 [moi] gắn:AGC150 | nêu:AGC4 | | • | AGC-4 Mk II Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4-mk-ii)
+deif#1001 [moi] gắn:AGC150 | nêu:AGC4 | | • | AGC-4 Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4)
+deif#1001 [moi] gắn:AGC150 | nêu:AGC4 | | • | AGC-4 Mk II Mains (www.deif.com/products/agc-4-mk-ii)
+deif#1004 [moi] gắn:AGC4 | nêu:AGC150 | | • | AGC 150 Generator (www.deif.com/products/agc-150-generator)
+deif#1004 [moi] gắn:AGC4 | nêu:AGC150 | | • | AGC 150 Mains (www.deif.com/products/agc-150-mains)
+deif#1004 [moi] gắn:AGC4 | nêu:AGC150 | | • | AGC 150 BTB (www.deif.com/products/agc-150-btb)
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | HGM6100N SERIES
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | HGM6100N series genset controller uses micro-processing technique which can achieve precision
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | HGM6100N controller has six variants:
+smartgen#1001 [cu] gắn:HGM6110N,HGM6110NC,HGM6110CAN | nêu:HGM6120 | Note: The key is fit for HGM6120 series controllers.
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100CAN | illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and
+smartgen#1001 [cu] gắn:HGM6110N,HGM6110NC,HGM6110CAN | nêu:HGM6120 | 1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains
+smartgen#1001 [cu] gắn:HGM6110N,HGM6110NC,HGM6110CAN | nêu:HGM6120 | 1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,
+smartgen#1001 [cu] gắn:HGM6110N,HGM6110NC,HGM6110CAN | nêu:HGM6120 | | 1) | HGM6120: Manual Mode is active when press
+smartgen#1001 [cu] gắn:HGM6110N,HGM6110NC,HGM6110CAN | nêu:HGM6120 | back panel of HGM6120 is as below.
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | | HGM6100N | Series
+smartgen#1001 [cu] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | | Factory | default: | Idle HGM6100N
+smartgen#1001 [moi] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100CAN | | 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN.
+smartgen#1001 [moi] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6120CAN | nêu:HGM6110CAN,HGM6100N,HGM6100CAN | HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”
+smartgen#1001 [moi] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100CAN | This function only suits for HGM6100CAN with engine type
+smartgen#1001 [moi] gắn:HGM6110N,HGM6120N,HGM6110NC,HGM6120NC,HGM6110CAN,HGM6120CAN | nêu:HGM6100N | | shutdown alarms. | Only HGM6100N has these
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | Note: The key is fit for HGM6110 series controllers.
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | 2) HGM6110: When “remote start” input is active, it enters into “Start Delay”.
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | 2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive.
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | | 2) | HGM6110: Manual Mode is active when pressing
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | | Sensing Input | HGM6110 without
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | | Sensing Input | HGM6110 without.
+smartgen#1001 [cu] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | | 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without.
+smartgen#1001 [moi] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | | 6 | Close Mains Output | HGM6110 without.
+smartgen#1001 [moi] gắn:HGM6120N,HGM6120NC,HGM6120CAN | nêu:HGM6110 | 1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U SERIES
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U SERIES GENSET CONTROLLER
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U series automatic controller, integrating digital, intelligent and network
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U series automatic controller uses micro-processing technique which can
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U controller has four variants:
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | | HGM6100U | SERIES
+smartgen#1002 [cu] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | | HGM6100U | Genset
+smartgen#1002 [moi] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | | HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39
+smartgen#1002 [moi] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | | HGM6100U SERIES | GENSET
+smartgen#1002 [moi] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U series controller can be applicable to (8~35) VDC battery voltage.
+smartgen#1002 [moi] gắn:HGM6110U,HGM6110UC,HGM6120U,HGM6120UC | nêu:HGM6100U | HGM6100U series controller must externally connect to current transformer; CT
+smartgen#1003 [cu] gắn:HGM9510 | nêu:HGM9210,HGM9220,HGM9310,HGM9320,HGM9410,HGM9420,HGM9520,HGM9610 | NOTE: The features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420/HGM9520/HGM9610/
+smartgen#1003 [cu] gắn:HGM9510 | nêu:HGM9620 | | HGM9620 controllers mentioned in this document may change, please check the corresponding user manual | for
+smartgen#1003 [moi] gắn:HGM9510 | nêu:HGM9500 | NOTE: Please refer to HGM9500 Synchronization Plan List for more information on GOV and AVR settings.
+smartgen#1004 [cu] gắn:HGM9530 | nêu:HGM9210,HGM9220,HGM9310,HGM9320,HGM9410 | NOTE: The features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/
+smartgen#1004 [cu] gắn:HGM9530 | nêu:HGM9420,HGM9520,HGM9610,HGM9620 | HGM9420/HGM9520/HGM9610/HGM9620 controllers mentioned in this document may change, please
+smartgen#1004 [moi] gắn:HGM9530 | nêu:HGM6500 | Note: Please refer to HGM6500 Synchronization Plan List for more information on GOV and
+smartgen#1005 [moi] gắn:HGM9510N,HGM9530N | nêu:HGM9520N | | 32 | Remote Start (Island) | (Only available for HGM9520N.)
+smartgen#1005 [moi] gắn:HGM9510N,HGM9530N | nêu:HGM9520N | | 71 | Grid-Tied Track | (Only available for HGM9520N.)
+smartgen#1005 [moi] gắn:HGM9510N,HGM9530N | nêu:HGM9520N | | 72 | Island Parallel | (Only available for HGM9520N.)
+smartgen#1005 [moi] gắn:HGM9510N,HGM9530N | nêu:HGM9500 | NOTE: Please refer to HGM9500 SYNCHRONIZATION PLAN LIST for more information on GOV and AVR settings.
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9600 | HGM9600 SERIES
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9600 | HGM9600 series genset controllers are used for genset automation and monitor control system of
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9600 | HGM9600 controller adopts 32-bit micro-processor technology with precision parameters measuring,
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9210,HGM9220,HGM9310,HGM9320,HGM9410,HGM9420 | NOTE: Functions of mentioned herein HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9510,HGM9520 | /HGM9510/HGM9520 controllers can be changed, please check the corresponding user manual for accurate
+smartgen#1006 [cu] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 Series Genset | Controller
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | HGM9600 series controller’s rear as following:
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | Fig.3 HGM9600 Rear Panel
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 Series Genset Controller | User
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 | Series Genset Controller
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 | Series Genset Controller User
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 Series Genset Controller User Manual | Page | 45
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 Series | Genset
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 | Series
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | NOTE: HGM9600 series controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery must be
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | | HGM9600 Series Genset Controller User Manual | Page 71 of | 73
+smartgen#1006 [moi] gắn:HGM9610,HGM9620 | nêu:HGM9600 | HGM9600 series controller supports Micro SD card, the controller can regularly save gen-set operation
+smartgen#1007 [cu] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | HGM7100N SERIES
+smartgen#1007 [moi] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | | HGM7100N Series Genset | Controller User
+smartgen#1007 [moi] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | | HGM7100N Series Genset | Controller
+smartgen#1007 [moi] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | | HGM7100N Series Genset Controller User | Manual
+smartgen#1007 [moi] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of
+smartgen#1007 [moi] gắn:HGM7110N,HGM7120N | nêu:HGM7100N | Current input of HGM7100N series controller must be connected to outside current transformer. And
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | HGM7200 SERIES
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7100A | Add HGM7100A series controller while delete HGM7100 series
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | Modify some functions of HGM7200 series controllers;
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7100A | 3. Delete HGM7100A series controller.
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | HGM7200 series genset controllers are used for genset automation and monitor control system of
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | HGM7200 series genset controller adopts 32-bit micro-processor technology with precision parameters
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM72X0 | All HGM7200 series controllers.
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7X20 | All HGM7200 series AMF controllers.
+smartgen#1008 [cu] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7X10 | All HGM7200 series ASM controllers.
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | HGM7200 series controller’s rear panel as following:
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7200 | Series Genset Controller
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7200 | Series Genset Controller User Manual | Page 32 of | 50
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7200 Series | Genset
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | | HGM7200 | Series
+smartgen#1008 [moi] gắn:HGM7210,HGM7220,HGM7210CAN,HGM7220CAN | nêu:HGM7200 | NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must
+smartgen#1011 [cu] gắn:HGM9420N | nêu:HGM9420LT | HGM9420LT: (-40~+70)°C
+smartgen#1011 [cu] gắn:HGM9420N | nêu:HGM9420LT | | LCD Display (HGM9420LT) | normally; after power on for 2min, dynamic display responses
+smartgen#1011 [cu] gắn:HGM9420N | nêu:HGM9420LT | HGM9420LT: (-45~+80)°C
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-S01 | Southeast Asia | WCDMA: B1/B8
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-S02 | North America | WCDMA: B2/B5
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | HGM9420LT-S03
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-S04 | Korea/Thailand/Middle | TDD-LTE: B38/B40/B41 | SGE02-4G-S03
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-S05 | New Zealand | TDD-LTE: B40 | SGE02-4G-S04
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-S06 | B1/B3/B8/B18/B19/B26
+smartgen#1011 [moi] gắn:HGM9420N | nêu:HGM9420LT | | HGM9420LT-G | TD-SCDMA: B34/B39
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320CAN | HGM9320CAN series controller only.
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320MPU | | 5.6.1 | HGM9320MPU(CAN) Switch Control Procedures.............................................25
+smartgen#1012 [cu] gắn:HGM9310,HGM9320 | nêu:HGM9610 | | 5.6.2 | HGM9610 Switch Control Procedures...............................................................26
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320MPU,HGM9320CAN | HGM9320MPU/HGM9320CAN
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320MPU,HGM9320CAN | (HGM9320MPU，HGM9320CAN without)
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320MPU | | 1. | HGM9320MPU(CAN): When Mains is abnormal (over and under voltage, over and under
+smartgen#1012 [cu] gắn:HGM9310 | nêu:HGM9320MPU | 1. HGM9320MPU(CAN), when mains return normal during genset running, enters into mains
+smartgen#1012 [moi] gắn:HGM9310 | nêu:HGM9320MPU | HGM9320MPU(CAN) typical application diagram
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | HGM9310MPU/HGM9310CAN
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | mode. (HGM9310MPU，HGM9310CAN without)
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | mode. (HGM9310MPU，HGM9310CAN without).
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | NOTE: HGM9310MPU，HGM9310CAN has no mains status screen.
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU | | 2. | HGM9310MPU(CAN): When “Remote Start (on load)” is active, “Start Delay” timer is
+smartgen#1012 [cu] gắn:HGM9320 | nêu:HGM9310MPU | 2. HGM9310MPU(CAN), When the “Remote Start” signal is removed, the Stop Delay is
+smartgen#1012 [moi] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | | 25 | ECU CAN L | 0.5mm2 | (HGM9310MPU, HGM9310CAN without).
+smartgen#1012 [moi] gắn:HGM9320 | nêu:HGM9310MPU,HGM9310CAN | (HGM9310MPU, HGM9310CAN without).
+smartgen#1012 [moi] gắn:HGM9320 | nêu:HGM9310MPU | HGM9310MPU(CAN) controller is applied.
+smartgen#1012 [moi] gắn:HGM9320 | nêu:HGM9310MPU | In HGM9310MPU(CAN) controller, there are no items of mains in setting and also no mains
+smartgen#1012 [moi] gắn:HGM9320 | nêu:HGM9310MPU | HGM9310MPU(CAN) typical application diagram
+smartgen#1013 [cu] gắn:HGM9520 | nêu:HGM9510 | (2)HGM9510’s analog sensors are composed by 3 fixed sensors (temperature, pressure, level)
+smartgen#1013 [cu] gắn:HGM9520 | nêu:HGM9210,HGM9220,HGM9310,HGM9320,HGM9410 | The controller features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/
+smartgen#1013 [cu] gắn:HGM9520 | nêu:HGM9420,HGM9510,HGM9610,HGM9620 | HGM9420/HGM9510/ HGM9610/HGM9620 mentioned in this document may change, please
+smartgen#1013 [moi] gắn:HGM9520 | nêu:HGM6500 | Note: Please refer to HGM6500 Synchronization Plan List for more information on
+woodward#1001 [cu] gắn:EASYGEN1400,EASYGEN1600,EASYGEN1700,EASYGEN1800 | nêu:EASYGEN1000 | The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime
+woodward#1001 [cu] gắn:EASYGEN1400,EASYGEN1600,EASYGEN1700,EASYGEN1800 | nêu:EASYGEN1000 | | The easYgen-1000 Series is available in four versions: | •
+woodward#1001 [cu] gắn:EASYGEN1400,EASYGEN1600,EASYGEN1700,EASYGEN1800 | nêu:EASYGEN100 | | ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •
+woodward#1001 [cu] gắn:EASYGEN1400,EASYGEN1600,EASYGEN1700,EASYGEN1800 | nêu:EASYGEN1000 | easYgen-1000
+woodward#1001 [cu] gắn:EASYGEN1400,EASYGEN1600,EASYGEN1700,EASYGEN1800 | nêu:EASYGEN1000 | | CONTACT | easYgen-1000 Series
+woodward#1002 [cu] gắn:EASYGEN3400,EASYGEN3500 | nêu:EASYGEN3000 | | The GC-3400XT is based on a scalable multi-master control concept to combine up to 31x easYgen-3000XT | 
+woodward#1002 [cu] gắn:EASYGEN3400,EASYGEN3500 | nêu:EASYGEN3000 | |  | SalesPGD_INDIA@woodward.com | LDSS Emulation Tool allows emulating a number of easYgen-3000XT, GC-3000XT, loads and

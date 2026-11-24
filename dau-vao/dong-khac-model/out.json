@@ -1,0 +1,4037 @@
+{
+ "stat": {
+  "controllerFacts": 68570
+ },
+ "rows": [
+  {
+   "model": "INTELIDRIVE",
+   "sheetModel": "InteliDrive",
+   "nguon": "comap#1020",
+   "supplier": "comap",
+   "n": 1020,
+   "moi": "cu",
+   "nameds": "INTELIGENNT,INTELISYSNT",
+   "line": "| InteliVision | 8 | Marine Approved 8\" Colour Display Unit for InteliGen NT/InteliSys NT and | InteliVision 8 Marine"
+  },
+  {
+   "model": "DKG307",
+   "sheetModel": "DKG-307",
+   "nguon": "datakom#1002",
+   "supplier": "datakom",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "DKG317",
+   "line": "6.27. Password Operation (applicable only to DKG-317CAN/MPU)"
+  },
+  {
+   "model": "DKG307",
+   "sheetModel": "DKG-307",
+   "nguon": "datakom#1002",
+   "supplier": "datakom",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "DKG317",
+   "line": "Applicable only to the DKG-317 model:"
+  },
+  {
+   "model": "DSE7310MKII",
+   "sheetModel": "DSE7310 MKII",
+   "nguon": "deep-sea-electronics#1001",
+   "supplier": "deep-sea-electronics",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "DSE7420MKII",
+   "line": "| DSE2520 MKII | DSENet® Remote Display Module for DSE7420 MKII | 7320-03"
+  },
+  {
+   "model": "DSE7310MKII",
+   "sheetModel": "DSE7310 MKII",
+   "nguon": "deep-sea-electronics#1001",
+   "supplier": "deep-sea-electronics",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "DSE7410MKII",
+   "line": "| DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03"
+  },
+  {
+   "model": "DSE7320MKII",
+   "sheetModel": "DSE7320 MKII",
+   "nguon": "deep-sea-electronics#1001",
+   "supplier": "deep-sea-electronics",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "DSE7420MKII",
+   "line": "| DSE2520 MKII | DSENet® Remote Display Module for DSE7420 MKII | 7320-03"
+  },
+  {
+   "model": "DSE7320MKII",
+   "sheetModel": "DSE7320 MKII",
+   "nguon": "deep-sea-electronics#1001",
+   "supplier": "deep-sea-electronics",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "DSE7410MKII",
+   "line": "| DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03"
+  },
+  {
+   "model": "DSE8610MKII",
+   "sheetModel": "DSE8610 MKII",
+   "nguon": "deep-sea-electronics#1004",
+   "supplier": "deep-sea-electronics",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "DSE8660MKII",
+   "line": "*When used with DSE8660 MKII controllers"
+  },
+  {
+   "model": "DSE8610MKII",
+   "sheetModel": "DSE8610 MKII",
+   "nguon": "deep-sea-electronics#1004",
+   "supplier": "deep-sea-electronics",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "DSE8680",
+   "line": "| DSE8680 | Synchronising Generator Bus Tie Control Module | 8680-01"
+  },
+  {
+   "model": "DSE8610MKII",
+   "sheetModel": "DSE8610 MKII",
+   "nguon": "deep-sea-electronics#1004",
+   "supplier": "deep-sea-electronics",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "DSE8660MKII",
+   "line": "| DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Control Module | 8660-02"
+  },
+  {
+   "model": "DSE8610MKII",
+   "sheetModel": "DSE8610 MKII",
+   "nguon": "deep-sea-electronics#1004",
+   "supplier": "deep-sea-electronics",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "DSE8003MKII",
+   "line": "| DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| sharing control | DSE8610 MKII"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| • | Mains (utility) failure detection including mains (utility) decoupling | DSE8610 MKII"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII | DSE8610 MKII | DSE8610 MKII | DSE8610 MKII"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "*When used with DSE8610 MKII Controllers"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII | Synchronising & Load Sharing Auto Start Control Module | 8610-02"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1005",
+   "supplier": "deep-sea-electronics",
+   "n": 1005,
+   "moi": "cu",
+   "nameds": "DSE8003MKII",
+   "line": "| DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1038",
+   "supplier": "deep-sea-electronics",
+   "n": 1038,
+   "moi": "cu",
+   "nameds": "DSE8620MKII",
+   "line": "| DSE8620 MKII | Synchronising Auto Mains (Utility) Failure Load Share Control"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1038",
+   "supplier": "deep-sea-electronics",
+   "n": 1038,
+   "moi": "cu",
+   "nameds": "DSE7410MKII",
+   "line": "| DSE7410 MKII | Auto Start Control Module | 7410-03"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1038",
+   "supplier": "deep-sea-electronics",
+   "n": 1038,
+   "moi": "cu",
+   "nameds": "DSE7310MKII",
+   "line": "| DSE7310 MKII | Auto Start Control Module | 7310-03"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1038",
+   "supplier": "deep-sea-electronics",
+   "n": 1038,
+   "moi": "cu",
+   "nameds": "DSE6120MKIII",
+   "line": "| DSE6120 MKIII | Auto Mains (Utility) Failure Control Module | 6120-05"
+  },
+  {
+   "model": "DSE8660MKII",
+   "sheetModel": "DSE8660 MKII",
+   "nguon": "deep-sea-electronics#1038",
+   "supplier": "deep-sea-electronics",
+   "n": 1038,
+   "moi": "cu",
+   "nameds": "DSE6110MKIII",
+   "line": "| DSE6110 MKIII | Auto Start Control Module | 6110-05"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| as a DSE8610 MKII | 320 mA at 12 V, 160 mA at 24 V"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| Refer to DSE8610 MKII Data | VOLTAGE RANGE"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| Independent earth fault protection | DSE8610 MKII | 10,000 Hz (max)"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII Data Sheet | 055-204 | -40 °C to +70 °C"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| as a DSE8610 MKII Auto Start Control | The event log will record 250 events"
+  },
+  {
+   "model": "DSE8620MKII",
+   "sheetModel": "DSE8620 MKII",
+   "nguon": "deep-sea-electronics#1010",
+   "supplier": "deep-sea-electronics",
+   "n": 1010,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| a DSE8610 MKII the unit provides | extensive number of fixed and flexible"
+  },
+  {
+   "model": "DSE7220",
+   "sheetModel": "DSE7220",
+   "nguon": "deep-sea-electronics#1011",
+   "supplier": "deep-sea-electronics",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "DSE7200",
+   "line": "| DSE7200/7300 Quick Start Guide | 057-101"
+  },
+  {
+   "model": "DSE7220",
+   "sheetModel": "DSE7220",
+   "nguon": "deep-sea-electronics#1011",
+   "supplier": "deep-sea-electronics",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "DSE7200",
+   "line": "| DSE7200/7300 Operator Manual | 057-074"
+  },
+  {
+   "model": "DSE7220",
+   "sheetModel": "DSE7220",
+   "nguon": "deep-sea-electronics#1011",
+   "supplier": "deep-sea-electronics",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "DSE7200",
+   "line": "| DSE7200/7300 Configuration Suite | PC"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1020",
+   "supplier": "deep-sea-electronics",
+   "n": 1020,
+   "moi": "cu",
+   "nameds": "DSE8660MKII",
+   "line": "| DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Control Module | 8660-02"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1020",
+   "supplier": "deep-sea-electronics",
+   "n": 1020,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII | Synchronising & Load Sharing Auto Start Control Module | 8610-02"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1026",
+   "supplier": "deep-sea-electronics",
+   "n": 1026,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII | DSE8610 MKII | DSE8610"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1026",
+   "supplier": "deep-sea-electronics",
+   "n": 1026,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| MKII | DSE8610 MKII"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE8620MKII",
+   "line": "| DSE8620 MKII | Synchronising Auto Mains (Utility) Failure Load Share Control"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE7410MKII",
+   "line": "| DSE7410 MKII | Auto Start Control Module | 7410-03"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE7310MKII",
+   "line": "| DSE7310 MKII | Auto Start Control Module | 7310-03"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE6120MKIII",
+   "line": "| DSE6120 MKIII | Auto Mains (Utility) Failure Control Module | 6120-05"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE6110MKIII",
+   "line": "| DSE6110 MKIII | Auto Start Control Module | 6110-05"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1035",
+   "supplier": "deep-sea-electronics",
+   "n": 1035,
+   "moi": "cu",
+   "nameds": "DSE6020MKII",
+   "line": "| DSE6020 MKII | Auto Mains (Utility) Control Module | 6020-03"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7420MKII",
+   "line": "| DSE7420 MKII | Auto Mains (Utility) Failure Control Module | 7420-03"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7320MKII",
+   "line": "| DSE7320 MKII | Auto Mains (Utility) Failure Control Module | 7320-03"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8920",
+   "line": "| DSE8920 | 7” Colour Load Share & Synchronising Control Module | 8920-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8860",
+   "line": "| DSE8860 | Auto Transfer Switch & Mains (Utility) Graphical Colour Display Control Module | 8860-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8810",
+   "line": "| DSE8810 | Load Share Control with Graphical Colour Display | 8810-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8760",
+   "line": "| DSE8760 | Rear Mounted Auto Transfer Switch & Mains (Utility) Control Module | 8760-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8710",
+   "line": "| DSE8710 | Rear Mounted Synchronising & Load Sharing Control Module | 8710-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8660",
+   "line": "| DSE8660 | Auto Transfer Switch & Mains (Utility) Control Module | 8660-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8620",
+   "line": "| DSE8620 | Synchronising & Load Sharing Auto Mains (Utility) Failure Control Module | 8620-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE8610",
+   "line": "| DSE8610 | Synchronising & Load Sharing Control Module | 8610-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7450",
+   "line": "| DSE7450 | DC/Hybrid Generator Control Module | 7450-02"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7420",
+   "line": "| DSE7420 | Auto Mains (Utility) Failure Control Module | 7420-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7410",
+   "line": "| DSE7410 | Auto Start Control Module | 7410-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7320",
+   "line": "| DSE7320 | Auto Mains (Utility) Failure Control Module | 7320-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE7310",
+   "line": "| DSE7310 | Auto Start Control Module | 7310-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE6120MKII",
+   "line": "| DSE6120 MKII | Auto Mains (Utility) Failure Control Module | 6120-01"
+  },
+  {
+   "model": "DSE8680",
+   "sheetModel": "DSE8680",
+   "nguon": "deep-sea-electronics#1036",
+   "supplier": "deep-sea-electronics",
+   "n": 1036,
+   "moi": "cu",
+   "nameds": "DSE6110MKII",
+   "line": "| DSE6110 MKII | Auto Start Control Module | 6110-01"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| RS232 | DSE8610 MKII Com Port"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE5510,DSE7510",
+   "line": "| DSE810 | DSE5510 / DSE7510 Com Port"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII | Synchronising & Load Sharing"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE7510",
+   "line": "| DSE7510 | Synchronising & Load Sharing"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE5510",
+   "line": "| DSE5510 | Synchronising & Load Sharing"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE5510,DSE7510",
+   "line": "| DSE810 (RJ45) | DSE5510 / DSE7510 Communications"
+  },
+  {
+   "model": "DSE7570",
+   "sheetModel": "DSE7570",
+   "nguon": "deep-sea-electronics#1027",
+   "supplier": "deep-sea-electronics",
+   "n": 1027,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| RS232 | DSE8610 MKII Communications"
+  },
+  {
+   "model": "DSE8003MKII",
+   "sheetModel": "DSE8003 MKII",
+   "nguon": "deep-sea-electronics#1031",
+   "supplier": "deep-sea-electronics",
+   "n": 1031,
+   "moi": "cu",
+   "nameds": "DSE8005",
+   "line": "| DSE8005 SCADA | Suite Manual | 057-128"
+  },
+  {
+   "model": "DSE8003MKII",
+   "sheetModel": "DSE8003 MKII",
+   "nguon": "deep-sea-electronics#1031",
+   "supplier": "deep-sea-electronics",
+   "n": 1031,
+   "moi": "cu",
+   "nameds": "DSE8610MKII",
+   "line": "| DSE8610 MKII Data Sheet | 055-204"
+  },
+  {
+   "model": "DSE8003MKII",
+   "sheetModel": "DSE8003 MKII",
+   "nguon": "deep-sea-electronics#1031",
+   "supplier": "deep-sea-electronics",
+   "n": 1031,
+   "moi": "cu",
+   "nameds": "DSE8660MKII",
+   "line": "| DSE8660 MKII Data Sheet | 055-169"
+  },
+  {
+   "model": "AGC150",
+   "sheetModel": "AGC-150",
+   "nguon": "deif#1001",
+   "supplier": "deif",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "AGC4",
+   "line": "| • | AGC-4 Mk II Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4-mk-ii)"
+  },
+  {
+   "model": "AGC150",
+   "sheetModel": "AGC-150",
+   "nguon": "deif#1001",
+   "supplier": "deif",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "AGC4",
+   "line": "| • | AGC-4 Genset, Mains, BTB, Group, and Plant (www.deif.com/products/agc-4)"
+  },
+  {
+   "model": "AGC150",
+   "sheetModel": "AGC-150",
+   "nguon": "deif#1001",
+   "supplier": "deif",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "AGC4",
+   "line": "| • | AGC-4 Mk II Mains (www.deif.com/products/agc-4-mk-ii)"
+  },
+  {
+   "model": "AGC4",
+   "sheetModel": "AGC-4",
+   "nguon": "deif#1004",
+   "supplier": "deif",
+   "n": 1004,
+   "moi": "moi",
+   "nameds": "AGC150",
+   "line": "| • | AGC 150 Generator (www.deif.com/products/agc-150-generator)"
+  },
+  {
+   "model": "AGC4",
+   "sheetModel": "AGC-4",
+   "nguon": "deif#1004",
+   "supplier": "deif",
+   "n": 1004,
+   "moi": "moi",
+   "nameds": "AGC150",
+   "line": "| • | AGC 150 Mains (www.deif.com/products/agc-150-mains)"
+  },
+  {
+   "model": "AGC4",
+   "sheetModel": "AGC-4",
+   "nguon": "deif#1004",
+   "supplier": "deif",
+   "n": 1004,
+   "moi": "moi",
+   "nameds": "AGC150",
+   "line": "| • | AGC 150 BTB (www.deif.com/products/agc-150-btb)"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "Note: The key is fit for HGM6120 series controllers."
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "| 1) | HGM6120: Manual Mode is active when press"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "back panel of HGM6120 is as below."
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110CAN,HGM6100N,HGM6100CAN",
+   "line": "HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6110N",
+   "sheetModel": "HGM6110N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "Note: The key is fit for HGM6110 series controllers."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: When “remote start” input is active, it enters into “Start Delay”."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 2) | HGM6110: Manual Mode is active when pressing"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110CAN,HGM6100N,HGM6100CAN",
+   "line": "HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "| 6 | Close Mains Output | HGM6110 without."
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120N",
+   "sheetModel": "HGM6120N",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "Note: The key is fit for HGM6120 series controllers."
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "| 1) | HGM6120: Manual Mode is active when press"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "back panel of HGM6120 is as below."
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110CAN,HGM6100N,HGM6100CAN",
+   "line": "HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6110NC",
+   "sheetModel": "HGM6110NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "Note: The key is fit for HGM6110 series controllers."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: When “remote start” input is active, it enters into “Start Delay”."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 2) | HGM6110: Manual Mode is active when pressing"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110CAN,HGM6100N,HGM6100CAN",
+   "line": "HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "| 6 | Close Mains Output | HGM6110 without."
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120NC",
+   "sheetModel": "HGM6120NC",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "Note: The key is fit for HGM6120 series controllers."
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "| 1) | HGM6120: Manual Mode is active when press"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6120",
+   "line": "back panel of HGM6120 is as below."
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6110CAN",
+   "sheetModel": "HGM6110CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N SERIES"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N series genset controller uses micro-processing technique which can achieve precision"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "HGM6100N controller has six variants:"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "Note: The key is fit for HGM6110 series controllers."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100CAN",
+   "line": "illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: When “remote start” input is active, it enters into “Start Delay”."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 2) | HGM6110: Manual Mode is active when pressing"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| HGM6100N | Series"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| Sensing Input | HGM6110 without."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6110",
+   "line": "| 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "HGM6100N",
+   "line": "| Factory | default: | Idle HGM6100N"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "| 88(83) | Custom Theme | (0-2) | 0 | 1: OEM Plant Theme; | HGM6100CAN."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110CAN,HGM6100N,HGM6100CAN",
+   "line": "HGM6110CAN; If the HGM6100N and HGM6100CAN parameter numbers are inconsistent, the second line of “Number”"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "| 6 | Close Mains Output | HGM6110 without."
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100CAN",
+   "line": "This function only suits for HGM6100CAN with engine type"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6100N",
+   "line": "| shutdown alarms. | Only HGM6100N has these"
+  },
+  {
+   "model": "HGM6120CAN",
+   "sheetModel": "HGM6120CAN",
+   "nguon": "smartgen#1001",
+   "supplier": "smartgen",
+   "n": 1001,
+   "moi": "moi",
+   "nameds": "HGM6110",
+   "line": "1) HGM6110, there are no items 1-5 in table 7; programmable output 1-4 have no digital outputs"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES GENSET CONTROLLER"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller, integrating digital, intelligent and network"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller uses micro-processing technique which can"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U controller has four variants:"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | SERIES"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U SERIES | GENSET"
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller can be applicable to (8~35) VDC battery voltage."
+  },
+  {
+   "model": "HGM6110U",
+   "sheetModel": "HGM6110U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller must externally connect to current transformer; CT"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES GENSET CONTROLLER"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller, integrating digital, intelligent and network"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller uses micro-processing technique which can"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U controller has four variants:"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | SERIES"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U SERIES | GENSET"
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller can be applicable to (8~35) VDC battery voltage."
+  },
+  {
+   "model": "HGM6110UC",
+   "sheetModel": "HGM6110UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller must externally connect to current transformer; CT"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES GENSET CONTROLLER"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller, integrating digital, intelligent and network"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller uses micro-processing technique which can"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U controller has four variants:"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | SERIES"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U SERIES | GENSET"
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller can be applicable to (8~35) VDC battery voltage."
+  },
+  {
+   "model": "HGM6120U",
+   "sheetModel": "HGM6120U",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller must externally connect to current transformer; CT"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U SERIES GENSET CONTROLLER"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller, integrating digital, intelligent and network"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series automatic controller uses micro-processing technique which can"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U controller has four variants:"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | SERIES"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U | Genset Controller | 2016-05-09 | Version 1.4 | Page 32 of | 39"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "| HGM6100U SERIES | GENSET"
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller can be applicable to (8~35) VDC battery voltage."
+  },
+  {
+   "model": "HGM6120UC",
+   "sheetModel": "HGM6120UC",
+   "nguon": "smartgen#1002",
+   "supplier": "smartgen",
+   "n": 1002,
+   "moi": "moi",
+   "nameds": "HGM6100U",
+   "line": "HGM6100U series controller must externally connect to current transformer; CT"
+  },
+  {
+   "model": "HGM9510",
+   "sheetModel": "HGM9510",
+   "nguon": "smartgen#1003",
+   "supplier": "smartgen",
+   "n": 1003,
+   "moi": "cu",
+   "nameds": "HGM9210,HGM9220,HGM9310,HGM9320,HGM9410,HGM9420,HGM9520,HGM9610",
+   "line": "NOTE: The features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420/HGM9520/HGM9610/"
+  },
+  {
+   "model": "HGM9510",
+   "sheetModel": "HGM9510",
+   "nguon": "smartgen#1003",
+   "supplier": "smartgen",
+   "n": 1003,
+   "moi": "cu",
+   "nameds": "HGM9620",
+   "line": "| HGM9620 controllers mentioned in this document may change, please check the corresponding user manual | for"
+  },
+  {
+   "model": "HGM9510",
+   "sheetModel": "HGM9510",
+   "nguon": "smartgen#1003",
+   "supplier": "smartgen",
+   "n": 1003,
+   "moi": "moi",
+   "nameds": "HGM9500",
+   "line": "NOTE: Please refer to HGM9500 Synchronization Plan List for more information on GOV and AVR settings."
+  },
+  {
+   "model": "HGM9530",
+   "sheetModel": "HGM9530",
+   "nguon": "smartgen#1004",
+   "supplier": "smartgen",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "HGM9210,HGM9220,HGM9310,HGM9320,HGM9410",
+   "line": "NOTE: The features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/"
+  },
+  {
+   "model": "HGM9530",
+   "sheetModel": "HGM9530",
+   "nguon": "smartgen#1004",
+   "supplier": "smartgen",
+   "n": 1004,
+   "moi": "cu",
+   "nameds": "HGM9420,HGM9520,HGM9610,HGM9620",
+   "line": "HGM9420/HGM9520/HGM9610/HGM9620 controllers mentioned in this document may change, please"
+  },
+  {
+   "model": "HGM9530",
+   "sheetModel": "HGM9530",
+   "nguon": "smartgen#1004",
+   "supplier": "smartgen",
+   "n": 1004,
+   "moi": "moi",
+   "nameds": "HGM6500",
+   "line": "Note: Please refer to HGM6500 Synchronization Plan List for more information on GOV and"
+  },
+  {
+   "model": "HGM9510N",
+   "sheetModel": "HGM9510N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 32 | Remote Start (Island) | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9510N",
+   "sheetModel": "HGM9510N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 71 | Grid-Tied Track | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9510N",
+   "sheetModel": "HGM9510N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 72 | Island Parallel | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9510N",
+   "sheetModel": "HGM9510N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9500",
+   "line": "NOTE: Please refer to HGM9500 SYNCHRONIZATION PLAN LIST for more information on GOV and AVR settings."
+  },
+  {
+   "model": "HGM9530N",
+   "sheetModel": "HGM9530N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 32 | Remote Start (Island) | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9530N",
+   "sheetModel": "HGM9530N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 71 | Grid-Tied Track | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9530N",
+   "sheetModel": "HGM9530N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9520N",
+   "line": "| 72 | Island Parallel | (Only available for HGM9520N.)"
+  },
+  {
+   "model": "HGM9530N",
+   "sheetModel": "HGM9530N",
+   "nguon": "smartgen#1005",
+   "supplier": "smartgen",
+   "n": 1005,
+   "moi": "moi",
+   "nameds": "HGM9500",
+   "line": "NOTE: Please refer to HGM9500 SYNCHRONIZATION PLAN LIST for more information on GOV and AVR settings."
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 SERIES"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 controller adopts 32-bit micro-processor technology with precision parameters measuring,"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9210,HGM9220,HGM9310,HGM9320,HGM9410,HGM9420",
+   "line": "NOTE: Functions of mentioned herein HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9510,HGM9520",
+   "line": "/HGM9510/HGM9520 controllers can be changed, please check the corresponding user manual for accurate"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset | Controller"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series controller’s rear as following:"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "Fig.3 HGM9600 Rear Panel"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller | User"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series Genset Controller"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series Genset Controller User"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller User Manual | Page | 45"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series | Genset"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "NOTE: HGM9600 series controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery must be"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller User Manual | Page 71 of | 73"
+  },
+  {
+   "model": "HGM9610",
+   "sheetModel": "HGM9610",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series controller supports Micro SD card, the controller can regularly save gen-set operation"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 SERIES"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "HGM9600 controller adopts 32-bit micro-processor technology with precision parameters measuring,"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9210,HGM9220,HGM9310,HGM9320,HGM9410,HGM9420",
+   "line": "NOTE: Functions of mentioned herein HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9510,HGM9520",
+   "line": "/HGM9510/HGM9520 controllers can be changed, please check the corresponding user manual for accurate"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "cu",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset | Controller"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series controller’s rear as following:"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "Fig.3 HGM9600 Rear Panel"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller | User"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series Genset Controller"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series Genset Controller User"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller User Manual | Page | 45"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series | Genset"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 | Series"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "NOTE: HGM9600 series controller can suit for widely range of battery voltage DC(8~35)V. Negative of battery must be"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "| HGM9600 Series Genset Controller User Manual | Page 71 of | 73"
+  },
+  {
+   "model": "HGM9620",
+   "sheetModel": "HGM9620",
+   "nguon": "smartgen#1006",
+   "supplier": "smartgen",
+   "n": 1006,
+   "moi": "moi",
+   "nameds": "HGM9600",
+   "line": "HGM9600 series controller supports Micro SD card, the controller can regularly save gen-set operation"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "cu",
+   "nameds": "HGM7100N",
+   "line": "HGM7100N SERIES"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset | Controller User"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset | Controller"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset Controller User | Manual"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of"
+  },
+  {
+   "model": "HGM7110N",
+   "sheetModel": "HGM7110N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "Current input of HGM7100N series controller must be connected to outside current transformer. And"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "cu",
+   "nameds": "HGM7100N",
+   "line": "HGM7100N SERIES"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset | Controller User"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset | Controller"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "| HGM7100N Series Genset Controller User | Manual"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "HGM7100N series controller can suit for widely range of battery voltage DC (8~35) V. Negative of"
+  },
+  {
+   "model": "HGM7120N",
+   "sheetModel": "HGM7120N",
+   "nguon": "smartgen#1007",
+   "supplier": "smartgen",
+   "n": 1007,
+   "moi": "moi",
+   "nameds": "HGM7100N",
+   "line": "Current input of HGM7100N series controller must be connected to outside current transformer. And"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 SERIES"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "Add HGM7100A series controller while delete HGM7100 series"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "Modify some functions of HGM7200 series controllers;"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "3. Delete HGM7100A series controller."
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controller adopts 32-bit micro-processor technology with precision parameters"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM72X0 | All HGM7200 series controllers."
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X20 | All HGM7200 series AMF controllers."
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X10 | All HGM7200 series ASM controllers."
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series controller’s rear panel as following:"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 Series | Genset"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series"
+  },
+  {
+   "model": "HGM7210",
+   "sheetModel": "HGM7210",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 SERIES"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "Add HGM7100A series controller while delete HGM7100 series"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "Modify some functions of HGM7200 series controllers;"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "3. Delete HGM7100A series controller."
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controller adopts 32-bit micro-processor technology with precision parameters"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM72X0 | All HGM7200 series controllers."
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X20 | All HGM7200 series AMF controllers."
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X10 | All HGM7200 series ASM controllers."
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series controller’s rear panel as following:"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 Series | Genset"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series"
+  },
+  {
+   "model": "HGM7220",
+   "sheetModel": "HGM7220",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 SERIES"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "Add HGM7100A series controller while delete HGM7100 series"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "Modify some functions of HGM7200 series controllers;"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "3. Delete HGM7100A series controller."
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controller adopts 32-bit micro-processor technology with precision parameters"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM72X0 | All HGM7200 series controllers."
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X20 | All HGM7200 series AMF controllers."
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X10 | All HGM7200 series ASM controllers."
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series controller’s rear panel as following:"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 Series | Genset"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series"
+  },
+  {
+   "model": "HGM7210CAN",
+   "sheetModel": "HGM7210CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 SERIES"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "Add HGM7100A series controller while delete HGM7100 series"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "Modify some functions of HGM7200 series controllers;"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7100A",
+   "line": "3. Delete HGM7100A series controller."
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controllers are used for genset automation and monitor control system of"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series genset controller adopts 32-bit micro-processor technology with precision parameters"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM72X0 | All HGM7200 series controllers."
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X20 | All HGM7200 series AMF controllers."
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "cu",
+   "nameds": "HGM7200",
+   "line": "| HGM7X10 | All HGM7200 series ASM controllers."
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "HGM7200 series controller’s rear panel as following:"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series Genset Controller User Manual | Page 32 of | 50"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 Series | Genset"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "| HGM7200 | Series"
+  },
+  {
+   "model": "HGM7220CAN",
+   "sheetModel": "HGM7220CAN",
+   "nguon": "smartgen#1008",
+   "supplier": "smartgen",
+   "n": 1008,
+   "moi": "moi",
+   "nameds": "HGM7200",
+   "line": "NOTE: HGM7200 series controller can suit for widely range of battery voltage (8~35) VDC. Negative of battery must"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "HGM9420LT",
+   "line": "HGM9420LT: (-40~+70)°C"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "HGM9420LT",
+   "line": "| LCD Display (HGM9420LT) | normally; after power on for 2min, dynamic display responses"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "cu",
+   "nameds": "HGM9420LT",
+   "line": "HGM9420LT: (-45~+80)°C"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-S01 | Southeast Asia | WCDMA: B1/B8"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-S02 | North America | WCDMA: B2/B5"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "HGM9420LT-S03"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-S04 | Korea/Thailand/Middle | TDD-LTE: B38/B40/B41 | SGE02-4G-S03"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-S05 | New Zealand | TDD-LTE: B40 | SGE02-4G-S04"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-S06 | B1/B3/B8/B18/B19/B26"
+  },
+  {
+   "model": "HGM9420N",
+   "sheetModel": "HGM9420N",
+   "nguon": "smartgen#1011",
+   "supplier": "smartgen",
+   "n": 1011,
+   "moi": "moi",
+   "nameds": "HGM9420LT",
+   "line": "| HGM9420LT-G | TD-SCDMA: B34/B39"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320CAN",
+   "line": "HGM9320CAN series controller only."
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320MPU",
+   "line": "| 5.6.1 | HGM9320MPU(CAN) Switch Control Procedures.............................................25"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9610",
+   "line": "| 5.6.2 | HGM9610 Switch Control Procedures...............................................................26"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320MPU,HGM9320CAN",
+   "line": "HGM9320MPU/HGM9320CAN"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320MPU,HGM9320CAN",
+   "line": "(HGM9320MPU，HGM9320CAN without)"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320MPU",
+   "line": "| 1. | HGM9320MPU(CAN): When Mains is abnormal (over and under voltage, over and under"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9320MPU",
+   "line": "1. HGM9320MPU(CAN), when mains return normal during genset running, enters into mains"
+  },
+  {
+   "model": "HGM9310",
+   "sheetModel": "HGM9310",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9320MPU",
+   "line": "HGM9320MPU(CAN) typical application diagram"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9610",
+   "line": "| 5.6.2 | HGM9610 Switch Control Procedures...............................................................26"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "HGM9310MPU/HGM9310CAN"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "mode. (HGM9310MPU，HGM9310CAN without)"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "mode. (HGM9310MPU，HGM9310CAN without)."
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "NOTE: HGM9310MPU，HGM9310CAN has no mains status screen."
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU",
+   "line": "| 2. | HGM9310MPU(CAN): When “Remote Start (on load)” is active, “Start Delay” timer is"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "cu",
+   "nameds": "HGM9310MPU",
+   "line": "2. HGM9310MPU(CAN), When the “Remote Start” signal is removed, the Stop Delay is"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "| 25 | ECU CAN L | 0.5mm2 | (HGM9310MPU, HGM9310CAN without)."
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9310MPU,HGM9310CAN",
+   "line": "(HGM9310MPU, HGM9310CAN without)."
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9310MPU",
+   "line": "HGM9310MPU(CAN) controller is applied."
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9310MPU",
+   "line": "In HGM9310MPU(CAN) controller, there are no items of mains in setting and also no mains"
+  },
+  {
+   "model": "HGM9320",
+   "sheetModel": "HGM9320",
+   "nguon": "smartgen#1012",
+   "supplier": "smartgen",
+   "n": 1012,
+   "moi": "moi",
+   "nameds": "HGM9310MPU",
+   "line": "HGM9310MPU(CAN) typical application diagram"
+  },
+  {
+   "model": "HGM9520",
+   "sheetModel": "HGM9520",
+   "nguon": "smartgen#1013",
+   "supplier": "smartgen",
+   "n": 1013,
+   "moi": "cu",
+   "nameds": "HGM9510",
+   "line": "(2)HGM9510’s analog sensors are composed by 3 fixed sensors (temperature, pressure, level)"
+  },
+  {
+   "model": "HGM9520",
+   "sheetModel": "HGM9520",
+   "nguon": "smartgen#1013",
+   "supplier": "smartgen",
+   "n": 1013,
+   "moi": "cu",
+   "nameds": "HGM9210,HGM9220,HGM9310,HGM9320,HGM9410",
+   "line": "The controller features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/"
+  },
+  {
+   "model": "HGM9520",
+   "sheetModel": "HGM9520",
+   "nguon": "smartgen#1013",
+   "supplier": "smartgen",
+   "n": 1013,
+   "moi": "cu",
+   "nameds": "HGM9420,HGM9510,HGM9610,HGM9620",
+   "line": "HGM9420/HGM9510/ HGM9610/HGM9620 mentioned in this document may change, please"
+  },
+  {
+   "model": "HGM9520",
+   "sheetModel": "HGM9520",
+   "nguon": "smartgen#1013",
+   "supplier": "smartgen",
+   "n": 1013,
+   "moi": "moi",
+   "nameds": "HGM6500",
+   "line": "Note: Please refer to HGM6500 Synchronization Plan List for more information on"
+  },
+  {
+   "model": "EASYGEN1400",
+   "sheetModel": "easYgen-1400",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime"
+  },
+  {
+   "model": "EASYGEN1400",
+   "sheetModel": "easYgen-1400",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| The easYgen-1000 Series is available in four versions: | •"
+  },
+  {
+   "model": "EASYGEN1400",
+   "sheetModel": "easYgen-1400",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN100",
+   "line": "| ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •"
+  },
+  {
+   "model": "EASYGEN1400",
+   "sheetModel": "easYgen-1400",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "easYgen-1000"
+  },
+  {
+   "model": "EASYGEN1400",
+   "sheetModel": "easYgen-1400",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| CONTACT | easYgen-1000 Series"
+  },
+  {
+   "model": "EASYGEN1600",
+   "sheetModel": "easYgen-1600",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime"
+  },
+  {
+   "model": "EASYGEN1600",
+   "sheetModel": "easYgen-1600",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| The easYgen-1000 Series is available in four versions: | •"
+  },
+  {
+   "model": "EASYGEN1600",
+   "sheetModel": "easYgen-1600",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN100",
+   "line": "| ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •"
+  },
+  {
+   "model": "EASYGEN1600",
+   "sheetModel": "easYgen-1600",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "easYgen-1000"
+  },
+  {
+   "model": "EASYGEN1600",
+   "sheetModel": "easYgen-1600",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| CONTACT | easYgen-1000 Series"
+  },
+  {
+   "model": "EASYGEN1700",
+   "sheetModel": "easYgen-1700",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime"
+  },
+  {
+   "model": "EASYGEN1700",
+   "sheetModel": "easYgen-1700",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| The easYgen-1000 Series is available in four versions: | •"
+  },
+  {
+   "model": "EASYGEN1700",
+   "sheetModel": "easYgen-1700",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN100",
+   "line": "| ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •"
+  },
+  {
+   "model": "EASYGEN1700",
+   "sheetModel": "easYgen-1700",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "easYgen-1000"
+  },
+  {
+   "model": "EASYGEN1700",
+   "sheetModel": "easYgen-1700",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| CONTACT | easYgen-1000 Series"
+  },
+  {
+   "model": "EASYGEN1800",
+   "sheetModel": "easYgen-1800",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "The Woodward easYgen-1000 series is designed for a single-generator set used in critical stand-by or prime"
+  },
+  {
+   "model": "EASYGEN1800",
+   "sheetModel": "easYgen-1800",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| The easYgen-1000 Series is available in four versions: | •"
+  },
+  {
+   "model": "EASYGEN1800",
+   "sheetModel": "easYgen-1800",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN100",
+   "line": "| ToolKit-SC is a single service tool for configuring easYgen-100 and –1000 series controllers. The module's | •"
+  },
+  {
+   "model": "EASYGEN1800",
+   "sheetModel": "easYgen-1800",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "easYgen-1000"
+  },
+  {
+   "model": "EASYGEN1800",
+   "sheetModel": "easYgen-1800",
+   "nguon": "woodward#1001",
+   "supplier": "woodward",
+   "n": 1001,
+   "moi": "cu",
+   "nameds": "EASYGEN1000",
+   "line": "| CONTACT | easYgen-1000 Series"
+  },
+  {
+   "model": "EASYGEN3400",
+   "sheetModel": "easYgen-3400",
+   "nguon": "woodward#1002",
+   "supplier": "woodward",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "EASYGEN3000",
+   "line": "| The GC-3400XT is based on a scalable multi-master control concept to combine up to 31x easYgen-3000XT | "
+  },
+  {
+   "model": "EASYGEN3400",
+   "sheetModel": "easYgen-3400",
+   "nguon": "woodward#1002",
+   "supplier": "woodward",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "EASYGEN3000",
+   "line": "|  | SalesPGD_INDIA@woodward.com | LDSS Emulation Tool allows emulating a number of easYgen-3000XT, GC-3000XT, loads and"
+  },
+  {
+   "model": "EASYGEN3500",
+   "sheetModel": "easYgen-3500",
+   "nguon": "woodward#1002",
+   "supplier": "woodward",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "EASYGEN3000",
+   "line": "| The GC-3400XT is based on a scalable multi-master control concept to combine up to 31x easYgen-3000XT | "
+  },
+  {
+   "model": "EASYGEN3500",
+   "sheetModel": "easYgen-3500",
+   "nguon": "woodward#1002",
+   "supplier": "woodward",
+   "n": 1002,
+   "moi": "cu",
+   "nameds": "EASYGEN3000",
+   "line": "|  | SalesPGD_INDIA@woodward.com | LDSS Emulation Tool allows emulating a number of easYgen-3000XT, GC-3000XT, loads and"
+  }
+ ]
+}

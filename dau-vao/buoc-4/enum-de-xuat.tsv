@@ -1,0 +1,145 @@
+truong	cach_viet_nguon	lan	model	ncc	gia_tri_hien_tai	de_xuat	ly_do
+engine.aspiration	Turbo-charged	135	135	149	Turbo-charged	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	涡轮增压	67	67	158	涡轮增压	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbocharged & Aftercooled	55	55	110	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	Natural	48	48	134	natural	(giữ)	đã khớp values / same
+engine.aspiration	Turbocharged	42	42	142	Turbocharged	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo charged	38	38	133	Turbo charged	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbocharged & Intercooled	35	35	133	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	增压中冷	32	32	61	增压中冷	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged and	25	25	46	Turbocharged and	cần Khoa xem	chuỗi bị cắt ở 'and' / '&' / ',' (có thể mất 'Aftercooled'): lỗi đọc cắt ô, không đoán
+engine.aspiration	Turbocharging and intercooling	22	22	48	Turbocharging and intercooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged and aftercooled	15	15	110	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	Turbo /Inter cooling	14	14	11	Turbo /Inter cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged & Air-to-air	11	11	45	Turbocharged & Air-to-air	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbo	11	11	103	turbo	(giữ)	đã khớp values / same
+engine.aspiration	Naturally Aspirated	11	11	101	Naturally Aspirated	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	自然吸气	11	11	101	自然吸气	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	Turbo Charger & Inter Cooler	11	11	54	Turbo Charger & Inter Cooler	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	涡轮增压 Turbo	9	9	128	涡轮增压 Turbo	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo,	9	9	105	Turbo,	cần Khoa xem	chuỗi bị cắt ở 'and' / '&' / ',' (có thể mất 'Aftercooled'): lỗi đọc cắt ô, không đoán
+engine.aspiration	Naturally	6	6	123	Naturally	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	涡轮增压Turbocharged	5	5	108	涡轮增压Turbocharged	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo, Water/Air cooling	4	4	79	Turbo, Water/Air cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Naturally aspirated	4	4	3	Naturally aspirated	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	Aftercooled	4	4	21	Aftercooled	cần Khoa xem	chỉ ghi 'Aftercooled': không ghi tăng áp
+engine.aspiration	增压	4	4	22	增压	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo charged, air to air cooled	4	4	32	Turbo charged, air to air cooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged and air-to-air charge cooled	3	3	94	Turbocharged and air-to-air charge cooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	turbo	3	3	98	turbo	(giữ)	đã khớp values / same
+engine.aspiration	Turbo, Air/Air Cooling	3	3	94	Turbo, Air/Air Cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	TURBOCHARGED	3	3	1	TURBOCHARGED	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo, Air/Air cooling	3	3	85	Turbo, Air/Air cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbo-charged , After cooler	3	3	45	Turbo-charged , After cooler	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	water-cooled,4 valves, Turbo charged	3	3	57	water-cooled,4 valves, Turbo charged	cần Khoa xem	ô dính nhiều thông số (xi lanh, van, làm mát); chọn theo chữ turbo / aftercooler: turbo
+engine.aspiration	Air natural aspirated	2	2	63	Air natural aspirated	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	Turbocharged and Aftercooled	2	2	19	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	Turbocharged and Air	2	2	44	Turbocharged and Air	cần Khoa xem	chuỗi bị cắt ở 'and' / '&' / ',' (có thể mất 'Aftercooled'): lỗi đọc cắt ô, không đoán
+engine.aspiration	Turbocharged &	2	2	64	Turbocharged &	cần Khoa xem	chuỗi bị cắt ở 'and' / '&' / ',' (có thể mất 'Aftercooled'): lỗi đọc cắt ô, không đoán
+engine.aspiration	Turbocharged & Charge Air Cooled	2	2	7	Turbocharged & Charge Air Cooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged ,	2	2	18	Turbocharged ,	cần Khoa xem	chuỗi bị cắt ở 'and' / '&' / ',' (có thể mất 'Aftercooled'): lỗi đọc cắt ô, không đoán
+engine.aspiration	LTA	2	2	23	LTA	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged and Intercooled	2	2	11	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	Natural intake	2	2	7	Natural intake	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	Turbo charging & turbocharged air cooling	2	2	40	Turbo charging & turbocharged air cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbo-charged , Air to Air	2	2	43	Turbo-charged , Air to Air	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged&No-Intercooling	2	2	43	Turbocharged&No-Intercooling	turbo	ghi rõ không làm mát khí nạp
+engine.aspiration	turbo charger	1	1	2	turbo charger	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	Turbo, charge air cooled	1	1	81	Turbo, charge air cooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharging	1	1	48	Turbocharging	turbo	tăng áp, không ghi làm mát khí nạp
+engine.aspiration	In-line,4strokes,4valves,water-cooled,Turbo charged with aftercooler	1	1	16	In-line,4strokes,4valves,water-cooled,Turbo charged with aftercooler	cần Khoa xem	ô dính nhiều thông số (xi lanh, van, làm mát); chọn theo chữ turbo / aftercooler: turbo_aftercooled
+engine.aspiration	Natural Turbocharged & Aftercooled	1	1	8	Natural Turbocharged & Aftercooled	cần Khoa xem	ghi cả natural và turbo
+engine.aspiration	Turbo, intercooling	1	1	20	Turbo, intercooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharging intercooled	1	1	1	Turbocharging intercooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged, aftercooled	1	1	98	turbo_aftercooled	(giữ)	đã khớp values / same
+engine.aspiration	Turbocharged , LTA	1	1	19	Turbocharged , LTA	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbo,Air/Water cooling	1	1	102	Turbo,Air/Water cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbocharged, low-temperature aftercooled	1	1	102	Turbocharged, low-temperature aftercooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	NATURAL	1	1	1	natural	(giữ)	đã khớp values / same
+engine.aspiration	Turbo, Water/Air Cooling	1	1	28	Turbo, Water/Air Cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Turbo - charging & air - to - air cooling	1	1	30	Turbo - charging & air - to - air cooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	Supercharged non-intercooled	1	1	36	Supercharged non-intercooled	turbo	ghi rõ không làm mát khí nạp
+engine.aspiration	Turbocharged&Intercooling	1	1	30	Turbocharged&Intercooling	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.aspiration	自然吸气 Natural	1	1	15	自然吸气 Natural	natural	tự nhiên / hút khí tự nhiên
+engine.aspiration	Turbocharged & air-air intercooled	1	1	26	Turbocharged & air-air intercooled	turbo_aftercooled	tăng áp + làm mát khí nạp (cùng nghĩa với same đã có: Turbocharged, Intercooled)
+engine.governor	Electrical	395	395	188	electronic	(giữ)	đã khớp values / same
+engine.governor	Electronic	296	296	185	electronic	(giữ)	đã khớp values / same
+engine.governor	Mechanical	234	234	169	mechanical	(giữ)	đã khớp values / same
+engine.governor	ECU	211	211	159	ecu	(giữ)	đã khớp values / same
+engine.governor	Electronic control	102	102	53	Electronic control	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electric	68	68	149	Electric	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Mechanic	45	45	128	Mechanic	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	EFC Electrical	45	45	132	EFC Electrical	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	电子调速E	36	36	73	电子调速E	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic speed	30	30	129	Electronic speed	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic/M	26	26	33	Electronic/M	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	Electronic speed controller	26	26	89	Electronic speed controller	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	FORTRUST Electronic	25	25	22	FORTRUST Electronic	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Mechanically	21	21	66	Mechanically	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	Electronically Controlled Common Rail System	16	16	38	Electronically Controlled Common Rail System	cần Khoa xem	là mô tả hệ thống phun (common rail / bơm) lọt vào cột điều tốc, không phải điều tốc
+engine.governor	EMS2 / ECU	13	13	42	EMS2 / ECU	ecu	ECU / ECM / EMS
+engine.governor	mechanical	12	12	71	mechanical	(giữ)	đã khớp values / same
+engine.governor	机械调速M	10	10	22	机械调速M	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	electronic	8	8	66	electronic	(giữ)	đã khớp values / same
+engine.governor	Electric Unit Pump System	8	8	40	Electric Unit Pump System	cần Khoa xem	là mô tả hệ thống phun (common rail / bơm) lọt vào cột điều tốc, không phải điều tốc
+engine.governor	Mechanical/ Electrical	7	7	3	Mechanical/ Electrical	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	机械调	6	6	81	机械调	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	电子	6	6	110	电子	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic Governor	5	5	43	electronic	(giữ)	đã khớp values / same
+engine.governor	Mechanical/Electrical	4	4	103	Mechanical/Electrical	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	GAC Electrical	4	4	101	GAC Electrical	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	ELECTRONIC	4	4	1	electronic	(giữ)	đã khớp values / same
+engine.governor	Mmechanical speed governors	3	3	95	Mmechanical speed governors	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	mechanical speed governors	3	3	59	mechanical speed governors	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	Electronically-control high pressure common	3	3	35	Electronically-control high pressure common	cần Khoa xem	là mô tả hệ thống phun (common rail / bơm) lọt vào cột điều tốc, không phải điều tốc
+engine.governor	electric	2	2	58	electric	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Mechanical speed controller,	2	2	39	Mechanical speed controller,	mechanical	cơ khí (Mechanic / Mechanically / 机械调速)
+engine.governor	Electroni speed	2	2	37	Electroni speed	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic/mechanical	1	1	88	Electronic/mechanical	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	LCS Electric	1	1	87	LCS Electric	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic / Mechanical	1	1	79	Electronic / Mechanical	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	Electronic ECM	1	1	40	Electronic ECM	cần Khoa xem	'Electronic ECM': vừa electronic vừa ECM
+engine.governor	Electronic, ±0.5% frequency deviation	1	1	40	Electronic, ±0.5% frequency deviation	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electrical controller (WOODWARD 2301A)	1	1	1	Electrical controller (WOODWARD 2301A)	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	electronics	1	1	64	electronics	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electric/Mechanical	1	1	55	Electric/Mechanical	cần Khoa xem	ghi cả hai (tuỳ chọn hoặc ô dính): không chọn
+engine.governor	BYC P7100/Electronic	1	1	24	BYC P7100/Electronic	cần Khoa xem	không nêu loại điều tốc rõ
+engine.governor	EGS-02 electric governor (WOODWARD)	1	1	2	EGS-02 electric governor (WOODWARD)	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	EFC electrical	1	1	67	EFC electrical	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	G-Drive Governor	1	1	28	G-Drive Governor	cần Khoa xem	không nêu loại điều tốc rõ
+engine.governor	ECM Electronic	1	1	26	ECM Electronic	cần Khoa xem	'Electronic ECM': vừa electronic vừa ECM
+engine.governor	Quantum Electronic	1	1	14	Quantum Electronic	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic governing	1	1	19	Electronic governing	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electrical speed	1	1	30	Electrical speed	electronic	điện tử / điện (Electric = Electrical đã có trong same)
+engine.governor	Electronic unit pump	1	1	29	Electronic unit pump	cần Khoa xem	là mô tả hệ thống phun (common rail / bơm) lọt vào cột điều tốc, không phải điều tốc
+engine.governor	Electronically controlled unit pump	1	1	26	Electronically controlled unit pump	cần Khoa xem	là mô tả hệ thống phun (common rail / bơm) lọt vào cột điều tốc, không phải điều tốc
+alternator.insulation	H	271	271	47	H	(giữ)	đã khớp values / same
+alternator.insulation	| Insulation class | H	61	61	20	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	H/H	47	47	2	H/H	H	'H/H' = cấp cách điện / cấp nhiệt cùng H (nhãn 'Insulation class/temperature rise class')
+alternator.insulation	| Insulation class | H | Excitation system 6 wire	30	30	11	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	| Insulation class | H | Excitation system 6-wire	22	22	2	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	H /IP22 or F/IP21	20	20	1	H /IP22 or F/IP21	cần Khoa xem	ô ghi hai tổ hợp cách điện / IP (H /IP22 or F/IP21): không chọn
+alternator.insulation	| INSULATION SYSTEM | CLASS H	18	18	20	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	| Insulation class | H | Excitation system 6 wires	12	12	10	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	H class	7	7	1	H class	H	Class H / H class
+alternator.insulation	| Insulation System | H	7	7	8	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	Class H	3	3	5	Class H	H	Class H / H class
+alternator.insulation	| Insulation System | Class H	3	3	6	H	H	ô dính cả dòng bảng ('| Insulation class | H | ...'): lỗi đọc gộp ô, giá trị lấy theo chữ cạnh nhãn
+alternator.insulation	Class F	1	1	1	Class F	F	Class H / H class
+alternator.insulation	H / H	1	1	1	H / H	H	'H/H' = cấp cách điện / cấp nhiệt cùng H (nhãn 'Insulation class/temperature rise class')
+alternator.excitation	Shunt	126	126	30	shunt	(giữ)	đã khớp values / same
+alternator.excitation	Single bearing, Brushless,	90	90	34	Single bearing, Brushless,	cần Khoa xem	ô dính 'Single bearing' (ổ đỡ) với kiểu kích từ: lỗi đọc gộp ô
+alternator.excitation	Brushless, self-excitation	46	46	1	Brushless, self-excitation	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	brushless self-exciting	20	20	27	brushless self-exciting	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brush less,self-exciting	15	15	24	Brush less,self-exciting	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	无刷自励磁	13	13	26	无刷自励磁	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	SHUNT	10	10	2	shunt	(giữ)	đã khớp values / same
+alternator.excitation	Self-excited	8	8	4	Self-excited	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless, shunt-excited	4	4	2	Brushless, shunt-excited	shunt	shunt (kể cả 'Brushless, shunt-excited')
+alternator.excitation	Brushless, self-excited	2	2	2	Brushless, self-excited	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless,	2	2	2	Brushless,	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Self-excitation	1	1	4	Self-excitation	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless,self-excitation	1	1	2	Brushless,self-excitation	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless, Self-Excited	1	1	2	Brushless, Self-Excited	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless, self-exciting	1	1	2	Brushless, self-exciting	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)
+alternator.excitation	Brushless	1	1	5	Brushless	cần Khoa xem	'Brushless / self-excited' chỉ kiểu không chổi than tự kích, KHÔNG chọn được shunt / AREP / PMG: cần Khoa quyết (thêm giá trị self_excited hay bỏ)

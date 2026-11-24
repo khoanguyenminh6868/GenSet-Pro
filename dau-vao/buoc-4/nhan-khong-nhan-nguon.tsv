@@ -1,0 +1,1201 @@
+hang	nhan	dang_viet_phu_bien	dong	ncc	model_o	col/row/pair	vi_du_1	vi_du_2	vi_du_3
+1	model	Model	2271	31	2687	srcrow1821 srcline450	aj-power #1001: | Model | Prime	aosif #1001: | Model | 4B3.9-G11	atlas-copco-power #1001: | Model | QES 9-20 | QES 9-10 | QES 14-25 | QES 30-50 | QES 60-695
+2	url	URL	1791	76	1791	srcline1791	agco-power #1001: URL: https://www.agcopower.com/wp-content/uploads/2026/08/AGCO_Power_CORE80_A4_Vertical_EN_202509_Web.pdf	aj-power #1001: URL: https://ajpower.s3-assets.com/AJ-Power-The-Range-Brochure-May-2006.pdf	aosif #1001: URL: https://www.aosif.com/w/files/doc/2026/09/260814651252.pdf
+3	accessed	Accessed	1791	76	1791	srcline1791	agco-power #1001: Accessed: 2026-11-03	aj-power #1001: Accessed: 2026-11-04	aosif #1001: Accessed: 2026-11-03
+4	from	From	1437	37	1437	srcline1420 srcrow17	agco-power #1001: From: https://www.agcopower.com/product/core80/	aj-power #1001: From: https://ajpower.net/products/diesel-generators/3-series	aosif #1001: From: https://www.aosif.com/p/5-8.html
+5	kw	KW	1305	19	10615	srcrow1305	datakom #1002: | KW | 0	genlitec #1001: | KW | KVA	gfe-power #1007: | kW | BHP
+6	tel	Tel	1272	16	1272	srcline1271 srcrow1	bruno-generators #3001: Tel: +39 0825 4210	deif #6001: Tel: +45 9614 9614	engine-traits #1604: Tel:400-618-3066
+7	unicode	UNICODE	1090	1	2068	srcrow1090	winco #1006: | UNICODE | UNICODE | 512		
+8	prime power	Prime Power	1045	13	1291	srcrow794 srcline251	aosif #1001: | Prime Power | 20KVA/16KW	cgm-italia #1001: | prime power | OPEN BASE FRAME	fdk-energy #1001: | Prime Power | 20KW/25KVA
+9	standby power	Standby Power	953	12	974	srcrow754 srcline199	aosif #1001: | Standby Power | 22kw /29HP	fdk-energy #1001: | Standby Power | 22KW/28KVA	gb-power #1001: | Standby Power | 9.3KW/12.5HP
+10	type	Type	892	23	921	srcrow886 srcline6	aosif #1001: | Type | Open	bison-zhejiang #1002: | Type | Air Cooled,Single Cylinder	bobig-power #3002: | Type | Silent(super Silent)or Open, Silent, Etc, In-line/6-Cylinder/4-Stroke/4-Valve/19L, Soundproof Canopy(Silent)
+11	engine	Engine	885	26	930	srcrow878 srcline7	agco-power #1001: | Engine | speed [1/min]	aj-power #1001: | Engine | Industrial silencer mounting kit	aosif #1040: | engine | 330.9 - 391kPa
+12	fuel system	Fuel System	832	13	959	srcrow832	aosif #1001: | Fuel System | Minimum cap pressure | 69kPa	baudouin #1008: | Fuel System | Mechanical	fdk-energy #1005: | Fuel system | Control system
+13	note	Note	826	18	830	srcline741 srcrow85	comap #1001: Note: The final depth of the controller depends on the selected plug-in module – it can vary between 41 mm	deep-sea-electronics #1016: NOTE: All communication ports can be used at the same time.	deif #1002: Note: Option T2 is NOT working
+14	power	Power	823	26	1224	srcrow821 srcline2	agco-power #1001: | Power | Torque	aj-power #1001: | Power: | Power:	aosif #1080: | Power | C
+15	web	Web	750	8	750	srcline750	bison-zhejiang #1002: Web: www.bisonpower.net	comap #1001: Web: www.comap-control.com	fdk-energy #1001: Web: www.fdkenergy.comEmail: info@fdkenergy.com
+16	alternator	Alternator	638	16	709	srcrow471 srcline167	aj-power #1001: | Alternator | Motorised kit for circuit breaker	aosif #1001: | Alternator | Control system	bison-zhejiang #1002: | Alternator | Copper
+17	kva	kVA	627	18	3551	srcrow608 srcline19	aj-power #1001: | kVA | inverter	atlas-copco-power #1002: | kVA | 3 | 22,5 | 67,5 | 67,5 | 67,5	baudouin #1004: | kVA: | 1150-1625
+18	read	Read	622	1	622	srcrow622	winco #1006: | Read | only		
+19	engine model	Engine model	619	16	765	srcrow618 srcline1	baudouin #1021: | Engine model | 6M31G825/5	bison-zhejiang #1003: | Engine model | 8S168F | BS170F	fdk-energy #1001: | Engine Model | 4B3.9G2
+20	and	and	615	25	664	srcrow615	baudouin #1019: | and | Dry	cgm-italia #1001: | and | SNMP	comap #1001: | and | Application overview
+21	n/a	N/A	592	9	2026	srcrow592	aj-power #1001: | N/A | dependant	aosif #1051: | N/A | Pressure Cap | 103 kPa	atlas-copco-power #1002: | N/A | N/A
+22	hz	Hz	590	16	2647	srcrow590	aj-power #1001: | Hz | and | 3	comap #1008: | Hz | / | 4.0	datakom #1001: | Hz | 45
+23	manufacturer	Manufacturer	584	10	585	srcrow339 srcline245	aosif #1001: | Manufacturer | dongfeng Cummins	deep-sea-electronics #1027: | Manufacturer | Description	deif #1001: | Manufacturer | ECUs
+24	code	Code	581	4	583	srcrow42 srcline539	comap #1001: | code | Description	sices #1003: | Code | Description.	winco #1006: | code | exception
+25	standby	Standby	540	13	819	srcrow539 srcline1	aj-power #1001: | Standby | Prime	gb-power #1001: | Standby | Standby	genlitec #1009: | Standby | Power
+26	can	CAN(H)	532	8	932	srcrow532	atlas-copco-power #1009: | can | synchronize	comap #1001: | CAN | Terminator impedance 120 Ω	deep-sea-electronics #1001: | CAN | 1 Non-Isolated Ports
+27	alternator model	Alternator model	513	7	513	srcrow513	fdk-energy #1001: | Alternator model | Stamford S0L2-M1	gb-power #1001: | Alternator Model | PI044E	genlitec #1001: | Alternator model | S274G120
+28	open	Open	511	9	565	srcrow511	aosif #1071: | Open | Silent	fdk-energy #1001: | Open | Soundproof	genlitec #1009: | Open | Silent
+29	control system	Control System	497	10	498	srcrow497	aj-power #1001: | Control System | Captive anti-vibration mounts (required for trailer sets)	aosif #1101: | Control System | Cooling system	fdk-energy #1001: | Control System | DSE7320
+30	fuel	Fuel	470	16	658	srcrow470	aj-power #1001: | Fuel | is available on location or at the modern	aosif #1091: | Fuel | ISO9001 | ISO14001	datakom #1001: | Fuel | Level
+31	bearing	Bearing	470	8	481	srcrow470	aosif #1001: | Bearing | Single Bearing	genlitec #1001: | Bearing | Single bearing	gfe-power #1040: | Bearing | Single Bearing
+32	open type	Open type	461	5	846	srcrow461	genlitec #1001: | Open type | Silent type	lees-power #1001: | Open type | 4750×2070×2414 | 6800	sanq-power #1001: | Open type | 1260mmx630mmx730mm | 450
+33	frequency	Frequency	460	24	726	srcrow459 srcline1	aj-power #1001: | Frequency (Hz) | ✓	genlitec #1001: | Frequency (Hz) | 50	smartgen #1008: | Frequency (Hz) | Frequency (Hz)
+34	altitude	altitude	451	12	708	srcrow451	comap #1004: | altitude | 4000 m above sea level for | ±1 % of meas value ±0.5 mA	gb-power #1001: | Altitude | ≤1000m	gfe-power #1002: | Altitude | m | ≤1000
+35	guangdong westinpower co., ltd │ add	GUANGDONG WESTINPOWER CO., LTD ￨ ADD	448	1	448	srcline448	westinpower #1001: GUANGDONG WESTINPOWER CO., LTD ￨ ADD:Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, China		
+36	winding pitch	Winding pitch	440	10	457	srcrow440	aosif #1001: | Winding pitch | 2/3	genlitec #1013: | Winding Pitch: | 2/3	gfe-power #1008: | Winding Pitch | Two Thirds
+37	genset	GENSET	428	11	436	srcrow427 srcline1	aj-power #1001: | GENSET | GENSET	aosif #1001: | Genset | Engine	datakom #1001: | Genset | Low Voltage Shutdown Limit
+38	configuration	CONFIGURATION	421	8	573	srcrow421	atlas-copco-power #1005: | CONFIGURATION | DIFFICILES	deep-sea-electronics #1007: | configuration | configurable when using CAN	gfe-power #1007: | CONFIGURATION | ENGINE MODEL: | KTA50-G16A | DATA SHEET: FR722 | CPL No.： PP634
+39	silent type	Silent type	401	3	900	srcrow401	lees-power #1001: | Silent type | 5400×2260×2550 | 10500 | 690	sanq-power #1001: | Silent type | 2200mmx1033mmx1304mm | 896	westinpower #1001: | Silent Type | 12000mm*3200mm*3670mm | 21201 Kg
+40	coolant capacity	Coolant capacity	399	9	567	srcrow399	aosif #1023: | Coolant Capacity(Engine only) | 7.9L	gb-power #1001: | Coolant capacity | 5.2L	hyundai-power-products #5001: | Coolant Capacity | L | 34
+41	input	input	393	5	687	srcrow392 srcline1	datakom #1001: | input | may	deep-sea-electronics #1001: | input | supply	deif #1001: | input | Tacho
+42	module	module	386	5	533	srcrow386	comap #1001: | module | CM223248XBX	deep-sea-electronics #1010: | Module | 0 V to 35 V	genlitec #1001: | Module | Options
+43	data	Data	371	8	540	srcrow81 srcline290	datakom #1001: | DATA | COEFFICIENT	deep-sea-electronics #1014: | data | sheet | 055-079	deif #1001: | Data | sheet | 4921240618-J
+44	coupling	Coupling	361	6	361	srcrow361	aosif #1001: | Coupling | Flexible disc	genlitec #1001: | Coupling | Flexible disc	gfe-power #1001: | Coupling | Direct
+45	no.	NO.	358	5	358	srcrow358	bison-zhejiang #1003: | NO. | SHAPE	deif #1001: | No. | Name	sices #1003: | No. | NAME
+46	oil capacity	Oil Capacity	335	7	505	srcrow335	aosif #1001: | Oil Capacity(Total) | 10.9L	jichai-huanneng #3002: | Oil capacity | 135 L	longkai-power #1001: | Oil capacity | L | 13
+47	genset model	Genset model	323	14	892	srcrow323	app-power-anpu #5001: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator	engine-traits #1805: | Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated 	fdk-energy #1001: | Genset Model | FDK-CD28/H1
+48	max back pressure	Max back pressure	319	3	487	srcrow319	longkai-power #1001: | Max back pressure | kPa | 6	westinpower #1001: | Max back pressure | 3KPa	xinhengxin-fujian #1001: | Max back pressure | kPa | 10
+49	max water temperature	Max water temperature	316	3	480	srcrow316	longkai-power #1001: | Max water temperature | ℃ | 104	westinpower #1001: | Max water temperature | 98°C	xinhengxin-fujian #1002: | Max water temperature | 104°C
+50	current	current	311	12	326	srcrow310 srcline1	comap #1017: | current | galvanically isolated	datakom #1001: | Current | transformer	deep-sea-electronics #1001: | Current | Analogue
+51	standard features	Standard Features	305	3	305	srcrow305	lees-power #1001: | Standard Features | Generator Features	longkai-power #1001: | Standard Features | Unit	xinhengxin-fujian #1001: | Standard Features | Unit
+52	electrical	Electrical	301	3	499	srcrow301	lees-power #1001: | Electrical | radiated generator set heat for a maximum of	leroy-somer-fuzhou #1001: | Electrical | Optimized genset power	vpower-hk #1001: | Electrical : | [%] | 44.3 | 42.9 | 40.6
+53	www.voltgent.com	www.voltgent.com	300	1	350	srcrow300	voltgent #1001: | www.voltgent.com | VC28-5-S3 | · 01		
+54	revision	Revision	292	2	292	srcline290 srcrow2	mecc-alte #1017: Revision: 7	sices #1003: | Revision | Date	
+55	12 months from date of purchase	12 months from date of purchase	288	2	288	srcrow288	longkai-power #1001: | 12 months from date of purchase | or 1000 hours	xinhengxin-fujian #1001: | 12 months from date of purchase | and 1000 hours.	
+56	prime	Prime	285	6	472	srcrow285	aj-power #1001: | Prime | Standby	gb-power #1001: | Prime | 2.9L/H	genlitec #1009: | Prime | Power
+57	system	system	280	8	284	srcrow278 srcline2	aosif #1032: | system (oil pan + oil filter) | --- 12℃ to 0℃- 0°F CCA | 475 CCA	atlas-copco-power #1010: | system | •	gb-power #1001: | system | 4.9L
+58	expansion	Expansion	280	3	507	srcrow280	deep-sea-electronics #1017: | Expansion | Module | 2170-01	smartgen #1004: | expansion | digital	winco #1006: | Expansion | module | 0
+59	oil pressure	Oil Pressure	279	6	423	srcrow279	aosif #1001: | Oil Pressure | Min. recommended battery capacity (24V)	datakom #1002: | Oil Pressure | Sender	gfe-power #1002: | Oil pressure | ●
+60	sound	Sound	276	1	276	srcrow276	lees-power #1001: | Sound | Data		
+61	t/a-a	T/A-A	264	1	264	srcrow264	baudouin #1005: | T/A-A | ECU		
+62	low	Low	264	8	280	srcrow259 srcline5	datakom #1001: | Low | If the mains frequency goes under this limit, it means	deif #1001: | Low | Data + (A)	fdk-energy #1001: | Low | environment Temp
+63	w www.deepseaelectronics.com	W: www.deepseaelectronics.com	264	1	584	srcrow264	deep-sea-electronics #1001: | W: www.deepseaelectronics.com | W: www.deepseaelectronics.com		
+64	standard	standard	251	13	260	srcrow250 srcline1	aj-power #1001: | standard | prevent hot air	aosif #1001: | Standard | supply	atlas-copco-power #1001: | Standard | Standard
+65	action	Action	243	2	252	srcrow243	datakom #1001: | Action | 0 | 1: Load Dump (the engine stops after cooldown)	smartgen #1002: | Action | 0: Indication; 1: Warning;	
+66	terminals of controller	Terminals of controller	242	1	253	srcrow242	smartgen #1001: | Terminals of controller | Connector B		
+67	winding leads	Winding Leads	238	4	238	srcrow238	gfe-power #1008: | Winding Leads | 12	stamford-avk-china #1001: | WINDING LEADS | 12	westinpower #1001: | Winding Leads | 6
+68	electronic	Electronic	229	3	877	srcrow229	atlas-copco-power #1001: | Electronic | Electronic	koten-power #1001: | Electronic | 4.75 | 274C | 2650*1050*1400 | 1550	sanq-power #1059: | electronic | control
+69	50hz	50Hz	227	7	737	srcrow227	aj-power #1001: | 50Hz | 60Hz | 50Hz | 60Hz	engine-traits #1102: | 50Hz | kWm | | kWe | kVA | RPM |	gfe-power #1002: | 50Hz | 1500rpm | 3-Phase | Factor Φ = 0.8
+70	analogue	Analogue	227	5	494	srcrow227	datakom #1001: | Analogue | high	deep-sea-electronics #1001: | Analogue | Input | (6),	deif #1001: | Analogue | load
+71	e-mail	E-mail	224	8	224	srcline224	bruno-generators #3001: E-mail: venditeitalia@brunogenerators.it	comap #1001: E-mail: info@comap-control.com	dingbo #3001: E-mail: sales@dieselgeneratortech.com
+72	poles	Poles	219	6	234	srcrow219	aosif #1001: | Poles | 4	genlitec #1001: | Poles | 4	koten-power #1002: | Poles | 4
+73	digital	digital	219	6	297	srcrow219	datakom #1001: | digital | outputs	deep-sea-electronics #1001: | Digital | Input	deif #1001: | Digital | load
+74	minimum	Minimum	214	7	408	srcrow214	aosif #1016: | Minimum | Coolant Friction Head External	gfe-power #1008: | Minimum | x 1.00 | x 1.80 | x 3.20	mecc-alte #1007: | Minimum | 1x | 1.80x | 3.20x
+75	rated frequency	Rated frequency	213	8	266	srcrow213	atlas-copco-power #1001: | Rated frequency | Hz | 50 | 50 | 50 | 50 | 50 | 50 | 50 | 50	fdk-energy #1001: | Rated frequency | 50Hz	jichai-huanneng #3002: | Rated frequency | 50Hz
+76	deep sea electronics uk	DEEP SEA ELECTRONICS UK	212	1	212	srcrow212	deep-sea-electronics #1001: | DEEP SEA ELECTRONICS UK | DEEP SEA ELECTRONICS USA		
+77	deep sea electronics uae	DEEP SEA ELECTRONICS UAE	212	1	212	srcrow212	deep-sea-electronics #1001: | DEEP SEA ELECTRONICS UAE | DEEP SEA ELECTRONICS INDIA		
+78	t +44 1723 890099	T: +44 (0) 1723 890099	212	1	636	srcrow212	deep-sea-electronics #1001: | T: +44 (0) 1723 890099 | T: +1 (815) 316 8706 | T: +971 (0) 45910819 | T: +91 20 68195900		
+79	e sales@deepseaelectronics.com	E: sales@deepseaelectronics.com	212	1	212	srcrow212	deep-sea-electronics #1001: | E: sales@deepseaelectronics.com | E: usasales@deepseaelectronics.com		
+80	e uaesales@deepseaelectronics.com	E: uaesales@deepseaelectronics.com	212	1	212	srcrow212	deep-sea-electronics #1001: | E: uaesales@deepseaelectronics.com | E: sales@deepseaelectronics.com		
+81	cycle	Cycle	211	3	211	srcrow211	fdk-energy #1001: | Cycle | Four stroke	genlitec #1013: | Cycle | 4 STROKE	smartgen #1007: | Cycle | Start Settings
+82	engine make	Engine Make	205	2	205	srcrow205	fdk-energy #1001: | Engine Make | Cummins	genlitec #1013: | Engine Make | Perkins	
+83	make	make	201	3	201	srcrow201	fdk-energy #1001: | make | the	smartgen #1005: | Make | records about all start/stop	taylor-power #1002: | Make | Voltage
+84	generator set	Generator set	201	2	201	srcrow201	fdk-energy #1001: | Generator set | Alternator	long-gen #1001: | Generator Set | Alternator	
+85	we	We	200	4	200	srcrow200	aj-power #1001: | We | work	bison-zhejiang #1003: | WE | A RE	fdk-energy #1001: | we | can
+86	the	The	200	17	204	srcrow200	atlas-copco-power #1001: | The | versatile QES generators	datakom #1001: | The | unit provides a set of non resettable incremental counters	deep-sea-electronics #1005: | the | operating
+87	rise	rise	200	3	200	srcrow200	lees-power #1001: | rise | •	leroy-somer-fuzhou #1003: | rise | 20%	stamford-avk-china #1018: | Rise | Scaling Factor
+88	breaker	Breaker	199	6	221	srcrow198 srcline1	aosif #1001: | Breaker | Fuel system	deif #1001: | breaker | handling,	hipower #1001: | BREAKER | Export/import trends,
+89	fdk diesel generator set	FDK Diesel Generator Set	199	1	199	srcrow199	fdk-energy #1001: | FDK Diesel Generator Set | Data		
+90	engine specifications	Engine Specifications	199	1	199	srcrow199	fdk-energy #1001: | Engine Specifications | (DETAILED in APPENDIX)		
+91	engine manufacturer	Engine Manufacturer	199	1	199	srcrow199	fdk-energy #1001: | Engine Manufacturer | Cummins (China		
+92	alternator manufacturer	Alternator manufacturer	199	1	199	srcrow199	fdk-energy #1001: | Alternator manufacturer | STAMFORD		
+93	(available	(Available	199	1	199	srcrow199	fdk-energy #1001: | (Available | with		
+94	rated output prime power	Rated output prime power	199	1	199	srcrow199	fdk-energy #1001: | Rated output prime power | 25 KVA		
+95	output frequency / rated speed	Output Frequency / Rated speed	198	1	198	srcrow198	fdk-energy #1001: | Output Frequency / Rated speed | 50Hz/1500rpm		
+96	air flow	Air flow	198	6	486	srcrow198	gfe-power #1025: | Air flow (m3/s) | 0.48	leroy-somer-fuzhou #1004: | Air flow (m3/s) | 0.48	hyundai-power-products #5001: | Air flow | m3/s | 0.514
+97	key features	Key features	197	4	198	srcrow197	comap #1004: | Key features | Application overview	deep-sea-electronics #1008: | KEY FEATURES | • | 3 engine maintenance alarms	lees-power #1122: | Key Features | Ø
+98	part number	Part Number	197	2	197	srcline195 srcrow2	deep-sea-electronics #1001: Part Number: 7310-03 / 7320-03	sices #1003: | Part number | Model Name	
+99	tank	tank	197	2	387	srcrow197	fdk-energy #1001: | tank |  | DSE7320	genlitec #1001: | tank | l	
+100	overall	Overall	196	3	204	srcrow196	deep-sea-electronics #1001: | Overall (W x H x D) | 245 mm x 184 mm x 51 mm / 9.6” x 7.2” x 2.0”	gfe-power #1002: | Overall | dimensions,	westinpower #1001: | OVERALL | PANEL CUTOUT
+101	pmg	PMG	196	6	208	srcrow194 srcline2	gfe-power #1008: | PMG | PMG	leroy-somer-fuzhou #1004: | PMG | optional | 421	longkai-power #1001: | PMG | ○
+102	custom	custom	193	3	193	srcrow193	deif #1003: | custom | alarms	fdk-energy #1001: | custom | requirements)	smartgen #1010: | Custom | Sensor
+103	generator	generator	191	13	204	srcrow190 srcline1	atlas-copco-power #1004: | generator | ökar	bison-zhejiang #1001: | GENERATOR | OTHER	comap #1004: | Generator | 50
+104	alternator option leroy somer, mecc, marathon,	Alternator option: Leroy Somer, MECC, Marathon,	191	1	191	srcrow191	fdk-energy #1001: | Alternator option: Leroy Somer, MECC, Marathon, | Engga, Faraday		
+105	rated output	Rated output	189	3	475	srcrow189	aosif #1001: | Rated output | Fuel consumption rate | ISO9001 | ISO14001	atlas-copco-power #1001: | Rated Output | kVA | 11 | 13.5 | 13 | 16 | 16.6 | 22.5 | 33/32 | 45/42.5 | 63.5/60 | 95.8/90 | 112/100	voltgent #1001: | RATED OUTPUT | CURRENT
+106	thermostat operation range	Thermostat operation range	186	3	370	srcrow186	aosif #1108: | Thermostat operation range | 80 ~ 90 ℃	gfe-power #1002: | Thermostat operation range | °C | up to 40°C	longkai-power #1001: | Thermostat operation range | ℃ | 82-95
+107	at	at	185	9	228	srcrow185	deep-sea-electronics #1035: | at | least | 10	deif #1004: | at | the	fdk-energy #1092: | at | rated
+108	standards	Standards	184	5	184	srcrow184	aosif #1078: | Standards | followed	smartgen #1004: | standards | for	stamford-avk-china #1001: | STANDARDS | WINDINGS & ELECTRICAL PERFORMANCE
+109	fuel relay output	Fuel Relay Output	181	1	234	srcrow181	smartgen #1001: | Fuel Relay Output | 16A DC28V at supply voltage		
+110	technical data	Technical data	178	7	184	srcrow178	agco-power #1001: | Technical data | CORE80 | 1800 | 400	comap #1013: | Technical data | Speed governor	datakom #1001: | Technical data | Description
+111	sudden voltage warp	Sudden Voltage Warp	178	2	276	srcrow178	gb-power #1001: | Sudden Voltage Warp | ≤±1%	shanhua #1001: | Sudden Voltage Warp (100% Sudden Reduce) | (瞬态电压偏差（100%突减功率）)： | ≤+25%	
+112	voltage stable time	Voltage Stable Time	178	2	280	srcrow178	gb-power #1001: | Voltage Stable Time | ≤6S	shanhua #1001: | Voltage Stable Time (100% Sudden Reduce) | （电压稳定时间（100%突减功率））： | ≤6S	
+113	measurement	measurement	177	4	181	srcrow177	comap #1001: | measurement | 0.2 % from measured value	deif #1004: | measurement | Accuracy: -179.9 to 180°: 0.2°, within the temperature operating range	sices #1003: | measurement | (PICK-UP
+114	oil consumption	Oil Consumption	177	5	318	srcrow177	gb-power #1038: | Oil Consumption | ≤1.36 G/KWH	longkai-power #1001: | Oil consumption | g/kwh	xinhengxin-fujian #1001: | Oil consumption | g/kwh | ≤4
+115	with	with	176	12	176	srcrow176	aj-power #1001: | with | your	atlas-copco-power #1001: | with | derating	cgm-italia #1001: | with | dedicated
+116	supply	supply	176	7	180	srcrow176	deep-sea-electronics #1003: | supply | voltage	deif #1001: | Supply | Engine	gfe-power #1002: | supply | ○
+117	user manual	User manual	176	3	176	srcrow176	longkai-power #1001: | User manual | ●	smartgen #1006: | User Manual | Page 12 of 73	xinhengxin-fujian #1001: | User Manual | ●
+118	• generator sets	• Generator sets	176	1	176	srcline176	sanq-power #1001: • Generator sets: GB/T2820-1997, ISO9001：2008		
+119	• diesel engine	• Diesel Engine	176	1	176	srcline176	sanq-power #1001: • Diesel Engine: ISO3046, DIN6271		
+120	• manufacture/type	• Manufacture/Type	176	1	177	srcrow176	sanq-power #1001: | • Manufacture/Type | Stamford/PI044E		
+121	• number of phase power	• Number of phase power	176	1	176	srcrow176	sanq-power #1001: | • Number of phase power | 3		
+122	• factor	• Factor	176	1	176	srcrow176	sanq-power #1001: | • Factor | 0.8		
+123	• pole number	• Pole Number	176	1	176	srcrow176	sanq-power #1001: | • Pole Number | 4		
+124	• bearing number	• Bearing Number	176	1	176	srcrow176	sanq-power #1001: | • Bearing Number | 1		
+125	• features	• Features	176	1	176	srcline176	sanq-power #1001: • Features: receive remote output signal from ATS and realize auto start and		
+126	• pre-heater	• Pre-heater	176	1	176	srcrow176	sanq-power #1001: | • Pre-heater | • Anti Condensation Heater		
+127	• drop ct	• Drop CT（For Paralleling）	176	1	176	srcrow176	sanq-power #1001: | • Drop CT（For Paralleling） | • Water Separator		
+128	add	Add	174	4	174	srcline174	app-power-anpu #5001: Add: No. 1800, Economic Development Zone, Wecnat Su	bison-zhejiang #1002: Add: 2/F, Build.D, Fangyuan Business Park,	longkai-power #1001: Add: Wei 5 Road, Tiehu Industrial Zone, Fuan, Fujian,China
+129	l/h	L/h	173	3	325	srcrow173	aosif #1104: | L/h | IEC60034 | IEC60204	lees-power #1186: | L/H | 28	voltgent #1001: | L/h | Maximum exhaust | 382 °C
+130	load	Load	173	11	242	srcrow172 srcline1	deep-sea-electronics #1004: | Load | Sharing	deif #1001: | load | take-over,	gfe-power #1025: | Load | shedding
+131	register	register	171	1	176	srcrow171	winco #1006: | register | range, the register was not changed and no actions were taken		
+132	engine heater	Engine heater	170	3	173	srcrow170	deif #1001: | Engine heater | 1 | 26	longkai-power #1001: | Engine heater | ○	xinhengxin-fujian #1001: | engine heater | O
+133	kw input	kW Input	170	3	2143	srcrow170	gfe-power #1008: | kW Input | 366 | 402 | 392 | 377 | 357 | 383 | 383 | 368 | 344 | 356 | 355 | 341 | 317 | 325 | 324 | 315	stamford-avk-china #1001: | kW Input | 66.0 | 65.8 | 65.7 | 75.0 | 74.8 | 74.7 | 79.1 | 78.8 | 78.7 | 81.5 | 81.2 | 81.0	wintpower #1001: | kW Input | 9.9 | 9.8 | 9.7 | 9.7 | 10.8 | 10.8 | 10.8 | 10.7
+134	standard auto control system	Standard auto control system	169	2	169	srcrow169	longkai-power #1001: | Standard auto control system | ●	xinhengxin-fujian #1001: | Standard auto control system | ●	
+135	alternator heater	Alternator heater	169	2	169	srcrow169	longkai-power #1001: | Alternator heater | ○	xinhengxin-fujian #1001: | Alternator heater | O	
+136	of	of	168	14	216	srcrow167 srcline1	aosif #1035: | of | 100mm	cgm-italia #1001: | of | engine	comap #1013: | of | the
+137	generator will be ready to run	generator will be ready to run	167	2	167	srcline167	longkai-power #1001: generator will be ready to run: “peace of	xinhengxin-fujian #1001: generator will be ready to run:“peace	
+138	rated prime power	Rated prime power	167	2	333	srcrow167	longkai-power #1001: | Rated prime power | kva | 68.75	xinhengxin-fujian #1001: | Rated prime power | kva | 562	
+139	wiring type	Wiring Type	167	2	169	srcrow167	longkai-power #1001: | Wiring Type | 3 Phase 4 wire, Y type	xinhengxin-fujian #1001: | Wiring Type | 3 Phase 4 wire, Y type	
+140	exhause system	Exhause System	167	2	167	srcrow167	longkai-power #1001: | Exhause System | High/low voltage	xinhengxin-fujian #1001: | Exhause System | High/low voltage	
+141	exhause gas flow	Exhause gas flow	167	2	313	srcrow167	longkai-power #1001: | Exhause gas flow | m³/min | 11.5	xinhengxin-fujian #1001: | Exhause gas flow | L/s | 1862	
+142	main line circuit breaker/mccb	Main line circuit breaker/MCCB	167	2	167	srcrow167	longkai-power #1001: | Main line circuit breaker/MCCB | ●	xinhengxin-fujian #1001: | Main line circuit breaker/MCCB | ●	
+143	switch box	Switch box	167	2	197	srcrow167	longkai-power #1001: | Switch box | ○	xinhengxin-fujian #1001: | Switch box | O	
+144	exhause gas temp	Exhause gas temp	166	2	314	srcrow166	longkai-power #1001: | Exhause gas temp | ℃ | 600	xinhengxin-fujian #1001: | Exhause gas temp | ℃ | 483	
+145	offset	offset	166	1	172	srcrow166	winco #1006: | offset | value		
+146	factory	Factory	165	4	167	srcline136 srcrow29	aosif #1001: Factory: No.1088 Tangbian, Changtai Economic Development Zone, Zhangzhou,Fujian,China.	comappower #3001: Factory: Tiehu Industrial Zone, Fuan City, Fujian Province	datakom #1001: | Factory | Description
+147	exhaust gas flow	Exhaust Gas Flow	165	4	171	srcrow165	gb-power #1036: | Exhaust Gas Flow | 346 M3 /H	westinpower #1001: | Exhaust gas flow | 525L/min	xinhengxin-fujian #1002: | Exhaust gas flow | 159.4 m3/min
+148	power your future	POWER YOUR FUTURE	165	1	165	srcrow165	longkai-power #1001: | POWER YOUR FUTURE | SC4H95D2		
+149	rated standard power	Rated standard power	165	1	411	srcrow165	longkai-power #1001: | Rated standard power | kva | 75.63		
+150	max inlet pressure	Max inlet pressure	165	1	310	srcrow165	longkai-power #1001: | Max inlet pressure | kPa | 6		
+151	24v charge alternator	24V charge alternator	165	1	165	srcrow165	longkai-power #1001: | 24V charge alternator | ●		
+152	two 24v batteries, rac and cable	Two 24V batteries, rac and cable	165	1	165	srcrow165	longkai-power #1001: | Two 24V batteries, rac and cable | ●		
+153	exhaust system(ripple flex exhaust pipe,	Exhaust system(Ripple flex exhaust pipe,	165	1	165	srcrow165	longkai-power #1001: | Exhaust system(Ripple flex exhaust pipe, | Open Type		
+154	exhaust siphon, flange, muffler	exhaust siphon, flange, muffler	165	1	165	srcrow165	longkai-power #1001: | exhaust siphon, flange, muffler | ●		
+155	battery charge	Battery charge	165	1	165	srcrow165	longkai-power #1001: | Battery charge | ○		
+156	water oil separator	Water oil separator	165	1	165	srcrow165	longkai-power #1001: | Water oil separator | ○		
+157	remote control panel	Remote control panel	165	1	165	srcrow165	longkai-power #1001: | Remote control panel | ○		
+158	automatic transfer switch/ats	Automatic transfer switch/ATS	165	1	165	srcrow165	longkai-power #1001: | Automatic transfer switch/ATS | ○		
+159	standard ●	Standard: ●	165	1	165	srcrow165	longkai-power #1001: | Standard: ● | Options:○		
+160	coating	Coating	164	3	164	srcrow164	aosif #1001: | Coating | Vacuum impregnation	genlitec #1001: | Coating | Vacuum impregnation	koten-power #1002: | Coating | Vacuum impregnation
+161	height	Height(mm)	161	10	333	srcrow161	agco-power #1001: | Height (C) | 1230 mm	aosif #1001: | Height(mm) | 1350 | 1540	atlas-copco-power #1001: | Height (Standard / 24h / 48h* ) | mm | 1225 / 1350 / | 1225 / 1350 / | 1225 / 1350 / | 1175 / 1360 / | 1175 / 1360 / | 1280 / 1400 / | 1643 / 1
+162	(https	[View Product Page](https	160	1	160	srcline160	engine-traits #1201: [Skip to main content](https://www.deere.com/en-us/products-and-solutions/engines-and-drivetrain/generator-drive-engines/#main-content)		
+163	packing	Packing	158	1	158	srcrow158	lees-power #1001: | Packing | •		
+164	baseframe	Baseframe	158	1	158	srcrow158	lees-power #1001: | Baseframe | •		
+165	wuxi lees power company limited	WUXI LEES POWER COMPANY LIMITED	158	1	158	srcrow158	lees-power #1001: | WUXI LEES POWER COMPANY LIMITED | LEES POWER (UK) LTD		
+166	email lees@leespower.com	Email: lees@leespower.com	158	1	158	srcrow158	lees-power #1001: | Email: lees@leespower.com | Email: lees@leespower.com		
+167	no	NO	157	5	166	srcrow157	bison-zhejiang #1002: | NO | D	leroy-somer-fuzhou #1008: | no | load and rated speed (star connection Y)	mecc-alte #1009: | No | load
+168	width	Width(mm)	156	8	296	srcrow156	agco-power #1001: | Width (B) | 707 mm	aosif #1001: | Width(mm) | 750 | 1000	genlitec #1001: | Width (W) | 1000mm | 1150mm
+169	brand	Brand	156	5	156	srcrow154 srcline2	aosif #1001: | Brand | Cummins	endress-stromerzeuger #1001: | Brand | Yanmar	hosem-power #1001: | Brand | Leroy Somer
+170	type injection system	Type Injection system	155	2	192	srcrow155	aosif #1001: | Type Injection system | WF A Direct injection	fdk-energy #1020: | Type Injection System | Bosch HPCR	
+171	is	is	155	6	160	srcrow155	deif #1001: | is | available	gfe-power #1008: | is | constant irrespective	sices #1003: | is | activated in case of faults in the engine
+172	exhaust system	Exhaust System	155	6	168	srcrow155	genlitec #1013: | Exhaust System | 50 Hz | 60 Hz	hyundai-power-products #5001: | Exhaust system | Preheating system	kc-generatorset #3002: | Exhaust System | Industrial Silencer and Flexible Exhaust Pipe | Corrugated Pipe, Extended Exhaust Pipe
+173	sustained	Sustained	155	3	342	srcrow155	gfe-power #1008: | Sustained | x 1.00 | x 1.50 | x 2.50	stamford-avk-china #1001: | Sustained | x 1.00 | x 1.50 | x 2.50	wintpower #1002: | Sustained | x 1.00 | x 1.50 | x 2.50
+174	length	Length(mm)	154	9	294	srcrow150 srcline4	agco-power #1001: | Length (A) | 1206 mm	aosif #1001: | Length(mm) | 1860 | 2250	deif #1001: Length: 233.3 mm (9.16 in)
+175	main features	Main features:	154	3	155	srcrow154	aosif #1001: | Main features: | Protection:	koten-power #1002: | Main Features | §	sices #1001: | MAIN FEATURES | >> | Available in two versions: GC600 and GC600Mains.
+176	can gnd	CAN GND	154	1	166	srcrow154	smartgen #1001: | CAN GND | -		
+177	accessories	Accessories	152	3	152	srcrow2 srcline150	comap #1013: | Accessories | Description	deif #1002: | Accessories | Description	westinpower #1001: Accessories: Silencer, bellow, exhaust silencing system accessories (with the
+178	guangdong westinpower co., ltd │add	GUANGDONG WESTINPOWER CO., LTD ￨ADD	152	1	152	srcline152	westinpower #1001: GUANGDONG WESTINPOWER CO., LTD ￨ADD:Westinpower Industrial Zone,Shantou Free Tax Zone,Guangdong Province, China		
+179	base frame	Base Frame:	151	3	152	srcrow151	genlitec #1013: | Base Frame: | Heavy Duty Fabricated	kc-generatorset #3002: | Base Frame | Heavy-Duty Steel Base | Upgraded Vibration Isolators	lees-power #1001: | Base frame | •
+180	233mm x 173mm x 38.5mm	233mm x 173mm x 38.5mm	151	1	151	srcrow151	westinpower #1001: | 233mm x 173mm x 38.5mm | 219mm x 158mm		
+181	restriction option	restriction option	151	1	151	srcrow151	westinpower #1001: | restriction option | 		
+182	extended battery lifetime	extended battery lifetime	151	1	151	srcrow151	westinpower #1001: | extended battery lifetime | 5/ Tier 4 Final		
+183	running modes	running modes	151	1	262	srcrow151	westinpower #1001: | running modes |  | RS-485 base communication		
+184	mm	mm	150	9	325	srcrow150	aosif #1078: | mm | Coolant Capacity | 15.0 L	atlas-copco-power #1006: | mm | 21546 x 5094	cgm-italia #1001: | mm | mm
+185	gen-set	GEN-Set	150	1	150	srcrow150	westinpower #1001: | GEN-Set | Dimension ( L*W*H )		
+186	engine air flow	Engine air flow	150	1	150	srcrow150	westinpower #1001: | Engine air flow | 175L/min		
+187	number of phase power	Number of phase power	150	1	150	srcrow150	westinpower #1001: | Number of phase power | 3		
+188	pole	Pole	150	1	150	srcrow150	westinpower #1001: | Pole | 4		
+189	web www.fdkenergy.com	Web: www.fdkenergy.com	147	1	147	srcrow147	fdk-energy #1005: | Web: www.fdkenergy.com | Email: info@fdkenergy.com		
+190	total oil capacity w/filters	Total oil capacity w/filters	147	1	147	srcrow147	westinpower #1001: | Total oil capacity w/filters | 213L		
+191	engine brand	Engine brand	143	7	144	srcrow143	genlitec #1001: | Engine brand | CUMMINS	gfe-power #1001: | Engine brand | JOHN DEERE	hosem-power #1001: | Engine Brand | Perkins
+192	co.,	Co.,	143	2	143	srcrow143	lees-power #1122: | Co., | Ltd.	longkai-power #1001: | Co., | Ltd.	
+193	control module with" three remote	Control module with" Three Remote	143	2	143	srcrow143	longkai-power #1001: | Control module with" Three Remote | Control"	xinhengxin-fujian #1001: | Control module with" Three Remote | Control"	
+194	website	Website	142	5	142	srcline142	aosif #1001: Website: www.aosif.com	app-power-anpu #5001: Website: www.appfdj.com - = i	lees-power #5001: Website: www.leespower.com
+195	operation	operation	141	5	142	srcrow141	aosif #1001: | operation | hoisting mechanism to facilitate transportation of the unit.	atlas-copco-power #1010: | operation | COMPARED TO	datakom #1001: | Operation | 1: In TEST mode, the load will be transferred to the
+196	to	to	141	15	166	srcrow141	aosif #1016: | to | 48kPa	baudouin #1004: | to | 100%	cgm-italia #1001: | to | 1P+N.
+197	number	Number	141	6	148	srcrow141	comap #1001: | Number | 8	datakom #1001: | Number | Description	deep-sea-electronics #1001: | Number | DSE7310 MKII: 1
+198	lsa	LSA	141	1	1297	srcrow141	leroy-somer-fuzhou #1008: | LSA | 42.3 | VS1 | 565 | 503 | 237 | 117 | 260 | 18 | 307 | 279 | 299 | 23 | 400 | 356		
+199	low fuel level alarm	Low fuel level alarm	138	2	144	srcrow138	aosif #1001: | Low fuel level alarm | ●	sunny-weifang #3001: | Low fuel level alarm | Low fuel level alarm | When a fuel level has been detected by the sensor fitted to the daily tank, the light is on. | -Gener	
+200	generating system and accessories.	generating system and accessories.	138	1	138	srcrow138	lees-power #1001: | generating system and accessories. | reconnectability.		
+201	factory-built, and production-tested.	factory-built, and production-tested.	138	1	138	srcrow138	lees-power #1001: | factory-built, and production-tested. | provides superior short-circuit capability		
+202	requirements for transient performance.	requirements for transient performance.	138	1	138	srcrow138	lees-power #1001: | requirements for transient performance. | features inside.		
+203	temp rise	Temp Rise	138	1	138	srcrow138	lees-power #1001: | Temp Rise | Clas		
+204	with powder-coated coating	with powder-coated coating	138	1	138	srcrow138	lees-power #1001: | with powder-coated coating | •		
+205	weatherproof & sound-	(dynamic)Weatherproof & sound-	138	1	138	srcrow138	lees-power #1001: | (dynamic)Weatherproof & sound- | •		
+206	attenated canopy	attenated canopy	138	1	138	srcrow138	lees-power #1001: | attenated canopy | •		
+207	current for up to 10 seconds	current for up to 10 seconds	138	1	138	srcrow138	lees-power #1001: | current for up to 10 seconds | •		
+208	air cleaner	Air cleaner	138	1	138	srcrow138	lees-power #1001: | Air cleaner | Fan power………………………………………… 27kW		
+209	cold cranking amps under -18 °c	Cold cranking amps under -18 ℃	138	1	138	srcrow138	lees-power #1001: | Cold cranking amps under -18 ℃ | * Air density = 1.184 kg/m3		
+210	standard and	Standard and	138	1	138	srcrow138	lees-power #1001: | Standard and | optional features		
+211	• standard dry type air filters	• Standard dry type air filters	138	1	138	srcrow138	lees-power #1001: | • Standard dry type air filters | •		
+212	exhaust elbows	Exhaust elbows	138	1	276	srcrow138	lees-power #1001: | Exhaust elbows | • | Exhaust silencers 30 db(A)		
+213	lifting lugs	Lifting lugs	138	1	138	srcrow138	lees-power #1001: | Lifting lugs | •		
+214	lead-acid	Lead-Acid	138	1	138	srcrow138	lees-power #1001: | Lead-Acid | Battery		
+215	wound	Wound	138	1	138	srcrow138	lees-power #1001: | Wound | Battery		
+216	alterator	Alterator	138	1	276	srcrow138	lees-power #1001: | Alterator | • | IP23 Protection		
+217	comprehensive power	Comprehensive Power	138	1	138	srcrow138	lees-power #1001: | Comprehensive Power | Solutions		
+218	unit type	Unit type	138	1	265	srcrow138	lees-power #1001: | Unit type | Prime | 75%		
+219	enclosed power unit at 7m)	Enclosed power unit (dB(A) at 7m)	138	1	138	srcrow138	lees-power #1001: | Enclosed power unit (dB(A) at 7m) | /		
+220	trading	Trading	138	1	138	srcrow138	lees-power #1001: | Trading | Estate,		
+221	slough,	Slough,	138	1	414	srcrow138	lees-power #1001: | Slough, | Berkshire, | SL1 | 4QA,		
+222	web www.leespower.com	Web:www.leespower.com	138	1	138	srcrow138	lees-power #1001: | Web:www.leespower.com | Web:www.leespower.uk		
+223	powered	Powered	136	1	136	srcrow136	lees-power #1001: | Powered | by		
+224	stand by power	Stand by Power	135	1	135	srcrow135	aosif #1001: | Stand by Power | 22KVA/18KW		
+225	optional supply	Optional supply	135	1	135	srcrow135	aosif #1001: | Optional supply | scope:		
+226	● tool box	● Tool box	135	1	135	srcrow135	aosif #1001: | ● Tool box | ●		
+227	fuel heater	Fuel heater	135	1	135	srcrow135	aosif #1001: | Fuel heater | ●		
+228	temp. detector for	Temp. detector for	135	1	135	srcrow135	aosif #1001: | Temp. detector for | ●		
+229	fuel and water	Fuel and water	135	1	135	srcrow135	aosif #1001: | Fuel and water | winding and bearing		
+230	● trailer	● Trailer	135	1	135	srcrow135	aosif #1001: | ● Trailer | ●		
+231	antirust, mildew and	Antirust, mildew and	135	1	135	srcrow135	aosif #1001: | Antirust, mildew and | ●		
+232	adjustable earth	Adjustable earth	135	1	135	srcrow135	aosif #1001: | Adjustable earth | relay		
+233	● abb	● ABB	135	1	135	srcrow135	aosif #1001: | ● ABB | ●		
+234	● schneider	● Schneider	135	1	135	srcrow135	aosif #1001: | ● Schneider | ●		
+235	auto fuel pump	Auto Fuel Pump	135	1	135	srcrow135	aosif #1001: | Auto Fuel Pump | ●		
+236	marketing center	Marketing Center	135	1	135	srcline135	aosif #1001: Marketing Center: Unit 1001,No.1 of Cheng Yi North Street,Software Park Phase III ,Xiamen ,China;		
+237	capacity	Capacity(L)	135	3	142	srcrow135	aosif #1049: | Capacity | of | 800A	gfe-power #1004: | capacity | Litres	lees-power #1001: | Capacity(L) | Capacity(L)
+238	100%standby	100%Standby	134	1	511	srcrow134	aosif #1001: | 100%Standby | 230g/KW.h | 6.1L/h | ISO8528 | ISO12100		
+239	winding connection	Winding connection	134	1	134	srcrow134	aosif #1001: | Winding connection | Star		
+240	configuration suite pc software	configuration Suite PC software	134	1	134	srcrow134	aosif #1001: | configuration Suite PC software | ●		
+241	1emergency stop button	①Emergency stop button	134	1	134	srcrow134	aosif #1001: | ①Emergency stop button | ●		
+242	3power indicator	③Power indicator	134	1	134	srcrow134	aosif #1001: | ③Power indicator | ●		
+243	4operation buttons	④Operation buttons	134	1	134	srcrow134	aosif #1001: | ④Operation buttons | ●		
+244	5lcd display	⑤LCD display	134	1	134	srcrow134	aosif #1001: | ⑤LCD display | ●		
+245	trimmer	trimmer	134	1	134	srcrow134	aosif #1001: | trimmer | ⑨MCB		
+246	same time	same time	134	1	134	srcrow134	aosif #1001: | same time | ●		
+247	not easy to bump	not easy to bump	134	1	134	srcrow134	aosif #1001: | not easy to bump | stable operation of the unit		
+248	loading and unloading	loading and unloading	134	1	134	srcrow134	aosif #1001: | loading and unloading | facilitates refueling		
+249	convenient for shipping	convenient for shipping	134	1	134	srcrow134	aosif #1001: | convenient for shipping | and not easy to rust, and can further reduce the noise		
+250	standard container for easy handling	standard container for easy handling	134	1	134	srcrow134	aosif #1001: | standard container for easy handling | muffler outlet to prevent objects from entering the unit		
+251	facilitates refueling	facilitates refueling	134	1	134	srcrow134	aosif #1001: | facilitates refueling | operation		
+252	enables quick response to operation requirements	enables quick response to operation requirements	134	1	134	srcrow134	aosif #1001: | enables quick response to operation requirements | stable operation of the unit		
+253	capacity of breaker	Capacity of Breaker	133	1	133	srcrow133	aosif #1001: | Capacity of Breaker | 63A		
+254	25%prime	25%Prime	133	1	257	srcrow133	aosif #1001: | 25%Prime | 390g/KW.h | 2.4L/h		
+255	output	Output	133	11	187	srcrow132 srcline1	baudouin #1009: | Output | Typical Generator Output	comap #1001: | output | IGS-PTM	deep-sea-electronics #1008: | OUTPUT | GENERATOR/
+256	sensor	Sensor	133	2	167	srcrow133	smartgen #1001: | Sensor | When sensor hasn’t connected to corresponding port, controller will send	winco #1006: | Sensor | I sensor fault | 0 | 15 | 13/16-16/16	
+257	basic parameter	Basic parameter	132	1	132	srcrow132	aosif #1001: | Basic parameter | Air induction system		
+258	ce	CE	131	3	131	srcrow131	aosif #1001: | CE | RETIE	atlas-copco-power #1005: | Ce | mode	sices #1003: | ce | b
+259	ratings	Ratings	131	6	135	srcrow94 srcline37	gb-power #1001: | Ratings | Ratings	gfe-power #1001: | RATINGS | 400	leroy-somer-fuzhou #1016: | Ratings | / Efficiencies | 60
+260	total lubrication system capacity	Total Lubrication System Capacity (L)	129	1	294	srcrow129	fdk-energy #1005: | Total Lubrication System Capacity (L) | 11.4L		
+261	available.	available.	128	3	145	srcrow128	aj-power #1001: | available. | compact modern	deep-sea-electronics #1011: | available. | VIBRATION	lees-power #1001: | available. | •
+262	mains	Mains	128	7	146	srcrow125 srcline3	datakom #1001: | Mains | Low Voltage Limit	deep-sea-electronics #1001: | Mains | (Utility)	deif #1001: | Mains | Solar
+263	humidity.	humidity.	128	1	128	srcrow128	lees-power #1001: | humidity. | Fuel		
+264	sudden frequency warp	Sudden Frequency Warp	127	2	178	srcrow127	gb-power #1001: | Sudden Frequency Warp | ≤+12%	shanhua #1001: | Sudden Frequency Warp （Sudden Increase） | （瞬态频率偏差（突加功率））： | ≤-10%	
+265	xd dir. axis synchronous	Xd Dir. Axis Synchronous	127	3	864	srcrow127	gfe-power #1008: | Xd Dir. Axis Synchronous | 2.71 | 2.54 | 2.36 | 2.02 | 3.28 | 3.23 | 2.95 | 2.82	stamford-avk-china #1001: | Xd DIR. AXIS SYNCHRONOUS | 2.13 | 1.94 | 1.79	wintpower #1001: | Xd DIR. AXIS SYNCHRONOUS | 1.873 | 1.690 | 1.570 | 1.796 | 2.294 | 2.148 | 1.965 | 1.880
+266	x'd dir. axis transient	X'd Dir. Axis Transient	127	3	864	srcrow127	gfe-power #1008: | X'd Dir. Axis Transient | 0.18 | 0.17 | 0.16 | 0.13 | 0.18 | 0.18 | 0.16 | 0.16	stamford-avk-china #1001: | X'd DIR. AXIS TRANSIENT | 0.16 | 0.15 | 0.13	wintpower #1001: | X'd DIR. AXIS TRANSIENT | 0.188 | 0.170 | 0.158 | 0.180 | 0.232 | 0.217 | 0.199 | 0.190
+267	x''d dir. axis subtransient	X''d Dir. Axis Subtransient	127	3	864	srcrow127	gfe-power #1008: | X''d Dir. Axis Subtransient | 0.13 | 0.13 | 0.12 | 0.10 | 0.13 | 0.13 | 0.12 | 0.11	stamford-avk-china #1001: | X''d DIR. AXIS SUBTRANSIENT | 0.12 | 0.11 | 0.10	wintpower #1001: | X''d DIR. AXIS SUBTRANSIENT | 0.122 | 0.110 | 0.102 | 0.117 | 0.146 | 0.137 | 0.125 | 0.120
+268	xq quad. axis reactance	Xq Quad. Axis Reactance	127	3	864	srcrow127	gfe-power #1008: | Xq Quad. Axis Reactance | 2.34 | 2.19 | 2.03 | 1.74 | 2.90 | 2.84 | 2.60 | 2.49	stamford-avk-china #1001: | Xq QUAD. AXIS REACTANCE | 0.98 | 0.89 | 0.83	wintpower #1001: | Xq QUAD. AXIS REACTANCE | 0.931 | 0.840 | 0.780 | 0.892 | 1.135 | 1.063 | 0.972 | 0.930
+269	x''q quad. axis subtransient	X''q Quad. Axis Subtransient	127	3	864	srcrow127	gfe-power #1008: | X''q Quad. Axis Subtransient | 0.31 | 0.29 | 0.27 | 0.23 | 0.42 | 0.42 | 0.38 | 0.36	stamford-avk-china #1001: | X''q QUAD. AXIS SUBTRANSIENT | 0.12 | 0.11 | 0.10	wintpower #1001: | X''q QUAD. AXIS SUBTRANSIENT | 0.211 | 0.190 | 0.177 | 0.202 | 0.256 | 0.240 | 0.220 | 0.210
+270	canopy	Canopy	125	3	126	srcrow125	bobig-power #3002: | Canopy | Customized	green-power-generators #1001: | Canopy | T45 / T46 / T48	lees-power #1093: | Canopy | •
+271	avr model	AVR Model:	124	3	124	srcrow124	genlitec #1013: | AVR Model: | R150	hyundai-power-products #5001: | AVR Model | can be replaced easily,examining diode doesn't	westinpower #1001: | AVR model | MX322
+272	radiator & engine capacity	Radiator & engine capacity	124	2	124	srcrow124	gfe-power #1016: | Radiator & Engine capacity (l) | 151	westinpower #1001: | Radiator & engine capacity | 260L	
+273	value	value	123	4	198	srcrow123	mwm #1028: | value | Hu	sices #1003: | Value | Description	smartgen #1003: | value | (default: | 30s)
+274	exhaust temperature	Exhaust temperature	123	2	123	srcrow123	westinpower #1001: | Exhaust temperature | 560°C	xinhengxin-fujian #1002: | Exhaust temperature | 502°C	
+275	thermostat	Thermostat	122	2	124	srcrow122	westinpower #1001: | Thermostat | 71-85°C	xinhengxin-fujian #1001: | Thermostat | ℃ | 82-93	
+276	control	Control	121	11	123	srcrow121	aosif #1049: | Control | Deepsea 6120	cgm-italia #1001: | control | panel,	deep-sea-electronics #1001: | Control | Modules
+277	comprehensive power solutions	Comprehensive Power Solutions	120	1	120	srcrow120	lees-power #1093: | Comprehensive Power Solutions | www.leespower.com		
+278	coolant capacity(engine	Coolant Capacity(Engine	119	1	233	srcrow119	aosif #1001: | Coolant Capacity(Engine | only) | 7.2L		
+279	fuan	Fuan	119	1	119	srcrow119	longkai-power #1001: | Fuan | Longkai Power		
+280	hgm9510 genset parallel controller user manual	HGM9510 Genset Parallel Controller User Manual	118	1	118	srcrow118	smartgen #1003: | HGM9510 Genset Parallel Controller User Manual | Page 2 of 77		
+281	mechanical	Mechanical	116	3	440	srcrow116	koten-power #1001: | Mechanical | 3.3 | 184G | 2100*900*1052 | 850	leroy-somer-fuzhou #1001: | Mechanical | Easy access to regulator	stamford-avk-china #1043: | Mechanical | data
+282	rated power	Rated power	113	12	183	srcrow112 srcline1	atlas-copco-power #1009: | Rated power | kVA/ | 2 | 15 / 12 | 35 / 35 | 45 / 36 | 45 / 36	bobig-power #3003: | Rated Power | 6kva-3000kva	jichai-huanneng #3002: | Rated power | 1090kw
+283	t/a-w	T/A-W	113	1	113	srcrow113	baudouin #1005: | T/A-W | ECU		
+284	prp	PRP	113	7	124	srcrow113	baudouin #1008: | PRP | ESP	engine-traits #1102: | PRP | ESP | PRP | PRP | ESP | ESP	genlitec #1001: | PRP | Current
+285	parameters	parameters	113	3	115	srcrow113	datakom #1001: | parameters | Genset Volts L1, | Genset Volts L2, | Genset Volts L3	sices #1003: | Parameters | for the configuration:	smartgen #1003: | Parameters | Defaults
+286	range	range	112	6	145	srcrow97 srcline15	aosif #1016: | range | Cranking Motor (Heavy Duty, Positive | DC 24V	cgm-italia #1001: | range | of	comap #1002: | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+287	fuel consumption110%	Fuel consumption110% (of the Prime Power)	112	1	112	srcrow112	westinpower #1001: | Fuel consumption110% (of the Prime Power) | 529L		
+288	email	Email	109	14	109	srcline109	app-power-anpu #5001: Email: app @appfdj.com r 5 -	dagus-fuan #3001: Email: hwn2000@126.com	engine-traits #1801: Email: generator@sdecie.com
+289	three	three	109	7	183	srcrow109	baudouin #1004: | three | strategic	deif #1002: | three | levels	gfe-power #1008: | THREE | PHASE
+290	economic	Economic	109	1	109	srcrow109	shanhua #1001: | Economic | Development		
+291	lnsulation class , temperature rise	lnsulation : class , temperature rise	109	1	109	srcrow109	westinpower #1001: | lnsulation : class , temperature rise | H / H		
+292	heavy-duty two stage air filters	Heavy-duty two stage air filters	108	1	108	srcrow108	lees-power #1001: | Heavy-duty two stage air filters | with		
+293	gensets operation and maintenance	Gensets operation and maintenance	108	1	108	srcrow108	lees-power #1001: | Gensets operation and maintenance | manual		
+294	---engine only	---Engine only	107	1	107	srcrow107	aosif #1001: | ---Engine only | 7.2L		
+295	start relay output	Start Relay Output	106	1	120	srcrow106	smartgen #1001: | Start Relay Output | 16A DC28V at supply voltage		
+296	copyright by gb power	Copyright By GB POWER	105	1	105	srcrow105	gb-power #1001: | Copyright By GB POWER | 1/4		
+297	制造商	制造商	105	1	105	srcrow105	shanhua #1001: | 制造商 | 山东华力机电有限公司		
+298	diesel	diesel	104	8	108	srcrow104	atlas-copco-power #1003: | diesel | Commerciale	deif #1001: | Diesel | ●	koten-power #1001: | DIESEL | GENERATOR
+299	induction system	Induction system	103	1	103	srcrow103	aosif #1001: | Induction system | Naturally Aspirated		
+300	accuracy	Accuracy	103	5	186	srcrow86 srcline17	comap #1001: | Accuracy | ±20	deep-sea-electronics #1001: | Accuracy | ±1 %	deif #1001: | Accuracy | ±0.35 V
+301	sec	sec	103	4	544	srcrow103	datakom #1001: | sec | 10	genlitec #1014: | sec | tion for specific	mecc-alte #1007: | sec | 0,026 | 0,017 | 0,036 | 0,044 | 0,042
+302	general	General	103	6	103	srcrow103	gfe-power #1001: | General | Lubrication System	green-power-generators #1001: | GENERAL | CATALOGUE	leroy-somer-fuzhou #1005: | general | arrangement - 6
+303	by	by	101	10	102	srcrow101	comap #1019: | by | and Power measurement	deep-sea-electronics #1001: | by | Enclosures	deif #1002: | by | the
+304	open set	OPEN SET	100	1	189	srcrow100	voltgent #1001: | OPEN SET | SILENT		
+305	rev	REV	100	1	100	srcrow100	winco #1006: | REV | A		
+306	---with dirty filter element	---with dirty filter element	98	1	98	srcrow98	aosif #1001: | ---with dirty filter element | 6.2kPa		
+307	designs without	designs without	98	1	98	srcrow98	fdk-energy #1001: | designs without | notice.		
+308	or	or	96	10	103	srcrow96	deep-sea-electronics #1002: | or | Load	deif #1001: | or | later) | MTU J1939 Smart Connect	gb-power #1002: | OR | ATS
+309	stator winding	Stator Winding	95	4	95	srcrow95	gfe-power #1008: | Stator Winding | Double Layer Lap	stamford-avk-china #1001: | STATOR WINDING | DOUBLE LAYER LAP	winco #1002: | STATOR WINDING | DOUBLE LAYER CONCENTRIC
+310	380v	380V	95	3	276	srcrow95	gfe-power #1008: | 380V | X 1.00 | 416V | X 1.00	stamford-avk-china #1001: | 380V | X 1.00	wintpower #1001: | 380V | 416V | 440V | 460 | 480V
+311	combustion volume	Combustion volume	95	1	100	srcrow95	longkai-power #1047: | Combustion volume | kPa		
+312	enabled in	Enabled in:	95	1	95	srcrow95	sices #1003: | Enabled in: | MAN*, AUTO, TEST, REMOTE START		
+313	hgm9420n_hgm9420lt genset controller user manual	HGM9420N_HGM9420LT Genset Controller User Manual	95	1	99	srcrow95	smartgen #1011: | HGM9420N_HGM9420LT Genset Controller User Manual | Page 2 of 117		
+314	false	False	95	1	190	srcrow95	winco #1006: | False | True | 16		
+315	---total system	---Total system	94	1	94	srcrow94	aosif #1001: | ---Total system | 15.2 L		
+316	drop	drop	94	1	94	srcrow94	leroy-somer-fuzhou #1003: | drop | 20%		
+317	related parameters	Related parameters:	94	1	94	srcrow79 srcline15	sices #1003: | Related parameters: | P.0101		
+318	to disable	To disable:	94	1	94	srcrow94	sices #1003: | To disable: | P.0302=0		
+319	name	Name	93	4	93	srcrow93	deif #1004: | Name* | Variant no.	sices #1003: | Name | Default	smartgen #1005: | Name | English: (0-19)
+320	400v	400V	93	5	246	srcrow93	gfe-power #1008: | 400V | X 1.05 | 440V | X 1.06	koten-power #1001: | 400V | 3PH	mecc-alte #1014: | 400V | - | 50Hz | 480V - 60Hz
+321	total system capacity	Total system capacity	92	2	94	srcrow92	aosif #1001: | Total system capacity | 10.9L	baudouin #1021: | Total system capacity (including filters) (L) | 60	
+322	waveform distortion	Waveform Distortion	92	6	132	srcrow92	aosif #1065: | Waveform Distortion | <5.0%	gfe-power #1008: | Waveform Distortion | NO | LOAD < 1.5% NON-DISTORTING BALANCED LINEAR LOAD < 5.0%	hyundai-power-products #5001: | Waveform distortion | % | ≤3
+323	starting relay output	Starting relay output	91	1	108	srcrow91	smartgen #1001: | Starting relay output | -		
+324	50 hz	50 Hz	90	5	100	srcrow90	gfe-power #1008: | 50 Hz | 60 Hz	leroy-somer-fuzhou #1016: | 50 Hz | 60 Hz	mecc-alte #1007: | 50 Hz | 60 Hz | 3
+325	instantaneous	Instantaneous	90	3	264	srcrow90	gfe-power #1008: | Instantaneous | x 1.00 | x 0.87 | x 1.30	stamford-avk-china #1001: | Instantaneous | x 1.00 | x 0.87 | x 1.30	wintpower #1002: | Instantaneous | x 1.00 | x 0.87 | x 1.30
+326	备用功率 standby power	备用功率 Standby Power	89	1	145	srcrow89	shanhua #1001: | 备用功率 Standby Power | 1320 | 1650		
+327	category	Category	89	2	89	srcrow89	sices #1003: | Category | M1	winco #1006: | category | codes	
+328	short circuit ratio	Short Circuit Ratio	88	3	88	srcrow88	gfe-power #1008: | Short Circuit Ratio | 1/Xd	stamford-avk-china #1001: | SHORT CIRCUIT RATIO | 1/Xd	wintpower #1001: | SHORT CIRCUIT RATIO | 1/Xd
+329	telephone interference	Telephone Interference	88	3	175	srcrow88	gfe-power #1008: | Telephone Interference | THF<2% | TIF<50	stamford-avk-china #1001: | TELEPHONE INTERFERENCE | THF<2% | TIF<50	wintpower #1001: | TELEPHONE INTERFERENCE | THF<2% | TIF<50
+330	class - temp rise	Class - Temp Rise	88	3	175	srcrow88	gfe-power #1008: | Class - Temp Rise | Standby - | 163/27°C	stamford-avk-china #1001: | Class - Temp Rise | Cont. | F - 105/40°C	wintpower #1001: | Class - Temp Rise | Cont. F | 105/40°C
+331	stamford	STAMFORD	88	3	100	srcrow88	longkai-power #1001: | STAMFORD | UCI224F	taylor-power #1003: | Stamford | 600 | S6L1D-F4-07 | 3 | 60 | 1000/1250 | 1204 | 2750	xinhengxin-fujian #1001: | STAMFORD | HCI544D
+332	max current	Max current	87	2	172	srcrow87	comap #1007: | Max current | 0.5 A (2 A per group)	lees-power #1001: | Max Current | A | 1588	
+333	shutdown	Shutdown	86	3	87	srcrow78 srcline8	datakom #1001: | Shutdown | 1: The charge input generates CHARGE FAIL alarm,	deif #1001: | shutdown | DEF problem stops normal	smartgen #1001: | Shutdown | When over speed shutdown input is active, controller will send shutdown
+334	xl stator leakage reactance	XL Stator Leakage Reactance	86	2	618	srcrow86	gfe-power #1008: | XL Stator Leakage Reactance | 0.06 | 0.05 | 0.05 | 0.04 | 0.07 | 0.07 | 0.07 | 0.06	stamford-avk-china #1016: | XL Stator Leakage Reactance | 0.07 | 0.06 | 0.06 | 0.05 | 0.09 | 0.08 | 0.08 | 0.07	
+335	x2 negative sequence reactance	X2 Negative Sequence Reactance	86	2	618	srcrow86	gfe-power #1008: | X2 Negative Sequence Reactance | 0.22 | 0.21 | 0.20 | 0.17 | 0.29 | 0.29 | 0.26 | 0.25	stamford-avk-china #1016: | X2 Negative Sequence Reactance | 0.27 | 0.25 | 0.23 | 0.19 | 0.28 | 0.27 | 0.25 | 0.24	
+336	x0 zero sequence reactance	X0 Zero Sequence Reactance	86	2	618	srcrow86	gfe-power #1008: | X0 Zero Sequence Reactance | 0.09 | 0.08 | 0.08 | 0.07 | 0.10 | 0.10 | 0.09 | 0.08	stamford-avk-china #1016: | X0 Zero Sequence Reactance | 0.10 | 0.09 | 0.09 | 0.07 | 0.10 | 0.09 | 0.09 | 0.08	
+337	xd	Xd	86	3	374	srcrow86	gfe-power #1025: | Xd | Direct-axis synchro. reactance unsaturated | 292 | 325 | 340 | 370 | 347 | 335 | 297 | 303 | 291	leroy-somer-fuzhou #1001: | Xd | Direct-axis synchro. reactance unsaturated | 217 | 209 | 222 | 251 | 256	mecc-alte #1007: | Xd | Direct-axis synchronous reactance
+338	xq	Xq	86	3	374	srcrow86	gfe-power #1025: | Xq | Quadrature-axis synchro. reactance unsaturated | 149 | 165 | 173 | 188 | 177 | 171 | 151 | 154 | 148	leroy-somer-fuzhou #1001: | Xq | Quadrature-axis synchro. reactance unsaturated | 130 | 125 | 133 | 151 | 153	mecc-alte #1007: | Xq | Quadrature-axis synchronous
+339	unit kva	Unit：kVA	86	1	86	srcrow86	lees-power #1093: | Unit：kVA | Unit：kVA		
+340	temperature	Temperature	85	5	97	srcrow85	aosif #1063: | Temperature | ·Cold Soak at 32~50°F(0~10℃) or Above | 1800	comap #1004: | temperature | Range | 0-5 V DC / 0-2500 Ω / 0-20 mA	datakom #1001: | temperature | sender
+341	time	Time	85	6	129	srcrow85	datakom #1002: | Time | 24 = exercise starts at Tuesday 00:00	deep-sea-electronics #1007: | time | BS EN 60068-2-78	leroy-somer-fuzhou #1003: | Time | (ms)
+342	bearing drive end	Bearing Drive End	85	3	118	srcrow85	gfe-power #1008: | Bearing Drive End | N/A	stamford-avk-china #1001: | BEARING DRIVE END | BALL. 6312-2RS (ISO)	wintpower #1001: | BEARING DRIVE END | BALL. 6309 - 2RS. (ISO)
+343	ta armature time const.	Ta ARMATURE TIME CONST.	84	3	84	srcrow84	gfe-power #1008: | Ta ARMATURE TIME CONST. | 0.018	stamford-avk-china #1001: | Ta ARMATURE TIME CONST. | 0.0065s	wintpower #1001: | Ta ARMATURE TIME CONST. | 0.006 s
+344	bearing non-drive end	Bearing Non-Drive End	84	3	111	srcrow84	gfe-power #1008: | Bearing Non-Drive End | Ball 6314	stamford-avk-china #1001: | BEARING NON-DRIVE END | BALL. 6309-2RS (ISO)	wintpower #1001: | BEARING NON-DRIVE END | BALL. 6306 - 2RS. (ISO)
+345	circuit	CIRCUIT	84	4	111	srcrow84	hipower #1001: | CIRCUIT | 4	smartgen #1002: | Circuit | displayed in LCD.	stamford-avk-china #1002: | Circuit | = | 430
+346	频率 frequency	频率 Frequency	84	1	84	srcrow84	shanhua #1001: | 频率 Frequency | 50 HZ		
+347	---with clean filter element	---with clean filter element	83	1	83	srcrow83	aosif #1001: | ---with clean filter element | 3.7kPa		
+348	rated net power	Rated net power(with fan)	83	2	196	srcrow83	atlas-copco-power #1001: | Rated net power | kWm | 8.6 | 13.2 | 21.3 | 28 | 26.5 | 38.8 | 38.4 | 56.5 | 86 | 96	longkai-power #1038: | Rated net power(with fan) | Kw | 401	
+349	lr	lr	83	4	95	srcrow83	bison-zhejiang #1003: | lr | ，	comap #1020: | LR | RINA	gfe-power #1025: | Lr | M
+350	rated net power(with	Rated net power(with	82	2	82	srcrow82	longkai-power #1001: | Rated net power(with | fan)	xinhengxin-fujian #1001: | Rated net power(with | fan)	
+351	act	Act	82	1	87	srcrow82	smartgen #1005: | Act | when		
+352	description	Description	81	10	81	srcrow81	comap #1001: | Description | ANSI	datakom #1001: | DESCRIPTION | FEATURES	deep-sea-electronics #1001: | description | charts for connection information
+353	total coolant capacity	Total coolant capacity	81	3	83	srcrow81	fdk-energy #1086: | Total Coolant Capacity (L) | 12.6	voltgent #1001: | Total coolant capacity | 7.2 L	xinhengxin-fujian #1001: | Total coolant capacity | L | 106
+354	415v	415V	81	3	253	srcrow81	gfe-power #1008: | 415V | X 1.09 | 460V | X 1.10 | Max. sustained duration 10 sec. | 5 sec. | 2 sec.	stamford-avk-china #1002: | 415v | X 1.12 | 460v | X 1.12	wintpower #1002: | 415v | X 1.12 | 460v | X 1.12
+355	bits/	Bits/	81	1	120	srcrow81	winco #1006: | Bits/ | sign		
+356	max. allowable back pressure	Max. allowable back pressure	80	1	80	srcrow80	aosif #1001: | Max. allowable back pressure | 10kPa		
+357	sustained short circuit	Sustained Short Circuit	80	3	116	srcrow80	aosif #1065: | Sustained Short Circuit | 7200A	stamford-avk-china #1001: | SUSTAINED SHORT CIRCUIT | REFER TO SHORT CIRCUIT DECREMENT CURVES (page | 6)	wintpower #1001: | SUSTAINED SHORT CIRCUIT | SELF EXCITED MACHINES DO NOT SUSTAIN
+358	en	en	80	6	133	srcrow80	atlas-copco-power #1004: | en | integrerad	cgm-italia #1001: | EN | FR	comap #1001: | EN | 61000-6-2 | EN 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100 Hz
+359	sender	Sender	80	2	200	srcrow80	datakom #1001: | Sender | Characteristics	winco #1006: | sender | 1	
+360	max. allowable oil temperature	Max. allowable oil temperature	79	1	193	srcrow79	aosif #1001: | Max. allowable oil temperature | 121℃ | ---18℃(0°F) to 0℃(32°F)- 0°F CCA | 312		
+361	lube oil capacity	Lube Oil Capacity	79	3	156	srcrow79	aosif #1062: | Lube Oil Capacity (l) | 235	lees-power #1093: | Lube Oil Capacity | 8L	vpower-hk #1001: | Lube oil Capacity | TBA | Efficiency (Cont. 100%) | 0.96
+362	oil	Oil	79	3	100	srcrow79	datakom #1001: | Oil | Pressure	gfe-power #1002: | Oil | Total oil system capacity	smartgen #1001: | Oil | Pressure | (0-400)kPa | 103 | out. When the value is 0, warning alarm won’t
+363	cummins generator	Cummins Generator	79	2	83	srcrow79	longkai-power #1047: | Cummins Generator | Prime Power: 17KW/21.25KVA	xinhengxin-fujian #1001: | Cummins Generator | Prime Power : | 450KW/562KVA	
+364	instrument	instrument	79	1	79	srcrow79	winco #1006: | instrument | 1		
+365	option	Option	78	5	115	srcrow78	atlas-copco-power #1001: | Option | Option	deif #1001: | option | (S10).	gfe-power #1025: | Option | 355-
+366	in	in	78	13	127	srcrow78	atlas-copco-power #1006: | in | b	cgm-italia #1001: | in | metallo | IP44	deep-sea-electronics #1020: | in | total
+367	reference conditions	Reference conditions	78	2	78	srcline78	engine-traits #1003: Reference conditions: Subject to change. | 3236410 | Edition 01/19 | ESM 2019-08.	gfe-power #1001: Reference Conditions: 25°C Air Inlet Temperature, 40°C Fuel Inlet Temperature, 100 kPa Barometric Pressure; 10.7 g/kg of dry air Humidity. Intake Restric	
+368	diesel engine	Diesel Engine	77	4	81	srcrow77	baudouin #1008: | Diesel Engine | RPM	bison-zhejiang #1002: | DIESEL ENGINE | I | B5170F(E) | B5178F(E) | B5186F(E) | B5186FA	hosem-power #3003: | Diesel Engine | Perkins
+369	overspeed	Overspeed	76	6	100	srcrow75 srcline1	comap #1001: | Overspeed | 12	deif #1001: | Overspeed | 2 | 12 | <400 ms	gfe-power #1002: | Overspeed | min -1 | 2250
+370	cummins model	CUMMINS MODEL	76	1	76	srcline76	fdk-energy #1001: CUMMINS MODEL: 4B3.9G2		
+371	friction energy output	Friction Energy Output	76	1	76	srcrow76	fdk-energy #1001: | Friction Energy Output | 8.2kw		
+372	low idle	Low idle	76	1	76	srcrow76	fdk-energy #1001: | Low idle | 950-1050rpm		
+373	high	High	75	7	87	srcrow69 srcline6	aosif #1053: | High | 64 /72 L	baudouin #1004: | High | step-load	datakom #1001: | High | If the mains frequency goes above this limit, it means
+374	for	for	75	11	82	srcrow75	aosif #1067: | for | 110 / 100 ℃	bison-zhejiang #1002: | for | A Bright Oasis of Power.	datakom #1001: | for | second
+375	2131 expansion module	2131 expansion module	75	1	147	srcrow75	winco #1006: | 2131 expansion module | 0analogue input A high | 0 | 15 | 9/16-12/16		
+376	usb	USB	73	6	166	srcrow73	deep-sea-electronics #1007: | USB | CONFIGURABLE	deif #1001: | USB | Service port (USB-B)	gfe-power #1002: | USB | RS232 / 484 | RS232
+377	ip rating	IP rating	73	4	73	srcrow73	genlitec #1001: | IP rating | IP23	gfe-power #1008: | IP Rating | IP23	koten-power #1002: | IP rating | IP23
+378	cooling air flow	Cooling Air Flow	73	4	95	srcrow73	gfe-power #1021: | Cooling Air Flow | 1.12 m³/sec | 1.34 m³/sec	long-gen #1001: | Cooling air flow | [m3/h] 103	stamford-avk-china #1018: | Cooling Air Flow | 1.25 m³/sec | 1.5 m³/sec
+379	a.v.r.	A.V.R.	73	2	127	srcrow73	stamford-avk-china #1001: | A.V.R. | MX341 | MX321	wintpower #1001: | A.V.R. | STANDARD SX460 | OPTIONAL AS440	
+380	page	Page	72	7	96	srcrow72	deif #1002: | Page | 25 | of 29	gfe-power #1008: | Page | 8 | S4L1D-F41_A056E880 Rev.F_19.08.2020	green-power-generators #1001: | Page | G
+381	lagging pf	Lagging PF	72	2	72	srcrow72	gfe-power #1008: | Lagging PF | Scaling Factor	stamford-avk-china #1016: | Lagging PF | Factor	
+382	symmetrical --------	Symmetrical --------	72	1	72	srcrow72	leroy-somer-fuzhou #1003: | Symmetrical -------- | Current (A)		
+383	standard thermostat range	Standard thermostat(modulating) range	71	1	71	srcrow71	aosif #1001: | Standard thermostat(modulating) range | 83-95 ℃		
+384	engine-dcec cummins	Engine-DCEC Cummins	71	1	142	srcrow71	longkai-power #1047: | Engine-DCEC Cummins | Power factor | 0.8		
+385	battery recharge system, negative ground	Battery recharge system, negative ground	69	1	69	srcrow69	aosif #1001: | Battery recharge system, negative ground | 40ampere		
+386	°c	°C	69	5	83	srcrow69	comap #1009: | °C | Number | 8	datakom #1001: | °C | 100	deif #1004: | °C | to | +50
+387	440v	440V	69	3	202	srcrow69	gfe-power #1008: | 440V | X 1.16 | 480V | X 1.15	stamford-avk-china #1006: | 440v | X 1.16 | 480v | X 1.15	wintpower #1002: | 440v | X 1.18 | 480v | X 1.17
+388	winding connections	Winding Connections (standard)	69	2	69	srcrow69	koten-power #1002: | Winding Connections (standard) | Star-serie	voltgent #1001: | Winding connections (standard) | Star-series	
+389	yuchai model	YUCHAI MODEL	68	1	68	srcline68	fdk-energy #1125: YUCHAI MODEL: YC4V35-D20		
+390	hgm93xx mpu series genset controller	HGM93XX MPU(CAN) Series Genset Controller	68	1	204	srcrow68	smartgen #1012: | HGM93XX MPU(CAN) Series Genset Controller | Version: 1.0 | 2014-07-24 | Page 4 of 75		
+391	cooling air	Cooling Air	67	4	127	srcrow67	gfe-power #1008: | Cooling Air | 0.76 m³/sec | 0.92 m³/sec	long-gen #1001: | Cooling air | The impeller is mounted on the top of the	stamford-avk-china #1001: | COOLING AIR | 0.281 m³/sec 595 cfm
+392	temperature rise	Temperature Rise	67	5	71	srcrow67	hipower #1001: | Temperature Rise | ˚F / ˚C | 105/40 | Nominal Power (1375)	lees-power #1093: | Temperature rise | Prime 130℃, 150℃ Standby	taylor-power #1002: | Temperature Rise | 125°C Standby
+393	standard exhaust pipe diameter	Standard exhaust pipe diameter	66	1	66	srcrow66	aosif #1001: | Standard exhaust pipe diameter | 75mm		
+394	---with heat exchanger	---With heat exchanger	66	1	66	srcrow66	aosif #1001: | ---With heat exchanger | 8L		
+395	battery capacity	Battery Capacity	66	3	68	srcrow66	aosif #1112: | Battery capacity(recommended) | 100AH	hyundai-power-products #5001: | Battery Capacity | Ah | 60×2	lees-power #1093: | Battery Capacity | 6-QW-45(380)*1
+396	kcc	Kcc	66	3	484	srcrow66	gfe-power #1025: | Kcc | Short-circuit ratio | 0.46 | 0.42 | 0.37 | 0.34 | 0.37 | 0.4 | 0.45 | 0.43 | 0.46	leroy-somer-fuzhou #1001: | Kcc | Short-circuit ratio | 0.55 | 0.55 | 0.54 | 0.45 | 0.45	mecc-alte #1007: | Kcc | Short circuit ratio | 1 | 0,8 | 0,9 | 0,98 | 1,1
+397	cummins	Cummins	65	6	88	srcrow65	atlas-copco-power #1001: | Cummins | Cummins	deif #1001: | Cummins | CM 500 | QSL, QSB5, QSX15 and 7,	gfe-power #1005: | Cummins | Stamford | GFE2200CSC
+398	yes	Yes	65	3	74	srcrow65	atlas-copco-power #1009: | Yes | Yes	sices #1003: | Yes | REMOTE START (controller should be at rest in AUTO mode). When it	winco #1006: | Yes | Reads one or more registers.
+399	moq	MOQ	65	2	65	srcline65	bobig-power #3002: MOQ: 1 set	hosem-power #3002: MOQ: 1 SET	
+400	min. allowable flow of fuel to	Min. Allowable flow of fuel to	64	1	64	srcrow64	aosif #1001: | Min. Allowable flow of fuel to | 6.1 L/h		
+401	injection type	Injection Type	64	3	66	srcrow64	aosif #1078: | Injection Type | Direct Injection	gfe-power #1001: | Injection Type | Direct	voltgent #1001: | Injection type | Direct
+402	point	point	64	3	67	srcrow64	datakom #1001: | point | 1,	deif #1002: | point | curve) | (27)	smartgen #1002: | point | for | 2s,
+403	www.atlascopco.com/energy-storage-systems	www.atlascopco.com/energy-storage-systems	63	1	63	srcrow63	atlas-copco-power #1002: | www.atlascopco.com/energy-storage-systems | 3		
+404	operating temperature	Operating temperature	62	6	112	srcrow62	atlas-copco-power #1001: | Operating temperature (min/max) (2) | ºC | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50 | -10/50	comap #1001: | Operating temperature | -20˚C to +70˚C	deep-sea-electronics #1001: | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+405	air system	Air System	62	2	124	srcrow62	genlitec #1013: | Air System | 50 Hz | 60 Hz	voltgent #1001: | AIR SYSTEM | Starting power | 4.5 kW	
+406	unimplemented	Unimplemented	62	1	186	srcrow62	winco #1006: | Unimplemented | 0 | 0 | 15/16		
+407	dkg-309 user manual	DKG-309 User Manual	61	1	67	srcrow61	datakom #1001: | DKG-309 User Manual | V-29 (23.08.2013)		
+408	storage temperature	Storage temperature	60	6	61	srcrow60	comap #1001: | Storage temperature | -30˚C to +80˚C	deep-sea-electronics #1001: | Storage Temperature | -40 °C to +80 °C / -40 °F to +176 °F	deif #1003: | Storage temperature | -30 to +75 °C (-22 to +167 °F). To IEC 60068-2-1, 2
+409	series delta	Series Delta (V)	60	3	948	srcrow60	gfe-power #1008: | Series Delta (V) | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277	stamford-avk-china #1001: | Series Delta (V) | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240 | 220 | 230 | 240	wintpower #1001: | Series Delta (V) | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277
+410	max. allowable top tank temerature	Max. allowable top tank temerature	59	1	59	srcrow59	aosif #1001: | Max. allowable top tank temerature | 110/104 ℃		
+411	scaling	Scaling	59	1	59	srcrow59	winco #1006: | Scaling | Units		
+412	resolution	Resolution	58	5	58	srcrow43 srcline15	comap #1001: | Resolution | 132 × 64 px	deep-sea-electronics #1001: | Resolution | 1 V	deif #1001: | Resolution | 0.1 V
+413	manual	Manual	58	6	87	srcrow58	deep-sea-electronics #1011: | Manual | 057-077	deif #1002: | Manual | Χ | Χ | Χ	gfe-power #1013: | Manual | Manual
+414	terminals	Terminals	58	5	68	srcrow57 srcline1	deif #1001: | Terminals | Tightening torque: 5-7 lb-in.	genlitec #1001: | Terminals | 6/12	koten-power #1002: | Terminals | 12
+415	moment of inertia	Moment of Inertia:	58	4	99	srcrow56 srcline2	genlitec #1013: | Moment of Inertia: | kg m² (lb/in²) | 10.61 (36256)	gfe-power #1008: | Moment of Inertia | 5.4292kgm2	leroy-somer-fuzhou #1018: | Moment of inertia: | J | (kgm2): | (4J
+416	x’d	X’d	58	3	379	srcrow58	genlitec #1013: | X’d | 0.25 | 0.27 | 0.179	gfe-power #1025: | X’d | Direct-axis transient reactance saturated | 15.1 | 16.7 | 17.1 | 18.6 | 17.1 | 16.5 | 14.3 | 14.5 | 13.7	leroy-somer-fuzhou #1001: | X’d | Direct-axis transient reactance saturated | 19.1 | 17.7 | 18.2 | 19.2 | 19.1
+417	x”d	X”d	58	3	379	srcrow58	genlitec #1013: | X”d | 0.148 | 0.148 | 0.143	gfe-power #1025: | X”d | Direct-axis subtransient reactance saturated | 12 | 13.4 | 13.7 | 14.9 | 13.7 | 13.2 | 11.4 | 11.6 | 11	leroy-somer-fuzhou #1001: | X”d | Direct-axis subtransient reactance saturated | 9.5 | 8.8 | 9.0 | 9.5 | 9.5
+418	the following multiplication factors should be	The following multiplication factors should be	58	3	58	srcrow58	gfe-power #1021: | The following multiplication factors should be | The following multiplication factor should be used to convert the	stamford-avk-china #1001: | The following multiplication factors should be | The following multiplication factor should	wintpower #1002: | The following multiplication factors should be | The following multiplication factor should be used to convert the
+419	s.a.e.	S.A.E.	58	2	58	srcrow58	gfe-power #1025: | S.A.E. | P	leroy-somer-fuzhou #1001: | S.A.E. | P	
+420	amortisseur windings	Amortisseur windings	58	2	58	srcrow58	lees-power #1093: | Amortisseur windings | Full	taylor-power #1001: | Amortisseur Windings | Full	
+421	locked rotor kva	Locked rotor kVA	58	3	61	srcrow58	leroy-somer-fuzhou #1011: | Locked rotor kVA | at P.F. = 0.6 | Locked rotor kVA at P.F. = 0.6	stamford-avk-china #1002: | LOCKED ROTOR kVA | LOCKED ROTOR kVA	wintpower #1002: | LOCKED ROTOR kVA | LOCKED ROTOR kVA
+422	hgm9600 series genset controller user manual	HGM9600 Series Genset Controller User Manual	58	1	60	srcrow58	smartgen #1006: | HGM9600 Series Genset Controller User Manual | Page 2 of 73		
+423	mx	MX	58	2	58	srcrow58	stamford-avk-china #1002: | MX | SX	wintpower #1002: | MX | SX	
+424	excellent	Excellent	58	1	58	srcrow58	westinpower #1006: | Excellent | Power		
+425	product	Product	57	4	57	srcrow56 srcline1	comap #1001: | Product | Description	deep-sea-electronics #1001: | Product | Documentation	deif #1001: | product | product
+426	rotor winding resistance	Rotor Winding Resistance (Rf)	57	3	122	srcrow57	gfe-power #1008: | Rotor Winding Resistance (Rf) | 1.37	stamford-avk-china #1016: | Rotor Winding Resistance (Rf) | 1.05	mecc-alte #1007: | Rotor Winding Resistance (20°C) | Ω | 6,078 | 7,141 | 8,539 | 9,743 | 10,884
+427	fuel type	Fuel Type	57	3	57	srcrow57	hosem-power #3002: | Fuel Type | Diesel	hyundai-power-products #5001: | Fuel type | Diesel	lees-power #1093: | Fuel Type | Diesel:0#(Summer),-10#(Winter),-35#(Cold)
+428	hgm9530 genset parallel unit	HGM9530 Genset Parallel Unit	57	1	161	srcrow57	smartgen #1004: | HGM9530 Genset Parallel Unit | 2016-11-03 | Version 1.4 | Page 3 of 65		
+429	hgm9520 genset parallel unit	HGM9520 Genset Parallel (With Mains) Unit	57	1	167	srcrow57	smartgen #1013: | HGM9520 Genset Parallel (With Mains) Unit | 2013-04-18 | Version 1.0 | Page 3 of 70		
+430	material	Material	56	3	56	srcrow56	deif #1002: | Material | All plastic materials are self-extinguishing according to UL94 (V1)	lees-power #1093: | Material | Synthetic, Nonhygroscopic	sices #1003: | Material | PC
+431	- (https	- [Buy Parts](https	56	1	56	srcline56	engine-traits #1201: - [Buy Parts](https://shop.deere.com/us)		
+432	dip	dip	56	3	67	srcrow56	gfe-power #1001: | dip | power factor at | 0.3	leroy-somer-fuzhou #1014: | dip | 15%	stamford-avk-china #1009: | DIP | DIP
+433	kwm	kWm	55	3	65	srcrow36 srcline19	baudouin #1008: | kWm | kWe	engine-traits #1102: | kWm | kWm | kWe | kVA | kWe | kVA	gfe-power #1024: | kWm | bhp
+434	tal	TAL	55	2	63	srcrow55	gfe-power #1025: | TAL | 046 - TAL 047 - TAL 049	leroy-somer-fuzhou #1002: | TAL | A42	
+435	asymmetrical - - -	Asymmetrical - - -	55	1	60	srcrow55	leroy-somer-fuzhou #1003: | Asymmetrical - - - | In		
+436	maximum overspeed	Maximum Overspeed	55	3	55	srcrow55	mecc-alte #1007: | Maximum Overspeed | 2250	stamford-avk-china #1001: | MAXIMUM OVERSPEED | 2250 Rev/Min	wintpower #1001: | MAXIMUM OVERSPEED | 2250 Rev/Min
+437	manufacturer leroy	Manufacturer： LEROY	55	1	55	srcrow55	westinpower #1002: | Manufacturer：LEROY | SOMER		
+438	working mode	Working Mode	54	2	54	srcrow54	lees-power #1093: | Working Mode | Naturally Aspirated	long-gen #1001: | Working mode: | continuous	
+439	via	Via	53	16	56	srcline42 srcrow11	app-power-anpu #5001: Via: catalog PDF nhà cung cấp gửi, Khoa tải lên (app-power-anpu-catalog.pdf); OCR (Tesseract 5, eng, 300 dpi); chỉ giữ dòng kiểm được bằng code (cat	engine-traits #1201: Via: firecrawl	hyundai-power-products #5001: Via: datasheet PDF tải từ trang hãng (hyundaipower-de.com, mục Downloads của DHY110KSE); pdftotext -table
+440	inputs	inputs	53	7	63	srcrow53	comap #1004: | inputs | 3 ph-n Mains/Bus voltage	datakom #1001: | inputs | have	deep-sea-electronics #1008: | inputs | •
+441	sensing	Sensing	53	3	54	srcrow53	deep-sea-electronics #1002: | Sensing | 29 to 32	taylor-power #1001: | Sensing | Three Phase	voltgent #1007: | sensing | configurable timers are included
+442	enclosure	Enclosure (according to IEC 34-5)	53	4	53	srcrow53	deif #1001: | Enclosure | A suitable type 1 (flat surface) enclosure is required	hipower #1002: | ENCLOSURE | • Fluid Containment Pan	sices #1003: | Enclosure | A suitable type 1 (flat surface) enclosure is required Unventilated/ventilated with filters for
+443	bearing quantity, type	Bearing: quantity, type	53	1	53	srcrow53	lees-power #1093: | Bearing: quantity, type | 1, Sealed		
+444	rotor balancing	Rotor balancing	53	1	53	srcrow53	lees-power #1093: | Rotor balancing | 125% 60 Hz, 150% 50 Hz		
+445	one-step load acceptance	One-step load acceptance	53	1	53	srcrow53	lees-power #1093: | One-step load acceptance | 100% of Rating(ALTERNATOR)		
+446	unbalanced load capability	Unbalanced load capability	53	1	53	srcrow53	lees-power #1093: | Unbalanced load capability | 100% of Rated Standby		
+447	air filter	Air filter	53	2	53	srcrow53	voltgent #1001: | Air filter | Dry	winco #1009: | AIR FILTER | 1	
+448	battery	Battery	52	7	58	srcrow52	aj-power #1001: | Battery | Telecommunications - Construction - Residential - Retail	deif #1003: | battery | voltage	green-power-generators #1001: | Battery | Bouchon de ravitaillement
+449	on	on	52	9	70	srcrow51 srcline1	aj-power #1001: | on | Residential silencer mounting kit	comap #1004: | on: | https://webstore.iec.ch/	deep-sea-electronics #1001: | on | the
+450	measurement inputs	Measurement inputs	52	2	58	srcrow52	comap #1001: | Measurement inputs | 3ph Gen current	deep-sea-electronics #1001: | Measurement Inputs | 3 Phase + Neutral	
+451	dkg-307 user manual	DKG-307 User Manual	52	1	56	srcrow52	datakom #1002: | DKG-307 User Manual | V-42 (24.05.2013)		
+452	remark	Remark	52	3	52	srcrow19 srcline33	gfe-power #1002: | Remark: | ● Standard	sices #1003: Remark: if generator or complete protections override function is enabled, this anomaly becomes a warning.	smartgen #1008: Remark: P stands for active power; Q stands for reactive power.
+453	io	io (A)	52	3	236	srcrow52	gfe-power #1025: | io (A) | No-load excitation current SHUNT/AREP | 0.9 | 0.9 | 1.01 | 1.01 | 0.82 | 0.88 | 0.88 | 0.85 | 1.09	leroy-somer-fuzhou #1004: | io (A) | No-load excitation current SHUNT/AREP+ | 1.01 | 1.01 | 1.14 | 1.14 | 1.06 | 1.06	mecc-alte #1007: | Io | Excitation current at no load
+454	ic	ic (A)	52	3	236	srcrow52	gfe-power #1025: | ic (A) | On-load excitation current SHUNT/AREP | 3.53 | 3.95 | 3.84 | 4.14 | 4.07 | 3.94 | 3.64 | 3.72 | 4.04	leroy-somer-fuzhou #1004: | ic (A) | On-load excitation current SHUNT/AREP+ | 3.84 | 4.14 | 3.5 | 3.76 | 3.3 | 3.63	mecc-alte #1007: | Ic | Excitation current at full load
+455	air	Air	51	5	73	srcrow51	aosif #1026: | Air | Recommended minimum	genlitec #1013: | AIR | TO	gfe-power #1002: | Air | Air inlet
+456	fax	Fax	51	11	51	srcline50 srcrow1	bison-zhejiang #1002: Fax: 0086-576-88017986	cgm-italia #1001: Fax: +39 0444 675384	dagus-fuan #3001: Fax: +86-593-6580466
+457	available	Available	51	6	51	srcrow50 srcline1	comap #1004: | Available | extension modules	deep-sea-electronics #1007: | AVAILABLE | VARIANTS	gfe-power #1002: | Available | Battery charger
+458	failure	Failure	51	4	53	srcrow51	deep-sea-electronics #1001: | Failure | Control	deif #1001: | failure | Emission failure or malfunction.	smartgen #1003: | Failure | the pre-set value, it will initiate a warning alarm.
+459	standby output	Standby Output	51	2	51	srcrow50 srcline1	gb-power #1001: | Standby Output | 8.8W/11KVA	hosem-power #3002: | Standby Output | 200kVA	
+460	60hz	60Hz	51	4	211	srcrow51	gfe-power #1021: | 60Hz | Sustained Short Circuit = 2600 Amps	shanhua #1012: | 60Hz | 1800 rpm | 220V	stamford-avk-china #1001: | 60Hz | RATINGS
+461	lb	LB	51	3	59	srcrow51	gfe-power #1025: | LB | Access to terminals | 568	leroy-somer-fuzhou #1001: | LB | Xg	mwm #1007: | lb | 17,791
+462	engine oil capacity	Engine oil capacity	51	2	51	srcrow51	kingway-power #3001: | Engine Oil Capacity (L) | 18	voltgent #1001: | Engine oil capacity | 10.9 L	
+463	rated	rated	51	6	61	srcrow49 srcline2	leroy-somer-fuzhou #1009: | rated | speed	long-gen #1002: | rated | capacity	sices #1003: | rated | current
+464	sudden frequency warp )	Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））	51	1	51	srcline51	shanhua #1001: Sudden Frequency Warp （100%Sudden Reduce） （瞬态频率偏差（100%突减功率））：≤+12%		
+465	循环周期 cycle	循环周期 cycle	51	1	70	srcrow51	shanhua #1001: | 循环周期 cycle | 4 | 冲程 4-cycle		
+466	电话影响系数 tif	电话影响系数 TIF	51	1	51	srcrow51	shanhua #1001: | 电话影响系数 TIF | ＜50		
+467	工作环境	工作环境	51	1	51	srcline51	shanhua #1001: 工作环境:（Work environment）		
+468	工作温度 operating temperature -20°c~60°c	工作温度 Operating temperature ：-20℃～60℃	51	1	51	srcrow51	shanhua #1001: | 工作温度 Operating temperature ：-20℃～60℃ | 相对湿度 Relative Humidity : 95%		
+469	开架式	开架式	51	1	51	srcrow51	shanhua #1001: | 开架式 | 静音型		
+470	发动机控制 engine control	发动机控制 Engine Control	51	1	51	srcrow51	shanhua #1001: | 发动机控制 Engine Control | 发电机低频/超频		
+471	发动机监测 engine monitoring	发动机监测 Engine Monitoring	51	1	51	srcrow51	shanhua #1001: | 发动机监测 Engine Monitoring | Frequency		
+472	测试显示清理 clear text display	测试显示清理 Clear Text Display	51	1	51	srcrow51	shanhua #1001: | 测试显示清理 Clear Text Display | 低速/超速 Under / Over Speed		
+473	电子相序	电子相序(可选)	51	1	51	srcrow51	shanhua #1001: | 电子相序(可选) | 电池电压过高/过低		
+474	shielding	shielding	51	1	51	srcrow51	smartgen #1001: | shielding | line		
+475	warning	WARNING	50	4	61	srcline20 srcrow30	datakom #1001: WARNING: THE UNIT IS NOT FUSED.	sices #1003: WARNING: In the internal battery operating state and in the absence of the main power supply (JD), the device is not	smartgen #1003: Warning: warn only, not shutdown.
+476	performance,	Performance,	50	1	50	srcrow50	voltgent #1001: | Performance, | engine, alternator and controller data		
+477	are common to	are common to	50	1	50	srcrow50	voltgent #1001: | are common to | both configurations.		
+478	rated performance	RATED PERFORMANCE	50	1	50	srcrow50	voltgent #1001: | RATED PERFORMANCE | POWER DEFINITIONS		
+479	kva)	kVA)	50	1	72	srcrow50	voltgent #1001: | kVA) | Prime | current (25		
+480	380/220 v	380/220 V	50	1	90	srcrow50	voltgent #1001: | 380/220 V | 42,5 A | 38.0 A		
+481	415/240 v	415/240 V	50	1	90	srcrow50	voltgent #1001: | 415/240 V | 39.0 A | 34.8 A		
+482	general engine data	GENERAL ENGINE DATA	50	1	50	srcrow50	voltgent #1001: | GENERAL ENGINE DATA | GENERAL ENGINE DATA		
+483	number of batteries	Number of batteries	50	1	50	srcrow50	voltgent #1001: | Number of batteries | 2		
+484	number of bearings	Number of bearings	50	1	50	srcrow50	voltgent #1001: | Number of bearings | Single bearing		
+485	coupling system	Coupling system	50	1	50	srcrow50	voltgent #1001: | Coupling system | Flexible disc		
+486	coating type	Coating type	50	1	50	srcrow50	voltgent #1001: | Coating type | Standard		
+487	maximum	Maximum	49	5	70	srcrow49	aosif #1016: | Maximum | Static Head of Coolant Above | 18.3 m	mecc-alte #1007: | Maximum | 20 s | 10 s | 4 s	sices #1003: | Maximum | power
+488	min	min	49	2	49	srcrow49	datakom #1002: | min | 0	winco #1006: | Min | Max	
+489	prime output	Prime Output	49	2	49	srcrow48 srcline1	gb-power #1001: | Prime Output | 8KW/10KVA	hosem-power #3002: | Prime Output | 182kVA	
+490	length width height	Length (mm) * Width (mm) * Height (mm)	49	1	49	srcrow49	gfe-power #1001: | Length (mm) * Width (mm) * Height (mm) | 1700		
+491	curves	Curves	49	4	49	srcrow49	gfe-power #1008: | Curves | -	mecc-alte #1009: | curves | -	stamford-avk-china #1016: | Curves | -
+492	available on our website (http	available on our website (http	49	2	49	srcline49	gfe-power #1008: available on our website (http://stamford-avk.com/)	stamford-avk-china #1001: available on our website (http://stamford-avk.com/)	
+493	flange	Flange	49	2	71	srcrow49	gfe-power #1025: | Flange (mm) | Flex plate	leroy-somer-fuzhou #1001: | Flange (mm) | Flex plate	
+494	接线方式 connecting type	接线方式 Connecting Type	49	1	64	srcrow49	shanhua #1001: | 接线方式 Connecting Type | 3 | Phase and 4		
+495	发电机欠压/过压	发电机欠压/过压	49	1	49	srcrow49	shanhua #1001: | 发电机欠压/过压 | Alternator Under / Over Voltage		
+496	all	All	48	6	49	srcrow48	comap #1004: | All | certificates and standards are available	lees-power #1122: | All | right	leroy-somer-fuzhou #1020: | All | values
+497	specification	specification	48	2	48	srcrow48	comap #1004: | specification | are	gb-power #1001: | Specification | Of Engine	
+498	ohm	ohm	48	1	48	srcrow48	datakom #1001: | ohm | 10		
+499	kwe	kWe:	47	2	48	srcrow47	baudouin #1004: | kWe: | 1600-2200	gfe-power #1001: | kWe | 35,20	
+500	rating	Rating (ESP)	47	5	48	srcrow9 srcline38	baudouin #1021: | Rating | gr/kWh | L/hr	deep-sea-electronics #1030: | Rating | 20 mA at 5 V	gfe-power #1029: | Rating | gr/kWh
+501	copyright	Copyright	47	1	50	srcrow47	gb-power #1001: | Copyright | By		
+502	winding number	Winding Number	47	3	47	srcrow47	gfe-power #1008: | Winding Number | 311	stamford-avk-china #1016: | Winding Number | 311	winco #1004: | WINDING NUMBER | 711
+503	主用功率 prime power	主用功率 Prime Power	47	1	94	srcrow47	shanhua #1001: | 主用功率 Prime Power | 1200 | 1500		
+504	开放型	开放型	47	1	94	srcrow47	shanhua #1001: | 开放型 | 尺 寸 Overall Size L×W×H，mm | 5100*1830*2440		
+505	发电机组监测	发电机组监测	47	1	47	srcrow47	shanhua #1001: | 发电机组监测 | Alternator Under/ Over Frequency		
+506	generator monitoring	Generator Monitoring	47	1	47	srcrow47	shanhua #1001: | Generator Monitoring | 市电欠压/过压 Mains Under / Over Voltage		
+507	发动机高温 high engine temperature	发动机高温 High Engine Temperature	47	1	47	srcrow47	shanhua #1001: | 发动机高温 High Engine Temperature | High Engine Temperature Pre-Alarm		
+508	接地故障 earth fault	接地故障 (可选) Earth Fault (Option)	47	1	47	srcrow47	shanhua #1001: | 接地故障 (可选) Earth Fault (Option) | 过流 Over-current		
+509	seconds	Seconds	46	3	47	srcrow46	datakom #1001: | Seconds | - | 00-59	sices #1004: | seconds | are	winco #1006: | Seconds | 16
+510	pin	Pin	46	2	46	srcrow46	deep-sea-electronics #1001: | Pin | Description	smartgen #1010: | Pin | Function	
+511	when	when	46	4	46	srcrow46	deif #1001: | when | installed	sices #1003: | When | an	smartgen #1001: | When | input
+512	ms	ms	46	4	317	srcrow46	deif #1004: | ms | ●	gfe-power #1025: | ms | Response time (∆U = 20% transient) | 500 | 500 | 500 | 500 | 500 | 500 | 500 | 500 | 500	leroy-somer-fuzhou #1001: | ms | Response time (∆U = 20%) | 500 | 500 | 500 | 500 | 500
+513	t’d	T’d	46	2	334	srcrow46	gfe-power #1025: | T’d | Short-circuit transient time constant | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100	leroy-somer-fuzhou #1001: | T’d | Short-circuit transient time constant | 74 | 74 | 74 | 74 | 74	
+514	t”d	T”d	46	2	334	srcrow46	gfe-power #1025: | T”d | Subtransient time constant | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10	leroy-somer-fuzhou #1001: | T”d | Subtransient time constant | 7.0 | 7.0 | 7.0 | 7.0 | 7.0	
+515	x”q	X”q	46	2	334	srcrow46	gfe-power #1025: | X”q | Quadrature-axis subtransient reactance saturated | 15.5 | 17.2 | 17.4 | 18.9 | 17.2 | 16.4 | 14.1 | 14.2 | 13.4	leroy-somer-fuzhou #1001: | X”q | Quadrature-axis subtransient reactance saturated | 20.0 | 18.6 | 19.0 | 20.1 | 20.0	
+516	ta	Ta	46	2	334	srcrow46	gfe-power #1025: | Ta | Armature time constant | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15 | 15	leroy-somer-fuzhou #1001: | Ta | Armature time constant | 11 | 11 | 11 | 11 | 11	
+517	sdec generator	SDEC Generator	46	1	46	srcrow46	longkai-power #1001: | SDEC Generator | Prime Power: 55KW/68.75KVA		
+518	24 months from date of purchase	24 months from date of purchase	46	1	46	srcrow46	longkai-power #1001: | 24 months from date of purchase | and 3000 hours.		
+519	overload	Overload	45	6	54	srcrow42 srcline3	comap #1001: | Overload (real power) | 32P	deif #1002: | Overload | x5 | 32F	long-gen #1001: | Overload | Capable of operating for 1 hour at 110% overload
+520	per	per	45	3	45	srcrow45	deif #1004: | per | AGC).	stamford-avk-china #1002: | PER | UNIT AT RATING	wintpower #1004: | PER | UNIT AT RATING
+521	litres	Litres	45	2	47	srcrow45	gfe-power #1002: | Litres | N/A	winco #1006: | Litres | 32 U	
+522	koten	Koten	45	1	81	srcrow45	koten-power #1001: | Koten | Generating Power		
+523	ato	ATO	45	1	323	srcrow45	mecc-alte #1003: | ATO | 28/2 VS | 3000 | 27 | 20 | 18 | 84 | 85,5 | 85 | S1 | <4%		
+524	r.f.i. suppression	R.F.I. SUPPRESSION	45	2	75	srcrow45	stamford-avk-china #1001: | R.F.I. SUPPRESSION | BS EN 61000-6-2 & BS EN 61000-6-4,VDE 0875G, VDE 0875N. refer to factory for others	wintpower #1001: | R.F.I. SUPPRESSION | BS EN 61000-6-2 & BS EN 61000-6-4,VDE 0875G, VDE 0875N. refer to factory for others	
+525	xl leakage reactance	XL LEAKAGE REACTANCE	45	2	278	srcrow45	stamford-avk-china #1001: | XL LEAKAGE REACTANCE | 0.07 | 0.06 | 0.06	wintpower #1001: | XL LEAKAGE REACTANCE | 0.075 | 0.068 | 0.063 | 0.072 | 0.093 | 0.087 | 0.079 | 0.076	
+526	reactances are saturated	REACTANCES ARE SATURATED	45	2	45	srcrow45	stamford-avk-china #1001: | REACTANCES ARE SATURATED | VALUES	wintpower #1001: | REACTANCES ARE SATURATED | VALUES ARE	
+527	silent set	Silent set	45	1	135	srcrow45	voltgent #1001: | Silent set | 2320 × 1050 × 1250 mm | 1090 kg | 120 L		
+528	maximum over speed	Maximum Over Speed	44	3	44	srcrow44	aosif #1065: | Maximum Over Speed | 2250 RPM	gfe-power #1008: | Maximum Over Speed | 2250	stamford-avk-china #1016: | Maximum Over Speed | 2250
+529	warranty	Warranty	44	7	44	srcrow43 srcline1	bobig-power #3002: | Warranty | 12 Months/1200 Hours	deif #1003: | warranty | will	hosem-power #3004: | Warranty | 1 Year Or 1000 Hours
+530	400/230v	400/230V	44	2	102	srcrow44	genlitec #1013: | 400/230V | 800 | 640 | 892 | 713.6	voltgent #1001: | 400/230V | 40,4 A | 36.1 A	
+531	yy	YY	44	2	339	srcrow44	gfe-power #1025: | YY | 220V | 220V | 220V | 220V	leroy-somer-fuzhou #1001: | YY | 190V 200V 208V | 190V 200V 208V | 190V 200V 208V | 190V | 200V 208V	
+532	xo	Xo	44	2	320	srcrow44	gfe-power #1025: | Xo | Zero sequence reactance unsaturated | 0.62 | 0.69 | 0.71 | 0.77 | 0.71 | 0.68 | 0.59 | 0.6 | 0.57	leroy-somer-fuzhou #1001: | Xo | Zero sequence reactance | 0.13 | 0.13 | 0.14 | 0.15 | 0.16	
+533	机 组 尺 寸、重 量	机 组 尺 寸、重 量	44	1	44	srcrow44	shanhua #1001: | 机 组 尺 寸、重 量 | OPEN STYLE		
+534	soundproof style	SOUNDPROOF STYLE	44	1	88	srcrow44	shanhua #1001: | SOUNDPROOF STYLE | 净 重, Weight(net）kg | 17000		
+535	制造商 manufacturer	制造商 Manufacturer	44	1	44	srcrow44	shanhua #1001: | 制造商 Manufacturer | CCEC CUMMINS		
+536	setting	Setting	44	1	45	srcrow44	smartgen #1003: | Setting | value		
+537	coolant flow	Coolant flow	44	1	44	srcrow44	westinpower #1003: | Coolant flow | 80m³/h		
+538	alarm	ALARM	43	5	70	srcrow42 srcline1	datakom #1001: | ALARM | Red	deif #1004: | Alarm | Automatic Gen-set Controller	sices #1003: | ALARM | 
+539	number of poles	Number of Poles	43	2	43	srcrow43	gfe-power #1008: | Number of Poles | 4	stamford-avk-china #1016: | Number of Poles | 4	
+540	rfi suppression	RFI Suppression	43	2	43	srcrow43	gfe-power #1008: | RFI Suppression | BS EN 61000-6-2 & BS EN 61000-6-4,VDE 0875G, VDE 0875N.	stamford-avk-china #1016: | RFI Suppression | BS EN 61000-6-2 & BS EN 61000-6-4,VDE 0875G, VDE 0875N.	
+541	steady state x/r ratio	Steady State X/R Ratio	43	2	43	srcrow43	gfe-power #1008: | Steady State X/R Ratio | 13.7389	stamford-avk-china #1016: | Steady State X/R Ratio | 12.29	
+542	t’d transient time const.	T’d TRANSIENT TIME CONST.	43	2	43	srcrow43	gfe-power #1008: | T’d TRANSIENT TIME CONST. | 0.08	stamford-avk-china #1016: | T’d TRANSIENT TIME CONST. | 0.08	
+543	t’do o.c. field time const.	T’do O.C. FIELD TIME CONST.	43	2	43	srcrow43	gfe-power #1008: | T’do O.C. FIELD TIME CONST. | 1.7	stamford-avk-china #1016: | T’do O.C. FIELD TIME CONST. | 1.7	
+544	positive sequence resistance	Positive Sequence Resistance (R1)	43	2	43	srcrow43	gfe-power #1008: | Positive Sequence Resistance (R1) | 0.009125	stamford-avk-china #1016: | Positive Sequence Resistance (R1) | 0.0155	
+545	negative sequence resistance	Negative Sequence Resistance (R2)	43	2	43	srcrow43	gfe-power #1008: | Negative Sequence Resistance (R2) | 0.010512	stamford-avk-china #1016: | Negative Sequence Resistance (R2) | 0.017856	
+546	zero sequence resistance	Zero Sequence Resistance (R0)	43	2	43	srcrow43	gfe-power #1008: | Zero Sequence Resistance (R0) | 0.009125	stamford-avk-china #1016: | Zero Sequence Resistance (R0) | 0.0155	
+547	发动机	发动机	43	2	43	srcrow43	lees-power #1119: | 发动机 | 外形尺寸&重量	shanhua #1002: | 发动机 | 参	
+548	fan consumption	Fan consumption	43	1	85	srcrow43	longkai-power #1001: | Fan consumption | kw | 6.2		
+549	engine-weichai	Engine-Weichai	43	1	86	srcrow43	longkai-power #1123: | Engine-Weichai | Power factor | 0.8		
+550	between	between	43	2	43	srcrow43	smartgen #1003: | between | the	voltgent #1007: | between | mains	
+551	frequency range	Frequency range	42	6	43	srcrow40 srcline2	comap #1001: | Frequency range | 30-520 Hz with SW key	deep-sea-electronics #1001: | Frequency Range | 3.5 Hz to 75 Hz	deif #1001: | Frequency range | 3.5 to 75 Hz
+552	0m	0m	42	1	252	srcrow42	lees-power #1119: | 0m | 500m | 1000m | 1500m | 2000m | 2500m | 3000m		
+553	weichai generator	Weichai Generator	42	1	42	srcrow42	longkai-power #1123: | Weichai Generator | Prime Power: 18KW/22.5KVA		
+554	常用功率 base output power	常用功率 Base Output Power (kW)	42	1	44	srcrow42	shanhua #1001: | 常用功率 Base Output Power (kW) | 1287		
+555	var	Var	42	1	42	srcrow42	winco #1006: | Var | 32S		
+556	oil pan capacity - low/high	Oil Pan capacity - Low/High	41	1	41	srcrow41	aosif #1037: | Oil Pan capacity - Low/High | 27 /19L		
+557	not	not	41	6	47	srcrow41	deep-sea-electronics #1012: | not | meet	deif #1001: | not | automatically	gfe-power #1002: | Not | available
+558	shunt	SHUNT	41	2	51	srcrow41	gfe-power #1025: | SHUNT | AREP / PMG	leroy-somer-fuzhou #1001: | SHUNT | AREP+	
+559	duty / t° c	Duty / T° C	41	2	108	srcrow41	gfe-power #1025: | Duty / T° C | Continuous / 40 °C	leroy-somer-fuzhou #1001: | Duty / T° C | Continuous / 40	
+560	t’do	T’do	41	2	290	srcrow41	gfe-power #1025: | T’do | No-load transient time constant | 1937 | 1937 | 1983 | 1983 | 2018 | 2033 | 2072 | 2093 | 2113	leroy-somer-fuzhou #1001: | T’do | No-load transient time constant | 789 | 826 | 850 | 873 | 914	
+561	engine-sdec	Engine-SDEC	41	1	82	srcrow41	longkai-power #1001: | Engine-SDEC | Power factor | 0.8		
+562	发动机型号 engine model	发动机型号 Engine Model	41	1	41	srcrow41	shanhua #1002: | 发动机型号 Engine Model | 12M33D1450E310		
+563	wr2 inertia	WR² INERTIA	41	2	85	srcrow41	stamford-avk-china #1001: | WR² INERTIA | 0.6071 kgm2 | 0.5754 kgm2	wintpower #1001: | WR² INERTIA | 0.1568 kgm2 | 0.1568 kgm2	
+564	x2 negative sequence	X2 NEGATIVE SEQUENCE	41	2	246	srcrow41	stamford-avk-china #1001: | X2 NEGATIVE SEQUENCE | 0.11 | 0.10 | 0.09	wintpower #1001: | X2 NEGATIVE SEQUENCE | 0.177 | 0.160 | 0.149 | 0.170 | 0.207 | 0.194 | 0.178 | 0.170	
+565	t'd transient time const.	T'd TRANSIENT TIME CONST.	41	2	41	srcrow41	stamford-avk-china #1001: | T'd TRANSIENT TIME CONST. | 0.03s	wintpower #1001: | T'd TRANSIENT TIME CONST. | 0.02 s	
+566	t''d sub-transtime const.	T''d SUB-TRANSTIME CONST.	41	2	41	srcrow41	stamford-avk-china #1001: | T''d SUB-TRANSTIME CONST. | 0.008s	wintpower #1001: | T''d SUB-TRANSTIME CONST. | 0.005 s	
+567	t'do o.c. field time const.	T'do O.C. FIELD TIME CONST.	41	2	41	srcrow41	stamford-avk-china #1001: | T'do O.C. FIELD TIME CONST. | 0.75s	wintpower #1001: | T'do O.C. FIELD TIME CONST. | 0.4 s	
+568	lnsulation class , temperature	lnsulation : class , temperature	41	1	41	srcrow41	westinpower #1005: | lnsulation : class , temperature | rise		
+569	degrees	Degrees	41	1	62	srcrow41	winco #1006: | Degrees | C | 16		
+570	na	NA	40	4	99	srcrow40	atlas-copco-power #1001: | NA | NA	baudouin #1005: | NA | ECU	deif #1002: | NA | Χ | Χ | Χ | Χ
+571	function	Function	40	5	88	srcrow40	datakom #1001: | Function | Color	deep-sea-electronics #1004: | Function | Governor and AVR control	sices #1003: | Function | Description
+572	flexible	Flexible	40	3	62	srcline3 srcrow37	deep-sea-electronics #1016: Flexible: Configured for Oil Sensor in the DSE default	smartgen #1003: | Flexible | Sensor | 1 | 0: Not used; 1: Temperature sensor;	winco #1006: | flexible | sensor
+573	compliance	Compliance	40	2	43	srcrow40	gb-power #1001: | Compliance | GB755,BS5000,VDE0530,NEMAMG1-22,IED34-1,CSA22.2	long-gen #1001: | Compliance | with GB755,BS5000,VDE0530,NEMAMG1-22,IED34-1,CSA22.2	
+574	x'd	X'd	40	1	40	srcrow40	mecc-alte #1007: | X'd | Direct-axis transient reactance		
+575	x''d direct-axis subtransient reactance	X''d Direct-axis subtransient reactance	40	1	300	srcrow40	mecc-alte #1007: | X''d Direct-axis subtransient reactance | % | 14,4 | 12,1 | 15,6 | 10 | 10		
+576	x'q	X'q	40	1	40	srcrow40	mecc-alte #1007: | X'q | Quadrature-axis transient		
+577	x''q	X''q	40	1	40	srcrow40	mecc-alte #1007: | X''q | Quadrature-axis subtransient		
+578	机组型号	机组型号	40	2	40	srcline4 srcrow36	sanq-power #3002: 机组型号：SQIC225备用功率：1760KW主用功率：1600KW发动机：康明斯QSK60-G4发电机：斯坦福PI734F控制系统：DSE8610 MKII带并机功能启动马达：24V出口国：智利...	shanhua #1002: | 机组型号 | HL1200GF	
+579	item	Item	40	2	68	srcrow40	smartgen #1003: | Item | HGM	winco #1006: | item | A	
+580	hgm7200 series genset controller user manual	HGM7200 Series Genset Controller User Manual	40	1	40	srcrow40	smartgen #1008: | HGM7200 Series Genset Controller User Manual | Page 2 of 50		
+581	for a preconfigured time	for a preconfigured time	40	1	40	srcrow40	westinpower #1004: | for a preconfigured time | functions		
+582	va	VA	40	1	40	srcrow40	winco #1006: | VA | 32		
+583	container	CONTAINER	39	4	44	srcrow39	atlas-copco-power #1001: | CONTAINER | FAST CHARGER	green-power-generators #1001: | CONTAINER | CONTENEUR	lees-power #1003: | Container | •
+584	tel.	Tel.	39	5	39	srcline32 srcrow7	cgm-italia #1001: Tel.: +39 0444 673712	dingbo #3001: Tel.: +86 771 5805 269	endress-stromerzeuger #1001: Tel.: +49 (0) 71 23 / 97 37 - 0
+585	baudouin	Baudouin	39	4	69	srcrow39	deif #1001: | Baudouin | CPCB IV	gfe-power #1002: | Baudouin | Stamford | GFE3000BSC	green-power-generators #1001: | Baudouin | Baudouin
+586	data sheet 4921240614p en	Data sheet 4921240614P EN	39	1	46	srcrow39	deif #1004: | Data sheet 4921240614P EN | Page 2 of 46		
+587	set	set	39	7	51	srcrow39	deif #1004: | set | 1 | Diesel generator set 2	gfe-power #1015: | Set | – | D830	koten-power #1001: | SET | POWERED
+588	excitation model	Excitation Model	39	2	39	srcrow39	gb-power #1001: | Excitation Model | Brushless, Self-Exciting	repower-gas #1001: | Excitation model | Brushless	
+589	mccb	MCCB	39	2	39	srcrow39	gfe-power #1002: | MCCB | /	yihua-fujian #3001: | MCCB | Battery charger	
+590	tcg	TCG	39	1	44	srcrow39	mwm #1001: | TCG | 3016 Robust. Effizient. Digital.		
+591	any	any	39	2	67	srcrow39	smartgen #1007: | any | key to mute alarms in	winco #1006: | Any | Any | 32S	
+592	price	Price	38	2	38	srcline38	bobig-power #3005: Price: $1600	hosem-power #3002: Price: Negotiable	
+593	unit	unit	38	5	40	srcrow37 srcline1	comap #1007: | unit | IGS-PTM	datakom #1001: | Unit | Factory	deif #1001: | unit | keeps
+594	perkins model	PERKINS MODEL	38	1	38	srcline38	fdk-energy #1077: PERKINS MODEL:403A-11G1		
+595	engine configuration	Engine Configuration	38	1	39	srcrow38	gb-power #1001: | Engine Configuration | 3Cylinder In Line, 4Stroke,Direct Injection		
+596	starter model	Starter Model	38	1	38	srcrow38	gb-power #1001: | Starter Model | 12V DC Start		
+597	connection type	Connection Type	38	1	38	srcrow38	gb-power #1001: | Connection Type | 3 Phase and 12 Wires “Star” Connection		
+598	telephone	Telephone	38	1	38	srcrow38	gb-power #1001: | Telephone | ＜50		
+599	frequency reduce	Frequency Reduce	38	1	38	srcrow38	gb-power #1001: | Frequency Reduce | 0-5% adjustable		
+600	class / t° k	Class / T° K	38	2	134	srcrow38	gfe-power #1025: | Class / T° K | H / 125°	leroy-somer-fuzhou #1001: | Class / T° K | H:125K | F:105K | H:150K | H:163K	
+601	千瓦 kw	千瓦 KW	38	1	38	srcrow38	shanhua #1002: | 千瓦 KW | 千伏安 KVA		
+602	机组保护	机组保护	38	1	38	srcrow38	shanhua #1002: | 机组保护 | 市电低频/超频		
+603	generator power	generator power	38	1	38	srcrow38	voltgent #1007: | generator power | counter		
+604	sensing versions	sensing versions	38	1	38	srcrow38	voltgent #1007: | sensing versions | front gasket		
+605	controller setup	controller setup	38	1	38	srcrow38	voltgent #1007: | controller setup | support field signals		
+606	magnetic-pick-up/alternator-sensing version	magnetic-pick-up/alternator-sensing version	38	1	38	srcrow38	voltgent #1007: | magnetic-pick-up/alternator-sensing version | MPU/alternator version; six on CAN		
+607	can engine version ·	CAN ENGINE VERSION ·	38	1	38	srcrow38	voltgent #1007: | CAN ENGINE VERSION · | MPU		
+608	/ alternator	/ ALTERNATOR	38	1	38	srcrow38	voltgent #1007: | / ALTERNATOR | VERSION		
+609	on the selected controller	on the selected controller	38	1	38	srcrow38	voltgent #1007: | on the selected controller | variant.		
+610	fuel consumption25%	Fuel consumption25% (of the Prime Power)	38	1	38	srcrow38	westinpower #1003: | Fuel consumption25% (of the Prime Power) | 240g/kWh		
+611	stop	STOP	37	6	40	srcrow33 srcline4	datakom #1001: | STOP | Yellow	deep-sea-electronics #1003: | Stop | input	deif #1002: | STOP | PREHEAT
+612	gas feeding model	Gas Feeding Model	37	1	37	srcrow37	gb-power #1001: | Gas Feeding Model | Natural Aspiration		
+613	temperature derate	Temperature (Celsius) Derate	37	1	49	srcrow37	lees-power #1093: | Temperature (Celsius) Derate | Curves		
+614	connected	Connected	37	3	39	srcrow37	mwm #1015: | Connected | Efficient	sices #1003: | connected | to	smartgen #1001: | Connected | to
+615	海拔要求 altitude	海拔要求 Altitude	37	1	37	srcrow37	shanhua #1001: | 海拔要求 Altitude | ≤1000m		
+616	温升等级 temperature rise	温升等级 Temperature Rise	37	1	37	srcrow37	shanhua #1002: | 温升等级 Temperature Rise | H		
+617	active	Active	37	2	37	srcrow37	smartgen #1002: | active (B-) | table 3	winco #1006: | Active | 10/16	
+618	electrical system	Electrical System	36	4	36	srcrow36	baudouin #1008: | Electrical System | 12V DC electric starter motor and battery charging alternator	hipower #1001: | ELECTRICAL SYSTEM | • 50/50 Ethylene Glycol Antifreeze	hyundai-power-products #5001: | Electrical system | Maintenance spare
+619	it	IT	36	3	36	srcrow31 srcline5	cgm-italia #1001: | IT | EN	sices #1003: | It | is	smartgen #1002: | it | alarm
+620	input impedance	Input impedance	36	2	42	srcrow36	comap #1001: | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n	deif #1001: | Input impedance | 4 MΩ/phase-to-ground, and 600 kΩ phase/neutral	
+621	class	class	36	5	48	srcrow36	deep-sea-electronics #1008: | class | •	gfe-power #1025: | Class | H / | 400 | V - 6	leroy-somer-fuzhou #1004: | Class | H
+622	gb power	GB POWER	36	1	36	srcrow36	gb-power #1001: | GB POWER | 3/4		
+623	shaft and keys	Shaft and Keys	36	2	36	srcrow36	gfe-power #1008: | Shaft and Keys | All alternator rotors are dynamically balanced to better than BS6861: Part 1 Grade 2.5 for	stamford-avk-china #1016: | Shaft and Keys | All alternator rotors are dynamically balanced to better than BS6861: Part 1 Grade 2.5 for	
+624	locked	Locked	36	4	37	srcrow36	gfe-power #1008: | Locked | Rotor	leroy-somer-fuzhou #1015: | Locked | rotor kVA	stamford-avk-china #1007: | LOCKED | ROTOR kVA
+625	the sustained current value	The sustained current value	36	3	60	srcrow36	gfe-power #1021: | The sustained current value | is	stamford-avk-china #1002: | The sustained current value | is constant irrespective	wintpower #1002: | The sustained current value | is constant irrespective | Note 3
+626	reactances . time constants	Reactances (%). Time constants (ms)	36	2	46	srcrow36	gfe-power #1025: | Reactances (%). Time constants (ms) | -	leroy-somer-fuzhou #1001: | Reactances (%). Time constants (ms) | - | Class H / 400 | V 12-wire	
+627	p.f.	P.F.	36	3	57	srcrow36	gfe-power #1025: | P.F. | Load	leroy-somer-fuzhou #1001: | P.F. | = | 0.8	mecc-alte #1001: | P.F. | 1 | 1 | 1 | 1 | 1 | 1 | 1
+628	hgm6100n series genset controller user manual	HGM6100N Series Genset Controller User Manual	36	1	36	srcrow36	smartgen #1001: | HGM6100N Series Genset Controller User Manual | Page 2 of 45		
+629	under	under	36	1	45	srcrow36	smartgen #1002: | under | speed,		
+630	hgm7100n series genset controller user manual	HGM7100N Series Genset Controller User Manual	36	1	36	srcrow36	smartgen #1007: | HGM7100N Series Genset Controller User Manual | Page 2 of 47		
+631	totally	Totally	35	1	35	srcrow35	gb-power #1001: | Totally | lubrication		
+632	cont. f -	Cont. F -	35	2	35	srcrow35	gfe-power #1008: | Cont. F - | 105/40°C	stamford-avk-china #1016: | Cont. F - | 105/40°C	
+633	transient	Transient	35	4	40	srcrow34 srcline1	gfe-power #1021: | Transient | Voltage	leroy-somer-fuzhou #1003: | Transient | voltage | variation 480V | - 60 | Hz - 6-wire	stamford-avk-china #1004: | TRANSIENT | 10
+634	united kingdom	UNITED KINGDOM	35	4	36	srcrow35	mecc-alte #1001: | UNITED KINGDOM | SPAIN	sices #1003: | UNITED KINGDOM | SPAIN	vpower-hk #1001: | United Kingdom | Middle East
+635	china	CHINA	35	4	35	srcrow35	mecc-alte #1001: | CHINA | INDIA	sices #1003: | CHINA | INDIA	vpower-hk #1001: | China | INTERNATIONAL HOLDINGS LIMITED
+636	(default	(default	35	1	35	srcrow2 srcline33	smartgen #1003: | (default: | 10s)		
+637	hgm400 series genset controller	HGM400 Series Genset Controller	35	1	106	srcrow35	smartgen #1010: | HGM400 Series Genset Controller | ISSUE 2015-05-27 | Version 1.6 | Page 5 of 44		
+638	max. sustained	Max. sustained	35	2	137	srcrow35	stamford-avk-china #1001: | Max. sustained | duration | 10 sec. | 5 sec. | 2 sec.	wintpower #1002: | Max. sustained | duration | 10 sec. | 5 sec. | 2 sec.	
+639	generating	generating	34	2	34	srcrow34	aj-power #1001: | generating | Auxiliary contact in circuit breaker	lees-power #1122: | Generating | Sets	
+640	power supply	Power supply	34	5	36	srcrow33 srcline1	comap #1001: | Power supply | Current measurement	deif #1004: | Power supply | CAN A	mecc-alte #1001: | Power Supply | Directly from A.C.
+641	be	be	34	8	35	srcrow34	datakom #1001: | be | programmed for below functions:	deif #1001: | be | used	gfe-power #1025: | be | downloaded
+642	kva base rating for	kVA Base Rating (Class H) for	34	3	255	srcrow34	gfe-power #1021: | kVA Base Rating (Class H) for | 600 | 610 | 600 | 600 | 681 | 713 | 731 | 750	stamford-avk-china #1018: | kVA Base Rating (Class H) for | 710 | 750 | 750 | 710 | 800 | 844 | 887 | 937	wintpower #1001: | kVA BASE RATING FOR | 22.5 | 22.5 | 22.5 | 17.5 | 27.5 | 28.8 | 28.8 | 30
+643	engine capacity	Engine capacity	34	2	34	srcrow34	hosem-power #1001: | Engine Capacity (L) | 61.1	westinpower #1009: | Engine capacity | 140 L	
+644	备用功率	备用功率	34	2	130	srcrow34	lees-power #1119: | 备用功率 | kVA | 2000	shanhua #1001: | 备用功率 | Standby power | 345 | 100%功率 100% prime power | 309	
+645	(external	(External	34	1	34	srcrow34	longkai-power #1102: | (External | Fuel Tank)		
+646	factory default	Factory default	34	1	34	srcline34	smartgen #1001: Factory default: Mains		
+647	can_scr	CAN_SCR	34	1	39	srcrow34	smartgen #1001: | CAN_SCR | SAE | J1939 shield		
+648	hgm6100u genset controller	HGM6100U Genset Controller	34	1	102	srcrow34	smartgen #1002: | HGM6100U Genset Controller | 2016-05-09 | Version 1.4 | Page 3 of 39		
+649	title	TITLE	33	2	35	srcrow33	deep-sea-electronics #1007: | TITLE | PART NO’S | -40 °C to +70 °C	winco #1006: | Title | String	
+650	level	level	33	5	41	srcrow33	deif #1001: | level | Regeneration	gfe-power #1008: | level | Curves are drawn for Star connected machines under no-load	smartgen #1001: | Level | When fuel level sensor value is under this
+651	amf	AMF (Auto Main Failure)	33	4	48	srcline1 srcrow32	deif #1003: AMF: If there is a significant loss of	genlitec #1001: | AMF | Yes	smartgen #1003: | AMF | ●
+652	altitude derate curves	Altitude (meters) Derate Curves	33	1	33	srcrow33	lees-power #1122: | Altitude (meters) Derate Curves | inside.		
+653	full-load(with < 0.5% drift due	full-load(with < 0.5% drift due	33	1	33	srcrow33	lees-power #1122: | full-load(with < 0.5% drift due | 3-Phase Sensing, ±0.25%		
+654	to temp. variation	to temp. variation	33	1	33	srcrow33	lees-power #1122: | to temp. variation | excellent load response.		
+655	facebook	Facebook	33	1	33	srcline33	lees-power #1122: Facebook: www.facebook.com/leesgenerator		
+656	2020 by wuxi lees	2020 by Wuxi Lees	33	1	33	srcrow33	lees-power #1122: | 2020 by Wuxi Lees | Power		
+657	kva base rating for reactance	kVA BASE RATING FOR REACTANCE	33	2	194	srcrow33	stamford-avk-china #1001: | kVA BASE RATING FOR REACTANCE | 85 | 85 | 85	wintpower #1002: | kVA BASE RATING FOR REACTANCE | 50 | 50 | 50 | 48 | 60 | 62.5 | 62.5 | 65	
+658	x0 zero sequence	X0 ZERO SEQUENCE	33	2	182	srcrow33	stamford-avk-china #1001: | X0 ZERO SEQUENCE | 0.08 | 0.07 | 0.07	wintpower #1001: | X0 ZERO SEQUENCE | 0.081 | 0.073 | 0.068 | 0.077 | 0.099 | 0.093 | 0.085 | 0.081	
+659	stator wdg. resistance	STATOR WDG. RESISTANCE	33	2	37	srcrow33	stamford-avk-china #1002: | STATOR WDG. RESISTANCE | 0.059	wintpower #1001: | STATOR WDG. RESISTANCE | 0.354 Ohms PER PHASE AT 22°C SERIES STAR CONNECTED	
+660	rotor wdg. resistance	ROTOR WDG. RESISTANCE	33	2	33	srcrow33	stamford-avk-china #1002: | ROTOR WDG. RESISTANCE | 1.12 Ohms at 22°C	wintpower #1001: | ROTOR WDG. RESISTANCE | 0.64 Ohms at 22°C	
+661	cummins pt	Cummins PT	32	2	33	srcrow32	aosif #1050: | Cummins PT | for stand by/prime power	fdk-energy #1024: | Cummins PT | (g/KWh)	
+662	esp	ESP	32	4	32	srcrow32	baudouin #1012: | ESP | PRP	gfe-power #1029: | ESP | PRP	koten-power #1001: | ESP | Engine Model
+663	data sheet 4921240618-j en	Data sheet 4921240618-J EN	32	1	43	srcrow32	deif #1001: | Data sheet 4921240618-J EN | Page 2 of 42		
+664	litres/hour	Litres/hour	32	1	32	srcrow32	gfe-power #1005: | Litres/hour | 0		
+665	uc	uc (V)	32	2	216	srcrow32	gfe-power #1025: | uc (V) | On-load excitation voltage SHUNT/AREP | 46 | 50.9 | 35.8 | 38.4 | 34.2 | 39.2 | 36 | 36.4 | 58	leroy-somer-fuzhou #1004: | uc (V) | On-load excitation voltage SHUNT/AREP+ | 37.4 | 40.2 | 40.6 | 43.5 | 38.2 | 41.9	
+666	star	Star (V)	32	2	439	srcrow32	stamford-avk-china #1021: | Star (V) | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440	wintpower #1011: | STAR | CONNECTED	
+667	lube oil consumption at full	Lube oil consumption at full	32	1	32	srcrow32	voltgent #1001: | Lube oil consumption at full | 0.5%-1% of fuel		
+668	phone	Phone	31	7	31	srcline31	app-power-anpu #5001: Phone: 4500312 443.0390 Fox 4017 43 MAD: EH EIIS2636E, No2635 Jungong Road, Shanghai	dagus-fuan #3001: Phone: +86-593 6581466 6580488	datakom #6001: Phone : +90 - 216 466 84 60 +90 - 216 466 84 61 Fax : +90 - 216 364 65 65
+669	optional	OPTIONAL	31	5	31	srcrow31	atlas-copco-power #1006: | * optional | 2014/35/EU, EMV-Richtlinie 2014/30/EU (weitere Informationen erhalten Sie beim technischen Support von	cgm-italia #1001: | OPTIONAL | 35	gfe-power #1002: | optional | ×
+670	models	Models	31	2	91	srcrow31	baudouin #1008: | Models | ESP	mecc-alte #1007: | Models | 380V 50Hz | 400V 50Hz | 415V 50Hz | 440V 50Hz	
+671	ethernet	Ethernet	31	6	53	srcrow31	cgm-italia #1001: | Ethernet | o	comap #1008: | Ethernet | 10/100 Mbit	deep-sea-electronics #1003: | Ethernet | 1 10/100 Ethernet Port
+672	auto	AUTO	31	5	39	srcrow29 srcline2	datakom #1001: | AUTO | Green	deep-sea-electronics #1001: | Auto | Mains	deif #1003: | AUTO | ACK
+673	cont. h	Cont. H	31	2	62	srcrow31	gfe-power #1008: | Cont. H | - | 125/40°C	stamford-avk-china #1016: | Cont. H | - | 125/40°C	
+674	标 准 功 能 standard functions	标 准 功 能 Standard functions	31	1	31	srcrow31	shanhua #1001: | 标 准 功 能 Standard functions | 停 机 Shutdown		
+675	key	Key	30	4	32	srcrow30	aj-power #1001: | Key | Benefits	deep-sea-electronics #1004: | Key | Features	sices #1003: | KEY: | 1 | E.01 ENGINE
+676	port	port	30	5	31	srcrow30	comap #1006: | port | non-isolated RS485, onlyterminal	datakom #1001: | port | engine to these terminals.	deep-sea-electronics #1007: | PORT | INPUTS
+677	date	Date	30	4	32	srcrow30	datakom #1001: | Date | - | 01-31	deep-sea-electronics #1036: | DATE | ISSUE. | 00-06	gfe-power #1007: | Date: | 2022/5/13
+678	other	OTHER	30	4	46	srcrow28 srcline2	deep-sea-electronics #1008: | OTHER | SCANIA	deif #1004: | Other | RMB connector kit	leroy-somer-fuzhou #1001: | Other | class
+679	circuit breaker type	Circuit Breaker Type:	30	2	30	srcrow30	genlitec #1013: | Circuit Breaker Type: | Options Available	koten-power #1002: | Circuit Breaker Type | 3pole MCCB (4P Available as option)	
+680	xlr rotor leakage reactance	Xlr Rotor Leakage Reactance	30	2	235	srcrow30	gfe-power #1008: | Xlr Rotor Leakage Reactance | 0.10 | 0.09 | 0.09 | 0.07 | 0.11 | 0.11 | 0.10 | 0.10	stamford-avk-china #1016: | Xlr Rotor Leakage Reactance | 0.12 | 0.11 | 0.10 | 0.09 | 0.14 | 0.13 | 0.12 | 0.12	
+681	saturation factors	Saturation Factors	30	2	60	srcrow30	gfe-power #1008: | Saturation Factors | 400V | 480V	stamford-avk-china #1016: | Saturation Factors | 400V | 480V	
+682	sae adaptor	SAE Adaptor	30	2	45	srcrow30	gfe-power #1008: | SAE Adaptor | SAE 0.5, 1	stamford-avk-china #1016: | SAE Adaptor | SAE 0.5, 1	
+683	two	two	30	4	30	srcrow30	gfe-power #1008: | two | minutes	sices #1003: | two | of them. For each interface are shown:	stamford-avk-china #1016: | two | minutes
+684	flex plate	Flex plate	30	2	72	srcrow30	gfe-power #1025: | Flex plate | 11 1/2 | 14 | 18	leroy-somer-fuzhou #1001: | Flex plate | (mm)	
+685	inside silencer	Inside silencer	30	1	30	srcrow30	lees-power #1003: | Inside silencer | •		
+686	型号	型号	30	2	104	srcrow30	lees-power #1119: | 型号 | LSM2000S3	mwm #1005: | 型号 | P5) | P5) | P5) | S6)	
+687	transient voltage	Transient voltage	30	3	35	srcrow30	leroy-somer-fuzhou #1013: | Transient voltage | variation | 400V - 50	stamford-avk-china #1018: | Transient Voltage | Dip	xinhengxin-fujian #1002: | Transient voltage | deviation | (100 % sudden
+688	for more information visit	For more information visit	30	1	30	srcline30	mecc-alte #1007: For more information visit: Insulation_System_Guide		
+689	nox ≤ 500 mg/nm32)	NOX ≤ 500 mg/Nm32)	30	1	44	srcrow30	mwm #1001: | NOX ≤ 500 mg/Nm32) | NOX ≤ 500 mg/Nm32)		
+690	发电	发电	30	1	30	srcrow30	shanhua #1002: | 发电 | 机 参 数 ALTERNATOR SPECIFICATION		
+691	all other	All other	30	2	30	srcrow30	stamford-avk-china #1002: | All other | times	wintpower #1002: | All other | times	
+692	per cent transient voltage dip	PER CENT TRANSIENT VOLTAGE DIP	30	2	30	srcrow30	stamford-avk-china #1006: | PER CENT TRANSIENT VOLTAGE DIP | 15	wintpower #1015: | PER CENT TRANSIENT VOLTAGE DIP | 15	
+693	of voltage level	of voltage level	30	2	30	srcrow30	stamford-avk-china #1006: | of voltage level | Curves are drawn for Star (Wye) connected machines. For other	wintpower #1002: | of voltage level | Curves are drawn for Star (Wye) connected machines. For other	
+694	electric	ELECTRIC	29	4	29	srcrow29	atlas-copco-power #1001: | ELECTRIC | DIESEL	cgm-italia #1001: | electric | EN Lateral side manual/automatic electric	gfe-power #1002: | Electric | Electrical system voltage
+695	options	Options	29	6	29	srcrow29	atlas-copco-power #1005: | Options | + Chauffage par temps froid	bobig-power #3003: | Options | ATS,color,voltage,phase,tank Capacity,frequency	deif #1004: | options | to
+696	connector	CONNECTOR	29	3	30	srcrow29	atlas-copco-power #1007: | CONNECTOR | MC4 is compatibel	sices #1003: | connector | (serial | port 1) can be used	smartgen #1001: | connector | of
+697	over	over	29	2	37	srcrow29	baudouin #1020: | over | the	smartgen #1001: | Over | Voltage | (30-60000)V | 264	
+698	mode	mode	29	7	38	srcrow29	cgm-italia #1001: | mode | l	deep-sea-electronics #1004: | mode | controller is	green-power-generators #1001: | Mode | Mode
+699	low oil pressure	Low Oil Pressure	29	3	44	srcline2 srcrow27	datakom #1001: LOW OIL PRESSURE: Set if a signal is detected at the Low Oil Pressure Switch input or the oil	smartgen #1001: | Low Oil Pressure | Alarm	winco #1004: | LOW OIL PRESSURE | SHUTDOWN
+700	cranking dropouts	Cranking Dropouts	29	2	35	srcline2 srcrow27	datakom #1001: Cranking dropouts: survives 0 V for 100ms	deep-sea-electronics #1001: | Cranking Dropouts | Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout	
+701	maximum operating current	Maximum Operating Current	29	2	30	srcrow29	deep-sea-electronics #1001: | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V	woodward #1001: | Maximum operating current | (All relays closed, LCD bright) | together. (easYgen-1600/1700/1800	
+702	fuan longkai power co., ltd.	Fuan Longkai Power Co., Ltd.	29	1	29	srcrow29	longkai-power #1005: | Fuan Longkai Power Co., Ltd. | ▏		
+703	winding	Winding	29	4	31	srcrow29	mecc-alte #1007: | Winding | Standard	stamford-avk-china #1042: | Winding | 311	winco #1004: | WINDING | 12 LEAD
+704	st	St	29	2	57	srcline1 srcrow28	sices #1003: ST (“Status”): the following code shows the status of a dimension or a condition of the device or of one of its functions.	wintpower #1002: | St | andb | 150/40°C	
+705	are	are	28	6	30	srcrow28	aj-power #1001: | are | available.	leroy-somer-fuzhou #1019: | are | available	sices #1003: | are | different in the
+706	modello	MODELLO	28	3	28	srcrow28	atlas-copco-power #1003: | MODELLO | ENERGIA	cgm-italia #1001: | modello | modelmodèle	green-power-generators #1001: | MODELLO | POTENZA kVA
+707	performance	performance	28	4	32	srcrow28	gfe-power #1002: | performance | Engine speed	hipower #1001: | Performance | Units | HRVW1250 | HRVW1375	leroy-somer-fuzhou #1001: | Performance | outputs, matching available
+708	ambient temperature	Ambient temperature	28	5	31	srcrow26 srcline2	kingway-power #3001: | Ambient temperature | -25℃~ +60℃	vpower-hk #1001: | Ambient Temperature | 0°C ~ 35°C	winco #1004: | AMBIENT TEMPERATURE | FREIGHT CLASS | 70
+709	containerized	Containerized	28	1	56	srcrow28	lees-power #1003: | Containerized | ISO 20'ft HQ | 17950		
+710	fuel consumption 25% load	Fuel Consumption 25% load	28	1	56	srcrow28	lees-power #1122: | Fuel Consumption 25% load | L/H | 85.50		
+711	控制系统	控制系统	28	2	28	srcrow28	mwm #1014: | 控制系统 | 废气门	shanhua #1002: | 控制系统 | CONTROL	
+712	request.	request.	28	2	28	srcrow28	stamford-avk-china #1001: | request. | with higher winding pitches, when in parallel with the	wintpower #1002: | request. | seen with higher winding pitches, when in parallel with	
+713	recommended battery	Recommended battery	28	1	28	srcrow28	voltgent #1004: | Recommended battery | 60 Ah		
+714	features	FEATURES	27	7	33	srcrow27	aj-power #1001: | FEATURES | FEATURES	comap #1004: | Features | and	deep-sea-electronics #1007: | FEATURES | the Industrial Environment
+715	pump	pump	27	1	31	srcrow27	aosif #1003: | pump | for stand by/prime power		
+716	pcs	pcs	27	1	27	srcrow27	cgm-italia #1001: | pcs | pcs		
+717	measurement range	Measurement range	27	4	33	srcrow26 srcline1	comap #1001: | Measurement range | 10-346 V AC / 10-600 V AC	deep-sea-electronics #1039: | Measurement Range | 0 Ω to 3000 Ω	sices #1002: | Measurement range | 3-99Hz
+718	bs en 61000-6-2	BS EN 61000-6-2	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment		
+719	bs en 61000-6-4	BS EN 61000-6-4	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment		
+720	bs en 60068-2-1	BS EN 60068-2-1	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC		
+721	bs en 60068-2-2	BS EN 60068-2-2	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC		
+722	bs en 60068-2-6	BS EN 60068-2-6	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-6 | Ten sweeps in each of three major axes		
+723	bs en 60068-2-30	BS EN 60068-2-30	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours		
+724	bs en 60068-2-78	BS EN 60068-2-78	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours		
+725	bs en 60068-2-27	BS EN 60068-2-27	27	1	27	srcrow27	deep-sea-electronics #1001: | BS EN 60068-2-27 | Three shocks in each of three major axes		
+726	switch	Switch	27	4	27	srcrow27	deep-sea-electronics #1005: | Switch | &	deif #1001: | switch | (open transition)	sices #1003: | Switch | command
+727	item no.	Item no.	27	2	27	srcrow27	deif #1002: | Item no. | Note	winco #1009: | ITEM NO. | PART NUMBER	
+728	air outlet	AIR OUTLET	27	2	51	srcrow27	gfe-power #1025: | AIR OUTLET | 68 | 8 | 610 | 21	leroy-somer-fuzhou #1001: | AIR OUTLET | 13	
+729	see	See	27	3	27	srcrow27	sices #1003: | See | below	smartgen #1003: | see | the	winco #1006: | See | table
+730	oil pressure sensor	Oil Pressure Sensor	26	2	26	srcrow26	atlas-copco-power #1001: | Oil Pressure Sensor | NA	smartgen #1005: | Oil Pressure Sensor | When the controller detects the sensor circuit is open, it shall issue a	
+731	bar	bar	26	2	26	srcrow26	datakom #1001: | bar | 0.0	smartgen #1003: | bar | psi	
+732	maximum standby current	Maximum Standby Current	26	2	26	srcrow26	deep-sea-electronics #1001: | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V	woodward #1001: | Maximum standby current | (All relays closed, LCD dimmed)	
+733	bus	Bus	26	5	31	srcrow21 srcline5	deep-sea-electronics #1019: | Bus | Bus	deif #1001: | bus | CAN bus	sices #1003: | BUS | (P.0700
+734	perkins	Perkins	26	3	38	srcrow26	deif #1001: | Perkins | ADEM3	gfe-power #1012: | Perkins | Stamford | GFE1650PSO	green-power-generators #1001: | Perkins | Perkins
+735	rotation	Rotation	26	3	32	srcrow26	gfe-power #1002: | Rotation | Anti-clockwise viewed on flywheel	winco #1004: | ROTATION | CCW	long-gen #1001: | Rotation (looking at flywheel) | Counter clockwise
+736	max. sustained duration	Max. sustained duration	26	3	78	srcrow26	gfe-power #1021: | Max. sustained duration | 10 sec. | 5 sec. | 2 sec.	stamford-avk-china #1006: | Max. sustained duration | 10 sec. | 5 sec. | 2 sec.	wintpower #1010: | Max. sustained duration | 10 sec. | 5 sec. | 2 sec.
+737	ah	AH	26	2	68	srcrow26	gfe-power #1025: | AH | Xg | 506 | 40	leroy-somer-fuzhou #1001: | AH | 212 | 49	
+738	press	press	26	1	26	srcrow26	smartgen #1001: | press | to start genset, it can automatically		
+739	delta	Delta (V)	26	2	416	srcrow26	stamford-avk-china #1006: | Delta (V) | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277	wintpower #1002: | Delta (V) | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277 | 240 | 254 | 266 | 277	
+740	per centtransien tvoltagedip .	PER CENTTRANSIEN TVOLTAGEDIP .	26	1	27	srcrow26	wintpower #1008: | PER CENTTRANSIEN TVOLTAGEDIP . | 15		
+741	co	CO (dry, 5 % O2)	25	2	25	srcrow25	atlas-copco-power #1003: | *Co | n	vpower-hk #1001: | CO (dry, 5 % O2) | < 1000 mg/m³ i.N	
+742	construction	Construction	25	2	41	srcrow25	atlas-copco-power #1009: | Construction | 0h | 3h | 6h | 9h | 12h | 15h | 18h | 21h | 24h	vpower-hk #1001: | Construction | Double Bearing	
+743	a)	a)	25	4	25	srcrow25	baudouin #1021: | a) | Noisetestmadeat100%oftheESPpower,at1mt.distance,onengine withoutradiator,withoutcoolingfanandwithout silencer.	gfe-power #1029: | a) | Noise test made at 100% of the ESP power, at 1 mt. distance, on engine without radiator, without cooling fan and without silencer.	sices #1003: | a) | Steady out of tolerance: the generator voltages and/or frequency status must be continuously other than “In
+744	program group	Program Group	25	1	25	srcline20 srcrow5	datakom #1001: Program Group: Controller Configuration		
+745	mtu	MTU	25	2	52	srcrow25	deif #1001: | MTU | MDEC module | M.201	green-power-generators #1001: | MTU | Doosan	
+746	ground	ground	25	4	25	srcrow25	deif #1002: | ground | current	genlitec #1013: | Ground | Negative	smartgen #1002: | Ground | recommended, its
+747	combustion system	Combustion system	25	2	25	srcrow25	genlitec #1004: | Combustion system | Indirect injection	gfe-power #1002: | Combustion system | Direct injection	
+748	total efficiency	Total efficiency	25	2	106	srcrow25	mwm #1009: | Total efficiency | % | 85.9 | 86.3 | 87.1 | 87.4 | 87.5 | 87.3 | 87.2	vpower-hk #1001: | Total efficiency: | [%] | 88.2 | 88.6 | 89.0	
+749	机油容量 oil capacity	机油容量 Oil Capacity	25	1	50	srcrow25	shanhua #1002: | 机油容量 Oil Capacity | （L） | 146		
+750	status	Status	25	3	59	srcrow25	sices #1003: | Status | Description	smartgen #1006: | status | in	winco #1006: | Status | Meaning
+751	temp.	Temp.	25	1	35	srcrow25	smartgen #1001: | Temp. (WT) | °C/°F		
+752	injection	Injection	24	2	48	srcrow24	aosif #1031: | Injection | Minimum Pressure Cap | 67kPa	fdk-energy #1024: | Injection | Fuel Consumption at 100% load | 197 at 1500rpm	
+753	singapore	SINGAPORE	24	3	25	srcrow24	baudouin #1004: | SINGAPORE | ITALY	vpower-hk #1001: | Singapore | Indonesia	winco #1006: | Singapore | 0x04 | 0x1004
+754	this	This	24	7	24	srcrow24	comap #1017: | This | product is CE compliant.	datakom #1002: | This | relay	deif #1001: | This | includes
+755	bs en 60529	BS EN 60529	24	1	24	srcrow24	deep-sea-electronics #1001: | BS EN 60529 | IP65 - IP65 - From the front of the module when the gasket is installed into a control		
+756	1 to 2	1 to 2	24	1	32	srcrow24	deep-sea-electronics #1001: | 1 to 2 | DC Supply | 1 to 2		
+757	use	use	24	3	24	srcrow24	deif #1001: | use | the	lees-power #1081: | use | for	smartgen #1012: | Use | to scroll
+758	data sheet 4921240362s en	DATA SHEET 4921240362S EN	24	1	28	srcrow24	deif #1002: | DATA SHEET 4921240362S EN | Page 2 of 29		
+759	endress generators	Endress Generators	24	1	24	srcline24	endress-stromerzeuger #1001: Endress Generators: Detail view		
+760	lifting system	Lifting system	24	1	24	srcrow24	endress-stromerzeuger #1001: | Lifting system | Manuell		
+761	deepsea6020 control model/	DEEPSEA6020 CONTROL MODEL/	24	1	24	srcrow24	gb-power #1001: | DEEPSEA6020 CONTROL MODEL/ | MANUAL		
+762	gal)	gal)	24	1	24	srcrow24	genlitec #1013: | gal) | 123 (32.5)		
+763	short circuit capacity	Short Circuit Capacity**	24	1	132	srcrow24	genlitec #1013: | Short Circuit Capacity** | % | 300 | 300 | 300 | 300		
+764	reactances	Reactances	24	1	67	srcrow24	genlitec #1013: | Reactances | Xd | 3.56 | 3.84		
+765	output ratings	Output Ratings	24	1	24	srcrow24	genlitec #1013: | Output Ratings | 50		
+766	industrial diesel generator	Industrial Diesel Generator	24	1	24	srcrow24	gfe-power #1001: | Industrial Diesel Generator | Set		
+767	control"	Control"	24	1	24	srcrow24	longkai-power #1023: | Control" | functions		
+768	caterpillar energy solutions	Caterpillar Energy Solutions	24	1	24	srcrow24	mwm #1001: | Caterpillar Energy Solutions | GmbH		
+769	return	Return	24	1	30	srcrow24	smartgen #1003: | Return | >Start Delay | Interface 1: Use		
+770	wrong	Wrong	24	1	24	srcrow24	smartgen #1003: | Wrong | shutdown alarm.		
+771	hgm4020t genset controller user manual	HGM4020T Genset Controller User Manual	24	1	25	srcrow24	smartgen #1009: | HGM4020T Genset Controller User Manual | Page 2 of 40		
+772	offset sump oil capacity low/high	Offset sump oil capacity: low/high	23	1	23	srcrow23	aosif #1001: | Offset sump oil capacity: low/high | 9.5 /8.5L		
+773	fuel injection system	Fuel Injection System	23	4	23	srcrow23	aosif #1060: | Fuel Injection System | Cummins XPI YZ	koten-power #1002: | Fuel injection system | Direct Inject	long-gen #1001: | Fuel Injection System | Direct
+774	reverse power	Reverse power	23	5	30	srcrow23	comap #1001: | Reverse power | 32R	datakom #1002: | Reverse power | If the genset power is negative and goes above	deif #1001: | Reverse power | 3 | 32R | <200 ms
+775	alternator frequency	Alternator frequency	23	3	23	srcline2 srcrow21	datakom #1001: Alternator frequency: 0-100 Hz.	genlitec #1001: | Alternator frequency | 50/60Hz	smartgen #1003: | Alternator Frequency | 50Hz/60Hz
+776	pgm	PGM	23	1	23	srcrow23	datakom #1002: | PGM | Parameter Definition		
+777	off	OFF	23	3	41	srcline6 srcrow17	deif #1001: OFF: The controller power is OFF.	green-power-generators #1001: | OFF | Carica batteria / Automatic battery charger / Chargeur pour batterie	sices #1001: | OFF | 5432 | 1 | 54321 | 321
+778	parallel star	Parallel Star (V)	23	3	368	srcrow23	gfe-power #1008: | Parallel Star (V) | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220	stamford-avk-china #1016: | Parallel Star (V) | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220	wintpower #1001: | Parallel Star (V) | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220 | 190 | 200 | 208 | 220
+779	avr power	AVR Power	23	2	52	srcrow23	gfe-power #1021: | AVR Power | Self-Excited	stamford-avk-china #1018: | AVR Power | Self-Excited	
+780	waveform nema = tif	Waveform: NEMA = TIF (**)	23	2	25	srcrow23	gfe-power #1025: | Waveform: NEMA = TIF (**) | < 50	leroy-somer-fuzhou #1001: | Waveform: NEMA = TIF (**) | < 50	
+781	xr	Xr	23	2	23	srcrow23	gfe-power #1025: | Xr | Lr	leroy-somer-fuzhou #1001: | Xr | Lr	
+782	thermal efficiency	Thermal efficiency	23	2	90	srcrow23	mwm #1009: | Thermal efficiency | % | 43.1 | 44.4 | 44.1 | 45.0 | 44.2 | 45.1 | 45.7	vpower-hk #1001: | Thermal efficiency: | [%] | 43.9 | 45.7 | 48.4	
+783	return value (default	return value (default	23	1	23	srcline23	smartgen #1003: return value (default: 108%) also can be		
+784	scaling factor	Scaling Factor	23	1	23	srcrow23	stamford-avk-china #1018: | Scaling Factor | Transient Voltage		
+785	configuración	CONFIGURACIÓN	22	2	96	srcrow22	atlas-copco-power #1002: | CONFIGURACIÓN | del 0-100%	mwm #1004: | Configuración | P5) | P5) | P5) | S6)	
+786	b)	b)	22	4	23	srcrow22	baudouin #1021: | b) | Noise test refers to ISO 6798 norm : “Reciprocating internal combustion engines. Measurement of emitted airborne noise.	gfe-power #1029: | b) | Noise test refers to ISO 6798 norm : “Reciprocating internal combustion engines. Measurement of emitted airborne noise.	sices #1003: | b) | Steady within tolerance: generator's voltage and frequency global status must be “within tolerance” for at least
+787	parameter	Parameter	22	5	24	srcrow22	bison-zhejiang #1003: | Parameter | 21nch | 31nch	datakom #1001: | Parameter | Definition	deif #1001: | Parameter | Setting
+788	dc supply	DC Supply :	22	2	22	srcrow22	deep-sea-electronics #1001: | DC Supply : | 8-35V, 0.5A max	genlitec #1001: | DC supply | DC 8-35V	
+789	analogue input	Analogue input	22	3	22	srcline1 srcrow21	deif #1002: Analogue input: <250 ms	genlitec #1001: | Analogue input | 3	winco #1006: | analogue input | G
+790	alternator commercial brand	Alternator commercial brand	22	1	22	srcrow22	gfe-power #1001: | Alternator commercial brand | KOHLER		
+791	normal	normal	22	4	27	srcrow22	gfe-power #1001: | normal | electricity	sices #1004: | NORMAL | J3 | 4 -C.L. | 4 -C.L.	smartgen #1002: | Normal | (0-3600)s | 10
+792	active power	Active power	22	2	22	srcrow22	gfe-power #1002: | Active power | ○	smartgen #1008: | Active power | Reactive power	
+793	reactive power	Reactive power	22	3	22	srcrow21 srcline1	gfe-power #1002: | Reactive power | ○	smartgen #1011: | Reactive power | Q	sices #1004: Reactive power: total and phase by phase.
+794	apparent power	Apparent power	22	3	22	srcrow21 srcline1	gfe-power #1002: | Apparent power | ×	smartgen #1011: | Apparent power | S	sices #1004: Apparent power: total and phase by phase.
+795	motor	Motor	22	2	22	srcrow22	gfe-power #1008: | Motor | Starting	stamford-avk-china #1016: | Motor | Starting	
+796	t’’d sub-transient time const.	T’’d Sub-Transient Time Const.	22	2	22	srcrow22	gfe-power #1021: | T’’d Sub-Transient Time Const. | 0.0120	stamford-avk-china #1018: | T’’d Sub-Transient Time Const. | 0.021	
+797	t’’q sub-transient time const.	T’’q Sub-Transient Time Const.	22	2	22	srcrow22	gfe-power #1021: | T’’q Sub-Transient Time Const. | 0.0190	stamford-avk-china #1018: | T’’q Sub-Transient Time Const. | 0.0120	
+798	chinese	Chinese	22	3	25	srcrow20 srcline2	koten-power #1001: | Chinese | Dim	smartgen #1008: | Chinese | or	winco #1006: | Chinese | Taiwan | 0x04 | 0x01 | 0x0404
+799	connect with us at	Connect with us at:	22	1	22	srcrow20 srcline2	leroy-somer-fuzhou #1001: | Connect with us at: | ongoing process of development and reserve the right to change the specification of their products without		
+800	functions	functions	22	2	22	srcrow22	shanhua #1002: | functions | 停 机 Shutdown	sices #1001: | FUNCTIONS | >>	
+801	full	Full	22	2	22	srcrow22	sices #1003: | Full | or	voltgent #1033: | full | ≤0.25%	
+802	caution	CAUTION	22	2	22	srcline19 srcrow3	sices #1003: CAUTION: Both the SW1 switches must remain in OFF position	smartgen #1003: CAUTION: All outputs of controller are relay contact output type. If need to expand the relays, please add freewheel	
+803	delay	Delay	22	2	23	srcrow21 srcline1	sices #1003: | Delay | Message	smartgen #1001: | Delay | (automatic transfer switch) control.	
+804	fuse	fuse	22	1	22	srcrow22	smartgen #1003: | fuse | is		
+805	user	user	22	1	37	srcrow22	smartgen #1004: | user | can		
+806	warn	Warn	22	1	23	srcrow22	smartgen #1005: | Warn | Act when expansion AIN8 sensor 4 low warning occurs.		
+807	applicable conditions	Applicable Conditions	22	1	22	srcrow22	vpower-hk #1001: | Applicable Conditions | Applicable Standard		
+808	installation place	Installation Place	22	1	44	srcrow22	vpower-hk #1001: | Installation Place | Indoor | EMV Directive 2004/108/EG		
+809	ambient humidity	Ambient Humidity	22	1	44	srcrow22	vpower-hk #1001: | Ambient Humidity | <60% | Protective coating (CSN EN12944)		
+810	system ratings	System Ratings (kWe/kVA)	22	1	22	srcrow22	vpower-hk #1001: | System Ratings (kWe/kVA) | 97/23/EC)		
+811	electrical power cop	Electrical power COP	22	1	22	srcrow22	vpower-hk #1001: | Electrical power COP | acc.		
+812	iso	ISO	22	1	22	srcrow22	vpower-hk #1001: | ISO | 8528-1:		
+813	nox, stated as no2	NOx, stated as NO2	22	1	22	srcrow22	vpower-hk #1001: | NOx, stated as NO2 | < 500 mg/m³ i.N		
+814	distance from genset	Distance from genset	22	1	22	srcrow22	vpower-hk #1001: | Distance from genset | 1m		
+815	reference height above ground	Reference height above ground	22	1	22	srcrow22	vpower-hk #1001: | Reference height above ground | 1.5m		
+816	gensetmodel	GensetModel	22	1	22	srcrow22	vpower-hk #1001: | GensetModel | DryWeight (kg）		
+817	vp flexgen limited	VP FLEXGEN LIMITED	22	1	22	srcrow22	vpower-hk #1001: | VP FLEXGEN LIMITED | VPower Middle East FZCO		
+818	vpower holdings	VPower Holdings (Singapore)	22	1	22	srcrow22	vpower-hk #1001: | VPower Holdings (Singapore) | PT VPower Operation		
+819	pte ltd.	PTE Ltd.	22	1	22	srcrow22	vpower-hk #1001: | PTE Ltd. | VPOWER GROUP		
+820	vpower engineering	VPower Engineering	22	1	22	srcrow22	vpower-hk #1001: | VPower Engineering | UNITS 2701-05, OFFICE TOWER 1,		
+821	china limited	China Limited	22	1	22	srcrow22	vpower-hk #1001: | China Limited | THE HABOURFRONT		
+822	brazil	Brazil	22	1	22	srcrow22	vpower-hk #1001: | Brazil | 18-22 TAK FUNG STREET, HUNG HOM		
+823	vp flexgen spe	VP FlexGen(Brazil) Spe	22	1	22	srcrow22	vpower-hk #1001: | VP FlexGen(Brazil) Spe | HONG KONG		
+824	ltda	Ltda	22	1	22	srcrow22	vpower-hk #1001: | Ltda | Tel : +852 2687 6517 Fax : +852 2687 6854		
+825	www.vpower.com	WWW.VPOWER.COM	22	1	44	srcrow22	vpower-hk #1001: | WWW.VPOWER.COM | info@vpower.com | HKEx Stock Code: 1608		
+826	pressure	pressure	21	3	24	srcrow21	aosif #1032: | pressure | 131 kPa	datakom #1001: | Pressure | - | 0 | 1: cranking is stopped when oil presure switch is open	smartgen #1001: | Pressure | Sensor
+827	fuel filter	Fuel Filter	21	3	29	srcrow21	aosif #1061: | Fuel Filter | Spin on fuel filters	long-gen #1001: | Fuel filter | Air filter, fuel filter, oil filter and can be	winco #1009: | FUEL FILTER | 1
+828	asp.	Asp.	21	1	21	srcrow21	baudouin #1008: | Asp. | Gov.		
+829	vibration	Vibration	21	2	26	srcrow21	comap #1001: | Vibration | 25-100 Hz, a = 400 m/s2	deif #1001: | Vibration | Endurance:	
+830	hours	Hours	21	4	39	srcrow21	datakom #1001: | Hours | - | 00-23	gfe-power #1002: | Hours | Litres | dB(A) at 7m	long-gen #1002: | hours | with
+831	parameter definition	Parameter Definition	21	1	21	srcrow21	datakom #1001: | Parameter Definition | Unit		
+832	communication port	Communication port	21	2	21	srcline2 srcrow19	datakom #1001: Communication port: RS-232. 9600 bauds, no parity, 1 stop bit.	gfe-power #1002: | Communication port | USB	
+833	bs en 61010	BS EN 61010	21	1	21	srcrow21	deep-sea-electronics #1001: | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business Equipment		
+834	dsenet® data	DSENet® Data	21	1	21	srcrow21	deep-sea-electronics #1023: | DSENet® Data | Sheet		
+835	mean effective pressure	Mean effective pressure	21	3	97	srcline1 srcrow20	engine-traits #1004: Mean effective pressure: bar ADEC (ECU 9) Input pressure customer radiator (TB): bar (rel.) 1.4	man-engines #1004: | Mean effective pressure | bar | 17.7	mwm #1002: | Mean effective pressure | bar | 18.9 | 18.9 | 18.8 | 23.5
+836	optional control panel	Optional control panel	21	1	21	srcrow21	gfe-power #1001: | Optional control panel | APM403		
+837	t’’d sub-transtime const.	T’’d SUB-TRANSTIME CONST.	21	2	21	srcrow21	gfe-power #1008: | T’’d SUB-TRANSTIME CONST. | 0.019	stamford-avk-china #1016: | T’’d SUB-TRANSTIME CONST. | 0.019	
+838	pf	PF	21	2	21	srcrow21	gfe-power #1021: | PF | Factor	stamford-avk-china #1025: | PF | Factor	
+839	inline	inline	21	1	21	srcrow21	man-engines #1006: | inline | 108 mm		
+840	conditions	conditions	21	3	21	srcrow21	mecc-alte #1007: | conditions | (Extended	sices #1003: | Conditions: | 360mA @ 13,5 VDC	smartgen #1001: | Conditions | of
+841	motortyp	Motortyp	21	1	112	srcrow21	mwm #1001: | Motortyp | TCG 3016 | V08 | V12 | V16 | V16		
+842	konfiguration	Konfiguration	21	1	95	srcrow21	mwm #1001: | Konfiguration | P5) | P5) | P5) | S6)		
+843	type de moteur	Type de moteur	21	1	108	srcrow21	mwm #1003: | Type de moteur | TCG 3016 | V08 | V12 | V16 | V16		
+844	tipo de motor	Tipo de motor	21	1	132	srcrow21	mwm #1004: | Tipo de motor | TCG | 3 | 016 | V08 | V12 | V16 | V16		
+845	燃气机类型	燃气机类型	21	1	111	srcrow21	mwm #1005: | 燃气机类型 | TCG 3016 | V08 | V12 | V16 | V16		
+846	motortype	Motortype	21	1	114	srcrow21	mwm #1006: | Motortype | TCG 3016 | V08 | V12 | V16 | V16		
+847	configuratie	Configuratie	21	1	95	srcrow21	mwm #1006: | Configuratie | P5) | P5) | P5) | S6)		
+848	line(connect	line(connect	21	1	21	srcrow21	smartgen #1012: | line(connect | with		
+849	winding 311 / 0.8 power	Winding 311 / 0.8 Power	21	2	21	srcrow21	stamford-avk-china #1002: | Winding 311 / 0.8 Power | Factor	wintpower #1001: | Winding 311 / 0.8 Power | Factor	
+850	stator winding resistance ,	Stator Winding Resistance (Ra),	21	1	21	srcrow21	stamford-avk-china #1018: | Stator Winding Resistance (Ra), | 0.00327		
+851	design	DESIGN	20	5	20	srcrow20	aj-power #1001: | DESIGN | & DAMAGE	atlas-copco-power #1003: | Design | Condizioni ambientali difficili, sporcizia e forti piogge sono comuni in applicazioni all’aperto,	endress-stromerzeuger #1006: | Design | 1-Zylinder 4-Takt OHV
+852	battery isolator switch	Battery isolator switch	20	3	20	srcrow20	aj-power #1001: | Battery isolator switch | 	gfe-power #1002: | Battery isolator switch | Included	green-power-generators #1001: | Battery isolator switch | Reisdential silencer for open type gensets
+853	zbc	ZBC	20	1	24	srcrow20	atlas-copco-power #1002: | ZBC | 250 kVA		
+854	gross	Gross	20	2	23	srcrow20	baudouin #1009: | Gross | Engine	gfe-power #1013: | Gross | Net	
+855	order code	Order code	20	1	20	srcline20	comap #1001: Order code: IL4AMF25BAA, IL4AMF25BLA		
+856	configurable	Configurable	20	5	33	srcrow20	comap #1013: | Configurable | Pull-up / Pull-down | Nominal (UL, cUL): 347 V L-N / 600 V L-L	deep-sea-electronics #1037: | configurable | outputs	smartgen #1001: | Configurable | output 3 | 19&41 | with 41 for 0.1s during high-speed
+857	dc	DC (+)	20	3	35	srcrow20	deep-sea-electronics #1008: | DC | OUTPUT	smartgen #1010: | DC | power	deif #1001: | DC (+) | Out | Out | Out | Out | Out | Out
+858	fuel and	FUEL AND	20	2	20	srcrow20	deep-sea-electronics #1009: | FUEL AND | MAGNETIC PICK-UP	gfe-power #1002: | Fuel and | Electronically governed	
+859	panel	Panel	20	4	20	srcrow20	deep-sea-electronics #1035: | Panel | 98 mm x 154 mm / 3.86 ” x 6.06 ”	deif #1001: | panel | (AOP-2).	green-power-generators #1001: | Panel | Panneau
+860	agc	AGC	20	1	20	srcrow20	deif #1001: | AGC | 150		
+861	ecu	ECU	20	2	20	srcrow20	deif #1001: | ECU | AVR	smartgen #1003: | ECU | communication	
+862	alternator type	Alternator type	20	1	20	srcrow20	endress-stromerzeuger #1001: | Alternator type | ECP34-2S/4A		
+863	typical genset electrical output	Typical genset electrical output	20	1	20	srcrow20	fdk-energy #1095: | Typical genset electrical output | 280 kw		
+864	low oil pressure warning	Low oil pressure warning	20	2	21	srcrow20	gfe-power #1002: | Low oil pressure warning | ×	xinrongbang-fujian #1001: | Low Oil Pressure Warning | kPa | 100	
+865	capotage	Capotage	20	1	20	srcrow20	green-power-generators #1001: | Capotage | 28		
+866	most	most	20	1	20	srcrow20	lees-power #1093: | most | advanced		
+867	pilot	Pilot	20	1	20	srcrow20	lees-power #1093: | Pilot | Exciter		
+868	full-load(with	full-load(with	20	1	60	srcrow20	lees-power #1093: | full-load(with | < | 0.5% drift | 3-Phase Sensing, ±0.25%		
+869	generating sets standard and optional	Generating Sets Standard and Optional	20	1	20	srcrow20	lees-power #1093: | Generating Sets Standard and Optional | Features		
+870	volvo engine model	Volvo engine Model:	20	1	20	srcrow19 srcline1	lees-power #1155: | Volvo engine Model: | TAD754GE		
+871	silent	Silent	20	3	20	srcrow20	longkai-power #1067: | Silent | Type	shanhua #1018: | SILENT | TYPE	westinpower #1106: | Silent | Type:
+872	ecp3 to eco38 &	ECP3 to ECO38 &	20	1	20	srcrow20	mecc-alte #1007: | ECP3 to ECO38 & | ●		
+873	series star y	Series Star Y	20	1	325	srcrow20	mecc-alte #1007: | Series Star Y | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 44		
+874	parallel star yy	Parallel Star YY	20	1	370	srcrow20	mecc-alte #1007: | Parallel Star YY | 190V | 200V | 208V | 220V | 190V | 200V | 208V | 220V | 190V | 200V 208V | 220V | 190V | 200V 208V | 220V | 190V | 200V 208V | 220V		
+875	series delta δ	Series Delta Δ	20	1	343	srcrow20	mecc-alte #1007: | Series Delta Δ | 220V | 230V | 240V | 254V | 220V | 230V | 240V | 254V | 220V | 230V 240V | 254V | 220V | 230V 240V | 254V | 220V | 230V 240V | 254V		
+876	parallel delta δδ	Parallel Delta ΔΔ	20	1	391	srcrow20	mecc-alte #1007: | Parallel Delta ΔΔ | 110V | 115V | 120V | 127V | 110V | 115V | 120V | 127V | 110V | 115V | 120V | 127V | 110V | 115V | 120V | 127V | 110V | 115V | 120V 		
+877	reactance & time	Reactance & Time	20	1	30	srcrow20	mecc-alte #1007: | Reactance & Time | constants- Class | H / 400V		
+878	unsaturated	Unsaturated (ref. EN60034-4)	20	1	22	srcrow20	mecc-alte #1007: | Unsaturated (ref. EN60034-4) | ECP3 1S4 C | ECP3 2S4		
+879	t'd	T'd	20	1	20	srcrow20	mecc-alte #1007: | T'd | Transient time constant		
+880	t''d	T''d	20	1	20	srcrow20	mecc-alte #1007: | T''d | Subtransient time constant		
+881	t'do	T'do	20	1	20	srcrow20	mecc-alte #1007: | T'do | Open circuit time constant		
+882	tα	Tα	20	1	20	srcrow20	mecc-alte #1007: | Tα | Armature time constant		
+883	additional information	Additional information	20	1	22	srcrow20	mecc-alte #1007: | Additional information | -		
+884	heat dissipation	Heat dissipation	20	1	150	srcrow20	mecc-alte #1007: | Heat dissipation | W | 1157 | 1246 | 1444 | 1743 | 1905		
+885	f +49 621 384-8800	F: +49 621 384-8800	20	1	20	srcrow20	mwm #1001: | F: +49 621 384-8800 | Version 12-24/DE		
+886	三相四线	三相四线	20	1	20	srcrow20	shanhua #1001: | 三相四线 | 无刷自励磁		
+887	default	Default	20	1	20	srcline13 srcrow7	smartgen #1001: Default: when temperature is overheat, the		
+888	temp. sensor	Temp. Sensor	20	1	20	srcrow20	smartgen #1003: | Temp. Sensor | >Start Idle Time		
+889	level sensor	Level Sensor	20	1	20	srcrow20	smartgen #1003: | Level Sensor | >Cooling Time		
+890	aux. output 1	Aux. output 1	20	1	27	srcrow20	smartgen #1011: | Aux. output 1 | 39		
+891	source	source	20	1	70	srcrow20	winco #1006: | source | 0 | 65535 | 16		
+892	operating	operating	19	4	21	srcrow19	atlas-copco-power #1001: | operating | for you.	comap #1004: | Operating | -20 ˚C to +70 ˚C	deep-sea-electronics #1001: | operating | mode controller is configured
+893	motore	motore	19	2	19	srcrow19	cgm-italia #1001: | motore | moteur	green-power-generators #1001: | MOTORE | SERBAT.	
+894	intelivision	InteliVision	19	1	45	srcrow19	comap #1008: | InteliVision | 5.2 | 5" TFT external display with 800 × 480 px resolution. | RD2IV5BXBAA		
+895	dsenet®	DSENet®	19	1	19	srcrow19	deep-sea-electronics #1001: | DSENet® | 1 Expansion Port		
+896	panel cut-out	Panel Cut-Out (W x H)	19	3	20	srcrow19	deep-sea-electronics #1001: | Panel Cut-Out (W x H) | 220 mm x 160 mm / 8.7” x 6.3”	deif #1003: | Panel cut-out | Height: 158.0 mm (6.22 in)	sices #1002: | Panel cut-out | 214 (W) x 156 (H) mm
+897	dse2548	DSE2548	19	1	27	srcrow19	deep-sea-electronics #1001: | DSE2548 | DSENet® LED Output Expansion Module | 2548-01		
+898	dse2152	DSE2152	19	1	27	srcrow19	deep-sea-electronics #1001: | DSE2152 | DSENet® Analogue Output Expansion Module | 2152-01		
+899	s1	s1	19	3	25	srcrow19	deep-sea-electronics #1001: | s1 | s1 | s1	deif #1001: | s1 | s2	smartgen #1012: | S1 | or S2 is TRUE, while S3 is TRUE, Defined combination output is outputting;
+900	dse	DSE	19	3	19	srcrow19	deep-sea-electronics #1015: | DSE | Modules	gfe-power #1002: | DSE | Controller Summary	winco #1006: | DSE | controller.
+901	邮箱	邮箱	19	3	19	srcline19	engine-traits #1704: 邮箱：inquiry@yuchai.cn	lees-power #1119: 邮箱： lees@leespower.com	sanq-power #3001: 邮箱: sales@sanqpower.com
+902	dongfeng)	Dongfeng)	19	1	36	srcrow19	fdk-energy #1001: | Dongfeng) | Displacement | 3.9L		
+903	- without radiator	- Without radiator	19	1	19	srcrow19	gfe-power #1002: | - Without radiator | Litres		
+904	maximum top tank temperature	Maximum top tank temperature	19	1	19	srcrow19	gfe-power #1002: | Maximum top tank temperature | °C		
+905	connecting cables	Connecting cables	19	1	19	srcrow19	gfe-power #1002: | Connecting cables | Included		
+906	standard supply	Standard supply	19	1	19	srcrow19	gfe-power #1002: | Standard supply | ○		
+907	electric energy metering	Electric energy metering	19	1	19	srcrow19	gfe-power #1002: | Electric energy metering | ×		
+908	overcurrent warning	Overcurrent warning	19	1	19	srcrow19	gfe-power #1002: | Overcurrent warning | ○		
+909	water temperature	Water temperature	19	1	19	srcrow19	gfe-power #1002: | Water temperature | ●		
+910	fuel meter / fuel sensor	Fuel meter / fuel sensor	19	1	19	srcrow19	gfe-power #1002: | Fuel meter / fuel sensor | ●/○		
+911	elapsed time	Elapsed time	19	1	19	srcrow19	gfe-power #1002: | Elapsed time | ●		
+912	high temperature warning	High temperature warning	19	1	19	srcrow19	gfe-power #1002: | High temperature warning | ○		
+913	overspeed warning	Overspeed warning	19	1	19	srcrow19	gfe-power #1002: | Overspeed warning | ×		
+914	alternator charger	Alternator charger	19	1	19	srcrow19	gfe-power #1002: | Alternator charger | ●		
+915	programmable input	Programmable input	19	1	19	srcrow19	gfe-power #1002: | Programmable input | ●		
+916	programmable output	Programmable output	19	1	19	srcrow19	gfe-power #1002: | Programmable output | ●		
+917	expand module	Expand module	19	1	19	srcrow19	gfe-power #1002: | Expand module | ×		
+918	communication function	Communication function	19	1	19	srcrow19	gfe-power #1002: | Communication function | ×		
+919	service indicate	Service indicate	19	1	19	srcrow19	gfe-power #1002: | Service indicate | ○		
+920	fault history	Fault history	19	1	19	srcrow19	gfe-power #1002: | Fault history | ●		
+921	gen-gen synchronising	Gen-gen synchronising	19	1	19	srcrow19	gfe-power #1002: | Gen-gen synchronising | ×		
+922	gen-mains synchronising	Gen-mains synchronising	19	1	19	srcrow19	gfe-power #1002: | Gen-mains synchronising | (20)		
+923	frame type	Frame type	19	1	19	srcrow19	gfe-power #1002: | Frame type | Dimensions		
+924	canopied	Canopied	19	1	73	srcrow19	gfe-power #1002: | Canopied | 12192 x 3000 x 3000 | 32,400 | 0 | 0		
+925	easy installation	Easy installation	19	1	19	srcline19	gfe-power #1002: Easy installation: wall-mounted and floor standing		
+926	unit 15a, goodwood road, keytec 7	Unit 15A, Goodwood Road, Keytec 7	19	1	19	srcrow19	gfe-power #1002: | Unit 15A, Goodwood Road, Keytec 7 | Business		
+927	the sustained	The sustained	19	2	19	srcrow19	gfe-power #1008: | The sustained | current value	stamford-avk-china #1016: | The sustained | current value	
+928	series star	Series Star (V)	19	2	292	srcrow19	gfe-power #1021: | Series Star (V) | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440 | 380 | 400 | 415 | 440	stamford-avk-china #1001: | Series Star (V) | 380 | 400 | 416 | 380 | 400 | 416 | 380 | 400 | 416 | 380 | 400 | 416	
+929	kva at	kVA at	19	2	25	srcrow19	gfe-power #1025: | kVA at | 0.8	leroy-somer-fuzhou #1004: | kVA at | P.F. = 0.8	
+930	centre of gravity	Centre of gravity:	19	2	19	srcline4 srcrow15	gfe-power #1025: Centre of gravity: Xr (mm), Rotor length: Lr (mm), Weight: M (kg), Moment of inertia: J (kgm2): (4J = MD2)	leroy-somer-fuzhou #1001: Centre of gravity: Xr (mm), Rotor length: Lr (mm), Weight: M (kg), Moment of inertia: J (kgm2): (4J = MD2)	
+931	couping	Couping	19	1	19	srcrow19	koten-power #1002: | Couping | Flexible disc		
+932	steady state frequency band............... 50hz	Steady state frequency band…………… 50HZ	19	1	19	srcrow19	lees-power #1001: | Steady state frequency band…………… 50HZ | Heat rejection to after cooler……………………257kW		
+933	leroy-somer electric power generation	Leroy-Somer Electric Power Generation	19	1	19	srcrow19	leroy-somer-fuzhou #1001: | Leroy-Somer Electric Power Generation | 9		
+934	tra	Tra	19	2	19	srcrow19	longkai-power #1053: | Tra | iler	stamford-avk-china #1057: | TRA | TRA	
+935	平均有效压力	平均有效压力	19	1	94	srcrow19	mwm #1005: | 平均有效压力 | bar | 18.9 | 18.9 | 18.8 | 23.5		
+936	disconnect	Disconnect	19	1	19	srcrow19	smartgen #1001: | Disconnect | starter will disconnect.		
+937	config sensor	Config Sensor	19	1	19	srcrow19	smartgen #1003: | Config Sensor | 1		
+938	permanent magnet generator control system.	Permanent Magnet Generator (PMG) control system.	19	2	19	srcrow19	stamford-avk-china #1001: | Permanent Magnet Generator (PMG) control system. | BS EN ISO 9001.	wintpower #1003: | Permanent Magnet Generator (PMG) control system. | ISO 9001.	
+939	operation with other ac generators.	operation with other ac generators.	19	1	19	srcrow19	stamford-avk-china #1002: | operation with other ac generators. | required for static windings and the high mechanical strength		
+940	cont. h -	Cont. H -	19	1	19	srcrow19	stamford-avk-china #1023: | Cont. H - | 125/40°C		
+941	l/s	L/s	19	1	38	srcrow19	voltgent #1012: | L/s | Recommended battery | 100 Ah		
+942	trang	Trang	19	1	19	srcline19	volvo-penta #1001: Trang: https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/d13-eu-stage-iiia-epa-tier-3/		
+943	application	Application	18	4	28	srcrow18	aj-power #1001: | Application | System control functions	atlas-copco-power #1005: | APPLICATION | FABRICATION	mecc-alte #1007: | Application | (Standard Use) | 32
+944	electronically	Electronically	18	1	36	srcrow18	aosif #1002: | Electronically | Maximum resistance to external cooling | 48 kPa		
+945	fuel system type	Fuel System Type	18	1	18	srcrow18	aosif #1078: | Fuel System Type | Bosch High Pressure		
+946	product name	Product Name	18	2	18	srcrow18	bobig-power #3003: | Product Name | Open Diesel Generator	hosem-power #3002: | Product Name | Perkins Diesel Generator Set	
+947	lt	lt	18	1	39	srcrow18	cgm-italia #1001: | lt | Model		
+948	operating conditions	Operating conditions	18	2	24	srcrow18	comap #1001: | Operating conditions | Physical supply for binary outputs 1 & 2.	woodward #1001: | Operating Conditions | Temperature: (-25 to +70) °C;	
+949	load shedding	Load shedding	18	3	20	srcrow18	comap #1004: | Load shedding | 32P	gfe-power #1025: | Load shedding | (SHUNT)	leroy-somer-fuzhou #1003: | Load shedding | (SHUNT)
+950	charge	CHARGE	18	7	18	srcline2 srcrow16	datakom #1001: CHARGE: Set if a charge alternator failure (or broken belt) occurs. This fault condition may result to a	deep-sea-electronics #1011: | CHARGE | FUEL & START	deif #1002: | charge | from www.deif.com.
+951	sender ohms	Sender Ohms	18	1	18	srcrow18	datakom #1001: | Sender Ohms | -1		
+952	dc outputs	DC Outputs :	18	3	18	srcline2 srcrow16	datakom #1001: DC outputs: 1A @ 28 VDC. protected semiconductor outputs	deep-sea-electronics #1001: | DC Outputs : | 24V, 15A(4-5) 2A(8-13)	sices #1003: | DC outputs | Digital Output 05 to 06 (Start and Fuel) : 0.7 A DC Pilot Duty (JL)
+953	relay	Relay	18	4	19	srcrow18	datakom #1002: | Relay | 1: intermittent (turns on and off every second)	deif #1003: | relay | or	smartgen #1002: | Relay | normal
+954	dse2157	DSE2157	18	1	26	srcrow18	deep-sea-electronics #1001: | DSE2157 | DSENet® Output Expansion Module | 2157-01		
+955	dse2133	DSE2133	18	1	22	srcrow18	deep-sea-electronics #1001: | DSE2133 | DSENet® RTD/Thermocouple Input Expansion Module | 2133-01		
+956	dse2131	DSE2131	18	1	26	srcrow18	deep-sea-electronics #1001: | DSE2131 | DSENet® Ratiometric Input Expansion Module | 2131-01		
+957	dse4520	DSE4520	18	2	52	srcrow18	deep-sea-electronics #1008: | DSE4520 | MKII	gfe-power #1002: | DSE4520 | DSE6120 | DSE7310/20 | DSE8610/20	
+958	link	Link	18	3	23	srcrow18	deep-sea-electronics #1036: | Link | Lost	sices #1003: | Link | enable | 0-No	smartgen #1001: | link | connector
+959	iveco	Iveco	18	1	20	srcrow18	deif #1001: | Iveco | CURSOR		
+960	light source	Light source	18	1	18	srcrow18	endress-stromerzeuger #1001: | Light source | LED 4 × 320 W		
+961	ecoplus fuel filter	Ecoplus fuel filter	18	1	18	srcrow18	gfe-power #1002: | Ecoplus fuel filter | YES		
+962	spin-on oil filter	Spin-on oil filter	18	1	18	srcrow18	gfe-power #1002: | Spin-on oil filter | YES		
+963	sustained short	Sustained Short	18	3	18	srcrow18	gfe-power #1008: | Sustained Short | Circuit = 1750 Amps	stamford-avk-china #1001: | Sustained Short | Circuit	wintpower #1002: | Sustained Short | Circuit
+964	saturated values in per unit at	Saturated Values in Per Unit at	18	2	18	srcrow18	gfe-power #1021: | Saturated Values in Per Unit at | Base Ratings and Voltages	stamford-avk-china #1018: | Saturated Values in Per Unit at | Base Ratings and Voltages	
+965	unsaturated values in per	Unsaturated Values in Per	18	2	18	srcrow18	gfe-power #1021: | Unsaturated Values in Per | Unit	stamford-avk-china #1018: | Unsaturated Values in Per | Unit	
+966	at base	at Base	18	2	18	srcrow18	gfe-power #1021: | at Base | Ratings	stamford-avk-china #1018: | at Base | Ratings	
+967	stator winding resistance	Stator Winding Resistance (Ra)	18	3	23	srcrow18	gfe-power #1040: | Stator Winding Resistance (Ra) | 0.067	stamford-avk-china #1042: | Stator Winding Resistance (Ra) | 1.132	mecc-alte #1004: | Stator winding resistance | ohm | 1,562 | 0,998 | 0,702 | 0,509 | 0,358
+968	moteur	Moteur	18	1	18	srcrow17 srcline1	green-power-generators #1001: | Moteur | Réservoir		
+969	fpt	FPT	18	2	32	srcrow18	green-power-generators #1001: | FPT | FPT	winco #1007: | FPT | 108” x 42” x 57” | 3,425 lbs	
+970	engine make /model	Engine Make /Model	18	1	18	srcrow18	koten-power #1002: | Engine Make /Model | YTO LR6B3L-D		
+971	alternator make /model	Alternator Make /Model	18	1	18	srcrow18	koten-power #1002: | Alternator Make /Model | Brushless, self-exciting		
+972	base frame / silent canopy	Base Frame / Silent Canopy	18	1	18	srcrow18	koten-power #1002: | Base Frame / Silent Canopy | Robust Structure/ Corrosion Resistant		
+973	engine brand /model	Engine Brand /Model	18	1	18	srcrow18	koten-power #1002: | Engine Brand /Model | YTO LR6B3L-D		
+974	cooling methed	Cooling methed	18	1	18	srcrow18	koten-power #1002: | Cooling methed | Forced watercooling		
+975	do	Do	18	1	18	srcrow18	lees-power #1081: | Do | not		
+976	moteurs leroy-somer sas. headquarters	Moteurs Leroy-Somer SAS. Headquarters	18	1	18	srcline18	leroy-somer-fuzhou #1001: Moteurs Leroy-Somer SAS. Headquarters: Bd Marcellin Leroy, CS 10015, 16915 Angoulême Cedex 9,		
+977	france. share capital	France. Share Capital	18	1	18	srcline18	leroy-somer-fuzhou #1001: France. Share Capital: 32,239,235 €, RCS Angoulême 338 567 258.		
+978	mittlerer effektiver druck	Mittlerer effektiver Druck	18	1	92	srcrow18	mwm #1001: | Mittlerer effektiver Druck | bar | 18,9 | 18,9 | 18,8 | 23,5		
+979	op sensor	OP Sensor	18	1	18	srcrow18	smartgen #1003: | OP Sensor | >Warming Up Time		
+980	seconds.	seconds.	18	1	18	srcrow18	stamford-avk-china #1001: | seconds. | DE RATES		
+981	400/230 v	400/230 V	18	1	36	srcrow18	voltgent #1033: | 400/230 V | 28.9 A | 26.0 A		
+982	lube oil consumption	Lube oil consumption	18	1	18	srcrow18	voltgent #1033: | Lube oil consumption | at		
+983	kpa	Kpa	18	1	18	srcrow18	winco #1006: | Kpa | 16		
+984	string	string	18	1	18	srcrow18	winco #1006: | string | UNICODE		
+985	2130 expansion module 0 digital input	2130 expansion module 0 digital input	18	1	72	srcrow18	winco #1006: | 2130 expansion module 0 digital input | B | 0 | 15 | 9/16-12/16		
+986	range min	Range Min	18	1	36	srcrow18	winco #1006: | Range Min | Any		
+987	range max	Range Max	18	1	36	srcrow18	winco #1006: | Range Max | Any		
+988	industrial	industrial	17	4	17	srcrow17	baudouin #1004: | industrial | ﬂexibility,	deif #1001: | Industrial | -	gfe-power #1015: | Industrial | Diesel
+989	c)	C)	17	2	26	srcrow17	bison-zhejiang #1003: | C) | Mass weight(kg) | 19 | 19 | 26	smartgen #1007: | c) | Mains Normal Indicator: always on when mains is normal; flash when mains is abnormal; light is off when there is	
+990	output type	Output Type	17	3	18	srcrow17	bobig-power #3002: | Output Type | AC Single/Three Phase	comap #1008: | Output Type | ±10 V DC or 5 V @ 500 Hz	hosem-power #3003: | Output Type | AC Three Phase
+991	shocks	Shocks	17	1	18	srcrow17	comap #1001: | Shocks | a = 500 m/s2		
+992	overcurrent	Overcurrent	17	1	17	srcrow17	comap #1001: | Overcurrent | 50/50TD		
+993	current unbalance	Current unbalance	17	3	17	srcrow16 srcline1	comap #1001: | Current unbalance | 46	datakom #1001: | (1) Current Unbalance | limit compared to the average current, then a	deif #1002: Current unbalance: <200 ms
+994	gen	Gen	17	2	22	srcrow10 srcline7	comap #1018: | Gen | current, 1 ph Mains current	smartgen #1005: | Gen | Under Volt 1 | (0-200.0)% | 80.0	
+995	maximum panel thickness	Maximum Panel Thickness	17	1	17	srcrow17	deep-sea-electronics #1001: | Maximum Panel Thickness | 8 mm / 0.3”		
+996	dse2130	DSE2130	17	1	24	srcrow17	deep-sea-electronics #1001: | DSE2130 | DSENet® Input Expansion Module | 2130-01		
+997	dseg8600	DSEG8600	17	1	28	srcrow17	deep-sea-electronics #1012: | DSEG8600 | Parallel Genset Controller with Integral Heater | G8600-01		
+998	panel cutout	Panel cutout	17	3	17	srcrow17	deif #1001: | Panel cutout | Height: 158.5 mm (6.24 in)	smartgen #1001: | Panel Cutout | 186mm x 141mm	woodward #1001: | Panel Cutout | easYgen-1700/1800: 214.5 x 160.5 mm
+999	terminal	Terminal	17	5	17	srcrow17	deif #1003: | Terminal | Text	mecc-alte #1001: | TERMINAL | CONNECTS TO	sices #1003: | Terminal | Function
+1000	info	INFO	17	2	17	srcrow17	deif #1004: | INFO | VIEW	winco #1006: | info | for	
+1001	comap	COMAP	17	2	19	srcrow17	genlitec #1001: | COMAP | DEIF	green-power-generators #1001: | COMAP | DEEP SEA ELEC.	
+1002	coupling / number of	Coupling / number of	17	1	17	srcrow17	gfe-power #1002: | Coupling / number of | bearings		
+1003	flexible disc / single	Flexible Disc / Single	17	1	17	srcrow17	gfe-power #1002: | Flexible Disc / Single | Bearing		
+1004	drip proof	Drip proof	17	1	17	srcrow17	gfe-power #1002: | Drip proof | IP23		
+1005	controller model / deepsea dse	Controller model / Deepsea DSE	17	1	17	srcrow17	gfe-power #1002: | Controller model / Deepsea DSE | Optional:		
+1006	generators used with commercial utility source	Generators used with commercial utility source	17	1	17	srcline17	gfe-power #1002: Generators used with commercial utility source: One (1) year or 1000 hours (whichever occurs		
+1007	torsional analysis data	Torsional analysis data	17	2	17	srcrow17	gfe-power #1025: | Torsional analysis data | Xr	leroy-somer-fuzhou #1005: | Torsional analysis data | Xr	
+1008	cofanatura	COFANATURA	17	1	17	srcrow17	green-power-generators #1001: | COFANATURA | Canopy		
+1009	cc	cc	17	1	34	srcrow17	green-power-generators #1001: | cc | 50 Hz | 60 Hz		
+1010	man.	Man.	17	1	17	srcrow17	green-power-generators #1001: | Man. | Aut.		
+1011	fuel level	Fuel level (FL)	17	4	17	srcrow17	hyundai-power-products #5001: | fuel level | ● standard	sices #1001: | Fuel level: | VDO, Veglia, BERU (configurable curve based on sensors available).	smartgen #1011: | Fuel Level | Unit: %
+1012	arep+	AREP+	17	1	17	srcrow17	leroy-somer-fuzhou #1001: | AREP+ | PMG		
+1013	cf	CF	17	1	18	srcrow17	leroy-somer-fuzhou #1002: | CF | Optional		
+1014	fuan longkai power	Fuan Longkai Power	17	1	17	srcrow17	longkai-power #1130: | Fuan Longkai Power | Co., Ltd.		
+1015	扭矩 torque	扭矩 Torque (Nm)	17	1	17	srcrow17	shanhua #1001: | 扭矩 Torque (Nm) | 6100		
+1016	排气温度 exhaust temperature	排气温度 Exhaust temperature	17	1	29	srcrow17	shanhua #1001: | 排气温度 Exhaust temperature | (℃) | 510		
+1017	最大排气流量 exhaust flow	最大排气流量 Exhaust flow (L/sec)	17	1	17	srcrow17	shanhua #1001: | 最大排气流量 Exhaust flow (L/sec) | 4350		
+1018	冷却液流量 engine coolant flow	冷却液流量 Engine coolant flow (L/sec)	17	1	17	srcrow17	shanhua #1001: | 冷却液流量 Engine coolant flow (L/sec) | N/A		
+1019	润滑系统最小容量	润滑系统最小容量	17	1	17	srcrow17	shanhua #1001: | 润滑系统最小容量 | 204		
+1020	lubrication system min. capacity	Lubrication system Min. capacity (L)	17	1	20	srcrow17	shanhua #1001: | Lubrication system Min. capacity (L) | Max. oil temperature permitted in oil pan		
+1021	table	Table	17	2	17	srcrow17	smartgen #1001: | Table | 6 – Terminal Connection Description	winco #1006: | Table | of contents	
+1022	aux.	Aux.	17	1	18	srcrow17	smartgen #1003: | Aux. | input | 9)		
+1023	ohms	Ohms	17	3	17	srcrow17	stamford-avk-china #1002: | Ohms | PER PHASE AT 22°C SERIES STAR	winco #1006: | Ohms | 16	wintpower #1002: | Ohms | PER PHASE AT 22°C SERIES STAR
+1024	standby -	Standby -	17	1	17	srcrow17	stamford-avk-china #1002: | Standby - | 150/40°C		
+1025	multiplier	Multiplier	17	1	51	srcrow17	winco #1006: | Multiplier | -128 | 127 | 16S		
+1026	precision	Precision	17	1	43	srcrow17	winco #1006: | Precision | 1 | 1		
+1027	ats	ATS	16	3	16	srcrow16	aj-power #1001: | ATS (40 Amp - 6300 Amp) | 	gb-power #1009: | ATS | USE	smartgen #1001: | ATS | Not
+1028	oil filter type	Oil Filter Type	16	2	16	srcrow16	aosif #1088: | Oil Filter Type | filter	genlitec #1013: | Oil Filter Type: | Spin-On, Full Flow	
+1029	exhaust gas temperature	Exhaust gas temperature (°C)	16	3	19	srcrow16	aosif #1089: | Exhaust Gas Temperature | 489°C	gb-power #1036: | Exhaust Gas Temperature | 500 ℃	gfe-power #1001: | Exhaust gas temperature (°C) | 510
+1030	whatsapp	WhatsApp	16	5	16	srcline8 srcrow8	app-power-anpu #5001: WhatsApp: 8618162085666 Oey 0	haitai-weifang #3001: WhatsApp: +8618678002095	sunny-weifang #3001: Whatsapp: +8613371069268
+1031	de	de	16	4	16	srcrow16	atlas-copco-power #1005: | de | stockage	cgm-italia #1001: | de | reduction.	gfe-power #1025: | DE | FG
+1032	engines	ENGINES	16	4	24	srcrow16	baudouin #1004: | ENGINES | RPM: 1500 | 1800	deif #1001: | Engines | Tier | 4/Stage	gfe-power #1001: | Engines | Voltage
+1033	typical	Typical	16	5	16	srcrow16	baudouin #1012: | Typical | Generator Output	deep-sea-electronics #1004: | Typical | Applications	gfe-power #1008: | Typical | Alternator Operating Charts
+1034	rtc battery	RTC battery	16	1	18	srcrow16	comap #1001: | RTC battery | Replaceable (3 V)		
+1035	inteli ain8	Inteli AIN8	16	1	32	srcrow16	comap #1001: | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8		
+1036	igs-ptm	IGS-PTM	16	1	16	srcrow16	comap #1001: | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog		
+1037	underfrequency	Underfrequency	16	1	16	srcrow16	comap #1001: | Underfrequency | 81U		
+1038	indication	indication	16	3	22	srcrow8 srcline8	comap #1004: | indication | >4 V DC open contact	winco #1006: | Indication | 0 | 15 | 1/16-4/16	smartgen #1003: Indication: indicate only, not warning or shutdown.
+1039	voltage level	Voltage level	16	3	16	srcrow16	comap #1020: | Voltage level | 8-36 V DC	gfe-power #1021: | voltage level | following multipliers should be applied to current values as	stamford-avk-china #1002: | voltage level | Curves are drawn for Star (Wye) connected machines.
+1040	connection	connection	16	5	21	srcrow16	comap #1021: | connection | only | CM3ETHERXBX	deep-sea-electronics #1003: | Connection | Label	leroy-somer-fuzhou #1017: | connection | Y)
+1041	positive dc output rating	Positive DC Output Rating	16	1	17	srcrow16	deep-sea-electronics #1001: | Positive DC Output Rating | Output A to B (Fuel and Start): 15 ADC at Emergency Stop		
+1042	usb b	USB B	16	1	16	srcrow16	deep-sea-electronics #1001: | USB B | 1 Programming Port		
+1043	volts	VOLTS	16	3	20	srcrow16	deep-sea-electronics #1007: | VOLTS | VOLTS	smartgen #1006: | Volts | 60s) & return value (default: 115%) also	winco #1004: | VOLTS | FACTOR | CB(1)
+1044	bit	bit	16	3	16	srcrow16	deep-sea-electronics #1020: | bit | colour	sices #1003: | BIT | Value	winco #1006: | bit | nibbles
+1045	deutz	Deutz	16	2	16	srcrow16	deif #1001: | Deutz | EMR2	green-power-generators #1001: | Deutz | Volvo	
+1046	impedance	Impedance	16	2	16	srcline4 srcrow12	deif #1002: Impedance: 4.7 kΩ	smartgen #1004: | Impedance | 120Ω	
+1047	air filter type	Air Filter Type:	16	2	16	srcrow16	genlitec #1013: | Air Filter Type: | Replaceable Element	taylor-power #1001: | Air Filter(s) Type | Dry	
+1048	class h	Class H	16	3	32	srcrow16	gfe-power #1025: | Class H | / 400 | V - 6 | & 12-wire	leroy-somer-fuzhou #1010: | Class H | / | 400 V	mecc-alte #1008: | Class H | / | 400V
+1049	øp	ØP	16	2	35	srcrow16	gfe-power #1025: | ØP | Ø BX	leroy-somer-fuzhou #1001: | ØP | ØP | 373	
+1050	- kva	- kVA	16	2	19	srcrow16	gfe-power #1025: | - kVA | at 0.8	leroy-somer-fuzhou #1002: | - kVA | at	
+1051	temperature derate curves	Temperature (Celsius) Derate Curves	16	1	16	srcrow16	lees-power #1122: | Temperature (Celsius) Derate Curves | ØA one-year limited warranty covers all systems and components.		
+1052	influence due to short-circuit	Influence due to short-circuit	16	1	35	srcrow16	leroy-somer-fuzhou #1007: | Influence due to short-circuit | 3-phase | 2-phase		
+1053	details	Details	16	2	16	srcrow16	man-engines #1006: | Details | on	smartgen #1003: | Details | of	
+1054	50hz short circuit	50Hz Short circuit	16	1	16	srcrow16	mecc-alte #1009: | 50Hz Short circuit | decrement		
+1055	60hz short circuit	60Hz Short circuit	16	1	16	srcrow16	mecc-alte #1009: | 60Hz Short circuit | decrement		
+1056	频率	频率	16	2	34	srcrow16	mwm #1014: | 频率 | Hz | 50 | 60 | 50 | 60 | 50 | 60 | 50	shanhua #1001: | 频率 | 转速	
+1057	冷却液容积 coolant capacity-engine only	冷却液容积 Coolant capacity-engine only (L)	16	1	16	srcrow16	shanhua #1001: | 冷却液容积 Coolant capacity-engine only (L) | 165		
+1058	reserved	RESERVED	16	2	29	srcrow16	sices #1004: | RESERVED | J16 | RS 232 INTERFACE	winco #1006: | Reserved | 0x28 | 0x0428	
+1059	sign	Sign	16	2	26	srcrow16	smartgen #1003: | Sign | Instruction	winco #1006: | sign | write	
+1060	ground connected is active	Ground connected is active (B-)	16	1	16	srcrow16	smartgen #1003: | Ground connected is active (B-) | Details see		
+1061	programmable relay output	Programmable Relay Output	16	1	32	srcrow16	smartgen #1006: | Programmable Relay Output | (1) | 7A DC28V at supply output		
+1062	due	Due	16	1	16	srcrow16	smartgen #1007: | Due | When maintenance time countdown equals to 0, and action select		
+1063	per unit at rating	PER UNIT AT RATING	16	2	16	srcrow16	stamford-avk-china #1006: | PER UNIT AT RATING | AND	wintpower #1001: | PER UNIT AT RATING | AND VOLTAGE INDICATED	
+1064	cent	CENT	16	1	16	srcrow16	stamford-avk-china #1009: | CENT | 10		
+1065	cable	CABLE	15	3	15	srcrow15	aj-power #1001: | CABLE | EXHAUST	leroy-somer-fuzhou #1003: | Cable | Entry	smartgen #1010: | Cable | Description
+1066	battery charging alternator	Battery Charging Alternator	15	2	15	srcrow15	aosif #1088: | Battery Charging Alternator | 35A	gfe-power #1013: | Battery charging alternator | ü	
+1067	parallel	PARALLEL	15	5	30	srcrow15	atlas-copco-power #1007: | PARALLEL | voor EENVOUDIG	leroy-somer-fuzhou #1001: | Parallel | (PA) | 115 V | 115 V | 115 V | 115 V	mecc-alte #1004: | PARALLEL | THERMAL PROTECTION
+1068	emergency standby power	Emergency Standby Power (ESP)	15	2	15	srcrow4 srcline11	baudouin #1021: | Emergency Standby Power (ESP) | Prime Power (PRP)	gfe-power #1029: | Emergency Standby Power (ESP) | Prime Power (PRP)	
+1069	remote	remote	15	7	15	srcrow15	cgm-italia #1001: | remote | •	deep-sea-electronics #1022: | Remote | Overview Display	deif #1004: | Remote | distribution transformer needs to be
+1070	power supply range	Power supply range	15	3	16	srcrow15	comap #1001: | Power supply range | 8-36 V DC	deif #1001: | Power supply range | Nominal voltage: 12 V DC or 24 V DC	sices #1003: | Power supply range (Vn variation) | From 8 to 32 Vdc
+1071	inteli io8/8	Inteli IO8/8	15	1	28	srcrow15	comap #1001: | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8		
+1072	inteli ain8tc	Inteli AIN8TC	15	1	30	srcrow15	comap #1001: | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC		
+1073	inteli aio9/1	Inteli AIO9/1	15	1	30	srcrow15	comap #1001: | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1		
+1074	below	Below	15	2	15	srcrow15	datakom #1001: | Below | parameters are available	winco #1006: | below | 16	
+1075	analogue resolution	Analogue Resolution	15	1	15	srcrow15	deep-sea-electronics #1001: | Analogue Resolution | 1 %		
+1076	extended	Extended	15	1	15	srcrow15	deif #1001: | Extended | Premium		
+1077	kohler	Kohler	15	2	21	srcrow15	deif #1001: | Kohler | ECU2-HD | KD62V12	gfe-power #1001: | KOHLER | SDMO premium performances | Consumption @ 100% load PRP (L/h) | 10	
+1078	data sheet 4921240650-e en	Data sheet 4921240650-E EN	15	1	21	srcrow15	deif #1003: | Data sheet 4921240650-E EN | Page 2 of 19		
+1079	close	close	15	2	21	srcrow15	deif #1004: | close | open	smartgen #1001: | Close | Can control gens to switch on in Manual mode.	
+1080	percenttransientvoltage dip	PERCENTTRANSIENTVOLTAGE DIP	15	2	15	srcrow15	gfe-power #1008: | PERCENTTRANSIENTVOLTAGE DIP | 25	stamford-avk-china #1016: | PERCENTTRANSIENTVOLTAGE DIP | 25	
+1081	ef	EF	15	2	17	srcrow15	gfe-power #1025: | EF | G	leroy-somer-fuzhou #1004: | EF | G	
+1082	xg	Xg	15	2	24	srcrow15	gfe-power #1025: | Xg | Weight (kg)	leroy-somer-fuzhou #1001: | Xg | Standard	
+1083	duty/t°c	Duty/T°C	15	1	60	srcrow15	leroy-somer-fuzhou #1003: | Duty/T°C | Continuous/ 40°C | Continuous/ 40°C | Stand-by/ 40°C | Stand-by/ 27°C		
+1084	class/t°k	Class/T°K	15	1	60	srcrow15	leroy-somer-fuzhou #1003: | Class/T°K | H:125K | F:105K | H:150K | H:163K		
+1085	- 60 hz	- 60 Hz	15	1	15	srcline15	leroy-somer-fuzhou #1007: - 60 Hz: 208V - 240V and 380V - 480V		
+1086	低油压 low oil pressure	低油压 Low Oil Pressure	15	1	15	srcrow15	shanhua #1001: | 低油压 Low Oil Pressure | 发动机高温预警		
+1087	specifications may change	Specifications may change	15	1	15	srcrow15	shanhua #1003: | Specifications may change | without notice		
+1088	notes	Notes	15	3	15	srcline15	sices #1003: Notes: GC315 is unable to directly track EJP information from the mains. To use this function an external detector must be	smartgen #1001: NOTES: A. Icom must connect to battery cathode of the controller.	winco #1004: NOTES: (1) Recommended breaker sizes are 100 to 125% of generator output.
+1089	pins	pins	15	1	15	srcrow15	smartgen #1001: | pins | data		
+1090	resistances in ohms	Resistances in Ohms (Ω)	15	1	30	srcrow15	stamford-avk-china #1020: | Resistances in Ohms (Ω) | at | 220C		
+1091	exhaust temperature before turbocharger	Exhaust temperature before turbocharger	15	1	15	srcrow15	westinpower #1009: | Exhaust temperature before turbocharger | ≤ 750°C		
+1092	closed	Closed	15	1	15	srcrow15	winco #1006: | Closed | 15/16		
+1093	energised	Energised	15	1	15	srcrow15	winco #1006: | Energised | 15/16		
+1094	series	SERIES	14	3	16	srcrow14	aj-power #1001: | SERIES | 9 SERIES	deep-sea-electronics #1018: | Series | Data	deif #1004: | Series | 50, | 60
+1095	max oil temperature	Max Oil Temperature	14	1	18	srcrow14	aosif #1051: | Max Oil Temperature | 121 ℃		
+1096	inlet	Inlet	14	2	32	srcrow14	aosif #1065: | Inlet | Temperature | 49℃	leroy-somer-fuzhou #1001: | INLET | A2	
+1097	factor	Factor	14	3	44	srcrow14	bison-zhejiang #1002: | Factor | 1 | 1 | 1 | 1 | 1 | 1	datakom #1001: | Factor | Description	smartgen #1003: | Factor | Power
+1098	ma	mA	14	2	20	srcrow14	comap #1001: | mA | for | 0-2	winco #1006: | mA | 32S	
+1099	operating humidity	Operating humidity	14	2	19	srcrow14	comap #1001: | Operating humidity | 95 % non-condensing	deif #1001: | Operating humidity | Damp Heat Steady State, 40 °C at 93 % relative humidity, 240 hours. To IEC	
+1100	internet	Internet	14	3	14	srcrow14	comap #1015: | Internet | /	deep-sea-electronics #1015: | Internet | Internet	voltgent #1001: | INTERNET | MODBUS RTU
+1101	frequency input range	Frequency input range	14	3	14	srcrow14	comap #1017: | Frequency input range | 4 Hz to 15 kHz	deep-sea-electronics #1001: | Frequency Input Range | 5 Hz to 10	deif #1001: | Frequency input range | 10 to 10 kHz (max.)
+1102	information	INFORMATION	14	3	14	srcrow4 srcline10	datakom #1001: | information | is	deep-sea-electronics #1004: | information | on the operating	sices #1003: INFORMATION: The dimensions indicated refer exclusively to the minimum area required to ensure basic natural
+1103	charge alternator	Charge Alternator :	14	3	15	srcrow14	datakom #1001: | (2) Charge Alternator | - | 0	deep-sea-electronics #1001: | Charge Alternator : | 30V, 2.5W max	smartgen #1005: | Charge Alternator | When this is enabled and the controller detects that charger voltage is
+1104	fail	Fail	14	3	16	srcrow14	datakom #1001: | Fail | 65	deep-sea-electronics #1028: | Fail | range | 0 V to 35 V	smartgen #1007: | Fail | When two gensets, which during in cycle start status, fail to
+1105	current range	Current Range	14	2	18	srcrow14	deep-sea-electronics #1001: | Current Range | 0 A to 1 A	deif #1001: | Current range | Nominal: -/1 A and -/5 A	
+1106	dse6110 mkiii	DSE6110 MKIII	14	1	21	srcrow13 srcline1	deep-sea-electronics #1002: | DSE6110 MKIII | DSE6120 MKIII		
+1107	dse8610 mkii	DSE8610 MKII	14	1	27	srcrow14	deep-sea-electronics #1004: | DSE8610 MKII | DSE8610 MKII		
+1108	gsm	GSM	14	3	35	srcrow10 srcline4	deep-sea-electronics #1012: | GSM | Antenna	sices #1003: | GSM | Global System for Mobile	smartgen #1003: | GSM | ●
+1109	aux	Aux	14	2	14	srcrow14	deep-sea-electronics #1030: | Aux | Auxiliary Supply Output	genlitec #1013: | AUX | winding)	
+1110	weichai	Weichai	14	1	19	srcrow14	deif #1001: | Weichai | - | - | - | Weichai Baudouin E6		
+1111	sound power level lwa ]	Sound power level LWA [db(A)]	14	1	14	srcrow14	endress-stromerzeuger #1001: | Sound power level LWA [db(A)] | 84		
+1112	shockproof sockets	Shockproof sockets	14	1	14	srcrow14	endress-stromerzeuger #1002: | Shockproof sockets | 1x CEE 230 V / 16 A		
+1113	alternator brand	Alternator brand	14	2	14	srcrow14	genlitec #1001: | Alternator brand | GENLITEC	hosem-power #1001: | Alternator Brand | Leroy Somer	
+1114	transient voltage dip scaling factor	Transient Voltage Dip Scaling Factor	14	2	14	srcrow14	gfe-power #1008: | Transient Voltage Dip Scaling Factor | Transient Voltage Rise Scaling Factor	stamford-avk-china #1016: | Transient Voltage Dip Scaling Factor | Transient Voltage Rise Scaling Factor	
+1115	cd	CD	14	2	14	srcrow14	gfe-power #1025: | CD | E	leroy-somer-fuzhou #1003: | CD | E HLMJ K	
+1116	access to	Access to	14	2	18	srcrow14	gfe-power #1025: | Access to | rectifiers	leroy-somer-fuzhou #1001: | Access to | 349	
+1117	for other types of short-circuit,	For other types of short-circuit,	14	1	53	srcrow14	leroy-somer-fuzhou #1003: | For other types of short-circuit, | Continuous | 1 | 1.5 | 2.2		
+1118	voltage drop	Voltage drop	14	1	14	srcrow14	leroy-somer-fuzhou #1005: | Voltage drop | Voltage drop		
+1119	mwm digitalpower	MWM DIGITALPOWER	14	1	14	srcrow14	mwm #1001: | MWM DIGITALPOWER | www.mwm.net		
+1120	机油消耗率 oil consumption	机油消耗率 Oil Consumption	14	1	14	srcrow14	shanhua #1002: | 机油消耗率 Oil Consumption | ≤0.3%		
+1121	海拔要求	海拔要求	14	1	28	srcrow14	shanhua #1007: | 海拔要求 | Altitude | ≤1000m		
+1122	update paragraphs	Update paragraphs	14	1	14	srcline14	sices #1003: Update paragraphs: 5.1, 5.2, 5.3, 10.9.4, 10.9.5, 10.9.6		
+1123	timer	timer	14	3	54	srcrow14	sices #1003: | timer | 1):	smartgen #1005: | Timer | Setting	winco #1006: | Timer | value | 1 | 0 | 864000 | 0.1
+1124	1bar	1bar	14	1	56	srcrow14	smartgen #1001: | 1bar | 1x105 | 1.02 | 1 | 14.5		
+1125	1psi	1psi	14	1	56	srcrow14	smartgen #1001: | 1psi | 6.89x103 | 7.03x10－2 | 6.89x10－2 | 1		
+1126	port)	port)	14	1	14	srcrow14	smartgen #1001: | port) | Remark		
+1127	condition	Condition	14	2	20	srcrow14	smartgen #1002: | Condition | alone and simultaneously to	winco #1006: | Condition | Meaning	
+1128	trip	Trip	14	1	14	srcrow6 srcline8	smartgen #1003: | Trip | and		
+1129	disable	Disable	14	1	21	srcrow14	smartgen #1003: | Disable | automatically according to the running		
+1130	connecting	connecting	14	1	14	srcrow14	smartgen #1004: | connecting | line		
+1131	hgm9510n/hgm9530n	HGM9510N/HGM9530N	14	1	16	srcrow14	smartgen #1005: | HGM9510N/HGM9530N | Paralleled Genset Controller User Manual		
+1132	416v	416V	14	1	26	srcrow14	stamford-avk-china #1001: | 416V | X 1.09		
+1133	improved regulation and performance.	improved regulation and performance.	14	1	14	srcrow14	stamford-avk-china #1002: | improved regulation and performance. | Note: Requirement for operating in an ambient exceeding		
+1134	materials	MATERIALS	13	3	13	srcrow13	aj-power #1001: | MATERIALS | MADE EASY	fdk-energy #1092: | materials | reduce vibration.	mecc-alte #1007: | materials | for
+1135	maximum allowable back pressure	Maximum Allowable Back Pressure	13	2	25	srcrow13	aosif #1057: | Maximum Allowable Back Pressure | 5 kPa	genlitec #1013: | Maximum Allowable Back Pressure: | kPa (in Hg) | 6 (1.8)	
+1136	fan power	Fan Power	13	1	13	srcrow13	aosif #1078: | Fan Power | 10 kWm		
+1137	france	FRANCE	13	3	13	srcrow13	baudouin #1004: | FRANCE | SPAIN	mecc-alte #1001: | FRANCE | FAR EAST	sices #1003: | FRANCE | FAR EAST
+1138	flywheel and housing	Flywheel and housing	13	2	14	srcrow13	baudouin #1008: | Flywheel and housing | SAE 3 flywheel housing and 11.5” flywheel	gfe-power #1024: | Flywheel and housing | Induction system	
+1139	service	Service	13	3	24	srcrow13	bobig-power #3003: | Service | 24/7	genlitec #1001: | Service | PRP(1) | ESP(2)	sices #1003: | service | requests
+1140	outputs	outputs	13	6	22	srcrow13	cgm-italia #1001: | outputs | • n.6 entrées analogiques, n.8 entrées binaires, n.8	deep-sea-electronics #1007: | OUTPUTS | ENGINES &	deif #1004: | outputs | (kWh,
+1141	switching to	Switching to	13	1	13	srcrow13	comap #1001: | Switching to | positive supply terminal		
+1142	master unit	Master unit	13	1	13	srcrow13	comap #1001: | Master unit | 1		
+1143	reclosing relay	Reclosing relay	13	1	13	srcrow13	comap #1001: | Reclosing relay | 79		
+1144	rocof	ROCOF	13	3	16	srcrow13	comap #1004: | ROCOF | 81R	smartgen #1005: | ROCOF | issue an alarm signal.	deif #1001: | ROCOF (df/dt) | ● | ●
+1145	vector shift	Vector shift	13	4	20	srcrow13	comap #1004: | Vector shift | 78	deif #1001: | Vector shift | 1 | 78 | <40 ms	smartgen #1005: | Vector Shift | set limit, it shall issue an alarm signal.
+1146	regulator	regulator	13	3	53	srcrow13	comap #1005: | regulator | output	leroy-somer-fuzhou #1013: | regulator | 759	mecc-alte #1007: | Regulator | M2K | M2Ks | M3K | M3Ks | M3KsHD
+1147	limit	Limit	13	2	16	srcrow13	datakom #1001: | Limit | Hz | 45	smartgen #1009: | Limit | higher than this value.	
+1148	alarms	ALARMS	13	4	14	srcrow13	datakom #1002: | ALARMS | Red	deep-sea-electronics #1011: | alarms | • | Automatic load transfer (DSE7220)	deif #1004: | Alarms | ANSI
+1149	dse890 mkii	DSE890 MKII	13	1	26	srcrow13	deep-sea-electronics #1001: | DSE890 MKII | DSEWebNet® Gateway | 0890-04		
+1150	dse8660 mkii	DSE8660 MKII	13	1	24	srcrow13	deep-sea-electronics #1004: | DSE8660 MKII | DSE8610 MKII		
+1151	gb	GB	13	2	24	srcrow13	deif #1001: | GB | MB	gb-power #1001: | GB | POWER | 2/4	
+1152	scania	Scania	13	2	27	srcrow13	deif #1001: | Scania | EMS	green-power-generators #1001: | Scania | Yanmar	
+1153	common	Common	13	3	34	srcrow13	deif #1001: | Common | 12/24 V DC	sices #1001: | COMMON | INPUT 18 | INPUT 17 | INPUT 16 | INPUT 15 | INPUT 14	smartgen #1002: | Common | / | Impedance-120Ω
+1154	low environment temp	Low environment Temp	13	1	13	srcrow13	fdk-energy #1005: | Low environment Temp | ATS		
+1155	recommended fuel	Recommended Fuel:	13	2	13	srcrow13	genlitec #1013: | Recommended Fuel: | Class A2 Diesel	taylor-power #1001: | Recommended Fuel | Ultra Low Sulfur Diesel	
+1156	total oil capacity	Total Oil Capacity:	13	2	13	srcrow13	genlitec #1013: | Total Oil Capacity: | l (US	xinhengxin-fujian #1002: | Total oil capacity | 50L	
+1157	oil pan capacity	Oil Pan Capacity:	13	2	14	srcrow13	genlitec #1013: | Oil Pan Capacity: | l (US	hosem-power #1001: | Oil Pan Capacity (L) | 214 | Maximum Oil Consumption (L/Hr)1.122	
+1158	oil type	Oil Type:	13	2	13	srcrow13	genlitec #1013: | Oil Type: | API CG4 15W-40	winco #1008: | OIL TYPE | RS8000	
+1159	number of bearing	Number of bearing	13	2	13	srcrow13	gfe-power #1001: | Number of bearing | Single Bearing	xinhengxin-fujian #1002: | Number of Bearing | 1	
+1160	separately	Separately	13	2	13	srcrow13	gfe-power #1008: | Separately | Excited	stamford-avk-china #1017: | Separately | Excited	
+1161	arrangement	arrangement	13	4	15	srcrow13	gfe-power #1023: | arrangement | 6 cyl / vertical in-line	leroy-somer-fuzhou #1004: | arrangement | - | 6	man-engines #1006: | Arrangement | Bore
+1162	air inlet	Air inlet	13	2	25	srcrow13	gfe-power #1024: | Air inlet | 2410 mm | 1120 mm	leroy-somer-fuzhou #1004: | AIR INLET | 610 | 21	
+1163	kva base rating	kVA Base Rating (Class H)	13	2	38	srcrow13	gfe-power #1040: | kVA Base Rating (Class H) | 30 | 32.4	stamford-avk-china #1042: | kVA Base Rating (Class H) | 9.2 | 10 | 10	
+1164	installation design. contact	installation design. Contact	13	1	13	srcrow13	lees-power #1082: | installation design. Contact | your local dealer		
+1165	use the following multiplication factors.	use the following multiplication factors.	13	1	36	srcrow13	leroy-somer-fuzhou #1003: | use the following multiplication factors. | Maximum duration | 1.5		
+1166	平均活塞速度	平均活塞速度	13	1	47	srcrow13	mwm #1005: | 平均活塞速度 | m/s | 8.0 | 8.0 | 8.0 | 8.0		
+1167	机组净重	机组净重	13	1	67	srcrow13	mwm #1005: | 机组净重 | kg | 5,720 | 7,000 | 8,070 | 8,560		
+1168	turbocharged air-air charge	Turbocharged air-air charge	13	1	13	srcrow13	sanq-power #1024: | Turbocharged air-air charge | cooled		
+1169	工作电压 operating voltage	工作电压 Operating voltage	13	1	13	srcline13	shanhua #1001: 工作电压 Operating voltage ：DC24V (范围 range ：18-30V，耐压 pressure ：50V/5 mm )		
+1170	negative	NEGATIVE	13	2	13	srcrow13	sices #1001: | NEGATIVE | PLUS	smartgen #1001: | negative | of	
+1171	mecc	Mecc	13	1	15	srcrow13	sices #1003: | Mecc | Alte		
+1172	terminals of	terminals of	13	2	18	srcrow13	sices #1003: | terminals of | C.T.s	smartgen #1003: | Terminals of | controller	
+1173	down/decrease	Down/Decrease	13	1	14	srcrow13	smartgen #1001: | Down/Decrease | Screen scroll;		
+1174	connect	connect	13	1	14	srcrow13	smartgen #1001: | connect | the port | 5 and 8 of the connector.		
+1175	timers	Timers	13	1	22	srcrow13	smartgen #1003: | Timers | >		
+1176	programmable output 1	Programmable output 1	13	1	18	srcrow13	smartgen #1003: | Programmable output 1 | voltage of 01, 07, 12, 13 is | Set programmable output 1 as “ECU		
+1177	can communication shielding	CAN communication shielding	13	1	13	srcrow13	smartgen #1003: | CAN communication shielding | line		
+1178	hgm9420n_hgm9420lt	HGM9420N_HGM9420LT	13	1	17	srcline1 srcrow12	smartgen #1011: HGM9420N_HGM9420LT: fits Mains-Gen power monitoring for Mains/Gen automatic transfer		
+1179	max	Max	13	1	14	srcrow13	winco #1006: | Max | Bits/ Sign		
+1180	emergency stop	Emergency stop	12	5	15	srcrow9 srcline3	aj-power #1001: | Emergency stop | ✓	deif #1001: | Emergency stop | 1 | <200 ms	smartgen #1001: | Emergency Stop | positive is connected to the emergency stop input;
+1181	analog inputs	Analog inputs	12	3	19	srcrow12	aj-power #1001: | Analog inputs | 3 | 4 | 4 | 4 | 3 | 3	deep-sea-electronics #1001: | Analog Inputs : | 10V max	woodward #1001: | Analog inputs | 4x resistive (2 | 4x resistive, 1x
+1182	capacity,	capacity,	12	2	21	srcrow12	aosif #1002: | capacity, | not	gfe-power #1001: | capacity, | GENERATOR SETS RATINGS	
+1183	maximum coolant temperature (engine	Maximum coolant temperature (engine	12	1	12	srcrow12	aosif #1006: | Maximum coolant temperature (engine | 99 ℃		
+1184	maximum back pressure	Maximum Back Pressure	12	2	12	srcrow12	aosif #1016: | Maximum Back Pressure | 10 kPa	xinhengxin-fujian #1004: | Maximum Back Pressure | 5.9KPA	
+1185	alternator specification	Alternator specification	12	1	12	srcrow12	aosif #1110: | Alternator specification | Battery recharge system,		
+1186	negative ground	negative ground	12	1	12	srcrow12	aosif #1110: | negative ground | 45ampere		
+1187	water-cooled	water-cooled	12	1	12	srcrow12	atlas-copco-power #1001: | water-cooled | water-cooled		
+1188	altas copco	Altas Copco	12	1	12	srcrow12	atlas-copco-power #1001: | Altas Copco | Altas Copco		
+1189	customer benefits	Customer benefits	12	1	13	srcrow12	baudouin #1008: | Customer benefits | Warranty terms – 2 yrs unlimited PRP, 4 yrs/800h ESP		
+1190	engine and block	Engine and block	12	1	12	srcrow12	baudouin #1008: | Engine and block | Cast iron gantry type structure block		
+1191	powerkit engine datasheet	PowerKit Engine Datasheet	12	2	24	srcrow12	baudouin #1021: | PowerKit Engine Datasheet | Page : | 2/4	gfe-power #1029: | PowerKit Engine Datasheet | Page : | 2 / 4	
+1192	d+	D+	12	4	24	srcrow12	comap #1001: | D+ | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA	deif #1002: | D+ | 93 | 93	sices #1001: | D+ | for the measure of the alternator battery charger voltage.
+1193	stopping device	Stopping device	12	1	12	srcrow12	comap #1001: | Stopping device | 5		
+1194	thermal relay	Thermal relay	12	1	12	srcrow12	comap #1001: | Thermal relay | 26		
+1195	pressure switch	Pressure switch	12	1	12	srcrow12	comap #1001: | Pressure switch | 63		
+1196	liquid level switch	Liquid level switch	12	1	12	srcrow12	comap #1001: | Liquid level switch | 71		
+1197	alarm relay	Alarm relay**	12	1	12	srcrow12	comap #1001: | Alarm relay*** | 74		
+1198	master sequence device	Master sequence device	12	1	12	srcrow12	comap #1001: | Master sequence device | 34		
+1199	overfrequency	Overfrequency	12	1	12	srcrow12	comap #1001: | Overfrequency | 81O		
+1200	display	Display	12	6	14	srcrow11 srcline1	comap #1002: | Display | Frequency	deep-sea-electronics #1020: | Display | 10.1” TFT	deif #1002: | Display | 240 × 128 pixel backlight STN
