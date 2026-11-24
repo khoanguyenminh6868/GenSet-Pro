@@ -5,6 +5,7 @@
 #   CLAUDE_CODE_OAUTH_TOKEN token của `claude setup-token` (gói tháng) và/hoặc ANTHROPIC_API_KEY (trả theo API)
 #   GH_TOKEN                GitHub token có quyền ghi repo (Publish-GenBidHsmt.ps1: Release + nhánh hsmt-inbox)
 #   FIRECRAWL_KEY           (tuỳ chọn) khoá Firecrawl cho Tìm NCC
+#   FIRECRAWL_KEY_2         (tuỳ chọn) khoá Firecrawl dự phòng, dùng khi khoá chính hết credit (suppliers/firecrawl.mjs)
 # Gemini (agy) cho bản dịch: đăng nhập Google một lần trong sandbox (`vercel sandbox connect genbid-bot`, chạy agy), lưu ở
 # ~/.config/antigravity và giữ qua snapshot. Tệp oauth_creds.json của máy Windows không dùng được (thử 17/11).
 # Bot chạy tới khi sandbox dừng (rảnh, máy Windows bật lại, hoặc hết phiên); web/api/_sandbox.js khởi chạy lại khi cần.
@@ -24,11 +25,12 @@ main() {
   [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || printf '%s\n' "$CLAUDE_CODE_OAUTH_TOKEN" > "$ROOT/.claude-bot-token"
   [ -z "${ANTHROPIC_API_KEY:-}" ]       || printf '%s\n' "$ANTHROPIC_API_KEY"       > "$ROOT/.anthropic-api-key"
   [ -z "${FIRECRAWL_KEY:-}" ]           || printf '%s\n' "$FIRECRAWL_KEY"           > "$KIT/.firecrawl-key"
+  [ -z "${FIRECRAWL_KEY_2:-}" ]         || printf '%s\n' "$FIRECRAWL_KEY_2"         > "$KIT/.firecrawl-key-2"
   # Bot tự chọn token / API key theo từng việc (đọc từ các tệp trên): các biến này không được lọt vào tiến trình con
   # (agent Claude có công cụ Bash, đọc tài liệu HSMT của bên thứ ba: biến môi trường là thứ dễ bị lấy nhất).
   # GH_TOKEN: lưu vào cấu hình của gh (gh từ chối `login` khi biến còn trong môi trường) rồi bỏ biến. Dùng PAT hạn chế quyền (README).
   local GHT="${GH_TOKEN:-}"
-  unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY GH_TOKEN GITHUB_TOKEN
+  unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY FIRECRAWL_KEY_2 GH_TOKEN GITHUB_TOKEN
   if [ -n "$GHT" ]; then
     printf '%s\n' "$GHT" | gh auth login --with-token >/dev/null 2>&1 && gh auth setup-git >/dev/null 2>&1 \
       || echo "Cảnh báo: gh auth login không được, tải HSMT lên GitHub sẽ lỗi" >&2
