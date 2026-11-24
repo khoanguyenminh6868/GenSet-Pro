@@ -4,6 +4,8 @@ Phiên con của điều phối, 24/11/2026. Báo cáo không chép chữ HSMT; 
 
 ## Kết luận từng PR
 
+**Cập nhật phần C (mục 7, 19:20):** #1174 đã sửa `comprFig` (`e61472c0`): 123 / 196 dòng compr sai → **0**, 0 dòng chưa giải thích, dòng dung tích sai 41 → 0 khi kèm #1202 + `bo-o-lech-4` → **#1174, #1202, `bo-o-lech-4` an toàn merge cùng đợt, theo thứ tự đó**; còn hai điểm chính sách Khoa cần quyết của lượt 4. #1201, #1200, #1192, #1203 đã merge. Bảng dưới là kết quả phần A (trước sửa).
+
 | PR | Nhánh | Dòng top 30 đổi khi đo riêng (so `main`) | Kết luận |
 |---|---|---:|---|
 | **#1174** nhãn thông số | `claude/fix-spec-labels` | **12.735** (840 lượt / 718 gói) | **Cần sửa trước khi merge** (và vẫn còn các điểm cần Khoa quyết của lượt 4). Lỗi mới tìm thấy: ô tỉ số nén viết dấu hai chấm toàn chiều rộng ("17.3：1", "17.3 ： 1", "16.5：1"…) mà #1174 nay đọc được thì `comprFig` trả null, `comprOff` coi là "không đọc được" và **bỏ luật loại** → **123 dòng vào top 30 sai** (động cơ có tỉ số khác HSMT mà không bị loại). Gộp với #1203 thành **196 dòng**. Sửa: `comprFig` nhận "：" (U+FF1A) như ":". 33 dòng dựa dung tích sai của lượt 4 thì #1202 + `bo-o-lech-4` đã gỡ hết. |
@@ -216,3 +218,53 @@ Soát theo cơ chế, mỗi nhóm lớn xem dữ liệu nguồn ít nhất một
 
 Giới hạn: tôi không đối chiếu từng giá trị `oil` / `emission` mới (#1105 / #1110 / #1111) với tờ hãng. Không tìm thấy thay đổi SAI nào ở phần B.
 
+
+## 7. Phần C: đo lại #1174 sau khi sửa `comprFig`
+
+Điều phối 16:34 / 16:56: #1201, #1200, #1192, #1203 đã merge; #1174 có commit sửa `comprFig` `e61472c0` ("nhận dấu hai chấm toàn chiều rộng (U+FF1A) bằng NFKC", đã gộp main `12b9cd8a`). Đo lại cùng bidhist, mỗi cây `cn` của chính nó:
+
+| Cây | Commit |
+|---|---|
+| main mới | `12b9cd8a` (có #1203) |
+| main + #1174 đã sửa | `e61472c0` (nhánh `claude/fix-spec-labels`, chứa main mới) |
+| + `bo-o-lech-126` (#1202) | gộp `bb33a791`; xung đột `web/CLAUDE.md`: bên #1174 có một mục, bên #1202 không thêm gì ở đó → giữ mục của #1174 |
+| + `bo-o-lech-4` | gộp `10dfdbd9`, sạch |
+
+Mọi cây 1.057 lượt, 0 lượt lỗi. Test trên cây cuối: suppliers **1.853 test, 1.851 đạt, 0 lỗi, 2 bỏ qua**; `verify.mjs` 436 hồ sơ 0 lỗi. Bộ kiểm giá trị (sai): main mới 196 → +#1174 248 → +#1202 / lech-4 **118**.
+
+### 7.1 Top 30
+
+| Bước | Lượt | Dòng | Ghi chú |
+|---|---:|---:|---|
+| main mới → + #1174 (đã sửa) | 833 | 12.140 | đổi điểm 3.349, đổi hạng 6.613, ra / vào 1.089 |
+| + #1202 | 5 | 58 | đúng 5 dòng luật số xi lanh như mục 4.2 (cùng 5 lượt, cùng kết quả), 53 hệ quả |
+| + `bo-o-lech-4` | 24 | 149 | 36 dòng −8 mất `disp` (S180M 19, S175M 8, 12M33D1450E310 8, 6135AD3 1); 1 hết bị loại maxDisp; 112 hệ quả |
+| main mới → cuối (#1174 + #1202 + lech-4) | 828 | 12.118 | |
+
+**Dòng chưa giải thích: 0** ở cả bốn bước (cùng tiêu chí mục 3: mọi dòng thuộc diem-khop / luat-loai / hệ quả trực tiếp / dây chuyền).
+
+### 7.2 Dòng "hết bị loại compr" SAI
+
+| | Trước sửa (mục 4) | Sau sửa |
+|---|---:|---:|
+| #1174 so main | **123** | **0** |
+| tích hợp (có #1203) | **196** | **0** (main mới đã có #1203) |
+
+Sau sửa, main mới → cuối có 105 dòng hết bị loại compr (97 vào top 30 + 8 dòng model HSMT nêu tên không còn −600): 21 do có giá trị trùng HSMT, 84 do NCC ghi khác nhau (đúng luật "mâu thuẫn thì giữ dòng"; ví dụ QSB59G30 / QSB59G31 nay đọc được "17.3 ： 1" mà NCC khác ghi số khác). 158 dòng bị loại compr: giá trị mới đọc được, đồng nhất, khác HSMT.
+
+**Ba ô còn null** (`comprFig` vẫn không đọc): weiman-fujian "18·2 :1" (1104C44TAG1, 1104C44TAG2), powerpack "17 17,5 : 1" (4M06G4D0). Không dòng top 30 nào **đổi** vì ba ô này: ô "18·2 :1" có sẵn trên `main` từ trước (#1174 không thêm), nên ở cả `main` lẫn nhánh, luật tỉ số nén đều không loại được 1104C44TAG1 / TAG2. Ảnh hưởng có sẵn (không do PR): 10 dòng top 30 ở 3 lượt HSMT ghi tỉ số nén chính xác: IB2300165131#0 (HSMT 16,1: sr-genset, tecgen, jet-power 1104C44TAG2 hạng 2 / 4 / 6), IB2300340905#0 (17,5: tecgen, sanq, jet-power hạng 1–3), IB2400325367#0 (17,3: sanq / dingbo 1104C44TAG1 hạng 5 / 13, elitech / rise-power 1104C44TAG2 hạng 24 / 25). Các NCC khác ghi 18,2–18,3:1, nên nếu đọc được "18·2" thì các dòng này bị loại. 4M06G4D0 chỉ có một giá trị (của powerpack) và không có dòng nào ở lượt HSMT ghi tỉ số nén.
+
+### 7.3 Dòng dựa dung tích sai
+
+main mới → + #1174: **41** dòng (S180M 19, S175M 8, 12M33D1450E310 9, TAD531GE 4, 6135AD3 1). Sau #1202 + lech-4: **0**: 32 dòng hết đổi; 9 dòng còn đổi nhưng không còn dựa ô sai (4 dòng dingbo TAD531GE bị loại `disp` đúng 4,76 L < 5,9 L; 5 dòng longkai 12M33D1450E310 chỉ còn +8 `compr`).
+
+### 7.4 Kết luận
+
+| PR | Kết luận |
+|---|---|
+| **#1174** (đã sửa `comprFig`) | **An toàn merge về đúng / sai dữ liệu**: 0 dòng compr sai, 0 dòng chưa giải thích; dòng dung tích sai chỉ hết khi merge kèm #1202 + `bo-o-lech-4`, nên **merge cùng đợt, theo thứ tự #1174 → #1202 → `bo-o-lech-4`** (nếu merge #1174 một mình thì 41 dòng dựa dung tích sai tạm có mặt). Vẫn còn hai điểm Khoa cần quyết của lượt 4 (+8 mỗi loại thông số làm đổi hạng hàng loạt ở 833 lượt; giữ 排气量): đó là quyết định chính sách, không phải lỗi. |
+| **#1202** | An toàn merge ngay sau #1174 (5 dòng luật xi lanh đều đúng). |
+| **`bo-o-lech-4`** | An toàn merge ngay sau #1202 (gỡ hết dòng dung tích sai). |
+| Ngoài các PR | Ô "18·2 :1" (weiman, dấu chấm giữa) có sẵn trên `main` làm 10 dòng top 30 không bị loại theo tỉ số nén; đề nghị một PR nhỏ riêng (comprFig nhận "·" là dấu thập phân, hoặc sửa ô nguồn), đo lại 3 lượt ở 7.2. |
+
+TSV: các bước phần C nằm cuối `do-gop-luot-5-pr.tsv` (cột bước đo bắt đầu bằng "C:"; cột đánh giá để trống vì không còn dòng compr / dung tích sai).
