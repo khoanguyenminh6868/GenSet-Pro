@@ -222,6 +222,11 @@ test("botEnv: GH_BOT_TOKEN ưu tiên hơn GITHUB_TOKEN; không mang biến Supab
     { GENBID_INGEST_TOKEN: "i", CLAUDE_CODE_OAUTH_TOKEN: "c", GH_TOKEN: "b" });
 });
 
+test("botEnv: khoá Firecrawl chính và dự phòng (Khoa 24/11/2026) đi vào sandbox khi có", () => {
+  assert.deepEqual(S.botEnv({ INGEST_TOKEN: "i", FIRECRAWL_KEY: "k1", FIRECRAWL_KEY_2: "k2" }), { GENBID_INGEST_TOKEN: "i", FIRECRAWL_KEY: "k1", FIRECRAWL_KEY_2: "k2" });
+  assert.deepEqual(S.botEnv({ INGEST_TOKEN: "i", FIRECRAWL_KEY: "k1" }), { GENBID_INGEST_TOKEN: "i", FIRECRAWL_KEY: "k1" });
+});
+
 // Sync theo lịch khi mọi máy Windows tắt (Khoa 18/11/2026): Vercel Cron 10:10 / 14:10 / 18:10 giờ VN, thứ Hai–thứ Sáu.
 const cron = async (env, bearer) => { const r = await call(await fresh("cron.js", env), mkReq({ bearer })); await S.lastBackground; return r; };
 const CENV = { ...ENV, CRON_SECRET: "cs" };
@@ -269,4 +274,6 @@ test("nhịp tim trả schedule.last = mốc Sync theo lịch gần nhất (sync
   const r = await poll({ kind: "all" });
   assert.equal(r.yieldTo, "sandbox");
   assert.deepEqual(r.schedule, { last: "2026-11-17 10:10" });
+  db.put("synclog", "current", { slot: "2026-11-17 14:10", doneAt: ago(1), ok: false, summary: "Sync lỗi: x" });
+  assert.equal((await poll({ kind: "all" })).schedule, undefined, "Sync lỗi không tính là xong mốc");
 });
