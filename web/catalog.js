@@ -1604,13 +1604,26 @@
           note(t, ti, ri, "ô mã viết dấu － toàn chiều rộng, đọc như '-'", c);
           return c.replace("－", "-");
         });
+        // A set of two engines ("| 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | 2*S4L1D-F41", baifa n106 TWIN; "2 x TAD1641GE",
+        // tecnogen; "2X DC13 505A AE", green-power; catalog-a): the cell is "<2-4> x <code>". The code alone is read as the cell's model
+        // and the cell is remembered in `twin`: the engine record of such a row carries `units` (how many engines the set has) and NO
+        // power (the row's kVA / kW is the SET's: matched against one engine it would call TAD1355GE a 900 kVA engine), and no engine-scope
+        // figure (the table does not say whether a displacement / cylinder count / engine rating on the row is one engine's or the
+        // set's). A twin cell that is not the engine's (the alternator "2*S4L1D-F41") gives no record.
+        // A power cell written "388VA" (yanan-power n101 / n107 "| YN388C | 388VA | 310kW | 350kVA | 280kW | QSNT-G2", catalog-doc-4): the "k" of
+        // kVA is missing (the page writes "388kVA" in the sibling rows of the same genset). Read as kVA only when a kW cell of the SAME row
+        // is 0.8 x the figure (310 / 388 = 0.80; 286 / 358; 330 / 413): otherwise it stays as written. Without this "388VA" was taken as the
+        // engine model (letters + digits) and the real engine code of the row, QSNT-G2, was never read.
+        const kwOfRow = cells.map((c) => c.match(/^(\d+(?:\.\d+)?)\s*kW$/i)).filter(Boolean).map((m) => +m[1]);
+        cells.forEach((c, i) => { const m = c.match(/^(\d+(?:\.\d+)?)\s*VA$/i); if (m && kwOfRow.some((k) => Math.abs(k / +m[1] - 0.8) <= 0.01)) cells[i] = `${m[1]}kVA`; });
+        const twin = [], twinCell = (c) => { const m = c.match(/^([2-4])\s*[x×*]\s*(\S.*)$/i); return m && [m[2], m[2].replace(/\s+/g, ""), m[2].split(/\s+/)[0]].some(isCode) ? m : null; };
+        const twinRow = cells.some((c) => twinCell(c));
+        if (twinRow && TWIN_ENGINE_SUPPLIERS.includes(s.id)) cells.forEach((c, i) => { const m = twinCell(c); if (m) { twin.push({ i, units: +m[1], text: c }); cells[i] = m[2]; } });
         // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
         const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
-        // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
-        // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
-        // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
-        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×*]\s*(\S.*)$/i); /* "2*TWD1645GE" (baifa n106 TWIN, catalog-a) */ return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        // Other suppliers (tecnogen "2 x TAD1641GE", green-power "2X DC13 505A AE"): the row gives nothing, as before (tests s6-tecnogen-cyl, bang-r1).
+        if (twinRow && !twin.length) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         // A table of series ("| Power range | models | Engine | Alternator | Controller", eastern-lion: "Engine By Cummins | 22 –
         // 444 kW | 40 | 4BTA3.9-G2 | EL 274K"): the row is a family of 40 models over a range of outputs, the engine and the
         // alternator are one example of it, not the set's own parts (lech-cot-11).
@@ -1671,6 +1684,10 @@
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
         const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (bareEng) { ai = ei; ei = bareEng.engCell; }
+        // Twin cells: only the engine's is read; with the engine not on a twin cell the row stays unread as before (which code is which is not known).
+        const twinEng = twin.find((x) => x.i === ei);
+        if (twin.length && !twinEng) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        for (const x of twin) if (x.i === ai) { note(t, ti, ri, "đầu phát ghép đôi, không dựng bản ghi", x.text); ai = -1; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
@@ -1678,7 +1695,11 @@
         // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
         const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
         if (twoCodes) note(t, ti, ri, "một ô ghi hai mã", cells[ei]);
-        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        if (ei >= 0 && !twoCodes) {
+          const rec = { ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable };
+          if (twinEng) { rec.units = twinEng.units; rec.setPower = common.power; rec.power = null; rec.specs = common.specs.filter((x) => SPEC[x.key]?.scope !== "engine"); }
+          out.push(rec);
+        }
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
@@ -1939,6 +1960,9 @@
   // (supplier + n + the header titles of the two cells): the bare number of `engCell` is the engine model as written, the code
   // of `altCell` the alternator. Khoa's rule for "ZS195 / 195": no make (none looked up), no code made up ("195" stays "195").
   const BARE_ENGINE_CELLS = [{ supplierId: "zhengdian-zhengzhou", n: [107], engCell: 3, altCell: 4, code: /^\d{3,4}$/, header: "柴油机型号 | 发电机型号", why: "điều phối 21/11/2026 (S6-4)" }];
+  // Twin-engine sets read as ONE engine record carrying `units` (baifa n101–n106 TWIN, "2*TAD1355GE"; catalog-doc-4, điều phối 24/11/2026).
+  // An explicit list: tecnogen and green-power still give no record for "2 x …" cells (their own tests say so).
+  const TWIN_ENGINE_SUPPLIERS = ["baifa-power"];
   const OR_ENGINE_CELLS = [{ supplierId: "xingguang-jiangsu", n: [108], engCell: 2, altCell: 3, code: /^[A-Z\d]+或[A-Z\d]+$/, header: "柴油机型号Motor Type", why: "điều phối 21/11/2026" }];
   // "YD4KD(YD485D)" of comappower n113 / yanan-power n111 (S6-5, điều phối 21/11/2026; 4 rows, tables with no alternator column): the
   // pages do not say what the bracket means. Same rule as TWO_CODE_CELLS above (kept apart from its declaration on purpose).
