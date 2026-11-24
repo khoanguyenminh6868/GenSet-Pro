@@ -56,7 +56,9 @@ test("mingbang n125: 7 dòng Volvo TAD13xx / TAD16xx / TWD1643GE bỏ xi lanh + 
     assert.equal(spec(r, "cyl"), undefined, g); assert.equal(spec(r, "disp"), undefined, g);
     assert.equal(spec(r, "bore") != null, true, g);
   }
-  for (const g of ["MB-V68", "MB-V120", "MB-V160"]) assert.equal(spec(e.find((x) => x.genset === g), "cyl"), "4", g);
+  // MB-V160 mất cả xi lanh ở bo-o-lech-126 (TAD733GE: cyl + bore + disp); MB-V68 / MB-V120 vẫn còn xi lanh.
+  for (const g of ["MB-V68", "MB-V120"]) assert.equal(spec(e.find((x) => x.genset === g), "cyl"), "4", g);
+  assert.equal(spec(e.find((x) => x.genset === "MB-V160"), "cyl"), undefined, "MB-V160 do bo-o-lech-126");
   assert.equal(spec(e.find((x) => x.genset === "MB-V480"), "cyl"), undefined, "MB-V480 do PR #957");
 });
 

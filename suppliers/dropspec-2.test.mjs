@@ -65,7 +65,8 @@ test("mingbang n125 MB-V480: xi lanh + dung tích bỏ, đường kính × hành
   assert.equal(spec(r, "cyl"), undefined); assert.equal(spec(r, "disp"), undefined);
   assert.equal(spec(r, "bore"), "105*127");
   assert.equal(spec(e.find((x) => x.genset === "MB-V500"), "disp"), undefined);
-  assert.equal(spec(e.find((x) => x.genset === "MB-V68"), "disp"), "1.1");
+  // MB-V68 (TAD530GE, 77*81, 1.1 L) lại bị bỏ ở bo-o-lech-126 (Khoa 24/11/2026): bore + disp; MB-V120 (cùng bảng, chưa đụng) còn dung tích.
+  assert.equal(spec(e.find((x) => x.genset === "MB-V68"), "disp"), undefined);
 });
 
 test("westinpower n1064 TP880L: tốc độ 1191 bỏ; dòng điện 1299 và dung tích giữ", () => {
