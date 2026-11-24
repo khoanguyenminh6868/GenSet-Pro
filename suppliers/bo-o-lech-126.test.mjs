@@ -154,16 +154,13 @@ test("126 ca: ô lệch bị bỏ, mỗi ca đúng một dòng nguồn có thậ
   }
 });
 
-test("ca ngoài danh sách giữ số: 6LTAA9.5-G1 (depco n2509), kangwo S175M / S180M, zhengchi 12M33D1450E310 n162", () => {
+test("ca ngoài danh sách giữ số: 6LTAA9.5-G1 (depco n2509); bốn ca loại 4 đã bỏ ở bo-o-lech-4.test.mjs", () => {
   const keep = (id, n, model, ks) => {
     const rs = recs(id).filter((r) => r.n === n && r.kind === "engine" && norm(r.model) === norm(model));
     assert.ok(rs.length, `${id} ${model}`);
     for (const r of rs) for (const k of ks) assert.ok((r.specs || []).some((s) => s.key === k), `${id} ${model} mất ${k}`);
   };
   keep("depco-power", 2509, "6LTAA9.5-G1", ["cyl", "bore", "disp"]);
-  keep("kangwo-guangdong", 110, "S175M", ["disp"]);
-  keep("kangwo-guangdong", 110, "S180M", ["disp"]);
-  keep("zhengchi-power", 162, "12M33D1450E310", ["disp"]);
 });
 
 test("ca bỏ một ô giữ ô còn lại: aosif QSB5.9-G31 mất dung tích, giữ 6 xi lanh và 102x120", () => {
