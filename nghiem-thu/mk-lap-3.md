@@ -1,6 +1,13 @@
 # Ghi chú "xác nhận đời (MK)" lặp 3 lần — đường gây, quét, dọn (24/11/2026, máy KhoaMiniPC)
 
-PR nháp https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1189 (nhánh `mk-lap-3`, worktree `wt-mk-lap-3` từ origin/main 83ec53ec). Chưa merge. **Chưa ghi dữ liệu web: chờ điều phối duyệt dọn.**
+PR https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1189 (nhánh `mk-lap-3`, worktree `wt-mk-lap-3` từ origin/main 83ec53ec): ready, chưa merge.
+
+## Đã dọn web (24/11/2026 ~15:17, điều phối duyệt)
+- Bản gốc trước khi ghi: `nghiem-thu\mk-lap-3-backup\configmatch-IB2600601812.json`, `configmatch-IB2600603983.json`.
+- `node suppliers/dedupe-notes.mjs --key IB2600601812 --write` (bỏ 124 câu MK ở 62 ghi chú), `--key IB2600603983 --write` (bỏ 7 câu BMS ở 7 ghi chú); mỗi lần `{"written":1}`.
+- Quét lại toàn bộ (chỉ đọc): 18 gói, 0 gói có lặp.
+- So với backup (từng trường, script `backup.mjs --diff` ở scratchpad phiên): IB2600601812 62 trường khác, IB2600603983 7 trường khác, TẤT CẢ là chuỗi `note` ngắn đi; doc web = đúng bản backup sau `dedupeMatch`; `at` giữ nguyên.
+- Còn lại (ngoài phạm vi, KHÔNG dọn): quét chung thấy IB2600603983 có 1 chuỗi lặp mảnh "tự động khi mất lưới (AMF) theo datasheet hãng;" (có từ trước khi dọn, không phải câu MK / BMS).
 
 ## 1. Đường gây (ĐÃ XÁC NHẬN bằng bằng chứng): không phải bot, là hai phiên tính lại bằng tay
 
