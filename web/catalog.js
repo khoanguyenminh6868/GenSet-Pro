@@ -2975,20 +2975,30 @@
       [/\bdeep\s?-?sea\s?(?:DSE)?\s?-?([3-8]\d{3})(?![\d])/gi, (m) => `DSE${m[1]}`]] },
     { brand: "SmartGen", word: /\bsmart\s?gen\b|众智/i, models: [
       [/\bHGM\s?-?(\d{4}[A-Z]{0,4}(?:-4G)?)(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`],
+      // bdk-ten-tat: the only three-digit models SmartGen's own datasheet names (HGM410_HGM420_en.pdf, [smartgen 1010]). A closed list,
+      // not \d{3}: Honny writes its gensets HGM550E / HGM625E / HGM1000E, and "HGM400" is the name of the series.
+      [/\bHGM\s?-?(4(?:10|20))(?![\dA-Z])/gi, (m) => `HGM${m[1]}`],
       [/\bsmart\s?gen\s?(?:HGM)?\s?-?(\d{4}[A-Z]{0,3})(?![\dA-Z])/gi, (m) => `HGM${up(m[1])}`]] },
     { brand: "ComAp", word: /\bcomap\b/i, models: [
       // "InteliSys Gas" is a model of its own (bdk-ds-4: its datasheet is ComAp's). InteliDrive DCU (Marine / Industrial) is an ENGINE
       // controller, not a genset one: no model of its own, so its datasheet is attached to no model (điều phối 22/11/2026).
-      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains)\s?(NTC|NT|4|500|1000|200|Gas\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2][0].toUpperCase() + m[2].slice(1).toLowerCase()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
+      [/\bInteli\s?(Lite|Gen|Sys|Compact|Drive|Mains|Nano)\s?(NTC|NT|4|500|1000|200|Gas\b)?\s?(?:(?:IL-?NT\s?)?(AMF|MRS)\s?-?(\d{1,2}))?(?![\w])/gi, (m) => ["Inteli" + m[1].replace(/^./, (c) => c.toUpperCase()), m[2] ? (/^(NTC|NT|\d+)$/i.test(m[2]) ? m[2].toUpperCase() : m[2][0].toUpperCase() + m[2].slice(1).toLowerCase()) : "", m[3] ? up(m[3]) + m[4] : ""].filter(Boolean).join(" ")],
       // ComAp order codes of InteliGen NT / NTC (IG-NT GC, IG-NTC-BB...).
       [/\bIG-?(NTC?)(?![\w])/gi, (m) => `InteliGen ${m[1].toUpperCase()}`],
       [/\bIL-?NT\s?(AMF|MRS)\s?-?(\d{1,2})(?![\w])/gi, (m) => `InteliLite NT ${up(m[1])}${m[2]}`],
-      [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
+      [/\b(AMF|MRS)\s?-?(20|25|9|8|10|11|15|16|18|19|5)(?![\w])/gi, (m) => `${up(m[1])}${m[2]}`, true]] },
     { brand: "DEIF", word: /\bdeif\b/i, models: [[/\b(AGC|SGC|GC|PPU|GPC|PPM)[\s-]?(\d{1,3}[A-Z]?|1F)(?![\w])/g, (m) => `${m[1]}-${m[2]}`, true]] },
     { brand: "Datakom", word: /\bdatakom\b/i, models: [
       [/\bDKG[\s-]?(\d{3})(?![\d])/gi, (m) => `DKG-${m[1]}`],
       [/\bD-?(\d{3,4})(?![\w])/g, (m) => `D-${m[1]}`, true]] },
     { brand: "Woodward", word: /\bwoodward\b/i, models: [[/\beasy\s?gen[\s-]?(\d{3,4})(?![\d])/gi, (m) => `easYgen-${m[1]}`]] },
+    // bdk-ten-tat: SICES controllers (since the controller business went to Mecc Alte the datasheets are meccalte.com's). Only the models a saved
+    // datasheet names ([sices 1001-1004]: GC315 / GC315Plus / GC315Link, GC400 / GC400Link / GC400Mains, GC600 / GC600Mains, DST4602 Evolution);
+    // GC310, GC350 and GC500Plus have no sheet and are not read. "GC600" alone is also a genset's name (agestar GC-600(S)), so the make
+    // comes first: "SICES" or "Mecc Alte" directly before the model, not "Mecc Alte, Stamford alternator ... controller" (no bare make here).
+    { brand: "SICES", word: /\bsices\b|\bmecc\s?-?alte\s+(?=(?:GC\s?-?\d{3}|DST\s?-?4602))/i, models: [
+      [/\bGC\s?-?(315|400|600)(Plus|Link|Mains)?(?![\w])/gi, (m) => `GC${m[1]}${m[2] ? m[2][0].toUpperCase() + m[2].slice(1).toLowerCase() : ""}`, true],
+      [/\bDST\s?-?4602\s?Evolution(?![\w])/gi, () => "DST4602Evolution", true]] },
     { brand: "Harsen", word: /\bharsen\b/i, models: [] },
     { brand: "Mebay", word: /\bmebay\b/i, models: [] },
     { brand: "Lixise", word: /\blixise\b/i, models: [] },
