@@ -239,7 +239,7 @@ export function normDiff(sa, sb, a, b) {
       const has = (r) => r && sa.SN.hasValue(r);
       const kind = `${key} ${!X ? "thêm" : !Y ? "bỏ" : has(X) && !has(Y) ? "mất số" : !has(X) && has(Y) ? "có số" : JSON.stringify(X.missing) !== JSON.stringify(Y.missing) ? "đổi missing" : "đổi số / đơn vị"}`;
       kinds[kind] = (kinds[kind] || 0) + 1;
-      const brief = (r) => (r ? [r.num ?? r.count ?? (r.range && r.range.join("–")) ?? (r.dims && r.dims.join("×")) ?? (r.bore && `${r.bore.bore}×${r.bore.stroke}`) ?? r.enum ?? "", r.unit || "", r.missing?.length ? `missing ${r.missing.join(",")}` : ""].filter((t) => t !== "").join(" ") : "∅");
+      const brief = (r) => (r ? [r.num ?? r.count ?? (r.range && r.range.join("–")) ?? (r.dims && (Array.isArray(r.dims) ? r.dims.join("×") : JSON.stringify(r.dims))) ?? (r.bore && `${r.bore.bore}×${r.bore.stroke}`) ?? r.enum ?? "", r.unit || "", r.missing?.length ? `missing ${r.missing.join(",")}` : ""].filter((t) => t !== "").join(" ") : "∅");
       changes.push({ kind, o, txt: `"${(y[i] || x[i]).raw?.value ?? ""}": ${brief(X)} → ${brief(Y)}` });
     }
   }

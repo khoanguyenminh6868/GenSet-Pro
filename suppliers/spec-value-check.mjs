@@ -251,6 +251,8 @@ export function checkDocs(docs, suppliers, { readings = [] } = {}) {
     if (!rule?.relation) continue;
     const m = { model: r.u.model ?? r.key, key: r.key, supplierId: r.u.supplierId };
     const it = { value: r.value, raw: r.sp.value, src: { supplierId: r.u.supplierId, n: r.u.n ?? null, table: r.u.table ?? null, row: r.u.row ?? null } };
+    // catalog.js `unsurespec` (gia-tri-sai, Khoa 24/11/2026): shown, never scored; listed as "cần xác nhận", not "sai".
+    if (r.sp.unconfirmed) { push(r.part, r.fid, m, it, { rule: "can-xac-nhan", level: "can-xac-nhan", detail: `cần xác nhận: ${r.sp.unconfirmed.why}` }); continue; }
     if (rule.relation === "absurd" && r.absurd === false) push(r.part, r.fid, m, it, { rule: "lech-cong-suat", level: "sai", detail: `absurdOf: ${r.sp.key} "${r.sp.value}" không hợp công suất của dòng` });
     // selfCheck reads the row's first displacement: only that value is the one it contradicts.
     if (rule.relation === "geometry" && r.geo?.bad && r.value === r.geo.disp) {
@@ -285,7 +287,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const { stats, violations, noRule, dups } = runAll(all);
   console.log("trường | số giá trị | sai | chưa chuẩn | luật vi phạm");
   for (const [k, s] of Object.entries(stats)) if (s.hasRule) console.log(`${k} | ${s.values} | ${s.bad} | ${s.soft} | ${Object.entries(s.rules).map(([r, c]) => `${r} ${c}`).join(", ")}`);
-  console.log(`\nTổng: ${Object.values(stats).reduce((a, s) => a + s.values, 0)} giá trị, ${violations.filter((v) => v.level === "sai").length} sai, ${violations.filter((v) => v.level !== "sai").length} chưa chuẩn.`);
+  console.log(`\nTổng: ${Object.values(stats).reduce((a, s) => a + s.values, 0)} giá trị, ${violations.filter((v) => v.level === "sai").length} sai, ${violations.filter((v) => v.level === "chua-chuan").length} chưa chuẩn, ${violations.filter((v) => v.level === "can-xac-nhan").length} cần xác nhận.`);
   const dupN = (k) => dups.list.filter((d) => d.kind === k).length;
   console.log(`Trùng mã: ${dups.list.length} nhóm (dấu ^ / ★ cố ý tách ${dupN("dau-co-nghia")}, ngoặc (M) / (E) ${dupN("ngoac-m-e")}, còn lại ${dupN("khac")}); khoá theo NCC cùng mã (cố ý, không tính): ${dups.scoped}.`);
   console.log(`Chưa có luật (${noRule.length} trường): ${noRule.map((x) => x.field).join(", ")}`);

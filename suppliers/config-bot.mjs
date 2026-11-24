@@ -98,15 +98,16 @@ export function useNormCtx(u, rowsMap = NORM_ROWS.map) {
   return { title: u?.title || "", header: u?.header || u?.lines?.header || [], rows: rowsMap.get(`${u?.supplierId}|${u?.table}`) || u?.lines?.rows || (u?.line ? [u.line] : []) };
 }
 // What makes a normalized figure not comparable, whatever the HSMT asks; and per key, the condition the HSMT's limit is at.
-const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value"]);
+// "confirm": catalog.js `unsurespec` (gia-tri-sai, Khoa 24/11/2026: googol weight not said to be the engine's or the set's).
+const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value", "confirm"]);
 // dims / weight: open or canopied counts only when the HSMT asks one build (want.enclosure, normFig; Khoa 14/11/2026: "so").
 const NORM_NEED = { fuel: ["load"], fuel75: ["load"], fuel50: ["load"], noise: ["distance"], bore: ["bore", "stroke"] };
-const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
+const NORM_VI = { confirm: "cần xác nhận (nguồn không nói là của động cơ hay tổ máy)", unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
   load: "không ghi mức tải", distance: "không ghi khoảng cách đo", enclosure: "không ghi máy trần hay có vỏ", stroke: "không ghi hành trình", bore: "không ghi đường kính" };
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
 // want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
 export function normFig(s, ctx, want = {}) {
-  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}), ...(s.unconfirmed ? { unconfirmed: s.unconfirmed } : {}) }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
   // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
   const at100 = want.load === 100 && r.cond?.load == null;
@@ -885,7 +886,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value, ...(s.unitCell ? { unitCell: s.unitCell } : {}), ...(s.unitMissing ? { unitMissing: s.unitMissing } : {}), ...(s.unconfirmed ? { unconfirmed: s.unconfirmed } : {}) }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -6001,7 +6002,7 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     let ok = null, off = "";
     if (code === "weight") {
       const lim = oneFig(req, /(\d[\d.,]*)\s*kg\b/gi), v = numbersIn(s.value)[0];
-      if (lim != null && v != null && /kg/i.test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} kg (${s.label})`; }
+      if (lim != null && v != null && !s.unconfirmed && /kg/i.test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} kg (${s.label})`; }
     } else if (code === "dimensions") {
       const lim = mmOf(req), v = mmOf(s.value);
       if (lim && v && /mm/i.test(`${s.label} ${s.value} ${req}`)) { ok = v.every((x, i) => x <= lim[i]) ? true : v.some((x, i) => x > lim[i]) ? false : null; off = `${s.value} mm (${s.label})`; }
