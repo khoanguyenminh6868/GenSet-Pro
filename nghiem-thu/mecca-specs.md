@@ -99,3 +99,8 @@ Nhánh `specs-dung-lai`, worktree `C:\Projects\GenSet Pro\wt-specs-dung-lai`, ba
 ## Kiểm (cả nhánh)
 - verify 436 / 0 lỗi; quality --check không xấu đi; `spec-diff git:HEAD . --gate` thoát 0, đảo vai 0 → 0, bản ghi 64.290 → 64.334 (+44 = sanq 20 + koten 10 + jet 14 trước khi hoàn tác jet; số "khác 372 / cần soát tay 113" đo trước khi hoàn tác jet, gồm nenjo 105 + yongcai 12 + previa 36: chưa soát tay từng giá trị, chỉ so bản ghi bằng rec-diff).
 - `node --test` (danh sách tệp): trước hoàn tác jet 1786 / 1787, ca hỏng s9-cc-129 (jet); sau hoàn tác jet các test liên quan qua (s9-cc-129, specs-drift, cao-lai-83, mecca-specs: 13 / 13). Chưa chạy lại toàn bộ sau hoàn tác jet.
+
+## Kiểm cuối (nhánh `specs-dung-lai` sau hoàn tác jet-power; thay các số "Kiểm" ở trên)
+- verify 436 / 0 lỗi; quality --check không xấu đi; `node --test` toàn bộ suppliers 1787 / 1787.
+- `spec-diff git:c9f8a3b7 . --gate` (so với base `mecca-specs`): thoát 0; đảo vai 0 → 0; bản ghi 64.290 → 64.320 (+30 = sanq 20 + koten 10); "khác 368 / chỉ cũ 1.711 / chỉ mới 1.741" là do ghép theo vị trí bảng (nenjo / previa / yongcai đổi thứ tự bảng); "cần soát tay 93" CHƯA soát từng giá trị (các giá trị thêm của sanq / koten / yongcai). Đối chiếu nội dung dùng rec-diff từng NCC (bảng trên).
+- Số 64.334 / 113 ở phần trên là trước khi hoàn tác jet-power.
