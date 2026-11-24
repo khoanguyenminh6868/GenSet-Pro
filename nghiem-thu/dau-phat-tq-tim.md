@@ -95,3 +95,42 @@ Bẫy gặp: (1) `specs/linz-electric.json` có bảng n103–105 mà `sources/l
 - Sincro (Soga, Ý): `sogaenergyteam.com/wp-content/uploads/2026/01/INDUSTRIAL-RANGE-SINCRO.pdf`, `…/2017/12/CSA-UL-INDUSTRIAL-RANGE-SINCRO.pdf`, `…/2024/01/CHP-COMPLETE-PROGRAMME-SINCRO_2024.pdf` v.v. (công khai, 200). Ngoài phạm vi "hãng TQ"; điều phối quyết có lưu cho `sincro-soga` không.
 - Linz còn ~100 model khác (alumen, compatto, e1c / e1s / e1x13 4 cực và 2 cực) có PDF; chưa lưu vì NCC không ghi.
 - Chưa làm: C.GEN (không có NCC ghi), HGI (chỉ có bản archive.org 2017), Keliang (cần OCR).
+
+---
+
+## 7. Lượt 3 (24/11/2026, nhánh `dau-phat-tq-2` từ `origin/dau-phat-tq`, PR #1196 chưa merge)
+
+**Kết quả: Sincro lưu 13 tờ (1001–1013); Nianfeng điền website + nguồn 2; KHÔNG tạo hồ sơ hãng cho LongHong / Hengtong / Kaichen / 欣同辰 (lý do ở 7.2); kiểm nối Linz: 0/33 nối được (7.4). `verify.mjs` 0 lỗi / 436 bản ghi; `node --test suppliers/*.test.mjs` 1731/1731 đạt (đo trước khi sửa tiêu đề Sincro; chạy lại ở cuối, xem PR).**
+
+### 7.1 Sincro (`sincro-soga`, Soga S.p.A., hãng Ý) — tờ loại (a) từ `sogaenergyteam.com/wp-content/uploads/`
+NCC tổ máy trong `cn/` KHÔNG ghi mã model Sincro nào (chỉ `visa-gensets` ghi cột "Sincro" cho hai mã tổ máy GSP33TWIS3 / GSK66TWIK, không có mã đầu phát) → không có model ưu tiên; lưu theo dòng đầu phát công nghiệp có tờ riêng.
+| n | Tệp | Nội dung |
+|---|---|---|
+| 1001 | DC-ALTERNATORS-SINCRO.pdf | đầu phát DC 24/48 VDC (tiêu đề đặt "DC alternators 24 VDC \| 48 VDC": không có model) |
+| 1002, 1003 | SK160-2-POLES / SK160-4-POLES | SK160 |
+| 1004–1008 | SK225 / SK280 / SK355 / SK400-450 / SK500 | SK225 (65–140 kVA), SK280 (160–350), SK355 (400–800), SK400-450, SK500 (1875–2600 kVA) |
+| 1009–1013 | IB2 / IB4 / FB2 / FB4 / HB4 | IB2, IB4, FB2, FB4, HB4 |
+Tiêu đề `maker-datasheets` của 1001, 1004–1008 là dòng rác ("| Corrente di corto circuito…", "| E3 | IB | SK160", "AVR BL4-U"): đã sửa tay trong `datasheets/sincro-soga.json` TRƯỚC `merge-specs` (bẫy ghi ở `suppliers/CLAUDE.md` mục Datasheet hãng). Dòng bảng không đổi.
+Không lưu được (công cụ báo "chỉ 0–2 dòng thông số": catalogue nhiều model dạng bảng ghép, không phải "nhãn | giá trị"): INDUSTRIAL-RANGE, CSA-UL-INDUSTRIAL-RANGE, SSG-IP54, SINCRO-MARINE, CHP-COMPLETE-PROGRAMME_2024, PORTABLE-MOBILE, EK / EP / ER / ET / FK / FT / GK / R80 (2023/12), EA-ED, SW-SINCRO 50/60 Hz. Cần đường catalog PDF (`catalog-pdf.mjs`, dải 5001+) nếu muốn. Bỏ vì không phải đầu phát tổ máy: EV, motor, gearmotor, PMM, máy hàn ARC / WELDERS.
+`cn/sincro-soga.json` chỉ THÊM (291 dòng, 0 xoá).
+
+### 7.2 Bốn hãng: xác định từ chữ NCC ghi — KHÔNG tạo hồ sơ hãng
+| Hãng | NCC ghi ở đâu | Công ty | Kết luận |
+|---|---|---|---|
+| LongHong | `longhong-foshan`: "发电机品牌： Generator brand： \| 隆宏发电机/广东佛山发电机 LongHong generator", "发电机组制造商： … \| 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd." (42 dòng) | CHÍNH NCC (gdfsfdj.com, đã có hồ sơ `genset_oem`) | cùng pháp nhân với hồ sơ NCC; không có tờ đầu phát riêng (trang web chỉ có bảng tổ máy, đầu phát là một dòng nhãn) |
+| Hengtong 恒通 | `hengtong-jiangsu`: "品牌：扬州/恒通(标配)", "生产厂家：江苏恒通发电机制造有限公司", "型号：HTI-420 … 电机类型：无刷三相交流同步发电机" (14 trang tổ máy); trang chủ "恒通6.5-2000KW无刷发电机" | CHÍNH NCC (yzhengtong.com, `genset_oem`) | cùng pháp nhân; đọc `yzhengtong.com/?list_7/` (danh mục theo hãng / công suất / kiểu): chỉ có bảng tổ máy + trang từng tổ máy, KHÔNG có trang / PDF đầu phát riêng |
+| Kaichen | `kaichen-jiangsu`: cột "Kaichen" trong báo giá 2026-11-10 (cột đầu phát = "Kaichen") | CHÍNH NCC (kaichenpower.com, `genset_oem`) | cùng pháp nhân; không tìm thấy tờ đầu phát |
+| 欣同辰 | `hechai-changzhou`: chỉ `productLines[].alternatorMakes: ["欣同辰"]` (13 dòng), KHÔNG có tên công ty / trang / địa danh nào | không xác định | Tìm "欣同辰 发电机 无刷" ra toàn bài chung (patent, baike), 0 trang hãng → không tạo, không đoán |
+Ba hãng đầu là thương hiệu đầu phát của chính NCC tổ máy: tạo hồ sơ `alternator_maker` riêng là nhân đôi cùng một công ty, cùng website, cùng nguồn, không thêm tờ nào. Điều phối / Khoa còn muốn nhân đôi (để tờ gắn qua `alternatorMakes`) thì báo, phiên sau làm; thông số đầu phát của ba NCC này đã nằm ở bảng của hồ sơ NCC (14 / 15 / 24 bảng).
+Mục (c): không có mục nào (không tìm được trang thứ ba ghi thông số đầu phát riêng của các hãng này).
+
+### 7.3 Nianfeng (`nianfeng-fujian`)
+Điền `website: "https://www.zgnfmotor.com/"`. Chứng minh: lưu `https://www.zgnfmotor.com/about.html` thành nguồn 2 (`fetch-source.mjs`, hạng A) có câu "年丰（福建）电机有限公司" (= NIANFENG (FUJIAN) MOTOR CO., LTD.) và "年丰系福建省大型发电机制造企业，坐落于“中国中小电机之都”，专业研发制造陆用/船用发电机、高压发电机、永磁发电机". Trang about không ghi tên tiếng Anh, năm thành lập hay "Fu'an" (khớp tên theo dịch 年丰 / 福建 / 电机 / 有限公司, không có dòng nào ghi trùng chữ). Cũng sửa ghi chú `missing` (hết "chưa có website"). PDF catalogue trên `thefastfile.com` vẫn 403: không đụng.
+
+### 7.4 Kiểm nối tờ Linz ↔ khoá model NCC ghi (đo bằng `modelFacts` / `factsFor`, không sửa code)
+Script: `…\scratchpad\linz-noi.mjs`, `linz-diag2.mjs`.
+- **0 / 33 tờ hãng (n1001–1033) được gắn cho khoá nào**, kể cả ba model NCC ghi (PRO18S C/4, PRO18L G/4, PRO22S D/4): `factsFor(facts,"alternator", model)` = 0 dòng.
+- Hai nguyên nhân độc lập:
+  1. **Catalog (build từ cả 436 hồ sơ) không có đầu phát PRO\* nào** (3.045 đầu phát, 0 khoá PRO\*): NCC (energy-gruppi n2001) chỉ nêu "Linz PRO18S C/4" trong dòng liệt kê, không phải dòng bảng có công suất + đầu phát → `isPart` sai → `modelFacts` bỏ tờ.
+  2. **`titleModelKeys` tách tiêu đề ở khoảng trắng**: "Datasheet: ALTERNATOR PRO18L G/4" → khoá ["PRO18L", "G/4"] (hai mã), "Datasheet: PRO18S C/4" cũng hai mã → `models.length !== 1` → bỏ. Đo catalog GIẢ chứa đủ 33 khoá `PRO18LG/4`…: vẫn nối 0/33. (Chữ ALTERNATOR không phải nguyên nhân: nó không là mã, `isCode` false.) Chỉ model không có khoảng trắng bên trong (UCI274F, TAL-A46) mới nối được.
+- Muốn nối cần sửa code (ngoài PR này): cho `titleModelKeys` nhận tên model có khoảng trắng khi chuỗi ghép là khoá có trong `partKeys`, và đưa model Linz vào catalog (dòng bảng của NCC / hoặc catalog nhận khoá từ tờ hãng).
