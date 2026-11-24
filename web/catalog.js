@@ -306,7 +306,9 @@
     // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
     // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
     // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
-    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/. Also a container size (longkai, previa "20FT",
+    // "40HQ", "20GP") and shengfeng's frequency cell "60HZ?".
+    if (/^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i.test(s) || /^\d{2}\s*hz\?$/i.test(s)) return false;
     if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
@@ -324,7 +326,10 @@
   const freqIn = (raw, labelOnly = false) => {
     // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
     // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
-    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
+    // "Dual-band 50/60HZ" (awt-aiweite n102), "50/60 Hz" nêu cả hai tần số: cùng nguyên tắc, trước đây chỉ "60HZ" khớp nên thành 60 Hz.
+    // Chỉ bỏ cặp, nhãn "Frequency: 50" của chính tờ vẫn đọc được. Số sát chữ / số trước nó là một phần của mã ("GB-D60-50HZ": 60 kVA, 50 Hz).
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ")
+      .replace(/(?<![\p{L}\p{N}.])(?:50\s*[\/／&~–-]\s*60|60\s*[\/／&~–-]\s*50)\s*hz(?![\p{L}\p{N}])/giu, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
@@ -1972,6 +1977,18 @@
     "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
     "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
     "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+    // ma-dong-co-trung PR 3: one code on two keys, the bracket form and the bare form. Listed only when no figure of the two keys
+    // disagrees and the row's genset power lies in the bare key's range. What "(3B)", "(3D)" mean is not read: the row keeps
+    // them in its own words. Not listed: zc-power "186FA(E)", "192F(E)" (compression), "1100F(E)" (power); a bare figure in brackets.
+    "12V4000G14F(3B)=12V4000G14F", "12V4000G14S(3B)=12V4000G14S", "12V4000G24F(3B)=12V4000G24F", "12V4000G24S(3B)=12V4000G24S",
+    "16V4000G14F(3B)=16V4000G14F", "16V4000G14S(3B)=16V4000G14S", "16V4000G24F(3B)=16V4000G24F", "16V4000G24S(3B)=16V4000G24S",
+    "20V4000G14F(3B)=20V4000G14F", "20V4000G14S(3B)=20V4000G14S", "20V4000G24F(3B)=20V4000G24F", "20V4000G24S(3B)=20V4000G24S",
+    "20V4000G34F(3B)=20V4000G34F", "20V4000G44S(3B)=20V4000G44S",
+    "12V4000G74F(3D)=12V4000G74F", "12V4000G74S(3D)=12V4000G74S", "12V4000G84F(3D)=12V4000G84F", "12V4000G84S(3D)=12V4000G84S",
+    "16V4000G74F(3D)=16V4000G74F", "16V4000G74S(3D)=16V4000G74S", "16V4000G84F(3D)=16V4000G84F",
+    "20V4000G64F(3D)=20V4000G64F", "20V4000G64S(3D)=20V4000G64S", "20V4000G74F(3D)=20V4000G74F", "20V4000G74S(3D)=20V4000G74S",
+    "20V4000G84F(3D)=20V4000G84F", "20V4000G94S(3D)=20V4000G94S",
+    // Khoa 24/11/2026: the six Cummins "(M)" codes (4BTA3.9-G2, 6BT5.9-G2, KTA19-G3, KTA19-G4, KTA38-G, NTA855-G2) stay on their own keys.
   ];
   let engineCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
@@ -2182,6 +2199,15 @@
     { supplierId: "bdadl-shanghai", n: 134, genset: "BDA-V360", line: "| BDA-V360 | 360/400 | 沃尔沃奔达 | TAD1345GE-B | 6 | 16.1 | 35 | ≤210 | 3200*1100*1800 | 3300", act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,1 L (số của TAD1642GE) cho Volvo Penta TAD1345GE-B (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" },
     ...[[113, "瑞典沃尔沃"], [140, "沃尔沃遍达"], [141, "瑞典沃尔沃"]].map(([n, mk]) => (
       { supplierId: "liangzi-yangzhou", n, genset: "LZ- V360", line: `| LZ- V360 | 360/450 | ${mk} | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | 3200*1100*1200 | 3100 | 详细参数`, act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" })),
+    // `unitspec` (kw-hp-sua, Khoa 24/11/2026 "làm như em đề xuất"): the label says "(kW/Hp)" but the cell holds ONE figure (or "507/580",
+    // not an HP / kW pair), so the unit is not written by the source: the spec stays, flagged `unitMissing`; spec-norm reads it with
+    // no unit (`missing: unit`), never as kW. Explicit rows, NOT a rule "kW/Hp one figure = kW" (the other 44 one-figure cells stay kW).
+    ...[["20V4000G63", "ET-3750", 143, "| ET-3750 | 2200 | 2750 | 2400 | 3000 | 20V4000G63 | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |", "3311"],
+      ["20V4000G63L", "ET-3250", 143, "| ET-3250 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |", "2590"],
+      ["20V4000G63L", "ET-3438", 143, "| ET-3438 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 2590 | 20.V | TBA | 8300*2950*2550 | 21000 |", "2590"],
+      ["20V4000G63L", "ET-4000", 143, "| ET-4000 | 2400 | 3000 | 2600 | 3250 | 20V4000G63L | 3311 | 20.V | TBA | 8300*2950*2550 | 21000 |", "3311"],
+      ["K19-DM", "EC-450M6", 145, "| EC-450M6 | 450 | 563 | K19-DM | 507/580 | 6.L | 19 | 3360x1100x2480 | 3520 |", "507/580"]].map(([, genset, n, line, from]) => (
+      { supplierId: "ettes-power", n, genset, line, act: "unitspec", keys: ["engPower"], from, khoa: "Khoa 24/11/2026", why: "ô \"(kW/Hp)\" không ghi đơn vị của số này (không phải cặp kW / HP): đánh dấu thiếu đơn vị, cần xác nhận, không đọc là kW" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -2194,7 +2220,11 @@
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
       else if (x.act === "dropspec") out.push({ ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) });
-      else if (x.act === "fixspec") {
+      else if (x.act === "unitspec") {
+        // Only a spec whose value is word for word `from` (the source changed → read as before).
+        const specs = (o.specs || []).map((sp) => (x.keys.includes(sp.key) && String(sp.value).trim() === x.from ? { ...sp, unitMissing: { why: x.why, khoa: x.khoa } } : sp));
+        out.push({ ...o, specs });
+      } else if (x.act === "fixspec") {
         // Replace only a spec whose value is word for word the source's `from`; any other value (the source changed) is left as read.
         const fixed = [];
         const specs = (o.specs || []).map((sp) => {

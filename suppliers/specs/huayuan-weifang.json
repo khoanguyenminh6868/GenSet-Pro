@@ -39,8 +39,17 @@
    "| HY 364P | 396 | 434 | 2506A-E15TAG1 | 3050 * 1150 * 1800 | 3150",
    "| HY 400P | 435 | 478 | 2506A-E15TAG2 | 3480 * 1200 * 2000 | 3910",
    "| HY 480P | 522 | 574 | 2806A-E18TAG1A | 3550 * 1580 * 2100 | 4430",
-   "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430",
-   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）",
+   "| HY 520P | 565 | 609 | 2806A-E18TAG2 | 3550 * 1580 * 2100 | 4430"
+  ]
+ },
+ {
+  "n": 102,
+  "url": "http://en.wf-hy.com/product/Generator/Perkins/0830/156.html",
+  "title": "Standby generator set - Perkins series Generator Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 主要功率(KW) | 备用功率(KW) | 康明斯型号 | 外形尺寸(MM) | 重量（KGS）"
+  ],
+  "rows": [
    "| HY 20C | 20 | 22 | 4B3.9-G2 | 1680 * 730 * 1100 | 715",
    "| HY 30C | 30 | 33 | 4BT3.9-G2 | 1800 * 730 * 1100 | 880",
    "| HY 50C | 50 | 55 | 4BTA3.9-G2 | 1900 * 740 * 1200 | 900",
@@ -331,6 +340,24 @@
    "| HY380GF | 380 | 418 | BF8M1015CP | PRP | 448 | 493 | 1500 | 水冷 | 3400×1815×1990",
    "| HY400GF | 400 | - | BF8M1015C | LTP | 459 | - | 1500 | 水冷 | 3400×1815×1990",
    "| HY420GF | 420 | - | BF8M1015CP | LTP | 490 | - | 1500 | 水冷 | 3400×1815×1990"
+  ]
+ },
+ {
+  "n": 113,
+  "url": "http://en.wf-hy.com/product/Generator/Exp/0830/133.html",
+  "title": "Weichai, Hua Chai and MWM series Deutsch generator sets - Export , Water Pump Set - Weifang Huayuan Diesel Engine manufacture Co.,Ltd.",
+  "header": [
+   "| 机组型号 | 柴油机型号 | 额定功率 | 外形尺寸 (mm) | 净重 （Kg）",
+   "| 备用 | 常用",
+   "| L | W | H"
+  ],
+  "rows": [
+   "| HY500GF | TBD604BL6 | 500 | 450 | 4470 | 1505 | 2156 | 5500",
+   "| HY550GF | TBD604BL6 | 550 | 500 | 4470 | 1505 | 2156 | 5800",
+   "| HY660GF | TBD620L6 | 660 | 600 | 4470 | 1505 | 2156 | 6000",
+   "| HY880GF | TBD620V8 | 880 | 800 | 4830 | 1716 | 2316 | 7500",
+   "| HY1320GF | TBD620V12 | 1320 | 1200 | 4850 | 1700 | 2200 | 8000",
+   "| HY1760GF | TBD620V16 | 1760 | 1600 | 5300 | 1700 | 2300 | 9500"
   ]
  },
  {

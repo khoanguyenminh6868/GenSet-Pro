@@ -55,8 +55,17 @@
    "| WDPG-P2000 | 1600 | 2000 | 1800 | 2250 | 4016-61TRG2 | 16 | E |",
    "| WDPG-P2200 | 1760 | 2200 | 1936 | 2420 | 4016-61TRG3 | 16 | E |",
    "| WDPG-P2250 | 1800 | 2250 | 2000 | 2500 | 4016-61TRG3 | 16 | E |",
-   "| | | | | | | | |",
-   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD",
+   "| | | | | | | | |"
+  ]
+ },
+ {
+  "n": 101,
+  "url": "http://worldpowergen.com/Home/ProdDetail/1",
+  "title": "Power Range - FUZHOU WORLD POWER GENERATION CO.,LTD",
+  "header": [
+   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+  ],
+  "rows": [
    "| WDPG-P9 | 7 | 9 | 8 | 10 | 403D-11G1 | 3 | M |",
    "| WDPG-P9 | 7 | 9 | 8 | 10 | 403D-11G | 3 | M |",
    "| WDPG-P13 | 10 | 13 | 11 | 14 | 403D-15G1 | 3 | M |",
@@ -264,8 +273,17 @@
    "| WDPG-CQ1250 | 1000 | 1250 | 1100 | 1375 | QSK38-G5 | 12 | E |",
    "| WDPG-C1250 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 16 | E |",
    "| WDPG-C1375 | 1100 | 1375 | 1200 | 1500 | KTA50-G8 | 16 | E |",
-   "| WDPG-C1500 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 16 | E |",
-   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD",
+   "| WDPG-C1500 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 16 | E |"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "http://worldpowergen.com/Home/ProdDetail/2",
+  "title": "Power Engine - FUZHOU WORLD POWER GENERATION CO.,LTD",
+  "header": [
+   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+  ],
+  "rows": [
    "| WDPG-C250 | 200 | 250 | 220 | 275 | NT855-GA | 6 | E |",
    "| WDPG-C275 | 220 | 275 | 240 | 300 | NTA855-G1A | 6 | E |",
    "| WDPG-C313 | 250 | 313 | 275 | 344 | MTAA11-G3 | 6 | E |",
@@ -404,8 +422,17 @@
    "| WDPG-DS638 | 510 | 638 | 560 | 700 | DP180LB | 10 | E |",
    "| WDPG-DS650 | 520 | 650 | 572 | 715 | P222FE | 12 | E |",
    "| WDPG-DS688 | 550 | 688 | 605 | 756 | DP222LB | 12 | E |",
-   "| WDPG-DS750 | 600 | 750 | 660 | 825 | DP222LC | 12 | E |",
-   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD",
+   "| WDPG-DS750 | 600 | 750 | 660 | 825 | DP222LC | 12 | E |"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "http://worldpowergen.com/Home/ProdDetail/2",
+  "title": "Power Engine - FUZHOU WORLD POWER GENERATION CO.,LTD",
+  "header": [
+   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+  ],
+  "rows": [
    "| WDPG-C250 | 200 | 250 | 220 | 275 | NT855-GA | 6 | E |",
    "| WDPG-C275 | 220 | 275 | 240 | 300 | NTA855-G1A | 6 | E |",
    "| WDPG-C313 | 250 | 313 | 275 | 344 | MTAA11-G3 | 6 | E |",
@@ -572,8 +599,17 @@
    "| WDPG-C1000 | 800 | 1000 | 880 | 1100 | KTA38-G5 | 12 | E |",
    "| WDPG-C1250 | 1000 | 1250 | 1100 | 1375 | KTA50-G3 | 16 | E |",
    "| WDPG-C1375 | 1100 | 1375 | 1200 | 1500 | KTA50-G8 | 16 | E |",
-   "| WDPG-C1500 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 16 | E |",
-   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD",
+   "| WDPG-C1500 | 1200 | 1500 | 1320 | 1650 | KTA50-GS8 | 16 | E |"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "http://worldpowergen.com/Home/ProdDetail/3",
+  "title": "Power Range - FUZHOU WORLD POWER GENERATION CO.,LTD",
+  "header": [
+   "| MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD"
+  ],
+  "rows": [
    "| WDPG-C250 | 200 | 250 | 220 | 275 | NT855-GA | 6 | E |",
    "| WDPG-C275 | 220 | 275 | 240 | 300 | NTA855-G1A | 6 | E |",
    "| WDPG-C313 | 250 | 313 | 275 | 344 | MTAA11-G3 | 6 | E |",

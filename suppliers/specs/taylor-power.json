@@ -61,8 +61,28 @@
    "| TGS40 kW: 40 Engine: PSI, 4.3L, V-6, 4-Cycle Download Spec | TGS40 | 40 | PSI, 4.3L, V-6, 4-Cycle | Download",
    "| TGS60 kW: 60 Engine: PSI, 5.7L, V-8, 4-Cycle Download Spec | TGS60 | 60 | PSI, 5.7L, V-8, 4-Cycle | Download",
    "| TGS100 kW: 100 Engine: PSI, 5.7L, Turbocharged V-8, 4-Cycle Download Spec | TGS100 | 100 | PSI, 5.7L, Turbocharged V-8, 4-Cycle | Download",
-   "| TGS150 kW: 150 Engine: PSI, 8.8L, Turbocharged V-8, 4-Cycle Download Spec | TGS150 | 150 | PSI, 8.8L, Turbocharged V-8, 4-Cycle | Download",
-   "| TGS80 kW: 80 Engine: PSI, 5.7L, Turbocharged V-8, 4-Cycle Download Spec | TGS80 | 80 | PSI, 5.7L, Turbocharged V-8, 4-Cycle | Download",
+   "| TGS150 kW: 150 Engine: PSI, 8.8L, Turbocharged V-8, 4-Cycle Download Spec | TGS150 | 150 | PSI, 8.8L, Turbocharged V-8, 4-Cycle | Download"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.taylorpowergenerators.com/generators/streamline-series",
+  "title": "Streamline Generators | Efficient Standby Power | Taylor Power Systems",
+  "header": [
+   "| | Model | Model | kW | Engine | Spec Sheet"
+  ],
+  "rows": [
+   "| TGS80 kW: 80 Engine: PSI, 5.7L, Turbocharged V-8, 4-Cycle Download Spec | TGS80 | 80 | PSI, 5.7L, Turbocharged V-8, 4-Cycle | Download"
+  ]
+ },
+ {
+  "n": 103,
+  "url": "https://www.taylorpowergenerators.com/generators/streamline-series",
+  "title": "Streamline Generators | Efficient Standby Power | Taylor Power Systems",
+  "header": [
+   "| | Model | Model | kW | Engine | Spec Sheet"
+  ],
+  "rows": [
    "| TDS55 kW: 55 Engine: Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS55 | 55 | Perkins, 1104D-44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
    "| TDS60 kW: 60 Engine: Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS60 | 60 | Perkins, 1104D-E44TG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
    "| TDS80 kW: 80 Engine: Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 Download Spec | TDS80 | 80 | Perkins, 1104D-E44TAG1, 4.4L Turbocharged Inline 4-Cylinder, Tier 3 | Download",
@@ -108,7 +128,17 @@
    "| TD1250 kW: 1250 Engine: Mitsubishi, S12R-Y2PTAW-1, 49.03L Turbocharged V-12, Tier 2 Download Spec | TD1250 | 1250 | Mitsubishi, S12R-Y2PTAW-1, 49.03L Turbocharged V-12, Tier 2 | Download",
    "| TD1500 kW: 1500 Engine: Perkins, 5012C-E46TAG6, 45.84L Quad Turbocharged V-12, Tier 2 Download Spec | TD1500 | 1500 | Perkins, 5012C-E46TAG6, 45.84L Quad Turbocharged V-12, Tier 2 | Download",
    "| TD1600 kW: 1600 Engine: Mitsubishi, S16R-Y2PTAW-1, 65.37L Turbocharged V-12, Tier 2 Download Spec | TD1600 | 1600 | Mitsubishi, S16R-Y2PTAW-1, 65.37L Turbocharged V-12, Tier 2 | Download",
-   "| TD2000 kW: 2000 Engine: Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 Download Spec | TD2000 | 2000 | Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 | Download",
+   "| TD2000 kW: 2000 Engine: Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 Download Spec | TD2000 | 2000 | Mitsubishi, S16R-Y2PTAW2-1, 65.37L Turbocharged V-12, Tier 2 | Download"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.taylorpowergenerators.com/generators/select-series",
+  "title": "Select Series Generators | Heavy-Duty Standby Power | Taylor Power Systems",
+  "header": [
+   "| | Model | Model | kW | Engine | Spec Sheet"
+  ],
+  "rows": [
    "| TG40 kW: 40 Engine: GM, 4.3L, Natural Aspirated V-6 Download Spec | TG40 | 40 | GM, 4.3L, Natural Aspirated V-6 | Download",
    "| TG60 kW: 60 Engine: GM, 5.7L, Natural Aspirated V-8 Download Spec | TG60 | 60 | GM, 5.7L, Natural Aspirated V-8 | Download",
    "| TG100 kW: 100 Engine: GM, 5.7L, Turbocharged, Air Cooled V-8 Download Spec | TG100 | 100 | GM, 5.7L, Turbocharged, Air Cooled V-8 | Download",
@@ -123,7 +153,17 @@
    "| TG650 kW: 650 Engine: PSI, 31.8L, Charged Cooled Forced Induction 12-Cylinder Download Spec | TG650 | 650 | PSI, 31.8L, Charged Cooled Forced Induction 12-Cylinder | Download",
    "| TG800 kW: 800 Engine: PSI, 39.2L, Charged Cooled Forced Induction 12-Cylinder Download Spec | TG800 | 800 | PSI, 39.2L, Charged Cooled Forced Induction 12-Cylinder | Download",
    "| TG1000 kW: 1000 Engine: PSI, 52.3L, Turbocharged V-16 4-Cycle Download Spec | TG1000 | 1000 | PSI, 52.3L, Turbocharged V-16 4-Cycle | Download",
-   "| TG1250 kW: 1500 Engine: PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle Download Spec | TG1250 | 1500 | PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle | Download",
+   "| TG1250 kW: 1500 Engine: PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle Download Spec | TG1250 | 1500 | PSI, 5012C-E46TAG6, 52.3L, Turbocharged V-16 4-Cycle | Download"
+  ]
+ },
+ {
+  "n": 104,
+  "url": "https://www.taylorpowergenerators.com/generators/select-series",
+  "title": "Select Series Generators | Heavy-Duty Standby Power | Taylor Power Systems",
+  "header": [
+   "| | Model | Model | kW | Engine | Spec Sheet"
+  ],
+  "rows": [
    "| TG80 kW: 80 Engine: GM, 5.7L, Turbocharged V-8 Download Spec | TG80 | 80 | GM, 5.7L, Turbocharged V-8 | Download"
   ]
  }

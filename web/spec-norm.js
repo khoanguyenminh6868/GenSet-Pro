@@ -493,7 +493,19 @@
     const slash = lu.match(/k\s*w\s*\/\s*(hp|ps|rpm|r\b|r\/min|转)/i);
     const vs = V.match(/^\s*(\d+(?:[.,]\d+)?)\s*(kw|kwm|hp|ps)?\s*\/\s*(\d+(?:[.,]\d+)?)\s*(hp|ps|rpm|r\/min|转|r)?\s*$/i);
     const vRates = [...V.matchAll(/(\d+(?:[.,]\d+)?)\s*(kwm?|hp|ps)\b\s*(prp|prime|cop|esp|standby|ltp)/gi)];
-    if (vRates.length >= 2) {
+    // "Rated Power/Speed(kw/hp/rpm) | 41/56/1500" (ricardo-weifang, kw-hp-sua Khoa 24/11/2026): the label names the triple, and
+    // HP / kW lies in 1.30-1.37 (1 kW = 1.341 HP, 1.36 metric): kW, HP, rpm. Any other ratio stays "ambiguous" as before.
+    const t3 = /k\s*w\s*\/\s*hp\s*\/\s*(rpm|r\/min)/i.test(lu) ? V.match(/^\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)\s*$/) : null;
+    const t3n = t3 ? [numOf(t3[1]), numOf(t3[2]), numOf(t3[3])] : null;
+    if (spec.unitMissing) {
+      // catalog.js ROW_EXCEPTIONS `unitspec`: the source writes no unit for this figure, so none is read (never kW).
+      const ns = [...V.matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => numOf(m[0]));
+      if (!ns.length || ns.some((x) => x.amb)) return miss(r, "number");
+      if (ns.length === 1) r.num = ns[0].n; else r.options = ns.map((x) => x.n);
+      r.unit = null;
+    } else if (t3n && !t3n.some((x) => x.amb) && t3n[0].n > 0 && t3n[1].n / t3n[0].n >= 1.30 && t3n[1].n / t3n[0].n <= 1.37) {
+      r.num = t3n[0].n; r.unit = "kW"; r.cond.hp = t3n[1].n; r.cond.rpm = t3n[2].n;
+    } else if (vRates.length >= 2) {
       r.unit = uniq(vRates.map((m) => m[2].toLowerCase())).length === 1 ? (/^kw/i.test(vRates[0][2]) ? "kW" : vRates[0][2].toLowerCase() === "hp" ? "hp" : "PS") : null;
       r.options = vRates.map((m) => numOf(m[1]).n);
       r.cond.ratings = vRates.map((m) => ratingsIn(m[3])[0] || null);
