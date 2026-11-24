@@ -1,0 +1,182 @@
+## phân loại (49637 dòng)
+58	1 pha / column
+91	1 pha / model
+44	1 pha / page
+24	1 pha / segment
+950	3 pha / column
+1418	3 pha / header
+211	3 pha / segment
+46841	không kết luận
+## giá trị cột pha
+76	acepow-fuan	3	3
+20	aj-power	1	Single Phase
+115	aj-power	3	Three Phase
+467	elitech-power	3	3-Phase
+15	superwatt-swt	1	1-phase
+18	superwatt-swt	3	3-phase
+23	welland-power	1	1
+274	welland-power	3	3
+## căn cứ dự phòng theo NCC (135)
+16	acepow-fuan	tên trang ghi Single Phase
+24	ade-power	tên trang ghi Single Phase
+85	agg-fuzhou	tên model đuôi -1P
+5	kachai-hangzhou	tên model đuôi -1P
+1	voltgent	tên model đuôi -1P
+4	yongcai-elecmama	tên trang ghi Single Phase
+## danh sách căn cứ dự phòng
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-10	YD480D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-12	YD4KD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-13	YND485D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-16	YSD490D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-19	Y490D-P	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-20	Y495D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-24	Y4100D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-25	Y4102D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-30	Y4102ZD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-30	Y4105D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-38	Y4102ZLD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-44	Y4105ZLD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-50	YD4EZLD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-60	Y4110ZLD	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-7	YD380D	1000KVA Single Phase 75KW Portable Electric Power Generator
+acepow-fuan	tên trang ghi Single Phase	n136	APYD-9	YD385D	1000KVA Single Phase 75KW Portable Electric Power Generator
+ade-power	tên trang ghi Single Phase	n2017		403A-11G1	ADE Perkins AP8D5-1P | 8 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2018		4M06G2D0/S	ADE Baudouin AB8D5-1P | 8 kVA 50Hz Single Phase Silent Diesel Generato
+ade-power	tên trang ghi Single Phase	n2020		404A-22G1	ADE Perkins AP15D5-1P | 15 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2022		404A-22G1	ADE Perkins AP18D5-1P | 18 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2030		X3.3-G1	Cummins C33D5 1ph | 28 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2031		1103A-33TG1	ADE Perkins AP40D5-1P | 40 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2050		1103A-33TG2	ADE Perkins AP50D5-1P | 50 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2051		1104A-44TG1	ADE Perkins AP60D5-1P | 60 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2053		1104A-44TG2	ADE Perkins AP75D5-1P | 75 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2057		1104C-44TAG2	ADE Perkins AP90D5-1P | 90 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2058		4M10G6D0/S	ADE Baudouin AB90D5-1P | 90 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2119		403A-15G1	ADE Perkins AP11D5-1P | 11 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2120		4M06G2D0/S	ADE Baudouin AB12D5-1P | 12 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2121		X2.5-G2	Cummins C17D5 1ph | 13 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2122		4M06G2D0/S	ADE Baudouin AB14D5-1P | 14 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2124		4M06G20/5	ADE Baudouin AB16D5-1P | 16 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2126		X2.5-G2	Cummins C22D5 1ph | 17 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2133		X3.3-G1	Cummins C38D5 1ph | 30 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2178		X2.5-G2	Cummins C28D5 1ph | 22 kVA 50Hz Single Phase Silent Diesel Generator
+ade-power	tên trang ghi Single Phase	n2179		1103A-33G	ADE Perkins AP25D5-1P | 25 kVA 50Hz Single Phase Silent Diesel Generat
+ade-power	tên trang ghi Single Phase	n2180		4M06G6D0/S	ADE Baudouin AB30D5-1P | 30 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2196		4M06G50/5	ADE Baudouin AB40D5-1P | 40 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2199		4M10G2D0/S	ADE Baudouin AB55D5-1P | 55 kVA 50Hz Single Phase Silent Diesel Genera
+ade-power	tên trang ghi Single Phase	n2223		4M10G4D0/S	ADE Baudouin AB70D5-1P | 70 kVA 50Hz Single Phase Silent Diesel Genera
+agg-fuzhou	tên model đuôi -1P	n103	AF13D5-1P	AF2270-23D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF17D6-1P	AF2270-28D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF18D5-1P	AF2540-29D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF22D5-1P	AF2540-35D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF26D6-1P	AF2540-38D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF27D5-1P	AF2540-39D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF35D6-1P	AF3860-53D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AF40D6-1P	AF3860-61D	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS13D5-1P	AS2300-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS17D6-1P	AS2300-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS18D5-1P	AS2700-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS22D5-1P	AS3000-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS22D6-1P	AS2700-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS26D6-1P	AS3000-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS27D5-1P	AS3200-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS35D6-1P	AS3200-G21	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n103	AS40D6-1P	AS3200-G21A	小型：10-300 kVA-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF13D5-1P	AF2270-23D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF17D6-1P	AF2270-28D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF18D5-1P	AF2540-29D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF22D5-1P	AF2540-35D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF26D6-1P	AF2540-38D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF27D5-1P	AF2540-39D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF35D6-1P	AF3860-53D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AF40D6-1P	AF3860-61D	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS13D5-1P	AS2300-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS17D6-1P	AS2300-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS18D5-1P	AS2700-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS22D5-1P	AS3000-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS22D6-1P	AS2700-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS26D6-1P	AS3000-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS27D5-1P	AS3200-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS35D6-1P	AS3200-G21	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n104	AS40D6-1P	AS3200-G21A	AGG-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU100D6-1P	6BT5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU120D6-1P	6BTA5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU132D6-1P	6BTAA5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU150D6-1P	6BTAA5.9-G12	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU160D6-1P	6CTA8.3-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU176D6-1P	6CTA8.3-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU200D6-1P	6CTAA8.3-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU220D6-1P	6CTAA8.3-G9	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU220D6-1P	6LTAA8.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU220D6-1P	NT855-GA	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU240D6-1P	6LTAA8.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU24D5-1P	4B3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU250D6-1P	6LTAA8.9-G3	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU26D5-1P	4BT3.9-G1	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU26D5A-1P	4B3.9-G12	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU28D6-1P	4B3.9-G12	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU28D6-1P	4B3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU35D5-1P	4BT3.9-G1	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU35D5A-1P	4BT3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU40D6-1P	4BT3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU44D5-1P	4BTA3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU44D6-1P	4BT3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU53D5-1P	4BTA3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU53D6-1P	4BTA3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU60D6-1P	4BTA3.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU70D5-1P	4BTA3.9-G11	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU80D5-1P	4BTA3.9-G13	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU80D5-1P	6BT5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU80D6-1P	4BTA3.9-G11	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU88D5-1P	4BTAA3.9-G3	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU88D5-1P	6BT5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n105	CU88D6-1P	6BT5.9-G2	康明斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P100D6-1P	1104C-44TAG2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P10D6-1P	403D-11G	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P11D5-1P	403A-15G1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P13D5-1P	403A-15G2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P13D6-1P	403D-15G	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P15D6-1P	403A-15G2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P18D5-1P	404A-22G1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P20D6-1P	404D-22G	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P26D5-1P	1103A-33G	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P30D6-1P	1103A-33G	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P40D5-1P	1103A-33TG1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P44D6-1P	1103A-33TG1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P50D5-1P	1103A-33TG2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P55D5-1P	1104A-44TG1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P60D6-1P	1103A-33TG2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P66D6-1P	1104A-44TG1	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P70D5-1P	1104A-44TG2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P80D6-1P	1104A-44TG2	帕金斯-德塔
+agg-fuzhou	tên model đuôi -1P	n106	P8D5-1P	403A-11G1	帕金斯-德塔
+kachai-hangzhou	tên model đuôi -1P	n2001	C24M6-1P	4B3.9-G11	Genset (Cummins) 60HZ 1-Phase
+kachai-hangzhou	tên model đuôi -1P	n2001	C28D6-1P	4B3.9-G2	Genset (Cummins) 60HZ 1-Phase
+kachai-hangzhou	tên model đuôi -1P	n2001	C32D6-1P	4B3.9-G12	Genset (Cummins) 60HZ 1-Phase
+kachai-hangzhou	tên model đuôi -1P	n2001	C40D6-1P	4BT3.9-G2	Genset (Cummins) 60HZ 1-Phase
+kachai-hangzhou	tên model đuôi -1P	n2001	C60D6-1P	4BTA3.9-G2	Genset (Cummins) 60HZ 1-Phase
+voltgent	tên model đuôi -1P	n101	P2500-1P	4016-61TRG3X	Diesel Backup Power Generator
+yongcai-elecmama	tên trang ghi Single Phase	n143		N485D	Single Phase 8.6kw Quanchai Diesel Generator | Yangzhou Yongcai Machin
+yongcai-elecmama	tên trang ghi Single Phase	n143		QC380D	Single Phase 8.6kw Quanchai Diesel Generator | Yangzhou Yongcai Machin
+yongcai-elecmama	tên trang ghi Single Phase	n143		QC385D	Single Phase 8.6kw Quanchai Diesel Generator | Yangzhou Yongcai Machin
+yongcai-elecmama	tên trang ghi Single Phase	n143		QC480D	Single Phase 8.6kw Quanchai Diesel Generator | Yangzhou Yongcai Machin
+## mọi dòng có 1P trong tên (106)
+85	agg-fuzhou	1 pha / model
+5	kachai-hangzhou	1 pha / model
+15	superwatt-swt	1 pha / column
+1	voltgent	1 pha / model
+## 1P mà kết luận khác dự phòng
+superwatt-swt	1 pha / column	1-phase	SK16.5-1P	D1703-BG
+superwatt-swt	1 pha / column	1-phase	SK16.5X-1P	V1505-BG
+superwatt-swt	1 pha / column	1-phase	SK25-1P	V2003-T-BG
+superwatt-swt	1 pha / column	1-phase	SK30X-1P	V2003-T-BG
+superwatt-swt	1 pha / column	1-phase	SK8.3-1P	D1105-BG
+superwatt-swt	1 pha / column	1-phase	SK8.8X-1P	D1105-BG
+superwatt-swt	1 pha / column	1-phase	SP11X-1P	403D-11G
+superwatt-swt	1 pha / column	1-phase	SP11X-1P	403D-11G
+superwatt-swt	1 pha / column	1-phase	SP17-1P	403A-15G2
+superwatt-swt	1 pha / column	1-phase	SP17X-1P	403D-15G
+superwatt-swt	1 pha / column	1-phase	SP17X-1P	403D-15G
+superwatt-swt	1 pha / column	1-phase	SP19X-1P	403A-15G2
+superwatt-swt	1 pha / column	1-phase	SP22-1P	404A-22G1
+superwatt-swt	1 pha / column	1-phase	SP34X-1P	404D-22TG
+superwatt-swt	1 pha / column	1-phase	SP34X-1P	404D-22TG
