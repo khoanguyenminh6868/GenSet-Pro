@@ -100,7 +100,7 @@
     if (r.action === "login") return ["Đăng nhập / mở ứng dụng", d.device || ""];
     if (r.action === "upload") return ["Tải tệp lên", [d.key ? `Mã: ${d.key}` : "", (d.files || []).join(", ")].filter(Boolean).join(" · ")];
     if (r.action === "ai") return [`Gọi AI (${d.tier || "default"}${d.images ? `, ${d.images} ảnh` : ""})`, d.ask ? `“${d.ask}…”` : ""];
-    if (r.coll === "synclog") return [`Sync theo lịch${d.slot ? ` (${d.slot.slice(-5)})` : ""}`, d.summary || ""];
+    if (r.coll === "synclog") return [`Sync theo lịch${/^Sync lỗi/.test(d.summary || "") ? " LỖI" : ""}${d.slot ? ` (${d.slot.slice(-5)})` : ""}`, d.summary || ""];
     const what = LOG_COLL[r.coll] || r.coll;
     let title = `${LOG_OP[r.action] || r.action} ${what}`;
     const keys = d.keys || [];

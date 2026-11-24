@@ -304,6 +304,7 @@ const UNIT = [["amf", /applications in 1 HW:\s*AMF\b|\bAMF\s+(?:unit|controller|
   ["start", /applications in 1 HW:\s*MRS\b|automatic start module|auto start control module|remote\W+start\W+unit/i]];
 // "HGM6110N/6110NC/6110CAN:" → HGM6110N, HGM6110NC, HGM6110CAN.
 const COLON = /^\W*((?:HGM|DSE)\s?\d{4}[A-Z]*)((?:\/\d{4}[A-Z]*)*)\s*:\s*(.*)$/i;
+const MULTI_MODE = new Set(["AGC4", "AGC200"]);
 export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
   const votes = new Map(), vote = (m, k) => { const key = ctlKey(m); if (key && k) votes.set(key, new Set([...(votes.get(key) || []), k])); };
   for (const s of suppliers || []) {
@@ -312,6 +313,8 @@ export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
       const rows = (t.rows || []).map((l) => String(l || "")), lines = [String(t.title || ""), ...rows], own = new Map();
       // (a)
       for (const l of lines) {
+        // A cross-reference names another document, it does not say what the model is ("refer to HGM9500 Synchronization Plan List").
+        if (/\brefer to\b/i.test(l)) continue;
         const hits = [];
         for (const m of [...new Set(modelsIn(l))]) { let i = -1; while ((i = l.toUpperCase().indexOf(m.toUpperCase(), i + 1)) >= 0) hits.push({ m, i, e: i + m.length }); }
         hits.sort((a, b) => a.i - b.i).forEach((h, j) => { const k = SEG(l.slice(h.e, j + 1 < hits.length ? hits[j + 1].i : l.length)); if (k) own.set(ctlKey(h.m), new Set([...(own.get(ctlKey(h.m)) || []), k])); });
@@ -331,7 +334,8 @@ export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
       // 3500XT): the whole table's kind for each of them. A model of the title the lines above did not tell apart takes it
       // too when its sibling models got a kind (bdk-ds-3: easYgen-1700 beside 1400 / 1600 / 1800, whose sheet says "easYgen-1000
       // Series of AMF genset controllers"; the 1700 line itself names no kind).
-      const titled = [...new Set(modelsIn(t.title).map(ctlKey))].filter((m) => !own.has(m));
+      // DEIF AGC-4 / AGC-200 are multi-mode platforms: one feature line of the manual ("island paralleling") is not their kind.
+      const titled = [...new Set(modelsIn(t.title).map(ctlKey))].filter((m) => !own.has(m) && !MULTI_MODE.has(m));
       if (titled.length && (own.size === 0 || titled.length < new Set(modelsIn(t.title).map(ctlKey)).size)) {
         const ks = new Set(UNIT.filter(([, re]) => rows.some((l) => re.test(l))).map(([k]) => k));
         if (ks.size) for (const m of titled) own.set(m, ks);

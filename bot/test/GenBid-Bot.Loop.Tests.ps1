@@ -98,10 +98,11 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             Assert-Eq $s.Jobs[0].slot '2026-11-14 10:10'
             Assert-Eq $s.Schedule '2026-11-14 10:10'
         }
-        It 'mỗi mốc chỉ chạy một lần: vòng sau trong cùng mốc không tạo lượt mới (nhớ qua khởi động lại bot)' {
+        It 'mốc đã Sync thành công chỉ chạy một lần: vòng sau trong cùng mốc không tạo lượt mới (nhớ qua khởi động lại bot)' {
             $r = New-BotRoot
             Run-Loop $r (At '10:30') | Out-Null
             Remove-Item "$r/.genbid-bot-jobs/*" -Force
+            Write-BotJson "$r/.genbid-bot-schedule.json" @{ last = '2026-11-14 10:10' }   # genbid-sync.js xoá retry khi thành công
             $s = Run-Loop $r (At '10:45')
             Assert-Eq @($s.Jobs).Count 0
         }
@@ -143,6 +144,38 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             Assert-Match $s.Log 'đã chạy ở máy khác'
             $global:Pend.schedule = @{ last = '2026-11-14 10:10' }
             Assert-Eq (Run-Loop (New-BotRoot) (At '17:00')).Jobs[0].slot '2026-11-14 14:10'
+        }
+        It 'Sync lỗi (còn retry): chưa tới giờ thì chờ, tới giờ chạy lại mốc đó, tối đa 3 lượt (Khoa 24/11)' {
+            $r = New-BotRoot
+            Run-Loop $r (At '10:10') | Out-Null
+            Remove-Item "$r/.genbid-bot-jobs/*" -Force
+            Assert-Eq @((Run-Loop $r (At '10:20')).Jobs).Count 0
+            $s = Run-Loop $r (At '10:26')
+            Assert-Eq $s.Jobs[0].slot '2026-11-14 10:10'
+            Assert-Match $s.Log 'lượt 2/3'
+            Remove-Item "$r/.genbid-bot-jobs/*" -Force
+            Assert-Eq (Run-Loop $r (At '10:42')).Jobs[0].slot '2026-11-14 10:10'
+            Remove-Item "$r/.genbid-bot-jobs/*" -Force
+            Assert-Eq @((Run-Loop $r (At '11:30')).Jobs).Count 0
+        }
+        It 'Sync thành công (genbid-sync.js đã xoá retry): không chạy lại mốc' {
+            $r = New-BotRoot
+            Write-BotJson "$r/.genbid-bot-schedule.json" @{ last = '2026-11-14 10:10' }
+            Assert-Eq @((Run-Loop $r (At '11:00')).Jobs).Count 0
+        }
+        It 'đang chờ thử lại mà máy khác đã Sync được mốc: không chạy, bỏ retry' {
+            $r = New-BotRoot
+            Write-BotJson "$r/.genbid-bot-schedule.json" @{ last = '2026-11-14 10:10'; retry = @{ slot = '2026-11-14 10:10'; tries = 1; at = '2026-11-14T10:25:00' } }
+            $global:Pend.schedule = @{ last = '2026-11-14 10:10' }
+            Assert-Eq @((Run-Loop $r (At '11:00')).Jobs).Count 0
+            Assert-Null (Get-Content -Raw -Encoding UTF8 "$r/.genbid-bot-schedule.json" | ConvertFrom-Json).retry
+        }
+        It 'sang mốc mới thì retry của mốc cũ không còn tác dụng, chạy mốc mới từ lượt 1' {
+            $r = New-BotRoot
+            Write-BotJson "$r/.genbid-bot-schedule.json" @{ last = '2026-11-14 10:10'; retry = @{ slot = '2026-11-14 10:10'; tries = 3; at = '2026-11-14T10:25:00' } }
+            $s = Run-Loop $r (At '14:10')
+            Assert-Eq $s.Jobs[0].slot '2026-11-14 14:10'
+            Assert-Eq (Get-Content -Raw -Encoding UTF8 "$r/.genbid-bot-schedule.json" | ConvertFrom-Json).retry.tries 1
         }
         It '-ScheduleDays giới hạn ngày: thứ Bảy không nằm trong danh sách thì không Sync' {
             $s = Run-Loop (New-BotRoot) (At '11:00') @{ ScheduleDays = @('Monday') }

@@ -132,6 +132,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .dot{width:7px;height:7px;border-radius:50%;background:var(--dim);display:inline-block}
 .dot.live{background:var(--mint);box-shadow:0 0 0 3px var(--mint-soft)}
 .dot.busy{background:var(--violet);box-shadow:0 0 0 3px var(--violet-soft)}
+.dot.fail{background:var(--rose);box-shadow:0 0 0 3px var(--rose-soft)}
 .spec{font:500 11px var(--f-mono);color:var(--dim);letter-spacing:.04em}
 
 /* KPI */
@@ -1212,6 +1213,7 @@ async function initDb() {
   db.doc("feed/current").onSnapshot((snap) => { state.feed = snap.exists ? snap.data() : null; state.loaded.feed = true; renderAll(); rememberSeen(); },
     () => { state.loaded.feed = true; renderAll(); });
   db.doc("syncreq/current").onSnapshot((snap) => { state.syncreq = snap.exists ? snap.data() : null; renderTop(); }, () => {});
+  db.doc("synclog/current").onSnapshot((snap) => { state.synclog = snap.exists ? snap.data() : null; renderTop(); }, () => {});
   db.doc("botstatus/current").onSnapshot((snap) => { state.botstatus = snap.exists ? snap.data() : null; refreshWaits(); aiCfgRedraw(); }, () => {});
   // Chỉ lấy gói mới and Cấu hình hệ thống: the superadmin only (Khoa, 2026-11-13).
   if (isSuperadmin()) {
@@ -1313,8 +1315,11 @@ function renderTop() {
   // While syncing, the dot becomes a spinner next to the label.
   if (syncPending) { dot.className = "spin"; txt.textContent = "Đang đồng bộ"; }
   else if (state.readOnly && f?.fetchedAt) { dot.className = "dot"; txt.textContent = `Bản chỉ xem · Cập nhật ${fmtBannerDate(typeof state.readOnly === "string" ? state.readOnly : f.fetchedAt)}`; }
+  // The last scheduled Sync failed and nothing has refreshed the list since (Khoa 24/11/2026); a later good Sync clears this.
+  else if (f?.fetchedAt && state.synclog?.ok === false && Date.parse(state.synclog.doneAt) > Date.parse(f.fetchedAt)) { dot.className = "dot fail"; txt.textContent = `Sync lỗi ${fmtBannerDate(state.synclog.doneAt)} · Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else if (f?.fetchedAt) { dot.className = "dot live"; txt.textContent = `Cập nhật ${fmtBannerDate(f.fetchedAt)}`; }
   else { dot.className = "dot"; txt.textContent = state.loaded.feed ? "Chưa có dữ liệu gói thầu" : "Đang tải dữ liệu..."; }
+  txt.title = dot.className === "dot fail" ? state.synclog.summary || "" : "";
   const ready = listReady();
   const items = ready ? allTenders() : [], tenders = items.filter((t) => !isProject(t));
   const K = KPIS.map((k) => ({ ...k, n: tenders.filter(k.f).length }));
