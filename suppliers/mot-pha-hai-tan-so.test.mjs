@@ -28,6 +28,14 @@ test("phaseOf: dòng về thiết bị khác không tính, trừ dòng có nhãn
   assert.equal(phaseOf("Tủ điện: số pha 3 pha"), 3);
 });
 
+test("phaseOf: cụm mô tả cuộn dây / đại lượng theo pha không là số pha của tổ máy", () => {
+  assert.equal(phaseOf("Máy phát: Đấu dây stator: cuộn dây quấn sóng 2 nhánh song song trên 1 pha, đấu sao"), null);
+  for (const l of ["Điện trở cuộn dây mỗi pha ≤ 0,1 Ω", "Dòng điện từng pha cân bằng", "Điện áp giữa các pha 400 V", "Winding resistance per phase", "Sai lệch điện áp trên một pha ≤ 1%"]) assert.equal(phaseOf(l), null, l);
+  // Câu có cả cụm cuộn dây lẫn số pha thật vẫn đọc số pha thật.
+  assert.equal(phaseOf("Máy phát 3 pha 4 dây, cuộn dây 2 nhánh song song trên 1 pha"), 3);
+  assert.equal(phaseOf("Số pha: 1 pha; điện trở mỗi pha ≤ 0,2 Ω"), 1);
+});
+
 test("phaseOf theo từng cỡ của gói nhiều cỡ", () => {
   const t = "Máy 12 kVA/1 pha: Số pha, số dây: 1 pha 2 dây\nMáy 45 kVA/3 pha: Số pha, số dây: 3 pha 4 dây";
   const sizes = [{ cap: { value: 12, unit: "kVA" }, kva: 12 }, { cap: { value: 45, unit: "kVA" }, kva: 45 }];

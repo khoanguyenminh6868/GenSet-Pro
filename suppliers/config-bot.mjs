@@ -1030,9 +1030,13 @@ function cylLayoutsIn(text) {
 const PH3 = /(?<![\d.,])0?3\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])ba\s+pha(?![\p{L}])|three\s*-?\s*phase/iu;
 const PH1 = /(?<![\d.,])0?1\s*-?\s*(?:pha(?![\p{L}])|ph(?:ase)?(?![\p{L}]))|(?<![\p{L}])m[ộo]t\s+pha(?![\p{L}])|single\s*-?\s*phase/iu;
 const PH_AUX = /s[ạa]c|[ắa]c\s*quy|đ[ồo]ng\s*h[ồo]|hi[ểe]n\s*th[ịi]|c[ảa]m\s*bi[ếe]n|bi[ếe]n\s*(?:d[òo]ng|[áa]p)|aptomat|c[ầa]u\s*dao|m[áa]y\s*c[ắa]t|\bMCCB\b|\bMCB\b|\bACB\b|\bATS\b|r[ơo]\s*-?\s*le|[ổo]\s*c[ắa]m|\bt[ủu]\b|c[áa]p\b|qu[ạa]t|b[ơo]m|đ[èe]n|s[ấa]y|\bUPS\b|b[ảa]o\s*v[ệe]|m[ấa]t\s*pha|l[ệe]ch\s*pha|ng[ắa]n\s*m[ạa]ch|đo\s/iu;
+// Cụm mô tả cuộn dây / đại lượng theo pha ("cuộn dây … 2 nhánh song song trên 1 pha", "mỗi pha", "từng pha", "giữa các pha", "per phase")
+// không phải số pha của tổ máy (24/11/2026, IB2300059621: máy 47.000 kVA đọc thành 1 pha): bỏ cụm đó rồi mới đọc.
+const PH_PER = /(?<![\p{L}])(?:tr[êe]n|m[ỗo]i|t[ừu]ng|gi[ữu]a(?:\s+c[áa]c)?|cho\s+m[ỗo]i)\s+(?:(?:0?[13]|m[ộo]t|ba)\s*)?pha(?![\p{L}])|\b(?:per|each|between)\s+(?:(?:1|3|one|three)\s*)?phases?\b/giu;
 function phasesIn(text) {
   const seen = new Set();
-  for (const l of String(text || "").split("\n")) {
+  for (const raw of String(text || "").split("\n")) {
+    const l = raw.replace(PH_PER, " ");
     if (!/pha(?![\p{L}])|phase/iu.test(l) || (PH_AUX.test(l) && !/s[ốo]\s*pha/iu.test(l))) continue;
     if (PH3.test(l)) seen.add(3);
     if (PH1.test(l)) seen.add(1);
