@@ -231,7 +231,7 @@ export function checkDocs(docs, suppliers, { readings = [] } = {}) {
   };
   const scan = (part, m, fields) => {
     const kws = (fields.power || []).map((x) => x.value?.kw ?? (x.value?.kva != null ? x.value.kva * 0.8 : null)).filter((x) => x > 0);
-    const nonDiesel = (fields.fuel || []).length > 0;
+    const nonDiesel = (fields.fuel || []).some((x) => x.value !== "diesel");
     for (const [id, items] of Object.entries(fields)) {
       const st = stats[`${part}.${id}`];
       st.models++; st.values += items.length;

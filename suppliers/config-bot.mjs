@@ -1126,9 +1126,9 @@ export function fuelOfHsmt(text) {
   if (kinds.length === 1) return { fuel: kinds[0][0], stated: true, why: kinds[0][1] };
   return { fuel: "diesel", stated: false, why: "HSMT không nêu nhiên liệu, coi là diesel" };
 }
-// A catalog use (`u.fuel` "gas" / "gasoline" / "dual", written only when the page says it) against the fuel the HSMT asks:
+// A catalog use (`u.fuel` "gas" / "gasoline" / "dual" / "diesel", written only when the page says it; "diesel" only for man-engines n104, FUEL_PAGES) against the fuel the HSMT asks:
 // true when it is the wrong one; a use with no fuel is never wrong (empty is not diesel).
-export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas" ? useFuel === "gas" || useFuel === "dual" : want === "gasoline" ? useFuel === "gasoline" || useFuel === "dual" : false);
+export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas" ? useFuel === "gas" || useFuel === "dual" : want === "gasoline" ? useFuel === "gasoline" || useFuel === "dual" : want === "diesel" ? useFuel === "diesel" : false);
 // The frequency the HSMT binds the set to: 50 or 60 when only that one is written, null when none or both (no constraint).
 // Both include the pairs written with one "Hz" ("50 & 60hz", "50/60Hz", "50 / 60Hz", "50-60Hz", "50 hoặc 60 Hz", "50Hz-60"):
 // `\b50\s?hz\b` alone read "50 & 60hz" as 60 Hz and the rows of an engine written only at 50 Hz were ruled out (2 rows with a
@@ -2219,7 +2219,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
       // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
       // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
-      if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
+      if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : u.fuel === "diesel" ? "diesel" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
       // Dòng không tự ghi tần số (Khoa 24/11/2026, `freqVerdict`): chính dòng / mã / tờ hãng trái gói thì loại; chỉ NCC khác ghi
       // tần số kia thì giữ, gắn cần xác nhận. Dòng của cả "X" và "X^" (tach-mu-2) cùng tính.
       const hzV = hints.freq ? freqVerdict(e, u, hints.freq, { twinUses, sup, sheets: freqSheets }) : null;
@@ -3894,7 +3894,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const fh = fuelOfHsmt(technicalPart(hsmtText || ""));
       const bad = fh.fuel ? (c.suppliers || []).filter((s) => !s.unverified).map((s) => rows.get(`${s.supplierId}|${Number(s.n)}|${CAT.keyOf(s.line || "")}`)).filter((u) => fuelOff(fh.fuel, u?.fuel)) : [];
       if (bad.length) {
-        const kind = (f) => (f === "gas" ? "khí" : f === "gasoline" ? "xăng" : "xăng / khí"), want = fh.fuel === "diesel" ? "diesel" : kind(fh.fuel);
+        const kind = (f) => (f === "gas" ? "khí" : f === "gasoline" ? "xăng" : f === "diesel" ? "diesel" : "xăng / khí"), want = fh.fuel === "diesel" ? "diesel" : kind(fh.fuel);
         const u = bad[0];
         c.checks.unshift({ item: "Nhiên liệu (HSMT)", requirement: `Nhiên liệu của tổ máy: ${want} (${fh.why})`, hsmtQuote: fh.stated ? fh.why : "", offered: `Dòng bảng của ${u.supplierId} ghi ${kind(u.fuel)}`, part: "engine", level: "core", byCode: true, fuelRule: true, status: "not_met", note: `Code ghi: dòng catalog ${u.supplierId} [${u.n}] ${u.fuelWhy || ""} (mức ${u.fuelFrom || "?"}); HSMT ${fh.stated ? "nêu" : "không nêu nhiên liệu nên coi là"} ${want}.` });
       }
