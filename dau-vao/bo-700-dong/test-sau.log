@@ -7841,3 +7841,262 @@ ok 1561 - bdadl n134 BDA-V360 (TAD1345GE-B): 16.1 L (số TAD1642GE) bỏ, 6 xi 
   ---
   duration_ms: 5962.1779
   ...
+# Subtest: supexcl: chỉ on===true được tính; supdeleted: mọi doc
+ok 1562 - supexcl: chỉ on===true được tính; supdeleted: mọi doc
+  ---
+  duration_ms: 19.2908
+  ...
+# Subtest: bỏ loại trừ rồi thì NCC quay lại
+ok 1563 - bỏ loại trừ rồi thì NCC quay lại
+  ---
+  duration_ms: 0.6207
+  ...
+# Subtest: không đọc được → ok=false, danh sách rỗng
+ok 1564 - không đọc được → ok=false, danh sách rỗng
+  ---
+  duration_ms: 0.7548
+  ...
+# Subtest: gaps: danh sách đọc được → báo cáo không có cảnh báo
+ok 1565 - gaps: danh sách đọc được → báo cáo không có cảnh báo
+  ---
+  duration_ms: 285418.6956
+  ...
+# Subtest: gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+ok 1566 - gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+  ---
+  duration_ms: 184320.9484
+  ...
+# Subtest: 6M31G1000/5 trơn mượn 6 xi lanh và 149×177 (18,52 L) của khoá ^
+ok 1567 - 6M31G1000/5 trơn mượn 6 xi lanh và 149×177 (18,52 L) của khoá ^
+  ---
+  duration_ms: 458.6815
+  ...
+# Subtest: 20M33G4D3/5^ mượn 20 xi lanh của khoá trơn
+ok 1568 - 20M33G4D3/5^ mượn 20 xi lanh của khoá trơn
+  ---
+  duration_ms: 171.6581
+  ...
+# Subtest: 8M33D1012E311: khoá có số riêng giữ số riêng, không bị 12V / 31,8 của aosif kéo lại
+ok 1569 - 8M33D1012E311: khoá có số riêng giữ số riêng, không bị 12V / 31,8 của aosif kéo lại
+  ---
+  duration_ms: 263.6497
+  ...
+# Subtest: tần số tính trên dòng của cả hai khoá
+ok 1570 - tần số tính trên dòng của cả hai khoá
+  ---
+  duration_ms: 99.2521
+  ...
+# Subtest: 9.36 L của TAD1341 / 1342 / 1351GE bỏ ở mọi dòng của 6 NCC, giữ số xi lanh
+ok 1571 - 9.36 L của TAD1341 / 1342 / 1351GE bỏ ở mọi dòng của 6 NCC, giữ số xi lanh
+  ---
+  duration_ms: 2061.9234
+  ...
+# Subtest: dòng kế bên giữ: fukangsi TAD1343GE 12.78
+ok 1572 - dòng kế bên giữ: fukangsi TAD1343GE 12.78
+  ---
+  duration_ms: 521.0392
+  ...
+# Subtest: dòng không có số, tờ hãng vượt ngưỡng: loại như số của dòng
+ok 1573 - dòng không có số, tờ hãng vượt ngưỡng: loại như số của dòng
+  ---
+  duration_ms: 812.6746
+  ...
+# Subtest: đúng mức tải: 75% so với 113, không so với 156
+ok 1574 - đúng mức tải: 75% so với 113, không so với 156
+  ---
+  duration_ms: 92.905
+  ...
+# Subtest: tờ hãng bằng đúng ngưỡng: giữ dòng, không cộng điểm
+ok 1575 - tờ hãng bằng đúng ngưỡng: giữ dòng, không cộng điểm
+  ---
+  duration_ms: 55.786
+  ...
+# Subtest: dòng tự ghi số thì theo số của dòng, không theo tờ hãng
+ok 1576 - dòng tự ghi số thì theo số của dòng, không theo tờ hãng
+  ---
+  duration_ms: 124.545
+  ...
+# Subtest: tắt chuẩn hoá tiêu hao: không dùng tờ hãng
+ok 1577 - tắt chuẩn hoá tiêu hao: không dùng tờ hãng
+  ---
+  duration_ms: 18.5916
+  ...
+# Subtest: đọc ô hai lần, hai đơn vị; dung tích hai đơn vị không lấy
+ok 1578 - đọc ô hai lần, hai đơn vị; dung tích hai đơn vị không lấy
+  ---
+  duration_ms: 9.5838
+  ...
+# Subtest: đường kính thiếu hành trình, một nhãn hai giá trị: không lấy
+ok 1579 - đường kính thiếu hành trình, một nhãn hai giá trị: không lấy
+  ---
+  duration_ms: 0.9266
+  ...
+# Subtest: chỉ gắn khi tờ của chính hãng và tiêu đề ghi đúng một model
+ok 1580 - chỉ gắn khi tờ của chính hãng và tiêu đề ghi đúng một model
+  ---
+  duration_ms: 38.812
+  ...
+# Subtest: tăng áp, làm mát khí nạp, dung dịch: đạt khi tờ ghi rõ
+ok 1581 - tăng áp, làm mát khí nạp, dung dịch: đạt khi tờ ghi rõ
+  ---
+  duration_ms: 68.3377
+  ...
+# Subtest: mã aspiration chấm từ tờ, kể cả bảng có dòng tiêu đề của hãng
+ok 1582 - mã aspiration chấm từ tờ, kể cả bảng có dòng tiêu đề của hãng
+  ---
+  duration_ms: 1.6066
+  ...
+# Subtest: nạp khí không lấy từ tờ của hãng khác
+ok 1583 - nạp khí không lấy từ tờ của hãng khác
+  ---
+  duration_ms: 0.4146
+  ...
+# Subtest: mã tiêu chuẩn: phần là mã riêng, cách viết về một dạng
+ok 1584 - mã tiêu chuẩn: phần là mã riêng, cách viết về một dạng
+  ---
+  duration_ms: 4.0406
+  ...
+# Subtest: tiêu chuẩn: đủ mã thì đạt; thiếu BS 5514/1 thì vẫn cần chứng từ và nêu đúng mã thiếu
+ok 1585 - tiêu chuẩn: đủ mã thì đạt; thiếu BS 5514/1 thì vẫn cần chứng từ và nêu đúng mã thiếu
+  ---
+  duration_ms: 20.8449
+  ...
+# Subtest: AVR: yêu cầu chỉ đòi có AVR thì đạt; nêu model khác thì giữ
+ok 1586 - AVR: yêu cầu chỉ đòi có AVR thì đạt; nêu model khác thì giữ
+  ---
+  duration_ms: 3.205
+  ...
+# Subtest: tốc độ từ tờ hãng động cơ: ≤ 1500 đạt, ≤ 1450 giữ chưa rõ
+ok 1587 - tốc độ từ tờ hãng động cơ: ≤ 1500 đạt, ≤ 1450 giữ chưa rõ
+  ---
+  duration_ms: 15.964
+  ...
+# Subtest: nhiên liệu: Diesel từ tờ động cơ, ghi rõ nguồn; HSMT đòi khí thì không
+ok 1588 - nhiên liệu: Diesel từ tờ động cơ, ghi rõ nguồn; HSMT đòi khí thì không
+  ---
+  duration_ms: 0.7593
+  ...
+# Subtest: tần số: cần cả động cơ đúng v/p và đầu phát có định mức đó
+ok 1589 - tần số: cần cả động cơ đúng v/p và đầu phát có định mức đó
+  ---
+  duration_ms: 1.1312
+  ...
+# Subtest: dòng tổ máy tự ghi 1800 v/p / 60 Hz: tờ động cơ 1500 không chấm đạt tốc độ, tần số
+ok 1590 - dòng tổ máy tự ghi 1800 v/p / 60 Hz: tờ động cơ 1500 không chấm đạt tốc độ, tần số
+  ---
+  duration_ms: 2.4001
+  ...
+# Subtest: tờ động cơ ghi cả 1500 và 1800: không tự chọn tốc độ
+ok 1591 - tờ động cơ ghi cả 1500 và 1800: không tự chọn tốc độ
+  ---
+  duration_ms: 0.5323
+  ...
+# Subtest: nhóm A: kiểu động cơ, hệ thống phun đạt khi tờ ghi đủ mọi ý HSMT nêu
+ok 1592 - nhóm A: kiểu động cơ, hệ thống phun đạt khi tờ ghi đủ mọi ý HSMT nêu
+  ---
+  duration_ms: 7.3507
+  ...
+# Subtest: nhóm A: Injection System, Fuel System không vào SPECS (là cột mã riêng của nhiều bảng)
+ok 1593 - nhóm A: Injection System, Fuel System không vào SPECS (là cột mã riêng của nhiều bảng)
+  ---
+  duration_ms: 0.5269
+  ...
+# Subtest: chạy lại confirmChecks + altDocChecks giữ nguyên kết quả
+ok 1594 - chạy lại confirmChecks + altDocChecks giữ nguyên kết quả
+  ---
+  duration_ms: 1.0098
+  ...
+# Subtest: page table: the JSON given to createElement(Specifications, …)
+ok 1595 - page table: the JSON given to createElement(Specifications, …)
+  ---
+  duration_ms: 19.8236
+  ...
+# Subtest: power: a figure is written only when the page gives the same kWm, kWe and kVA
+ok 1596 - power: a figure is written only when the page gives the same kWm, kWe and kVA
+  ---
+  duration_ms: 3.2628
+  ...
+# Subtest: shared lines: bore × stroke, displacement, weight
+ok 1597 - shared lines: bore × stroke, displacement, weight
+  ---
+  duration_ms: 1.7903
+  ...
+# Subtest: fuel: models × speeds of the table, one figure per column, right column text left out
+ok 1598 - fuel: models × speeds of the table, one figure per column, right column text left out
+  ---
+  duration_ms: 2.7946
+  ...
+# Subtest: bulletin: one table per model, each figure from its source line
+ok 1599 - bulletin: one table per model, each figure from its source line
+  ---
+  duration_ms: 2.3552
+  ...
+# Subtest: traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+ok 1600 - traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+  ---
+  duration_ms: 6.5843
+  ...
+# Subtest: official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+ok 1601 - official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+  ---
+  duration_ms: 3.2135
+  ...
+# Subtest: catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+ok 1602 - catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+  ---
+  duration_ms: 24.1184
+  ...
+# Subtest: catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+ok 1603 - catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+  ---
+  duration_ms: 601.6866
+  ...
+# Subtest: recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+ok 1604 - recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+  ---
+  duration_ms: 3.1556
+  ...
+# Subtest: 90 days, then gone; the store keeps its size; forget by model
+ok 1605 - 90 days, then gone; the store keeps its size; forget by model
+  ---
+  duration_ms: 21.9517
+  ...
+# Subtest: catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+ok 1606 - catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+  ---
+  duration_ms: 2.6791
+  ...
+# Subtest: recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+ok 1607 - recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+  ---
+  duration_ms: 38.6716
+  ...
+# Subtest: runModels: the candidate rows' engines, alternators, gensets and controllers once each
+ok 1608 - runModels: the candidate rows' engines, alternators, gensets and controllers once each
+  ---
+  duration_ms: 0.7741
+  ...
+# Subtest: a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+ok 1609 - a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+  ---
+  duration_ms: 68.9313
+  ...
+# Subtest: what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+ok 1610 - what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+  ---
+  duration_ms: 8.7774
+  ...
+# Subtest: what "source": still needs the trace, not_found only, and a model the HSMT names
+ok 1611 - what "source": still needs the trace, not_found only, and a model the HSMT names
+  ---
+  duration_ms: 0.6295
+  ...
+1..1611
+# tests 1611
+# suites 0
+# pass 1610
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1249357.8104

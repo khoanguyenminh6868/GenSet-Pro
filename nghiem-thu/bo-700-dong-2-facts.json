@@ -1,0 +1,444 @@
+{
+ "catalog": {
+  "engines": [
+   6222,
+   6224
+  ],
+  "alternators": [
+   3024,
+   3026
+  ],
+  "controllers": [
+   209,
+   209
+  ],
+  "gensets": [
+   845,
+   845
+  ]
+ },
+ "factKeys": {
+  "before": 4038,
+  "after": 4038,
+  "added": [],
+  "lost": []
+ },
+ "partChanged": {
+  "controller": {
+   "keys": 29,
+   "added": 32726,
+   "lost": 0
+  }
+ },
+ "controller": [
+  {
+   "key": "controller:DKG309",
+   "before": 700,
+   "after": 2244,
+   "lost": 0,
+   "addedBySource": {
+    "datakom#1001": 1544
+   }
+  },
+  {
+   "key": "controller:DKG307",
+   "before": 700,
+   "after": 2051,
+   "lost": 0,
+   "addedBySource": {
+    "datakom#1002": 1351
+   }
+  },
+  {
+   "key": "controller:AGC150",
+   "before": 700,
+   "after": 1424,
+   "lost": 0,
+   "addedBySource": {
+    "deif#1001": 724
+   }
+  },
+  {
+   "key": "controller:AGC200",
+   "before": 700,
+   "after": 761,
+   "lost": 0,
+   "addedBySource": {
+    "deif#1002": 61
+   }
+  },
+  {
+   "key": "controller:AGC4",
+   "before": 700,
+   "after": 1589,
+   "lost": 0,
+   "addedBySource": {
+    "deif#1004": 889
+   }
+  },
+  {
+   "key": "controller:HGM6110N",
+   "before": 693,
+   "after": 1495,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 802
+   }
+  },
+  {
+   "key": "controller:HGM6120N",
+   "before": 695,
+   "after": 1194,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 499
+   }
+  },
+  {
+   "key": "controller:HGM6110NC",
+   "before": 692,
+   "after": 1191,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 499
+   }
+  },
+  {
+   "key": "controller:HGM6120NC",
+   "before": 695,
+   "after": 1194,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 499
+   }
+  },
+  {
+   "key": "controller:HGM6110CAN",
+   "before": 692,
+   "after": 1191,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 499
+   }
+  },
+  {
+   "key": "controller:HGM6120CAN",
+   "before": 693,
+   "after": 1193,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1001": 500
+   }
+  },
+  {
+   "key": "controller:HGM6110U",
+   "before": 581,
+   "after": 959,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1002": 378
+   }
+  },
+  {
+   "key": "controller:HGM6110UC",
+   "before": 592,
+   "after": 974,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1002": 382
+   }
+  },
+  {
+   "key": "controller:HGM6120U",
+   "before": 582,
+   "after": 960,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1002": 378
+   }
+  },
+  {
+   "key": "controller:HGM6120UC",
+   "before": 688,
+   "after": 1081,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1002": 393
+   }
+  },
+  {
+   "key": "controller:HGM9510",
+   "before": 699,
+   "after": 2542,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1003": 1843
+   }
+  },
+  {
+   "key": "controller:HGM9530",
+   "before": 699,
+   "after": 2415,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1004": 1716
+   }
+  },
+  {
+   "key": "controller:HGM9510N",
+   "before": 700,
+   "after": 3342,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1005": 2642
+   }
+  },
+  {
+   "key": "controller:HGM9530N",
+   "before": 694,
+   "after": 3333,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1005": 2639
+   }
+  },
+  {
+   "key": "controller:HGM9610",
+   "before": 298,
+   "after": 1793,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1006": 1495
+   }
+  },
+  {
+   "key": "controller:HGM9620",
+   "before": 683,
+   "after": 2263,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1006": 1580
+   }
+  },
+  {
+   "key": "controller:HGM7110N",
+   "before": 683,
+   "after": 1747,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1007": 1064
+   }
+  },
+  {
+   "key": "controller:HGM7120N",
+   "before": 220,
+   "after": 1284,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1007": 1064
+   }
+  },
+  {
+   "key": "controller:HGM7210",
+   "before": 700,
+   "after": 2172,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1008": 1472
+   }
+  },
+  {
+   "key": "controller:HGM7220",
+   "before": 700,
+   "after": 2171,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1008": 1471
+   }
+  },
+  {
+   "key": "controller:HGM7210CAN",
+   "before": 700,
+   "after": 2171,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1008": 1471
+   }
+  },
+  {
+   "key": "controller:HGM7220CAN",
+   "before": 700,
+   "after": 2171,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1008": 1471
+   }
+  },
+  {
+   "key": "controller:HGM4020T",
+   "before": 700,
+   "after": 1529,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1009": 829
+   }
+  },
+  {
+   "key": "controller:HGM9420N",
+   "before": 700,
+   "after": 3271,
+   "lost": 0,
+   "addedBySource": {
+    "smartgen#1011": 2571
+   }
+  }
+ ],
+ "factsFor": [
+  {
+   "model": "AGC150",
+   "before": 700,
+   "after": 1424
+  },
+  {
+   "model": "AGC200",
+   "before": 700,
+   "after": 761
+  },
+  {
+   "model": "AGC4",
+   "before": 700,
+   "after": 1589
+  },
+  {
+   "model": "DKG307",
+   "before": 700,
+   "after": 2051
+  },
+  {
+   "model": "DKG309",
+   "before": 700,
+   "after": 2244
+  },
+  {
+   "model": "HGM4020T",
+   "before": 700,
+   "after": 1529
+  },
+  {
+   "model": "HGM6110CAN",
+   "before": 692,
+   "after": 1191
+  },
+  {
+   "model": "HGM6110N",
+   "before": 693,
+   "after": 1495
+  },
+  {
+   "model": "HGM6110NC",
+   "before": 692,
+   "after": 1191
+  },
+  {
+   "model": "HGM6110U",
+   "before": 581,
+   "after": 959
+  },
+  {
+   "model": "HGM6110UC",
+   "before": 592,
+   "after": 974
+  },
+  {
+   "model": "HGM6120CAN",
+   "before": 693,
+   "after": 1193
+  },
+  {
+   "model": "HGM6120N",
+   "before": 695,
+   "after": 1194
+  },
+  {
+   "model": "HGM6120NC",
+   "before": 695,
+   "after": 1194
+  },
+  {
+   "model": "HGM6120U",
+   "before": 582,
+   "after": 960
+  },
+  {
+   "model": "HGM6120UC",
+   "before": 688,
+   "after": 1081
+  },
+  {
+   "model": "HGM7110N",
+   "before": 683,
+   "after": 1747
+  },
+  {
+   "model": "HGM7120N",
+   "before": 220,
+   "after": 1284
+  },
+  {
+   "model": "HGM7210",
+   "before": 700,
+   "after": 2172
+  },
+  {
+   "model": "HGM7210CAN",
+   "before": 700,
+   "after": 2171
+  },
+  {
+   "model": "HGM7220",
+   "before": 700,
+   "after": 2171
+  },
+  {
+   "model": "HGM7220CAN",
+   "before": 700,
+   "after": 2171
+  },
+  {
+   "model": "HGM9420N",
+   "before": 700,
+   "after": 3271
+  },
+  {
+   "model": "HGM9510",
+   "before": 1399,
+   "after": 5884
+  },
+  {
+   "model": "HGM9510N",
+   "before": 700,
+   "after": 3342
+  },
+  {
+   "model": "HGM9530",
+   "before": 1393,
+   "after": 5748
+  },
+  {
+   "model": "HGM9530N",
+   "before": 694,
+   "after": 3333
+  },
+  {
+   "model": "HGM9610",
+   "before": 298,
+   "after": 1793
+  },
+  {
+   "model": "HGM9620",
+   "before": 683,
+   "after": 2263
+  }
+ ],
+ "kinds": []
+}
