@@ -336,7 +336,18 @@
         "| LG670C | 670 | 600 | 134 | KTAA19G5 | 6L | Electronic | 18.9 |",
         "| LG738C | 738 | 675 | 140 | KTAA19G6A | 6L | Electronic | 18.9 |",
         "| LG700C | 700 | 638 | 140 | QSK19-G4 | 6L | ECM | 18.9 |",
-        "| LG750C | 750 | 688 | 151 | QSK19-G5 | 6L | ECM | 18.9 |",
+        "| LG750C | 750 | 688 | 151 | QSK19-G5 | 6L | ECM | 18.9 |"
+      ]
+    },
+    {
+      "n": 101,
+      "title": "Open type genset-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| LG850C | 850 | 775 | 154 | KT38G | 12V | Electronic | 37.8 |",
         "| LG935C | 935 | 850 | 198 | KTA38G1 | 12V | Electronic | 38.0 |",
         "| LG963C | 963 | 875 | 198 | KTA38G1 | 12V | Electronic | 38.0 |",
@@ -510,7 +521,18 @@
         "| C370 | 370 | 338 | 75 | QSL9-G5 | 6L | ECM | 8.8 |",
         "| C500 | 500 | 450 | 97.6 | QSX15-G4 | 6L | ECM | 15 |",
         "| C500 | 500 | 450 | 97.6 | QSX15-G6 | 6L | ECM | 15 |",
-        "| C625 | 625 | 569 | 117.8 | QSX15-G9 | 6L | ECM | 15 |",
+        "| C625 | 625 | 569 | 117.8 | QSX15-G9 | 6L | ECM | 15 |"
+      ]
+    },
+    {
+      "n": 104,
+      "title": "Cummins G-Drive Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| C250 | 250 | 230 | 50 | QSB7-G5 | 6L | ECM | 6.69 |",
         "| C316 | 316 | 288 | 70 | QSL9-G3 | 6L | ECM | 8.8 |",
         "| C370 | 370 | 338 | 75 | QSL9-G5 | 6L | ECM | 8.8 |",
@@ -661,7 +683,18 @@
         "| LG670C | 670 | 600 | 134 | KTAA19G5 | 6L | Electronic | 18.9 | LG670C 60 Hz.pdf",
         "| LG738C | 738 | 675 | 140 | KTAA19G6A | 6L | Electronic | 18.9 |",
         "| LG700C | 700 | 638 | 140 | QSK19-G4 | 6L | ECM | 18.9 | LG700C 60 Hz.pdf LG750C 60 Hz-1.pdf",
-        "| LG750C | 750 | 688 | 151 | QSK19-G5 | 6L | ECM | 18.9 | LG750C 60 Hz-1.pdf",
+        "| LG750C | 750 | 688 | 151 | QSK19-G5 | 6L | ECM | 18.9 | LG750C 60 Hz-1.pdf"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "Cummins Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| LG850C | 850 | 775 | 154 | KT38G | 12V | Electronic | 37.8 | LG850C 60 Hz.pdf",
         "| LG935C | 935 | 850 | 198 | KTA38G1 | 12V | Electronic | 38.0 | LG935C 60 Hz.pdf",
         "| LG963C | 963 | 875 | 198 | KTA38G1 | 12V | Electronic | 38.0 | LG963C 60 Hz.pdf",
@@ -730,7 +763,18 @@
         "| LG740DY | 740 | 675 | 150.7 | DP180LB | 10L | Electronic | 18.273 |",
         "| LG825DY | 825 | 750 | 161.7 | DP222LA | 12L | Electronic | 21.927 |",
         "| LG853DY | 852.5 | 775 | 172.7 | DP222LB | 12L | Electronic | 21.927 |",
-        "| LG900DY | 900 | 825 | 183.2 | DP222LC | 12L | Electronic | 21.927 |",
+        "| LG900DY | 900 | 825 | 183.2 | DP222LC | 12L | Electronic | 21.927 |"
+      ]
+    },
+    {
+      "n": 106,
+      "title": "Doosan Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| LG200DY | 200 | 181.3 | 41.3 | DP086TA | 6L | Electronic | 8.071 | LG200DY DP086TA UCI274F.pdf",
         "| LG225DY | 225 | 205 | 56 | DP086LA | 6L | Electronic | 8.071 | LG225DY DP086LA UCI274G.pdf",
         "| LG265DY | 265 | 240 | 56 | DP086LA | 6L | Electronic | 8.071 | LG265DY DP086LA UCI274H.pdf",
@@ -865,7 +909,18 @@
         "| LG633P | 633 | 575 | 115 | 2506A-E15TAG4 | 6L | Electronic | 15.2 |",
         "| LG688P | 688 | 625 | 127 | 2806A-E18TAG1A | 6L | Electronic | 18.13 |",
         "| LG770P | 770 | 700 | 144 | 2806A-E18TAG3 | 6L | Electronic | 18.13 |",
-        "| LG770P | 770 | 700 | 145 | 2806C-E18TAG3 | 6L | ECU | 18.13 |",
+        "| LG770P | 770 | 700 | 145 | 2806C-E18TAG3 | 6L | ECU | 18.13 |"
+      ]
+    },
+    {
+      "n": 107,
+      "title": "Perkins Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| LG825P | 825 | 750 | 177 | 4006-23TAG2A | 6L | Electronic | 22.921 | LG825P 4006-23TAG2A.pdf",
         "| LG910P | 910 | 825 | 200 | 4006-23TAG3A | 6L | Electronic | 22.921 |",
         "| LG963P | 963 | 875 | 201 | 4008TAG1 | 8L | Electronic | 30.561 |",
@@ -968,7 +1023,18 @@
         "| IV360T3 | 360 | 325 | 76.4 | C10 TE1D | 6L | ECM | 10.3 |",
         "| IV420 | 420 | 382.5 | 76.1 | C13 TE2A | 6L | ECM | 12.9 |",
         "| IV432T3 | 432 | 394 | 92.7 | C13 TE3X | 6L | ECM | 12.9 |",
-        "| IV465 | 465 | 422.5 | 98.1 | C13 TE3A | 6L | ECM | 12.9 |",
+        "| IV465 | 465 | 422.5 | 98.1 | C13 TE3A | 6L | ECM | 12.9 |"
+      ]
+    },
+    {
+      "n": 109,
+      "title": "Iveco Series-Fujian Everstrong Lega Power Equipments Co., Ltd.",
+      "header": [
+        "| Genset Specification 440/254V 60HZ | Engine Soecification | Datasheet",
+        "| Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)",
+        "| ESP | PRP"
+      ],
+      "rows": [
         "| IV795 | 795 | 725 | 160 | V20 TE1 | 6L | ECM | 20 |",
         "| IV858T2 | 858 | 780 | 160 | V20 TE2 | 6L | ECM | 20 |"
       ]

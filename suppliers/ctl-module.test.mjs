@@ -59,6 +59,10 @@ test("commWords (Q3): BMS met through Modbus / SNMP, with the note", () => {
   assert.equal(x.status, "met");
   assert.equal(x.bmsVia, "Modbus");
   assert.match(x.note, /BMS qua Modbus\/SNMP, cần NCC xác nhận/);
+  // The agent wrote the sentence itself (config-prompt.md): the code does not add it again (mk-lap-3, IB2600603983).
+  const y = { name: "BMS", item: "T: BMS", status: "met", sourceQuote: "| RS485 | 1 Modbus RTU Port", note: CM.BMS_NOTE };
+  CM.commWords(y, ctl("DSE7320"));
+  assert.equal(y.note, CM.BMS_NOTE);
 });
 
 const NAMES = ["Điều khiển từ xa qua cổng Internet/4G", "Cổng kết nối với hệ thống kiểm soát từ xa", "RS232", "RS485", "Ethernet", "BMS", "USB"];

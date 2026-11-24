@@ -576,7 +576,18 @@
         "| GD165(S) | 165 | 132 | 150 | 120 | BF6M1013EC | 32 | Mechanical | ASG274D | 3200*1130*1740 | 2020",
         "| GD193(S) | 193 | 154 | 175 | 140 | BF6M1013FCG2 | 39.4 | Electrical | ASG274E | 3200*1130*1740 | 2020",
         "| GD220(S) | 220 | 176 | 200 | 160 | BF6M1013FCG3 | 42.8 | Electrical | ASG274F | 3400*1130*1740 | 2300",
-        "| | | | | | | | | | |",
+        "| | | | | | | | | | |"
+      ]
+    },
+    {
+      "n": 105,
+      "title": "DEUTZ generator set",
+      "header": [
+        "| Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight (kg)",
+        "| ESP | PRP | Engine type | Consumption 100% | Gov",
+        "| KVA | KW | KVA | KW | L/H"
+      ],
+      "rows": [
         "| GD248(S) | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 42.7 | Electrical | ASG274J | 3600*1280*2050 | 2790",
         "| GD275(S) | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 47.4 | Electrical | ASG274K | 3400*1200*1900 | 2810",
         "| GD303(S) | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 52.2 | Electrical | ASG314C | 3400*1200*1900 | 2870",
@@ -1095,7 +1106,18 @@
         "| GD165 | 165 | 132 | 150 | 120 | BF6M1013EC | 32 | Mechanical | ASG274D | 2630*1160*1640 | 1890",
         "| GD193 | 193 | 154 | 175 | 140 | BF6M1013FCG2 | 39.4 | Electrical | ASG274E | 2760*1190*1740 | 1930",
         "| GD220 | 220 | 176 | 200 | 160 | BF6M1013FCG3 | 42.8 | Electrical | ASG274F | 2900*1330*1760 | 2180",
-        "| | | | | | | | | | |",
+        "| | | | | | | | | | |"
+      ]
+    },
+    {
+      "n": 116,
+      "title": "DEUTZ generator set",
+      "header": [
+        "| Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight (kg)",
+        "| ESP | PRP | Engine type | Consumption 100% | Gov",
+        "| KVA | KW | KVA | KW | L/H"
+      ],
+      "rows": [
         "| GD248 | 248 | 198 | 225 | 180 | BF6M1015-LA GA | 42.7 | Electrical | ASG274J | 3400*1080*1850 | 2590",
         "| GD275 | 275 | 220 | 250 | 200 | BF6M1015C-LA G1A | 47.4 | Electrical | ASG274K | 3200*1100*1700 | 2610",
         "| GD303 | 303 | 242 | 275 | 220 | BF6M1015C-LA G2A | 52.2 | Electrical | ASG314C | 3300*1160*1800 | 2670",

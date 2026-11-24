@@ -306,7 +306,9 @@
     // heading + figure (baifa "4 months" = delivery time was read as the engine of the SCANIA rows; tecgen "7 Days",
     // "1500 Hours"; wartsila "22 bar"; byc "6,500 lbs"; cameo "4 Wheels"; elitech "30kKVA"; victory "18KW22.5KVA";
     // yingtai "Tire 2" for Tier 2; camda "IEC 60034 Standard"; man-engines "Combustion 3", "Efficiency 2"). Khoa
-    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/.
+    // 24/11/2026 (engine-key-junk): the list is closed and tested over cn/. Also a container size (longkai, previa "20FT",
+    // "40HQ", "20GP") and shengfeng's frequency cell "60HZ?".
+    if (/^(?:20|40|45)\s*(?:ft|gp|hq|hc)[*x]?$/i.test(s) || /^\d{2}\s*hz\?$/i.test(s)) return false;
     if (/^\d[\d.,]*\s*(?:months?|mths?|years?|yrs?|days?|weeks?|wks?|hours?|hrs?|bar|psi|lbs?|wheels?)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*k\s*(?:kva|kw)$/i.test(s) || /^\d+(?:[.,]\d+)?\s*kw\s*\d+(?:[.,]\d+)?\s*kva$/i.test(s) || /^(?:tire|tier)\s?\d$/i.test(s) || /\bstandard$/i.test(s) || /^(?:combustion|efficiency|mechanical)\s\d{1,2}$/i.test(s)) return false;
     if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
     // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
@@ -324,7 +326,10 @@
   const freqIn = (raw, labelOnly = false) => {
     // "1500/1800 RPM SWITCHABLE" (baifa n104, tiêu đề cột của bảng 50 Hz) nêu cả hai tốc độ: không cho tần số nào. Trước đây
     // chỉ "1800 RPM" khớp nên cả bảng thành 60 Hz và luật `freq` loại oan dòng 50 Hz của NCC khác cùng động cơ.
-    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ");
+    // "Dual-band 50/60HZ" (awt-aiweite n102), "50/60 Hz" nêu cả hai tần số: cùng nguyên tắc, trước đây chỉ "60HZ" khớp nên thành 60 Hz.
+    // Chỉ bỏ cặp, nhãn "Frequency: 50" của chính tờ vẫn đọc được. Số sát chữ / số trước nó là một phần của mã ("GB-D60-50HZ": 60 kVA, 50 Hz).
+    const text = String(raw).replace(/\b(?:1500\s*\/\s*1800|1800\s*\/\s*1500)\s*(?:rpm|r\/min)/gi, " ")
+      .replace(/(?<![\p{L}\p{N}.])(?:50\s*[\/／&~–-]\s*60|60\s*[\/／&~–-]\s*50)\s*hz(?![\p{L}\p{N}])/giu, " ");
     // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
     // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
     const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
@@ -1972,6 +1977,18 @@
     "4BTA3.9-G2 (QC50/60E)=4BTA3.9-G2", "4BTA3.9-G2 (QC58/67E)=4BTA3.9-G2", "4BTA3.9-G2(G45E1)=4BTA3.9-G2", "4BTA3.9-G2(G52E1)=4BTA3.9-G2", "6BT5.9-G1(G75M1)=6BT5.9-G1",
     "6BT5.9-G2 (QC86/100E)=6BT5.9-G2", "6BT5.9-G2 (QC96/115E)=6BT5.9-G2", "6BT5.9-G2(G75E1)=6BT5.9-G2", "6BT5.9-G2(G84E1)=6BT5.9-G2", "6BTA5.9-G2(G75E1)=6BTA5.9-G2",
     "PHF4056ZD1(R1J01)=PHF4056ZD1", "PHF4075ZLD1(R4J01)=PHF4075ZLD1", "PHF6084ZD1(R1J01)=PHF6084ZD1", "PHF6100ZLD1(R1J01)=PHF6100ZLD1", "PHF6110ZLD1(R2J01)=PHF6110ZLD1", "PHF6132ZLD1(R4J01)=PHF6132ZLD1",
+    // ma-dong-co-trung PR 3: one code on two keys, the bracket form and the bare form. Listed only when no figure of the two keys
+    // disagrees and the row's genset power lies in the bare key's range. What "(3B)", "(3D)" mean is not read: the row keeps
+    // them in its own words. Not listed: zc-power "186FA(E)", "192F(E)" (compression), "1100F(E)" (power); a bare figure in brackets.
+    "12V4000G14F(3B)=12V4000G14F", "12V4000G14S(3B)=12V4000G14S", "12V4000G24F(3B)=12V4000G24F", "12V4000G24S(3B)=12V4000G24S",
+    "16V4000G14F(3B)=16V4000G14F", "16V4000G14S(3B)=16V4000G14S", "16V4000G24F(3B)=16V4000G24F", "16V4000G24S(3B)=16V4000G24S",
+    "20V4000G14F(3B)=20V4000G14F", "20V4000G14S(3B)=20V4000G14S", "20V4000G24F(3B)=20V4000G24F", "20V4000G24S(3B)=20V4000G24S",
+    "20V4000G34F(3B)=20V4000G34F", "20V4000G44S(3B)=20V4000G44S",
+    "12V4000G74F(3D)=12V4000G74F", "12V4000G74S(3D)=12V4000G74S", "12V4000G84F(3D)=12V4000G84F", "12V4000G84S(3D)=12V4000G84S",
+    "16V4000G74F(3D)=16V4000G74F", "16V4000G74S(3D)=16V4000G74S", "16V4000G84F(3D)=16V4000G84F",
+    "20V4000G64F(3D)=20V4000G64F", "20V4000G64S(3D)=20V4000G64S", "20V4000G74F(3D)=20V4000G74F", "20V4000G74S(3D)=20V4000G74S",
+    "20V4000G84F(3D)=20V4000G84F", "20V4000G94S(3D)=20V4000G94S",
+    // Khoa 24/11/2026: the six Cummins "(M)" codes (4BTA3.9-G2, 6BT5.9-G2, KTA19-G3, KTA19-G4, KTA38-G, NTA855-G2) stay on their own keys.
   ];
   let engineCellCodes = null; // built on first use: `keyOf` is declared further down
   function splitEngineCells(s, list, note) {
