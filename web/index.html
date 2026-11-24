@@ -1711,7 +1711,7 @@ function infoHtml(t) {
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
       ${raw(files.length ? `<div class="doclist">${files.map((f, i) => h`<div class="docrow"><span class="fn">${f.name}</span><span class="muted num small">${f.size ? (f.size / 1048576).toFixed(2) + " MB" : ""}</span>
         ${raw(f.url && (f.converted || /\.pdf$/i.test(f.name)) ? h`<button class="btn sm" data-openpdf="${i}" title="${f.converted ? "Xem (bản PDF chuyển từ tệp gốc)" : "Xem tệp"}" aria-label="${f.converted ? "Xem bản PDF" : "Xem tệp"}">${raw(PDF_SVG)}</button>` : f.url ? h`<a class="btn sm" href="#" role="button" data-dlfile="${i}" title="Tải tệp" aria-label="Tải tệp ${f.name}">${raw(DL_SVG)}</a>` : isDrawing(f) ? '<span class="chip mut">Bản vẽ, chưa xem được trên trình duyệt</span>' : "")}
-        ${raw(f.manual && !state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp tải tay này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
+        ${raw(!state.readOnly ? h`<button class="btn sm" data-pdel="${i}" title="Bỏ tệp này" aria-label="Bỏ tệp ${f.name}">${raw(TRASH_SVG)}</button>` : "")}</div>`).join("")}</div>` : '<div class="note">Hồ sơ của gói này chưa được tải về.</div>')}
       ${raw(refetchHtml(t))}
     </div>
     ${raw(competeHtml(t))}${raw(rivalsHtml(t))}`;
@@ -2374,12 +2374,15 @@ function textByFile(all) {
   for (const m of String(all).matchAll(/--- Tệp: (.+?) ---\n([\s\S]*?)(?=\n\n--- Tệp: |$)/g)) out.set(m[1], m[2]);
   return out;
 }
+// Text parts that are no file of the list (the bot's "Chương V (webform)", "Danh mục hàng hóa (Thông tin chung)") are kept:
+// only the text of a file taken off the list goes (Khoa 24/11/2026: any file of a tender can be taken off, not only uploads).
 async function saveProjectFiles(key, files, texts) {
-  const all = files.filter((f) => texts.has(f.name)).map((f) => `--- Tệp: ${f.name} ---\n${texts.get(f.name).trim()}`).join("\n\n");
-  const parts = all ? chunkText(all, 60000) : [], old = state.hsmt[key]?.textChunks || 0;
+  const cur = state.hsmt[key] || {}, gone = new Set((cur.files || []).filter((f) => !files.includes(f)).map((f) => f.name));
+  const all = [...texts].filter(([n]) => files.some((f) => f.name === n) || !gone.has(n)).map(([n, t]) => `--- Tệp: ${n} ---\n${t.trim()}`).join("\n\n");
+  const parts = all ? chunkText(all, 60000) : [], old = cur.textChunks || 0;
   for (const [i, text] of parts.entries()) if (!(await dbSet(`hsmttext/${key}_${i}`, { text }))) throw new Error("không lưu được nội dung tệp");
   for (let i = parts.length; i < old; i++) await state.db.doc(`hsmttext/${key}_${i}`).delete().catch(() => {});
-  const rec = { notifyNo: key, updatedAt: new Date().toISOString(), source: "tải tay", files, textChunks: parts.length };
+  const rec = { ...cur, notifyNo: key, updatedAt: new Date().toISOString(), source: cur.source || "tải tay", files, textChunks: parts.length };
   if (!(await dbSet("hsmt/" + key, rec))) throw new Error("không lưu được danh sách tệp");
   state.hsmt = { ...state.hsmt, [key]: rec };
 }
@@ -2412,7 +2415,7 @@ function askRemoveProjectFile(key, i) {
   const f = state.hsmt[key]?.files?.[i];
   if (!f) return;
   modal(h`<div class="row"><h2 style="flex:1">Bỏ tệp này?</h2>${raw(CLOSE_BTN)}</div>
-    <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ ${isProject(findTender(key)) ? "của dự án" : "mời thầu"}, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.</p>
+    <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ ${isProject(findTender(key)) ? "của dự án" : "mời thầu"}, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.${isProject(findTender(key)) || f.manual ? "" : " Bấm \"Lấy lại tệp\" thì bot tải lại cả danh sách từ muasamcong, kể cả tệp này."}</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="pDelOk" style="color:var(--red)">Bỏ tệp</button></div>`, (m, close) => {
     $("#pDelOk", m).addEventListener("click", async () => {
       close();
