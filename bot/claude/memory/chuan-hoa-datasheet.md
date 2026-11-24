@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: b49d0d88-7eb5-4bd3-b8c8-395854537175
-  modified: 2026-11-24T02:28:38.245Z
+  modified: 2026-11-24T02:56:39.433Z
 ---
 
 Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và cả động cơ, đầu phát, bộ điều khiển.
@@ -31,6 +31,7 @@ Khoa 24/11/2026 giao: chuẩn hoá thông số dòng máy của các NCC và c�
 - Khoa 24/11/2026 nhắc: phiên điều phối quá 30 % context mà không tự lưu + compact. Luật ở [[orchestrator-delegate-by-model]]: xong một task mà quá 30 % thì ghi sổ + bộ nhớ rồi NHỜ KHOA gõ /compact (phiên không tự compact được). Em đã ghi nhưng quên nhờ; từ nay cuối mỗi task phải nói rõ câu nhờ đó.
 - Bước 2 đã merge (#1147, `suppliers/spec-standard.mjs`, collection `specstd`, workflow chỉ `--dry`). Khoa 24/11/2026 (nguyên văn "làm HGM9510 trước xong rồi làm cả 3 như đề xuất") chốt ba điểm: (1) bản chuẩn đăng vào BẢNG RIÊNG `spec_std` của Supabase, không realtime, không trigger nhật ký (không ghi vào `docs`); bước 5 đọc qua API riêng; (2) động cơ nguồn ghi HP thì CHỈ giữ số nguồn ghi (`power_hp`), không thêm kWm quy đổi; (3) soát 275 số dưới nhãn "kW/Hp" (ettes-power…) trước khi web đọc bản chuẩn. #1148 đã bỏ trần 700 và sinh lại dữ liệu (+31.991 dòng).
 - Khoa 24/11/2026 CHỐT plan bước 5 (nguyên văn "ok, chốt plan đó. khi làm bước 5 nhớ thêm bước kiểm tra trùng và sai data"): thứ tự bước 3 → 4 → 5; bước 5 = web + Gợi ý cấu hình chỉ đọc `spec_std`, chuyển TỪNG NHÓM số (công suất, xi lanh, dung tích, tỉ số nén, tiêu hao, tần số, định mức đầu phát), mỗi nhóm đo lại top 30 trên gói lịch sử, khớp mới bỏ đường đọc cũ; xong hết thì cắt bảng thô khỏi dữ liệu đăng Supabase (bảng thô chỉ còn ở git); chấm chức năng BĐK vẫn theo dòng datasheet tới khi bước 4 đọc đủ trường BĐK. BẮT BUỘC thêm ở bước 5 một bước KIỂM TRA TRÙNG VÀ SAI DỮ LIỆU của bản chuẩn. Khoa định nghĩa (24/11/2026, nguyên văn): "trùng là trùng mã. sai là nằm ngoài dải hợp lý hoặc giá trị không đúng với thông số ví dụ ghi nhầm standby qua prime hay tỉ số nén mà ghi là kg hoặc L". Tức: trùng = trùng MÃ (cùng một mã model nằm ở nhiều bản ghi); sai = (a) giá trị ngoài dải hợp lý của trường, (b) giá trị không đúng loại thông số của trường: nhầm mức (standby ghi sang prime), nhầm đơn vị / loại đại lượng (tỉ số nén mà mang kg hoặc L). Mâu thuẫn giữa các NCC KHÔNG nằm trong định nghĩa của Khoa (em từng diễn giải thêm, bỏ). Khoa nói thêm cùng lúc (nguyên văn): "nên có bộ kiểm thử giá trị của từng thông số" → mỗi trường của `spec-fields.json` có luật kiểm giá trị riêng (diễn giải của em: dải hợp lý, đơn vị / loại đại lượng được phép, mức prime / standby), chạy trên MỌI giá trị của bản chuẩn, báo trường nào chưa có luật.
+- Soát 275 số "kW/Hp" xong (`nghiem-thu\kw-hp-275.md`: 270 kW, 1 HP, 4 không xác định). Khoa 24/11/2026 ("làm như em đề xuất"): ô ettes ET-3750 20V4000G63 `3311` KHÔNG đổi thành HP (nguồn không ghi chữ HP) mà đánh dấu thiếu đơn vị, cần xác nhận; 4 ô không xác định (20V4000G63L ×3, K19-DM `507/580`) cũng thiếu đơn vị; bộ ba ricardo đọc kW / HP / v/p theo thứ tự; KHÔNG đặt luật chung "nhãn kW/Hp một số của NCC X = kW", chỉ danh sách tường minh từng dòng.
 - Khoa: giao cho model phù hợp để hiệu quả và tiết kiệm, theo [[orchestrator-delegate-by-model]].
 - Bộ trường em đề xuất bám bộ mã yêu cầu HSMT `suppliers/reqcodes.mjs` (diễn giải của em: dữ liệu dùng để chấm HSMT nên cùng bộ mã).
 
