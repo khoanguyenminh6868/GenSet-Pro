@@ -2107,7 +2107,7 @@
   // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
   // their own codes and were NOT listed (not approved). buoc-3-p2 (điều phối 24/11/2026, brief "gạch ngang toàn chiều rộng" of
   // họ P2) lists them too: only the character changes, the rest of the cell is the source's word for word.
-  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }, ...["aosif", "jiangchai-xuzhou", "walter-yangzhou", "westinpower"].map((supplierId) => ({ supplierId, khoa: "điều phối 24/11/2026 (bước 3, họ P2): chờ Khoa xác nhận" }))];
+  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }, ...["aosif", "jiangchai-xuzhou", "walter-yangzhou", "westinpower"].map((supplierId) => ({ supplierId, khoa: "Khoa 25/11/2026 (bước 3, họ P2)" }))];
   // An engine cell naming two codes, the second shortened ("TAD1650GE(1345GE)", sanq-power n111 / n117; Khoa 21/11/2026 "A"): the page
   // does not say what the bracket means, and other suppliers give the two codes different displacements (TAD750GE 7.15 L /
   // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.
