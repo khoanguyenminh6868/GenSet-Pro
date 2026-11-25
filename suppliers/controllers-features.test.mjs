@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { featuresOfLine, controllerFeatures, ctlFeatureFields, checkCtlFeatureValues, skipOf, otherSheet, sharedManual, sheetCtx, rowFeatures, foreignSheet, BOOL_FEATURES, REVIEW_FILE } from "./controllers-features.mjs";
+import { featuresOfLine, controllerFeatures, ctlFeatureFields, checkCtlFeatureValues, skipOf, otherSheet, sharedManual, sheetCtx, rowFeatures, foreignSheet, BOOL_FEATURES, REVIEW_FILE, ansiFullLines, MAX_SETS_COND, KHOA_DROP } from "./controllers-features.mjs";
 import { standardOf } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -120,7 +120,8 @@ test("D tham số tắt, tiêu đề trang, số tổ máy có điều kiện", 
   assert.deepEqual(got("168 = exerciser off", "DKG309"), []);
   assert.deepEqual(got("InteliLite 4 AMF 20 Datasheet | 2", "INTELILITE4AMF20"), []);
   assert.deepEqual(got("AGC 150 PMS lite: For simple load sharing and power management over CANshare, for up to 256 generators and/or BTBs.", "AGC150").filter((x) => x.startsWith("max_sets")), []);
-  assert.equal(has("AGC4", "max_sets"), false);
+  // AGC-4: ba số theo điều kiện chỉ từ MAX_SETS_COND (Khoa 25/11/2026), xem test "buoc-4-g3".
+  assert.ok((FEAT.get("AGC4") || []).filter((x) => x.fid === "max_sets").every((x) => x.cond?.application));
 });
 
 test("cặp đã soát loại (controllers-features-loai.json) không cho giá trị", () => {
@@ -235,7 +236,6 @@ test("tờ của sản phẩm khác dưới tiêu đề BĐK (Part Number), HGM9
   // DSE8680 / DSE8660 MKII không nhận "8 V to 35 V" của mô-đun DSE2133 / DSE2548.
   assert.deepEqual((FEAT.get("DSE8680") || []).filter((x) => x.fid === "dc_supply").map((x) => x.src.n), [1026]);
   for (const f of ["can", "ecu_support"]) for (const m of ["HGM9310", "HGM9320"]) assert.equal(has(m, f), false);
-  assert.equal(has("AGC4", "max_sets"), false);
 });
 
 // ---------- Soát độc lập của điều phối cho PR G phần 2 (25/11/2026) ----------
@@ -278,14 +278,26 @@ test("E Datakom ECU FAIL chỉ của bản CANBUS; D 14 languages của bản c�
   }
   assert.deepEqual(vals("EASYGEN3100", "languages"), []);
 });
-test("K bảng ANSI có cột ứng dụng / biến thể (dấu ● mất) → không gán; bảng một cột vẫn đọc", () => {
-  // Bảng "Protections overview" có cột Genset / Mains / BTB (AGC 150), "AGC 212/222/…" (AGC 200), "All" (AGC-4): không gán. Còn bảng
-  // "Engine protections" của mục bộ điều khiển máy phát (không cột ứng dụng) thì đọc.
-  for (const m of ["AGC150", "AGC200", "AGC4"]) assert.ok(vals(m, "protections").every((x) => x.value === "Overspeed (ANSI 12)"), m);
-  assert.ok(!vals("AGC150", "protections").some((x) => /Reverse power|Directional/.test(x.value)));
-  assert.ok(vals("SGC420", "protections").some((x) => x.value === "Reverse power (ANSI 32R)"));
+test("K bảng ANSI có cột ứng dụng / biến thể: chỉ hàng có dấu ở MỌI cột (dòng dấu của tệp nguồn); bảng một cột vẫn đọc", () => {
+  // Bảng "Protections overview" có cột Genset / Mains / BTB (AGC 150), "AGC 212/222/…" (AGC 200), "All" (AGC-4): specTables mất dòng
+  // dấu, tệp nguồn sources/deif/<n>.md còn (buoc-4-g3, điều phối 25/11/2026). Không có nguồn (supplierId) thì không gán.
   const rows = ["| 1.5 | Protections overview", "| Protections | Alarms", "| ANSI | Operate", "| Genset* | Mains", "BTB", "| Reverse power | 3 | 32R | <200 ms"];
   assert.deepEqual(rf(rows, 5, "AGC150"), []);
+  assert.deepEqual(rf(rows, 5, "AGC150", { ctx: { presence: () => null, starOpt: () => false, ansiFull: ansiFullLines("deif", 1001) } }), ["protections=Reverse power (ANSI 32R)"]);
+  const p = (m) => vals(m, "protections").map((x) => x.value);
+  // AGC 150 "| ● | ● | ●" → có; "●" (Under-excitation 32RV) / "| ● | ●" (Vector shift 78, Directional 67) không định vị được → bỏ.
+  for (const v of ["Reverse power (ANSI 32R)", "Phase sequence error (ANSI 47)", "ROCOF df/dt (ANSI 81R)", "Overspeed (ANSI 12)"]) assert.ok(p("AGC150").includes(v), v);
+  for (const re of [/32RV/, /Vector shift/, /Directional/, /46I2|Negative sequence/, /IEC\/IEEE/]) assert.ok(!p("AGC150").some((v) => re.test(v)), String(re));
+  // AGC 200 bốn cột "| Χ | Χ | Χ | Χ" → có; Overspeed "| Χ | Χ" (2 / 4 cột) → bỏ.
+  for (const v of ["Reverse power (ANSI 32R)", "Busbar/mains unbalanced voltage (ANSI 47)", "Low battery voltage (ANSI 27DC)"]) assert.ok(p("AGC200").includes(v), v);
+  assert.ok(!p("AGC200").some((v) => /Overspeed/.test(v)));
+  // AGC-4 cột "All controllers": "●" và "| - | ●" → có; "●***" (***Not in BTB controller) và bảng chỉ cột "Genset" (Overspeed) → bỏ.
+  for (const v of ["Reverse power (ANSI 32R)", "Directional over-current (ANSI 67)", "IEC/IEEE inverse time over-current (ANSI 51)", "Phase sequence error (ANSI 47)"]) assert.ok(p("AGC4").includes(v), v);
+  assert.ok(!p("AGC4").some((v) => /Overspeed|Power-dependent/.test(v)));
+  assert.equal(p("AGC150").length + p("AGC200").length + p("AGC4").length, 23 + 20 + 23);
+  assert.ok(ansiFullLines("deif", 1004).has("| Over-voltage (according to IEC 60255-127) | 2 | 59P | <200 ms"));
+  assert.ok(!ansiFullLines("deif", 1004).has("| via current | 1/group | 51"));
+  assert.ok(vals("SGC420", "protections").some((x) => x.value === "Reverse power (ANSI 32R)"));
   // J: tên bảo vệ bị ngắt trước danh từ.
   assert.deepEqual(rf(["Functions and protections as defined by ANSI", "| Voltage controlled | 51C"], 1, "INTELIGEN1000"), []);
 });
@@ -302,4 +314,34 @@ test("M HGM7210CAN / 7220CAN: can / ecu_support chỉ từ câu '(controller wit
     assert.equal(l.length, 1, `${m} ${f}`);
     assert.ok(/controller with CAN Bus port only/.test(l[0].raw) && l[0].src.rowEnd > l[0].src.row, `${m} ${f}`);
   }
+});
+
+// ---------- buoc-4-g3: quyết định của Khoa 25/11/2026 ----------
+test("buoc-4-g3 AGC-4 max_sets 32 / 127 / 254 kèm điều kiện nguyên văn; HGM9510 operating_temp bản mới; mục để trống", () => {
+  const dse = read("deif"), src = fs.readFileSync(path.join(ROOT, "sources", "deif", "1004.md"), "utf8");
+  // Mọi mục MAX_SETS_COND: dòng có trong bảng nguồn và tệp nguồn, điều kiện là chuỗi con của dòng, số có trong dòng.
+  for (const e of MAX_SETS_COND) {
+    assert.ok(dse.specTables.some((t) => t.n === e.n && t.rows.includes(e.line)), e.line);
+    assert.ok(src.includes(e.line) && e.line.includes(e.cond) && new RegExp(`\\b${e.value}\\b`).test(e.line), e.line);
+  }
+  const ms = vals("AGC4", "max_sets").map((x) => `${x.value}|${x.cond.application}`).sort();
+  assert.deepEqual(ms, ["127|Load sharing, with bus tie breakers (CANshare)", "254|gensets and/or bus tie breakers, all controllers must have software version 6.23 or later", "32|Island power management"]);
+  // Model khác không có điều kiện: không nhận số của AGC-4, không có cond.
+  for (const [m, l] of FEAT) if (m !== "AGC4") assert.ok(l.every((x) => !x.cond), m);
+  // Bản chuẩn: ba giá trị, mỗi giá trị kèm cond; kiểm chéo nhận cond đúng, bắt cond sửa tay.
+  const docs = standardOf(MAKERS), d = docs.find((x) => x.id === "controller:AGC4");
+  assert.deepEqual(d.fields.max_sets.map((x) => x.value).sort((a, b) => a - b), [32, 127, 254]);
+  assert.ok(d.fields.max_sets.every((x) => x.cond?.application && x.raw.includes(x.cond.application)));
+  assert.deepEqual(checkCtlFeatureValues([d], MAKERS).bad, []);
+  const bad = structuredClone(d);
+  bad.fields.max_sets[0].cond.application = "Island";
+  assert.equal(checkCtlFeatureValues([bad], MAKERS).bad.length, 1);
+  // HGM9510: giữ "(-40~+70)°C" của smartgen 1003 (bảng sửa đổi "Modify the working and storage temperature ranges."), bỏ
+  // "(-25~+70)°C" của smartgen 1014. Ngoại lệ chỉ của đúng model + trường + nguồn.
+  assert.ok(fs.readFileSync(path.join(ROOT, "sources", "smartgen", "1003.md"), "utf8").includes("Modify the working and storage temperature ranges."));
+  assert.deepEqual(vals("HGM9510", "operating_temp").map((x) => `${x.src.n} ${x.value}`), ["1003 (-40~+70)°C"]);
+  assert.deepEqual(KHOA_DROP.map((e) => `${e.model} ${e.fid}`), ["HGM9510 operating_temp"]);
+  // Để trống theo Khoa (không mở lại): EASYGEN1800 prot_reverse_power / prot_earth_fault, HGM9310 / HGM9320 can / ecu_support.
+  for (const f of ["prot_reverse_power", "prot_earth_fault"]) assert.equal(has("EASYGEN1800", f), false, f);
+  for (const m of ["HGM9310", "HGM9320"]) for (const f of ["can", "ecu_support"]) assert.equal(has(m, f), false, `${m} ${f}`);
 });
