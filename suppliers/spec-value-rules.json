@@ -99,6 +99,18 @@
     "controller.ul": { "kind": "bool", "basis": "như auto_start_stop" },
     "controller.event_log": { "kind": "number", "range": [5, 100000], "int": true, "basis": "số sự kiện nhật ký đọc trong câu (\"Event log (15)\", \"up to 1000 events\"); cận trên rộng", "review": true },
     "controller.max_sets": { "kind": "number", "range": [2, 256], "int": true, "basis": "số tổ máy hoà \"up to N generators\"; nguồn thật 16-256 (DEIF AGC 150 \"up to 256 generators and/or bus tie breakers\")", "review": true },
-    "controller.front_ip": { "kind": "text", "must": "^IP[2-6][0-9]$", "basis": "mã IP mặt trước IPxx (IEC 60529), dòng nêu front / fascia / gasket" }
+    "controller.front_ip": { "kind": "text", "must": "^IP[2-6][0-9]$", "basis": "mã IP mặt trước IPxx (IEC 60529), dòng nêu front / fascia / gasket" },
+    "controller.protections": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên bảo vệ như nguồn ghi (kèm mã ANSI khi bảng hãng ghi); PR G phần 2" },
+    "controller.alarms": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên cảnh báo như nguồn ghi, chỉ dòng nguồn gắn nhãn warning (Khoa 25/11/2026 thêm trường)" },
+    "controller.display": { "kind": "text", "must": "LCD|TFT|STN|OLED|monochrom|display|px|pixel|colou?r|graphic", "basis": "kiểu / độ phân giải màn hình như nguồn ghi" },
+    "controller.languages": { "kind": "text", "must": "language|lingual|English|Chinese", "basis": "ngôn ngữ hiển thị: danh sách tiếng hoặc câu nhiều ngôn ngữ của nguồn" },
+    "controller.measure_voltage": { "kind": "text", "must": "\\d\\s*k?V(AC)?\\b|AC\\s?\\d+\\s?V", "basis": "dải / mức điện áp xoay chiều đo được, có đơn vị V (V, kV, VAC)" },
+    "controller.measure_frequency": { "kind": "text", "must": "\\d\\s*Hz", "basis": "dải tần số đo / tần số đầu vào máy phát, có đơn vị Hz, ≤ 1.000 Hz (không phải cảm biến tốc độ)" },
+    "controller.measure_current": { "kind": "text", "must": "\\d\\s*A\\b", "basis": "dải / mức dòng điện đầu vào CT, có đơn vị A" },
+    "controller.accuracy": { "kind": "text", "must": "%|±|digit", "basis": "độ chính xác đo, nêu đại lượng (nhãn, đề mục hoặc chính giá trị)" },
+    "controller.operating_temp": { "kind": "text", "must": "\\d\\s?[^\\d\\s]{0,3}\\s?C\\b", "basis": "dải nhiệt độ làm việc °C (phần °F quy đổi của nguồn bỏ)" },
+    "controller.dc_supply": { "kind": "text", "must": "\\d[^V]*V", "basis": "dải điện áp nguồn DC như nguồn ghi" },
+    "controller.dimensions": { "kind": "text", "must": "\\d+(\\.\\d+)?\\s*(mm)?\\s*(\\(\\w\\))?\\s*[x×X*]\\s*\\d+", "basis": "kích thước vỏ ba chiều, mm (phần inch quy đổi của nguồn bỏ)" },
+    "controller.io": { "kind": "io", "kinds": ["digital_in", "digital_out", "analogue_in", "analogue_out"], "count": [1, 100], "basis": "số ngõ vào / ra theo loại; chỉ ô số của chính model (cột theo tiêu đề model hoặc dòng Number ngay dưới đề mục)", "review": true }
   }
 }
