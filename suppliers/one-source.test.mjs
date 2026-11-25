@@ -24,6 +24,7 @@ const PAGES = {
     "46.2 L9 kVA 280 300",
     "Number of poles 4 poles",
     "Insulation class H",
+    "Cooling IC01",
   ].join("\n"),
   "sources/one-source/2.md": "URL: https://example.org/6m33.html\nAccessed: 2026-11-20\n\n6M33 engine Displacement 32.1 L, Cylinders 6\nCompression ratio 15.0:1\nPrime power at 1500 rpm\n",
 };
@@ -150,11 +151,12 @@ test("6. đè số của tờ hãng: fact sheet, định mức tờ hãng, thu�
 });
 
 test("6. trường không kiểm tự động được: lưu ý và makerChecked phải có", () => {
-  const poles = { ...GOOD, id: "ls-lsa462-poles", field: "poles", value: 4, quote: ["Number of poles 4 poles"], condQuote: [] };
+  // A field with no `key` in spec-fields.json (poles got one in buoc-4-c, so the tool can check it now): cooling.
+  const poles = { ...GOOD, id: "ls-lsa462-cooling", field: "cooling", value: "IC01", quote: ["Cooling IC01"], condQuote: [] };
   const r = run([poles]);
   assert.deepEqual(r.errors, []);
   assert.ok(r.warnings.some((w) => /không kiểm tự động/.test(w.msg)));
-  has(run([{ ...poles, makerChecked: [], note: "đã tìm leroy-somer.com" }]), /makerChecked rỗng: trường poles/);
+  has(run([{ ...poles, makerChecked: [], note: "đã tìm leroy-somer.com" }]), /makerChecked rỗng: trường cooling/);
   // Trường kiểm được: makerChecked rỗng cần note.
   has(run([{ ...GOOD, makerChecked: [] }]), /makerChecked rỗng thì note/);
   assert.deepEqual(run([{ ...GOOD, makerChecked: [], note: "hãng chưa có tài liệu trong repo; đã tìm leroy-somer.com" }]).errors, []);

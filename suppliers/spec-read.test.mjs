@@ -261,3 +261,37 @@ test("compr / disp / start: Chinese labels 压缩比, 排气量, 启动方式, �
   assert.equal(fits("启动方式", "电启动"), "start"); // kusing-guangzhou n2002, hengke-jiangsu n2001
   assert.equal(fits("起动方式", "电起动"), "start"); // chenxing-weifang n101
 });
+
+// PR C (buoc-4-c, 24/11/2026): alternator labels, and the labels they were wrongly taken as.
+test("alternator: poles / bearing / wires / overspeed / pitch / TIF / THF have their own key; Wires is not phase", () => {
+  for (const [l, k] of [["Poles", "poles"], ["No of Poles", "poles"], ["Pole number", "poles"], ["No.of bearings", "bearing"], ["Bearing", "bearing"],
+    ["Wires", "wires"], ["Wires:", "wires"], ["No of Leads", "wires"], ["Number of wires", "wires"], ["Overspeed: rpm", "overspeed"], ["MAXIMUM OVERSPEED", "overspeed"],
+    ["Winding Pitch", "pitch"], ["Telephone Influence Factor (TIF)", "tif"], ["电话谐波系数 THF", "thf"], ["Telephone harmonic factor (THF)", "thf"],
+    ["Cooling Air Flow", "airflow"], ["Alternator fan air flow", "airflow"]]) assert.equal(CAT.specKey(l), k, l);
+  assert.equal(CAT.specKey("Phase / Wires"), "phase"); // "3-Phase, 4-Wire" is the phase
+  assert.equal(fits("Wires", "12"), "wires");
+});
+test("alternator: poles / bearing labels of another thing, engine / radiator air flow, are not read as the alternator's", () => {
+  for (const l of ["Drive end bearing / Lubrication 驱动端轴承/润滑", "Main bearings", "Engine air flow", "Combustion Air Flow Prime", "Radiator Cooling Airflow:", "Intake air flow", "No of Pole and Phase", "Phase / Poles"])
+    assert.ok(!["poles", "bearing", "airflow"].includes(CAT.specKey(l)), l);
+});
+test("AVR: 'Voltage regulator' / 'AVR model' is the AVR type (not vreg / excit); 'Voltage regulation' stays vreg", () => {
+  for (const l of ["Voltage regulator", "Voltage regulator type", "AVR model", "AVR Model:", "AVR Type", "调压器"]) assert.equal(CAT.specKey(l), "avr", l);
+  assert.equal(CAT.specKey("AVR"), "excit"); // the bare label is mixed (SHUNT / R150 / ±3 kV): kept as before
+  assert.equal(CAT.specKey("Voltage regulation"), "vreg");
+  assert.equal(CAT.specKey("Voltage regulation, steady state"), "vreg");
+  assert.equal(CAT.specKey("Excitation system"), "excit");
+  for (const v of ["A.V.R.", "AVR (Electronic)", "MX321", "R150", "type IC", "固态"]) assert.equal(fits("Voltage regulator", v), "avr", v);
+  for (const v of ["±3 kV", "+/- 10 V DC", "Yes", "3,1", "SHUNT", "±1%"]) assert.equal(fits("AVR type", v), null, v); // not an AVR type
+  assert.equal(CAT.specKey("AVR make"), null); // a brand
+});
+test("short circuit: sustained current / capacity is `scirc`; SCR (ratio), protection and the rated-current key stay apart", () => {
+  for (const l of ["Sustained Short Circuit", "Short Circuit Capacity**", "短路电流", "短路能力", "Short circuit current"]) assert.equal(CAT.specKey(l), "scirc", l);
+  for (const l of ["Short circuit ratio", "Short Circuit Ratio (SCR)", "Short circuit protection"]) assert.notEqual(CAT.specKey(l), "scirc", l);
+  assert.notEqual(CAT.specKey("短路电流"), "current");
+  assert.equal(CAT.specKey("Rated current"), "current");
+});
+test("THF is not the THD: the telephone factors have their own keys", () => {
+  for (const l of ["电话谐波系数 THF", "THF", "Telephone Harmonic Factor"]) assert.notEqual(CAT.specKey(l), "thd", l);
+  assert.equal(CAT.specKey("Total Harmonic Distortion THD"), "thd");
+});
