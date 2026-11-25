@@ -46,6 +46,7 @@
     "engine.coolant_capacity": { "kind": "number", "range": [0.5, 5000], "units": ["L"], "kinds": ["volume"], "basis": "dữ liệu cn/ 18-510 L; dải lỏng", "review": true },
     "engine.oil_capacity": { "kind": "number", "range": [0.3, 3000], "units": ["L"], "kinds": ["volume"], "basis": "dữ liệu cn/ 0,75-520 L, 1 số 2.419 cần soát; dải lỏng", "review": true },
     "engine.speed": { "kind": "number", "range": [600, 6000], "units": ["rpm"], "kinds": ["speed", "freq"], "basis": "dữ liệu cn/ 1.000-3.600; không dùng tập RPM của absurdOf vì chặn nhầm số thật (ZS195 2000, ZS1100 2200 v/p của zhengdian n103)" },
+    "engine.ambient": { "kind": "text", "must": "\\d\\s*(m|米|meters?|metres?|°|º|℃|c\\b|deg)|\\d\\s*$", "basis": "nhiệt độ (°C) / độ cao (m) chuẩn nguồn ghi cho động cơ, bằng số; Khoa 25/11/2026 thêm" },
     "engine.emission": { "kind": "emission", "scales": ["EPA Tier", "EU Stage", "CN", "Euro", "IMO"], "basis": "danh sách { thang, mức } của spec-norm; thang thuộc QUAL của spec-norm.js hoặc trống (nguồn không ghi thang)" },
 
     "alternator.brand": { "kind": "code", "basis": "tên hãng không rỗng" },
@@ -54,6 +55,8 @@
     "alternator.ratings": { "kind": "alt_ratings", "voltage": [100, 15000], "hz": [50, 60], "phases": [1, 3], "kva": [0.5, 20000], "ratio": [0.5, 1.2], "eff": [50, 100], "basis": "kW / kVA như tổ máy; hiệu suất tờ hãng 80-97 %; standby >= continuous cùng điện áp, tần số" },
     "alternator.insulation": { "kind": "enum", "basis": "values của spec-fields.json" },
     "alternator.ip": { "kind": "text", "must": "^IP\\s?\\d{2}", "basis": "dạng IPnn" },
+    "alternator.phases": { "kind": "number", "set": [1, 3], "kinds": ["phase"], "basis": "1 hoặc 3 pha như genset.phases; chỉ dòng dưới mục đầu phát (Khoa 25/11/2026 thêm)" },
+    "alternator.ambient": { "kind": "text", "must": "\\d\\s*(°|º|℃|c\\b|deg)|\\d\\s*$", "basis": "nhiệt độ môi trường ghi bằng số (40 °C ambient); Khoa 25/11/2026 thêm" },
     "alternator.altitude": { "kind": "number", "range": [100, 6000], "units": ["m"], "kinds": ["length"], "basis": "dữ liệu cn/ ≤ 1000 m (huali n2008); dải lỏng 100-6.000 m; buoc-4-h", "review": true },
     "alternator.type": { "kind": "text", "must": "brush|self|excit|synchron|permanent|pmg|无刷|有刷|自励|励磁|同步|永磁", "basis": "phải nêu kiểu: không chổi than / tự kích / đồng bộ (ok của altType, catalog.js); buoc-4-h" },
     "alternator.excitation": { "kind": "enum", "basis": "values của spec-fields.json" },

@@ -241,6 +241,12 @@ const CASES = [
   ["altitude", "海拔要求", "≤1000 m", null, { unit: "m", num: 1000, missing: [] }], // liangdi-fujian n101
   ["altitude", "Altitude", "1000", null, { num: 1000, missing: ["unit"] }], // no unit written: not guessed
   ["altitude", "Operating altitude", "0 to 4000 m with derating", null, { missing: ["value"] }], // deif: a range with a condition
+  // alternator phases (buoc-4-h, Khoa 25/11/2026 thêm): read as the set's phase
+  ["altPhase", "Number of Phases", "3", null, { num: 3, missing: [] }], // huali-shandong n2005 (under "Alternator")
+  ["altPhase", "Phase", "3-phase", null, { num: 3, missing: [] }],
+  ["altPhase", "Phase", "Three", null, { num: 3, missing: [] }],
+  ["altPhase", "Phase", "1-Phase , 3-Phase", null, { options: [1, 3], missing: [] }],
+  ["altPhase", "Numbers of Wires", "6 Wires", null, { cond: { wires: [6] }, missing: ["value"] }],
 ];
 
 for (const [key, label, value, ctx, want] of CASES) {

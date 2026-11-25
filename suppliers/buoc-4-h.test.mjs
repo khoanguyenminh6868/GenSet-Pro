@@ -72,6 +72,32 @@ test("altitude under the 'Alternator' heading is the alternator's; in the set's 
   for (const o of recs.filter((x) => x.n !== 2005 && x.n !== 2008)) assert.equal((o.specs || []).some((s) => s.key === "altitude" || s.key === "ambient"), false, `${o.n} ${o.model}`);
 });
 
+test("altPhase (Khoa 25/11/2026 thêm): phases under 'Alternator Specifications' are the alternator's; the set's phase stays as before (fdk-energy n1001)", () => {
+  const recs = CAT.fromSupplier(sup("fdk-energy")).filter((o) => o.n === 1001);
+  assert.ok(recs.length);
+  for (const o of recs) {
+    const by = (k) => (o.specs || []).filter((s) => s.key === k).map((s) => `${s.label}=${s.value}`);
+    assert.deepEqual(by("phase"), ["Phase=Three"], o.model); // "| Phase | Three" of the set's part, unchanged
+    assert.deepEqual(by("altPhase"), ["Number of phase=3"], o.model); // under "Alternator Specifications"
+  }
+});
+
+test("altPhase: the first phases line in the set's part is not the alternator's (huali n2006: 'Phase' twice)", () => {
+  const recs = CAT.fromSupplier(sup("huali-shandong")).filter((o) => o.n === 2006);
+  for (const o of recs) assert.deepEqual((o.specs || []).filter((s) => s.key === "altPhase" || s.key === "phase").map((s) => s.key).sort(), ["altPhase", "phase"], o.model);
+  // A model whose sheet writes phases only in the set's part gets no altPhase (n2014 has no 'Alternator' heading line with phases).
+  for (const o of CAT.fromSupplier(sup("huali-shandong")).filter((x) => ![2005, 2006, 2008].includes(x.n))) assert.equal((o.specs || []).some((s) => s.key === "altPhase"), false, `${o.n} ${o.model}`);
+});
+
+test("two-column PDF flattened (longkai n1067 '| Engine-DCEC Cummin | s'): no part's key", () => {
+  const recs = CAT.fromSupplier(sup("longkai-power")).filter((o) => o.n === 1067);
+  assert.ok(recs.length);
+  for (const o of recs) {
+    assert.equal((o.specs || []).some((s) => ["altPhase", "altitude", "altAmbient", "engAmbient", "ambient"].includes(s.key)), false, o.model);
+  }
+  assert.ok(CAT.fromSupplier(sup("longkai-power")).every((o) => !(o.specs || []).some((s) => s.key === "altPhase")));
+});
+
 test("spec-norm altitude: the figure and the operator; metres only when written", () => {
   const n = (value, label = "Altitude Requirement", header = []) => SN.normalize({ key: "altitude", label, value }, { header });
   const a = n("≤ 1000 m");

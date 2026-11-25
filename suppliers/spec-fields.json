@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "approved": "Khoa chốt 24/11/2026",
+  "approved": "Khoa chốt 24/11/2026; Khoa 25/11/2026 thêm alternator.phases, alternator.ambient, engine.ambient",
   "note": "Bộ trường chuẩn của thông số tổ máy, động cơ, đầu phát, bộ điều khiển (bước 1 của việc chuẩn hoá datasheet). Bản chuẩn (bước 2) chỉ ghi các trường ở đây; web chỉ hiện các trường ở đây. type: number (số + unit), enum (một trong values), text (chữ nguồn đã gọn), bool (có / không + dòng nguồn), table (nhiều dòng theo cols). cond = điều kiện phải đi kèm giá trị; nguồn không ghi điều kiện thì bản chuẩn ghi missing và web vẫn hiện kèm ghi chú. req = mã yêu cầu HSMT trong reqcodes.mjs. key = khoá đang đọc trong web/catalog.js SPECS; không có key = chưa có code đọc (việc bước 4). Nguồn không ghi thì để trống, không suy ra, không quy đổi ngoài web/conversions.js.",
   "brandGroups": {
     "note": "Trường brand_country của cả bốn phần (Khoa 24/11/2026: thêm thương hiệu ở đâu: Trung Quốc, G7, G20, EU…). Là nước của THƯƠNG HIỆU, tách khỏi nơi sản xuất (made_in). Nhóm tính từ mã nước bằng bảng COUNTRY_GROUP của web/catalog.js, không chép lại ở đây: cn = CN; g7; g20 (không gồm Trung Quốc); eu (27 nước). Một nước có thể thuộc nhiều nhóm (Đức: g7, g20, eu). Hãng trong NO_GROUP của catalog.js (Deutz) không tính vào nhóm nào. Nguồn của nước thương hiệu: động cơ theo ENGINE_COUNTRY / CN_MODEL của catalog.js; đầu phát, bộ điều khiển theo country của hồ sơ hãng; tổ máy theo country của nhà cung cấp. Chưa rõ hãng thì để trống.",
@@ -76,7 +76,8 @@
       { "id": "coolant_capacity", "vi": "Dung tích nước làm mát", "type": "number", "unit": "L", "req": "coolant_capacity", "key": "coolant" },
       { "id": "oil_capacity", "vi": "Dung tích dầu bôi trơn", "type": "number", "unit": "L", "req": "oil_capacity", "key": "oil" },
       { "id": "speed", "vi": "Tốc độ quay", "type": "number", "unit": "rpm", "req": "speed", "key": "speed" },
-      { "id": "emission", "vi": "Tiêu chuẩn khí thải", "type": "text", "cond": ["scale"], "req": "emission", "key": "emission", "note": "scale: EPA Tier | EU Stage | CN | Euro | IMO; không quy đổi giữa các thang." }
+      { "id": "emission", "vi": "Tiêu chuẩn khí thải", "type": "text", "cond": ["scale"], "req": "emission", "key": "emission", "note": "scale: EPA Tier | EU Stage | CN | Euro | IMO; không quy đổi giữa các thang." },
+      { "id": "ambient", "vi": "Nhiệt độ môi trường làm việc (điều kiện chuẩn nguồn ghi cho động cơ)", "type": "text", "req": "ambient", "key": "engAmbient", "note": "Khoa 25/11/2026 thêm. Chỉ dòng nhiệt độ môi trường / độ cao ghi DƯỚI mục động cơ của bảng nhãn (catalog.js partKey); không lấy từ phần tổ máy, không suy ra." }
     ],
     "alternator": [
       { "id": "brand", "vi": "Hãng đầu phát", "type": "text", "req": "alt_make" },
@@ -87,8 +88,10 @@
       { "id": "insulation", "vi": "Cấp cách điện", "type": "enum", "values": ["F", "H"], "req": "alt_insulation", "key": "insul", "same": { "H": ["H/H"] } },
       { "id": "winding_pitch", "vi": "Bước quấn dây", "type": "text", "req": "alt_pitch", "key": "pitch" },
       { "id": "wires", "vi": "Số đầu dây", "type": "number", "key": "wires" },
+      { "id": "phases", "vi": "Số pha", "type": "number", "req": "phases", "key": "altPhase", "note": "Khoa 25/11/2026 thêm, chỉ để hiển thị. Chỉ dòng số pha ghi DƯỚI mục đầu phát của bảng nhãn (catalog.js partKey); dòng đó vẫn là số pha tổ máy (phase) như trước, luật loại theo số pha của candidates không đổi." },
       { "id": "ip", "vi": "Cấp bảo vệ", "type": "text", "req": "alt_ip", "key": "ip" },
       { "id": "altitude", "vi": "Độ cao làm việc", "type": "number", "unit": "m", "key": "altitude" },
+      { "id": "ambient", "vi": "Nhiệt độ môi trường làm việc", "type": "text", "req": "ambient", "key": "altAmbient", "note": "Khoa 25/11/2026 thêm. Chỉ dòng nhiệt độ môi trường ghi DƯỚI mục đầu phát của bảng nhãn (catalog.js partKey), vd '40 °C ambient'; nhiệt độ cột định mức của bảng Ratings ở ratings.ambient_c." },
       { "id": "overspeed", "vi": "Tốc độ vượt", "type": "number", "unit": "rpm", "key": "overspeed" },
       { "id": "air_flow", "vi": "Lưu lượng gió làm mát", "type": "number", "unit": "m3/s", "cond": ["hz"], "key": "airflow" },
       { "id": "short_circuit", "vi": "Dòng ngắn mạch duy trì", "type": "text", "cond": ["excitation"], "req": "alt_short_circuit", "key": "scirc" },

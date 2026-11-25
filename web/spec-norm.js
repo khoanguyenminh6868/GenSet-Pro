@@ -16,7 +16,7 @@
   "use strict";
 
   const conv = () => root.GenbidConversions;
-  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow", "altitude"];
+  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow", "altitude", "altPhase"];
 
   // ---- text helpers ----
   // NFKC: chữ toàn khổ （）：, số La Mã Ⅱ → II, ³ → 3. Chỉ dùng cho bản làm việc, `raw` giữ nguyên văn.
@@ -696,7 +696,7 @@
     weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i, COMP.kg], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i, COMP.L], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i, COMP.L],
     speed: [/speed|转速/i, /rpm|r\/min/i, COMP.rpm], bore: [/bore|缸径/i, /mm/i, COMP.mm] };
 
-  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow, altitude };
+  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow, altitude, altPhase: phase };
 
   // One spec { key, label, value } with its table's context { title, header } → the normalized form, or null for a
   // key this layer does not normalize.

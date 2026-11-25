@@ -287,6 +287,11 @@
     // becomes this key only when a label sheet writes it under the alternator's heading (`partKey`, buoc-4-h): huali n2008 "Alternator" …
     // "| Altitude Requirement | ≤ 1000 m"; the same words in the set's part (huali n2005 "Reference Site Altitude") stay the set's.
     ["altitude", "alternator", "Độ cao làm việc", /(?!)/, null, /^[≤<]?\s*\d{1,2},?\d{3}\s*(m|米|meters?|metres?)?\.?$/i],
+    // Same way (no label pattern, only `partKey` under a part heading; Khoa 25/11/2026 thêm): the alternator's ambient temperature and
+    // phases, the engine's ambient / altitude. Shapes as the set's `ambient` / `phase`.
+    ["altAmbient", "alternator", "Nhiệt độ môi trường (đầu phát)", /(?!)/, null, /\d/],
+    ["altPhase", "alternator", "Số pha (đầu phát)", /(?!)/, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|three|single|三相|单相/i],
+    ["engAmbient", "engine", "Nhiệt độ môi trường (động cơ)", /(?!)/, null, /\d/],
     ["altType", "alternator", "Kiểu đầu phát", /^\s*(alternator|generator)\s*-?\s*type\s*[:：]?\s*$|^\s*type\s*of\s*alternator\s*[:：]?\s*$|alternatortype|电机类型|发电机类型|发电机型式|电机型式/i, null, /brush|self|excit|synchron|permanent|pmg|无刷|有刷|自励|励磁|同步|永磁/i],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
@@ -315,14 +320,20 @@
     return specKeys.get(L);
   }
   // The key of a label read under a part heading of a label sheet (buoc-4-h, 25/11/2026). The set's site conditions (`ambient`) and its
-  // overload capability are the SET's only outside the engine's and the alternator's parts: under "Alternator" an altitude is the
-  // alternator's (`altitude`), its ambient temperature / overload are the alternator's rating conditions (no field: not read); under
-  // "Engine" they are the engine's (not read). Other keys are unchanged.
+  // overload capability are the SET's only outside the engine's and the alternator's parts. Under "Alternator" an altitude is the
+  // alternator's (`altitude`), an ambient temperature the alternator's (`altAmbient`; Khoa 25/11/2026 thêm alternator.ambient), the
+  // phases the alternator's (`altPhase`; Khoa 25/11/2026 thêm alternator.phases); under "Engine" the ambient / altitude is the engine's
+  // (`engAmbient`; Khoa 25/11/2026 thêm engine.ambient). An overload under either part has no field: not read. Other keys are unchanged.
+  // fromLabelTable keeps the set's `phase` too (it was read there before: candidates' phase rule must not change).
   const ALTITUDE_LBL = /altitude|海拔/i;
+  // part "unsure": a sheet whose part headings do not tell whose a line is (fromLabelTable `twoCol`): no part's key, no set's ambient.
   function partKey(sk, part, label) {
+    if (sk === "phase") return part === "alternator" ? "altPhase" : sk;
     if (sk !== "ambient" && sk !== "overload") return sk;
-    if (part === "alternator") return sk === "ambient" && ALTITUDE_LBL.test(label) ? "altitude" : null;
-    return part === "engine" ? null : sk;
+    if (part === "unsure") return null;
+    if (sk === "overload") return part === "alternator" || part === "engine" ? null : sk;
+    if (part === "alternator") return ALTITUDE_LBL.test(label) ? "altitude" : "altAmbient";
+    return part === "engine" ? "engAmbient" : sk;
   }
   function specKeyOf(L) {
     if (!L || L.length > 70 || /brand|make|品牌|厂家/i.test(L) || (/\bmodel\b|型号/i.test(L) && !/\bavr\b|a\.v\.r|voltage\s*regulator|调压器/i.test(L))) return null;
@@ -787,6 +798,11 @@
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
     let part = null, splitHead = false;
+    // A two-column PDF flattened line by line (a line "| Engine-SDEC | Power factor | 0.8": longkai, xinhengxin): the set's lines and
+    // the alternator's interleave ("Alternator", "| Rated prime power | kva | 562", "| Model | 544D", "| Phase | 3"), so the part
+    // heading does not tell whose a line is. partKey gives no part's key there (buoc-4-h): `phase` stays the set's, ambient unread.
+    // Also "| Engine-DCEC Cummin | s" (the heading cut in two cells) and "Controller-DEEPSEA" (longkai n1067).
+    const twoCol = lines0.some((l) => /^(engine|alternator|controller)\s*[-–]\s*[a-z]/i.test(cellsOf(l)[0] || ""));
     // GFE datasheets head the sheet with "| Engine | Alternator", then "| Cummins | Stamford | GFE2200CSC" (makes and
     // the genset model) and "| QSK50-G17 | S7L1D-G41" (models): stack counts the lines read after that heading.
     let stack = 0, engBlock = false;
@@ -897,7 +913,7 @@
       // A line of fuel units only ("| Rating | gr/kWh | L/hr" over "| 100% PRP | 193 | 156", Baudouin 6M31G825/5 [1021]): the unit
       // of each column of the fuel lines below it with as many cells.
       if (c.length >= 3 && c.slice(1).every((x) => FUEL_UNIT_CELL.test(String(x).trim()))) fuelUnits = c.slice(1).map((x) => String(x).trim());
-      const sk = partKey(specKey(label), part, label);
+      const sk = partKey(specKey(label), twoCol ? "unsure" : part, label);
       if (sk && /^fuel/.test(sk) && !W) {
         const col = (cols[0] = cols[0] || {}), specs = (col.specs = col.specs || []), got = {};
         let load = sk === "fuel75" ? 75 : sk === "fuel50" ? 50 : 100;
@@ -945,7 +961,9 @@
         const sv = c.slice(1).filter((v) => v && !UNIT_CELL.test(v));
         // "| N° of Cylinders / Valves | 6 / 24" (Baudouin [1021]): the label names the order, the first figure is the count.
         const cylValves = sk === "cyl" && /cylinders?\s*\/\s*valves/i.test(label);
-        sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(sk, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === sk)) col.specs.push({ key: sk, label, value: val }); } });
+        // Phases under "Alternator": the alternator's (`altPhase`) AND, as before this key, the set's `phase` (partKey).
+        for (const k of sk === "altPhase" ? ["phase", "altPhase"] : [sk])
+          sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(k, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === k)) col.specs.push({ key: k, label, value: val }); } });
         // "Engine type" is the engine model on some sites: read it as before too. So is "Alternator type" (buoc-4-h): endress "| Alternator
         // type | ECP32 2S4 C" is the alternator's code, and the line went on to the alternator's model before the key existed (victory
         // "Self-excited,2-pole,single phase" stays the record's `other` as before: no record, and `other` feeds config-bot's candidates).
