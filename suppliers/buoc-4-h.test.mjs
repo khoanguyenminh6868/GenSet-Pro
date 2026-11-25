@@ -98,6 +98,49 @@ test("two-column PDF flattened (longkai n1067 '| Engine-DCEC Cummin | s'): no pa
   assert.ok(CAT.fromSupplier(sup("longkai-power")).every((o) => !(o.specs || []).some((s) => s.key === "altPhase")));
 });
 
+test("breaker / battery / standards labels; a controller's alarm, a battery voltage, a bare 'Standard' are not", () => {
+  for (const [l, v] of [["Circuit Breaker", "4-Pole"], ["MCCB:", "ABB,Chint,etc"], ["Breaker", "630A"], ["Breaker Model", "S203-C80"]]) assert.equal(fits(l, v), "breaker", `${l} ${v}`);
+  for (const l of ["Circuit Breaker Rated Current (A)", "Breaker failure", "Breaker settings", "Overload protection", "Breaker control via fascia buttons", "Breaker position failure"]) assert.notEqual(CAT.specKey(l), "breaker", l);
+  assert.equal(fits("AC circuit breaker", "52"), null); // comap: an ANSI code, not a breaker
+  for (const [l, v] of [["Battery", "36AH"], ["Battery Capacity", "60×2"], ["Number of batteries", "2"], ["Battery", "100AH/24V"]]) assert.equal(fits(l, v), "battery", `${l} ${v}`);
+  for (const l of ["Battery Voltage", "Battery Under Voltage", "Battery Charging Alternator", "Battery Charger Model", "Battery voltage monitoring", "Min. recommended battery capacity (24V)"]) assert.notEqual(CAT.specKey(l), "battery", l);
+  for (const [l, v] of [["Standards", "ISO8528"], ["CERTIFICATION", "CSA C22.2 No. 100:14"], ["Certificate", "CE"]]) assert.equal(fits(l, v), "standards", `${l} ${v}`);
+  for (const l of ["Standard", "STANDARD", "ISO 8528 Generator Standard"]) assert.notEqual(CAT.specKey(l), "standards", l); // "Standard" = standard equipment
+  assert.equal(fits("Standards", "Yes"), null);
+});
+
+test("breaker / battery of a table across: the value of the row's own column (kachai n2009, westinpower n112)", () => {
+  const colOf = (id, n, key) => CAT.fromSupplier(sup(id)).filter((o) => o.n === n && (o.specs || []).some((s) => s.key === key))
+    .map((o) => { const c = CAT.cellsOf(o.line); const v = (o.specs || []).find((s) => s.key === key).value; return `${o.genset} ${v} ${c[c.length - 1] === v || c.includes(v) ? "ok" : "LỆCH"}`; });
+  const brk = colOf("kachai-hangzhou", 2009, "breaker");
+  assert.ok(brk.length >= 20);
+  assert.deepEqual(brk.filter((x) => x.endsWith("LỆCH")), []);
+  const bat = colOf("westinpower", 112, "battery");
+  assert.ok(bat.length >= 20);
+  assert.deepEqual(bat.filter((x) => x.endsWith("LỆCH")), []);
+  // Before the keys existed, the walk stopped at the battery / breaker column and lost what followed (kaichen n5002).
+  const kc = CAT.fromSupplier(sup("kaichen-jiangsu")).filter((o) => o.n === 5002);
+  assert.ok(kc.length);
+  for (const o of kc) assert.deepEqual((o.specs || []).map((s) => s.key).filter((k) => ["tank", "weight", "dims"].includes(k)).sort(), ["dims", "tank", "weight"], o.model);
+});
+
+test("the second pair of a four-cell line (tecgen '| Cooling Method | … | Ambient Temp | ≤40 C')", () => {
+  const recs = CAT.fromSupplier(sup("tecgen-fujian")).filter((o) => o.n === 102);
+  assert.ok(recs.length);
+  for (const o of recs.filter((x) => x.genset)) {
+    assert.deepEqual((o.specs || []).filter((s) => s.key === "ambient").map((s) => `${s.label}=${s.value}`), ["Ambient Temp=≤40 C"], o.model);
+    assert.ok((o.specs || []).some((s) => s.key === "cooling"), "ô đầu vẫn đọc như cũ"); // the first pair is unchanged
+  }
+});
+
+test("a field holding several facts keeps both lines (superwatt n107: ambient temperature AND altitude)", () => {
+  const recs = CAT.fromSupplier(sup("superwatt-swt")).filter((o) => o.n === 107);
+  assert.ok(recs.length);
+  for (const o of recs) {
+    assert.deepEqual((o.specs || []).filter((s) => s.key === "ambient").map((s) => s.value).sort(), ["40°C", "≤1000m"], o.model);
+  }
+});
+
 test("spec-norm altitude: the figure and the operator; metres only when written", () => {
   const n = (value, label = "Altitude Requirement", header = []) => SN.normalize({ key: "altitude", label, value }, { header });
   const a = n("≤ 1000 m");

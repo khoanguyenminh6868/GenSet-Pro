@@ -48,9 +48,9 @@
       { "id": "load_step", "vi": "Nhận tải một bước", "type": "number", "unit": "%", "req": "load_step" },
       { "id": "iso8528_class", "vi": "Cấp vận hành ISO 8528-5", "type": "enum", "values": ["G1", "G2", "G3", "G4"], "req": "iso8528_class" },
       { "id": "ambient", "vi": "Nhiệt độ môi trường, độ cao", "type": "text", "req": "ambient", "key": "ambient" },
-      { "id": "breaker", "vi": "Áp-tô-mát đầu ra", "type": "text", "req": "breaker" },
-      { "id": "battery", "vi": "Ắc quy", "type": "text", "req": "battery" },
-      { "id": "standards", "vi": "Tiêu chuẩn, chứng nhận", "type": "text", "req": "standards" }
+      { "id": "breaker", "vi": "Áp-tô-mát đầu ra", "type": "text", "req": "breaker", "key": "breaker" },
+      { "id": "battery", "vi": "Ắc quy", "type": "text", "req": "battery", "key": "battery" },
+      { "id": "standards", "vi": "Tiêu chuẩn, chứng nhận", "type": "text", "req": "standards", "key": "standards" }
     ],
     "engine": [
       { "id": "brand", "vi": "Hãng động cơ", "type": "text", "req": "engine_make" },

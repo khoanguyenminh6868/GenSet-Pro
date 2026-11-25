@@ -232,6 +232,14 @@
     ["ambient", "genset", "Nhiệt độ môi trường, độ cao", /ambient\s*(air\s*)?temp|^\s*ambient\s*[:：]?\s*$|环境温度|altitude|海拔(要求|高度)/i, /radiator|capacity|start|storage|setting|derat|修正|allowable|noise|engine|coolant|turbo|after\s*-?cool|display|location|controller|sensor/i, /\d/],
     // Overload capability of the set (buoc-4-h; field genset.overload): "1.5倍2分钟", "过载 10%一小时", "110% 1h". A protection, a timeout,
     // an alarm, an ANSI code ("Overload | 32") or "overload power (kW)" (a power column) is not it.
+    // Output breaker, battery, standards of the set (buoc-4-h, điều phối 25/11/2026; fields genset.breaker / battery / standards). Values as
+    // written, never derived. breaker: "4-Pole", "3 Pole MCCB", "ABB,Chint,etc" (not a protection code "52", a failure / position / count
+    // line of a controller, nor "Circuit Breaker Rated Current (A) | 3200"). battery: a capacity or a count ("60×2" Ah, "30AH", "2"); a
+    // battery VOLTAGE is the electrical system's (engine.electrical_vdc, PR #1246) and a charger / alarm / terminal line is not it.
+    // standards: a code of a standard or a mark written ("ISO8528", "CSA C22.2 No. 100:14", "CE"); a bare "Standard" (standard equipment) is not.
+    ["breaker", "genset", "Áp-tô-mát đầu ra", /^\s*(ac\s*)?(circuit\s*)?breakers?\s*(model|type)?\s*[:：]?\s*$|^\s*(mccb|acb)\s*[:：]?\s*$|断路器|空气开关/i, /current|failure|fail|position|status|close|open|trip|control|setting|symbol|counter|input|output|kit|upgrade|auto\s*start/i, /pole|极|mccb|acb|abb|schneider|chint|正泰|德力西|siemens|legrand|\bls\b|mitsubishi|\d\s*a\b|\d\s*p\b|^[a-z]{1,4}\d{2,4}[a-z]?\s*-\s*[a-z]?\d{1,4}[a-z]?$/i],
+    ["battery", "genset", "Ắc quy", /^\s*batter(y|ies)\s*(capacity|qty|quantity|type)?\s*[:：]?\s*$|number\s*of\s*batter|^\s*(蓄电池|电瓶)(容量|规格|数量)?\s*$/i, /volt|charg|alarm|under|over|negative|positive|monitor|recommend|port|pin/i, /\d\s*(a\s?h|a\.h|安时)\b|\d\s*[×x*]\s*\d|^\s*\d{1,2}\s*$/i],
+    ["standards", "genset", "Tiêu chuẩn, chứng nhận", /^\s*(standards|certifications?|certificates?|compl(y|ies|iance)\s*with|执行标准|产品标准|认证)\s*[:：]?\s*$/i, null, /\biso\s?-?\d|\biec\s?\d|\ben\s?\d|\bgb\s?\/?\s?t?\s?\d|\bbs\s?\d|\bce\b|\bcsa\b|\bul\s?\d|\bnema\b|\bdin\b|\bvde\b|\bjis\b|\bas\s?\d|\bccs\b|\bepa\b|\bcarb\b/i],
     ["overload", "genset", "Khả năng quá tải", /overload\s*(capa\w*|capabil\w*|ability)|过载能力|^\s*overload\s*[:：]?\s*$/i, /protect|timeout|alarm|trip|relay|action|measur|current|power|功率|load\s*shed|保护/i, /\d\s*(%|％|倍)|\d\s*(h|hrs?|hours?|min|mins?|minutes?|s|sec|seconds?|小时|分钟|秒)\b|\d\s*(小时|分钟|秒)/i],
     ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
     ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量|排气量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
@@ -326,6 +334,11 @@
   // (`engAmbient`; Khoa 25/11/2026 thêm engine.ambient). An overload under either part has no field: not read. Other keys are unchanged.
   // fromLabelTable keeps the set's `phase` too (it was read there before: candidates' phase rule must not change).
   const ALTITUDE_LBL = /altitude|海拔/i;
+  // Keys whose field holds several facts, so one record may carry more than one value of them (buoc-4-h): the set's site conditions are
+  // written as an ambient temperature AND an altitude, each on its own line.
+  const MULTI = new Set(["ambient", "engAmbient", "altAmbient"]);
+  // Keys of buoc-4-h read from the second pair of a four-cell line too (fromLabelTable).
+  const SECOND_PAIR = new Set(["ambient", "overload", "altType", "altitude", "altAmbient", "engAmbient", "breaker", "battery", "standards"]);
   // part "unsure": a sheet whose part headings do not tell whose a line is (fromLabelTable `twoCol`): no part's key, no set's ambient.
   function partKey(sk, part, label) {
     if (sk === "phase") return part === "alternator" ? "altPhase" : sk;
@@ -336,12 +349,15 @@
     return part === "engine" ? "engAmbient" : sk;
   }
   function specKeyOf(L) {
-    if (!L || L.length > 70 || /brand|make|品牌|厂家/i.test(L) || (/\bmodel\b|型号/i.test(L) && !/\bavr\b|a\.v\.r|voltage\s*regulator|调压器/i.test(L))) return null;
+    // "Breaker Model" (westinpower) is the breaker's own code, as "AVR model" is the AVR's (buoc-4-h): the block on "model" labels
+    // keeps model columns out of the specs, and these two name a part's own figure.
+    if (!L || L.length > 70 || /brand|make|品牌|厂家/i.test(L) || (/\bmodel\b|型号/i.test(L) && !/\bavr\b|a\.v\.r|voltage\s*regulator|调压器|breaker|断路器/i.test(L))) return null;
     // Genset power is read on its own (powersIn); an engine's own output is kept here.
     // "Oil capacity" / "Coolant capacity" are volumes of the engine (keys oil / coolant), not a rating; a heater, cooler or pump
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
-    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    // "Battery capacity" (Ah) is the battery's, not a rating (buoc-4-h), as "Short circuit capacity" is the alternator's (PR C).
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路|batter(y|ies)|蓄电池|电瓶/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
@@ -365,7 +381,9 @@
   }
   const specVal = (v) => { const s = String(v || "").trim(); return s && s.length <= 80 && !/^[-–—/]+$/.test(s) && !/[:：]$/.test(s) && !/^[(（][^)）]*[一-鿿]/.test(s) ? s : null; };
   // A value fits its kind when it has the expected shape and is not a model code (a code there means a shifted column).
-  const specFits = (key, v) => SPEC[key].ok.test(v) && !(isCode(v) && !/^(asp|gov|emission|engType|excit|controller|cyl)$/.test(key));
+  // A breaker's value may be its model ("S203-C80", westinpower), a battery's looks like a code ("60AH", "100AH/24V"; buoc-4-h). Without
+  // them the walk along a row stopped at those columns and lost the figures after them (kaichen n5002 tank / weight / size).
+  const specFits = (key, v) => SPEC[key].ok.test(v) && !(isCode(v) && !/^(asp|gov|emission|engType|excit|controller|cyl|breaker|battery)$/.test(key));
 
   const cellsOf = (line) => {
     const s = String(line).trim();
@@ -914,6 +932,12 @@
       // of each column of the fuel lines below it with as many cells.
       if (c.length >= 3 && c.slice(1).every((x) => FUEL_UNIT_CELL.test(String(x).trim()))) fuelUnits = c.slice(1).map((x) => String(x).trim());
       const sk = partKey(specKey(label), twoCol ? "unsure" : part, label);
+      // The second label | value pair of a line of exactly four cells, on a one-model sheet (buoc-4-h, điều phối 25/11/2026): "| Cooling
+      // Method | Water Cooling | Ambient Temp | ≤40 C" (tecgen). Only the keys of buoc-4-h (SECOND_PAIR): the older keys keep their reading.
+      if (c.length === 4 && !M && !W) {
+        const k2 = partKey(specKey(c[2]), twoCol ? "unsure" : part, c[2]), v2 = specVal(c[3]);
+        if (SECOND_PAIR.has(k2) && v2 && specFits(k2, v2)) { const col = (cols[0] = cols[0] || {}); col.specs = col.specs || []; if (!col.specs.some((x) => x.key === k2 && (!MULTI.has(k2) || x.value === v2))) col.specs.push({ key: k2, label: c[2], value: v2 }); }
+      }
       if (sk && /^fuel/.test(sk) && !W) {
         const col = (cols[0] = cols[0] || {}), specs = (col.specs = col.specs || []), got = {};
         let load = sk === "fuel75" ? 75 : sk === "fuel50" ? 50 : 100;
@@ -963,7 +987,7 @@
         const cylValves = sk === "cyl" && /cylinders?\s*\/\s*valves/i.test(label);
         // Phases under "Alternator": the alternator's (`altPhase`) AND, as before this key, the set's `phase` (partKey).
         for (const k of sk === "altPhase" ? ["phase", "altPhase"] : [sk])
-          sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(k, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === k)) col.specs.push({ key: k, label, value: val }); } });
+          sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(k, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === k && (!MULTI.has(k) || x.value === val))) col.specs.push({ key: k, label, value: val }); } });
         // "Engine type" is the engine model on some sites: read it as before too. So is "Alternator type" (buoc-4-h): endress "| Alternator
         // type | ECP32 2S4 C" is the alternator's code, and the line went on to the alternator's model before the key existed (victory
         // "Self-excited,2-pole,single phase" stays the record's `other` as before: no record, and `other` feeds config-bot's candidates).
@@ -3198,9 +3222,17 @@
         say("prime lớn hơn standby", JSON.stringify(power)); delete power.prime; delete power.standby;
       }
       if (!power.prime && !power.standby) { say("không có công suất prime / standby ghi rõ ở phần tổ máy", g.code); return; }
-      const seen = new Map();
-      for (const x of specs) { const k = x.key; if (!seen.has(k)) seen.set(k, x); else if (seen.get(k) && seen.get(k).value !== x.value) { say("thông số ghi hai lần khác số", `${k}: ${seen.get(k).value} / ${x.value}`); seen.set(k, null); } }
-      const sp = saneSpecs([...seen.values()].filter(Boolean), power, (x) => say("số vô lý so với công suất", `${x.key}=${x.value}`));
+      // A key written twice with two figures is ambiguous and dropped — except the keys of MULTI, whose field holds several facts of
+      // its own (genset.ambient is "nhiệt độ môi trường, độ cao": "| Standard Ambient Temperature | 40°C" and "| Altitude Condition |
+      // ≤1000m" of superwatt are both true, buoc-4-h). Each value is kept once; the rest is unchanged.
+      const seen = new Map(), more = [];
+      for (const x of specs) {
+        const k = x.key;
+        if (MULTI.has(k)) { if (!more.some((y) => y.key === k && y.value === x.value)) more.push(x); continue; }
+        if (!seen.has(k)) seen.set(k, x);
+        else if (seen.get(k) && seen.get(k).value !== x.value) { say("thông số ghi hai lần khác số", `${k}: ${seen.get(k).value} / ${x.value}`); seen.set(k, null); }
+      }
+      const sp = saneSpecs([...[...seen.values()].filter(Boolean), ...more], power, (x) => say("số vô lý so với công suất", `${x.key}=${x.value}`));
       const freq = freqIn(lines.join(" "), true);
       const titleHead = base.title.split(/\s[|–-]\s|\|/)[0];
       const makesOf = (code, list, brandCell) => {

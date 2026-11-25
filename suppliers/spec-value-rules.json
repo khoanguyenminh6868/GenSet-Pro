@@ -23,6 +23,9 @@
     "genset.dimensions": { "kind": "dims", "basis": "mỗi chiều 300-16.000 mm hoặc 0,3-16 m (likely, catalog.js); cm quy theo cùng dải" },
     "genset.weight": { "kind": "number", "range": [30, 80000], "units": ["kg"], "kinds": ["mass"], "relation": "absurd", "basis": "30-80.000 kg (likely); 2,5-150 kg/kVA (checkSpec qua absurdOf)" },
     "genset.noise": { "kind": "number", "range": [40, 120], "units": ["dB(A)", "dB"], "kinds": ["noise"], "basis": "40-120 (likely); chỉ xét đơn vị ngay sau số của giá trị, khoảng cách đo (7 m) không tính" },
+    "genset.breaker": { "kind": "text", "must": "pole|极|mccb|acb|abb|schneider|chint|正泰|德力西|siemens|legrand|mitsubishi|\\d", "basis": "số cực / hãng / dòng định mức / mã áp-tô-mát ghi trong nguồn (4-Pole, 3 Pole MCCB, 630A, S203-C80); buoc-4-h" },
+    "genset.battery": { "kind": "text", "must": "\\d", "basis": "dung lượng Ah hoặc số bình ghi bằng số (60×2, 36AH, 100AH/24V); buoc-4-h" },
+    "genset.standards": { "kind": "text", "must": "iso|iec|\\ben\\b|\\bgb\\b|\\bbs\\b|\\bce\\b|csa|\\bul\\b|nema|din|vde|jis|ccs|epa|carb", "basis": "mã tiêu chuẩn / dấu chứng nhận ghi trong nguồn (ISO8528, CSA C22.2 No. 100:14, CE); buoc-4-h" },
     "genset.ambient": { "kind": "text", "must": "\\d\\s*(m|米|meters?|metres?|°|º|℃|c\\b|deg)|\\d\\s*$", "basis": "nhiệt độ (°C) hoặc độ cao (m) ghi bằng số (≤40 ℃, ≤ 1000 m, -15℃～45℃); buoc-4-h" },
     "genset.overload": { "kind": "text", "must": "\\d\\s*(%|％|倍)", "basis": "mức quá tải ghi bằng % hoặc bội số (10%一小时, 1.5倍2分钟, 110% 1h); buoc-4-h" },
 
