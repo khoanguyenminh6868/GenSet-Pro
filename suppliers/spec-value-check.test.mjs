@@ -109,6 +109,8 @@ test("chỉ báo: không đổi doc; trường chưa có luật được liệt 
   assert.equal(JSON.stringify(docs), before);
   assert.equal(r.violations.length, 1);
   assert.equal(r.violations[0].row, "| X | 16 3:1");
-  assert.ok(r.noRule.some((x) => x.field === "controller.usb"));
+  // controller.usb có luật từ PR G (controllers-features.mjs); dimensions vẫn chưa.
+  assert.ok(r.noRule.some((x) => x.field === "controller.dimensions"));
+  assert.ok(!r.noRule.some((x) => x.field === "controller.usb"));
   assert.ok(!r.noRule.some((x) => x.field === "engine.compression"));
 });

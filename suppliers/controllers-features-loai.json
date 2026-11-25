@@ -1,0 +1,2847 @@
+{
+ "note": "Cặp (trường, dòng) đã soát tay và LOẠI (PR G bước 4, 25/11/2026: soát hết 3.092 cặp từ khoá → dòng của controllers-features.mjs, không lấy mẫu). line = dòng datasheet chuẩn hoá NFKC, why = lý do. Đổi từ khoá / luật bỏ dòng thì soát lại cặp mới.",
+ "rejects": {
+  "auto_start_stop": [
+   {
+    "line": "HGM7X10: Auto Start Module, controls genset to start or stop automatically by remote start signal.",
+    "why": "bien-the: HGM7X10 chi cua 7210, gan ca 7220"
+   },
+   {
+    "line": "| 6010-03 | Auto Start with real time clock | 5 Hz to 8 Hz at +/-7.5 mm,",
+    "why": "bien-the: ma dat hang 6010-03 chi cua DSE6010, gan ca DSE6020"
+   },
+   {
+    "line": "| Auto Start Control | Module | 8610-02",
+    "why": "san-pham-khac: dong noi DSE8610 (8610-02) tren to DSE7570"
+   },
+   {
+    "line": "| Auto start with real time clock and | HUMIDITY",
+    "why": "bien-the: dong ma dat hang auto start chi cua DSE6010, gan ca DSE6020"
+   }
+  ],
+  "can": [
+   {
+    "line": "202 – Wrong number of generators on CAN-BUS 1 (PMCB) (solo GC400x)",
+    "why": "chi GC400x"
+   },
+   {
+    "line": "5.6.1HGM9320MPU(CAN) SWITCH CONTROL PROCEDURES",
+    "why": "ten model MPU(CAN), tieu de"
+   },
+   {
+    "line": "CAN",
+    "why": "mo-ho: chu tran, gan nhieu model"
+   },
+   {
+    "line": "CAN bus",
+    "why": "mo-ho: chu tran, gan nhieu model"
+   },
+   {
+    "line": "DEIF engine specification (J1939 + CANopen)",
+    "why": "tai lieu tham chieu"
+   },
+   {
+    "line": "ESC/SHIFT at the same time. In the GC400x controller, since there are two CAN interfaces, it is first necessary to",
+    "why": "chi GC400x"
+   },
+   {
+    "line": "Fig.1 – HGM6110 (HGM6110N/NC/CAN) Front Panel Indication",
+    "why": "ten model \"(…/CAN)\" chu thich hinh"
+   },
+   {
+    "line": "Fig.2 – HGM6120 (HGM6120N/NC/CAN) Front Panel Indication",
+    "why": "ten model \"(…/CAN)\" chu thich hinh"
+   },
+   {
+    "line": "HGM9320 MPU(CAN), has all functions of HGM9310 MPU(CAN) as well as automatic",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "HGM93XX MPU(CAN) Series Genset Controller",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "HGM93XX MPU(CAN) series genset controllers adopt 32 bits micro-processor technology",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "HGM93XX MPU(CAN) series genset controllers are used for genset automation and",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "HGM93XXMPU(CAN) series controller‟s rear as following:",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "In this mode are shown the measures and the status acquired by the CAN-BUS PMCB, which connects all Mecc Alte devices",
+    "why": "PMCB chi GC400x"
+   },
+   {
+    "line": "NOTE: HGM93XXMPU(CAN) series controller can suit for widely range of battery voltage",
+    "why": "ten model MPU(CAN)"
+   },
+   {
+    "line": "This page shows the totals calculated on all genset controllers connected on CAN-BUS PMCB. It is shown:",
+    "why": "PMCB chi GC400x"
+   },
+   {
+    "line": "WARNING: ELECTRICITY CAN KILL",
+    "why": "dong-tu CAN"
+   },
+   {
+    "line": "[6] CAN open – Cabling and Connector Pin Assignment – CiA Draft Recommendation DR-303-1.",
+    "why": "tai lieu tham chieu"
+   },
+   {
+    "line": "[7] BOSCH CAN Specification – Version 2.0 – 1991, Robert Bosch Gmbh.",
+    "why": "tai lieu tham chieu"
+   },
+   {
+    "line": "parameters or cancel the history logs (in the version equipped with CAN-",
+    "why": "bien-the: chi ban co CAN"
+   },
+   {
+    "line": "that the data transmitted by the modules are received from all the GC400x controllers connected to the CAN-",
+    "why": "chi GC400x"
+   },
+   {
+    "line": "to connect the modules to this CAN-BUS interface, you need to use an additional CAN-BRIDGE module, to avoid",
+    "why": "mo-dun CAN-BRIDGE"
+   },
+   {
+    "line": "| (X4) | buttons and 1 status relay. CAN bus | 2912411060 | with each AGC 200 unit",
+    "why": "phu-kien AOP, ma dat hang"
+   },
+   {
+    "line": "| 58 | CAN L (Reserved)",
+    "why": "chan Reserved"
+   },
+   {
+    "line": "| 59 | CAN H (Reserved)",
+    "why": "chan Reserved"
+   },
+   {
+    "line": "| Available CAN | modules",
+    "why": "danh sach mo-dun CAN"
+   },
+   {
+    "line": "| CAN High | BCP-508-4GN",
+    "why": "mo-ho: BCP-508-4GN san pham khac"
+   },
+   {
+    "line": "| CAN modules and SW key features | digital AVRs, breakers, etc.",
+    "why": "mo-dun CAN (tieu de muc)"
+   },
+   {
+    "line": "| CAN) | Group: Standard",
+    "why": "mo-ho: manh vo"
+   },
+   {
+    "line": "| CAN2 bus redundancy | Inter-controller CAN redundancy to maintain communication between | SKREDCAN201",
+    "why": "tuy-chon/ma dat hang SKREDCAN201"
+   },
+   {
+    "line": "| H12.8* | CAN bus E and CAN bus F (dual CAN):",
+    "why": "tuy-chon H12.8"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) Series Genset Controller | Version: 1.0 | 2014-07-24 | Page 49",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) Series Genset Controller | Version: | 1.0 | 2014-07-24",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) Series Genset | Controller",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) Series | Genset Controller",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) | Series Genset",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX MPU(CAN) | Series Genset Controller",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX | MPU(CAN) Series Genset",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| HGM93XX | MPU(CAN) Series Genset Controller",
+    "why": "ten model MPU(CAN), dau/chan trang"
+   },
+   {
+    "line": "| I-CR | CAN Repeater Module.",
+    "why": "mo-dun I-CR"
+   },
+   {
+    "line": "| I-CR | CAN repeater module, compatible with 32C/8C CAN intercontroller communication",
+    "why": "mo-dun I-CR"
+   },
+   {
+    "line": "| I-CR-R | CAN Redundancy Module.",
+    "why": "mo-dun I-CR-R"
+   },
+   {
+    "line": "| IG500 G2 Suite | A bundle of features including large PLC capacity, shared signals over CAN line and more. | SKEFSUITE01",
+    "why": "goi tuy-chon SKEFSUITE01"
+   },
+   {
+    "line": "| IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA",
+    "why": "phu-kien IGL-RA15, ma dat hang"
+   },
+   {
+    "line": "| J8 | Display CAN cable for DU-2 connection and 2 x plugs for cables",
+    "why": "phu-kien: cap DU-2"
+   },
+   {
+    "line": "| T2 | Genset: Standard | CAN bus communication with DEIF digital AVRs DVC 550, DVC 350, DVC 310, and",
+    "why": "ma tuy-chon T2"
+   },
+   {
+    "line": "| X2 | Additional standard display (DU-2). CAN bus comm.",
+    "why": "tuy-chon X2 (DU-2)"
+   },
+   {
+    "line": "| X4 | configurable buttons and 1 status relay. CAN bus comm.",
+    "why": "tuy-chon X4 (AOP)"
+   },
+   {
+    "line": "| for | CAN | 58 and 59",
+    "why": "chan 58/59 Reserved"
+   }
+  ],
+  "cellular_sms": [
+   {
+    "line": "14 GSM SHORT MESSAGE ALARM AND REMOTE CONTROL",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "14.1 GSM SHORT MESSAGE ALARM",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "14.2 GSM SHORT MESSAGE REMOTE CONTROL",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "14.3 CONTROLLER AND GSM MODULE CONNECTION",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "19.1.1 4G ANTENNA PORT",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "1: SMS enabled",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "1: SMS sent when mains failed or restored",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "2. Using the \"Communication events\" parameter, configure which system events should cause the SMS* to be sent.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "20 SMS MESSAGE ALARM AND REMOTE CONTROL",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "20.1 SMS MESSAGE ALARM",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "20.2 SMS MESSAGE REMOTE CONTROL",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "3.3 Additional characteristics of LINK LTE series device (GPRS/EDGE/LTE)",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "6 Link LTE Controllers",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "6.1 Preface Link LTE",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "6.15 SMS Message Sending",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "6.15. SMS message sending",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "6.2 Parameter’s configuration (Link LTE)",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "6.2.1 SMS messages",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "A sample GSM SMS message is given below:",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "AL_58). Modified Chapters 6 for new Link LTE controllers equipped with LTE CAT-M1 and",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Active e-mail messaging and SMS",
+    "why": "SMS qua mo-dun/modem ngoai"
+   },
+   {
+    "line": "Command for start in TEST mode from SMS",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Command for stop in TEST mode from SMS",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Communication and SMS protocol).",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Connect 4G antenna with 4G port of SGE02.",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "Connected to GSM module",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Connected to GSM module.",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Enable, SMS Enable and MODBUS Address program parameters should be set to 0 before",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "Ethernet interface or via GPRS.",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "FDD-LTE:",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "FDD-LTE: B1/B3/B8",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "Fig.11 Controller and GSM Module Connection",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "GSM",
+    "why": "mo-ho"
+   },
+   {
+    "line": "GSM SMS message. The new message will indicate all existing alarms, even masked ones.",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "GSM Setting",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "GSM communication failed).",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "GSM model, controller sends corresponding warning signal.",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "GSM/GPRS/EDGE, LTE Cat M1 and NB-IoT or all these connections.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "GSM: 850/900/1800/1900MHz",
+    "why": "bang tan mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "GSM: 900/1800MHz",
+    "why": "bang tan mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "HGM9420N_HGM9420LT genset controller can connect with SGE02-4G network communication",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "HW Configuration Link LTE",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "I.e.: at each new anomaly event (set for SMS* transmission generation) occurrence, the quantity of programmed SMS* is",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "INFORMATION: Module is able to make and receive SMS*, make GPRS/EDGE/LTE traffic but is unable to make and",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "In case that the device is configured with at least one phone number dedicated to SMS transmission and it is configured for",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "It is possible to use a combined antenna GSM/LTE+GPS/GLONASS or GSM/LTE+GPS antennas.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "LTE Cat. M1",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "LTE Cat. NB-IoT",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "LTE NB-IoT multimode module.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "LTE power class:",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Mains Fail, Mains Restored (enabled via SMS on Mains Change program parameter)",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "NOTE: Pass back information from SMS DETAIL including: working mode, mains voltage,",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "NOTE: Pass back information from SMS DETAIL including: working mode, mains voltage, generator voltage, load",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "NOTE: Pass back information from SMS DETAIL including: working mode, mains voltage, generator voltage, load current,",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "NOTE: SMS DETAIL returned detailed information includes: working mode, Mains voltage, Gen voltage, load current,",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "NOTE: When sending orders, users need to follow SMS orders in above form and all the",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "NOTE: When sending orders, users need to follow SMS orders in above form and all the letters must be capital.",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "Network communication module has SMS message function.",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "New LINK LTE devices deployed in the field today, can then be activated on existing 2G networks and still leverage the benefits",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "PIN code before using it in the Link LTE devices.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Power for GSM module (GSM module is power-off reset",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Power for GSM module (GSM module is reset",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Power for GSM module (GSM module is reset when",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Power for GSM module (GSM module is reset when GSM",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Program Group: SMS-3 Telephone Number (password level-2)",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "Program Group: SMS-4 Telephone Number (password level-2)",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "Program Group: SMS-5 Telephone Number (password level-2)",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "Program Group: SMS-6 Telephone Number (password level-2)",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "REWIND - GPRS/GSM/GPS Device.",
+    "why": "thiet bi REWIND ngoai"
+   },
+   {
+    "line": "SGE02-4G status, genset status, Mains status, and breaker status.",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "SMS message for the identification of the genset",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "SMS* sending system, the position and status data even in case the device main supply is removed.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "SMS, while in AUTO, TEST or REMOTE START mode.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "START as soon as it receives the SMS and returns to AUTO when it receives the opposite command. In this case,",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "TDD-LTE: B38/B39/B40/B41",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "Table 19 SMS Message Order List",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "Table 19 SMS Orders",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "Table 20 SMS Orders List",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "The GSM SMS sending is activated by setting the SMS Enable program parameter to 1.",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "The Link LTE controllers can send alerts directly to a mobile phone via SMS* (mobile originated SMS); to do so, the device can",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "The diagram below illustrates the application of SmartGen GSM-3 module (international version).",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "The maximum number of alarms transmitted in a SMS message is 4. This limitation is due to the",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "The new GC315Link e GC400Linkcontrollers are equipped with an LTE Cat.M1 and NB‐IoTMultimode module and quad‐band 2G",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "The unit is able to send SMS messages in fuel theft or fuelling conditions.",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "This is the language used in SMS messages.",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "This line is intended for the identification of the genset sending the SMS message.",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "This parameter controls SMS sending when mains",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "To activate the function of the Link LTE types, it is necessary to set the parameter P.0450 to the “1-Link Module” or “2-Link",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "To use the communication on 2G/LTE network it is necessary to configure some parameters that allow the device to connect",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "Users send order message to GSM mode, then controller will make actions according to this SMS order",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Users send order message to GSM module, then controller will make actions according to",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "Users send order message to GSM module, then controller will make actions according to this SMS order",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "When SMS sending is in progress, an (SMS) icon will appear at the upper right corner of the",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "When a fault condition occurs, the unit will compose an SMS message and will send it to up to 6",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "When first power up, it will search with the following priority: CAT-M > NB-IOT > GSM/GPRS/EDGE.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "When select GSM enable but the controller couldn’t detect GSM",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "When select GSM enable but the controller couldn‟t detect",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "[2] Mecc Alte EAAS0341xx Serial Communication and SMS Protocol.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "an SMS command.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "and SMS messaging. Comprehensive communications are also available via RS232, RS485 & Ethernet for remote PC control and monitoring to allow",
+    "why": "SMS qua modem ngoai (cau bi cat)"
+   },
+   {
+    "line": "besides, generator status can be controlled and checked using SMS(GSM port is",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "calls made from a remote location. GSM modems and classic cable network (PSTN) modems are",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "can be asked via SMS* and it can be used to pinpoint the genset on a map (many business sites allow this operation).",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "can be controlled and checked using SMS;",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "configuration. For the SMS* you can receive and for the commands you can send see the document [2] (EAAS0341xx Serial",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "controller can send short messages via SMS automatically to max. 5 telephone numbers.",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "controller via SMS* to know the current IP address.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "converted by the controller into IP address using the DNS server (suitably configured or automatic on GPRS). It is",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "fallback (GPRS/EDGE) with multi-regional coverage.",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "maximum length of an SMS message which is 160 characters.",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "need to be programmed to send SMS* to a specific phone.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "of LTE Cat.M1 and NB‐IoT technology once it becomes available.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "recommend setting parameter P.0570 to 1-GSM/GPRS to force the connection to the GSM/GPRS/EDGE network and make",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "release and preventing consecutive GSM SMS messages. Any new upcoming alarm will result in a new",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "short messages via SMS automatically to max. 5 telephone numbers. besides, generator status can",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "short messages via SMS automatically to setting 5 telephone numbers. Besides, generator status",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "supports LTE Cat M1 network.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "the controller shifts from TEST after receiving the SMS and returns to AUTO after the time P.0420 Test starting",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "through GSM and PSTN modems.",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "transmitted to each configured phone number, in accordance with “Number of SMS for each event” parameter",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "used as the recipient of an SMS*. This is obtained by setting the parameters for each telephone number entered",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "when GSM communication failed).",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| (2) SMS on Mains Change | - | 0",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "| - | YANMAR gas 4G",
+    "why": "4G la ten dong dong co Yanmar gas, khong phai mang di dong"
+   },
+   {
+    "line": "| - | Yanmar gas 4G",
+    "why": "4G la ten dong dong co Yanmar gas, khong phai mang di dong"
+   },
+   {
+    "line": "| 1 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 1 | SMS GENSET",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 1. | Selects the first phone number configured for SMS* transmission.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| 19 | GSM",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| 2 | SMS START",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 2. | Sends an SMS* to that number.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| 27 | GSM Power",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| 27 | GSM Power Supply",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| 3 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 3 | SMS STOP",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 3 | SMS STOP MODE",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| 34 | GSM Com Fail",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| 34 | GSM Comm. Fail",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| 3G Communication Module | with",
+    "why": "mo-dun truyen thong (3G Communication Module)"
+   },
+   {
+    "line": "| 4 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 4 | SMS MANUAL",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| 4. | Checks if further phone numbers configured for SMS* transmission exist. In case that-these exist, the device",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| 4G EU market | CM2IB4GEBFB",
+    "why": "ma dat hang mo-dun CM2-4G"
+   },
+   {
+    "line": "| 4G Japan market | CM2IB4GJBFB",
+    "why": "ma dat hang mo-dun CM2-4G"
+   },
+   {
+    "line": "| 5 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 5 | SMS AUTO",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 5 | SMS AUTO MODE",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| 5G (LTE Cat-M, Nb-IoT), with GPS compatibility. | • | GC315 LINK version with in-built wireless 2G/5G and GPS",
+    "why": "chi ban GC315 LINK, gan ca GC315/GC315PLUS"
+   },
+   {
+    "line": "| 6 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 6 | SMS DETAIL",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| 64 | SGE02-4G Comm. Fail",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| 7 | SMS DETAIL",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 8 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| 8. | SGE02-4G | (0-1) | 1 | 0:",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| 9 | SMS",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| >> | SMS communication.",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| A. | SMA FEMALE connector for GSM - LTE antenna.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| AUTO MODE | SMS AUTO MODE OK",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| AUTO | SMS AUTO MODE OK",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| Antenna RF (GSM/LTE) | 50 ohm nominal characteristic impedance",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| Display | SmartCloud | 2G/5G and",
+    "why": "chi ban GC315 LINK, gan ca GC315/GC315PLUS"
+   },
+   {
+    "line": "| EDGE Class: | GPRS:",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "| EDGE | Enhanced Data rates for GSM Evolution (E)",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| FDD-LTE: | SGE02-4G-S05",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "| GNSS Receiver Antenna (Link LTE) | 1 SMA female connector",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| GPRS power class: | EDGE power class:",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "| GPRS | General Packet Radio Service",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| GSM | Global System for Mobile",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| GSM | Setting",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| GSM | ●",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| GSM | ● | ● | ● | ●",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| GSM | ● | ● | ● | ● | ● | ●",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "| HGM9420N-G | All Regions | TDD-LTE: B38/B39/B40/B41 | SGE02-4G-G",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "| HGM9420N-S01 | Chinese Mainland and | TD-SCDMA: B34/B39 | SGE02-4G",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| HGM9420N-S02 | FDD-LTE: B2/B4/B12 | SGE02-4G-S01",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "| HGM9420N-S03 | FDD-LTE: B2/B4/B5/B13 | SGE02-4G-S02",
+    "why": "bang tan/ma dat hang mo-dun SGE02-4G ngoai"
+   },
+   {
+    "line": "| ID | sending the SMS message. Any 20 character long",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "| In this case both GPS/GLONASS and GSM/LTE antennas are integrated in just one body; they can be provided | on",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| Insert 4G, 3G or 2G SIM card, controller will connect the server by wireless | mobile network.",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| LTE CAT-M1: | LTE NB-IoT:",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| LTE | Long Term Evolution",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| LTE-M | Long-Term Evolution Machine Type Communications",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| MANUAL MODE | SMS MANUAL MODE OK",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| MANUAL | SMS MANUAL MODE OK",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| Modbus TCP, as well as GPRS communication over Ethernet or 2G, | with Modbus RTU and Ethernet port with Modbus TCP",
+    "why": "chi ban Link, gan ca GC315/GC315PLUS"
+   },
+   {
+    "line": "| NOTE: This module supports Netcom 4G wireless network, applying standard SIM | card (dimension 25mmx15mm); if",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| P.0570 | Mobile network mode | 1-GSM/GPRS",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| P.0571 | LTE category | 2-CAT M and NB-Iot",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| P_078 | SMS Enable",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "| Relay | GSM Support",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| SMS AUTO MODE OK | Set as auto mode",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS AUTO MODE OK | Set to auto mode",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| SMS MANUAL MODE OK | Set as manual mode",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS MANUAL MODE OK | Set to manual mode",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| SMS START OK | In manual mode, is starting",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| SMS START OK | Start in manual",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS START OK | Start in manual mode",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| SMS START OK | Start in manual or test mode",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS STOP OK | Set as stop mode",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS STOP OK | Set to stop mode",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| SMS | Pass back information can",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| SMS | Short Message Service",
+    "why": "chu giai viet tat"
+   },
+   {
+    "line": "| SMS | and",
+    "why": "mo-ho, qua mo-dun cam them"
+   },
+   {
+    "line": "| SMS-3 telephone number | ---------------- | This SMS telephone number accepts up to 16 digits.",
+    "why": "SMS qua modem GSM ngoai"
+   },
+   {
+    "line": "| STOP MODE | SMS STOP OK",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| STOP | SMS STOP OK",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| TEST | SMS TEST MODE OK",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| WARNING! A separation distance of at least 30 cm (11.81 inches) between the GSM/LTE antenna and | the",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| YANMAR | - | Gas 4G",
+    "why": "4G la ten dong dong co Yanmar gas, khong phai mang di dong"
+   },
+   {
+    "line": "| emergency stop terminal – for fuel and crank | GSM/GPRS/EDGE",
+    "why": "chi ban Link, gan ca GC315/GC315PLUS"
+   },
+   {
+    "line": "| module | Active e-mail messaging and SMS",
+    "why": "mo-dun truyen thong"
+   },
+   {
+    "line": "| name the Mobile Country Code (MCC) + Mobile Network | LTE NB | 85",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| types. All programs may be modified via front panel | GSM SMS message sending on fault",
+    "why": "qua modem GSM/PSTN ngoai"
+   },
+   {
+    "line": "| you want to use the module in LTE Cat M1 network you have to confirm with the operator that | the",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| — | By connecting SGE02-4G module, GPS positioning function can be realized to obtain genset",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| — | By connecting SGE02-4G module, SMS function can be realized; when alarms occur, it can",
+    "why": "mo-dun ngoai SGE02-4G, khong co san tren bo dieu khien"
+   },
+   {
+    "line": "| • | Automatic call or SMS in case of event.",
+    "why": "mo-ho, qua modem/thiet bi ngoai"
+   },
+   {
+    "line": "| • | By means of a proper command via SMS (refer to document [2]). In this case, the controller shifts to REMOTE",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | By means of a proper command via SMS (refer to document [2]. In order for this feature to be used, the",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | EVT.1060: Command for start in TEST mode from SMS",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | EVT.1061: Command for stop in TEST mode from SMS",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | For GC315Link/GC400xLink controllers (equipped with GPRS internal module), the controller shows:",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "| • | LINK LTE to refer to all models GC315Link GC400Link GC400Mains+Link equipped with a module that uses GPRS/EDGE, LTE",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | P.0571 parameter configures the preferred LTE network mode to:",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | REWIND - Module interface for SIMONE using GPRS/GSM and GPS technology.",
+    "why": "mo-dun REWIND ngoai"
+   },
+   {
+    "line": "| • | SMS communication",
+    "why": "chi ban Link, gan ca GC315/GC315PLUS"
+   },
+   {
+    "line": "| • | The IP address assigned to the controller by the GPRS network.",
+    "why": "chi ban Link (GC315/GC400 goc khong co modem)"
+   },
+   {
+    "line": "| • | To receive SMS* messages in case of alarms or information about the plant status.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | To send commands to the plant through SMS* messages",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| • | Using a “SMS” command (see doc. [2]).",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "| ♦ | Equipped with SMS (Short Message Service) function. When genset",
+    "why": "SMS qua mo-dun SGE02-4G/GSM ngoai"
+   },
+   {
+    "line": "| ♦ | Equipped with SMS (Short Message Service) function. When genset is",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "| ➢ | the active connection type GSM, EDGE, LTE NB-IoT or LTE | S.04 SERIAL COMMUN.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "◙ GSM",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "★GSM settings",
+    "why": "qua mo-dun GSM ngoai (SmartGen GSM module)"
+   },
+   {
+    "line": "♦ Equipped with SMS (Short Message Service) function. When genset is alarming, controller can send",
+    "why": "SMS qua mo-dun GSM ngoai"
+   },
+   {
+    "line": "➢ 0 (“Automatic”): automatic connection between GSM/GPRS/EDGE or LTE network.",
+    "why": "chi ban Link LTE"
+   },
+   {
+    "line": "➢ Sending and receiving SMS* message",
+    "why": "chi ban Link LTE"
+   }
+  ],
+  "data_logging": [
+   {
+    "line": "Data logging",
+    "why": "mo-ho: chi co tu khoa tran"
+   },
+   {
+    "line": "J1939 standard). For example, if you use the files related to MAN DATALOGGER, the controller displays all the measurements",
+    "why": "nghia-khac: tep 'MAN DATALOGGER' cua ECU"
+   }
+  ],
+  "ecu_support": [
+   {
+    "line": "\"ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "15 CONNECTIONS OF CONTROLLER WITH J1939 ENGINE",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "2. Add settings of fuel output time, ECU GOV gain and ECU",
+    "why": "nhat-ky-sua-doi"
+   },
+   {
+    "line": "DEIF engine specification (J1939 + CANopen)",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "ECU.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "Engine type: Common J1939.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "Incorrect ecm software",
+    "why": "noi-ve-dong-co: ma loi phan mem ECM cua dong co"
+   },
+   {
+    "line": "Indicate ECU sends a shutdown alarm signal.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "Indicate ECU sends a warning alarm signal.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "J1939 interface.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "J1939 protocols.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "NOTE: If connected with J1939 engine via CANBUS port, this page also includes: coolant pressure, coolant level, fuel",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "NOTE: If there is any question of connection between controller and ECU communication, please feel free to contact",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "When connected to J1939 engine,",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "YC-ECU-A",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "Yuchai YC-ECU",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "Yuchai YC-ECU-A",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "[5] Mecc Alte EAAM0136xx User Manual J1939 interfaces.",
+    "why": "tai-lieu-tham-chieu: sach HD san pham khac (Mecc Alte AVR)"
+   },
+   {
+    "line": "because regeneration is in progress or about to start: the ECU could apply a reduction in engine performance",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "cannot regenerate it, at some point the ECU will still apply a derating and eventually it could stop the",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "electronic control unit can manage in first person the requests of OVERRIDE. In this case, they are already the ECU which do",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "electronic engines",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "fitted with J1939 interface.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "follow the J1939-75 standard).",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "of ECU machine, but also control starting up, shutdown, speed raise and speed drop via CANBUS",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "parameter is reset to 0-Automatic). If the ECU can, it carries out a regeneration cycle, which",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "performance. It should be a transient condition: if the level of soot in the filter increases and the ECU",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "speed governor or ECU)",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "the ECU”.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "time and the soot level in the filter becomes extremely high, the ECU activates a diagnostic code with red lamp",
+    "why": "noi-ve-dong-co: hanh vi ECU cua dong co (tai sinh DPF, derate), khong phai chuc nang bo dieu khien"
+   },
+   {
+    "line": "with J1939.",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| (ECU, ACM, SCR etc.) | Remote monitoring via Modbus, TCP/IP, AirGate",
+    "why": "mo-ho: o bang tron noi dung (ECU, ACM, SCR) canh o khac"
+   },
+   {
+    "line": "| 1 | Engine Type | (0-39) | 0 | J1939).",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| 12 | ECU shutdown | When controller gets stop signal from engine via J1939, it will send",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| 13 | ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| 16 | ECU Warn | When controller gets the alarm signal from engine via J1939, it",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| 60 | ECU Warn",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| 61 | ECU Shutdown",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| 62 | ECU Comm. Failure",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| Analogue | ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| Any engine that uses | ● | Generic J1939",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| CAN (J1939) | ● | ●",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN GND | SAE J1939 shield",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN GND | SAE J1939 shield-E",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN(H) | SAE J1939 signal | Using impedance 120Ω connecting line.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN(H) | SAE J1939 signal-C | Using impedance 120Ω connecting line.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN(L) | SAE J1939 return | Using impedance 120Ω connecting line.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| CAN(L) | SAE J1939 return-D | Using impedance 120Ω connecting line.",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| ECU | AVR",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| ECU | communication",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| ECU | warning or stop",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| ECU-dependent | Cummins Generic*",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| Generic J1939 | Any ECU that uses",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| Guascor | GCS-e ECU",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| Isuzu | ECM | 4JJ1X, 4JJ1T, | 6WG1X",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| MTU | J1939 Smart",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| MTU | J1939 Smart Connect, | Series 1600",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| NOTE: For ECU alarms | and shutdown alarms, if the alarm information is",
+    "why": "bien-the: danh sach co HGM7210/HGM7220 (khong CAN) canh ban CAN; noi dung J1939/CANBUS chi dung ban CAN"
+   },
+   {
+    "line": "| Protection degree (front | J1939",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| The CANBUS version connects to ECU controlled | Event logging with time stamp and",
+    "why": "bien-the: chi ban CANBUS cua DKG307 ('The CANBUS version connects to ECU')"
+   },
+   {
+    "line": "| Yuchai United | YC-ECU",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| Yuchai United | YC-ECU-A",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| as | “ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| electronic engines providing engine control, | Dual genset mutual standby operation",
+    "why": "mo-ho/bien-the: manh cau brochure 'The CANBUS version ...'"
+   },
+   {
+    "line": "| electronic engines providing engine control, | measurements",
+    "why": "bien-the: chi ban CANBUS cua DKG307 ('The CANBUS version connects to ECU')"
+   },
+   {
+    "line": "| events, | ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| or | CAN-based | J1939",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| or | MTU J1939 Smart Connect",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| or | later) | MTU J1939 Smart Connect",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| with | J1939",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "| ● | (ECU v 2.3",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "| ● | (ECU v 2.3 | Volvo Penta EMS2",
+    "why": "danh-sach-dong-co: ten ECU/dong co trong bang dong co tuong thich, khong noi chuc nang bo dieu khien"
+   },
+   {
+    "line": "―ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   },
+   {
+    "line": "“ECU",
+    "why": "mo-ho: manh cat/1-2 tu, khong khang dinh"
+   }
+  ],
+  "emergency_stop": [
+   {
+    "line": "Adding input port functions: “Emergency Stop”, “Low Oil Level Warn”;",
+    "why": "nhat ky sua doi (\"Adding input port functions\")"
+   },
+   {
+    "line": "Emergency Stop",
+    "why": "mo-ho: dong chi co tu khoa (tieu de)"
+   },
+   {
+    "line": "| software | For example, emergency stop, and remote",
+    "why": "mo-ho: vi du chung ve phan mem, khong khang dinh chuc nang"
+   }
+  ],
+  "ethernet": [
+   {
+    "line": "5.18.4.1 Ethernet – SNMP protocol",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "DSEG8-Series controllers via Ethernet.",
+    "why": "noi ve bo dieu khien khac (DSEG8)"
+   },
+   {
+    "line": "ETHERNET",
+    "why": "mo-ho, khong ro model nao co"
+   },
+   {
+    "line": "Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "Ethernet interface or via GPRS.",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "Ethernet or",
+    "why": "mo-ho"
+   },
+   {
+    "line": "For GC315Plus and GC400 controllers (with ETHERNET interface), the controller shows:",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "In case the controller is equipped with an Ethernet connection, the controller clock can be automatically updated through the",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "LED I/F and Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "and/or ASC-4 controllers. The TDU uses an Ethernet port to connect to these controllers.",
+    "why": "noi ve TDU (thiet bi khac)"
+   },
+   {
+    "line": "connection RS232/RS485 or to Ethernet. After installing the driver, the PC will acknowledge the controller as a new serial port,",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "on-board Ethernet port is reset. This is a safe procedure to prevent hardware faults, and also allow fault recovery and auto-",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "over Ethernet protocol.",
+    "why": "mo-ho"
+   },
+   {
+    "line": "ports: Ethernet TCP/IP,",
+    "why": "chi 1 model trong dong easYgen-1000 co Ethernet"
+   },
+   {
+    "line": "| Analogue | Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| CAN & Ethernet bus. The group controller collects and sorts the data of its group and acts like a “Big Genset” | and busbar arbitration",
+    "why": "noi ve group controller (thiet bi khac)"
+   },
+   {
+    "line": "| CAN B | Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| Cellular/Ethernet | Connection",
+    "why": "mo-dun truyen thong"
+   },
+   {
+    "line": "| Compliant IEE802.3/802.3u (Fast ethernet), ISO802-3/IEEE802.3 | (10BASE-T)",
+    "why": "GC315 goc khong co Ethernet (chi ban ETH)"
+   },
+   {
+    "line": "| ETHERNET | ● | ●",
+    "why": "mo-ho, 2 dau cham cho 4 model"
+   },
+   {
+    "line": "| Ethernet (TCP/IP) | — | — | — | 1",
+    "why": "chi 1 model trong dong easYgen-1000 co Ethernet"
+   },
+   {
+    "line": "| Ethernet Cable | 016-160",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| Ethernet cable, crossed, | 3",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| Ethernet port | can",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| Ethernet | Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| Ethernet | Internal",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| Ethernet | USB",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| J4 | PC Ethernet cable crossed, 3 m. UL94 (V1) approved",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| Load | Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| Measurement details | True RMS. 12-bit resolution. 10 kHz sampling rate | 1 Ethernet port",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| Modbus TCP, as well as GPRS communication over Ethernet or 2G, | with Modbus RTU and Ethernet port with Modbus TCP",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| N | Ethernet TCP/IP Modbus RTU",
+    "why": "tuy chon N cua AGC200"
+   },
+   {
+    "line": "| N | Ethernet communication",
+    "why": "tuy chon N cua AGC200"
+   },
+   {
+    "line": "| On some models of the controller, a RJ45 serial port is provided for data exchange connection via Ethernet | network.",
+    "why": "GC315 goc khong co Ethernet (chi ban ETH)"
+   },
+   {
+    "line": "| Type of interface | 1 Ethernet interface 10/100Mbps full-duplex 10T/100Tx Auto",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| Using | Ethernet",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| o | “Communication in course”: communication in course and cable connected to the Ethernet network.",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| used in the configuration are | available | in the menu 5.5 Ethernet:",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| • | DANCE - Module interface for SIMONE using Ethernet technology.",
+    "why": "mo-dun DANCE ngoai"
+   },
+   {
+    "line": "| • | Ethernet",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| • | Ethernet switch (Bridged between 2 ports).",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| • | RJ45 connector for connection to Ethernet networks 10/100 (GC315ETH version).",
+    "why": "GC315 goc khong co Ethernet (chi ban ETH)"
+   },
+   {
+    "line": "| • | Sending Modbus commands through serial ports, the USB port, the ETHERNET port or through the modems. The",
+    "why": "GC315 goc khong co Ethernet (chi GC315Plus/ETH)"
+   },
+   {
+    "line": "| ✓ | Built-in Ethernet for remote",
+    "why": "chi 1 model trong dong easYgen-1000 co Ethernet"
+   },
+   {
+    "line": "|  | Redundant or single load share communication over Ethernet among group controllers",
+    "why": "noi ve group controller (thiet bi khac)"
+   },
+   {
+    "line": "• Ethernet switch (Bridged between 2 ports).",
+    "why": "mo-ho"
+   }
+  ],
+  "event_log": [
+   {
+    "line": "4 Event Log",
+    "why": "so-sai: so muc '4 Event Log'"
+   },
+   {
+    "line": "8.4 EVENT LOG",
+    "why": "so-sai: so muc '8.4 EVENT LOG'"
+   },
+   {
+    "line": "Table 7 Event Log",
+    "why": "so-sai: 'Table 7'"
+   }
+  ],
+  "front_ip": [
+   {
+    "line": "| Display gasket | Display gasket IP66 | 2912420030 | Standard is IP52",
+    "why": "phu-kien: IP66 la gioang ma 2912420030; chuan IP52"
+   },
+   {
+    "line": "| EN | 61326-1 | EN 60529 (front panel IP50, front panel IP65 with gasket,",
+    "why": "gioang-tuy-chon: IP65 chi voi gioang (khong noi kem theo); IP50 dung"
+   },
+   {
+    "line": "| Hz | Protection Level | IP65 in the front, mounted with kit",
+    "why": "mo-ho: IP65 'mounted with kit' (kit tuy chon?)"
+   },
+   {
+    "line": "| IP65 Gasket | 020-282",
+    "why": "phu-kien: gioang IP65 ma dat hang 020-282"
+   },
+   {
+    "line": "| IP65 Gasket | 020-521",
+    "why": "phu-kien: gioang IP65 ma dat hang 020-521"
+   },
+   {
+    "line": "| L | DU-2 or AOP display gasket for IP54",
+    "why": "tuy-chon: ma tuy chon L, gioang DU-2/AOP"
+   },
+   {
+    "line": "| the measures and operation | >> | Protection Grade: IP54 (front panel, by means of additional keylock",
+    "why": "phu-kien: IP54 nho 'additional keylock'"
+   }
+  ],
+  "load_demand": [
+   {
+    "line": "Remote Start On Load Demand. See",
+    "why": "nghia khac: Remote Start On Load = khoi dong tu xa, khong theo nhu cau tai"
+   },
+   {
+    "line": "the peak load demand and runs parallel to mains.",
+    "why": "nghia khac: peak shaving, khong phai start/stop theo tai giua cac may"
+   },
+   {
+    "line": "| ASEAN & Oceania | mains connections and their load dependent start/stop behavior. The tool allows access by Mod-",
+    "why": "san pham khac: phan mem cau hinh (tool)"
+   },
+   {
+    "line": "| Peak shaving | Genset supplies peak load demand paralleled to",
+    "why": "nghia khac: peak shaving"
+   },
+   {
+    "line": "| Peak shaving | Power plant where generator supplies peak load demand paralleled to the",
+    "why": "nghia khac: peak shaving"
+   },
+   {
+    "line": "| Peak shaving | Power plant where generator supplies peak load demand paralleled to the mains.",
+    "why": "nghia khac: peak shaving"
+   },
+   {
+    "line": "|  | Active and reactive load sharing and load dependent start/stop (LDSS) management of the whole fleet",
+    "why": "san pham khac: quan ly ca doi may cua group controller"
+   }
+  ],
+  "load_sharing": [
+   {
+    "line": "VARIETY OF LOAD SHARE APPLICATIONS",
+    "why": "mo-ho: tieu de chung; DSE8003MKII la man hinh tu xa, khong chia tai"
+   },
+   {
+    "line": "demanding load share applications.",
+    "why": "mo-ho: cau ve ca dong; DSE8680 la bo bus-tie"
+   },
+   {
+    "line": "load-share)",
+    "why": "mo-ho: manh chu"
+   },
+   {
+    "line": "ports capable of being active at the same time, the DSE86XX MKII series is ideal for a wide variety of demanding load share applications.",
+    "why": "mo-ho: cau ve ca dong DSE86XX; DSE8660 la bo dieu khien luoi"
+   },
+   {
+    "line": "| Analogue load sharing (with IOM 230) | ● | ● | ●",
+    "why": "phu kien: can mo-dun IOM 230"
+   },
+   {
+    "line": "| Analogue load sharing | Analogue load sharing | Analogue load sharing",
+    "why": "phu kien: chia tai analog can IOM 230"
+   },
+   {
+    "line": "| Analogue load sharing | IOM | IOM | IOM | IOM | IOM | IOM | IOM",
+    "why": "phu kien: chia tai analog qua IOM"
+   },
+   {
+    "line": "| Analogue | load sharing",
+    "why": "phu kien: chia tai analog can IOM 230"
+   },
+   {
+    "line": "| DSEG0123 | Analogue Load Share Lines Interface | G0123-01",
+    "why": "phu kien: DSEG0123 giao dien duong chia tai analog"
+   },
+   {
+    "line": "| Specialized engine controller for Marine | Symmetrical load sharing for propulsion engines",
+    "why": "nghia khac: chia tai dong co day tau, khong phai to may phat"
+   },
+   {
+    "line": "| the same load sharing system | load share modules.",
+    "why": "thiet bi khac: DSE8003MKII noi voi mo-dun chia tai"
+   },
+   {
+    "line": "|  | Active and reactive load sharing and load dependent start/stop (LDSS) management of the whole fleet",
+    "why": "san pham khac: quan ly ca doi may cua group controller"
+   },
+   {
+    "line": "|  | Redundant or single load share communication over Ethernet among group controllers",
+    "why": "san pham khac: giua cac group controller"
+   }
+  ],
+  "mains_failure": [
+   {
+    "line": "(AMF)",
+    "why": "mo-ho: manh \"(AMF)\" khong ngu canh"
+   },
+   {
+    "line": "A. A signal activated well in advance with respect to the mains failure (e.g., approx. 30 mins).",
+    "why": "khac-nghia: chuc nang EJP (tin hieu bao truoc), khong phai phat hien mat luoi"
+   },
+   {
+    "line": "B. A signal activated just before mains failure.",
+    "why": "khac-nghia: chuc nang EJP (tin hieu bao truoc)"
+   },
+   {
+    "line": "In case of a mains failure, Sices genset control panel gets a signal from the existing ATS (it may be ATS115, MC200 or",
+    "why": "thiet-bi-ngoai: ATS ben ngoai phat hien mat luoi, gui tin hieu"
+   },
+   {
+    "line": "Mains (Utility) Failure Control Modules",
+    "why": "to-ghep: gan ca DSE6110/DSE7310/DSE7410 (ban auto start)"
+   },
+   {
+    "line": "Mains failure",
+    "why": "mo-ho: chu tran \"Mains failure\" khong ngu canh"
+   },
+   {
+    "line": "The EJP function allows to start the engine and warm it before mains failure, so when it will happen, loads can be immediately",
+    "why": "khac-nghia: chuc nang EJP (chay truoc khi mat luoi)"
+   },
+   {
+    "line": "Upon mains failure, the load is immediately supplied by the genset.",
+    "why": "mo-ho: mo ta ung dung chung, khong noi bo dieu khien do luoi"
+   },
+   {
+    "line": "from the mains failure signal.",
+    "why": "thiet-bi-ngoai: tin hieu mat luoi tu ATS ngoai"
+   },
+   {
+    "line": "mains failure and prevents damage to electrical equipment.",
+    "why": "mo-ho: manh cau, co the noi ve bao ve"
+   },
+   {
+    "line": "mains failure function (AMF), particularly well suited for single automation systems that",
+    "why": "bien-the: AMF cua HGM9320, gan ca HGM9310"
+   },
+   {
+    "line": "mains failure.",
+    "why": "mo-ho: manh \"mains failure.\" khong ngu canh"
+   },
+   {
+    "line": "mains/generator automatic transfer control function (AMF), particularly suits for single automation",
+    "why": "bien-the: cau AMF cua HGM9620, gan ca HGM9610"
+   },
+   {
+    "line": "stations where any mains failure, even for a few seconds, could cause huge problems to people and data security, by",
+    "why": "ngu-canh-ung-dung: mo ta nhu cau tram/data center"
+   },
+   {
+    "line": "| 46 | Aux Mains Failure",
+    "why": "ngõ vào mất lưới phụ (thiết bị ngoài báo), không phải bộ điều khiển đo lưới"
+   },
+   {
+    "line": "| 5. | Mains Split Action | (0-1) | 0 | 0: Trip and Stop; 1: Aux. Mains Failure.",
+    "why": "tác động khi tách lưới, không phải phát hiện mất lưới"
+   },
+   {
+    "line": "| 6020-03 | Auto Mains Failure with real",
+    "why": "bien-the: ma 6020-03 chi cua DSE6020, gan ca DSE6010"
+   },
+   {
+    "line": "| 6020-04 | Auto Mains Failure with real",
+    "why": "bien-the: ma 6020-04 chi cua DSE6020, gan ca DSE6010"
+   },
+   {
+    "line": "| AGC | 213 Mains failure,",
+    "why": "bien-the: chi bien the AGC 213"
+   },
+   {
+    "line": "| AMF | ●",
+    "why": "mo-ho: o bang \"AMF | ●\" khong ro model/che do"
+   },
+   {
+    "line": "| AMF | ● | ●",
+    "why": "bang-so-sanh: bang nhieu model, gan ca HGM7210/HGM9310 khong AMF"
+   },
+   {
+    "line": "| AMF | ● | ● | ● | ● | ●",
+    "why": "bang-so-sanh: bang nhieu model, gan ca HGM9510/HGM9610"
+   },
+   {
+    "line": "| AUTO START & AUTO MAINS FAILURE | BS EN 61000-6-2",
+    "why": "to-ghep: tieu de chung, gan ca DSE7210"
+   },
+   {
+    "line": "| AUTO START AND AUTO MAINS FAILURE | CONTINUOUS VOLTAGE RATING",
+    "why": "to-ghep: tieu de chung, gan ca DSE6010"
+   },
+   {
+    "line": "| AUTO START AND AUTO MAINS FAILURE | DC SUPPLY",
+    "why": "to-ghep: tieu de chung DSE4610 (auto start) & DSE4620 (AMF)"
+   },
+   {
+    "line": "| AUTO START AND AUTO MAINS FAILURE | ELECTRO-MAGNETIC COMPATIBILITY",
+    "why": "to-ghep: tieu de chung, gan ca DSE4610/DSE6010"
+   },
+   {
+    "line": "| HGM7X20 | All HGM7200 series AMF controllers.",
+    "why": "bien-the: HGM7X20 la ban AMF, gan ca HGM7210"
+   },
+   {
+    "line": "| MKII Auto Mains (Utility) Failure | sensing engine support for diesel,",
+    "why": "to-ghep: gan ca DSE6010 (ban auto start)"
+   },
+   {
+    "line": "| MKIII | Auto Mains (Utility) Failure Control Modules",
+    "why": "to-ghep: gan ca DSE6110 (ban auto start)"
+   },
+   {
+    "line": "| Mains (Utility) Failure Control | frequency, voltage, current, power",
+    "why": "to-ghep: gan ca DSE4610 (ban auto start)"
+   },
+   {
+    "line": "| Mains (Utility) Failure | Control",
+    "why": "to-ghep: DSE6110 la ban auto start, dong la ten ban AMF"
+   },
+   {
+    "line": "| • | Mains (utility) failure detection including mains (utility) decoupling",
+    "why": "khac-nghia: bao ve tach luoi (decoupling) cua bo hoa dong, khong phai AMF"
+   }
+  ],
+  "max_sets": [
+   {
+    "line": "These pages show the significant data of each genset that operates on the PMBC Canbus. Each page shows up to 7 gensets.",
+    "why": "so doc sai: so may moi trang hien thi"
+   },
+   {
+    "line": "| system you can imagine. It enables you to command up to 248 gensets, with complete genset management, | GC-3400XT and easYgen",
+    "why": "phu kien: 248 may can group controller GC-3400XT"
+   },
+   {
+    "line": "|  | Full connectivity of up to 248 gensets sorted into 8 groups of 31 gensets each. One GC-3400XT per group",
+    "why": "phu kien: 248 may can group controller GC-3400XT"
+   },
+   {
+    "line": "|  Command up to 248 gensets sorted into | 8 groups of",
+    "why": "phu kien: 248 may can group controller GC-3400XT"
+   }
+  ],
+  "modbus_rtu": [
+   {
+    "line": "Galvanic insulated, Modbus Engines, Modbus RTU",
+    "why": "bien-the: 'galvanic insulated' = RS485 cua GC315 Plus"
+   },
+   {
+    "line": "Modbus RTU",
+    "why": "mo-ho: chi co tu khoa tran"
+   },
+   {
+    "line": "Modbus RTU/TCP",
+    "why": "mo-ho: dong tran gan ca InteliLite4 AMF20.. (can modul)"
+   },
+   {
+    "line": "| H2 | Modbus RTU (RS-485)",
+    "why": "tuy-chon: ma tuy chon H2"
+   },
+   {
+    "line": "| H6 | Modbus RTU, RS-485 (Cummins GCS)",
+    "why": "tuy-chon: ma tuy chon H6"
+   },
+   {
+    "line": "| Modbus TCP, as well as GPRS communication over Ethernet or 2G, | with Modbus RTU and Ethernet port with Modbus TCP",
+    "why": "bien-the: cong chi co o GC315 Plus/Link"
+   },
+   {
+    "line": "| N | Ethernet TCP/IP Modbus RTU",
+    "why": "tuy-chon: ma tuy chon N (Ethernet)"
+   }
+  ],
+  "modbus_tcp": [
+   {
+    "line": "Ethernet/Modbus TCP/IP connector: RJ-45",
+    "why": "tuy-chon: thong so dau noi cua tuy chon N (Modbus TCP/IP)"
+   },
+   {
+    "line": "Modbus RTU/TCP",
+    "why": "mo-ho: dong tran gan ca InteliLite4 AMF20.. (can modul)"
+   },
+   {
+    "line": "Modbus TCP communication",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "Modbus/TCP protocol with the controller is possible (BoardPrg4, Mecc Alte Supervisor SS3).",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "Protocols: Modbus/TCP, DHCP, DNS, SNMP, NTP",
+    "why": "bien-the: Ethernet chi o GC315 Link"
+   },
+   {
+    "line": "the Modbus TCP/IP protocol).",
+    "why": "mo-ho: manh cau, GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "| Modbus TCP, as well as GPRS communication over Ethernet or 2G, | with Modbus RTU and Ethernet port with Modbus TCP",
+    "why": "bien-the: Ethernet chi o GC315 Link"
+   },
+   {
+    "line": "| P.0559 | Modbus/TCP port | 502",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "| • | P.0558 parameter activate/deactivate the data exchange with the protocol Modbus/TCP on the mobile",
+    "why": "bien-the: GC315 thuong khong co Ethernet; 'on the mobile' (modem)"
+   }
+  ],
+  "plc": [
+   {
+    "line": "PLC start-stop",
+    "why": "ben thu ba: PLC ngoai start-stop"
+   },
+   {
+    "line": "traditional PLC.",
+    "why": "mo-ho: manh \"traditional PLC\" (so sanh)"
+   },
+   {
+    "line": "| DEEP SEA ELECTRONICS PLC UK | DEEP SEA ELECTRONICS INC USA",
+    "why": "ten cong ty: Deep Sea Electronics PLC"
+   },
+   {
+    "line": "| IG500 G2 Suite | A bundle of features including large PLC capacity, shared signals over CAN line and more. | SKEFSUITE01",
+    "why": "tuy chon: goi IG500 G2 Suite (ma dat hang)"
+   },
+   {
+    "line": "| PLC Package 1 | Enhanced PLC capacity and number of PLC blocks. | SKPLCPCKG01",
+    "why": "tuy chon: goi PLC Package 1 (ma dat hang)"
+   },
+   {
+    "line": "| PLC-controlled power management possible | ● | ● | ●",
+    "why": "ben thu ba: PLC ngoai dieu khien"
+   },
+   {
+    "line": "| Used for: Modbus RTU, PLC, SCADA, Remote monitoring | (Insight)",
+    "why": "ben thu ba: noi toi PLC ngoai qua Modbus"
+   },
+   {
+    "line": "| • PLC controls start and stop using digital inputs, Modbus | and/or M-Logic",
+    "why": "ben thu ba: PLC ngoai start-stop"
+   },
+   {
+    "line": "• Modbus to PLC, SCADA, and so on",
+    "why": "ben thu ba: noi toi PLC ngoai qua Modbus"
+   }
+  ],
+  "prot_earth_fault": [
+   {
+    "line": "| Earth fault* | 50G",
+    "why": "mo-ho: dau * chu thich (co the tuy chon/bien the)"
+   },
+   {
+    "line": "| Earth fault** | 50G",
+    "why": "mo-ho: dau ** chu thich (co the tuy chon/bien the)"
+   },
+   {
+    "line": "| Measurement Inputs | 3 Phase with Earth Fault",
+    "why": "mo-ho: chi la ngo vao do luong, khong noi bao ve"
+   }
+  ],
+  "prot_mains_decoupling": [
+   {
+    "line": "(ROCOF).",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "ROCOF)",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "ROCOF).",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "When the controller receives “MSC Mains Decoupling” alarm, it shall",
+    "why": "tin hieu tu thiet bi khac qua MSC, khong phai bao ve cua chinh bo dieu khien"
+   },
+   {
+    "line": "vector shift;",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "| 61 | MSC Mains Decoupling",
+    "why": "tin hieu tu thiet bi khac qua MSC (MSC Mains Decoupling)"
+   }
+  ],
+  "prot_overcurrent": [
+   {
+    "line": "IDMT",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "Overcurrent Relay",
+    "why": "mo-ho: \"Overcurrent Relay\" co the la role ngo ra"
+   },
+   {
+    "line": "When over current fault shutdown input is active, controller will send",
+    "why": "ngo vao so bao loi tu thiet bi ngoai (over current fault shutdown input)"
+   },
+   {
+    "line": "over current.",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "overcurrent",
+    "why": "mo-ho: dong chi co tu khoa"
+   },
+   {
+    "line": "used for wiring the mains or generator voltage to the panel. In addition, it must comply with the limit value of the overcurrent",
+    "why": "nghia khac: gioi han qua dong cua day/cau chi khi dau day"
+   },
+   {
+    "line": "| 23 | Over Current Fault",
+    "why": "ngo vao so bao loi tu thiet bi ngoai (Over Current Fault input)"
+   },
+   {
+    "line": "| 24 | Over Current Fault Shutdown",
+    "why": "ngo vao so bao loi tu thiet bi ngoai (Over Current Fault Shutdown input)"
+   },
+   {
+    "line": "| A5 | Directional over-current | (67)",
+    "why": "tuy chon: ma option A5"
+   },
+   {
+    "line": "| Earth fault current | IDMT | 51+64",
+    "why": "nghia khac: IDMT cua bao ve cham dat, khong phai qua dong"
+   },
+   {
+    "line": "| Earth fault inverse time over-current (4th | 1 | 51G",
+    "why": "nghia khac: qua dong cham dat (earth fault), khong phai qua dong may phat"
+   },
+   {
+    "line": "| Earth fault over-current (4th CT) | 2",
+    "why": "nghia khac: qua dong cham dat (earth fault), khong phai qua dong may phat"
+   },
+   {
+    "line": "| Inverse time earth over-current | 1 | 50G | <100 ms",
+    "why": "nghia khac: qua dong cham dat (earth), khong phai qua dong may phat"
+   },
+   {
+    "line": "| Inverse time neutral over-current | 1 | 50N | <100 ms",
+    "why": "nghia khac: qua dong trung tinh (neutral)"
+   },
+   {
+    "line": "| Neutral inverse time over-current (4th CT) | 1 | 51N",
+    "why": "nghia khac: qua dong trung tinh (neutral, 4th CT)"
+   },
+   {
+    "line": "| Neutral over-current (4th CT) | 2",
+    "why": "nghia khac: qua dong trung tinh (neutral, 4th CT)"
+   },
+   {
+    "line": "| check | IDMT",
+    "why": "mo-ho: \"check | IDMT\" khong ro chuc nang"
+   },
+   {
+    "line": "| overcurrent | control/transfer",
+    "why": "mo-ho: \"overcurrent | control/transfer\""
+   }
+  ],
+  "prot_reverse_power": [
+   {
+    "line": "reverse power.",
+    "why": "mo-ho: dong chi co tu khoa"
+   }
+  ],
+  "remote_monitoring": [
+   {
+    "line": "6.16 Remote Monitoring and Programming",
+    "why": "tieu-de: so muc 6.16 (muc luc/tieu de)"
+   },
+   {
+    "line": "6.16. Remote Monitoring and Programming",
+    "why": "tieu-de: so muc 6.16. (muc luc/tieu de)"
+   },
+   {
+    "line": "DSE SCADA is a secure software platform that provides advanced multi-set monitoring & commissioning functionality for DSEG8-Series",
+    "why": "san-pham-khac: phan mem DSE SCADA"
+   },
+   {
+    "line": "Free configuration and SCADA software",
+    "why": "phan-mem-PC: phan mem SCADA mien phi"
+   },
+   {
+    "line": "Insight is a responsive remote monitoring service (www.deif.com/products/insight). It includes real-time genset data, a",
+    "why": "san-pham-khac: dich vu Insight"
+   },
+   {
+    "line": "SCADA",
+    "why": "mo-ho: chi co tu khoa tran"
+   },
+   {
+    "line": "The PC program used for remote monitoring and programming is the same RAINBOW",
+    "why": "phan-mem-PC: RAINBOW"
+   },
+   {
+    "line": "The remote monitoring and programming PC software is called RAINBOW and may be",
+    "why": "phan-mem-PC: RAINBOW"
+   },
+   {
+    "line": "| 3.2 | Remote monitoring service: Insight",
+    "why": "san-pham-khac: dich vu Insight; dang muc luc"
+   },
+   {
+    "line": "| 5.4 | Remote monitoring service: Insight",
+    "why": "san-pham-khac: dich vu Insight; dang muc luc"
+   },
+   {
+    "line": "| DSE SCADA | DSE Paralleling SCADA | 037-060",
+    "why": "san-pham-khac: DSE SCADA ma dat hang 037-060"
+   },
+   {
+    "line": "| DSESCADA | DSE Paralleling SCADA | 037-060",
+    "why": "san-pham-khac: DSE SCADA ma dat hang 037-060"
+   },
+   {
+    "line": "| Insight is a responsive remote monitoring service (www.deif.com/products/insight). It includes real-time genset data, | a",
+    "why": "san-pham-khac: dich vu Insight"
+   },
+   {
+    "line": "| Remote Monitoring | Control",
+    "why": "mo-ho: tieu de bang 'Remote Monitoring | Control'"
+   },
+   {
+    "line": "| Remote SCADA monitoring via | 8 mm",
+    "why": "mo-ho: manh o bang, khong ro qua gi"
+   },
+   {
+    "line": "| SCADA | access",
+    "why": "mo-ho: o bang 'SCADA | access'"
+   },
+   {
+    "line": "| The DSEG810 is a 10” capacitive touchscreen DSE SCADA overview display designed for monitoring and controlling multiple applications. It | runs",
+    "why": "san-pham-khac: man hinh DSEG810"
+   },
+   {
+    "line": "| adjustable timers, threshold levels, input and output | Free MS-Windows Remote monitoring SW",
+    "why": "phan-mem-PC: 'Remote monitoring SW' chay rieng"
+   },
+   {
+    "line": "| configurations, operating sequences and engine | Free MS-Windows Remote monitoring SW",
+    "why": "phan-mem-PC: 'Remote monitoring SW' chay rieng"
+   }
+  ],
+  "remote_start": [
+   {
+    "line": "HGM7X10: Auto Start Module, controls genset to start or stop automatically by remote start signal.",
+    "why": "bien-the: cau rieng HGM7X10, gan ca HGM7220"
+   },
+   {
+    "line": "| 2. | HGM7X10, generator enters “stop delay” as soon as “Remote Start on Load” is inactive.",
+    "why": "bien-the: cau rieng HGM7X10, gan ca HGM7220"
+   },
+   {
+    "line": "| 2. | HGM7X10: Generator enters “start delay” as soon as “Remote Start on Load” is active.",
+    "why": "bien-the: cau rieng HGM7X10, gan ca HGM7220"
+   },
+   {
+    "line": "| Push buttons | REMOTE START: starting is enabled if the operating mode of the local controller is",
+    "why": "phu-kien: nut REMOTE START cua bang dieu khien xa, noi \"local controller\""
+   }
+  ],
+  "rs232": [
+   {
+    "line": "1 (RS232, and which can be used to connect via Modbus to a PC or other devices. You can also use it to acquire the measures",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   },
+   {
+    "line": "43.8 mm and 62 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "BoardPrg4 can be used on all the Mecc Alte devices; connection to the PC can be realized both directly, via the RS232 serial",
+    "why": "phan mem PC BoardPrg4 / bien the GC315"
+   },
+   {
+    "line": "COM1 - RS232 Communication interface (JA)",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   },
+   {
+    "line": "DIGITUS USB 1.1 TO RS-232 ADAPTER (PRODUCT CODE: DA70145 REV 1.1)",
+    "why": "phu kien: bo chuyen USB-RS232 DIGITUS"
+   },
+   {
+    "line": "DIGITUS USB 2.0 TO RS-232 ADAPTER (PRODUCT CODE: DA70146 REV 1.1)",
+    "why": "phu kien: bo chuyen USB-RS232 DIGITUS"
+   },
+   {
+    "line": "Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm more for standard",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "RS232 connector and cable).",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "RS232 serial port using RS485/RS232 adaptors or RS485/USB when necessary.",
+    "why": "phu kien: bo chuyen RS485/RS232"
+   },
+   {
+    "line": "about 60 mm more for standard RS232 connector and cable).",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "and 56 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "connection RS232/RS485 or to Ethernet. After installing the driver, the PC will acknowledge the controller as a new serial port,",
+    "why": "bien the / nghia khac: cong ao qua USB"
+   },
+   {
+    "line": "more for standard RS232 connector and cable).",
+    "why": "mo-ho: ghi chu kich thuoc lap dat (gia dinh)"
+   },
+   {
+    "line": "software used for RS-232 connection.",
+    "why": "mo-ho: manh ve phan mem"
+   },
+   {
+    "line": "to be used just as if it were an RS232 serial.",
+    "why": "nghia khac: cong USB gia lap RS232"
+   },
+   {
+    "line": "using RS485/RS232 or RS485/USB adaptors where necessary.",
+    "why": "phu kien: bo chuyen RS485/RS232"
+   },
+   {
+    "line": "| 8 DIGITAL INPUTS | RS232",
+    "why": "bien the: RS232 chi co o GC315 Plus"
+   },
+   {
+    "line": "| Controller | USB | RS232 | RS485",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   },
+   {
+    "line": "| DI | RS232",
+    "why": "mo-ho: so do; bang 413 cho thay mot so bien the khong co RS232"
+   },
+   {
+    "line": "| INNER DIAGRAM | RS232",
+    "why": "mo-ho: so do; bang 413 cho thay mot so bien the khong co RS232"
+   },
+   {
+    "line": "| Key features | RS232/485 connection or additional binary inputs/outputs",
+    "why": "mo-dun mo rong: RS232/485 qua mo-dun cam them"
+   },
+   {
+    "line": "| RS232 | JA",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   },
+   {
+    "line": "| RS232 | — | — | 1 | 1",
+    "why": "bien the: bang cho thay 2 bien the khong co RS232"
+   },
+   {
+    "line": "| User-defined protections and setpoints, ease-to-use PLC | RS232/485 connection or additional binary inputs/outputs",
+    "why": "mo-dun mo rong: RS232/485 qua mo-dun cam them"
+   },
+   {
+    "line": "| a variety of communication interfaces, supporting Modbus RT U, | • | GC315 Plus version with RS232 and (insulated) RS485 serial ports",
+    "why": "bien the: RS232 chi co o GC315 Plus"
+   },
+   {
+    "line": "| • Operation modes: AUTO, STOP, and MANUAL modes accessible through front panel, discrete inputs or | RS232, USB,",
+    "why": "mo-ho: mau thuan bang bien the (413)"
+   },
+   {
+    "line": "| • | RS232 Serial connection (max 12m), see par. 5.14.1.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   },
+   {
+    "line": "➢ The RS232 serial port",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 thuong khong co RS232"
+   }
+  ],
+  "rs485": [
+   {
+    "line": "& RS485)",
+    "why": "mo-ho: manh '& RS485)', AMF20 can modul CM-RS232-485"
+   },
+   {
+    "line": "*Second RS485 port available in future update",
+    "why": "tuong-lai: cong RS485 thu hai 'future update'"
+   },
+   {
+    "line": "Check whether damage RS485 transfer module;",
+    "why": "thiet-bi-ngoai: 'RS485 transfer module' (bo chuyen doi)"
+   },
+   {
+    "line": "RS 485",
+    "why": "mo-ho: chi co tu khoa tran, khong ngu canh"
+   },
+   {
+    "line": "RS232 serial port using RS485/RS232 adaptors or RS485/USB when necessary.",
+    "why": "bo-chuyen-doi: adaptor RS485/RS232/USB"
+   },
+   {
+    "line": "RS485",
+    "why": "mo-ho: chi co tu khoa tran"
+   },
+   {
+    "line": "RS485)",
+    "why": "mo-ho: manh 'RS485)', AMF8/9 khong co RS485 san"
+   },
+   {
+    "line": "communication via ModBus protocol (RS485 communication port is needed);",
+    "why": "mo-ho: 'RS485 communication port is needed' (dieu kien)"
+   },
+   {
+    "line": "connection RS232/RS485 or to Ethernet. After installing the driver, the PC will acknowledge the controller as a new serial port,",
+    "why": "bo-chuyen-doi: noi qua adaptor/driver, khong khang dinh cong"
+   },
+   {
+    "line": "using RS485/RS232 or RS485/USB adaptors where necessary.",
+    "why": "bo-chuyen-doi: adaptor RS485/RS232/USB"
+   },
+   {
+    "line": "| Connection | RS485",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "| Controller | USB | RS232 | RS485",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "| For details concerning the RS485 connection, its use and the | programming of",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "| GC315 Plus | RS485",
+    "why": "bien-the: chi GC315 Plus co RS485, gan ca GC315/GC315LINK"
+   },
+   {
+    "line": "| H2 | Modbus RTU (RS-485)",
+    "why": "tuy-chon: ma tuy chon H2"
+   },
+   {
+    "line": "| H6 | Modbus RTU, RS-485 (Cummins GCS)",
+    "why": "tuy-chon: ma tuy chon H6"
+   },
+   {
+    "line": "| The RS485 connection needs a 120Ohm termination resistor | on both ends of",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "| Type of interface | 1 RS485 serial port standard TIA/EIA, with galvanic insulation.",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "| U: 1% from value ±100 mV | RS 485",
+    "why": "mo-ho: o bang tron voi thong so do luong, khong ro cong cua ai"
+   },
+   {
+    "line": "| a variety of communication interfaces, supporting Modbus RT U, | • | GC315 Plus version with RS232 and (insulated) RS485 serial ports",
+    "why": "bien-the: chi GC315 Plus co RS485"
+   },
+   {
+    "line": "| • | RS485 Serial connection with galvanic isolation; maximum connection length under optimal conditions, 1200m.",
+    "why": "bien-the: manual chung GC315/GC400, GC315 thuong khong co RS485"
+   },
+   {
+    "line": "➢ The USB port, the RS485 serial port and the CANBUS port are inactive",
+    "why": "bien-the: cong 'inactive'; GC315 thuong khong co RS485"
+   }
+  ],
+  "scheduler": [
+   {
+    "line": "6.17 Exerciser",
+    "why": "tieu-de: so muc 6.17"
+   },
+   {
+    "line": "6.17. Automatic Exerciser",
+    "why": "tieu-de: so muc 6.17."
+   },
+   {
+    "line": "6.18 Exerciser",
+    "why": "tieu-de: so muc 6.18"
+   },
+   {
+    "line": "6.18. Automatic Exerciser",
+    "why": "tieu-de: so muc 6.18."
+   },
+   {
+    "line": "7. Added custom weekly set for cycle selection of scheduled run.",
+    "why": "nhat-ky-sua-doi: 'Added custom weekly set'"
+   },
+   {
+    "line": "Scheduled Run",
+    "why": "mo-ho: chi co tu khoa tran"
+   },
+   {
+    "line": "exerciser is off.",
+    "why": "mo-ho: manh cau 'exerciser is off.'"
+   },
+   {
+    "line": "exerciser.",
+    "why": "mo-ho: manh cau 'exerciser.'"
+   },
+   {
+    "line": "load exerciser.",
+    "why": "mo-ho: manh cau 'load exerciser.'"
+   },
+   {
+    "line": "the exerciser.",
+    "why": "mo-ho: manh cau 'the exerciser.'"
+   },
+   {
+    "line": "| 13 | Exerciser on | 46",
+    "why": "muc-luc: so trang 46"
+   },
+   {
+    "line": "| 13 | Exerciser on | 54",
+    "why": "muc-luc: so trang 54"
+   },
+   {
+    "line": "• Maintenance scheduler with multipurpose flexible timers",
+    "why": "bao-duong: 'Maintenance scheduler'"
+   }
+  ],
+  "snmp": [
+   {
+    "line": "2. AGENT: is the device that responds to SNMP queries (e.g., Mecc Alte controller);",
+    "why": "mo-ho: dinh nghia chung SNMP agent"
+   },
+   {
+    "line": "5.18.4.1 Ethernet – SNMP protocol",
+    "why": "bien-the: tieu de muc, GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "Currently the controller supports the versions v1 and V2c of the SNMP protocol.",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "Protocols: Modbus/TCP, DHCP, DNS, SNMP, NTP",
+    "why": "bien-the: Ethernet chi o GC315 Link"
+   },
+   {
+    "line": "SNMP Manager:",
+    "why": "mo-ho: tieu de 'SNMP Manager'"
+   },
+   {
+    "line": "The SNMP protocol (Simple Network Management Protocol) is an international standard protocol for managing devices on IP",
+    "why": "mo-ho: dinh nghia chung giao thuc SNMP"
+   },
+   {
+    "line": "The SNMP protocol has three fundamental components:",
+    "why": "mo-ho: dinh nghia chung giao thuc SNMP"
+   },
+   {
+    "line": "| Protocols | SNMP v1/v2c/v3",
+    "why": "mo-ho: bang giao thuc gan ca InteliLite4 (can modul truyen thong)"
+   },
+   {
+    "line": "| SNMP Manager address | 0.0.0.0",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "| SNMP Notification events (TRAP) | 0",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   },
+   {
+    "line": "| SNMP Notification port (TRAP) | 162",
+    "why": "bien-the: GC315 thuong khong co Ethernet"
+   }
+  ],
+  "synchronising": [
+   {
+    "line": "Furthermore, the group controller may handle a group breaker, to synchronize or prioritize dead busbar closing.",
+    "why": "san pham khac: group controller xu ly group breaker"
+   },
+   {
+    "line": "In the case in which the controller commands both the MCB and GCB breakers, but it cannot use the synchronisation to close",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "It is activated during the synchronisation for the closing of the GCB circuit breaker.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "It is activated during the synchronisation for the closing of the GCB, MCB or MGCB",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "It is activated during the synchronisation for the closing of the MCB or MGCB circuit",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "Load taking inhibition (for ongoing synchronization on MCB) active.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "P.0852 Maximum time for GCB synchronisation",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "P.0853 Maximum time for MCB synchronisation",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "This page shows the necessary information for the synchronization.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "mains and start the genset. By means of this connection, moreover, the controller is able to synchronize the",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "perform a manual synchronization.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "seconds). It is always possible to close MCB: if GCB is closed, the controller activates the synchronisation (if it is",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "synchronisation.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "synchronising gensets. See the AGC 150 Hybrid Data sheet.",
+    "why": "bien the: tro sang datasheet AGC 150 Hybrid"
+   },
+   {
+    "line": "synchronization and to supply the “synchronized” contact.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "the back synchronisation",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "to connect to a NTP server in such a way to keep the inner time and the given time zone synchronized and updated (that is UTC",
+    "why": "nghia khac: dong bo dong ho NTP"
+   },
+   {
+    "line": "| Additionally, the group controller supports the synchronization and soft loading/unloading of a tie- or mains | and soft loading /",
+    "why": "san pham khac: group controller GC-3400XT"
+   },
+   {
+    "line": "| DSE SCADA | DSE Paralleling SCADA | 037-060",
+    "why": "san pham khac: phan mem DSE Paralleling SCADA / ma dat hang"
+   },
+   {
+    "line": "| DSESCADA | DSE Paralleling SCADA | 037-060",
+    "why": "san pham khac: phan mem DSE Paralleling SCADA / ma dat hang"
+   },
+   {
+    "line": "| equipped gensets with one group controller in a group. The groups are scaled up to x8, i.e. a total up to 248 | (GGB) synchronization",
+    "why": "san pham khac: group controller (GGB)"
+   },
+   {
+    "line": "| from simple functions, such as start/stop of a genset to complex ones, like synchronizing and power manage- | • ATS (Automatic Transfer",
+    "why": "mo-ho: cau gioi thieu ca dong san pham Woodward"
+   },
+   {
+    "line": "| is kept low and the single genset operation is kept safe, should a group controller become the point of failure. | (MCB) synchronization",
+    "why": "mo-ho: manh cau ve group controller (MCB)"
+   },
+   {
+    "line": "| o | The possibility of using the synchronization for closing the breaker (if syncing can be used, the two contact",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "| • | DIF.1004 - “Synchronisation request for GCB”.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "| • | DIF.1034 - “Synchronisation request for MCB”.",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "| • | It activates the warning W272 “Mains reverse synchronization failure”",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "| • | MPM: connect the parallel bars to the JH connector. In this way, the controller can synchronize the genset to",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "|  | alternation with GCB during input synchronization, flashes alone during",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "|  | Supports synchronization and soft loading/unloading of a tie- or mains breaker",
+    "why": "san pham khac: tinh nang cua group controller"
+   },
+   {
+    "line": "|  | Time / Date synchronization over Simple Network Time Protocol (SNTP)",
+    "why": "nghia khac: dong bo thoi gian SNTP"
+   },
+   {
+    "line": "“load management” or from the ongoing back synchronization).",
+    "why": "bien the: tai lieu chung GC315/GC400, GC315 khong hoa dong bo"
+   },
+   {
+    "line": "• NTP time synchronisation with NTP servers",
+    "why": "nghia khac: dong bo thoi gian NTP"
+   }
+  ],
+  "ul": [
+   {
+    "line": "1.13 Notes for UL certification",
+    "why": "tieu-de: muc '1.13 Notes for UL certification'"
+   },
+   {
+    "line": "5A AC150V volt-free output (relay output) (UL certified product)",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "5A AC250V volt-free output (relay output) (UL certified product)",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "5A DC24V power supply output (relay output) (UL certified product)",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "Please note that the UL 6200 certification applies exclusively to the following products:",
+    "why": "mo-ho: 'applies exclusively to the following products'"
+   },
+   {
+    "line": "Range: DC12V-DC30V continuous (UL certified product)",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "The slave relay on the Fuel output must meet the UL 6200 requirements",
+    "why": "thiet-bi-ngoai: ro-le phu phai dat UL 6200"
+   },
+   {
+    "line": "| (easYgen-1800) | 420 mA (12 V); 200 mA (24 V) | 2Adc at 24Vdc (acc. to UL 6200)",
+    "why": "nghia-khac: dinh muc ro-le 'acc. to UL 6200'"
+   },
+   {
+    "line": "| 3-Phase 3-Wire | UL6200) | easYgen-1400: 135 x 110 x 44 mm",
+    "why": "mo-ho: manh 'UL6200)' (co the 'acc. to')"
+   },
+   {
+    "line": "| Crank Output | 3A DC12V/30V power supply output (relay output) (UL certified",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "| Digital Output 8 | 1A DC30V/12V power supply output (transistor output) (UL certified",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "| Digital Output | 7 | 1A DC30V/12V power supply output (transistor output) (UL certified",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "| Fuel Output | 3A DC12V/30V power supply output (relay output) (UL certified",
+    "why": "bien-the: '(UL certified product)' = phien ban UL"
+   },
+   {
+    "line": "| for | UL certification",
+    "why": "mo-ho: manh 'for UL certification'"
+   }
+  ],
+  "usb": [
+   {
+    "line": "6. Modify the description of the Host USB port.",
+    "why": "nhat ky sua doi"
+   },
+   {
+    "line": "DIGITUS USB 1.1 TO RS-232 ADAPTER (PRODUCT CODE: DA70145 REV 1.1)",
+    "why": "bo chuyen doi USB-RS232 ben thu ba"
+   },
+   {
+    "line": "DIGITUS USB 2.0 TO RS-232 ADAPTER (PRODUCT CODE: DA70146 REV 1.1)",
+    "why": "bo chuyen doi USB-RS232 ben thu ba"
+   },
+   {
+    "line": "FLEXY USB 1.1 TO SERIAL ADAPTER (PRODUCT CODE BF-810)",
+    "why": "bo chuyen doi USB-RS232 ben thu ba"
+   },
+   {
+    "line": "RS232 serial port using RS485/RS232 adaptors or RS485/USB when necessary.",
+    "why": "bo chuyen doi RS485/USB"
+   },
+   {
+    "line": "USB",
+    "why": "mo-ho"
+   },
+   {
+    "line": "interface (USB to LINK, SG72 adaptor produced by Smartgen is recommended) via",
+    "why": "cong LINK + adaptor SG72, khong phai USB cua bo dieu khien"
+   },
+   {
+    "line": "using RS485/RS232 or RS485/USB adaptors where necessary.",
+    "why": "bo chuyen doi RS485/USB"
+   },
+   {
+    "line": "| AC voltage | USB",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| Ethernet | USB",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| J7 | PC cable for utility software (USB), 3 m. UL94 (V1) approved",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| Power consumption | USB Host",
+    "why": "mo-ho"
+   },
+   {
+    "line": "| USB Cable Interface | 016-161",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| USB cable, 3 m (J7) | For PC utility software | 1022040065",
+    "why": "phu kien cap"
+   },
+   {
+    "line": "| USB interface to PC | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ",
+    "why": "mo-ho (ky hieu X)"
+   }
+  ]
+ }
+}
