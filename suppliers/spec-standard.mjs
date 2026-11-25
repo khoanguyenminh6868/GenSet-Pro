@@ -268,7 +268,7 @@ function brandFields(bag, e) {
 function addRatings(bag, list, attrs) {
   for (const x of list || []) {
     const raw = (x.lines || []).find((l) => String(l).includes(String(x.kVA))) || null;
-    const value = { voltage: x.volt ?? null, connection: x.conn ?? null, phases: x.phase ?? null, hz: x.hz ?? null, duty: /standb/i.test(x.duty || "") ? "standby" : "continuous",
+    const value = { voltage: x.volt ?? null, connection: x.conn ?? null, phases: x.phase ?? null, hz: x.hz ?? null, duty: x.duty == null ? null : /standb/i.test(x.duty) ? "standby" : "continuous", // tờ không ghi chế độ (Linz cấp H / F, Firstall): để trống
       insulation_rise: x.rise ?? null, kva: x.kVA ?? null, kw: x.kW ?? null, efficiency_pct: x.eff ?? null };
     bag.add("ratings", { value, unit: null, cond: null, missing: [], raw }, { supplierId: x.supplierId, n: x.n, table: null, row: null });
   }
