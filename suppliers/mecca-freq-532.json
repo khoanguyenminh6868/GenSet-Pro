@@ -1,0 +1,5859 @@
+{
+ "note": "Tần số gắn cho bản ghi mecca-power freq null (mecca-freq-532, 25/11/2026, Khoa: tìm cùng mã trong hệ thống / internet, không có thì để trống). Chỉ gắn khi cùng mã tổ máy, cùng công suất (prime + standby kVA / kW), và các bản ghi KHÁC của mecca-power có tần số rõ (tên trang catalog ghi 50Hz / 60Hz hoặc dòng mô tả TABLE_CAPTIONS) cho đúng mã + công suất đó chỉ ra MỘT tần số. Nguồn internet mới: không có (meccapower.com.cn chỉ có các trang đã lưu sources/mecca-power; tìm PDF / trang khác không ra).",
+ "summary": {
+  "total": 532,
+  "attached": 96,
+  "bySource": {
+   "catalog PDF n5001 (tên trang ghi 50Hz/60Hz)": 67,
+   "bảng khác trên site (n129, dòng mô tả TABLE_CAPTIONS)": 17,
+   "bảng khác trên site (n108, dòng mô tả TABLE_CAPTIONS)": 6,
+   "bảng khác trên site (n102, dòng mô tả TABLE_CAPTIONS)": 2,
+   "bảng khác trên site (n180, dòng mô tả TABLE_CAPTIONS)": 4
+  },
+  "internet": 0,
+  "blank": {
+   "conflict": 53,
+   "codeOnly": 28,
+   "none": 355
+  }
+ },
+ "entries": [
+  {
+   "n": 103,
+   "genset": "MC124D",
+   "power": [
+    113,
+    90,
+    124,
+    99
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC138D",
+   "power": [
+    125,
+    100,
+    138,
+    110
+   ],
+   "freq": 60,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC176D",
+   "power": [
+    160,
+    128,
+    176,
+    141
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC184D",
+   "power": [
+    168,
+    134,
+    184,
+    147
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC198D",
+   "power": [
+    180,
+    144,
+    198,
+    158
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC22D",
+   "power": [
+    20,
+    16,
+    22,
+    18
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC231D",
+   "power": [
+    210,
+    168,
+    231,
+    185
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC303D",
+   "power": [
+    275,
+    220,
+    303,
+    242
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC33D",
+   "power": [
+    30,
+    24,
+    33,
+    26
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC344D",
+   "power": [
+    313,
+    250,
+    344,
+    275
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC385D",
+   "power": [
+    350,
+    280,
+    385,
+    308
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC39D",
+   "power": [
+    35,
+    28,
+    39,
+    31
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC400D",
+   "power": [
+    363,
+    290,
+    399,
+    319
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC481D",
+   "power": [
+    438,
+    350,
+    481,
+    385
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC495D",
+   "power": [
+    450,
+    360,
+    495,
+    396
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC500D",
+   "power": [
+    450,
+    360,
+    495,
+    396
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC523D",
+   "power": [
+    475,
+    380,
+    523,
+    418
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC605D",
+   "power": [
+    550,
+    440,
+    605,
+    484
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC619D",
+   "power": [
+    563,
+    450,
+    619,
+    495
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    6,
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC83D",
+   "power": [
+    75,
+    60,
+    83,
+    66
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC88D",
+   "power": [
+    80,
+    64,
+    88,
+    70
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    7
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 103,
+   "genset": "MC99D",
+   "power": [
+    90,
+    72,
+    99,
+    79
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    6
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC1500P",
+   "power": [
+    1350,
+    1080,
+    1500,
+    1200
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    8,
+    9
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC1650P",
+   "power": [
+    1500,
+    1200,
+    1650,
+    1320
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    8
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC220P",
+   "power": [
+    200,
+    160,
+    220,
+    176
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    8,
+    9
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC2500P",
+   "power": [
+    2250,
+    1800,
+    2500,
+    2000
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    8
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC250P",
+   "power": [
+    225,
+    180,
+    250,
+    200
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    8
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC275P",
+   "power": [
+    250,
+    200,
+    275,
+    220
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    8
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC550P",
+   "power": [
+    500,
+    400,
+    550,
+    440
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    8
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 49,
+     "title": "n5001 bảng #49 \"Catalog mecca-power-catalog-2026 — trang 11 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC688P",
+   "power": [
+    625,
+    500,
+    688,
+    550
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    9
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 49,
+     "title": "n5001 bảng #49 \"Catalog mecca-power-catalog-2026 — trang 11 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 104,
+   "genset": "MC825P",
+   "power": [
+    750,
+    600,
+    825,
+    660
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    8,
+    9
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 48,
+     "title": "n5001 bảng #48 \"Catalog mecca-power-catalog-2026 — trang 11 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC110YC",
+   "power": [
+    100,
+    80,
+    110,
+    88
+   ],
+   "freq": 60,
+   "records": 3,
+   "tables": [
+    14,
+    15
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 61,
+     "title": "n5001 bảng #61 \"Catalog mecca-power-catalog-2026 — trang 17 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC165YC",
+   "power": [
+    150,
+    120,
+    165,
+    132
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    14,
+    15
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 60,
+     "title": "n5001 bảng #60 \"Catalog mecca-power-catalog-2026 — trang 17 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC2750YC",
+   "power": [
+    2500,
+    2000,
+    2750,
+    2200
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    14
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 61,
+     "title": "n5001 bảng #61 \"Catalog mecca-power-catalog-2026 — trang 17 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC550YC",
+   "power": [
+    500,
+    400,
+    550,
+    440
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    14,
+    15
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 60,
+     "title": "n5001 bảng #60 \"Catalog mecca-power-catalog-2026 — trang 17 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC66YC",
+   "power": [
+    60,
+    48,
+    66,
+    53
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    15
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 60,
+     "title": "n5001 bảng #60 \"Catalog mecca-power-catalog-2026 — trang 17 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 110,
+   "genset": "MC88YC",
+   "power": [
+    80,
+    64,
+    88,
+    70
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    14
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 60,
+     "title": "n5001 bảng #60 \"Catalog mecca-power-catalog-2026 — trang 17 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC165D",
+   "power": [
+    150,
+    120,
+    165,
+    132
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC186D",
+   "power": [
+    168,
+    134,
+    186,
+    148
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC313D",
+   "power": [
+    275,
+    220,
+    313,
+    250
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC330D",
+   "power": [
+    300,
+    240,
+    330,
+    264
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC335D",
+   "power": [
+    313,
+    250,
+    335,
+    268
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC388D",
+   "power": [
+    350,
+    280,
+    388,
+    310
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC406D",
+   "power": [
+    365,
+    292,
+    406,
+    324
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC450D",
+   "power": [
+    400,
+    320,
+    450,
+    360
+   ],
+   "freq": 60,
+   "records": 2,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC575D",
+   "power": [
+    520,
+    416,
+    575,
+    460
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC625D",
+   "power": [
+    565,
+    450,
+    625,
+    500
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC625D",
+   "power": [
+    563,
+    450,
+    625,
+    500
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC688D",
+   "power": [
+    625,
+    500,
+    688,
+    550
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC700D",
+   "power": [
+    625,
+    500,
+    700,
+    560
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    18
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC875D",
+   "power": [
+    785,
+    628,
+    875,
+    700
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 113,
+   "genset": "MC935D",
+   "power": [
+    850,
+    680,
+    935,
+    748
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    19
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 22,
+     "title": "n129 bảng #22 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC1320C",
+   "power": [
+    1200,
+    960,
+    1320,
+    1056
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    24
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 13,
+     "title": "n108 bảng #13 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC1375C",
+   "power": [
+    1250,
+    1000,
+    1375,
+    1100
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    },
+    {
+     "n": 5001,
+     "table": 46,
+     "title": "n5001 bảng #46 \"Catalog mecca-power-catalog-2026 — trang 10 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC1513C",
+   "power": [
+    1375,
+    1100,
+    1513,
+    1210
+   ],
+   "freq": 50,
+   "records": 2,
+   "tables": [
+    23,
+    24
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC1650C",
+   "power": [
+    1500,
+    1200,
+    1650,
+    1320
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    24
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC2063C",
+   "power": [
+    1875,
+    1500,
+    2063,
+    1650
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 43,
+     "title": "n5001 bảng #43 \"Catalog mecca-power-catalog-2026 — trang 8 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC2750C",
+   "power": [
+    2500,
+    2000,
+    2750,
+    2200
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 42,
+     "title": "n5001 bảng #42 \"Catalog mecca-power-catalog-2026 — trang 8 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC500C",
+   "power": [
+    450,
+    360,
+    495,
+    396
+   ],
+   "freq": 60,
+   "records": 2,
+   "tables": [
+    24
+   ],
+   "src": [
+    {
+     "n": 102,
+     "table": 5,
+     "title": "n102 bảng #5 \"450KVA Cummins Diesel Power Generators from China manufacturer - Mecca Power\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC715C",
+   "power": [
+    650,
+    520,
+    715,
+    572
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC825C",
+   "power": [
+    750,
+    600,
+    825,
+    660
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    },
+    {
+     "n": 188,
+     "table": 39,
+     "title": "n188 bảng #39 \"447KW Cummins KTA19-M3 Marine Engine Diesel Generator CCS/IMO from China manufac\""
+    },
+    {
+     "n": 5001,
+     "table": 42,
+     "title": "n5001 bảng #42 \"Catalog mecca-power-catalog-2026 — trang 8 trái (50Hz)\""
+    },
+    {
+     "n": 5001,
+     "table": 46,
+     "title": "n5001 bảng #46 \"Catalog mecca-power-catalog-2026 — trang 10 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 134,
+   "genset": "MC880C",
+   "power": [
+    800,
+    640,
+    880,
+    704
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    23
+   ],
+   "src": [
+    {
+     "n": 108,
+     "table": 12,
+     "title": "n108 bảng #12 \"1500KVA High Voltage Cummins Diesel Genset for Oil Field from China manufacturer\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC1100M",
+   "power": [
+    1000,
+    800,
+    1100,
+    880
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    35
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC1250M",
+   "power": [
+    1138,
+    910,
+    1250,
+    1000
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC1375M",
+   "power": [
+    1250,
+    1000,
+    1375,
+    1100
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    35
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC1500M",
+   "power": [
+    1375,
+    1100,
+    1500,
+    1200
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC2000M",
+   "power": [
+    1819,
+    1455,
+    2000,
+    1600
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 51,
+     "title": "n5001 bảng #51 \"Catalog mecca-power-catalog-2026 — trang 12 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC2200M",
+   "power": [
+    2000,
+    1600,
+    2200,
+    1760
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 51,
+     "title": "n5001 bảng #51 \"Catalog mecca-power-catalog-2026 — trang 12 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC2750M",
+   "power": [
+    2500,
+    2000,
+    2750,
+    2200
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    35
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    },
+    {
+     "n": 5001,
+     "table": 50,
+     "title": "n5001 bảng #50 \"Catalog mecca-power-catalog-2026 — trang 12 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC2875M",
+   "power": [
+    2625,
+    2100,
+    2875,
+    2300
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 51,
+     "title": "n5001 bảng #51 \"Catalog mecca-power-catalog-2026 — trang 12 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC3125M",
+   "power": [
+    2875,
+    2300,
+    3125,
+    2500
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 51,
+     "title": "n5001 bảng #51 \"Catalog mecca-power-catalog-2026 — trang 12 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC3300M",
+   "power": [
+    3000,
+    2400,
+    3300,
+    2640
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    35
+   ],
+   "src": [
+    {
+     "n": 180,
+     "table": 32,
+     "title": "n180 bảng #32 \"3.3KV-13.8KV Medium High Voltage MTU Diesel Generator 1800KW 2000KW 2250KVA 2500\""
+    },
+    {
+     "n": 5001,
+     "table": 50,
+     "title": "n5001 bảng #50 \"Catalog mecca-power-catalog-2026 — trang 12 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC4000M",
+   "power": [
+    3637.5,
+    2910,
+    4000,
+    3200
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    36
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 51,
+     "title": "n5001 bảng #51 \"Catalog mecca-power-catalog-2026 — trang 12 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 182,
+   "genset": "MC880M",
+   "power": [
+    800,
+    640,
+    880,
+    704
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    35
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 50,
+     "title": "n5001 bảng #50 \"Catalog mecca-power-catalog-2026 — trang 12 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 5001,
+   "genset": "MC138D",
+   "power": [
+    125,
+    100,
+    138,
+    110
+   ],
+   "freq": 60,
+   "records": 1,
+   "tables": [
+    54
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 53,
+     "title": "n5001 bảng #53 \"Catalog mecca-power-catalog-2026 — trang 13 phải (60Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 5001,
+   "genset": "MC303D",
+   "power": [
+    275,
+    220,
+    303,
+    242
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    54
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  },
+  {
+   "n": 5001,
+   "genset": "MC330D",
+   "power": [
+    300,
+    240,
+    330,
+    264
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    54
+   ],
+   "src": [
+    {
+     "n": 129,
+     "table": 21,
+     "title": "n129 bảng #21 \"900 Kva Open Type Doosan Diesel Generator for Shopping Mall from China manufactu\""
+    }
+   ]
+  },
+  {
+   "n": 5001,
+   "genset": "MC385D",
+   "power": [
+    350,
+    280,
+    385,
+    308
+   ],
+   "freq": 50,
+   "records": 1,
+   "tables": [
+    54
+   ],
+   "src": [
+    {
+     "n": 5001,
+     "table": 52,
+     "title": "n5001 bảng #52 \"Catalog mecca-power-catalog-2026 — trang 13 trái (50Hz)\""
+    }
+   ]
+  }
+ ],
+ "blank": {
+  "conflict": [
+   {
+    "n": 103,
+    "genset": "MC110D",
+    "power": [
+     100,
+     80,
+     110,
+     88
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC206D",
+    "power": [
+     188,
+     150,
+     206,
+     165
+    ],
+    "records": 1,
+    "freqs": [
+     60,
+     50
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC220D",
+    "power": [
+     200,
+     160,
+     220,
+     176
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC248D",
+    "power": [
+     225,
+     180,
+     248,
+     198
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC275D",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 2,
+    "freqs": [
+     60,
+     50
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC413D",
+    "power": [
+     375,
+     300,
+     413,
+     330
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC550D",
+    "power": [
+     500,
+     400,
+     550,
+     440
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC825D",
+    "power": [
+     750,
+     600,
+     825,
+     660
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC28D",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 103,
+    "genset": "MC440D",
+    "power": [
+     400,
+     320,
+     440,
+     352
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 104,
+    "genset": "MC1250P",
+    "power": [
+     1125,
+     900,
+     1250,
+     1000
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC138YC",
+    "power": [
+     125,
+     100,
+     138,
+     110
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC275YC",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC413YC",
+    "power": [
+     375,
+     300,
+     413,
+     330
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC688YC",
+    "power": [
+     625,
+     500,
+     688,
+     550
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC825YC",
+    "power": [
+     750,
+     600,
+     825,
+     660
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC1375YC",
+    "power": [
+     1250,
+     1000,
+     1375,
+     1100
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC2063YC",
+    "power": [
+     1875,
+     1500,
+     2063,
+     1650
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC28D",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC220D",
+    "power": [
+     200,
+     160,
+     220,
+     176
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC250D",
+    "power": [
+     225,
+     180,
+     250,
+     200
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC413D",
+    "power": [
+     375,
+     300,
+     413,
+     330
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC440D",
+    "power": [
+     400,
+     320,
+     440,
+     352
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC500D",
+    "power": [
+     450,
+     360,
+     500,
+     400
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC550D",
+    "power": [
+     500,
+     400,
+     550,
+     440
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC750D",
+    "power": [
+     675,
+     540,
+     750,
+     600
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC825D",
+    "power": [
+     750,
+     600,
+     825,
+     660
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC206D",
+    "power": [
+     188,
+     150,
+     206,
+     165
+    ],
+    "records": 1,
+    "freqs": [
+     60,
+     50
+    ]
+   },
+   {
+    "n": 113,
+    "genset": "MC275D",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 1,
+    "freqs": [
+     60,
+     50
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC220C",
+    "power": [
+     200,
+     160,
+     220,
+     176
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC275C",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC330C",
+    "power": [
+     300,
+     240,
+     330,
+     264
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC440C",
+    "power": [
+     400,
+     320,
+     440,
+     352
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC550C",
+    "power": [
+     500,
+     400,
+     550,
+     440
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC1100C",
+    "power": [
+     1000,
+     800,
+     1100,
+     880
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC2500M",
+    "power": [
+     2250,
+     1800,
+     2500,
+     2000
+    ],
+    "records": 2,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 5001,
+    "genset": "MC220D",
+    "power": [
+     200,
+     160,
+     220,
+     176
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 5001,
+    "genset": "MC248D",
+    "power": [
+     225,
+     180,
+     248,
+     198
+    ],
+    "records": 1,
+    "freqs": [
+     50,
+     60
+    ]
+   },
+   {
+    "n": 5001,
+    "genset": "MC275D",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 1,
+    "freqs": [
+     60,
+     50
+    ]
+   }
+  ],
+  "codeOnly": [
+   {
+    "n": 104,
+    "genset": "MC1000P",
+    "power": [
+     900,
+     720,
+     1000,
+     800
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[910,728,1000,800]@50"
+    ]
+   },
+   {
+    "n": 104,
+    "genset": "MC1875P",
+    "power": [
+     1705,
+     1364,
+     1875,
+     1500
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1710,1368,1875,1500]@50"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC344YC",
+    "power": [
+     312.5,
+     250,
+     344,
+     275
+    ],
+    "records": 2,
+    "otherPowers": [
+     "[313,250,344,275]@50"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC440YC",
+    "power": [
+     400,
+     320,
+     440,
+     352
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[400,320,450,360]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC495YC",
+    "power": [
+     450,
+     360,
+     495,
+     396
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[450,360,500,400]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC1100YC",
+    "power": [
+     1000,
+     800,
+     1100,
+     880
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1000,800,1125,900]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC1650YC",
+    "power": [
+     1500,
+     1200,
+     1650,
+     1320
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1500,1200,1625,1300]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC2200YC",
+    "power": [
+     2000,
+     1600,
+     2200,
+     1760
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[2000,1600,2250,1800]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC80YC",
+    "power": [
+     72.5,
+     58,
+     80,
+     64
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[75,60,80,64]@50",
+     "[73,58,80,64]@60"
+    ]
+   },
+   {
+    "n": 110,
+    "genset": "MC150YC",
+    "power": [
+     137.5,
+     110,
+     151,
+     121
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[138,110,150,120]@50"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC500C",
+    "power": [
+     455,
+     364,
+     501,
+     400
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[450,360,500,400]@50",
+     "[475,380,500,400]@50",
+     "[475,380,500,400]@60",
+     "[450,360,495,396]@60",
+     "[444,355,500,400]@60",
+     "[450,360,500,400]@60",
+     "[438,350,500,400]@60"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC800C",
+    "power": [
+     725,
+     580,
+     798,
+     638
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[725,580,800,640]@50"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC2000C",
+    "power": [
+     1815,
+     1452,
+     1997,
+     1597
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1818,1454,2000,1600]@50",
+     "[1875,1500,2000,1600]@50",
+     "[1825,1460,2000,1600]@50",
+     "[1800,1440,2000,1600]@60"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC2500C",
+    "power": [
+     2250,
+     1800,
+     2475,
+     1980
+    ],
+    "records": 3,
+    "otherPowers": [
+     "[2250,1800,2500,2000]@50",
+     "[2000,1600,2500,2000]@50",
+     "[2281,1825,2500,2000]@60"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC3000C",
+    "power": [
+     2750,
+     2200,
+     3025,
+     2420
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[2750,2200,3000,2400]@50"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC250C",
+    "power": [
+     230,
+     184,
+     253,
+     202
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[null,null,null,null]@50",
+     "[225,180,248,198]@50",
+     "[225,180,248,198]@60",
+     "[225,180,250,200]@50",
+     "[225,180,250,200]@60",
+     "[228,182,250,200]@60"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC1250C",
+    "power": [
+     1137.5,
+     910,
+     1251,
+     1001
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1135,908,1250,1000]@50",
+     "[1138,910,1250,1000]@60",
+     "[1136,909,1250,1000]@50",
+     "[1125,900,1250,1000]@50",
+     "[1125,900,1250,1000]@60"
+    ]
+   },
+   {
+    "n": 134,
+    "genset": "MC1875C",
+    "power": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1713,1370,1875,1500]@50",
+     "[1700,1360,1875,1500]@50",
+     "[1706,1365,1875,1500]@60",
+     "[1675,1340,1875,1500]@50"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC1000M",
+    "power": [
+     900,
+     720,
+     1000,
+     800
+    ],
+    "records": 2,
+    "otherPowers": [
+     "[913,730,1000,800]@50"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC1250M",
+    "power": [
+     1125,
+     900,
+     1250,
+     1000
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1138,910,1250,1000]@50"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC1500M",
+    "power": [
+     1350,
+     1080,
+     1500,
+     1200
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1375,1100,1500,1200]@50"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC2000M",
+    "power": [
+     1812,
+     1450,
+     2000,
+     1600
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[1819,1455,2000,1600]@60"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC2250M",
+    "power": [
+     2050,
+     1640,
+     2250,
+     1800
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[2088,1670,2250,1800]@50"
+    ]
+   },
+   {
+    "n": 182,
+    "genset": "MC3438M",
+    "power": [
+     3125,
+     2500,
+     3437.5,
+     2750
+    ],
+    "records": 1,
+    "otherPowers": [
+     "[3125,2500,3438,2750]@60"
+    ]
+   }
+  ],
+  "none": [
+   {
+    "n": 103,
+    "genset": "MC44D",
+    "power": [
+     40,
+     32,
+     44,
+     35
+    ],
+    "records": 1
+   },
+   {
+    "n": 103,
+    "genset": "MC55D",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 1
+   },
+   {
+    "n": 103,
+    "genset": "MC66D",
+    "power": [
+     60,
+     48,
+     66,
+     53
+    ],
+    "records": 2
+   },
+   {
+    "n": 103,
+    "genset": "MC756D",
+    "power": [
+     688,
+     550,
+     756,
+     605
+    ],
+    "records": 2
+   },
+   {
+    "n": 103,
+    "genset": "MC52D",
+    "power": [
+     48,
+     38,
+     52,
+     42
+    ],
+    "records": 1
+   },
+   {
+    "n": 103,
+    "genset": "MC77D",
+    "power": [
+     70,
+     56,
+     77,
+     62
+    ],
+    "records": 1
+   },
+   {
+    "n": 103,
+    "genset": "MC151D",
+    "power": [
+     138,
+     110,
+     151,
+     121
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC10P",
+    "power": [
+     9,
+     7.2,
+     10,
+     8
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC15P",
+    "power": [
+     13,
+     10,
+     15,
+     12
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC16.5P",
+    "power": [
+     15,
+     12,
+     16.5,
+     13
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC22P",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC30P",
+    "power": [
+     28,
+     22,
+     30,
+     24
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC33P",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC50P",
+    "power": [
+     45,
+     36,
+     50,
+     40
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC66P",
+    "power": [
+     60,
+     48,
+     66,
+     53
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC72P",
+    "power": [
+     65,
+     52,
+     72,
+     58
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC88P",
+    "power": [
+     80,
+     64,
+     88,
+     70
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC110P",
+    "power": [
+     100,
+     80,
+     110,
+     88
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC150P",
+    "power": [
+     135,
+     108,
+     150,
+     120
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC165P",
+    "power": [
+     150,
+     120,
+     165,
+     132
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC200P",
+    "power": [
+     180,
+     144,
+     200,
+     160
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC330P",
+    "power": [
+     300,
+     240,
+     330,
+     264
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC400P",
+    "power": [
+     350,
+     280,
+     400,
+     320
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC450P",
+    "power": [
+     400,
+     320,
+     450,
+     360
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC500P",
+    "power": [
+     450,
+     360,
+     500,
+     400
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC660P",
+    "power": [
+     600,
+     480,
+     660,
+     528
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC715P",
+    "power": [
+     650,
+     520,
+     715,
+     572
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC880P",
+    "power": [
+     800,
+     640,
+     880,
+     704
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC1100P",
+    "power": [
+     1000,
+     800,
+     1100,
+     880
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC1375P",
+    "power": [
+     1250,
+     1000,
+     1375,
+     1100
+    ],
+    "records": 2
+   },
+   {
+    "n": 104,
+    "genset": "MC1850P",
+    "power": [
+     1650,
+     1320,
+     1850,
+     1480
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC2030P",
+    "power": [
+     1845,
+     1476,
+     2030,
+     1624
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC2260P",
+    "power": [
+     2050,
+     1640,
+     2260,
+     1808
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC12P",
+    "power": [
+     11,
+     8.8,
+     12,
+     10
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC17P",
+    "power": [
+     15,
+     12,
+     17,
+     14
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC20P",
+    "power": [
+     18,
+     14.4,
+     20,
+     16
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC27P",
+    "power": [
+     24,
+     19.2,
+     27,
+     22
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC35P",
+    "power": [
+     30,
+     24,
+     35,
+     29
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC38P",
+    "power": [
+     35,
+     28,
+     38,
+     30
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC59P",
+    "power": [
+     53,
+     42.4,
+     59,
+     47
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC75P",
+    "power": [
+     68,
+     54.4,
+     75,
+     60
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC84P",
+    "power": [
+     76,
+     60.8,
+     84,
+     67
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC100P",
+    "power": [
+     91,
+     72.8,
+     100,
+     80
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC125P",
+    "power": [
+     112.5,
+     90,
+     125,
+     100
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC169P",
+    "power": [
+     152,
+     121.6,
+     169,
+     135
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC188P",
+    "power": [
+     169,
+     135.2,
+     188,
+     150
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC269P",
+    "power": [
+     245,
+     196,
+     269,
+     215
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC313P",
+    "power": [
+     281,
+     224.8,
+     313,
+     250
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC375P",
+    "power": [
+     338,
+     270.4,
+     375,
+     300
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC438P",
+    "power": [
+     400,
+     320,
+     438,
+     350
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC563P",
+    "power": [
+     500,
+     400,
+     563,
+     450
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC938P",
+    "power": [
+     844,
+     675.2,
+     938,
+     750
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC1675P",
+    "power": [
+     1500,
+     1200,
+     1675,
+     1340
+    ],
+    "records": 1
+   },
+   {
+    "n": 104,
+    "genset": "MC1880P",
+    "power": [
+     1700,
+     1360,
+     1880,
+     1504
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC10YD",
+    "power": [
+     9,
+     7,
+     10,
+     8
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC14YD",
+    "power": [
+     13,
+     10,
+     14,
+     11
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC17YD",
+    "power": [
+     15,
+     12,
+     17,
+     13
+    ],
+    "records": 2
+   },
+   {
+    "n": 105,
+    "genset": "MC19YD",
+    "power": [
+     18,
+     14,
+     19,
+     15
+    ],
+    "records": 2
+   },
+   {
+    "n": 105,
+    "genset": "MC25YD",
+    "power": [
+     23,
+     18,
+     25,
+     20
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC28YD",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 2
+   },
+   {
+    "n": 105,
+    "genset": "MC33YD",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 2
+   },
+   {
+    "n": 105,
+    "genset": "MC41YD",
+    "power": [
+     38,
+     30,
+     41,
+     33
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC55YD",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC66YD",
+    "power": [
+     60,
+     48,
+     66,
+     53
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC74YD",
+    "power": [
+     68,
+     54,
+     74,
+     59
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC94YD",
+    "power": [
+     85,
+     68,
+     94,
+     75
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC12YD",
+    "power": [
+     11,
+     9,
+     12,
+     10
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC22YD",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC44YD",
+    "power": [
+     40,
+     32,
+     44,
+     35
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC52YD",
+    "power": [
+     48,
+     38,
+     52,
+     42
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC58YD",
+    "power": [
+     53,
+     42,
+     58,
+     46
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC690YD",
+    "power": [
+     63,
+     50,
+     69,
+     55
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC80YD",
+    "power": [
+     73,
+     58,
+     80,
+     64
+    ],
+    "records": 1
+   },
+   {
+    "n": 105,
+    "genset": "MC100YD",
+    "power": [
+     90,
+     72,
+     99,
+     79
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC47YC",
+    "power": [
+     42.5,
+     34,
+     47,
+     37
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC69YC",
+    "power": [
+     62.5,
+     50,
+     69,
+     55
+    ],
+    "records": 2
+   },
+   {
+    "n": 110,
+    "genset": "MC83YC",
+    "power": [
+     75,
+     60,
+     83,
+     66
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC124YC",
+    "power": [
+     112.5,
+     90,
+     124,
+     99
+    ],
+    "records": 2
+   },
+   {
+    "n": 110,
+    "genset": "MC193YC",
+    "power": [
+     175,
+     140,
+     193,
+     154
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC206YC",
+    "power": [
+     187.5,
+     150,
+     206,
+     165
+    ],
+    "records": 2
+   },
+   {
+    "n": 110,
+    "genset": "MC248YC",
+    "power": [
+     225,
+     180,
+     248,
+     198
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC385YC",
+    "power": [
+     350,
+     280,
+     385,
+     308
+    ],
+    "records": 2
+   },
+   {
+    "n": 110,
+    "genset": "MC481YC",
+    "power": [
+     437.5,
+     350,
+     481,
+     385
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC619YC",
+    "power": [
+     562.5,
+     450,
+     619,
+     495
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC756YC",
+    "power": [
+     687.5,
+     550,
+     756,
+     605
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC894YC",
+    "power": [
+     812.5,
+     650,
+     894,
+     715
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC963YC",
+    "power": [
+     875,
+     700,
+     963,
+     770
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC1925YC",
+    "power": [
+     1750,
+     1400,
+     1925,
+     1540
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC2475YC",
+    "power": [
+     2250,
+     1800,
+     2475,
+     1980
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC3025YC",
+    "power": [
+     2750,
+     2200,
+     3025,
+     2420
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC52YC",
+    "power": [
+     47.5,
+     38,
+     52,
+     42
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC220YC",
+    "power": [
+     200,
+     160,
+     220,
+     176
+    ],
+    "records": 1
+   },
+   {
+    "n": 110,
+    "genset": "MC303YC",
+    "power": [
+     275,
+     220,
+     303,
+     242
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC14F",
+    "power": [
+     13,
+     10,
+     14,
+     11
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC17F",
+    "power": [
+     15,
+     12,
+     17,
+     13
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC22F",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC28F",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC33F",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC41F",
+    "power": [
+     38,
+     30,
+     41,
+     33
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC55F",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC69F",
+    "power": [
+     63,
+     50,
+     69,
+     55
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC103F",
+    "power": [
+     94,
+     75,
+     103,
+     83
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC116F",
+    "power": [
+     105,
+     84,
+     116,
+     92
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC150F",
+    "power": [
+     138,
+     110,
+     151,
+     121
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC165F",
+    "power": [
+     150,
+     120,
+     165,
+     132
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC206F",
+    "power": [
+     188,
+     150,
+     206,
+     165
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC248F",
+    "power": [
+     225,
+     180,
+     248,
+     198
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC275F",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC345F",
+    "power": [
+     313,
+     250,
+     344,
+     275
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC385F",
+    "power": [
+     350,
+     280,
+     385,
+     308
+    ],
+    "records": 2
+   },
+   {
+    "n": 112,
+    "genset": "MC413F",
+    "power": [
+     375,
+     300,
+     413,
+     330
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC30F",
+    "power": [
+     28,
+     22,
+     30,
+     24
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC34F",
+    "power": [
+     31,
+     25,
+     34,
+     28
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC50F",
+    "power": [
+     45,
+     36,
+     50,
+     40
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC62F",
+    "power": [
+     56,
+     45,
+     62,
+     50
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC94F",
+    "power": [
+     85,
+     68,
+     94,
+     75
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC138F",
+    "power": [
+     125,
+     100,
+     138,
+     110
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC154F",
+    "power": [
+     140,
+     112,
+     154,
+     123
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC180F",
+    "power": [
+     163,
+     130,
+     179,
+     143
+    ],
+    "records": 1
+   },
+   {
+    "n": 112,
+    "genset": "MC227F",
+    "power": [
+     206,
+     165,
+     227,
+     182
+    ],
+    "records": 1
+   },
+   {
+    "n": 113,
+    "genset": "MC8D",
+    "power": [
+     7,
+     5.4,
+     8,
+     6
+    ],
+    "records": 1
+   },
+   {
+    "n": 113,
+    "genset": "MC15D",
+    "power": [
+     14,
+     11,
+     15,
+     12
+    ],
+    "records": 1
+   },
+   {
+    "n": 113,
+    "genset": "MC19D",
+    "power": [
+     18,
+     14,
+     19,
+     15
+    ],
+    "records": 1
+   },
+   {
+    "n": 113,
+    "genset": "MC10D",
+    "power": [
+     9,
+     6.8,
+     null,
+     null
+    ],
+    "records": 2
+   },
+   {
+    "n": 113,
+    "genset": "MC18D",
+    "power": [
+     17,
+     13,
+     18,
+     14
+    ],
+    "records": 2
+   },
+   {
+    "n": 113,
+    "genset": "MC25D",
+    "power": [
+     24,
+     19,
+     25,
+     20
+    ],
+    "records": 1
+   },
+   {
+    "n": 113,
+    "genset": "MC32D",
+    "power": [
+     29,
+     23,
+     32,
+     25
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC715SME",
+    "power": [
+     650,
+     520,
+     715,
+     572
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC825SME",
+    "power": [
+     750,
+     600,
+     825,
+     660
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC1400SME",
+    "power": [
+     1250,
+     1000,
+     1400,
+     1120
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC1540SME",
+    "power": [
+     1400,
+     1120,
+     1540,
+     1232
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC1650SME",
+    "power": [
+     1500,
+     1200,
+     1650,
+     1320
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC1915SME",
+    "power": [
+     1750,
+     1400,
+     1915,
+     1532
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC2100SME",
+    "power": [
+     1875,
+     1500,
+     2100,
+     1680
+    ],
+    "records": 1
+   },
+   {
+    "n": 114,
+    "genset": "MC2250SME",
+    "power": [
+     2050,
+     1640,
+     2250,
+     1800
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1023C",
+    "power": [
+     930,
+     744,
+     1023,
+     818
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1210C",
+    "power": [
+     1100,
+     880,
+     1210,
+     968
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1815C",
+    "power": [
+     1650,
+     1320,
+     1815,
+     1452
+    ],
+    "records": 2
+   },
+   {
+    "n": 134,
+    "genset": "MC2200C",
+    "power": [
+     2000,
+     1600,
+     2200,
+     1760
+    ],
+    "records": 2
+   },
+   {
+    "n": 134,
+    "genset": "MC316C",
+    "power": [
+     287.5,
+     230,
+     316,
+     253
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC370C",
+    "power": [
+     337.5,
+     270,
+     371,
+     297
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC626C",
+    "power": [
+     568.75,
+     455,
+     626,
+     501
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC935C",
+    "power": [
+     850,
+     680,
+     935,
+     748
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC983C",
+    "power": [
+     893.75,
+     715,
+     983,
+     787
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1128C",
+    "power": [
+     1025,
+     820,
+     1128,
+     902
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1450C",
+    "power": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "records": 1
+   },
+   {
+    "n": 134,
+    "genset": "MC1720C",
+    "power": [
+     1562.5,
+     1250,
+     1719,
+     1375
+    ],
+    "records": 1
+   },
+   {
+    "n": 159,
+    "genset": "MC11Y",
+    "power": [
+     10,
+     8,
+     11,
+     9
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC14Y",
+    "power": [
+     13,
+     10,
+     14,
+     11
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC17Y",
+    "power": [
+     15,
+     12,
+     17,
+     13
+    ],
+    "records": 1
+   },
+   {
+    "n": 159,
+    "genset": "MC19Y",
+    "power": [
+     18,
+     14,
+     19,
+     15
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC22Y",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC33Y",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC47Y",
+    "power": [
+     43,
+     34,
+     47,
+     37
+    ],
+    "records": 2
+   },
+   {
+    "n": 159,
+    "genset": "MC55Y",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 1
+   },
+   {
+    "n": 159,
+    "genset": "MC62Y",
+    "power": [
+     56,
+     45,
+     62,
+     50
+    ],
+    "records": 1
+   },
+   {
+    "n": 159,
+    "genset": "MC9Y",
+    "power": [
+     8,
+     6.6,
+     9,
+     7
+    ],
+    "records": 1
+   },
+   {
+    "n": 159,
+    "genset": "MC32Y",
+    "power": [
+     29,
+     23,
+     32,
+     25
+    ],
+    "records": 1
+   },
+   {
+    "n": 144,
+    "genset": "MC12Y",
+    "power": [
+     11,
+     8.8,
+     12,
+     10
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC15Y",
+    "power": [
+     14,
+     11,
+     15,
+     12
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC19Y",
+    "power": [
+     18,
+     14,
+     19,
+     15
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC22Y",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC25Y",
+    "power": [
+     23,
+     18,
+     25,
+     20
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC41Y",
+    "power": [
+     38,
+     30,
+     41,
+     33
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC52Y",
+    "power": [
+     48,
+     38,
+     52,
+     42
+    ],
+    "records": 2
+   },
+   {
+    "n": 144,
+    "genset": "MC61Y",
+    "power": [
+     55,
+     44,
+     61,
+     48
+    ],
+    "records": 1
+   },
+   {
+    "n": 144,
+    "genset": "MC69Y",
+    "power": [
+     63,
+     50,
+     69,
+     55
+    ],
+    "records": 1
+   },
+   {
+    "n": 144,
+    "genset": "MC10Y",
+    "power": [
+     9,
+     7.2,
+     10,
+     8
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC500M",
+    "power": [
+     450,
+     360,
+     500,
+     400
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC550M",
+    "power": [
+     500,
+     400,
+     550,
+     440
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC660M",
+    "power": [
+     600,
+     480,
+     660,
+     528
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC725M",
+    "power": [
+     660,
+     528,
+     725,
+     580
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC1650M",
+    "power": [
+     1500,
+     1200,
+     1650,
+     1320
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC1800M",
+    "power": [
+     1625,
+     1300,
+     1800,
+     1440
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC3000M",
+    "power": [
+     2750,
+     2200,
+     3000,
+     2400
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC625M",
+    "power": [
+     563,
+     450,
+     625,
+     500
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC688M",
+    "power": [
+     625,
+     500,
+     688,
+     550
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC750M",
+    "power": [
+     688,
+     550,
+     750,
+     600
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC875M",
+    "power": [
+     800,
+     640,
+     875,
+     700
+    ],
+    "records": 1
+   },
+   {
+    "n": 182,
+    "genset": "MC1125M",
+    "power": [
+     1025,
+     820,
+     1125,
+     900
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC175D",
+    "power": [
+     159,
+     127,
+     175,
+     140
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC238D",
+    "power": [
+     216,
+     173,
+     238,
+     190
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC424D",
+    "power": [
+     385,
+     308,
+     424,
+     339
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC574D",
+    "power": [
+     520,
+     416,
+     574,
+     459
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC620D",
+    "power": [
+     563,
+     450,
+     620,
+     496
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC665D",
+    "power": [
+     603,
+     482,
+     665,
+     532
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC703D",
+    "power": [
+     636,
+     509,
+     703,
+     562
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC351V",
+    "power": [
+     319,
+     255,
+     351,
+     281
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC387V",
+    "power": [
+     352,
+     282,
+     387,
+     310
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC414V",
+    "power": [
+     378,
+     302,
+     414,
+     331
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC452V",
+    "power": [
+     411,
+     329,
+     452,
+     362
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC506V",
+    "power": [
+     456,
+     365,
+     506,
+     405
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC552V",
+    "power": [
+     502,
+     402,
+     552,
+     442
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC556V",
+    "power": [
+     505,
+     404,
+     556,
+     445
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC651V",
+    "power": [
+     591,
+     473,
+     651,
+     521
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC770V",
+    "power": [
+     700,
+     560,
+     770,
+     616
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC833V",
+    "power": [
+     758,
+     606,
+     833,
+     666
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC245V",
+    "power": [
+     223,
+     178,
+     245,
+     196
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC285V",
+    "power": [
+     259,
+     207,
+     285,
+     228
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC350V",
+    "power": [
+     318,
+     254,
+     350,
+     280
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC451V",
+    "power": [
+     410,
+     328,
+     451,
+     361
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC501V",
+    "power": [
+     455,
+     364,
+     501,
+     401
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC506V",
+    "power": [
+     460,
+     368,
+     506,
+     405
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC687V",
+    "power": [
+     625,
+     500,
+     687,
+     550
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC752V",
+    "power": [
+     684,
+     547,
+     752,
+     602
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC800V",
+    "power": [
+     727,
+     582,
+     800,
+     640
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC881V",
+    "power": [
+     801,
+     641,
+     881,
+     705
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC33FP",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC42FP",
+    "power": [
+     38,
+     30,
+     42,
+     34
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC59FP",
+    "power": [
+     54,
+     43,
+     59,
+     47
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC71FP",
+    "power": [
+     65,
+     52,
+     71,
+     57
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC111FP",
+    "power": [
+     101,
+     81,
+     111,
+     89
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC136FP",
+    "power": [
+     123,
+     98,
+     136,
+     109
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC139FP",
+    "power": [
+     126,
+     101,
+     139,
+     111
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC175FP",
+    "power": [
+     159,
+     127,
+     175,
+     140
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC190FP",
+    "power": [
+     173,
+     138,
+     190,
+     152
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC224FP",
+    "power": [
+     204,
+     163,
+     224,
+     179
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC274FP",
+    "power": [
+     249,
+     199,
+     274,
+     219
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC348FP",
+    "power": [
+     320,
+     256,
+     348,
+     278
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC384FP",
+    "power": [
+     349,
+     279,
+     384,
+     307
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC455FP",
+    "power": [
+     414,
+     331,
+     455,
+     364
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC545FP",
+    "power": [
+     505,
+     404,
+     545,
+     436
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC661FP",
+    "power": [
+     600,
+     480,
+     661,
+     529
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC36FP",
+    "power": [
+     33,
+     26,
+     36,
+     29
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC41FP",
+    "power": [
+     37,
+     30,
+     41,
+     33
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC387FP",
+    "power": [
+     356,
+     285,
+     387,
+     310
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC419FP",
+    "power": [
+     380,
+     304,
+     419,
+     335
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC468FP",
+    "power": [
+     423,
+     338,
+     468,
+     374
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC539FP",
+    "power": [
+     475,
+     380,
+     539,
+     431
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC686FP",
+    "power": [
+     621,
+     497,
+     686,
+     549
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC275S",
+    "power": [
+     250,
+     200,
+     275,
+     220
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC330S",
+    "power": [
+     300,
+     240,
+     330,
+     264
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC360S",
+    "power": [
+     330,
+     264,
+     360,
+     288
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC385S",
+    "power": [
+     350,
+     280,
+     385,
+     308
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC400S",
+    "power": [
+     375,
+     300,
+     400,
+     320
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC440S",
+    "power": [
+     400,
+     320,
+     440,
+     352
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC450S",
+    "power": [
+     400,
+     320,
+     450,
+     360
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC495S",
+    "power": [
+     450,
+     360,
+     495,
+     396
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC500S",
+    "power": [
+     450,
+     360,
+     500,
+     400
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC535S",
+    "power": [
+     480,
+     384,
+     535,
+     428
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC550S",
+    "power": [
+     500,
+     400,
+     550,
+     440
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC605S",
+    "power": [
+     550,
+     440,
+     605,
+     484
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC660S",
+    "power": [
+     600,
+     480,
+     660,
+     528
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC660S",
+    "power": [
+     625,
+     500,
+     660,
+     528
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC700S",
+    "power": [
+     640,
+     512,
+     700,
+     560
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC715S",
+    "power": [
+     650,
+     520,
+     715,
+     572
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC770S",
+    "power": [
+     700,
+     560,
+     770,
+     616
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC800S",
+    "power": [
+     750,
+     600,
+     800,
+     640
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC310S",
+    "power": [
+     280,
+     224,
+     310,
+     248
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC413S",
+    "power": [
+     375,
+     300,
+     413,
+     330
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC460S",
+    "power": [
+     420,
+     336,
+     460,
+     368
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC560S",
+    "power": [
+     510,
+     408,
+     560,
+     448
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC552S",
+    "power": [
+     501,
+     401,
+     552,
+     442
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC600S",
+    "power": [
+     550,
+     440,
+     600,
+     480
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC607S",
+    "power": [
+     550,
+     440,
+     607,
+     486
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC625S",
+    "power": [
+     566,
+     453,
+     625,
+     500
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC662S",
+    "power": [
+     600,
+     480,
+     662,
+     530
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC11YM",
+    "power": [
+     10,
+     8,
+     11,
+     9
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC14YM",
+    "power": [
+     13,
+     10,
+     14,
+     11
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC19YM",
+    "power": [
+     18,
+     14,
+     19,
+     15
+    ],
+    "records": 4
+   },
+   {
+    "n": 5001,
+    "genset": "MC22YM",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 4
+   },
+   {
+    "n": 5001,
+    "genset": "MC33YM",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC55YM",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC62YM",
+    "power": [
+     56,
+     45,
+     62,
+     50
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC12YM",
+    "power": [
+     11,
+     8.8,
+     12,
+     10
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC15YM",
+    "power": [
+     14,
+     11,
+     15,
+     12
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC25YM",
+    "power": [
+     23,
+     18,
+     25,
+     20
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC41YM",
+    "power": [
+     38,
+     30,
+     41,
+     33
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC52YM",
+    "power": [
+     48,
+     38,
+     52,
+     42
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC69YM",
+    "power": [
+     63,
+     50,
+     69,
+     55
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC10YM",
+    "power": [
+     9,
+     7.2,
+     10,
+     8
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC22IS",
+    "power": [
+     20,
+     16,
+     22,
+     18
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC28IS",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 4
+   },
+   {
+    "n": 5001,
+    "genset": "MC33IS",
+    "power": [
+     30,
+     24,
+     33,
+     26
+    ],
+    "records": 4
+   },
+   {
+    "n": 5001,
+    "genset": "MC41IS",
+    "power": [
+     38,
+     30,
+     41,
+     33
+    ],
+    "records": 4
+   },
+   {
+    "n": 5001,
+    "genset": "MC55IS",
+    "power": [
+     50,
+     40,
+     55,
+     44
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC50IS",
+    "power": [
+     45,
+     36,
+     50,
+     40
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC69IS",
+    "power": [
+     63,
+     50,
+     69,
+     55
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC11KT",
+    "power": [
+     10,
+     8,
+     11,
+     8.8
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC22KT",
+    "power": [
+     20,
+     16,
+     22,
+     17.6
+    ],
+    "records": 2
+   },
+   {
+    "n": 5001,
+    "genset": "MC25KT",
+    "power": [
+     22.5,
+     18,
+     25,
+     20
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC30KT",
+    "power": [
+     27.5,
+     22,
+     30,
+     24
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC14KT",
+    "power": [
+     13,
+     10,
+     14,
+     11
+    ],
+    "records": 1
+   },
+   {
+    "n": 5001,
+    "genset": "MC28KT",
+    "power": [
+     25,
+     20,
+     28,
+     22
+    ],
+    "records": 1
+   }
+  ]
+ }
+}
