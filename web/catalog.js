@@ -1895,7 +1895,7 @@
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
     if (notes) silentRows(s, out, notes, note);
-    return altMakeAsk(mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note)));
+    return meccaFreq(s, altMakeAsk(mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note))));
   }
   // A machine row (a code cell + at least two figures) of a table that DID give records, which gave none and was not said anywhere
   // (buoc-3-p2, "dòng bị bỏ phải ghi note": kaihua "P086T1-1", fengmao "U I224D", ettes "1104C-44TAG1/ 1104D-E44TAG 1 ★", jianghao
@@ -1990,6 +1990,97 @@
     ["mecca-power", 190, "| CCFJ-150 | 206 | 165 | 188 | 150 | NT855-D(M) | 47 | 6L | 14 | E | 2760*1000*1790 | 2700", "| CCEC Cummins Marine Diesel Generator Set 50HZ 400/230V 150-1500KW"],
   ];
   const captionOf = (s, t) => { const r0 = String(t.rows?.[0] ?? "").trim(); const x = TABLE_CAPTIONS.find((e) => e[0] === s.id && e[1] === +t.n && e[2] === r0); return x ? x[3] : ""; };
+  // mecca-power records still without a frequency (mecca-freq-532, Khoa 25/11/2026: "tìm cùng mã trong hệ thống / internet, có thì lấy tần số, không
+  // có thì để trống"). An explicit list "n|genset|[prime kVA, kW, standby kVA, kW]|Hz": the SAME code with the SAME power appears in other mecca
+  // records whose frequency is stated (catalog page named "(50Hz)" / "(60Hz)", or a TABLE_CAPTIONS line) and all of them give ONE frequency. Evidence
+  // per entry in suppliers/mecca-freq-532.json; test mecca-freq-532 checks both. Same code + power at 50 AND 60 Hz, other power, no other record: blank.
+  const MECCA_FREQ = [
+    "103|MC124D|[113,90,124,99]|50",
+    "103|MC138D|[125,100,138,110]|60",
+    "103|MC176D|[160,128,176,141]|50",
+    "103|MC184D|[168,134,184,147]|60",
+    "103|MC198D|[180,144,198,158]|50",
+    "103|MC22D|[20,16,22,18]|50",
+    "103|MC231D|[210,168,231,185]|60",
+    "103|MC303D|[275,220,303,242]|50",
+    "103|MC33D|[30,24,33,26]|50",
+    "103|MC344D|[313,250,344,275]|50",
+    "103|MC385D|[350,280,385,308]|50",
+    "103|MC39D|[35,28,39,31]|60",
+    "103|MC400D|[363,290,399,319]|60",
+    "103|MC481D|[438,350,481,385]|50",
+    "103|MC495D|[450,360,495,396]|50",
+    "103|MC500D|[450,360,495,396]|60",
+    "103|MC523D|[475,380,523,418]|50",
+    "103|MC605D|[550,440,605,484]|50",
+    "103|MC619D|[563,450,619,495]|50",
+    "103|MC83D|[75,60,83,66]|50",
+    "103|MC88D|[80,64,88,70]|60",
+    "103|MC99D|[90,72,99,79]|50",
+    "104|MC1500P|[1350,1080,1500,1200]|50",
+    "104|MC1650P|[1500,1200,1650,1320]|50",
+    "104|MC220P|[200,160,220,176]|50",
+    "104|MC2500P|[2250,1800,2500,2000]|50",
+    "104|MC250P|[225,180,250,200]|50",
+    "104|MC275P|[250,200,275,220]|50",
+    "104|MC550P|[500,400,550,440]|60",
+    "104|MC688P|[625,500,688,550]|60",
+    "104|MC825P|[750,600,825,660]|50",
+    "110|MC110YC|[100,80,110,88]|60",
+    "110|MC165YC|[150,120,165,132]|50",
+    "110|MC2750YC|[2500,2000,2750,2200]|60",
+    "110|MC550YC|[500,400,550,440]|50",
+    "110|MC66YC|[60,48,66,53]|50",
+    "110|MC88YC|[80,64,88,70]|50",
+    "113|MC165D|[150,120,165,132]|50",
+    "113|MC186D|[168,134,186,148]|50",
+    "113|MC313D|[275,220,313,250]|50",
+    "113|MC330D|[300,240,330,264]|50",
+    "113|MC335D|[313,250,335,268]|60",
+    "113|MC388D|[350,280,388,310]|60",
+    "113|MC406D|[365,292,406,324]|50",
+    "113|MC450D|[400,320,450,360]|60",
+    "113|MC575D|[520,416,575,460]|60",
+    "113|MC625D|[565,450,625,500]|50",
+    "113|MC625D|[563,450,625,500]|60",
+    "113|MC688D|[625,500,688,550]|60",
+    "113|MC700D|[625,500,700,560]|50",
+    "113|MC875D|[785,628,875,700]|60",
+    "113|MC935D|[850,680,935,748]|60",
+    "134|MC1320C|[1200,960,1320,1056]|60",
+    "134|MC1375C|[1250,1000,1375,1100]|50",
+    "134|MC1513C|[1375,1100,1513,1210]|50",
+    "134|MC1650C|[1500,1200,1650,1320]|50",
+    "134|MC2063C|[1875,1500,2063,1650]|60",
+    "134|MC2750C|[2500,2000,2750,2200]|50",
+    "134|MC500C|[450,360,495,396]|60",
+    "134|MC715C|[650,520,715,572]|50",
+    "134|MC825C|[750,600,825,660]|50",
+    "134|MC880C|[800,640,880,704]|50",
+    "182|MC1100M|[1000,800,1100,880]|50",
+    "182|MC1250M|[1138,910,1250,1000]|50",
+    "182|MC1375M|[1250,1000,1375,1100]|50",
+    "182|MC1500M|[1375,1100,1500,1200]|50",
+    "182|MC2000M|[1819,1455,2000,1600]|60",
+    "182|MC2200M|[2000,1600,2200,1760]|60",
+    "182|MC2750M|[2500,2000,2750,2200]|50",
+    "182|MC2875M|[2625,2100,2875,2300]|60",
+    "182|MC3125M|[2875,2300,3125,2500]|60",
+    "182|MC3300M|[3000,2400,3300,2640]|50",
+    "182|MC4000M|[3637.5,2910,4000,3200]|60",
+    "182|MC880M|[800,640,880,704]|50",
+    "5001|MC138D|[125,100,138,110]|60",
+    "5001|MC303D|[275,220,303,242]|50",
+    "5001|MC330D|[300,240,330,264]|50",
+    "5001|MC385D|[350,280,385,308]|50",
+  ];
+  const meccaFreq = (s, out) => {
+    if (s.id !== "mecca-power") return out;
+    const m = new Map(MECCA_FREQ.map((x) => { const [n, g, p, f] = x.split("|"); return [`${n}|${g}|${p}`, +f]; }));
+    const pk = (p) => JSON.stringify([p?.prime?.kVA ?? null, p?.prime?.kW ?? null, p?.standby?.kVA ?? null, p?.standby?.kW ?? null]);
+    for (const r of out) if (r.freq == null && r.kind === "engine" && r.genset) { const f = m.get(`${r.n}|${r.genset}|${pk(r.power)}`); if (f) r.freq = f; }
+    return out;
+  };
   // Loose alternator and engine tables (bang-roi-29, chủ dự án 21/11/2026: "đọc cả 29 thành bản ghi đầu phát / động cơ"):
   // an alternator maker's range table, or an engine table, on a page of its own (dau-vao-bang-roi/29-bang.md, lớp A / E).
   // An explicit list checked by hand row by row, NOT a rule: supplier + n + the FIRST header line word for word (a re-crawl
@@ -4461,7 +4552,7 @@
 
   // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
   const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
-  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, TABLE_CAPTIONS, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, TABLE_CAPTIONS, MECCA_FREQ, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
