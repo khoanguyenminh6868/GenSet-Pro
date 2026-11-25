@@ -2722,6 +2722,13 @@
     { supplierId: "kangwo-guangdong", n: 110, model: "S180M", line: "| GKW-5GF | 5 | 6.25 | 9 | S180M | 1 | 80/80 | 1.2 | 210 | 1100*600*800 | 300", act: "dropspec", keys: ["disp"], khoa: "Khoa 24/11/2026", why: "[kangwo-guangdong n110] nguồn tự mâu thuẫn hình học: 1 xi lanh × 80 × 80 = 0.402 L, ghi 1.2 L; không có tờ hãng hay ≥3 NCC khác cùng giá trị: bỏ riêng dung tích, giữ dòng, không ghi số thay" },
     { supplierId: "zhengchi-power", n: 162, model: "12M33D1450E310", line: "| ZCDL-W1320 | 1200 | 1320 | 2376A | 12M33D1450E310 | 12 | 159*159 | 50L | g/kw.h | 5900*2270*2500 | 12000kg | 220/380 | 50Hz | 三相四线 | 详细参数", act: "dropspec", keys: ["disp"], khoa: "Khoa 24/11/2026", why: "[zhengchi-power n162] nguồn tự mâu thuẫn hình học: 12 xi lanh × 159 × 159 = 37.885 L, ghi 50 L; không có tờ hãng hay ≥3 NCC khác cùng giá trị: bỏ riêng dung tích, giữ dòng, không ghi số thay" },
     { supplierId: "taihai-taizhou", n: 108, model: "6135AD-3", line: "| TH-100GF | 100 | 125 | 180 | 6135AD-3 | 6 | 135*150 | 8.6 | 28 | 226 | 2600*900*1600 | 2200", act: "dropspec", keys: ["disp"], khoa: "Khoa 24/11/2026", why: "[taihai-taizhou n108] nguồn tự mâu thuẫn hình học: 6 xi lanh × 135 × 150 = 12.882 L, ghi 8.6 L; không có tờ hãng hay ≥3 NCC khác cùng giá trị: bỏ riêng dung tích, giữ dòng, không ghi số thay" },
+    // ngoai-le-1006-182 (Khoa 25/11/2026: "không sửa rule, ngoại lệ việc này để là 18,2"): weiman-fujian n111 ghi tỉ số nén "18·2 :1"
+    // (dấu chấm thập phân gõ thành dấu giữa "·"; các dòng 1104C-44TAG1 / TAG2 khác của chính trang ghi "18.2:1" / "18.2 :1"). Chỉ đổi dấu
+    // "·" thành "." của hai ô này; `comprFig` KHÔNG đổi, không có luật chung nhận "·". Test: `suppliers/ngoai-le-1006-182.test.mjs`.
+    ...[["| 64 | 80 | 70 | 88 | 1104C-44TAG1 | 72 | 79 | 211 | 18.6 | 4×105×127 | 4.41 | 18·2 :1 | TC | More data", "1104C-44TAG1"],
+      ["| WT-P110 | 80 | 100 | 88 | 110 | 1104C-44TAG2 | 90 | 100 | 205 | 22.6 | 4×105×127 | 4.41 | 18·2 :1 | TC | More data", "1104C-44TAG2"]].map(([line, model]) => (
+      { supplierId: "weiman-fujian", n: 111, model, line, act: "fixspec", khoa: "Khoa 25/11/2026", why: "nguồn ghi tỉ số nén \"18·2 :1\": đọc là 18,2 (chỉ đổi dấu \"·\" thành dấu thập phân; dòng khác của cùng trang ghi 18.2:1), ngoại lệ riêng hai ô này, không đổi luật đọc tỉ số nén",
+        fixes: [{ key: "compr", from: "18·2 :1", to: "18.2 :1", why: "ô nguồn \"18·2 :1\" đọc là 18,2 (Khoa 25/11/2026, ngoại lệ riêng hai ô weiman-fujian n111)", src: "ô nguồn weiman-fujian n111; dòng 1104C-44TAG1 / TAG2 khác của cùng trang ghi 18.2:1" }] })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -3573,6 +3580,18 @@
     if (win) return { makes: best.filter((m) => sameMaker(lead, m.name)), conflict: null };
     return { makes: [], conflict: names.map((n) => ({ name: n, suppliers: count(n) })) };
   }
+  // Engine makes Khoa decided one code at a time (not a rule: `keptMakes` and `SAME_MAKER` are untouched for every other code).
+  // 1006TG2A (Khoa 25/11/2026: "Không sửa rule, ngoại lệ việc này để 1006TG2A là Lovol"): jet-power n137 writes Lovol (column
+  // title) but camda-generator n158 puts the row under a "… powered by Perkins …" title line, so `keptMakes` saw one supplier
+  // against one and kept no make. Every make a source gave stays in `makesAll`; only the kept `makes` is set to the Lovol entries.
+  // Test: suppliers/ngoai-le-1006-182.test.mjs.
+  const MAKE_EXCEPTIONS = [{ kind: "engine", key: "1006TG2A", make: "Lovol", khoa: "Khoa 25/11/2026",
+    why: "Khoa quyết riêng mã 1006TG2A là Lovol (jet-power n137 ghi Lovol; camda-generator n158 ghi Perkins ở dòng tiêu đề, không phải ở dòng máy): ngoại lệ, không đổi luật chọn hãng" }];
+  const makeException = (e) => {
+    const x = MAKE_EXCEPTIONS.find((y) => y.kind === e.kind && y.key === e.key);
+    const makes = x ? e.makes.filter((m) => m.name === x.make) : [];
+    return makes.length ? { makes, conflict: null, exception: { khoa: x.khoa, why: x.why } } : null;
+  };
   // A trailing "*" / "†" / "×" is a footnote mark, not part of the model ("QSK19-G4*", tellhow "KTA50-G15×"), and an en / em
   // dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same model of other suppliers and
   // missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is known (MARK_KEEP). O/0 and I/1
@@ -4024,8 +4043,8 @@
       // `makesAll`; `makeConflict`: the names the sources disagree on when none is kept.
       const sheet = e.kind === "alternator" && !e.makes.length ? SHEET_MAKE[e.key] : null;
       if (sheet) e.makes.push({ name: sheet.name, via: "tờ hãng", supplierId: sheet.supplierId, n: sheet.n });
-      const kept = e.kind === "controller" ? { makes: e.makes, conflict: null } : keptMakes(e);
-      return { ...e, specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
+      const kept = e.kind === "controller" ? { makes: e.makes, conflict: null } : makeException(e) || keptMakes(e);
+      return { ...e, ...(kept.exception ? { makeException: kept.exception } : {}), specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
         kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null,
         makesAll: e.makes, makes: kept.makes, makeConflict: kept.conflict, make: makeOf(kept.makes) };
     };
