@@ -16,7 +16,7 @@
   "use strict";
 
   const conv = () => root.GenbidConversions;
-  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission"];
+  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow"];
 
   // ---- text helpers ----
   // NFKC: chữ toàn khổ （）：, số La Mã Ⅱ → II, ³ → 3. Chỉ dùng cho bản làm việc, `raw` giữ nguyên văn.
@@ -473,6 +473,54 @@
     return r;
   }
 
+  // ---- alternator count / speed / air flow (buoc-4-c, 24/11/2026): the figure as written, nothing derived ----
+  // Poles and wires: one count ("4", "12 wires") or two written alternatives joined by "or" ("6 or 12"); "12/6", "6 (12 option)" are
+  // not read (the cell does not say which is which).
+  function count(spec, ctx, r) {
+    const V = nf(spec.value).replace(/\s*(poles?|wires?|leads?|线|极)\.?$/i, "");
+    const m = V.match(/^(\d{1,2})(?:\s+or\s+(\d{1,2}))?$/i);
+    if (!m) return miss(r, "value");
+    if (m[2]) r.options = [Number(m[1]), Number(m[2])]; else r.num = Number(m[1]);
+    return r;
+  }
+  // Bearings: a count, or the word for it ("Single", "Single bearing", "单轴承", "Two bearing"): one, two and 单 / 双 are numbers
+  // written in words, the same fact as "1" / "2" under "No. of bearings".
+  const BEARING_WORD = { single: 1, one: 1, "单": 1, double: 2, two: 2, "双": 2 };
+  function bearing(spec, ctx, r) {
+    const V = nf(spec.value).toLowerCase().replace(/[\s-]*(bearings?|轴承|支承|支撑)$/, "").replace(/^[一二两]个?/, (x) => (x[0] === "一" ? "one" : "two"));
+    const n = /^[12]$/.test(V) ? Number(V) : BEARING_WORD[V];
+    if (n == null) return miss(r, "value");
+    r.num = n;
+    return r;
+  }
+  // Overspeed: the speed written; the unit only when the cell, label or header writes it.
+  function overspeed(spec, ctx, r) {
+    const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
+    const m = V.match(/^(\d{1,2},\d{3}|\d{3,4})(?:\s*(?:rpm|r\.?\s*p\.?\s*m\.?|rev\.?\s*\/\s*min|r\s*\/\s*min|min\s*-1|转\s*\/\s*分|转))?\.?$/i);
+    if (!m) return miss(r, "value");
+    const n = numOf(m[1]);
+    if (n.amb) return miss(r, "number");
+    r.num = n.n;
+    const REV = /rev\.?\s*\/\s*min/i;
+    r.unit = [V, L, H].some((x) => RPM.test(x) || REV.test(x)) ? "rpm" : null;
+    if (!r.unit) miss(r, "unit");
+    return r;
+  }
+  // Cooling air flow: one figure with the unit written in the cell, else in the label / header; units kept as written (no conversion).
+  const AIR_UNIT = /(m\s*(?:3|³)\s*\/\s*(?:s|min|h)|scfm|cfm|l\s*\/\s*s)\b/i;
+  const airUnit = (s) => { const m = nf(s).match(AIR_UNIT); return m ? m[1].replace(/\s+/g, "").replace("³", "3").toLowerCase() : null; };
+  function airflow(spec, ctx, r) {
+    const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
+    const m = V.match(/^(\d+(?:[.,]\d+)*)\s*(?:(m\s*(?:3|³)\s*\/\s*(?:s|min|h)|scfm|cfm|l\s*\/\s*s)\b\.?)?(?:\s*[(（][^)）]*[)）])?$/i);
+    if (!m) return miss(r, "value");
+    const n = numOf(m[1]);
+    if (n.amb) return miss(r, "number");
+    r.num = n.n;
+    r.unit = (m[2] && airUnit(m[2])) || airUnit(L) || airUnit(H) || null;
+    if (!r.unit) miss(r, "unit");
+    return r;
+  }
+
   function tank(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
     // "Fuel Tank running hours: 8/10/12H": a running time, not a capacity.
@@ -632,7 +680,7 @@
     weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i, COMP.kg], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i, COMP.L], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i, COMP.L],
     speed: [/speed|转速/i, /rpm|r\/min/i, COMP.rpm], bore: [/bore|缸径/i, /mm/i, COMP.mm] };
 
-  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission };
+  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow };
 
   // One spec { key, label, value } with its table's context { title, header } → the normalized form, or null for a
   // key this layer does not normalize.

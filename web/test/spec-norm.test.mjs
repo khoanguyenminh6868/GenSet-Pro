@@ -203,6 +203,37 @@ const CASES = [
   ["emission", "Emission Standards", "CN III, EU III", null, { enum: [{ scale: "CN", level: "3", text: "CN III" }, { scale: "EU Stage", level: "3", text: "EU III" }], missing: [] }], // victory-generator
   ["emission", "EPA EMISSION LEVEL", "Tier 4 Final", null, { enum: [{ scale: "EPA Tier", level: "4F", text: "Tier 4 Final" }], missing: [] }], // airman
   ["emission", "Emission level", "Stage IIIA / Tier 3", null, { enum: [{ scale: null, level: "3A", text: "Stage IIIA" }, { scale: null, level: "3", text: "Tier 3" }], missing: ["scale"] }], // jet-power: no conversion between scales
+  // alternator poles / wires / bearing / overspeed / air flow (buoc-4-c, 24/11/2026)
+  ["poles", "Poles", "4", null, { num: 4, missing: [] }], // koten-power
+  ["poles", "Pole number", "2", null, { num: 2, missing: [] }], // jet-power
+  ["poles", "Number of Poles", "4", null, { num: 4, missing: [] }], // huali-shandong
+  ["poles", "No of Poles", "4 Poles", null, { num: 4, missing: [] }],
+  ["poles", "No of Poles", "2 or 4", null, { options: [2, 4], missing: [] }],
+  ["poles", "Poles", "4/6", null, { missing: ["value"] }], // not read: which is which is not written
+  ["wires", "Wires", "12", null, { num: 12, missing: [] }], // depco-power
+  ["wires", "Wires:", "4", null, { num: 4, missing: [] }], // genlitec
+  ["wires", "Numbers of Wires", "6 Wires", null, { num: 6, missing: [] }], // hosem-power
+  ["wires", "Number of wires", "6 or 12", null, { options: [6, 12], missing: [] }],
+  ["wires", "No of Leads", "12/6", null, { missing: ["value"] }], // powerpack: not read
+  ["wires", "Number of wires", "6 (12 option)", null, { missing: ["value"] }], // hipower / mecc alte sheet: not read
+  ["bearing", "No.of bearings", "1", null, { num: 1, missing: [] }], // depco-power
+  ["bearing", "Bearing", "Single bearing", null, { num: 1, missing: [] }], // koten-power
+  ["bearing", "Bearing Arrangement", "Single-bearing", null, { num: 1, missing: [] }], // huali-shandong
+  ["bearing", "轴承数", "双轴承", null, { num: 2, missing: [] }],
+  ["bearing", "Bearing", "Two bearing", null, { num: 2, missing: [] }],
+  ["bearing", "Bearing", "6319-2RS", null, { missing: ["value"] }], // a bearing code, not a count
+  ["overspeed", "Overspeed: rpm", "2250", null, { unit: "rpm", num: 2250, missing: [] }], // genlitec
+  ["overspeed", "Overspeed", "2250RPM", null, { unit: "rpm", num: 2250, missing: [] }], // long-gen
+  ["overspeed", "Maximum Over Speed", "2250 RPM", null, { unit: "rpm", num: 2250, missing: [] }], // aosif
+  ["overspeed", "MAXIMUM OVERSPEED", "2250 Rev/Min", null, { unit: "rpm", num: 2250, missing: [] }], // stamford-avk-china
+  ["overspeed", "Overspeed", "2250", null, { num: 2250, missing: ["unit"] }], // no unit written: not guessed
+  ["overspeed", "Overspeed", "12", null, { missing: ["value"] }], // comap controller, not a speed
+  ["airflow", "Cooling Air Flow", "0,7 m3/s", null, { unit: "m3/s", num: 0.7, missing: [] }], // himoinsa-china
+  ["airflow", "Cooling Air Flow", "0,0875 m3/s", null, { unit: "m3/s", num: 0.0875, missing: [] }], // himoinsa-china
+  ["airflow", "Cooling Air Flow 60 Hz", "74 m3/min", null, { unit: "m3/min", num: 74, missing: [] }], // unit kept as written, not converted
+  ["airflow", "Air flow (m3/s)", "0.48", null, { unit: "m3/s", num: 0.48, missing: [] }], // gfe-power
+  ["airflow", "Cooling Air Flow", "0.48", null, { num: 0.48, missing: ["unit"] }],
+  ["airflow", "Cooling Air Flow", "TBA kg/h", null, { missing: ["value"] }],
 ];
 
 for (const [key, label, value, ctx, want] of CASES) {

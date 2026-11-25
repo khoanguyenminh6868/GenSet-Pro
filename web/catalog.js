@@ -237,15 +237,36 @@
     ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|vertical|冲程/i],
     // ^ A cell that only names the aspiration ("Turbocharged": jet-power n125, an "Engine type" title over "No. of Cylinder |
     //   Aspirated") or only the cylinders ("6 cylinder in line", yihua n106) is no engine type (L1-B4 / B5, 24/11/2026).
+    // Alternator labels of PR C (buoc-4-c, 24/11/2026). They stand before `excit` / `vreg` / `thd` / `phase` / `current`, which took
+    // these labels wrongly (Wires → phase, AVR → vreg / excit, short-circuit current → current): the first pattern that matches wins.
+    ["poles", "alternator", "Số cực", /\bpoles?\b|极数|磁极数/i, /phase|相|breaker|mccb|switch|shoe|piece|cylinder|断路|开关/i, /^\d{1,2}(\s*(poles?|极))?$/i],
+    ["bearing", "alternator", "Ổ đỡ", /bearing|轴承/i, /drive|\bnde?\b|lubric|grease|润滑|驱动|temp|life|寿命|main|crank|con(?:necting)?\s*rod|\bcam|thrust|brand|品牌|make|code|model|part|曲轴|连杆|凸轮/i, /^(?:[12](?:\s*bearings?)?|(?:single|double|two|one)(?:[\s-]*bearings?)?|[单双]\s*(?:轴承|支承|支撑)|[一二两]个?轴承)$/i],
+    ["wires", "alternator", "Số đầu dây", /^(?:(?:no|number|numbers)\.?\s*of\s*)?(?:wires?|leads?)\s*[:：]?$|引出线|出线数/i, null, /^\d{1,2}(\s*(wires?|leads?|线))?(\s+or\s+\d{1,2})?$/i],
+    // "Voltage regulator" = the AVR (its type), not the voltage regulation % (`vreg`: "Voltage regulation"). A figure with a % / V / kV,
+    // "Yes" / "No" / a bare number is no AVR type; a value that is only an excitation word ("SHUNT" under an "AVR" column of a table
+    // whose cells are excitation systems) is not read as an AVR (L1, PR C). The bare label "AVR" stays `excit` as before (its cells
+    // are mixed: "SHUNT" x18, "R150", "±3 kV"; a saved check quotes "| AVR | SHUNT" as the excitation evidence).
+    ["avr", "alternator", "Loại AVR", /\bavr\b|a\.v\.r\.?|voltage\s*regulator|调压器|调压装置/i, /^\s*avr\s*[:：]?\s*$|regulation|accuracy|stab|steady|调压方式|调压率|governor|\bctrl\b|control|output|protect|power|digital|analog|external|built|\bslot\b|\bcard\b|input|\btime\b|ratio|range|bias|\bpid\b|-avr\b|\bavr\s*-|calibrat|sensing|wave|调压时间|brand|make|品牌|厂家/i,
+      /^(?![\s\S]*(?:[%％±]|\d\s*k?v\b|\bv\s*dc\b|\bvdc\b|\bvac\b))(?!\s*(?:yes|no|y|n|●|○|-|—)\s*$)(?!\s*(?:shunt|arep|pmg|brushless|self[\s-]*excit\w*|separately\s*excited|aux\w*\s*winding)\s*$)(?!\s*[\d.,]+\s*$)[\s\S]*[a-z一-鿿]/i],
+    // Sustained short-circuit current / capacity (Khoa 24/11/2026 (1)): "Short circuit ratio" (SCR, 1/Xd) is another quantity and has
+    // no key; a protection / breaker / curve is not the alternator's.
+    ["scirc", "alternator", "Dòng ngắn mạch duy trì", /sustained\s*short|short\s*-?\s*circuit\s*(capacity|current|capability|ability|rating)|短路(电流|能力|容量)|corto\s*circuito/i, /ratio|protect|curve|breaking|making|\bscr\b|\bpeak\b|比|保护|分断|峰值|relay|trip|breaker|\bcb\b|mccb/i, /\d/],
+    ["pitch", "alternator", "Bước quấn dây", /winding\s*pitch|pitch\s*of\s*(the\s*)?winding|绕组节距|节距/i, null, /^\d+\s*\/\s*\d+$|^\d+(\.\d+)?\s*%$|^\d+(\.\d+)?$/],
+    ["overspeed", "alternator", "Tốc độ vượt", /over\s*-?\s*speed|超速/i, /relay|protect|alarm|delay|trip|threshold|stop|shutdown|nominal|frequency|\bfreq|\+|保护|报警|停机|延时/i, /^(?:\d{1,2},\d{3}|\d{3,4})(?:\s*(?:rpm|r\.?\s*p\.?\s*m\.?|rev\.?\s*\/\s*min|r\s*\/\s*min|min\s*-1|转\s*\/\s*分|转))?\.?$/i],
+    // Alternator cooling air only: the engine / radiator / combustion air flows are other quantities.
+    ["airflow", "alternator", "Lưu lượng gió làm mát", /(alternator|generator|alt\.?)\s*(cooling\s*)?(fan\s*)?air\s*-?\s*(flow|volume)|cooling\s*air\s*-?\s*(flow|volume)|发电机.*(风量|冷却空气)/i, /engine|radiator|combustion|intake|restriction|external|exhaust|resist|pressure|发动机|散热|水箱|进气/i, /\d/],
+    // Telephone factors: THF in % ("＜2%", "THF<2%"), TIF a figure; "Telephone Interference | THF<2% | TIF<50" is two cells of one row.
+    ["thf", "alternator", "THF", /\bthf\b|telephone\s*harmonic|电话谐波|fattore\s*armonico\s*telefonico/i, null, /\d/],
+    ["tif", "alternator", "TIF", /\btif\b|telephone\s*influence|电话影响/i, null, /\d/],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
-    ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, /brush|self|pmg|shunt|aref|separately|\bavr\b|自励|永磁|无刷|有刷/i],
+    ["excit", "alternator", "Kích từ", /excit|励磁|^\s*avr\s*[:：]?\s*$/i, null, /brush|self|pmg|shunt|aref|separately|自励|永磁|无刷|有刷/i],
     // Not "Telephone harmonic factor (THF)" / TIF: the telephone factors are another figure (all 38 values this key had were THF of shanhua; 24/11/2026).
     ["thd", "alternator", "Méo sóng hài (THD)", /harmonic|\bthd\b|谐波/i, /\bthf\b|\btif\b|telephone|电话/i, /\d\s*[%％]/],
     ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, /time|时间/i, /\d\s*[%％]/i],
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
-    ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, /breaker|断路器|空开/i, /^\d/],
+    ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, /breaker|断路器|空开|短路|short\s*-?\s*circuit/i, /^\d/],
     ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差|fre\w*\s*\/\s*volt|频率\s*\/\s*电压/i, /^\D{0,3}\d{3}/],
     ["pf", "genset", "Hệ số công suất", /power\s*factor|(?<![a-z])cos(?![a-z])|功率因数/i, null, /0[.,]\d|^1$/],
     ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|\d\s*-?\s*wire|three|single|三相|单相/i],
@@ -264,12 +285,12 @@
     return specKeys.get(L);
   }
   function specKeyOf(L) {
-    if (!L || L.length > 70 || /\bmodel\b|型号|brand|make|品牌|厂家/i.test(L)) return null;
+    if (!L || L.length > 70 || /brand|make|品牌|厂家/i.test(L) || (/\bmodel\b|型号/i.test(L) && !/\bavr\b|a\.v\.r|voltage\s*regulator|调压器/i.test(L))) return null;
     // Genset power is read on its own (powersIn); an engine's own output is kept here.
     // "Oil capacity" / "Coolant capacity" are volumes of the engine (keys oil / coolant), not a rating; a heater, cooler or pump
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
-    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
