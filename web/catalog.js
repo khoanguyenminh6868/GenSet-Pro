@@ -3031,6 +3031,28 @@
     });
     return add;
   }
+  // A bare second "Model | <code>" line read as the ENGINE (buoc-3-to-doc, họ V3 of buoc-3-bo-cuc-chua-doc.md; Khoa: "Model" trơ thứ
+  // hai chỉ là động cơ khi mã KIỂM ĐƯỢC là động cơ). A closed list per supplier, not a rule: each code is already an engine key of
+  // ANOTHER supplier in cn/ (suppliers/buoc-3-to-doc.test.mjs checks it against build() without this supplier); a code of the
+  // supplier's own only, or near another key, stays out. The line counts as the engine's only when it is the sheet's SECOND model
+  // line, after the genset's, outside any part heading, and no engine line was read yet; from it on the sheet is the engine's part
+  // (an output under it is the engine's: dingbo "Prime Power 354kW" under "Model: TAD1344GE-B", the set's 329 kW is "Rated").
+  //   astra-fuan: "| Model | AS165W" / "| Standby Power (kW/kVA) | 132/165" / "| Model | WP6D152E200". Out: 4B3.9-G1(MECH.),
+  //     4B3.9-G11(MECH.), 4BT3.9-G1(MECH.) ("(MECH.)" written into the cell: no supplier has that key), 8M33D880E200 (no supplier), "8M33D975E310^"
+  //     (the "^" mark makes another key; keyOf does not drop it, and near keys are not merged).
+  //   kubota-japan: "| MODEL | Unit | SQ-3200" / "| Model | - | V2203". Out: Z482, D1005, V1305 (no other supplier has them;
+  //     "Kubota" is only in the page title, not in the table).
+  //   dingbo: "Genset Model: DB-329GF" / "| Model: | TAD1344GE-B". The set's own output is "Rated Power" only (no level): no record,
+  //     noted "không có công suất prime / standby" (listed so the note says why, not "hai model").
+  // Not listed: slong SL390 / SL420 / SL460 / SL550 / GB750 / GB1000 (slong's own keys only), sunkings WP10D238E301NG (no other
+  // supplier; the page title names WP13D317E300NG), koten n211–n231 (bảng cột, họ L1: not this PR), supermaly n107 / n108 (three
+  // "Model" lines, outputs "Power" only), xinhengxin n1001 ("Model | 544D" is the alternator's, the engine line writes "CCEC").
+  const V_SECOND_ENGINE = [
+    { supplierId: "astra-fuan", codes: "4B3.9-G12 4B3.9-G2 4BT3.9-G2 6CTA8.3-G2 6M33D572E200 6M33D633E200 6M33D670E200 6M33D725E310 8M33D800E200 BFM3G1 WP10D200E200 WP10D238E200 WP10D264E200 WP10D320E200 WP12D353E200 WP13D385E200 WP13D405E200 WP13D440E310 WP13D490E310 WP2.3D25E200 WP2.3D33E200 WP2.3D40E200 WP2.3D48E200 WP4.1D113E200 WP4.1D66E200 WP4.1D80E200 WP6D132E200 WP6D152E200 WP6D167E200 YC4A100Z-D20 YC4A140L-D20 YC4A180L-D20 YC4D60-D21 YC4D90Z-D21 YC4V35-D20 YC4V45Z-D20 YC4V55Z-D20 YC6A245L-D21 YC6B205L-D20 YC6MJ500-D30 YC6MJ540-D30 YC6MJ600-D30 YC6MK350L-D20 YC6MK420L-D20" },
+    { supplierId: "kubota-japan", codes: "D1703 D722 V2203 V3300" },
+    { supplierId: "dingbo", codes: "1103A-33G 1104A-44TG1 1104C-44TAG2 1106A-70TAG2 1206A-E70TTAG3 403A-11G1 404A-22G1 404D-22TG 6M33D572E200 6M33D633E200 TAD1344GE-B WP13D440E310 WP13D490E310" },
+  ];
+  const vSecondEngine = (sid, code) => V_SECOND_ENGINE.some((x) => x.supplierId === sid && x.codes.split(" ").some((c) => keyOf(c) === keyOf(code)));
   function verticalRecords(s, already, note) {
     const out = [], tables = s.specTables || [];
     tables.forEach((t, ti) => {
@@ -3091,6 +3113,10 @@
         if (V_MODEL.test(label) && !V_ENGINE.test(label)) {
           if (codes.length > 1) { multi = lines[li]; return; }
           if (!codes.length) return;
+          // V_SECOND_ENGINE: the second bare model line, a code checked as an engine's, is the engine line and opens its part.
+          if (!part && !col && models.size === 1 && !engines.size && !models.has(keyOf(codes[0].code)) && vSecondEngine(s.id, codes[0].code)) {
+            engines.set(keyOf(codes[0].code), codes[0]); part = "engine"; partSeen = true; return;
+          }
           const to = part === "engine" ? engines : part === "alternator" ? alts : models;
           to.set(keyOf(codes[0].code), codes[0]);
           return;
@@ -4461,7 +4487,7 @@
 
   // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
   const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
-  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, TABLE_CAPTIONS, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, TABLE_CAPTIONS, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets, V_SECOND_ENGINE };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
