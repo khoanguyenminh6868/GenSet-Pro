@@ -23,6 +23,8 @@
     "genset.dimensions": { "kind": "dims", "basis": "mỗi chiều 300-16.000 mm hoặc 0,3-16 m (likely, catalog.js); cm quy theo cùng dải" },
     "genset.weight": { "kind": "number", "range": [30, 80000], "units": ["kg"], "kinds": ["mass"], "relation": "absurd", "basis": "30-80.000 kg (likely); 2,5-150 kg/kVA (checkSpec qua absurdOf)" },
     "genset.noise": { "kind": "number", "range": [40, 120], "units": ["dB(A)", "dB"], "kinds": ["noise"], "basis": "40-120 (likely); chỉ xét đơn vị ngay sau số của giá trị, khoảng cách đo (7 m) không tính" },
+    "genset.ambient": { "kind": "text", "must": "\\d\\s*(m|米|meters?|metres?|°|º|℃|c\\b|deg)|\\d\\s*$", "basis": "nhiệt độ (°C) hoặc độ cao (m) ghi bằng số (≤40 ℃, ≤ 1000 m, -15℃～45℃); buoc-4-h" },
+    "genset.overload": { "kind": "text", "must": "\\d\\s*(%|％|倍)", "basis": "mức quá tải ghi bằng % hoặc bội số (10%一小时, 1.5倍2分钟, 110% 1h); buoc-4-h" },
 
     "engine.brand": { "kind": "code", "basis": "tên hãng không rỗng" },
     "engine.model": { "kind": "code", "basis": "mã không rỗng" },
@@ -52,6 +54,8 @@
     "alternator.ratings": { "kind": "alt_ratings", "voltage": [100, 15000], "hz": [50, 60], "phases": [1, 3], "kva": [0.5, 20000], "ratio": [0.5, 1.2], "eff": [50, 100], "basis": "kW / kVA như tổ máy; hiệu suất tờ hãng 80-97 %; standby >= continuous cùng điện áp, tần số" },
     "alternator.insulation": { "kind": "enum", "basis": "values của spec-fields.json" },
     "alternator.ip": { "kind": "text", "must": "^IP\\s?\\d{2}", "basis": "dạng IPnn" },
+    "alternator.altitude": { "kind": "number", "range": [100, 6000], "units": ["m"], "kinds": ["length"], "basis": "dữ liệu cn/ ≤ 1000 m (huali n2008); dải lỏng 100-6.000 m; buoc-4-h", "review": true },
+    "alternator.type": { "kind": "text", "must": "brush|self|excit|synchron|permanent|pmg|无刷|有刷|自励|励磁|同步|永磁", "basis": "phải nêu kiểu: không chổi than / tự kích / đồng bộ (ok của altType, catalog.js); buoc-4-h" },
     "alternator.excitation": { "kind": "enum", "basis": "values của spec-fields.json" },
     "alternator.brushless": { "kind": "bool", "basis": "có / không (true / false); chỉ true khi nguồn ghi brushless / 无刷" },
     "alternator.voltage_regulation": { "kind": "number", "range": [0, 10], "units": ["%"], "kinds": ["pct"], "basis": "dữ liệu cn/ 0,5-5 %; nới 10 %", "review": true },

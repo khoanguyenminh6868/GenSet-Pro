@@ -224,6 +224,15 @@
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, /engine\s*(size|dimen)|motor\s*(size|dimen)|(发动机|柴油机)\s*尺寸/i, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
     ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*(time|hours?)/i, null, N],
+    // Site conditions of the set (buoc-4-h, 25/11/2026; field genset.ambient "Nhiệt độ môi trường, độ cao"): ambient temperature and
+    // altitude as written ("≤40 ℃", "≤1000m", "-15℃～45℃"). Not the radiator's design ambient ("Ambient capacity of radiator"), a start
+    // aid ("Min Ambient for Unaided Start"), storage, a derating table, an engine's coolant limit ("Max. allowable operating
+      // temperature | ℃ | 103") nor the German "Höhe" (a height). "Operating temperature" never gets here: specKeyOf stops "…rating…"
+    // labels (opeRATING) first; it is mostly a controller's range (Deep Sea, ComAp), and is left so.
+    ["ambient", "genset", "Nhiệt độ môi trường, độ cao", /ambient\s*(air\s*)?temp|^\s*ambient\s*[:：]?\s*$|环境温度|altitude|海拔(要求|高度)/i, /radiator|capacity|start|storage|setting|derat|修正|allowable|noise|engine|coolant|turbo|after\s*-?cool|display|location|controller|sensor/i, /\d/],
+    // Overload capability of the set (buoc-4-h; field genset.overload): "1.5倍2分钟", "过载 10%一小时", "110% 1h". A protection, a timeout,
+    // an alarm, an ANSI code ("Overload | 32") or "overload power (kW)" (a power column) is not it.
+    ["overload", "genset", "Khả năng quá tải", /overload\s*(capa\w*|capabil\w*|ability)|过载能力|^\s*overload\s*[:：]?\s*$/i, /protect|timeout|alarm|trip|relay|action|measur|current|power|功率|load\s*shed|保护/i, /\d\s*(%|％|倍)|\d\s*(h|hrs?|hours?|min|mins?|minutes?|s|sec|seconds?|小时|分钟|秒)\b|\d\s*(小时|分钟|秒)/i],
     ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
     ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量|排气量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
     ["cyl", "engine", "Số xi lanh", /cylinder|^cyl|^cil|气缸|缸数/i, /air\s*flow/i, /^(\d{1,2}|\d{1,2}\s*[-–]?\s*(l|v|in\s*-?\s*line|cyl\w*)\b.*|\d{1,2}\s*缸.*|[lv]\s?-?\d{1,2}|in-?line.*|vertical.*|v-?type.*)$/i],
@@ -269,6 +278,16 @@
     // Telephone factors: THF in % ("＜2%", "THF<2%"), TIF a figure; "Telephone Interference | THF<2% | TIF<50" is two cells of one row.
     ["thf", "alternator", "THF", /\bthf\b|telephone\s*harmonic|电话谐波|fattore\s*armonico\s*telefonico/i, null, /\d/],
     ["tif", "alternator", "TIF", /\btif\b|telephone\s*influence|电话影响/i, null, /\d/],
+    // Alternator type as written (buoc-4-h, 25/11/2026; field alternator.type "Kiểu (không chổi than, tự kích)"): "Brushless, Self-Exciting",
+    // "无刷三相交流同步发电机". The label names the alternator ("Alternator type", "电机类型"); a bare "Type" / "类型" does not (35 NCC write
+    // it for the engine, the canopy, the genset). A cell that is a model ("ECP32 2S4 C", endress) or a genset kind ("Silent Gasoline
+    // Generator", slong "Generator type") names no type: the value must name brushless / excitation / synchronous. Kept as text in this
+    // field only: brushless / excitation are not derived from it (they are read from their own labels).
+    // Altitude of the alternator (field alternator.altitude): no label pattern of its own. A label `ambient` takes ("Altitude Requirement")
+    // becomes this key only when a label sheet writes it under the alternator's heading (`partKey`, buoc-4-h): huali n2008 "Alternator" …
+    // "| Altitude Requirement | ≤ 1000 m"; the same words in the set's part (huali n2005 "Reference Site Altitude") stay the set's.
+    ["altitude", "alternator", "Độ cao làm việc", /(?!)/, null, /^[≤<]?\s*\d{1,2},?\d{3}\s*(m|米|meters?|metres?)?\.?$/i],
+    ["altType", "alternator", "Kiểu đầu phát", /^\s*(alternator|generator)\s*-?\s*type\s*[:：]?\s*$|^\s*type\s*of\s*alternator\s*[:：]?\s*$|alternatortype|电机类型|发电机类型|发电机型式|电机型式/i, null, /brush|self|excit|synchron|permanent|pmg|无刷|有刷|自励|励磁|同步|永磁/i],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
@@ -294,6 +313,16 @@
     const L = String(label || "").trim();
     if (!specKeys.has(L)) { const k = specKeyOf(L); specKeys.set(L, k && NOT_OF[k]?.test(L) ? null : k); }
     return specKeys.get(L);
+  }
+  // The key of a label read under a part heading of a label sheet (buoc-4-h, 25/11/2026). The set's site conditions (`ambient`) and its
+  // overload capability are the SET's only outside the engine's and the alternator's parts: under "Alternator" an altitude is the
+  // alternator's (`altitude`), its ambient temperature / overload are the alternator's rating conditions (no field: not read); under
+  // "Engine" they are the engine's (not read). Other keys are unchanged.
+  const ALTITUDE_LBL = /altitude|海拔/i;
+  function partKey(sk, part, label) {
+    if (sk !== "ambient" && sk !== "overload") return sk;
+    if (part === "alternator") return sk === "ambient" && ALTITUDE_LBL.test(label) ? "altitude" : null;
+    return part === "engine" ? null : sk;
   }
   function specKeyOf(L) {
     if (!L || L.length > 70 || /brand|make|品牌|厂家/i.test(L) || (/\bmodel\b|型号/i.test(L) && !/\bavr\b|a\.v\.r|voltage\s*regulator|调压器/i.test(L))) return null;
@@ -868,7 +897,7 @@
       // A line of fuel units only ("| Rating | gr/kWh | L/hr" over "| 100% PRP | 193 | 156", Baudouin 6M31G825/5 [1021]): the unit
       // of each column of the fuel lines below it with as many cells.
       if (c.length >= 3 && c.slice(1).every((x) => FUEL_UNIT_CELL.test(String(x).trim()))) fuelUnits = c.slice(1).map((x) => String(x).trim());
-      const sk = specKey(label);
+      const sk = partKey(specKey(label), part, label);
       if (sk && /^fuel/.test(sk) && !W) {
         const col = (cols[0] = cols[0] || {}), specs = (col.specs = col.specs || []), got = {};
         let load = sk === "fuel75" ? 75 : sk === "fuel50" ? 50 : 100;
@@ -917,8 +946,10 @@
         // "| N° of Cylinders / Valves | 6 / 24" (Baudouin [1021]): the label names the order, the first figure is the count.
         const cylValves = sk === "cyl" && /cylinders?\s*\/\s*valves/i.test(label);
         sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(sk, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === sk)) col.specs.push({ key: sk, label, value: val }); } });
-        // "Engine type" is the engine model on some sites: read it as before too.
-        if (sk !== "engType") continue;
+        // "Engine type" is the engine model on some sites: read it as before too. So is "Alternator type" (buoc-4-h): endress "| Alternator
+        // type | ECP32 2S4 C" is the alternator's code, and the line went on to the alternator's model before the key existed (victory
+        // "Self-excited,2-pole,single phase" stays the record's `other` as before: no record, and `other` feeds config-bot's candidates).
+        if (sk !== "engType" && sk !== "altType") continue;
       }
       // "Engine ref." is the engine model on Kohler-SDMO sheets ("| Engine ref. | 4045TSG20 *", * = a footnote).
       // "Power model" (动力型号) is the engine on Koop pages ("| Power model | KD292F").
@@ -3108,7 +3139,7 @@
           levels[lv].push({ p, line: lines[li] });
           return;
         }
-        const sk = specKey(label);
+        const sk = partKey(specKey(label), part, label);
         if (!sk) return;
         const scope = SPEC[sk].scope;
         if (part === "alternator" ? scope !== "alternator" : part === "engine" ? scope === "alternator" : false) return;

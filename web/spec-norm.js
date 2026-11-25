@@ -16,7 +16,7 @@
   "use strict";
 
   const conv = () => root.GenbidConversions;
-  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow"];
+  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow", "altitude"];
 
   // ---- text helpers ----
   // NFKC: chữ toàn khổ （）：, số La Mã Ⅱ → II, ³ → 3. Chỉ dùng cho bản làm việc, `raw` giữ nguyên văn.
@@ -521,6 +521,22 @@
     return r;
   }
 
+  // Alternator altitude (buoc-4-h, 25/11/2026): one figure ("≤ 1000 m", "1,000m"), the operator kept; metres only when the cell, label
+  // or header writes them.
+  function altitude(spec, ctx, r) {
+    const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
+    const m = V.match(/^(?:≤|<=|<)?\s*(\d{1,2},\d{3}|\d{3,5})\s*(m|米|meters?|metres?)?\.?$/i);
+    if (!m) return miss(r, "value");
+    const n = numOf(m[1]);
+    if (n.amb) return miss(r, "number");
+    r.num = n.n;
+    r.op = opOf(V);
+    const M = /(?:^|[^a-z])(m|米|meters?|metres?)(?![a-z])/i;
+    r.unit = m[2] || M.test(L.replace(/altitude|海拔/gi, " ").replace(/\(([^)]*)\)/g, " $1 ")) || M.test(H) ? "m" : null;
+    if (!r.unit) miss(r, "unit");
+    return r;
+  }
+
   function tank(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
     // "Fuel Tank running hours: 8/10/12H": a running time, not a capacity.
@@ -680,7 +696,7 @@
     weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i, COMP.kg], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i, COMP.L], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i, COMP.L],
     speed: [/speed|转速/i, /rpm|r\/min/i, COMP.rpm], bore: [/bore|缸径/i, /mm/i, COMP.mm] };
 
-  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow };
+  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow, altitude };
 
   // One spec { key, label, value } with its table's context { title, header } → the normalized form, or null for a
   // key this layer does not normalize.
