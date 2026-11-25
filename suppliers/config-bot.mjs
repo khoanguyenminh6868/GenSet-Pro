@@ -4911,7 +4911,9 @@ export function altKvaOf(suppliers, built) {
 // alternator ratings by model key, and the maker's engine outputs as rated facts (engPrime / engStandby, net kWm at the
 // sheet's speed; maker when the supplier is of the engine's family — the Cummins sheet of cummins-inc). Read once a run.
 let RT_CACHE = null;
-const keysOfModel = (m) => { const parts = String(m).split("/"), pre = (parts[0].match(/^[A-Za-z]+/) || [""])[0]; return parts.map((p, i) => CAT.keyOf(i && /^\d/.test(p) ? pre + p : p)); };
+// "HCI534D/544D" là hai model; "PRO18L G/4" (Linz, "/4" = số cực) là MỘT model: chỉ tách khi mọi phần sau "/" dài ≥ 2 ký tự
+// (buoc-3-dau-phat-dinh-muc: tách "/4" từng tạo khoá rác "PRO4" gom mọi tờ Linz).
+const keysOfModel = (m) => { if (String(m).split("/").slice(1).some((p) => p.trim().length < 2)) return [CAT.keyOf(m)]; const parts = String(m).split("/"), pre = (parts[0].match(/^[A-Za-z]+/) || [""])[0]; return parts.map((p, i) => CAT.keyOf(i && /^\d/.test(p) ? pre + p : p)); };
 // The ratings of a catalog model by key: the model as written, else the same code with the make written before it
 // dropped ("Stamford S4L1D-C41" → S4L1D-C41). Only leading words that are not model codes go; no near-name match.
 // Names the maker itself gives ONE sheet in two ways (Stamford S4L1D, Wdg.311; stamford-avk-china n1016 D, n1017 E, n1019 C,
@@ -4950,7 +4952,9 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       const file = path.join(dir, String(s.id), `${src.n}.md`);
       if (!fs.existsSync(file)) continue;
       const text = fs.readFileSync(file, "utf8");
-      if (!/RATINGS|TEMPERATURE RISE|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)/im.test(text)) continue;
+      // Cổng chữ: mẫu Stamford / Leroy-Somer / Cummins, và tờ dạng A / B của `sheetRatings` (Kwise "Duty type/Temperature",
+      // Shangyan "Rated capacity(KVA)", Linz "Rated Power in Class", Firstall "Rated power at Class").
+      if (!/RATINGS|TEMPERATURE RISE|^Ratings (50|60) Hz|rpm \((50|60) Hz Ratings\)|Duty\s*type\/Temperature|Rated capacity\s*\(KVA\)|Rated Power in Class|Rated power at Class/im.test(text)) continue;
       const fam = supplierFamily(s, true);
       const rs = ratingsOf(text);
       // A technical data sheet of one alternator model (cfg-r3): its attributes (insulation, poles, THD...) by that model.

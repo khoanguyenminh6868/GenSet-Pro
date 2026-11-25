@@ -506,4 +506,197 @@ export function lsSheetAttrs(text) {
   return out;
 }
 
-export const ratingsOf = (text) =>[...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text), ...meccRatings(text)];
+// ---------- Tờ hãng đầu phát dạng A / B (buoc-3-dau-phat-dinh-muc, 25/11/2026) ----------
+// Dạng A: tiêu đề cột (tần số, chế độ / độ tăng nhiệt, pha, điện áp) rồi mỗi model một dòng "| <model> | kVA | …" và dòng
+// kW ngay dưới (Kwise, Shangyan). Dạng B: tờ một model, mỗi cấp nhiệt một cặp dòng "| Rated Power in Class H | kVA | …" /
+// "| (125°C/40°C) | kW | …" (Linz, Firstall). Luật chung (Khoa chốt): mỗi số một điện áp, kèm chế độ, độ tăng nhiệt /
+// cấp, pha, tần số, hệ số công suất ĐÚNG như tờ ghi; tờ không ghi điều kiện nào thì để null (không suy, không quy đổi
+// kVA ↔ kW). Một nhóm cột chỉ chia đều cho các nhóm của tiêu đề khi chính dãy điện áp xác nhận ranh giới (`splitEven`:
+// trong mỗi phần điện áp tăng dần, phần sau bắt đầu thấp hơn chỗ phần trước kết thúc); không thì bỏ cả khối. Số ô của
+// dòng kVA / kW phải đúng bằng số cột, không thì bỏ model đó (không đoán cột).
+const RISE = (r, amb) => (amb ? `${r}/${amb}°C` : `${r}°C`);
+const isNum = (t) => /^\d+(?:[.,]\d+)?$/.test(t);
+// Chia `a` (số) thành k phần bằng nhau mà dãy tự xác nhận ranh giới; null khi không chắc. Mỗi phần tăng dần; mỗi ranh giới
+// được xác nhận khi phần sau bắt đầu thấp hơn chỗ phần trước kết thúc, hoặc (cùng `grp`, vd. cùng tần số) hai phần giống hệt.
+// Ranh giới giữa hai `grp` khác nhau mà không tự xác nhận chỉ nhận khi độ dài phần đã được xác nhận ở ranh giới khác (Shangyan:
+// "380 400 415" ×3 rồi "416 440 480" ×3).
+function splitEven(a, k, grp = null) {
+  if (!k || a.length % k || a.some((x) => !(x > 0))) return null;
+  const n = a.length / k, parts = [];
+  for (let p = 0; p < k; p++) parts.push(a.slice(p * n, (p + 1) * n));
+  if (parts.some((s) => s.some((x, i) => i && x <= s[i - 1]))) return null;
+  let proven = false, open = false;
+  for (let p = 1; p < k; p++) {
+    const reset = parts[p][0] < parts[p - 1][n - 1], same = grp && grp[p] === grp[p - 1] && parts[p].join() === parts[p - 1].join();
+    if (reset || same) proven = true;
+    else if (grp && grp[p] !== grp[p - 1]) open = true;
+    else return null;
+  }
+  return !open || proven ? n : null;
+}
+// Số của một dòng (mọi ô sau nhãn); null khi có ô không phải số.
+const figs = (cs) => (cs.length && cs.every(isNum) ? cs.map(num) : null);
+function pushCols(out, model, cols, kva, kw, eff, lines, extra = 0) {
+  if (!kva || kva.length !== cols.length + extra || (kw && kw.length !== kva.length) || (eff && eff.length !== kva.length)) return;
+  cols.forEach((c, i) => {
+    if (!c || kva[i] == null) return;
+    out.push({ part: "alternator", model, hz: c.hz ?? null, duty: c.duty ?? null, rise: c.rise ?? null, cls: c.cls ?? null, phase: c.phase ?? null, volt: c.volt,
+      conn: c.conn ?? null, kVA: kva[i], kW: kw ? kw[i] : null, eff: eff ? eff[i] : null, pf: c.pf ?? null, lines });
+  });
+}
+const DUTY_WORD = (w) => (/^(Cont\.?|Continuous|Common(?: use)?)$/i.test(w) ? "Cont." : /^(Standby|Stand-by|Backup|Spare)$/i.test(w) ? "Standby" : null);
+
+// Kwise (kwise-generator 1001–1009): khối "| 50Hz/1500RPM | Standard Winding | / Power Factor 0.8" → "| Duty type/Temperature |
+// Cont./125K/40℃ | Standby/163K/27℃ [| Cont./125K/40℃]" → "| Phase | 3-Phases | 3-Phases [| 1-Phase]" → "| Y | 380V | …" →
+// "| KAL164A1 | kVA | …" + "| kW | …". Chỉ đọc cột 3 pha (nhóm 1 pha "220V/230V/240V" chia hai cột PF 0.8 / 1.0: không một
+// điện áp, bỏ); nhóm 1 pha phải đứng cuối và dòng "YY" ghi đúng "0.8 | 1.0" thì mới biết nó chiếm 2 ô.
+export function kwiseRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  L.forEach((l, i) => {
+    const hm = l.match(/^\|\s*(50|60)Hz\/(1500|1800|3000|3600)RPM\s*\|/);
+    if (!hm) return;
+    let j = i + 1;
+    const isModel = (s) => /^\|\s*[A-Z][\w.\-/]*\s*\|\s*kVA\s*\|/.test(s);
+    while (j < L.length && j < i + 14 && !isModel(L[j])) j++;
+    if (!isModel(L[j] || "")) return;
+    const head = L.slice(i, j), flat = head.slice(0, 3).map(flatLine).join(" ");
+    const pf = (flat.match(/Power\s*Factor\s*(0\.\d+)/i) || [])[1];
+    const dl = head.find((h) => /^\|\s*Duty\s*type\/Temperature\s*\|/i.test(h)), ph = head.find((h) => /^\|\s*Phase\s*\|/.test(h));
+    const yl = head.find((h) => /^\|\s*(?:Voltage\s*\|\s*)?Y\s*\|/.test(h)), yy = head.find((h) => /^\|\s*YY\*?\s*\|/.test(h));
+    if (!dl || !ph || !yl) return;
+    const groups = cells(dl).slice(1).map((c) => c.match(/^(Cont\.|Standby)\/(\d{3})K\/(\d{2})℃$/));
+    const phases = cells(ph).slice(1).map((c) => (/^3-Phases$/.test(c) ? 3 : /^1-Phase$/.test(c) ? 1 : null));
+    if (!groups.length || groups.some((g) => !g) || phases.length !== groups.length || phases.some((p) => !p)) return;
+    const n3 = phases.filter((p) => p === 3).length;
+    if (phases.slice(0, n3).some((p) => p !== 3)) return;
+    const yt = cells(yl).slice(/^\|\s*Voltage/.test(yl) ? 2 : 1), vt = yt.slice(0, yt.length - (phases.length - n3));
+    if (vt.some((t) => !/^\d{3}V$/.test(t))) return;
+    const volts = vt.map((t) => num(t.slice(0, -1))), per = splitEven(volts, n3);
+    if (!per) return;
+    let extra = 0;
+    if (n3 < phases.length) { if (phases.length - n3 !== 1 || !yy || !/\|\s*0\.8\s*\|\s*1\.0\s*$/.test(yy)) return; extra = 2; }
+    const cols = volts.map((v, c) => { const g = groups[Math.floor(c / per)]; return { hz: Number(hm[1]), duty: DUTY_WORD(g[1]), rise: RISE(g[2], g[3]), phase: 3, volt: v, conn: "Y", pf: pf ? num(pf) : null }; });
+    for (let r = j; r < L.length && r < j + 80; r++) {
+      if (/^\|\s*(50|60)Hz\/\d+RPM/.test(L[r])) break;
+      if (!isModel(L[r])) continue;
+      const c = cells(L[r]), kwl = /^\|\s*kW\s*\|/.test(L[r + 1] || "") ? L[r + 1] : null;
+      pushCols(out, c[0], cols, figs(c.slice(2)), kwl ? figs(cells(kwl).slice(1)) : null, null, [...head, L[r], ...(kwl ? [kwl] : [])], extra);
+    }
+  });
+  return out;
+}
+
+// Shangyan (shangyan-jiangsu 104–117): "| Model | [Frequency |] 50Hz(1500rpm) | 60Hz(1800rpm)" → [ "| Environment temperature |
+// Common 40℃ | Peak 40℃ | …", "| Temperature rise | Common 125℃ | Backup 150℃ | …" ] → "| Voltage [(series connection)] | 380 | …"
+// → "| GR270C | Rated capacity(KVA) | …" + "| Rated power(KW) | …" + "| Efficiency (%) | …". Có dòng độ tăng nhiệt thì mỗi
+// tần số phải lặp đúng cùng dãy nhóm (Common / Backup …), mỗi ô có chữ chế độ ("105℃" trơn: bỏ khối). Không ghi pha, PF.
+export function shangyanRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  L.forEach((l, i) => {
+    const hz = [...l.matchAll(/(50|60)\s*Hz\s*\((?:1500|1800|3000|3600)rpm\)/gi)].map((m) => Number(m[1]));
+    if (!/^\|\s*Model\s*\|/.test(l) || hz.length < 1 || cells(l).length !== hz.length + 1 + (/\|\s*Frequency\s*\|/.test(l) ? 1 : 0)) return;
+    const isModel = (s) => /^\|\s*[A-Z][\w.\-/]*\s*\|\s*Rated capacity\s*\(KVA\)\s*\|/i.test(s);
+    let j = i + 1;
+    while (j < L.length && j < i + 8 && !isModel(L[j])) j++;
+    if (!isModel(L[j] || "")) return;
+    const head = L.slice(i, j);
+    const vl = head.find((h) => /^\|\s*Voltage\s*(?:\((?:series(?: connection)?)\))?\s*\|/i.test(h));
+    const rl = head.find((h) => /^\|\s*Temperature rise\s*\|/i.test(h)), al = head.find((h) => /^\|\s*(?:Environment|Ambient) temperature\s*\|/i.test(h));
+    if (!vl || head.some((h) => h !== vl && h !== rl && h !== al && h !== l && !/^\|\s*Voltage\s*\(parallel/i.test(h))) return;
+    const vt = cells(vl).slice(1);
+    if (!vt.every((t) => /^\d{3}$/.test(t))) return;
+    const volts = vt.map(Number), conn = /series/i.test(vl) ? "series" : null;
+    let groups = hz.map((h) => ({ hz: h }));
+    if (rl) {
+      const rs = cells(rl).slice(1).map((c) => c.match(/^(Common(?: use)?|Backup|Spare)\s*(\d{3})℃$/i)), as = al ? cells(al).slice(1).map((c) => c.match(/^(?:Common(?: use)?|Peak(?: value)?)\s*(\d{2})℃$/i)) : null;
+      if (rs.some((r) => !r) || rs.length % hz.length || (as && (as.length !== rs.length || as.some((a) => !a)))) return;
+      const per = rs.length / hz.length, sig = (p) => rs.slice(p * per, (p + 1) * per).map((r, k) => `${r[1]}${r[2]}${as ? as[p * per + k][1] : ""}`).join();
+      if (hz.some((_, p) => sig(p) !== sig(0))) return;
+      groups = rs.map((r, k) => ({ hz: hz[Math.floor(k / per)], duty: DUTY_WORD(r[1]), rise: RISE(r[2], as ? as[k][1] : null) }));
+    }
+    const n = splitEven(volts, groups.length, rl ? groups.map((g) => g.hz) : null);
+    if (!n) return;
+    const cols = volts.map((v, c) => ({ ...groups[Math.floor(c / n)], volt: v, conn })), blk = [];
+    for (let r = j; r < L.length && r < j + 120; r++) {
+      if (/^\|\s*Model\s*\|/.test(L[r])) break;
+      if (!isModel(L[r])) continue;
+      const c = cells(L[r]), kwl = /^\|\s*[RP]ated power\s*\(KW\)\s*\|/i.test(L[r + 1] || "") ? L[r + 1] : null;
+      const efl = kwl && /^\|\s*Efficiency\s*\(%\)\s*\|/i.test(L[r + 2] || "") ? L[r + 2] : null;
+      pushCols(blk, c[0], cols, figs(c.slice(2)), kwl ? figs(cells(kwl).slice(1)) : null, efl ? figs(cells(efl).slice(1)) : null, [...head, L[r], ...(kwl ? [kwl] : []), ...(efl ? [efl] : [])]);
+    }
+    // Một ô kW lớn hơn ô kVA cùng cột (n113: số điện áp 416 / 440 / 480 lẫn vào dòng kVA, cả dòng dưới lệch một tầng) hay
+    // hiệu suất ≥ 100: bố cục khối không chắc, bỏ cả khối.
+    if (!blk.some((x) => (x.kW != null && x.kW > x.kVA) || (x.eff != null && x.eff >= 100))) out.push(...blk);
+  });
+  return out;
+}
+
+// Ô điện áp của tờ một model: "380/220" (dây / pha) → 380; ô khác ("115/230" của Double Delta, "230", "277") giữ chỗ cột mà
+// không đọc (`keep` false): không biết cách nối / số pha của cột đó.
+const starCell = (t) => { const m = String(t).match(/^(\d{3})\/(\d{3})$/); return m && Number(m[1]) > Number(m[2]) ? Number(m[1]) : null; };
+const firstVolt = (t) => Number((String(t).match(/^(\d{2,3})/) || [])[1]);
+// Cột của tờ một model: tần số theo dòng Frequency (một tần số → mọi cột; hai → chia đều khi dãy điện áp xác nhận).
+function sheetCols(hz, vtoks, base) {
+  const n = hz.length === 1 ? vtoks.length : splitEven(vtoks.map(firstVolt), hz.length);
+  if (!n || !vtoks.length) return null;
+  return vtoks.map((t, c) => { const v = starCell(t); return v ? { ...base, hz: hz[Math.floor(c / n)], volt: v } : null; });
+}
+
+// Linz (linz-electric 1001–1033, "TECHNICAL DATA SHEET" một model): "| Frequency | 50Hz - 1500rpm [| 60Hz - 1800rpm]" → "| V |
+// 380/220 | …" (hay "| Voltage Series Star | V | …"; ô dính "400/230 415/240" tách theo dấu cách) → "| Rated Power in Class H |
+// kVA | …" + "| (125°C/40°C) | kW | …", "| Rated Power Standby | kVA | …" + "| (150°C/40°C) | kW | …". Dòng cấp H / F không ghi
+// chế độ (duty null), dòng Standby không ghi cấp (cls null). Pha 3 khi tờ ghi "Three-Phase"; PF từ "| Rated Power Factor | 0.8".
+export function linzRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  const model = (L.map((l) => l.trim().match(/^(?:ALTERNATOR\s+)?(PRO\d+[A-Z]+\s+[A-Z]+\/\d)$/)).find(Boolean) || [])[1];
+  if (!model) return out;
+  const pf = (L.map((l) => l.match(/^\|\s*Rated Power Factor\s*\|\s*(0[.,]\d+)\s*$/)).find(Boolean) || [])[1];
+  const three = L.some((l) => /^\|?\s*Three-Phase\b/.test(l.trim()));
+  L.forEach((l, i) => {
+    const fm = l.match(/^\|\s*Frequency\s*\|\s*(50|60)Hz - (?:1500|1800)rpm(?:\s*\|\s*(50|60)Hz - (?:1500|1800)rpm)?\s*$/);
+    if (!fm) return;
+    const hz = [fm[1], fm[2]].filter(Boolean).map(Number);
+    let v = i + 1;
+    while (v < L.length && v < i + 9 && !/^\|\s*(?:V|Voltage Series Star\s*\|\s*V)\s*\|/.test(L[v])) v++;
+    if (v >= i + 9 || v >= L.length) return;
+    const series = /Voltage Series Star/.test(L[v]);
+    const vtoks = cells(L[v]).slice(series ? 2 : 1).flatMap((x) => x.split(/\s+/));
+    // Một dòng điện áp mà dòng kế không phải dòng định mức (dòng điện áp thứ hai "| 190/110 | …" của cách nối khác): bỏ qua nó.
+    const cols = sheetCols(hz, vtoks, { phase: three ? 3 : null, conn: series ? "Series Star" : null, pf: pf ? num(pf) : null });
+    if (!cols) return;
+    for (let r = v + 1; r < L.length && r < v + 16; r++) {
+      if (/^\|\s*Frequency\s*\||^\|?\s*EFFICIENCY/i.test(L[r])) break;
+      const m = L[r].match(/^\|\s*Rated Power (?:in Class ([HF])|Standby)\s*\|\s*kVA\s*\|/), k = L[r + 1] || "", km = k.match(/^\|\s*\((\d{3})°C\/(\d{2})°C\)\s*\|\s*kW\s*\|/);
+      if (!m || !km) continue;
+      const cs = cols.map((c) => c && { ...c, cls: m[1] || null, duty: m[1] ? null : "Standby", rise: RISE(km[1], km[2]) });
+      pushCols(out, model, cs, figs(cells(L[r]).slice(2)), figs(cells(k).slice(2)), null, [L[i], L[v], L[r], k]);
+    }
+  });
+  return out;
+}
+
+// Firstall (firstall-power 1001–1007, tờ một model, tên ở dòng đầu "QYI454G"): "| Frequency频率 | Hz | 50 | 60" → "| Voltage
+// ( series star )电压 Y | V | 380/220 | …" → "| Rated power at Class H (125ºC) temperature rise | kVA | …" + "| 额定功率在H(125ºC)温升 |
+// kW | …". Tờ không ghi chế độ, nhiệt độ môi trường của dòng đó, pha (null).
+export function firstallRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  const model = ((L.slice(2).find((l) => l.trim()) || "").trim().match(/^([A-Z]{2,4}\d{3}[A-Z]{1,2})$/) || [])[1];
+  if (!model) return out;
+  const pf = null; // Tờ chỉ ghi "P.F.=0.8" ở dòng hiệu suất: không gán cho kVA.
+  L.forEach((l, i) => {
+    const fm = l.match(/^\|\s*Frequency频率\s*\|\s*Hz\s*\|\s*(50|60)(?:\s*\|\s*(50|60))?\s*$/);
+    if (!fm || !/^\|\s*Voltage \( series star \)电压 Y\s*\|\s*V\s*\|/.test(L[i + 1] || "")) return;
+    const cols = sheetCols([fm[1], fm[2]].filter(Boolean).map(Number), cells(L[i + 1]).slice(2).flatMap((x) => x.split(/\s+/)), { conn: "series star", pf });
+    if (!cols) return;
+    for (let r = i + 2; r < L.length && r < i + 12; r++) {
+      const m = L[r].match(/^\|\s*Rated power at Class ([HF]) \((\d{3})ºC\) temperature rise\s*\|\s*kVA\s*\|/), k = L[r + 1] || "";
+      if (!m || !/^\|\s*额定功率在[HF]\(\d{3}ºC\)温升\s*\|\s*kW\s*\|/.test(k)) continue;
+      pushCols(out, model, cols.map((c) => c && { ...c, cls: m[1], rise: RISE(m[2]) }), figs(cells(L[r]).slice(2)), figs(cells(k).slice(2)), null, [l, L[i + 1], L[r], k]);
+    }
+  });
+  return out;
+}
+
+export const sheetRatings = (text) => [...kwiseRatings(text), ...shangyanRatings(text), ...linzRatings(text), ...firstallRatings(text)];
+
+export const ratingsOf = (text) =>[...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text), ...meccRatings(text), ...sheetRatings(text)];
