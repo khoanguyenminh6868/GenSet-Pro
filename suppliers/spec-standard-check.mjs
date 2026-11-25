@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { standardOf, stable, joinKey, tidyText, enumOf, nextCellOf, stripBrushless, FIELDS, readOneSource, checkOneSourceValues } from "./spec-standard.mjs";
+import { checkCtlFeatureValues } from "./controllers-features.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const CAT = globalThis.GenbidCatalog;
@@ -92,11 +93,16 @@ c.docs = docs.length;
 const one = checkOneSourceValues(docs, readOneSource(), (file) => { const p = path.join(ROOT, file); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; });
 c.oneSourceChecked = one.checked;
 c.oneSourceBad = one.bad.length;
+// Chức năng bộ điều khiển (origin ctl-sheet, PR G) cũng không qua `audit`: dòng nguồn phải là dòng datasheet của chính model.
+const ctl = checkCtlFeatureValues(docs, all);
+c.ctlSheetChecked = ctl.checked;
+c.ctlSheetBad = ctl.bad.length;
 console.log(JSON.stringify(c, null, 1));
 if (bad.length) console.log(JSON.stringify(bad.slice(0, 6)));
 if (rawBad.length) console.log(JSON.stringify(rawBad));
 if (one.bad.length) console.log(JSON.stringify(one.bad.slice(0, 8)));
+if (ctl.bad.length) console.log(JSON.stringify(ctl.bad.slice(0, 8)));
 const i = process.argv.indexOf("--json");
-if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad, oneSourceBad: one.bad }, null, 1));
+if (i > 0) fs.writeFileSync(process.argv[i + 1], JSON.stringify({ c, bad, oneSourceBad: one.bad, ctlSheetBad: ctl.bad }, null, 1));
 void CAT;
-process.exit(c.unexplained || c.absent || c.rawNotInLine || c.oneSourceBad ? 1 : 0);
+process.exit(c.unexplained || c.absent || c.rawNotInLine || c.oneSourceBad || c.ctlSheetBad ? 1 : 0);
