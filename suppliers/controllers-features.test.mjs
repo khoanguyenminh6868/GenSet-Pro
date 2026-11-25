@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { featuresOfLine, controllerFeatures, ctlFeatureFields, checkCtlFeatureValues, skipOf, otherSheet, sharedManual, BOOL_FEATURES, REVIEW_FILE } from "./controllers-features.mjs";
+import { featuresOfLine, controllerFeatures, ctlFeatureFields, checkCtlFeatureValues, skipOf, otherSheet, sharedManual, sheetCtx, BOOL_FEATURES, REVIEW_FILE } from "./controllers-features.mjs";
 import { standardOf } from "./spec-standard.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -56,6 +56,58 @@ test("dòng nêu nhiều model: chữ sau tên model nào là của model đó",
   // Tờ của sản phẩm khác chỉ liệt kê bộ điều khiển tương thích.
   assert.equal(otherSheet("Datasheet: The DSEG0123 also allows the DSEG8600, DSEG8900, DSE8610 MKII, DSE8610, DSE7510 and DSE5510 controllers to be added"), true);
   assert.equal(otherSheet("Datasheet: | DSE7310 MKII Auto Start & DSE7320 MKII | Auto"), false);
+});
+
+// Soát độc lập của điều phối (25/11/2026): tờ viết chung cho nhiều biến thể.
+const FEAT = controllerFeatures(MAKERS).byModel;
+const has = (model, fid) => (FEAT.get(model) || []).some((x) => x.fid === fid);
+test("A1 HGM6100N: 'HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without', CAN chỉ bản CAN", () => {
+  for (const m of ["HGM6110N", "HGM6120N", "HGM6110NC", "HGM6120NC"]) for (const f of ["can", "ecu_support"]) assert.equal(has(m, f), false, `${m} ${f}`);
+  for (const m of ["HGM6110N", "HGM6120N"]) assert.equal(has(m, "rs485"), false, m);
+  // Nguồn không nói bản CAN có RS485: không ghi.
+  for (const m of ["HGM6110CAN", "HGM6120CAN"]) { assert.equal(has(m, "rs485"), false, m); assert.equal(has(m, "can"), true, m); }
+  for (const m of ["HGM6110NC", "HGM6120NC"]) assert.equal(has(m, "rs485"), true, m);
+});
+test("A2 HGM6100U: RS485 chỉ bản UC", () => {
+  for (const m of ["HGM6110U", "HGM6120U"]) assert.equal(has(m, "rs485"), false, m);
+  for (const m of ["HGM6110UC", "HGM6120UC"]) assert.equal(has(m, "rs485"), true, m);
+});
+test("A3 HGM7200: '| CAN (J1939) | ● | ●' 2 / 4 ô, không định vị được cột → không ai nhận CAN / J1939 từ tờ này", () => {
+  for (const m of ["HGM7210", "HGM7220", "HGM7210CAN", "HGM7220CAN"]) for (const f of ["can", "ecu_support"]) assert.equal(has(m, f), false, `${m} ${f}`);
+  // Hàng đủ 4 ô ● vẫn cho mọi model.
+  for (const m of ["HGM7210", "HGM7220CAN"]) assert.equal(has(m, "rs485"), true, m);
+});
+test("A4 HGM93XX MPU(CAN): khoá HGM9310 / 9320 gộp bản MPU và CAN → không ghi CAN / J1939", () => {
+  for (const m of ["HGM9310", "HGM9320"]) for (const f of ["can", "ecu_support"]) assert.equal(has(m, f), false, `${m} ${f}`);
+});
+test("A5 easYgen-1000: bảng theo cột 1400 / 1600 / 1700 / 1800, dòng dính địa chỉ không là nguồn", () => {
+  for (const f of ["prot_reverse_power", "prot_earth_fault", "data_logging", "rs485"]) assert.equal(has("EASYGEN1400", f), false, f);
+  for (const m of ["EASYGEN1600", "EASYGEN1700", "EASYGEN1800"]) assert.equal(has(m, "rs485"), true, m);
+  assert.deepEqual(got("| China | Reverse Power", "EASYGEN1400"), []);
+  assert.deepEqual(got("| Tel.: +86 512 8818 5515 | Earth fault (measured)", "EASYGEN1400"), []);
+});
+test("B bảng so sánh dàn phẳng: '| ETHERNET | ●' dưới tiêu đề vỡ không gán cho HGM9510", () => {
+  assert.equal(has("HGM9510", "ethernet"), false);
+  const t = { title: "X", rows: ["| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN", "| RS485 | ● | ● | ● | ●", "| AMF | ● | ●", "| USB | — | ● | ● | ●"] };
+  const ctx = sheetCtx(t, ["HGM7220", "HGM7210", "HGM7220CAN", "HGM7210CAN"]);
+  assert.equal(ctx.presence(1, "HGM7210"), true);
+  assert.equal(ctx.presence(2, "HGM7220"), false);
+  assert.equal(ctx.presence(3, "HGM7220"), false);
+  assert.equal(ctx.presence(3, "HGM7210"), true);
+  assert.deepEqual([...ctx.restrict.get("usb")].sort(), ["HGM7210", "HGM7210CAN", "HGM7220CAN"]);
+  assert.equal(ctx.presence(1, "HGM7210") && sheetCtx({ title: "", rows: ["| Item | HGM", "| ETHERNET | ●"] }, ["HGM9510"]).presence(1, "HGM9510"), false);
+});
+test("C 'Scheduled Run PCT' là ngưỡng % tải, không phải hẹn giờ chạy", () => {
+  assert.deepEqual(got("| 12 | Scheduled Run PCT | (0-100)% | 80", "HGM9510"), []);
+  assert.equal(has("HGM9510", "scheduler"), false);
+  assert.deepEqual(got("Scheduled run with weekly exerciser", "X"), ["scheduler=true"]);
+});
+test("D tham số tắt, tiêu đề trang, số tổ máy có điều kiện", () => {
+  assert.deepEqual(got("0: The J1939 port is inoperative.", "DKG309"), []);
+  assert.deepEqual(got("168 = exerciser off", "DKG309"), []);
+  assert.deepEqual(got("InteliLite 4 AMF 20 Datasheet | 2", "INTELILITE4AMF20"), []);
+  assert.deepEqual(got("AGC 150 PMS lite: For simple load sharing and power management over CANshare, for up to 256 generators and/or BTBs.", "AGC150").filter((x) => x.startsWith("max_sets")), []);
+  assert.equal(has("AGC4", "max_sets"), false);
 });
 
 test("cặp đã soát loại (controllers-features-loai.json) không cho giá trị", () => {

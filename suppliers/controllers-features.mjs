@@ -38,7 +38,8 @@ export const BOOL_FEATURES = [
   { id: "auto_start_stop", re: /\bauto(?:matic)?[\s-]*start(?:ing)?\b|\bautomatic(?:ally)?\s+start(?:s|ing)?\s*(?:and|&|\/)\s*stop/i },
   { id: "mains_failure", re: /\bAMF\b|\bauto(?:matic)?\s+mains\s+(?:\(utility\)\s+)?failure|\bmains\s+(?:\(utility\)\s+)?failure\b|\butility\s+failure\b/i },
   { id: "remote_start", re: /\bremote[\s-]+start(?:ing)?\b/i },
-  { id: "scheduler", re: /\bscheduler\b|\bexerciser\b|\bscheduled\s+run(?:s|ning)?\b/i },
+  // "Scheduled Run PCT | (0-100)%" (SmartGen HGM9510) là ngưỡng % tải gọi tổ máy khác, không phải hẹn giờ chạy.
+  { id: "scheduler", re: /\bscheduler\b|\bexerciser\b|\bscheduled\s+run(?:s|ning)?\b(?!\s*(?:PCT|%|percent))/i },
   { id: "prot_earth_fault", re: /\bearth[\s-]*fault\b|\bground[\s-]*fault\b/i },
   { id: "prot_reverse_power", re: /\breverse[\s-]*power\b|\b32R\b/i },
   { id: "prot_overcurrent", re: /\bover[\s-]*current\b|\bIDMT\b/i },
@@ -78,7 +79,8 @@ export const NUM_FEATURES = [
   } },
   { id: "max_sets", read: (l) => {
     const out = [];
-    for (const m of l.matchAll(/\bup\s+to\s+(\d{1,3})\s+(?:gen[\s-]?sets|generators|generating\s+sets|sets)\b/gi)) out.push(Number(m[1]));
+    // "up to 256 generators and/or bus tie breakers" đếm cả máy cắt nối thanh cái: không phải số tổ máy.
+    for (const m of l.matchAll(/\bup\s+to\s+(\d{1,3})\s+(?:gen[\s-]?sets|generators|generating\s+sets|sets)\b(?!\s*(?:and\s*\/\s*or|or)\s+(?:bus|BTB))/gi)) out.push(Number(m[1]));
     return out;
   } },
   { id: "front_ip", read: (l) => {
@@ -100,6 +102,11 @@ const SKIP = [
   ["phu-dinh", /\bnot\b|\bno\b|\bnon[\s-]|\bwithout\b|\bunavailable\b|\bunsupported\b|\bdisabled?\b|\bn\/a\b|不支持|没有|无此/i],
   // Chỉ một biến thể ("Only Link LTE", "Only GC400x. CAN 1 ERR-ACTIVE", "(Only available for HGM9520N)"): không biết của model nào.
   ["chi-bien-the", /\bonly\b|\bexcept\b|仅/i],
+  // Tham số tắt / không hoạt động ("0: The J1939 port is inoperative.", "168 = exerciser off", "If this parameter is 0 then ...").
+  ["tham-so-tat", /\binoperative\b|\binactive\b|=\s*[\w\s]{0,20}\boff\b|\bif\s+this\s+parameter\s+is\s+0\b/i],
+  // Rác bố cục: ô địa chỉ / điện thoại / tên nước dính vào dòng ("| China | Reverse Power", "| Tel.: +86 … | Earth fault"), đầu /
+  // chân trang ("InteliLite 4 AMF 20 Datasheet | 2", "Page 49", "Version: 1.0"). Dòng đó không phải câu chức năng (soát PR G).
+  ["bo-cuc", /\bTel\.?\s*:|\bFax\s*:|\bE-?mail\s*:|\bwww\.|\+\d{2}[\s\d-]{6,}|\|\s*(?:China|Germany|USA|Denmark|Italy|India|Japan|Turkey|United Kingdom|UK|North & Central America|South America|Europe|Asia|Middle East|Africa)\s*(?:\||$)|\bdatasheet\s*\|\s*\d{1,3}\s*$|\bPage\s+\d+\b|\bVersion\s*:|\bDate of issue\b/i],
   // Rung / va đập "3G in X, Y and Z axes": gia tốc, không phải mạng di động.
   ["khong-phai-chuc-nang", /\bvibration\b|\bshock\b|\bacceleration\b/i],
   // Sản phẩm khác: mô-đun truyền thông (danh sách ctl-module.mjs), cổng / phần mềm / dịch vụ giám sát của hãng.
@@ -142,12 +149,81 @@ export function ownerOK(line, model, pos, ms = mentionsOf(line)) {
   return ms.every((m) => m.keys.every((k) => names(k, model)));
 }
 
+// ---------- Tờ viết chung cho nhiều biến thể (soát PR G của điều phối, 25/11/2026) ----------
+// (a) Câu phân biệt biến thể trong tờ: "HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without." → chức năng đó chỉ của biến thể
+//     câu nêu là có; biến thể khác (kể cả biến thể câu không nhắc) không nhận từ tờ này.
+// (b) Dòng bảng so sánh ●/— ("| CAN (J1939) | ● | ●"): ô trống bị bỏ khi dàn phẳng nên chỉ định vị được cột khi số ô bằng số model
+//     của dòng tiêu đề bảng gần nhất phía trên ("| Items | HGM7220 | HGM7210 | HGM7220CAN | HGM7210CAN"); khi đó lấy đúng cột của
+//     model. Không có tiêu đề nêu model: chỉ nhận khi mọi ô có và số ô bằng số ô lớn nhất của bảng. Tiêu đề vỡ ("| Item | HGM"): bỏ.
+// (c) Tờ mà khoá model gộp hai biến thể khác chức năng ("HGM93XX MPU(CAN)": HGM9310 là cả 9310MPU lẫn 9310CAN, chỉ bản CAN có
+//     J1939): trường của chức năng đó không ghi.
+const PORT_FIDS = { RS485: ["rs485"], RS232: ["rs232"], CAN: ["can", "ecu_support"], ETHERNET: ["ethernet"], USB: ["usb"], GSM: ["cellular_sms"] };
+// Woodward easYgen-1000: "| … | Model | easYgen-1400 | … | easYgen-1800" stands 67 rows above "| RS485 | — | 1 | 1 | 1".
+const HEADER_SPAN = 100;
+const MARK = /^(?:●|○|◎|✓|√|✔|×|✗|Χ|—|–|-|\d{1,2}|Yes|No|N\/A)$/i, MARK_SYM = /[●○◎✓√✔×✗Χ—–]/, POS = /^(?:●|✓|√|✔|Yes|[1-9]\d?)$/i;
+export function presenceOf(row) {
+  const cells = CAT.cellsOf(row);
+  if (cells.length < 2) return null;
+  const marks = cells.slice(1);
+  return marks.every((c) => MARK.test(c)) && marks.some((c) => MARK_SYM.test(c)) ? marks : null;
+}
+const keysIn = (cell) => mentionsOf(cell).flatMap((m) => m.keys);
+export function sheetCtx(t, models = []) {
+  const rows = t.rows || [], restrict = new Map(), block = new Set();
+  const own = (k) => models.filter((m) => names(k, m));
+  for (const r of rows) {
+    const m = NFKC(r).match(/^(?:NOTE\s*\d*\s*:\s*)?(.+?)\s+has\s+(RS-?485|RS-?232|CAN|ETHERNET|USB|GSM)\s+port\s*,\s*(.+?)\s+without\.?$/i);
+    if (!m) continue;
+    const have = keysIn(m[1]).flatMap(own);
+    for (const fid of PORT_FIDS[m[2].replace("-", "").toUpperCase()]) restrict.set(fid, new Set([...(restrict.get(fid) || []), ...have]));
+  }
+  if (/MPU\s*\(CAN\)/i.test(t.title || "")) for (const fid of PORT_FIDS.CAN) block.add(fid);
+  const header = rows.map((r) => {
+    const cells = CAT.cellsOf(r);
+    const codes = cells.map((c) => { const k = keysIn(c); return k.length === 1 ? k[0] : null; });
+    if (codes.filter(Boolean).length >= 2) return { codes: codes.filter(Boolean) };
+    if (cells.length >= 2 && /^(?:items?|models?|module|functions?|features?)$/i.test(cells[0]) && !presenceOf(r)) return { broken: true };
+    return null;
+  });
+  const widest = Math.max(0, ...rows.map((r) => presenceOf(r)?.length || 0));
+  // A ●/— row under a header naming the sheet's models that does not say yes for every one of them ("| CAN (J1939) | ● | ●" of
+  // four; "| RS485 | — | 1 | 1 | 1"): that function differs by variant, so the sheet's other lines (pin tables, "Engine type:
+  // Common J1939") say nothing about which variant has it. Only the models whose own column says yes keep it (none when the
+  // column cannot be found).
+  rows.forEach((r, i) => {
+    const marks = presenceOf(r);
+    if (!marks) return;
+    let h = null;
+    for (let j = i - 1; j >= Math.max(0, i - HEADER_SPAN) && !h; j--) h = header[j];
+    // Columns that are not models (DEIF: application / option columns of one controller): only that row is dropped (presence).
+    if (!h?.codes || !h.codes.some((k) => own(k).length)) return;
+    if (marks.length === h.codes.length && marks.every((x) => POS.test(x)) && models.every((m) => h.codes.some((k) => names(k, m)))) return;
+    const yes = marks.length === h.codes.length ? h.codes.filter((k, c) => POS.test(marks[c])).flatMap(own) : [];
+    const label = NFKC(CAT.cellsOf(r)[0]);
+    for (const f of BOOL_FEATURES) if (f.re.test(label)) restrict.set(f.id, new Set([...(restrict.get(f.id) || []), ...yes]));
+  });
+  // → true (this model's column says yes), false (no, or the column cannot be found), null (not a ●/— row).
+  const presence = (i, model) => {
+    const marks = i == null ? null : presenceOf(rows[i]);
+    if (!marks) return null;
+    for (let j = i - 1; j >= Math.max(0, i - HEADER_SPAN); j--) {
+      const h = header[j];
+      if (!h) continue;
+      if (h.broken || marks.length !== h.codes.length) return false;
+      const c = h.codes.findIndex((k) => names(k, model));
+      return c >= 0 && POS.test(marks[c]);
+    }
+    return marks.length === widest && marks.every((x) => POS.test(x));
+  };
+  return { restrict, block, presence };
+}
+
 // One line of `model`'s own sheet → { values: [{ fid, value, kw }], skipped: why | null, foreign: [{ fid, kw }] }.
 // `kw` = the words matched (for the review of every keyword → line pair).
 // A manual shared by variants that differ in what they have (Mecc Alte "GC315 (GC315Plus, GC315Link)", "GC315-GC400": GC315
 // does not synchronise, only Plus has RS232, only Link has LTE / GPRS; soát PR G): a line gives a value only to a model it names.
 export const sharedManual = (title) => /\bGC315\s*\(GC315Plus,\s*GC315Link\)|\bGC315-GC400\b/i.test(String(title || ""));
-export function featuresOfLine(line, model, { mustName = false } = {}) {
+export function featuresOfLine(line, model, { mustName = false, ctx = null, row = null } = {}) {
   const l = NFKC(line), skip = skipOf(l), values = [], foreign = [], hits = [];
   for (const f of BOOL_FEATURES) {
     const re = new RegExp(f.re.source, f.re.flags.includes("g") ? f.re.flags : `${f.re.flags}g`);
@@ -163,6 +239,7 @@ export function featuresOfLine(line, model, { mustName = false } = {}) {
   for (const h of hits) {
     if (deniedOf(h.fid, l)) { foreign.push({ fid: h.fid, kw: h.kw, denied: true }); continue; }
     if ((mustName && !ms.some((m) => m.keys.some((k) => names(k, model)))) || !ownerOK(l, model, h.pos, ms)) { foreign.push({ fid: h.fid, kw: h.kw }); continue; }
+    if (ctx && (ctx.block.has(h.fid) || (ctx.restrict.has(h.fid) && !ctx.restrict.get(h.fid).has(model)) || ctx.presence(row, model) === false)) { foreign.push({ fid: h.fid, kw: h.kw, variant: true }); continue; }
     if (!values.some((x) => x.fid === h.fid && x.value === h.value)) values.push({ fid: h.fid, value: h.value, kw: h.kw });
   }
   return { values, skipped: null, foreign };
@@ -193,12 +270,12 @@ export function ctlFeatureFields(fields, items = []) {
 export function checkCtlFeatureValues(docs, suppliers = []) {
   const byId = new Map((suppliers || []).filter(Boolean).map((s) => [s.id, s])), sheetCache = new Map(), out = { checked: 0, bad: [] };
   const boolIds = new Set(BOOL_FEATURES.map((f) => f.id));
-  const modelsOf = (s, ti) => {
+  const sheetOf = (s, ti) => {
     const k = `${s.id}|${ti}`;
     if (!sheetCache.has(k)) {
-      const m = new Map();
-      for (const { model, f } of controllerSheetFacts(s, s.specTables[ti])) m.set(`${model}\u0000${f.line}`, true);
-      sheetCache.set(k, m);
+      const m = new Map(), facts = controllerSheetFacts(s, s.specTables[ti]);
+      for (const { model, f } of facts) m.set(`${model}\u0000${f.line}`, true);
+      sheetCache.set(k, { has: m, ctx: sheetCtx(s.specTables[ti], [...new Set(facts.map((x) => x.model))]) });
     }
     return sheetCache.get(k);
   };
@@ -211,9 +288,11 @@ export function checkCtlFeatureValues(docs, suppliers = []) {
       const s = byId.get(it.src?.supplierId), t = s?.specTables?.[it.src?.table];
       if (!s || s.role !== "controller_maker" || !t || t.n !== it.src.n) { bad("không có bảng nguồn của hãng BĐK"); continue; }
       if (t.rows[it.src.row] !== it.raw) { bad("raw không phải dòng src.row của bảng"); continue; }
-      if (otherSheet(t.title) || !modelsOf(s, it.src.table).has(`${d.key}\u0000${it.raw}`)) { bad("dòng không thuộc datasheet của chính model"); continue; }
+      const sh = sheetOf(s, it.src.table);
+      if (otherSheet(t.title) || !sh.has.has(`${d.key}\u0000${it.raw}`)) { bad("dòng không thuộc datasheet của chính model"); continue; }
       if (boolIds.has(fid) && it.value !== true) bad(`trường bool phải là true, có ${JSON.stringify(it.value)}`);
-      if (!featuresOfLine(it.raw, d.key, { mustName: sharedManual(t.title) }).values.some((v) => v.fid === fid && v.value === it.value)) bad("đọc lại dòng không ra giá trị này");
+      if (fid === "max_sets" && items.length > 1) bad("nhiều số tổ máy hoà cho một model");
+      if (!featuresOfLine(it.raw, d.key, { mustName: sharedManual(t.title), ctx: sh.ctx, row: it.src.row }).values.some((v) => v.fid === fid && v.value === it.value)) bad("đọc lại dòng không ra giá trị này");
     }
   }
   return out;
@@ -238,8 +317,9 @@ export function controllerFeatures(suppliers = []) {
       // same model (a row repeated in one table is one source line either way).
       const rowIdx = new Map();
       t.rows.forEach((r, i) => { if (!rowIdx.has(r)) rowIdx.set(r, i); });
-      for (const { model, f } of controllerSheetFacts(s, t)) {
-        const r = featuresOfLine(f.line, model, { mustName: sharedManual(t.title) });
+      const facts = controllerSheetFacts(s, t), ctx = sheetCtx(t, [...new Set(facts.map((x) => x.model))]);
+      for (const { model, f } of facts) {
+        const r = featuresOfLine(f.line, model, { mustName: sharedManual(t.title), ctx, row: rowIdx.get(f.line) ?? null });
         if (!r.values.length && !r.skipped && !r.foreign.length) continue;
         const src = { supplierId: s.id, n: t.n, table: ti, row: rowIdx.get(f.line) ?? null };
         audit.push({ model, line: f.line, src, values: r.values, skipped: r.skipped, hits: r.hits || [], foreign: r.foreign });
@@ -251,6 +331,9 @@ export function controllerFeatures(suppliers = []) {
       }
     });
   }
+  // Số tổ máy hoà khác nhau cho một model (DEIF AGC-4: 32 "island power management", 127 "CANshare", từ câu điều kiện khác nhau):
+  // không chọn hộ, không ghi.
+  for (const [model, l] of out) if (new Set(l.filter((x) => x.fid === "max_sets").map((x) => x.value)).size > 1) out.set(model, l.filter((x) => x.fid !== "max_sets"));
   return { byModel: out, audit };
 }
 

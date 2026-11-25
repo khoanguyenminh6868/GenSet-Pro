@@ -1,5 +1,5 @@
 {
- "note": "Cặp (trường, dòng) đã soát tay và LOẠI (PR G bước 4, 25/11/2026: soát hết 3.092 cặp từ khoá → dòng của controllers-features.mjs, không lấy mẫu). line = dòng datasheet chuẩn hoá NFKC, why = lý do. Đổi từ khoá / luật bỏ dòng thì soát lại cặp mới.",
+ "note": "Cặp (trường, dòng) đã soát tay và LOẠI (PR G bước 4, 25/11/2026: soát hết 3.092 cặp từ khoá → dòng của controllers-features.mjs, không lấy mẫu). line = dòng datasheet chuẩn hoá NFKC, why = lý do. Thêm 7 cặp từ lần soát độc lập của điều phối (25/11/2026). Đổi từ khoá / luật bỏ dòng thì soát lại cặp mới.",
  "rejects": {
   "auto_start_stop": [
    {
@@ -17,6 +17,10 @@
    {
     "line": "| Auto start with real time clock and | HUMIDITY",
     "why": "bien-the: dong ma dat hang auto start chi cua DSE6010, gan ca DSE6020"
+   },
+   {
+    "line": "| • | Advanced load demand schemes including automatic start / stop",
+    "why": "DSE8660 MKII là bộ điều khiển lưới / ATS: khởi động / dừng các tổ máy theo tải, không phải tự khởi động / dừng tổ máy của chính nó (soát điều phối D)"
    }
   ],
   "can": [
@@ -1183,6 +1187,18 @@
    {
     "line": "J1939 standard). For example, if you use the files related to MAN DATALOGGER, the controller displays all the measurements",
     "why": "nghia-khac: tep 'MAN DATALOGGER' cua ECU"
+   },
+   {
+    "line": "data log using SD",
+    "why": "cột \"easYgen-1800 Unique Features\" bị dàn phẳng: chỉ của easYgen-1800, tờ gắn cho cả 1400 / 1600 / 1700 (soát điều phối A5)"
+   },
+   {
+    "line": "| • Event and data logging capabilities with real time clock | interface",
+    "why": "tờ easYgen-1000 hai / ba cột dàn phẳng, không biết cột của model nào (soát điều phối A5)"
+   },
+   {
+    "line": "| • Multilingual customizable user interface | triggered data log",
+    "why": "cột \"easYgen-1800 Unique Features\" bị dàn phẳng (soát điều phối A5)"
    }
   ],
   "ecu_support": [
@@ -1495,6 +1511,10 @@
    {
     "line": "Emergency Stop",
     "why": "mo-ho: dong chi co tu khoa (tieu de)"
+   },
+   {
+    "line": "output port and electromagnetic valve when you connect emergency stop button on",
+    "why": "ghi chú đi dây (soát điều phối D)"
    },
    {
     "line": "| software | For example, emergency stop, and remote",
@@ -1889,6 +1909,10 @@
     "why": "bien-the: ma 6020-04 chi cua DSE6020, gan ca DSE6010"
    },
    {
+    "line": "| >> | (Auto mode, Standby, AMF active, LCD Lamp Saving",
+    "why": "dòng điều kiện đo công suất tiêu thụ, không phải câu chức năng (soát điều phối D)"
+   },
+   {
     "line": "| AGC | 213 Mains failure,",
     "why": "bien-the: chi bien the AGC 213"
    },
@@ -1949,6 +1973,10 @@
    {
     "line": "These pages show the significant data of each genset that operates on the PMBC Canbus. Each page shows up to 7 gensets.",
     "why": "so doc sai: so may moi trang hien thi"
+   },
+   {
+    "line": "| The genset has to supply the load while a | Island power management, with up to 32 gensets.",
+    "why": "DEIF AGC-4 ghi 32 / 127 / 254 theo điều kiện khác nhau: không chọn hộ (soát điều phối D)"
    },
    {
     "line": "| system you can imagine. It enables you to command up to 248 gensets, with complete genset management, | GC-3400XT and easYgen",
