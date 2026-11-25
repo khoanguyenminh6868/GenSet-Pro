@@ -87,10 +87,21 @@
   // "DC9 65A 10-93"): a code with up to three spaces (catalog-bang-r1: agg-fuzhou, kaihua, voltgent, green-power, huadong
   // had rows whose only engine cell failed isCode, so the row gave no record).
   // "DC13 320A 02-61"; baifa's second Scania row type writes the code with the set's kVA after it: "DC13 505A 400KVA".
-  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}|\d{2,4}\s?kva)$/i;
+  // buoc-3-p2: also "DC12 59A 10-32A" (huadong-yangzhou n106: a letter after the last pair, as "DC9 65A 10-93" without it).
+  // NOT "DC13 507A 300" (agg-fuzhou n102 / n112, voltgent n107): the figure after the code has no unit and equals the set's prime kVA in
+  // agg-fuzhou, so it is either a rating (as "400KVA" above) or part of the code, and the page does not say: left unread, noted.
+  const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}[A-Z]?|\d{2,4}\s?kva)$/i;
+  // A Deutz engine written as the maker does, with spaces ("BF4M 2011 C", "BF6M 1013 FC G2", "TCD 2013 L06 4V", cgm-italia n1001):
+  // up to three spaces, only this shape (buoc-3-p2).
+  const DEUTZ_CODE = /^(?:BF\d?M|TCD)\s?\d{4}(?:\s[A-Z0-9]{1,3}){0,3}$/i;
   // Doosan DP054CC / DP086CC / DP222CC (the trailing "CC" is part of the code, not a displacement in cc): the one exception to the "<digit>CC" rule of `isCode`.
-  const DOOSAN_DP = /^DP\d{3}CC$/i;
+  // cgm-italia n1001 writes "DP222 CC" with a space (buoc-3-p2).
+  const DOOSAN_DP = /^DP\d{3}\s?CC$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
+  // Doosan P-engines the suppliers write with another ending ("P086T1-1", "P126T1-11", "P086TA", "P086LA", "P158FE", "P222FE"): the same
+  // rule as DOOSAN_P (one alternator-shaped code of the row, under an engine title, nothing else taken as the engine), an explicit
+  // list of endings, only at the two places of that rule (buoc-3-p2: kaihua-genset, zhengdian-zhengzhou, xingguang-jiangsu).
+  const DOOSAN_P_ODD = /^P\d{3}(?:T1|TA|LA|FE)\b/i;
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
   // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
   // list, not a rule, so not in ALT_CODE). eastern-lion writes its alternator "EL 164D" / "ELS 184F" (60 Hz) under "Alternator
@@ -336,7 +347,9 @@
   function isCode(c) {
     const s = String(c || "").trim();
     if (s.length < 3 || s.length > 32 || !/[a-z]/i.test(s) || !/\d/.test(s)) return false;
-    if ((s.match(/\s/g) || []).length > (ALT_CODE.test(s) ? 2 : SCANIA_CODE.test(s) ? 3 : 1)) return false;
+    // A note mark after the code ("QSK38- G26 *", tellhow n103) is not a word of it (buoc-3-p2).
+    // (not when the cell has a "/": "1104C-44TAG1/ 1104D-E44TAG 1 ★" names two engines, ettes n146.)
+    if (((/\//.test(s) ? s : s.replace(/\s+[*＊★☆]+$/, "")).match(/\s/g) || []).length > (ALT_CODE.test(s) ? 2 : SCANIA_CODE.test(s) || DEUTZ_CODE.test(s) ? 3 : 1)) return false;
     if (/[\u3000-\u9fff\uff00-\uffef]/.test(s) || /^\d+(\.\d+)?\s*k(w|va)\s*\/\s*\d/i.test(s)) return false;
     if (/\d\s*[*×xX]\s*\d+\s*[*×xX]\s*\d/.test(s)) return false;
     if (/^\d+(\.\d+)?\s*[*×xX]\s*\d+/.test(s)) return false;
@@ -1712,7 +1725,10 @@
         // "CG250-H1 CONTACT" (fdk-energy): the page's "Contact" link text run into the model cell (catalog-a).
         // An emission stage in ASCII brackets after the code ("TAD1351GE(欧三)", "YC6T660-D31( 国三)", bdadl / pengpai) is the same kind
         // of note: without this the cell failed isCode and the row gave no engine (doc-ma-2).
-        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$|\s*\(\s*[国欧][一二三四五六]\s*\)\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
+        // buoc-3-p2: the bracket closed with an ASCII ")" after a full-width "（" (nenjo "4BTA3.9-G2 （QC50/60E)"; only a note with a
+        // digit: "（M)" of xingguang n123 is the "(M)" Khoa keeps apart, not stripped), and the emission
+        // note after the code without brackets ("QSZ13-G5 欧二 Tier 2").
+        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$|\s*[（][^）)]*\d[^）)]*\)\s*$|\s*\(\s*[国欧][一二三四五六]\s*\)\s*$|\s+[国欧][一二三四五六](?:\s*tier\s*\d)?\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
         const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, "")).map((c) => {
@@ -1770,8 +1786,8 @@
           // A table with no alternator column never set `ai` (only `hasAltCol` does), so its lone Doosan "P126TI" never reached the rule
           // below and the row had no engine record (catalog-doosan-p, Khoa 20/11/2026: 288 rows, 40 tables): one alternator-shaped code
           // of the row, Doosan-shaped, under an engine title with nothing else taken as the engine.
-          if (hasEngineCol && ei < 0 && ai < 0 && alt.length === 1 && DOOSAN_P.test(cells[alt[0]].trim())) ai = alt[0];
-          if (hasEngineCol && ei < 0 && ai >= 0 && DOOSAN_P.test(cells[ai].trim())) { const dp = ai; ei = dp; ai = rest.find((i) => i !== dp && (ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())))) ?? -1; }
+          if (hasEngineCol && ei < 0 && ai < 0 && alt.length === 1 && (DOOSAN_P.test(cells[alt[0]].trim()) || DOOSAN_P_ODD.test(cells[alt[0]].trim()))) ai = alt[0];
+          if (hasEngineCol && ei < 0 && ai >= 0 && (DOOSAN_P.test(cells[ai].trim()) || DOOSAN_P_ODD.test(cells[ai].trim()))) { const dp = ai; ei = dp; ai = rest.find((i) => i !== dp && (ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())))) ?? -1; }
           if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? alt.find((i) => i < ei && BC_ALT.test(cells[i].trim())) ?? -1; // (acepow "| APW-10.5 | … | BC164C | 10.8 | 12 | Y480BD": no title for the alternator, its BC1xx code stands before the engine; lech-cot-8) only after the engine: one before it, under no title, may be a Doosan "P158LE" or a Mitsubishi "S4L2" (tried 18/11/2026: 6 suppliers got engines as alternators)
           // The header names both, the alternator's title before the engine's ("| Alternator | Engine model", acepow;
           // "发电机型号 | 发动机型号", cldj-fujian), and the row has just these two codes after the genset: they stand in
@@ -1878,7 +1894,24 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
+    if (notes) silentRows(s, out, notes, note);
     return altMakeAsk(mergeRepeats(splitEngineCells(s, namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note), note)));
+  }
+  // A machine row (a code cell + at least two figures) of a table that DID give records, which gave none and was not said anywhere
+  // (buoc-3-p2, "dòng bị bỏ phải ghi note": kaihua "P086T1-1", fengmao "U I224D", ettes "1104C-44TAG1/ 1104D-E44TAG 1 ★", jianghao
+  // "Weichai Steyr P10"): noted, so unread-tables lists it. Not a row whose identical line gave records in another table of the supplier.
+  function silentRows(s, out, notes, note) {
+    const have = new Set(out.map((o) => `${o.table}|${o.row}`)), lines = new Set(out.map((o) => o.line)), tabs = new Set(out.map((o) => o.table));
+    const said = new Set(notes.filter((x) => x.supplierId === s.id && x.row != null).map((x) => `${x.table}|${x.row}`));
+    (s.specTables || []).forEach((t, ti) => {
+      if (!tabs.has(ti)) return;
+      (t.rows || []).forEach((line, ri) => {
+        const c = cellsOf(line);
+        if (c.length < 3 || have.has(`${ti}|${ri}`) || said.has(`${ti}|${ri}`) || lines.has(line)) return;
+        if (!c.some((x) => isCode(x)) || c.filter((x) => NUM.test(x)).length < 2) return;
+        note(t, ti, ri, "dòng máy có mã nhưng không dựng được bản ghi (không xác định được ô động cơ / đầu phát)", line);
+      });
+    });
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -2150,8 +2183,9 @@
   // another make (22 engines, 3,828 row-turns). As a page-level vote it still names the make where nothing higher exists.
   // Suppliers whose code cells may carry U+FF0D (full-width hyphen) as the hyphen (catalog-b3, Khoa 20/11/2026). Only zhengchi-power
   // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
-  // their own codes and are NOT listed (not approved).
-  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }];
+  // their own codes and were NOT listed (not approved). buoc-3-p2 (điều phối 24/11/2026, brief "gạch ngang toàn chiều rộng" of
+  // họ P2) lists them too: only the character changes, the rest of the cell is the source's word for word.
+  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }, ...["aosif", "jiangchai-xuzhou", "walter-yangzhou", "westinpower"].map((supplierId) => ({ supplierId, khoa: "Khoa 25/11/2026 (bước 3, họ P2)" }))];
   // An engine cell naming two codes, the second shortened ("TAD1650GE(1345GE)", sanq-power n111 / n117; Khoa 21/11/2026 "A"): the page
   // does not say what the bracket means, and other suppliers give the two codes different displacements (TAD750GE 7.15 L /
   // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.

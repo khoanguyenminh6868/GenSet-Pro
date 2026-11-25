@@ -46,8 +46,8 @@ test("zhengchi: ô động cơ viết dấu '－' toàn chiều rộng (U+FF0D) 
   assert.deepEqual(r.map((x) => x.model), ["YC12VTD2000-D30"]);
   assert.equal(r[0].genset, "ZCDL-Y1345");
   assert.ok(notes.some((n) => /toàn chiều rộng/.test(n.reason)));
-  // NCC không có trong danh sách: không đổi (vẫn không đọc ra mã)
-  const o = recs(sup("aosif", [{ n: 112, title: "1500KW柴油发电机组 - 【官网】", header: ZC_HEADER, rows: row }]), "engine");
+  // NCC không có trong danh sách (aosif, jiangchai-xuzhou, walter-yangzhou, westinpower vào danh sách từ buoc-3-p2): không đổi
+  const o = recs(sup("kaihua-genset", [{ n: 112, title: "1500KW柴油发电机组 - 【官网】", header: ZC_HEADER, rows: row }]), "engine");
   assert.ok(!o.some((x) => x.model === "YC12VTD2000-D30"));
 });
 
