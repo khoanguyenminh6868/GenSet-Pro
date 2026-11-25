@@ -2870,6 +2870,24 @@
     "line": "| USB interface to PC | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ | Χ",
     "why": "mo-ho (ky hieu X)"
    }
+  ],
+  "alarms": [
+   {
+    "line": "ECU FAIL (warning): Set when an engine fault code is received from the ECU of the electronic engine.",
+    "why": "(ONLY CANBUS VERSIONS): ECU FAIL chỉ của bản CANBUS, không gắn cho model gốc DKG-307 / 309 (soát điều phối PR G phần 2, E)"
+   }
+  ],
+  "protections": [
+   {
+    "line": "ECU FAIL (alarm): Set if no information has been received during 3 seconds from the ECU of the",
+    "why": "(ONLY CANBUS VERSIONS): ECU FAIL chỉ của bản CANBUS, không gắn cho model gốc DKG-307 / 309 (soát điều phối PR G phần 2, E)"
+   }
+  ],
+  "languages": [
+   {
+    "line": "graphical display and text that can configured in 14 languages.",
+    "why": "câu chỉ nói về bản gắn cửa có màn hình màu (door mounted … backlit color LCD) của tờ chung 3100XT / 3200XT (soát điều phối PR G phần 2, D)"
+   }
   ]
  }
 }
