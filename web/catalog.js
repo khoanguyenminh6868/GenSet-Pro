@@ -240,7 +240,7 @@
     ["cooling", "engine", "Làm mát",/cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow|after\s*-?cool|charge\s*air|piston|inter\s*-?cool|air\s*\/|增压空气|活塞/i, COOL],
     ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, NO_SIZE_ANY_NUM],
     ["start", "engine", "Khởi động", /start|启动方式|起动方式/i, null, /\d\s*v|electric|电/i],
-    ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
+    ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan/i, null, /^\d/],
     ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|over\s*-?\s*speed|超速|torque|扭矩|\d\s*v\s*\/\s*\d+\s*hz/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
     // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
     // "Fuel System": they are COLUMNS of many tables with the maker's own codes ("EUI", "ECR", "m-FIP+e-gov."), and a new key there
@@ -301,7 +301,7 @@
     // "Oil capacity" / "Coolant capacity" are volumes of the engine (keys oil / coolant), not a rating; a heater, cooler or pump
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
-    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }
@@ -933,6 +933,9 @@
         const kind = PRIME_RATE.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
         // "Maximum Power (kw) | 24.5 | 24.2" inside the engine's block ("| Diesel Engine | Model | 404D-22 | 404D-24G3" opens it, gtl-power n105) is the ENGINE's power:
         // the label has no "engine" in it and the part heading is the first cell of a line, not a heading line of its own (so `part` stays empty).
+        // "Max power(with fan) | Kw | 575" (longkai-power n1101 / 1145 / 1149 / 1159, two interleaved columns of alternator and engine) is the engine's
+        // gross power with its fan (575 against a set's 572 kW standby): kept as the engine's power spec, never as the set's.
+        if (kind === "standby" && /max(imum)?\s*power\s*\(\s*with\s*fan/i.test(L) && !STANDBY_NAMED.test(L)) { note("công suất tối đa (with fan) là của động cơ, không là công suất tổ máy", l); continue; }
         if (kind === "standby" && MAX_POWER.test(L) && !STANDBY_NAMED.test(L) && engBlock) { note("công suất tối đa ghi dưới dòng động cơ, không là công suất tổ máy", l); continue; }
         if (kind === "rated" && listedOut.has(L.trim())) { note("dòng công suất không ghi mức lặp lại với số khác (danh sách máy khác)", l); continue; }
         // An output in kW only, one figure, under the engine's heading recognised from a heading split in two cells ("常用功率 Base
