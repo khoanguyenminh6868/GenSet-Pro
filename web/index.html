@@ -3720,7 +3720,7 @@ function supDetailHtml(s) {
 let supLazy = [];
 function supModelsHtml(s) {
   // Building the catalog of every supplier takes seconds: the rest of the page shows first (supModelsLater).
-  if (!catReady()) return h`<div id="supModels" data-id="${s.id}"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(progress("Đang dựng danh mục động cơ, đầu phát..."))}</div>`;
+  if (!catReady()) return h`<div id="supModels" data-id="${s.id}">${raw(progress("Đang dựng danh mục động cơ, đầu phát..."))}</div>`;
   const cat = catalog();
   const part = (kind) => {
     const K = CAT_KIND[kind];
@@ -3743,7 +3743,7 @@ function supModelsHtml(s) {
     return h`<details class="supspec" ${open ? "open" : ""} data-lazy="${lazy}"><summary>${raw(summary)}</summary>${raw(open ? table : "")}</details>`;
   };
   const body = part("engine") + part("alternator") + part("controller") + supGensetsPart(cat, s);
-  return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body || '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
+  return h`<div id="supModels">${raw(body || '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
 }
 // Tổ máy của bảng không ghi mã động cơ (catalog.js gensetsOf / build().gensets; việc C PR 2, Khoa 20/11/2026 "PA1 trước"):
 // chỉ hiện ở hồ sơ NCC, Gợi ý cấu hình không đọc. Mức công suất ghi như bảng "Các dòng bảng ghi model này" của Danh mục
