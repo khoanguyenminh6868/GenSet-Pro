@@ -295,3 +295,29 @@ test("THF is not the THD: the telephone factors have their own keys", () => {
   for (const l of ["电话谐波系数 THF", "THF", "Telephone Harmonic Factor"]) assert.notEqual(CAT.specKey(l), "thd", l);
   assert.equal(CAT.specKey("Total Harmonic Distortion THD"), "thd");
 });
+
+// PR D (buoc-4-d, 25/11/2026): engine labels. Fuel system, electrical voltage, HP, cycle.
+test("engine: injection system / electrical system voltage / HP labels have their own key; starting voltage is not `start`", () => {
+  for (const [l, k] of [["Fuel System", "fuelsys"], ["Injection System", "fuelsys"], ["Injection", "fuelsys"], ["燃油系统", "fuelsys"], ["High-pressure fuel injection", "fuelsys"],
+    ["Engine Electrical System", "elecv"], ["Starting Voltage", "elecv"], ["Starter Voltage", "elecv"], ["Starter motor voltage", "elecv"], ["Cranking Motor Voltage", "elecv"],
+    ["起动机电压 Start Motor Voltage (V)", "elecv"], ["Gross hp", "engPower"], ["Net hp", "engPower"], ["ENGINE HP", "engPower"], ["Output(hp)", "engPower"],
+    ["Power Output# (HP)", "engPower"], ["BHP", "engPower"], ["CV", "engPower"], ["Cycle", "engType"]]) assert.equal(CAT.specKey(l), k, l);
+  assert.equal(CAT.specKey("Starting System"), "start");
+  assert.equal(CAT.specKey("启动方式"), "start");
+});
+test("engine: labels that only look like the new keys stay out (kW / rpm pairs, models, tractor HP, auxiliary / system voltage)", () => {
+  for (const l of ["Gross kW (hp)", "Hp/Kw", "Rated Output (ps/rpm)", "HP-K880", "HP (recommended) tractor power", "11HP(8.1KW)", "HP/CYLINDERS:", "System Voltage", "Auxiliary voltage", "Combustion System", "Fuel supply connection size"])
+    assert.ok(!["fuelsys", "elecv", "engPower"].includes(CAT.specKey(l)), l);
+  assert.equal(CAT.specKey("Max Power (kW/Hp)"), "engPower"); // old key, unchanged
+});
+test("engine: cells of the new keys (a maker's own code, a unit, a controller's 'Control System') do not fit", () => {
+  assert.equal(fits("Fuel System", "Common rail"), "fuelsys");
+  assert.equal(fits("Fuel System", "High pressure common rail system"), "fuelsys");
+  assert.equal(fits("Injection System", "Direct"), "fuelsys");
+  for (const v of ["Control System", "ECR", "Backup fuel consumption rate", "Maximum fuel pump flow (l/h)"]) assert.equal(fits("Fuel System", v), null, v);
+  assert.equal(fits("Starting Voltage", "DC24V"), "elecv");
+  assert.equal(fits("Starting Voltage", "24"), "elecv");
+  for (const v of ["V", "12V/24V", "Electric", "380"]) assert.equal(fits("Starting Voltage", v), null, v);
+  assert.equal(fits("Cycle", "4 Stroke"), "engType");
+  assert.equal(fits("Cycle", "4-cycle"), "engType");
+});

@@ -35,6 +35,8 @@
     "engine.bore_stroke": { "kind": "bore", "range": [50, 400], "basis": "mỗi số 50-400 mm (likely, catalog.js)" },
     "engine.displacement": { "kind": "number", "range": [0.05, 300], "units": ["L"], "kinds": ["volume"], "relation": "geometry", "basis": "0,05-300 L (absurdOf: YC16VC 105 L, 8WH32 257 L); SN.selfCheck: lệch > 5 % so với xi lanh x bore x hành trình của chính dòng" },
     "engine.compression": { "kind": "number", "range": [6, 30], "kinds": [], "basis": "dữ liệu cn/ phần lớn 11-24; dải lỏng 6-30, không mang đơn vị", "review": true },
+    "engine.fuel_system": { "kind": "text", "must": "rail|共轨|injector|\\beui\\b|单体|pump|泵|direct|indirect|直喷|\\bpt\\b|mechanical|electronic|电控|机械", "basis": "phải nêu kiểu hệ thống phun (common rail, bơm / kim phun, trực tiếp / gián tiếp); không là mã riêng của hãng" },
+    "engine.electrical_vdc": { "kind": "number", "range": [6, 48], "units": ["VDC"], "kinds": ["volt"], "basis": "dữ liệu cn/ 12 và 24 V (powerpack, westinpower, genlitec, shanhua); dải lỏng 6-48 V", "review": true },
     "engine.engine_type": { "kind": "text", "must": "stroke|cycle|diesel|kỳ|冲程|四冲|gas", "basis": "phải nêu kiểu động cơ" },
     "engine.aspiration": { "kind": "enum", "basis": "values + same của spec-fields.json" },
     "engine.charge_cooling": { "kind": "text", "must": "air|water|intercool|aftercool|中冷", "basis": "phải nêu môi chất làm mát khí nạp" },
