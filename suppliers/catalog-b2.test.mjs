@@ -37,6 +37,16 @@ test("C20 (fukangsi n2001, pengpai n125): 5500 kg bỏ; dòng 4B3.9-G2 kế bên
   }
 });
 
+test("aosif n123 AW1125 (8M33D1012E311^): bỏ riêng xi lanh + dung tích 12V / 31.8, tiêu hao giữ", () => {
+  const notes = [], e = recs(real("aosif"), notes).filter((r) => r.kind === "engine" && r.n === 123);
+  const r = e.find((x) => x.genset === "AW1125");
+  assert.ok(r);
+  assert.equal(spec(r, "cyl"), undefined);
+  assert.equal(spec(r, "disp"), undefined);
+  assert.equal(spec(r, "fuel"), "218.9");
+  assert.ok(hits(notes).some((x) => String(x.detail || x.row || "").includes("AW1125") || x.n === 123));
+});
+
 test("dropspec tự hết hiệu lực khi chữ dòng nguồn đổi", () => {
   const s = real("fukangsi-yangzhou");
   for (const t of s.specTables) t.rows = t.rows.map((r) => r.includes("FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1") ? r.replace("| 9 |", "| 10 |") : r);
