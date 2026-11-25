@@ -42,7 +42,9 @@ test("lees n1118: chỉ dòng có nhãn mức; 'Power | kW | 70.6' không ghi m�
 
 test("bảng không đọc (ghi lý do): công suất ở phần động cơ, nhiều model, động cơ không là mã", () => {
   const cases = [
-    ["dingbo", 102, /hai model tổ máy/], // "Genset Model: DB-329GF" + "| Model: | TAD1344GE-B" (động cơ không tiêu đề)
+    // "Genset Model: DB-329GF" + "| Model: | TAD1344GE-B" (động cơ không tiêu đề, mã trong V_SECOND_ENGINE từ buoc-3-to-doc):
+    // tổ máy chỉ ghi "Rated Power", "Prime Power 354kW" dưới dòng động cơ là của động cơ.
+    ["dingbo", 102, /không có công suất prime \/ standby/],
     ["supermaly", 107, /hai model tổ máy/], // SP28GFS, 1103A-33G, BC184FS trên một trang
     ["ronsun-power", 101, /không có mã động cơ/], // "Engine Model: Gas Series 6 Cylinder"
   ];
