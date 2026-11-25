@@ -93,7 +93,9 @@
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s(?:\d{2}[\s-]\d{2}[A-Z]?|\d{2,4}\s?kva)$/i;
   // A Deutz engine written as the maker does, with spaces ("BF4M 2011 C", "BF6M 1013 FC G2", "TCD 2013 L06 4V", cgm-italia n1001):
   // up to three spaces, only this shape (buoc-3-p2).
-  const DEUTZ_CODE = /^(?:BF\d?M|TCD)\s?\d{4}(?:\s[A-Z0-9]{1,3}){0,3}$/i;
+  // The make may be written before it ("DEUTZ TCD 24V12", cgm-italia n101 750DZ; tidyModel then drops it) and the code may be
+  // "TCD 24V12" (two figures, V, two figures) instead of four figures (sua-nho-luot-7).
+  const DEUTZ_CODE = /^(?:DEUTZ\s)?(?:BF\d?M|TCD)\s?(?:\d{4}|\d{2}V\d{2})(?:\s[A-Z0-9]{1,3}){0,3}$/i;
   // Doosan DP054CC / DP086CC / DP222CC (the trailing "CC" is part of the code, not a displacement in cc): the one exception to the "<digit>CC" rule of `isCode`.
   // cgm-italia n1001 writes "DP222 CC" with a space (buoc-3-p2).
   const DOOSAN_DP = /^DP\d{3}\s?CC$/i;
@@ -312,9 +314,15 @@
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
     if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|(?<![a-z0-9-])(?:hp|bhp|ps|cv)(?![a-z0-9-])|马力|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
-    for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
+    for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return SENTENCE_KEYS.test(key) && sentenceLabel(L) ? null : key;
     return HP_LABEL.test(L) && !HP_NOT.test(L) ? "engPower" : null;
   }
+  // The label of `avr` / `excit` / `vreg` is half a sentence of a datasheet's prose ("the Automatic Voltage Regulator (AVR) to the
+  // main exciter.", "via the Automatic Voltage Regulator (AVR) to the main", stamford-avk-china n1066-1068, sua-nho-luot-7): five
+  // words or more that start in lower case (the sentence began on the line before) or end with a full stop. A table label is
+  // neither; the value of such a line ("terminal box contains the AVR and provides ample space for") is then no figure.
+  const SENTENCE_KEYS = /^(avr|excit|vreg)$/;
+  const sentenceLabel = (L) => L.split(/\s+/).length >= 5 && (/^[a-z]/.test(L) || /\.$/.test(L));
   // Engine power written in HP / BHP / PS / CV (buoc-4-d, 25/11/2026): "Gross hp", "ENGINE HP", "Output(hp)", "Power Output# (HP)", "BHP", "CV".
   // Tried AFTER every pattern (the old engPower labels keep their key). The HP word is a word of its own and the label names NO kW
   // (a label naming both, "Gross kW (hp)", "Max Power (kW/Hp)" (old key), "Hp/Kw", stays as before: Khoa 24/11/2026, one figure
@@ -1856,6 +1864,11 @@
           if (ei !== e || ai !== a) note(t, ti, ri, "mã ở cột khác cột tiêu đề (bảng có dòng tiêu đề bổ sung): chỉ đọc ô của tiêu đề", line);
           ei = e; ai = a;
         }
+        // A code of the maker's own shell column (cgm-italia "B800" open base frame, "C800" canopy, "QM1000" panel) is no engine: the
+        // row's engine cell was no code ("FPT N45 SM3", "KOHLER KDI 2504M") or the row has no engine cell (the tail of a split row),
+        // and the first code left was taken (sua-nho-luot-7). No engine record; the row's other codes are not read either.
+        const shell = ei >= 0 && SHELL_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei].trim()));
+        if (shell) { note(t, ti, ri, "mã ở cột vỏ máy / tủ điều khiển, không phải động cơ: không dựng bản ghi động cơ", cells[ei]); ei = -1; }
         // Twin cells: only the engine's is read; with the engine not on a twin cell the row stays unread as before (which code is which is not known).
         const twinEng = twin.find((x) => x.i === ei);
         if (twin.length && !twinEng) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
@@ -2307,6 +2320,9 @@
   // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.
   // eastern-lion-fuan n122 / n141 / n146 / n151 (S6-3, điều phối 21/11/2026): "(YD4KD) YD485D", one row each; the tables do not say
   // what the bracket means (YD4KD appears nowhere else on them) and the whole cell was the engine model. Same rule.
+  // The codes of a maker's shell columns (open base frame "B20".."B3000", canopy "C20".."C1500" / "CT40" / "SH40", panels "QM45" /
+  // "QA1000"): an explicit list (supplier + n), not a rule on the shape: "B800" is a model of other makers (sua-nho-luot-7).
+  const SHELL_CELLS = [{ supplierId: "cgm-italia", n: [101, 1001], code: /^(?:B|C|CT|SH|QM|QA)\d{2,4}\+?$/ }];
   const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" },
     { supplierId: "eastern-lion-fuan", n: [122, 141, 146, 151], code: /^\(YD4KD\) YD485D$/, khoa: "điều phối 21/11/2026 (S6-3)" }];
   // An engine cell naming two engines joined by "或" (or): "ZS1110或295D", xingguang-jiangsu n108 (bang-roi-29, điều phối
@@ -3789,7 +3805,7 @@
     let s = raw.replace(MARK_TAIL, "").replace(/[–—]/g, "-");
     const m = s.match(/^(\S+)\s+(?:penta\s+)?(?=\S*\d)/i);
     if (m && brandIn(m[1], list).length && isCode(s.slice(m[0].length))) s = s.slice(m[0].length);
-    else { const w = brandedCode(s, list); if (w) s = w; }
+    else { const w = brandedCode(s, list); if (w) s = w; else if (/^deutz\s+(?:BF\d?M|TCD)\b/i.test(s) && isCode(s.replace(/^deutz\s+/i, ""))) s = s.replace(/^deutz\s+/i, ""); }
     return (list === ENGINE_BRANDS ? engineCode(s) : s) + kept;
   };
   // An engine cell with words or figures written next to the code (ma-dong-co-trung PR 1, Khoa 20/11/2026: one engine stood
