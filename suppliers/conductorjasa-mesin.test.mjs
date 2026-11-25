@@ -46,9 +46,10 @@ test("bảng 4 cột của n116 và dòng mà tên là mã có một dấu cách
   assert.deepEqual(r.map((x) => x.specs), [[], []]);
 });
 
-test("mã động cơ có nhiều dấu cách ('BF8M 1015 CP', '4008 TAG 2') hoặc không có chữ ('2011'): không ra bản ghi, không đoán", () => {
+// Từ #1235 (bước 3 họ P2, `DEUTZ_CODE`) mã Deutz viết có dấu cách "BF8M 1015 CP" là mã động cơ: dòng đó ra bản ghi, mã đúng chữ ô nguồn.
+test("mã Deutz có dấu cách ('BF8M 1015 CP') đọc đúng chữ ô; mã không có chữ ('2011') không ra bản ghi, không đoán", () => {
   const r = recs(H6, ["| DJPS-500 WP BF8M 1015 CP 500 kVA prime | BF8M 1015 CP | 500 | 550 | 84,9 L/jam | 3000 × 1500 × 2050 mm", "| DJPS-20 OP1 2011 20 kVA prime | 2011 | 20 | 22 | 4,2 L/jam | 1300 × 700 × 1070 mm"]);
-  assert.deepEqual(r, []);
+  assert.deepEqual(r.map((x) => [x.kind, x.genset, x.model, x.power.prime.kVA, x.power.standby.kVA]), [["engine", "DJPS-500 WP BF8M 1015 CP 500 kVA prime", "BF8M 1015 CP", 500, 550]]);
 });
 
 test("cột kích thước ('Dimensi open') đọc như kích thước; mức tải khác 75 % của BBM không thành fuel75", () => {
@@ -104,5 +105,5 @@ test("tệp nguồn thật: mọi dòng '|' của n101-n116 đứng dưới tiê
       rowsAll += r.length;
     }
   }
-  assert.equal(rowsAll, 138);
+  assert.equal(rowsAll, 143);   // 138 + 5 dòng Deutz "BF8M 1015 CP" ×2, "BF8M 1015 C", "BF6M 1015 C", "BF6M 1013 FC" (#1235); từng dòng đã so ô nguồn ở vòng trên
 });

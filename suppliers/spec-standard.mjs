@@ -13,6 +13,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { sourceRatings, modelFacts } from "./config-bot.mjs";
 import { ONE_SOURCE_FILE, readOneSource, oneSourcePick } from "./one-source-rules.mjs";
+import { controllerFeatures, ctlFeatureFields } from "./controllers-features.mjs";
 import { norm } from "./verify.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -361,6 +362,8 @@ export function standardOf(suppliers, opts = {}) {
   const oneByDoc = new Map();
   for (const x of one.keep) { const id = `${x.rec.part}:${x.rec.key}`; oneByDoc.set(id, [...(oneByDoc.get(id) || []), x]); }
   if (opts.oneSourceReport) Object.assign(opts.oneSourceReport, { records: Array.isArray(oneRecords) ? oneRecords.length : 0, used: one.keep.length, docs: oneByDoc.size, skipped: one.skipped });
+  // Chức năng bộ điều khiển từ datasheet hãng của chính model (controllers-features.mjs, PR G): chỉ vào trường chưa có giá trị.
+  const ctl = opts.ctlFeatures ?? controllerFeatures(list);
   for (const [part, entries] of [["engine", built.engines], ["alternator", built.alternators], ["controller", built.controllers]]) {
     for (const e of entries) {
       const bag = new Bag();
@@ -369,6 +372,7 @@ export function standardOf(suppliers, opts = {}) {
       if (part === "alternator") addRatings(bag, rt.alt.get(e.key), rt.attr.get(e.key));
       let fields = bag.fields();
       if (part === "engine") moveEnginePower(fields);
+      if (part === "controller" && ctl.byModel.has(e.key)) fields = ctlFeatureFields(fields, ctl.byModel.get(e.key));
       if (oneByDoc.has(`${part}:${e.key}`)) fields = addOneSource(fields, oneByDoc.get(`${part}:${e.key}`));
       const doc = { id: `${part}:${e.key}`, part, key: e.key, model: e.model, make: e.make || null, suppliers: [...e.suppliers].sort(), fields };
       doc.hash = hashOf(doc);

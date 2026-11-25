@@ -7,7 +7,11 @@ on:
   push:
     branches: [main]
     # The row flags (rowflags/current, step "Row flags") also change when the code that reads the tables changes.
-    paths: ['suppliers/cn/**', 'suppliers/row-flags.mjs', 'suppliers/spec-diff.mjs', 'web/catalog.js', 'web/spec-norm.js', 'web/conversions.js']
+    # The spec standard (spec_std, step "Spec standard") also changes when its own readers change (Khoa 25/11/2026: thêm bộ
+    # đọc thì "lấy lại data"): without these paths a PR that only touches a reader left spec_std stale until the next cn/ push.
+    paths: ['suppliers/cn/**', 'suppliers/row-flags.mjs', 'suppliers/spec-diff.mjs', 'web/catalog.js', 'web/spec-norm.js', 'web/conversions.js',
+            'suppliers/spec-standard.mjs', 'suppliers/spec-fields.json', 'suppliers/ratings.mjs', 'suppliers/config-bot.mjs', 'suppliers/ctl-module.mjs',
+            'suppliers/controllers-features.mjs', 'suppliers/controllers-features-loai.json', 'suppliers/one-source.json', 'suppliers/one-source-rules.mjs']
 
 concurrency:
   group: supplier-publish

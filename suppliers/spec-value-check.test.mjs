@@ -109,6 +109,8 @@ test("chỉ báo: không đổi doc; trường chưa có luật được liệt 
   assert.equal(JSON.stringify(docs), before);
   assert.equal(r.violations.length, 1);
   assert.equal(r.violations[0].row, "| X | 16 3:1");
-  assert.ok(r.noRule.some((x) => x.field === "controller.usb"));
+  // controller.usb có luật từ PR G phần 1, dimensions / protections từ PR G phần 2; order_code vẫn chưa.
+  assert.ok(r.noRule.some((x) => x.field === "controller.order_code"));
+  for (const f of ["controller.usb", "controller.dimensions", "controller.protections", "controller.alarms"]) assert.ok(!r.noRule.some((x) => x.field === f), f);
   assert.ok(!r.noRule.some((x) => x.field === "engine.compression"));
 });

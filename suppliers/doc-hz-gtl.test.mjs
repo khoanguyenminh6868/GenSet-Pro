@@ -58,7 +58,10 @@ test("mecca: bảng có dòng 'Powered by … 50HZ / 60HZ' ngay trên nó nhận
 test("mecca: nhãn tab 'rời' 50HZ | 60HZ của trang, 'Both 50Hz and 60Hz', trang catalog không ghi Hz: không đoán, freq vẫn null", () => {
   const rs = recs("mecca-power");
   const s = load("mecca-power");
-  const f = (n, g) => { const ti = s.specTables.findIndex((t) => +t.n === n && C.cellsOf(t.rows[0])[0] === g); assert.ok(ti >= 0, g); return [...new Set(rs.filter((r) => r.table === ti).map((r) => r.freq))]; };
+  // Bản ghi có trong MECCA_FREQ (mecca-freq-532: cùng mã + cùng công suất ở bản ghi khác có tần số rõ) được gắn riêng; phần còn lại vẫn null.
+  const pk = (p) => JSON.stringify([p?.prime?.kVA ?? null, p?.prime?.kW ?? null, p?.standby?.kVA ?? null, p?.standby?.kW ?? null]);
+  const listed = (r) => C.MECCA_FREQ.some((x) => x.startsWith(`${r.n}|${r.genset}|${pk(r.power)}|`));
+  const f = (n, g) => { const ti = s.specTables.findIndex((t) => +t.n === n && C.cellsOf(t.rows[0])[0] === g); assert.ok(ti >= 0, g); return [...new Set(rs.filter((r) => r.table === ti && !listed(r)).map((r) => r.freq))]; };
   assert.deepEqual(f(144, "MC12Y"), [null]); // tab 50HZ / 60HZ, hai bảng, không dòng nào gắn bảng với tần số
   assert.deepEqual(f(159, "MC11Y"), [null]);
   assert.deepEqual(f(103, "MC22D"), [null]);

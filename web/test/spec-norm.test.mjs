@@ -234,6 +234,13 @@ const CASES = [
   ["airflow", "Air flow (m3/s)", "0.48", null, { unit: "m3/s", num: 0.48, missing: [] }], // gfe-power
   ["airflow", "Cooling Air Flow", "0.48", null, { num: 0.48, missing: ["unit"] }],
   ["airflow", "Cooling Air Flow", "TBA kg/h", null, { missing: ["value"] }],
+  // engine electrical system voltage (buoc-4-d, 25/11/2026)
+  ["elecv", "Starting Voltage", "DC24V", null, { unit: "VDC", num: 24, missing: [] }], // aosif
+  ["elecv", "Starter motor voltage", "12V", null, { unit: "VDC", num: 12, missing: [] }], // genlitec
+  ["elecv", "Starter Voltage (V)", "24", null, { unit: "VDC", num: 24, missing: [] }], // westinpower
+  ["elecv", "起动机电压 Start Motor Voltage (V)", "24", null, { unit: "VDC", num: 24, missing: [] }], // shanhua
+  ["elecv", "Engine Electrical System", "24", null, { num: 24, missing: ["unit"] }], // powerpack: unit cell not passed
+  ["elecv", "Starting Voltage", "12V/24V", null, { missing: ["value"] }], // two systems: not read
 ];
 
 for (const [key, label, value, ctx, want] of CASES) {
@@ -344,4 +351,22 @@ test("cờ công suất tổ máy: chỉ 'rated' → thiếu chế độ; không
   assert.deepEqual(SN.powerFlags({ power: { rated: { kVA: 100, kW: 80 } }, freq: null }).missing, ["rating", "freq"]);
   assert.deepEqual(SN.powerFlags({ power: { prime: { kVA: 100, kW: 80 } }, freq: 50 }).missing, []);
   assert.deepEqual(SN.powerFlags({ power: null, freq: 60 }).missing, ["value"]);
+});
+
+// PR D (buoc-4-d, 25/11/2026): điện áp hệ thống điện và công suất ghi HP / CV của động cơ.
+test("elecv: 12 / 24 V của hệ thống điện, đơn vị chỉ khi ô / nhãn / ô đơn vị ghi", () => {
+  const n = (label, value, unitCell) => SN.normalize({ key: "elecv", label, value, ...(unitCell ? { unitCell } : {}) });
+  assert.deepEqual([n("Starting Voltage", "DC24V").num, n("Starting Voltage", "DC24V").unit], [24, "VDC"]);
+  assert.equal(n("Starter motor voltage", "12V").unit, "VDC");
+  const bare = n("Engine Electrical System", "24"); assert.equal(bare.num, 24); assert.equal(bare.unit, null); assert.ok(bare.missing.includes("unit"));
+  assert.equal(n("Engine Electrical System", "24", "VDC").unit, "VDC");
+  for (const v of ["12V/24V", "V", "Electric"]) assert.ok(!SN.hasValue(n("Starting Voltage", v)), v);
+});
+test("engPower: HP / BHP / CV giữ số nguồn ghi, hai số trơ ('75/3000') không đọc", () => {
+  const n = (label, value) => SN.normalize({ key: "engPower", label, value });
+  const a = n("Gross hp", "552"); assert.equal(a.conv.from.num, 552); assert.equal(a.conv.from.unit, "hp");
+  assert.equal(n("BHP", "680").conv.from.unit, "hp");
+  assert.equal(n("CV", "64").conv.from.unit, "PS"); // cavallo vapore = mã lực hệ mét
+  const two = n("Rated power (HP)", "75/3000"); assert.ok(!SN.hasValue(two)); assert.ok(two.missing.includes("ambiguous"));
+  assert.equal(n("Engine Power (kW)", "110").unit, "kW"); // cách đọc kW không đổi
 });
