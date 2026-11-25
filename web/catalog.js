@@ -2295,6 +2295,10 @@
       ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
       { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
     // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
+    // aosif n123 AW1125 (8M33D1012E311^): the same "12V | 31.8" (12M26's cylinders / displacement); 8M33D1012E311 is 8 cylinders,
+    // 150×185 mm ≈ 26.1 L (waeta, wiseke: 8 / 26.14). Khoa 20/11/2026: "bỏ 2 số sai" (PR #953 was merged into branch catalog-b2
+    // after that branch had gone to main, so the entry never reached main; brought back 25/11/2026).
+    { supplierId: "aosif", n: 123, genset: "AW1125", line: "| AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8 xi lanh (nguồn khác ghi 8 / 26,14 L): bỏ riêng số xi lanh và dung tích" },
     // 12V1600G80F (23/11/2026): 23.88 L is the 12V2000's figure (bdadl writes it for 12V2000G65 in the same family of rows); wintpower
     // writes 21 for G80F, and G10F / G20F / G70F / G80S are 21. The row has no bore x stroke, so `dropspec`, not `fixspec`. All five copies.
     ...[["bdadl-shanghai", 112, "BDA-M580"], ["bdadl-shanghai", 135, "BDA-M580"], ["fukangsi-yangzhou", 2007, "FKS-M580"], ["pengpai-yangzhou", 111, "PPDL-M580"], ["pengpai-yangzhou", 127, "PPDL-M580"]].map(([supplierId, n, genset]) =>
