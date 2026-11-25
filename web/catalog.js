@@ -227,9 +227,10 @@
     // Site conditions of the set (buoc-4-h, 25/11/2026; field genset.ambient "Nhiệt độ môi trường, độ cao"): ambient temperature and
     // altitude as written ("≤40 ℃", "≤1000m", "-15℃～45℃"). Not the radiator's design ambient ("Ambient capacity of radiator"), a start
     // aid ("Min Ambient for Unaided Start"), storage, a derating table, an engine's coolant limit ("Max. allowable operating
-      // temperature | ℃ | 103") nor the German "Höhe" (a height). "Operating temperature" never gets here: specKeyOf stops "…rating…"
-    // labels (opeRATING) first; it is mostly a controller's range (Deep Sea, ComAp), and is left so.
-    ["ambient", "genset", "Nhiệt độ môi trường, độ cao", /ambient\s*(air\s*)?temp|^\s*ambient\s*[:：]?\s*$|环境温度|altitude|海拔(要求|高度)/i, /radiator|capacity|start|storage|setting|derat|修正|allowable|noise|engine|coolant|turbo|after\s*-?cool|display|location|controller|sensor/i, /\d/],
+      // temperature | ℃ | 103") nor the German "Höhe" (a height). "Operating temperature" (Khoa 25/11/2026: the set's, atlas-copco): specKeyOf
+    // lets it past its "…rating…" block (opeRATING) only when the label STARTS with it; a controller's range (Deep Sea, ComAp) stays out
+    // because a controller's datasheet gives no engine / alternator record.
+    ["ambient", "genset", "Nhiệt độ môi trường, độ cao", /ambient\s*(air\s*)?temp|^\s*ambient\s*[:：]?\s*$|环境温度|altitude|海拔(要求|高度)|^\s*operating\s*temp/i, /radiator|capacity|start|storage|setting|derat|修正|allowable|noise|engine|coolant|turbo|after\s*-?cool|display|location|controller|sensor/i, /\d/],
     // Overload capability of the set (buoc-4-h; field genset.overload): "1.5倍2分钟", "过载 10%一小时", "110% 1h". A protection, a timeout,
     // an alarm, an ANSI code ("Overload | 32") or "overload power (kW)" (a power column) is not it.
     // Output breaker, battery, standards of the set (buoc-4-h, điều phối 25/11/2026; fields genset.breaker / battery / standards). Values as
@@ -300,6 +301,7 @@
     ["altAmbient", "alternator", "Nhiệt độ môi trường (đầu phát)", /(?!)/, null, /\d/],
     ["altPhase", "alternator", "Số pha (đầu phát)", /(?!)/, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|three|single|三相|单相/i],
     ["engAmbient", "engine", "Nhiệt độ môi trường (động cơ)", /(?!)/, null, /\d/],
+    ["altOverload", "alternator", "Khả năng quá tải (đầu phát)", /(?!)/, null, /\d\s*(%|％|倍)|\d\s*(h|hrs?|hours?|min|mins?|minutes?|s|sec|seconds?)\b|\d\s*(小时|分钟|秒)/i],
     ["altType", "alternator", "Kiểu đầu phát", /^\s*(alternator|generator)\s*-?\s*type\s*[:：]?\s*$|^\s*type\s*of\s*alternator\s*[:：]?\s*$|alternatortype|电机类型|发电机类型|发电机型式|电机型式/i, null, /brush|self|excit|synchron|permanent|pmg|无刷|有刷|自励|励磁|同步|永磁/i],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
@@ -338,13 +340,14 @@
   // written as an ambient temperature AND an altitude, each on its own line.
   const MULTI = new Set(["ambient", "engAmbient", "altAmbient"]);
   // Keys of buoc-4-h read from the second pair of a four-cell line too (fromLabelTable).
-  const SECOND_PAIR = new Set(["ambient", "overload", "altType", "altitude", "altAmbient", "engAmbient", "breaker", "battery", "standards"]);
+  const SECOND_PAIR = new Set(["ambient", "overload", "altType", "altitude", "altAmbient", "engAmbient", "altOverload", "breaker", "battery", "standards"]);
   // part "unsure": a sheet whose part headings do not tell whose a line is (fromLabelTable `twoCol`): no part's key, no set's ambient.
   function partKey(sk, part, label) {
     if (sk === "phase") return part === "alternator" ? "altPhase" : sk;
     if (sk !== "ambient" && sk !== "overload") return sk;
     if (part === "unsure") return null;
-    if (sk === "overload") return part === "alternator" || part === "engine" ? null : sk;
+    // Overload under "Alternator" is the alternator's (`altOverload`, Khoa 25/11/2026 thêm alternator.overload); under "Engine" no field.
+    if (sk === "overload") return part === "alternator" ? "altOverload" : part === "engine" ? null : sk;
     if (part === "alternator") return ALTITUDE_LBL.test(label) ? "altitude" : "altAmbient";
     return part === "engine" ? "engAmbient" : sk;
   }
@@ -357,7 +360,7 @@
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
     // "Battery capacity" (Ah) is the battery's, not a rating (buoc-4-h), as "Short circuit capacity" is the alternator's (PR C).
-    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路|batter(y|ies)|蓄电池|电瓶/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路|batter(y|ies)|蓄电池|电瓶|^\s*operating\s*temp/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
     return null;
   }

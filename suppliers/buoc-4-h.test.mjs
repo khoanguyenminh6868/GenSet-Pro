@@ -18,8 +18,10 @@ test("ambient: site temperature / altitude labels; radiator, start, storage, eng
   for (const [l, v] of [["Altitude", "≤1000m"], ["环境温度", "≤40 ℃"], ["海拔高度", "≤1000M"], ["海拔要求", "≤1000 m"], ["Ambient Temp", "≤40 C"], ["Standard Ambient Temperature", "40°C"],
     ["Altitude Condition", "≤1000m"], ["Reference Site Altitude", "≤ 1000 m"], ["Ambient temperature(℃)", "40"]])
     assert.equal(fits(l, v), "ambient", l);
-  // "Operating temperature": specKeyOf stops labels with "rating" (opeRATING) before SPECS; mostly a controller's range (Deep Sea, ComAp).
-  for (const l of ["Operating temperature", "Operating Temperature", "Operating temperature (min/max) (2)"]) assert.equal(CAT.specKey(l), null, l);
+  // "Operating temperature" (Khoa 25/11/2026: mở cho tổ máy): past specKeyOf's "rating" block only when the label STARTS with it; a
+  // controller's datasheet gives no engine / alternator record, so its range never reaches genset.ambient.
+  for (const l of ["Operating temperature", "Operating Temperature", "Operating temperature (min/max) (2)"]) assert.equal(CAT.specKey(l), "ambient", l);
+  for (const l of ["Max. allowable operating temperature", "Rated operating temperature rise"]) assert.notEqual(CAT.specKey(l), "ambient", l);
   for (const l of ["Ambient capacity of radiator……………………………50℃", "Min Ambient for Unaided Start", "Min Ambient Temp for Unaided Cold Start", "Max. allowable operating temperature",
     "Ambient temperature (storage)......................-30 to 80 °C / -22 to 176 °F", "海拔功率修正表", "Ambient temperature and altitude derating", "Höhe 1)", "Noise / Ambient", "toAftercoolers @ 25°C Ambient (℃)"])
     assert.notEqual(CAT.specKey(l), "ambient", l);
@@ -139,6 +141,21 @@ test("a field holding several facts keeps both lines (superwatt n107: ambient te
   for (const o of recs) {
     assert.deepEqual((o.specs || []).filter((s) => s.key === "ambient").map((s) => s.value).sort(), ["40°C", "≤1000m"], o.model);
   }
+});
+
+test("Khoa 25/11/2026: overload under 'Alternator' is the alternator's; 'Operating temperature' has a key; a type cell that affirms brushless", async () => {
+  // A label sheet: the set's part, then the alternator's (the rows of senci n113, written as a sheet with headings).
+  const rec = { id: "t-overload", status: "complete", country: "CN", specTables: [{ n: 1, title: "t", header: ["| Model | GF-300"], rows: [
+    "| Prime Power | 300kW/375kVA", "| Overload capability | 110% 1h in 12h", "Engine", "| Engine Model | YC6MK350L-D20", "Alternator", "| Alternator Model | SC314G300D7", "| 过载能力 | 过载 10%一小时"] }] };
+  const recs = CAT.fromSupplier(rec);
+  const of = (k) => recs.flatMap((o) => (o.specs || []).filter((s) => s.key === k).map((s) => `${o.kind} ${s.value}`)).sort();
+  assert.deepEqual(of("altOverload"), ["alternator 过载 10%一小时", "engine 过载 10%一小时"]);
+  assert.deepEqual(of("overload"), ["alternator 110% 1h in 12h", "engine 110% 1h in 12h"]);
+  assert.equal(CAT.specKey("Operating temperature (min/max) (2)"), "ambient");
+  assert.equal(CAT.specKey("Operating Temperature"), "ambient");
+  const { brushlessTypeOf } = await import(pathToFileURL(path.join(ROOT, "suppliers", "spec-standard.mjs")).href);
+  for (const t of ["Brushless, Self-Exciting", "无刷三相交流同步发电机", "Self-excitation , Brushless Type", "không chổi than, tự kích"]) assert.equal(brushlessTypeOf(t), true, t);
+  for (const t of ["Self-excited,2-pole,single phase", "synchron", "non-brushless", "not brushless", "brush type", "有刷"]) assert.equal(brushlessTypeOf(t), false, t);
 });
 
 test("spec-norm altitude: the figure and the operator; metres only when written", () => {
