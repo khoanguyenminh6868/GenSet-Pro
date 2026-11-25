@@ -94,10 +94,12 @@ test("nhóm A: kiểu động cơ, hệ thống phun đạt khi tờ ghi đủ m
   assert.equal(t("fuel_system", "Hệ thống nhiên liệu (phun)", "Bơm cao áp cơ khí").status, "unclear");
 });
 
-test("nhóm A: Injection System, Fuel System không vào SPECS (là cột mã riêng của nhiều bảng)", () => {
+test("nhóm A: Injection System, Fuel System là cột mã riêng của nhiều bảng: khoá `fuelsys` là khoá MỀM (buoc-4-d), ô không khớp không dừng lượt đọc", () => {
   assert.equal(C.specKey("Thermodynamic Cycle"), "engType");
-  assert.equal(C.specKey("Injection System"), null);
-  assert.equal(C.specKey("Fuel System"), null);
+  assert.equal(C.specKey("Injection System"), "fuelsys");
+  assert.equal(C.specKey("Fuel System"), "fuelsys");
+  // The maker's own codes and other columns of those tables are no value of the key.
+  for (const v of ["ECR", "Control System", "m-FIP+e-gov."]) assert.ok(!C.SPEC.fuelsys.ok.test(v), v);
 });
 
 test("chạy lại confirmChecks + altDocChecks giữ nguyên kết quả", () => {

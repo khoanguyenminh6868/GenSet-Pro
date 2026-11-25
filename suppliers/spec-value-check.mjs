@@ -121,6 +121,11 @@ export function checkValue(part, id, it, ctx = {}) {
     case "bool": if (typeof v !== "boolean") out("ngoai-danh-sach", `"${v}" không là có / không`, "chua-chuan"); break;
     case "text": if (!new RegExp(rule.must, "iu").test(String(v))) out("sai-loai", `"${v}" không nêu đúng loại thông số`); break;
     case "number": checkNumber(rule, it, out); break;
+    case "io": {
+      if (!v || typeof v !== "object" || !rule.kinds.includes(v.kind)) out("ngoai-danh-sach", `loại ngõ "${v?.kind}"`, "chua-chuan");
+      else if (!Number.isInteger(v.count) || !inRange(v.count, rule.count)) out("ngoai-dai", `${v.count} ngõ ngoài ${rule.count.join("-")}`);
+      break;
+    }
     case "fuel": checkFuel(rule, it, ctx.kws || [], !!ctx.nonDiesel, out); break;
     case "dims": checkDims(it, out); break;
     case "bore": {

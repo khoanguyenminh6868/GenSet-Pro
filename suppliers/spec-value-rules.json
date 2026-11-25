@@ -40,6 +40,8 @@
     "engine.bore_stroke": { "kind": "bore", "range": [50, 400], "basis": "mỗi số 50-400 mm (likely, catalog.js)" },
     "engine.displacement": { "kind": "number", "range": [0.05, 300], "units": ["L"], "kinds": ["volume"], "relation": "geometry", "basis": "0,05-300 L (absurdOf: YC16VC 105 L, 8WH32 257 L); SN.selfCheck: lệch > 5 % so với xi lanh x bore x hành trình của chính dòng" },
     "engine.compression": { "kind": "number", "range": [6, 30], "kinds": [], "basis": "dữ liệu cn/ phần lớn 11-24; dải lỏng 6-30, không mang đơn vị", "review": true },
+    "engine.fuel_system": { "kind": "text", "must": "rail|共轨|injector|\\beui\\b|单体|pump|泵|direct|indirect|直喷|\\bpt\\b|mechanical|electronic|电控|机械", "basis": "phải nêu kiểu hệ thống phun (common rail, bơm / kim phun, trực tiếp / gián tiếp); không là mã riêng của hãng" },
+    "engine.electrical_vdc": { "kind": "number", "range": [6, 48], "units": ["VDC"], "kinds": ["volt"], "basis": "dữ liệu cn/ 12 và 24 V (powerpack, westinpower, genlitec, shanhua); dải lỏng 6-48 V", "review": true },
     "engine.engine_type": { "kind": "text", "must": "stroke|cycle|diesel|kỳ|冲程|四冲|gas", "basis": "phải nêu kiểu động cơ" },
     "engine.aspiration": { "kind": "enum", "basis": "values + same của spec-fields.json" },
     "engine.charge_cooling": { "kind": "text", "must": "air|water|intercool|aftercool|中冷", "basis": "phải nêu môi chất làm mát khí nạp" },
@@ -110,6 +112,18 @@
     "controller.ul": { "kind": "bool", "basis": "như auto_start_stop" },
     "controller.event_log": { "kind": "number", "range": [5, 100000], "int": true, "basis": "số sự kiện nhật ký đọc trong câu (\"Event log (15)\", \"up to 1000 events\"); cận trên rộng", "review": true },
     "controller.max_sets": { "kind": "number", "range": [2, 256], "int": true, "basis": "số tổ máy hoà \"up to N generators\"; nguồn thật 16-256 (DEIF AGC 150 \"up to 256 generators and/or bus tie breakers\")", "review": true },
-    "controller.front_ip": { "kind": "text", "must": "^IP[2-6][0-9]$", "basis": "mã IP mặt trước IPxx (IEC 60529), dòng nêu front / fascia / gasket" }
+    "controller.front_ip": { "kind": "text", "must": "^IP[2-6][0-9]$", "basis": "mã IP mặt trước IPxx (IEC 60529), dòng nêu front / fascia / gasket" },
+    "controller.protections": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên bảo vệ như nguồn ghi (kèm mã ANSI khi bảng hãng ghi); PR G phần 2" },
+    "controller.alarms": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên cảnh báo như nguồn ghi, chỉ dòng nguồn gắn nhãn warning (Khoa 25/11/2026 thêm trường)" },
+    "controller.display": { "kind": "text", "must": "LCD|TFT|STN|OLED|monochrom|display|px|pixel|colou?r|graphic", "basis": "kiểu / độ phân giải màn hình như nguồn ghi" },
+    "controller.languages": { "kind": "text", "must": "language|lingual|English|Chinese", "basis": "ngôn ngữ hiển thị: danh sách tiếng hoặc câu nhiều ngôn ngữ của nguồn" },
+    "controller.measure_voltage": { "kind": "text", "must": "\\d\\s*k?V(AC)?\\b|AC\\s?\\d+\\s?V", "basis": "dải / mức điện áp xoay chiều đo được, có đơn vị V (V, kV, VAC)" },
+    "controller.measure_frequency": { "kind": "text", "must": "\\d\\s*Hz", "basis": "dải tần số đo / tần số đầu vào máy phát, có đơn vị Hz, ≤ 1.000 Hz (không phải cảm biến tốc độ)" },
+    "controller.measure_current": { "kind": "text", "must": "\\d\\s*A\\b", "basis": "dải / mức dòng điện đầu vào CT, có đơn vị A" },
+    "controller.accuracy": { "kind": "text", "must": "%|±|digit", "basis": "độ chính xác đo, nêu đại lượng (nhãn, đề mục hoặc chính giá trị)" },
+    "controller.operating_temp": { "kind": "text", "must": "\\d\\s?[^\\d\\s]{0,3}\\s?C\\b", "basis": "dải nhiệt độ làm việc °C (phần °F quy đổi của nguồn bỏ)" },
+    "controller.dc_supply": { "kind": "text", "must": "\\d[^V]*V", "basis": "dải điện áp nguồn DC như nguồn ghi" },
+    "controller.dimensions": { "kind": "text", "must": "\\d+(\\.\\d+)?\\s*(mm)?\\s*(\\(\\w\\))?\\s*[x×X*]\\s*\\d+", "basis": "kích thước vỏ ba chiều, mm (phần inch quy đổi của nguồn bỏ)" },
+    "controller.io": { "kind": "io", "kinds": ["digital_in", "digital_out", "analogue_in", "analogue_out"], "count": [1, 100], "basis": "số ngõ vào / ra theo loại; chỉ ô số của chính model (cột theo tiêu đề model hoặc dòng Number ngay dưới đề mục)", "review": true }
   }
 }

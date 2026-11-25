@@ -257,13 +257,23 @@
     ["aircool", "engine", "Làm mát khí nạp / piston", /after\s*-?cool|charge\s*air|piston\s*cool|inter\s*-?cool|air\s*\/\s*(air|water)\s*cool|增压空气|活塞冷却/i, null, COOL],
     ["cooling", "engine", "Làm mát",/cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow|after\s*-?cool|charge\s*air|piston|inter\s*-?cool|air\s*\/|增压空气|活塞/i, COOL],
     ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, NO_SIZE_ANY_NUM],
+    // Voltage of the engine's electrical (starting) system (buoc-4-d, 25/11/2026): before `start` / `voltage`, which took
+    // "Starting voltage" / "Cranking motor voltage" (the figure "DC24V" went to the starting system column). "System voltage" and
+    // "Auxiliary voltage" are of the controller or the genset, not the engine's: no key.
+    ["elecv", "engine", "Điện áp hệ thống điện", /^(?:engine\s*)?electrical\s*system(?:\s*(?:voltage|\(\s*v(?:dc)?\s*\)))?\s*[:：]?$|(?:starting|starter(?:\s*motor)?|start\s*motor|cranking(?:\s*motor)?|starting\s*batter\w*|motor\s*starter)\s*(?:voltage|volt\.?)\b|^starting\s*system\s*\(\s*volts?\s*\)|(?:起动|启动)(?:机|马达)?电压|电气系统电压/i,
+      /alarm|under|over|\blow|high|warn|min|max|range|delay|input|output|auxiliary|charg|time|resist|current|cable|power|stop|fail|battery\s*voltage\s*$/i,
+      /^(?:dc\s*|vdc\s*)?(?:6|12|24|36|48)(?:\.0)?\s*(?:v|vdc|v\s*dc|volts?)?(?:\s*dc)?$/i],
     ["start", "engine", "Khởi động", /start|启动方式|起动方式/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan/i, null, /^\d/],
     ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|over\s*-?\s*speed|超速|torque|扭矩|\d\s*v\s*\/\s*\d+\s*hz/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
     // Label of an engine maker's sheet (nhóm A, Khoa 21/11/2026): "Thermodynamic Cycle | Diesel 4 stroke". NOT "Injection System" /
     // "Fuel System": they are COLUMNS of many tables with the maker's own codes ("EUI", "ECR", "m-FIP+e-gov."), and a new key there
     // stops the walk along the row (sdec, sr-genset, jichai lost cylinders, emission, speed). config-bot reads them from the sheet.
-    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$/i, null, /stroke|cool|vertical|冲程/i],
+    ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$|^thermodynamic\s*cycle$|^(?:engine\s*)?cycle$|^(?:no\.?\s*of|number\s*of)\s*(?:stroke|cycle)s?$|^(?:发动机|柴油机)(?:类型|型式)$|^冲程数$/i, null, /stroke|cool|vertical|冲程|\b[24]\s*-?\s*cycle|四冲|二冲/i],
+    // Injection system of the engine (buoc-4-d): ONLY the plain labels; "Injection System" / "Fuel System" are COLUMNS of many tables with
+    // the maker's own codes ("ECR", "EUI", "Control System"): the key is soft (SOFT_KEYS: an unfit cell does not stop the walk).
+    ["fuelsys", "engine", "Hệ thống phun", /^(?:(?:fuel|diesel)\s*)?(?:injection|fuel\s*injection)\s*(?:system|type|method|mode)?\s*[:：]?$|^fuel\s*system\s*[:：]?$|^type\s*of\s*(?:fuel\s*)?injection(?:\s*system)?$|^high\s*-?\s*pressure\s*fuel\s*injection$|^燃油(?:喷射)?(?:系统|方式)$|^燃油喷射(?:方式|系统)$|^喷油方式$|^供油方式$/i, null,
+      /^(?![\s\S]*(?:\bl\s*\/\s*h|\bkg\b|\d\s*%|\bkpa\b|consum|control\s*system|\bflow\b|\bhead\b))[\s\S]*(?:common\s*-?\s*rail|共轨|unit\s*(?:injector|pump)|electronic(?:ally)?\s*(?:controlled\s*)?unit|\beui\b|单体|直列泵|in\s*-?\s*line\s*(?:fuel\s*)?(?:injection\s*)?pump|直列式|rotary\s*pump|distributor|\bpt\s*(?:fuel|system|pump)|pt燃油泵|cummins\s*pt|direct\s*injection|indirect\s*injection|\bdirect\b|\bindirect\b|直喷|间接|mono\s*-?\s*block|单体泵|mechanical\s*(?:fuel\s*)?(?:injection|pump)|electronic\s*(?:fuel\s*)?injection|电控|机械式)/i],
     // ^ A cell that only names the aspiration ("Turbocharged": jet-power n125, an "Engine type" title over "No. of Cylinder |
     //   Aspirated") or only the cylinders ("6 cylinder in line", yihua n106) is no engine type (L1-B4 / B5, 24/11/2026).
     // Alternator labels of PR C (buoc-4-c, 24/11/2026). They stand before `excit` / `vreg` / `thd` / `phase` / `current`, which took
@@ -360,10 +370,16 @@
     // of them, or a kW / kVA figure, stays a power label.
     const volume = /capacity/i.test(L) && /oil|lub|coolant|cooling\s*water|water\s*(tank|capacity)|机油|润滑油/i.test(L) && !/heater|cooler|pump|heat|power|output|rating|功率|\bkw|kva/i.test(L);
     // "Battery capacity" (Ah) is the battery's, not a rating (buoc-4-h), as "Short circuit capacity" is the alternator's (PR C).
-    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路|batter(y|ies)|蓄电池|电瓶|^\s*operating\s*temp/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
+    if (!volume && /power|output|capacity|rating|功率/i.test(L) && !/short\s*-?\s*circuit|短路|batter(y|ies)|蓄电池|电瓶|^\s*operating\s*temp/i.test(L) && !/(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp|max(imum)?\s*power\s*\(\s*with\s*fan|(?<![a-z0-9-])(?:hp|bhp|ps|cv)(?![a-z0-9-])|马力|power\s*factor|功率因数|tank|fuel|consum|油耗|\d\s*%\s*(load|prime|prp|功率|负载|\(?\s*of)/i.test(L)) return null;
     for (const [key, , , re, not] of SPECS) if (re.test(L) && !(not && not.test(L))) return key;
-    return null;
+    return HP_LABEL.test(L) && !HP_NOT.test(L) ? "engPower" : null;
   }
+  // Engine power written in HP / BHP / PS / CV (buoc-4-d, 25/11/2026): "Gross hp", "ENGINE HP", "Output(hp)", "Power Output# (HP)", "BHP", "CV".
+  // Tried AFTER every pattern (the old engPower labels keep their key). The HP word is a word of its own and the label names NO kW
+  // (a label naming both, "Gross kW (hp)", "Max Power (kW/Hp)" (old key), "Hp/Kw", stays as before: Khoa 24/11/2026, one figure
+  // under "kW/Hp" is no HP), no tractor / per-cylinder / speed pair, and is no model name ("HP-K880").
+  const HP_LABEL = /(?<![a-z0-9-])(?:hp|bhp|ps|cv)(?![a-z0-9-])|马力/i;
+  const HP_NOT = /k\s*w|kva|tractor|recommend|per\s*cyl|cylinder|\/\s*(?:rpm|r\b)|(?:rpm|r\b)\s*\/|[-\d]\s*hp\b|hp\s*[-/]|\bps\b\s*[/-]|model|型号|series/i;
   // "mm*mm" (kanpor "| 缸径*行程 | mm*mm | 114×135 | …"; L1-B9, 24/11/2026): the unit of a bore × stroke column. Read as a value it
   // took the first model's place and every bore moved one model to the right (NTA855-GA got 114×135 for 140×152).
   const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|mm\s*[*×x]\s*mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
@@ -384,6 +400,12 @@
   }
   const specVal = (v) => { const s = String(v || "").trim(); return s && s.length <= 80 && !/^[-–—/]+$/.test(s) && !/[:：]$/.test(s) && !/^[(（][^)）]*[一-鿿]/.test(s) ? s : null; };
   // A value fits its kind when it has the expected shape and is not a model code (a code there means a shifted column).
+  // Keys added by buoc-4-d (25/11/2026). Their labels are columns of many tables whose cells are no value of the key ("Fuel System |
+  // Control System", "Starting voltage | V"): a cell that does not fit leaves the key out and the walk goes on, as before the key
+  // existed (a hard stop lost cylinders / emission / speed of sr-genset and jichai). engPower is soft when the label is an HP label only.
+  const SOFT_KEYS = new Set(["fuelsys", "elecv"]);
+  const OLD_ENGPOWER = /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i;
+  const softKey = (key, label) => SOFT_KEYS.has(key) || (key === "engPower" && !OLD_ENGPOWER.test(label));
   // A breaker's value may be its model ("S203-C80", westinpower), a battery's looks like a code ("60AH", "100AH/24V"; buoc-4-h). Without
   // them the walk along a row stopped at those columns and lost the figures after them (kaichen n5002 tank / weight / size).
   const specFits = (key, v) => SPEC[key].ok.test(v) && !(isCode(v) && !/^(asp|gov|emission|engType|excit|controller|cyl|breaker|battery)$/.test(key));
@@ -990,7 +1012,7 @@
         const cylValves = sk === "cyl" && /cylinders?\s*\/\s*valves/i.test(label);
         // Phases under "Alternator": the alternator's (`altPhase`) AND, as before this key, the set's `phase` (partKey).
         for (const k of sk === "altPhase" ? ["phase", "altPhase"] : [sk])
-          sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(k, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === k && (!MULTI.has(k) || x.value === val))) col.specs.push({ key: k, label, value: val }); } });
+          sv.forEach((v, j) => { const val = specVal(v); if (val && (specFits(k, val) || (cylValves && /^\d{1,2}\s*\/\s*\d{1,3}$/.test(val)))) { const col = (cols[j] = cols[j] || {}); (col.specs = col.specs || []); if (!col.specs.some((x) => x.key === k && (!MULTI.has(k) || x.value === val))) col.specs.push({ key: k, label, value: val, ...(k === "elecv" && c.slice(1).some((x) => /^v\s*dc$/i.test(x)) ? { unitCell: "VDC" } : {}) }); } });
         // "Engine type" is the engine model on some sites: read it as before too. So is "Alternator type" (buoc-4-h): endress "| Alternator
         // type | ECP32 2S4 C" is the alternator's code, and the line went on to the alternator's model before the key existed (victory
         // "Self-excited,2-pole,single phase" stays the record's `other` as before: no record, and `other` feeds config-bot's candidates).
@@ -1403,7 +1425,7 @@
         // The engine's (alternator's) title over another cell: a title spans two cells, the row does not line up.
         if ((at.ei >= 0 && engTitle(ttl) && i + shift !== at.ei) || (at.ai >= 0 && altTitle(ttl) && i + shift !== at.ai)) return null;
         if (!key || !val) continue;
-        if (!specFits(key, val) || (kW !== undefined && !likely(key, val, kW))) return null;
+        if (!specFits(key, val) || (kW !== undefined && !likely(key, val, kW))) { if (softKey(key, ttl)) continue; return null; }
         // Two engine power columns, one standby and one not ("额定功率/转速 | 备用功率/转速", dcec; nenjo "Engine prime
         // power | Engine standby power"): both, each with its title. Other keys: the first column.
         const sb = (l) => /standby|stand-by|\besp\b|备用/i.test(l);
@@ -1504,7 +1526,7 @@
   }
   function likely(key, v, kW) {
     const n = nums(v), x = n[0];
-    if (x == null) return /^(gov|asp|emission|engType|excit|controller|cooling|start|insul|ip|phase)$/.test(key);
+    if (x == null) return /^(gov|asp|emission|engType|excit|controller|cooling|start|insul|ip|phase|fuelsys)$/.test(key);
     switch (key) {
       case "cyl": return x >= 1 && x <= 20;
       // Over 100 L only when the SET's own kW makes it plausible (0.01-0.3 L per kW, up to 300 L): a 16-cylinder 200x210 engine
@@ -1572,7 +1594,7 @@
           // header names the engine's make and model apart ("Engine | Model", sr-genset: a kVA was read as the voltage).
           if (!key && d === 1 && c0 === 0 && cells.length > h.length && POWER_TITLE.test(x) && !/电流|current|amp|\(A\)/i.test(x)) { if (!onePair(cells[c], cells[c + 1])) { miss = true; if (!power && ++lost >= 2 && cut == null) cut = mine.length; } else { if (!skips++) keep = mine.length; c++; } }
           if (!val) continue;
-          if (!specFits(key, val) || !likely(key, val, kW)) break;
+          if (!specFits(key, val) || !likely(key, val, kW)) { if (softKey(key, x)) continue; break; }
           // Two columns of one kind (open and silent size, weight): the one further left.
           const same = mine.findIndex((m) => m.key === key);
           if (same >= 0) { if (c < mine[same].c) mine[same] = { key, label: x, value: val, c }; }

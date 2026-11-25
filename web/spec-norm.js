@@ -16,7 +16,7 @@
   "use strict";
 
   const conv = () => root.GenbidConversions;
-  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow", "altitude", "altPhase"];
+  const KEYS = ["fuel", "fuel75", "fuel50", "noise", "dims", "weight", "disp", "bore", "cyl", "compr", "speed", "voltage", "phase", "pf", "tank", "engPower", "emission", "poles", "wires", "bearing", "overspeed", "airflow", "elecv", "altitude", "altPhase"];
 
   // ---- text helpers ----
   // NFKC: chữ toàn khổ （）：, số La Mã Ⅱ → II, ³ → 3. Chỉ dùng cho bản làm việc, `raw` giữ nguyên văn.
@@ -537,6 +537,19 @@
     return r;
   }
 
+
+  // Voltage of the engine's electrical system (buoc-4-d): one figure, 12 / 24 ... V; "DC24V", "24 VDC", "24" under a label that names
+  // volts. The unit is read only when the cell, label or header writes it ("V" / "VDC" / "volt"); a bare figure is kept with missing "unit".
+  function elecv(spec, ctx, r) {
+    const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
+    const m = V.match(/^(?:v?dc\s*)?(\d{1,2}(?:\.\d)?)\s*(?:v\s*dc|vdc|volts?|v)?(?:\s*dc)?$/i);
+    if (!m) return miss(r, "value");
+    r.num = Number(m[1]);
+    r.unit = /\d\s*(?:v|volts?)\b|\bv\s*dc|\bvdc|\bdc\s*\d|volt/i.test(V) || /\(\s*v\s*\)|\bvdc\b|volt|\bv\b|伏/i.test(L + " " + H) ? "VDC" : null;
+    if (!r.unit) miss(r, "unit");
+    return r;
+  }
+
   function tank(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
     // "Fuel Tank running hours: 8/10/12H": a running time, not a capacity.
@@ -622,9 +635,12 @@
       if (!f) return miss(r, "value");
       if (f.amb) return miss(r, "number");
       if (f.list) { r.options = f.list; miss(r, "ambiguous"); } else if (f.range) r.range = f.range; else r.num = f.num;
-      const u = (s) => (/\bkwm?\b|\dkw|千瓦|\(kw\)|kw\b/i.test(s) ? "kW" : /\bhp\b|\dhp/i.test(s) ? "hp" : /\bps\b|马力/i.test(s) ? "PS" : null);
+      const u = (s) => (/\bkwm?\b|\dkw|千瓦|\(kw\)|kw\b/i.test(s) ? "kW" : /\bb?hp\b|\dhp/i.test(s) ? "hp" : /\bps\b|\bcv\b|\dcv|马力/i.test(s) ? "PS" : null);
       r.unit = u(V) || u(L) || u(H);
     }
+    // HP / PS written alone with two figures ("75/3000" under "Rated power (HP)"): which one is the power is not written, so none is read
+    // (buoc-4-d; the speed is not an HP figure, and no HP is taken for a kW).
+    if ((r.unit === "hp" || r.unit === "PS") && r.options && !r.cond.ratings && !/k\s*w/i.test(`${L} ${V}`)) { delete r.options; return miss(r, "ambiguous"); }
     if (r.unit === "hp" || r.unit === "PS") {
       const f = r.unit === "hp" ? "kw_from_hp" : "kw_from_ps", name = r.unit === "hp" ? "P_hp" : "P_PS";
       if (r.num != null && conv()) { const c = conv().compute({ formula: f, inputs: [{ name, value: r.num }] }); if (!c.error) { r.conv = { formula: f, from: { num: r.num, unit: r.unit } }; r.num = c.value; r.unit = "kW"; } }
@@ -696,7 +712,7 @@
     weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i, COMP.kg], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i, COMP.L], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i, COMP.L],
     speed: [/speed|转速/i, /rpm|r\/min/i, COMP.rpm], bore: [/bore|缸径/i, /mm/i, COMP.mm] };
 
-  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow, altitude, altPhase: phase };
+  const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission, poles: count, wires: count, bearing, overspeed, airflow, elecv, altitude, altPhase: phase };
 
   // One spec { key, label, value } with its table's context { title, header } → the normalized form, or null for a
   // key this layer does not normalize.
