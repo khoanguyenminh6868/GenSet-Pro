@@ -127,6 +127,9 @@
   // read as prime). PRIME above stays for "does the label name some rating" and for the HSMT side.
   const PRIME_RATE = /prime|\bprp\b|常用|主用/i;
   const STANDBY = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
+  // The standby words WITHOUT "Maximum power" (doc-hz-gtl, 25/11/2026): "Maximum Power (kw) | 24.5 | 24.2" under the engine's model row is the engine's (gtl-power n105).
+  const STANDBY_NAMED = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng/i;
+  const MAX_POWER = /max(imum)?\s*power/i;
   // Engine makes from outside China (Khoa, 2026-10-29: "Xuất xứ: Trung Quốc" in Gợi ý cấu hình leaves them out).
   // A foreign make built under licence in China (Dongfeng / Chongqing Cummins...) still counts as foreign.
   const FOREIGN_ENGINE = new Set(["Cummins", "Perkins", "Baudouin", "Deutz", "Volvo Penta", "MTU", "Mitsubishi", "Doosan", "Hyundai",
@@ -723,7 +726,7 @@
     let part = null, splitHead = false;
     // GFE datasheets head the sheet with "| Engine | Alternator", then "| Cummins | Stamford | GFE2200CSC" (makes and
     // the genset model) and "| QSK50-G17 | S7L1D-G41" (models): stack counts the lines read after that heading.
-    let stack = 0;
+    let stack = 0, engBlock = false;
     // The cells of the last line of fuel units ("| Rating | gr/kWh | L/hr"): the unit of each column of the fuel lines below.
     let fuelUnits = null;
     // Models running across line up at the right: a row with a second label cell ("| Engine | Engine Model | LPG210 |
@@ -782,6 +785,11 @@
       }
       if (stack === 2 && c.length === 2 && isCode(c[0]) && isCode(c[1])) { put(0, "engine", c[0]); put(0, "alternator", c[1]); stack = 0; continue; }
       stack = 0;
+      // The engine's block of a sheet that opens it with a line "| Diesel Engine | Model | 404D-22 | 404D-24G3" (the heading is the first cell of a line
+      // with its label and values: "Diesel Engine | Model | <code> …", gtl-power n105; "| ENGINE | NOISE | 12V DC RECEPTACLE" of bison opens nothing): up to the next line that opens another part (alternator, control system, dimension...).
+      const raw = cellsOf(l);
+      if (raw.length >= 4 && /^(diesel\s+)?engine$/i.test(raw[0].trim()) && /^model$/i.test(raw[1].trim()) && isCode(raw[2])) engBlock = true;
+      else if (/^(alternator|generator|genset|control|controller|auxiliary|battery|power outlet|dimensions?|weight|safety)\b/i.test(raw[0].trim())) engBlock = false;
       // A two-column PDF sets a part heading in front of the other column's line ("| Engine-SDEC | Power factor | 0.8",
       // longkai): the heading starts the part, the rest is read as a line. Without it the engine's "Model" below was
       // read under "Alternator" (rà soát 18/11/2026: 136 engines read as alternators).
@@ -889,6 +897,9 @@
       // "Starting power: 1,4 kW" is the starter motor's, a heater's or a charger's power is its own: not the genset's.
       else if (OUT_LINE(L)) {
         const kind = PRIME_RATE.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
+        // "Maximum Power (kw) | 24.5 | 24.2" inside the engine's block ("| Diesel Engine | Model | 404D-22 | 404D-24G3" opens it, gtl-power n105) is the ENGINE's power:
+        // the label has no "engine" in it and the part heading is the first cell of a line, not a heading line of its own (so `part` stays empty).
+        if (kind === "standby" && MAX_POWER.test(L) && !STANDBY_NAMED.test(L) && engBlock) { note("công suất tối đa ghi dưới dòng động cơ, không là công suất tổ máy", l); continue; }
         if (kind === "rated" && listedOut.has(L.trim())) { note("dòng công suất không ghi mức lặp lại với số khác (danh sách máy khác)", l); continue; }
         // An output in kW only, one figure, under the engine's heading recognised from a heading split in two cells ("常用功率 Base
         // Output Power (kW) | 240" under "| 发动机 | 参", shanhua; L1-B8) is the engine's, not the set's. Only after such a heading:
@@ -1511,7 +1522,7 @@
       const headerText = (t.header || []).join(" ");
       const title = String(t.title || "");
       const titleHead = title.split(/\s[|–-]\s|\|/)[0];
-      const tFreq = freqIn(headerText + " " + title);
+      const tFreq = freqIn(headerText + " " + title + " " + captionOf(s, t0));
       const hEng = brandIn(headerText, ENGINE_BRANDS), hAlt = brandIn(headerText, ALT_BRANDS);
       const tEng = brandIn(titleHead, ENGINE_BRANDS), tAlt = brandIn(titleHead, ALT_BRANDS);
       const base = { supplierId: s.id, n: t.n, table: ti, title };
@@ -1893,6 +1904,38 @@
       add: ["| Model | Rated power | Frenquency | Engine model | Power/Speed"] },
   ];
   const headerLinesOf = (s, t) => HEADER_LINES.find((x) => x.supplierId === s.id && x.n === +t.n && String(t.header?.[0] ?? "").trim() === x.header && (cellsOf(t.rows?.[0] || "")[0] || "") === x.first) || null;
+  // Table captions that name the frequency (doc-hz-gtl, điều phối 25/11/2026). camda / mecca write "…50Hz 3 phases+4 wires…" /
+  // "Powered by … 60HZ 220-480 V …" as a line of its own right above the table; the crawl kept it out of the saved table (header /
+  // title), so those tables had no frequency. [supplier, n, the saved FIRST row word for word, the caption line word for word from
+  // suppliers/sources/<id>/<n>.md]. An explicit list, NOT a rule: only a caption that heads ITS table (in the source, from the caption
+  // down to the table's first row every line is a table line) is listed; a page-level "50HZ | 60HZ" tab label, "Both 50Hz and 60Hz",
+  // a catalog page without Hz in its name, or the order of two tables under two tabs says nothing about one table, so those stay null
+  // (test doc-hz-gtl checks each line against its source and that exactly one table of cn/ matches). The caption is read like the title.
+  const TABLE_CAPTIONS = [
+    ["camda-generator", 138, "| KDGC22S | 27 | 22 | 25 | 20 | 4B3.9-G2 | PI144E | 2350×1133×1516", "| | Camda diesel generator sets powered by Cummins, silent type. 50Hz 3 phases+4 wires, 400/230V, pf 0.8."],
+    ["camda-generator", 155, "| KDGC660S | 800 | 660 | 725 | 580 | 4006-23TAG2A | LSA49.1M6 | 6058×2438×2591 | 10370", "| camda containerized Diesel Generator Set s powered by Perkins 50Hz 3 phases+4 wires, 400/230V, pf 0.8."],
+    ["mecca-power", 101, "| MC22C | 22 | 17.6 | 20 | 16 | 4B3.9-G11 | CN | 5.7 | 4L | 3.9 | M", "| Powered by DCEC CUMMINS Series 50HZ 400/230 V 22-550KVA"],
+    ["mecca-power", 101, "| MC28C | 28 | 22 | 25 | 20 | 4B3.9-G11 | CN | 7.1 | 4L | 3.9 | M", "| Powered by DCEC CUMMINS 60HZ 220-480 V 33-550KVA"],
+    ["mecca-power", 101, "| MC66C | 66 | 53 | 60 | 48 | QSB3.9-G2 | CN | 18 | 4L | 3.9 | ECU", "| Powered by DCEC CUMMINS Series 50HZ 400/230 V 22-550KVA"],
+    ["mecca-power", 101, "| MC425C | 425 | 340 | 388 | 310 | QSZ13-G6 | CN | 88.7 | 6L | 13.0 | ECU", "| Powered by DCEC CUMMINS 60HZ 220-480 V 33-550KVA"],
+    ["mecca-power", 102, "| MC28C | 28 | 22 | 25 | 20 | 4B3.9-G1 | CN | 7.1 | 4L | 3.9 | M | 1950*735*1420 | 765", "| Powered by DCEC CUMMINS Series 50HZ 400/230 V 22-550KVA"],
+    ["mecca-power", 102, "| MC33C | 33 | 26 | 30 | 24 | 4B3.9-G2 | CN | 8.6 | 4L | 3.9 | E | 1950*735*1420 | 765", "| Powered by DCEC CUMMINS 60HZ 220-480 V 33-550KVA"],
+    ["mecca-power", 108, "| MC275C | 275 | 220 | 250 | 200 | NT855-GA | CN | 53.4 | 6L | 14 | E | 2950*1100*1750 | 2715", "| Powered by CCEC CUMMINS Series 50HZ 400/230 V 275-1650KVA"],
+    ["mecca-power", 108, "| MC275C | 275 | 220 | N/A | N/A | NT855-GA | CN | 59.4 | 6L | 14.0 | E | 2950*1100*1750 | 2715", "| Powered by CCEC CUMMINS 60HZ 220-480 V 275-1733KVA"],
+    ["mecca-power", 129, "| MC69D | 69 | 55 | 63 | 50 | SP344CB | Korea | 13.8 | 4L | 3.4 | ECU | China 3 | 2300*1000*1400 | 850", "| Powered by Doosan 50HZ 400/230 V 60-1000KVA"],
+    ["mecca-power", 129, "| MC80D | 80 | 64 | 73 | 58 | SP344CB | Korea | 16.6 | 4L | 3.4 | ECU | China 3 | 2300*1000*1400 | 850", "| Powered by Doosan 60HZ 220-480V 80-1125KVA"],
+    ["mecca-power", 151, "| MC55SC | 55 | 44 | 50 | 40 | SC4H95D2 | CN | 15 | 4L | 4.3 | E", "| Powered by SDEC Series 50HZ 400/230 V 55-1100KVA"],
+    ["mecca-power", 151, "| MC61SC | 61 | 48 | 55 | 44 | 4HT4.3-G21 | CN | 14.5 | 4L | 4.3 | E", "| Powered by SDEC Series （ Dual Frequency Engine） 50HZ 400/230 V 60-650KVA"],
+    ["mecca-power", 151, "| MC69SC | 69 | 55 | 63 | 50 | 4HT4.3-G21 | CN | 14.5 | 4L | 4.3 | E", "| Powered by SDEC Series （ Dual Frequency Engine） 60HZ 220-480V 60-900KVA"],
+    ["mecca-power", 180, "| MC1000M | 1000 | 800 | 913 | 730 | 16V2000G25 | 16/V | 31.84 | 198 | 102 | 200 | 5280x1730x2100 | 9500", "| 50HZ 1000-3600KVA |"],
+    ["mecca-power", 181, "| MC688MS | 688 | 550 | 625 | 500 | S6R2-PTA-C | CN | 139 | 6L | 30.0 | E", "| Powered by SME 50HZ 220-440 V 688-2500KVA"],
+    ["mecca-power", 181, "| MC825MT | 825 | 660 | 750 | 600 | S6R2-PTAA | JP | 170 | 6L | 30.0 | E", "| Powered by Mitsubishi 50HZ 220-440 V 825-2750KVA"],
+    ["mecca-power", 187, "| MC41MC | 41 | 33 | 37.5 | 30 | 4BTA3.9-GM47 | 47 | 12.0 | 4L | 3.9 | 1750*750*1130 | 850", "| Powered by CUMMINS Marine Series 50HZ 400/230 V 41-1100KVA"],
+    ["mecca-power", 188, "| MC41M | 41 | 33 | 37.5 | 30 | 4BTA3.9-GM47 | 47 | 12.0 | 4L | 3.9 | 1750*750*1130 | 850", "| CUMMINS Marine Series 50HZ 400/230 V 41-1100KVA"],
+    ["mecca-power", 190, "| CCFJ-20 | 28 | 22 | 25 | 20 | 4BTA3.9-GM47 | 12 | 4L | 3.9 | E | 1670*850*1270 | 800", "| DCEC Cummins Marine Diesel Generator Set 50HZ 430/230V 20-132KW"],
+    ["mecca-power", 190, "| CCFJ-150 | 206 | 165 | 188 | 150 | NT855-D(M) | 47 | 6L | 14 | E | 2760*1000*1790 | 2700", "| CCEC Cummins Marine Diesel Generator Set 50HZ 400/230V 150-1500KW"],
+  ];
+  const captionOf = (s, t) => { const r0 = String(t.rows?.[0] ?? "").trim(); const x = TABLE_CAPTIONS.find((e) => e[0] === s.id && e[1] === +t.n && e[2] === r0); return x ? x[3] : ""; };
   // Loose alternator and engine tables (bang-roi-29, chủ dự án 21/11/2026: "đọc cả 29 thành bản ghi đầu phát / động cơ"):
   // an alternator maker's range table, or an engine table, on a page of its own (dau-vao-bang-roi/29-bang.md, lớp A / E).
   // An explicit list checked by hand row by row, NOT a rule: supplier + n + the FIRST header line word for word (a re-crawl
@@ -4340,7 +4383,7 @@
 
   // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
   const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
-  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, HEADER_LINES, TABLE_CAPTIONS, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS, columnSheets };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
