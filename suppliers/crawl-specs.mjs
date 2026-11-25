@@ -101,7 +101,12 @@ export const isMachineRow = (l) => {
 export const headerEnd = (lines) => { const i = lines.findIndex((l, j) => j >= 1 && isMachineRow(l)); return i < 0 ? lines.length : i; };
 const cellsIn = (l) => l.split("|").map((x) => x.trim()).filter(Boolean);
 const widthOf = (l) => l.split("|").length, nonBlank = (l) => l.replace(/[|\s]/g, "");
-const isData = (l) => { const c = cellsIn(l); return c.filter(isNumCell).length >= Math.max(2, c.length * 0.4); };
+// A lone dash ("–", "-", "—") at the END of a line is an empty last column, not a text cell: "| MJPS-2000 S16R-PTAA2 | S16R-PTAA2 |
+// 2000 | 2200 | 305 L/jam | –" (conductorjasa n101-103, the "Dimensi" column of a model with no size) has two numbers in six
+// cells, and is a data line only without it. A dash in the middle of a line stays a cell ("| 60HZ Engine By Yuxing Series |
+// 24 – 371 kW | 0 | — | — | — | View details →", eastern-lion: a category list, not machines).
+const trimDash = (c) => { const k = [...c]; while (k.length && /^[-–—]$/.test(k[k.length - 1])) k.pop(); return k; };
+const isData = (l) => { const c = trimDash(cellsIn(l)); return c.filter(isNumCell).length >= Math.max(2, c.length * 0.4); };
 const plainNum = (x) => /^\d+(\.\d+)?$/.test(x);
 // One table from the lines of one table: header = the leading lines that are mostly not numbers.
 // byMachine (only for a part of a block being split): a part whose rows are all wide machine rows with few number cells
@@ -207,6 +212,15 @@ const rowLike = (l) => cellsIn(l).length > 1 && (isData(l) || isMachineRow(l));
 const wordCell = (c) => /[a-z]{3}|[一-鿿]{2}/i.test(c);
 const codeRow = (l) => { const c = cellsIn(l)[0] || ""; return rowLike(l) && /[a-z]/i.test(c) && /\d/.test(c) && !/^\d[\d.,]*\s*(hz|rpm|v|kva|kw)\b/i.test(c); };
 // Table blocks: 2+ consecutive lines of 3+ cells; header = the leading lines that are mostly not numbers.
+function titleAbove(lines, start, block) {
+  const prev = lines[start - 1];
+  if (!prev || prev.startsWith("|") || !prev.includes("|") || !codeRow(block[0])) return null;
+  const n = cellsIn(block[0]).length, c = cellsIn(prev);
+  if (c.length < n || n < 3) return null;
+  const tail = c.slice(c.length - n);
+  if (tail.some((x) => plainNum(x) || !wordCell(x)) || !POWER.test(tail.join(" "))) return null;
+  return "| " + tail.join(" | ");
+}
 export function tablesOf(text) {
   const lines = text.split(/\r?\n/), out = [];
   // titles = the title lines of the last block of this run of "|" lines that had any; tw = the width of the rows under
@@ -223,10 +237,10 @@ export function tablesOf(text) {
       i++; continue;
     }
     let j = i; while (j < lines.length && lines[j].startsWith("|") && widthOf(lines[j]) >= 3) j++;
-    let block = lines.slice(i, j); i = j;
+    const bs = i; let block = lines.slice(i, j); i = j;
     if (sect.includes(null)) sect = [];
     const t = tableOf(block);
-    let joined = null;
+    let joined = null, above = null;
     // The last pieces of a cut row at the head of a block that is no table ("| 630 | DP222LP | OP…" and then full
     // rows, longkai-power n123): at most two lines, narrower than the rows and with a bare number. Left out, so the
     // full rows after them are read like any block that starts with a row.
@@ -245,6 +259,12 @@ export function tablesOf(text) {
     // header (the comment above). Kept apart and put last, so that what the rest of this function does with the
     // tables found so far (the one-model sheet below, only when there is none) is what it did before.
     // The joined lines can themselves hold sub-tables (taihai-taizhou n107), split like any block.
+    // A block of rows with no titles of its own whose titles stand in the line right above it, on the same line as a
+    // label that has no "|" cell structure ("Seri 400 3 model | | Model | Mesin | Prime kVA | Standby kVA", conductorjasa
+    // n116: the page glued the section label and the titles). Taken only when the last N cells of that line, N = the cells
+    // of the first row, are all words (no bare number), say an output (kVA / kW ...), and the line sits right above the block.
+    // Anything else is read as before. A table of its own, put last like the cut tables.
+    else if (!t && r0 === 0 && !own.length && (above = titleAbove(lines, bs, block))) cut.push(...subTables([above, ...block]));
     else if (titles && r0 >= 0 && !own.length && codeRow(block[r0]) && (!tw || widthOf(block[r0]) === tw)) {
       // The section line stands over the whole block: each sub-table keeps it ("| Weichai Series--Baudouin Engine", longkai-power n126).
       const over = sect.length ? sect : last;

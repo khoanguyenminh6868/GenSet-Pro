@@ -2356,7 +2356,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // A 100% figure whose heading names no load (the catalog files "Fuel consumption (L/h)" under 100%) is not left out either (the old
         // 300 points off stay): only a load written in the label that is the HSMT's (100% / full load) counts. 75% and 50% are in the label by construction.
         const loadUnstated = fk === "fuel" && fl && (NF ? nNoLoad : !LOAD_100.test(String(fl.label)));
-        if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h${fromSheet ? " (tờ hãng động cơ)" : ""} > ${hints[hk]} L/h HSMT cho phép`); }
+        if (fv != null && !unsure && fv > hints[hk]) {
+          fuelOver = true;
+          // Khoa 25/11/2026: label with no load stated → no points off (flags + a note to confirm); a stated load keeps -300 and "ruled".
+          if (loadUnstated) { fuelNoLoad = true; why.push(`tiêu hao${at} ${fv} L/h${fromSheet ? " (tờ hãng động cơ)" : ""} > ${hints[hk]} L/h HSMT cho phép, nguồn không ghi mức tải: cần xác nhận`); }
+          else { score -= 300; ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h${fromSheet ? " (tờ hãng động cơ)" : ""} > ${hints[hk]} L/h HSMT cho phép`); }
+        }
       }
       // An alternator the supplier labels with its own brand (OWN_BRAND_ALTS) is found in the catalog only from that supplier's
       // own tables: "found" says nothing of it, so neither the +40 nor its figures' bonus; named by the HSMT still counts.
