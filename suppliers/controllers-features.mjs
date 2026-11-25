@@ -170,7 +170,7 @@ export function presenceOf(row) {
 }
 const keysIn = (cell) => mentionsOf(cell).flatMap((m) => m.keys);
 export function sheetCtx(t, models = []) {
-  const rows = t.rows || [], restrict = new Map(), block = new Set();
+  const rows = t.rows || [], restrict = new Map(), block = new Set(), spans = [], optStars = new Set();
   const own = (k) => models.filter((m) => names(k, m));
   for (const r of rows) {
     const m = NFKC(r).match(/^(?:NOTE\s*\d*\s*:\s*)?(.+?)\s+has\s+(RS-?485|RS-?232|CAN|ETHERNET|USB|GSM)\s+port\s*,\s*(.+?)\s+without\.?$/i);
@@ -189,6 +189,21 @@ export function sheetCtx(t, models = []) {
     const have = models.filter((x) => x.endsWith(tok));
     if (!have.length || have.length === models.length) continue;
     for (const fid of PORT_FIDS[tok]) restrict.set(fid, new Set([...(restrict.get(fid) || []), ...have]));
+    // The sentence the clause closes ("♦ Equipped with CANBUS port … port (controller with CAN Bus port only);", soát điều phối
+    // 25/11/2026 M): the variants it names take these fields from that sentence only, read as one line (src.row … rowEnd), not
+    // from scraps of pin tables ("ECU stop;", "| CAN(H) | 1").
+    const c = rows.indexOf(r);
+    let s = c;
+    while (s > Math.max(0, c - 6) && !/^(?:\|\s*)?[♦•]/.test(NFKC(rows[s]))) s--;
+    if (/^(?:\|\s*)?[♦•]/.test(NFKC(rows[s]))) spans.push({ from: s, to: c, owners: have, fids: new Set(PORT_FIDS[tok]) });
+  }
+  // (f) Footnote stars: "| Earth fault** | 50G" + "| *Dual operation | **Extension module | EM-BIO8-EFCP" / "| required | …":
+  //     a star level whose footnote says module / option / required is not standard on the controller (soát điều phối A).
+  for (let i = 0; i < rows.length; i++) {
+    const s = NFKC(rows[i]);
+    if (!/^(?:\|\s*)?\*/.test(s)) continue;
+    const text = `${s} ${NFKC(rows[i + 1] || "")}`;
+    for (const m of text.matchAll(/(?<=^|[|\s])(\*{1,3})(?!\*)\s*([^*]*)/g)) if (/\boption(?:al|s)?\b|\bextension\b|\bmodule\b/i.test(m[2])) optStars.add(m[1].length);
   }
   // (e) Cột "<model> Unique Features" (Woodward easYgen-1000: "| easYgen-1400 / … | easYgen-1800 | easYgen-1800 Unique Features"):
   //     các mục "✓ …" ngay dưới (kể cả dòng nối không có "|" / bullet) là của model đó MỘT mình. Mỗi mục đọc thành một câu nối
@@ -260,7 +275,10 @@ export function sheetCtx(t, models = []) {
     }
     return undefined;
   };
-  return { restrict, block, presence, columns, columnOf, colCell };
+  // Row i's first cell ends with a footnote star whose footnote says module / option → true.
+  const starOpt = (i) => { const m = i == null ? null : CAT.cellsOf(NFKC(rows[i]))[0]?.match(/[^*](\*{1,3})$/); return !!m && optStars.has(m[1].length); };
+  const spanOf = (i, end) => spans.find((x) => x.from === i && x.to === end) || null;
+  return { restrict, block, presence, columns, columnOf, colCell, spans, spanOf, starOpt, optStars };
 }
 
 // ---------- Trường chữ / bảng: đọc theo nhãn ô của chính dòng (PR G phần 2, Khoa 25/11/2026) ----------
@@ -277,9 +295,11 @@ const tidy = (s) => String(s ?? "").replace(/\s+/g, " ").trim().replace(/^(?:[�
 const DANGLING = /\b(?:to|from|and|or|of|with|in|at|the|for|by)$/i;
 const balanced = (s) => (s.match(/\(/g) || []).length === (s.match(/\)/g) || []).length;
 const COND = /\b(?:for|when|if|only|except|unless|option(?:al)?|with\s+option)\b|\bSW\s*key\b|\bdepend/i;
-// "8 V to 35 V DC", "DC8.0V to 35.0V", "7...32 Vdc", "8-36 V DC"; or a nominal voltage ("12 V DC or 24 V DC", "12/24 V DC").
-const V_RANGE = /\d+(?:[.,]\s?\d+)?\s*V?\s*(?:DC)?\s*(?:-|–|to|~|÷|…|\.{2,3})\s*(?:DC\s*)?\d+(?:[.,]\s?\d+)?\s*V|\b\d{1,2}\s*(?:V\s*DC\s*(?:or|\/)\s*\d{1,2}\s*)?V\s*DC\b/i;
-const HZ_RANGE = /\d+(?:\.\d+)?\s*(?:Hz)?\s*(?:-|–|to|~|\/)\s*\d+(?:\.\d+)?\s*Hz/i;
+// "8 V to 35 V DC", "DC8.0V to 35.0V", "7...32 Vdc", "8-36 V DC". A nominal voltage alone ("Nominal voltage: 12 V DC or 24 V DC")
+// is not the range: DEIF writes the range on the next line ("Operating range: 6.5 to 36 V DC"), read with it (soát điều phối F).
+const V_RANGE = /\d+(?:[.,]\s?\d+)?\s*V?\s*(?:DC)?\s*(?:-|–|to|~|÷|…|\.{2,3})\s*(?:DC\s*)?\d+(?:[.,]\s?\d+)?\s*V/i;
+// A RANGE only: "50Hz/60Hz" of "Alternator Frequency" is the rated frequency, not a measuring range (soát điều phối L).
+const HZ_RANGE = /\d+(?:\.\d+)?\s*(?:Hz)?\s*(?:-|–|to|~)\s*\d+(?:\.\d+)?\s*Hz/i;
 const DIMS3 = /\d+(?:\.\d+)?\s*(?:mm)?\s*(?:\(\w\))?\s*[x×X*]\s*\d+(?:\.\d+)?\s*(?:mm)?\s*(?:\(\w\))?\s*[x×X*]\s*\d+(?:\.\d+)?\s*(?:mm)?\s*(?:\(\w\))?/;
 const QTY = /^(voltage|current|frequency|power|ac[\s-]?measurement|measurement)\s+accuracy$/i;
 // Section line above row i (no "|", no digit, short): DSE "Voltage Measurement", "Digital Inputs"; Datakom "Accuracy:".
@@ -327,7 +347,9 @@ export const TEXT_FEATURES = [
       // Another label inside the value ("| Voltage Accuracy | Humidity: max. 93%"): a cell of another column.
       if (/[A-Za-z]{3,}\s*:/.test(v.replace(/^[UI]\s*:/, ""))) return null;
       // The value names the measured quantity itself (ComAp "U: 1 % from value ±100 mV", "1 % of 277 V", "2 % of 1 A / 5 A").
-      const self = /^[UI]\s*:\s*\d/.test(v) || /\bof\s+\d+(?:\.\d+)?\s*(?:V|A)\b|CT error/i.test(v);
+      // "U: 1 % from value ±100 mV" / "I: …" / "R: …" are the analogue INPUT modes (soát điều phối B): not an AC measurement.
+      if (/^[UIR]\s*:/.test(v)) return null;
+      const self = /\bof\s+\d+(?:\.\d+)?\s*(?:V|A)\b|CT error/i.test(v);
       if (self && /^accuracy$/i.test(label)) return /^(?:voltage|current) measurement$/i.test(section?.text || "") ? `${section.text}: ${v}` : v;
       // Accuracy of an output (DEIF "Speed governor output" → "| Voltage accuracy | ±1% of setting value"): not a measurement.
       if (/governor|\bAVR\b|regulator|output|PWM|analog(?:ue)? input/i.test(section?.text || "")) return null;
@@ -336,7 +358,7 @@ export const TEXT_FEATURES = [
       if (/^measurement accuracy$/i.test(label) && sec) return `${sec}: ${v}`;
       if (QTY.test(label)) return `${label}: ${v}`;
       if (sec && (/^±?\s?\d+(?:\.\d+)?\s?%/.test(v))) return `${sec}: ${v}`;
-      if (/^[UI]\s*:\s*\d/.test(v) || /\bof\s+(?:\d+(?:\.\d+)?\s*(?:V|A)\b|nominal)|CT error/i.test(v)) return v;
+      if (/\bof\s+(?:\d+(?:\.\d+)?\s*(?:V|A)\b|nominal)|CT error/i.test(v)) return v;
       return null;
     } },
 ];
@@ -382,23 +404,46 @@ function ownValue(v, model) {
   if (m && ms.every((x) => x.end <= m[1].length) && ms.some((x) => x.keys.some((k) => names(k, model)))) return tidy(m[2]);
   return null;
 }
+// A label | value row whose value goes on in the next lines without "|" ("| Current Range | 0 A to 1 A" + "0 A to 5 A", DEIF
+// "Nominal voltage: 12 V DC or 24 V DC" + "Operating range: 6.5 to 36 V DC"): the last row of the value (soát điều phối C, F).
+// The value is read from all its rows (src.row … rowEnd), never from the first row alone.
+export function contEnd(rows, i) {
+  if (CAT.cellsOf(NFKC(rows[i] || "")).length < 2) return i;
+  let j = i;
+  while (j + 1 < rows.length && j - i < 3) {
+    const r = NFKC(rows[j + 1]);
+    if (r.includes("|") || !/^(?:[±+\-–]?\s?\d|(?:operating\s+)?range\s*:)/i.test(r)) break;
+    j++;
+  }
+  return j;
+}
 // One row of `model`'s sheet → [{ fid, value, kw }] for the text / table fields. rows + i give the neighbours (section line above,
 // qualifier line below, column header for "| Digital Input Port | 7 | 7 | 7 | 7").
-export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line = null } = {}) {
+export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line = null, rowEnd = null } = {}) {
   const l = String(line ?? rows[i]).replace(/\s+/g, " ").trim(), out = [];
   const why = skipOf(l);
   if (why && ["muc-luc", "nhat-ky-sua", "bo-cuc"].includes(why)) return out;
   if (ctx?.presence(i, model) === false) return out;
+  if (ctx?.starOpt(i)) return out;
   const ms = mentionsOf(l);
   if (mustName && !ms.some((m) => m.keys.some((k) => names(k, model)))) return out;
-  const next = line == null && i + 1 < rows.length ? NFKC(rows[i + 1]) : "";
-  const qualified = /^(?:for|only|when|if|except|to|and|or|of|from)\b/i.test(next) && !next.includes("|");
-  const section = line == null ? sectionOf(rows, i) : null;
+  const last = rowEnd ?? i, next = (line == null || rowEnd != null) && last + 1 < rows.length ? NFKC(rows[last + 1]) : "";
+  // The value goes on in the next row ("15 V to 415 V Phase" + "to | Neutral"), or is qualified there ("for Low Temp. version").
+  const qualified = /^(?:for|only|when|if|except|to|and|or|of|from)\b/i.test(next) || /^\|\s*(?:to|and|or|of|from)\s*(?:\||$)/i.test(next);
+  const section = line == null || rowEnd != null ? sectionOf(rows, i) : null;
+  // A value that goes on in the next rows is read only from the joined rows (controllerFeatures, rowEnd).
+  const cont = line == null && contEnd(rows, i) > i;
   const add = (fid, value, kw, pos) => {
     if (deniedOf(fid, l) || !ownerOK(l, model, pos, ms)) return;
     if (!out.some((x) => x.fid === fid && JSON.stringify(x.value) === JSON.stringify(value))) out.push({ fid, value, kw });
   };
-  const cellOK = (s) => !skipOf(s) && balanced(s) && !COND.test(s) && !DANGLING.test(s) && s.length <= 120;
+  const cellOK = (s) => !skipOf(s) && balanced(s) && !COND.test(s) && !DANGLING.test(s) && s.length <= (rowEnd != null ? 200 : 120);
+  // Rows above whose first cell is already a value of the field without label ("| 40-70 Hz (accuracy 0.1 Hz) | Speed governor"
+  // above "| Frequency range | 45-55 Hz …"): one label over several values, this row is a sub-range (soát điều phối H).
+  const valueAbove = (f) => [rows[i - 1], rows[i - 2]].some((r) => {
+    const c0 = r == null || !NFKC(r).startsWith("|") ? "" : tidy(CAT.cellsOf(NFKC(r))[0] || "");
+    return !!c0 && /\d/.test(c0) && !f.label.test(c0) && !!f.val(c0, { label: "", section });
+  });
   const cellList = CAT.cellsOf(l);
   for (const p of pairsOf(l)) {
     const label = tidy(p.label).replace(/\s*[:：]$/, "");
@@ -409,7 +454,8 @@ export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line
       const v = ownValue(p.value, model);
       // The label may carry an unclosed note from the layout ("| Operating temperature (incl. display | -40 to +70 °C"): the
       // value is still this field's, so only the value must be a whole, unconditional cell.
-      if (!v || !cellOK(v) || qualified || skipOf(label) || COND.test(label)) continue;
+      if (cont || !v || !cellOK(v) || qualified || skipOf(label) || COND.test(label)) continue;
+      if (f.id === "measure_frequency" && line == null && valueAbove(f)) continue;
       let got = f.val(v, { label, section });
       // Metric part only: the source's imperial conversion after " / " ("245 mm x 184 mm x 51 mm / 9.6” x …") or in brackets
       // at the end ("-40 to +70 °C (-40 to +158 °F)") is dropped, so one temperature / size is one value however it is written.
@@ -444,6 +490,19 @@ export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line
     const b = s.match(new RegExp(`${LANG_LIST.source}(?:\\s+(?:or|and)\\s+other\\s+languages)?`, "i"));
     if (b && /language|interface|optional|selectable|can be selected|available/i.test(s) && !/\b(?:or|and)\s*$/i.test(s.slice(0, b.index + b[0].length + 5))) add("languages", tidy(b[0]), b[0], l.indexOf(b[0]));
   });
+  // An ANSI table with application / variant columns (DEIF "| Genset* | Mains" / "BTB", "| AGC | 212/222/232/242", "All"): the ●
+  // marks of those columns are lost in specTables, so which application a row is for is unknown → none (soát điều phối K).
+  const appCols = (k) => {
+    let a = k - 1;
+    while (a >= Math.max(0, k - 120) && !PROT_TABLE.test(NFKC(rows[a]))) a--;
+    if (a < Math.max(0, k - 120)) return false;
+    for (let j = a; j < k; j++) {
+      const r = NFKC(rows[j]), cs = CAT.cellsOf(r);
+      if (cs.slice(1).some((x) => ANSI_CODE.test(NFKC(x)))) break;
+      if (/\bGenset\*?\b|\bBTB\b|\bAll\b|\bAGC\s*\|\s*\d{3}/.test(r) || /^\|\s*Mains\b/.test(r)) return true;
+    }
+    return false;
+  };
   // Protections: ANSI table rows "| Reverse power | 32R", "| Over-current | 4 | 50TD | <200 ms" under a protections / ANSI title.
   const cells = CAT.cellsOf(l);
   if (l.trim().startsWith("|") && cells.length >= 2 && line == null && rows.slice(Math.max(0, i - 120), i).some((r) => PROT_TABLE.test(NFKC(r)) && !NFKC(r).includes("....."))) {
@@ -452,7 +511,9 @@ export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line
       const code = NFKC(cells[c]).match(ANSI_CODE)[1].replace(/\s+/g, "");
       const name = tidy(cells.slice(0, c).filter((x) => !/^(?:x?\d{1,2}|\d+\/(?:breaker|group))$/i.test(NFKC(x))).join(" ")).replace(/\*+$/, "").replace(/\s+ANSI$/, "");
       // Lower-case start / dangling end = a name cut by the layout ("| voltage | 47", "| Voltage asymmetry and | 47").
-      if (ANSI_PROT.test(code) && /^[A-Z]/.test(name) && PROT_WORD.test(name) && !NOT_PROT.test(name) && !DANGLING.test(name) && !skipOf(name) && balanced(name)) add("protections", `${name} (ANSI ${code})`, `${name} | ${code}`, 0);
+      // A name cut before its noun ("| Voltage controlled | 51C" … "| overcurrent | …" two rows below, soát điều phối J).
+      const cutName = /\b(?:controlled|restrained|dependent|inverse|directional|time)$/i.test(name);
+      if (!cutName && !appCols(i) && ANSI_PROT.test(code) && /^[A-Z]/.test(name) && PROT_WORD.test(name) && !NOT_PROT.test(name) && !DANGLING.test(name) && !skipOf(name) && balanced(name)) add("protections", `${name} (ANSI ${code})`, `${name} | ${code}`, 0);
     }
   }
   const tg = l.match(TAGGED);
@@ -465,7 +526,7 @@ export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line
 // A manual shared by variants that differ in what they have (Mecc Alte "GC315 (GC315Plus, GC315Link)", "GC315-GC400": GC315
 // does not synchronise, only Plus has RS232, only Link has LTE / GPRS; soát PR G): a line gives a value only to a model it names.
 export const sharedManual = (title) => /\bGC315\s*\(GC315Plus,\s*GC315Link\)|\bGC315-GC400\b/i.test(String(title || ""));
-export function featuresOfLine(line, model, { mustName = false, ctx = null, row = null } = {}) {
+export function featuresOfLine(line, model, { mustName = false, ctx = null, row = null, span = false } = {}) {
   const l = NFKC(line), skip = skipOf(l), values = [], foreign = [], hits = [];
   for (const f of BOOL_FEATURES) {
     const re = new RegExp(f.re.source, f.re.flags.includes("g") ? f.re.flags : `${f.re.flags}g`);
@@ -482,6 +543,10 @@ export function featuresOfLine(line, model, { mustName = false, ctx = null, row 
     if (deniedOf(h.fid, l)) { foreign.push({ fid: h.fid, kw: h.kw, denied: true }); continue; }
     if ((mustName && !ms.some((m) => m.keys.some((k) => names(k, model)))) || !ownerOK(l, model, h.pos, ms)) { foreign.push({ fid: h.fid, kw: h.kw }); continue; }
     if (ctx && (ctx.block.has(h.fid) || (ctx.restrict.has(h.fid) && !ctx.restrict.get(h.fid).has(model)) || ctx.presence(row, model) === false)) { foreign.push({ fid: h.fid, kw: h.kw, variant: true }); continue; }
+    // A row whose name carries a footnote star meaning "module / option required" (ComAp "| Earth fault** | 50G").
+    if (ctx && !span && ctx.starOpt(row)) { foreign.push({ fid: h.fid, kw: h.kw, option: true }); continue; }
+    // Fields a "(controller with X port only)" sentence gives its variants: only from that sentence.
+    if (ctx && !span && ctx.spans.some((x) => x.fids.has(h.fid) && x.owners.includes(model))) { foreign.push({ fid: h.fid, kw: h.kw, variant: true }); continue; }
     if (!values.some((x) => x.fid === h.fid && x.value === h.value)) values.push({ fid: h.fid, value: h.value, kw: h.kw });
   }
   return { values, skipped: null, foreign };
@@ -493,6 +558,19 @@ export function valuesAt(t, ctx, model, row, rowEnd = null) {
   const col = ctx.columnOf(row);
   if (col && !(row === col.from && rowEnd === col.to && model === col.owner)) return { values: [], skipped: "cot-bien-the", foreign: [], line: t.rows[row] };
   const line = rowEnd == null ? t.rows[row] : t.rows.slice(row, rowEnd + 1).join(" "), mustName = sharedManual(t.title);
+  if (rowEnd != null && !col) {
+    const sp = ctx.spanOf(row, rowEnd);
+    if (sp) {
+      // The "(controller with CAN Bus port only)" sentence of its own variants: the clause names the port; "Not only … but also"
+      // is the sentence's wording, not a negation / restriction.
+      if (!sp.owners.includes(model)) return { values: [], skipped: "cau-bien-the", foreign: [], line };
+      const text = line.replace(/\(controller with ([^)]*?) port only\)/i, "($1 port)").replace(/\bNot only\b/i, "").replace(/\bbut also\b/i, "");
+      const r = featuresOfLine(text, model, { mustName, ctx, row, span: true });
+      return { ...r, values: r.values.filter((v) => sp.fids.has(v.fid)), line };
+    }
+    // A value that goes on in the next rows (contEnd): text / table fields of the joined rows only.
+    return { values: rowFeatures(t.rows, row, model, { mustName, ctx, line: t.rows.slice(row, rowEnd + 1).join(" / "), rowEnd }), skipped: null, foreign: [], line };
+  }
   const r = featuresOfLine(line, model, { mustName, ctx, row });
   return { ...r, values: [...r.values, ...rowFeatures(t.rows, row, model, { mustName, ctx, line: rowEnd == null ? null : line })], line };
 }
@@ -597,6 +675,17 @@ export function controllerFeatures(suppliers = []) {
       };
       for (const { model, f } of facts) if (rowIdx.has(f.line)) take(model, rowIdx.get(f.line));
       for (const c of ctx.columns) if (t.rows.slice(c.from, c.to + 1).every((r) => has.has(`${c.owner}\u0000${r}`))) take(c.owner, c.from, c.to);
+      const all = (m, a, b) => t.rows.slice(a, b + 1).every((r) => has.has(`${m}\u0000${r}`));
+      for (const sp of ctx.spans) for (const m of sp.owners) if (all(m, sp.from, sp.to)) take(m, sp.from, sp.to);
+      // Values that go on in the next rows: read once per model from all the rows (src.row … rowEnd).
+      const seen = new Set();
+      for (const { model, f } of facts) {
+        const i = rowIdx.get(f.line);
+        if (i == null || seen.has(`${model}\u0000${i}`) || ctx.columnOf(i)) continue;
+        seen.add(`${model}\u0000${i}`);
+        const j = contEnd(t.rows, i);
+        if (j > i && all(model, i, j) && !ctx.spanOf(i, j)) take(model, i, j);
+      }
     });
   }
   // Số tổ máy hoà khác nhau cho một model (DEIF AGC-4: 32 "island power management", 127 "CANshare", từ câu điều kiện khác nhau):

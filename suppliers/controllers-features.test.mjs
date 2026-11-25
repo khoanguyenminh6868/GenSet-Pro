@@ -237,3 +237,69 @@ test("tờ của sản phẩm khác dưới tiêu đề BĐK (Part Number), HGM9
   for (const f of ["can", "ecu_support"]) for (const m of ["HGM9310", "HGM9320"]) assert.equal(has(m, f), false);
   assert.equal(has("AGC4", "max_sets"), false);
 });
+
+// ---------- Soát độc lập của điều phối cho PR G phần 2 (25/11/2026) ----------
+const vals = (model, fid) => (FEAT.get(model) || []).filter((x) => x.fid === fid);
+test("A dấu sao chú thích 'Extension module … required': không là có sẵn (ComAp Earth fault**)", () => {
+  for (const m of ["INTELILITE4AMF25", "INTELILITE4AMF9", "INTELILITE4MRS16", "INTELIMAINSNTC"]) assert.ok(!vals(m, "protections").some((x) => /Earth fault/.test(x.value)), m);
+  // Hàng không dấu sao của cùng bảng vẫn có.
+  assert.ok(vals("INTELILITE4AMF25", "protections").some((x) => x.value === "Reverse power (ANSI 32R)"));
+  const t = { title: "X", rows: ["| Earth fault** | 50G", "| Reverse power | 32R", "| *Dual operation | **Extension module | EM-BIO8-EFCP", "| required | *** extension module | IGL-RA15"] };
+  const ctx = sheetCtx(t, ["INTELILITE4AMF25"]);
+  assert.equal(ctx.starOpt(0), true);
+  assert.equal(ctx.starOpt(1), false);
+  // "*MINT" là chế độ, không phải tuỳ chọn.
+  assert.deepEqual([...sheetCtx({ title: "X", rows: ["| *MINT | ** extension module IGL-RA15"] }, ["X"]).optStars], [2]);
+});
+test("B 'U: 1 % from value' là độ chính xác ngõ vào analog, không phải đo AC", () => {
+  for (const m of ["INTELIGEN4", "INTELILITE4AMF25", "INTELILITE4MRS16"]) assert.ok(!vals(m, "accuracy").some((x) => /^U:/.test(x.value)), m);
+  assert.deepEqual(rf(["| Accuracy | U: 1 % from value ±100 mV"], 0, "INTELIGEN4"), []);
+  // Giá trị tự nêu đại lượng AC vẫn có.
+  assert.deepEqual(rf(["| Accuracy | 1 % of 277 V"], 0, "INTELIGENNT"), ["accuracy=1 % of 277 V"]);
+});
+test("C giá trị nhiều dòng: đọc đủ (rowEnd), không lấy riêng dòng đầu", () => {
+  for (const m of ["DSE7310MKII", "DSE7320MKII", "DSE7410MKII", "DSE7420MKII"]) {
+    const l = vals(m, "measure_current");
+    assert.deepEqual(l.map((x) => x.value), ["0 A to 1 A / 0 A to 5 A"], m);
+    assert.equal(l[0].src.rowEnd, l[0].src.row + 1);
+  }
+  // Dòng đầu một mình không cho giá trị.
+  assert.deepEqual(rf(["| Current Range | 0 A to 1 A", "0 A to 5 A"], 0, "DSE7320MKII"), []);
+  // "15 V to 415 V Phase" + "to | Neutral": cụt, bỏ (I).
+  for (const m of ["DSE8610MKII", "DSE8660MKII", "DSE8680"]) assert.deepEqual(vals(m, "measure_voltage"), [], m);
+  // DEIF: danh định + dải làm việc ở dòng sau, ghi cả hai (F); danh định một mình không đọc.
+  assert.deepEqual(vals("AGC150", "dc_supply").map((x) => x.value), ["Nominal voltage: 12 V DC or 24 V DC / Operating range: 6.5 to 36 V DC"]);
+  assert.deepEqual(rf(["| Power supply range | Nominal voltage: 12 V DC or 24 V DC"], 0, "AGC150"), []);
+});
+test("E Datakom ECU FAIL chỉ của bản CANBUS; D 14 languages của bản có màn hình màu", () => {
+  for (const m of ["DKG307", "DKG309"]) {
+    for (const f of ["alarms", "protections"]) assert.ok(!vals(m, f).some((x) => x.value === "ECU FAIL"), `${m} ${f}`);
+    assert.ok(vals(m, "alarms").some((x) => x.value === "LOW BATTERY VOLTAGE"), m);
+  }
+  assert.deepEqual(vals("EASYGEN3100", "languages"), []);
+});
+test("K bảng ANSI có cột ứng dụng / biến thể (dấu ● mất) → không gán; bảng một cột vẫn đọc", () => {
+  // Bảng "Protections overview" có cột Genset / Mains / BTB (AGC 150), "AGC 212/222/…" (AGC 200), "All" (AGC-4): không gán. Còn bảng
+  // "Engine protections" của mục bộ điều khiển máy phát (không cột ứng dụng) thì đọc.
+  for (const m of ["AGC150", "AGC200", "AGC4"]) assert.ok(vals(m, "protections").every((x) => x.value === "Overspeed (ANSI 12)"), m);
+  assert.ok(!vals("AGC150", "protections").some((x) => /Reverse power|Directional/.test(x.value)));
+  assert.ok(vals("SGC420", "protections").some((x) => x.value === "Reverse power (ANSI 32R)"));
+  const rows = ["| 1.5 | Protections overview", "| Protections | Alarms", "| ANSI | Operate", "| Genset* | Mains", "BTB", "| Reverse power | 3 | 32R | <200 ms"];
+  assert.deepEqual(rf(rows, 5, "AGC150"), []);
+  // J: tên bảo vệ bị ngắt trước danh từ.
+  assert.deepEqual(rf(["Functions and protections as defined by ANSI", "| Voltage controlled | 51C"], 1, "INTELIGEN1000"), []);
+});
+test("L 'Alternator Frequency 50/60Hz' là tần số định mức, không phải dải đo; H dải con không đọc", () => {
+  for (const m of ["EASYGEN1400", "EASYGEN1800", "HGM6110N", "HGM9510", "HGM7210CAN"]) assert.ok(!vals(m, "measure_frequency").some((x) => /50\s*Hz\s*\/|50\/60/.test(x.value)), m);
+  assert.deepEqual(rf(["| AC Alternator Frequency | 50Hz/60Hz"], 0, "HGM6110N"), []);
+  // Dải thật vẫn đọc.
+  assert.deepEqual(rf(["| Frequency Range | 3.5 Hz to 75 Hz"], 0, "DSE7320MKII"), ["measure_frequency=3.5 Hz to 75 Hz"]);
+  assert.deepEqual(rf(["| 40-70 Hz (accuracy 0.1 Hz) | Speed governor", "output", "| Frequency range | 45-55 Hz (accuracy <0.01 Hz)"], 2, "INTELIGENNTC"), []);
+});
+test("M HGM7210CAN / 7220CAN: can / ecu_support chỉ từ câu '(controller with CAN Bus port only)'", () => {
+  for (const m of ["HGM7210CAN", "HGM7220CAN"]) for (const f of ["can", "ecu_support"]) {
+    const l = vals(m, f);
+    assert.equal(l.length, 1, `${m} ${f}`);
+    assert.ok(/controller with CAN Bus port only/.test(l[0].raw) && l[0].src.rowEnd > l[0].src.row, `${m} ${f}`);
+  }
+});
