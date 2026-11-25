@@ -160,7 +160,7 @@
     [/m3\s*\/\s*h/i, "m³/h"],
     [/kg\s*\/\s*h/i, "kg/h"],
     [/gal\w*\.?\s*\/\s*h|\bgph\b/i, "gal/h"],
-    [/(?<![a-z])l\s*\/\s*h|(?<![a-z])lph\b|lit(re|er)s?\s*\/\s*h|升\s*\/\s*小?时/i, "L/h"],
+    [/(?<![a-z])l\s*\/\s*(?:h|jam\b)|(?<![a-z])lph\b|lit(re|er)s?\s*\/\s*h|升\s*\/\s*小?时/i, "L/h"],
   ];
   const unitBy = (list, ...texts) => { for (const t of texts) { if (!t) continue; for (const [re, u] of list) if (re.test(nf(t))) return u; } return null; };
 

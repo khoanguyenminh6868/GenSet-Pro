@@ -197,7 +197,7 @@
   const NO_SIZE_NUM_FIRST = new RegExp(`^(?![\\s\\S]*${SIZE3})\\d`), NO_SIZE_ANY_NUM = new RegExp(`^(?![\\s\\S]*${SIZE3})[\\s\\S]*\\d`);
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
-  const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan|run(ning)?\s*(time|hours?)/i;
+  const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|l\s*\/\s*jam|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan|run(ning)?\s*(time|hours?)/i;
   // `fuel` is the consumption at 100% load: a label naming another load (25%, 70%, 110%, 1/4, "25/50/75/100%") is not it.
   // 75% and 50% are the keys above.
   const OTHER_LOAD = /(?<![\d.])(?!(?:100|75|50)(?![\d.])\s*%)\d{1,3}(?:\.\d+)?\s*%|(?<![\d.])1\s*\/\s*4(?!\d)|¼|25\s*\/\s*50/;
@@ -206,9 +206,9 @@
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, /run(ning)?\s*(time|hours?)/i, N],
     // Part loads first: "75%Prime", "75% load(Prime power)", "Fuel consumption75% (of the Prime Power)", "Fuel @75% (L/h)",
     // "75 % Load" (a column title), "75%负载油耗", "3/4 load" (2026-11-09).
-    ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%/i, NOT_FUEL, FUEL_OK],
-    ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%/i, NOT_FUEL, FUEL_OK],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL_100, FUEL_OK],
+    ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%|\bbbm\b[^|]{0,20}?75\s*%/i, NOT_FUEL, FUEL_OK],
+    ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%|\bbbm\b[^|]{0,20}?50\s*%/i, NOT_FUEL, FUEL_OK],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)|\bbbm\b[^|]{0,20}?100\s*%/i, NOT_FUEL_100, FUEL_OK],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, /engine\s*(size|dimen)|motor\s*(size|dimen)|(发动机|柴油机)\s*尺寸/i, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
@@ -278,9 +278,9 @@
   const UNIT_CELL = /^\(?(kva|kw|kw\/kva|kva\/kw|v|hz|db\(?a?\)?|l\/h|l\/hr|mm|mm\s*[*×x]\s*mm|kg|kgs|l|rpm|r\/min|g\/kw\.?h|g\/kwh|%|a|cm|m)\)?$/i;
   // A cell that is itself a label ("(瞬态电压偏差):", "Exciter Type") is not a value.
   // A cell that is only a fuel unit ("L/h", "L/hr", "L/H", "lph", "g/kWh", "gr/kWh", "g/kW.h", "升/小时"), read as written.
-  const FUEL_UNIT_CELL = /^[(（]?\s*(gr?\s*\/\s*\(?\s*kw\s*[.·-]?\s*h\)?|l\s*\/\s*h(r|our)?|lph|lit(re|er)s?\s*\/\s*h(our)?|kg\s*\/\s*h|升\s*\/\s*小?时)\s*[)）]?$/i;
-  const LH_CELL = /^[(（]?\s*(l\s*\/\s*h(r|our)?|lph|lit(re|er)s?\s*\/\s*h(our)?|升\s*\/\s*小?时)\s*[)）]?$/i;
-  const LH_TEXT = /l\s*\/\s*h|l\/hr|lph|litres?\/h|lít/i, FUEL_UNIT_TEXT = /l\s*\/\s*h|lph|litres?\/h|lít|g\s*\/\s*\(?\s*kw|gr\s*\/\s*kw|kg\s*\/\s*h|升|克/i;
+  const FUEL_UNIT_CELL = /^[(（]?\s*(gr?\s*\/\s*\(?\s*kw\s*[.·-]?\s*h\)?|l\s*\/\s*h(r|our)?|l\s*\/\s*jam|lph|lit(re|er)s?\s*\/\s*h(our)?|kg\s*\/\s*h|升\s*\/\s*小?时)\s*[)）]?$/i;
+  const LH_CELL = /^[(（]?\s*(l\s*\/\s*h(r|our)?|l\s*\/\s*jam|lph|lit(re|er)s?\s*\/\s*h(our)?|升\s*\/\s*小?时)\s*[)）]?$/i;
+  const LH_TEXT = /l\s*\/\s*h|l\s*\/\s*jam|l\/hr|lph|litres?\/h|lít/i, FUEL_UNIT_TEXT = /l\s*\/\s*h|l\s*\/\s*jam|lph|litres?\/h|lít|g\s*\/\s*\(?\s*kw|gr\s*\/\s*kw|kg\s*\/\s*h|升|克/i;
   // "342.9 / 457.1 L/h (@75% / @100%)", "58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)": one figure per load named in the
   // brackets, in order; the brackets hold only loads (and a rating word). → { nums, loads, unit } or null.
   function multiLoad(t) {
@@ -319,7 +319,7 @@
     if (/[\u3000-\u9fff\uff00-\uffef]/.test(s) || /^\d+(\.\d+)?\s*k(w|va)\s*\/\s*\d/i.test(s)) return false;
     if (/\d\s*[*×xX]\s*\d+\s*[*×xX]\s*\d/.test(s)) return false;
     if (/^\d+(\.\d+)?\s*[*×xX]\s*\d+/.test(s)) return false;
-    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|hp|ps|nm|°c|h|hrs?)$/i.test(s) || (/\d\s?cc$/i.test(s) && !DOOSAN_DP.test(s))) return false;
+    if (/^[\d.,~\-–/\s]+(hz|rpm|r\/min|v|vac|kv|l|ltr|kg|kgs|mm|kw|kva|kwe|db|dba|a|%|cc|ml|g\/kwh|g\/kw\.h|l\/h|l\/jam|hp|ps|nm|°c|h|hrs?)$/i.test(s) || (/\d\s?cc$/i.test(s) && !DOOSAN_DP.test(s))) return false;
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
@@ -1351,7 +1351,7 @@
   // The title of the engine (alternator) model's column: "Engine model", "柴油机型号", "Alternator" (not its power or brand).
   // Not a figure of the part ("Engine oil system capacity", "Engine type" over cylinders and governor, "Alternator efficiency").
   const PART_FIGURE = /speed|cylinder|displace|bore|stroke|governor|consum|oil|cool|start|type|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|frequency|emission/i;
-  const engTitle = (x) => ENGINE_LBL.test(x) && /model|型号|engine\s*$|发动机$|柴油机$/i.test(x) && !specKey(x) && !MOVING.test(x) && !PART_FIGURE.test(x);
+  const engTitle = (x) => ENGINE_LBL.test(x) && /model|型号|engine\s*$|发动机$|柴油机$|^\s*mesin\s*$/i.test(x) && !specKey(x) && !MOVING.test(x) && !PART_FIGURE.test(x);
   const altTitle = (x) => ALT_LBL.test(x) && !specKey(x) && !MOVING.test(x) && !PART_FIGURE.test(x);
   // A title over two cells shifts every column after it without a sign in the row, so each figure laid over a cell this
   // way must also be likely for its kind and for the genset's power (prime, else standby, kW): a value that is not
@@ -1665,6 +1665,15 @@
       // in a header row with as many cells as the row: -1 when no such row, or two. Used only when the genset's code is the
       // row's FIRST code, in a column after the second (zhengchi n102-120: "功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号" put the
       // genset code at 3, so it was read as the engine and the real engine model (柴油机型号) was lost; catalog-b3).
+      // The one column titled "Mesin" (Indonesian: the engine), "Model" at the left, in a header row with as many cells as the row:
+      // -1 when no such row, or two. For a first cell that is a NAME with the engine code and the power in it ("PJPS-13 WP 403A-15G1",
+      // "MJPS-2000 S16R-PTAA2 2000 kVA prime", conductorjasa n101-103 / n116; conductorjasa-26): no code, so the code of the Mesin
+      // column was taken as the genset's and the row gave no engine.
+      const mesinCol = (n) => {
+        const js = new Set();
+        for (const h of (t.header || []).map(cellsOf)) if (h.length === n && /^model$/i.test(h[0].trim())) h.forEach((x, i) => /^s*mesins*$/i.test(x) && js.add(i));
+        return js.size === 1 ? [...js][0] : -1;
+      };
       const GEN_TITLE = /^(整机|机组|发电机组|成套机组)\s*(型号|编号|代号)$|^(genset|generator\s*set)\s*model$/i;
       const gensetCol = (n) => {
         const js = new Set();
@@ -1768,6 +1777,11 @@
             }
           }
         }
+        // The Mesin column holds a code and the first cell, the model name, is no code: the code is the engine, the name the genset's.
+        // (a name that is a code too, "PJPS-1800-WP 4016TAG1A", already gave gi 0 / ei: only the figures are read over the whole row)
+        const mj = engineTable ? -1 : mesinCol(cells.length);
+        let mesinRow = false;
+        if (mj > 0 && ai < 0 && isCode(cells[mj]) && ((gi === mj && !isCode(cells[0])) || (gi === 0 && ei === mj))) { gi = 0; ei = mj; mesinRow = true; }
         const orEng = OR_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
         const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
@@ -1785,7 +1799,7 @@
         if (twin.length && !twinEng) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         for (const x of twin) if (x.i === ai) { note(t, ti, ri, "đầu phát ghép đôi, không dựng bản ghi", x.text); ai = -1; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
-        const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
+        const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, mesinRow ? { gi, ei: -1, ai: -1 } : { gi, ei, ai }, title);
         // A table whose header lines were put back (HEADER_LINES) is read by its titles only: when they do not fit a row, its
         // figures are not paired by their ratio and size either (that would name prime / standby against the titles: mamo
         // "TF33 | 30 | 37.5 | 26 | 33" under PRIME | PRIME | STANDBY | STANDBY).

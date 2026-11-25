@@ -251,7 +251,11 @@ export function tablesOf(text) {
     if (t) {
       const pre = titles && r0 === 0 ? [...titles, ...(sect.length ? sect : last), ...block] : null;
       const parts = pre && splitPoints(pre).starts.length > 1 ? subTables(pre) : [];
-      if (parts.length > 1) { joined = pre; out.push(...parts); } else out.push(...subTables(block));
+      if (parts.length > 1) { joined = pre; out.push(...parts); }
+      // Rows with no titles of their own that stand right under a glued label + titles line ("BBM 75% (prime): 305–315 L/jam
+      // 3 model | | Model | Mesin | Prime kVA | Standby kVA | BBM 75% | Dimensi open", conductorjasa n101-115; same rule as the
+      // block below that is no table): the titles are the last N cells of that line. Only a block that had no titles.
+      else { const ab = !t.header?.length && r0 === 0 && !own.length ? titleAbove(lines, bs, block) : null; out.push(...subTables(ab ? [ab, ...block] : block)); }
     }
     // A block that is no table by itself, starts with the row of a model (codeRow: "Length (mm) | 2240 | 2700" under
     // the "label | value" lines of a one-model page is not one, tecgen-fujian) and stands under the titles of the
