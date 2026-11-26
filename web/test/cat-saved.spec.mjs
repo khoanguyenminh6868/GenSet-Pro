@@ -57,7 +57,7 @@ const holdWorker = (page) => page.addInitScript(() => {
   window.__held = [];
   window.__stopped = 0;
   Worker.prototype.terminate = function () { window.__stopped++; stop.call(this); };
-  Worker.prototype.postMessage = function (...a) { if (window.__hold) window.__held.push(() => post.apply(this, a)); else post.apply(this, a); };
+  Worker.prototype.postMessage = function (...a) { window.__worker = this; if (window.__hold) window.__held.push(() => post.apply(this, a)); else post.apply(this, a); };
 });
 const release = (page) => page.evaluate(() => { window.__hold = false; window.__held.splice(0).forEach((f) => f()); });
 const held = (page) => expect.poll(() => page.evaluate(() => window.__held.length)).toBe(1);
@@ -100,6 +100,29 @@ test("hồ sơ đổi rồi trở lại giữa lúc dựng: bản dựng dở b�
   await expect.poll(() => page.evaluate(() => window.__stopped)).toBe(stopped + 1);
   await release(page);
   expect(await savedKey(page)).toBe(old);
+});
+
+test("worker của bản dựng đã dừng báo lỗi muộn: trang không tự dựng", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await holdWorker(page);
+  await page.goto("/#dong-co");
+  await ready(page);
+  await page.evaluate(() => { window.__hold = true; });
+  await touchSupplier(page);
+  await held(page);
+  await page.evaluate(async () => {
+    window.__old = window.__worker;
+    const db = await window.claude.use("db"), id = Object.keys(window.__gb.colls.supplier)[0];
+    await db.doc("supplier/" + id).update({ testMark: 2 }); // bản dựng đang chạy bị dừng, bản mới bắt đầu
+  });
+  await expect.poll(() => page.evaluate(() => window.__held.length)).toBe(2);
+  await page.evaluate(() => window.__old.onerror({ preventDefault() {} }));
+  await page.waitForTimeout(1000);
+  expect((await builds(page)).page).toBe(0);
+  await release(page);
+  await ready(page);
+  expect((await builds(page)).page).toBe(0);
 });
 
 test("bản lưu bị xoá rồi trang khác tạo lại giữa lúc dựng: worker cũ không ghi vào bản mới", async ({ page }) => {

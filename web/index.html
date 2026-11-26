@@ -3989,8 +3989,9 @@ function catWork() {
     let w = null, timer = 0;
     const end = () => { if (catJob === job) catJob = null; done(); };
     const quit = () => { w?.terminate(); clearTimeout(timer); };
-    // No worker, or it failed: built here, the page held until done (its spinner is painted first).
-    const here = () => { quit(); timer = setTimeout(() => { catalog(); end(); }, 50); };
+    // No worker, or it failed: built here, the page held until done (its spinner is painted first). Not for a stopped
+    // job: a worker terminated while loading can still report an error afterwards.
+    const here = () => { if (catJob !== job) return; quit(); timer = setTimeout(() => { catalog(); end(); }, 50); };
     job.stop = () => { quit(); end(); };
     if (!window.GenbidCatalog || !window.Worker) return here();
     const suppliers = supAll();
