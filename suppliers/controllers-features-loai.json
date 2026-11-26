@@ -1976,7 +1976,7 @@
    },
    {
     "line": "| The genset has to supply the load while a | Island power management, with up to 32 gensets.",
-    "why": "DEIF AGC-4 ghi 32 / 127 / 254 theo điều kiện khác nhau: không chọn hộ (soát điều phối D)"
+    "why": "DEIF AGC-4 ghi 32 / 127 / 254 theo điều kiện khác nhau: bộ đọc chung không đọc; ba số kèm điều kiện lấy từ MAX_SETS_COND (Khoa 25/11/2026)"
    },
    {
     "line": "| system you can imagine. It enables you to command up to 248 gensets, with complete genset management, | GC-3400XT and easYgen",

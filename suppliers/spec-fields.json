@@ -147,7 +147,7 @@
       { "id": "load_sharing", "vi": "Chia tải", "type": "bool", "req": "ctl_parallel" },
       { "id": "load_demand", "vi": "Chạy theo nhu cầu tải", "type": "bool", "req": "ctl_parallel" },
       { "id": "dead_bus", "vi": "Đóng thanh cái chết", "type": "bool", "req": "ctl_parallel" },
-      { "id": "max_sets", "vi": "Số tổ máy hoà tối đa", "type": "number", "req": "ctl_parallel" },
+      { "id": "max_sets", "vi": "Số tổ máy hoà tối đa", "type": "number", "cond": ["application"], "req": "ctl_parallel", "note": "Nguồn ghi nhiều số theo ứng dụng (DEIF AGC-4: 32 / 127 / 254, Khoa 25/11/2026) thì ghi mọi số, mỗi số kèm cond.application nguyên văn." },
       { "id": "governor_avr_control", "vi": "Điều khiển governor / AVR", "type": "text", "req": "ctl_parallel" },
       { "id": "languages", "vi": "Ngôn ngữ hiển thị", "type": "text", "req": "ctl_display_lang" },
       { "id": "dc_supply", "vi": "Nguồn DC", "type": "text", "unit": "V" },

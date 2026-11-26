@@ -100,7 +100,7 @@
     "controller.dead_bus": { "kind": "bool", "basis": "như auto_start_stop" },
     "controller.ul": { "kind": "bool", "basis": "như auto_start_stop" },
     "controller.event_log": { "kind": "number", "range": [5, 100000], "int": true, "basis": "số sự kiện nhật ký đọc trong câu (\"Event log (15)\", \"up to 1000 events\"); cận trên rộng", "review": true },
-    "controller.max_sets": { "kind": "number", "range": [2, 256], "int": true, "basis": "số tổ máy hoà \"up to N generators\"; nguồn thật 16-256 (DEIF AGC 150 \"up to 256 generators and/or bus tie breakers\")", "review": true },
+    "controller.max_sets": { "kind": "number", "range": [2, 256], "int": true, "basis": "số tổ máy hoà \"up to N generators\"; nguồn thật 16-256 (DEIF AGC 150 \"up to 256 generators and/or bus tie breakers\"; AGC-4 32 / 127 / 254 kèm cond.application, Khoa 25/11/2026)", "review": true },
     "controller.front_ip": { "kind": "text", "must": "^IP[2-6][0-9]$", "basis": "mã IP mặt trước IPxx (IEC 60529), dòng nêu front / fascia / gasket" },
     "controller.protections": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên bảo vệ như nguồn ghi (kèm mã ANSI khi bảng hãng ghi); PR G phần 2" },
     "controller.alarms": { "kind": "text", "must": "[A-Za-z]{3}", "basis": "tên cảnh báo như nguồn ghi, chỉ dòng nguồn gắn nhãn warning (Khoa 25/11/2026 thêm trường)" },

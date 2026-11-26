@@ -169,7 +169,7 @@ export function presenceOf(row) {
   return marks.every((c) => MARK.test(c)) && marks.some((c) => MARK_SYM.test(c)) ? marks : null;
 }
 const keysIn = (cell) => mentionsOf(cell).flatMap((m) => m.keys);
-export function sheetCtx(t, models = []) {
+export function sheetCtx(t, models = [], { supplierId = null } = {}) {
   const rows = t.rows || [], restrict = new Map(), block = new Set(), spans = [], optStars = new Set();
   const own = (k) => models.filter((m) => names(k, m));
   for (const r of rows) {
@@ -278,7 +278,9 @@ export function sheetCtx(t, models = []) {
   // Row i's first cell ends with a footnote star whose footnote says module / option → true.
   const starOpt = (i) => { const m = i == null ? null : CAT.cellsOf(NFKC(rows[i]))[0]?.match(/[^*](\*{1,3})$/); return !!m && optStars.has(m[1].length); };
   const spanOf = (i, end) => spans.find((x) => x.from === i && x.to === end) || null;
-  return { restrict, block, presence, columns, columnOf, colCell, spans, spanOf, starOpt, optStars };
+  // (g) Rows of an ANSI table with application columns whose source line is marked in every column (`ansiFullLines`).
+  const ansiFull = supplierId && t.n != null ? ansiFullLines(supplierId, t.n) : new Set();
+  return { restrict, block, presence, columns, columnOf, colCell, spans, spanOf, starOpt, optStars, ansiFull };
 }
 
 // ---------- Trường chữ / bảng: đọc theo nhãn ô của chính dòng (PR G phần 2, Khoa 25/11/2026) ----------
@@ -373,6 +375,51 @@ const ANSI_PROT = /^(?:12|14|21|24|27|32|37|40|46|47|49|50|51|59|64|67|78|81|87)
 // The table must say its codes are ANSI (ComAp "Support of functions and protections as defined by ANSI", DEIF "| ANSI | Operate"):
 // a number column of another table (SmartGen "| 6 | Warning | (0-60)°C | 40", Woodward "| 50 | 50 | 99") is not a code.
 const PROT_TABLE = /\bANSI\b/;
+// ANSI tables with application / variant columns (DEIF "| Genset* | Mains" / "BTB", "| AGC | 212/222/232/242" …, "| All" /
+// "controllers"; buoc-4-g3, điều phối 25/11/2026): specTables drop the mark line under each row, the source file
+// `sources/<id>/<n>.md` keeps it ("| ● | ● | ●", "| Χ | Χ | Χ | Χ", "●", "| - | ●" with "-" = no operate time). A row counts
+// only when EVERY column of the table is marked with a plain mark (no "***" note: AGC-4 "***Not in BTB controller"), the
+// column set is not one application ("| Operate time* | Genset" of AGC-4 = genset controllers only) and every place of the
+// same line in the file says so. Returns the NFKC lines that count.
+const SOURCES = path.join(path.dirname(fileURLToPath(import.meta.url)), "sources");
+const ANSI_MARK = /^(?:[●ΧXx]|-|NA)$/;
+const markLine = (s) => {
+  const cs = NFKC(s).split("|").map((x) => x.trim()).filter(Boolean);
+  return cs.length && cs.every((x) => ANSI_MARK.test(x)) ? cs.filter((x) => /^[●ΧXx]$/.test(x)).length : null;
+};
+const appColsOf = (lines, k) => {
+  let a = k - 1;
+  while (a >= Math.max(0, k - 120) && !PROT_TABLE.test(NFKC(lines[a]))) a--;
+  if (a < Math.max(0, k - 120)) return null;
+  const cols = [];
+  for (let j = a; j < k; j++) {
+    const r = NFKC(lines[j]), cs = CAT.cellsOf(r);
+    if (cs.slice(1).some((x) => ANSI_CODE.test(NFKC(x)))) break;
+    if (/^\|\s*AGC\s*\|\s*\d{3}/.test(r)) cols.push(r);
+    for (const w of r.match(/\bGenset\*?(?=\s*\||$)|\bMains\b(?=\s*\||$)|\bBTB\b|\bAll\b(?=\s*\||$)/g) || []) cols.push(w.replace(/\*$/, ""));
+  }
+  return cols;
+};
+const fullCache = new Map();
+export function ansiFullLines(supplierId, n) {
+  const k = `${supplierId}|${n}`;
+  if (fullCache.has(k)) return fullCache.get(k);
+  const f = path.join(SOURCES, String(supplierId || ""), `${n}.md`), ok = new Map();
+  if (supplierId && fs.existsSync(f)) {
+    const lines = fs.readFileSync(f, "utf8").split(/\r?\n/);
+    lines.forEach((l, i) => {
+      if (!NFKC(l).startsWith("|") || markLine(l) != null) return;
+      const cols = appColsOf(lines, i);
+      if (!cols?.length) return;
+      const marks = markLine(lines[i + 1] ?? ""), all = !(cols.length === 1 && cols[0] !== "All");
+      const key = NFKC(l);
+      ok.set(key, (ok.get(key) ?? true) && all && marks === cols.length);
+    });
+  }
+  const out = new Set([...ok].filter(([, v]) => v).map(([l]) => l));
+  fullCache.set(k, out);
+  return out;
+}
 const NOT_PROT = /shedding|load shed|sequence relay|master|device|\brelay\b|switch|contactor|matching|starting|check\b|regulat|communication|\bAGC\b|terminals?\b|mm2|\bAWG\b|warning|alarm|\d{8,}-\d/i;
 // A protection name (not a stray cell: "| Generator | 50" is the first half of "Generator overcurrent").
 const PROT_WORD = /over|under|reverse|fault|unbalance|asymmetr|sequence|loss|excitation|rocof|df\/dt|vector|overload|failure|voltage|current|frequency|power|temperature|thermal|restrain|controlled|battery|supply|speed/i;
@@ -513,7 +560,7 @@ export function rowFeatures(rows, i, model, { mustName = false, ctx = null, line
       // Lower-case start / dangling end = a name cut by the layout ("| voltage | 47", "| Voltage asymmetry and | 47").
       // A name cut before its noun ("| Voltage controlled | 51C" … "| overcurrent | …" two rows below, soát điều phối J).
       const cutName = /\b(?:controlled|restrained|dependent|inverse|directional|time)$/i.test(name);
-      if (!cutName && !appCols(i) && ANSI_PROT.test(code) && /^[A-Z]/.test(name) && PROT_WORD.test(name) && !NOT_PROT.test(name) && !DANGLING.test(name) && !skipOf(name) && balanced(name)) add("protections", `${name} (ANSI ${code})`, `${name} | ${code}`, 0);
+      if (!cutName && (!appCols(i) || ctx?.ansiFull?.has(NFKC(l))) && ANSI_PROT.test(code) && /^[A-Z]/.test(name) && PROT_WORD.test(name) && !NOT_PROT.test(name) && !DANGLING.test(name) && !skipOf(name) && balanced(name)) add("protections", `${name} (ANSI ${code})`, `${name} | ${code}`, 0);
     }
   }
   const tg = l.match(TAGGED);
@@ -584,10 +631,10 @@ export function ctlFeatureFields(fields, items = []) {
   const out = { ...fields }, add = new Map();
   for (const it of items) {
     if (fields[it.fid]) continue;
-    const k = `${it.fid}\u0000${JSON.stringify(it.value)}`;
+    const k = `${it.fid}\u0000${JSON.stringify(it.value)}\u0000${JSON.stringify(it.cond ?? null)}`;
     const e = add.get(k);
     if (e) { e.sup.add(it.src.supplierId); continue; }
-    add.set(k, { fid: it.fid, it: { value: it.value, raw: it.raw, src: it.src, origin: "ctl-sheet" }, sup: new Set([it.src.supplierId]) });
+    add.set(k, { fid: it.fid, it: { value: it.value, ...(it.cond ? { cond: it.cond } : {}), raw: it.raw, src: it.src, origin: "ctl-sheet" }, sup: new Set([it.src.supplierId]) });
   }
   for (const { fid, it, sup } of add.values()) (out[fid] ||= []).push({ ...it, suppliers: sup.size });
   for (const fid of new Set([...add.values()].map((x) => x.fid))) out[fid].sort((a, b) => b.suppliers - a.suppliers || cmp(JSON.stringify(a.value), JSON.stringify(b.value)));
@@ -605,7 +652,7 @@ export function checkCtlFeatureValues(docs, suppliers = []) {
     if (!sheetCache.has(k)) {
       const m = new Map(), facts = controllerSheetFacts(s, s.specTables[ti]);
       for (const { model, f } of facts) m.set(`${model}\u0000${f.line}`, true);
-      sheetCache.set(k, { has: m, ctx: sheetCtx(s.specTables[ti], [...new Set(facts.map((x) => x.model))]) });
+      sheetCache.set(k, { has: m, ctx: sheetCtx(s.specTables[ti], [...new Set(facts.map((x) => x.model))], { supplierId: s.id }) });
     }
     return sheetCache.get(k);
   };
@@ -622,7 +669,8 @@ export function checkCtlFeatureValues(docs, suppliers = []) {
       const sh = sheetOf(s, it.src.table);
       if (otherSheet(t.title) || foreignSheet(t) || span.some((r) => !sh.has.has(`${d.key}\u0000${r}`))) { bad("dòng không thuộc datasheet của chính model"); continue; }
       if (boolIds.has(fid) && it.value !== true) bad(`trường bool phải là true, có ${JSON.stringify(it.value)}`);
-      if (fid === "max_sets" && items.length > 1) bad("nhiều số tổ máy hoà cho một model");
+      if (fid === "max_sets" && items.length > 1 && items.some((x) => !x.cond)) bad("nhiều số tổ máy hoà cho một model");
+      if (it.cond) { if (fid !== "max_sets" || !condSetsOf(d.key, it)) bad("điều kiện không có ở MAX_SETS_COND"); continue; }
       if (!valuesAt(t, sh.ctx, d.key, it.src.row, it.src.rowEnd ?? null).values.some((v) => v.fid === fid && JSON.stringify(v.value) === JSON.stringify(it.value))) bad("đọc lại dòng không ra giá trị này");
     }
   }
@@ -648,6 +696,26 @@ export const foreignSheet = (t) => {
   }
   return false;
 };
+// Số tổ máy hoà theo điều kiện (Khoa 25/11/2026, buoc-4-g3): DEIF AGC-4 ghi 32 / 127 / 254 cho các ứng dụng khác nhau → ghi CẢ
+// BA, mỗi số kèm điều kiện nguyên văn của chính dòng nguồn (`cond.application`, chuỗi con của `line`). Danh sách TƯỜNG MINH: bộ
+// đọc không tự đọc điều kiện; model có mục ở đây không lấy max_sets của bộ đọc chung. `line` = dòng specTables (NFKC).
+export const MAX_SETS_COND = [
+  { model: "AGC4", supplierId: "deif", n: 1004, value: 32, cond: "Island power management",
+    line: "| The genset has to supply the load while a | Island power management, with up to 32 gensets." },
+  { model: "AGC4", supplierId: "deif", n: 1004, value: 127, cond: "Load sharing, with bus tie breakers (CANshare)",
+    line: "| Load sharing, with bus tie breakers (CANshare) (up to 127 generators) | ●" },
+  { model: "AGC4", supplierId: "deif", n: 1004, value: 254, cond: "gensets and/or bus tie breakers, all controllers must have software version 6.23 or later",
+    line: "| NOTE | For up to 254 gensets and/or bus tie breakers, all controllers must have software version 6.23 or later. For older" },
+];
+// Giá trị bỏ theo quyết định của Khoa (25/11/2026, buoc-4-g3) — NGOẠI LỆ TƯỜNG MINH, không phải luật "bản mới thắng": HGM9510
+// `operating_temp` có hai tài liệu hãng ghi khác nhau; lấy bản mới smartgen 1003 "(-40~+70)°C" (bảng sửa đổi của chính tài liệu
+// ghi "Modify the working and storage temperature ranges."), bỏ "(-25~+70)°C" của manual smartgen 1014. Chỉ đúng model + trường +
+// nguồn ở đây, và chỉ khi nguồn còn lại (`keep`) cũng cho giá trị.
+export const KHOA_DROP = [
+  { model: "HGM9510", fid: "operating_temp", supplierId: "smartgen", n: 1014, value: "(-25~+70)°C", keep: { n: 1003, value: "(-40~+70)°C" } },
+];
+const condSetsOf =(model, it) => MAX_SETS_COND.find((e) => e.model === model && e.supplierId === it.src?.supplierId && e.n === it.src?.n
+  && e.line === NFKC(it.raw) && e.value === it.value && e.cond === it.cond?.application && NFKC(it.raw).includes(e.cond));
 // Every controller maker's sheet → Map(model key →[{ fid, value, raw, src: { supplierId, n, table, row }, kw }]) in the order
 // of the sheets, plus `audit` = every line with a hit (kept, skipped or of another model) for the review list.
 export function controllerFeatures(suppliers = []) {
@@ -660,7 +728,7 @@ export function controllerFeatures(suppliers = []) {
       // same model (a row repeated in one table is one source line either way).
       const rowIdx = new Map();
       t.rows.forEach((r, i) => { if (!rowIdx.has(r)) rowIdx.set(r, i); });
-      const facts = controllerSheetFacts(s, t), ctx = sheetCtx(t, [...new Set(facts.map((x) => x.model))]);
+      const facts = controllerSheetFacts(s, t), ctx = sheetCtx(t, [...new Set(facts.map((x) => x.model))], { supplierId: s.id });
       const has = new Set(facts.map(({ model, f }) => `${model}\u0000${f.line}`));
       const take = (model, row, rowEnd = null) => {
         const r = valuesAt(t, ctx, model, row, rowEnd);
@@ -686,11 +754,25 @@ export function controllerFeatures(suppliers = []) {
         const j = contEnd(t.rows, i);
         if (j > i && all(model, i, j) && !ctx.spanOf(i, j)) take(model, i, j);
       }
+      for (const e of MAX_SETS_COND) {
+        if (e.supplierId !== s.id || e.n !== t.n) continue;
+        const i = t.rows.findIndex((r) => NFKC(r) === e.line);
+        if (i < 0 || !has.has(`${e.model}\u0000${t.rows[i]}`)) continue;
+        const l = (out.get(e.model) || []).filter((x) => x.fid !== "max_sets" || x.cond);
+        l.push({ fid: "max_sets", value: e.value, cond: { application: e.cond }, raw: t.rows[i], src: { supplierId: s.id, n: t.n, table: ti, row: i }, kw: "MAX_SETS_COND" });
+        out.set(e.model, l);
+      }
     });
   }
-  // Số tổ máy hoà khác nhau cho một model (DEIF AGC-4: 32 "island power management", 127 "CANshare", từ câu điều kiện khác nhau):
-  // không chọn hộ, không ghi.
-  for (const [model, l] of out) if (new Set(l.filter((x) => x.fid === "max_sets").map((x) => x.value)).size > 1) out.set(model, l.filter((x) => x.fid !== "max_sets"));
+  for (const e of KHOA_DROP) {
+    const l = out.get(e.model) || [];
+    const is = (x, n, v) => x.fid === e.fid && x.src.supplierId === e.supplierId && x.src.n === n && x.value === v;
+    if (l.some((x) => is(x, e.keep.n, e.keep.value))) out.set(e.model, l.filter((x) => !is(x, e.n, e.value)));
+  }
+  const condModels = new Set(MAX_SETS_COND.map((e) => e.model));
+  for (const m of condModels) if (out.has(m)) out.set(m, out.get(m).filter((x) => x.fid !== "max_sets" || x.cond));
+  // Số tổ máy hoà khác nhau cho một model mà không có điều kiện ở MAX_SETS_COND: không chọn hộ, không ghi.
+  for (const [model, l] of out) if (!condModels.has(model) && new Set(l.filter((x) => x.fid === "max_sets").map((x) => x.value)).size > 1) out.set(model, l.filter((x) => x.fid !== "max_sets"));
   return { byModel: out, audit };
 }
 
