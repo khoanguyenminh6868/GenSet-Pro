@@ -147,7 +147,7 @@ test("hồ sơ trở lại ngay trước khi worker trả lời: bản trang b�
     window.__beforeReply = async () => {
       await new Promise((r) => setTimeout(r, 1000));
       await db.doc("supplier/zz-test").delete();
-      while (state.supplier["zz-test"]) await new Promise((r) => setTimeout(r, 20));
+      await new Promise((r) => setTimeout(r, 500));
     };
     await db.doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" });
   });
