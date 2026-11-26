@@ -95,8 +95,9 @@ test("hồ sơ đổi rồi trở lại giữa lúc dựng: bản dựng dở b�
   await page.evaluate(() => { window.__hold = true; });
   await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" }));
   await held(page);
+  const stopped = await page.evaluate(() => window.__stopped); // lúc mở trang có thể đã dừng một worker
   await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").delete());
-  await expect.poll(() => page.evaluate(() => window.__stopped)).toBe(1);
+  await expect.poll(() => page.evaluate(() => window.__stopped)).toBe(stopped + 1);
   await release(page);
   expect(await savedKey(page)).toBe(old);
 });
