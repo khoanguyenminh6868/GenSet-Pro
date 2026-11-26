@@ -50,7 +50,7 @@ test.describe("có mô-đun và phương án khác", () => {
   });
 
   test("danh mục thiếu model rồi bản nhà cung cấp mới về: bỏ chữ chưa có, hiện link", async ({ page }) => {
-    test.setTimeout(300000); // Danh mục dựng lúc trang rảnh. Trước 23/11/2026 trình duyệt không cấp thời gian rảnh thì 1 bước/giây (~60 s); nay ~1,5 s (idle() của index.html). Giữ hạn dài cho máy bận.
+    test.setTimeout(300000); // Danh mục dựng ở catalog-worker.js. Giữ hạn dài cho máy bận.
     await openApp(page, "#goi/" + RICH);
     await openTab(page, "config");
     const blk = page.locator("#dbody .cfgcard").first().locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
