@@ -143,7 +143,12 @@ test("hồ sơ trở lại ngay trước khi worker trả lời: bản trang b�
   const old = await savedKey(page);
   await page.evaluate(async () => {
     const db = await window.claude.use("db");
-    window.__beforeReply = () => db.doc("supplier/zz-test").delete();
+    // Chờ 1 s (worker nào tự lưu thì đã lưu xong), rồi đổi hồ sơ về cũ và chờ trang nhận bản đó.
+    window.__beforeReply = async () => {
+      await new Promise((r) => setTimeout(r, 1000));
+      await db.doc("supplier/zz-test").delete();
+      while (state.supplier["zz-test"]) await new Promise((r) => setTimeout(r, 20));
+    };
     await db.doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" });
   });
   await expect.poll(() => page.evaluate(() => window.__replied), { timeout: 60000 }).toBe(true);
