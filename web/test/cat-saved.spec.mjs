@@ -192,21 +192,29 @@ test("worker hỏng rồi hồ sơ đổi ngay: hẹn giờ cũ bị huỷ, tran
   test.setTimeout(120000);
   await countBuilds(page);
   await page.addInitScript(() => {
-    const W = window.Worker;
+    const W = window.Worker, later = window.setTimeout;
     let first = true;
-    // Worker đầu tiên báo lỗi và đổi hồ sơ ngay trong 50 ms chờ của đường dự phòng; các worker sau chạy thật.
+    // 50 ms chờ của đường dự phòng kéo thành 1 s, để máy chậm vẫn đổi hồ sơ kịp trước khi hẹn giờ chạy.
+    window.setTimeout = (f, ms, ...a) => later(f, ms === 50 ? 1000 : ms, ...a);
+    // Worker đầu tiên báo lỗi và đổi hồ sơ ngay trong lúc chờ đó; worker sau chỉ nhận việc khi ca gọi __go().
     window.Worker = class extends W {
       constructor(url, o) { super(url, o); this.broken = first; first = false; }
       postMessage(m) {
-        if (!this.broken) return super.postMessage(m);
+        if (!this.broken) {
+          if (m.suppliers) { window.__go = () => super.postMessage(m); return; }
+          return super.postMessage(m);
+        }
         this.onerror({ preventDefault() {} });
         window.claude.use("db").then((db) => db.doc("supplier/" + Object.keys(window.__gb.colls.supplier)[0]).update({ testMark: 1 }));
       }
     };
   });
   await page.goto("/#dong-co");
+  await expect.poll(() => page.evaluate(() => !!window.__go)).toBe(true);
+  await page.waitForTimeout(1500); // quá hẹn giờ cũ
+  expect(await builds(page)).toEqual({ worker: 2, page: 0 });
+  await page.evaluate(() => window.__go());
   await ready(page);
-  await page.waitForTimeout(500);
   expect(await builds(page)).toEqual({ worker: 2, page: 0 });
 });
 
