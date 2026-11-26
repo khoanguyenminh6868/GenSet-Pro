@@ -73,7 +73,7 @@
     collection(c) {
       return {
         doc: (id) => db.doc(c + "/" + id),
-        onSnapshot(fn) { return watch(c, () => { const m = gb.colls[c] || {}; fn({ docs: Object.keys(m).map((id) => snapDoc(id, m[id])), size: Object.keys(m).length }); }); },
+        onSnapshot(fn) { return watch(c, () => { const m = gb.colls[c] || {}; fn({ docs: Object.keys(m).map((id) => ({ ...snapDoc(id, m[id]), updatedAt: gb.stamps[c]?.[id] })), size: Object.keys(m).length }); }); },
       };
     },
   };
