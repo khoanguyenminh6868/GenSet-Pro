@@ -234,6 +234,19 @@ const CASES = [
   ["airflow", "Air flow (m3/s)", "0.48", null, { unit: "m3/s", num: 0.48, missing: [] }], // gfe-power
   ["airflow", "Cooling Air Flow", "0.48", null, { num: 0.48, missing: ["unit"] }],
   ["airflow", "Cooling Air Flow", "TBA kg/h", null, { missing: ["value"] }],
+  // alternator altitude (buoc-4-h, 25/11/2026): the figure and the operator; metres only when written
+  ["altitude", "Altitude Requirement", "≤ 1000 m", null, { unit: "m", num: 1000, op: "≤", missing: [] }], // huali-shandong n2008
+  ["altitude", "Altitude(m)", "1000", null, { unit: "m", num: 1000, missing: [] }], // acepow-fuan n121
+  ["altitude", "Altitude", "≤1000m", null, { unit: "m", num: 1000, missing: [] }], // huali-shandong n2014
+  ["altitude", "海拔要求", "≤1000 m", null, { unit: "m", num: 1000, missing: [] }], // liangdi-fujian n101
+  ["altitude", "Altitude", "1000", null, { num: 1000, missing: ["unit"] }], // no unit written: not guessed
+  ["altitude", "Operating altitude", "0 to 4000 m with derating", null, { missing: ["value"] }], // deif: a range with a condition
+  // alternator phases (buoc-4-h, Khoa 25/11/2026 thêm): read as the set's phase
+  ["altPhase", "Number of Phases", "3", null, { num: 3, missing: [] }], // huali-shandong n2005 (under "Alternator")
+  ["altPhase", "Phase", "3-phase", null, { num: 3, missing: [] }],
+  ["altPhase", "Phase", "Three", null, { num: 3, missing: [] }],
+  ["altPhase", "Phase", "1-Phase , 3-Phase", null, { options: [1, 3], missing: [] }],
+  ["altPhase", "Numbers of Wires", "6 Wires", null, { cond: { wires: [6] }, missing: ["value"] }],
   // engine electrical system voltage (buoc-4-d, 25/11/2026)
   ["elecv", "Starting Voltage", "DC24V", null, { unit: "VDC", num: 24, missing: [] }], // aosif
   ["elecv", "Starter motor voltage", "12V", null, { unit: "VDC", num: 12, missing: [] }], // genlitec

@@ -57,6 +57,11 @@ function enumMatches(f, text) {
 // "Không chổi than" (Khoa 24/11/2026: tách khỏi hệ kích từ): chữ nguồn ghi brushless / brush less / 无刷. Chỉ nhận chữ ghi thẳng.
 const BRUSHLESS = /brush\s*-?\s*less|无刷/i;
 export const brushlessOf = (text) => BRUSHLESS.test(NFKC(text));
+// A type cell that affirms brushless (Khoa 25/11/2026, buoc-4-h: "Brushless, Self-Exciting", "无刷三相交流同步发电机", "không chổi
+// than"): the words written, never negated ("non-brushless", "not brushless", "无刷?" no; "brush type", "有刷" are not brushless).
+const BRUSHLESS_TYPE = /brush\s*-?\s*less|无刷|không\s*chổi\s*than/i;
+const BRUSHLESS_NOT = /\b(non|not|no|without)[\s-]*brush\s*-?\s*less|không\s+(phải\s+)?(loại\s+)?không\s*chổi\s*than|非\s*无刷/i;
+export const brushlessTypeOf = (text) => { const t = NFKC(text); return BRUSHLESS_TYPE.test(t) && !BRUSHLESS_NOT.test(t); };
 // The text without the brushless words and the separators they leave: "Brushless, self-excited" → "self-excited"; "Brushless," → "".
 export const stripBrushless = (text) => NFKC(text).replace(new RegExp(BRUSHLESS.source, "gi"), " ").replace(/^[\s,;，、/&+]+|[\s,;，、/&+]+$/g, "").replace(/\s+/g, " ").trim();
 export function enumOf(f, text, next = null) {
@@ -209,7 +214,8 @@ function addSpecs(bag, part, u, rows, audit, ctx) {
     if (f.id === "charge_cooling" && /piston|活塞/i.test(String(sp.label ?? ""))) { audit?.({ part, ...ctx, u, sp, n, fid: f.id, drop: "piston" }); continue; }
     const r = valueOf(f, n, sp, f.type === "enum" && !n ? nextCellOf(u.line, sp.value) : null);
     // A cell of the excitation system that also says brushless: a second value, in its own field; raw is the source text of both.
-    if (part === "alternator" && f.id === "excitation" && !n && brushlessOf(sp.value)) {
+    // Same for a cell of the alternator TYPE that affirms brushless (Khoa 25/11/2026): the type stays as written, brushless is added.
+    if (part === "alternator" && ((f.id === "excitation" && brushlessOf(sp.value)) || (f.id === "type" && brushlessTypeOf(sp.value))) && !n) {
       const raw = sp.fixed?.from ?? sp.value;
       const rawJoined = !u.line && !sp.fixed && !flatText([...(u.lines?.rows || []), ...(u.lines?.header || []), ...(rows || [])].join("\n")).includes(flatText(raw));
       bag.add("brushless", { value: true, unit: null, cond: null, missing: [], raw, rawJoined }, srcOf(u));

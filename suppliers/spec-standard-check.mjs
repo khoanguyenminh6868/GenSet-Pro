@@ -54,7 +54,7 @@ const audit = (a) => {
   // (2) brushless = có, chỉ khi chữ nguồn ghi brushless / brush less / 无刷.
   else if (!a.n && a.fid === "excitation" && rules.includes("tach-khong-choi-than") && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)
     && enumOf(fieldDef(a.part, a.fid), stripBrushless(a.sp.value))?.value === a.value) bump(c.byRule, "enum");
-  else if (a.fid === "brushless" && a.part === "alternator" && rules.includes("co-chu-khong-choi-than") && a.value === true && /brush\s*-?\s*less|无刷/i.test(tidyText(a.sp.value).text)) bump(c.byRule, "bool");
+  else if (a.fid === "brushless" && a.part === "alternator" && rules.includes("co-chu-khong-choi-than") && a.value === true && /brush\s*-?\s*less|无刷|không\s*chổi\s*than/i.test(tidyText(a.sp.value).text)) bump(c.byRule, "bool");
   else { c.unexplained++; if (bad.length < 40) bad.push({ model: a.key, fid: a.fid, raw: a.sp.value, norm: from, std: v }); }
   for (const r of rules) bump(c.byRule, `luat:${r}`);
   const raw = a.sp.fixed?.from ?? a.sp.value;
