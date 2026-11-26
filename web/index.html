@@ -3891,19 +3891,21 @@ function catReady() {
 // catalog-worker.js, and catSig().
 const catStore = (() => {
   let open, code;
-  // { d, born }: born is a random mark written when the database is created, so a build started before a wipe cannot
-  // save into the one made after it.
+  // { d, born }: born is a random mark of this database, written when it has none (new, or made before the mark), so a
+  // build started before a wipe cannot save into the one made after it.
   const db = () => (open ||= new Promise((res) => {
     try {
       const r = indexedDB.open("genbid-catalog", 1);
-      r.onupgradeneeded = () => r.result.createObjectStore("built").put(crypto.randomUUID(), "born");
+      r.onupgradeneeded = () => r.result.createObjectStore("built");
       r.onsuccess = () => {
         const d = r.result;
         d.onversionchange = () => d.close();
         try {
-          const g = d.transaction("built").objectStore("built").get("born");
-          g.onsuccess = () => res({ d, born: g.result });
-          g.onerror = () => res(null);
+          const t = d.transaction("built", "readwrite"), s = t.objectStore("built"), g = s.get("born");
+          let born;
+          g.onsuccess = () => { born = g.result; if (!born) s.put((born = crypto.randomUUID()), "born"); };
+          t.oncomplete = () => res({ d, born });
+          t.onerror = t.onabort = () => res(null);
         } catch { res(null); }
       };
       r.onerror = r.onblocked = () => res(null);

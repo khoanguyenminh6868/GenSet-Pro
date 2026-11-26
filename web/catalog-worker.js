@@ -46,4 +46,6 @@ onmessage = async ({ data }) => {
     return close();
   }
   postMessage({ cat: built });
+  // A page loaded before this protocol sends `key` and never asks to save: nothing more to do for it.
+  if ("key" in data) close();
 };

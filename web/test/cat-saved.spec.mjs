@@ -119,6 +119,38 @@ test("bản lưu bị xoá rồi trang khác tạo lại giữa lúc dựng: wor
   expect(await savedKey(page)).toBeNull();
 });
 
+test("database tạo trước khi có dấu born được thêm dấu khi trang mở", async ({ page }) => {
+  test.setTimeout(120000);
+  await page.goto("/#dong-co");
+  await ready(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  const born = () => page.evaluate(() => new Promise((res) => {
+    const o = indexedDB.open("genbid-catalog");
+    o.onsuccess = () => { const g = o.result.transaction("built").objectStore("built").get("born"); g.onsuccess = () => { o.result.close(); res(g.result || null); }; };
+  }));
+  await page.evaluate(() => new Promise((res) => {
+    const o = indexedDB.open("genbid-catalog");
+    o.onsuccess = () => { const t = o.result.transaction("built", "readwrite"); t.objectStore("built").delete("born"); t.oncomplete = () => { o.result.close(); res(); }; };
+  }));
+  expect(await born()).toBeNull();
+  await page.reload();
+  await ready(page);
+  expect(await born()).not.toBeNull();
+});
+
+test("trang tải từ trước (gửi key, không bảo lưu): worker trả danh mục rồi tự đóng", async ({ page }) => {
+  await page.goto("/#dong-co");
+  await ready(page);
+  // Đóng rồi thì tin thứ hai không còn được trả lời.
+  const replies = await page.evaluate(() => new Promise((res) => {
+    const w = new Worker("/catalog-worker.js");
+    let n = 0;
+    w.onmessage = () => { if (++n === 1) { w.postMessage({ suppliers: [], key: null }); setTimeout(() => res(n), 1500); } };
+    w.postMessage({ suppliers: [], key: null });
+  }));
+  expect(replies).toBe(1);
+});
+
 test("hồ sơ trở lại ngay trước khi worker trả lời: bản trang bỏ không được lưu", async ({ page }) => {
   test.setTimeout(120000);
   await countBuilds(page);
