@@ -584,8 +584,8 @@ const HIST_FILE = path.join(ROOT, ".genbid-history.json");
 
 // The search's own answers (/smart/search) carry the full rows, ids included: read them as the pages go by.
 async function histList(page, state, maxPages) {
-  const rows = new Map(); let last = null;
-  const onResp = async (r) => { if (!r.url().includes("/smart/search")) return; try { const j = JSON.parse(await r.text()); last = j.page; for (const c of j.page?.content || []) rows.set(c.notifyNo, c); } catch {} };
+  const rows = new Map(); let last = null, bad = 0;
+  const onResp = async (r) => { if (!r.url().includes("/smart/search")) return; try { const j = JSON.parse(await r.text()); last = j.page; for (const c of j.page?.content || []) rows.set(c.notifyNo, c); } catch { bad++; } };
   page.on("response", onResp);
   try {
     await search(page, "máy phát điện", false);
@@ -599,12 +599,18 @@ async function histList(page, state, maxPages) {
       const content = last.content || [];
       const fresh = content.filter((c) => (has(c.bidOpenId) || has(c.inputResultId)) && isGenset(c)).filter((c) => { const s = state.read[c.notifyNo]; return !s || s.step !== c.stepCode || !s.final; });
       log(`  Trang ${Number(last.currentPage) + 1}/${last.totalPages}: ${content.length} gói, ${fresh.length} cần đọc`);
-      if (last.last || Number(last.currentPage) + 1 >= last.totalPages || n >= maxPages || (!opt("full") && content.length && !fresh.length)) break;
+      const endOfList = last.last || Number(last.currentPage) + 1 >= last.totalPages;
+      const earlyStop = !opt("full") && content.length && !fresh.length;
+      if (endOfList || n >= maxPages || earlyStop) {
+        log(`  Dừng đọc danh sách ở trang ${Number(last.currentPage) + 1}: ${endOfList ? "đã hết trang" : n >= maxPages ? `đủ ${maxPages} trang (-pages)` : "trang này không có gói cần đọc (dừng sớm; --full để đọc hết)"}`);
+        break;
+      }
       const resp = page.waitForResponse((x) => x.url().includes("/smart/search"), { timeout: 60000 });
       await page.locator(".el-pagination .btn-next").first().click();
       try { await resp; } catch { if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh"); throw new Error("muasamcong không trả trang kết quả tiếp theo"); }
       await page.waitForTimeout(1200 + Math.random() * 800);
     }
+    if (bad) log(`  Không đọc được ${bad} trang kết quả (dữ liệu trả về không phải JSON); các gói trong trang đó không có trong danh sách này`);
     return { rows: [...rows.values()], total: last?.totalElements ?? rows.size };
   } finally { page.off("response", onResp); }
 }
@@ -629,6 +635,22 @@ async function historyRound(page, { maxPages = 60, maxTenders = 2000 } = {}) {
     return !s || (!s.final && (s.step !== c.stepCode || Date.parse(s.at) < dayAgo)) || (s.final && s.step !== c.stepCode);
   }).slice(0, maxTenders);
   log(`Lịch sử máy phát điện: muasamcong có ${total} gói, ${rows.length} gói trong các trang đã đọc, ${todo.length} gói cần mở trang kết quả`);
+  // Log only (Khoa, 2026-11-26): why each row of the list is not read. One line per excluded row in genbid-bot-logs\history-loc-<ngày>.tsv.
+  {
+    const notName = rows.filter((c) => !isGenset(c));
+    const named = rows.filter((c) => isGenset(c));
+    const unopened = named.filter((c) => !(has(c.bidOpenId) || has(c.inputResultId)));
+    const otherType = named.filter((c) => (has(c.bidOpenId) || has(c.inputResultId)) && c.type !== "es-notify-contractor");
+    log(`  Lọc: ${notName.length} gói không đúng tên máy phát điện, ${unopened.length} gói chưa mở thầu/chưa có kết quả, ${otherType.length} gói loại khác es-notify-contractor, ${rows.length - notName.length - unopened.length - otherType.length} gói còn lại`);
+    const f = path.join(ROOT, "genbid-bot-logs", `history-loc-${new Date().toISOString().slice(0, 10).replace(/-/g, "")}.tsv`);
+    const clean = (v) => String(v ?? "").replace(/[\t\r\n]+/g, " ");
+    const lines = [...notName.map((c) => ["ten", c.notifyNo, c.bidName, c.type])
+      , ...unopened.map((c) => ["chua-mo", c.notifyNo, c.bidName, c.type])
+      , ...otherType.map((c) => ["loai-khac", c.notifyNo, c.bidName, c.type])]
+      .map((x) => [now(), ...x].map(clean).join("\t"));
+    fs.writeFileSync(f, "at\tlý do\tnotifyNo\ttên\tloại\n" + lines.join("\n") + (lines.length ? "\n" : ""), "utf8");
+    log(`  Danh sách gói bị loại: ${path.relative(ROOT, f)}`);
+  }
   let done = 0, failed = 0, buf = [];
   // --dry: nothing posted or remembered; the documents go to genbid-work/bidhist-dry.json to look at.
   const flush = async () => {
