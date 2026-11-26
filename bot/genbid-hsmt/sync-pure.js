@@ -38,7 +38,10 @@ const PLANT_RE = /tua\s*bin|turbine|tổ\s*máy\s*(số\s*)?[HS]?\d|nhà\s*máy\
 const MPD_RE = /(?<!\p{L})mp[đd](?!\p{L})/iu;
 // Narrow on purpose: the renewable word must touch the generator, so a mixed package that also buys a set stays in.
 const RENEW_RE = /máy\s*phát\s*(?:điện\s*)?(?:gió|mặt\s*trời|năng\s*lượng)|phát\s*điện\s*(?:gió|mặt\s*trời|năng\s*lượng)|điện\s*gió|năng\s*lượng\s*gió|tua\s*-?\s*bin\s*gió|pin\s*(?:năng\s*lượng\s*)?mặt\s*trời|quang\s*điện|\bsolar\b|\bwind\b/i;
-const isGenset = (c) => { const n = String([].concat(c.bidName || c.pname || "")[0]).normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n)) && (!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
+// "Máy nổ phát điện" is a set, and so is "máy phát" followed by its fuel or its power in kW (Khoa, 2026-11-26: only
+// names about a set, not the many "máy phát" parts and repairs of power plants, nor radio / signal transmitters).
+const ENGINE_SET_RE = /m[áa]y\s*n[ổo]\s*ph[áa]t\s*đi[ệe]n|m[áa]y\s*ph[áa]t(?!\s*(?:thanh|hình|sóng|xung|tín|tia|số|fm(?![a-z])|truyền|vô\s*tuyến))(?:\s*(?:xăng|dầu(?!\s*(?:nhớt|bôi)))|[^,;:]{0,30}?(?:chạy\s*(?:xăng|dầu)|\d\s*kw(?![a-z])))/i;
+const isGenset = (c) => { const n = String([].concat(c.bidName || c.pname || "")[0]).normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n) || ENGINE_SET_RE.test(n)) &&(!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
 const vnTime = (s) => (s ? new Date(/[zZ]|[+-]\d\d:?\d\d$/.test(s) ? s : s + "+07:00").toISOString() : null);
 function histUrl(t) {
   const kq = has(t.inputResultId), P = HIST_PREFIX;

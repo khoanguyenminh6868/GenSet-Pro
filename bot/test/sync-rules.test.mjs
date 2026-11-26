@@ -145,6 +145,17 @@ test("ba nơi (bidprice.js, sync-pure.js, muasamcong.ts) cùng kết luận trê
     assert.equal(BP.isGensetName(n), false, "bidprice.js: " + n);
     assert.equal(P.isGenset({ bidName: n }), false, "sync-pure.js: " + n);
   }
+  // Khoa 26/11/2026: "máy nổ phát điện", và "máy phát" kèm nhiên liệu / công suất kW (tên thật từ danh sách bị loại).
+  for (const n of ["Mua sắm máy nổ phát điện chạy xăng 7.5KVA", "Mua sắm máy nổ phát điện chạy xăng", "Cung cấp và lắp đặt máy nổ phát điện", "Mua máy phát xăng 5kW", "Mua máy phát chạy dầu", "Mua 02 máy phát công suất 30 kW"]) {
+    assert.equal(BP.isGensetName(n), true, "bidprice.js: " + n);
+    assert.equal(P.isGenset({ bidName: n }), true, "sync-pure.js: " + n);
+    assert.equal(server(n), true, "muasamcong.ts: " + n);
+  }
+  // Phụ tùng máy phát nhà máy điện, máy phát sóng không là tổ máy (server nới hơn, không so).
+  for (const n of ["Mua 01 máy phát dòng điện sơ cấp", "Cung cấp bộ làm mát gió máy phát Nhà máy thủy điện Khe Bố", "Mua dầu bôi trơn cho máy phát", "Gói thầu XL01: nhà trạm bơm, máy phát; cầu rửa xe", "Mua máy phát thanh FM 300W", "Thay thế máy phát hình công suất 5kW", "Mua máy phát sóng 10kW", "Đại tu Thiết bị điện sau máy phát số 5 (Máy cắt đầu cực 905)"]) {
+    assert.equal(BP.isGensetName(n), false, "bidprice.js: " + n);
+    assert.equal(P.isGenset({ bidName: n }), false, "sync-pure.js: " + n);
+  }
 });
 test("không phải gói máy phát: tổ máy của nhà máy điện, tua bin, tên không nói máy phát", () => {
   for (const n of ["Sửa chữa tổ máy số 2 Nhà máy thủy điện Hòa Bình - máy phát điện", "Đại tu tua bin máy phát điện H1", "Giảm phát thải tại Nhà máy Điện", "Mua sắm máy biến áp"])
