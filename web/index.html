@@ -3526,8 +3526,7 @@ async function setRowOk(sid, key, d) {
 const supLoaded = () => state.loaded.supplier && state.loaded.supdeleted;
 // Also before the database is there (a reload on a screen's link draws it first): building then would skip the saved catalog.
 const supWait = () => ((state.db || window.genbidWeb) && !supLoaded() ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
-// A build running for suppliers that have just changed starts again at once.
-const supChanged = () => { if (catJob && !catReady()) catWork(); renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
+const supChanged = () => { catRecheck(); renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a>${raw(CLOSE_BTN)}</header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
@@ -3887,8 +3886,9 @@ function catReady() {
   return true;
 }
 // The built catalog is kept on this device (IndexedDB "genbid-catalog", one record, removed with the documents when
-// sign-in fails: shim.js), so a reload reads it instead of building it again. catalog-worker.js writes it; its key: the
-// code of catalog.js and catalog-worker.js, and catSig().
+// sign-in fails: shim.js), so a reload reads it instead of building it again. catalog-worker.js writes it, or catalog()
+// when the page had to build; only this store creates the database. Its key: the code of catalog.js and
+// catalog-worker.js, and catSig().
 const catStore = (() => {
   let open, code;
   const db = () => (open ||= new Promise((res) => {
@@ -3925,7 +3925,17 @@ const catStore = (() => {
       } catch { res(null); }
     });
   };
-  return { key, get };
+  // Throws on a database wiped since it was opened (closed by onversionchange): nothing is saved then.
+  const put = async (sig, cat) => {
+    const [d, k] = await Promise.all([db(), key(sig)]);
+    if (!d || !k) return;
+    try {
+      const s = d.transaction("built", "readwrite").objectStore("built");
+      s.put(cat, "cat");
+      s.put(k, "key");
+    } catch {}
+  };
+  return { key, get, put };
 })();
 // A catalog built or read for the suppliers of `sig` becomes the current one, if they are still the ones loaded.
 function catTake(cat, sig, src, del) {
@@ -3958,11 +3968,12 @@ function catWork() {
   catJob?.stop();
   const job = (catJob = { sig, src, del });
   job.p = new Promise((done) => {
-    let w = null;
+    let w = null, timer = 0;
     const end = () => { if (catJob === job) catJob = null; done(); };
+    const quit = () => { w?.terminate(); clearTimeout(timer); };
     // No worker, or it failed: built here, the page held until done (its spinner is painted first).
-    const here = () => { w?.terminate(); setTimeout(() => { catalog(); end(); }, 50); };
-    job.stop = () => { w?.terminate(); done(); };
+    const here = () => { quit(); timer = setTimeout(() => { catalog(); end(); }, 50); };
+    job.stop = () => { quit(); end(); };
     if (!window.GenbidCatalog || !window.Worker) return here();
     const suppliers = supAll();
     try { w = new Worker("/catalog-worker.js"); } catch { return here(); }
@@ -3972,6 +3983,13 @@ function catWork() {
     catStore.key(sig).then((key) => { if (catJob === job) w.postMessage({ suppliers, key }); });
   });
   return job.p;
+}
+// The suppliers changed: a running build for older ones is stopped, so that it does not save over a newer catalog; one
+// for the new ones starts at once, unless the current catalog already fits them.
+function catRecheck() {
+  if (!catJob) return;
+  if (!catReady()) catWork();
+  else if (catJob.sig !== catSig()) catJob.stop();
 }
 // The catalog of the suppliers now loaded: the saved one, else built in the worker. Resolves once it is the current one.
 async function catEnsure(onBuild) {
@@ -3990,8 +4008,11 @@ function catWarm() {
 // The current catalog. Screens wait for catEnsure() first: a build here holds the page for many seconds.
 function catalog() {
   if (!catReady()) {
-    const C = window.GenbidCatalog;
-    catMemo = { src: state.supplier, del: state.supdeleted, sig: C ? catSig() : null, cat: C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+    const C = window.GenbidCatalog, sig = C ? catSig() : null;
+    const cat = C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] };
+    catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
+    // Saved a little later, so the screen that waited for it draws first.
+    if (sig) setTimeout(() => { if (catMemo.cat === cat) catStore.put(sig, cat); }, 500);
   }
   return catMemo.cat;
 }

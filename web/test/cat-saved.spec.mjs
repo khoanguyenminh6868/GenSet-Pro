@@ -51,6 +51,92 @@ test("hồ sơ nhà cung cấp đổi phiên bản: dựng lại và lưu bản 
   await expect.poll(() => savedKey(page)).not.toBe(old);
 });
 
+// Giữ lại tin gửi cho worker (window.__held) để ca kiểm chen việc vào giữa một lần dựng, rồi thả bằng release().
+const holdWorker = (page) => page.addInitScript(() => {
+  const post = Worker.prototype.postMessage;
+  window.__held = [];
+  Worker.prototype.postMessage = function (...a) { if (window.__hold) window.__held.push(() => post.apply(this, a)); else post.apply(this, a); };
+});
+const release = (page) => page.evaluate(() => { window.__hold = false; window.__held.splice(0).forEach((f) => f()); });
+const held = (page) => expect.poll(() => page.evaluate(() => window.__held.length)).toBe(1);
+const databases = (page) => page.evaluate(async () => (await indexedDB.databases()).map((d) => d.name));
+const touchSupplier = (page) => page.evaluate(async () => {
+  const db = await window.claude.use("db"), id = Object.keys(window.__gb.colls.supplier)[0];
+  await db.doc("supplier/" + id).update({ testMark: 1 });
+});
+
+test("bản lưu bị xoá giữa lúc dựng (đăng nhập hỏng): worker không tạo lại", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await holdWorker(page);
+  await page.goto("/#dong-co");
+  await ready(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  await page.evaluate(() => { window.__hold = true; });
+  await touchSupplier(page);
+  await held(page);
+  await page.evaluate(() => new Promise((res) => { const d = indexedDB.deleteDatabase("genbid-catalog"); d.onsuccess = d.onerror = res; }));
+  await release(page);
+  await ready(page);
+  await page.waitForTimeout(2000); // worker lưu sau khi đã trả danh mục
+  expect(await databases(page)).not.toContain("genbid-catalog");
+});
+
+test("hồ sơ đổi rồi trở lại giữa lúc dựng: bản dựng dở bị dừng, không đè bản đã lưu", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await holdWorker(page);
+  await page.goto("/#dong-co");
+  await ready(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  const old = await savedKey(page);
+  await page.evaluate(() => { window.__hold = true; });
+  await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" }));
+  await held(page);
+  await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").delete());
+  await page.waitForTimeout(500);
+  await release(page);
+  await page.waitForTimeout(5000); // đủ cho worker (nếu còn sống) dựng và lưu bản dữ liệu mẫu
+  expect(await savedKey(page)).toBe(old);
+});
+
+test("worker hỏng rồi hồ sơ đổi ngay: hẹn giờ cũ bị huỷ, trang không tự dựng", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await page.addInitScript(() => {
+    const W = window.Worker;
+    let first = true;
+    // Worker đầu tiên báo lỗi và đổi hồ sơ ngay trong 50 ms chờ của đường dự phòng; các worker sau chạy thật.
+    window.Worker = class extends W {
+      constructor(url, o) { super(url, o); this.broken = first; first = false; }
+      postMessage(m) {
+        if (!this.broken) return super.postMessage(m);
+        this.onerror({ preventDefault() {} });
+        window.claude.use("db").then((db) => db.doc("supplier/" + Object.keys(window.__gb.colls.supplier)[0]).update({ testMark: 1 }));
+      }
+    };
+  });
+  await page.goto("/#dong-co");
+  await ready(page);
+  await page.waitForTimeout(500);
+  expect(await builds(page)).toEqual({ worker: 2, page: 0 });
+});
+
+test("worker không tạo được: bản trang tự dựng được lưu, F5 đọc lại", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await page.addInitScript(() => { window.Worker = class { constructor() { throw new Error("no worker"); } }; });
+  await page.goto("/#dong-co");
+  await ready(page);
+  expect((await builds(page)).page).toBe(1);
+  const first = await rows(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  await page.reload();
+  await ready(page);
+  expect((await builds(page)).page, "lần mở sau không dựng").toBe(0);
+  expect(await rows(page)).toEqual(first);
+});
+
 test("không tải được worker: trang tự dựng, danh mục và bộ lọc y như dựng ở luồng nền", async ({ page, context, errors }) => {
   test.setTimeout(120000);
   await countBuilds(page);

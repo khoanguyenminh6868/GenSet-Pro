@@ -6,8 +6,10 @@ importScripts("/catalog.js");
 const save = (key, cat) => new Promise((done) => {
   try {
     const r = indexedDB.open("genbid-catalog", 1);
-    r.onupgradeneeded = () => r.result.createObjectStore("built");
-    r.onerror = r.onblocked = () => done();
+    // The page creates the database before a build starts (catStore). Gone now = wiped meanwhile (shim.js, sign-in
+    // failed): it is not made again, and nothing is saved.
+    r.onupgradeneeded = () => r.transaction.abort();
+    r.onerror = r.onblocked = (e) => { e.preventDefault(); done(); };
     r.onsuccess = () => {
       const db = r.result;
       db.onversionchange = () => db.close();
