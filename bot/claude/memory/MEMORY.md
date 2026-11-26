@@ -1,3 +1,4 @@
+- [Reply in English](reply-in-english.md) — Khoa 26/11/2026: always answer in English, even to Vietnamese messages
 - [Quy tắc theo luồng](quy-tac-luong.md) — quyết định của Khoa về Sync, chuỗi tự động, specs, phân tích; vì sao từng bị loại kỹ thuật
 - [Kiểm chéo toàn bộ](kiem-cheo-toan-bo.md) — sửa mã đọc dữ liệu: so mọi bản ghi, giải thích mọi dòng top 30, không lấy mẫu; script sẵn
 - [Không viết ẩu](khong-viet-au.md) — thứ chưa có (màn hình, người xem, quy trình) không được viết như đã có; nói rõ ai, ở đâu, phải làm mới
