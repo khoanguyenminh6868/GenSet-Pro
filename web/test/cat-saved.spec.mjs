@@ -53,8 +53,10 @@ test("hồ sơ nhà cung cấp đổi phiên bản: dựng lại và lưu bản 
 
 // Giữ lại tin gửi cho worker (window.__held) để ca kiểm chen việc vào giữa một lần dựng, rồi thả bằng release().
 const holdWorker = (page) => page.addInitScript(() => {
-  const post = Worker.prototype.postMessage;
+  const post = Worker.prototype.postMessage, stop = Worker.prototype.terminate;
   window.__held = [];
+  window.__stopped = 0;
+  Worker.prototype.terminate = function () { window.__stopped++; stop.call(this); };
   Worker.prototype.postMessage = function (...a) { if (window.__hold) window.__held.push(() => post.apply(this, a)); else post.apply(this, a); };
 });
 const release = (page) => page.evaluate(() => { window.__hold = false; window.__held.splice(0).forEach((f) => f()); });
@@ -94,9 +96,58 @@ test("hồ sơ đổi rồi trở lại giữa lúc dựng: bản dựng dở b�
   await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" }));
   await held(page);
   await page.evaluate(async () => (await window.claude.use("db")).doc("supplier/zz-test").delete());
-  await page.waitForTimeout(500);
+  await expect.poll(() => page.evaluate(() => window.__stopped)).toBe(1);
   await release(page);
-  await page.waitForTimeout(5000); // đủ cho worker (nếu còn sống) dựng và lưu bản dữ liệu mẫu
+  expect(await savedKey(page)).toBe(old);
+});
+
+test("bản lưu bị xoá rồi trang khác tạo lại giữa lúc dựng: worker cũ không ghi vào bản mới", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  await holdWorker(page);
+  await page.goto("/#dong-co");
+  await ready(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  await page.evaluate(() => { window.__hold = true; });
+  await touchSupplier(page);
+  await held(page);
+  await page.evaluate(() => new Promise((res) => { const d = indexedDB.deleteDatabase("genbid-catalog"); d.onsuccess = d.onerror = res; }));
+  expect(await savedKey(page)).toBeNull(); // savedKey tạo lại database, như một trang khác
+  await release(page);
+  await ready(page);
+  await page.waitForTimeout(3000); // worker lưu sau khi trang nhận danh mục
+  expect(await savedKey(page)).toBeNull();
+});
+
+test("hồ sơ trở lại ngay trước khi worker trả lời: bản trang bỏ không được lưu", async ({ page }) => {
+  test.setTimeout(120000);
+  await countBuilds(page);
+  // Trước khi giao câu trả lời của worker cho trang: chạy window.__beforeReply (đổi hồ sơ), rồi giao ngay.
+  await page.addInitScript(() => {
+    const W = window.Worker;
+    window.Worker = class extends W {
+      set onmessage(fn) {
+        this.addEventListener("message", async (e) => {
+          const first = window.__beforeReply;
+          window.__beforeReply = null;
+          if (first) await first();
+          fn(e);
+          if (first) window.__replied = true;
+        });
+      }
+    };
+  });
+  await page.goto("/#dong-co");
+  await ready(page);
+  await expect.poll(() => savedKey(page)).not.toBeNull();
+  const old = await savedKey(page);
+  await page.evaluate(async () => {
+    const db = await window.claude.use("db");
+    window.__beforeReply = () => db.doc("supplier/zz-test").delete();
+    await db.doc("supplier/zz-test").set({ id: "zz-test", name: "ZZ test" });
+  });
+  await expect.poll(() => page.evaluate(() => window.__replied), { timeout: 60000 }).toBe(true);
+  await page.waitForTimeout(3000);
   expect(await savedKey(page)).toBe(old);
 });
 
@@ -131,6 +182,10 @@ test("worker không tạo được: bản trang tự dựng được lưu, F5 đ
   expect((await builds(page)).page).toBe(1);
   const first = await rows(page);
   await expect.poll(() => savedKey(page)).not.toBeNull();
+  expect(await page.evaluate(() => new Promise((res) => {
+    const o = indexedDB.open("genbid-catalog");
+    o.onsuccess = () => { const g = o.result.transaction("built").objectStore("built").get("cat"); g.onsuccess = () => { o.result.close(); res(g.result.engines.every((e) => e.origin)); }; };
+  })), "lưu kèm nước thương hiệu và nơi sản xuất").toBe(true);
   await page.reload();
   await ready(page);
   expect((await builds(page)).page, "lần mở sau không dựng").toBe(0);

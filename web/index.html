@@ -3891,11 +3891,21 @@ function catReady() {
 // catalog-worker.js, and catSig().
 const catStore = (() => {
   let open, code;
+  // { d, born }: born is a random mark written when the database is created, so a build started before a wipe cannot
+  // save into the one made after it.
   const db = () => (open ||= new Promise((res) => {
     try {
       const r = indexedDB.open("genbid-catalog", 1);
-      r.onupgradeneeded = () => r.result.createObjectStore("built");
-      r.onsuccess = () => { r.result.onversionchange = () => r.result.close(); res(r.result); };
+      r.onupgradeneeded = () => r.result.createObjectStore("built").put(crypto.randomUUID(), "born");
+      r.onsuccess = () => {
+        const d = r.result;
+        d.onversionchange = () => d.close();
+        try {
+          const g = d.transaction("built").objectStore("built").get("born");
+          g.onsuccess = () => res({ d, born: g.result });
+          g.onerror = () => res(null);
+        } catch { res(null); }
+      };
       r.onerror = r.onblocked = () => res(null);
     } catch { res(null); }
   }));
@@ -3913,11 +3923,11 @@ const catStore = (() => {
     return c && c + "\n" + sig;
   };
   const get = async (sig) => {
-    const [d, want] = await Promise.all([db(), key(sig)]);
-    if (!d || !want) return null;
+    const [o, want] = await Promise.all([db(), key(sig)]);
+    if (!o || !want) return null;
     return new Promise((res) => {
       try {
-        const t = d.transaction("built", "readonly"), s = t.objectStore("built"), k = s.get("key");
+        const t = o.d.transaction("built", "readonly"), s = t.objectStore("built"), k = s.get("key");
         let cat = null;
         k.onsuccess = () => { if (k.result === want) { const r = s.get("cat"); r.onsuccess = () => { cat = r.result; }; } };
         t.oncomplete = () => res(cat);
@@ -3925,24 +3935,30 @@ const catStore = (() => {
       } catch { res(null); }
     });
   };
+  // What a catalog of `sig` is saved under: { key, born }, or null when nothing can be saved.
+  const stamp = async (sig) => {
+    const [o, k] = await Promise.all([db(), key(sig)]);
+    return o && k ? { key: k, born: o.born } : null;
+  };
   // Throws on a database wiped since it was opened (closed by onversionchange): nothing is saved then.
   const put = async (sig, cat) => {
-    const [d, k] = await Promise.all([db(), key(sig)]);
-    if (!d || !k) return;
+    const [o, k] = await Promise.all([db(), key(sig)]);
+    if (!o || !k) return;
     try {
-      const s = d.transaction("built", "readwrite").objectStore("built");
+      const s = o.d.transaction("built", "readwrite").objectStore("built");
       s.put(cat, "cat");
       s.put(k, "key");
     } catch {}
   };
-  return { key, get, put };
+  return { get, stamp, put };
 })();
 // A catalog built or read for the suppliers of `sig` becomes the current one, if they are still the ones loaded.
 function catTake(cat, sig, src, del) {
-  if (sig ? catSig() !== sig : state.supplier !== src || state.supdeleted !== del) return;
+  if (sig ? catSig() !== sig : state.supplier !== src || state.supdeleted !== del) return false;
   // builder() loads the places of manufacture from the maker records (useManufacturing), which madeOf reads.
   window.GenbidCatalog.builder(supAll());
   catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
+  return true;
 }
 // The saved catalog of the suppliers now loaded becomes the current one. Resolves to whether the catalog is ready.
 let catLoading = { sig: null, p: null };
@@ -3978,14 +3994,19 @@ function catWork() {
     const suppliers = supAll();
     try { w = new Worker("/catalog-worker.js"); } catch { return here(); }
     w.onerror = (e) => { e.preventDefault(); here(); };
-    // After its answer the worker saves the catalog and closes itself: not terminated here.
-    w.onmessage = ({ data }) => { if (!data.cat) return here(); catTake(data.cat, sig, src, del); end(); };
-    catStore.key(sig).then((key) => { if (catJob === job) w.postMessage({ suppliers, key }); });
+    // The worker saves only a catalog the page has taken: told so, it saves and closes itself (not terminated here).
+    let stamp = null;
+    w.onmessage = ({ data }) => {
+      if (!data.cat) return here();
+      if (catTake(data.cat, sig, src, del) && stamp) w.postMessage({ save: stamp }); else w.terminate();
+      end();
+    };
+    catStore.stamp(sig).then((s) => { if (catJob !== job) return; stamp = s; w.postMessage({ suppliers }); });
   });
   return job.p;
 }
-// The suppliers changed: a running build for older ones is stopped, so that it does not save over a newer catalog; one
-// for the new ones starts at once, unless the current catalog already fits them.
+// The suppliers changed: a running build for older ones is stopped; one for the new ones starts at once, unless the
+// current catalog already fits them.
 function catRecheck() {
   if (!catJob) return;
   if (!catReady()) catWork();
@@ -4012,7 +4033,12 @@ function catalog() {
     const cat = C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] };
     catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
     // Saved a little later, so the screen that waited for it draws first.
-    if (sig) setTimeout(() => { if (catMemo.cat === cat) catStore.put(sig, cat); }, 500);
+    if (sig) setTimeout(() => {
+      if (!catReady() || catMemo.cat !== cat) return; // the suppliers have changed since
+      // With the filters' origins, as the worker saves it.
+      for (const e of [...cat.engines, ...cat.alternators, ...cat.controllers]) e.origin = catOriginOf(e);
+      catStore.put(sig, cat);
+    }, 500);
   }
   return catMemo.cat;
 }
