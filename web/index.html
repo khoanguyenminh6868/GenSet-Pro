@@ -701,7 +701,7 @@ const SHOW_FIND_NOTE = false;
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, rowflags: {}, rowok: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, bcdg: {}, deleted: {}, sel: new Set(), limit: pageSize(),
-  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
+  loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false, supdeleted: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
   sort: { ...DEFAULT_SORT },
@@ -1169,10 +1169,14 @@ function askBidPrice(key, edit = false) {
     inp.focus();
   });
 }
+const docStamp = new WeakMap(); // a document's data → its updated_at, from the same snapshot (catSig)
 function subscribe(coll, field, after) {
   state.db.collection(coll).onSnapshot((snap) => {
     const next = {};
-    snap.docs.forEach((d) => { next[d.id] = d.data(); });
+    snap.docs.forEach((d) => {
+      const v = (next[d.id] = d.data());
+      if (d.updatedAt && v && typeof v === "object") docStamp.set(v, d.updatedAt);
+    });
     state[field] = next;
     if (field in state.loaded) state.loaded[field] = true;
     after?.();
@@ -3518,7 +3522,10 @@ async function setRowOk(sid, key, d) {
   if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
   if (!(await dbSet("rowok/" + sid, cur))) toast("Không lưu được quyết định cho dòng nghi sai.");
 }
-const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
+// The deleted marks too: without them the list shows deleted suppliers and the catalog would be built from them.
+const supLoaded = () => state.loaded.supplier && state.loaded.supdeleted;
+// Also before the database is there (a reload on a screen's link draws it first): building then would skip the saved catalog.
+const supWait = () => ((state.db || window.genbidWeb) && !supLoaded() ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a>${raw(CLOSE_BTN)}</header>`;
@@ -3771,13 +3778,13 @@ function supGensetsPart(cat, s) {
 function supModelsLater() {
   const el = $("#supModels[data-id]");
   if (!el) return;
-  // A short wait: the page with its spinner is painted before the build holds the thread (not requestAnimationFrame,
-  // which does not run while the tab is hidden).
-  window.genbidBusy(new Promise((done) => setTimeout(() => {
+  // The saved catalog first. A build needs a short wait: the page with its spinner is painted before it holds the thread
+  // (not requestAnimationFrame, which does not run while the tab is hidden).
+  window.genbidBusy(catRestore().then((had) => new Promise((done) => setTimeout(() => {
     const s = state.supplier?.[el.dataset.id];
     if (el.isConnected && s) { catalog(); el.outerHTML = supModelsHtml(s); }
     done();
-  }, 50)));
+  }, had ? 0 : 50))));
 }
 // The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
 const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
@@ -3863,8 +3870,88 @@ const CAT_KIND = { engine: { one: "động cơ", tab: "Động cơ", title: "Dan
   controller: { one: "bộ điều khiển", tab: "Bộ điều khiển", title: "Danh mục bộ điều khiển", list: "controllers", other: "Động cơ trong dòng" },
   alternator: { one: "đầu phát", tab: "Đầu phát", title: "Danh mục đầu phát", list: "alternators", other: "Động cơ đi kèm" } };
 const CAT_RATING = { prime: "Liên tục (prime)", standby: "Dự phòng (standby)", rated: "Không ghi loại" };
-let catMemo = { src: null, del: null, cat: null };
-const catReady = () => catMemo.src === state.supplier && catMemo.del === state.supdeleted;
+let catMemo = { src: null, del: null, sig: null, cat: null };
+// What the catalog is built from: every supplier it reads with its updated_at (every write of docs changes it). null when
+// one has no stamp: such a catalog is neither saved nor taken over from an earlier snapshot.
+let catSigMemo = { src: null, del: null, sig: null };
+function catSig() {
+  if (catSigMemo.src !== state.supplier || catSigMemo.del !== state.supdeleted) {
+    const parts = supAll().map((s) => (docStamp.has(s) ? s.id + " " + docStamp.get(s) : null));
+    catSigMemo = { src: state.supplier, del: state.supdeleted, sig: parts.length && parts.every(Boolean) ? parts.sort().join("\n") : null };
+  }
+  return catSigMemo.sig;
+}
+function catReady() {
+  if (catMemo.src === state.supplier && catMemo.del === state.supdeleted) return true;
+  if (!catMemo.sig || catSig() !== catMemo.sig) return false;
+  // A new snapshot with the same suppliers in the same versions: the catalog stands.
+  catMemo = { ...catMemo, src: state.supplier, del: state.supdeleted };
+  return true;
+}
+// The built catalog is kept on this device (IndexedDB "genbid-catalog", one record, removed with the documents when
+// sign-in fails: shim.js), so a reload reads it instead of building it again. Its key: the code of catalog.js and catSig().
+const catStore = (() => {
+  let open, code;
+  const db = () => (open ||= new Promise((res) => {
+    try {
+      const r = indexedDB.open("genbid-catalog", 1);
+      r.onupgradeneeded = () => r.result.createObjectStore("built");
+      r.onsuccess = () => { r.result.onversionchange = () => r.result.close(); res(r.result); };
+      r.onerror = r.onblocked = () => res(null);
+    } catch { res(null); }
+  }));
+  // SHA-256 of catalog.js as this page loaded it (the browser's cache of the <script>): a new version builds anew.
+  const codeHash = () => (code ||= fetch($('script[src*="catalog.js"]').src, { cache: "force-cache" })
+    .then((r) => { if (!r.ok) throw new Error("catalog.js " + r.status); return r.arrayBuffer(); })
+    .then((b) => crypto.subtle.digest("SHA-256", b))
+    .then((d) => [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join(""))
+    .catch(() => null));
+  const tx = async (mode, fn) => {
+    const [d, c] = await Promise.all([db(), codeHash()]);
+    if (!d || !c) return null;
+    return new Promise((res) => {
+      try {
+        const t = d.transaction("built", mode), out = fn(t.objectStore("built"), c);
+        t.oncomplete = () => res(out?.value ?? null);
+        t.onerror = t.onabort = () => res(null);
+      } catch { res(null); }
+    });
+  };
+  return {
+    get: (sig) => tx("readonly", (s, c) => {
+      const out = { value: null }, k = s.get("key");
+      k.onsuccess = () => { if (k.result === c + "\n" + sig) { const r = s.get("cat"); r.onsuccess = () => { out.value = r.result; }; } };
+      return out;
+    }),
+    put: (sig, cat) => tx("readwrite", (s, c) => { s.put(cat, "cat"); s.put(c + "\n" + sig, "key"); }),
+  };
+})();
+// The saved catalog of the suppliers now loaded becomes the current one. Resolves to whether the catalog is ready.
+let catLoading = { sig: null, p: null };
+function catRestore() {
+  if (catReady()) return Promise.resolve(true);
+  const sig = catSig();
+  if (!sig || !window.GenbidCatalog?.builder) return Promise.resolve(false);
+  if (catLoading.sig !== sig) {
+    const p = catStore.get(sig).then((cat) => {
+      if (catLoading.p === p) catLoading = { sig: null, p: null };
+      if (catReady()) return true;
+      if (!cat || catSig() !== sig) return false;
+      // builder() also loads the places of manufacture from the maker records (useManufacturing), which madeOf reads.
+      window.GenbidCatalog.builder(supAll());
+      catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
+      return true;
+    });
+    catLoading = { sig, p };
+  }
+  return catLoading.p;
+}
+// After a build, a little later so the screen that waited for it draws first.
+let catSaveTimer = 0;
+function catSave() {
+  clearTimeout(catSaveTimer);
+  catSaveTimer = setTimeout(() => { if (catMemo.sig) catStore.put(catMemo.sig, catMemo.cat); }, 500);
+}
 // The catalog is read from every supplier table (seconds on a phone): once the Nhà cung cấp or a catalog screen opens,
 // each supplier's rows are read while the page is idle, then the catalog is built, so opening one is quick.
 let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog being spread over idle time ({ src, del, b })
@@ -3886,7 +3973,7 @@ const idle = (fn) => {
   return id;
 };
 function catWarm() {
-  if (!window.GenbidCatalog?.builder || !state.loaded.supplier || catReady() || catWarmFor === state.supplier) return;
+  if (!window.GenbidCatalog?.builder || !supLoaded() || catReady() || catWarmFor === state.supplier) return;
   const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();
   const stop = () => { if (catWarmFor === src) catWarmFor = null; if (catBuild?.src === src) catBuild = null; };
   const live = () => catWarmFor === src && src === state.supplier && del === state.supdeleted && !catReady();
@@ -3895,23 +3982,28 @@ function catWarm() {
     if (!live()) return stop();
     do window.GenbidCatalog.prime(todo.pop()); while (todo.length && d.timeRemaining() > 4);
     if (todo.length) return idle(read);
-    catBuild = { src, del, b: window.GenbidCatalog.builder(supAll()) };
+    catBuild = { src, del, sig: catSig(), b: window.GenbidCatalog.builder(supAll()) };
     idle(make);
   };
   // Then the catalog itself, in steps of the same size (catalog() finishes it at once when it is wanted sooner).
   const make = (d) => {
     if (!live()) return stop();
     if (!catBuild.b.step(() => d.timeRemaining())) return idle(make);
-    catMemo = { src, del, cat: catBuild.b.result() };
+    catMemo = { src, del, sig: catBuild.sig, cat: catBuild.b.result() };
     stop();
+    catSave();
     partsFill();
   };
-  idle(read);
+  // The saved catalog first; built only when there is none for these suppliers.
+  catRestore().then((had) => {
+    if (had) { stop(); partsFill(); } else if (live()) idle(read); else stop();
+  });
 }
 function catalog() {
-  if (catMemo.src !== state.supplier || catMemo.del !== state.supdeleted) {
+  if (!catReady()) {
     const C = window.GenbidCatalog, part = catBuild?.src === state.supplier && catBuild.del === state.supdeleted ? catBuild.b : null;
-    catMemo = { src: state.supplier, del: state.supdeleted, cat: part ? (part.step(), part.result()) : C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+    catMemo = { src: state.supplier, del: state.supdeleted, sig: C ? catSig() : null, cat: part ? (part.step(), part.result()) : C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
+    catSave();
   }
   return catMemo.cat;
 }
@@ -3968,11 +4060,15 @@ function renderCatalog() {
   const body = $("#catBody");
   if (!body) return;
   if (supWait()) { body.innerHTML = supWait(); return; }
-  // The first build holds the page for a few seconds: the spinner is painted first.
+  // The catalog saved on this device first; a build holds the page for a few seconds: its spinner is painted first.
   if (!catReady()) {
     if (!body.querySelector(".catwait")) {
-      body.innerHTML = h`<div class="mscroll catwait loading">${raw(progress("Đang dựng danh mục..."))}</div>`;
-      window.genbidBusy(new Promise((done) => setTimeout(() => { if (body.isConnected) { catalog(); renderCatalog(); } done(); }, 50)));
+      const wait = (text) => { body.innerHTML = h`<div class="mscroll catwait loading">${raw(progress(text))}</div>`; };
+      wait("Đang mở danh mục...");
+      window.genbidBusy(catRestore().then((had) => new Promise((done) => {
+        if (!had && body.isConnected) wait("Đang dựng danh mục...");
+        setTimeout(() => { if (body.isConnected) { catalog(); renderCatalog(); } done(); }, had ? 0 : 50);
+      })));
     }
     return;
   }

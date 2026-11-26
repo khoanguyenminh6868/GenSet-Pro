@@ -295,7 +295,8 @@
       put: (rows) => rows.length && tx("readwrite", (s) => rows.forEach((r) => s.put({ ...r, coll: at(r.coll) }))),
       del: (coll, ids) => ids.length && tx("readwrite", (s) => ids.forEach((id) => s.delete([at(coll), id]))),
       dropWhole: (coll) => tx("readwrite", (s) => s.delete(IDBKeyRange.bound([coll, ""], [coll, "￿"]))),
-      wipe: () => { try { indexedDB.deleteDatabase("genbid-docs"); } catch {} },
+      // "genbid-catalog": the catalog index.html builds from the supplier documents (catStore).
+      wipe: () => { for (const n of ["genbid-docs", "genbid-catalog"]) try { indexedDB.deleteDatabase(n); } catch {} },
     };
   })();
   // Collections the page reads as light copies (api/lite.js): most of an analysis is its technical specs, needed only
@@ -454,7 +455,8 @@
       return {
         doc: (id) => db.doc(coll + "/" + id),
         onSnapshot(fn, onErr) {
-          return watch(coll, () => fn({ docs: [...cache.get(coll)].map(([id, d]) => snapDoc(id, d)), size: cache.get(coll).size }), onErr);
+          // updatedAt: the version of each document, read with its data (index.html keys its saved catalog by it).
+          return watch(coll, () => fn({ docs: [...cache.get(coll)].map(([id, d]) => ({ ...snapDoc(id, d), updatedAt: stamps.get(coll)?.get(id) })), size: cache.get(coll).size }), onErr);
         },
       };
     },
