@@ -3526,7 +3526,8 @@ async function setRowOk(sid, key, d) {
 const supLoaded = () => state.loaded.supplier && state.loaded.supdeleted;
 // Also before the database is there (a reload on a screen's link draws it first): building then would skip the saved catalog.
 const supWait = () => ((state.db || window.genbidWeb) && !supLoaded() ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
-const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
+// A build running for suppliers that have just changed starts again at once.
+const supChanged = () => { if (catJob && !catReady()) catWork(); renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
   <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a>${raw(CLOSE_BTN)}</header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
@@ -3778,13 +3779,10 @@ function supGensetsPart(cat, s) {
 function supModelsLater() {
   const el = $("#supModels[data-id]");
   if (!el) return;
-  // The saved catalog first. A build needs a short wait: the page with its spinner is painted before it holds the thread
-  // (not requestAnimationFrame, which does not run while the tab is hidden).
-  window.genbidBusy(catRestore().then((had) => new Promise((done) => setTimeout(() => {
+  window.genbidBusy(catEnsure().then(() => {
     const s = state.supplier?.[el.dataset.id];
-    if (el.isConnected && s) { catalog(); el.outerHTML = supModelsHtml(s); }
-    done();
-  }, had ? 0 : 50))));
+    if (el.isConnected && s) el.outerHTML = supModelsHtml(s);
+  }));
 }
 // The model tables of a supplier (crawl-specs.mjs), each line as it is on the supplier's page, with its source [n].
 const supCells = (line) => String(line).split("|").map((c) => c.trim()).slice(1);
@@ -3889,7 +3887,8 @@ function catReady() {
   return true;
 }
 // The built catalog is kept on this device (IndexedDB "genbid-catalog", one record, removed with the documents when
-// sign-in fails: shim.js), so a reload reads it instead of building it again. Its key: the code of catalog.js and catSig().
+// sign-in fails: shim.js), so a reload reads it instead of building it again. catalog-worker.js writes it; its key: the
+// code of catalog.js and catalog-worker.js, and catSig().
 const catStore = (() => {
   let open, code;
   const db = () => (open ||= new Promise((res) => {
@@ -3900,32 +3899,41 @@ const catStore = (() => {
       r.onerror = r.onblocked = () => res(null);
     } catch { res(null); }
   }));
-  // SHA-256 of catalog.js as this page loaded it (the browser's cache of the <script>): a new version builds anew.
-  const codeHash = () => (code ||= fetch($('script[src*="catalog.js"]').src, { cache: "force-cache" })
-    .then((r) => { if (!r.ok) throw new Error("catalog.js " + r.status); return r.arrayBuffer(); })
+  // SHA-256 of one script: catalog.js as this page loaded it (the browser's cache of the <script>), the worker as served.
+  const sha = (url, cache) => fetch(url, { cache })
+    .then((r) => { if (!r.ok) throw new Error(url + " " + r.status); return r.arrayBuffer(); })
     .then((b) => crypto.subtle.digest("SHA-256", b))
-    .then((d) => [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join(""))
-    .catch(() => null));
-  const tx = async (mode, fn) => {
-    const [d, c] = await Promise.all([db(), codeHash()]);
-    if (!d || !c) return null;
+    .then((d) => [...new Uint8Array(d)].map((x) => x.toString(16).padStart(2, "0")).join(""));
+  // A new version of either builds anew. null when it cannot be told: nothing is read or saved.
+  const key = async (sig) => {
+    if (!sig) return null;
+    code ||= Promise.all([sha($('script[src*="catalog.js"]').src, "force-cache"), sha("/catalog-worker.js", "no-cache")])
+      .then((h) => h.join(" "), () => null);
+    const c = await code;
+    return c && c + "\n" + sig;
+  };
+  const get = async (sig) => {
+    const [d, want] = await Promise.all([db(), key(sig)]);
+    if (!d || !want) return null;
     return new Promise((res) => {
       try {
-        const t = d.transaction("built", mode), out = fn(t.objectStore("built"), c);
-        t.oncomplete = () => res(out?.value ?? null);
+        const t = d.transaction("built", "readonly"), s = t.objectStore("built"), k = s.get("key");
+        let cat = null;
+        k.onsuccess = () => { if (k.result === want) { const r = s.get("cat"); r.onsuccess = () => { cat = r.result; }; } };
+        t.oncomplete = () => res(cat);
         t.onerror = t.onabort = () => res(null);
       } catch { res(null); }
     });
   };
-  return {
-    get: (sig) => tx("readonly", (s, c) => {
-      const out = { value: null }, k = s.get("key");
-      k.onsuccess = () => { if (k.result === c + "\n" + sig) { const r = s.get("cat"); r.onsuccess = () => { out.value = r.result; }; } };
-      return out;
-    }),
-    put: (sig, cat) => tx("readwrite", (s, c) => { s.put(cat, "cat"); s.put(c + "\n" + sig, "key"); }),
-  };
+  return { key, get };
 })();
+// A catalog built or read for the suppliers of `sig` becomes the current one, if they are still the ones loaded.
+function catTake(cat, sig, src, del) {
+  if (sig ? catSig() !== sig : state.supplier !== src || state.supdeleted !== del) return;
+  // builder() loads the places of manufacture from the maker records (useManufacturing), which madeOf reads.
+  window.GenbidCatalog.builder(supAll());
+  catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
+}
 // The saved catalog of the suppliers now loaded becomes the current one. Resolves to whether the catalog is ready.
 let catLoading = { sig: null, p: null };
 function catRestore() {
@@ -3935,75 +3943,55 @@ function catRestore() {
   if (catLoading.sig !== sig) {
     const p = catStore.get(sig).then((cat) => {
       if (catLoading.p === p) catLoading = { sig: null, p: null };
-      if (catReady()) return true;
-      if (!cat || catSig() !== sig) return false;
-      // builder() also loads the places of manufacture from the maker records (useManufacturing), which madeOf reads.
-      window.GenbidCatalog.builder(supAll());
-      catMemo = { src: state.supplier, del: state.supdeleted, sig, cat };
-      return true;
+      if (cat && !catReady()) catTake(cat, sig);
+      return catReady();
     });
     catLoading = { sig, p };
   }
   return catLoading.p;
 }
-// After a build, a little later so the screen that waited for it draws first.
-let catSaveTimer = 0;
-function catSave() {
-  clearTimeout(catSaveTimer);
-  catSaveTimer = setTimeout(() => { if (catMemo.sig) catStore.put(catMemo.sig, catMemo.cat); }, 500);
-}
-// The catalog is read from every supplier table (seconds on a phone): once the Nhà cung cấp or a catalog screen opens,
-// each supplier's rows are read while the page is idle, then the catalog is built, so opening one is quick.
-let catWarmFor = null, catBuild = null; // catBuild: the build of the catalog being spread over idle time ({ src, del, b })
-// A browser may never give idle time (measured 2026-11-23, Edge / Chromium on Windows, also in a visible window: 58 of 59
-// callbacks ran only because the 1 s timeout passed, each with timeRemaining() = 0, so the catalog took a minute for 0.2 s of
-// work). A callback that ran on its timeout therefore gets a fixed 15 ms slice, and the next one waits 50 ms at most; once
-// the browser gives idle time again the steps go back to it. Without requestIdleCallback (Safari): the same slice on a timer.
-const idleSlice = () => { const t = performance.now(); return { timeRemaining: () => Math.max(0, 15 - (performance.now() - t)) }; };
-let idleLate = false; // the last callback ran on its timeout, not in idle time
-// Cause (measured 2026-11-24, Chromium, also headless on Linux): after a real mouse click a page that is producing no frames
-// gets no idle period, so every callback waits for its timeout (1000, 50, 50, 50 ms; didTimeout, timeRemaining() = 0; 7 of 8
-// clicks, vs 0 of 9 for element.click()). While any frame is in flight (an rAF loop, a running animation) the same callbacks run
-// 0-7 ms after the call, in real idle time. So each call also asks for one empty animation frame: it costs nothing, and in a
-// hidden tab (no frames) the timeout above still applies.
-const idle = (fn) => {
-  if (!window.requestIdleCallback) return setTimeout(() => fn(idleSlice()), 30);
-  const id = requestIdleCallback((d) => { idleLate = d.didTimeout; fn(idleLate ? idleSlice() : d); }, { timeout: idleLate ? 50 : 1000 });
-  requestAnimationFrame(() => {});
-  return id;
-};
-function catWarm() {
-  if (!window.GenbidCatalog?.builder || !supLoaded() || catReady() || catWarmFor === state.supplier) return;
-  const src = catWarmFor = state.supplier, del = state.supdeleted, todo = supAll();
-  const stop = () => { if (catWarmFor === src) catWarmFor = null; if (catBuild?.src === src) catBuild = null; };
-  const live = () => catWarmFor === src && src === state.supplier && del === state.supdeleted && !catReady();
-  // Each supplier's rows first, at least one supplier a step so a busy page still gets through.
-  const read = (d) => {
-    if (!live()) return stop();
-    do window.GenbidCatalog.prime(todo.pop()); while (todo.length && d.timeRemaining() > 4);
-    if (todo.length) return idle(read);
-    catBuild = { src, del, sig: catSig(), b: window.GenbidCatalog.builder(supAll()) };
-    idle(make);
-  };
-  // Then the catalog itself, in steps of the same size (catalog() finishes it at once when it is wanted sooner).
-  const make = (d) => {
-    if (!live()) return stop();
-    if (!catBuild.b.step(() => d.timeRemaining())) return idle(make);
-    catMemo = { src, del, sig: catBuild.sig, cat: catBuild.b.result() };
-    stop();
-    catSave();
-    partsFill();
-  };
-  // The saved catalog first; built only when there is none for these suppliers.
-  catRestore().then((had) => {
-    if (had) { stop(); partsFill(); } else if (live()) idle(read); else stop();
+// The build running in catalog-worker.js: { sig, src, del, p, stop }. One at a time; one for older suppliers is stopped.
+let catJob = null;
+function catWork() {
+  const sig = catSig(), src = state.supplier, del = state.supdeleted;
+  if (catJob && (sig ? catJob.sig === sig : catJob.src === src && catJob.del === del)) return catJob.p;
+  catJob?.stop();
+  const job = (catJob = { sig, src, del });
+  job.p = new Promise((done) => {
+    let w = null;
+    const end = () => { if (catJob === job) catJob = null; done(); };
+    // No worker, or it failed: built here, the page held until done (its spinner is painted first).
+    const here = () => { w?.terminate(); setTimeout(() => { catalog(); end(); }, 50); };
+    job.stop = () => { w?.terminate(); done(); };
+    if (!window.GenbidCatalog || !window.Worker) return here();
+    const suppliers = supAll();
+    try { w = new Worker("/catalog-worker.js"); } catch { return here(); }
+    w.onerror = (e) => { e.preventDefault(); here(); };
+    // After its answer the worker saves the catalog and closes itself: not terminated here.
+    w.onmessage = ({ data }) => { if (!data.cat) return here(); catTake(data.cat, sig, src, del); end(); };
+    catStore.key(sig).then((key) => { if (catJob === job) w.postMessage({ suppliers, key }); });
   });
+  return job.p;
 }
+// The catalog of the suppliers now loaded: the saved one, else built in the worker. Resolves once it is the current one.
+async function catEnsure(onBuild) {
+  while (!catReady()) {
+    if (await catRestore()) return;
+    onBuild?.();
+    await catWork();
+  }
+}
+// Once the Nhà cung cấp or a screen with catalog links opens, the catalog is got ready, so opening it is quick.
+let catWarming = null;
+function catWarm() {
+  if (!window.GenbidCatalog?.builder || !supLoaded() || catReady() || catWarming) return;
+  catWarming = catEnsure().then(() => { catWarming = null; partsFill(); });
+}
+// The current catalog. Screens wait for catEnsure() first: a build here holds the page for many seconds.
 function catalog() {
   if (!catReady()) {
-    const C = window.GenbidCatalog, part = catBuild?.src === state.supplier && catBuild.del === state.supdeleted ? catBuild.b : null;
-    catMemo = { src: state.supplier, del: state.supdeleted, sig: C ? catSig() : null, cat: part ? (part.step(), part.result()) : C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
-    catSave();
+    const C = window.GenbidCatalog;
+    catMemo = { src: state.supplier, del: state.supdeleted, sig: C ? catSig() : null, cat: C ? C.build(supAll()) : { engines: [], alternators: [], controllers: [] } };
   }
   return catMemo.cat;
 }
@@ -4042,7 +4030,7 @@ function openCatalog(kind, key, from = null, q = null, name = null) {
 }
 // Nước của thương hiệu và nơi sản xuất (web/catalog.js brandOf / madeOf; Khoa, 2026-11-17): "?" là nguồn không cho biết.
 const catOrigin = new WeakMap();
-const catOriginOf = (e) => { if (!catOrigin.has(e)) { const b = window.GenbidCatalog.brandOf(e); catOrigin.set(e, { brand: b.length ? b : ["?"], made: window.GenbidCatalog.madeOf(e) }); } return catOrigin.get(e); };
+const catOriginOf = (e) => { if (e.origin) return e.origin; /* computed by catalog-worker.js */ if (!catOrigin.has(e)) { const b = window.GenbidCatalog.brandOf(e); catOrigin.set(e, { brand: b.length ? b : ["?"], made: window.GenbidCatalog.madeOf(e) }); } return catOrigin.get(e); };
 const catCountry = (c) => SUP_COUNTRY[c] || c;
 function catMatches(e, f = catView) {
   const q = f.q.trim().toLowerCase();
@@ -4060,15 +4048,13 @@ function renderCatalog() {
   const body = $("#catBody");
   if (!body) return;
   if (supWait()) { body.innerHTML = supWait(); return; }
-  // The catalog saved on this device first; a build holds the page for a few seconds: its spinner is painted first.
+  // The catalog saved on this device, else built in the background (catEnsure).
   if (!catReady()) {
     if (!body.querySelector(".catwait")) {
       const wait = (text) => { body.innerHTML = h`<div class="mscroll catwait loading">${raw(progress(text))}</div>`; };
       wait("Đang mở danh mục...");
-      window.genbidBusy(catRestore().then((had) => new Promise((done) => {
-        if (!had && body.isConnected) wait("Đang dựng danh mục...");
-        setTimeout(() => { if (body.isConnected) { catalog(); renderCatalog(); } done(); }, had ? 0 : 50);
-      })));
+      window.genbidBusy(catEnsure(() => { if (body.isConnected) wait("Đang dựng danh mục..."); })
+        .then(() => { if (body.isConnected) renderCatalog(); }));
     }
     return;
   }
