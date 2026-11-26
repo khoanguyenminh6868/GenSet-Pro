@@ -71,7 +71,10 @@
   // Narrow on purpose: the renewable word must touch the generator ("máy phát điện gió"), so a mixed building package
   // ("điện năng lượng mặt trời, Máy phát điện; Điều hòa…") that also buys a set stays a generator tender.
   const RENEW_RE = /máy\s*phát\s*(?:điện\s*)?(?:gió|mặt\s*trời|năng\s*lượng)|phát\s*điện\s*(?:gió|mặt\s*trời|năng\s*lượng)|điện\s*gió|năng\s*lượng\s*gió|tua\s*-?\s*bin\s*gió|pin\s*(?:năng\s*lượng\s*)?mặt\s*trời|quang\s*điện|\bsolar\b|\bwind\b/i;
-  const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n)) && (!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
+  // "Máy nổ phát điện" is a set, and so is "máy phát" followed by its fuel or its power in kW (Khoa, 2026-11-26: only
+  // names about a set, not the many "máy phát" parts and repairs of power plants, nor radio / signal transmitters).
+  const ENGINE_SET_RE = /m[áa]y\s*n[ổo]\s*ph[áa]t\s*đi[ệe]n|m[áa]y\s*ph[áa]t(?!\s*(?:thanh|hình|sóng|xung|tín|tia|số|fm(?![a-z])|truyền|vô\s*tuyến))(?:\s*(?:xăng|dầu(?!\s*(?:nhớt|bôi)))|[^,;:]{0,30}?(?:chạy\s*(?:xăng|dầu)|\d\s*kw(?![a-z])))/i;
+  const isGensetName = (n) => { n = String(n || "").normalize("NFC"); return (GENSET_RE.test(n) || MPD_RE.test(n) || ENGINE_SET_RE.test(n)) &&(!PLANT_RE.test(n) || SET_RE.test(n)) && (!RENEW_RE.test(n) || SET_RE.test(n)); };
   // Repair, upkeep, rental, parts and studies are priced differently from supplying a generator set.
   const SVC_RE = /sửa\s*chữa|bảo\s*dưỡng|bảo\s*trì|đại\s*tu|trung\s*tu|giám\s*sát\s*(thi\s*công|lắp\s*đặt)|thuê|phụ\s*tùng|vật\s*tư|chổi\s*than|thí\s*nghiệm|kiểm\s*định|tư\s*vấn|dầu\s*(nhớt|bôi\s*trơn)/i;
   // Moving or re-installing a set already owned (Khoa, 2026-11-03) is not supplying one either: "Di dời, lắp đặt máy phát
